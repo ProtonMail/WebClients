@@ -1,4 +1,4 @@
-import { CreateDocumentPayload } from '../../interfaces/drive/documents';
+import type { CreateDocumentPayload } from '../../interfaces/drive/documents';
 
 export const queryCreateDocument = (shareId: string, data: CreateDocumentPayload) => ({
     method: 'post',

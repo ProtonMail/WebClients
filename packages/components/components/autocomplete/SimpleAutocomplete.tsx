@@ -1,4 +1,5 @@
-import Autocomplete, { Props as AutocompleteProps } from './Autocomplete';
+import type { Props as AutocompleteProps } from './Autocomplete';
+import Autocomplete from './Autocomplete';
 
 interface Props extends Omit<AutocompleteProps<string>, 'getData' | 'onSelect'> {}
 

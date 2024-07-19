@@ -3,7 +3,7 @@ import mimemessage from '@protontech/mimemessage';
 import { encodeUtf8 } from '@proton/crypto/lib/utils';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import { AttachmentDirect } from '../../interfaces/mail/crypto';
+import type { AttachmentDirect } from '../../interfaces/mail/crypto';
 
 /**
  * Remove '; name=' and '; filename=' values

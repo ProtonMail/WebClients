@@ -1,4 +1,5 @@
-import { Children, ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import clsx from '@proton/utils/clsx';
@@ -10,7 +11,7 @@ import ErrorBoundary from '../app/ErrorBoundary';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
-import { SettingsAreaConfig } from './interface';
+import type { SettingsAreaConfig } from './interface';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;

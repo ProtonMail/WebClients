@@ -1,24 +1,18 @@
-import React, { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import React from 'react';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import {
-    Icon,
-    Info,
-    ModalSize,
-    ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    SettingsLink,
-} from '@proton/components/components';
+import type { ModalSize, ModalStateProps } from '@proton/components/components';
+import { Icon, Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';
 import clsx from '@proton/utils/clsx';
 
-import { UpsellFeatureName, upsellFeatures } from './constants';
+import type { UpsellFeatureName } from './constants';
+import { upsellFeatures } from './constants';
 
 type UpsellHeaderType = 'mail' | 'calendar' | 'composer-assistant';
 const getHeader = (headerType: UpsellHeaderType) => {

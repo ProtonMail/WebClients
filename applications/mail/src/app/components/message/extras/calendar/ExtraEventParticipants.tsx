@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { UnderlineButton } from '@proton/components';
-import { Participant } from '@proton/shared/lib/interfaces/calendar';
+import type { Participant } from '@proton/shared/lib/interfaces/calendar';
 
 import ExtraEventParticipant from './ExtraEventParticipant';
 

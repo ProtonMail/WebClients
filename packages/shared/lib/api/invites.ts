@@ -1,4 +1,4 @@
-import { CLIENT_TYPES } from '../constants';
+import type { CLIENT_TYPES } from '../constants';
 
 export const createInvitation = ({ Email, Type }: { Email: string; Type: CLIENT_TYPES }) => ({
     method: 'post',

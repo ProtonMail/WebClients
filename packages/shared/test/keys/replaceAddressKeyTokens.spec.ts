@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
+import type { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import { getDecryptedUserKeysHelper, getReplacedAddressKeyTokens, splitKeys } from '../../lib/keys';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 

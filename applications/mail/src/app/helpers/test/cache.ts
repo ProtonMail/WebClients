@@ -1,9 +1,9 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { Address, Key } from '@proton/shared/lib/interfaces';
+import type { Address, Key } from '@proton/shared/lib/interfaces';
 import { ResolvedRequest, clearCache, mockCache, resolvedRequest } from '@proton/testing';
 
-import { Base64Cache } from '../../hooks/useBase64Cache';
+import type { Base64Cache } from '../../hooks/useBase64Cache';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/testing package directly

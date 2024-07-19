@@ -13,14 +13,16 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { User } from '@proton/shared/lib/interfaces';
-import { Member } from '@proton/shared/lib/interfaces/Member';
+import type { User } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';
 
-import { Prompt, PromptProps } from '../../components';
+import type { PromptProps } from '../../components';
+import { Prompt } from '../../components';
 import { AuthModal } from '../password';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {

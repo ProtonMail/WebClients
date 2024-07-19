@@ -1,15 +1,16 @@
-import { ChangeEvent, JSX, useEffect, useMemo, useRef, useState } from 'react';
+import type { ChangeEvent, JSX } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { InvalidAddressesError, UnavailableAddressesError, createMember } from '@proton/account';
 import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     Checkbox,
     Icon,
     Marks,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -35,13 +36,15 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
-import { APP_NAMES, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { CreateMemberMode, Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -49,8 +52,8 @@ import noop from '@proton/utils/noop';
 import removeIndex from '@proton/utils/removeIndex';
 
 import useVerifyOutboundPublicKeys from '../../../keyTransparency/useVerifyOutboundPublicKeys';
-import { CsvConfig } from '../csv';
-import { UserTemplate } from '../types';
+import type { CsvConfig } from '../csv';
+import type { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
 import validateOrganizationCapacity, { OrganizationCapacityError } from './validateOrganizationCapacity';
 

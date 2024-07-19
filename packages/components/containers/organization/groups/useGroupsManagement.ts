@@ -13,11 +13,12 @@ import {
     useNotifications,
 } from '@proton/components';
 import { createGroup } from '@proton/shared/lib/api/groups';
-import { Group, GroupFlags, GroupPermissions, Organization } from '@proton/shared/lib/interfaces';
+import type { Group, Organization } from '@proton/shared/lib/interfaces';
+import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { addSubdomain } from './helpers';
-import { GroupsManagementReturn } from './types';
+import type { GroupsManagementReturn } from './types';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 

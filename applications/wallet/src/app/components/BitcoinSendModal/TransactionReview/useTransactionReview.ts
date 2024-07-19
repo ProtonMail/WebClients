@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { useAddresses, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
-import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { usePsbt } from '../../../hooks/usePsbt';
 import { isExchangeRate } from '../../../utils';
-import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
 export const useTransactionReview = ({
     isUsingBitcoinViaEmail,

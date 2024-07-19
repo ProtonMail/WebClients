@@ -1,8 +1,10 @@
 import { useState } from 'react';
 
-import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { ModalProps, ModalTwo } from '../../../components/modalTwo';
+import type { ModalProps } from '../../../components/modalTwo';
+import { ModalTwo } from '../../../components/modalTwo';
 import ContactImportAttaching from './steps/ContactImportAttaching';
 import ContactImportCsv from './steps/ContactImportCsv';
 import ContactImportGroups from './steps/ContactImportGroups';

@@ -1,7 +1,7 @@
 import type { AlgorithmInfo } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
-import { KeyGenConfig } from '../interfaces';
+import type { KeyGenConfig } from '../interfaces';
 
 const formatCurveName = (curve: AlgorithmInfo['curve']) => {
     switch (curve) {

@@ -1,11 +1,11 @@
-import { ReactElement, RefObject } from 'react';
+import type { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
 import { SettingsLink, Spotlight } from '@proton/components';
 import { APPS, BRAND_NAME, DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 interface Props {

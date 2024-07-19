@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import type { ModalProps } from '../../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../components';
 
 interface Props extends ModalProps {

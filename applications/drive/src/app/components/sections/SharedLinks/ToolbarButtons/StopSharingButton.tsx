@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { DecryptedLink, useActions } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
+import { useActions } from '../../../../store';
 import { isMultiSelect, noSelection } from '../../ToolbarButtons/utils';
 
 interface Props {

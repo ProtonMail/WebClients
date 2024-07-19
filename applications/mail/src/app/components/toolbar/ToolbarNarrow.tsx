@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { useElementBreakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import ListSettings, { Props as ListSettingsProps } from '../list/ListSettings';
+import type { Props as ListSettingsProps } from '../list/ListSettings';
+import ListSettings from '../list/ListSettings';
 
 interface Props extends ListSettingsProps {
     classname: string;

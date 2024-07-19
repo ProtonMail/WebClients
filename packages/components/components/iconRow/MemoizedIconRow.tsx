@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
-import IconRow, { IconRowProps } from './IconRow';
+import type { IconRowProps } from './IconRow';
+import IconRow from './IconRow';
 
 const MemoizedIconRow = (props: IconRowProps) => IconRow(props);
 

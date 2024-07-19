@@ -1,7 +1,7 @@
 import { generateUID } from '@proton/components/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 import {

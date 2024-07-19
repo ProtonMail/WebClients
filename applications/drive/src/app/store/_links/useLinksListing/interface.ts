@@ -1,5 +1,5 @@
-import { DecryptedLink } from '../interface';
-import { FetchMeta } from './useLinksListingHelpers';
+import type { DecryptedLink } from '../interface';
+import type { FetchMeta } from './useLinksListingHelpers';
 
 type LoadLinksMetaOptions = {
     /**

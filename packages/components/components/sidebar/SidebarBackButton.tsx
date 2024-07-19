@@ -1,11 +1,13 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 
 import { Icon } from '../icon';
-import AppLink, { AppLinkProps } from '../link/AppLink';
+import type { AppLinkProps } from '../link/AppLink';
+import AppLink from '../link/AppLink';
 
 const SidebarBackButton = ({ children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     return (

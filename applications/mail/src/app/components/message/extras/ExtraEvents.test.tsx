@@ -20,12 +20,12 @@ import { ADDRESS_STATUS, API_CODES, APPS, BRAND_NAME } from '@proton/shared/lib/
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
-import {
-    CalendarKeyFlags,
+import type {
     CalendarUserSettings,
     CalendarWithOwnMembers,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -33,8 +33,8 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import * as inviteApi from '../../../helpers/calendar/inviteApi';
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
-    GeneratedKey,
     addApiMock,
     clearAll,
     generateKeys as generateAddressKeys,
@@ -43,7 +43,7 @@ import {
     minimalCache,
     render,
 } from '../../../helpers/test/helper';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraEvents from './ExtraEvents';
 
 jest.setTimeout(20000);

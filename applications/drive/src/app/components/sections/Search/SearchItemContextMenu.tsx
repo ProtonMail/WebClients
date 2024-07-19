@@ -1,8 +1,8 @@
 import { ContextSeparator } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
-import { DecryptedLink } from '../../../store';
-import { ContextMenuProps } from '../../FileBrowser/interface';
+import type { DecryptedLink } from '../../../store';
+import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { DriveItemContextMenu } from '../Drive/DriveContextMenu';
 import { GoToParent } from './ContextMenuButtons';
 

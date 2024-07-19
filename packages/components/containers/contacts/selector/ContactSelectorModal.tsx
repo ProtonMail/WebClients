@@ -1,18 +1,19 @@
-import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
+import type { ModalProps } from '../../../components';
 import {
     Checkbox,
     Form,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -23,7 +24,7 @@ import {
 } from '../../../components';
 import { useActiveBreakpoint, useContactEmailsSortedByName, useUserSettings } from '../../../hooks';
 import { useContactGroups } from '../../../hooks/useCategories';
-import { ContactEditProps } from '../edit/ContactEditModal';
+import type { ContactEditProps } from '../edit/ContactEditModal';
 import ContactSelectorEmptyContacts from './ContactSelectorEmptyContacts';
 import ContactSelectorEmptyResults from './ContactSelectorEmptyResults';
 import ContactSelectorList from './ContactSelectorList';

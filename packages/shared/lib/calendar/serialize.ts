@@ -1,7 +1,7 @@
-import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
-import { SimpleMap } from '../interfaces';
-import { VcalVeventComponent } from '../interfaces/calendar';
+import type { SimpleMap } from '../interfaces';
+import type { VcalVeventComponent } from '../interfaces/calendar';
 import { CALENDAR_CARD_TYPE } from './constants';
 import {
     createSessionKey,

@@ -1,6 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
-import CollapsibleHeaderButton, { CollapsibleHeaderButtonProps } from './CollapsibleHeaderButton';
+import type { CollapsibleHeaderButtonProps } from './CollapsibleHeaderButton';
+import CollapsibleHeaderButton from './CollapsibleHeaderButton';
 
 import './CollapsibleHeaderIconButton.scss';
 

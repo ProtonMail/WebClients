@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { AuthSecurityKeyContent } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
+import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import noop from '@proton/utils/noop';

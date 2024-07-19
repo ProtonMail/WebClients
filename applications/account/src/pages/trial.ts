@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Parameters } from './interface';
+import type { Parameters } from './interface';
 
 const planName = `${MAIL_APP_NAME} Plus`;
 

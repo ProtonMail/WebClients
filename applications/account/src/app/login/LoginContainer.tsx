@@ -1,25 +1,19 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import {
-    AbuseModal,
-    OnLoginCallback,
-    useApi,
-    useConfig,
-    useErrorHandler,
-    useIsInboxElectronApp,
-} from '@proton/components';
+import type { OnLoginCallback } from '@proton/components';
+import { AbuseModal, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import {
+import type {
     AuthActionResponse,
     AuthCacheResult,
-    AuthStep,
-    AuthType,
     ExternalSSOFlow,
 } from '@proton/components/containers/login/interface';
+import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import {
     handleFido2,
     handleNextLogin,
@@ -29,9 +23,10 @@ import {
 } from '@proton/components/containers/login/loginActions';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronPass } from '@proton/shared/lib/helpers/desktop';
 
@@ -43,8 +38,10 @@ import Main from '../public/Main';
 import Text from '../public/Text';
 import { getContinueToString } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
-import { MetaTags, useMetaTags } from '../useMetaTags';
-import LoginForm, { LoginFormRef } from './LoginForm';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
+import type { LoginFormRef } from './LoginForm';
+import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
 import Testflight from './Testflight';

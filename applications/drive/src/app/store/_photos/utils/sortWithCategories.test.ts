@@ -1,6 +1,6 @@
 import { fromUnixTime, getUnixTime } from 'date-fns';
 
-import { PhotoLink } from '../interface';
+import type { PhotoLink } from '../interface';
 import { sortWithCategories } from './sortWithCategories';
 
 jest.mock('@proton/shared/lib/i18n', () => ({

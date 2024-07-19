@@ -14,12 +14,13 @@ import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPla
 import noop from '@proton/utils/noop';
 
 import CongratulationsStep from '../../signup/CongratulationsStep';
-import { SignupCacheResult, SignupType, UserCacheResult } from '../../signup/interfaces';
+import type { SignupCacheResult, UserCacheResult } from '../../signup/interfaces';
+import { SignupType } from '../../signup/interfaces';
 import { handleDisplayName, handleSetupOrg } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
-import { SignupCustomStepProps } from '../interface';
+import type { SignupCustomStepProps } from '../interface';
 import OrgSetupStep from './OrgSetupStep';
 import RecoveryStep from './RecoveryStep';
 

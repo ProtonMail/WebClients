@@ -1,4 +1,4 @@
-import { MessageImage, MessageImages, MessageState } from '../../store/messages/messagesTypes';
+import type { MessageImage, MessageImages, MessageState } from '../../store/messages/messagesTypes';
 import { createDocument } from '../test/message';
 import { removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
 

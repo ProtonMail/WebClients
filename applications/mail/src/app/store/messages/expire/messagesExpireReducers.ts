@@ -1,7 +1,7 @@
-import { Draft, PayloadAction } from '@reduxjs/toolkit';
+import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import { MessagesState } from '../messagesTypes';
+import type { MessagesState } from '../messagesTypes';
 
 const previousExpiration: Record<string, number | undefined> = {};
 const previousDraftFlagsExpiresIn: Record<string, Date | undefined> = {};

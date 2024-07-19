@@ -11,14 +11,14 @@ import {
     MEMBER_TYPE,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import {
+import type {
     Address,
-    AddressConfirmationState,
     CachedOrganizationKey,
     Member,
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { AddressConfirmationState } from '@proton/shared/lib/interfaces';
 import { getCanGenerateMemberAddressKeys } from '@proton/shared/lib/keys/memberKeys';
 import { getIsNonDefault } from '@proton/shared/lib/mail/addresses';
 

@@ -1,7 +1,7 @@
 import { MimeIcon, ToolbarButton } from '@proton/components';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
-import { DecryptedLink } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 

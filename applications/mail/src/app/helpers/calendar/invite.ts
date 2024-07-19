@@ -54,8 +54,8 @@ import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/hel
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
-import {
+import type { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type {
     CalendarEvent,
     CalendarEventEncryptionData,
     CalendarWidgetData,
@@ -70,16 +70,16 @@ import {
     VcalXOrIanaComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 
 import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
 
-import { MessageStateWithData, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
-import { FetchAllEventsByUID } from './inviteApi';
+import type { MessageStateWithData, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
+import type { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
     PAST,

@@ -2,8 +2,8 @@ import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/s
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { filterOutDeclinedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 
-import { Api } from '../../interfaces';
-import {
+import type { Api } from '../../interfaces';
+import type {
     CalendarUrlsResponse,
     CalendarWithOwnMembers,
     GetAllMembersApiResponse,

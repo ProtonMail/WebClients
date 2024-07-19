@@ -1,9 +1,9 @@
 import { ProtonLogo } from '@proton/components/components';
-import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-import { PublicTheme } from '../../containers/PublicThemeProvider';
+import type { PublicTheme } from '../../containers/PublicThemeProvider';
 import { SignupType } from '../../signup/interfaces';
-import { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
+import type { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
 import { getMailConfiguration } from '../mail/configuration';
 
 export const getGenericConfiguration = ({

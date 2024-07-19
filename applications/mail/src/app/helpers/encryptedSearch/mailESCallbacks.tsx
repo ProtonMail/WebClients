@@ -1,18 +1,20 @@
-import { History } from 'history';
+import type { History } from 'history';
 
-import {
+import type {
     CachedItem,
     ESCallbacks,
     ESEvent,
     ESItemInfo,
     ESStatusBooleans,
     ESTimepoint,
-    ES_BACKGROUND_METADATA_BATCH,
-    ES_MAX_METADATA_BATCH,
-    ES_MAX_PARALLEL_ITEMS,
     EncryptedItemWithInfo,
     EventsObject,
     RecordProgress,
+} from '@proton/encrypted-search';
+import {
+    ES_BACKGROUND_METADATA_BATCH,
+    ES_MAX_METADATA_BATCH,
+    ES_MAX_PARALLEL_ITEMS,
     apiHelper,
     buildContentDB,
     checkVersionedESDB,
@@ -29,21 +31,21 @@ import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Api, LabelCount, UserModel } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Api, LabelCount, UserModel } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_EVENTLOOP_NAME } from '../../constants';
-import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import {
+import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
+import type {
     ESBaseMessage,
     ESMessage,
     ESMessageContent,
     MetadataRecoveryPoint,
     NormalizedSearchParams,
 } from '../../models/encryptedSearch';
-import { Event } from '../../models/event';
+import type { Event } from '../../models/event';
 import { decryptMessage } from '../message/messageDecrypt';
 import ESdeletedConversationIdsCache from './ESDeletedConversationsCache';
 import { queryConversation, queryEvents, queryMessage } from './esAPI';

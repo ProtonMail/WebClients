@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { SectionConfig } from '@proton/components';
+import type { SectionConfig } from '@proton/components';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
-import { APPS, APP_NAMES, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 /**
  * Calendar config is coupled to CalendarSidebar.

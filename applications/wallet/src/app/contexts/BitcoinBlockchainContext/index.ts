@@ -1,15 +1,15 @@
 import { createContext, useContext } from 'react';
 
-import { WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
-import { IWasmApiWalletData, WalletMap } from '@proton/wallet';
+import type { WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
+import type { IWasmApiWalletData, WalletMap } from '@proton/wallet';
 
-import {
+import type {
     AccountIdByDerivationPathAndWalletId,
     AccountWithChainData,
     WalletChainDataByWalletId,
     WalletWithChainData,
 } from '../../types';
-import { SyncingMetadata } from './useWalletsChainData';
+import type { SyncingMetadata } from './useWalletsChainData';
 
 export type SyncingObserver = (wallet: WalletWithChainData, account: AccountWithChainData) => void;
 

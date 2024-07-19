@@ -1,5 +1,6 @@
 import logical from 'postcss-logical';
-import { Compiler, sources } from 'webpack';
+import type { Compiler } from 'webpack';
+import { sources } from 'webpack';
 
 import postcss from 'postcss';
 

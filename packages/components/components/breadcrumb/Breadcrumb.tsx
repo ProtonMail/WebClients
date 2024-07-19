@@ -1,4 +1,5 @@
-import { Fragment, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { Fragment } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

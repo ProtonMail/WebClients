@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,25 +12,26 @@ import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api, RequireSome } from '@proton/shared/lib/interfaces';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { Api, RequireSome } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import getAllEventsByUID from '../getAllEventsByUID';
-import { CalendarViewEvent } from '../interface';
+import type { CalendarViewEvent } from '../interface';
 import { getIsCalendarEvent } from './cache/helper';
 import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
-import {
+import type {
     CalendarEventStoreRecord,
     CalendarEventsCache,
     CalendarsEventsCache,
     DecryptedEventTupleResult,
     EventReadResult,
     SharedVcalVeventComponent,
-    getEventStoreRecordHasEventData,
 } from './interface';
-import useCalendarsEventsRetry, { InitRetry } from './useCalendarsEventsRetry';
+import { getEventStoreRecordHasEventData } from './interface';
+import type { InitRetry } from './useCalendarsEventsRetry';
+import useCalendarsEventsRetry from './useCalendarsEventsRetry';
 
 const SLOW_EVENT_BYPASS = {};
 const EVENTS_PER_BATCH_OLD = 5;

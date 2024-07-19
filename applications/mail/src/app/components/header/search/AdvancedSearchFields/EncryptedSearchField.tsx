@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Info, Label, Progress, Toggle, Tooltip, useModalState } from '@proton/components';
-import { ESIndexingState } from '@proton/encrypted-search';
+import type { ESIndexingState } from '@proton/encrypted-search';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';

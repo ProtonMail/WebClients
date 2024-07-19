@@ -1,10 +1,11 @@
 import { render } from '@testing-library/react';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
-import { Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import type { Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getSubscriptionMock } from '@proton/testing/data';
 
-import SubscriptionCycleSelector, { Props, getAllowedCycles } from './SubscriptionCycleSelector';
+import type { Props } from './SubscriptionCycleSelector';
+import SubscriptionCycleSelector, { getAllowedCycles } from './SubscriptionCycleSelector';
 
 let props: Props;
 

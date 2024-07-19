@@ -1,4 +1,5 @@
-import { Matcher, MatcherOptions, fireEvent, render } from '@testing-library/react';
+import type { Matcher, MatcherOptions } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { Input } from './Input';
 

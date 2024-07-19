@@ -1,5 +1,5 @@
 import { ADDRESS_STATUS, MEMBER_PRIVATE } from '../constants';
-import { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
+import type { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getHasMigratedAddressKeys } from './keyMigration';
 

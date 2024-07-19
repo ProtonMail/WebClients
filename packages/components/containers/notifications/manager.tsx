@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import DOMPurify from 'dompurify';
 
 import { isElement } from '@proton/shared/lib/helpers/dom';
 
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from './constants';
-import { CreateNotificationOptions, Notification, NotificationOffset } from './interfaces';
+import type { CreateNotificationOptions, Notification, NotificationOffset } from './interfaces';
 
 function createNotificationManager(
     setNotifications: Dispatch<SetStateAction<Notification[]>>,

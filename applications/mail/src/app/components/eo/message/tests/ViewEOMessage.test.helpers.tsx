@@ -1,5 +1,5 @@
 import { EORender } from '../../../../helpers/test/eo/EORender';
-import { EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
+import type { EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
 import ViewEOMessage from '../ViewEOMessage';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {

@@ -1,14 +1,10 @@
 import { Icon } from '@proton/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import {
-  ParticipantTrackerEvent,
-  WebsocketConnectionEvent,
-  WebsocketConnectionEventPayloads,
-  WebsocketConnectionEventStatusChange,
-} from '@proton/docs-core'
+import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
+import { ParticipantTrackerEvent, WebsocketConnectionEvent } from '@proton/docs-core'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { mergeRegister } from '@lexical/utils'
-import { ConnectionCloseReason } from '@proton/docs-proto'
+import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { c } from 'ttag'
 import CloudIcon from '../../Icons/CloudIcon'
 import CloudSlashIcon from '../../Icons/CloudSlashIcon'

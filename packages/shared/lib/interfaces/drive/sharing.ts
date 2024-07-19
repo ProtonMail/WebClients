@@ -1,9 +1,9 @@
-import { SessionKey } from '@proton/crypto';
-import { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
+import type { SessionKey } from '@proton/crypto';
+import type { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 
-import { AuthVersion } from '../../authentication/interface';
-import { DriveFileBlock, ScanResultItem, Thumbnail } from './file';
-import { LinkType } from './link';
+import type { AuthVersion } from '../../authentication/interface';
+import type { DriveFileBlock, ScanResultItem, Thumbnail } from './file';
+import type { LinkType } from './link';
 
 type WithSRPPayload<T extends any> = T & {
     SRPModulusID: string;

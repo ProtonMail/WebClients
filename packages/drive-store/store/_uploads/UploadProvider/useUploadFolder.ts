@@ -4,8 +4,9 @@ import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
 import { useLinkActions, useLinksActions } from '../../_links';
-import { TransferConflictStrategy, UploadFolderControls } from '../interface';
-import { ConflictStrategyHandler } from './interface';
+import type { UploadFolderControls } from '../interface';
+import { TransferConflictStrategy } from '../interface';
+import type { ConflictStrategyHandler } from './interface';
 import useUploadHelper from './useUploadHelper';
 
 type LogCallback = (message: string) => void;

@@ -1,11 +1,11 @@
 import { Result } from '../Domain/Result/Result'
-import { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { Comment } from '../Models'
 import { GenerateUUID } from '../Util/GenerateUuid'
-import { EncryptComment } from './EncryptComment'
-import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
+import type { EncryptComment } from './EncryptComment'
+import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CreateComment } from './CreateComment'
-import { DocsApi } from '../Api/DocsApi'
+import type { DocsApi } from '../Api/DocsApi'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),

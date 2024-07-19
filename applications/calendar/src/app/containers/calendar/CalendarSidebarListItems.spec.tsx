@@ -13,11 +13,12 @@ import {
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
-import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
+import type { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
+import CalendarSidebarListItems from './CalendarSidebarListItems';
 
 jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,

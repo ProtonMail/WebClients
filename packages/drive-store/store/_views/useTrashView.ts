@@ -8,7 +8,7 @@ import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
 import { useDefaultShare } from '../_shares';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
-import { SortField } from './utils/useSorting';
+import type { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,

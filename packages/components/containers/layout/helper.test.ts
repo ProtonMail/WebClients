@@ -1,4 +1,4 @@
-import { SectionConfig, SubSectionConfig } from '.';
+import type { SectionConfig, SubSectionConfig } from '.';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from './helper';
 
 describe('getIsSubsectionAvailable', () => {

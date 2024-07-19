@@ -2,7 +2,8 @@ import UAParser from 'ua-parser-js';
 
 import { SUPPORTED_ELECTRON_APP } from '@proton/components/hooks/useIsElectronApp';
 
-import { APPS, APP_NAMES } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS } from '../constants';
 import { isLinux, isMac, isWindows } from './browser';
 
 const uaParser = new UAParser();
@@ -32,4 +33,3 @@ export const isElectronPass = isElectronApp && /ProtonPass/i.test(ua.ua);
  */
 export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass)\/)(?<version>([0-9][.]).{3})/i)?.groups
     ?.version;
-

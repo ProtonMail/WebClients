@@ -17,12 +17,13 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     InputFieldTwo,
@@ -30,7 +31,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     SettingsLink,
     useFormErrors,

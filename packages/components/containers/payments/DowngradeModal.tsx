@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Alert, Prompt } from '../../components';
 
 export interface DowngradeModalProps extends ModalProps {
     hasMail: boolean;

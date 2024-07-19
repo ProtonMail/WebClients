@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { Icon, IconName, useModalState } from '@proton/components/components';
-import { DOMAIN_STATE, Domain } from '@proton/shared/lib/interfaces';
+import type { IconName } from '@proton/components/components';
+import { Icon, useModalState } from '@proton/components/components';
+import type { Domain } from '@proton/shared/lib/interfaces';
+import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import TXTRecordModal from './TXTRecordModal';

@@ -1,5 +1,5 @@
 import { MailImportDestinationFolder, MailImportGmailCategories } from '../interface';
-import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 import { getDefaultImportCategoriesDestination } from './getDefaultImportCategories';
 
 const dummyEmail: MailImportFolder = {

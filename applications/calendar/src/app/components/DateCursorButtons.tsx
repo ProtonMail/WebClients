@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { getNavigationArrowsText } from '../helpers/i18n';

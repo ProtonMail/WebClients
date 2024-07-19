@@ -4,7 +4,7 @@ import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 
-import { LatestSubscription } from '../payments/core';
+import type { LatestSubscription } from '../payments/core';
 import useApi from './useApi';
 import useUser from './useUser';
 

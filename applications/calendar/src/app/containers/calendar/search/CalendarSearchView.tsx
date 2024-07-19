@@ -1,4 +1,5 @@
-import React, { MouseEvent, MutableRefObject, useCallback, useEffect, useMemo, useState } from 'react';
+import type { MouseEvent, MutableRefObject } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
@@ -8,22 +9,22 @@ import { Icon } from '@proton/components/components';
 import { SkeletonLoader } from '@proton/components/components/skeletonLoader';
 import { IllustrationPlaceholder } from '@proton/components/containers';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import getCalendarEventsCache from '../eventStore/cache/getCalendarEventsCache';
 import upsertCalendarApiEventWithoutBlob from '../eventStore/cache/upsertCalendarApiEventWithoutBlobs';
-import { CalendarsEventsCache, EventReadResult } from '../eventStore/interface';
+import type { CalendarsEventsCache, EventReadResult } from '../eventStore/interface';
 import useCalendarsEventsReader from '../eventStore/useCalendarsEventsReader';
-import { CalendarViewEvent, InteractiveState } from '../interface';
+import type { CalendarViewEvent, InteractiveState } from '../interface';
 import { useCalendarSearch } from './CalendarSearchProvider';
 import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
 import CalendarSearchViewYearSeparator from './CalendarSearchViewYearSeparator';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 import {
     expandAndOrderItems,
     fillEmptyToday,

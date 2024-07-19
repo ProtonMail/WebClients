@@ -4,7 +4,7 @@ import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getNCalendarsText } from '../../../containers/payments/features/calendar';
-import { UpsellFeature } from './interface';
+import type { UpsellFeature } from './interface';
 
 export type UpsellFeatureName =
     | 'auto-delete-trash-and-spam'

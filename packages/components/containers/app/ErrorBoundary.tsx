@@ -1,6 +1,8 @@
-import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
+import type { ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
+import { Component } from 'react';
 
-import { SentryInitiative, traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import type { SentryInitiative } from '@proton/shared/lib/helpers/sentry';
+import { traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import GenericError from '../error/GenericError';
 

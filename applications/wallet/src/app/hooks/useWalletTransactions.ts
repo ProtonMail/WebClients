@@ -1,21 +1,21 @@
-import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { SetStateAction } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
+import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
 import { useAddressesKeys } from '@proton/components/hooks/useAddressesKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PrivateKeyReference } from '@proton/crypto/lib';
+import type { PrivateKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+import type { IWasmApiWalletData, WalletMap } from '@proton/wallet';
 import {
-    IWasmApiWalletData,
-    WalletMap,
     decryptTextData,
     decryptWalletData,
     decryptWalletKeyForHmac,
@@ -26,7 +26,7 @@ import {
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useGetApiWalletTransactionData } from '../store/hooks';
-import { AccountIdByDerivationPathAndWalletId } from '../types';
+import type { AccountIdByDerivationPathAndWalletId } from '../types';
 import { removeMasterPrefix } from '../utils';
 
 export type DecryptedTransactionData = Omit<WasmApiWalletTransaction, 'ToList' | 'TransactionID' | 'Sender'> & {

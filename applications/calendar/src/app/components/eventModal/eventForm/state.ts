@@ -25,8 +25,8 @@ import {
 import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { Address, RequireOnly, Address as tsAddress } from '@proton/shared/lib/interfaces';
-import {
+import type { Address, RequireOnly, Address as tsAddress } from '@proton/shared/lib/interfaces';
+import type {
     AttendeeModel,
     CalendarMember,
     CalendarSettings,
@@ -37,9 +37,9 @@ import {
     VisualCalendar,
     CalendarSettings as tsCalendarSettings,
 } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
+import type { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import getFrequencyModelChange from './getFrequencyModelChange';
 import { propertiesToModel } from './propertiesToModel';

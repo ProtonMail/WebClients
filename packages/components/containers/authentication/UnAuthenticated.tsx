@@ -1,6 +1,7 @@
-import { ReactNode, useLayoutEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useLayoutEffect } from 'react';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { useTheme } from '../themes';
 

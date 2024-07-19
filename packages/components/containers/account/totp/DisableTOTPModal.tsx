@@ -4,7 +4,8 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
-import { ModalProps, Prompt, useModalState } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Prompt, useModalState } from '../../../components';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 

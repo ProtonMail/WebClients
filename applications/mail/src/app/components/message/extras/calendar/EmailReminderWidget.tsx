@@ -39,8 +39,8 @@ import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, CALENDAR_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
@@ -48,7 +48,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
-import { MessageErrors } from '../../../../store/messages/messagesTypes';
+import type { MessageErrors } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';

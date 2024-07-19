@@ -4,10 +4,10 @@ import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useAddressesKeys';

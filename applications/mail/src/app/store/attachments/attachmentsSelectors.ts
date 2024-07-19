@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { MailState } from '../store';
+import type { MailState } from '../store';
 
 const attachments = (state: MailState) => state.attachments;
 

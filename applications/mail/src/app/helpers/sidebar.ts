@@ -1,6 +1,6 @@
-import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import { UnreadCounts } from '../components/sidebar/MailSidebarList';
+import type { UnreadCounts } from '../components/sidebar/MailSidebarList';
 
 export const getUnreadCount = (counterMap: UnreadCounts, folder: FolderWithSubFolders): number => {
     if (folder.Expanded) {

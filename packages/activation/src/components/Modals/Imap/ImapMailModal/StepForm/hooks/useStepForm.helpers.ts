@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { IMPORT_ERROR, ImportProvider } from '@proton/activation/src/interface';
 
-import { StepFormBlur, StepFormErrors, StepFormState } from './useStepForm.interface';
+import type { StepFormBlur, StepFormErrors, StepFormState } from './useStepForm.interface';
 
 const IMAPS = {
     [ImportProvider.GOOGLE]: 'imap.gmail.com',

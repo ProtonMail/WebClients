@@ -1,6 +1,6 @@
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 
-import { CONTACT_CARD_TYPE } from '../../constants';
+import type { CONTACT_CARD_TYPE } from '../../constants';
 
 export interface ContactEmail {
     ID: string;

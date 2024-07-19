@@ -2,7 +2,8 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../../AllNodes'
 import { $createTableNodeWithDimensions } from '../CreateTableNodeWithDimensions'
 import { $toggleTableHeaderRow } from './toggleTableHeaderRow'
-import { TableCellHeaderStates, TableCellNode, TableRowNode } from '@lexical/table'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import { TableCellHeaderStates } from '@lexical/table'
 
 describe('clearCellsInTableSelection', () => {
   const editor = createHeadlessEditor({

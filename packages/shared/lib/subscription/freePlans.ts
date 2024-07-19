@@ -1,5 +1,5 @@
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
-import { Currency, Cycle, FreePlanDefault, SubscriptionCheckResponse } from '../interfaces';
+import type { Currency, Cycle, FreePlanDefault, SubscriptionCheckResponse } from '../interfaces';
 
 export const FREE_PLAN: FreePlanDefault = {
     ID: 'free',

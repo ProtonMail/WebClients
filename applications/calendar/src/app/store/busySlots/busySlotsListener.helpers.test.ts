@@ -1,4 +1,4 @@
-import { CalendarState } from '../store';
+import type { CalendarState } from '../store';
 import { getBusyAttendeesToFetch } from './busySlotsListener.helpers';
 import type { BusySlotsState } from './busySlotsSlice';
 

@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
-    ModalProps,
     Prompt,
     useCalendarShareInvitationActions,
     useModalState,
@@ -22,8 +22,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 export interface SharedCalendarModalOwnProps {
     addresses: Address[];

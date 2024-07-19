@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Breakpoints, DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -20,7 +21,7 @@ import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
-import { DropdownRender } from '../message/header/HeaderDropdown';
+import type { DropdownRender } from '../message/header/HeaderDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 
 const {

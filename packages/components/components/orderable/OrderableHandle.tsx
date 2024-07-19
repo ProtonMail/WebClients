@@ -1,4 +1,4 @@
-import { ComponentType, ReactNode } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 import { SortableHandle } from 'react-sortable-hoc';
 
 interface Props {

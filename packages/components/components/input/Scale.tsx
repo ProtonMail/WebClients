@@ -1,11 +1,12 @@
-import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
+import type { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
 import { concatStringProp } from '../../helpers';
 import useUid from '../../hooks/useUid';
-import InputButton, { InputButtonProps } from './InputButton';
+import type { InputButtonProps } from './InputButton';
+import InputButton from './InputButton';
 import ScaleLabel from './ScaleLabel';
 
 export interface ScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {

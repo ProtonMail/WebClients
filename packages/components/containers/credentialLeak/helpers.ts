@@ -9,7 +9,7 @@ import breachIconResolvedSmall from '@proton/styles/assets/img/breach-alert/shie
 import breachIconWarningBig from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-big.svg';
 import breachIconWarningSmall from '@proton/styles/assets/img/breach-alert/shield-bolt-warning-small.svg';
 
-import { SampleBreach } from '.';
+import type { SampleBreach } from '.';
 import { BREACH_STATE } from './models';
 
 export const enum SEVERITY_LEVELS {

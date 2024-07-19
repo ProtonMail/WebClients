@@ -5,18 +5,19 @@ import { c } from 'ttag';
 import { generateUID } from '@proton/components';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
-import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
+import type { TransferMeta } from '../../../components/TransferManager/transfer';
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferFinished, isTransferPending } from '../../../utils/transfer';
-import { LinkDownload } from '../interface';
-import {
+import type { LinkDownload } from '../interface';
+import type {
     Download,
-    DownloadUserError,
     UpdateCallback,
     UpdateCallbackParams,
     UpdateData,
     UpdateFilter,
     UpdateState,
 } from './interface';
+import { DownloadUserError } from './interface';
 
 type LogCallback = (id: string, message: string) => void;
 

@@ -10,7 +10,8 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
-import Layout, { Background } from './Layout';
+import type { Background } from './Layout';
+import Layout from './Layout';
 import illustration from './business-onboarding-illustration.svg';
 
 const Step4 = ({

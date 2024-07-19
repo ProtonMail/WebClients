@@ -1,9 +1,11 @@
-import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
+import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
+import { memo, useMemo, useRef } from 'react';
 
-import { Breakpoints, ItemCheckbox } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { ItemCheckbox } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -16,8 +18,8 @@ import { getRecipients as getConversationRecipients, getSenders } from '../../he
 import { isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
-import { Element } from '../../models/element';
-import { ESMessage } from '../../models/encryptedSearch';
+import type { Element } from '../../models/element';
+import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';

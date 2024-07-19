@@ -4,7 +4,8 @@ import { useConfig } from '@proton/components/hooks';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
-import { ModalStateProps, UpsellModal, useUpsellConfig } from '../../../components';
+import type { ModalStateProps } from '../../../components';
+import { UpsellModal, useUpsellConfig } from '../../../components';
 
 const ContactUpgradeModal = (modalProps: ModalStateProps) => {
     const { APP_NAME } = useConfig();

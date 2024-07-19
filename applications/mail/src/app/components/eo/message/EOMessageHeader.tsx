@@ -7,7 +7,7 @@ import { Icon, Loader, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

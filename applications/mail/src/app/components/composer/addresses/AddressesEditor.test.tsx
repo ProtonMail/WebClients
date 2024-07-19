@@ -1,18 +1,18 @@
-import { MutableRefObject } from 'react';
+import type { MutableRefObject } from 'react';
 
 import { fireEvent, screen } from '@testing-library/react';
 import { getByText } from '@testing-library/react';
 
 import { pick } from '@proton/shared/lib/helpers/object';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MailStore } from 'proton-mail/store/store';
+import type { MailStore } from 'proton-mail/store/store';
 
 import { addApiMock, clearAll, getDropdown, render, tick } from '../../../helpers/test/helper';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { composerActions } from '../../../store/composers/composersSlice';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import AddressesEditor from './AddressesEditor';
 
 const email1 = 'test@test.com';

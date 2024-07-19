@@ -6,9 +6,10 @@ import { useToolbar } from '@proton/components/components/editor/hooks/useToolba
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { Alert, Editor, EditorActions, Toggle, Tooltip } from '../../../components';
+import type { EditorActions } from '../../../components';
+import { Alert, Editor, Toggle, Tooltip } from '../../../components';
 import { useMailSettings, useUser } from '../../../hooks';
-import { Actions } from '../interfaces';
+import type { Actions } from '../interfaces';
 
 interface Props {
     actions: Actions;

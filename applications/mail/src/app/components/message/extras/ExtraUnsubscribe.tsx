@@ -41,7 +41,7 @@ import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
 import { useSimpleLoginExtension } from '../../../hooks/simpleLogin/useSimpleLoginExtension';
 import { useSimpleLoginTelemetry } from '../../../hooks/simpleLogin/useSimpleLoginTelemetry';
-import {
+import type {
     MessageStateWithData,
     MessageWithOptionalBody,
     PartialMessageState,

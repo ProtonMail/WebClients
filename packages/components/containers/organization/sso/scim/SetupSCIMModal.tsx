@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
+import type { ModalProps } from '../../../../components';
 import {
     Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../../components';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 

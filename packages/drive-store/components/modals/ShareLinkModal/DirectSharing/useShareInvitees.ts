@@ -6,7 +6,8 @@ import { useNotifications } from '@proton/components/hooks';
 import { CryptoProxy } from '@proton/crypto';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-import { ShareInvitee, useDriveSharingFlags, useGetPublicKeysForEmail } from '../../../../store';
+import type { ShareInvitee } from '../../../../store';
+import { useDriveSharingFlags, useGetPublicKeysForEmail } from '../../../../store';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 
 /**

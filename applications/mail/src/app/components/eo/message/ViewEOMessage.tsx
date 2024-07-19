@@ -4,7 +4,7 @@ import { useRouteMatch } from 'react-router-dom';
 import { useActiveBreakpoint } from '@proton/components';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
-import { EOUrlParams } from '../../../helpers/eo/eoUrl';
+import type { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOEmbeddedImages, useLoadEORemoteImages } from '../../../hooks/eo/useLoadEOImages';
 import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import MessageFooter from '../../message/MessageFooter';

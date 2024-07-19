@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/components';
 
 import { createCalendar, updateCalendarUserSettings } from '../../../api/calendars';
 import { getRandomAccentColor } from '../../../colors';
 import { getTimezone } from '../../../date/timezone';
 import { getActiveAddresses } from '../../../helpers/address';
-import { Address, Api } from '../../../interfaces';
-import { CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import type { Address, Api } from '../../../interfaces';
+import type { CalendarWithOwnMembers } from '../../../interfaces/calendar';
 import { getPrimaryKey } from '../../../keys';
 import { DEFAULT_CALENDAR } from '../../constants';
 import { setupCalendarKey } from './setupCalendarKeys';

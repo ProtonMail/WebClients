@@ -2,7 +2,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
+import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
+import { ImportType } from '@proton/activation/src/interface';
 import {
     FeatureCode,
     Loader,

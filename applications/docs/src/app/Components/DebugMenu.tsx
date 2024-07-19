@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Icon } from '@proton/components/components'
-import { DocControllerInterface } from '@proton/docs-core'
+import type { DocControllerInterface } from '@proton/docs-core'
 import { useApplication } from '../Containers/ApplicationProvider'
 import { useLocalState } from '@proton/components/hooks'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'

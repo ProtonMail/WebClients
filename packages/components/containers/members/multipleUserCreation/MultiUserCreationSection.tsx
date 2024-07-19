@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components/modalTwo';
 import { Tooltip } from '@proton/components/components/tooltip';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
@@ -14,8 +14,9 @@ import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import useFlag from '../../unleash/useFlag';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
-import { CsvConfig, downloadSampleCSV } from './csv';
-import { UserTemplate } from './types';
+import type { CsvConfig } from './csv';
+import { downloadSampleCSV } from './csv';
+import type { UserTemplate } from './types';
 
 const defaultCsvConfig: Omit<CsvConfig, 'mode'> = {
     multipleAddresses: true,

@@ -1,9 +1,10 @@
-import { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref, forwardRef } from 'react';
+import type { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import {
+import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,

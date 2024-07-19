@@ -1,7 +1,8 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import {
+import type {
     ActiveSignedKeyList,
     Address,
     Api,
@@ -22,20 +23,16 @@ import {
     uploadVerifiedEpoch,
 } from '../../helpers/apiHelpers';
 import { KeyTransparencyError, throwKTError } from '../../helpers/utils';
-import {
-    AddressAuditResult,
-    AddressAuditStatus,
-    AddressAuditWarningReason,
-    Epoch,
-    VerifiedEpoch,
-} from '../../interfaces';
+import type { AddressAuditResult, Epoch, VerifiedEpoch } from '../../interfaces';
+import { AddressAuditStatus, AddressAuditWarningReason } from '../../interfaces';
 import { checkKeysInSKL, verifySKLSignature } from '../verifyKeys';
 import {
     verifyProofOfAbsenceForAllRevision,
     verifyProofOfAbsenceForRevision,
     verifyProofOfObsolescence,
 } from '../verifyProofs';
-import { SKLAuditResult, SKLAuditStatus, auditSKL } from './sklAudit';
+import type { SKLAuditResult } from './sklAudit';
+import { SKLAuditStatus, auditSKL } from './sklAudit';
 
 const millisecondsToSeconds = (milliseconds: number) => Math.floor(milliseconds / 1000);
 const secondsToMilliseconds = (seconds: number) => seconds * 1000;

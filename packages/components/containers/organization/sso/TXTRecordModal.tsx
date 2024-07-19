@@ -3,15 +3,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import { getDomain } from '@proton/shared/lib/api/domains';
-import { Domain, VERIFY_STATE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
+import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { verifyDomain } from '../../domains/DomainModal';

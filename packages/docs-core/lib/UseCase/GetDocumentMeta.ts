@@ -1,10 +1,10 @@
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/DocsApi'
+import type { DocsApi } from '../Api/DocsApi'
 
-import { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DocumentMetaInterface } from '@proton/docs-shared'
 import { DocumentMeta } from '../Models/DocumentMeta'
-import { NodeMeta } from '@proton/drive-store'
+import type { NodeMeta } from '@proton/drive-store'
 
 /**
  * Primarily used to look up the CommitIds for a document, so that we can fetch the binary for the commits.

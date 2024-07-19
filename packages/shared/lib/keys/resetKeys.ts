@@ -1,11 +1,12 @@
-import { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
-import { Address, AddressKeyPayloadV2, KeyGenConfig, PreAuthKTVerify } from '../interfaces';
+import type { Address, AddressKeyPayloadV2, KeyGenConfig, PreAuthKTVerify } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
-import { OnSKLPublishSuccess, getSignedKeyListWithDeferredPublish } from './signedKeyList';
+import type { OnSKLPublishSuccess } from './signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 import { generateUserKey } from './userKeys';
 
 export const getResetAddressesKeysV2 = async ({

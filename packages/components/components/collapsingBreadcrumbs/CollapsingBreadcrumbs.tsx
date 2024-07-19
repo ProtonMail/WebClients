@@ -7,7 +7,7 @@ import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import Icon from '../icon/Icon';
 import Breadcrumb from './Breadcrumb';
 import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
-import { BreadcrumbInfo } from './interfaces';
+import type { BreadcrumbInfo } from './interfaces';
 
 export type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
 

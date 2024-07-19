@@ -1,4 +1,5 @@
-import { ChangeEvent, Fragment, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +9,8 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, Input, Option, Radio, SelectTwo, Tooltip } from '../../../components';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
-import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
+import type { Condition } from '../interfaces';
+import { ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
 import { getConditionLabel, getEmailSentLabel, getEmailSentLabelJt } from './helper';
 
 import './FilterConditionsFormRow.scss';

@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { HotkeyTuple } from '@proton/components';
+import type { HotkeyTuple } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';

@@ -1,6 +1,8 @@
-import { ComponentPropsWithoutRef, useState } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { useState } from 'react';
 
-import { LogoProps, generateUID } from '@proton/components';
+import type { LogoProps } from '@proton/components';
+import { generateUID } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

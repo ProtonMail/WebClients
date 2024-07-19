@@ -1,4 +1,5 @@
-import { RefObject, useLayoutEffect, useState } from 'react';
+import type { RefObject } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 import debounce from '@proton/utils/debounce';
 

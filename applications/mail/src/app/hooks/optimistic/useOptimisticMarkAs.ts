@@ -7,8 +7,8 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { isSystemLabel } from 'proton-mail/helpers/labels';
@@ -20,8 +20,8 @@ import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { isElementReminded } from '../../helpers/snooze';
 import useMailModel from '../../hooks/useMailModel';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
+import type { Conversation } from '../../models/conversation';
+import type { Element } from '../../models/element';
 import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,

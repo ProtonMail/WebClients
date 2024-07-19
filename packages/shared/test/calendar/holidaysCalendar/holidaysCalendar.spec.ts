@@ -4,7 +4,7 @@ import {
     getHolidaysCalendarsFromTimeZone,
     getSuggestedHolidaysCalendar,
 } from '@proton/shared/lib/calendar/holidaysCalendar/holidaysCalendar';
-import { HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 const frCalendar = {
     CalendarID: 'calendarID1',

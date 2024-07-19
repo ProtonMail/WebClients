@@ -3,18 +3,21 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
-import { OnKeyImportCallback } from '@proton/shared/lib/keys';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import getRandomString from '@proton/utils/getRandomString';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 import ImportKeysList from './ImportKeysList';
-import { ImportKey, Status } from './interface';
+import type { ImportKey } from './interface';
+import { Status } from './interface';
 import { updateKey } from './state';
 
 const getNewKey = (privateKey: PrivateKeyReference): ImportKey => {

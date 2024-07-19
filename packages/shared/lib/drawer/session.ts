@@ -1,7 +1,8 @@
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 
-import { ResumedSessionResult } from '../authentication/persistedSessionHelper';
-import { APP_NAMES, SECOND } from '../constants';
+import type { ResumedSessionResult } from '../authentication/persistedSessionHelper';
+import type { APP_NAMES } from '../constants';
+import { SECOND } from '../constants';
 import { createTimeoutError } from '../fetch/ApiError';
 import { getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
 import { DRAWER_EVENTS } from './interfaces';

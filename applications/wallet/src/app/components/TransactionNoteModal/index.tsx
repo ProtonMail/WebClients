@@ -2,14 +2,15 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWalletTransaction } from '@proton/andromeda';
-import { ModalPropsWithData } from '@proton/components/components';
+import type { WasmApiWalletTransaction } from '@proton/andromeda';
+import type { ModalPropsWithData } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
-import { IWasmApiWalletData, encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
 
 import { TEXT_AREA_MAX_LENGTH } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { TransactionData } from '../../hooks/useWalletTransactions';
+import type { TransactionData } from '../../hooks/useWalletTransactions';
 import { TextAreaModal } from '../TextAreaModal';
 
 interface Props extends ModalPropsWithData<{ transaction: TransactionData }> {

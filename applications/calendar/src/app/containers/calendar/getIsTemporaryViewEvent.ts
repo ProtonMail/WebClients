@@ -1,4 +1,4 @@
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
+import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 const getIsTemporaryViewEvent = (
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent

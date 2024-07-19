@@ -11,7 +11,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
+import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

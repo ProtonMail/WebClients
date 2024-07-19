@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { WorkerDecryptionResult } from '@proton/crypto';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
@@ -25,7 +25,7 @@ import {
 import unique from '@proton/utils/unique';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
+import type { MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { formatFullDate } from '../date';

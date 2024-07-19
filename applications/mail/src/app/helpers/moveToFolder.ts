@@ -1,14 +1,15 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
-import { TelemetryMailSelectAllEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import type { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { Api, MailSettings } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Api, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -141,8 +142,8 @@ const searchForLabelInElement = (isMessage: boolean, elements: Element[], labelT
     if (isMessage) {
         return (elements as Message[]).filter((element) => element.LabelIDs.includes(labelToSearch));
     } else {
-        return (elements as Conversation[]).filter(
-            (element) => element.Labels?.some((label) => label.ID === labelToSearch)
+        return (elements as Conversation[]).filter((element) =>
+            element.Labels?.some((label) => label.ID === labelToSearch)
         );
     }
 };

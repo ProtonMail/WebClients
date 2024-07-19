@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { BRAND_NAME, CALENDAR_SHORT_APP_NAME, DRIVE_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Parameters, getLoginTitle } from './interface';
+import type { Parameters } from './interface';
+import { getLoginTitle } from './interface';
 
 const data = (): Parameters => ({
     title: getLoginTitle(c('Metadata title').t`${BRAND_NAME} Account`),

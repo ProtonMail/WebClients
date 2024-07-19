@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,7 +15,8 @@ import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { APP_NAMES, BRAND_NAME, GIGA, MAIL_APP_NAME, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, GIGA, MAIL_APP_NAME, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -23,11 +25,13 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getHasVpnB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
-import { CreateMemberMode, Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
+import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { ModalProps } from '../../components';
 import {
     DropdownSizeUnit,
     Icon,
@@ -37,7 +41,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Option,
     PasswordInputTwo,
     SelectTwo,

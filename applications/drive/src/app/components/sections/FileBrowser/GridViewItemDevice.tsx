@@ -1,6 +1,6 @@
 import { Icon } from '@proton/components';
 
-import { DeviceItem } from '../Devices/Devices';
+import type { DeviceItem } from '../Devices/Devices';
 import GridViewItemBase from './GridViewItem';
 import { getDeviceIconText } from './utils';
 

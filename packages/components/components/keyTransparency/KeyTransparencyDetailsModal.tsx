@@ -2,10 +2,10 @@ import { formatDistanceToNow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     AppLink,
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -13,13 +13,12 @@ import {
     useConfig,
     useKeyTransparencyContext,
 } from '@proton/components';
-import {
-    AddressAuditStatus,
+import type {
     AddressAuditWarningDetails,
-    AddressAuditWarningReason,
     LocalStorageAuditResult,
     SelfAuditResult,
 } from '@proton/key-transparency/lib';
+import { AddressAuditStatus, AddressAuditWarningReason } from '@proton/key-transparency/lib';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';

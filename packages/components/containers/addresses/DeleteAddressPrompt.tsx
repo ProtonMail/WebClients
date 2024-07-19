@@ -1,11 +1,12 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 
-import { ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Prompt } from '../../components';
 
 interface Props extends ModalProps, PropsWithChildren {
     onDeleteAddress: () => Promise<void>;

@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
+import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
 import { AttachedFile } from '../../../components';
 

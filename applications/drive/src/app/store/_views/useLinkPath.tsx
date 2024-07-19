@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 
 import { useDevicesListing } from '../_devices';
-import { DecryptedLink, useLink } from '../_links';
+import type { DecryptedLink } from '../_links';
+import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
 import { ShareType, useShare } from '../_shares';
 import { isLinkReadOnly } from './utils/useIsActiveLinkReadOnly';

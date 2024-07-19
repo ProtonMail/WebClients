@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
-import { KeysPair } from '../interfaces';
-import { Contact, ContactCard } from '../interfaces/contacts';
-import { VCardContact } from '../interfaces/contacts/VCard';
+import type { KeysPair } from '../interfaces';
+import type { Contact, ContactCard } from '../interfaces/contacts';
+import type { VCardContact } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
 import { mergeVCard } from './properties';
 import { parseToVCard } from './vcard';

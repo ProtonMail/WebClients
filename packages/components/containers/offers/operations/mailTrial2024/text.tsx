@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { Price } from '../../../../components/price';
 

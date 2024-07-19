@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -11,7 +12,7 @@ import {
     useGetEncryptionPreferences,
     useNotifications,
 } from '@proton/components/hooks';
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
@@ -23,16 +24,18 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, KeyTransparencyActivation, Recipient, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
-import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import type { Address, Recipient, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     AddressesAutocompleteTwo,
     AddressesInput,
@@ -43,7 +46,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     RadioGroup,
 } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';

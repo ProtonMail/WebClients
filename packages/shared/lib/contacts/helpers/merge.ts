@@ -2,8 +2,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { normalize } from '../../helpers/string';
-import { FormattedContact } from '../../interfaces/contacts/FormattedContact';
-import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
+import type { FormattedContact } from '../../interfaces/contacts/FormattedContact';
+import type { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
 import {
     fromVCardProperties,
     generateNewGroupName,

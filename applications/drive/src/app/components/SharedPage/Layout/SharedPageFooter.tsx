@@ -1,7 +1,8 @@
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { useDownload, useDownloadScanFlag } from '../../../store';
-import { DownloadButton, DownloadButtonProps } from './DownloadButton';
+import type { DownloadButtonProps } from './DownloadButton';
+import { DownloadButton } from './DownloadButton';
 import ReportAbuseButton from './ReportAbuseButton';
 
 interface Props extends DownloadButtonProps {}

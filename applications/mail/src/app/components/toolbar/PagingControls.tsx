@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton } from '@proton/components';
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';

@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { generateUID } from '@proton/components/helpers';
 
-import { Condition, ConditionComparator, ConditionType } from '../interfaces';
+import type { Condition } from '../interfaces';
+import { ConditionComparator, ConditionType } from '../interfaces';
 
 const generateNewCondition = () => ({
     type: ConditionType.SUBJECT,

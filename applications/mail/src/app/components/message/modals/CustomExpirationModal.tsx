@@ -4,10 +4,10 @@ import { addDays, endOfDay, endOfToday, isBefore, isToday, startOfToday } from '
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     DateInput,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

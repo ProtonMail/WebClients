@@ -2,7 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { useNotifications } from '@proton/components/hooks';
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 
 import { useGetPublicKeysForEmail } from '../../../../../app/store';

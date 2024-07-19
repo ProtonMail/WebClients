@@ -6,7 +6,7 @@ import range from '@proton/utils/range';
 
 import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
-import {
+import type {
     VCardAddress,
     VCardContact,
     VCardDateOrText,

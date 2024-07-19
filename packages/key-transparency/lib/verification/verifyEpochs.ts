@@ -2,7 +2,7 @@ import { CryptoProxy, serverTime } from '@proton/crypto';
 import { arrayToHexString, hexStringToArray } from '@proton/crypto/lib/utils';
 
 import { throwKTError } from '../helpers/utils';
-import { Epoch } from '../interfaces';
+import type { Epoch } from '../interfaces';
 import { parseCertChain, parseCertTime, verifyAltName, verifyCertChain, verifySCT } from './verifyCertificates';
 
 /**

@@ -1,13 +1,13 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { ButtonGroup, Checkbox, Icon, Tooltip } from '../../../components';
-import { CustomAction } from './types';
+import type { CustomAction } from './types';
 
 interface Props {
     allChecked: boolean;

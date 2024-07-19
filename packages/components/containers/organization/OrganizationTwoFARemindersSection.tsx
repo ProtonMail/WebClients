@@ -5,7 +5,7 @@ import { Button } from '@proton/atoms/Button';
 import { Info, useConfig, useMembers, useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { Label, Loader, Row } from '../../components';
 import { SettingsParagraph } from '../account';

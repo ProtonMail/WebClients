@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { OfferProps } from '../../interface';
+import type { OfferProps } from '../../interface';
 import OfferCountdown from './OfferCountdown';
 
 interface Props extends OfferProps {

@@ -17,7 +17,8 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import protonSentinelImage from '@proton/styles/assets/img/illustrations/upsell-proton-sentinel.svg';
 
-import { ModalStateProps, ModalTwo } from '../../../../../modalTwo';
+import type { ModalStateProps } from '../../../../../modalTwo';
+import { ModalTwo } from '../../../../../modalTwo';
 
 interface Props {
     modalProps: ModalStateProps;

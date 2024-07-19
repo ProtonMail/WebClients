@@ -3,14 +3,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 
 import create from '../lib/guest';
-import {
-    Action,
+import type {
     GetLocalStorageKeysMessageResponse,
     GetLocalStorageMessageResponse,
     ProtonMessages,
     RemoveLocalStorageMessageResponse,
     SetLocalStorageMessageResponse,
 } from './interface';
+import { Action } from './interface';
 
 const createProtonInstance = (url: string) => create<ProtonMessages>(url);
 

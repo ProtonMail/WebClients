@@ -1,15 +1,9 @@
-import {
-    Children,
-    ComponentPropsWithoutRef,
-    KeyboardEvent,
-    ReactElement,
-    cloneElement,
-    isValidElement,
-    useContext,
-} from 'react';
+import type { ComponentPropsWithoutRef, KeyboardEvent, ReactElement } from 'react';
+import { Children, cloneElement, isValidElement, useContext } from 'react';
 
-import Option, { Props as OptionProps } from '../option/Option';
-import { SelectChangeEvent } from './select';
+import type { Props as OptionProps } from '../option/Option';
+import Option from '../option/Option';
+import type { SelectChangeEvent } from './select';
 import { SelectContext } from './useSelect';
 
 interface SelectOptionsProps<V> extends Omit<ComponentPropsWithoutRef<'ul'>, 'onChange'> {

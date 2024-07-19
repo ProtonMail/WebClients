@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { EditorMetadata, useHandler } from '@proton/components';
-import { PublicKeyReference } from '@proton/crypto';
+import type { EditorMetadata } from '@proton/components';
+import { useHandler } from '@proton/components';
+import type { PublicKeyReference } from '@proton/crypto';
 import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
@@ -12,10 +13,10 @@ import { setContent } from '../../../helpers/message/messageContent';
 import { createNewDraft } from '../../../helpers/message/messageDraft';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
-import { MessageState, OutsideKey } from '../../../store/messages/messagesTypes';
-import { MessageChange } from '../../composer/Composer';
+import type { MessageState, OutsideKey } from '../../../store/messages/messagesTypes';
+import type { MessageChange } from '../../composer/Composer';
 import ComposerContent from '../../composer/ComposerContent';
-import { ExternalEditorActions } from '../../composer/editor/EditorWrapper';
+import type { ExternalEditorActions } from '../../composer/editor/EditorWrapper';
 import ComposerInsertImageModal from '../../composer/modals/ComposerInsertImageModal';
 import EOReplyFooter from './EOReplyFooter';
 import EOReplyHeader from './EOReplyHeader';

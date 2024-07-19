@@ -1,10 +1,8 @@
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { mockGlobalFile, testFile } from '../../utils/test/file';
+import type { ExtendedAttributes, ParsedExtendedAttributes, XAttrCreateParams } from './extendedAttributes';
 import {
-    ExtendedAttributes,
-    ParsedExtendedAttributes,
-    XAttrCreateParams,
     createFileExtendedAttributes,
     createFolderExtendedAttributes,
     parseExtendedAttributes,

@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { omit } from 'lodash';
 
-import { PublicKeyReference } from '@proton/crypto/lib';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 export enum InvalidRecipientErrorCode {
     NoAddressSetOnBitcoinAddress,

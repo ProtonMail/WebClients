@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { useFileSharingModal } from '../../../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
-import { useLinkSharingModal } from '../../../../modals/ShareLinkModal/ShareLinkModal';
+import type { useFileSharingModal } from '../../../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import type { useLinkSharingModal } from '../../../../modals/ShareLinkModal/ShareLinkModal';
 import ContextMenuButton from '../../ContextMenuButton';
 
 interface Props {

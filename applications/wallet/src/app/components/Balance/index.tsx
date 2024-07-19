@@ -2,11 +2,12 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { Icon } from '@proton/components/components';
 import { useToggle } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT, IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';

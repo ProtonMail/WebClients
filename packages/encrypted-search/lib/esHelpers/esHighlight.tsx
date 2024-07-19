@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
 import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from '../constants';
-import { HighlightMetadata } from '../models';
+import type { HighlightMetadata } from '../models';
 import { esSentryReport } from './esAPI';
 import { normalizeString } from './esUtils';
 

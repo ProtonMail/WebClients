@@ -1,5 +1,5 @@
-import { EnvironmentExtended } from '@proton/shared/lib/interfaces';
-import { SpotlightDate } from '@proton/shared/lib/spotlight/interface';
+import type { EnvironmentExtended } from '@proton/shared/lib/interfaces';
+import type { SpotlightDate } from '@proton/shared/lib/spotlight/interface';
 
 export const getEnvironmentDate = (
     currentEnvironment: EnvironmentExtended | undefined,

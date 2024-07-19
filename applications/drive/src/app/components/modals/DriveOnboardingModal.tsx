@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { OnboardingStepRenderCallback } from '@proton/components';
 import {
     Icon,
     Loader,
@@ -9,7 +10,6 @@ import {
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
-    OnboardingStepRenderCallback,
 } from '@proton/components';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';

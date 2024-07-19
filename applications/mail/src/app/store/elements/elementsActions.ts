@@ -13,9 +13,9 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-import { Element } from '../../models/element';
-import { MailState, MailThunkExtra } from '../store';
-import {
+import type { Element } from '../../models/element';
+import type { MailState, MailThunkExtra } from '../store';
+import type {
     ESResults,
     EventUpdates,
     NewStateParams,

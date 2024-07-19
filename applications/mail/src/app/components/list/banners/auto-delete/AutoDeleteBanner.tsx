@@ -1,4 +1,4 @@
-import { AutoDeleteBannerType } from './useAutodeleteBanner';
+import type { AutoDeleteBannerType } from './useAutodeleteBanner';
 import AutoDeleteEnabledBanner from './variations/AutoDeleteEnabledBanner';
 import AutoDeleteFreeBanner from './variations/AutoDeleteFreeBanner';
 import AutoDeletePaidBanner from './variations/AutoDeletePaidBanner';

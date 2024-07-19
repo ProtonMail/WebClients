@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,8 +11,8 @@ import {
     updateCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
-import { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import {

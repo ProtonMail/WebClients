@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { CalendarViewEvent } from '../../containers/calendar/interface';
+import type { CalendarViewEvent } from '../../containers/calendar/interface';
 import { layout } from './layout';
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitTimeGridEventsPerDay } from './splitTimeGridEventsPerDay';

@@ -1,20 +1,20 @@
 import { c } from 'ttag';
 
-import {
-    CryptoProxy,
-    PrivateKeyReference,
-    SessionKey,
-    VERIFICATION_STATUS,
-    getMatchingSigningKey,
-} from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { LockedDeviceForRestore, LockedShareForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
-import { AddressesKeysResult } from './useLockedVolume';
+import type {
+    LockedDeviceForRestore,
+    LockedShareForRestore,
+    LockedVolumeForRestore,
+    ShareWithKey,
+} from './../interface';
+import type { AddressesKeysResult } from './useLockedVolume';
 
 export const getPossibleAddressPrivateKeys = (addressesKeys: AddressesKeysResult) => {
     if (!addressesKeys?.length) {

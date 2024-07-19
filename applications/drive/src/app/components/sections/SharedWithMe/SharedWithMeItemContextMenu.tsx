@@ -1,9 +1,9 @@
 import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
-import { ContextMenuProps } from '../../FileBrowser';
+import type { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { DetailsButton, DownloadButton, OpenInDocsButton, PreviewButton } from '../ContextMenu';

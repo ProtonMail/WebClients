@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
 
-import { MailState } from '../store';
+import type { MailState } from '../store';
 
 const messages = (state: MailState) => state.messages;
 

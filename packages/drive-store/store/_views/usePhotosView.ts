@@ -1,9 +1,12 @@
-import React, { useEffect, useMemo } from 'react';
+import type React from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import { LinkDownload, useDownloadProvider } from '../_downloads';
-import { DriveEvents, useDriveEventManager } from '../_events';
+import type { LinkDownload } from '../_downloads';
+import { useDownloadProvider } from '../_downloads';
+import type { DriveEvents } from '../_events';
+import { useDriveEventManager } from '../_events';
 import { useLinksListing, useLinksQueue } from '../_links';
 import { isPhotoGroup, sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';

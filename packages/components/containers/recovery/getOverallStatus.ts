@@ -1,4 +1,4 @@
-import RecoveryStatus from './RecoveryStatus';
+import type RecoveryStatus from './RecoveryStatus';
 
 interface Props {
     accountRecoveryStatus: RecoveryStatus;

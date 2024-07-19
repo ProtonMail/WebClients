@@ -7,8 +7,10 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
-import { DecryptedLink, useLink } from '../_links';
-import { ShareInvitationDetails, useShareInvitation } from '../_shares';
+import type { DecryptedLink } from '../_links';
+import { useLink } from '../_links';
+import type { ShareInvitationDetails } from '../_shares';
+import { useShareInvitation } from '../_shares';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {

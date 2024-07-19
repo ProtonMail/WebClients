@@ -1,6 +1,6 @@
 import { GENERATION_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { isURLProtonInternal } from '@proton/components/helpers/url';
-import { TransformCallback } from '@proton/llm/lib/actions';
+import type { TransformCallback } from '@proton/llm/lib/actions';
 import { getAssistantModels } from '@proton/llm/lib/api';
 import {
     AssistantStatus,
@@ -8,19 +8,19 @@ import {
     STOP_STRINGS_WRITE_FULL_EMAIL,
     assistantAuthorizedApps,
 } from '@proton/llm/lib/constants';
-import {
+import type {
     Action,
-    AssistantEvent,
     AssistantModel,
     IframeToParentMessage,
     OpenedAssistant,
     OpenedAssistantStatus,
     ParentToIframeMessage,
 } from '@proton/llm/lib/types';
+import { AssistantEvent } from '@proton/llm/lib/types';
 import { checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import window from '@proton/shared/lib/window';
 
 export const getAssistantHasCompatibleBrowser = () => {

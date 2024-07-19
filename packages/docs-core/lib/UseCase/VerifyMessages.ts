@@ -1,10 +1,10 @@
 import { VERIFICATION_STATUS } from '@proton/crypto'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { EncryptionService } from '../Services/Encryption/EncryptionService'
-import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { DecryptedMessage } from '@proton/docs-shared'
-import { VerificationUsecaseResult, SingleMessageVerificationResult } from './VerifyUpdatesResult'
+import type { EncryptionService } from '../Services/Encryption/EncryptionService'
+import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
+import type { DecryptedMessage } from '@proton/docs-shared'
+import type { VerificationUsecaseResult, SingleMessageVerificationResult } from './VerifyUpdatesResult'
 
 export class VerifyMessages implements UseCaseInterface<VerificationUsecaseResult> {
   constructor(private encryption: EncryptionService<EncryptionContext.RealtimeMessage>) {}

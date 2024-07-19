@@ -1,5 +1,6 @@
-import { $getElementForTableNode, $insertTableRow, TableNode } from '@lexical/table'
-import { LexicalEditor } from 'lexical'
+import type { TableNode } from '@lexical/table'
+import { $getElementForTableNode, $insertTableRow } from '@lexical/table'
+import type { LexicalEditor } from 'lexical'
 
 export function addNewRowToTable(editor: LexicalEditor, tableNode: TableNode) {
   editor.update(() => {

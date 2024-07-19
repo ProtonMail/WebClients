@@ -1,15 +1,9 @@
-import { ChangeEvent, SetStateAction, useState } from 'react';
+import type { ChangeEvent, SetStateAction } from 'react';
+import { useState } from 'react';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import {
-    Checkbox,
-    CreateNotificationOptions,
-    CustomNotificationProps,
-    InputFieldTwo,
-    NotificationButton,
-    RadioGroup,
-    useNotifications,
-} from '@proton/components';
+import type { CreateNotificationOptions, CustomNotificationProps } from '@proton/components';
+import { Checkbox, InputFieldTwo, NotificationButton, RadioGroup, useNotifications } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';

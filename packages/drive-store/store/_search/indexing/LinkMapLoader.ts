@@ -1,10 +1,10 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import { createAsyncQueue } from '../../../utils/parallelRunners';
 import { PAGE_SIZE } from '../constants';
 import { fetchItemsMetadataPage } from './fetchItemsMetadataPage';
-import { FetchShareMap } from './useFetchShareMap';
+import type { FetchShareMap } from './useFetchShareMap';
 
 const PARALLEL_FETCH_LIMIT = 5;
 

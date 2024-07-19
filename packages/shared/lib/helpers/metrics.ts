@@ -1,9 +1,11 @@
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { metrics } from '../api/metrics';
-import { TelemetryReport, sendMultipleTelemetryData, sendTelemetryData } from '../api/telemetry';
-import { METRICS_LOG, SECOND } from '../constants';
-import { Api } from '../interfaces';
+import type { TelemetryReport } from '../api/telemetry';
+import { sendMultipleTelemetryData, sendTelemetryData } from '../api/telemetry';
+import type { METRICS_LOG } from '../constants';
+import { SECOND } from '../constants';
+import type { Api } from '../interfaces';
 import { wait } from './promise';
 
 // Make the metrics false by default to avoid (rare) cases where we could have sendMetricReport or sendTelemetryReport

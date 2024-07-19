@@ -1,10 +1,10 @@
 import { fromUnixTime, getUnixTime } from 'date-fns';
 
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { renderHook } from 'proton-mail/helpers/test/render';
-import { Conversation } from 'proton-mail/models/conversation';
-import { MessageState } from 'proton-mail/store/messages/messagesTypes';
+import type { Conversation } from 'proton-mail/models/conversation';
+import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
 import { initialize } from 'proton-mail/store/messages/read/messagesReadActions';
 
 import { useExpiringElement } from './useExpiringElement';

@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { PlansMap } from '@proton/shared/lib/interfaces';
+import type { PlansMap } from '@proton/shared/lib/interfaces';
 
-import { PlanCard, PlanCardSelector } from './PlanCardSelector';
+import type { PlanCard } from './PlanCardSelector';
+import { PlanCardSelector } from './PlanCardSelector';
 
 const onSelect = jest.fn();
 

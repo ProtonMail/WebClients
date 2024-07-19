@@ -1,7 +1,7 @@
 import { eachDayOfInterval, endOfDay, isSameDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
-import { LayoutEvent } from './layout';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
+import type { LayoutEvent } from './layout';
 
 const MIN_DURATION = 15; // In minutes
 

@@ -1,18 +1,19 @@
-import { ChangeEvent, useMemo } from 'react';
+import type { ChangeEvent } from 'react';
+import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ButtonGroup, Checkbox, Icon, Tooltip } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import useContactList from '../hooks/useContactList';
-import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
-import { SelectEmailsProps } from '../modals/SelectEmailsModal';
-import { CustomAction } from './types';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type useContactList from '../hooks/useContactList';
+import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import type { CustomAction } from './types';
 
 interface Props {
     allChecked: boolean;

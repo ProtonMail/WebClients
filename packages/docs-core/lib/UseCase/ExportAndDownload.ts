@@ -1,5 +1,6 @@
-import { DataTypesThatDocumentCanBeExportedAs, DocumentExportMimeTypes } from '@proton/docs-shared'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
+import { DocumentExportMimeTypes } from '@proton/docs-shared'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
 export class ExportAndDownload implements UseCaseInterface<void> {

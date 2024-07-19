@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CSSProperties, FC } from 'react';
+import type { CSSProperties, FC } from 'react';
 
 import { c } from 'ttag';
 

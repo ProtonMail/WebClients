@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
-import { DKIM_STATE, Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
+import { DKIM_STATE } from '@proton/shared/lib/interfaces';
 
 import { Alert, Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';

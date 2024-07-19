@@ -2,11 +2,14 @@
  * Taken from https://github.com/facebook/lexical/blob/main/packages/lexical-markdown/src/MarkdownImport.ts
  * but modified to allow keeping new lines when importing markdown.
  */
-import { $createCodeNode, CodeNode } from '@lexical/code'
-import { $isListItemNode, $isListNode, ListItemNode } from '@lexical/list'
-import { ElementTransformer, TextFormatTransformer, TextMatchTransformer, Transformer } from '@lexical/markdown'
+import type { CodeNode } from '@lexical/code'
+import { $createCodeNode } from '@lexical/code'
+import type { ListItemNode } from '@lexical/list'
+import { $isListItemNode, $isListNode } from '@lexical/list'
+import type { ElementTransformer, TextFormatTransformer, TextMatchTransformer, Transformer } from '@lexical/markdown'
 import { $isQuoteNode } from '@lexical/rich-text'
 import { $findMatchingParent } from '@lexical/utils'
+import type { ElementNode, LexicalNode, TextNode } from 'lexical'
 import {
   $createLineBreakNode,
   $createParagraphNode,
@@ -15,9 +18,6 @@ import {
   $getSelection,
   $isParagraphNode,
   $isTextNode,
-  ElementNode,
-  LexicalNode,
-  TextNode,
 } from 'lexical'
 
 import { IS_APPLE_WEBKIT, IS_IOS, IS_SAFARI } from '../Shared/environment'

@@ -1,12 +1,12 @@
-import { PLANS } from '@proton/shared/lib/constants';
-import { Audience, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { PLANS } from '@proton/shared/lib/constants';
+import type { Audience, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSupportFeatures, getTeamManagementFeatures } from './b2b';
 import { getCalendarFeatures } from './calendar';
 import { getDriveFeatures } from './drive';
 import { getHighlightFeatures } from './highlights';
-import { PlanCardFeature } from './interface';
+import type { PlanCardFeature } from './interface';
 import { getMailFeatures } from './mail';
 import { getPassFeatures } from './pass';
 import { getVPNFeatures } from './vpn';

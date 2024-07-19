@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
 import { CryptoProxy, serverTime } from '@proton/crypto';
+import type { SelfAuditResult } from '@proton/key-transparency/lib';
 import {
-    SelfAuditResult,
     StaleEpochError,
     getKTLocalStorage,
     getSelfAuditInterval,
@@ -13,7 +13,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
 
 import {
     useApi,

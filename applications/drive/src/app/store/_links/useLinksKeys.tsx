@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 type LinksKeysByShare = {
     [shareId: string]: {

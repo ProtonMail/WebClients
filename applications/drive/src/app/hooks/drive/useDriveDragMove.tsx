@@ -9,10 +9,10 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useSelection } from '../../components/FileBrowser';
-import { DragMoveControls } from '../../components/FileBrowser/interface';
-import { DriveItem } from '../../components/sections/Drive/Drive';
+import type { DragMoveControls } from '../../components/FileBrowser/interface';
+import type { DriveItem } from '../../components/sections/Drive/Drive';
 import { useActions } from '../../store';
-import { LinkInfo } from '../../store/_actions/interface';
+import type { LinkInfo } from '../../store/_actions/interface';
 
 type DragAndDropItem = DriveItem;
 

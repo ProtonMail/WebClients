@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { useApi, useEventManager, useUserSettings } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getChecklist } from '@proton/shared/lib/api/checklist';
-import { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
+import type { ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import { Event } from '../../../models/event';
+import type { Event } from '../../../models/event';
 
 interface ChecklistApiResponse {
     Code: number;

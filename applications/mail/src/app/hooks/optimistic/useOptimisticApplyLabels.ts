@@ -6,22 +6,21 @@ import {
     selectMessageCounts,
 } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCounters } from '../../helpers/counter';
 import { getCurrentFolderIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
+import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import {
-    LabelChanges,
-    UnreadStatus,
     applyLabelChangesOnConversation,
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
+import type { Conversation } from '../../models/conversation';
+import type { Element } from '../../models/element';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,

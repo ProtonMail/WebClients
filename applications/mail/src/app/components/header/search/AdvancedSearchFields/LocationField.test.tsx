@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { getModelState } from '@proton/account/test';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders } from '@proton/testing/index';
 

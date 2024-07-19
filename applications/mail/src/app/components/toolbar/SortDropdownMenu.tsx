@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { Sort } from '../../models/tools';
+import type { Sort } from '../../models/tools';
 
 const TIME = 'Time';
 const SIZE = 'Size';

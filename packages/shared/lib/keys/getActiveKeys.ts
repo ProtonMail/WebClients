@@ -1,9 +1,10 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
-import { ActiveKey, Address, DecryptedKey, Key, SignedKeyList } from '../interfaces';
+import type { ActiveKey, Address, DecryptedKey, Key, SignedKeyList } from '../interfaces';
 import { getDefaultKeyFlags, setExternalFlags } from './keyFlags';
 import { getParsedSignedKeyList, getSignedKeyListMap } from './signedKeyList';
 

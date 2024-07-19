@@ -1,7 +1,7 @@
-import { Observable } from 'lib0/observable'
-import { Doc } from 'yjs'
-import { DocsAwareness } from './DocsAwareness'
-import { RtsMessagePayload } from './RtsMessagePayload'
+import type { Observable } from 'lib0/observable'
+import type { Doc } from 'yjs'
+import type { DocsAwareness } from './DocsAwareness'
+import type { RtsMessagePayload } from './RtsMessagePayload'
 
 export interface DocStateInterface extends Observable<string> {
   receiveMessage(message: RtsMessagePayload): void

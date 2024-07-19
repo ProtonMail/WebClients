@@ -1,6 +1,6 @@
-import { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { BroadcastSource, WebsocketConnectionInterface } from '@proton/docs-shared'
-import { EventTypeEnum } from '@proton/docs-proto'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { BroadcastSource, WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { EventTypeEnum } from '@proton/docs-proto'
 
 export interface WebsocketServiceInterface {
   createConnection(

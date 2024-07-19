@@ -1,15 +1,20 @@
-import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
-import { IndexingMetrics, defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
+import type { IndexingMetrics } from '@proton/encrypted-search';
+import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { MINUTE_IN_SECONDS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type {
+    CalendarEventManager,
+    CalendarEventsEventManager,
+} from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import { getESCallbacks } from '../helpers/encryptedSearch/calendarESCallbacks';
 import {
@@ -18,7 +23,7 @@ import {
     processCoreEvents,
     updateRecurrenceIDsMap,
 } from '../helpers/encryptedSearch/esUtils';
-import {
+import type {
     ESCalendarContent,
     ESCalendarMetadata,
     ESCalendarSearchParams,

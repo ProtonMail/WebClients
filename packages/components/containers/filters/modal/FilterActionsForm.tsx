@@ -1,7 +1,7 @@
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { Actions, SimpleFilterModalModel } from '../interfaces';
+import type { Actions, SimpleFilterModalModel } from '../interfaces';
 import FilterActionsFormAutoReplyRow from './FilterActionsFormAutoReplyRow';
 import FilterActionsFormFoldersRow from './FilterActionsFormFolderRow';
 import FilterActionsFormLabelsRow from './FilterActionsFormLabelsRow';

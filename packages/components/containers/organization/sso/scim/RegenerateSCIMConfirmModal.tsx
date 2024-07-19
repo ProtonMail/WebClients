@@ -4,7 +4,8 @@ import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
-import { Prompt, PromptProps } from '../../../../components';
+import type { PromptProps } from '../../../../components';
+import { Prompt } from '../../../../components';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onConfirm: () => Promise<void>;

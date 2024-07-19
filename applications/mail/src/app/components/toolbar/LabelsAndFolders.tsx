@@ -1,9 +1,10 @@
-import { Ref } from 'react';
+import type { Ref } from 'react';
 
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Breakpoints, DropdownSizeUnit, Icon } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { DropdownSizeUnit, Icon } from '@proton/components';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';

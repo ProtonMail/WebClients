@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
+import type { IconName } from '@proton/components';
 import {
     Dropdown,
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
-    IconName,
     Tooltip,
     usePopperAnchor,
 } from '@proton/components';
-import { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import { useDriveSharingFlags } from '../../../../store';

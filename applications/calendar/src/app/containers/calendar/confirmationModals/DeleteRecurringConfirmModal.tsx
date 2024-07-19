@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms';
 import { Alert, Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
-import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
+import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import SelectRecurringType from './SelectRecurringType';
 
 const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {

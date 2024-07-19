@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
-import { KTContext, defaultKTContext } from './ktContext';
+import type { KTContext } from './ktContext';
+import { defaultKTContext } from './ktContext';
 
 export const KeyTransparencyContext = createContext<KTContext>(defaultKTContext);
 export const useKeyTransparencyContext = () => useContext(KeyTransparencyContext);

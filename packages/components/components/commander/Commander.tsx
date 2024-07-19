@@ -3,13 +3,15 @@ import { useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Kbd, Scroll } from '@proton/atoms';
-import { Icon, IconName, InputFieldTwo } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { Icon, InputFieldTwo } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from '../dropdown';
 import { Form } from '../form';
-import { ModalProps, ModalTwo } from '../modalTwo';
+import type { ModalProps } from '../modalTwo';
+import { ModalTwo } from '../modalTwo';
 import { Mark } from '../text';
 
 import './Commander.scss';

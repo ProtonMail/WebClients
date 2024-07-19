@@ -1,5 +1,5 @@
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { KTLocalStorageAPI, KeyTransparencyState } from '../interfaces';
+import type { KTLocalStorageAPI, KeyTransparencyState } from '../interfaces';
 
 /**
  * Return the default set of functions to use local storage,

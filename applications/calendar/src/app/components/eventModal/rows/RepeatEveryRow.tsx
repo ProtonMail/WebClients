@@ -2,8 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { IntegerInput, Option, SelectTwo } from '@proton/components';
 import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '@proton/shared/lib/calendar/constants';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { DateTimeModel, EventModelErrors, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import SelectMonthlyType from '../inputs/SelectMonthlyType';

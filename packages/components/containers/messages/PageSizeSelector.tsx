@@ -4,7 +4,8 @@ import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { DropdownProps, Option, SelectTwo } from '../../components';
+import type { DropdownProps } from '../../components';
+import { Option, SelectTwo } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 
 interface Props {

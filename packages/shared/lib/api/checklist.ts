@@ -1,4 +1,4 @@
-import { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKeyType } from '../interfaces';
+import type { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKeyType } from '../interfaces';
 
 export const getChecklist = (checklistId: ChecklistId) => ({
     method: 'get',

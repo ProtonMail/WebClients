@@ -1,4 +1,5 @@
-import { FunctionComponent, useState } from 'react'
+import type { FunctionComponent } from 'react'
+import { useState } from 'react'
 import { Router } from 'react-router-dom'
 
 import FlagProvider from '@unleash/proxy-client-react'
@@ -24,14 +25,16 @@ import { getClientID } from '@proton/shared/lib/apps/helper'
 import { newVersionUpdater } from '@proton/shared/lib/busy'
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
-import { DRAWER_VISIBILITY, UserModel } from '@proton/shared/lib/interfaces'
+import type { UserModel } from '@proton/shared/lib/interfaces'
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
 import { bootstrapApp } from './bootstrap'
 import * as config from './config'
 import locales from './locales'
-import { DocsStore } from './ReduxStore/store'
+import type { DocsStore } from './ReduxStore/store'
 import { extraThunkArguments } from './ReduxStore/thunk'
-import { Availability, AvailabilityReport, AvailabilityTypes } from '@proton/utils/availability'
+import type { AvailabilityReport } from '@proton/utils/availability'
+import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { DocsThemeProvider } from './DocsThemeProvider'
 
 setTtagLocales(locales)

@@ -1,4 +1,5 @@
-import { LiHTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
+import type { LiHTMLAttributes, ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { Button } from '@proton/atoms/';
 import clsx from '@proton/utils/clsx';

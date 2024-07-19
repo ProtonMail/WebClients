@@ -1,11 +1,11 @@
 import { getUnixTime } from 'date-fns';
 
-import { ESItem } from '@proton/encrypted-search/lib';
+import type { ESItem } from '@proton/encrypted-search/lib';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
 import { SECOND } from '@proton/shared/lib/constants';
 import { differenceInCalendarYears } from '@proton/shared/lib/date-fns-utc';
 
-import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
+import type { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { YEARS_TO_EXPAND_AHEAD } from './constants';
 import { expandSearchItem } from './searchHelpers';
 

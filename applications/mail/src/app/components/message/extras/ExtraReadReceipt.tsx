@@ -6,7 +6,7 @@ import { useLoading } from '@proton/hooks';
 import { readReceipt } from '@proton/shared/lib/api/messages';
 import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
 
-import { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageWithOptionalBody;

@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES, VPN_PASS_PROMOTION_COUPONS } from '../constants';
-import {
+import type {
     MaxKeys,
     Plan,
     PlanIDs,
@@ -10,8 +10,8 @@ import {
     Pricing,
     Subscription,
     SubscriptionCheckResponse,
-    getMaxValue,
 } from '../interfaces';
+import { getMaxValue } from '../interfaces';
 import { getPlanFromCheckout, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './planIDs';
 import { INCLUDED_IP_PRICING, customCycles, getOverriddenPricePerCycle, getPricingPerMember } from './subscription';
 

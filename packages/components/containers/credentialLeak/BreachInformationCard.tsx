@@ -10,7 +10,7 @@ import BreachRecommendations from './BreachRecommendations';
 import BreachTitle from './BreachTitle';
 import UserBreachInfo from './UserBreachInfo';
 import { getFillerBreachData, getStyle } from './helpers';
-import { FetchedBreaches } from './models';
+import type { FetchedBreaches } from './models';
 
 import './BreachInfoCard.scss';
 

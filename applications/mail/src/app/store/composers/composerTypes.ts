@@ -1,7 +1,7 @@
-import { Optional, Recipient } from '@proton/shared/lib/interfaces';
+import type { Optional, Recipient } from '@proton/shared/lib/interfaces';
 
-import { EditorTypes } from '../../hooks/composer/useComposerContent';
-import { RecipientType } from '../../models/address';
+import type { EditorTypes } from '../../hooks/composer/useComposerContent';
+import type { RecipientType } from '../../models/address';
 
 type ComposerFields = {
     ID: string;

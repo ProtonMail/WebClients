@@ -1,6 +1,6 @@
-import { MIMEAttachment, WorkerDecryptionResult } from '@proton/crypto';
+import type { MIMEAttachment, WorkerDecryptionResult } from '@proton/crypto';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { ENCRYPTED_STATUS } from '../../../constants';

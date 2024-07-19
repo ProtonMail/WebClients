@@ -8,7 +8,7 @@ import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
-import {
+import type {
     Attendee,
     AttendeeModel,
     VcalAttendeeProperty,
@@ -16,8 +16,8 @@ import {
     VcalPmVeventComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
-import { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
-import { RequireSome, SimpleMap } from '../interfaces/utils';
+import type { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
+import type { RequireSome, SimpleMap } from '../interfaces/utils';
 import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 

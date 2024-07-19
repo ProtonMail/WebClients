@@ -1,7 +1,7 @@
-import { ComponentType, ReactNode } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { Icons } from '../../components';
 import SpotlightProvider from '../../components/spotlight/Provider';

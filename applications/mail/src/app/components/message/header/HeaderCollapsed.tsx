@@ -1,10 +1,10 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
 import type { Breakpoints } from '@proton/components/hooks';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {
     getHasOnlyIcsAttachments,
     hasAttachments,
@@ -15,7 +15,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

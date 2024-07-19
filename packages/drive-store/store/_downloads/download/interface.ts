@@ -1,6 +1,6 @@
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
-import { LinkDownload } from '../interface';
+import type { LinkDownload } from '../interface';
 
 export type NestedLinkDownload = LinkDownload & {
     parentLinkIds: string[];

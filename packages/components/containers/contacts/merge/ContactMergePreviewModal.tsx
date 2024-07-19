@@ -1,15 +1,17 @@
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
-import { Contact, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { Contact, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { ModalProps, ModalTwo } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { ModalTwo } from '../../../components';
 import { useApi, useEventManager, useUserKeys } from '../../../hooks';
 import ContactMergeErrorContent from './ContactMergeErrorContent';
 import ContactMergeViewContent from './ContactMergeViewContent';

@@ -2,7 +2,7 @@ import Push from 'push.js';
 
 import noop from '@proton/utils/noop';
 
-import { ElectronNotification } from '../desktop/desktopTypes';
+import type { ElectronNotification } from '../desktop/desktopTypes';
 import { invokeInboxDesktopIPC } from '../desktop/ipcHelpers';
 import { isElectronMail } from './desktop';
 

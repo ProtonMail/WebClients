@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,11 +9,13 @@ import { Icon, StripedItem, StripedList } from '@proton/components/components';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useActiveBreakpoint } from '@proton/components/hooks';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonColor, ButtonShape, UpsellCta, UpsellFeature, isUpsellCta } from '../helpers';
+import type { ButtonColor, ButtonShape, UpsellCta, UpsellFeature } from '../helpers';
+import { isUpsellCta } from '../helpers';
 import Panel from './Panel';
 
 import './UpsellPanel.scss';

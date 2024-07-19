@@ -2,12 +2,12 @@ import { act } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, api, clearAll, render } from '../../../helpers/test/helper';
-import { Conversation } from '../../../models/conversation';
-import { MessageEvent } from '../../../models/event';
+import type { Conversation } from '../../../models/conversation';
+import type { MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
 import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
 

@@ -1,8 +1,11 @@
-import { ReactNode, RefObject, useEffect, useState } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import { useEffect, useState } from 'react';
 
 import { generateUID } from '../../helpers';
-import { Dropdown, DropdownProps } from '../dropdown';
-import { PopperPosition, cornerPopperPlacements } from '../popper';
+import type { DropdownProps } from '../dropdown';
+import { Dropdown } from '../dropdown';
+import type { PopperPosition } from '../popper';
+import { cornerPopperPlacements } from '../popper';
 
 export interface ContextMenuProps {
     anchorRef: RefObject<HTMLElement>;

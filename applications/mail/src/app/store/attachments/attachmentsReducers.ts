@@ -1,9 +1,9 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 
-import { AttachmentsState } from './attachmentsTypes';
+import type { AttachmentsState } from './attachmentsTypes';
 
 export const globalReset = (state: Draft<AttachmentsState>) => {
     Object.keys(state).forEach((key) => delete state[key]);

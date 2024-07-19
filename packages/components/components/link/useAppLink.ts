@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { appLink } from '@proton/shared/lib/apps/appLink';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { useAuthentication, useConfig } from '../../hooks';
 

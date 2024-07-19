@@ -1,10 +1,11 @@
-import { RefObject, useCallback, useState } from 'react';
+import type { RefObject } from 'react';
+import { useCallback, useState } from 'react';
 
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import ItemContextMenu from './ItemContextMenu';
 
 interface Props {

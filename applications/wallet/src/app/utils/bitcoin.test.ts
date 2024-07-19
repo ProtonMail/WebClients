@@ -1,4 +1,5 @@
-import { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
+import type { WasmApiExchangeRate } from '@proton/andromeda';
+import { WasmNetwork } from '@proton/andromeda';
 
 import { convertAmount, isValidBitcoinAddress } from '.';
 

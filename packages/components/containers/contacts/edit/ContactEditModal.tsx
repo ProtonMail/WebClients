@@ -16,19 +16,20 @@ import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useContactEmails, useEventManager, useHandler, useNotifications } from '../../../hooks';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
-import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
-import { ContactImageProps } from '../modals/ContactImageModal';
+import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import type { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditProperties from './ContactEditProperties';
 import ContactEditProperty from './ContactEditProperty';
 

@@ -3,11 +3,12 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Address, Recipient, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 
 import { minimalCache } from '../../../helpers/test/cache';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import { GeneratedKey, addApiKeys, addApiMock, clearAll, generateKeys, render } from '../../../helpers/test/helper';
+import type { GeneratedKey } from '../../../helpers/test/helper';
+import { addApiKeys, addApiMock, clearAll, generateKeys, render } from '../../../helpers/test/helper';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import Composer from '../Composer';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';

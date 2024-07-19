@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { AppsDropdown, Sidebar, SidebarDrawerItems, SidebarNav } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
@@ -7,7 +8,8 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
-import { ShareWithKey, useDefaultShare } from '../../../../store';
+import type { ShareWithKey } from '../../../../store';
+import { useDefaultShare } from '../../../../store';
 import { useCreateDevice } from '../../../../store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../../../store/_shares/useCreatePhotos';
 import DriveSidebarFooter from './DriveSidebarFooter';

@@ -1,6 +1,7 @@
-import { CSSProperties, useMemo } from 'react';
+import type { CSSProperties } from 'react';
+import { useMemo } from 'react';
 
-import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
 import { layout } from './layout';
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';

@@ -8,7 +8,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 

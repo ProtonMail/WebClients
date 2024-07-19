@@ -3,10 +3,8 @@ import { addDays } from 'date-fns';
 
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import {
-    ContextState,
-    useGetStartedChecklist,
-} from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import type { ContextState } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { minimalCache, render } from 'proton-mail/helpers/test/helper';
 
 import MailSidebar from '../sidebar/MailSidebar';

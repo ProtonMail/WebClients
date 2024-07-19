@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { InputFieldTwo } from '@proton/components/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
-import { CountryOption } from '@proton/components/components/country/helpers';
+import type { CountryOption } from '@proton/components/components/country/helpers';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './CountrySelect.mdx';

@@ -1,10 +1,13 @@
-import { ComponentType, Dispatch, ReactNode, SetStateAction, useRef } from 'react';
+import type { ComponentType, Dispatch, ReactNode, SetStateAction } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import removeItem from '@proton/utils/removeIndex';
 import uniqueBy from '@proton/utils/uniqueBy';
 

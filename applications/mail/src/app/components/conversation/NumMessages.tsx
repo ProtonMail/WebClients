@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Conversation } from '../../models/conversation';
+import type { Conversation } from '../../models/conversation';
 
 import './NumMessages.scss';
 

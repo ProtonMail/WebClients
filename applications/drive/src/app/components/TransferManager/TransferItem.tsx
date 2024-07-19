@@ -17,7 +17,7 @@ import {
 import ProgressBar from './ProgressBar';
 import TransferControls from './TransferControls';
 import TransferStateIndicator from './TransferStateIndicator';
-import { TransferProps } from './interfaces';
+import type { TransferProps } from './interfaces';
 import { TransferType } from './transfer';
 
 type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &

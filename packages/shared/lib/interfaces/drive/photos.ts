@@ -1,4 +1,4 @@
-import { LinkState } from '@proton/shared/lib/interfaces/drive/link';
+import type { LinkState } from '@proton/shared/lib/interfaces/drive/link';
 
 export interface Photo {
     LinkID: string;

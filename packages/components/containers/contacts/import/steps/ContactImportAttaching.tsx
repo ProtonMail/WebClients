@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
+import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
@@ -28,7 +28,8 @@ import { getIsAcceptedExtension, getSupportedContacts, splitErrors } from '@prot
 import { extractVcards, readVcf } from '@proton/shared/lib/contacts/vcard';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { useFeature } from '../../../../hooks';
 import { FeatureCode } from '../../../features';

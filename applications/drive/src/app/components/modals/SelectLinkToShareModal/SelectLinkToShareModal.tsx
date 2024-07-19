@@ -2,12 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useModalTwoStatic } from '@proton/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
-import { DecryptedLink, useDriveSharingFlags, useTreeForModals } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDriveSharingFlags, useTreeForModals } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
-import { useLinkSharingModal } from '../ShareLinkModal/ShareLinkModal';
+import type { useLinkSharingModal } from '../ShareLinkModal/ShareLinkModal';
 import { ModalContent } from './ModalContent';
 
 interface Props {

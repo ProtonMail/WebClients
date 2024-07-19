@@ -1,7 +1,8 @@
-import { CryptoProxy, PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
-import { Key } from '../../lib/interfaces';
+import type { Key } from '../../lib/interfaces';
 import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
 
 const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];

@@ -1,8 +1,10 @@
-import { OpenCallbackProps, SUBSCRIPTION_STEPS } from '@proton/components/index';
-import { SelectedPlan, getScribeAddonNameByPlan } from '@proton/components/payments/core';
+import type { OpenCallbackProps } from '@proton/components/index';
+import { SUBSCRIPTION_STEPS } from '@proton/components/index';
+import type { SelectedPlan } from '@proton/components/payments/core';
+import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { isScribeAddon, removeAddon } from '@proton/shared/lib/helpers/planIDs';
-import { PlanIDs, UserModel } from '@proton/shared/lib/interfaces';
+import type { PlanIDs, UserModel } from '@proton/shared/lib/interfaces';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
     cycle: currentCycle,

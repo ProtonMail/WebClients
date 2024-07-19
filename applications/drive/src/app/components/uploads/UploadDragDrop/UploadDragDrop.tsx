@@ -1,4 +1,5 @@
-import { ReactNode, SyntheticEvent, useCallback, useState } from 'react';
+import type { ReactNode, SyntheticEvent } from 'react';
+import { useCallback, useState } from 'react';
 import * as React from 'react';
 
 import { c } from 'ttag';
@@ -8,7 +9,8 @@ import { DS_STORE } from '@proton/shared/lib/drive/constants';
 import { isImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
-import { UploadFileList, mimeTypeFromFile, useUpload } from '../../../store';
+import type { UploadFileList } from '../../../store';
+import { mimeTypeFromFile, useUpload } from '../../../store';
 import { isTransferCancelError } from '../../../utils/transfer';
 
 interface UploadDragDropProps {

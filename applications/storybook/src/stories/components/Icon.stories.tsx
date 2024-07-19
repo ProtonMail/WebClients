@@ -1,4 +1,5 @@
-import { Icon, IconProps } from '@proton/components';
+import type { IconProps } from '@proton/components';
+import { Icon } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Icon.mdx';

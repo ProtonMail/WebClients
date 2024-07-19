@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/dom';
 
-import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
+import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
@@ -8,7 +8,7 @@ import { generateMockAddress } from '@proton/activation/src/tests/data/addresses
 import { prepareState } from '@proton/activation/src/tests/data/prepareState';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
-import { MailImportFields } from '../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { MailImportFields } from '../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import StepPrepare from './StepPrepareOAuth';
 import useStepPrepare from './hooks/useStepPrepareOAuth';
 import useStepPrepareEmailSummary from './hooks/useStepPrepareOAuthEmailSummary';

@@ -1,7 +1,8 @@
-import { Reducer, useEffect, useReducer } from 'react';
+import type { Reducer } from 'react';
+import { useEffect, useReducer } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { Referral } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../../hooks';
 import fetchAllReferralsByOffset from '../helpers/fetchAllReferralsByOffset';

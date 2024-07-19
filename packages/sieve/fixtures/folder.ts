@@ -1,12 +1,8 @@
 /*
  * Sieve/Tree test inputs
  */
-import {
-    ConditionComparator,
-    ConditionType,
-    FilterStatement,
-    SimpleObject,
-} from '@proton/components/containers/filters/interfaces';
+import type { SimpleObject } from '@proton/components/containers/filters/interfaces';
+import { ConditionComparator, ConditionType, FilterStatement } from '@proton/components/containers/filters/interfaces';
 
 const tree = [
     {

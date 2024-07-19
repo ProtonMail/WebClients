@@ -1,4 +1,4 @@
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 
 import type { MEMBER_ORG_KEY_STATE } from './Member';
 

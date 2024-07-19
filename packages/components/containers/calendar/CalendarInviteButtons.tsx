@@ -6,7 +6,7 @@ import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
+import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 

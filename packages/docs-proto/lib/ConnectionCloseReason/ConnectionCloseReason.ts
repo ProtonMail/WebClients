@@ -1,6 +1,6 @@
 import { ValueObject } from '@standardnotes/domain-core'
 
-import { ConnectionCloseReasonProps } from './ConnectionCloseReasonProps'
+import type { ConnectionCloseReasonProps } from './ConnectionCloseReasonProps'
 
 export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProps> {
   static CODES = {

@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmGatewayProvider, WasmPaymentMethod, WasmQuote } from '@proton/andromeda';
+import type { ModelState } from '@proton/account';
+import { getInitialModelState } from '@proton/account';
+import type { WasmGatewayProvider, WasmPaymentMethod, WasmQuote } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
 
-import { WalletThunkArguments } from '../thunk';
+import type { WalletThunkArguments } from '../thunk';
 
 const name = 'quotes_by_provider' as const;
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { UserState } from '@lexical/yjs'
+import type { UserState } from '@lexical/yjs'
 import { Tooltip } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 import { useApplication } from '../Containers/ApplicationProvider'
-import { DocAwarenessEvent, DocsAwarenessStateChangeData, UserAvatar } from '@proton/docs-shared'
+import type { DocsAwarenessStateChangeData } from '@proton/docs-shared'
+import { DocAwarenessEvent, UserAvatar } from '@proton/docs-shared'
 
 export function DocumentActiveUsers({ className }: { className?: string }) {
   const application = useApplication()

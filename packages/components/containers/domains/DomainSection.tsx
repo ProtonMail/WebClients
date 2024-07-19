@@ -4,7 +4,7 @@ import { Href } from '@proton/atoms/Href';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
 
 import { Alert, InputFieldTwo } from '../../components';
 

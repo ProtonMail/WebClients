@@ -4,7 +4,8 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
-import { ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {

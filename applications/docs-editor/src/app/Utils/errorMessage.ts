@@ -1,8 +1,5 @@
-import {
-  EditorBridgeMessageType,
-  EditorRequiresClientMethods,
-  EditorToClientInvokationMessage,
-} from '@proton/docs-shared'
+import type { EditorRequiresClientMethods, EditorToClientInvokationMessage } from '@proton/docs-shared'
+import { EditorBridgeMessageType } from '@proton/docs-shared'
 import { GenerateUUID } from '@proton/docs-core'
 import { type ErrorInfo } from 'react'
 

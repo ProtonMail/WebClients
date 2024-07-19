@@ -1,8 +1,10 @@
-import { Address, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
+import type { Address, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKeys } from '../keyMigration';
-import importKeysProcessLegacy, { ImportKeysProcessLegacyArguments } from './importKeysProcessLegacy';
-import importKeysProcessV2, { ImportKeysProcessV2Arguments } from './importKeysProcessV2';
+import type { ImportKeysProcessLegacyArguments } from './importKeysProcessLegacy';
+import importKeysProcessLegacy from './importKeysProcessLegacy';
+import type { ImportKeysProcessV2Arguments } from './importKeysProcessV2';
+import importKeysProcessV2 from './importKeysProcessV2';
 
 interface Arguments extends Omit<ImportKeysProcessV2Arguments, 'userKey'>, ImportKeysProcessLegacyArguments {
     addresses: Address[];

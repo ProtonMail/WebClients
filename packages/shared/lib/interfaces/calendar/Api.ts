@@ -1,12 +1,12 @@
-import { PaginationParams } from '../../api/interface';
-import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
-import { ApiResponse } from '../Api';
-import { Nullable, RequireSome } from '../utils';
-import { CalendarNotificationSettings, CalendarSettings } from './Calendar';
-import { CalendarKey, CalendarPassphrase } from './CalendarKey';
-import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
-import { Attendee, CalendarEvent, CalendarEventData } from './Event';
-import { ACCESS_LEVEL } from './Link';
+import type { PaginationParams } from '../../api/interface';
+import type { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
+import type { ApiResponse } from '../Api';
+import type { Nullable, RequireSome } from '../utils';
+import type { CalendarNotificationSettings, CalendarSettings } from './Calendar';
+import type { CalendarKey, CalendarPassphrase } from './CalendarKey';
+import type { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
+import type { Attendee, CalendarEvent, CalendarEventData } from './Event';
+import type { ACCESS_LEVEL } from './Link';
 
 export type CalendarCreateData = {
     Name: string;

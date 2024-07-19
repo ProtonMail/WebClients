@@ -1,4 +1,5 @@
-import tinycolor, { Instance as Color } from 'tinycolor2';
+import type { Instance as Color } from 'tinycolor2';
+import tinycolor from 'tinycolor2';
 
 function genAccentColorShades(base: Color) {
     const hsl = base.toHsl();

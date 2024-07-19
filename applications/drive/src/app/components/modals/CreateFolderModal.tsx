@@ -1,11 +1,12 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
+import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     InputFieldTwo,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

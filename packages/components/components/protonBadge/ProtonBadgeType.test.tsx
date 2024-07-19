@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { ProtonBadgeType } from '@proton/components/components';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 

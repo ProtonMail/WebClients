@@ -1,10 +1,11 @@
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/DocsApi'
-import { DecryptCommit } from './DecryptCommit'
-import { EncryptMessage } from './EncryptMessage'
-import { SquashAlgorithm } from './SquashAlgorithm'
-import { SquashDocument, SquashDocumentDTO } from './SquashDocument'
-import { VerifyCommit } from './VerifyCommit'
+import type { DocsApi } from '../Api/DocsApi'
+import type { DecryptCommit } from './DecryptCommit'
+import type { EncryptMessage } from './EncryptMessage'
+import type { SquashAlgorithm } from './SquashAlgorithm'
+import type { SquashDocumentDTO } from './SquashDocument'
+import { SquashDocument } from './SquashDocument'
+import type { VerifyCommit } from './VerifyCommit'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 
 jest.mock('@proton/docs-proto', () => ({

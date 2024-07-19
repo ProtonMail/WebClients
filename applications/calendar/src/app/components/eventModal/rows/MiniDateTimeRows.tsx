@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { DateInput, MemoizedIconRow as IconRow, TimeInput } from '@proton/components';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { getAllDayCheck } from '../eventForm/stateActions';
 import useDateTimeFormHandlers from '../hooks/useDateTimeFormHandlers';

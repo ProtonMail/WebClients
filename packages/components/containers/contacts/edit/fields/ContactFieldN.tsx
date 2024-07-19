@@ -1,10 +1,11 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { ErrorZone } from '@proton/components/components';
 import { isFirstLastNameValid } from '@proton/shared/lib/contacts/property';
-import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import ContactFieldString from './ContactFieldString';
 

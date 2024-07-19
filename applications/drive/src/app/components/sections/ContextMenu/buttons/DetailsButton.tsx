@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { DecryptedLink } from '../../../../store';
-import { useDetailsModal } from '../../../modals/DetailsModal';
-import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
+import type { DecryptedLink } from '../../../../store';
+import type { useDetailsModal } from '../../../modals/DetailsModal';
+import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {

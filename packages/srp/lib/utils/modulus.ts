@@ -1,4 +1,5 @@
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
 import { SRP_MODULUS_KEY, VERIFICATION_STATUS } from '../constants';

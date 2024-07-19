@@ -3,7 +3,7 @@ import { Icon, Loader, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
-import { StatusIcon } from '../../models/crypto';
+import type { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {
     loading?: boolean;

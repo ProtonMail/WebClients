@@ -5,7 +5,7 @@ import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils'
 
 import { API_CODES } from '../constants';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
-import {
+import type {
     SyncMultipleApiResponses,
     SyncMultipleApiSuccessResponses,
     VcalDateOrDateTimeProperty,

@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';

@@ -1,8 +1,10 @@
-import React, { ComponentPropsWithRef, ReactElement, ReactNode, cloneElement, useContext } from 'react';
+import type { ComponentPropsWithRef, ReactElement, ReactNode } from 'react';
+import React, { cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonProps, Vr } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button, Vr } from '@proton/atoms';
 import generateUID from '@proton/atoms/generateUID';
 import clsx from '@proton/utils/clsx';
 

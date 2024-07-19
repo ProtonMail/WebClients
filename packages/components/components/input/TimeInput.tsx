@@ -1,9 +1,12 @@
-import { ChangeEvent, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
+import type { ChangeEvent, MouseEvent } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { Locale, addMinutes, format, parse, startOfDay } from 'date-fns';
+import type { Locale } from 'date-fns';
+import { addMinutes, format, parse, startOfDay } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Input, InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms';
+import { Input } from '@proton/atoms';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import noop from '@proton/utils/noop';

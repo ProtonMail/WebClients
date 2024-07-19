@@ -1,6 +1,7 @@
 import { SORT_DIRECTION } from '../constants';
 import { isMobile } from '../helpers/browser';
-import { LayoutSetting, SortSetting, UserSettings } from '../interfaces/drive/userSettings';
+import type { UserSettings } from '../interfaces/drive/userSettings';
+import { LayoutSetting, SortSetting } from '../interfaces/drive/userSettings';
 
 export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;

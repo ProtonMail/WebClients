@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModal, ModalStateProps, PrimaryButton, useModalTwoStatic } from '@proton/components';
+import type { ModalStateProps } from '@proton/components';
+import { BasicModal, PrimaryButton, useModalTwoStatic } from '@proton/components';
 import { DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {

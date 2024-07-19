@@ -6,7 +6,7 @@ import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon
 import { Table, TableBody, TableCell, TableRow } from '../../components/table';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
-import { KeyActions, KeyDisplay } from './shared/interface';
+import type { KeyActions, KeyDisplay } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {
     keys: KeyDisplay[];

@@ -1,6 +1,6 @@
-import { OfflineKey } from '../../authentication/offlineKey';
+import type { OfflineKey } from '../../authentication/offlineKey';
 import { type ExtensionApp, type ExtensionMessageResponse, sendExtensionMessage } from '../../browser/extension';
-import { ProduceForkParameters } from './produce';
+import type { ProduceForkParameters } from './produce';
 
 interface ExtensionForkPayloadArguments {
     selector: string;

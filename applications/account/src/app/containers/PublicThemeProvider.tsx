@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext } from 'react';
 
 import type { Breakpoints } from '@proton/components/hooks';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';

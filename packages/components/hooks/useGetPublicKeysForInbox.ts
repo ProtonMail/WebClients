@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
+import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 
 import { useKeyTransparencyContext } from '../containers/keyTransparency';
 import useApi from './useApi';

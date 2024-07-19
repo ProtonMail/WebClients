@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react';
 
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';

@@ -7,7 +7,7 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { formatDateToHuman } from '../../../helpers/date';
 import { addApiMock, clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
 
 const getMessage = (sendingDate: Date) => {

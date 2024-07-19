@@ -2,7 +2,7 @@ import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { differenceInCalendarDays, differenceInCalendarWeeks } from '@proton/shared/lib/date-fns-utc';
 
 import { TYPE } from '../../components/calendar/interactions/constants';
-import { EventTargetAction } from './interface';
+import type { EventTargetAction } from './interface';
 
 export const getInitialTargetEventData = (
     eventTargetAction: EventTargetAction | undefined,

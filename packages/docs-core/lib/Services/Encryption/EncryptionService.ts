@@ -1,19 +1,19 @@
-import {
-  CryptoProxy,
+import type {
   MaybeArray,
   PrivateKeyReference,
   PublicKeyReference,
   SessionKey,
   VERIFICATION_STATUS,
 } from '@proton/crypto'
+import { CryptoProxy } from '@proton/crypto'
 import { SignedPlaintextContent } from '@proton/docs-proto'
 import { encryptData as gcmEncrypt, decryptData as gcmDecrypt } from '@proton/shared/lib/authentication/cryptoHelper'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
-import { EncryptionContext } from './EncryptionContext'
+import type { EncryptionContext } from './EncryptionContext'
 import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
-import { DriveCompat } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store'
 import { Result } from '../../Domain/Result/Result'
 
 export class EncryptionService<C extends EncryptionContext> {

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import InvoiceType from './InvoiceType';
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 
 it('should render', () => {
     const invoice: Invoice = {

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { APP_VERSION } from '../../config';
-import { TransferInitializationLog, TransferLog, TransferType } from './interface';
+import type { TransferInitializationLog, TransferLog, TransferType } from './interface';
 
 export default function useTransferLog(transferType: TransferType) {
     const logs = useRef<(TransferInitializationLog | TransferLog)[]>([]);

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import isLastWeek from '@proton/utils/isLastWeek';
 
-import { DriveFileRevision } from '../../store';
+import type { DriveFileRevision } from '../../store';
 
 export type RevisionCategory = { title: string; list: DriveFileRevision[] };
 export type CategorizedRevisions = Map<string, RevisionCategory>;

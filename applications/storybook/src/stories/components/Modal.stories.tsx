@@ -1,14 +1,13 @@
 import { useState } from 'react';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps, ModalSize } from '@proton/components';
 import {
     BasicModal,
     Checkbox,
     Form,
     Icon,
     InputFieldTwo,
-    ModalProps,
-    ModalSize,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

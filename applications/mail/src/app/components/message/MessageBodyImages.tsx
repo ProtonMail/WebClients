@@ -1,6 +1,7 @@
-import { RefObject, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { MessageImages } from '../../store/messages/messagesTypes';
+import type { MessageImages } from '../../store/messages/messagesTypes';
 import MessageBodyImage from './MessageBodyImage';
 
 interface Props {

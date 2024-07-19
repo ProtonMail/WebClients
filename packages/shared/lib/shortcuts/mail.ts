@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { altKey, isSafari as checkIsSafari, metaKey, shiftKey } from '../helpers/browser';
-import { KeyboardKeyType } from '../interfaces';
+import type { KeyboardKeyType } from '../interfaces';
 
 export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
     addAttachment: ['Meta', 'Shift', 'A'],

@@ -6,7 +6,7 @@ import {
     getUnlimitedInboxFeatures,
     getVisionaryInboxFeatures,
 } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import bannerImage from './BF-Mail-App-Modal-996x176.png';
 import bannerImage2x from './BF-Mail-App-Modal-1992x352.png';
 import Layout from './Layout';

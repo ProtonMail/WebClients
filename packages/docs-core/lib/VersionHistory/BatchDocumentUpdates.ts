@@ -1,7 +1,7 @@
-import { DecryptedMessage } from '@proton/docs-shared'
-import { VersionHistoryBatch } from './VersionHistoryBatch'
+import type { DecryptedMessage } from '@proton/docs-shared'
+import type { VersionHistoryBatch } from './VersionHistoryBatch'
 import { Result } from '../Domain/Result/Result'
-import { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
+import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
 
 /**
  * BatchDocumentUpdates takes a list of DecryptedMessages and creates batches of them

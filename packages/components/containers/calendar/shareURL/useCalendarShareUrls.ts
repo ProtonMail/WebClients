@@ -9,9 +9,9 @@ import {
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/calendar/helpers';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import {
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type {
     CalendarEventManager,
     CalendarUrlEventManager,
     CalendarUrlEventManagerDelete,

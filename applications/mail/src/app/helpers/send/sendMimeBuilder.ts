@@ -1,14 +1,20 @@
 import mimemessage from '@protontech/mimemessage';
 
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
-import { MessageEmbeddedImage, MessageImages, MessageKeys, MessageState } from '../../store/messages/messagesTypes';
-import { Download, formatDownload } from '../attachment/attachmentDownloader';
+import type {
+    MessageEmbeddedImage,
+    MessageImages,
+    MessageKeys,
+    MessageState,
+} from '../../store/messages/messagesTypes';
+import type { Download } from '../attachment/attachmentDownloader';
+import { formatDownload } from '../attachment/attachmentDownloader';
 import { getPlainText } from '../message/messageContent';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import { prepareExport } from '../message/messageExport';

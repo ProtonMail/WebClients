@@ -1,7 +1,7 @@
 import { Icon } from '@proton/components/components';
 import { SettingsParagraph, SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
 
-import { PlanConfigStorage } from './interface';
+import type { PlanConfigStorage } from './interface';
 
 const ReminderSectionStorage = ({ title, description, warning }: PlanConfigStorage) => {
     return (

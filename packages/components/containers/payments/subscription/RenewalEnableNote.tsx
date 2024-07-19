@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { subscriptionExpires } from './helpers';
-import { CheckoutModifiers } from './useCheckoutModifiers';
+import type { CheckoutModifiers } from './useCheckoutModifiers';
 
 type Props = {
     subscription: SubscriptionModel | undefined;

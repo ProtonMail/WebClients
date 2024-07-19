@@ -1,8 +1,8 @@
-import { MutableRefObject } from 'react';
+import type { MutableRefObject } from 'react';
 
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import { CachedItem, ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
+import type { CachedItem, ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
 
 /**
  * Show or update the search results in the UI

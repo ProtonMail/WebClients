@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { UnleashFlagProvider } from '@proton/components/containers';
 

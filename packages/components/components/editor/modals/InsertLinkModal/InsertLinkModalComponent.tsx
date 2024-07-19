@@ -1,4 +1,5 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,10 +14,11 @@ import Field from '../../../container/Field';
 import Row from '../../../container/Row';
 import { Form } from '../../../form';
 import Label from '../../../label/Label';
-import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
+import type { ModalStateProps } from '../../../modalTwo';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
 import { Option } from '../../../option';
 import { SelectTwo } from '../../../selectTwo';
-import { InsertLinkSelectionType } from './InsertLinkModal';
+import type { InsertLinkSelectionType } from './InsertLinkModal';
 
 export interface InsertLinkModalProps {
     modalStateProps: ModalStateProps;

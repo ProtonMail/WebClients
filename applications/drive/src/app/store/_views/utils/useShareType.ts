@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { ShareType } from '../..';
+import type { ShareType } from '../..';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { useShare } from '../../_shares';
 

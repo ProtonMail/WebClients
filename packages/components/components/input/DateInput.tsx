@@ -1,6 +1,8 @@
-import { ChangeEvent, FocusEvent, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-import { Locale, addDays, format, parse } from 'date-fns';
+import type { Locale } from 'date-fns';
+import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -10,7 +12,8 @@ import { useHotkeys } from '../../hooks';
 import Dropdown from '../dropdown/Dropdown';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
 import { usePopperAnchor } from '../popper';
-import Input, { Props as InputProps } from './Input';
+import type { Props as InputProps } from './Input';
+import Input from './Input';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'PP', { locale });

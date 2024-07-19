@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -78,7 +78,15 @@ const PromotionBanner = ({
                     <>
                         {icon && <div className="shrink-0">{icon}</div>}
                         {description && (
-                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1', mode === 'banner' && !contentCentered && 'text-center md:text-left')}>{description}</div>
+                            <div
+                                className={clsx(
+                                    'bg-promotion-text',
+                                    !contentCentered && 'flex-1',
+                                    mode === 'banner' && !contentCentered && 'text-center md:text-left'
+                                )}
+                            >
+                                {description}
+                            </div>
                         )}
                         {cta && <div className="shrink-0 w-full md:w-auto md:max-w-1/3 text-right">{cta}</div>}
                     </>

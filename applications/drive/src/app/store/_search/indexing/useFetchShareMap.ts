@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { queryShareMap } from '@proton/shared/lib/api/drive/link';
-import { ShareMapPayload } from '@proton/shared/lib/interfaces/drive/link';
+import type { ShareMapPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useDebouncedRequest } from '../../_api';
 

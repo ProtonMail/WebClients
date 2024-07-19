@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import RecipientItem from '../../message/recipients/RecipientItem';
 import RecipientType from '../../message/recipients/RecipientType';
 

@@ -4,9 +4,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import type { ModalProps, OpenCallbackProps } from '@proton/components';
 import {
-    ModalProps,
-    OpenCallbackProps,
     Prompt,
     useConfig,
     useLastSubscriptionEnd,
@@ -60,14 +59,16 @@ import {
 import { getMonths } from '@proton/components/containers/payments/SubscriptionsSection';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { CURRENCIES, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/shared/lib/constants';
+import { CURRENCIES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan, PlansMap, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Currency, Plan, PlansMap, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getCurrency } from './helpers';
-import { Eligibility, PlanCombinationWithDiscount, getEligibility } from './subscriptionEligbility';
+import type { Eligibility, PlanCombinationWithDiscount } from './subscriptionEligbility';
+import { getEligibility } from './subscriptionEligbility';
 
 const getParameters = (
     search: string,

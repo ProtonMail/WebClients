@@ -1,5 +1,6 @@
 import '@mlc-ai/web-llm';
-import { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
+import type { ChatOptions } from '@mlc-ai/web-llm';
+import { WebWorkerEngine } from '@mlc-ai/web-llm';
 
 import {
     CACHING_FAILED,
@@ -8,7 +9,8 @@ import {
     STOP_STRINGS_REFINE,
     STOP_STRINGS_WRITE_FULL_EMAIL,
 } from './constants';
-import { AppCaches, CacheId, getCachedFiles, storeInCache } from './downloader';
+import type { AppCaches, CacheId } from './downloader';
+import { getCachedFiles, storeInCache } from './downloader';
 import {
     convertToDoubleNewlines,
     isAssistantPostMessage,

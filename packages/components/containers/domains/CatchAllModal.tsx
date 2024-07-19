@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
-import { Info, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import type { ModalProps } from '../../components';
+import { Info, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import AddressesTable from './AddressesTable';
 
 interface Props extends ModalProps {

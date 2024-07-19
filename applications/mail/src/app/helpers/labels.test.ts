@@ -1,9 +1,9 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { Conversation } from '../models/conversation';
-import { MessageWithOptionalBody } from '../store/messages/messagesTypes';
+import type { Conversation } from '../models/conversation';
+import type { MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import {
     applyLabelChangesOnConversation,
     applyLabelChangesOnMessage,

@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import useLoading from '@proton/hooks/useLoading';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { DecryptedLink, DecryptedLinkWithShareInfo } from '../_links';
+import type { DecryptedLink, DecryptedLinkWithShareInfo } from '../_links';
 import { useAbortSignal } from '../_views/utils';
 import { useDirectSharingInfo } from './useDirectSharingInfo';
 

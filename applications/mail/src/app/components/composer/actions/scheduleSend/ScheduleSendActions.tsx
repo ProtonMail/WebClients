@@ -1,6 +1,7 @@
 import { forwardRef, useMemo } from 'react';
 
-import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';
+import type { Locale } from 'date-fns';
+import { addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';

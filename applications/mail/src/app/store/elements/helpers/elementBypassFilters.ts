@@ -1,6 +1,6 @@
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 
 export const getElementsToBypassFilter = (elements: Element[], action: MARK_AS_STATUS, unreadFilter?: number) => {
     let elementsToBypass: Element[] = [];

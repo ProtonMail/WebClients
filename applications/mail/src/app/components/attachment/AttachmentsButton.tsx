@@ -1,9 +1,11 @@
-import { ChangeEvent, Ref, forwardRef, useEffect, useRef } from 'react';
+import type { ChangeEvent, Ref } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
+import type { ButtonLikeProps } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

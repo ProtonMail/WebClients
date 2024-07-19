@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import type { ModelState } from '@proton/account';
+import { getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getUnreadBreachesCount } from '@proton/shared/lib/api/breaches';
-import { Api } from '@proton/shared/lib/interfaces';
-import { BreachesCount } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { BreachesCount } from '@proton/shared/lib/interfaces';
 
 const name = 'breachesCount';
 

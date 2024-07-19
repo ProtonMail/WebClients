@@ -3,29 +3,30 @@ import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import { CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
-import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
+import type { Address, Api } from '@proton/shared/lib/interfaces';
+import type { CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
-import { EventOldData } from '../../../interfaces/EventData';
-import {
+import type { EventOldData } from '../../../interfaces/EventData';
+import type {
     AttendeeDeleteSingleEditOperation,
-    INVITE_ACTION_TYPES,
     InviteActions,
     SendIcs,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
-import { GetDecryptedEventCb } from '../eventStore/interface';
+import type { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
-import { SyncEventActionOperations, getDeleteSyncOperation } from '../getSyncMultipleEventsPayload';
-import { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
+import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import { getDeleteSyncOperation } from '../getSyncMultipleEventsPayload';
+import type { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
 import { getUpdatePartstatOperation } from './getChangePartstatActions';
 import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';
 import getRecurringDeleteType from './getRecurringDeleteType';

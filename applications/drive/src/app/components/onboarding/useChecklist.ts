@@ -5,7 +5,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { useApi, useUser } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getDriveChecklist, seenCompletedDriveChecklist } from '@proton/shared/lib/api/checklist';
-import { ChecklistApiResponse } from '@proton/shared/lib/interfaces';
+import type { ChecklistApiResponse } from '@proton/shared/lib/interfaces';
 
 export default function useChecklist() {
     const api = useApi();

@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
-import { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
+import type { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
 

@@ -1,4 +1,5 @@
-import { DependencyList, useEffect, useState } from 'react';
+import type { DependencyList } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useAuthentication } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';

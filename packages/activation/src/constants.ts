@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CreateNotificationOptions } from '@proton/components/containers';
+import type { CreateNotificationOptions } from '@proton/components/containers';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD } from './interface';

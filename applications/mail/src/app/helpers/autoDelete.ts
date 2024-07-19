@@ -1,5 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 const { SPAM, TRASH } = MAILBOX_LABEL_IDS;

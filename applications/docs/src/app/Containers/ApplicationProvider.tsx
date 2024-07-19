@@ -1,5 +1,6 @@
-import { ReactNode, createContext, useContext, memo } from 'react'
-import { Application } from '@proton/docs-core'
+import type { ReactNode } from 'react'
+import { createContext, useContext, memo } from 'react'
+import type { Application } from '@proton/docs-core'
 
 const ApplicationContext = createContext<Application | undefined>(undefined)
 

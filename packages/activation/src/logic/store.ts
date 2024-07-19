@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import type { TypedUseSelectorHook } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
-import { NotificationsManager } from '@proton/components/containers/notifications/manager';
-import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import imapDraft from './draft/imapDraft/imapDraft.slice';
 import oauthDraft from './draft/oauthDraft/oauthDraft.slice';

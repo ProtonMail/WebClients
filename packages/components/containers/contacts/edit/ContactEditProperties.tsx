@@ -1,4 +1,5 @@
-import { Ref, forwardRef, useCallback, useMemo } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,16 +12,17 @@ import {
     getVCardProperties,
 } from '@proton/shared/lib/contacts/properties';
 import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 
-import { Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
-import { ContactImageProps } from '../modals/ContactImageModal';
+import type { IconName } from '../../../components';
+import { Icon, OrderableContainer, OrderableElement } from '../../../components';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import type { ContactImageProps } from '../modals/ContactImageModal';
 import EncryptedIcon from '../view/EncryptedIcon';
 import ContactEditProperty from './ContactEditProperty';
 

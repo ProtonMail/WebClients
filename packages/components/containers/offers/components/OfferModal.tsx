@@ -1,11 +1,12 @@
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { ModalProps, ModalTwo, ModalTwoContent } from '../../../components/modalTwo';
+import type { ModalProps } from '../../../components/modalTwo';
+import { ModalTwo, ModalTwoContent } from '../../../components/modalTwo';
 import useOnSelectDeal from '../hooks/useOnSelectDeal';
 import useVisitedOffer from '../hooks/useVisitedOffer';
-import { Offer, OfferConfig, OfferProps } from '../interface';
+import type { Offer, OfferConfig, OfferProps } from '../interface';
 import OfferCloseButton from './shared/OfferCloseButton';
 
 import '../Offer.scss';

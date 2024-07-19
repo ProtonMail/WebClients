@@ -6,10 +6,13 @@ import { addContacts, updateContact } from '@proton/shared/lib/api/contacts';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { Api } from '@proton/shared/lib/interfaces/Api';
-import { AddContactsApiResponses, UpdateContactApiResponse } from '@proton/shared/lib/interfaces/contacts/ContactApi';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type {
+    AddContactsApiResponses,
+    UpdateContactApiResponse,
+} from '@proton/shared/lib/interfaces/contacts/ContactApi';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { useApi, useGetUserKeys, useNotifications } from '../../../hooks';
 

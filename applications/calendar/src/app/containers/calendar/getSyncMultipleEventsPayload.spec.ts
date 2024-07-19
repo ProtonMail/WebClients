@@ -1,10 +1,8 @@
 import { parse } from '@proton/shared/lib/calendar/vcal';
-import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
-import getSyncMultipleEventsPayload, {
-    SyncMultipleEventsArguments,
-    SyncOperationTypes,
-} from './getSyncMultipleEventsPayload';
+import type { SyncMultipleEventsArguments } from './getSyncMultipleEventsPayload';
+import getSyncMultipleEventsPayload, { SyncOperationTypes } from './getSyncMultipleEventsPayload';
 
 jest.mock('@proton/shared/lib/calendar/serialize', () => ({
     createCalendarEvent: jest.fn(() => ({})),

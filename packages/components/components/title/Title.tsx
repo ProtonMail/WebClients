@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 const Title = ({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) => <h1 {...rest}>{children}</h1>;
 

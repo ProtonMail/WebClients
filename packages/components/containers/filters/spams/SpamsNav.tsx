@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { SpamNavItem } from './Spams.interfaces';
+import type { SpamNavItem } from './Spams.interfaces';
 
 interface Props {
     onChange: (type: SpamNavItem) => void;

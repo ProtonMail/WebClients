@@ -1,4 +1,4 @@
-import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 
 type DocsApiError = {
   code: DocsApiErrorCode

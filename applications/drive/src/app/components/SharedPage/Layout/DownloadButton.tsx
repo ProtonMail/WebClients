@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ThemeColorUnion } from '@proton/colors/types';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
-import { DecryptedLink, useDownload, useDownloadScanFlag } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDownload, useDownloadScanFlag } from '../../../store';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
-import { PublicLink } from '../interface';
+import type { PublicLink } from '../interface';
 import { useDownloadNotifications } from './useDownloadNotifications';
 
 export interface DownloadButtonProps {

@@ -1,15 +1,11 @@
-import { Location } from 'history';
+import type { Location } from 'history';
 
 import { CryptoProxy } from '@proton/crypto';
+import type { CachedItem, ESEvent, ESItemEvent, EncryptedItemWithInfo, EventsObject } from '@proton/encrypted-search';
 import {
-    CachedItem,
-    ESEvent,
-    ESItemEvent,
     ES_MAX_CONCURRENT,
     ES_MAX_ITEMS_PER_BATCH,
     ES_SYNC_ACTIONS,
-    EncryptedItemWithInfo,
-    EventsObject,
     apiHelper,
     decryptFromDB,
     normalizeKeyword,
@@ -23,22 +19,25 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
-import {
+import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import type {
     CalendarEvent,
     CalendarEventWithoutBlob,
     CalendarEventsIDsQuery,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
 } from '@proton/shared/lib/interfaces/calendar';
-import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type {
+    CalendarEventManager,
+    CalendarEventsEventManager,
+} from '@proton/shared/lib/interfaces/calendar/EventManager';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import unique from '@proton/utils/unique';
 
 import { propertiesToAttendeeModel } from '../../components/eventModal/eventForm/propertiesToAttendeeModel';
 import { propertiesToOrganizerModel } from '../../components/eventModal/eventForm/propertiesToOrganizerModel';
-import { CalendarSearchQuery } from '../../containers/calendar/interface';
-import {
+import type { CalendarSearchQuery } from '../../containers/calendar/interface';
+import type {
     ESAttendeeModel,
     ESCalendarContent,
     ESCalendarMetadata,

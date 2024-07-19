@@ -1,4 +1,5 @@
-import { ChangeEvent, useMemo } from 'react';
+import type { ChangeEvent } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 

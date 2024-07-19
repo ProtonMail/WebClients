@@ -1,7 +1,7 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../constants';
-import { Options } from './dateFnLocale';
+import type { Options } from './dateFnLocale';
 import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import {
     browserDateLocale,

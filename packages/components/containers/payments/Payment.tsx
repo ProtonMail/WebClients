@@ -1,32 +1,33 @@
-import { ReactNode, Ref, useEffect } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
+import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
-import {
-    PAYMENT_METHOD_TYPES,
+import type {
     PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodType,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
-    canUseChargebee,
 } from '@proton/components/payments/core';
-import { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
-import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
-import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
-import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+import { PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/components/payments/core';
+import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
+import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled, Currency, User, isBilledUser } from '@proton/shared/lib/interfaces';
+import type { ChargebeeEnabled, Currency, User } from '@proton/shared/lib/interfaces';
+import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
 import { useConfig } from '../../hooks';
-import { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
+import type { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
 import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
-import { CardModel } from '../../payments/core';
+import type { CardModel } from '../../payments/core';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import Alert3DS from './Alert3ds';

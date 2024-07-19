@@ -1,10 +1,10 @@
 import { APPS } from '@proton/shared/lib/constants';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
-import { CalendarEventsCache } from '../interface';
+import type { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import type { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEventUnencryptedPart from './getComponentFromCalendarEventUnencryptedPart';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';

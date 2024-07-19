@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { useUserSettings } from '@proton/components/hooks';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';

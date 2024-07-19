@@ -4,9 +4,10 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
-import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
-import { Alert, ModalProps, Prompt } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Alert, Prompt } from '../../../components';
 import { useApi, useContactGroups, useEventManager, useNotifications } from '../../../hooks';
 import { getDeleteText } from '../../general/helper';
 

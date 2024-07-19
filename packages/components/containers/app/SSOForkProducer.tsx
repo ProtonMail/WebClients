@@ -1,22 +1,23 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
-import { OnLoginCallbackResult } from '@proton/components/containers';
-import { AuthSession } from '@proton/components/containers/login/interface';
+import type { OnLoginCallbackResult } from '@proton/components/containers';
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { OAuthClientInfo, getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
+import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
+import { getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import type { OAuthProduceForkParameters, ProduceForkParametersFull } from '@proton/shared/lib/authentication/fork';
 import {
-    OAuthProduceForkParameters,
-    ProduceForkParametersFull,
     getEmailSessionForkSearchParameter,
     getProduceForkParameters,
     getRequiredForkParameters,
     getShouldReAuth,
 } from '@proton/shared/lib/authentication/fork';
+import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     GetActiveSessionType,
-    GetActiveSessionsResult,
     getActiveLocalSession,
     getActiveSessions,
     resumeSession,

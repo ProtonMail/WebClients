@@ -1,8 +1,9 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 
-import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
-import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
 import { convertAmount, getDecimalStepByUnit } from '../utils';

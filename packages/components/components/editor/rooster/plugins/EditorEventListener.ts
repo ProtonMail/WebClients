@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
-import { EditorPlugin, IEditor, PluginEvent } from 'roosterjs-editor-types';
+import type { EditorPlugin, IEditor, PluginEvent } from 'roosterjs-editor-types';
 
-import { OnEditorEventListened } from '../../interface';
+import type { OnEditorEventListened } from '../../interface';
 
 /**
  * This pluggin is here to dispatch editorEvents

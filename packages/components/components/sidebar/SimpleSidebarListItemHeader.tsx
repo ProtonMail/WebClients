@@ -1,9 +1,11 @@
-import { ReactNode, Ref, useRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { useRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { HotkeyTuple, useHotkeys } from '../../hooks';
+import type { HotkeyTuple } from '../../hooks';
+import { useHotkeys } from '../../hooks';
 import Icon from '../icon/Icon';
 import SidebarListItem from './SidebarListItem';
 

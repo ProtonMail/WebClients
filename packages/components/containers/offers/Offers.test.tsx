@@ -1,12 +1,13 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { FeatureCode, TopNavbarUpsell } from '@proton/components';
+import type { FeatureCode } from '@proton/components';
+import { TopNavbarUpsell } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { renderWithProviders } from '../contacts/tests/render';
 import { OffersTestProvider } from './Offers.test.helpers';
-import { OfferConfig } from './interface';
+import type { OfferConfig } from './interface';
 
 const OFFER_CONTENT = 'deal deal deal deal deal';
 

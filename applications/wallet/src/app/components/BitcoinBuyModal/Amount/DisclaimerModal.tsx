@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmGatewayProvider } from '@proton/andromeda';
+import type { WasmGatewayProvider } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
-import { Checkbox, ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Checkbox } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Button, Modal } from '../../../atoms';

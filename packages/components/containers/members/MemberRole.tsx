@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces';
 
 const MemberRole = ({ member }: { member: Member }) => {
     if (member.Subscriber) {

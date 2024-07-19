@@ -1,4 +1,4 @@
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { Icon, OrderableTableRow } from '../../components';
 import ActionsLabel from './ActionsLabel';

@@ -1,7 +1,7 @@
-import { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
+import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import range from '@proton/utils/range';
 
-import { ElementsStateParams } from '../elementsTypes';
+import type { ElementsStateParams } from '../elementsTypes';
 import { queryElementsInBatch } from './elementQuery';
 
 const buildFiftyItems = (start: number = 0, count = 50) => {

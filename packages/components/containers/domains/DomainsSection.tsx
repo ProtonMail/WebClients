@@ -1,4 +1,5 @@
-import { MutableRefObject, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -15,7 +16,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
-import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 

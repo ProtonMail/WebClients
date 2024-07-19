@@ -1,11 +1,12 @@
 import { sha1 } from '@noble/hashes/sha1';
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
 import { queryPhotosDuplicates } from '@proton/shared/lib/api/drive/photos';
-import { HashCheckResult, LinkState } from '@proton/shared/lib/interfaces/drive/link';
-import { DuplicatePhotosHash } from '@proton/shared/lib/interfaces/drive/photos';
+import type { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
+import { LinkState } from '@proton/shared/lib/interfaces/drive/link';
+import type { DuplicatePhotosHash } from '@proton/shared/lib/interfaces/drive/photos';
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import range from '@proton/utils/range';
 

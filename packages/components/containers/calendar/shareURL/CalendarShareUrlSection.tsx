@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, MouseEvent, useEffect, useState } from 'react';
+import type { ComponentPropsWithoutRef, MouseEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -13,10 +14,10 @@ import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { Nullable } from '@proton/shared/lib/interfaces/utils';
+import type { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
+import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import type { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
 import { Alert, Loader } from '../../../components';

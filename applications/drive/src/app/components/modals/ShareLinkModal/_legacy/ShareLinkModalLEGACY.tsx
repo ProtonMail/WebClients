@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useConfirmActionModal } from '@proton/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, useConfirmActionModal } from '@proton/components';
 
 import { useLegacyShareURLView } from '../../../../store';
 import ModalContentLoader from '../../ModalContentLoader';

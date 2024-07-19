@@ -1,4 +1,4 @@
-import { MatchChunk } from '@proton/shared/lib/helpers/regex';
+import type { MatchChunk } from '@proton/shared/lib/helpers/regex';
 
 interface Chunk {
     start: number;

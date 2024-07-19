@@ -1,15 +1,16 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, IconName, Meter, StripedItem, StripedList } from '../../../../components';
+import type { IconName } from '../../../../components';
+import { Icon, Meter, StripedItem, StripedList } from '../../../../components';
 import Panel from './Panel';
 
 interface Item {

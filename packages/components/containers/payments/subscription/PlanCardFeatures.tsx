@@ -1,4 +1,5 @@
-import { ReactNode, cloneElement, isValidElement } from 'react';
+import type { ReactNode } from 'react';
+import { cloneElement, isValidElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,9 +7,11 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarLogo, DriveLogo, Icon, IconSize, Info, MailLogo, PassLogo, VpnLogo } from '../../../components';
-import { AllFeatures, getFeatureDefinitions } from '../features';
-import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
+import type { IconSize } from '../../../components';
+import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, PassLogo, VpnLogo } from '../../../components';
+import type { AllFeatures } from '../features';
+import { getFeatureDefinitions } from '../features';
+import type { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
 interface FeatureListProps {
     features: PlanCardFeatureDefinition[];

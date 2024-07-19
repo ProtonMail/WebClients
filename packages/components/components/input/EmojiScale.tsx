@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
+import type { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,8 @@ import emojiWonderful from '@proton/styles/assets/img/emojis/emoji-wonderful.svg
 import clsx from '@proton/utils/clsx';
 
 import { Tooltip } from '../tooltip';
-import InputButton, { InputButtonProps } from './InputButton';
+import type { InputButtonProps } from './InputButton';
+import InputButton from './InputButton';
 import ScaleLabel from './ScaleLabel';
 
 import './EmojiScale.scss';

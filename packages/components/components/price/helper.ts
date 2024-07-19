@@ -1,5 +1,5 @@
 import humanPrice from '@proton/shared/lib/helpers/humanPrice';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 export const getSimplePriceString = (currency: Currency, rawPrice: number, suffix: string) => {
     const price = humanPrice(rawPrice, 100);

@@ -1,6 +1,6 @@
 import { ES_MAX_CACHE, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch, readMetadataBatch, readSortedIDs } from '../esIDB';
-import { CachedItem, ESCache, ESTimepoint, GetItemInfo } from '../models';
+import type { CachedItem, ESCache, ESTimepoint, GetItemInfo } from '../models';
 import { decryptFromDB } from './esSearch';
 import { isTimepointSmaller } from './esUtils';
 

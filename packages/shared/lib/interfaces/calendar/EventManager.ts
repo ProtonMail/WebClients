@@ -1,5 +1,5 @@
-import { EVENT_ACTIONS } from '../../constants';
-import {
+import type { EVENT_ACTIONS } from '../../constants';
+import type {
     Calendar,
     CalendarAlarm,
     CalendarEventWithoutBlob,

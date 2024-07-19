@@ -1,4 +1,4 @@
-import { CreateDeviceVolume } from '../../interfaces/drive/device';
+import type { CreateDeviceVolume } from '../../interfaces/drive/device';
 
 export const queryDevices = () => ({
     method: 'get',

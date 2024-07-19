@@ -1,31 +1,30 @@
-import {
+import type {
   AnyCommentMessageData,
-  CommentsMessageType,
   CommentServiceInterface,
   CommentThreadInterface,
   CommentInterface,
   InternalEventHandlerInterface,
   InternalEventInterface,
   InternalEventBusInterface,
-  CommentsEvent,
   CommentMarkNodeChangeData,
-  BroadcastSource,
 } from '@proton/docs-shared'
-import { EncryptComment } from '../../UseCase/EncryptComment'
-import { LoggerInterface } from '@proton/utils/logs'
+import { CommentsMessageType, CommentsEvent, BroadcastSource } from '@proton/docs-shared'
+import type { EncryptComment } from '../../UseCase/EncryptComment'
+import type { LoggerInterface } from '@proton/utils/logs'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
-import { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { LocalCommentsState } from './LocalCommentsState'
-import { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
-import { CreateThread } from '../../UseCase/CreateThread'
-import { CreateComment } from '../../UseCase/CreateComment'
-import { LoadThreads } from '../../UseCase/LoadThreads'
+import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
+import type { CreateThread } from '../../UseCase/CreateThread'
+import type { CreateComment } from '../../UseCase/CreateComment'
+import type { LoadThreads } from '../../UseCase/LoadThreads'
 import { LiveComments } from '../../Realtime/LiveComments/LiveComments'
-import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
-import { DocControllerEvent, DocControllerEventPayloads } from '../../Controller/Document/DocControllerEvent'
+import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
+import type { DocControllerEventPayloads } from '../../Controller/Document/DocControllerEvent'
+import { DocControllerEvent } from '../../Controller/Document/DocControllerEvent'
 import metrics from '@proton/metrics'
 import { EventTypeEnum } from '@proton/docs-proto'
-import { DocsApi } from '../../Api/DocsApi'
+import type { DocsApi } from '../../Api/DocsApi'
 
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState

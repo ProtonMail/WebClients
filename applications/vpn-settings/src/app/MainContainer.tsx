@@ -1,4 +1,5 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
@@ -73,10 +74,10 @@ import TwoFactorSection from '@proton/components/containers/account/TwoFactorSec
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import { BugModalMode } from '@proton/components/containers/support/BugModal';
+import type { BugModalMode } from '@proton/components/containers/support/BugModal';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
+import type { ZendeskRef } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import LiveChatZendesk, {
-    ZendeskRef,
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';

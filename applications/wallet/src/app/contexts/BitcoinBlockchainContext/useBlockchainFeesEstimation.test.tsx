@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';

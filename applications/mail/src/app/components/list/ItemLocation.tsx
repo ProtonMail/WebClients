@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getCurrentFolders, getStandardFolders } from '../../helpers/labels';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import ItemIcon from './ItemIcon';
 
 const { ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;

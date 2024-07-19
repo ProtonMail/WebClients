@@ -1,16 +1,10 @@
-import { MutableRefObject, ReactNode, useEffect, useState } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownProps,
-    DropdownSizeUnit,
-    Tooltip,
-    generateUID,
-    usePopperAnchor,
-} from '@proton/components';
-import { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
+import type { DropdownProps } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownSizeUnit, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
+import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 
 export interface DropdownRenderProps {
     onClose: () => void;

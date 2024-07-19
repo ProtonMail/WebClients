@@ -1,14 +1,14 @@
-import { fireEvent, getByTitle, act } from '@testing-library/react';
+import { act, fireEvent, getByTitle } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Address, Key } from '@proton/shared/lib/interfaces';
+import type { Address, Key } from '@proton/shared/lib/interfaces';
 
 import { arrayToBase64 } from '../../../helpers/base64';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
-    GeneratedKey,
     addApiKeys,
     addApiMock,
     addApiResolver,
@@ -60,11 +60,11 @@ describe('Composer attachments', () => {
         const { resolve } = addApiResolver('mail/v4/attachments');
 
         updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }: any) => {
-            Message.Attachments = Message.Attachments.map((Attachment: any) => (
-                AttachmentKeyPackets?.[Attachment.ID] ?
-                    { ...Attachment, KeyPackets: AttachmentKeyPackets[Attachment.ID] }
+            Message.Attachments = Message.Attachments.map((Attachment: any) =>
+                AttachmentKeyPackets?.[Attachment.ID]
+                    ? { ...Attachment, KeyPackets: AttachmentKeyPackets[Attachment.ID] }
                     : Attachment
-            ));
+            );
             return Promise.resolve({ Message });
         });
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
@@ -105,11 +105,10 @@ describe('Composer attachments', () => {
     };
 
     const waitForAutoSave = async () => {
-
         act(() => {
-            jest.useFakeTimers()
+            jest.useFakeTimers();
             jest.advanceTimersByTime(3000);
-            jest.useRealTimers()
+            jest.useRealTimers();
         });
         await waitForSpyCall({ spy: updateSpy });
     };
@@ -158,7 +157,9 @@ describe('Composer attachments', () => {
     });
 
     it('should show embedded modal when html mode', async () => {
-        const { queryAllByText, getByTestId, findByText, resolve, container, attachment } = await setup(MIME_TYPES.DEFAULT);
+        const { queryAllByText, getByTestId, findByText, resolve, container, attachment } = await setup(
+            MIME_TYPES.DEFAULT
+        );
 
         const embeddedModalMatch = queryAllByText('Insert image');
         expect(embeddedModalMatch.length).toBeGreaterThanOrEqual(1);
@@ -204,7 +205,8 @@ describe('Composer attachments', () => {
     });
 
     it('should re-encrypt attachment key packets on sender address change and send', async () => {
-        const { message, resolve, attachment, generatedSessionKey, updateSpy, sendSpy, ...renderResult } = await setup();
+        const { message, resolve, attachment, generatedSessionKey, updateSpy, sendSpy, ...renderResult } =
+            await setup();
 
         await switchAddress(renderResult.getByTestId);
 

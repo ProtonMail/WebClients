@@ -1,4 +1,5 @@
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 

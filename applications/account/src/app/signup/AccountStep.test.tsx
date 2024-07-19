@@ -5,7 +5,8 @@ import { render } from '@testing-library/react';
 import { CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { applyHOCs, withConfig } from '@proton/testing/index';
 
-import AccountStep, { AccountStepProps } from './AccountStep';
+import type { AccountStepProps } from './AccountStep';
+import AccountStep from './AccountStep';
 import { SignupType } from './interfaces';
 
 const AccountStepWrapper = (props: AccountStepProps) => {

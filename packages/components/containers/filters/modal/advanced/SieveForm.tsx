@@ -3,7 +3,7 @@ import { Suspense, lazy, useMemo } from 'react';
 import { Loader } from '@proton/components/components';
 import { useTheme } from '@proton/components/containers';
 
-import { AdvancedSimpleFilterModalModel } from '../../interfaces';
+import type { AdvancedSimpleFilterModalModel } from '../../interfaces';
 
 const LazySieveEditor = lazy(() => import(/* webpackChunkName: "SieveEditor" */ './SieveEditor'));
 

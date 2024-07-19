@@ -1,15 +1,5 @@
-import {
-    Dispatch,
-    MutableRefObject,
-    RefObject,
-    SetStateAction,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Prompt } from 'react-router';
 
 import { c } from 'ttag';
@@ -54,12 +44,12 @@ import {
     getIsCalendarWritable,
     getIsOwnedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
+import type { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import {
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
-    RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
     VIEWS,
 } from '@proton/shared/lib/calendar/constants';
@@ -72,7 +62,7 @@ import { buildVcalOrganizer, propertyToUTCDate } from '@proton/shared/lib/calend
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -80,9 +70,9 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Address } from '@proton/shared/lib/interfaces';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import {
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import type {
     AttendeeDeleteSingleEditResponse,
     AttendeeModel,
     CalendarBootstrap,
@@ -95,18 +85,18 @@ import {
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
-import Popover, { PopoverRenderData } from '../../components/calendar/Popover';
+import type { PopoverRenderData } from '../../components/calendar/Popover';
+import Popover from '../../components/calendar/Popover';
 import { ACTIONS, ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, TYPE } from '../../components/calendar/interactions/constants';
+import type { MouseDownAction, MouseUpAction } from '../../components/calendar/interactions/interface';
 import {
-    MouseDownAction,
-    MouseUpAction,
     isCreateDownAction,
     isEventDownAction,
     isMoreDownAction,
@@ -131,10 +121,10 @@ import { extractInviteEmails } from '../../helpers/invite';
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../helpers/sendPreferences';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useBusySlots from '../../hooks/useBusySlots';
-import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
-import {
+import type {
     AttendeeDeleteSingleEditOperation,
     InviteActions,
     OnSendPrefsErrors,
@@ -165,11 +155,12 @@ import {
     upsertSyncMultiActionsResponses,
     upsertUpdateEventPartResponses,
 } from './eventStore/cache/upsertResponsesArray';
-import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
+import type { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import getAttendeeDeleteSingleEditPayload from './getAttendeeDeleteSingleEditPayload';
-import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
+import type { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
+import getSyncMultipleEventsPayload from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
-import {
+import type {
     AugmentedSendPreferences,
     CalendarViewEvent,
     CalendarViewEventData,

@@ -1,4 +1,4 @@
-import { KeyMode } from './KeyPair';
+import type { KeyMode } from './KeyPair';
 
 export type CertificateMode = 'session' | 'persistent';
 

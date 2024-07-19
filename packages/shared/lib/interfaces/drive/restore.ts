@@ -1,4 +1,4 @@
-import { RESPONSE_CODE } from '../../drive/constants';
+import type { RESPONSE_CODE } from '../../drive/constants';
 
 export interface RestoreFromTrashResult {
     Responses: {

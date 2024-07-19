@@ -4,7 +4,7 @@ import { getPromiseValue } from '@proton/components/hooks/useCachedModelResult';
 import { fetchLatestEpoch } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
-import { GetLatestEpoch } from '@proton/shared/lib/interfaces';
+import type { GetLatestEpoch } from '@proton/shared/lib/interfaces';
 
 import { useApi, useCache } from '../../hooks';
 

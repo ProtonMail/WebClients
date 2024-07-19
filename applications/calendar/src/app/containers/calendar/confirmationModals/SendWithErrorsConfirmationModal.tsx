@@ -2,12 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BasicModal } from '@proton/components';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { getCleanSendDataFromSendPref, getSendPrefErrorMap } from '../../../helpers/sendPreferences';
-import { CleanSendIcsActionData, INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
-import { AugmentedSendPreferences } from '../interface';
+import type { CleanSendIcsActionData, InviteActions } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { AugmentedSendPreferences } from '../interface';
 
 const { CHANGE_PARTSTAT, DECLINE_INVITATION, NONE } = INVITE_ACTION_TYPES;
 

@@ -1,11 +1,13 @@
-import { MutableRefObject, RefObject, useRef } from 'react';
+import type { MutableRefObject, RefObject } from 'react';
+import { useRef } from 'react';
 
-import { EditorActions, HotkeyTuple, useHotkeys } from '@proton/components';
+import type { EditorActions, HotkeyTuple } from '@proton/components';
+import { useHotkeys } from '@proton/components';
 import { isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
 import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import noop from '@proton/utils/noop';
 
-import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { EditorTypes } from './useComposerContent';
 
 interface ComposerHotkeysHandlers {

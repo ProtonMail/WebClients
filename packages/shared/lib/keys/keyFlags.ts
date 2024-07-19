@@ -1,4 +1,4 @@
-import { Address, ProcessedApiKey } from '@proton/shared/lib/interfaces';
+import type { Address, ProcessedApiKey } from '@proton/shared/lib/interfaces';
 
 import { ADDRESS_FLAGS, ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit, hasBit, setBit } from '../helpers/bitset';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
-import { Referral } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

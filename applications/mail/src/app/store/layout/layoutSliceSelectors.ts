@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { MailState } from '../store';
+import type { MailState } from '../store';
 
 const layout = (state: MailState) => state.layout;
 

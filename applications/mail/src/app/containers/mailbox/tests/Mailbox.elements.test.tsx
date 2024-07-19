@@ -5,8 +5,8 @@ import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { addApiMock, api, clearAll, tick, waitForSpyCall } from '../../../helpers/test/helper';
-import { Element } from '../../../models/element';
-import { Sort } from '../../../models/tools';
+import type { Element } from '../../../models/element';
+import type { Sort } from '../../../models/tools';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);

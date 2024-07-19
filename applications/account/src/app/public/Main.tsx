@@ -1,4 +1,4 @@
-import { HTMLProps } from 'react';
+import type { HTMLProps } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

@@ -1,10 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { PlansMap, Renew, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { Renew } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
-import { Model } from './SubscriptionContainer';
+import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
 

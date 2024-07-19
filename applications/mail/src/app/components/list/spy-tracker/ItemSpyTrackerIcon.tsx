@@ -8,7 +8,7 @@ import { MONTH } from '@proton/shared/lib/constants';
 import { isPlainText, isSent } from '@proton/shared/lib/mail/messages';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import LoadContentSpotlight from '../../message/LoadContentSpotlight';
 import PrivacyDropdown from './PrivacyDropdown';
 

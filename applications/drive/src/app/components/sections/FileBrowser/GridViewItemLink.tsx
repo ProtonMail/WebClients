@@ -1,10 +1,10 @@
 import { FileIcon } from '@proton/components';
 
 import SignatureIcon from '../../SignatureIcon';
-import { DriveItem } from '../Drive/Drive';
-import { SharedLinkItem } from '../SharedLinks/SharedLinks';
-import { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
-import { TrashItem } from '../Trash/Trash';
+import type { DriveItem } from '../Drive/Drive';
+import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
+import type { TrashItem } from '../Trash/Trash';
 import GridViewItemBase from './GridViewItem';
 import { getLinkIconText } from './utils';
 

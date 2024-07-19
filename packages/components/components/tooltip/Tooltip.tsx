@@ -1,14 +1,5 @@
-import {
-    Children,
-    HTMLProps,
-    ReactElement,
-    ReactNode,
-    Ref,
-    cloneElement,
-    forwardRef,
-    useCallback,
-    useState,
-} from 'react';
+import type { HTMLProps, ReactElement, ReactNode, Ref } from 'react';
+import { Children, cloneElement, forwardRef, useCallback, useState } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 import useInstance from '@proton/hooks/useInstance';
@@ -17,7 +8,8 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { generateUID } from '../../helpers';
-import { Popper, PopperPlacement, usePopper } from '../popper';
+import type { PopperPlacement } from '../popper';
+import { Popper, usePopper } from '../popper';
 import useTooltipHandlers from './useTooltipHandlers';
 
 import './Tooltip.scss';

@@ -1,5 +1,5 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
 import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
 
@@ -8,7 +8,7 @@ import { markEmbeddedImagesAsLoaded } from '../../../helpers/message/messageEmbe
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
 import { getMessage } from '../helpers/messagesReducer';
-import {
+import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
     LoadFakeRemoteParams,

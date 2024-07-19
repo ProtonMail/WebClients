@@ -1,14 +1,14 @@
 import { addDays, fromUnixTime } from 'date-fns';
 
-import { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
+import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
 import { getClosestProtonColor } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
-import { RequireOnly } from '../../../lib/interfaces';
+import type { RequireOnly } from '../../../lib/interfaces';
 import { DAY } from '../../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
-import {
+import type {
     IcalJSDateOrDateTimeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateTimeValue,

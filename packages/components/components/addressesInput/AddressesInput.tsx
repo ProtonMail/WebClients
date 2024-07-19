@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, HTMLProps, MouseEvent, ReactElement, ReactNode, forwardRef } from 'react';
+import type { ComponentPropsWithoutRef, HTMLProps, MouseEvent, ReactElement, ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 

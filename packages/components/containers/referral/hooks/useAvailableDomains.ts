@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../../hooks';
 

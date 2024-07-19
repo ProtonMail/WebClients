@@ -1,4 +1,5 @@
-import { MutableRefObject, ReactNode, useEffect, useState } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -8,7 +9,7 @@ import { Card } from '@proton/atoms/Card';
 import { Href } from '@proton/atoms/Href';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Member } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces';
 import {
     OrganizationKeyMode,
     OrganizationKeyState,

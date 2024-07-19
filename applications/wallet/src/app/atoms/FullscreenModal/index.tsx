@@ -1,6 +1,7 @@
-import { PropsWithChildren, ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
-import ModalTwo, { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import clsx from '@proton/utils/clsx';
 

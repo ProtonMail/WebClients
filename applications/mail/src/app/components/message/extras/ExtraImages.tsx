@@ -4,11 +4,11 @@ import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemoteImageBanner';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
-import { MessageImages } from '../../../store/messages/messagesTypes';
+import type { MessageImages } from '../../../store/messages/messagesTypes';
 
 interface Props {
     messageImages?: MessageImages;

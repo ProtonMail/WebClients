@@ -3,18 +3,12 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Form,
-    ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components/components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 
 import { GatewayCountrySelection } from './GatewayCountrySelection';
-import { GatewayDto } from './GatewayDto';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayDto } from './GatewayDto';
+import type { GatewayUser } from './GatewayUser';
 import { getInitialModel } from './helpers';
 import { useAddedQuantities } from './useAddedQuantities';
 import { useSpecificCountryCount } from './useSpecificCountryCount';

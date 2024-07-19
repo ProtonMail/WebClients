@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { ProtonBadgeType } from '@proton/components/components';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getElementSenders } from '../../helpers/recipients';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 interface Props {
     element: Element;

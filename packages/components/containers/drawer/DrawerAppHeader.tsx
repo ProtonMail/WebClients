@@ -1,4 +1,5 @@
-import { ReactNode, useCallback, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 

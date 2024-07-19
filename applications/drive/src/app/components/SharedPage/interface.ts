@@ -1,4 +1,4 @@
-import { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store';
 
 export interface PublicLink extends DecryptedLink {
     id: string;

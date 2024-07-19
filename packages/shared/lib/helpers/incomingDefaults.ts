@@ -1,5 +1,5 @@
 import { INCOMING_DEFAULTS_LOCATION } from '../constants';
-import { IncomingDefault } from '../interfaces';
+import type { IncomingDefault } from '../interfaces';
 
 /**
  * Check if an email address is inside email in incomingDefaults

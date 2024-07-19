@@ -2,9 +2,10 @@ import { useCallback, useState } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
 
-import { ToolbarConfig, getToolbarConfig } from '../helpers/getToolbarConfig';
-import { EditorMetadata, SetEditorToolbarConfig } from '../interface';
-import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './interface';
+import type { ToolbarConfig } from '../helpers/getToolbarConfig';
+import { getToolbarConfig } from '../helpers/getToolbarConfig';
+import type { EditorMetadata, SetEditorToolbarConfig } from '../interface';
+import type { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './interface';
 
 interface Props {
     showModalLink: (options: ModalLinkProps) => void;

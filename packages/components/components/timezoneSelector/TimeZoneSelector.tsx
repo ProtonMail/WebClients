@@ -3,22 +3,18 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import {
-    AbbreviatedTimezone,
-    getAbbreviatedTimezoneName,
-    getTimeZoneOptions,
-    getTimezoneAndOffset,
-} from '@proton/shared/lib/date/timezone';
+import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
+import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
 import { DropdownSizeUnit } from '../dropdown';
-import { Unit } from '../dropdown/utils';
+import type { Unit } from '../dropdown/utils';
 import { Option } from '../option';
 import { SearchableSelect } from '../selectTwo';
-import { Props as SearchableSelectProps } from '../selectTwo/SearchableSelect';
-import { Props as SelectProps } from '../selectTwo/SelectTwo';
+import type { Props as SearchableSelectProps } from '../selectTwo/SearchableSelect';
+import type { Props as SelectProps } from '../selectTwo/SelectTwo';
 import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {

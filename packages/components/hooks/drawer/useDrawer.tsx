@@ -1,14 +1,5 @@
-import {
-    Dispatch,
-    ReactNode,
-    SetStateAction,
-    createContext,
-    useCallback,
-    useContext,
-    useEffect,
-    useRef,
-    useState,
-} from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import {
     useApi,
@@ -22,9 +13,11 @@ import { serverTime } from '@proton/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_EVENTS, DrawerApp, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
+import type { DrawerApp, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';

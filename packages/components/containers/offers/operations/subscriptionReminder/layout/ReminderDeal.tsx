@@ -1,4 +1,4 @@
-import { IconName } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
 
 export interface DealItem {
     icon: IconName;

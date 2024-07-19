@@ -6,7 +6,7 @@ import { MAILBOX_LABEL_IDS, MIME_TYPES } from '../constants';
 import { clearBit, hasBit, hasBitBigInt, setBit, toggleBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail, getEmailParts } from '../helpers/email';
 import { isICS } from '../helpers/mimetype';
-import { AttachmentInfo, Message } from '../interfaces/mail/Message';
+import type { AttachmentInfo, Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
 
 const { PLAINTEXT, MIME } = MIME_TYPES;

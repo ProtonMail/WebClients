@@ -6,7 +6,7 @@ import ICAL from 'ical.js';
 import { parseWithRecovery } from '@proton/shared/lib/calendar/icsSurgery/ics';
 
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
-import {
+import type {
     VcalCalendarComponent,
     VcalCalendarComponentWithMaybeErrors,
     VcalDateOrDateTimeValue,

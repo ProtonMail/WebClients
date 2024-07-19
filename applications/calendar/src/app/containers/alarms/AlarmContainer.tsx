@@ -1,10 +1,10 @@
-import { MutableRefObject } from 'react';
+import type { MutableRefObject } from 'react';
 
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { CalendarsEventsCache } from '../calendar/eventStore/interface';
+import type { CalendarsEventsCache } from '../calendar/eventStore/interface';
 import AlarmWatcher from './AlarmWatcher';
-import { CalendarsAlarmsCache } from './CacheInterface';
+import type { CalendarsAlarmsCache } from './CacheInterface';
 import useCalendarsAlarms from './useCalendarsAlarms';
 
 interface Props {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { ThemeColor } from '@proton/colors/types';
 import { Icon } from '@proton/components/components';
-import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Icon, SettingsLink } from '@proton/components/components';
 import { useLocalState, useSubscription } from '@proton/components/hooks';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     DRIVE_SHORT_APP_NAME,
     DRIVE_UPSELL_PATHS,
     MAIL_SHORT_APP_NAME,
@@ -13,7 +13,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import {
     SpaceState,
     getAppStorage,

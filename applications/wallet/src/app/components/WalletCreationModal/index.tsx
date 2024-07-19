@@ -1,8 +1,10 @@
-import { ChangeEvent, useEffect } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { WasmMnemonic, WasmWordCount } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -10,7 +12,6 @@ import {
     CollapsibleHeaderIconButton,
     DropdownSizeUnit,
     Icon,
-    ModalOwnProps,
     PasswordInputTwo,
     useModalState,
 } from '@proton/components/components';
@@ -20,7 +21,7 @@ import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
-import { SubTheme } from '../../utils';
+import type { SubTheme } from '../../utils';
 import { WalletImportModal } from '../WalletImportModal';
 import { WalletInformationalModal } from '../WalletInformationalModal';
 

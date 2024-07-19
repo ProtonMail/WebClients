@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,16 +9,18 @@ import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import {
+import type {
     Address,
     Api,
-    DKIM_STATE,
-    DMARC_STATE,
-    DOMAIN_STATE,
     DecryptedKey,
     Domain,
     DomainAddress,
     KeyTransparencyVerify,
+} from '@proton/shared/lib/interfaces';
+import {
+    DKIM_STATE,
+    DMARC_STATE,
+    DOMAIN_STATE,
     MX_STATE,
     SPF_STATE,
     VERIFY_STATE,
@@ -27,11 +30,11 @@ import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     ButtonGroup,
     Form,
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

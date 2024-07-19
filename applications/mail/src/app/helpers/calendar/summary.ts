@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getIsVeventCancelled } from '@proton/shared/lib/calendar/vcalHelper';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { InvitationModel, UPDATE_ACTION } from './invite';
+import type { InvitationModel } from './invite';
+import { UPDATE_ACTION } from './invite';
 
 const { REPLY, COUNTER, REFRESH, REQUEST, CANCEL, ADD } = ICAL_METHOD;
 const { ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;

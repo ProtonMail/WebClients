@@ -1,7 +1,7 @@
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageEmbeddedImage, MessageImage, PartialMessageState } from '../../store/messages/messagesTypes';
+import type { MessageEmbeddedImage, MessageImage, PartialMessageState } from '../../store/messages/messagesTypes';
 import { createDocument } from '../test/message';
 import {
     createBlob,

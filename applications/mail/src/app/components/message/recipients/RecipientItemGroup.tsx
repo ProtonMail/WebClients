@@ -1,4 +1,5 @@
-import { MouseEvent, useState } from 'react';
+import type { MouseEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,8 +22,8 @@ import { useOnCompose } from '../../../containers/ComposeProvider';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { RecipientGroup } from '../../../models/address';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import type { RecipientGroup } from '../../../models/address';
+import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import GroupModal from '../modals/GroupModal';
 import RecipientItemLayout from './RecipientItemLayout';
 

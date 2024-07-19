@@ -1,4 +1,4 @@
-import { AuthenticationCredentialsPayload, AuthenticationOptions, RegisteredKey } from '../webauthn/interface';
+import type { AuthenticationCredentialsPayload, AuthenticationOptions, RegisteredKey } from '../webauthn/interface';
 
 export interface Fido2Response {
     AuthenticationOptions: AuthenticationOptions;

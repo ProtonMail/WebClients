@@ -2,7 +2,7 @@ import { useApi } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { computeKeyPassword } from '@proton/srp';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';

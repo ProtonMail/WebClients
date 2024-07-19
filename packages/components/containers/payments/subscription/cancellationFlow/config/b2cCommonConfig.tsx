@@ -4,12 +4,12 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 import alias from '@proton/styles/assets/img/cancellation-flow/testimonial_alias.png';
 import darkWeb from '@proton/styles/assets/img/cancellation-flow/testimonial_dark_web.png';
 import netShield from '@proton/styles/assets/img/cancellation-flow/testimonial_net_shield.png';
 
-import { ConfirmationModal, PlanConfigTestimonial } from '../interface';
+import type { ConfirmationModal, PlanConfigTestimonial } from '../interface';
 
 export const getDefaultTestimonial = (): PlanConfigTestimonial => {
     return {

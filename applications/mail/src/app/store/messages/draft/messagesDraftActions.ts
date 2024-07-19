@@ -1,10 +1,10 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { cancelSend as cancelSendApiCall } from '@proton/shared/lib/api/messages';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MailThunkExtra } from '../../store';
-import { MessageDraftFlags, MessageEmbeddedImage, MessageState } from '../messagesTypes';
+import type { MailThunkExtra } from '../../store';
+import type { MessageDraftFlags, MessageEmbeddedImage, MessageState } from '../messagesTypes';
 
 export const createDraft = createAction<MessageState>('message/draft/create');
 

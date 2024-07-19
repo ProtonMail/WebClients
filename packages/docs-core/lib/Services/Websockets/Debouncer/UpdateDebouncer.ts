@@ -1,5 +1,5 @@
-import { NodeMeta } from '@proton/drive-store'
-import { LoggerInterface } from '@proton/utils/logs'
+import type { NodeMeta } from '@proton/drive-store'
+import type { LoggerInterface } from '@proton/utils/logs'
 import { mergeUpdates } from 'yjs'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
 import { UpdateDebouncerEventType } from './UpdateDebouncerEventType'

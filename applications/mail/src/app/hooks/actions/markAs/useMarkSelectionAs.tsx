@@ -10,12 +10,12 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { isElementReminded } from 'proton-mail/helpers/snooze';
-import { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
+import type { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useOptimisticMarkAs } from '../../optimistic/useOptimisticMarkAs';
 

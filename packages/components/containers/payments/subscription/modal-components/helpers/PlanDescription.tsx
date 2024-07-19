@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Included } from '@proton/shared/lib/helpers/checkout';
+import type { Included } from '@proton/shared/lib/helpers/checkout';
 
 import {
     Collapsible,

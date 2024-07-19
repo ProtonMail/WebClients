@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { getAuditResult, getKTLocalStorage, storeAuditResult } from '@proton/key-transparency/lib';
-import { KeyTransparencyState } from '@proton/shared/lib/interfaces';
+import type { KeyTransparencyState } from '@proton/shared/lib/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

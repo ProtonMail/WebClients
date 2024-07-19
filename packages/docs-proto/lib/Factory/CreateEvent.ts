@@ -1,4 +1,4 @@
-import { EventTypeEnum } from '../Event/EventTypeEnum'
+import type { EventTypeEnum } from '../Event/EventTypeEnum'
 import { Event } from '../Generated'
 
 export function CreateEvent(dto: {

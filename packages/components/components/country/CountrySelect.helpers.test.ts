@@ -1,5 +1,5 @@
+import type { CountryOption } from '@proton/components/components/country/helpers';
 import {
-    CountryOption,
     PRESELECTED_COUNTRY_OPTION_SUFFIX,
     divideSortedCountries,
     getAllDropdownOptions,

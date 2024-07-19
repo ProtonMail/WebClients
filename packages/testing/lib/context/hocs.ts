@@ -1,6 +1,7 @@
-import { ComponentType, ReactNode, createElement } from 'react';
+import type { ComponentType, ReactNode } from 'react';
+import { createElement } from 'react';
 
-import { WrapperComponent } from '@testing-library/react-hooks';
+import type { WrapperComponent } from '@testing-library/react-hooks';
 
 interface HOC<T> {
     (Component: ComponentType<T>): ComponentType<T>;

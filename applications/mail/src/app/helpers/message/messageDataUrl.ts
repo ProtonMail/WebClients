@@ -1,7 +1,7 @@
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
 
 // Reference Angular/src/app/composer/services/extractDataURI.js

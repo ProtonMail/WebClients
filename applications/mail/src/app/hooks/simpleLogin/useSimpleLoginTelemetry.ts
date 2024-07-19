@@ -1,10 +1,12 @@
 import { useApi, useSubscription } from '@proton/components/hooks';
-import { TelemetryMeasurementGroups, TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import type { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import type { PLANS } from '@proton/shared/lib/constants';
+import { PLAN_NAMES } from '@proton/shared/lib/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPrimaryPlan } from '@proton/shared/lib/helpers/subscription';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 export const useSimpleLoginTelemetry = () => {

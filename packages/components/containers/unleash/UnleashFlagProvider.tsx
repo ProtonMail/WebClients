@@ -1,12 +1,13 @@
-import { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
 import { useEffect } from 'react';
 
 import FlagProvider from '@unleash/proxy-client-react';
 import { useUnleashClient } from '@unleash/proxy-client-react';
-import { IConfig, UnleashClient } from 'unleash-proxy-client';
+import type { IConfig, UnleashClient } from 'unleash-proxy-client';
 
 import { createPromise } from '@proton/shared/lib/helpers/promise';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import useApi from '../../hooks/useApi';
 import ProtonUnleashStorageProvider from './ProtonUnleashStorageProvider';
