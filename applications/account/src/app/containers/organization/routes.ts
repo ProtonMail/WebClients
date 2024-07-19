@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import { APPS, APP_NAMES, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasMemberCapablePlan,
@@ -26,7 +26,8 @@ export const getOrganizationAppRoutes = ({
     app,
     user,
     organization,
-    subscription, canDisplayB2BLogsVPN,
+    subscription,
+    canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
@@ -184,7 +185,10 @@ export const getOrganizationAppRoutes = ({
                 to: '/authentication-security',
                 icon: 'shield',
                 available:
-                    (hasActiveOrganizationKey || hasActiveOrganization) && organization && organization.MaxMembers > 1,
+                    (hasActiveOrganizationKey || hasActiveOrganization) &&
+                    organization &&
+                    (organization.MaxMembers > 1 ||
+                        organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
                 subsections: [
                     {
                         id: 'two-factor-authentication-users',
