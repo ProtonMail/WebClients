@@ -17,8 +17,9 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
+import { useAddresses } from '@proton/components/hooks';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { Address, Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
@@ -28,6 +29,7 @@ import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-inte
 import { CoreButton, Input, InputProps } from '../../atoms';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
 import { isValidBitcoinAddress } from '../../utils';
+import { isSelfAddress } from '../../utils/email';
 import { EmailListItem } from '../EmailListItem';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
 import { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
@@ -59,8 +61,12 @@ interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
     }) => JSX.Element | null;
 }
 
-const validateInput = (input: string, network: WasmNetwork) => {
-    if (!validateEmailAddress(input) && !isValidBitcoinAddress(input, network)) {
+const validateInput = (input: string, addresses: Address[], network: WasmNetwork) => {
+    if (validateEmailAddress(input)) {
+        if (isSelfAddress(input, addresses)) {
+            return c('Error').t`Bitcoin via Email to self is not supported`;
+        }
+    } else if (!isValidBitcoinAddress(input, network)) {
         return c('Error').t`Input isn't a valid email or bitcoin address`;
     }
 };
@@ -85,6 +91,8 @@ export const EmailOrBitcoinAddressInput = ({
 
     const [input, setInput] = useState('');
     const [emailError, setEmailError] = useState('');
+
+    const [addresses = []] = useAddresses();
 
     const [qrCodeModal, setQrCodeModal] = useModalState();
 
@@ -111,14 +119,15 @@ export const EmailOrBitcoinAddressInput = ({
     const contactsAutocompleteItems = useMemo(() => {
         return getContactsAutocompleteItems(
             filteredContactEmails,
-            ({ Email }) => !recipientsByAddress.has(canonicalizeEmail(Email)) && !validateInput(Email, network)
+            ({ Email }) =>
+                !recipientsByAddress.has(canonicalizeEmail(Email)) && !validateInput(Email, addresses, network)
         );
-    }, [filteredContactEmails, recipientsByAddress, network]);
+    }, [filteredContactEmails, recipientsByAddress, addresses, network]);
 
     const safeAddRecipients = useCallback(
         (newRecipients: Recipient[]) => {
             const recipients = newRecipients.filter(({ Address }) => {
-                return !validateInput(Address || '', network);
+                return !validateInput(Address || '', addresses, network);
             });
 
             if (recipients.length) {
@@ -127,7 +136,7 @@ export const EmailOrBitcoinAddressInput = ({
                 onAddRecipients(recipients);
             }
         },
-        [onAddRecipients, network]
+        [onAddRecipients, addresses, network]
     );
 
     useEffect(() => {
@@ -150,7 +159,7 @@ export const EmailOrBitcoinAddressInput = ({
             errors: string[];
         }>(
             (acc, recipient) => {
-                const error = validateInput(recipient.Address || '', network);
+                const error = validateInput(recipient.Address || '', addresses, network);
                 if (error) {
                     acc.errors.push(error);
                     acc.invalidRecipients.push(recipient);
