@@ -8,12 +8,19 @@ import QRCodeReader from '../QRCodeReader';
 interface Props extends ModalOwnProps {
     title?: string;
     onScan: (qrcode: QRCode) => void;
+    onError?: (errorName: DOMException['name']) => void;
 }
 
-export const QRCodeReaderModal = ({ title, onScan, ...rest }: Props) => {
+export const QRCodeReaderModal = ({ title, onScan, onError, ...modalProps }: Props) => {
     return (
-        <Modal title={title} {...rest} enableCloseWhenClickOutside>
-            <QRCodeReader onScan={onScan} />
+        <Modal title={title} {...modalProps} enableCloseWhenClickOutside>
+            <QRCodeReader
+                onScan={onScan}
+                onError={(name) => {
+                    onError?.(name);
+                    modalProps.onClose?.();
+                }}
+            />
         </Modal>
     );
 };
