@@ -61,10 +61,10 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                                                             name={`${sectionKey}[${index}]`}
                                                             onDelete={() => {
                                                                 if (sectionFields.length === 1) {
-                                                                    setShowWarningMessage(sectionIndex);
-                                                                } else {
-                                                                    helpers.remove(index);
+                                                                    return setShowWarningMessage(sectionIndex);
                                                                 }
+
+                                                                helpers.remove(index);
                                                             }}
                                                             touched={
                                                                 (form.touched as FormTouched).extraSections?.[

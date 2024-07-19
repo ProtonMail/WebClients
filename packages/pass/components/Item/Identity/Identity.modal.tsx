@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import type { FormikHelpers } from 'formik/dist/types';
@@ -10,6 +11,10 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { UpsellRef } from '@proton/pass/constants';
+import { selectPassPlan } from '@proton/pass/store/selectors';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 const formId = 'identity-new-section-modal';
 
@@ -19,6 +24,14 @@ type IdentityAddNewSectionProps = {
 
 export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd }) => {
     const [{ open, onClose }, setModal] = useModalState();
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const spotlight = useSpotlight();
+
+    const openUpsell = () =>
+        spotlight.setUpselling({
+            type: 'early-access',
+            upsellRef: UpsellRef.DEFAULT,
+        });
 
     const closeModal = (resetForm: FormikHelpers<{ value: string }>['resetForm']) => {
         onClose();
@@ -45,7 +58,12 @@ export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd })
 
     return (
         <>
-            <Button className="rounded-full w-full" color="weak" shape="solid" onClick={() => setModal(true)}>
+            <Button
+                className="rounded-full w-full"
+                color="weak"
+                shape="solid"
+                onClick={() => (isFreePlan ? openUpsell() : setModal(true))}
+            >
                 <div className="flex items-center justify-center">
                     <Icon name="plus" />
                     <div className="ml-2 text-semibold">{c('Label').t`Add section`}</div>
