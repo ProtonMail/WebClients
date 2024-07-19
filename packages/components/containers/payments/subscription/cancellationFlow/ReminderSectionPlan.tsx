@@ -4,7 +4,7 @@ import { PlanConfigReminder } from './interface';
 
 const ReminderSectionPlan = ({ title }: PlanConfigReminder) => {
     return (
-        <SettingsSectionWide className="mt-14 container-section-sticky-section">
+        <SettingsSectionWide className="mt-14 container-section-sticky-section" data-testid="cancellation-flow:heading">
             <SettingsPageTitle className="mb-5">{title}</SettingsPageTitle>
         </SettingsSectionWide>
     );

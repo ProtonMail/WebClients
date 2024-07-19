@@ -48,6 +48,7 @@ const CancelConfirmationModal = ({
             <ModalTwoFooter className="flex justify-space-between">
                 <Button
                     shape="outline"
+                    data-testid="confirm-cancellation-button"
                     onClick={() => {
                         sendCancelModalConfirmCancelReport();
                         cancelSubscription();

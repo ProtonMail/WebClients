@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
-
+import { useFlag } from '@proton/components/containers/unleash';
 import { useSubscription } from '@proton/components/hooks';
 import {
     hasBundle,
@@ -72,7 +71,6 @@ const useCancellationFlow = () => {
         redirectToDashboard,
         b2cAccess: getHasB2CAccess(),
         b2bAccess: getHasB2BAccess(),
-        subscription,
         setStartedCancellation,
     };
 };
