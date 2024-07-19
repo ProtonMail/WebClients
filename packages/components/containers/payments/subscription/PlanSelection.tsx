@@ -48,8 +48,7 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import { useCancellationFlow } from './cancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { notHigherThanAvailableOnBackend } from './helpers/payment';
-import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
+import { getBundleProPlanToUse, getVPNPlanToUse, notHigherThanAvailableOnBackend } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -266,7 +265,7 @@ const PlanSelection = ({
         plansMap[PLANS.BUNDLE],
     ]);
 
-    let FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]);
+    const FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.DUO], plansMap[PLANS.FAMILY]]);
 
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import {
     CALENDAR_SHORT_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     MAIL_SHORT_APP_NAME,
     PLANS,
@@ -206,6 +207,41 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getPremium(WALLET_SHORT_APP_NAME),
+            },
+        ];
+    }
+
+    const duo = planIDs[PLANS.DUO];
+    if (duo !== undefined && duo > 0) {
+        const storage = humanSize({
+            bytes: summary.space || freePlan.MaxSpace,
+            fraction: 0,
+        });
+
+        return [
+            {
+                type: 'text',
+                text: getNUsersText(DUO_MAX_USERS),
+            },
+            {
+                type: 'text',
+                text: c('Info').t`${storage} storage`,
+            },
+            {
+                type: 'text',
+                text: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
+            },
+            {
+                type: 'text',
+                text: getPremium(VPN_SHORT_APP_NAME),
+            },
+            {
+                type: 'text',
+                text: getPremium(DRIVE_SHORT_APP_NAME),
+            },
+            {
+                type: 'text',
+                text: getPremiumPasswordManagerText(),
             },
         ];
     }
