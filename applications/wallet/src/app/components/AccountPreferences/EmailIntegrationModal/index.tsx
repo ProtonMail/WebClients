@@ -42,6 +42,10 @@ export const EmailIntegrationModal = ({
                         onClick={() => {
                             onAddressSelect(address);
                         }}
+                        aria-label={
+                            // translator: Use <email address>
+                            c('Action').t`Use ${address.Email}`
+                        }
                     >
                         {address.Email}
                     </CoreButton>
