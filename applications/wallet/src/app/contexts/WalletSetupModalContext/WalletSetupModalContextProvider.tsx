@@ -3,7 +3,7 @@ import { ReactNode, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useModalStateWithData } from '@proton/components/components';
-import { useUserWalletSettings } from '@proton/wallet';
+import { IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
 
 import { ModalData, WalletSetupModalContext, WalletSetupModalKind } from '.';
 import { WalletCreationModal } from '../../components';
@@ -18,6 +18,10 @@ import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 interface Props {
     children: ReactNode;
 }
+
+const getPrimaryEmail = (wallet: IWasmApiWalletData[]) => {
+    return wallet[0]?.WalletAccounts[0]?.Addresses[0]?.Email;
+};
 
 export const WalletSetupModalContextProvider = ({ children }: Props) => {
     const onCloseRef = useRef<() => void>();
@@ -81,7 +85,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                 }
 
                 if (!settings.AcceptTermsAndConditions && !loadingSettings) {
-                    return <WalletTermsAndConditionsPrompt open />;
+                    const primaryEmail = decryptedApiWalletsData && getPrimaryEmail(decryptedApiWalletsData);
+                    return <WalletTermsAndConditionsPrompt open email={primaryEmail} />;
                 }
 
                 const walletWithoutWalletAccount = decryptedApiWalletsData?.find((w) => !w.WalletAccounts.length);
