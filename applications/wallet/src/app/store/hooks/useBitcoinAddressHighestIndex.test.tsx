@@ -1,9 +1,9 @@
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
-import { MockedFunction } from 'vitest';
+import type { MockedFunction } from 'vitest';
 
-import { WasmBitcoinAddressClient } from '@proton/andromeda';
+import type { WasmBitcoinAddressClient } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getMockedApi } from '@proton/wallet/tests';
 

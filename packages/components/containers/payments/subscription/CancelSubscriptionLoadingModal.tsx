@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { ModalProps, ModalTwo, ModalTwoContent } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent } from '@proton/components/components';
 
 const CancelSubscriptionLoadingModal = (props: ModalProps) => {
     return (

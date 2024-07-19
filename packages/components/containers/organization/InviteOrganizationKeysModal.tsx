@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account';
+import type { MemberKeyPayload } from '@proton/account';
+import { getMemberKeyPayloads, setAdminRoles } from '@proton/account';
 import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 
-import { Icon, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import type { ModalProps } from '../../components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AdministratorList, { AdministratorItem } from './AdministratorList';

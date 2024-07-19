@@ -1,8 +1,10 @@
 import { $isElementNode } from 'lexical'
 import { Table, TableCell, TableRow } from 'docx'
-import { $isTableCellNode, $isTableRowNode, TableCellNode, TableNode, TableRowNode } from '@lexical/table'
-import { TopLevelChildren, getTopLevelChildrenFromElementNode } from './getTopLevelChildrenFromElementNode'
-import { DocxExportContext } from './Context'
+import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import { $isTableCellNode, $isTableRowNode } from '@lexical/table'
+import type { TopLevelChildren } from './getTopLevelChildrenFromElementNode'
+import { getTopLevelChildrenFromElementNode } from './getTopLevelChildrenFromElementNode'
+import type { DocxExportContext } from './Context'
 
 async function getChildrenFromCellNode(node: TableCellNode, context: DocxExportContext): Promise<TopLevelChildren[]> {
   const children: TopLevelChildren[] = []

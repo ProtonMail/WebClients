@@ -8,7 +8,7 @@ import {
     fromUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';

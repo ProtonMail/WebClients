@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
 import { waitUntil } from '../../../utils/async';
-import { Download, UpdateFilter } from './interface';
+import type { Download, UpdateFilter } from './interface';
 
 export default function useDownloadContainsDocument(cancelDownloads: (filter: UpdateFilter) => void) {
     const [containsDocumentModal, showModal] = useDownloadContainsDocumentsModal();

@@ -1,4 +1,4 @@
-import { Annotation } from 'codemirror/addon/lint/lint';
+import type { Annotation } from 'codemirror/addon/lint/lint';
 
 export enum FilterStatement {
     ALL = 'all',

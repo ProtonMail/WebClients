@@ -1,7 +1,7 @@
-import { ChallengePayload } from '../authentication/interface';
-import { APP_CLIENT_IDS } from '../constants';
+import type { ChallengePayload } from '../authentication/interface';
+import type { APP_CLIENT_IDS } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
-import { AuthenticationCredentialsPayload } from '../webauthn/interface';
+import type { AuthenticationCredentialsPayload } from '../webauthn/interface';
 
 export const PASSWORD_WRONG_ERROR = 8002;
 

@@ -1,6 +1,6 @@
-import { Location } from 'history';
+import type { Location } from 'history';
 
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isSearch } from './elements';

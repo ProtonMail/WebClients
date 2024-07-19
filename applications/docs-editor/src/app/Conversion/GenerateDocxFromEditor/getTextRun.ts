@@ -1,4 +1,4 @@
-import { EditorState, ElementNode, TextNode } from 'lexical'
+import type { EditorState, ElementNode, TextNode } from 'lexical'
 import { TextRun } from 'docx'
 import tinycolor from 'tinycolor2'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'

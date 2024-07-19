@@ -1,5 +1,5 @@
 import * as useAddressKeysModule from '@proton/account/addressKeys/hooks';
-import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 export const mockUseAddressKeys = (value: [{ address: Address; keys: DecryptedAddressKey[] }[]?, boolean?] = []) => {
     const [keys, cached = false] = value;

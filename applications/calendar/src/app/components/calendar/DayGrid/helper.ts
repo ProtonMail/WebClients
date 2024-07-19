@@ -1,5 +1,5 @@
-import { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
-import { LayoutEvent } from '../layout';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
+import type { LayoutEvent } from '../layout';
 
 export const getEvent = (
     idx: number,

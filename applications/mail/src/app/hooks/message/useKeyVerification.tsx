@@ -1,7 +1,7 @@
 import { useGetAddresses, useNotifications } from '@proton/components';
 import type { KeyID } from '@proton/crypto';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import DecryptionErrorNotification from '../../components/notifications/DecryptionErrorNotification';
 import { getMessageDecryptionKeyIDFromAddress } from '../../helpers/message/messageDecrypt';

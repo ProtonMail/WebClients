@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalProps, Prompt, useUserSettings } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { Prompt, useUserSettings } from '@proton/components';
 import { useAssistant } from '@proton/llm/lib';
 import { deleteAssistantCachedFiles } from '@proton/llm/lib/downloader';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

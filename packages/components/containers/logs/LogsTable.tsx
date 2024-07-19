@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { AuthLog } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

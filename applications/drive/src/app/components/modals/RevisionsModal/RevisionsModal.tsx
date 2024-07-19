@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike, CircleLoader } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     AppLink,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoHeader,
@@ -16,9 +16,10 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsOwner } from '@proton/shared/lib/drive/permissions';
-import { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
+import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { DecryptedLink, useUserSettings } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useUserSettings } from '../../../store';
 import { RevisionList, RevisionsProvider, useRevisionsProvider } from '../../revisions';
 
 import './RevisionsModal.scss';

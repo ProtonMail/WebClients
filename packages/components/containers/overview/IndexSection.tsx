@@ -1,7 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
-import { SectionConfig } from '../layout';
+import type { SectionConfig } from '../layout';
 import Sections from './Sections';
 
 const IndexSection = ({ pages, limit = 4 }: { pages: SectionConfig[]; limit?: number }) => {

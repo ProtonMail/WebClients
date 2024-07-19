@@ -1,4 +1,5 @@
-import { DragEvent, MouseEvent, RefObject, useState } from 'react';
+import type { DragEvent, MouseEvent, RefObject } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,8 +20,9 @@ import clsx from '@proton/utils/clsx';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { MessageSendInfo, useUpdateGroupSendInfo } from '../../../hooks/useSendInfo';
-import { RecipientGroup } from '../../../models/address';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { useUpdateGroupSendInfo } from '../../../hooks/useSendInfo';
+import type { RecipientGroup } from '../../../models/address';
 import AddressesGroupModal from './AddressesGroupModal';
 
 interface Props {

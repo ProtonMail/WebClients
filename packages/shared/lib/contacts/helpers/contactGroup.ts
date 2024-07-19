@@ -1,7 +1,7 @@
-import { ContactGroupLimitReachedProps } from '@proton/components/containers/contacts/modals/ContactGroupLimitReachedModal';
+import type { ContactGroupLimitReachedProps } from '@proton/components/containers/contacts/modals/ContactGroupLimitReachedModal';
 
-import { MailSettings } from '../../interfaces';
-import { ContactEmail } from '../../interfaces/contacts';
+import type { MailSettings } from '../../interfaces';
+import type { ContactEmail } from '../../interfaces/contacts';
 import { DEFAULT_MAILSETTINGS } from '../../mail/mailSettings';
 
 /**

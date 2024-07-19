@@ -2,7 +2,7 @@ import { isValid } from 'date-fns';
 
 import { getDateFromVCardProperty } from '@proton/shared/lib/contacts/property';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
-import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { DateInput } from '../../../../components';
 

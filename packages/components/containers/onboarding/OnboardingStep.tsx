@@ -1,4 +1,4 @@
-import { OnboardingStepProps } from './interface';
+import type { OnboardingStepProps } from './interface';
 
 const OnboardingStep = ({ children }: OnboardingStepProps) => {
     return <>{children}</>;

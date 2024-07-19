@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import {
     queryCreateFile,
     queryCreateFileRevision,
@@ -11,7 +12,7 @@ import {
 } from '@proton/shared/lib/api/drive/files';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import {
+import type {
     CreateFileResult,
     CreateFileRevisionResult,
     GetVerificationDataResult,
@@ -30,21 +31,23 @@ import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveEventManager } from '../../_events';
-import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
+import type { DecryptedLink } from '../../_links';
+import { useLink, useLinksActions, validateLinkName } from '../../_links';
 import { useShare } from '../../_shares';
 import { useVolumesState } from '../../_volumes';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
-import {
+import type {
     FileKeys,
     FileRequestBlock,
     PhotoUpload,
     ThumbnailRequestBlock,
-    TransferConflictStrategy,
     UploadFileControls,
     VerificationData,
 } from '../interface';
-import { ConflictStrategyHandler, UploadUserError } from './interface';
+import { TransferConflictStrategy } from '../interface';
+import type { ConflictStrategyHandler } from './interface';
+import { UploadUserError } from './interface';
 import { generateClientUid } from './uploadClientUid';
 import useUploadHelper from './useUploadHelper';
 

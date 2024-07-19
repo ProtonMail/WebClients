@@ -4,7 +4,8 @@ import metrics from '@proton/metrics';
 import { getApiError, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { Share, ShareType } from '../../_shares/interface';
+import type { Share } from '../../_shares/interface';
+import { ShareType } from '../../_shares/interface';
 import useShareState from '../../_shares/useSharesState';
 import { isVerificationError } from '../worker/verifier';
 

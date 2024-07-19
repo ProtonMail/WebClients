@@ -7,11 +7,11 @@ import clsx from '@proton/utils/clsx';
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { SelectionState } from '../../FileBrowser/hooks/useSelectionControls';
-import { DeviceItem } from '../Devices/Devices';
-import { DriveItem } from '../Drive/Drive';
-import { SharedLinkItem } from '../SharedLinks/SharedLinks';
-import { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
-import { TrashItem } from '../Trash/Trash';
+import type { DeviceItem } from '../Devices/Devices';
+import type { DriveItem } from '../Drive/Drive';
+import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
+import type { TrashItem } from '../Trash/Trash';
 
 const GridViewItemBase = ({
     IconComponent,

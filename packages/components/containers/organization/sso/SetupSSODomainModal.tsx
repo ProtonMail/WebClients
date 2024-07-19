@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,9 +9,11 @@ import metrics, { observeApiError } from '@proton/metrics/index';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain, VERIFY_STATE } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
+import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     Icon,
@@ -19,7 +22,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '../../../components';
 import { useApi, useEventManager } from '../../../hooks';

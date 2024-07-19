@@ -1,4 +1,4 @@
-import { Address } from './Address';
+import type { Address } from './Address';
 
 export enum GroupPermissions {
     NobodyCanSend = 0,

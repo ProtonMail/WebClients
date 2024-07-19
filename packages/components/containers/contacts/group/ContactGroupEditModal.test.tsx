@@ -4,13 +4,14 @@ import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/testing/lib/api';
 
 import { clearAll, getCard, minimalCache, mockedCryptoApi, renderWithProviders } from '../tests/render';
-import ContactGroupEditModal, { ContactGroupEditProps } from './ContactGroupEditModal';
+import type { ContactGroupEditProps } from './ContactGroupEditModal';
+import ContactGroupEditModal from './ContactGroupEditModal';
 
 describe('ContactGroupEditModal', () => {
     const props: ContactGroupEditProps = {

@@ -1,10 +1,10 @@
 import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 
 const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventModelReadView, hasPaidMail: boolean) => {
     const { calendarData, eventReadResult, eventData } = calendarViewEvent.data;

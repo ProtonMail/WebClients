@@ -16,7 +16,8 @@ import {
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { ItemsGroup, useLocationFieldOptions } from './useLocationFieldOptions';
+import type { ItemsGroup } from './useLocationFieldOptions';
+import { useLocationFieldOptions } from './useLocationFieldOptions';
 
 interface Props {
     value: string;
@@ -104,10 +105,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                     <Icon name={item.icon} className="shrink-0 mr-2" />
                                                 )}
                                                 {isCustomFolder(item) && (
-                                                    <FolderIcon
-                                                        folder={item.folderEntity}
-                                                        className="shrink-0 mr-2"
-                                                    />
+                                                    <FolderIcon folder={item.folderEntity} className="shrink-0 mr-2" />
                                                 )}
                                                 <span className="text-ellipsis">
                                                     <Mark value={search}>{item.text}</Mark>

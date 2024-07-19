@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import DrawerAppButton, { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { APPS } from '@proton/shared/lib/constants';
-import { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces';
 
 import { useAppLink } from '../../link';
 import { WalletDrawerLogo } from '../drawerIcons';

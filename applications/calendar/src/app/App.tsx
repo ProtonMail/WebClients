@@ -1,4 +1,5 @@
-import { FunctionComponent, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import FlagProvider from '@unleash/proxy-client-react';
@@ -24,7 +25,7 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
-import { CalendarStore } from './store/store';
+import type { CalendarStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
 const defaultState: {

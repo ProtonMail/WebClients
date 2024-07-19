@@ -2,13 +2,14 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
 import { useUserKeys } from '@proton/components/hooks';
-import { PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
-import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
-import { IWasmApiWalletData, encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../utils';

@@ -1,4 +1,5 @@
-import { KeyboardEvent, MouseEvent, useCallback, useState } from 'react';
+import type { KeyboardEvent, MouseEvent } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +8,7 @@ import { Icon, Tooltip } from '@proton/components';
 import noop from '@proton/utils/noop';
 
 import { useActions } from '../../../store';
-import { BrowserItemId } from '../../FileBrowser/interface';
+import type { BrowserItemId } from '../../FileBrowser/interface';
 
 interface Props {
     shareId: string;

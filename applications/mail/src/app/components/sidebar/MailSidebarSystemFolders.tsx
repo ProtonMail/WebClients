@@ -1,16 +1,17 @@
-import { DragEvent, DragEventHandler, useEffect, useRef, useState } from 'react';
+import type { DragEvent, DragEventHandler } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 import { c } from 'ttag';
 
 import { SimpleSidebarListItemHeader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
-import { UnreadCounts } from './MailSidebarList';
+import type { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
 
 interface Props {

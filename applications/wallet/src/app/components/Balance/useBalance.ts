@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { ChartDataset } from 'chart.js';
+import type { ChartDataset } from 'chart.js';
 import { format, sub } from 'date-fns';
 import { groupBy } from 'lodash';
 
-import { WasmApiWalletAccount, WasmTransactionDetails } from '@proton/andromeda';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { WasmApiWalletAccount, WasmTransactionDetails } from '@proton/andromeda';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { WalletChainDataByWalletId } from '../../types';
+import type { WalletChainDataByWalletId } from '../../types';
 import {
     getAccountBalance,
     getAccountTransactions,

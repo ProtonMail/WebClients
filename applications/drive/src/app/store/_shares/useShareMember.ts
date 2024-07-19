@@ -3,10 +3,10 @@ import {
     queryShareMemberListing,
     queryUpdateShareMemberPermissions,
 } from '@proton/shared/lib/api/drive/member';
-import { ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/member';
-import { ShareMember } from './interface';
+import type { ShareMemberPayload } from '@proton/shared/lib/interfaces/drive/member';
 
 import { shareMemberPayloadToShareMember, useDebouncedRequest } from '../_api';
+import type { ShareMember } from './interface';
 
 export const useShareMember = () => {
     const debouncedRequest = useDebouncedRequest();

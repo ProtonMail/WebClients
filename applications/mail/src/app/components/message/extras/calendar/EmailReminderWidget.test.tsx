@@ -17,8 +17,9 @@ import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { DRAWER_VISIBILITY, Nullable, UserSettings } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Nullable, UserSettings } from '@proton/shared/lib/interfaces';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 import {
     addressBuilder,

@@ -1,10 +1,11 @@
-import { ReactNode, createContext, useContext, useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
 import { useContactGroups } from '@proton/components/hooks/useCategories';
 import { useContactEmails } from '@proton/components/hooks/useContactEmails';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
 export type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;

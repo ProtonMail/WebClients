@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import onboardingDisplayName from '@proton/styles/assets/img/onboarding/display-name.svg';
 
 import { InputFieldTwo } from '../../components';
-import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
+import type { Props as OnboardingContentProps } from './OnboardingContent';
+import OnboardingContent from './OnboardingContent';
 
 interface Props extends Omit<OnboardingContentProps, 'img' | 'text' | 'description'> {
     displayName: string;

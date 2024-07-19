@@ -1,16 +1,16 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { parseLabelIDsInEvent } from '../../../helpers/elements';
-import { LabelIDsChanges, MessageEvent } from '../../../models/event';
+import type { LabelIDsChanges, MessageEvent } from '../../../models/event';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import {
+import type {
     DocumentInitializeParams,
     LoadParams,
     MessageErrors,

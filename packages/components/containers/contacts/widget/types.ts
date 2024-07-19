@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/index';
-import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces/index';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/index';
+import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces/index';
 
-import useContactList from '../hooks/useContactList';
+import type useContactList from '../hooks/useContactList';
 
 export enum CONTACT_WIDGET_TABS {
     CONTACTS,

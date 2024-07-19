@@ -1,4 +1,5 @@
-import { RefObject, useImperativeHandle } from 'react';
+import type { RefObject } from 'react';
+import { useImperativeHandle } from 'react';
 
 import { c } from 'ttag';
 

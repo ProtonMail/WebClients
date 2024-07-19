@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
-import { GatewayDto } from './GatewayDto';
-import { GatewayLogical } from './GatewayLogical';
-import { GatewayServer } from './GatewayServer';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayDto } from './GatewayDto';
+import type { GatewayLogical } from './GatewayLogical';
+import type { GatewayServer } from './GatewayServer';
+import type { GatewayUser } from './GatewayUser';
 
 export const getSuffix = (name: string | undefined) => name?.match(/#\d+$/)?.[0] || '';
 

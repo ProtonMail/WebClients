@@ -4,7 +4,7 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 
-import { ChallengeLog } from './interface';
+import type { ChallengeLog } from './interface';
 
 // Select option is broken on react. Correct the HTML here.
 export const normalizeSelectOptions = (el: HTMLElement) => {

@@ -1,15 +1,8 @@
 import { serverTime } from '@proton/crypto';
 import { commitSKLToLS, fetchSignedKeyLists, ktSentryReport, ktSentryReportError } from '@proton/key-transparency';
 
-import {
-    Address,
-    Api,
-    DecryptedKey,
-    KeyTransparencyActivation,
-    PreAuthKTVerifier,
-    PreAuthKTVerify,
-    SignedKeyList,
-} from '../interfaces';
+import type { Address, Api, DecryptedKey, PreAuthKTVerifier, PreAuthKTVerify, SignedKeyList } from '../interfaces';
+import { KeyTransparencyActivation } from '../interfaces';
 import { getDefaultKTLS } from './defaults';
 
 /**

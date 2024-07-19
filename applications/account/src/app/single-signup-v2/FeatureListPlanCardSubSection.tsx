@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 const FeatureListPlanCardSubSection = ({ description, features }: { description: ReactNode; features: ReactNode }) => {
     return (

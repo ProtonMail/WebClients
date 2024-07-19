@@ -1,11 +1,14 @@
-import { ReactNode, Ref, forwardRef, useImperativeHandle, useState } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef, useImperativeHandle, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { PopperPlacement } from '../../../components/popper';
+import type { PopperPlacement } from '../../../components/popper';
 import { generateUID } from '../../../helpers';
-import Dropdown, { DropdownProps } from '../../dropdown/Dropdown';
-import DropdownButton, { DropdownButtonProps } from '../../dropdown/DropdownButton';
+import type { DropdownProps } from '../../dropdown/Dropdown';
+import Dropdown from '../../dropdown/Dropdown';
+import type { DropdownButtonProps } from '../../dropdown/DropdownButton';
+import DropdownButton from '../../dropdown/DropdownButton';
 import { usePopperAnchor } from '../../popper';
 import Tooltip from '../../tooltip/Tooltip';
 

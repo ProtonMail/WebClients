@@ -1,10 +1,6 @@
-import { DecryptedKey, Address as tsAddress, Key as tsKey, User as tsUser } from '../../lib/interfaces';
-import {
-    KeyReactivationRecord,
-    getDecryptedAddressKeysHelper,
-    getDecryptedUserKeysHelper,
-    reactivateKeysProcess,
-} from '../../lib/keys';
+import type { DecryptedKey, Address as tsAddress, Key as tsKey, User as tsUser } from '../../lib/interfaces';
+import type { KeyReactivationRecord } from '../../lib/keys';
+import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../../lib/keys';
 import { getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '1';

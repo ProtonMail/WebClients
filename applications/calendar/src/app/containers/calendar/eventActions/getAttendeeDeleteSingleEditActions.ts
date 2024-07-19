@@ -1,4 +1,4 @@
-import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 export const getAttendeeDeleteSingleEditOperation = ({
     eventComponent,

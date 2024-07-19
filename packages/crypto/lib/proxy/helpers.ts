@@ -1,4 +1,4 @@
-import { KeyReference, PrivateKeyReference } from '../worker/api.models';
+import type { KeyReference, PrivateKeyReference } from '../worker/api.models';
 import { CryptoProxy } from './proxy';
 
 /**

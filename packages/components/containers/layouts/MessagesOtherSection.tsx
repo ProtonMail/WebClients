@@ -8,8 +8,9 @@ import {
     updateFontSize,
     updateRightToLeft,
 } from '@proton/shared/lib/api/mailSettings';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { DEFAULT_MAILSETTINGS, DIRECTION } from '@proton/shared/lib/mail/mailSettings';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info, Label } from '../../components';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';

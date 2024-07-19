@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import useLoading from '@proton/hooks/useLoading';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { PlatformInfo, appPlatforms, fetchDesktopDownloads } from '../../utils/appPlatforms';
+import type { PlatformInfo } from '../../utils/appPlatforms';
+import { appPlatforms, fetchDesktopDownloads } from '../../utils/appPlatforms';
 
 type PlatformDownload = PlatformInfo & {
     url?: string;

@@ -1,14 +1,24 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
-import { APP_NAMES } from '../constants';
+import type { APP_NAMES } from '../constants';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { Address, Api, DecryptedKey, InactiveKey, KeyPair, PreAuthKTVerify, User, UserSettings } from '../interfaces';
+import type {
+    Address,
+    Api,
+    DecryptedKey,
+    InactiveKey,
+    KeyPair,
+    PreAuthKTVerify,
+    User,
+    UserSettings,
+} from '../interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../keys';
 import {
     getAllKeysReactivationRequests,
@@ -16,7 +26,7 @@ import {
     getInitialStates,
     getLikelyHasKeysToReactivate,
 } from '../keys/getInactiveKeys';
-import { KeyReactivationRequestStateData } from '../keys/reactivation/interface';
+import type { KeyReactivationRequestStateData } from '../keys/reactivation/interface';
 import {
     generateRecoveryFileMessage,
     generateRecoverySecret,

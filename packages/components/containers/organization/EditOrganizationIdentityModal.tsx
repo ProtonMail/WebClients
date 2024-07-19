@@ -1,16 +1,17 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { changeOrganizationSignature } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
+import type { ModalProps } from '@proton/components/components';
 import {
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Option,
     SelectTwo,
     useFormErrors,

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
 
 import useApi from './useApi';
 import useCache from './useCache';

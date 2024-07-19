@@ -1,10 +1,11 @@
-import { RefObject, useCallback, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
-import { IEditor } from 'roosterjs-editor-types';
+import type { IEditor } from 'roosterjs-editor-types';
 
 import { useSyncIframeStyles, useTheme } from '@proton/components/containers';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import {
     EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
@@ -12,8 +13,8 @@ import {
     ROOSTER_EDITOR_ID,
     ROOSTER_EDITOR_WRAPPER_ID,
 } from '../../constants';
-import { ModalLinkProps } from '../../hooks/interface';
-import { EditorActions, OnEditorEventListened } from '../../interface';
+import type { ModalLinkProps } from '../../hooks/interface';
+import type { EditorActions, OnEditorEventListened } from '../../interface';
 import { initRoosterEditor } from '../helpers/initRoosterEditor';
 
 import iframeCss from '../RoosterEditorIframe.raw.scss';

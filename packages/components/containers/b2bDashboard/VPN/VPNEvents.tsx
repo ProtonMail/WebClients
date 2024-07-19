@@ -10,7 +10,7 @@ import { useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getVPNLogs } from '@proton/shared/lib/api/b2blogs';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
+import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
 import { GenericError, SettingsSectionWide } from '../..';
@@ -19,7 +19,7 @@ import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
 import { ALL_EVENTS_DEFAULT, PAGINATION_LIMIT, getLocalTimeStringFromDate, getSearchType } from '../Pass/helpers';
 import VPNEventsTable from './VPNEventsTable';
 import { downloadVPNEvents, getVPNEventNameText, uniqueVPNEventsArray } from './helpers';
-import { VPNEvent } from './interface';
+import type { VPNEvent } from './interface';
 
 export interface FilterModel {
     eventType: string;

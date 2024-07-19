@@ -1,8 +1,10 @@
-import { ChangeEvent, Ref, forwardRef } from 'react';
+import type { ChangeEvent, Ref } from 'react';
+import { forwardRef } from 'react';
 
-import { Input, InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms';
+import { Input } from '@proton/atoms';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
-import { VCardOrg, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardOrg, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
 
 interface Props extends Omit<InputProps, 'onChange'> {

@@ -1,5 +1,5 @@
 import { deduplicateBusySlots } from './busySlotsSelectors.helpers';
-import { BusySlot } from './busySlotsSlice';
+import type { BusySlot } from './busySlotsSlice';
 
 describe('deduplicateBusySlots', () => {
     it('should deduplicate equal busy slots', () => {

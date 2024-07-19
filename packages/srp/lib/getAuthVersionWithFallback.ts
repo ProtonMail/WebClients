@@ -1,5 +1,5 @@
 import { AUTH_FALLBACK_VERSION } from './constants';
-import { AuthVersion } from './interface';
+import type { AuthVersion } from './interface';
 import { cleanUsername } from './utils/username';
 
 /**

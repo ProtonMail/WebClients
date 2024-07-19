@@ -1,5 +1,5 @@
-import { VerificationPreferences } from '../VerificationPreferences';
-import { ContactEmail } from '../contacts';
+import type { VerificationPreferences } from '../VerificationPreferences';
+import type { ContactEmail } from '../contacts';
 
 export type GetVerificationPreferences = ({
     email,

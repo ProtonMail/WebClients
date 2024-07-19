@@ -1,4 +1,5 @@
-import { ADDON_NAMES, CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
+import type { ADDON_NAMES } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { getHas2023OfferCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 

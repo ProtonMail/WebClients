@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
@@ -12,6 +13,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Alert,
     Form,
@@ -20,7 +22,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     useFormErrors,
 } from '../../components';

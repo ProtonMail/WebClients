@@ -1,4 +1,5 @@
-import { ChangeEvent, DependencyList, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent, DependencyList } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import unique from '@proton/utils/unique';
 

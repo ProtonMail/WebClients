@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 import orderBy from 'lodash/orderBy';
 
-import { EasySwitchState } from '../store';
-import { SyncMap, SyncState } from './sync.interface';
+import type { EasySwitchState } from '../store';
+import type { SyncMap, SyncState } from './sync.interface';
 
 export const selectSyncStore = (state: EasySwitchState): SyncState => state.sync;
 export const selectSync = (state: EasySwitchState): SyncMap => state.sync.syncs;

@@ -9,7 +9,7 @@ import { GenericError } from '@proton/components/containers';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 import { Alert, Loader, SettingsLink, useModalState } from '../../components';

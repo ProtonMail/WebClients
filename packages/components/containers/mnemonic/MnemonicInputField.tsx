@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { validateMnemonic } from '@proton/shared/lib/mnemonic';
 
 import { InputFieldTwo, TextAreaTwo } from '../../components';
-import { InputFieldProps } from '../../components/v2/field/InputField';
+import type { InputFieldProps } from '../../components/v2/field/InputField';
 
 export const useMnemonicInputValidation = (mnemonic: string) => {
     const InvalidPassphraseError = c('Error').t`Wrong recovery phrase. Try again or use another recovery method.`;

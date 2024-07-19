@@ -3,13 +3,17 @@ import { useRef } from 'react';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import { CryptoProxy, PrivateKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { DriveFileRevisionResult, DriveFileRevisionThumbnailResult } from '@proton/shared/lib/interfaces/drive/file';
-import { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
+import type {
+    DriveFileRevisionResult,
+    DriveFileRevisionThumbnailResult,
+} from '@proton/shared/lib/interfaces/drive/file';
+import type { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
@@ -19,7 +23,7 @@ import { useDriveCrypto } from '../_crypto';
 import { ShareType, useShare } from '../_shares';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
-import { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
+import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
 import { isDecryptedLinkSame } from './link';
 import useLinksKeys from './useLinksKeys';
 import useLinksState from './useLinksState';

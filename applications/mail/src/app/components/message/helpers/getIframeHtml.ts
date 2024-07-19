@@ -1,7 +1,7 @@
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.svg';
 
 import { locateHead } from '../../../helpers/message/messageHead';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
     MESSAGE_IFRAME_PRINT_FOOTER_ID,

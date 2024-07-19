@@ -1,14 +1,14 @@
-import { MutableRefObject, Ref, RefObject } from 'react';
+import type { MutableRefObject, Ref, RefObject } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import DayGrid from '../../components/calendar/DayGrid';
 import TimeGrid from '../../components/calendar/TimeGrid';
-import { OnMouseDown } from '../../components/calendar/interactions/interface';
-import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
-import { CalendarsEventsCache } from './eventStore/interface';
-import { InteractiveState, SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
+import type { OnMouseDown } from '../../components/calendar/interactions/interface';
+import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import type { CalendarsEventsCache } from './eventStore/interface';
+import type { InteractiveState, SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
 import CalendarSearchView from './search/CalendarSearchView';
 
 const { DAY, WEEK, MONTH, MAIL, DRIVE, SEARCH } = VIEWS;

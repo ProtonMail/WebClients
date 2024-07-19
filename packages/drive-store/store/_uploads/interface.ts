@@ -1,8 +1,8 @@
-import React from 'react';
+import type React from 'react';
 
-import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
-import { ThumbnailType } from './media';
+import type { ThumbnailType } from './media';
 
 export type UploadConflictModal = React.FunctionComponent<UploadConflictModalProps>;
 

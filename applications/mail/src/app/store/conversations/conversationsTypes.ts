@@ -1,7 +1,7 @@
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { Conversation } from '../../models/conversation';
+import type { Conversation } from '../../models/conversation';
 
 export interface ConversationResult {
     Conversation: Conversation;

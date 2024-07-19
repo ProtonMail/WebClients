@@ -1,8 +1,9 @@
-import { ElementType, ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
-import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 
-import ModalTwo, { ModalOwnProps as MainModalOwnProps } from './Modal';
+import type { ModalOwnProps as MainModalOwnProps } from './Modal';
+import ModalTwo from './Modal';
 import ModalTwoContent from './ModalContent';
 import ModalTwoFooter from './ModalFooter';
 import ModalTwoHeader from './ModalHeader';

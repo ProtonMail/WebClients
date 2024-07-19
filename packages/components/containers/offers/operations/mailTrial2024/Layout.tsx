@@ -5,7 +5,7 @@ import OfferLoader from '../../components/shared/OfferLoader';
 import OfferTitle from '../../components/shared/OfferTitle';
 import Deals from '../../components/shared/deal/Deals';
 import hasOffer from '../../helpers/hasOffer';
-import { OfferLayoutProps } from '../../interface';
+import type { OfferLayoutProps } from '../../interface';
 import { getExpires, getRenews, getTitle } from './text';
 
 const Layout = (props: OfferLayoutProps) => {

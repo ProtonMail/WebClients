@@ -9,6 +9,7 @@ import { queryUnlock } from '@proton/shared/lib/api/user';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     InputFieldTwo,
@@ -16,7 +17,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
 } from '../../components';
 import { useApi, useErrorHandler } from '../../hooks';

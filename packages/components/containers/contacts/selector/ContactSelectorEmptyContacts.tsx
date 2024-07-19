@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 import noop from '@proton/utils/noop';
 
-import { ContactEditProps } from '../edit/ContactEditModal';
+import type { ContactEditProps } from '../edit/ContactEditModal';
 
 interface Props {
     onClose?: () => void;

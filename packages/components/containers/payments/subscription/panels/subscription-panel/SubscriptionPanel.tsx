@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
+import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     CYCLE,
     DRIVE_SHORT_APP_NAME,
     FREE_VPN_CONNECTIONS,
     MAIL_SHORT_APP_NAME,
-    PLANS,
     PLAN_NAMES,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -22,7 +21,7 @@ import {
     hasVpnBusiness,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
-import {
+import type {
     Address,
     Currency,
     Organization,
@@ -37,7 +36,8 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../../../components';
+import type { IconName } from '../../../../../components';
+import { Icon, Meter, Price, StripedItem, StripedList } from '../../../../../components';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -57,7 +57,7 @@ import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers
 import Panel from '../Panel';
 import { ActionButtons } from './ActionButtons';
 import { GetMoreButton } from './GetMoreButton';
-import { Item } from './Item';
+import type { Item } from './Item';
 import { SubscriptionItems } from './SubscriptionItems';
 
 interface Props {

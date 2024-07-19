@@ -1,4 +1,4 @@
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { textToHtml } from './textToHtml';
 

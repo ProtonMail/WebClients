@@ -1,4 +1,5 @@
-import { SenderImageMode, getLogo } from '@proton/shared/lib/api/images';
+import type { SenderImageMode } from '@proton/shared/lib/api/images';
+import { getLogo } from '@proton/shared/lib/api/images';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 

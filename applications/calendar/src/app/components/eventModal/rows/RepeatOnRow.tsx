@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import DayCheckbox from '../inputs/DayCheckbox';

@@ -1,15 +1,8 @@
-import { ReactNode, Ref, useImperativeHandle, useState } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { useImperativeHandle, useState } from 'react';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownButtonProps,
-    DropdownProps,
-    DropdownSizeUnit,
-    Tooltip,
-    generateUID,
-    usePopperAnchor,
-} from '@proton/components';
+import type { DropdownButtonProps, DropdownProps } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownSizeUnit, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 export interface DropdownRenderProps {

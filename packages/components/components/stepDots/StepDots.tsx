@@ -1,8 +1,9 @@
-import { Children, HTMLProps, ReactElement, cloneElement } from 'react';
+import type { HTMLProps, ReactElement } from 'react';
+import { Children, cloneElement } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { Props as StepDotProps } from '../stepDot/StepDot';
+import type { Props as StepDotProps } from '../stepDot/StepDot';
 
 export interface Props extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
     value: number;

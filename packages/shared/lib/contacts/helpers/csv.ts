@@ -6,13 +6,13 @@ import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 
 import { getAllTypes } from '../../helpers/contacts';
-import {
+import type {
     ParsedCsvContacts,
     PreVcardProperty,
     PreVcardsContact,
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
-import { VCardContact, VCardKey, VCardProperty } from '../../interfaces/contacts/VCard';
+import type { VCardContact, VCardKey, VCardProperty } from '../../interfaces/contacts/VCard';
 import { createContactPropertyUid, fromVCardProperties, generateNewGroupName } from '../properties';
 import { combine, standarize, toPreVcard } from './csvFormat';
 

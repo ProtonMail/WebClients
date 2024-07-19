@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
+import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
 
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '../constants';
+import type { ICAL_ATTENDEE_STATUS } from '../constants';
+import { ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '../constants';
 
 export enum INVITATION_ERROR_TYPE {
     INVITATION_INVALID,

@@ -6,7 +6,8 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../../components';
 import { getComparatorLabels, getConditionTypeLabels } from '../constants';
-import { ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
+import type { SimpleFilterModalModel } from '../interfaces';
+import { ConditionType, FilterStatement } from '../interfaces';
 import { getConditionLabel, getEmailSentLabel, getEmailSentLabelJt } from './helper';
 
 interface Props {

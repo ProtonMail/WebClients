@@ -4,13 +4,14 @@ import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import createCache from '@proton/shared/lib/helpers/cache';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { generateSimpleCalendar } from '@proton/testing/lib/builders';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
-import CalendarsSection, { CalendarsSectionProps } from './CalendarsSection';
+import type { CalendarsSectionProps } from './CalendarsSection';
+import CalendarsSection from './CalendarsSection';
 
 jest.mock('../../../hooks/useAddresses', () => ({
     __esModule: true,

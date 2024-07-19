@@ -4,7 +4,7 @@ import { Alert, TextLoader } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { SignatureIssueLocation, SignatureIssues } from '../store';
+import type { SignatureIssueLocation, SignatureIssues } from '../store';
 
 type Props = {
     loading: boolean;

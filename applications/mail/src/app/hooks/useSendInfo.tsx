@@ -1,18 +1,19 @@
-import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useGetEncryptionPreferences, useKeyTransparencyContext } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
@@ -22,9 +23,10 @@ import noop from '@proton/utils/noop';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
-import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
-import { ContactsMap } from '../store/contacts/contactsTypes';
-import { MessageState } from '../store/messages/messagesTypes';
+import type { MapSendInfo } from '../models/crypto';
+import { STATUS_ICONS_FILLS } from '../models/crypto';
+import type { ContactsMap } from '../store/contacts/contactsTypes';
+import type { MessageState } from '../store/messages/messagesTypes';
 import { useContactsMap } from './contact/useContacts';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;

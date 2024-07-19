@@ -9,17 +9,11 @@ import {
     mergeHeaders,
     withVerificationHeaders,
 } from '@proton/shared/lib/fetch/headers';
-import { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import {
-    HumanVerificationTrigger,
-    SignupActionResponse,
-    SignupCacheResult,
-    SignupInviteParameters,
-    SignupSteps,
-    SignupType,
-} from '../interfaces';
+import type { SignupActionResponse, SignupCacheResult, SignupInviteParameters } from '../interfaces';
+import { HumanVerificationTrigger, SignupSteps, SignupType } from '../interfaces';
 import { hvHandler } from './helpers';
 
 const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {

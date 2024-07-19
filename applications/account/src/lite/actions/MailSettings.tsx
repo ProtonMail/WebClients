@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -31,13 +32,8 @@ import {
     updateSwipeRight,
     updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
-import {
-    AUTO_DELETE_SPAM_AND_TRASH_DAYS,
-    DEFAULT_MAILSETTINGS,
-    STICKY_LABELS,
-    SWIPE_ACTION,
-    VIEW_MODE,
-} from '@proton/shared/lib/mail/mailSettings';
+import type { AUTO_DELETE_SPAM_AND_TRASH_DAYS, SWIPE_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import EditProfileModal from '../components/EditProfileModal';
 import MobileSection from '../components/MobileSection';

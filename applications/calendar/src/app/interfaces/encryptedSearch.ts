@@ -1,5 +1,5 @@
-import { EncryptedSearchFunctions } from '@proton/encrypted-search';
-import {
+import type { EncryptedSearchFunctions } from '@proton/encrypted-search';
+import type {
     AttendeeModel,
     CalendarEventMetadata,
     CalendarEventSharedData,

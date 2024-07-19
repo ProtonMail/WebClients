@@ -1,6 +1,6 @@
 import { listTimeZones } from '@protontech/timezone-support';
 
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import {
     convertUTCDateTimeToZone,

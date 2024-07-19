@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces';
 
 import { clearAll, minimalCache, render } from '../../helpers/test/helper';
 import MoveButtons from './MoveButtons';

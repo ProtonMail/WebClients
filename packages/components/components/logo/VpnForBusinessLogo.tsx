@@ -1,8 +1,9 @@
-import { ComponentPropsWithoutRef, useState } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { useState } from 'react';
 
 import { generateUID } from '@proton/components';
 
-import { LogoProps } from './Logo';
+import type { LogoProps } from './Logo';
 
 type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 

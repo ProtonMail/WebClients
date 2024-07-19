@@ -1,14 +1,13 @@
 /* eslint-disable class-methods-use-this */
 import { getPasteSource, wrap } from 'roosterjs-editor-dom';
-import {
+import type {
     AttributeCallbackMap,
     BeforePasteEvent,
     EditorPlugin,
     IEditor,
-    KnownPasteSourceType,
     PluginEvent,
-    PluginEventType,
 } from 'roosterjs-editor-types';
+import { KnownPasteSourceType, PluginEventType } from 'roosterjs-editor-types';
 
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 

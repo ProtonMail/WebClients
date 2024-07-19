@@ -1,24 +1,22 @@
-import { PropsWithChildren, ReactElement, ReactNode, useRef } from 'react';
+import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import { useRef } from 'react';
 import { Route, Router } from 'react-router';
 
-import {
-    RenderResult as OriginalRenderResult,
-    RenderOptions,
-    act,
-    render as originalRender,
-} from '@testing-library/react';
+import type { RenderResult as OriginalRenderResult, RenderOptions } from '@testing-library/react';
+import { act, render as originalRender } from '@testing-library/react';
 import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
-import { History, createMemoryHistory } from 'history';
+import type { History } from 'history';
+import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
+import type { PrivateAuthenticationStore } from '@proton/components';
 import {
     CacheProvider,
     CalendarModelEventManagerProvider,
     FeatureCode,
     ModalsChildren,
     ModalsProvider,
-    PrivateAuthenticationStore,
 } from '@proton/components';
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import ApiContext from '@proton/components/containers/api/apiContext';
@@ -28,7 +26,7 @@ import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import {
+import type {
     ApiEnvironmentConfig,
     CachedOrganizationKey,
     DecryptedKey,
@@ -36,21 +34,21 @@ import {
     UserModel,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
-import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getFeatureFlagsState, registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
-import { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
+import type { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
 import { composersInitialState } from 'proton-mail/store/composers/composersSlice';
 import { mailContactsInitialState } from 'proton-mail/store/contacts/contactsSlice';
-import { ConversationsState } from 'proton-mail/store/conversations/conversationsTypes';
+import type { ConversationsState } from 'proton-mail/store/conversations/conversationsTypes';
 import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
 import { incomingDefaultsInitialState } from 'proton-mail/store/incomingDefaults/incomingDefaultsSlice';
 import { layoutInitialState } from 'proton-mail/store/layout/layoutSlice';
-import { MessagesState } from 'proton-mail/store/messages/messagesTypes';
+import type { MessagesState } from 'proton-mail/store/messages/messagesTypes';
 import { snoozeInitialState } from 'proton-mail/store/snooze/snoozeSlice';
 
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
@@ -61,7 +59,8 @@ import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
-import { MailState, MailStore, extendStore, setupStore } from '../../store/store';
+import type { MailState, MailStore } from '../../store/store';
+import { extendStore, setupStore } from '../../store/store';
 import { api, mockDomApi } from './api';
 import { mockCache } from './cache';
 import NotificationsTestProvider from './notifications';

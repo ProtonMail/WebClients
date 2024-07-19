@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import type { ModalStateProps } from '@proton/components/components';
 import {
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -15,7 +15,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import PendingInvitationModalErrors from './PendingInvitationModalErrors';

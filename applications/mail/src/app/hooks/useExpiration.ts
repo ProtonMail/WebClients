@@ -10,7 +10,7 @@ import {
     getExpiresOnMessage,
     getMessageExpirationDate,
 } from '../helpers/message/messageExpirationTime';
-import { MessageState } from '../store/messages/messagesTypes';
+import type { MessageState } from '../store/messages/messagesTypes';
 
 const useExpiration = (message: MessageState, autoDelete = false) => {
     const [expiresInLessThan24Hours, setExpiresInLessThan24Hours] = useState(false);

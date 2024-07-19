@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 
 interface Props {

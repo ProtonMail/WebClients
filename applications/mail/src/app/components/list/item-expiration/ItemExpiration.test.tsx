@@ -3,13 +3,13 @@ import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
 import { getModelState } from '@proton/account/test';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import ItemExpiration from './ItemExpiration';
 
 const defaultLabelID = MAILBOX_LABEL_IDS.INBOX;

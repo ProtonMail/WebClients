@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,7 +18,8 @@ import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useApi, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
-import { AssistantFeedback, sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
+import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
+import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 interface Props {

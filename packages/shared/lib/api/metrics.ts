@@ -1,4 +1,4 @@
-import { METRICS_LOG } from '../constants';
+import type { METRICS_LOG } from '../constants';
 
 interface SendMetricsReportPayload {
     Log: METRICS_LOG;

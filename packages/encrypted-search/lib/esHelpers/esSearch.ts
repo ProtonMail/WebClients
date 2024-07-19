@@ -3,7 +3,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { AesKeyGenParams, ES_EXTRA_RESULTS_LIMIT, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch, readMetadataBatch, readSortedIDs } from '../esIDB';
-import {
+import type {
     AesGcmCiphertext,
     CachedItem,
     ESCache,

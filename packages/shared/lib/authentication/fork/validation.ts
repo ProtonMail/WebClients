@@ -1,7 +1,8 @@
-import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../../constants';
+import type { APP_NAMES } from '../../constants';
+import { APPS, APPS_CONFIGURATION } from '../../constants';
 import { validateEmailAddress } from '../../helpers/email';
 import { decodeBase64URL, stringToUint8Array } from '../../helpers/encoding';
-import {ExtraSessionForkSearchParameters, ForkType, ForkableApps, ForkSearchParameters} from './constants';
+import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkableApps } from './constants';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
     if (ForkableApps.has(app as any)) {
@@ -43,7 +44,7 @@ export const getValidatedLocalID = (localID = '') => {
 export const getLocalIDForkSearchParameter = (searchParams: URLSearchParams) => {
     const localID = searchParams.get(ForkSearchParameters.LocalID) || '';
     return getValidatedLocalID(localID);
-}
+};
 
 export const getValidatedRawKey = (str: string) => {
     try {

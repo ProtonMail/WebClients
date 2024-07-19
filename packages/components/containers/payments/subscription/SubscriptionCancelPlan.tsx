@@ -4,7 +4,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import clsx from '@proton/utils/clsx';
 
-import { PlanCardFeatureDefinition } from '../features/interface';
+import type { PlanCardFeatureDefinition } from '../features/interface';
 
 import './SubscriptionCancelPlan.scss';
 

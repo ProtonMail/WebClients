@@ -2,13 +2,13 @@ import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRoute } from '../../api/keys';
-import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
+import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
 import reactivateKeysProcessLegacy from '../reactivation/reactivateKeysProcessLegacy';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { getFilteredImportRecords } from './helper';
-import { KeyImportData, OnKeyImportCallback } from './interface';
+import type { KeyImportData, OnKeyImportCallback } from './interface';
 
 export interface ImportKeysProcessLegacyArguments {
     api: Api;

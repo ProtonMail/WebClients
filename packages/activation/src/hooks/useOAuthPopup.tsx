@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ImportProvider } from '@proton/activation/src/interface';
+import type { ImportProvider } from '@proton/activation/src/interface';
 import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

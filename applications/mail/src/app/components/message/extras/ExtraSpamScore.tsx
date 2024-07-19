@@ -13,7 +13,7 @@ import {
     isSuspicious,
 } from '@proton/shared/lib/mail/messages';
 
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageStateWithData;

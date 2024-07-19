@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Badge, LoaderIcon, Table, TableBody, TableHeader, TableRow } from '../../../components';
-import { ImportKey, Status } from './interface';
+import type { ImportKey } from './interface';
+import { Status } from './interface';
 
 interface Props {
     keys: ImportKey[];

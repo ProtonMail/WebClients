@@ -1,11 +1,11 @@
-import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { SimpleMap } from '../interfaces';
-import { Message } from '../interfaces/mail/Message';
-import { PackageDirect } from '../interfaces/mail/crypto';
-import { CREATE_DRAFT_MESSAGE_ACTION, SEND_MESSAGE_DIRECT_ACTION } from '../interfaces/message';
+import type { SimpleMap } from '../interfaces';
+import type { Message } from '../interfaces/mail/Message';
+import type { PackageDirect } from '../interfaces/mail/crypto';
+import type { CREATE_DRAFT_MESSAGE_ACTION, SEND_MESSAGE_DIRECT_ACTION } from '../interfaces/message';
 import { getAppropriateSort } from './helpers/snoozeSort';
-import { MailboxItemsQueryParams } from './mailbox';
+import type { MailboxItemsQueryParams } from './mailbox';
 
 type BaseMessage = Pick<
     Message,

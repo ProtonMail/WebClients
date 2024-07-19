@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
@@ -31,7 +31,8 @@ import {
     Time,
     Tooltip,
 } from '../../components';
-import { default as Badge, BadgeType } from '../../components/badge/Badge';
+import type { BadgeType } from '../../components/badge/Badge';
+import { default as Badge } from '../../components/badge/Badge';
 import { useApi, useEventManager, usePlans, useSubscription, useUser } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';

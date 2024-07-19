@@ -1,5 +1,5 @@
-import { CircleLoader, CircleLoaderSize } from '@proton/atoms';
-
+import type { CircleLoaderSize } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms';
 
 interface Props {
     size?: CircleLoaderSize;

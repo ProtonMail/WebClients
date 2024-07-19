@@ -1,4 +1,4 @@
-import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
 export const mockEventManager: EventManager = {
     call: jest.fn().mockReturnValue(Promise.resolve()),

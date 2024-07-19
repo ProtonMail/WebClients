@@ -1,9 +1,10 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/address';
-import {
+import type {
     ActiveKey,
     Address,
     DecryptedKey,
@@ -12,7 +13,7 @@ import {
     SignedKeyList,
     SignedKeyListItem,
 } from '../interfaces';
-import { SimpleMap } from '../interfaces/utils';
+import type { SimpleMap } from '../interfaces/utils';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 
 export const getSignedKeyListSignature = async (data: string, signingKey: PrivateKeyReference, date?: Date) => {

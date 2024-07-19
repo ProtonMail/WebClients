@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components';
 import {
     Cell,
     Form,
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -21,10 +21,10 @@ import {
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
 
-import { Gateway } from './Gateway';
+import type { Gateway } from './Gateway';
 import GatewayAddServersModal from './GatewayAddServersModal';
-import { GatewayLogical } from './GatewayLogical';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayLogical } from './GatewayLogical';
+import type { GatewayUser } from './GatewayUser';
 import { getCountryFlagAndName } from './getCountryFlagAndName';
 import { getFormattedLoad, getSuffix, getTotalAdded } from './helpers';
 

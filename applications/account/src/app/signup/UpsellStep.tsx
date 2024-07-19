@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CurrencySelector, Price, useConfig, useModalState } from '@proton/components';
-import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getCTA,
     getFreeDrivePlan,
@@ -18,7 +18,14 @@ import metrics from '@proton/metrics';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Currency, Cycle, FreePlanDefault, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type {
+    Currency,
+    Cycle,
+    FreePlanDefault,
+    Plan,
+    PlanIDs,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import Content from '../public/Content';

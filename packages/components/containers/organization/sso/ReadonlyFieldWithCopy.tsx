@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms/Input';
+import type { Input } from '@proton/atoms/Input';
 import { Copy, InputFieldTwo } from '@proton/components/components';
-import { InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 

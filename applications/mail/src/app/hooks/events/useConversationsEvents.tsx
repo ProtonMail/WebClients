@@ -1,12 +1,12 @@
 import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { parseLabelIDsInEvent } from '../../helpers/elements';
-import { Conversation } from '../../models/conversation';
-import { Event, LabelIDsChanges } from '../../models/event';
+import type { Conversation } from '../../models/conversation';
+import type { Event, LabelIDsChanges } from '../../models/event';
 import {
     eventConversationUpdate,
     eventDelete,

@@ -3,15 +3,8 @@ import { c } from 'ttag';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER, PLANS } from '../constants';
-import {
-    Address,
-    CachedOrganizationKey,
-    DOMAIN_STATE,
-    Domain,
-    MEMBER_ORG_KEY_STATE,
-    Member,
-    Organization,
-} from '../interfaces';
+import type { Address, CachedOrganizationKey, Domain, Member, Organization } from '../interfaces';
+import { DOMAIN_STATE, MEMBER_ORG_KEY_STATE } from '../interfaces';
 
 export const isSuperAdmin = (members: Member[]) =>
     (members || []).some(({ Subscriber, Self }) => Self === 1 && Subscriber === MEMBER_SUBSCRIBER.PAYER);

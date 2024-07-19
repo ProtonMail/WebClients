@@ -8,10 +8,10 @@ import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     ADDRESS_TYPE,
     APPS,
-    APP_NAMES,
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     MAIL_APP_NAME,
@@ -22,7 +22,8 @@ import {
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { Address, AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
+import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { AppLink, Badge, Icon, Info, Tooltip, useModalState } from '../../components';

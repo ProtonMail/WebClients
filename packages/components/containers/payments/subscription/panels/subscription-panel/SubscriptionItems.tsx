@@ -1,7 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
 import { Icon, StripedItem } from '../../../../../components';
-import { Item } from './Item';
+import type { Item } from './Item';
 
 interface Props {
     items: Item[];

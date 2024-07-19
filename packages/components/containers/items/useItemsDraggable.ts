@@ -1,4 +1,5 @@
-import { DragEvent, useCallback, useEffect, useRef, useState } from 'react';
+import type { DragEvent } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { generateUID } from '../../helpers';
 import useHandler from '../../hooks/useHandler';

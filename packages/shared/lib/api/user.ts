@@ -1,6 +1,7 @@
-import { ProductParam, getProductHeaders } from '../apps/product';
-import { CLIENT_TYPES } from '../constants';
-import { HumanVerificationMethodType } from '../interfaces';
+import type { ProductParam } from '../apps/product';
+import { getProductHeaders } from '../apps/product';
+import type { CLIENT_TYPES } from '../constants';
+import type { HumanVerificationMethodType } from '../interfaces';
 
 export const getUser = () => ({
     url: 'core/v4/users',

@@ -2,15 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    useApi,
-} from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton, useApi } from '@proton/components';
 import { createSLUser } from '@proton/shared/lib/api/simpleLogin';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, SIMPLE_LOGIN_EXTENSION_LINKS } from '@proton/shared/lib/constants';

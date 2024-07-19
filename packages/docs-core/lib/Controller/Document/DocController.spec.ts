@@ -1,28 +1,28 @@
-import { DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { DriveCompat, NodeMeta } from '@proton/drive-store'
 import { DocController } from './DocController'
-import { SquashDocument } from '../../UseCase/SquashDocument'
-import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import { LoadDocument } from '../../UseCase/LoadDocument'
-import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
-import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
-import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
-import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
-import {
+import type { SquashDocument } from '../../UseCase/SquashDocument'
+import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
+import type { LoadDocument } from '../../UseCase/LoadDocument'
+import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
+import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
+import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
+import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import type {
   BroadcastSource,
   ClientRequiresEditorMethods,
-  DecryptedMessage,
   InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
-import { LoggerInterface } from '@proton/utils/logs'
-import { LoadCommit } from '../../UseCase/LoadCommit'
+import { DecryptedMessage } from '@proton/docs-shared'
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoadCommit } from '../../UseCase/LoadCommit'
 import { ConnectionCloseReason } from '@proton/docs-proto'
-import { DecryptedCommit } from '../../Models/DecryptedCommit'
+import type { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { Result } from '../../Domain/Result/Result'
-import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
-import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
-import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { DocControllerEvent } from './DocControllerEvent'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../../Models/Constants'
 

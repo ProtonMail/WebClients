@@ -1,8 +1,9 @@
 import { differenceInMonths, fromUnixTime } from 'date-fns';
 
-import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
+import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { MailImportDestinationFolder, MailImportMapping, TIME_PERIOD } from '@proton/activation/src/interface';
+import type { MailImportMapping } from '@proton/activation/src/interface';
+import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
 import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import { standardFolderResponse } from '@proton/activation/src/tests/data/gmail.formattedResponse';
 import { gmailImapResponse } from '@proton/activation/src/tests/data/gmail.imap.formattedResponse';
@@ -10,7 +11,7 @@ import gmailImapModalLabels from '@proton/activation/src/tests/data/gmail.imap.p
 import labels from '@proton/activation/src/tests/data/gmail.providerFolders';
 
 import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
-import { StepPrepareData } from './useStepPrepareImap';
+import type { StepPrepareData } from './useStepPrepareImap';
 
 // used in MailFoldersMapping.getRandomLabelColor.
 jest.mock('@proton/utils/randomIntFromInterval', () => () => 0);

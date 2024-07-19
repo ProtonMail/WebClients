@@ -11,7 +11,7 @@ import { useLinksListing } from '../_links';
 import { useSearchResults } from '../_search';
 import { useUserSettings } from '../_settings';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSorting, useSortingWithDefault } from './utils';
-import { SortField } from './utils/useSorting';
+import type { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,

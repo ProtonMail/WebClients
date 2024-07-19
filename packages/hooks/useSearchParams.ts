@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { ParsedSearchParams, changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
+import type { ParsedSearchParams } from '@proton/shared/lib/helpers/url';
+import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 
 type SetSearchParams = (nextInit: ParsedSearchParams | ((prev: ParsedSearchParams) => ParsedSearchParams)) => void;
 

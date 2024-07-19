@@ -1,6 +1,6 @@
 import { SORT_DIRECTION } from '../../constants';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
-import { CreateNewFolder } from '../../interfaces/drive/folder';
+import type { CreateNewFolder } from '../../interfaces/drive/folder';
 
 export const queryFolderChildren = (
     shareID: string,

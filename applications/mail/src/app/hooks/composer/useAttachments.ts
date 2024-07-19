@@ -1,20 +1,22 @@
-import { MutableRefObject, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useApi, useAuthentication, useHandler, useNotifications } from '@proton/components';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { MessageChange } from '../../components/composer/Composer';
-import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import type { MessageChange } from '../../components/composer/Composer';
+import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../constants';
-import { UploadResult, checkSizeAndLength, upload } from '../../helpers/attachment/attachmentUploader';
+import type { UploadResult } from '../../helpers/attachment/attachmentUploader';
+import { checkSizeAndLength, upload } from '../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
@@ -22,9 +24,9 @@ import {
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
-import { Upload } from '../../helpers/upload';
+import type { Upload } from '../../helpers/upload';
 import { addAttachment } from '../../store/attachments/attachmentsActions';
-import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';

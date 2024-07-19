@@ -1,17 +1,18 @@
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
-import { APPS, APP_NAMES, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import {
+import type {
     CachedOrganizationKey,
     EnhancedMember,
     Member,
-    MemberUnprivatizationState,
     Organization,
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import isTruthy from '@proton/utils/isTruthy';
 

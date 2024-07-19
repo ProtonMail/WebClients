@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CYCLE, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import Logo from '../../../components/logo/Logo';
 import { getSimplePriceString } from '../../../components/price/helper';

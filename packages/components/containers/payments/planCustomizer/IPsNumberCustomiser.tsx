@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Plan } from '@proton/shared/lib/interfaces';
+import type { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Info } from '../../../components';

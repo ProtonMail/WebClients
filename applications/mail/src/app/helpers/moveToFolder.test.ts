@@ -1,5 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
 
@@ -9,7 +9,7 @@ import {
     getNotificationTextUnauthorized,
     searchForScheduled,
 } from '../helpers/moveToFolder';
-import { Element } from '../models/element';
+import type { Element } from '../models/element';
 
 const { SPAM, TRASH, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX, SCHEDULED } = MAILBOX_LABEL_IDS;
 

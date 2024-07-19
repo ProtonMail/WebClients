@@ -1,5 +1,5 @@
 import * as useFeatureModule from '@proton/features/useFeature';
-import { DeepPartial } from '@proton/shared/lib/interfaces';
+import type { DeepPartial } from '@proton/shared/lib/interfaces';
 
 type HookReturnType = ReturnType<typeof useFeatureModule.default>;
 

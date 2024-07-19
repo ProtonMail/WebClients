@@ -2,13 +2,13 @@ import { fireEvent, within } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { assertIcon } from '../../../helpers/test/assertion';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
-    GeneratedKey,
     addApiKeys,
     addApiMock,
     clearAll,

@@ -1,14 +1,10 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    MemberKeyPayload,
-    editMember,
-    getMemberAddresses,
-    getMemberEditPayload,
-    getPrivateAdminError,
-} from '@proton/account';
+import type { MemberKeyPayload } from '@proton/account';
+import { editMember, getMemberAddresses, getMemberEditPayload, getPrivateAdminError } from '@proton/account';
 import { Button, Card } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -16,10 +12,11 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Icon,
     Info,
@@ -28,7 +25,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Prompt,
     Toggle,
     Tooltip,

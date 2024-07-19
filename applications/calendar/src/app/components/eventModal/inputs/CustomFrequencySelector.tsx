@@ -1,5 +1,5 @@
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 
 import EndsRow from '../rows/EndsRow';
 import RepeatEveryRow from '../rows/RepeatEveryRow';

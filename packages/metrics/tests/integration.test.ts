@@ -3,8 +3,8 @@ import Histogram from '../lib/Histogram';
 import MetricsApi from '../lib/MetricsApi';
 import MetricsBase from '../lib/MetricsBase';
 import MetricsRequestService from '../lib/MetricsRequestService';
-import IMetricsRequestService from '../lib/types/IMetricsRequestService';
-import MetricSchema from '../lib/types/MetricSchema';
+import type IMetricsRequestService from '../lib/types/IMetricsRequestService';
+import type MetricSchema from '../lib/types/MetricSchema';
 
 export const counterName = 'counter_name';
 export const counterVersion = 1;

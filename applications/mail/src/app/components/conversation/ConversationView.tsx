@@ -1,18 +1,19 @@
-import { RefObject, memo, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
+import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms';
-import { Breakpoints, useLabels, useToggle } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { useLabels, useToggle } from '@proton/components';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
 import useUnreadNotifications from 'proton-mail/hooks/useUnreadNotifications';
-
+import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -27,7 +28,8 @@ import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
-import MessageView, { MessageViewRef } from '../message/MessageView';
+import type { MessageViewRef } from '../message/MessageView';
+import MessageView from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
 import ConversationHeader from './ConversationHeader';
 import TrashWarning from './TrashWarning';

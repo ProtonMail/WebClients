@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import clsx from '@proton/utils/clsx';

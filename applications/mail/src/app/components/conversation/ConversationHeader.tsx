@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isConversation as testIsConversation } from '../../helpers/elements';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import NumMessages from './NumMessages';
 
 interface Props {

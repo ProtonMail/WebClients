@@ -4,7 +4,8 @@ import { Button, Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Prompt, PromptProps } from '../../../components';
+import type { PromptProps } from '../../../components';
+import { Prompt } from '../../../components';
 
 export type VisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
 

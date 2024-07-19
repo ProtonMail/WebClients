@@ -9,8 +9,8 @@ import {
     usePopperAnchor,
 } from '@proton/components/components';
 
-import { Gateway } from './Gateway';
-import { GatewayLogical } from './GatewayLogical';
+import type { Gateway } from './Gateway';
+import type { GatewayLogical } from './GatewayLogical';
 
 interface Props {
     gateway: Gateway;

@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { DealProps } from '../../../interface';
+import type { DealProps } from '../../../interface';
 
 const DealContext = createContext<DealProps | undefined>(undefined);
 

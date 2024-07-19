@@ -1,6 +1,6 @@
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
-import RecoveryStatus from '../containers/recovery/RecoveryStatus';
+import type RecoveryStatus from '../containers/recovery/RecoveryStatus';
 import usePrimaryRecoverySecret from './usePrimaryRecoverySecret';
 import { useUser } from './useUser';
 import useUserSettings from './useUserSettings';

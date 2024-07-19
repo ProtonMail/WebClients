@@ -1,11 +1,12 @@
-import { ComponentPropsWithoutRef, ReactNode, Ref, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode, Ref } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { getISOWeek } from 'date-fns';
 
 import { eachDayOfInterval, isSameMonth } from '@proton/shared/lib/date-fns-utc';
 import chunk from '@proton/utils/chunk';
 
-import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
+import type { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 import { useRect } from '../../hooks/useRect';
 import DayButtons from './DayGrid/DayButtons';
 import RowEvents from './DayGrid/RowEvents';

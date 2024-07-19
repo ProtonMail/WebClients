@@ -1,8 +1,8 @@
-import { RefObject } from 'react';
+import type { RefObject } from 'react';
 
-import { Middleware, MiddlewareArguments, MiddlewareReturn } from '@floating-ui/dom';
+import type { Middleware, MiddlewareArguments, MiddlewareReturn } from '@floating-ui/dom';
 
-import { ArrowOffset, PopperPlacement, PopperPosition } from './interface';
+import type { ArrowOffset, PopperPlacement, PopperPosition } from './interface';
 
 export const allPopperPlacements: PopperPlacement[] = [
     'top-start',

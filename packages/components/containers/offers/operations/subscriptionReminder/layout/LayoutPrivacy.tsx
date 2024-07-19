@@ -6,7 +6,8 @@ import shieldDouble from '@proton/styles/assets/img/subscription-reminder/shield
 import storage from '@proton/styles/assets/img/subscription-reminder/storage.svg';
 
 import ReminderCTA from './ReminderCTA';
-import ReminderDeal, { DealItem } from './ReminderDeal';
+import type { DealItem } from './ReminderDeal';
+import ReminderDeal from './ReminderDeal';
 import ReminderHeader from './ReminderHeader';
 
 interface Props {

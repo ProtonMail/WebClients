@@ -1,10 +1,11 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
-import { MIME_TYPES } from '../../constants';
+import type { MIME_TYPES } from '../../constants';
 import { hasBitBigInt } from '../../helpers/bitset';
-import { Attachment } from '../../interfaces/mail/Message';
-import { Packets } from '../../interfaces/mail/crypto';
+import type { Attachment } from '../../interfaces/mail/Message';
+import type { Packets } from '../../interfaces/mail/crypto';
 import { MESSAGE_FLAGS } from '../constants';
 
 export const encryptAttachment = async (

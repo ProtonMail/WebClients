@@ -5,7 +5,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import * as globalAction from '../actions';
 import * as action from './importers.actions';
 import { normalizeImporter, normalizeImporters } from './importers.helpers';
-import { ImportersState } from './importers.interface';
+import type { ImportersState } from './importers.interface';
 
 const initialState: ImportersState = { importers: {}, activeImporters: {}, loading: 'idle' };
 

@@ -1,11 +1,13 @@
-import { ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLikeShape } from '@proton/atoms';
-import { ThemeColorUnion } from '@proton/colors';
+import type { ButtonLikeShape } from '@proton/atoms';
+import type { ThemeColorUnion } from '@proton/colors';
 import { useCombinedRefs } from '@proton/hooks';
-import { ArmoredKeyWithInfo, parseKeyFiles } from '@proton/shared/lib/keys';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import { parseKeyFiles } from '@proton/shared/lib/keys';
 
 import FileInput from '../../../components/input/FileInput';
 

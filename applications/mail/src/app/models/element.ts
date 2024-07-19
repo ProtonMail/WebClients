@@ -1,6 +1,6 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { Conversation } from './conversation';
-import { ESMessage } from './encryptedSearch';
+import type { Conversation } from './conversation';
+import type { ESMessage } from './encryptedSearch';
 
 export type Element = Conversation | Message | ESMessage;

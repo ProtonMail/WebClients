@@ -8,16 +8,17 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHostname } from '@proton/shared/lib/helpers/url';
-import {
+import type {
     Api,
     KeyTransparencyActivation,
     UserSettings,
@@ -44,8 +45,9 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
-import { ChallengeResult } from '../challenge';
-import { AuthActionResponse, AuthCacheResult, AuthSession, AuthStep } from './interface';
+import type { ChallengeResult } from '../challenge';
+import type { AuthActionResponse, AuthCacheResult, AuthSession } from './interface';
+import { AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
 const syncUser = async (cache: AuthCacheResult): Promise<tsUser> => {

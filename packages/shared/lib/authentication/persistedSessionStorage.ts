@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import createListeners from '../helpers/listeners';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import {
+import type {
     DefaultPersistedSession,
     OfflinePersistedSession,
     PersistedSession,
@@ -14,7 +14,7 @@ import {
 } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
 import { getValidatedLocalID } from './fork/validation';
-import { OfflineKey } from './offlineKey';
+import type { OfflineKey } from './offlineKey';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 
 // We have business logic relying on this constant, please change with caution!

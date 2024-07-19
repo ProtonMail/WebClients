@@ -1,4 +1,4 @@
-import { IntervalTree } from '../interface';
+import type { IntervalTree } from '../interface';
 
 interface UpsertCalendarEventInTreeArguments {
     oldStart?: number;

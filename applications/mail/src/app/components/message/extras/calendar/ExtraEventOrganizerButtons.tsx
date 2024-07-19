@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { InvitationModel, getHasInvitationApi } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { getHasInvitationApi } from '../../../../helpers/calendar/invite';
 import ExtraEventAddParticipantButton from './ExtraEventAddParticipantButton';
 
 interface Props {

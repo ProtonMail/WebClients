@@ -3,15 +3,16 @@ import { useCallback, useEffect, useState } from 'react';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
-import { Icon, IconName, Tooltip } from '@proton/components/components';
-import { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import type { IconName } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
 import { usePsbt } from '../../../../hooks/usePsbt';
-import { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
+import type { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
 import { isExchangeRate } from '../../../../utils';
 
 import './FeesModal.scss';

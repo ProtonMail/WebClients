@@ -1,4 +1,4 @@
-import {
+import type {
     AuthenticationMethod,
     CalendarImporterPayload,
     ContactsImporterPayload,
@@ -7,8 +7,8 @@ import {
     MailImportGmailCategories,
     MailImporterPayload,
 } from '@proton/activation/src/interface';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { ApiResponse } from '@proton/shared/lib/interfaces';
+import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import type { ApiResponse } from '@proton/shared/lib/interfaces';
 
 /**
  * API EVENTS

@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { LinkDownload } from '../interface';
-import { Download, UpdateCallback, UpdateData, UpdateFilter, UpdateState } from './interface';
+import type { LinkDownload } from '../interface';
+import type { Download, UpdateCallback, UpdateData, UpdateFilter, UpdateState } from './interface';
 import useDownloadQueue from './useDownloadQueue';
 
 function makeDownloadLink(name: string, isFile = true): LinkDownload {

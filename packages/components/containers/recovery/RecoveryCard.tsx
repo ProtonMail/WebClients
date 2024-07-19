@@ -18,7 +18,8 @@ import {
 } from '../../hooks';
 import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
 import { SettingsSectionTitle } from '../account';
-import RecoveryCardStatus, { RecoveryCardStatusProps } from './RecoveryCardStatus';
+import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
+import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';
 
 interface Props {

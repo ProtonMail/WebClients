@@ -199,6 +199,7 @@ module.exports = {
         'custom-rules/deprecate-sizing-classes': 'warn',
         'custom-rules/deprecate-classes': 'warn',
         'custom-rules/no-template-in-translator-context': 'error',
+        '@typescript-eslint/consistent-type-imports': 'error',
     },
     settings: {
         'import/resolver': {

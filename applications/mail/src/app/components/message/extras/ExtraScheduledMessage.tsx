@@ -20,7 +20,7 @@ import { LABEL_IDS_TO_HUMAN, PREVENT_CANCEL_SEND_INTERVAL } from '../../../const
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../../store/messages/scheduled/scheduledActions';
 import { isScheduledSendTodayMorning } from '../../composer/actions/scheduleSend/helpers';
 

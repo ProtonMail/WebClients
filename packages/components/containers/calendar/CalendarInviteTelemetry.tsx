@@ -1,7 +1,8 @@
-import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { PLANS } from '@proton/shared/lib/constants';
+import type { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import type { PLANS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 type Options = {
     event: TelemetryCalendarEvents.answer_invite;

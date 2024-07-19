@@ -1,13 +1,14 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     Alert,
     FileNameDisplay,
     Icon,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -21,8 +22,9 @@ import { useLoading } from '@proton/hooks';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { DriveFileRevision, SignatureIssues, useLinkDetailsView } from '../../store';
-import { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
+import type { DriveFileRevision, SignatureIssues } from '../../store';
+import { useLinkDetailsView } from '../../store';
+import type { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
 import useRevisions from '../../store/_revisions/useRevisions';
 import { formatAccessCount } from '../../utils/formatters';
 import { Cells } from '../FileBrowser';

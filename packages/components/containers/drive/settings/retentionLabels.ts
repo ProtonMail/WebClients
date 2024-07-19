@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
+import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 const retentionLabelForDays = (nbDay: number) => c('Label').ngettext(msgid`${nbDay} day`, `${nbDay} days`, nbDay);
 const retentionLabelForYears = (nbYear: number) =>

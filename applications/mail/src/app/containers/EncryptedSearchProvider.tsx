@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -33,14 +34,14 @@ import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESD
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
-import {
+import type {
     ESBaseMessage,
     ESDBStatusMail,
     ESMessageContent,
     EncryptedSearchFunctionsMail,
     NormalizedSearchParams,
 } from '../models/encryptedSearch';
-import { Event } from '../models/event';
+import type { Event } from '../models/event';
 
 const EncryptedSearchContext = createContext<EncryptedSearchFunctionsMail>(defaultESContextMail);
 export const useEncryptedSearchContext = () => useContext(EncryptedSearchContext);

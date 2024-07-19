@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import MessageBodyIframe from '../../message/MessageBodyIframe';
 
 interface Props {

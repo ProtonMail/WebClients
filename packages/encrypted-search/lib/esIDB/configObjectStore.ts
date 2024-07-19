@@ -1,8 +1,8 @@
-import { IDBPDatabase } from 'idb';
+import type { IDBPDatabase } from 'idb';
 
 import noop from '@proton/utils/noop';
 
-import { ConfigKeys, ConfigValues, EncryptedSearchDB, RetryObject } from '../models';
+import type { ConfigKeys, ConfigValues, EncryptedSearchDB, RetryObject } from '../models';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
 /**

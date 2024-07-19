@@ -4,7 +4,8 @@ import { useAuthentication, useConfig, useDrawer, useOnline, useUser } from '@pr
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import {
     addParentAppToUrl,
     getDisplayDrawerApp,
@@ -12,7 +13,7 @@ import {
     getIsIframedDrawerApp,
     getLocalStorageUserDrawerKey,
 } from '@proton/shared/lib/drawer/helpers';
-import { DrawerLocalStorageValue } from '@proton/shared/lib/drawer/interfaces';
+import type { DrawerLocalStorageValue } from '@proton/shared/lib/drawer/interfaces';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 const useOpenDrawerOnLoad = () => {

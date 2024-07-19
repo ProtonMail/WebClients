@@ -4,7 +4,7 @@ import { FileIcon, FileNameDisplay } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { Cells } from '../../FileBrowser';
-import { LinkInfo } from './types';
+import type { LinkInfo } from './types';
 
 interface Props {
     linkInfo: LinkInfo;

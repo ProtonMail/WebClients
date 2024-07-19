@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { OfferConfig } from '../interface';
+import type { OfferConfig } from '../interface';
 import useOfferFlags from './useOfferFlags';
 
 /**

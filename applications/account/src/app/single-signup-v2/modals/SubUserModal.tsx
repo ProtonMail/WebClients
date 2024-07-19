@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
 import { getFreeTitle } from '../helper';
 import PlanComparison from './PlanComparison';

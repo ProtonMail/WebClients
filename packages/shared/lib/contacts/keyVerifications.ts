@@ -1,8 +1,9 @@
-import { CryptoProxy, KeyID } from '@proton/crypto';
+import type { KeyID } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
-import { Key } from '../interfaces';
-import { Contact } from '../interfaces/contacts';
+import type { Key } from '../interfaces';
+import type { Contact } from '../interfaces/contacts';
 
 export interface KeyWithIds {
     key: Key;

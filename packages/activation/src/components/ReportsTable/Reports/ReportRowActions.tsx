@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ApiReportRollbackState } from '@proton/activation/src/api/api.interface';
 import { deleteReportSummary, rollbackReportSummary } from '@proton/activation/src/logic/reports/reports.actions';
-import { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
+import type { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
 import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';

@@ -1,4 +1,4 @@
-import { LiHTMLAttributes } from 'react';
+import type { LiHTMLAttributes } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

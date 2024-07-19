@@ -1,4 +1,4 @@
-import { EventTypeEnum } from '@proton/docs-proto'
+import type { EventTypeEnum } from '@proton/docs-proto'
 
 export class ProcessedIncomingRealtimeEventMessage {
   constructor(

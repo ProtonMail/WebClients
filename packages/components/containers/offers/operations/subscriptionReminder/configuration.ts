@@ -1,5 +1,5 @@
 import { FeatureCode } from '../../../../containers/features';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
 const config = {

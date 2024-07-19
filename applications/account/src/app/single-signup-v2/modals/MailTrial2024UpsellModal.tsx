@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, ModalProps, ModalTwo, ModalTwoContent, Tooltip } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, Tooltip } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getMailPlus2024InboxFeatures } from '@proton/components/containers/offers/helpers/offerCopies';
 import { mailTrial2024Config } from '@proton/components/containers/offers/operations/mailTrial2024';
@@ -9,7 +10,7 @@ import { getCTAContent, getRenews } from '@proton/components/containers/offers/o
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import SaveLabel from '../SaveLabel';
 import useMailSignupUpsellTelemetry from './useMailSignupUpsellTelemetry';

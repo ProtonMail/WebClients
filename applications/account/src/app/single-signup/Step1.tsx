@@ -1,4 +1,5 @@
-import { Dispatch, Fragment, ReactElement, ReactNode, SetStateAction, useEffect, useRef, useState } from 'react';
+import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
@@ -8,7 +9,8 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, IconSize, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
+import type { IconSize } from '@proton/components/components';
+import { Icon, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
     CurrencySelector,
@@ -52,23 +54,22 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
-import { Breakpoints, useApi } from '@proton/components/hooks';
+import type { Breakpoints } from '@proton/components/hooks';
+import { useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/components/payments/core';
 import {
-    BillingAddress,
-    ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
-    TokenPayment,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
-import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
+import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
@@ -85,13 +86,14 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2023OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -103,13 +105,15 @@ import noop from '@proton/utils/noop';
 import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import { PlanIDs, SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
-import AccountStepDetails, { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
+import type { PlanIDs, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { SignupType } from '../signup/interfaces';
+import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
+import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
 import FreeLogo from '../single-signup-v2/FreeLogo';
 import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
 import bundle from '../single-signup-v2/bundle.svg';
 import { getFreeSubscriptionData, getFreeTitle, getSubscriptionMapping } from '../single-signup-v2/helper';
-import { OptimisticOptions } from '../single-signup-v2/interface';
+import type { OptimisticOptions } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
 import AddonSummary from './AddonSummary';
@@ -117,7 +121,8 @@ import Box from './Box';
 import CycleSelector from './CycleSelector';
 import GiftCodeSummary from './GiftCodeSummary';
 import Guarantee from './Guarantee';
-import Layout, { Background } from './Layout';
+import type { Background } from './Layout';
+import Layout from './Layout';
 import RightPlanSummary from './RightPlanSummary';
 import SaveLabel2 from './SaveLabel2';
 import StepLabel from './StepLabel';
@@ -125,9 +130,10 @@ import UpsellModal from './UpsellModal';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import VpnProLogo from './VpnProLogo';
 import swissFlag from './flag.svg';
-import { getBillingCycleText, getOffText, getUpsellShortPlan } from './helper';
-import { Measure, VPNSignupModel } from './interface';
-import { TelemetryPayType } from './measure';
+import type { getUpsellShortPlan } from './helper';
+import { getBillingCycleText, getOffText } from './helper';
+import type { Measure, VPNSignupModel } from './interface';
+import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import getAddonsPricing from './planCustomizer/getAddonsPricing';
 

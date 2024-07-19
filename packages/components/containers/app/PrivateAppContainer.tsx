@@ -1,4 +1,4 @@
-import { ReactNode, Ref } from 'react';
+import type { ReactNode, Ref } from 'react';
 
 interface Props {
     containerRef?: Ref<HTMLDivElement>;

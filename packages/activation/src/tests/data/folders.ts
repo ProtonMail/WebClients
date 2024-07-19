@@ -1,4 +1,4 @@
-import { FolderMapItem } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { FolderMapItem } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 
 export const folderWithChildren: FolderMapItem[] = [
     {

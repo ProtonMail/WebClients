@@ -6,7 +6,8 @@ import { patchNews } from '@proton/shared/lib/api/settings';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 
 import { useApi, useEventManager, useNotifications, useUser, useUserSettings } from '../../hooks';
-import EmailSubscriptionToggles, { NewsletterSubscriptionUpdateData } from './EmailSubscriptionToggles';
+import type { NewsletterSubscriptionUpdateData } from './EmailSubscriptionToggles';
+import EmailSubscriptionToggles from './EmailSubscriptionToggles';
 import { getEmailSubscriptions } from './constants';
 
 const EditEmailSubscription = () => {

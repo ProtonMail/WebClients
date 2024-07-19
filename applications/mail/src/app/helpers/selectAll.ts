@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { getLabelName } from 'proton-mail/helpers/labels';
 

@@ -1,8 +1,8 @@
 import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { API_KEY_SOURCE } from '../../constants';
-import {
+import type { API_KEY_SOURCE } from '../../constants';
+import type {
     Api,
     FetchedSignedKeyList,
     KeyTransparencyVerificationResult,

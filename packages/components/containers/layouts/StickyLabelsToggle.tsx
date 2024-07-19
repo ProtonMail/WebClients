@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { STICKY_LABELS } from '@proton/shared/lib/mail/mailSettings';
 

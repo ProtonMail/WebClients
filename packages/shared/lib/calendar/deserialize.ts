@@ -1,10 +1,10 @@
-import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
-import { Address, Nullable } from '../interfaces';
-import {
+import type { Address, Nullable } from '../interfaces';
+import type {
     CalendarEvent,
     CalendarNotificationSettings,
     CalendarSettings,
@@ -12,7 +12,7 @@ import {
     VcalOrganizerProperty,
     VcalVeventComponent,
 } from '../interfaces/calendar';
-import { SimpleMap } from '../interfaces/utils';
+import type { SimpleMap } from '../interfaces/utils';
 import { toSessionKey } from '../keys/sessionKey';
 import { modelToValarmComponent } from './alarms/modelToValarm';
 import { apiNotificationsToModel } from './alarms/notificationsToModel';

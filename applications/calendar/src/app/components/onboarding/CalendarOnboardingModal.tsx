@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
+import type { OnboardingStepRenderCallback } from '@proton/components';
+import { OnboardingContent, OnboardingModal, OnboardingStep } from '@proton/components';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/calendar-welcome.svg';

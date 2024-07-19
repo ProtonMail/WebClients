@@ -6,9 +6,11 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { deleteMember } from '@proton/shared/lib/api/members';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { MEMBER_STATE, Member, Organization } from '@proton/shared/lib/interfaces';
+import type { Member, Organization } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
-import { ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {

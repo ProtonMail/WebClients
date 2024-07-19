@@ -1,10 +1,11 @@
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocumentMetaInterface } from '@proton/docs-shared'
-import { DriveCompat, NodeMeta } from '@proton/drive-store'
-import { GetDocumentMeta } from './GetDocumentMeta'
+import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
-import { DocumentEntitlements, rawPermissionToRole } from '../Types/DocumentEntitlements'
+import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
+import { rawPermissionToRole } from '../Types/DocumentEntitlements'
 
 type LoadDocumentResult = {
   entitlements: DocumentEntitlements

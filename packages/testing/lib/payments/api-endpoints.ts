@@ -1,12 +1,10 @@
-import {
-    Autopay,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
+import type {
     PayPalDetails,
     PaymentMethodStatus,
     SavedCardDetails,
     SavedPaymentMethod,
 } from '@proton/components/payments/core';
+import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { createTokenV4, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import lastItem from '@proton/utils/lastItem';
 

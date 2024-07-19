@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { PrivateAuthenticationStore } from '../containers/app/interface';
+import type { PrivateAuthenticationStore } from '../containers/app/interface';
 import AuthenticationContext from '../containers/authentication/authenticationContext';
 
 const useAuthentication = () => {

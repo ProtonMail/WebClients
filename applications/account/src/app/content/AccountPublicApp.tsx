@@ -1,9 +1,11 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
-import * as H from 'history';
+import type * as H from 'history';
 
 import { publicApp } from '@proton/account/bootstrap';
-import { OnLoginCallbackResult, ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
+import type { OnLoginCallbackResult, ProtonLoginCallback } from '@proton/components';
+import { StandardLoadErrorPage, useApi } from '@proton/components';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -12,14 +14,11 @@ import {
     getLocalIDForkSearchParameter,
 } from '@proton/shared/lib/authentication/fork';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import {
-    GetActiveSessionsResult,
-    getActiveSessions,
-    resumeSession,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
     location: H.Location;

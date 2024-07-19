@@ -1,4 +1,5 @@
-import { Address, User, UserType } from '../interfaces';
+import type { Address, User } from '../interfaces';
+import { UserType } from '../interfaces';
 import { getIsAddressEnabled } from './address';
 
 export default function getUsername(user: User, addresses: Address[]) {

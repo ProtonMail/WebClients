@@ -5,11 +5,11 @@ import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/recur
 import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
 import { getDateProperty, getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { convertTimestampToTimezone, fromUTCDate } from '@proton/shared/lib/date/timezone';
-import { Nullable } from '@proton/shared/lib/interfaces';
-import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
-import { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { Nullable } from '@proton/shared/lib/interfaces';
+import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { MetadataVcalVeventComponent } from '../interface';
+import type { MetadataVcalVeventComponent } from '../interface';
 
 const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithoutBlob): MetadataVcalVeventComponent => {
     const { FullDay, StartTime, StartTimezone, EndTime, EndTimezone, RRule, RecurrenceID, Exdates } = eventData;

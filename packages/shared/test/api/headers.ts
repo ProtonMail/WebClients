@@ -1,5 +1,6 @@
 import { getClientID } from '../../lib/apps/helper';
-import { APPS, APP_NAMES } from '../../lib/constants';
+import type { APP_NAMES } from '../../lib/constants';
+import { APPS } from '../../lib/constants';
 import { getAppVersionHeaders } from '../../lib/fetch/headers';
 
 describe('app version headers', () => {

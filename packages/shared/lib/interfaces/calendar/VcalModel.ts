@@ -1,4 +1,4 @@
-import {
+import type {
     ICAL_ATTENDEE_ROLE,
     ICAL_ATTENDEE_RSVP,
     ICAL_ATTENDEE_STATUS,

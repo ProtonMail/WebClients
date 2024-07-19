@@ -1,15 +1,16 @@
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
 import { useFlag } from '@proton/components/containers';
 import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { SharedFileScan, SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import type { SharedFileScan, SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { usePublicSession } from '../_api';
-import { DecryptedLink, useLink, usePublicLinksListing } from '../_links';
+import type { DecryptedLink } from '../_links';
+import { useLink, usePublicLinksListing } from '../_links';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import downloadThumbnailPure from './download/downloadThumbnail';
-import {
+import type {
     DownloadControls,
     DownloadEventCallbacks,
     DownloadStreamControls,

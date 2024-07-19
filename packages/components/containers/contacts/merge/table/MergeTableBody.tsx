@@ -1,7 +1,8 @@
-import { ComponentProps, useEffect, useRef, useState } from 'react';
+import type { ComponentProps } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { OrderableTableBody } from '../../../../components';
 import MergeTableBodyRow from './MergeTableBodyRow';

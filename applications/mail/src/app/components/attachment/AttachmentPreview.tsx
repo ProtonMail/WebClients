@@ -1,12 +1,13 @@
-import { MutableRefObject, Ref, forwardRef, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject, Ref } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
 import Portal from '@proton/components/components/portal/Portal';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useDownload, usePreview } from '../../hooks/attachments/useDownload';
-import { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
+import type { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 
 export interface AttachmentPreviewControls {
     preview: (attachment: Attachment) => void;

@@ -1,5 +1,6 @@
-import { Button, ButtonProps } from '@proton/atoms';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Price } from '../../components';

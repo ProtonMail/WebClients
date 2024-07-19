@@ -1,5 +1,5 @@
-import { IconName } from '@proton/components/components';
-import { PLANS } from '@proton/shared/lib/constants';
+import type { IconName } from '@proton/components/components';
+import type { PLANS } from '@proton/shared/lib/constants';
 
 export interface PlanConfigReminder {
     title: string;

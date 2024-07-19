@@ -1,6 +1,7 @@
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { useAddresses, useAddressesKeys } from '@proton/components/hooks';
-import { Address, ForwardingState, ForwardingType, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import {
     applyHOCs,
     mockUseUser,

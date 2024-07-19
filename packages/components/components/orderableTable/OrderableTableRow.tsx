@@ -1,8 +1,10 @@
-import { ReactNode, Ref, forwardRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import Icon from '../icon/Icon';
 import { OrderableElement, OrderableHandle } from '../orderable';
-import { Cell, TableRow } from '../table';
+import type { Cell } from '../table';
+import { TableRow } from '../table';
 
 interface Props {
     index: number;

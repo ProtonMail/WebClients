@@ -1,12 +1,15 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalProps, Prompt, SettingsLink, useConfig } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { Prompt, SettingsLink, useConfig } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
-import { ORGANIZATION_CAPACITY_ERROR_TYPE, OrganizationCapacityError } from './validateOrganizationCapacity';
+import type { OrganizationCapacityError } from './validateOrganizationCapacity';
+import { ORGANIZATION_CAPACITY_ERROR_TYPE } from './validateOrganizationCapacity';
 
 interface Props extends ModalProps {
     error: OrganizationCapacityError;

@@ -1,9 +1,11 @@
-import { RenderResult, act, render } from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
-import { PAYMENT_TOKEN_STATUS, PaymentMethodStatus } from '@proton/components/payments/core';
+import type { PaymentMethodStatus } from '@proton/components/payments/core';
+import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import {
     addApiMock,
@@ -18,7 +20,8 @@ import {
 import { buildUser } from '@proton/testing/builders';
 import noop from '@proton/utils/noop';
 
-import PaymentStep, { Props } from './PaymentStep';
+import type { Props } from './PaymentStep';
+import PaymentStep from './PaymentStep';
 
 let paymentMethodStatus: PaymentMethodStatus;
 beforeEach(() => {

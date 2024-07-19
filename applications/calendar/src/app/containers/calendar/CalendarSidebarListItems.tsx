@@ -1,4 +1,5 @@
-import { MouseEvent, useState } from 'react';
+import type { MouseEvent } from 'react';
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -13,7 +14,7 @@ import ShareLinkModal from '@proton/components/containers/calendar/shareURL/Shar
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { useLoading } from '@proton/hooks';
-import { LoadingByKey } from '@proton/hooks/useLoading';
+import type { LoadingByKey } from '@proton/hooks/useLoading';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsHolidaysCalendar, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
@@ -25,19 +26,19 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { Address, Nullable } from '@proton/shared/lib/interfaces';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import {
+import type { Address, Nullable } from '@proton/shared/lib/interfaces';
+import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import type {
     ACCESS_LEVEL,
     CalendarMember,
     CalendarMemberInvitation,
     CalendarUrlsResponse,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
-    MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
 import CalendarSidebarListItem from './CalendarSidebarListItem';

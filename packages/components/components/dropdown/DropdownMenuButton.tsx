@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import type { ComponentPropsWithRef } from 'react';
+import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';

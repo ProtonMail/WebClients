@@ -1,14 +1,14 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getDealDurationText } from '@proton/components/containers/offers/helpers/offerCopies';
-import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { CYCLE } from '@proton/shared/lib/constants';
-import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import type { CYCLE } from '@proton/shared/lib/constants';
+import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

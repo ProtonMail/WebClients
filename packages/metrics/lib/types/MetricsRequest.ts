@@ -1,4 +1,4 @@
-import MetricVersions from './MetricVersions';
+import type MetricVersions from './MetricVersions';
 
 export default interface MetricsRequest {
     Name: string;

@@ -1,6 +1,7 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-import { ButtonLike, ButtonLikeProps as TButtonLikeProps } from '@proton/atoms';
+import type { ButtonLikeProps as TButtonLikeProps } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 export interface InputButtonProps extends ComponentPropsWithoutRef<'input'> {
@@ -33,10 +34,7 @@ const InputButton = ({
             <ButtonLike
                 as="span"
                 {...ButtonLikeProps}
-                className={clsx([
-                    'input-button flex justify-center shrink-0 rounded-50',
-                    ButtonLikeProps.className,
-                ])}
+                className={clsx(['input-button flex justify-center shrink-0 rounded-50', ButtonLikeProps.className])}
             >
                 {children}
             </ButtonLike>

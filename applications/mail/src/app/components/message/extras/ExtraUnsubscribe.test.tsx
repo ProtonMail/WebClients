@@ -19,7 +19,7 @@ import {
     waitForNotification,
 } from '../../../helpers/test/helper';
 import * as useSimpleLoginExtension from '../../../hooks/simpleLogin/useSimpleLoginExtension';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();

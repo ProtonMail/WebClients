@@ -1,15 +1,5 @@
-import {
-    ChangeEvent,
-    ForwardRefRenderFunction,
-    Fragment,
-    KeyboardEvent,
-    MutableRefObject,
-    ReactNode,
-    forwardRef,
-    useEffect,
-    useMemo,
-    useRef,
-} from 'react';
+import type { ChangeEvent, ForwardRefRenderFunction, KeyboardEvent, MutableRefObject, ReactNode } from 'react';
+import { Fragment, forwardRef, useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 

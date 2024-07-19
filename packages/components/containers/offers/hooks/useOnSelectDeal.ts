@@ -4,12 +4,12 @@ import { useSettingsLink } from '@proton/components/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { openLinkInBrowser } from '../../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import getOfferRedirectionParams from '../helpers/getOfferRedirectionParams';
-import { Deal, Offer } from '../interface';
+import type { Deal, Offer } from '../interface';
 
 const useSelectDeal = (callback?: () => void) => {
     const goToSettingsLink = useSettingsLink();

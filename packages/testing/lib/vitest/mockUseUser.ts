@@ -1,5 +1,5 @@
 import * as useUserModule from '@proton/account/user/hooks';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { buildUser } from '../../builders';
 

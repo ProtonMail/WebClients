@@ -1,5 +1,6 @@
-import HtmlWebpackPlugin, { HtmlTagObject } from 'html-webpack-plugin';
-import { Compiler } from 'webpack';
+import type { HtmlTagObject } from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import type { Compiler } from 'webpack';
 
 export default class HtmlEditWebpackPlugin {
     constructor(private handle: (node: HtmlTagObject) => HtmlTagObject) {}

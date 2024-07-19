@@ -1,7 +1,8 @@
-import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import { UserSettingsState, UserState } from '@proton/account';
-import { FeaturesReducerState } from '@proton/features';
+import type { UserSettingsState, UserState } from '@proton/account';
+import type { FeaturesReducerState } from '@proton/features';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
 const name = 'accountSecurity' as const;
@@ -98,11 +99,7 @@ export const selectHasAccountSecurityIssue = createSelector(
  * Use case: Allows to know if we should display cards or success message
  */
 export const selectHasAccountSecurityCardToDisplay = createSelector(
-    [
-        selectAccountSecurityElements,
-        selectAccountSecurityLoading,
-        selectCanDisplayAccountSecuritySection,
-    ],
+    [selectAccountSecurityElements, selectAccountSecurityLoading, selectCanDisplayAccountSecuritySection],
     (elements, loading, canDisplayAccountSecurity) => {
         if (loading || !canDisplayAccountSecurity) {
             return false;

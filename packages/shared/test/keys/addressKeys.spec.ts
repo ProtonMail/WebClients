@@ -1,4 +1,4 @@
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import {
     decryptAddressKeyToken,

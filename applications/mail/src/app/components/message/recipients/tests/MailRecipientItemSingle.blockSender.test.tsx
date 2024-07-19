@@ -1,11 +1,13 @@
 import { act } from 'react-dom/test-utils';
 
 import { fireEvent } from '@testing-library/react';
-import { RenderResult, queryByTestId } from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
+import { queryByTestId } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { INCOMING_DEFAULTS_LOCATION, MIME_TYPES } from '@proton/shared/lib/constants';
-import { IncomingDefault, MailSettings, Recipient } from '@proton/shared/lib/interfaces';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
+import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
+import type { IncomingDefault, MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import {
@@ -18,7 +20,7 @@ import {
     waitForNotification,
 } from '../../../../helpers/test/helper';
 import { load } from '../../../../store/incomingDefaults/incomingDefaultsActions';
-import { MessageState } from '../../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../../store/messages/messagesTypes';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const meAddress = 'me@protonmail.com';

@@ -1,4 +1,4 @@
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../../constants';
 import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
@@ -6,8 +6,8 @@ import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parseToVCard } from '../../contacts/vcard';
 import { CANONICALIZE_SCHEME, canonicalizeEmail } from '../../helpers/email';
-import { Api, PinnedKeysConfig } from '../../interfaces';
-import { ContactEmail, Contact as tsContact } from '../../interfaces/contacts';
+import type { Api, PinnedKeysConfig } from '../../interfaces';
+import type { ContactEmail, Contact as tsContact } from '../../interfaces/contacts';
 import { getContact, queryContactEmails } from '../contacts';
 
 const getContactEmail = async (

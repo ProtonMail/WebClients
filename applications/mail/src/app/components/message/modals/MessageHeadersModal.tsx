@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 import './MessageHeadersModal.scss';
 

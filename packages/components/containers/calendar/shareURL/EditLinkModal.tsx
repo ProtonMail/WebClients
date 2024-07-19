@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
+import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { useLoading } from '@proton/hooks';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
-import { Nullable } from '@proton/shared/lib/interfaces/utils';
+import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 
 import { BasicModal, Form, InputFieldTwo } from '../../../components';
 import { useNotifications } from '../../../hooks';

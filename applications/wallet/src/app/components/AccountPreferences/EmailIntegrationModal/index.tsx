@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { WasmApiEmailAddress } from '@proton/andromeda';
-import { ModalOwnProps } from '@proton/components/components';
+import type { WasmApiEmailAddress } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Button, CoreButton, Modal } from '../../../atoms';

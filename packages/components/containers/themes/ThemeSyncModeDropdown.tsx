@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, Icon, SimpleDropdown, ThemeCard } from '../..';
-import { Theme } from './ThemeCards';
+import type { Theme } from './ThemeCards';
 
 interface Props {
     mode: 'light' | 'dark';

@@ -1,5 +1,10 @@
-import { RequireSome } from '../../interfaces';
-import { VcalVcalendar, VcalVeventComponent, VcalVtimezoneComponent, VisualCalendar } from '../../interfaces/calendar';
+import type { RequireSome } from '../../interfaces';
+import type {
+    VcalVcalendar,
+    VcalVeventComponent,
+    VcalVtimezoneComponent,
+    VisualCalendar,
+} from '../../interfaces/calendar';
 import { ICAL_METHOD } from '../constants';
 import { serialize } from '../vcal';
 

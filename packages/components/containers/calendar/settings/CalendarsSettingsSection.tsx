@@ -4,10 +4,15 @@ import {
     getPendingInvitations,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { HolidaysDirectoryCalendar, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type {
+    HolidaysDirectoryCalendar,
+    SubscribedCalendar,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 
-import { MyCalendarsSection, PrivateMainAreaLoading, PrivateMainSettingsArea, SectionConfig } from '../..';
+import type { SectionConfig } from '../..';
+import { MyCalendarsSection, PrivateMainAreaLoading, PrivateMainSettingsArea } from '../..';
 import { useCalendarShareInvitations } from '../../../hooks';
 import OtherCalendarsSection from '../settings/OtherCalendarsSection';
 

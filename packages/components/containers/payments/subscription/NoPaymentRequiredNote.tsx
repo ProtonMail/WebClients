@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
-import { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     amountDue: number;

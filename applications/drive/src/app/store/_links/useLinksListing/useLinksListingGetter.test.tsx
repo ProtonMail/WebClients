@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
-import { EncryptedLink } from '../interface';
+import type { EncryptedLink } from '../interface';
 import { useLinksListingProvider } from './useLinksListing';
 
 jest.mock('../../_utils/errorHandler', () => {

@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { updatePhone } from '@proton/shared/lib/api/settings';
-import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';

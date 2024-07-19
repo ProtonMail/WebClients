@@ -1,4 +1,4 @@
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { getDiscountPrice } from '../SubscriptionCycleSelector';
 

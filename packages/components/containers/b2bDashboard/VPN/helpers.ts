@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { ALL_EVENTS_DEFAULT } from '../Pass/helpers';
-import { VPNEvent } from './interface';
+import type { VPNEvent } from './interface';
 
 enum EventTypesVPN {
     session_end = 'session_end',

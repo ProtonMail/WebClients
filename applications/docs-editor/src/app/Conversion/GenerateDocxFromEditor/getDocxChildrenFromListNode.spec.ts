@@ -3,8 +3,8 @@ import { ListNode, ListItemNode } from '@lexical/list'
 import { TextNode, $getRoot } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { getDocxChildrenFromListNode } from './getDocxChildrenFromListNode'
-import { Paragraph } from 'docx'
-import { DocxExportContext } from './Context'
+import type { Paragraph } from 'docx'
+import type { DocxExportContext } from './Context'
 
 function jsonify(obj: any) {
   return JSON.parse(JSON.stringify(obj))

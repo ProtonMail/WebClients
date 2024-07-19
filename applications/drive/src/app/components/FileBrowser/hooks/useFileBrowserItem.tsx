@@ -1,6 +1,7 @@
-import { MouseEvent, useCallback, useRef } from 'react';
+import type { MouseEvent } from 'react';
+import { useCallback, useRef } from 'react';
 
-import { BrowserItemId } from '../interface';
+import type { BrowserItemId } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 const DOUBLE_CLICK_MS = 500;

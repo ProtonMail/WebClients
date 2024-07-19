@@ -1,6 +1,7 @@
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { Cycle, PlanIDs, PlansMap, PriceType } from '@proton/shared/lib/interfaces';
+import type { Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { PriceType } from '@proton/shared/lib/interfaces';
 
 const getRenewCycle = (cycle: Cycle, planIDs: PlanIDs): CYCLE => {
     // This is currently hardcoded. Once the payments backend supports renewals at different cycles, it will be changed to more generic code.

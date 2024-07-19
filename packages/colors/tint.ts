@@ -1,4 +1,5 @@
-import tiny, { Instance as Color } from 'tinycolor2';
+import type { Instance as Color } from 'tinycolor2';
+import tiny from 'tinycolor2';
 
 import percentOf from '@proton/utils/percentOf';
 

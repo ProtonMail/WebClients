@@ -17,11 +17,12 @@ import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/end
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
-import { AccountState, extendStore, setupStore } from '../store/store';
+import type { AccountState } from '../store/store';
+import { extendStore, setupStore } from '../store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer').then((result) => result.default);

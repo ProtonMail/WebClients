@@ -1,12 +1,13 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { UserModel } from '@proton/shared/lib/interfaces';
-import { ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
-import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
+import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

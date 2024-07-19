@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { IsActiveInEnvironmentContainer, SpotlightProps } from '@proton/components/components';
+import type { IsActiveInEnvironmentContainer, SpotlightProps } from '@proton/components/components';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import NewFeatureTag from './NewFeatureTag';

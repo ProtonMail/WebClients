@@ -1,17 +1,17 @@
-import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
+import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
-import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
+import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
-import { AugmentedSendPreferences } from '../interface';
+import type { AugmentedSendPreferences } from '../interface';
 import { getAttendeesDiff, getHasProtonAttendees, getRoleDiff, getSendIcsAction } from './inviteActions';
 
 const generateContact = ({

@@ -1,8 +1,8 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v6-canary';
+import type { CompressedDataPacket } from 'pmcrypto-v6-canary/lib/openpgp';
 import {
-    CompressedDataPacket,
     SymEncryptedIntegrityProtectedDataPacket,
     enums,
     decryptKey as openpgp_decryptKey,
@@ -13,7 +13,8 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto-v6-canary/lib/openpgp';
 
-import { ARGON2_PARAMS, CryptoApiInterface, S2kTypeForConfig, SessionKey, VERIFICATION_STATUS } from '../../lib';
+import type { CryptoApiInterface, SessionKey } from '../../lib';
+import { ARGON2_PARAMS, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
     binaryStringToArray,

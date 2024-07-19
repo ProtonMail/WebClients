@@ -1,14 +1,15 @@
-import { CryptoProxy, PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
-import { Api } from '@proton/shared/lib/interfaces';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
+import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 
 export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array>,

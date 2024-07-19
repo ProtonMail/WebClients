@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { UnderlineButton } from '../../components';
-import { Condition, FilterStatement } from '../filters/interfaces';
+import type { Condition, FilterStatement } from '../filters/interfaces';
 import useFilterConditions from '../filters/modal/useFilterConditions';
 import ForwardCondition from './ForwardCondition';
 

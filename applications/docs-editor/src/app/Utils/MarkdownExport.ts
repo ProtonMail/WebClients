@@ -1,15 +1,6 @@
 import type { ElementTransformer, TextFormatTransformer, TextMatchTransformer, Transformer } from '@lexical/markdown'
-import {
-  ElementNode,
-  LexicalNode,
-  TextFormatType,
-  TextNode,
-  $getRoot,
-  $isDecoratorNode,
-  $isElementNode,
-  $isLineBreakNode,
-  $isTextNode,
-} from 'lexical'
+import type { ElementNode, LexicalNode, TextFormatType, TextNode } from 'lexical'
+import { $getRoot, $isDecoratorNode, $isElementNode, $isLineBreakNode, $isTextNode } from 'lexical'
 import { TRANSFORMERS, transformersByType } from './MarkdownImportExportUtils'
 
 export function createMarkdownExport(transformers: Transformer[]): (node?: ElementNode) => string {

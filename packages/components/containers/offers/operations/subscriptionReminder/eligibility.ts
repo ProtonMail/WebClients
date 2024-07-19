@@ -2,7 +2,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { APPS } from '@proton/shared/lib/constants';
-import { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     user: UserModel;

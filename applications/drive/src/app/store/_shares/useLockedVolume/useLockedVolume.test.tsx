@@ -1,14 +1,15 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
 
 import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
-import { LockedVolumeForRestore } from '../interface';
-import useSharesState from '../useSharesState';
-import useLockedVolume, { useLockedVolumeInner } from './useLockedVolume';
+import type { LockedVolumeForRestore } from '../interface';
+import type useSharesState from '../useSharesState';
+import type useLockedVolume from './useLockedVolume';
+import { useLockedVolumeInner } from './useLockedVolume';
 
 const mockRequest = jest.fn();
 jest.mock('../../_api/useDebouncedRequest', () => {

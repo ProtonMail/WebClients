@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,23 +17,20 @@ import {
 } from '@proton/components/containers/payments';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import {
-    OnBillingAddressChange,
-    WrappedTaxCountrySelector,
-} from '@proton/components/containers/payments/TaxCountrySelector';
+import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
+import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { useConfig, useHandler } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import type { ExtendedTokenPayment, TokenPayment } from '@proton/components/payments/core';
 import {
-    ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
-    TokenPayment,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
-import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
@@ -46,7 +44,7 @@ import {
     getIsVpnPlan,
     getPlanFromIds,
 } from '@proton/shared/lib/helpers/subscription';
-import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -54,7 +52,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import { getSignupApplication } from './helper';
-import { PlanIDs, SubscriptionData } from './interfaces';
+import type { PlanIDs, SubscriptionData } from './interfaces';
 
 export interface Props {
     api: Api;

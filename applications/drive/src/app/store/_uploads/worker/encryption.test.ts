@@ -9,10 +9,11 @@ import {
     setupCryptoProxyForTesting,
 } from '../../../utils/test/crypto';
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
-import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
-import { ThumbnailInfo, ThumbnailType } from '../media';
+import type { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
+import type { ThumbnailInfo } from '../media';
+import { ThumbnailType } from '../media';
 import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';
-import { Verifier } from './interface';
+import type { Verifier } from './interface';
 import { createVerifier } from './verifier';
 
 jest.setTimeout(20000);

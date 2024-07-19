@@ -1,8 +1,9 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { OptionsWithIntl, readableTimeIntl } from '@proton/shared/lib/helpers/time';
+import type { OptionsWithIntl } from '@proton/shared/lib/helpers/time';
+import { readableTimeIntl } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const getValue = (value?: string | number | Date | null) => {

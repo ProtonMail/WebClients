@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AppLink, Checkbox, Label, ModalProps, Prompt } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { AppLink, Checkbox, Label, Prompt } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
-import { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
+import type { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 interface Props extends ModalProps {

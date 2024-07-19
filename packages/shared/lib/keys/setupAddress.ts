@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
-import { AddressGeneration } from '@proton/components/containers/login/interface';
+import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import { ADDRESS_TYPE, APP_NAMES, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
 import { isPrivate } from '@proton/shared/lib/user/helpers';
@@ -16,7 +17,8 @@ import noop from '@proton/utils/noop';
 import { getAllAddresses } from '../api/addresses';
 import { updateUsername } from '../api/settings';
 import { getUser, queryCheckUsernameAvailability } from '../api/user';
-import { Address, Api, PreAuthKTVerify, UserType, User as tsUser } from '../interfaces';
+import type { Address, Api, PreAuthKTVerify, User as tsUser } from '../interfaces';
+import { UserType } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';

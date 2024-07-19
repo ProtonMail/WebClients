@@ -10,7 +10,7 @@ import { useModals, useNotifications } from '../../hooks';
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
 import PayInvoiceModal from './PayInvoiceModal';
 import { getInvoicePaymentsVersion } from './helpers';
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 
 interface Props {
     invoice: Invoice;

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MailImportFields } from '../CustomizeMailImportModal.interface';
+import type { MailImportFields } from '../CustomizeMailImportModal.interface';
 import ManageFoldersHeader from './ManageFoldersHeader';
 import ManageFoldersRow from './ManageFoldersRow/ManageFoldersRow';
 import useManageFolders from './useManageFolders';

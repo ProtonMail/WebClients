@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { fetchDealPrices } from '../helpers/dealPrices';
-import { Offer, OfferConfig } from '../interface';
+import type { Offer, OfferConfig } from '../interface';
 
 interface Props {
     offerConfig: OfferConfig | undefined;

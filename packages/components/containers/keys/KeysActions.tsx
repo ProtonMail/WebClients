@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';
-import { KeyActions } from './shared/interface';
+import type { KeyActions } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {
     isLoading: boolean;

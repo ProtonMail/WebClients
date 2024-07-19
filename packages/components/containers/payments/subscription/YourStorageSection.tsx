@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,9 +16,9 @@ import {
 import { SettingsSection, useFlag } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     SHARED_UPSELL_PATHS,

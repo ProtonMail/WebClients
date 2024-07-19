@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +16,8 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
+import type { Address, Member } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import {
     getCanGenerateMemberKeys,
     getShouldSetupMemberKeys,
@@ -25,6 +27,7 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     DropdownSizeUnit,
     InputFieldTwo,
@@ -32,7 +35,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Option,
     PasswordInputTwo,
     SelectTwo,

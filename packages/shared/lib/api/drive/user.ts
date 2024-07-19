@@ -1,4 +1,4 @@
-import { UserSettings } from '../../interfaces/drive/userSettings';
+import type { UserSettings } from '../../interfaces/drive/userSettings';
 
 /* User settings*/
 export const queryUserSettings = () => {

@@ -1,8 +1,8 @@
 import isTruthy from '@proton/utils/isTruthy';
 
-import { SimpleMap } from '../interfaces';
-import { VcalVeventComponent } from '../interfaces/calendar';
-import { GetVTimezonesMap } from '../interfaces/hooks/GetVTimezonesMap';
+import type { SimpleMap } from '../interfaces';
+import type { VcalVeventComponent } from '../interfaces/calendar';
+import type { GetVTimezonesMap } from '../interfaces/hooks/GetVTimezonesMap';
 import { getPropertyTzid } from './vcalHelper';
 
 interface Params {

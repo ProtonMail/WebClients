@@ -1,14 +1,12 @@
-import {
+import type {
     AnimationEvent,
     CSSProperties,
     HTMLAttributes,
     MouseEvent as ReactMouseEvent,
     ReactNode,
     RefObject,
-    useEffect,
-    useRef,
-    useState,
 } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,12 +17,15 @@ import noop from '@proton/utils/noop';
 
 import useDropdownArrowNavigation from '../../hooks/useDropdownArrowNavigation';
 import useElementRect from '../../hooks/useElementRect';
-import { HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
+import type { HotkeyTuple } from '../../hooks/useHotkeys';
+import { useHotkeys } from '../../hooks/useHotkeys';
 import useIsClosing from '../../hooks/useIsClosing';
 import { useFocusTrap } from '../focus';
-import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
+import type { PopperPlacement, PopperPosition } from '../popper';
+import { allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';
-import { DropdownSize, DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
+import type { DropdownSize } from './utils';
+import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;

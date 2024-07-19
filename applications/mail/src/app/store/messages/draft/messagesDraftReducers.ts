@@ -1,18 +1,18 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { isPlainText, setFlag } from '@proton/shared/lib/mail/messages';
 
 import { setDocumentContent } from '../../../helpers/message/messageContent';
 import { replaceEmbeddedAttachments } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
-import { MailState } from '../../store';
+import type { MailState } from '../../store';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
 import { allMessages } from '../messagesSelectors';
-import {
+import type {
     MessageDraftFlags,
     MessageEmbeddedImage,
     MessageState,

@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import Icon from '../icon/Icon';
-import Input, { Props } from './Input';
+import type { Props } from './Input';
+import Input from './Input';
 
 /**
  * @deprecated please use PasswordInputTwo instead

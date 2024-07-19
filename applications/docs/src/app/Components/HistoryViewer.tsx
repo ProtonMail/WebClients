@@ -1,8 +1,8 @@
 import { Button } from '@proton/atoms/Button'
+import type { ModalStateProps } from '@proton/components/components'
 import {
   Icon,
   MimeIcon,
-  ModalStateProps,
   ModalTwo,
   ModalTwoContent,
   ModalTwoFooter,
@@ -10,7 +10,7 @@ import {
   Tooltip,
   useModalTwoStatic,
 } from '@proton/components/components'
-import { NativeVersionHistory } from '@proton/docs-core'
+import type { NativeVersionHistory } from '@proton/docs-core'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { EditorFrame } from './EditorFrame'

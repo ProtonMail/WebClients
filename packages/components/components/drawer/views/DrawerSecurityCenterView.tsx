@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import DrawerView, { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 
 import SecurityCenter from './SecurityCenter/SecurityCenter';
 

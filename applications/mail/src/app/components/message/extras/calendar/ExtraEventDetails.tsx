@@ -8,13 +8,14 @@ import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { InvitationModel, getParticipantsList } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { getParticipantsList } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
 const { REFRESH, REPLY } = ICAL_METHOD;
@@ -67,11 +68,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 </IconRow>
             )}
             {!!calendar && (
-                <IconRow
-                    title={c('Label').t`Calendar`}
-                    icon="calendar-grid"
-                    labelClassName="inline-flex pt-0.5"
-                >
+                <IconRow title={c('Label').t`Calendar`} icon="calendar-grid" labelClassName="inline-flex pt-0.5">
                     <span className="text-break">{calendar.Name}</span>
                 </IconRow>
             )}

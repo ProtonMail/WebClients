@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,9 +11,10 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { setupSAMLFields, setupSAMLUrl, setupSAMLXml } from '@proton/shared/lib/api/samlSSO';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 
+import type { ModalProps } from '../../../components';
 import {
     Dropzone,
     Form,
@@ -21,13 +23,11 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     RadioGroup,
     useFormErrors,
 } from '../../../components';
-import IdentityProviderEndpointsContent, {
-    IdentityProviderEndpointsContentProps,
-} from './IdentityProviderEndpointsContent';
+import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
+import IdentityProviderEndpointsContent from './IdentityProviderEndpointsContent';
 import UploadedXmlFile from './UploadedXmlFile';
 
 enum STEP {

@@ -1,10 +1,10 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-import { CalendarSelectOption } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarSelectOption } from '@proton/shared/lib/interfaces/calendar';
 
 import { Option } from '../option';
 import { SelectTwo } from '../selectTwo';
-import { SelectChangeEvent } from '../selectTwo/select';
+import type { SelectChangeEvent } from '../selectTwo/select';
 import CalendarSelectIcon from './CalendarSelectIcon';
 
 interface Props

@@ -4,9 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { SectionConfig } from '@proton/components';
 import {
     Icon,
-    SectionConfig,
     SettingsListItem,
     SidebarListItem,
     SidebarListItemButton,
@@ -20,7 +20,7 @@ import CalendarSelectIcon from '@proton/components/components/calendarSelect/Cal
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 const MAX_CALENDARS = 10;

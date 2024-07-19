@@ -1,4 +1,4 @@
-import { FileToDocPendingConversion } from './FileToDocPendingConversion'
+import type { FileToDocPendingConversion } from './FileToDocPendingConversion'
 
 export type EditorInitializationConfig =
   | {

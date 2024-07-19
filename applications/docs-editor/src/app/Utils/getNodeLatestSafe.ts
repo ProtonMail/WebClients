@@ -1,4 +1,4 @@
-import { LexicalNode } from 'lexical'
+import type { LexicalNode } from 'lexical'
 
 /**
  * Non-throwing version of LexicalNode.getLatest().

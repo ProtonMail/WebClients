@@ -3,9 +3,12 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
-import { FreeSubscription, isFreeSubscription } from '@proton/shared/lib/constants';
-import { External, Subscription } from '@proton/shared/lib/interfaces';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import type { FreeSubscription } from '@proton/shared/lib/constants';
+import { isFreeSubscription } from '@proton/shared/lib/constants';
+import type { Subscription } from '@proton/shared/lib/interfaces';
+import { External } from '@proton/shared/lib/interfaces';
 
 interface InAppPurchaseModalProps extends ModalProps {
     subscription: Subscription | FreeSubscription;

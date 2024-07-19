@@ -1,11 +1,12 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
 import diff from '@proton/utils/diff';
 
-import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
+import type { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 
 export interface AttendeeBusySlot extends CalendarViewBusyEvent {}
 

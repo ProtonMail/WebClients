@@ -3,24 +3,27 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
+import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
-import { SetupForwardingParameters, setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
+import type { SetupForwardingParameters } from '@proton/shared/lib/api/forwardings';
+import { setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
 import { ADDRESS_RECEIVE, KEYGEN_CONFIGS, KEYGEN_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, DecryptedKey, ForwardingType, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Address, DecryptedKey, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ForwardingType } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { useKTVerifier } from '..';
+import type { ModalProps } from '../../components';
 import {
     Form,
     Icon,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -42,7 +45,8 @@ import {
     useGetUserKeys,
     useNotifications,
 } from '../../hooks';
-import { Condition, FilterStatement } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
+import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
 import { getInternalParameters, getSieveParameters, getSieveTree } from './helpers';
 

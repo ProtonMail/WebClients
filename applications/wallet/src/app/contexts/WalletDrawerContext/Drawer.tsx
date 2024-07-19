@@ -1,4 +1,5 @@
-import { CSSProperties, PropsWithChildren, useRef } from 'react';
+import type { CSSProperties, PropsWithChildren } from 'react';
+import { useRef } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll';
 import { useHotkeys } from '@proton/components/hooks';

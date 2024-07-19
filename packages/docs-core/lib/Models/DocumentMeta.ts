@@ -1,4 +1,4 @@
-import { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DocumentMetaInterface } from '@proton/docs-shared'
 
 export class DocumentMeta implements DocumentMetaInterface {
   constructor(

@@ -7,7 +7,7 @@ import { CollapsingBreadcrumbs, Icon, Option, SimpleDropdown } from '@proton/com
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import SelectOptions from '@proton/components/components/selectTwo/SelectOptions';
 import { getCalendarSubpagePath, getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
     calendar: VisualCalendar;

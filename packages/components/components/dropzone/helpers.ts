@@ -1,4 +1,4 @@
-import { DragEvent, DragEventHandler } from 'react';
+import type { DragEvent, DragEventHandler } from 'react';
 
 export const isDragFile = (event: DragEvent) => event.dataTransfer?.types?.includes('Files');
 

@@ -1,10 +1,10 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 

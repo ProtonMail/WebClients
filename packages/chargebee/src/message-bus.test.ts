@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
 
-import {
+import type {
     BinData,
     ChargebeeSubmitEventResponse,
     FormValidationErrors,
@@ -10,20 +10,17 @@ import {
     PaypalAuthorizedPayload,
     ThreeDsChallengePayload,
 } from '../lib';
-import {
+import type {
     ChargebeeSubmitEvent,
     GetBinEvent,
     GetHeightEvent,
-    MessageBus,
     ParentMessagesProps,
     SetConfigurationEvent,
     SetPaypalPaymentIntentEvent,
     ValidateFormEvent,
     VerifySavedCardEvent,
-    createMessageBus,
-    getMessageBus,
-    verifySavedCardMessageType,
 } from './message-bus';
+import { MessageBus, createMessageBus, getMessageBus, verifySavedCardMessageType } from './message-bus';
 
 window.parent.postMessage = jest.fn();
 

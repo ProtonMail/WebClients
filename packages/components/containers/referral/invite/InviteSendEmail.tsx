@@ -1,4 +1,5 @@
-import { KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
+import type { KeyboardEvent } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -8,7 +9,7 @@ import { useLoading } from '@proton/hooks';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTONMAIL_DOMAINS, getEmailParts } from '@proton/shared/lib/helpers/email';
-import { Recipient, Referral } from '@proton/shared/lib/interfaces';
+import type { Recipient, Referral } from '@proton/shared/lib/interfaces';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import InviteSendEmailRecipient from './InviteSendEmailRecipient';

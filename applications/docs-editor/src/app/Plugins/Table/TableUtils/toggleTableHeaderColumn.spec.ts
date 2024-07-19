@@ -1,7 +1,8 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../../AllNodes'
 import { $createTableNodeWithDimensions } from '../CreateTableNodeWithDimensions'
-import { TableCellHeaderStates, TableCellNode, TableRowNode } from '@lexical/table'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import { TableCellHeaderStates } from '@lexical/table'
 import { $toggleTableHeaderColumn } from './toggleTableHeaderColumn'
 
 describe('clearCellsInTableSelection', () => {

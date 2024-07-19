@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 
 import { getMessageHasData } from 'proton-mail/helpers/message/messages';
-import { MessageState } from 'proton-mail/store/messages/messagesTypes';
+import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import ExtraExpirationSelfDestruction from './ExtraExpirationSelfDestruction';
 import ExtraExpirationSentExpirationAutoDelete from './ExtraExpirationSentExpirationAutoDelete';

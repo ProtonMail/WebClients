@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { AddonDescription } from '@proton/shared/lib/helpers/checkout';
+import type { AddonDescription } from '@proton/shared/lib/helpers/checkout';
 import { isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { Info, Price } from '../../../../../components';
 

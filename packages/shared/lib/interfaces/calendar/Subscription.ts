@@ -1,4 +1,4 @@
-import { VisualCalendar } from './Calendar';
+import type { VisualCalendar } from './Calendar';
 
 export enum CALENDAR_SUBSCRIPTION_STATUS {
     OK = 0,

@@ -1,7 +1,7 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { EmailInput } from '../../../../components';
 

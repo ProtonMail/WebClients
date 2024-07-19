@@ -1,8 +1,10 @@
-import { MouseEvent, Ref, forwardRef } from 'react';
+import type { MouseEvent, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLikeShape, ButtonProps } from '@proton/atoms';
+import type { ButtonLikeShape, ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { Icon } from '../icon';

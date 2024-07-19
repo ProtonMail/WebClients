@@ -1,8 +1,10 @@
-import { ReactNode, createContext, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
-import { SelectChangeEvent, isValidMultiMode } from './select';
+import type { SelectChangeEvent } from './select';
+import { isValidMultiMode } from './select';
 
 interface UseSelectOptions<V> {
     multiple: boolean;

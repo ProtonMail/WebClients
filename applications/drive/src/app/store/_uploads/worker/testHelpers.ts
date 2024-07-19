@@ -1,7 +1,7 @@
 import { WAIT_TIME } from '../constants';
-import { EncryptedBlock, Link, ThumbnailEncryptedBlock } from '../interface';
-import { ThumbnailType } from '../media';
-import { UploadingBlock, UploadingBlockControl } from './interface';
+import type { EncryptedBlock, Link, ThumbnailEncryptedBlock } from '../interface';
+import type { ThumbnailType } from '../media';
+import type { UploadingBlock, UploadingBlockControl } from './interface';
 
 export function waitFor(callback: () => boolean, timeout = 100): Promise<string> {
     return new Promise((resolve, reject) => {

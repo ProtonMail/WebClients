@@ -1,12 +1,10 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    AcceptOrganizationKeyInvitePayload,
-    acceptOrganizationKeyInvite,
-    prepareAcceptOrganizationKeyInvite,
-} from '@proton/account';
+import type { AcceptOrganizationKeyInvitePayload } from '@proton/account';
+import { acceptOrganizationKeyInvite, prepareAcceptOrganizationKeyInvite } from '@proton/account';
 import { Button, Card, CircleLoader } from '@proton/atoms';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useLoading } from '@proton/hooks';
@@ -15,7 +13,8 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { Icon, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import type { ModalProps } from '../../components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useErrorHandler, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 

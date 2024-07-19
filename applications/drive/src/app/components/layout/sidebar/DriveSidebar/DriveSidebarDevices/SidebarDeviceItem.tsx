@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import useActiveShare from '../../../../../hooks/drive/useActiveShare';
 import { useFolderTree } from '../../../../../store';
-import { Device } from '../../../../../store/_devices';
+import type { Device } from '../../../../../store/_devices';
 import ExpandButton from '../DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarSubfolders from '../DriveSidebarFolders/DriveSidebarSubfolders';
 import DriveSidebarListItem from '../DriveSidebarListItem';

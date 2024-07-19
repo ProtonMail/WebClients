@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 import { c } from 'ttag';
 
 import {
@@ -14,7 +14,8 @@ import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/o
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { FeatureCode } from '@proton/components';
 import { useFeature, useUser } from '@proton/components/hooks';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCard from './ProviderCard';
 

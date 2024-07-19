@@ -7,7 +7,8 @@ import { Info, Toggle } from '@proton/components/components';
 import { useErrorHandler } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import { BitField, type Maybe, OrganizationGetResponse } from '@proton/pass/types';
+import type { OrganizationGetResponse } from '@proton/pass/types';
+import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

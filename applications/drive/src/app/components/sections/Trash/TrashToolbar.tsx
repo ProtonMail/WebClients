@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
-import { DecryptedLink } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { getSelectedItems } from '../helpers';

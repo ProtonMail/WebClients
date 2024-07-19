@@ -1,15 +1,21 @@
 // @ts-ignore missing `toStream` TS definitions
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { decryptExtendedAttributes } from '../../_links/extendedAttributes';
-import { DecryptFileKeys, DownloadCallbacks, DownloadStreamControls, LinkDownload, LogCallback } from '../interface';
+import type {
+    DecryptFileKeys,
+    DownloadCallbacks,
+    DownloadStreamControls,
+    LinkDownload,
+    LogCallback,
+} from '../interface';
 import initDownloadBlocks from './downloadBlocks';
 
 /**

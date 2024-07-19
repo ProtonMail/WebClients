@@ -1,7 +1,8 @@
 import ExifReader from 'exifreader';
 import type { ExifTags, ExpandedTags } from 'exifreader';
 
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 

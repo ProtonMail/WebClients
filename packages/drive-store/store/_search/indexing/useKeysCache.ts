@@ -1,5 +1,7 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { LinkType, ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 

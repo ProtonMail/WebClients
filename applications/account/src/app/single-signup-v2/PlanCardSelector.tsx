@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,20 +8,17 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { ADDON_NAMES, BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import {
-    SubscriptionCheckoutData,
-    getCheckResultFromSubscription,
-    getCheckout,
-} from '@proton/shared/lib/helpers/checkout';
+import type { ADDON_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import {
     getPlanIDs,
     getPlanOffer,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
+import type {
     Currency,
     FreePlanDefault,
     Plan,
@@ -31,13 +28,15 @@ import {
     SubscriptionPlan,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import ArrowImage from './ArrowImage';
 import BundlePlanSubSection from './BundlePlanSubSection';
 import SaveLabel from './SaveLabel';
-import { SubscriptionDataCycleMapping, getHasAnyPlusPlan, getSubscriptionMapping } from './helper';
+import type { SubscriptionDataCycleMapping } from './helper';
+import { getHasAnyPlusPlan, getSubscriptionMapping } from './helper';
 
 import './PlanCardSelector.scss';
 

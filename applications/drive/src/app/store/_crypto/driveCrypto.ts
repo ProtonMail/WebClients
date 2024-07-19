@@ -1,13 +1,14 @@
-import { PrivateKeyReference, PublicKeyReference, toPublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { toPublicKeyReference } from '@proton/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address } from '@proton/shared/lib/interfaces/Address';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { ShareWithKey } from '../_shares';
+import type { ShareWithKey } from '../_shares';
 
 export interface PrimaryAddressKey {
     privateKey: PrivateKeyReference;

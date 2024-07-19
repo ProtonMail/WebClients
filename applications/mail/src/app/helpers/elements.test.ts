@@ -1,8 +1,8 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { Conversation, ConversationLabel } from '../models/conversation';
+import type { Conversation, ConversationLabel } from '../models/conversation';
 import {
     getCounterMap,
     getDate,

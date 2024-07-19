@@ -1,5 +1,5 @@
-import { PublicKeyReference, SessionKey } from '@proton/crypto';
-import {
+import type { PublicKeyReference, SessionKey } from '@proton/crypto';
+import type {
     SHARE_EXTERNAL_INVITATION_STATE,
     SHARE_MEMBER_PERMISSIONS,
     SHARE_MEMBER_STATE,

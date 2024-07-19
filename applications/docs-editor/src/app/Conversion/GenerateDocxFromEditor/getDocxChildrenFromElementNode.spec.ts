@@ -4,7 +4,7 @@ import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode
 import { ExternalHyperlink, TextRun } from 'docx'
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
-import { DocxExportContext } from './Context'
+import type { DocxExportContext } from './Context'
 
 describe('getDocxChildrenFromElementNode', () => {
   const editor = createHeadlessEditor({

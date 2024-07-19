@@ -1,4 +1,4 @@
-import { RecurringCache, RecurringEventsCache } from '../interface';
+import type { RecurringCache, RecurringEventsCache } from '../interface';
 
 export const removeEventFromRecurrenceInstances = (
     uid: string,

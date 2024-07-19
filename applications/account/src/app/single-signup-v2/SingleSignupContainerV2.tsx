@@ -1,10 +1,11 @@
-import { ReactNode, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import type { OnLoginCallback } from '@proton/components';
 import {
-    OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
     useActiveBreakpoint,
@@ -16,13 +17,14 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { AuthSession } from '@proton/components/containers/login/interface';
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { PAYMENT_METHOD_TYPES, PaymentMethodFlows } from '@proton/components/payments/core';
-import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
+import type { PaymentMethodFlows } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
@@ -31,19 +33,19 @@ import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customCo
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
-import { ProductParam, normalizeProduct } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
-import {
+import type {
     LocalSessionPersisted,
     ResumedSessionResult,
-    resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
+import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     BRAND_NAME,
-    CLIENT_TYPES,
     CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
@@ -57,7 +59,8 @@ import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planI
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
@@ -68,17 +71,25 @@ import noop from '@proton/utils/noop';
 import mailReferPage from '../../pages/refer-a-friend';
 import mailTrialPage from '../../pages/trial';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
-import { Paths } from '../content/helper';
+import type { Paths } from '../content/helper';
 import { isMailReferAFriendSignup, isMailTrialSignup } from '../signup/helper';
-import { InviteData, SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
+import type {
+    InviteData,
+    SessionData,
+    SignupCacheResult,
+    SubscriptionData,
+    UserCacheResult,
+} from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import { handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
-import { MetaTags, useMetaTags } from '../useMetaTags';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
 import Layout from './Layout';
 import LoginModal from './LoginModal';
-import Step1, { Step1Rref } from './Step1';
+import type { Step1Rref } from './Step1';
+import Step1 from './Step1';
 import Step2 from './Step2';
 import SwitchModal from './SwitchModal';
 import { getDriveConfiguration } from './drive/configuration';
@@ -91,14 +102,11 @@ import {
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
-import { SignupMode, SignupModelV2, SignupParameters2, Steps, Upsell, UpsellTypes } from './interface';
+import type { SignupModelV2, SignupParameters2, Upsell } from './interface';
+import { SignupMode, Steps, UpsellTypes } from './interface';
 import { getMailConfiguration } from './mail/configuration';
-import {
-    TelemetryMeasurementData,
-    getPaymentMethodsAvailable,
-    getPlanNameFromSession,
-    getSignupTelemetryData,
-} from './measure';
+import type { TelemetryMeasurementData } from './measure';
+import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
 import AccessModal from './modals/AccessModal';
 import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';

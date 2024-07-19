@@ -1,15 +1,15 @@
-import { KeyboardEvent, useEffect, useRef, useState } from 'react';
+import type { KeyboardEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
+import type { ChallengeRef, ChallengeResult } from '@proton/components';
 import {
     Challenge,
     ChallengeError,
-    ChallengeRef,
-    ChallengeResult,
     DropdownSizeUnit,
     Info,
     InputFieldTwo,
@@ -21,7 +21,8 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import { APP_NAMES, BRAND_NAME, CALENDAR_APP_NAME, CLIENT_TYPES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     emailValidator,

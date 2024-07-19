@@ -1,15 +1,15 @@
 import { getConversation, queryConversations } from '@proton/shared/lib/api/conversations';
-import { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
+import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import range from '@proton/utils/range';
 
-import { Element } from '../../../models/element';
-import { MailState } from '../../store';
+import type { Element } from '../../../models/element';
+import type { MailState } from '../../store';
 import { pollTaskRunning } from '../elementsActions';
-import { ElementsStateParams, QueryParams, QueryResults, RetryData } from '../elementsTypes';
+import type { ElementsStateParams, QueryParams, QueryResults, RetryData } from '../elementsTypes';
 
 export const TASK_RUNNING_POLLING_INTERVAL = 10000;
 

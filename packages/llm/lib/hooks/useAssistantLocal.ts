@@ -7,13 +7,11 @@ import useAssistantTelemetry, {
     ERROR_TYPE,
 } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useApi, useNotifications } from '@proton/components/hooks';
+import type { AssistantRunningAction, AssistantRunningActionResolver, GenerateAssistantResult } from '@proton/llm/lib';
 import {
-    AssistantRunningAction,
-    AssistantRunningActionResolver,
     AssistantStatus,
     CACHING_FAILED,
     FAILED_TO_DOWNLOAD,
-    GenerateAssistantResult,
     PromptRejectedError,
     UNLOAD_ASSISTANT_TIMEOUT,
     buildMLCConfig,
@@ -24,7 +22,7 @@ import {
 import { GpuLlmManager } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
-import {
+import type {
     AssistantConfig,
     DownloadProgressInfo,
     GenerationCallbackDetails,

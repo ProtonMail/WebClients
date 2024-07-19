@@ -1,4 +1,4 @@
-import { LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import { $convertToMarkdownString } from '../Utils/MarkdownExport'
 

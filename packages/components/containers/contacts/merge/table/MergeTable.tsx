@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
 import { Block, OrderableTable, TableCell } from '../../../../components';
 import MergeTableBody from './MergeTableBody';

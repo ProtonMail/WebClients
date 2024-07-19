@@ -1,5 +1,5 @@
 import { ORGANIZATION_STATE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import {
+import type {
     OrganizationWithSettings,
     PendingInvitation,
     Subscription,
@@ -7,7 +7,7 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import { UpsellCta } from '../helpers';
+import type { UpsellCta } from '../helpers';
 
 export const mailPlusUpsell = {
     plan: PLANS.MAIL,

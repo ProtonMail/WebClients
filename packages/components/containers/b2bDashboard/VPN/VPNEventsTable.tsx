@@ -6,7 +6,7 @@ import { Table, TableBody, TableHeader, TableRow, Time } from '@proton/component
 import { getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 
 import { getVPNEventColor } from './helpers';
-import { VPNEvent } from './interface';
+import type { VPNEvent } from './interface';
 
 interface Props {
     events: VPNEvent[];

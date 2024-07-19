@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { DropdownSizeUnit } from '@proton/components/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
@@ -9,7 +9,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Input } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';

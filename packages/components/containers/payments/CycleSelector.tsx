@@ -3,13 +3,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Cycle } from '@proton/shared/lib/interfaces';
+import type { Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import ButtonGroup, { Props as ForwardedButtonGroupProps } from '../../components/button/ButtonGroup';
+import type { Props as ForwardedButtonGroupProps } from '../../components/button/ButtonGroup';
+import ButtonGroup from '../../components/button/ButtonGroup';
 import Option from '../../components/option/Option';
-import Select, { Props as ForwardedSelectProps } from '../../components/select/Select';
-import SelectTwo, { Props as ForwardedSelectTwoProps } from '../../components/selectTwo/SelectTwo';
+import type { Props as ForwardedSelectProps } from '../../components/select/Select';
+import Select from '../../components/select/Select';
+import type { Props as ForwardedSelectTwoProps } from '../../components/selectTwo/SelectTwo';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 

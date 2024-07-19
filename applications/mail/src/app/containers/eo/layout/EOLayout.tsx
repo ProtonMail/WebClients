@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,8 +15,8 @@ import {
     getAppVersion,
     useConfig,
 } from '@proton/components';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
-    APP_NAMES,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,

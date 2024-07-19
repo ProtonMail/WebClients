@@ -11,7 +11,7 @@ import { getEvent, queryEventsIDs } from '../../api/calendars';
 import { getSilentApi } from '../../api/helpers/customConfig';
 import { SECOND } from '../../constants';
 import formatUTC from '../../date-fns-utc/format';
-import { WeekStartsOn } from '../../date-fns-utc/interface';
+import type { WeekStartsOn } from '../../date-fns-utc/interface';
 import {
     formatGMTOffsetAbbreviation,
     fromUTCDate,
@@ -19,18 +19,18 @@ import {
     getTimezoneOffset,
 } from '../../date/timezone';
 import { dateLocale } from '../../i18n';
-import { Address, Api, Key } from '../../interfaces';
-import {
+import type { Address, Api, Key } from '../../interfaces';
+import type {
     CalendarEvent,
     CalendarSettings,
-    EXPORT_EVENT_ERROR_TYPES,
     ExportError,
     VcalVeventComponent,
     VisualCalendar,
 } from '../../interfaces/calendar';
-import { CalendarEventsIDsQuery } from '../../interfaces/calendar/Api';
-import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
-import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
+import { EXPORT_EVENT_ERROR_TYPES } from '../../interfaces/calendar';
+import type { CalendarEventsIDsQuery } from '../../interfaces/calendar/Api';
+import type { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
+import type { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { getIsAutoAddedInvite } from '../apiModels';
 import { withNormalizedAuthors } from '../author';
 import { getIsOwnedCalendar } from '../calendar';

@@ -1,10 +1,11 @@
-import { ReactNode, RefObject, useEffect, useState } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 

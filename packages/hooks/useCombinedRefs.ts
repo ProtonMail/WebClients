@@ -1,4 +1,5 @@
-import { Ref, useCallback } from 'react';
+import type { Ref } from 'react';
+import { useCallback } from 'react';
 
 const useCombinedRefs = <T extends any>(...refs: (Ref<T> | undefined)[]): Ref<T> =>
     useCallback(

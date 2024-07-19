@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { IconName, useApi } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { useApi } from '@proton/components';
 import { useSystemFolders } from '@proton/components/hooks/useCategories';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.helpers';
 
@@ -52,7 +53,7 @@ export interface SystemFolder extends BaseSystemFolder {
 type UseSidebarElementsResponse = [
     sidebarElements: SystemFolder[],
     moveSidebarElements: (draggedId: MAILBOX_LABEL_IDS, droppedId: MAILBOX_LABEL_IDS | 'MORE_FOLDER_ITEM') => void,
-    loading: boolean
+    loading: boolean,
 ];
 
 const useMoveSystemFolders = ({

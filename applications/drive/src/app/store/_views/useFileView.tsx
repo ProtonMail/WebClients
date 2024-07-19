@@ -10,11 +10,12 @@ import { streamToBuffer } from '../../utils/stream';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import usePublicDownload from '../_downloads/usePublicDownload';
-import { DecryptedLink, useLink } from '../_links';
+import type { DecryptedLink } from '../_links';
+import { useLink } from '../_links';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useFileViewNavigation, usePublicFileViewNavigation } from './useFileNavigation';
 import { DEFAULT_SORT } from './usePublicFolderView';
-import { SortParams } from './utils/useSorting';
+import type { SortParams } from './utils/useSorting';
 
 /**
  * useFileView provides data for file preview.

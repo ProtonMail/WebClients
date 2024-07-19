@@ -1,4 +1,5 @@
-import { KeyboardEvent, ReactNode, useRef, useState } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 

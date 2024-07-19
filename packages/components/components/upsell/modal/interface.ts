@@ -1,4 +1,4 @@
-import { IconName } from '../../icon';
+import type { IconName } from '../../icon';
 
 export interface UpsellFeature {
     getText: () => string;

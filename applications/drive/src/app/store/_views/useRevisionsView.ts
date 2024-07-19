@@ -7,16 +7,16 @@ import {
     queryRestoreFileRevision,
 } from '@proton/shared/lib/api/drive/files';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
-import {
+import type {
     DriveFileRestoreRevisionResult,
     DriveFileRevisionPayload,
     DriveFileRevisionsResult,
-    FileRevisionState,
 } from '@proton/shared/lib/interfaces/drive/file';
+import { FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
 
 import { revisionPayloadToRevision } from '../_api';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
-import { DriveFileRevision } from '../_revisions';
+import type { DriveFileRevision } from '../_revisions';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 
 const filterRevisions = (revisions: DriveFileRevisionPayload[]) => {

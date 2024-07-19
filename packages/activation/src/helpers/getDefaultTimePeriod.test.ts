@@ -1,4 +1,4 @@
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TIME_PERIOD } from '../interface';
 import { getDefaultTimePeriod } from './getDefaultTimePeriod';

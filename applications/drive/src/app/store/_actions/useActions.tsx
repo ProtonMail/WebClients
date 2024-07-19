@@ -16,7 +16,7 @@ import { useShareActions, useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
 import { useErrorHandler } from '../_utils';
-import { LinkInfo } from './interface';
+import type { LinkInfo } from './interface';
 import useListNotifications from './useListNotifications';
 
 /**

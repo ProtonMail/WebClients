@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import welcomeImage from '@proton/styles/assets/img/onboarding/proton-welcome.svg';
 
-import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
+import type { Props as OnboardingContentProps } from './OnboardingContent';
+import OnboardingContent from './OnboardingContent';
 
 const OnboardingWelcome = (props: Omit<OnboardingContentProps, 'decription' | 'img'>) => {
     return (

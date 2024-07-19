@@ -14,7 +14,7 @@ import { propertyToUTCDate } from '../../lib/calendar/vcalConverter';
 import { DAY, HOUR, MINUTE, WEEK } from '../../lib/constants';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, toUTCDate } from '../../lib/date/timezone';
 import { pick } from '../../lib/helpers/object';
-import {
+import type {
     DateTime,
     NotificationModel,
     VcalDateProperty,

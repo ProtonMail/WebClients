@@ -1,10 +1,11 @@
-import { KeyboardEvent, useState } from 'react';
+import type { KeyboardEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { InputFieldTwo } from '../../components';
 import { useNotifications } from '../../hooks';
-import { Condition } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 import TokensCondition from './TokensCondition';
 
 interface Props {

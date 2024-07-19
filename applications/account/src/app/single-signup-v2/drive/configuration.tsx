@@ -10,15 +10,19 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
-import Benefits, { BenefitItem } from '../Benefits';
+import type { BenefitItem } from '../Benefits';
+import Benefits from '../Benefits';
 import BundlePlanSubSection from '../BundlePlanSubSection';
-import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
+import type { PlanCard } from '../PlanCardSelector';
+import { planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
-import { SignupConfiguration, SignupMode } from '../interface';
+import type { SignupConfiguration } from '../interface';
+import { SignupMode } from '../interface';
 import CustomStep from '../mail/CustomStep';
 import setupAccount from '../mail/account-setup.svg';
 

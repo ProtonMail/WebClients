@@ -1,7 +1,8 @@
-import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
-import { PublicKeyReference } from '@proton/crypto';
+import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
+import type { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail, getEquivalentAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_ROLE, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import type { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
     generateEmailBody,
@@ -14,18 +15,19 @@ import { getAttendeePartstat, getAttendeeRole, getHasAttendees } from '@proton/s
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
-import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
+import type { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getSupportedPlusAlias } from '@proton/shared/lib/mail/addresses';
 import unary from '@proton/utils/unary';
 
-import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
-import { AugmentedSendPreferences } from '../interface';
+import type { InviteActions } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { AugmentedSendPreferences } from '../interface';
 import { withIncrementedSequence } from './sequence';
 
 const {

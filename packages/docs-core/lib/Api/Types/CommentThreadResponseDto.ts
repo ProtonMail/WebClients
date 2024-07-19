@@ -1,5 +1,5 @@
-import { CommentThreadState } from '@proton/docs-shared'
-import { CommentResponseDto } from './CommentResponseDto'
+import type { CommentThreadState } from '@proton/docs-shared'
+import type { CommentResponseDto } from './CommentResponseDto'
 
 export type CommentThreadResponseDto = {
   CommentThreadID: string

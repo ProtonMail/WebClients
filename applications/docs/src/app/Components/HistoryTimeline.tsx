@@ -1,5 +1,5 @@
 import clsx from '@proton/utils/clsx'
-import { NativeVersionHistory } from '@proton/docs-core'
+import type { NativeVersionHistory } from '@proton/docs-core'
 import { useMemo } from 'react'
 import { c } from 'ttag'
 

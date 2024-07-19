@@ -3,18 +3,22 @@ import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRe
 import { createContactGroup } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { API_CODES, HOUR } from '@proton/shared/lib/constants';
-import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
+import type { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 import { extractContactImportCategories, getContactId, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
-import { IMPORT_GROUPS_ACTION, ImportCategories, ImportedContact } from '@proton/shared/lib/interfaces/contacts';
-import { AddContactsApiResponse, AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/ContactApi';
-import { EncryptedContact, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { ImportCategories, ImportedContact } from '@proton/shared/lib/interfaces/contacts';
+import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
+import type {
+    AddContactsApiResponse,
+    AddContactsApiResponses,
+} from '@proton/shared/lib/interfaces/contacts/ContactApi';
+import type { EncryptedContact, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';

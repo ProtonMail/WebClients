@@ -1,16 +1,18 @@
-import { Fragment, ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { Fragment, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
+import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     InputFieldTwo,
@@ -18,7 +20,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Option,
     SelectTwo,
     TextAreaTwo,

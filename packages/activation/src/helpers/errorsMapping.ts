@@ -1,7 +1,7 @@
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 
 const RESERVED_NAMES = ['scheduled', 'spam', 'trash', 'outbox', 'snoozed'];
 

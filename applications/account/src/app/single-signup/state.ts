@@ -2,7 +2,7 @@ import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/cont
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
-import { VPNSignupModel } from './interface';
+import type { VPNSignupModel } from './interface';
 
 export const getCycleData = ({ plan, coupon }: { plan: PLANS; coupon?: string }) => {
     if (getIsVPNPassPromotion(plan, coupon)) {

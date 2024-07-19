@@ -1,6 +1,6 @@
-import { NodeMeta } from '@proton/drive-store'
-import { StatusObserver } from './DocLoader'
-import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
+import type { NodeMeta } from '@proton/drive-store'
+import type { StatusObserver } from './DocLoader'
+import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
 
 export interface DocLoaderInterface {
   initialize(lookup: NodeMeta): Promise<void>

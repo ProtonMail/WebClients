@@ -4,7 +4,7 @@ import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '../../../lib
 import { createInviteIcs, generateEmailBody, generateEmailSubject } from '../../../lib/calendar/mailIntegration/invite';
 import { omit } from '../../../lib/helpers/object';
 import { toCRLF } from '../../../lib/helpers/string';
-import { VcalVeventComponent } from '../../../lib/interfaces/calendar';
+import type { VcalVeventComponent } from '../../../lib/interfaces/calendar';
 import { RE_PREFIX } from '../../../lib/mail/messages';
 
 const exampleVevent: VcalVeventComponent = {

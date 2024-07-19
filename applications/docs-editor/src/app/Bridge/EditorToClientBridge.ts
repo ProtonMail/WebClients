@@ -1,12 +1,14 @@
 import { Logger } from '@proton/utils/logs'
-import {
+import type {
   ClientToEditorGenericMessage,
   ClientToEditorInvokationMessage,
   ClientToEditorReplyMessage,
   ClientRequiresEditorMethods,
-  EditorBridgeMessageType,
   EditorRequiresClientMethods,
   EditorToClientReplyMessage,
+} from '@proton/docs-shared'
+import {
+  EditorBridgeMessageType,
   BridgeOriginProvider,
   DOCS_EDITOR_DEBUG_KEY,
   EDITOR_TAG_INFO_EVENT,

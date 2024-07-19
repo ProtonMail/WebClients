@@ -1,9 +1,9 @@
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { Element } from '../../models/element';
-import { LabelIDsChanges } from '../../models/event';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+import type { Element } from '../../models/element';
+import type { LabelIDsChanges } from '../../models/event';
+import type { Filter, SearchParameters, Sort } from '../../models/tools';
 
 export interface ElementsStateParams {
     labelID: string;

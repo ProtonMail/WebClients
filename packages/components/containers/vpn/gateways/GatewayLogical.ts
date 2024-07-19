@@ -1,4 +1,4 @@
-import { GatewayServer } from './GatewayServer';
+import type { GatewayServer } from './GatewayServer';
 
 export interface GatewayLogical {
     ID: string;

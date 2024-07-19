@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { useApi, useGetCalendarInfo } from '../../../hooks';
 

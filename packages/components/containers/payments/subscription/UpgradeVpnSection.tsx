@@ -1,4 +1,4 @@
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 

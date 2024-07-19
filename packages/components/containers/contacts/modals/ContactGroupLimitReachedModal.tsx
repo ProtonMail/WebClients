@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, Prompt } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { useContactGroups } from '@proton/components/hooks';
-import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 const getContactGroupsNames = (groupIDs: string[], contactGroups: ContactGroup[]) => {
     return contactGroups.filter((contactGroup) => groupIDs.includes(contactGroup.ID));

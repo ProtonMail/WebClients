@@ -1,4 +1,4 @@
-import { AutoReplyDuration } from '../constants';
+import type { AutoReplyDuration } from '../constants';
 
 export interface AutoResponder {
     IsEnabled: boolean;

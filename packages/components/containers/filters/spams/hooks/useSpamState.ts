@@ -1,6 +1,7 @@
-import { Reducer, useCallback, useReducer } from 'react';
+import type { Reducer } from 'react';
+import { useCallback, useReducer } from 'react';
 
-import { SpamItem, SpamLocation, SpamNavItem } from '../Spams.interfaces';
+import type { SpamItem, SpamLocation, SpamNavItem } from '../Spams.interfaces';
 
 interface State {
     display: SpamNavItem;

@@ -1,3 +1,4 @@
+import type { DocumentUpdate, SquashCommit } from '@proton/docs-proto'
 import {
   CommitVersion,
   CreateDocumentUpdate,
@@ -5,25 +6,21 @@ import {
   SquashLock,
   CreateCommit,
   CreateSquashCommit,
-  DocumentUpdate,
-  SquashCommit,
 } from '@proton/docs-proto'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/DocsApi'
-import { EncryptMessage } from './EncryptMessage'
-import { DocumentKeys } from '@proton/drive-store'
-import { DocumentMetaInterface } from '@proton/docs-shared'
-import { DecryptCommit } from './DecryptCommit'
+import type { DocsApi } from '../Api/DocsApi'
+import type { EncryptMessage } from './EncryptMessage'
+import type { DocumentKeys } from '@proton/drive-store'
+import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DecryptCommit } from './DecryptCommit'
 import metrics from '@proton/metrics'
-import { UpdatePair, SquashAlgorithm, SquashResult } from './SquashAlgorithm'
+import type { UpdatePair, SquashAlgorithm, SquashResult } from './SquashAlgorithm'
 import { SQUASH_FACTOR, GetCommitDULimit } from '../Types/SquashingConstants'
-import { VerifyCommit } from './VerifyCommit'
-import { DecryptedCommit } from '../Models/DecryptedCommit'
-import {
-  SquashVerificationObjectionCallback,
-  SquashVerificationObjectionDecision,
-} from '../Types/SquashVerificationObjection'
+import type { VerifyCommit } from './VerifyCommit'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import type { SquashVerificationObjectionCallback } from '../Types/SquashVerificationObjection'
+import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
 

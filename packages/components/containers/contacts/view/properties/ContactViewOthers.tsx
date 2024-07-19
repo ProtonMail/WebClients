@@ -4,7 +4,7 @@ import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants'
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { isDateTextValue, isValidDateValue } from '@proton/shared/lib/contacts/vcard';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import {
+import type {
     VCardContact,
     VCardDateOrText,
     VCardGenderValue,

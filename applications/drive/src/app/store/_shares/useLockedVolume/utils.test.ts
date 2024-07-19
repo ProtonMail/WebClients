@@ -1,4 +1,4 @@
-import { DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
 

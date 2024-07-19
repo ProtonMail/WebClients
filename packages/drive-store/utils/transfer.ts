@@ -1,5 +1,6 @@
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
-import { Transfer, TransferState, TransferSummary, TransfersStats } from '../components/TransferManager/transfer';
+import type { Transfer, TransferSummary, TransfersStats } from '../components/TransferManager/transfer';
+import { TransferState } from '../components/TransferManager/transfer';
 
 export const isTransferFinished = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled, TransferState.Skipped, TransferState.Done].includes(state);

@@ -2,7 +2,7 @@ import { screen, waitFor } from '@testing-library/react';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
-import { EOMessageReply } from '../../../../store/eo/eoType';
+import type { EOMessageReply } from '../../../../store/eo/eoType';
 import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message reply', () => {

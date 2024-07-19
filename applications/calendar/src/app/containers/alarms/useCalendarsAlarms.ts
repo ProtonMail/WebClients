@@ -1,12 +1,13 @@
-import { MutableRefObject, useEffect, useMemo, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components';
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
-import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
-import { CalendarsAlarmsCache } from './CacheInterface';
+import type { CalendarsAlarmsCache } from './CacheInterface';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
 
 const PADDING = 2 * MINUTE;

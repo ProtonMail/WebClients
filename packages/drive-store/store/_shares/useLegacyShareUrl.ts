@@ -1,5 +1,6 @@
 import { useApi, usePreventLeave } from '@proton/components';
-import { CryptoProxy, SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { encodeUtf8 } from '@proton/crypto/lib/utils';
 import {
     queryCreateSharedLink,
@@ -21,11 +22,11 @@ import {
     uint8ArrayToBase64String,
 } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import {
+import type {
     ShareURL as ShareURLPayload,
-    SharedURLFlags,
     SharedURLSessionKeyPayload,
 } from '@proton/shared/lib/interfaces/drive/sharing';
+import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpGetVerify } from '@proton/shared/lib/srp';
@@ -43,7 +44,7 @@ import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';
-import { ShareURLLEGACY, UpdateSharedURL } from './interface';
+import type { ShareURLLEGACY, UpdateSharedURL } from './interface';
 import { getSharedLink } from './shareUrl';
 import useShare from './useShare';
 import useShareActions from './useShareActions';

@@ -1,5 +1,5 @@
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
-import { FormattedContact } from '@proton/shared/lib/interfaces/contacts/FormattedContact';
+import type { FormattedContact } from '@proton/shared/lib/interfaces/contacts/FormattedContact';
 
 type TestContact = Pick<FormattedContact, 'Name' | 'emails'>;
 

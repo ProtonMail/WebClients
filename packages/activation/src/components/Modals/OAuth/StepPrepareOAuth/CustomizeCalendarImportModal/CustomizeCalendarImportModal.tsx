@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
-import { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
+import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { Button } from '@proton/atoms/Button';
-import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { PrimaryButton } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CustomizeCalendarImportModalLimitReached from './CustomizeCalendarImportModalLimitReached';
 import CustomizeCalendarImportModalTableHeader from './CustomizeCalendarImportModalTableHeader';
 import CustomizeCalendarImportRow from './CustomizeCalendarImportRow';
-import { DerivedCalendarType } from './useCustomizeCalendarImportModal';
+import type { DerivedCalendarType } from './useCustomizeCalendarImportModal';
 
 interface Props {
     modalProps: ModalStateProps;

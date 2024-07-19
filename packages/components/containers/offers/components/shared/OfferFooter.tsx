@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import { CurrencySelector, useUser } from '@proton/components';
 
-import { OfferProps } from '../../interface';
+import type { OfferProps } from '../../interface';
 import OfferDisableButton from './OfferDisableButton';
 
 interface Props extends OfferProps {

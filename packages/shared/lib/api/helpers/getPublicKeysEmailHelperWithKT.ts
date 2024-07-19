@@ -1,6 +1,7 @@
 import { RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import { Api, ApiKeysConfig, KT_VERIFICATION_STATUS, VerifyOutboundPublicKeys } from '../../interfaces';
+import type { Api, ApiKeysConfig, VerifyOutboundPublicKeys } from '../../interfaces';
+import { KT_VERIFICATION_STATUS } from '../../interfaces';
 import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '../../keys';
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 

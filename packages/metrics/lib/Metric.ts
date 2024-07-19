@@ -1,6 +1,6 @@
-import IMetricsRequestService from './types/IMetricsRequestService';
-import MetricSchema from './types/MetricSchema';
-import MetricVersions from './types/MetricVersions';
+import type IMetricsRequestService from './types/IMetricsRequestService';
+import type MetricSchema from './types/MetricSchema';
+import type MetricVersions from './types/MetricVersions';
 
 /**
  * Custom regex based on the following

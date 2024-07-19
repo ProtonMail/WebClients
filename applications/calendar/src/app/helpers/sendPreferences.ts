@@ -1,11 +1,12 @@
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
-import { AugmentedSendPreferences } from '../containers/calendar/interface';
-import { INVITE_ACTION_TYPES, InviteActions } from '../interfaces/Invite';
+import type { AugmentedSendPreferences } from '../containers/calendar/interface';
+import type { InviteActions } from '../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../interfaces/Invite';
 
 const { CHANGE_PARTSTAT, DECLINE_INVITATION, NONE, SEND_INVITATION, CANCEL_INVITATION, SEND_UPDATE } =
     INVITE_ACTION_TYPES;

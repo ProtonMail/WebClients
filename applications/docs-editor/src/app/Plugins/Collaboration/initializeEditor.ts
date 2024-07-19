@@ -1,7 +1,9 @@
-import { LexicalEditor, $getRoot, $createParagraphNode, $getSelection } from 'lexical'
-import { DocWillInitializeWithEmptyNodeEvent, EditorInitializationConfig } from '@proton/docs-shared'
+import type { LexicalEditor } from 'lexical'
+import { $getRoot, $createParagraphNode, $getSelection } from 'lexical'
+import type { EditorInitializationConfig } from '@proton/docs-shared'
+import { DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
 import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
-import { Binding } from '@lexical/yjs'
+import type { Binding } from '@lexical/yjs'
 import { CLEAR_HISTORY_COMMAND } from './useYjsHistory'
 
 /**

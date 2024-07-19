@@ -1,4 +1,5 @@
-import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
+import type { TypedStartListening } from '@reduxjs/toolkit';
+import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { start } from './listener';
 import { rootReducer } from './rootReducer';

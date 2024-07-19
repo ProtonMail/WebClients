@@ -1,7 +1,13 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Address, CachedOrganizationKey, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    CachedOrganizationKey,
+    Member,
+    PartialMemberAddress,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import AddressActions from './AddressActions';

@@ -1,6 +1,8 @@
-import { KeyboardEvent, RefObject, useEffect, useMemo, useState } from 'react';
+import type { KeyboardEvent, RefObject } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-import { MatchChunk, escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
+import type { MatchChunk } from '@proton/shared/lib/helpers/regex';
+import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 import { useHotkeys } from '../../hooks';

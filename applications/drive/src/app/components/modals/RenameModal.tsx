@@ -1,13 +1,14 @@
-import { ChangeEvent, FocusEvent, useState } from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     Field,
     InputFieldTwo,
     Label,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -19,7 +20,8 @@ import {
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../../store';
+import type { DecryptedLink } from '../../store';
+import { formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../../store';
 
 interface Props {
     onClose?: () => void;

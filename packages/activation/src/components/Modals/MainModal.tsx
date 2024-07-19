@@ -1,4 +1,4 @@
-import { ImportType } from '@proton/activation/src/interface';
+import type { ImportType } from '@proton/activation/src/interface';
 import { selectDraftModal } from '@proton/activation/src/logic/draft/draft.selector';
 import {
     readImapInstructions,

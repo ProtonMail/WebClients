@@ -1,4 +1,4 @@
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import { clearAll } from '../../../helpers/test/helper';
 import { refresh } from '../../../store/contacts/contactsActions';

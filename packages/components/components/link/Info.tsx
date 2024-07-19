@@ -1,11 +1,13 @@
-import { ComponentPropsWithoutRef, MouseEvent, ReactNode, useState } from 'react';
+import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
 import { generateUID } from '../../helpers';
-import Icon, { IconProps } from '../icon/Icon';
+import type { IconProps } from '../icon/Icon';
+import Icon from '../icon/Icon';
 import Tooltip from '../tooltip/Tooltip';
 
 import './Info.scss';

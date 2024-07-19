@@ -1,4 +1,5 @@
-import { FormEvent, KeyboardEvent, MouseEvent, Ref, RefObject, forwardRef, useEffect, useRef } from 'react';
+import type { FormEvent, KeyboardEvent, MouseEvent, Ref, RefObject } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 

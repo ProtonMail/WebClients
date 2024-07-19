@@ -3,18 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Form,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 
-import { GatewayDto } from './GatewayDto';
-import { GatewayModel } from './GatewayModel';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayDto } from './GatewayDto';
+import type { GatewayModel } from './GatewayModel';
+import type { GatewayUser } from './GatewayUser';
 import { GatewayUserSelection } from './GatewayUserSelection';
 
 type PartialGateway = Pick<GatewayDto, 'features' | 'userIds'>;

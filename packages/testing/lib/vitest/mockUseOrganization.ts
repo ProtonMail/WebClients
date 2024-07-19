@@ -1,5 +1,5 @@
 import * as useOrganizationModule from '@proton/account/organization/hooks';
-import { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
 
 export const mockUseGetOrganization = (value: Partial<OrganizationWithSettings> = {}) => {
     const spy = vi.spyOn(useOrganizationModule, 'useGetOrganization');

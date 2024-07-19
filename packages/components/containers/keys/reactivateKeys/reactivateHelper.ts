@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
-import { KeySalt } from '@proton/shared/lib/interfaces';
+import type { KeySalt } from '@proton/shared/lib/interfaces';
 import { decryptPrivateKeyWithSalt, getHasMigratedAddressKey } from '@proton/shared/lib/keys';
-import { KeyReactivationData, KeyReactivationRequestStateData } from '@proton/shared/lib/keys/reactivation/interface';
+import type {
+    KeyReactivationData,
+    KeyReactivationRequestStateData,
+} from '@proton/shared/lib/keys/reactivation/interface';
 
 interface KeyReactivationError {
     id: string;

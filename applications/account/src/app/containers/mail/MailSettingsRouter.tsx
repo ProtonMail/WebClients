@@ -1,4 +1,5 @@
-import { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useLoadAllowedTimeZones } from '@proton/calendar/timezones';

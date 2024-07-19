@@ -1,4 +1,5 @@
-import React, { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import React, { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,7 +7,7 @@ import { Button } from '@proton/atoms';
 import { FileIcon, Icon, TableRowBusy, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store';
 import FloatingEllipsis from './FloatingEllipsis';
 
 interface Props {

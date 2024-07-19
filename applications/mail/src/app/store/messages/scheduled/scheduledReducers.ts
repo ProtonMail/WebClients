@@ -1,7 +1,7 @@
-import { Draft, PayloadAction } from '@reduxjs/toolkit';
+import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
 import { getMessage } from '../helpers/messagesReducer';
-import { MessagesState } from '../messagesTypes';
+import type { MessagesState } from '../messagesTypes';
 
 export const updateScheduled = (
     state: Draft<MessagesState>,

@@ -3,11 +3,12 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { Address } from '@proton/shared/lib/interfaces/Address';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
-import { ShareWithKey } from '../_shares';
+import type { ShareWithKey } from '../_shares';
 import { useGetPublicKeysForEmail } from '../_user';
 import {
     decryptSharePassphraseAsync,

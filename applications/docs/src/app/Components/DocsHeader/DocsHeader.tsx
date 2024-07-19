@@ -3,14 +3,14 @@ import { APPS } from '@proton/shared/lib/constants'
 import DocumentTitleDropdown from '../layout/DocumentTitleDropdown'
 import { DocumentActiveUsers } from '../DocumentActiveUsers'
 import { ConnectionStatus } from '../layout/ConnectionStatus'
-import { DocControllerInterface } from '@proton/docs-core'
+import type { DocControllerInterface } from '@proton/docs-core'
 import { useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { Button } from '@proton/atoms'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
 import { c } from 'ttag'
-import { DocumentAction } from '@proton/drive-store'
+import type { DocumentAction } from '@proton/drive-store'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()

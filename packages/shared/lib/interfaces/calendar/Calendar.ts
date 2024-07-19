@@ -1,15 +1,15 @@
-import {
+import type {
     CALENDAR_DISPLAY,
     CALENDAR_SHARE_BUSY_TIME_SLOTS,
     CALENDAR_TYPE,
     NOTIFICATION_TYPE_API,
     SETTINGS_VIEW,
 } from '../../calendar/constants';
-import { Nullable } from '../utils';
-import { CalendarKey } from './CalendarKey';
-import { CalendarMember, CalendarOwner } from './CalendarMember';
-import { NotificationModel } from './Notification';
-import { Passphrase } from './Passphrase';
+import type { Nullable } from '../utils';
+import type { CalendarKey } from './CalendarKey';
+import type { CalendarMember, CalendarOwner } from './CalendarMember';
+import type { NotificationModel } from './Notification';
+import type { Passphrase } from './Passphrase';
 
 export interface Calendar {
     ID: string;

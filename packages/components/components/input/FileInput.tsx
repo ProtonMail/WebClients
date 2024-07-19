@@ -1,7 +1,9 @@
-import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactNode, Ref, forwardRef, useRef } from 'react';
+import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactNode, Ref } from 'react';
+import { forwardRef, useRef } from 'react';
 
-import { ButtonLike, ButtonLikeShape } from '@proton/atoms';
-import { ThemeColorUnion } from '@proton/colors';
+import type { ButtonLikeShape } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms';
+import type { ThemeColorUnion } from '@proton/colors';
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 

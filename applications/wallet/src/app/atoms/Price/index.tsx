@@ -1,5 +1,6 @@
-import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
-import CorePrice, { Props as PriceOwnProps } from '@proton/components/components/price/Price';
+import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
+import type { Props as PriceOwnProps } from '@proton/components/components/price/Price';
+import CorePrice from '@proton/components/components/price/Price';
 import '@proton/components/components/price/Price.scss';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';

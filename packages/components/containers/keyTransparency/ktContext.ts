@@ -1,8 +1,5 @@
-import {
-    KeyTransparencyActivation,
-    KeyTransparencyState,
-    VerifyOutboundPublicKeys,
-} from '@proton/shared/lib/interfaces';
+import type { KeyTransparencyState, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { defaultKeyTransparencyState } from '@proton/shared/lib/keyTransparency';
 
 export interface KTContext {

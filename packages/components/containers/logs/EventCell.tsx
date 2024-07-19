@@ -1,4 +1,5 @@
-import { AuthLog, AuthLogStatus } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog';
+import { AuthLogStatus } from '@proton/shared/lib/authlog';
 
 import { Icon } from '../../components';
 

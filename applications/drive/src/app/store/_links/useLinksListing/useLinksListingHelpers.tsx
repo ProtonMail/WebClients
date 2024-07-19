@@ -6,9 +6,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { useErrorHandler, waitFor } from '../../_utils';
-import { DecryptedLink, EncryptedLink } from '../interface';
+import type { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
-import useLinksState, { Link, isLinkDecrypted } from '../useLinksState';
+import type { Link } from '../useLinksState';
+import useLinksState, { isLinkDecrypted } from '../useLinksState';
 
 export type FetchMeta = {
     isEverythingFetched?: boolean;

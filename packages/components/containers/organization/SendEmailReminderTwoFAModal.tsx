@@ -5,9 +5,10 @@ import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import type { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Badge,
     Form,
@@ -15,7 +16,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';

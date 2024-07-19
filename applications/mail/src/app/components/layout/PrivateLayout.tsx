@@ -1,8 +1,9 @@
-import { ReactNode, Ref, forwardRef, useEffect } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import type { Breakpoints } from '@proton/components';
 import {
-    Breakpoints,
     DrawerApp,
     InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
@@ -12,7 +13,7 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

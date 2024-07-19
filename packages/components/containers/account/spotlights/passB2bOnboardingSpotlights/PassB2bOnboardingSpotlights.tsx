@@ -1,9 +1,10 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { Spotlight, useAccountSpotlights } from '@proton/components';
-import { APPS, APP_NAMES, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import spotlightAddUsers from './spotlight-add-users.svg';
 import spotlightVault from './spotlight-vault.svg';

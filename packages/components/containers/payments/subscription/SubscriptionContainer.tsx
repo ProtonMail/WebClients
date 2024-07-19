@@ -1,4 +1,5 @@
-import { FormEvent, ReactNode, RefObject, useEffect, useMemo, useRef, useState } from 'react';
+import type { FormEvent, ReactNode, RefObject } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,9 +7,9 @@ import { Button } from '@proton/atoms';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
+import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
     APPS,
@@ -23,13 +24,8 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import {
-    AddonGuard,
-    getPlanFromPlanIDs,
-    hasPlanIDs,
-    hasScribeAddon,
-    switchPlan,
-} from '@proton/shared/lib/helpers/planIDs';
+import type { AddonGuard } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs, hasScribeAddon, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
@@ -42,19 +38,17 @@ import {
     getPlanNameFromIDs,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
-    ChargebeeEnabled,
+import type {
     Currency,
     Cycle,
     FreePlanDefault,
     Organization,
     Plan,
     PlanIDs,
-    PriceType,
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
+import { Audience, ChargebeeEnabled, PriceType } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
@@ -64,14 +58,13 @@ import noop from '@proton/utils/noop';
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
-import {
-    BillingAddress,
-    CheckWithAutomaticOptions,
-    PAYMENT_METHOD_TYPES,
-    isOnSessionMigration,
-} from '../../../../components/payments/core';
-import { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
-import { PaymentProcessorHook, PaymentProcessorType } from '../../../../components/payments/react-extensions/interface';
+import type { BillingAddress, CheckWithAutomaticOptions } from '../../../../components/payments/core';
+import { PAYMENT_METHOD_TYPES, isOnSessionMigration } from '../../../../components/payments/core';
+import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
+import type {
+    PaymentProcessorHook,
+    PaymentProcessorType,
+} from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { Icon, Tooltip } from '../../../components';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
@@ -95,20 +88,16 @@ import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
-import { VisionaryWarningModal, VisionaryWarningModalOwnProps } from './PlanLossWarningModal';
+import type { VisionaryWarningModalOwnProps } from './PlanLossWarningModal';
+import { VisionaryWarningModal } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionCycleSelector, { SubscriptionCheckoutCycleItem } from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS } from './constants';
-import {
-    SelectedProductPlans,
-    exclude24Months,
-    getAutoCoupon,
-    getCurrency,
-    getDefaultSelectedProductPlans,
-} from './helpers';
+import type { SelectedProductPlans } from './helpers';
+import { exclude24Months, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';

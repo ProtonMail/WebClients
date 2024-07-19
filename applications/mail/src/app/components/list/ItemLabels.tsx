@@ -3,14 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import { LabelStack } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import orderBy from '@proton/utils/orderBy';
 
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 interface Props {
     element?: Element;

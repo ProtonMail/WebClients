@@ -4,7 +4,7 @@ import { isEdge, isEdgeChromium, isIos, isSafari } from '@proton/shared/lib/help
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
-import { TransferMeta } from '../../../components/TransferManager/transfer';
+import type { TransferMeta } from '../../../components/TransferManager/transfer';
 
 /**
  * Safari and Edge don't support returning stream as a response.

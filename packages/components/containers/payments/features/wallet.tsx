@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeatureDefinition } from './interface';
 
 export const FREE_WALLETS = 2;
 export const FREE_WALLET_ACCOUNTS = 2;

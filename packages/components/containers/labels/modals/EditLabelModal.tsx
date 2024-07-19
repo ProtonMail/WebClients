@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,19 +9,12 @@ import { checkLabelAvailability, create as createLabel, updateLabel } from '@pro
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import noop from '@proton/utils/noop';
 
-import {
-    Form,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useFormErrors,
-} from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useFormErrors } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 

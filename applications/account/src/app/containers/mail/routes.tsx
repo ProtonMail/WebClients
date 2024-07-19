@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import Href from '@proton/atoms/Href/Href';
-import { SidebarConfig } from '@proton/components';
-import { ADDRESS_TYPE, APPS, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { SidebarConfig } from '@proton/components';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount } from '@proton/shared/lib/keys';
 
 export const getHasPmMeAddress = (addresses?: Address[]) => {

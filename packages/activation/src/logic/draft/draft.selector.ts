@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { ImportType } from '@proton/activation/src/interface';
+import type { ImportType } from '@proton/activation/src/interface';
 
-import { EasySwitchState } from '../store';
+import type { EasySwitchState } from '../store';
 
 const selectImapDraft = (state: EasySwitchState) => state.imapDraft;
 const selectOauthDraft = (state: EasySwitchState) => state.oauthDraft;

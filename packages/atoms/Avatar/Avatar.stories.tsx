@@ -1,4 +1,5 @@
-import Avatar, { AvatarProps } from './Avatar';
+import type { AvatarProps } from './Avatar';
+import Avatar from './Avatar';
 import mdx from './Avatar.mdx';
 
 export default {

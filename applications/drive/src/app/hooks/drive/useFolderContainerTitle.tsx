@@ -1,4 +1,4 @@
-import { DriveSectionRouteProps } from '../../components/sections/Drive/DriveView';
+import type { DriveSectionRouteProps } from '../../components/sections/Drive/DriveView';
 import { useLinkName } from '../../store/_views/utils';
 
 export const useFolderContainerTitle = ({

@@ -6,15 +6,11 @@ import { useTheme } from '@proton/components/containers';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import {
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoHeader as ModalHeader,
-    ModalProps,
-} from '../../../components';
+import type { ModalProps } from '../../../components';
+import { ModalTwo as Modal, ModalTwoContent as ModalContent, ModalTwoHeader as ModalHeader } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';

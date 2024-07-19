@@ -1,17 +1,20 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ButtonProps, InlineLinkButton } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms';
 import { useModals, useNotifications } from '@proton/components';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { FileInput } from '../../../../components';
-import { CsvConfig, downloadSampleCSV, parseMultiUserCsv } from '../csv';
+import type { CsvConfig } from '../csv';
+import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';
 import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';
-import { UserTemplate } from '../types';
+import type { UserTemplate } from '../types';
 import CsvFormatErrorModal from './CsvFormatErrorModal';
 
 export interface Props {

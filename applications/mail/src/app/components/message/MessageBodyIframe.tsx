@@ -1,16 +1,17 @@
-import { RefObject, useEffect } from 'react';
+import type { RefObject } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
 import { Icon, Tooltip, useSyncIframeStyles, useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
 import MessagePrintFooter from './MessagePrintFooter';
 import MessagePrintHeader from './MessagePrintHeader';

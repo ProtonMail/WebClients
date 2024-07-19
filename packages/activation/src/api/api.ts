@@ -1,4 +1,5 @@
-import { CreateImportPayload, EASY_SWITCH_SOURCES, ImportType, LaunchImportPayload, OAuthProps } from '../interface';
+import type { CreateImportPayload, EASY_SWITCH_SOURCES, LaunchImportPayload, OAuthProps } from '../interface';
+import { ImportType } from '../interface';
 
 export const createToken = (
     data: OAuthProps & {

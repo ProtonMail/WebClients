@@ -1,7 +1,8 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback } from 'react';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import { useApplyLabelsToAll } from './useApplyLabelsToAll';
 import { useApplyLabelsToSelection } from './useApplyLabelsToSelection';
 

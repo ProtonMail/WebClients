@@ -1,19 +1,13 @@
-import { Children, ComponentPropsWithoutRef, ReactElement, cloneElement, isValidElement, useMemo } from 'react';
-
-
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
+import { Children, cloneElement, isValidElement, useMemo } from 'react';
 
 import clsx from '@proton/utils/clsx';
-
-
 
 import Step from './Step';
 import StepIndicator from './StepIndicator';
 import StepperContext from './StepperContext';
 
-
-
 import './Stepper.scss';
-
 
 export interface StepperProps extends ComponentPropsWithoutRef<'div'> {
     /**
@@ -42,10 +36,7 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
 
     const contextValue = useMemo(() => ({ activeStep }), [activeStep]);
 
-    const sharedUlClasses = clsx(
-        'unstyled flex *:min-size-auto gap-2 flex-nowrap m-0',
-        `justify-${position}`
-    );
+    const sharedUlClasses = clsx('unstyled flex *:min-size-auto gap-2 flex-nowrap m-0', `justify-${position}`);
 
     return (
         <StepperContext.Provider value={contextValue}>

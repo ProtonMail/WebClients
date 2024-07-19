@@ -1,4 +1,5 @@
-import { ChangeEvent, MutableRefObject, forwardRef, useState } from 'react';
+import type { ChangeEvent, MutableRefObject } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,10 +7,10 @@ import { Input } from '@proton/atoms';
 import { Label, generateUID } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { MessageSendInfo } from '../../hooks/useSendInfo';
-import { ComposerID } from '../../store/composers/composerTypes';
-import { MessageState } from '../../store/messages/messagesTypes';
-import { MessageChange } from './Composer';
+import type { MessageSendInfo } from '../../hooks/useSendInfo';
+import type { ComposerID } from '../../store/composers/composerTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageChange } from './Composer';
 import ComposerExpirationTime from './ComposerExpirationTime';
 import ComposerAddresses from './addresses/Addresses';
 import SelectSender from './addresses/SelectSender';

@@ -10,9 +10,10 @@ import { useLoading } from '@proton/hooks';
 import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
-import { PaymentTokenResult } from '../../payments/core/interface';
+import type { PaymentTokenResult } from '../../payments/core/interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

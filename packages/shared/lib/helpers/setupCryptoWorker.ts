@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
-import { WorkerPoolInitOptions as CryptoWorkerOptions, CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
+import type { WorkerPoolInitOptions as CryptoWorkerOptions } from '@proton/crypto/lib/worker/workerPool';
+import { CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
 
 import { hasModulesSupport } from './browser';
 

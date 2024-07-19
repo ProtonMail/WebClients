@@ -7,8 +7,8 @@ import useInterval from '@proton/hooks/useInterval';
 
 import { formatFullDate } from '../../../helpers/date';
 import { isConversation } from '../../../helpers/elements';
-import { Conversation } from '../../../models/conversation';
-import { Element } from '../../../models/element';
+import type { Conversation } from '../../../models/conversation';
+import type { Element } from '../../../models/element';
 
 const EVERY_MINUTE = 60 * 1000;
 

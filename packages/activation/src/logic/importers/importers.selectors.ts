@@ -3,8 +3,8 @@ import { createSelector } from '@reduxjs/toolkit';
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import orderBy from '@proton/utils/orderBy';
 
-import { EasySwitchState } from '../store';
-import { ActiveImportID, ActiveImporter, ActiveImportersMap, ImportersMap } from './importers.interface';
+import type { EasySwitchState } from '../store';
+import type { ActiveImportID, ActiveImporter, ActiveImportersMap, ImportersMap } from './importers.interface';
 
 const selectImportersMap = (state: EasySwitchState): ImportersMap => state.importers.importers;
 const selectActiveImportersMap = (state: EasySwitchState): ActiveImportersMap => state.importers.activeImporters;

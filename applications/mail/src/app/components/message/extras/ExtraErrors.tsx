@@ -7,7 +7,7 @@ import { Icon, SettingsLink } from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
-import { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
 
 const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
     switch (key) {

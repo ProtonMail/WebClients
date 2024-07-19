@@ -1,5 +1,5 @@
-import { ModalStateReturnObj } from '@proton/components/components';
-import { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
+import type { ModalStateReturnObj } from '@proton/components/components';
+import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import type { AliasOptions, Share, ShareType } from '@proton/pass/types';
 
 export type PassAliasesVault = Share<ShareType.Vault>;

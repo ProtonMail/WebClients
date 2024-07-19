@@ -1,7 +1,7 @@
 import { Icon, StripedItem, StripedList } from '@proton/components/components';
 import { SettingsParagraph, SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
 
-import { PlanConfigFeatures } from './interface';
+import type { PlanConfigFeatures } from './interface';
 
 const ReminderSectionFeatures = ({ title, features, description, extraWarning }: PlanConfigFeatures) => {
     return (

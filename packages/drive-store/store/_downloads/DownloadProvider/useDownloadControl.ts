@@ -4,8 +4,8 @@ import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferFinished, isTransferPending, isTransferProgress } from '../../../utils/transfer';
-import { DownloadControls } from '../interface';
-import {
+import type { DownloadControls } from '../interface';
+import type {
     Download,
     DownloadLinksProgresses,
     DownloadProgresses,

@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 
-import { ApiEvent } from '@proton/activation/src/api/api.interface';
+import type { ApiEvent } from '@proton/activation/src/api/api.interface';
 import { useSubscribeEventManager } from '@proton/components/hooks';
 
 import MainModal from '../components/Modals/MainModal';

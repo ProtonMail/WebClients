@@ -1,8 +1,8 @@
 import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
 
-import { DENSITY } from '../constants';
-import { RegisteredKey } from '../webauthn/interface';
-import { ChecklistId } from './Checklist';
+import type { DENSITY } from '../constants';
+import type { RegisteredKey } from '../webauthn/interface';
+import type { ChecklistId } from './Checklist';
 
 export enum SETTINGS_STATUS {
     UNVERIFIED = 0,

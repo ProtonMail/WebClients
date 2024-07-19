@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import DrawerAppButton, { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { useDrawer } from '@proton/components/hooks';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces';
 
 import { ContactsDrawerLogo } from '../drawerIcons';
 

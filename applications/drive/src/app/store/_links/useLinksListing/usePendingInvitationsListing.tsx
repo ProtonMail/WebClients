@@ -1,15 +1,18 @@
 import { useRef, useState } from 'react';
 
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto/lib';
+import type { PrivateKeyReference } from '@proton/crypto/lib';
+import { CryptoProxy } from '@proton/crypto/lib';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
-import { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
-import { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
+import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 
 import { shareInvitationDetailsPayloadToShareInvitationDetails, useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
-import { ShareInvitationDetails, useDefaultShare } from '../../_shares';
-import { DEFAULT_SORTING, FetchMeta, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
+import type { ShareInvitationDetails } from '../../_shares';
+import { useDefaultShare } from '../../_shares';
+import type { FetchMeta, SortParams } from './useLinksListingHelpers';
+import { DEFAULT_SORTING, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchSharedLinksMeta extends FetchMeta {
     lastPage: number;

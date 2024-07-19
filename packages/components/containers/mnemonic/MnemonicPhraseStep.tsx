@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -47,11 +47,7 @@ export const MnemonicPhraseStepContent = ({
             ) : (
                 <>
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
-                    <Card
-                        className="mt-2 flex justify-space-between items-center flex-nowrap"
-                        bordered={false}
-                        rounded
-                    >
+                    <Card className="mt-2 flex justify-space-between items-center flex-nowrap" bordered={false} rounded>
                         <span className="mr-2" data-testid="account:recovery:generatedRecoveryPhrase">
                             {mnemonic}
                         </span>

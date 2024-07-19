@@ -1,6 +1,6 @@
-import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
-import { NodeMeta } from '../interface';
+import type { NodeMeta } from '../interface';
 
 /**
  * Container for document keys.

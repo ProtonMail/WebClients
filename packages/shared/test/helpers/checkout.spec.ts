@@ -2,7 +2,7 @@ import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/consta
 import { getCheckout, getUsersAndAddons } from '@proton/shared/lib/helpers/checkout';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { Plan } from '../../lib/interfaces';
+import type { Plan } from '../../lib/interfaces';
 
 const getPlan = (data: Partial<Plan>) => {
     return { ...data, Type: PLAN_TYPES.PLAN } as Plan;

@@ -3,8 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
-import { Share, ShareWithKey } from '../_shares';
+import type { DecryptedLink } from '../_links';
+import { useLinksActions, useLinksListing } from '../_links';
+import type { Share, ShareWithKey } from '../_shares';
 import useSharesState from '../_shares/useSharesState';
 import { waitFor } from '../_utils';
 import { usePhotos } from './PhotosProvider';

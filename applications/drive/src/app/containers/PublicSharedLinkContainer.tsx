@@ -10,7 +10,8 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { SignUpFlowModal } from '../components/SharedPage/Bookmarks/SignUpFlowModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
-import { DecryptedLink, PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
+import type { DecryptedLink } from '../store';
+import { PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_shares/useDriveShareURLBookmarking';
 import { deleteStoredUrlPassword } from '../utils/url/password';
 

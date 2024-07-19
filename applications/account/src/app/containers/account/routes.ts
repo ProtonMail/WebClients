@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { ThemeColor } from '@proton/colors';
-import { SectionConfig } from '@proton/components';
+import type { ThemeColor } from '@proton/colors';
+import type { SectionConfig } from '@proton/components';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
     DEFAULT_CURRENCY,
@@ -20,7 +20,8 @@ import {
     hasCancellablePlan,
     hasNewCancellablePlan,
 } from '@proton/shared/lib/helpers/subscription';
-import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Renew, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';

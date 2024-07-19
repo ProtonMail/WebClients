@@ -1,8 +1,9 @@
-import { ComponentPropsWithRef, forwardRef } from 'react';
+import type { ComponentPropsWithRef } from 'react';
+import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { IconSize } from './Icon';
+import type { IconSize } from './Icon';
 
 export type MimeName =
     | 'attachments'

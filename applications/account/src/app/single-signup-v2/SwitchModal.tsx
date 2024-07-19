@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
 import { useErrorHandler } from '@proton/components/hooks';
-import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
-import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { User } from '@proton/shared/lib/interfaces';
+import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
+import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { User } from '@proton/shared/lib/interfaces';
 
 import AccountSwitcherItem from './AccountSwitcherItem';
 

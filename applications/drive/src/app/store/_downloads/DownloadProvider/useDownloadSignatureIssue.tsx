@@ -4,9 +4,10 @@ import { TransferCancel, TransferState } from '../../../components/TransferManag
 import { useSignatureIssueModal } from '../../../components/modals/SignatureIssueModal';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferSignatureIssue } from '../../../utils/transfer';
-import { SignatureIssues } from '../../_links';
-import { LinkDownload, TransferSignatureIssueStrategy } from '../interface';
-import { Download, UpdateData, UpdateFilter, UpdateState } from './interface';
+import type { SignatureIssues } from '../../_links';
+import type { LinkDownload } from '../interface';
+import { TransferSignatureIssueStrategy } from '../interface';
+import type { Download, UpdateData, UpdateFilter, UpdateState } from './interface';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
 // No upload has empty ID.

@@ -1,17 +1,13 @@
-import {
+import type {
     AnimationEvent,
     CSSProperties,
-    Children,
     MouseEventHandler,
     PropsWithChildren,
     ReactElement,
     ReactNode,
     RefObject,
-    cloneElement,
-    useEffect,
-    useRef,
-    useState,
 } from 'react';
+import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,7 +20,8 @@ import clsx from '@proton/utils/clsx';
 import { generateUID } from '../../helpers';
 import { useIsClosing } from '../../hooks';
 import { Icon } from '../icon';
-import { PopperPlacement, usePopper, usePopperState } from '../popper';
+import type { PopperPlacement } from '../popper';
+import { usePopper, usePopperState } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';
 import Portal from '../portal/Portal';
 

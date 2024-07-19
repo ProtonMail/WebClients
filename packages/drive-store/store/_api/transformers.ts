@@ -3,14 +3,15 @@ import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
-import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
-import {
+import type { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
+import type {
     ShareExternalInvitationPayload,
     ShareInvitationDetailsPayload,
     ShareInvitationPayload,
 } from '@proton/shared/lib/interfaces/drive/invitation';
-import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
-import { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
+import type { LinkMeta, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -20,14 +21,16 @@ import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { ShareMember, ShareURLLEGACY, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
     Share,
     ShareExternalInvitation,
     ShareInvitation,
     ShareInvitationDetails,
+    ShareMember,
     ShareMembership,
     ShareURL,
+    ShareURLLEGACY,
     ShareWithKey,
 } from '../_shares';
 import { ThumbnailType } from '../_uploads/media';

@@ -7,7 +7,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
-import { Element } from '../../../../models/element';
+import type { Element } from '../../../../models/element';
 import SnoozeDropdown from './SnoozeDropdown';
 
 jest.mock('@proton/components/hooks/useUser');

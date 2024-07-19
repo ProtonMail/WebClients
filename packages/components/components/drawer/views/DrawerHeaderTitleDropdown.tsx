@@ -5,7 +5,7 @@ import {
     DropdownMenuButton,
     usePopperAnchor,
 } from '@proton/components/components';
-import { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

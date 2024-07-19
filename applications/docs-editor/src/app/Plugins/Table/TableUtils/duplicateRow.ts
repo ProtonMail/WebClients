@@ -1,6 +1,7 @@
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'
-import { $createTableSelection, $isTableNode, TableCellNode, TableRowNode } from '@lexical/table'
-import { LexicalEditor } from 'lexical'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import { $createTableSelection, $isTableNode } from '@lexical/table'
+import type { LexicalEditor } from 'lexical'
 
 export function duplicateRow(editor: LexicalEditor, rowNode: TableRowNode) {
   editor.update(

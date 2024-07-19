@@ -2,12 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    MAX_CHARS_API,
-    OrganizationKeyRotationPayload,
-    createPasswordlessOrganizationKeys,
-    getKeyRotationPayload,
-} from '@proton/account';
+import type { OrganizationKeyRotationPayload } from '@proton/account';
+import { MAX_CHARS_API, createPasswordlessOrganizationKeys, getKeyRotationPayload } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -21,6 +17,7 @@ import { getHasVpnOrPassB2BPlan } from '@proton/shared/lib/helpers/subscription'
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     InputFieldTwo,
@@ -28,7 +25,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
     useSettingsLink,
 } from '../../components';

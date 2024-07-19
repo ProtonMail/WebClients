@@ -1,6 +1,6 @@
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { InvitationModel } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
 import {
     getAttendeeSummaryText,
     getHasBeenUpdatedText,

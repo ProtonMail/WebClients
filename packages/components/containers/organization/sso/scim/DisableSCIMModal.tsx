@@ -5,7 +5,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
+import type { ModalProps } from '../../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 
 interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
