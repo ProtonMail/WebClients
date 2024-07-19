@@ -16,7 +16,13 @@ import { useWalletDispatch } from '../../store/hooks';
 
 const termsLink = `${getAppStaticUrl(APP_NAME)}/legal/terms`;
 
-export const WalletTermsAndConditionsPrompt = ({ ...modalProps }: ModalOwnProps) => {
+interface TermsAndConditionsProps {
+    email?: string;
+}
+
+type Props = ModalOwnProps & TermsAndConditionsProps;
+
+export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) => {
     const walletApi = useWalletApiClients();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -32,21 +38,19 @@ export const WalletTermsAndConditionsPrompt = ({ ...modalProps }: ModalOwnProps)
         }
     };
 
-    const termsAndConditionsLink = <Href className="" href={termsLink}>{`(${termsLink})`}</Href>;
+    const termsAndConditionsLink = <Href className="" href={termsLink}>{`terms and conditions`}</Href>;
 
     return (
         <Prompt
             size="large"
-            footnote={c('Wallet Upgrade')
-                .jt`By continuing, you agree to our terms and conditions ${termsAndConditionsLink}`}
+            footnote={c('Wallet Upgrade').jt`By continuing, you agree to our ${termsAndConditionsLink}`}
             buttons={
                 <Button
                     fullWidth
                     size="large"
                     shape="solid"
                     color="norm"
-                    shadow
-                    className="block"
+                    className="block pb-0"
                     disabled={loading}
                     onClick={() => {
                         void withLoading(handleAcceptConditions());
@@ -69,8 +73,10 @@ export const WalletTermsAndConditionsPrompt = ({ ...modalProps }: ModalOwnProps)
                         .t`This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${BRAND_NAME} can seize your assets.`}</p>
                     <p>{c('Wallet Terms and Conditions')
                         .t`To avoid loss of assets from forget password or other access issues, back up your ${BRAND_NAME} recovery phrase and ${WALLET_SHORT_APP_NAME} seed phrase.`}</p>
-                    <p>{c('Wallet Terms and Conditions')
-                        .t`We have also enabled the Bitcoin via Email feature on this wallet so other ${WALLET_APP_NAME} users can easily send BTC to [email].`}</p>
+                    {email && (
+                        <p>{c('Wallet Terms and Conditions')
+                            .t`We have also enabled the Bitcoin via Email feature on this wallet so other ${WALLET_APP_NAME} users can easily send BTC to ${email}.`}</p>
+                    )}
                 </ModalParagraph>
             </div>
         </Prompt>
