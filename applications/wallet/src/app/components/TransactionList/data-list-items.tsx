@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
@@ -59,7 +60,9 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
             bottomNode={
                 <div className={clsx(loading && 'skeleton-loader')}>
                     {confirmedDate ? (
-                        <span className="color-hint block text-ellipsis">{confirmedDate}</span>
+                        <Tooltip title={confirmedDate}>
+                            <span className="color-hint block text-ellipsis">{confirmedDate}</span>
+                        </Tooltip>
                     ) : (
                         <div className="flex flex-row flex-nowrap items-center color-primary">
                             <CircleLoader className="shrink-0" />
@@ -85,25 +88,28 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
 
     const senderOrRecipientName = <span className="text-ellipsis">{transactionRecipientsHumanReadableNameList}</span>;
 
+    const senderOrRecipientLabel = isSent
+        ? // transalators: example translation -> To: bob@proton.me
+          c('Wallet transaction').jt`To: ${senderOrRecipientName}`
+        : // transalators: example translation -> From: alice@proton.me
+          c('Wallet transaction').jt`From: ${senderOrRecipientName}`;
+
     return (
         <DataListItem
             label={
                 <div className={clsx('block text-ellipsis', loading && 'skeleton-loader')}>
-                    <span>
-                        {
-                            // transalators: example translation -> To: bob@proton.me / From: alice@proton.me
-                            isSent
-                                ? c('Wallet transaction').jt`To: ${senderOrRecipientName}`
-                                : c('Wallet transaction').jt`From: ${senderOrRecipientName}`
-                        }
-                    </span>
+                    <Tooltip title={senderOrRecipientLabel}>
+                        <span>{senderOrRecipientLabel}</span>
+                    </Tooltip>
                 </div>
             }
             bottomNode={
                 message && (
-                    <div className={clsx('color-weak block text-ellipsis', loading && 'skeleton-loader')}>
-                        {message}
-                    </div>
+                    <Tooltip title={message}>
+                        <div className={clsx('color-weak block text-ellipsis', loading && 'skeleton-loader')}>
+                            {message}
+                        </div>
+                    </Tooltip>
                 )
             }
         />
@@ -121,21 +127,23 @@ export const NoteDataListItem = ({
             className="pl-2"
             bottomNode={
                 <div className={clsx('flex items-center', loading && 'skeleton-loader')}>
-                    <button
-                        className={clsx(
-                            'py-0.5 px-2 block text-ellipsis relative rounded-sm interactive-pseudo-inset',
-                            tx.apiData?.Label ? 'color-weak' : 'color-primary'
-                        )}
-                        style={{
-                            color: !tx.apiData?.Label && 'var(--interaction-norm-major-3)',
-                        }}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onClick(tx);
-                        }}
-                    >
-                        {tx.apiData?.Label || c('Wallet transaction').t`+ Add`}
-                    </button>
+                    <Tooltip title={tx.apiData?.Label}>
+                        <button
+                            className={clsx(
+                                'py-0.5 px-2 block text-ellipsis relative rounded-sm interactive-pseudo-inset',
+                                tx.apiData?.Label ? 'color-weak' : 'color-primary'
+                            )}
+                            style={{
+                                color: !tx.apiData?.Label && 'var(--interaction-norm-major-3)',
+                            }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onClick(tx);
+                            }}
+                        >
+                            {tx.apiData?.Label || c('Wallet transaction').t`+ Add`}
+                        </button>
+                    </Tooltip>
                 </div>
             }
         />
@@ -153,6 +161,21 @@ export const AmountDataListItem = ({
 
     const bitcoinUnit = settings.BitcoinUnit;
 
+    const primaryAmount = (
+        <Price
+            unit={exchangeRate ?? bitcoinUnit}
+            satsAmount={value}
+            withPositiveSign
+            signClassName={value < 0 ? 'color-danger' : 'color-success'}
+        />
+    );
+
+    const secondaryAmount = (
+        <span className={clsx('text-ellipsis')}>
+            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)} {getLabelByUnit(settings.BitcoinUnit)}
+        </span>
+    );
+
     return (
         <DataListItem
             align="end"
@@ -161,12 +184,9 @@ export const AmountDataListItem = ({
                     {loadingLabel ? (
                         <span>{c('Wallet transaction').t`Loading`}</span>
                     ) : (
-                        <Price
-                            unit={exchangeRate ?? bitcoinUnit}
-                            satsAmount={value}
-                            withPositiveSign
-                            signClassName={value < 0 ? 'color-danger' : 'color-success'}
-                        />
+                        <Tooltip title={primaryAmount}>
+                            <div>{primaryAmount}</div>
+                        </Tooltip>
                     )}
                 </div>
             }
@@ -179,10 +199,9 @@ export const AmountDataListItem = ({
                             loading && 'skeleton-loader'
                         )}
                     >
-                        <span className={clsx('text-ellipsis')}>
-                            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                            {getLabelByUnit(settings.BitcoinUnit)}
-                        </span>
+                        <Tooltip title={secondaryAmount}>
+                            <div>{secondaryAmount}</div>
+                        </Tooltip>
                     </div>
                 )
             }
