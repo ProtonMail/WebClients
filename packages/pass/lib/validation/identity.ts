@@ -30,28 +30,25 @@ const validateExtraFields = (values: IdentityItemFormValues) => {
     return Object.keys(errors).length > 0 ? (errors as FormikErrors<IdentityItemFormValues>) : undefined;
 };
 
-type ExtraSectionsErrors = { extraSections: { sectionFields: FormikErrors<UnsafeItemExtraField>[] }[] };
+type ExtraSectionsErrors = FormikErrors<UnsafeItemExtraField>[];
 const validateExtraSections = ({ extraSections }: IdentityItemFormValues) => {
-    const errors = extraSections.reduce<ExtraSectionsErrors>(
-        (acc, { sectionFields }) => {
-            const fieldErrors = sectionFields.map(({ fieldName }) => {
-                const fieldError: FormikErrors<UnsafeItemExtraField> = {};
+    const errors = extraSections.reduce<ExtraSectionsErrors[]>((acc, { sectionFields }, index) => {
+        const fieldErrors = sectionFields.map(({ fieldName }) => {
+            const fieldError: FormikErrors<UnsafeItemExtraField> = {};
 
-                if (isEmptyString(fieldName)) fieldError.fieldName = c('Validation').t`Field name is required`;
+            if (isEmptyString(fieldName)) fieldError.fieldName = c('Validation').t`Field name is required`;
 
-                return fieldError;
-            });
+            return fieldError;
+        });
 
-            if (fieldErrors.some((error) => Object.keys(error).length > 0)) {
-                acc.extraSections.push({ sectionFields: fieldErrors });
-            }
+        if (fieldErrors.some((error) => Object.keys(error).length > 0)) {
+            acc[index] = fieldErrors;
+        }
 
-            return acc;
-        },
-        { extraSections: [] }
-    );
+        return acc;
+    }, []);
 
-    return errors.extraSections.length > 0 ? (errors as FormikErrors<IdentityItemFormValues>) : undefined;
+    return errors.length > 0 ? (errors as FormikErrors<IdentityItemFormValues>) : undefined;
 };
 
 export const validateIdentityForm = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
