@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
@@ -9,8 +8,9 @@ import {
     SettingsLink,
     SettingsSection,
     useAppTitle,
-    useCancellationFlow,
+    useFlag,
     useModalState,
+    useSubscription,
     useUser,
     useVPNServersCount,
 } from '@proton/components';
@@ -27,6 +27,7 @@ import ReminderSectionPlan from './ReminderSectionPlan';
 import ReminderSectionStorage from './ReminderSectionStorage';
 import ReminderSectionTestimonials from './ReminderSectionTestimonials';
 import { getReminderPageConfig } from './reminderPageConfig';
+import useCancellationFlow from './useCancellationFlow';
 import useCancellationTelemetry from './useCancellationTelemetry';
 
 interface Props {
@@ -35,8 +36,9 @@ interface Props {
 
 export const CancellationReminderSection = ({ app }: Props) => {
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const [{ paid }] = useVPNServersCount();
-    const { b2bAccess, b2cAccess, redirectToDashboard, subscription, setStartedCancellation } = useCancellationFlow();
+    const { b2bAccess, b2cAccess, redirectToDashboard, setStartedCancellation } = useCancellationFlow();
     const { sendCancelPageKeepPlanReport, sendCancelPageConfirmCancelReport } = useCancellationTelemetry();
 
     const isChargeBeeUser = onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.CHARGEBEE_FORCED;
@@ -80,7 +82,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
 
     return (
         <>
-            <div className="overflow-auto">
+            <div className="overflow-auto" data-testid="cancellation-flow:reminder-container">
                 <div className="container-section-sticky">
                     <ReminderSectionPlan {...config.reminder} />
                     <ReminderSectionTestimonials {...config.testimonials} />
@@ -97,6 +99,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
                                 shape="solid"
                                 color="norm"
                                 className="flex flex-nowrap items-center justify-center"
+                                data-testid="cancellation-flow:keep-plan-button"
                             >
                                 <Icon name="upgrade" size={5} className="mr-1" />
                                 {c('Subscription reminder').t`Keep ${config.planName}`}
@@ -112,6 +115,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
                         <Button
                             shape="underline"
                             className="color-weak py-0"
+                            data-testid="cancellation-flow:confirm-cancellation"
                             onClick={() => {
                                 sendCancelPageConfirmCancelReport();
                                 setCancelModalOpen(true);
