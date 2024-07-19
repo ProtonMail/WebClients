@@ -204,7 +204,6 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const walletEASignupEnabled = useFlag('WalletEASignup');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -327,7 +326,12 @@ const SingleSignupContainerV2 = ({
                 data: { invitee: email, preVerifiedAddressToken },
             };
             result.preSelectedPlan = PLANS.FREE;
-        } else if (toApp === APPS.PROTONWALLET && walletEASignupEnabled && !result.preSelectedPlan) {
+        } else if (
+            toApp === APPS.PROTONWALLET &&
+            // If it's not visionary or wallet, force free selection
+            !new Set([PLANS.VISIONARY, PLANS.WALLET]).has(result.preSelectedPlan as any)
+        ) {
+            // TODO: WalletEA
             result.preSelectedPlan = PLANS.FREE;
         }
 

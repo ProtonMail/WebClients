@@ -94,17 +94,31 @@ interface Props {
 
 const allBits = PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN | PRODUCT_BIT.WALLET;
 
+const plusPlans = new Set([
+    PLANS.MAIL,
+    PLANS.VPN,
+    PLANS.VPN2024,
+    PLANS.PASS,
+    PLANS.DRIVE,
+    PLANS.VPN_PASS_BUNDLE,
+    PLANS.WALLET,
+]);
+
+const professionalPlans = new Set([PLANS.MAIL_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS]);
+
+const essentialsPlans = new Set([PLANS.MAIL_PRO, PLANS.PASS_PRO, PLANS.VPN_PRO, PLANS.DRIVE_PRO]);
+
 const getNameFromPlan = (plan?: PLANS) => {
     if (!plan) {
         return '';
     }
-    if ([PLANS.MAIL_PRO, PLANS.PASS_PRO, PLANS.VPN_PRO, PLANS.DRIVE_PRO].includes(plan)) {
+    if (essentialsPlans.has(plan)) {
         return 'Essentials';
     }
-    if ([PLANS.MAIL_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS].includes(plan)) {
+    if (professionalPlans.has(plan)) {
         return 'Professional';
     }
-    if ([PLANS.MAIL, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.DRIVE, PLANS.VPN_PASS_BUNDLE].includes(plan)) {
+    if (plusPlans.has(plan)) {
         return 'Plus';
     }
 };
