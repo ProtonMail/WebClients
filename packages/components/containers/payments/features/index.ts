@@ -10,6 +10,7 @@ import type { PlanCardFeature } from './interface';
 import { getMailFeatures } from './mail';
 import { getPassFeatures } from './pass';
 import { getVPNFeatures } from './vpn';
+import { getWalletFeatures } from './wallet';
 
 export const getAllFeatures = ({
     plansMap,
@@ -27,6 +28,7 @@ export const getAllFeatures = ({
         drive: getDriveFeatures(plansMap, freePlan),
         pass: getPassFeatures(),
         vpn: getVPNFeatures(serversCount),
+        wallet: getWalletFeatures(),
         team: getTeamManagementFeatures(),
         support: getSupportFeatures(),
     } as const;
