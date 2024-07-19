@@ -56,7 +56,7 @@ const ExpandableRow = ({
                             !isSelected && 'folder-tree-list-item-selected-hidden',
                         ])}
                     >
-                        <span className="inline-flex bg-primary rounded-50 folder-tree-list-item-selected-check">
+                        <span className="flex justify-center items-center w-8 h-8 bg-primary rounded-full">
                             <Icon name="checkmark" className="p-1" size={4} />
                         </span>
                     </div>
