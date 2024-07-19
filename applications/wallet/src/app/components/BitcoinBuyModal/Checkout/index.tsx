@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { RampInstantEventTypes } from '@ramp-network/ramp-instant-sdk';
 import { c } from 'ttag';
 
+import type { WasmGatewayProvider, WasmPaymentMethod } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
 import { Icon, Tooltip } from '@proton/components/components';
-import { useWalletApi } from '@proton/wallet';
+import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import type { QuoteWithProvider } from '../Amount';
 
@@ -18,9 +19,35 @@ interface Props {
     onDone: () => void;
 }
 
-export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
-    const walletApi = useWalletApi();
+const buildUrl = (
+    amount: number,
+    bitcoinAddress: string,
+    currency: string,
+    paymentMethod: WasmPaymentMethod,
+    provider: WasmGatewayProvider
+) => {
+    const wasmPaymentMethodToNumber: Record<WasmPaymentMethod, number> = {
+        ApplePay: 1,
+        BankTransfer: 2,
+        Card: 3,
+        GooglePay: 4,
+        InstantPayment: 5,
+        Paypal: 6,
+        Unsupported: -1,
+    };
 
+    const url = getApiSubdomainUrl(`/wallet/v1/payment-gateway/on-ramp/iframe`, window.location.origin);
+
+    url.searchParams.set('Amount', amount.toString());
+    url.searchParams.set('BitcoinAddress', bitcoinAddress);
+    url.searchParams.set('FiatCurrency', currency);
+    url.searchParams.set('PaymentMethod', wasmPaymentMethodToNumber[paymentMethod].toString());
+    url.searchParams.set('Provider', provider);
+
+    return url.toString();
+};
+
+export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
     useEffect(() => {
         const handleEvent = (event?: MessageEvent<any>) => {
             if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
@@ -59,15 +86,13 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
 
                 <iframe
                     className="banxa-iframe"
-                    src={walletApi
-                        .clients()
-                        .payment_gateway.getCheckoutIframeSrc(
-                            Number(quote.FiatAmount),
-                            btcAddress,
-                            quote.FiatCurrencySymbol,
-                            quote.PaymentMethod,
-                            quote.provider
-                        )}
+                    src={buildUrl(
+                        Number(quote.FiatAmount),
+                        btcAddress,
+                        quote.FiatCurrencySymbol,
+                        quote.PaymentMethod,
+                        quote.provider
+                    )}
                     title={c('Bitcoin buy').t`${quote.provider} checkout`}
                 />
             </div>
