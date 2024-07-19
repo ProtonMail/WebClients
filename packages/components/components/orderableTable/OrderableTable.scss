@@ -1,20 +1,26 @@
-@use "sass:map";
-@import "~@proton/styles/scss/lib";
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
 
 .orderableHelper {
-	z-index: map.get($z-indexes, 'up');
+	z-index: map.get($z-indexes, 'modals');
 	color: var(--text-norm);
 	background: var(--background-norm);
 	border: 1px solid var(--border-norm);
 	border-radius: var(--border-radius-lg) !important;
 	box-shadow: var(--shadow-lifted);
 
+	&--inModal {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+
 	td {
 		border: none;
 	}
 }
 
-@include media("<=medium") {
+@include media('<=medium') {
 	.orderableTable {
 		tbody {
 			tr {
