@@ -39,6 +39,7 @@ export type IconName =
     | 'arrow-in-to-rectangle'
     | 'arrow-left'
     | 'arrow-left-and-up'
+    | 'arrow-left-and-down'
     | 'arrow-out-from-rectangle'
     | 'arrow-out-square'
     | 'arrow-over-square'
