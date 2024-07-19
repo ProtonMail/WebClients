@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { isSplittedUser } from '@proton/components/payments/core';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -22,6 +23,7 @@ const redirectFromDesktop = '?open=credit-modal';
 
 const CreditsSection = () => {
     const location = useLocation();
+    const [user] = useUser();
     const [subscription] = useSubscription();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwoStatic(InAppPurchaseModal);
@@ -58,6 +60,11 @@ const CreditsSection = () => {
     }
 
     const hasVpnB2B = getHasVpnB2BPlan(subscription);
+    const splittedUser = isSplittedUser(user.ChargebeeUser, user.ChargebeeUserExists, subscription.BillingPlatform);
+
+    // Splitted users can't add credits in both v4 and v5 APIs, so we hide this option for them until the migration is
+    // completed.
+    const hideAddCredits = hasVpnB2B || splittedUser;
 
     return (
         <SettingsSection>
@@ -65,7 +72,7 @@ const CreditsSection = () => {
                 {c('Info')
                     .t`When your subscription renews, we will apply any available credits before we charge the payment method above.`}
             </SettingsParagraph>
-            {hasVpnB2B ? null : (
+            {hideAddCredits ? null : (
                 <div className="mb-7">
                     <Button
                         shape="outline"

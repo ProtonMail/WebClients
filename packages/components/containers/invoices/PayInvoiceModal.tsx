@@ -41,8 +41,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
 
+    const invoicePaymentsVersion = getInvoicePaymentsVersion(invoice);
     const { result, loading: amountLoading } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
-        () => checkInvoice(invoice.ID, getInvoicePaymentsVersion(invoice)),
+        () => checkInvoice(invoice.ID, invoicePaymentsVersion),
         []
     );
     const [subscription] = useSubscription();
@@ -56,16 +57,20 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
     const chargebeeContext = useChargebeeContext();
 
+    const forceInhouseSavedMethodProcessors = !invoice.IsExternal;
+    const disableNewPaymentMethods =
+        forceInhouseSavedMethodProcessors && user.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED;
+
     const paymentFacade = usePaymentFacade({
         amount,
         currency,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
-        // the override is required for the on-session migration.
-        chargebeeEnabled: invoice.IsExternal ? ChargebeeEnabled.CHARGEBEE_FORCED : ChargebeeEnabled.INHOUSE_FORCED,
+        forceInhouseSavedMethodProcessors,
+        disableNewPaymentMethods,
         onChargeable: (operations) => {
             return withLoading(async () => {
-                await operations.payInvoice(invoice.ID);
+                await operations.payInvoice(invoice.ID, invoicePaymentsVersion);
                 await Promise.all([
                     call(), // Update user.Delinquent to hide TopBanner
                     fetchInvoices(),
@@ -122,7 +127,12 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             );
         }
 
-        if (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+        if (
+            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
+            // if the invoice is internal, then we don't render the CB paypal button and fallback to the regular pay
+            // button
+            !forceInhouseSavedMethodProcessors
+        ) {
             return (
                 <div className="flex justify-end">
                     <div className="w-1/2 mr-1">
@@ -197,6 +207,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                             noMaxWidth
                             hasSomeVpnPlan={hasSomeVpnPlan}
+                            disableNewPaymentMethods={disableNewPaymentMethods}
                         />
                     ) : null}
                 </>

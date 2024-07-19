@@ -11,6 +11,7 @@ import {
     ChargebeeIframeHandles,
     ExistingPaymentMethod,
     PaymentVerificatorV5,
+    SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
 } from '../core';
@@ -19,7 +20,7 @@ import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    savedMethod?: SavedPaymentMethodExternal | SavedPaymentMethodInternal;
+    savedMethod?: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
     onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;

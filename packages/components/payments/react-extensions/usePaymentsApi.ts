@@ -159,7 +159,7 @@ export const usePaymentsApi = (
                         error,
                     })
                 ) {
-                    return await statusExtended('v4');
+                    return statusExtended('v4');
                 }
 
                 throw error;
@@ -252,7 +252,7 @@ export const usePaymentsApi = (
                         error,
                     })
                 ) {
-                    return await checkV4(data, signal, {
+                    return checkV4(data, signal, {
                         reason: 'killswitch',
                         system: 'inhouse',
                     });
@@ -265,7 +265,6 @@ export const usePaymentsApi = (
         return {
             checkWithAutomaticVersion,
             statusExtendedAutomatic,
-            statusExtended,
         };
     };
 
