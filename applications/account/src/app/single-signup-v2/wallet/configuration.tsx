@@ -21,7 +21,7 @@ import {
     getWallets,
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { APPS, CYCLE, PLANS, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CYCLE, PLANS, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -30,6 +30,7 @@ import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
+import StepLabel, { StepLabelSize } from '../StepLabel';
 import { getBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
@@ -122,19 +123,24 @@ export const getWalletConfiguration = ({
     audience,
     hideFreePlan,
     isLargeViewport,
+    signedIn,
 }: {
     mode: SignupMode;
     audience: Audience.B2B | Audience.B2C;
     hideFreePlan: boolean;
+    signedIn: boolean;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     plansMap?: PlansMap;
 }): SignupConfiguration => {
     const logo = <WalletLogo />;
 
+    const appName = WALLET_APP_NAME;
+
     const title = c('wallet_signup_2024: Info').t`A safer way to hold your Bitcoin`;
-    const inviteTitle = c('wallet_signup_2024: Info').t`You have been invited to join ${WALLET_APP_NAME}`;
-    const onboardingTitle = c('wallet_signup_2024: Info').t`Unlock ${WALLET_APP_NAME} premium features by upgrading`;
+    const inviteTitle1 = c('wallet_signup_2024: Info').t`You're Invited.`;
+    const inviteTitle2 = c('wallet_signup_2024: Info').t`Exclusive early access to ${appName}.`;
+    const onboardingTitle = c('wallet_signup_2024: Info').t`Unlock ${appName} premium features by upgrading`;
 
     const features = getGenericFeatures(isLargeViewport);
 
@@ -174,15 +180,79 @@ export const getWalletConfiguration = ({
     };
 
     const benefits = (() => {
-        const benefitItems = getWalletBenefits();
-        return (
-            benefitItems && (
+        // TODO: WalletEA
+        if (mode === SignupMode.Invite) {
+            return (
                 <div>
-                    <div className="text-lg text-semibold">{getBenefits(WALLET_APP_NAME)}</div>
-                    <Benefits className="mt-5 mb-5" features={benefitItems} />
+                    <div className="text-lg text-semibold">
+                        {c('wallet_signup_2024: Info').t`Join ${appName} early access!`}
+                    </div>
+                    <div className="flex flex-column gap-2 my-6">
+                        {[
+                            {
+                                title: c('wallet_signup_2024: Info').t`Get started`,
+                                message: c('wallet_signup_2024: Info')
+                                    .t`As an invited user, sign up for a free ${BRAND_NAME} account to exclusively get access to ${appName}`,
+                            },
+                            {
+                                title: c('wallet_signup_2024: Info').t`Invite Friends`,
+                                message: c('wallet_signup_2024: Info')
+                                    .t`Visionary users and their invited friends can share early access with others, invite your friends to try ${appName} for free!`,
+                            },
+                        ].map(({ title, message }, i) => {
+                            return (
+                                <div className="flex flex-nowrap gap-2">
+                                    <div className="shrink-0">
+                                        <StepLabel step={i} size={StepLabelSize.small} className="color-primary" />
+                                    </div>
+                                    <div>
+                                        <div className="text-semibold mb-1">{title}</div>
+                                        <div className="text-sm">{message}</div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
                     <div>{getJoinString(audience)}</div>
                 </div>
-            )
+            );
+        }
+        if (signedIn) {
+            const benefitItems = getWalletBenefits();
+            return (
+                benefitItems && (
+                    <div>
+                        <div className="text-lg text-semibold">{getBenefits(appName)}</div>
+                        <Benefits className="mt-5 mb-5" features={benefitItems} />
+                        <div>{getJoinString(audience)}</div>
+                    </div>
+                )
+            );
+        }
+        // TODO: WalletEA
+        return (
+            <div>
+                <div>
+                    <div
+                        className="py-0.5 px-2 rounded-lg text-sm text-semibold inline-flex flex-nowrap mb-6 items-center"
+                        style={{
+                            background: 'var(--interaction-norm-minor-1)',
+                            color: 'var(--interaction-norm)',
+                        }}
+                    >
+                        <Icon name="hourglass" size={4} className="shrink-0" />
+                        <span className="ml-1 flex-1">{c('wallet_signup_2024: Info').t`Early access waitlist`}</span>
+                    </div>
+                </div>
+                <div className="text-lg text-semibold">
+                    {c('wallet_signup_2024: Info').t`Join ${appName} early access!`}
+                </div>
+                <div className="my-6">
+                    {c('wallet_signup_2024: Info')
+                        .t`Sign up for a free ${BRAND_NAME} account to secure your spot. The earlier you sign up, the sooner you will get access to ${appName}.`}
+                </div>
+                <div>{getJoinString(audience)}</div>
+            </div>
         );
     })();
 
@@ -191,7 +261,13 @@ export const getWalletConfiguration = ({
         title: {
             [SignupMode.Default]: title,
             [SignupMode.Onboarding]: onboardingTitle,
-            [SignupMode.Invite]: inviteTitle,
+            [SignupMode.Invite]: (
+                <>
+                    {inviteTitle1}
+                    <br />
+                    {inviteTitle2}
+                </>
+            ),
             [SignupMode.MailReferral]: title,
         }[mode],
         features,
