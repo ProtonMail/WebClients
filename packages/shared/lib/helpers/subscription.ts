@@ -73,6 +73,7 @@ const {
     MEMBER_SCRIBE_PASS_BIZ,
     MEMBER_SCRIBE_VPN_PRO,
     MEMBER_SCRIBE_FAMILY,
+    MEMBER_SCRIBE_DUO,
 } = ADDON_NAMES;
 
 type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
@@ -187,6 +188,7 @@ export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
         MEMBER_SCRIBE_PASS_BIZ,
         MEMBER_SCRIBE_VPN_PRO,
         MEMBER_SCRIBE_FAMILY,
+        MEMBER_SCRIBE_DUO,
     ]);
 
 export const PLANS_WITH_AI_INCLUDED = [VISIONARY];

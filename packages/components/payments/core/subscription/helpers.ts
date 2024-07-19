@@ -34,5 +34,7 @@ export const getScribeAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO;
         case PLANS.FAMILY:
             return ADDON_NAMES.MEMBER_SCRIBE_FAMILY;
+        case PLANS.DUO:
+            return ADDON_NAMES.MEMBER_SCRIBE_DUO;
     }
 };
