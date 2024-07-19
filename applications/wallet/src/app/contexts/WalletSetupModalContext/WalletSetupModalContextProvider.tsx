@@ -28,8 +28,9 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
     const [settings, loadingSettings] = useUserWalletSettings();
 
-    const [walletUpgradeModal, setWalletUpgradeModal] = useModalStateWithData<WalletUpgradeModalOwnProps>();
-    const [walletSetupModal, setWalletSetupModal] = useModalStateWithData<ModalData>({
+    const [walletUpgradeModal, setWalletUpgradeModal, renderWalletUpgradeModal] =
+        useModalStateWithData<WalletUpgradeModalOwnProps>();
+    const [walletSetupModal, setWalletSetupModal, renderSetupModal] = useModalStateWithData<ModalData>({
         onClose: () => {
             onCloseRef.current?.();
         },
@@ -103,32 +104,42 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
                 if (walletUpgradeModal.data) {
                     return (
-                        <WalletUpgradeModal
-                            theme={walletUpgradeModal.data.theme}
-                            content={walletUpgradeModal.data.content}
-                            {...walletUpgradeModal}
-                        />
+                        renderWalletUpgradeModal && (
+                            <WalletUpgradeModal
+                                theme={walletUpgradeModal.data.theme}
+                                content={walletUpgradeModal.data.content}
+                                {...walletUpgradeModal}
+                            />
+                        )
                     );
                 }
 
                 switch (walletSetupModal.data?.kind) {
                     case WalletSetupModalKind.WalletCreation:
-                        return <WalletCreationModal theme={walletSetupModal.data.theme} {...walletSetupModal} />;
+                        return (
+                            renderSetupModal && (
+                                <WalletCreationModal theme={walletSetupModal.data.theme} {...walletSetupModal} />
+                            )
+                        );
                     case WalletSetupModalKind.WalletBackup:
                         return (
-                            <WalletBackupModal
-                                theme={walletSetupModal.data.theme}
-                                apiWalletData={walletSetupModal.data.apiWalletData}
-                                {...walletSetupModal}
-                            />
+                            renderSetupModal && (
+                                <WalletBackupModal
+                                    theme={walletSetupModal.data.theme}
+                                    apiWalletData={walletSetupModal.data.apiWalletData}
+                                    {...walletSetupModal}
+                                />
+                            )
                         );
                     case WalletSetupModalKind.WalletAccountCreation:
                         return (
-                            <WalletAccountCreationModal
-                                theme={walletSetupModal.data.theme}
-                                apiWalletData={walletSetupModal.data.apiWalletData}
-                                {...walletSetupModal}
-                            />
+                            renderSetupModal && (
+                                <WalletAccountCreationModal
+                                    theme={walletSetupModal.data.theme}
+                                    apiWalletData={walletSetupModal.data.apiWalletData}
+                                    {...walletSetupModal}
+                                />
+                            )
                         );
                 }
             })()}
