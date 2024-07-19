@@ -40,7 +40,7 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     };
 
     const exists = (recipient: Recipient) => {
-        return Boolean(recipientEmailMap[recipient.Address]);
+        return Boolean(recipientEmailMap[recipient.Address] || btcAddressMap[recipient.Address]);
     };
 
     const addValidRecipient = (
