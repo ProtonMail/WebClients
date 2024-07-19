@@ -40,6 +40,7 @@ const {
     DRIVE,
     DRIVE_PRO,
     PASS,
+    WALLET,
     VPN,
     VPN2024,
     VPN_PASS_BUNDLE,
@@ -151,6 +152,7 @@ export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomeP
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
+export const hasWallet = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, WALLET);
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
@@ -202,6 +204,8 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
                 return PLANS.DRIVE;
             case APPS.PROTONVPN_SETTINGS:
                 return PLANS.VPN;
+            case APPS.PROTONWALLET:
+                return PLANS.WALLET;
             default:
             case APPS.PROTONMAIL:
                 return PLANS.MAIL;
@@ -834,6 +838,7 @@ export const hasNewCancellablePlan = (subscription: Subscription | undefined, us
         hasFamily,
         hasVisionary,
         hasDrive,
+        hasWallet,
         hasMailPro,
         hasMailBusiness,
         hasDrivePro,

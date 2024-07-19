@@ -19,6 +19,7 @@ import {
     hasVPN,
     hasVPNPassBundle,
     hasVpnBusiness,
+    hasWallet,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
@@ -52,6 +53,15 @@ import {
     getVaults,
 } from '../../../features/pass';
 import { getVPNConnectionsFeature } from '../../../features/vpn';
+import {
+    WALLET_PLUS_WALLETS,
+    WALLET_PLUS_WALLET_ACCOUNTS,
+    WALLET_PLUS_WALLET_EMAIL,
+    getBitcoinViaEmail,
+    getWalletAccounts,
+    getWalletEmailAddresses,
+    getWallets,
+} from '../../../features/wallet';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
 import Panel from '../Panel';
@@ -233,6 +243,22 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
         );
     };
 
+    const getWalletAppWalletPlus = () => {
+        const items: Item[] = [
+            getWallets(WALLET_PLUS_WALLETS),
+            getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
+            getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
+            getBitcoinViaEmail(),
+        ];
+
+        return (
+            <StripedList alternate={alternate}>
+                {storageItem}
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
     const getVpnB2B = () => {
         /**
          * The `vpn` in `vpn-get-more` is unimportant.
@@ -357,6 +383,9 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
                 }
                 if (getHasVpnB2BPlan(subscription)) {
                     return getVpnB2B();
+                }
+                if (hasWallet(subscription)) {
+                    return getWalletAppWalletPlus();
                 }
 
                 return getDefault();

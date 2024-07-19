@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import type { PlanCardFeatureDefinition } from './interface';
+import { PLANS } from '@proton/shared/lib/constants';
+
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const FREE_WALLETS = 2;
 export const FREE_WALLET_ACCOUNTS = 2;
@@ -53,9 +55,102 @@ export const getWalletEmailAddresses = (
     };
 };
 
+export const getBitcoinViaEmailText = () => {
+    return c('wallet_signup_2024: Info').t`Bitcoin via email`;
+};
+
 export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
     return {
-        text: c('wallet_signup_2024: Info').t`Bitcoin via email`,
+        text: getBitcoinViaEmailText(),
         included: true,
     };
+};
+
+export const getWalletFeatures = (): PlanCardFeature[] => {
+    return [
+        {
+            name: 'wallets',
+            plans: {
+                [PLANS.FREE]: getWallets(FREE_WALLETS),
+                [PLANS.WALLET]: getWallets(WALLET_PLUS_WALLETS),
+                [PLANS.BUNDLE]: getWallets(UNLIMITED_WALLETS),
+                [PLANS.MAIL]: getWallets(FREE_WALLETS),
+                [PLANS.VPN]: getWallets(FREE_WALLETS),
+                [PLANS.DRIVE]: getWallets(FREE_WALLETS),
+                [PLANS.PASS]: getWallets(FREE_WALLETS),
+                [PLANS.FAMILY]: getWallets(UNLIMITED_WALLETS),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: null,
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'wallet-accounts',
+            plans: {
+                [PLANS.FREE]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.WALLET]: getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
+                [PLANS.BUNDLE]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
+                [PLANS.MAIL]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.VPN]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.DRIVE]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.PASS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.FAMILY]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: null,
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'wallet-email-addresses',
+            plans: {
+                [PLANS.FREE]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.WALLET]: getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
+                [PLANS.BUNDLE]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
+                [PLANS.MAIL]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.VPN]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.DRIVE]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.PASS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.FAMILY]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: null,
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'wallet-bitcoin-via-email',
+            plans: {
+                [PLANS.FREE]: getBitcoinViaEmail(),
+                [PLANS.WALLET]: getBitcoinViaEmail(),
+                [PLANS.BUNDLE]: getBitcoinViaEmail(),
+                [PLANS.MAIL]: getBitcoinViaEmail(),
+                [PLANS.VPN]: getBitcoinViaEmail(),
+                [PLANS.DRIVE]: getBitcoinViaEmail(),
+                [PLANS.PASS]: getBitcoinViaEmail(),
+                [PLANS.FAMILY]: getBitcoinViaEmail(),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: null,
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+    ];
 };

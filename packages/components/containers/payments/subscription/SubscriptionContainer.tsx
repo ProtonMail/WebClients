@@ -99,6 +99,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import type { SelectedProductPlans } from './helpers';
 import { exclude24Months, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
+import { notHigherThanAvailableOnBackend } from './helpers/notHigherThanAvailableOnBackend';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
@@ -332,6 +333,7 @@ const SubscriptionContainer = ({
                 subscription?.UpcomingSubscription?.Cycle ?? Number.NEGATIVE_INFINITY
             )
         );
+        cycle = notHigherThanAvailableOnBackend(planIDs, plansMap, cycle);
 
         const currency = (() => {
             if (maybeCurrency) {

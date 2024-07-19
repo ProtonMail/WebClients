@@ -24,6 +24,7 @@ import { getMonthFreeText } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
 import PlanDiscount from './helpers/PlanDiscount';
 import PlanPrice from './helpers/PlanPrice';
+import { notHigherThanAvailableOnBackend } from './helpers/notHigherThanAvailableOnBackend';
 
 type TotalPricings = {
     [key in CYCLE]: TotalPricing;
@@ -197,22 +198,6 @@ export const SubscriptionCheckoutCycleItem = ({
         </div>
     );
 };
-
-function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: PlansMap, cycle: CYCLE): CYCLE {
-    const planID = getPlanFromIds(planIDs);
-    if (!planID) {
-        return cycle;
-    }
-
-    const plan = plansMap[planID];
-    if (!plan) {
-        return cycle;
-    }
-
-    const availableCycles = Object.keys(plan.Pricing) as unknown as CYCLE[];
-    const maxCycle = Math.max(...availableCycles) as CYCLE;
-    return Math.min(cycle, maxCycle);
-}
 
 // todo: that's not a long-term solution, because we already have cycles like 3, 15, 18, 30
 // which might appear for certain promotions.

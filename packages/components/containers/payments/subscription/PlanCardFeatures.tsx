@@ -8,7 +8,8 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { IconSize } from '../../../components';
-import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, PassLogo, VpnLogo } from '../../../components';
+import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, PassLogo, VpnLogo, WalletLogo } from '../../../components';
+import { useFlag } from '../../unleash';
 import type { AllFeatures } from '../features';
 import { getFeatureDefinitions } from '../features';
 import type { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
@@ -134,6 +135,8 @@ interface Props {
 }
 
 const PlanCardFeatures = ({ planName, features, audience }: Props) => {
+    const canAccessWalletPlan = useFlag('WalletPlan');
+
     const highlightFeatures = (
         <div data-testid={planName}>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
@@ -179,6 +182,17 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.vpn, audience)} />
         </div>
     );
+
+    const showWalletFeatures = canAccessWalletPlan && audience !== Audience.B2B;
+
+    const walletFeatures = showWalletFeatures ? (
+        <div data-testid={`${planName}-wallet`}>
+            <h3>
+                <WalletLogo />
+            </h3>
+            <PlanCardFeatureList features={getFeatureDefinitions(planName, features.wallet, audience)} />
+        </div>
+    ) : null;
     const teamFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
             <h3 className="h4 text-bold">{c('new_plans: heading').t`Team management`}</h3>
@@ -199,6 +213,7 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
             {driveFeatures}
             {vpnFeatures}
             {passFeatures}
+            {walletFeatures}
             {teamFeatures}
             {supportFeatures}
         </>
