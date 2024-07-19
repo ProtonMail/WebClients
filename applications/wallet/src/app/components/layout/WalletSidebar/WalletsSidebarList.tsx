@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -32,12 +32,12 @@ interface WalletsSidebarListItemProps {
 }
 
 const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme }: WalletsSidebarListItemProps) => {
-    const { state: showAccounts, toggle: toggleShowAccounts } = useToggle(false);
+    const { state: showAccounts, toggle: toggleShowAccounts, set } = useToggle(false);
 
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
 
-    const { walletId } = useParams<{ walletId: string }>();
+    const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
     const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const walletIndex = useMemo(
@@ -51,6 +51,13 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme }: WalletsSi
     ];
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
+
+    const { pathname } = useLocation();
+    useEffect(() => {
+        if (accountId) {
+            set(pathname.includes(`/wallets/${wallet.Wallet.ID}`));
+        }
+    }, [pathname, wallet.Wallet.ID, accountId, set]);
 
     return (
         <>
