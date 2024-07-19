@@ -11,7 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 
 interface Props {
     onScan: (qrcode: QRCode) => void;
-    onError?: () => void;
+    onError?: (errorName: DOMException['name']) => void;
 }
 
 const QRCodeReader = ({ onScan, onError }: Props) => {
@@ -62,10 +62,17 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
             videoRef.current.addEventListener('loadedmetadata', onLoadedMetadata);
         };
 
-        const handleError = (error: unknown) => {
-            createNotification({ text: c('QRCode Reader').t`Could not run QR code reader` });
-            console.error('handleError', error);
-            onError?.();
+        const handleError = (error: DOMException) => {
+            if (error.name === 'NotAllowedError') {
+                createNotification({
+                    text: c('QRCode Reader')
+                        .t`You need to grant camera permission to be able to activate QRCode scanner`,
+                });
+            } else {
+                createNotification({ text: c('QRCode Reader').t`Could not run QR code reader` });
+            }
+
+            onError?.(error.name);
         };
 
         void withLoadingCam(

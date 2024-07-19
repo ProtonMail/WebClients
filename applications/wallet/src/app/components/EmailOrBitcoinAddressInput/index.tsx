@@ -12,6 +12,7 @@ import {
     Dropdown,
     DropdownSizeUnit,
     Icon,
+    Tooltip,
     getContactsAutocompleteItems,
     getRecipientFromAutocompleteItem,
     useAutocompleteFilter,
@@ -97,6 +98,7 @@ export const EmailOrBitcoinAddressInput = ({
     const [addresses = []] = useAddresses();
 
     const [qrCodeModal, setQrCodeModal] = useModalState();
+    const [cameraPermissionError, setCameraPermissionError] = useState<DOMException['name']>();
 
     const recipientsWithBtcAddress = compact(Object.values(recipientEmailMap));
 
@@ -306,22 +308,41 @@ export const EmailOrBitcoinAddressInput = ({
                         error={emailError}
                         suffix={
                             !input ? (
-                                <CoreButton
-                                    icon
-                                    pill
-                                    size="small"
-                                    shape="ghost"
-                                    onClick={() => {
-                                        setQrCodeModal(true);
-                                    }}
+                                <Tooltip
+                                    title={(() => {
+                                        if (cameraPermissionError === 'NotAllowedError') {
+                                            return c('Wallet send')
+                                                .t`Please grant camera permission to use QRCode scanner`;
+                                        }
+
+                                        if (!!cameraPermissionError) {
+                                            return c('Wallet send')
+                                                .t`Cannot use QRCode scanner. Please check browser compatibility`;
+                                        }
+
+                                        return undefined;
+                                    })()}
                                 >
-                                    <Icon
-                                        className="color-weak"
-                                        name="qr-code"
-                                        size={5}
-                                        alt={c('Bitcoin send').t`Open QR code reader`}
-                                    />
-                                </CoreButton>
+                                    <div>
+                                        <CoreButton
+                                            icon
+                                            pill
+                                            size="small"
+                                            shape="ghost"
+                                            disabled={!!cameraPermissionError}
+                                            onClick={() => {
+                                                setQrCodeModal(true);
+                                            }}
+                                        >
+                                            <Icon
+                                                className="color-weak"
+                                                name="qr-code"
+                                                size={5}
+                                                alt={c('Bitcoin send').t`Open QR code reader`}
+                                            />
+                                        </CoreButton>
+                                    </div>
+                                </Tooltip>
                             ) : (
                                 <CoreButton
                                     icon
@@ -385,7 +406,13 @@ export const EmailOrBitcoinAddressInput = ({
                 </div>
             </div>
 
-            <QRCodeReaderModal onScan={handleAddRecipientFromScan} {...qrCodeModal} />
+            <QRCodeReaderModal
+                onScan={handleAddRecipientFromScan}
+                onError={(name) => {
+                    setCameraPermissionError(name);
+                }}
+                {...qrCodeModal}
+            />
         </>
     );
 };
