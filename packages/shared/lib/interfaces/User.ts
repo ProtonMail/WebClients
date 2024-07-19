@@ -36,10 +36,7 @@ export enum ChargebeeEnabled {
     CHARGEBEE_FORCED = 2,
 }
 
-export enum ChargebeeUserExists {
-    NO = 0,
-    YES = 1,
-}
+export type ChargebeeUserExists = number;
 
 export enum UserLockedFlags {
     BASE_STORAGE_EXCEEDED = 1,

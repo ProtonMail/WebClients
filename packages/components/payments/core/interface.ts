@@ -399,7 +399,6 @@ export interface PaymentsApi {
         options?: CheckWithAutomaticOptions
     ) => Promise<SubscriptionCheckResponse>;
     statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
-    statusExtended: (version: PaymentsVersion) => Promise<PaymentMethodStatusExtended>;
 }
 
 export type ChargebeeKillSwitchData = {

@@ -32,6 +32,8 @@ import {
     SavedPaymentMethod,
     canUseChargebee,
     isExistingPaymentMethod,
+    isOnSessionMigration,
+    isSplittedUser,
 } from '../core';
 import { PaymentProcessorType } from './interface';
 import useBitcoin from './useBitcoin';
@@ -67,7 +69,7 @@ export interface OperationsData {
  */
 export interface Operations {
     buyCredit: () => Promise<unknown>;
-    payInvoice: (invoiceId: string) => Promise<unknown>;
+    payInvoice: (invoiceId: string, paymentsVersion?: PaymentsVersion) => Promise<unknown>;
     subscribe: (operationsDataParam?: OperationsSubscriptionData) => Promise<unknown>;
     savePaymentMethod: () => Promise<unknown>;
 }
@@ -88,8 +90,8 @@ function getOperations(
         buyCredit: async () => {
             return api(buyCredit(params, paymentsVersion)).then(wrappedAfterOperation);
         },
-        payInvoice: async (invoiceId: string) => {
-            return api(payInvoice(invoiceId, params, paymentsVersion)).then(wrappedAfterOperation);
+        payInvoice: async (invoiceId: string, versionOverride?: PaymentsVersion) => {
+            return api(payInvoice(invoiceId, params, versionOverride ?? paymentsVersion)).then(wrappedAfterOperation);
         },
         subscribe: async (operationsDataParam?: OperationsSubscriptionData) => {
             if (!operationsData?.subscription && !operationsDataParam) {
@@ -182,6 +184,8 @@ export const usePaymentFacade = (
         bitcoinChargebeeEnabled,
         billingPlatform,
         chargebeeUserExists,
+        forceInhouseSavedMethodProcessors,
+        disableNewPaymentMethods,
     }: {
         amount: number;
         currency: Currency;
@@ -212,6 +216,8 @@ export const usePaymentFacade = (
         bitcoinChargebeeEnabled: boolean;
         billingPlatform?: BillingPlatform;
         chargebeeUserExists?: ChargebeeUserExists;
+        forceInhouseSavedMethodProcessors?: boolean;
+        disableNewPaymentMethods?: boolean;
     },
     {
         api,
@@ -259,6 +265,7 @@ export const usePaymentFacade = (
             bitcoinChargebeeEnabled,
             billingPlatform,
             chargebeeUserExists,
+            disableNewPaymentMethods,
         },
         {
             api,
@@ -269,9 +276,7 @@ export const usePaymentFacade = (
     const savedMethod = useSavedMethod(
         {
             amountAndCurrency,
-            // If Chargebee is allowed and there is a saved internal payment method, then we are in migration mode.
-            // It means that we should go with useSavedChargebeeMethod instead of useSavedMethod.
-            savedMethod: canUseChargebee(isChargebeeEnabled()) ? undefined : methods.savedInternalSelectedMethod,
+            savedMethod: methods.savedSelectedMethod,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
@@ -296,13 +301,7 @@ export const usePaymentFacade = (
     const savedChargebeeMethod = useSavedChargebeeMethod(
         {
             amountAndCurrency,
-            // If we are in migration mode (there is a saved payment internal method and Chargebee is allowed),
-            // the we prefer to use the saved internal payment method. There shouldn't be any saved external payment
-            // method in this case, but we still keep it as a fallback.
-            // If Chargebee is not allowed, then we use the saved external payment method.
-            savedMethod: canUseChargebee(isChargebeeEnabled())
-                ? methods.savedInternalSelectedMethod ?? methods.savedExternalSelectedMethod
-                : methods.savedExternalSelectedMethod,
+            savedMethod: methods.savedSelectedMethod,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
             onChargeable: (params, paymentMethodId) =>
@@ -505,13 +504,21 @@ export const usePaymentFacade = (
         },
     });
 
+    const onSessionMigration = isOnSessionMigration(isChargebeeEnabled(), billingPlatform);
+    const splittedUser = isSplittedUser(isChargebeeEnabled(), chargebeeUserExists, billingPlatform);
+    const creditFlowBeforeMigration = flow === 'credit' && onSessionMigration && !splittedUser;
+
     const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
         if (isExistingPaymentMethod(paymentMethodValue)) {
+            if (forceInhouseSavedMethodProcessors) {
+                return savedMethod;
+            }
+
             if (
                 // If Chargebee is allowed and the saved method is internal (migration mode), then we use the
                 // saved Chargebee method processor.
-                canUseChargebee(isChargebeeEnabled()) ||
+                (canUseChargebee(isChargebeeEnabled()) && !creditFlowBeforeMigration) ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
                 paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
             ) {

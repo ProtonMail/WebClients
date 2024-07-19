@@ -7,6 +7,7 @@ import {
     AmountAndCurrency,
     ChargeablePaymentParameters,
     ChargeableV5PaymentParameters,
+    SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
     V5PaymentToken,
@@ -37,7 +38,7 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
          * For the on-session v4-v5 migration, the saved payment method can also be internal.
          * In this case the frontend will send the internal saved method to v5 and the backend will do the migration.
          */
-        savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal,
+        savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod,
         public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
@@ -88,7 +89,7 @@ export class SavedChargebeePaymentProcessor extends PaymentProcessor<SavedCharge
         return this.tokenCreated(token);
     }
 
-    updateSavedMethod(savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal) {
+    updateSavedMethod(savedMethod: SavedPaymentMethodExternal | SavedPaymentMethodInternal | SavedPaymentMethod) {
         this.state.method = {
             paymentMethodId: savedMethod.ID,
             type: savedMethod.Type,

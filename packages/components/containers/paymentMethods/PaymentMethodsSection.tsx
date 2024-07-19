@@ -4,7 +4,12 @@ import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { MethodStorage, PAYMENT_METHOD_TYPES, isOnSessionMigration } from '@proton/components/payments/core';
+import {
+    MethodStorage,
+    PAYMENT_METHOD_TYPES,
+    isOnSessionMigration,
+    isSplittedUser,
+} from '@proton/components/payments/core';
 import useLoading from '@proton/hooks/useLoading';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -60,7 +65,8 @@ const PaymentMethodsSection = () => {
 
     const canAddV4 =
         isChargebeeEnabled() !== ChargebeeEnabled.CHARGEBEE_FORCED ||
-        isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform);
+        (isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform) &&
+            !isSplittedUser(user.ChargebeeUser, user.ChargebeeUserExists, subscription?.BillingPlatform));
 
     const canAddPaypalV4 =
         !paymentMethods.some(

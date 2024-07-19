@@ -1,5 +1,11 @@
 import { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { BillingPlatform, ChargebeeEnabled, Subscription, User } from '@proton/shared/lib/interfaces';
+import {
+    BillingPlatform,
+    ChargebeeEnabled,
+    ChargebeeUserExists,
+    Subscription,
+    User,
+} from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from './constants';
 import { MethodStorage, SavedPaymentMethod, TokenPaymentMethod, V5PaymentToken } from './interface';
@@ -38,15 +44,19 @@ export function canUseChargebee(chargebeeEnabled: ChargebeeEnabled): boolean {
     );
 }
 
-export function isSplittedUser(user: User, subscription: Subscription | undefined) {
-    return !!user.ChargebeeUserExists && subscription?.BillingPlatform === BillingPlatform.Proton;
-}
-
 export function isOnSessionMigration(
     chargebeeUser: ChargebeeEnabled,
     billingPlatform: BillingPlatform | undefined
 ): boolean {
     return chargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED && billingPlatform === BillingPlatform.Proton;
+}
+
+export function isSplittedUser(
+    chargebeeUser: ChargebeeEnabled,
+    chargebeeUserExists: ChargebeeUserExists | undefined,
+    billingPlatform: BillingPlatform | undefined
+): boolean {
+    return isOnSessionMigration(chargebeeUser, billingPlatform) && !!chargebeeUserExists;
 }
 
 export function onSessionMigrationChargebeeStatus(
