@@ -1,10 +1,13 @@
 import type { FC } from 'react';
 
-import { FieldArray, type FormikContextType, type FormikErrors } from 'formik';
+import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components/components';
-import { ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
+import {
+    ExtraFieldComponent,
+    type ExtraFieldProps,
+} from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { getNewField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -12,7 +15,9 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import type { IdentityField, IdentityFieldSection } from '@proton/pass/hooks/identity/useIdentityFormSections';
-import type { IdentityItemFormValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityItemFormValues } from '@proton/pass/types';
+
+type IdentityFormikSection<T> = { [key: string]: T[] };
 
 type IdentityCollapsibleSectionProps = IdentityFieldSection & {
     form: FormikContextType<IdentityItemFormValues>;
@@ -53,19 +58,13 @@ export const IdentityCollapsibleSection: FC<IdentityCollapsibleSectionProps> = (
                                     type={type ?? 'text'}
                                     name={`${extraFieldName}[${index}]`}
                                     onDelete={() => helpers.remove(index)}
-                                    /* Formik TS type are wrong for FormikTouched */
                                     touched={
-                                        (form.touched as unknown as Record<string, Record<number, boolean>>)?.[
-                                            extraFieldName
-                                        ]?.[index]
+                                        (form.touched as IdentityFormikSection<boolean>)?.[extraFieldName]?.[index]
                                     }
                                     error={
-                                        (
-                                            form.errors as unknown as Record<
-                                                string,
-                                                Record<number, FormikErrors<UnsafeItemExtraField>>
-                                            >
-                                        )?.[extraFieldName]?.[index]
+                                        (form.errors as IdentityFormikSection<ExtraFieldProps['error']>)?.[
+                                            extraFieldName
+                                        ]?.[index]
                                     }
                                     autoFocus
                                 />
