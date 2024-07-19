@@ -32,6 +32,7 @@ import {
     PASS_APP_NAME,
     PLANS,
     SSO_PATHS,
+    WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -479,10 +480,18 @@ const Step1 = ({
                         mode !== SignupMode.Invite
                     ) {
                         const plan = `${BRAND_NAME} Visionary`;
-                        const textLaunchOffer = getBoldFormattedText(
-                            c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
-                        );
-                        return wrap('hourglass', textLaunchOffer);
+                        let text;
+                        if (app === APPS.PROTONWALLET) {
+                            const appName = WALLET_APP_NAME;
+                            text = getBoldFormattedText(
+                                c('wallet_signup_2024: Info').t`**Get ${plan}** for early access to ${appName}!`
+                            );
+                        } else {
+                            text = getBoldFormattedText(
+                                c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
+                            );
+                        }
+                        return wrap('hourglass', text);
                     }
 
                     const mailOfferPlans = [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO];
