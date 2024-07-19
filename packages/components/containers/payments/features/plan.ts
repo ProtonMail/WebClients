@@ -1,7 +1,14 @@
 import { c } from 'ttag';
 
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    DUO_MAX_USERS,
+    FAMILY_MAX_USERS,
+    PLANS,
+    PLAN_NAMES,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
@@ -520,6 +527,42 @@ export const getFamilyPlan = ({
     };
 };
 
+export const getDuoPlan = ({
+    freePlan,
+    plan,
+    serversCount,
+}: {
+    freePlan: FreePlanDefault;
+    plan: Plan;
+    serversCount: VPNServersCountData;
+}): ShortPlan => {
+    return {
+        plan: PLANS.DUO,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`Secure your digital life with ${BRAND_NAME} for two people.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getUsersFeature(DUO_MAX_USERS),
+            getStorageFeature(plan.MaxSpace, { family: true, freePlan }),
+            getNAddressesFeature({ n: plan.MaxAddresses, family: true }),
+            getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
+            getNMessagesFeature(Number.POSITIVE_INFINITY),
+            getNDomainsFeature({ n: plan.MaxDomains }),
+            getSentinel(true),
+            getCalendarAppFeature({ family: true }),
+            getDriveAppFeature({ family: true }),
+            getVPNAppFeature({
+                family: true,
+                serversCount,
+            }),
+            getPassAppFeature(),
+            getSupport('priority'),
+            getSMTPToken(true),
+        ],
+    };
+};
+
 export const getVPNProPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
     const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
     return {
@@ -666,6 +709,8 @@ export const getShortPlan = (
             return getVisionaryPlan({ serversCount: vpnServers, plan: planData, freePlan });
         case PLANS.FAMILY:
             return getFamilyPlan({ plan: planData, serversCount: vpnServers, freePlan });
+        case PLANS.DUO:
+            return getDuoPlan({ plan: planData, serversCount: vpnServers, freePlan });
         case PLANS.VPN_PRO:
             return getVPNProPlan(planData, vpnServers);
         case PLANS.VPN_BUSINESS:

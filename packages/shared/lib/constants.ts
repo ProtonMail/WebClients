@@ -941,6 +941,7 @@ export enum PLANS {
     BUNDLE_PRO_2024 = 'bundlepro2024',
     ENTERPRISE = 'enterprise2022',
     FAMILY = 'family2022',
+    DUO = 'duo2024',
     VISIONARY = 'visionary2022',
     VPN_PRO = 'vpnpro2023',
     VPN_BUSINESS = 'vpnbiz2023',
@@ -967,6 +968,7 @@ export const PLAN_NAMES = {
     [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
     [PLANS.ENTERPRISE]: 'Enterprise',
     [PLANS.FAMILY]: 'Proton Family',
+    [PLANS.DUO]: 'Proton Duo',
     [PLANS.VISIONARY]: 'Proton Visionary',
     [PLANS.VPN_PRO]: 'VPN Essentials',
     [PLANS.VPN_BUSINESS]: 'VPN Professional',
@@ -1019,6 +1021,7 @@ export const VPN_PASS_PROMOTION_COUPONS = [
 ];
 
 export const FAMILY_MAX_USERS = 6;
+export const DUO_MAX_USERS = 2;
 
 export const KEY_EXTENSION = 'asc';
 export const KEY_FILE_EXTENSION = `.${KEY_EXTENSION}`;
