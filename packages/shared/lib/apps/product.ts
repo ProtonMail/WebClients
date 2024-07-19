@@ -27,7 +27,7 @@ export interface ProductHeaderContext {
 }
 
 function notifySentry(normalizedProduct: string | undefined, context?: ProductHeaderContext) {
-    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'pass'].includes(
+    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'pass', 'wallet', 'docs'].includes(
         '' + normalizedProduct
     );
     if (!isAllowed) {
