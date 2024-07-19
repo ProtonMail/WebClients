@@ -2,9 +2,10 @@ import noop from '@proton/utils/noop';
 
 import { getEvents } from '../api/events';
 import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
-import createListeners, { Listener } from '../helpers/listeners';
+import type { Listener } from '../helpers/listeners';
+import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
-import { Api } from '../interfaces';
+import type { Api } from '../interfaces';
 
 export enum EVENT_ID_KEYS {
     DEFAULT = 'EventID',

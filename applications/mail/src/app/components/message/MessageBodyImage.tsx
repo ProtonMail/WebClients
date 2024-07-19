@@ -1,17 +1,18 @@
-import { CSSProperties, RefObject, useEffect, useRef } from 'react';
+import type { CSSProperties, RefObject } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
 import { Icon, Tooltip, useApi } from '@proton/components';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { getAnchor } from '../../helpers/message/messageImages';
 import { failedRemoteDirectLoading, loadRemoteProxy } from '../../store/messages/images/messagesImagesActions';
-import { MessageImage } from '../../store/messages/messagesTypes';
+import type { MessageImage } from '../../store/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 

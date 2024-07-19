@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
-import Input, { Props as InputProps } from '../input/Input';
+import type { Props as InputProps } from '../input/Input';
+import Input from '../input/Input';
 import { Option } from '../option';
 import { Marks } from '../text';
 import AutocompleteList from './AutocompleteList';

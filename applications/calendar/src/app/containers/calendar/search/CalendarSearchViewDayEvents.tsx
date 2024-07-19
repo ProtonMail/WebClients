@@ -1,4 +1,5 @@
-import React, { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
+import React from 'react';
 
 import { isSameDay } from 'date-fns';
 
@@ -6,13 +7,13 @@ import { useAddresses, useUser } from '@proton/components/hooks';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Nullable } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Nullable } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarSearch } from './CalendarSearchProvider';
 import { getEventTraits } from './CalendarSearchViewDayEvents.utils';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 import { getEventsDayDateString, getTimeString } from './searchHelpers';
 
 import './SearchView.scss';

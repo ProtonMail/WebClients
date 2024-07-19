@@ -1,11 +1,11 @@
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
-import { Address } from './Address';
-import { ProcessedApiKey } from './EncryptionPreferences';
-import { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
-import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
-import { User } from './User';
+import type { Address } from './Address';
+import type { ProcessedApiKey } from './EncryptionPreferences';
+import type { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
+import type { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
+import type { User } from './User';
 
 export enum IGNORE_KT {
     NORMAL,

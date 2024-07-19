@@ -1,7 +1,8 @@
-import { RefObject, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { CONTACT_TAB } from '@proton/components/components/drawer/views/DrawerContactView';
-import { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 
 const useDrawerParent = (searchInputRef: RefObject<HTMLInputElement>, tab: SelectedDrawerOption) => {
     const animationEnded = useRef(false);

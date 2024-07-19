@@ -13,12 +13,14 @@ import {
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/testing/lib/builders';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 import noop from '@proton/utils/noop';
 
-import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
+import type { CalendarSidebarProps } from './CalendarSidebar';
+import CalendarSidebar from './CalendarSidebar';
 
 jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,

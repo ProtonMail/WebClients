@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -47,7 +47,7 @@ import {
     YourStorageSection,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { recoveryIds } from './recoveryIds';
 import type { getAccountAppRoutes } from './routes';

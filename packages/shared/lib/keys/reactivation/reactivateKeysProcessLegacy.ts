@@ -2,10 +2,10 @@ import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { reactivateKeyRoute } from '../../api/keys';
-import { Address, Api, DecryptedKey, Key, KeyTransparencyVerify } from '../../interfaces';
+import type { Address, Api, DecryptedKey, Key, KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
-import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
+import type { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { resetUserId } from './reactivateKeyHelper';
 
 interface ReactivateKeysProcessArguments {

@@ -1,4 +1,4 @@
-import { SectionConfig, SubSectionConfig } from '@proton/components';
+import type { SectionConfig, SubSectionConfig } from '@proton/components';
 
 export const getIsSubsectionAvailable = (section: SubSectionConfig) => {
     return section.available !== false;

@@ -1,12 +1,15 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { APPS, APP_NAMES, KEY_FILE_EXTENSION } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS, KEY_FILE_EXTENSION } from '../constants';
 import downloadFile from '../helpers/downloadFile';
-import { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
-import { ArmoredKeyWithInfo, getHasMigratedAddressKeys, getPrimaryKey } from '../keys';
+import type { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
+import type { ArmoredKeyWithInfo } from '../keys';
+import { getHasMigratedAddressKeys, getPrimaryKey } from '../keys';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
     try {

@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { Price } from '@proton/components/components';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {

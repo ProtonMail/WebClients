@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getPassAppFeature = (): PlanCardFeatureDefinition => {
     return {

@@ -1,9 +1,9 @@
-import { SortableContainerProps } from 'react-sortable-hoc';
+import type { SortableContainerProps } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';

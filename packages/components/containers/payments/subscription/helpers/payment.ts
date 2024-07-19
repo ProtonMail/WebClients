@@ -1,24 +1,23 @@
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
     APPS,
     COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
-    FreeSubscription,
     PLANS,
     VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
-import {
-    Audience,
+import type {
     Plan,
     PlanIDs,
     PlansMap,
-    Renew,
     Subscription,
     SubscriptionModel,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { Audience, Renew } from '@proton/shared/lib/interfaces';
 
 export const getVPNPlanToUse = ({
     planIDs,

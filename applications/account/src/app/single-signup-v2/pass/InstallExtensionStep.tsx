@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,8 +21,9 @@ import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import Content from '../../public/Content';
 import Header from '../../public/Header';
 import Main from '../../public/Main';
-import { Measure } from '../interface';
-import { TelemetryExtensionPlatform, getTelemetryClientType } from '../measure';
+import type { Measure } from '../interface';
+import type { TelemetryExtensionPlatform } from '../measure';
+import { getTelemetryClientType } from '../measure';
 import appStore from './logos/app-store.svg';
 import brave from './logos/brave.svg';
 import chrome from './logos/chrome.svg';

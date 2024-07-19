@@ -1,14 +1,5 @@
-import {
-    Dispatch,
-    MutableRefObject,
-    SetStateAction,
-    useCallback,
-    useEffect,
-    useMemo,
-    useReducer,
-    useRef,
-    useState,
-} from 'react';
+import type { Dispatch, MutableRefObject, SetStateAction } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -47,14 +38,14 @@ import {
 } from '@proton/shared/lib/date/timezone';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Address, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
-import {
+import type { Address, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type {
     AttendeeModel,
     CalendarMemberInvitation,
     CalendarUserSettings,
-    MEMBER_INVITATION_STATUS,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import unary from '@proton/utils/unary';
 
@@ -65,18 +56,18 @@ import {
     getTimezoneSuggestionKey,
     saveLastTimezoneSuggestion,
 } from '../../helpers/timezoneSuggestion';
-import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import ShareCalendarInvitationModal from './ShareCalendarInvitationModal';
 import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_DRAWER } from './constants';
-import { CalendarsEventsCache } from './eventStore/interface';
+import type { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import getDateRange from './getDateRange';
 import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
-import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
+import type { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
 import { useCalendarSearch } from './search/CalendarSearchProvider';
 
 const { DAY, WEEK, MONTH, SEARCH } = VIEWS;

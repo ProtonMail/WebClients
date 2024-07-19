@@ -1,7 +1,7 @@
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 import { protonizer as purifyHTML } from '@proton/shared/lib/sanitize';
 
-import { Base64Cache } from '../../hooks/useBase64Cache';
+import type { Base64Cache } from '../../hooks/useBase64Cache';
 import { uniqID } from '../string';
 
 export const IMG_SRC_BASE_64_PREFIX = 'data-proton-replace-base';

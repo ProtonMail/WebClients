@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { MouseEventHandler } from 'react';
-import { NavLink } from 'react-router-dom';
+import type { MouseEventHandler } from 'react';
+import type { NavLink } from 'react-router-dom';
 
+import type { IconName } from '@proton/components';
 import {
-    IconName,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,

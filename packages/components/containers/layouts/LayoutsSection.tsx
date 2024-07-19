@@ -3,9 +3,10 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { DENSITY } from '@proton/shared/lib/constants';
+import type { DENSITY } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { COMPOSER_MODE, DEFAULT_MAILSETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info, Loader } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications, useUserSettings } from '../../hooks';

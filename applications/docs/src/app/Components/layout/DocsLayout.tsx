@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 
 import DocsHeader from '../DocsHeader/DocsHeader'
 import DocsQuickSettings from './DocsQuickSettings'
-import { DocumentAction } from '@proton/drive-store'
+import type { DocumentAction } from '@proton/drive-store'
 
 interface Props {
   children: ReactNode

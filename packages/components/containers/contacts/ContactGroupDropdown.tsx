@@ -1,8 +1,10 @@
-import { ChangeEvent, FormEvent, ReactNode, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent, FormEvent, ReactNode } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
@@ -10,7 +12,7 @@ import {
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownButton, DropdownSizeUnit } from '../../components';
@@ -23,10 +25,10 @@ import Mark from '../../components/text/Mark';
 import Tooltip from '../../components/tooltip/Tooltip';
 import { generateUID } from '../../helpers';
 import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
-import { ContactGroupEditProps } from './group/ContactGroupEditModal';
+import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
-import { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';
-import { SelectEmailsProps } from './modals/SelectEmailsModal';
+import type { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';
+import type { SelectEmailsProps } from './modals/SelectEmailsModal';
 
 import './ContactGroupDropdown.scss';
 

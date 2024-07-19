@@ -1,8 +1,8 @@
 import { ImageRun } from 'docx'
-import { ImageNode } from '../../Plugins/Image/ImageNode'
+import type { ImageNode } from '../../Plugins/Image/ImageNode'
 import { toImage } from '@proton/shared/lib/helpers/image'
 import { isBase64Image } from '@proton/shared/lib/helpers/validators'
-import { DocxExportContext } from './Context'
+import type { DocxExportContext } from './Context'
 
 export async function getImageRun(
   node: ImageNode,

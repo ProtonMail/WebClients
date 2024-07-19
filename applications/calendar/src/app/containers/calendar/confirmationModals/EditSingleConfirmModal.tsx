@@ -4,7 +4,8 @@ import { Button } from '@proton/atoms';
 import { BasicModal } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
-import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
+import type { InviteActions, RecurringActionData } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 
 const { SEND_INVITATION, SEND_UPDATE } = INVITE_ACTION_TYPES;
 

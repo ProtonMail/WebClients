@@ -1,7 +1,8 @@
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { createHost } from '../lib';
-import { Action, ProtonMessageResponses, ProtonMessages } from './interface';
+import type { ProtonMessageResponses, ProtonMessages } from './interface';
+import { Action } from './interface';
 
 const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses | undefined> => {
     if (message.type === Action.getLocalStorage) {

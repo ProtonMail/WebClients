@@ -1,4 +1,5 @@
-import { MutableRefObject, ReactNode, createContext, useContext, useRef } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { createContext, useContext, useRef } from 'react';
 
 const CheckAllRefContext = createContext<MutableRefObject<((check: boolean) => void) | null>>(null as any);
 

@@ -1,6 +1,7 @@
 import invert from 'lodash/invert';
 
-import { FilterCondition, FilterStatement, SimpleObject } from '@proton/components/containers/filters/interfaces';
+import type { FilterCondition, SimpleObject } from '@proton/components/containers/filters/interfaces';
+import { FilterStatement } from '@proton/components/containers/filters/interfaces';
 
 import { LABEL_KEYS, OPERATOR_KEYS } from '../interface';
 import { extractMainNode, parseComparatorComment, parseIfConditions, parseThenNodes } from './fromSieveTree.helpers';

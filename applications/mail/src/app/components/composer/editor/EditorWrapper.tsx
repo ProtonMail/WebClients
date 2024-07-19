@@ -2,12 +2,13 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import type { GetContentMode } from 'roosterjs-editor-types';
 
-import { Editor, EditorActions, EditorMetadata, useHandler } from '@proton/components';
+import type { EditorActions, EditorMetadata } from '@proton/components';
+import { Editor, useHandler } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import diff from '@proton/utils/diff';
@@ -21,8 +22,8 @@ import {
     removeEmbeddedHTML,
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
-import { MessageState } from '../../../store/messages/messagesTypes';
-import { MessageChange } from '../Composer';
+import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageChange } from '../Composer';
 
 export interface ExternalEditorActions
     extends Pick<EditorActions, 'getSelectionContent' | 'setSelectionContent' | 'getContent'> {

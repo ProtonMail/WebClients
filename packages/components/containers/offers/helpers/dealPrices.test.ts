@@ -1,6 +1,6 @@
 import { CYCLE } from '@proton/shared/lib/constants';
 
-import { DealWithPrices } from '../interface';
+import type { DealWithPrices } from '../interface';
 import { getDiscount, getDiscountWithCoupon } from './dealPrices';
 
 describe('getDiscountWithCoupon', () => {

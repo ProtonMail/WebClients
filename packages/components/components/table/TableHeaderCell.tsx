@@ -1,4 +1,4 @@
-import { ReactNode, ThHTMLAttributes } from 'react';
+import type { ReactNode, ThHTMLAttributes } from 'react';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 

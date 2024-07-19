@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useConversationCounts, useDynamicFavicon, useFeature, useMessageCounts } from '@proton/components/hooks';

@@ -4,10 +4,10 @@ import { serverTime } from '@proton/crypto';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
+import type {
     InviteActions,
     ReencryptInviteActionData,
     SendIcs,
@@ -15,7 +15,7 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
-import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { getUpdatePersonalPartOperation } from './getUpdatePersonalPartActions';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;

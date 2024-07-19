@@ -5,7 +5,7 @@ import { SettingsLink, useModalState } from '@proton/components/components';
 import { BugModal, useUser } from '@proton/components/index';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces';
 
 interface Props {
     invite: PendingInvitation;

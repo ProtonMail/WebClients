@@ -8,7 +8,7 @@ import { formatDateToHuman } from '../../../helpers/date';
 import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import useSnooze from '../../../hooks/actions/useSnooze';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraSnoozedMessage from './ExtraSnoozedMessage';
 
 const mockUseGetElementsFromIDs = jest.fn();

@@ -1,16 +1,17 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownActions, Icon, OrderableHandle } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
-import { ContactImageProps } from '../modals/ContactImageModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import type { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
 

@@ -1,13 +1,14 @@
 import { useMemo } from 'react';
 
 import { ContextSeparator } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink, useDriveSharingFlags } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDriveSharingFlags } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
-import { ContextMenuProps } from '../../FileBrowser/interface';
+import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';

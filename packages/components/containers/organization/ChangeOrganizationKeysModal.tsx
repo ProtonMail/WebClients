@@ -7,9 +7,10 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
-import { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Alert,
     Form,
@@ -18,7 +19,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     useFormErrors,
     useModalState,

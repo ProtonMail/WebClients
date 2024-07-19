@@ -6,11 +6,11 @@ import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
+import type { ModalProps } from '../../components';
 import {
     Alert,
     Field,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

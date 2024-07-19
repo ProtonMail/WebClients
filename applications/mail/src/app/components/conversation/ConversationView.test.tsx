@@ -2,12 +2,12 @@ import { fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
-import { MessageState } from 'proton-mail/store/messages/messagesTypes';
+import type { MessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import {
     addApiKeys,
@@ -19,12 +19,12 @@ import {
     tick,
     waitForSpyCall,
 } from '../../helpers/test/helper';
-import { Conversation } from '../../models/conversation';
+import type { Conversation } from '../../models/conversation';
 import {
     initialize as initializeConversation,
     updateConversation,
 } from '../../store/conversations/conversationsActions';
-import { ConversationState } from '../../store/conversations/conversationsTypes';
+import type { ConversationState } from '../../store/conversations/conversationsTypes';
 import * as messageDraftActions from '../../store/messages/draft/messagesDraftActions';
 import { initialize as initializeMessage } from '../../store/messages/read/messagesReadActions';
 import ConversationView from './ConversationView';

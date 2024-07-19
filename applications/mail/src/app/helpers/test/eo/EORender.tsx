@@ -1,17 +1,20 @@
-import { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import * as React from 'react';
 import { Router } from 'react-router';
 import { Route } from 'react-router-dom';
 
-import { RenderResult as OriginalRenderResult, render as originalRender } from '@testing-library/react';
-import { MemoryHistory, createMemoryHistory } from 'history';
+import type { RenderResult as OriginalRenderResult } from '@testing-library/react';
+import { render as originalRender } from '@testing-library/react';
+import type { MemoryHistory } from 'history';
+import { createMemoryHistory } from 'history';
 
 import { CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
-import { EOInitStore, EOOriginalMessageOptions, validID } from 'proton-mail/helpers/test/eo/helpers';
+import type { EOOriginalMessageOptions } from 'proton-mail/helpers/test/eo/helpers';
+import { EOInitStore, validID } from 'proton-mail/helpers/test/eo/helpers';
 import { init } from 'proton-mail/store/eo/eoActions';
 
 import { EO_REDIRECT_PATH } from '../../../constants';

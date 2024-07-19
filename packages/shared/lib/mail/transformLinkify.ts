@@ -1,7 +1,7 @@
 import LinkifyIt from 'linkify-it';
 
 import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 const linkifyInstance = new LinkifyIt();
 

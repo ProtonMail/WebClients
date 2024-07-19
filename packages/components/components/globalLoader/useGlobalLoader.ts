@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 
-import { GlobalLoaderContext, TaskOptions } from './GlobalLoaderProvider';
+import type { TaskOptions } from './GlobalLoaderProvider';
+import { GlobalLoaderContext } from './GlobalLoaderProvider';
 
 type WithGlobalLoading = <T>(promise: Promise<T>) => Promise<T>;
 

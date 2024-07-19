@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput, contactToRecipient, majorToRecipient } from '@proton/shared/lib/mail/recipient';
 
 export type AddressesAutocompleteItem =
@@ -77,7 +77,7 @@ export const getContactsAutocompleteItems = (
                     type: 'contact',
                     key: contact.ID,
                     score: contact.LastUsedTime || 0,
-                } as const)
+                }) as const
         )
         .sort(compare);
 };

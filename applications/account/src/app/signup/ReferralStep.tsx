@@ -8,7 +8,7 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     WrappedTaxCountrySelector,
 } from '@proton/components/containers/payments/TaxCountrySelector';
-import { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
@@ -19,7 +19,7 @@ import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
 import { getSignupApplication } from './helper';
-import { SubscriptionData } from './interfaces';
+import type { SubscriptionData } from './interfaces';
 
 type PlanType = 'free' | 'trial';
 

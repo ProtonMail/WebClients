@@ -9,11 +9,12 @@
  * flag from the BE, thus once this migration code no longer exists
  * the checkVersionedESDB will remove the old index
  */
-import { IDBPTransaction, openDB } from 'idb';
+import type { IDBPTransaction } from 'idb';
+import { openDB } from 'idb';
 
+import type { GetUserKeys } from '@proton/encrypted-search';
 import {
     ES_MAX_ITEMS_PER_BATCH,
-    GetUserKeys,
     INDEXING_STATUS,
     decryptIndexKey,
     defaultESProgress,

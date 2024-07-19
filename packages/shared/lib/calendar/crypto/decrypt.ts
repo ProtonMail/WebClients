@@ -1,10 +1,11 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { base64StringToUint8Array } from '../../helpers/encoding';
-import { CalendarEventData } from '../../interfaces/calendar';
-import { SimpleMap } from '../../interfaces/utils';
+import type { CalendarEventData } from '../../interfaces/calendar';
+import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
 
 export const getEventVerificationStatus = (status: VERIFICATION_STATUS | undefined, hasPublicKeys: boolean) => {

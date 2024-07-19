@@ -1,4 +1,5 @@
-import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { addMonths, endOfMonth, isSameMonth, startOfMonth } from 'date-fns';
 import { c } from 'ttag';
@@ -15,7 +16,7 @@ import MonthDays from './MonthDays';
 import WeekDays from './WeekDays';
 import WeekNumbers from './WeekNumbers';
 import { getDateTupleFromMonday, getDaysInMonth } from './helper';
-import { DateTuple, WeekStartsOn } from './index.d';
+import type { DateTuple, WeekStartsOn } from './index.d';
 
 export interface Props {
     hasCursors?: boolean;

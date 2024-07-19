@@ -1,6 +1,6 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 
 const isAllDayPrio = (a: CalendarViewEvent, b: CalendarViewEvent) => {
     // If a is an all day event,

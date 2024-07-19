@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { PLANS } from '@proton/shared/lib/constants';
-import { Domain, SSO } from '@proton/shared/lib/interfaces';
+import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
-import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
+import type { ModalStateProps } from '../../../components';
+import { Info, InputFieldTwo, Loader, useModalState } from '../../../components';
 import { useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
 import {
     SettingsLayout,
@@ -20,7 +21,7 @@ import { SubSettingsSection } from '../../layout';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
-import { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
+import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import RemoveSSODomain from './RemoveSSODomain';
 import RemoveSSOSection from './RemoveSSOSection';
 import SSOInfoForm from './SSOInfoForm';

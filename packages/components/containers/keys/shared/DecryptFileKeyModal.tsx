@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     InputFieldTwo,
@@ -16,7 +18,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     useFormErrors,
 } from '../../../components';

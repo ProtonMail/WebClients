@@ -2,10 +2,10 @@ import { render } from '@testing-library/react';
 import { addDays, addYears, getUnixTime } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { formatFullDate, formatScheduledTimeString } from '../../helpers/date';
-import { Conversation } from '../../models/conversation';
+import type { Conversation } from '../../models/conversation';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
 const snoozedMessage = {

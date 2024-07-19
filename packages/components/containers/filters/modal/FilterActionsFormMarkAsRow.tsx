@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { Checkbox, Icon } from '../../../components';
-import { Actions } from '../interfaces';
+import type { Actions } from '../interfaces';
 
 interface Props {
     actions: Actions;

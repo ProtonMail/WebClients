@@ -3,7 +3,7 @@ import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 const getSingleEditRecurringData = (originalEvent: VcalVeventComponent, occurrenceEvent: VcalVeventComponent) => {
     // If it's a single edition, the recurrence ID exists on the occurrence

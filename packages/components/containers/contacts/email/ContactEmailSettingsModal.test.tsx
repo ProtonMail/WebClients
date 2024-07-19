@@ -3,12 +3,13 @@ import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import { RequireSome } from '@proton/shared/lib/interfaces';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { addApiMock } from '@proton/testing/lib/api';
 
 import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
-import ContactEmailSettingsModal, { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
+import type { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
+import ContactEmailSettingsModal from './ContactEmailSettingsModal';
 
 describe('ContactEmailSettingsModal', () => {
     const props: ContactEmailSettingsProps = {

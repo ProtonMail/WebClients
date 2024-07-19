@@ -2,7 +2,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SORT_DIRECTION } from '../../constants';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
-import { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
+import type { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
 export const queryInitSRPHandshake = (token: string) => {
     return {

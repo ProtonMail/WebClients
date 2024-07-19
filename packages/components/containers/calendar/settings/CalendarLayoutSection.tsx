@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import { Info, Toggle } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';

@@ -1,6 +1,6 @@
 import { useLoading } from '@proton/hooks';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import { AutoResponder } from '@proton/shared/lib/interfaces/AutoResponder';
+import type { AutoResponder } from '@proton/shared/lib/interfaces/AutoResponder';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useToggle } from '../../hooks';

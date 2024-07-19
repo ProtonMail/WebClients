@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,7 +20,7 @@ import { useDefaultShare, useShare } from '../_shares';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import useFetchShareMap from './indexing/useFetchShareMap';
 import { migrate } from './migration';
-import { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
+import type { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
 import { useESCallbacks } from './useESCallbacks';
 
 const SearchLibraryContext = createContext<EncryptedSearchFunctionsDrive | null>(null);

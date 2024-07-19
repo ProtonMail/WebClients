@@ -1,4 +1,4 @@
-import { IEditor } from 'roosterjs-editor-types';
+import type { IEditor } from 'roosterjs-editor-types';
 
 export interface ModalLinkProps {
     editor: IEditor;

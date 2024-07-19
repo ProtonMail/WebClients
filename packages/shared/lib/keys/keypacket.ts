@@ -1,4 +1,5 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 export const decryptKeyPacket = async ({

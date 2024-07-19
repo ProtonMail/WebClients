@@ -7,7 +7,8 @@ import { Icon, Logo } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, PLANS, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, PLANS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { User } from '@proton/shared/lib/interfaces';
 

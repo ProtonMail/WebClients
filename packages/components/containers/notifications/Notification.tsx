@@ -1,10 +1,12 @@
-import { AnimationEvent, MouseEvent, ReactNode, Ref, cloneElement, forwardRef, isValidElement } from 'react';
+import type { AnimationEvent, MouseEvent, ReactNode, Ref } from 'react';
+import { cloneElement, forwardRef, isValidElement } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { Icon, IconName } from '../../components/icon';
+import type { IconName } from '../../components/icon';
+import { Icon } from '../../components/icon';
 import { NotificationCloseButton } from './NotificationButton';
-import { CustomNotificationProps, NotificationType } from './interfaces';
+import type { CustomNotificationProps, NotificationType } from './interfaces';
 import NotificationContext from './notificationContext';
 
 const TYPES_CLASS = {

@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback } from 'react';
 
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { startOfDay } from '@proton/shared/lib/date-fns-utc';
@@ -8,10 +9,10 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { getViewEventDateProperties } from '../containers/calendar/eventHelper';
-import { EventTargetAction } from '../containers/calendar/interface';
+import type { EventTargetAction } from '../containers/calendar/interface';
 import { generateEventUniqueId } from '../helpers/event';
 
 interface Props {

@@ -1,4 +1,5 @@
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 
 import { API_KEY_SOURCE, RECIPIENT_TYPES } from '../../lib/constants';
 import { getContactPublicKeyModel, sortApiKeys, sortPinnedKeys } from '../../lib/keys/publicKeys';

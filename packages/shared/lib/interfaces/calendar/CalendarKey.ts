@@ -1,6 +1,6 @@
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { ApiResponse } from '@proton/shared/lib/interfaces';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import type { ApiResponse } from '@proton/shared/lib/interfaces';
 
 export enum CalendarKeyFlags {
     INACTIVE = 0,

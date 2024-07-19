@@ -1,10 +1,11 @@
-import { ComponentProps, useRef } from 'react';
+import type { ComponentProps } from 'react';
+import { useRef } from 'react';
 
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { render } from 'proton-mail/helpers/test/render';
 

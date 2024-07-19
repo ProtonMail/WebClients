@@ -2,7 +2,7 @@ import { act } from 'react-dom/test-utils';
 
 import { fireEvent, getAllByText } from '@testing-library/react';
 import { addDays } from 'date-fns';
-import { Location } from 'history';
+import type { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
@@ -10,14 +10,13 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { conversationCountsActions } from '@proton/mail';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { CHECKLIST_DISPLAY_TYPE, Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import range from '@proton/utils/range';
 
-import {
-    ContextState,
-    useGetStartedChecklist,
-} from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import type { ContextState } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { assertFocus, clearAll, getDropdown, minimalCache, render } from '../../helpers/test/helper';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';

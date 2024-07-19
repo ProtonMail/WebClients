@@ -1,4 +1,4 @@
-import { NotificationModel } from '../../interfaces/calendar';
+import type { NotificationModel } from '../../interfaces/calendar';
 import { getValarmTrigger } from '../alarms/getValarmTrigger';
 import { toTriggerString } from '../vcal';
 

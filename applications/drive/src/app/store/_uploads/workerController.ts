@@ -1,5 +1,7 @@
-import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
-import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
+import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
+import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
 import { convertSafeError } from '../../utils/errorHandling/EnrichedError';
 import { RefreshError, getRefreshError } from '../../utils/errorHandling/RefreshError';

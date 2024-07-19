@@ -1,16 +1,12 @@
 import { useState } from 'react';
 
-
-
 import { RadioGroup } from '@proton/components/components';
-
-
 
 import { Button } from '../Button';
 import Step from './Step';
-import Stepper, { StepperProps } from './Stepper';
+import type { StepperProps } from './Stepper';
+import Stepper from './Stepper';
 import mdx from './Stepper.mdx';
-
 
 export default {
     component: Stepper,

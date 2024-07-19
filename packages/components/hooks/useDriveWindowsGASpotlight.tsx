@@ -1,8 +1,9 @@
-import { MouseEventHandler, useState } from 'react';
+import type { MouseEventHandler } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { SpotlightProps } from '@proton/components/components';
+import type { SpotlightProps } from '@proton/components/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import devicesSpotlightIcon from '@proton/styles/assets/img/drive/computers-spotlight.png';
 

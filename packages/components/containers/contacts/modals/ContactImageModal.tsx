@@ -1,4 +1,5 @@
-import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,13 +9,13 @@ import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 
+import type { ModalProps } from '../../../components';
 import {
     ErrorZone,
     Field,
     FileInput,
     Form,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

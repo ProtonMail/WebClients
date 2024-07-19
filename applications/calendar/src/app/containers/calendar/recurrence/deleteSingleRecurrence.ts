@@ -2,7 +2,7 @@ import { toExdate } from '@proton/shared/lib/calendar/exdate';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 /**

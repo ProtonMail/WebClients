@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
-import { OfferProps } from '../../interface';
+import type { OfferProps } from '../../interface';
 
 const OfferDisableButton = (props: OfferProps) => {
     const { handleHide } = useOfferFlags(props.offer);

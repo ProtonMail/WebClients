@@ -8,7 +8,7 @@ import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

@@ -14,7 +14,7 @@ import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import NavigationControls from './NavigationControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
-import { Props as ToolbarProps } from './Toolbar';
+import type { Props as ToolbarProps } from './Toolbar';
 
 interface Props
     extends Omit<ToolbarProps, 'onCheck' | 'columnMode' | 'sort' | 'onSort' | 'filter' | 'onFilter' | 'mailSettings'> {

@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Checkbox, FormModal, Label, generateUID } from '@proton/components';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 
-import { RecipientGroup } from '../../../models/address';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { GroupWithContacts } from '../../../store/contacts/contactsTypes';
+import type { RecipientGroup } from '../../../models/address';
+import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import type { GroupWithContacts } from '../../../store/contacts/contactsTypes';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 
 interface Props {

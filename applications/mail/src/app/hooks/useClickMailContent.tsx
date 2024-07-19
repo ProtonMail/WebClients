@@ -1,4 +1,5 @@
-import { ReactNode, RefObject, createContext, useContext, useEffect } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
 import { useHandler } from '@proton/components';
 

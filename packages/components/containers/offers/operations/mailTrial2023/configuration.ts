@@ -4,7 +4,7 @@ import { CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { FeatureCode } from '../../../../containers/features';
 import { getMailPlusInboxFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import bannerImage from './upsell_mail-plus-free-trial.png';
 import bannerImage2x from './upsell_mail-plus-free-trial@2x.png';

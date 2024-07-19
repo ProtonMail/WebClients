@@ -1,7 +1,8 @@
 import { CryptoProxy, serverTime } from '@proton/crypto';
-import { KTBlobContent, commitSKLToLS, getKTLocalStorage } from '@proton/key-transparency/lib';
+import type { KTBlobContent } from '@proton/key-transparency/lib';
+import { commitSKLToLS, getKTLocalStorage } from '@proton/key-transparency/lib';
 import { encodeBase64URL, stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { SaveSKLToLS } from '@proton/shared/lib/interfaces';
+import type { SaveSKLToLS } from '@proton/shared/lib/interfaces';
 
 import { useConfig, useGetUser, useGetUserKeys } from '../../hooks';
 

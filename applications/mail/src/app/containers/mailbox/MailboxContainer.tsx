@@ -1,12 +1,12 @@
-import { RefObject, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { RefObject } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import type { Breakpoints, CommanderItemInterface } from '@proton/components';
 import {
-    Breakpoints,
     Commander,
-    CommanderItemInterface,
     DrawerSidebar,
     ErrorBoundary,
     InboxQuickSettingsAppButton,
@@ -25,8 +25,8 @@ import { useCalendarsInfoCoreListener } from '@proton/components/containers/even
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -74,7 +74,7 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useOnCompose } from '../ComposeProvider';
 import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';

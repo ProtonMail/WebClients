@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
 import { Icon, Option, SelectTwo, Tooltip } from '@proton/components/components';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useLoading } from '@proton/hooks';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';

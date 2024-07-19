@@ -1,5 +1,5 @@
 import { normalize } from '../../helpers/string';
-import { VcalStringProperty } from '../../interfaces/calendar';
+import type { VcalStringProperty } from '../../interfaces/calendar';
 import { ICAL_CALSCALE } from '../constants';
 
 export const getSupportedStringValue = (property?: VcalStringProperty) => {

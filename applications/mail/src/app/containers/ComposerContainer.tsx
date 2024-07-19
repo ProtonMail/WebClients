@@ -1,8 +1,10 @@
-import { ReactNode, memo, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Breakpoints, useBeforeUnload, useDrawerWidth } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { useBeforeUnload, useDrawerWidth } from '@proton/components';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';

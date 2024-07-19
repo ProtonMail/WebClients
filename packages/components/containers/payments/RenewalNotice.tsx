@@ -2,16 +2,16 @@ import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Coupon, Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Coupon, Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import Price from '../../components/price/Price';
 import Time from '../../components/time/Time';
 import { getMonths } from './SubscriptionsSection';
-import { CheckoutModifiers } from './subscription/useCheckoutModifiers';
+import type { CheckoutModifiers } from './subscription/useCheckoutModifiers';
 
 export type RenewalNoticeProps = {
     cycle: number;

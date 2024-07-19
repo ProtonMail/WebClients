@@ -18,7 +18,7 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { loadFakeTrackers } from '../../../store/messages/images/messagesImagesActions';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';
 import UTMTrackerModal from './UTMTrackerModal';

@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 
 import { Badge } from '../../components';
-import { Session } from './interface';
+import type { Session } from './interface';
 
 interface Props {
     session: Session;

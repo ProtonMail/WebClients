@@ -1,4 +1,4 @@
-import { UserModel } from '../interfaces';
+import type { UserModel } from '../interfaces';
 import { getIsSSOVPNOnlyAccount } from '../keys';
 
 export const getIsRecoveryAvailable = (user: UserModel) => {

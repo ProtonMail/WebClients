@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
-import { Participant } from '@proton/shared/lib/interfaces/calendar';
+import type { Participant } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

@@ -4,13 +4,14 @@ import noop from '@proton/utils/noop';
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getAppHref } from '../apps/helper';
 import { getSlugFromApp } from '../apps/slugHelper';
-import { APPS, APP_NAMES, SSO_PATHS } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS, SSO_PATHS } from '../constants';
 import { replaceUrl } from '../helpers/browser';
 import { decodeBase64URL, encodeBase64URL } from '../helpers/encoding';
-import { PersistedSession } from './SessionInterface';
-import { AuthenticationStore } from './createAuthenticationStore';
+import type { PersistedSession } from './SessionInterface';
+import type { AuthenticationStore } from './createAuthenticationStore';
 import { requestFork } from './fork/consume';
-import { ExtraSessionForkData } from './interface';
+import type { ExtraSessionForkData } from './interface';
 import { stripLocalBasenameFromPathname } from './pathnameHelper';
 import { getPersistedSession, removePersistedSession } from './persistedSessionStorage';
 

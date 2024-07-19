@@ -1,23 +1,22 @@
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import type { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { EVENT_INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getIsRruleSupported } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { Attendee, CalendarEvent, Participant } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Attendee, CalendarEvent, Participant } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
-import { EventInvitation, getIsPartyCrasher, getSupportedEventInvitation, parseVcalendar } from './invite';
+import type { EventInvitation } from './invite';
+import { getIsPartyCrasher, getSupportedEventInvitation, parseVcalendar } from './invite';
 
 describe('Invitations', () => {
     beforeAll(async () => {

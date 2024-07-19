@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 import NotificationsContainer from '@proton/components/containers/notifications/Container';
-import { Notification } from '@proton/components/containers/notifications/interfaces';
+import type { Notification } from '@proton/components/containers/notifications/interfaces';
 import createNotificationManager from '@proton/components/containers/notifications/manager';
 import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
 import noop from '@proton/utils/noop';

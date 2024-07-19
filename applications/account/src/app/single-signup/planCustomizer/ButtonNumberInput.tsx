@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, useState } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 

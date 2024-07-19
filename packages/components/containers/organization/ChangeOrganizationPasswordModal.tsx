@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Alert,
     Form,
@@ -18,7 +19,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     useFormErrors,
     useModalState,

@@ -1,4 +1,5 @@
-import { IMPORT_ERROR, ImportProvider } from '@proton/activation/src/interface';
+import type { IMPORT_ERROR } from '@proton/activation/src/interface';
+import { ImportProvider } from '@proton/activation/src/interface';
 import { selectImapDraftProvider } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 

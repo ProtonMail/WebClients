@@ -1,8 +1,10 @@
-import { ReactNode, Ref, forwardRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import SettingsLink, { Props as SettingsLinkProps } from '../link/SettingsLink';
+import type { Props as SettingsLinkProps } from '../link/SettingsLink';
+import SettingsLink from '../link/SettingsLink';
 
 export interface SidebarListItemSettingsLinkProps extends Omit<SettingsLinkProps, 'className'> {
     children: ReactNode;

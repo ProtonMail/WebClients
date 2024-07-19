@@ -22,7 +22,8 @@ import noop from '@proton/utils/noop';
 
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import { useFlowRef } from '../useFlowRef';
-import { MetaTags, useMetaTags } from '../useMetaTags';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';

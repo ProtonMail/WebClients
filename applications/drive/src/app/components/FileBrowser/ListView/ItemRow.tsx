@@ -7,7 +7,7 @@ import shallowEqual from '@proton/utils/shallowEqual';
 
 import useDragAndDrop from '../hooks/useDragAndDrop';
 import useFileBrowserItem from '../hooks/useFileBrowserItem';
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
 
 export interface ListItemProps<T extends FileBrowserBaseItem> {
     Cells: React.FC<{ item: any }>[];

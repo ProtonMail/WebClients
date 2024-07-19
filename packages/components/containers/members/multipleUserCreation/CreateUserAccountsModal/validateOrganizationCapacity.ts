@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { UserTemplate } from '../types';
+import type { UserTemplate } from '../types';
 
 export enum ORGANIZATION_CAPACITY_ERROR_TYPE {
     MEMBER,

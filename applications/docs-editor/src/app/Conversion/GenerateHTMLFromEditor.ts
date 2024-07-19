@@ -1,4 +1,4 @@
-import { LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 import { $generateHtmlFromNodes } from '@lexical/html'
 
 export function generateHTMLFromEditor(editor: LexicalEditor): string {

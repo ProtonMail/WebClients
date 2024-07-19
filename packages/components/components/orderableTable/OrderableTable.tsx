@@ -1,5 +1,6 @@
-import { ReactNode, useRef } from 'react';
-import { SortableContainerProps } from 'react-sortable-hoc';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
+import type { SortableContainerProps } from 'react-sortable-hoc';
 
 import clsx from '@proton/utils/clsx';
 

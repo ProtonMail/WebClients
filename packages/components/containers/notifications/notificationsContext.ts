@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { NotificationsManager } from './manager';
+import type { NotificationsManager } from './manager';
 
 export type NotificationsContextValue = NotificationsManager;
 

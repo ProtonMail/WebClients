@@ -5,25 +5,25 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages,
     optimisticRestore as optimisticRestoreConversationsAction,
 } from '../../store/conversations/conversationsActions';
-import { ConversationState } from '../../store/conversations/conversationsTypes';
+import type { ConversationState } from '../../store/conversations/conversationsTypes';
 import {
     optimisticDelete as optimisticDeleteElementAction,
     optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
 } from '../../store/elements/elementsActions';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,

@@ -4,7 +4,8 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { Prompt, PromptProps } from '../../components';
+import type { PromptProps } from '../../components';
+import { Prompt } from '../../components';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     email: string;

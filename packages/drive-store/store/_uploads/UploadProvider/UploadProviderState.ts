@@ -1,6 +1,6 @@
-import { TransferProgresses } from '../../../components/TransferManager/transfer';
-import { UploadFileList } from '../interface';
-import { FileUpload, FolderUpload, UpdateFilter } from './interface';
+import type { TransferProgresses } from '../../../components/TransferManager/transfer';
+import type { UploadFileList } from '../interface';
+import type { FileUpload, FolderUpload, UpdateFilter } from './interface';
 
 export interface UploadProviderState {
     uploads: (FileUpload | FolderUpload)[];

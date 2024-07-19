@@ -1,6 +1,6 @@
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { PROPERTIES } from '@proton/shared/lib/calendar/vcalDefinition';
-import { VcalCalendarComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalCalendarComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { captureMessage } from '../../helpers/sentry';
 

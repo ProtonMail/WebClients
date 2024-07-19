@@ -1,4 +1,5 @@
-import { CryptoProxy, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 

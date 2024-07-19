@@ -1,16 +1,16 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/testing/lib/api';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
 import { minimalCache } from '../../../helpers/test/cache';
+import type { GeneratedKey } from '../../../helpers/test/crypto';
 import {
-    GeneratedKey,
     generateKeys,
     getAddressKeyCache,
     releaseCryptoProxy,
@@ -18,7 +18,7 @@ import {
 } from '../../../helpers/test/crypto';
 import { encryptMessage } from '../../../helpers/test/message';
 import { render } from '../../../helpers/test/render';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';

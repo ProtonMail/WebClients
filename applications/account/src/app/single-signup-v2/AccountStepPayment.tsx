@@ -1,4 +1,5 @@
-import { MutableRefObject, useImperativeHandle, useRef } from 'react';
+import type { MutableRefObject } from 'react';
+import { useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,33 +12,30 @@ import { PayPalButton, StyledPayPalButton } from '@proton/components/containers'
 import { useAssistantAddonEnabledSignup } from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import {
-    OnBillingAddressChange,
-    WrappedTaxCountrySelector,
-} from '@proton/components/containers/payments/TaxCountrySelector';
+import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
+import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/components/payments/core';
 import {
-    ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
-    PaymentMethodFlows,
-    TokenPayment,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
-import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
-import { WithLoading } from '@proton/hooks/useLoading';
+import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import type { WithLoading } from '@proton/hooks/useLoading';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api, Audience, Plan, VPNServersCountData, isBilledUser, isTaxInclusive } from '@proton/shared/lib/interfaces';
+import type { Api, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience, isBilledUser, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -50,8 +48,9 @@ import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
-import { Measure, OptimisticOptions, SignupModelV2 } from './interface';
-import { TelemetryPayType, getPaymentMethod } from './measure';
+import type { Measure, OptimisticOptions, SignupModelV2 } from './interface';
+import type { TelemetryPayType } from './measure';
+import { getPaymentMethod } from './measure';
 
 export interface AccountStepPaymentRef {
     process: () => void;

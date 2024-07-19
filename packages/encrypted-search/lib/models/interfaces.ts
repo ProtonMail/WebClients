@@ -1,7 +1,7 @@
-import { DBSchema } from 'idb';
+import type { DBSchema } from 'idb';
 
-import { ES_SYNC_ACTIONS, INDEXING_STATUS, TIMESTAMP_TYPE } from '../constants';
-import { ESSetResultsList } from './esFunctions';
+import type { ES_SYNC_ACTIONS, INDEXING_STATUS, TIMESTAMP_TYPE } from '../constants';
+import type { ESSetResultsList } from './esFunctions';
 
 /**
  * Object to be stored locally to retry an API call

@@ -1,10 +1,11 @@
-import { IDBPDatabase, deleteDB, openDB } from 'idb';
+import type { IDBPDatabase } from 'idb';
+import { deleteDB, openDB } from 'idb';
 
 import noop from '@proton/utils/noop';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
 import { ciphertextSize, esSentryReport, isTimepointSmaller, removeESFlags } from '../esHelpers';
-import { AesGcmCiphertext, EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
+import type { AesGcmCiphertext, EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
 import { getOldestID, getOldestInfo } from './metadata';
 

@@ -1,4 +1,5 @@
-import { DOMAIN_STATE, Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
+import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
 
@@ -10,13 +11,9 @@ export interface Props {
 
 const DomainName = ({ domain }: Props) => {
     const ICONS = {
-        [DOMAIN_STATE_DEFAULT]: (
-            <Icon className="color-danger shrink-0" type="error" name="cross-circle-filled" />
-        ),
+        [DOMAIN_STATE_DEFAULT]: <Icon className="color-danger shrink-0" type="error" name="cross-circle-filled" />,
         [DOMAIN_STATE_VERIFIED]: <Icon className="color-success shrink-0" name="checkmark-circle-filled" />,
-        [DOMAIN_STATE_WARN]: (
-            <Icon className="color-warning shrink-0" type="warning" name="cross-circle-filled" />
-        ),
+        [DOMAIN_STATE_WARN]: <Icon className="color-warning shrink-0" type="warning" name="cross-circle-filled" />,
     };
 
     return (

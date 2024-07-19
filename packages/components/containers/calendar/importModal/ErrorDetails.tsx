@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MAX_UID_CHARS_DISPLAY } from '@proton/shared/lib/calendar/constants';
-import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
+import type { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 
 import { Bordered, Details, Summary } from '../../../components';

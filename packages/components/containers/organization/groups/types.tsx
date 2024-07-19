@@ -1,6 +1,6 @@
-import { Domain, Group } from '@proton/shared/lib/interfaces';
+import type { Domain, Group } from '@proton/shared/lib/interfaces';
 
-import { GROUPS_STATE } from './useGroupsManagement';
+import type { GROUPS_STATE } from './useGroupsManagement';
 
 interface DomainData {
     loadingCustomDomains: boolean;

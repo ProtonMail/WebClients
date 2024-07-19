@@ -8,14 +8,13 @@ import { createExportIcs } from '@proton/shared/lib/calendar/export/createExport
 import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalConfig';
 import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import {
-    EXPORT_ERRORS,
-    EXPORT_STEPS,
+import type {
     ExportCalendarModel,
     ExportError,
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { getAppVersion } from '../../..';

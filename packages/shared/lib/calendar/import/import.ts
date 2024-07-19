@@ -2,11 +2,8 @@ import { c } from 'ttag';
 
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
-import {
-    TelemetryIcsSurgeryEvents,
-    TelemetryMeasurementGroups,
-    TelemetryReport,
-} from '@proton/shared/lib/api/telemetry';
+import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
+import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import isTruthy from '@proton/utils/isTruthy';
@@ -14,12 +11,13 @@ import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
 import { getEventByUID } from '../../api/calendars';
-import formatUTC, { Options as FormatOptions } from '../../date-fns-utc/format';
+import type { Options as FormatOptions } from '../../date-fns-utc/format';
+import formatUTC from '../../date-fns-utc/format';
 import { getSupportedTimezone, toUTCDate } from '../../date/timezone';
 import { readFileAsString } from '../../helpers/file';
 import { dateLocale } from '../../i18n';
-import { Api, SimpleMap } from '../../interfaces';
-import {
+import type { Api, SimpleMap } from '../../interfaces';
+import type {
     CalendarEvent,
     ImportCalendarModel,
     ImportedEvent,

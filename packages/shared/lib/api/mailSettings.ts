@@ -1,6 +1,6 @@
-import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
-import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
-import {
+import type { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
+import type { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
+import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     DIRECTION,
     MAIL_PAGE_SIZE,

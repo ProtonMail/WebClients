@@ -1,4 +1,4 @@
-import { ReactNode, ThHTMLAttributes } from 'react';
+import type { ReactNode, ThHTMLAttributes } from 'react';
 
 interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
     children: ReactNode;

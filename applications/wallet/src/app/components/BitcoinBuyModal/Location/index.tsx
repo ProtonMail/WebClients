@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { uniqBy } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiCountry } from '@proton/andromeda';
+import type { WasmApiCountry } from '@proton/andromeda';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 
-import { Button, CoreSearchableSelectProps, SearchableSelect } from '../../../atoms';
+import type { CoreSearchableSelectProps } from '../../../atoms';
+import { Button, SearchableSelect } from '../../../atoms';
 import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvider';
 
 interface Props {

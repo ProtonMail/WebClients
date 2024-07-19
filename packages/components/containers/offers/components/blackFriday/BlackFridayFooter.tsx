@@ -4,7 +4,7 @@ import { Price } from '@proton/components/components';
 
 import { getDiscount } from '../../helpers/dealPrices';
 import { getRenewDescription } from '../../helpers/offerCopies';
-import { OfferProps } from '../../interface';
+import type { OfferProps } from '../../interface';
 
 const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
     return (

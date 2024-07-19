@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import FlagProvider from '@unleash/proxy-client-react';
@@ -20,10 +21,10 @@ import {
     getUnleashConfig,
 } from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
-import { ApiWithListener } from '@proton/shared/lib/api/createApi';
+import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

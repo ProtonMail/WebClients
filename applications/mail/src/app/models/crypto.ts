@@ -1,5 +1,5 @@
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 
 export enum STATUS_ICONS_FILLS {
     PLAIN = 0,

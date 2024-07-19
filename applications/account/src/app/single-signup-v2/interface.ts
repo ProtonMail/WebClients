@@ -1,15 +1,15 @@
-import { FunctionComponent, Key, ReactNode } from 'react';
+import type { FunctionComponent, Key, ReactNode } from 'react';
 
-import { LocationDescriptor } from 'history';
+import type { LocationDescriptor } from 'history';
 
-import { AuthSession } from '@proton/components/containers/login/interface';
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
-import { PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import {
+import type {
     Audience,
     Currency,
     FreePlanDefault,
@@ -21,7 +21,7 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import {
+import type {
     InviteData,
     ReferralData,
     SessionData,
@@ -30,11 +30,11 @@ import {
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
-import { SignupCacheResult, SignupType } from '../signup/interfaces';
-import { getSignupSearchParams } from '../signup/searchParams';
-import { PlanCard } from './PlanCardSelector';
-import { SubscriptionDataCycleMapping } from './helper';
-import { TelemetryMeasurementData } from './measure';
+import type { SignupCacheResult, SignupType } from '../signup/interfaces';
+import type { getSignupSearchParams } from '../signup/searchParams';
+import type { PlanCard } from './PlanCardSelector';
+import type { SubscriptionDataCycleMapping } from './helper';
+import type { TelemetryMeasurementData } from './measure';
 
 export type BaseMeasure<T> = (data: T) => Promise<void>;
 export type Measure = BaseMeasure<TelemetryMeasurementData>;

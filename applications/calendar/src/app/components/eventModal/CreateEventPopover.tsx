@@ -1,20 +1,22 @@
-import { CSSProperties, MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
+import type { CSSProperties, MouseEventHandler, Ref } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PrimaryButton, useMailSettings } from '@proton/components';
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { Address } from '@proton/shared/lib/interfaces';
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
 import { getCannotSaveEvent } from '../../helpers/event';
 import { useRect } from '../../hooks/useRect';
-import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
+import type { InviteActions } from '../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
 import { busySlotsActions } from '../../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch } from '../../store/hooks';
 import PopoverContainer from '../events/PopoverContainer';

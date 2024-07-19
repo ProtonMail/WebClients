@@ -1,4 +1,4 @@
-import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
+import type { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
 
 export type BlockHash = {
     index: number;

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { Href } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getBrowser } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';

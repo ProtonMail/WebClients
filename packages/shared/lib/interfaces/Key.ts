@@ -1,6 +1,6 @@
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 
-import { RequireSome } from './utils';
+import type { RequireSome } from './utils';
 
 export interface KeyWithRecoverySecret extends Key {
     RecoverySecret: string;

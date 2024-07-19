@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 
-import { Editor, EditorChange, EditorConfiguration } from 'codemirror';
-import { Annotation, Linter } from 'codemirror/addon/lint/lint';
+import type { Editor, EditorChange, EditorConfiguration } from 'codemirror';
+import type { Annotation, Linter } from 'codemirror/addon/lint/lint';
 import 'codemirror/addon/lint/lint';
 import 'codemirror/mode/sieve/sieve';
 

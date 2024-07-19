@@ -1,7 +1,8 @@
-import { ElementType, ReactNode, forwardRef } from 'react';
+import type { ElementType, ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 import { Avatar } from '@proton/atoms/Avatar';
-import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 

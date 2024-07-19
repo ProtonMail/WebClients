@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
-import { DecryptedLink, useActions, useTreeForModals } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useActions, useTreeForModals } from '../../../store';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';

@@ -1,14 +1,16 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, Ref, forwardRef } from 'react';
+import type { ButtonHTMLAttributes, DetailedHTMLProps, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms';
-import { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DropdownCaret, IconName } from '../..';
+import type { IconName } from '../..';
+import { DropdownCaret } from '../..';
 
 export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;

@@ -4,13 +4,14 @@ import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/shared/lib/api/helpers/g
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
-import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
-import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
+import type { MapStatusIcons, StatusIcon } from '../../models/crypto';
+import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
+import type { MessageState, MessageVerification, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 
 // The logic for determining the status icons can be found in Confluence under the title
 // Encryption status for outgoing and incoming email

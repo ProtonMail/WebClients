@@ -1,5 +1,6 @@
-import { $insertTableColumn__EXPERIMENTAL, TableCellNode } from '@lexical/table'
-import { LexicalEditor } from 'lexical'
+import type { TableCellNode } from '@lexical/table'
+import { $insertTableColumn__EXPERIMENTAL } from '@lexical/table'
+import type { LexicalEditor } from 'lexical'
 
 export function insertNewColumnAtSelection(editor: LexicalEditor, cellNode: TableCellNode, insertAfter: boolean) {
   editor.update(

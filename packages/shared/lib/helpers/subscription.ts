@@ -1,36 +1,33 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 
+import type { FreeSubscription } from '../constants';
 import {
     ADDON_NAMES,
     APPS,
     COUPON_CODES,
     CYCLE,
-    FreeSubscription,
     IPS_INCLUDED_IN_PLAN,
     PLANS,
     PLAN_SERVICES,
     PLAN_TYPES,
     isFreeSubscription,
 } from '../constants';
-import {
-    Audience,
-    ChargebeeEnabled,
-    External,
+import type {
     Organization,
     Plan,
     PlanIDs,
     PlansMap,
-    PriceType,
     Pricing,
     Subscription,
     SubscriptionModel,
     SubscriptionPlan,
     UserModel,
 } from '../interfaces';
+import { Audience, ChargebeeEnabled, External, PriceType } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;

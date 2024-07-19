@@ -1,4 +1,5 @@
-import { SavedCardDetails, isExpired } from '@proton/components/payments/core';
+import type { SavedCardDetails } from '@proton/components/payments/core';
+import { isExpired } from '@proton/components/payments/core';
 
 describe('card helpers', () => {
     it('should return false if card not expired', () => {

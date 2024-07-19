@@ -1,19 +1,18 @@
-import {
+import type {
   EditorToClientReplyMessage,
   ClientRequiresEditorMethods,
   ParamsExcludingFunctions,
   ClientToEditorInvokationMessage,
   PendingMessage,
-  EditorBridgeMessageType,
   RtsMessagePayload,
-  BridgeOriginProvider,
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRoleType,
   EditorInitializationConfig,
 } from '@proton/docs-shared'
-import { LoggerInterface } from '@proton/utils/logs'
+import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
+import type { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
-import { SerializedEditorState } from 'lexical'
+import type { SerializedEditorState } from 'lexical'
 
 /** Allows the client to invoke methods on the editor */
 export class EditorInvoker implements ClientRequiresEditorMethods {

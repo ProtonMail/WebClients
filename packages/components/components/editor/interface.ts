@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
-import { IEditor, PluginEvent } from 'roosterjs-editor-types';
+import type { IEditor, PluginEvent } from 'roosterjs-editor-types';
 
-import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
+import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 export interface EditorMetadata {
     supportImages: boolean;

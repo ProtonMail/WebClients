@@ -22,7 +22,8 @@ import noop from '@proton/utils/noop';
 import * as config from './config';
 import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
 import locales from './locales';
-import { DriveStore, extendStore, setupStore } from './redux-store/store';
+import type { DriveStore } from './redux-store/store';
+import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 
 const bootstrapApp = async () => {

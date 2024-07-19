@@ -1,5 +1,5 @@
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 describe('hasOrganizationSetup', () => {
     it('Should return false when RequiresKey not set', () => {

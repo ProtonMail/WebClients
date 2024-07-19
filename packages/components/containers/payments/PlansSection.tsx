@@ -7,7 +7,8 @@ import { Button } from '@proton/atoms';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, isStringPLAN } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CYCLE, FREE_SUBSCRIPTION, isStringPLAN } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -17,7 +18,8 @@ import {
     getValidAudience,
     getValidCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Icon, Loader } from '../../components';

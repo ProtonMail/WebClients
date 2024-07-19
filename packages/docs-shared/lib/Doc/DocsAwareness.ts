@@ -1,5 +1,5 @@
 import { Awareness } from 'y-protocols/awareness'
-import { UserState } from '@lexical/yjs'
+import type { UserState } from '@lexical/yjs'
 
 export type DocsUserState = UserState & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

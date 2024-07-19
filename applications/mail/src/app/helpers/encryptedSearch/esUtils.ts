@@ -1,8 +1,8 @@
-import { History, Location } from 'history';
+import type { History, Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { LabelCount, UserModel } from '@proton/shared/lib/interfaces';
+import type { LabelCount, UserModel } from '@proton/shared/lib/interfaces';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { isSearch as checkIsSearch } from '../elements';

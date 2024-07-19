@@ -6,7 +6,8 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData, disabledWalletShowRecovery, useWalletApi } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { disabledWalletShowRecovery, useWalletApi } from '@proton/wallet';
 
 import { getThemeForWallet } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';

@@ -8,9 +8,9 @@ import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export enum UpdateAllPossibilities {
     KEEP_SINGLE_MODIFICATIONS,

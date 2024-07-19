@@ -1,4 +1,4 @@
-import IMetricsRequestService from './types/IMetricsRequestService';
+import type IMetricsRequestService from './types/IMetricsRequestService';
 
 export default class MetricsBase {
     protected requestService: IMetricsRequestService;

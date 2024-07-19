@@ -1,14 +1,15 @@
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import { TransferCancel, TransferMeta } from '../../../components/TransferManager/transfer';
+import type { TransferMeta } from '../../../components/TransferManager/transfer';
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
-import { LogCallback } from '../interface';
+import type { LogCallback } from '../interface';
 import { initDownloadSW, openDownloadStream } from './download';
 
 // FileSaver provides functionality to start download to file. This class does

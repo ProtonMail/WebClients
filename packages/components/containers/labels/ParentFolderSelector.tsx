@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
-import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { InputFieldTwo, Loader, Option, SearchableSelect } from '../../components';
-import { OptionProps } from '../../components/select/Select';
+import type { OptionProps } from '../../components/select/Select';
 import { useFolders } from '../../hooks';
 
 interface Props {

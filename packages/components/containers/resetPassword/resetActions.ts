@@ -5,14 +5,15 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { requestLoginResetToken } from '@proton/shared/lib/api/reset';
 import { getSettings } from '@proton/shared/lib/api/settings';
-import { GetMnemonicResetData, getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
+import type { GetMnemonicResetData } from '@proton/shared/lib/api/settingsMnemonic';
+import { getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import {
+import type {
     Api,
     KeyTransparencyActivation,
     ResetSelfAudit,
@@ -39,14 +40,14 @@ import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import {
+import type {
     AccountType,
     RecoveryMethod,
     ResetActionResponse,
     ResetCacheResult,
-    STEPS,
     ValidateResetTokenResponse,
 } from './interface';
+import { STEPS } from './interface';
 
 export const handleNewPassword = async ({
     password,

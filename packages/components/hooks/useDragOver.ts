@@ -1,4 +1,5 @@
-import { DragEvent, DragEventHandler, useState } from 'react';
+import type { DragEvent, DragEventHandler } from 'react';
+import { useState } from 'react';
 
 interface Options {
     onDragOver?: (event: DragEvent) => void;

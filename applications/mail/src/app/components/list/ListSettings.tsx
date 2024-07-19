@@ -1,8 +1,9 @@
-import { ReactElement, memo } from 'react';
+import type { ReactElement } from 'react';
+import { memo } from 'react';
 
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { Filter, Sort } from '../../models/tools';
+import type { Filter, Sort } from '../../models/tools';
 import FilterActions from '../toolbar/FilterActions';
 import SortDropdown from '../toolbar/SortDropdown';
 

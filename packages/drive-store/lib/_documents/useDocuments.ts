@@ -2,7 +2,7 @@ import { useAuthentication } from '@proton/components/hooks';
 import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { CreateDocumentResult } from '@proton/shared/lib/interfaces/drive/documents';
+import type { CreateDocumentResult } from '@proton/shared/lib/interfaces/drive/documents';
 import {
     encryptName,
     generateContentKeys,
@@ -19,8 +19,8 @@ import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { LegacyNodeMeta, NodeMeta } from '../interface';
-import { DocumentKeys, DocumentNodeMeta } from './interface';
+import type { LegacyNodeMeta, NodeMeta } from '../interface';
+import type { DocumentKeys, DocumentNodeMeta } from './interface';
 
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();

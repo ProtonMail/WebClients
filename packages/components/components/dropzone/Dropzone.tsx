@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode, cloneElement } from 'react';
+import type { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode } from 'react';
+import { cloneElement } from 'react';
 
 import { isDragFile } from '@proton/components/components';
 import { useDragOver } from '@proton/components/hooks';

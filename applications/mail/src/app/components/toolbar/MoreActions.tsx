@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {

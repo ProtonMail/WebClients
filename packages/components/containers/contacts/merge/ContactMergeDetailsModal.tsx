@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import useContactList from '@proton/components/containers/contacts/hooks/useContactList';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import { Loader, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useAddresses, useContactGroups, useUserKeys } from '../../../hooks';
 import useContact from '../hooks/useContact';
 import useVCardContact from '../hooks/useVCardContact';

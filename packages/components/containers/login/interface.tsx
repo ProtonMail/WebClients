@@ -1,8 +1,8 @@
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
-import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import {
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type {
     Address,
     Api,
     KeyMigrationKTVerifier,
@@ -11,7 +11,7 @@ import {
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import { AddressGenerationSetup, ClaimableAddress } from '@proton/shared/lib/keys';
+import type { AddressGenerationSetup, ClaimableAddress } from '@proton/shared/lib/keys';
 
 export interface AddressGeneration {
     externalEmailAddress: Address | undefined;

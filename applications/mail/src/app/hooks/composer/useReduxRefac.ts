@@ -6,13 +6,13 @@ import { useAddresses, useUserSettings } from '@proton/components/hooks';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { MessageChange } from '../../components/composer/Composer';
+import type { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail } from '../../helpers/addresses';
 import { changeSignature } from '../../helpers/message/messageSignature';
-import { RecipientType } from '../../models/address';
+import type { RecipientType } from '../../models/address';
 import { selectComposer } from '../../store/composers/composerSelectors';
-import { ComposerID } from '../../store/composers/composerTypes';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { ComposerID } from '../../store/composers/composerTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     composerID?: ComposerID;

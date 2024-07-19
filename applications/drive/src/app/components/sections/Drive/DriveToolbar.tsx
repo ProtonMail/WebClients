@@ -2,11 +2,12 @@ import { useMemo } from 'react';
 
 import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { DecryptedLink, useDriveSharingFlags } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDriveSharingFlags } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,

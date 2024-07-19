@@ -1,6 +1,7 @@
-import { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
-import { Icon, IconName } from '@proton/components/index';
+import type { IconName } from '@proton/components/index';
+import { Icon } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';

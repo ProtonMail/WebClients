@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, ModalProps, Prompt, useApi, useNotifications } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { ErrorButton, Prompt, useApi, useNotifications } from '@proton/components';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
-import { Element } from '../../../models/element';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { Element } from '../../../models/element';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 
 const { SPAM } = MAILBOX_LABEL_IDS;
 

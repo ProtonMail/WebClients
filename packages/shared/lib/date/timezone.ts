@@ -4,8 +4,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getAllowedTimeZones } from '../api/calendars';
 import { SECOND } from '../constants';
-import { Api } from '../interfaces';
-import { DateTime } from '../interfaces/calendar/Date';
+import type { Api } from '../interfaces';
+import type { DateTime } from '../interfaces/calendar/Date';
 import {
     FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,
     MANUAL_TIMEZONE_EQUIVALENCE,

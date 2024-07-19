@@ -1,4 +1,4 @@
-import { WebsocketConnectionEvent } from './WebsocketConnectionEvent'
+import type { WebsocketConnectionEvent } from './WebsocketConnectionEvent'
 
 export type WebsocketConnectionEventStatusChange =
   | WebsocketConnectionEvent.Connecting

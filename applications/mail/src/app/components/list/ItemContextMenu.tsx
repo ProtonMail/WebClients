@@ -1,4 +1,5 @@
-import { RefObject, useMemo } from 'react';
+import type { RefObject } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
+import type { OnboardingStepRenderCallback } from '@proton/components';
+import { OnboardingContent, OnboardingModal, OnboardingStep } from '@proton/components';
 import sharingOnboardingWelcome from '@proton/styles/assets/img/onboarding/drive-sharing-welcome.svg';
 
 interface Props {

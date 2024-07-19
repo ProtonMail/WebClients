@@ -4,7 +4,7 @@ import { Icon } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
-import { BenefitItem } from '../Benefits';
+import type { BenefitItem } from '../Benefits';
 import swissFlag from '../flag.svg';
 
 export const getBenefits = (appName: string) => {

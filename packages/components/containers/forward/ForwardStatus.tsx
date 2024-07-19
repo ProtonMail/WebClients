@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ForwardingState, IncomingAddressForwarding, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import type { IncomingAddressForwarding, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ForwardingState } from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
 

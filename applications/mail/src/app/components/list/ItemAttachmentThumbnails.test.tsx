@@ -2,10 +2,10 @@ import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { useFlag } from '@proton/components';
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
@@ -17,8 +17,8 @@ import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 import { arrayToBase64 } from 'proton-mail/helpers/base64';
 import { addApiMock } from 'proton-mail/helpers/test/api';
+import type { GeneratedKey } from 'proton-mail/helpers/test/helper';
 import {
-    GeneratedKey,
     addApiKeys,
     assertIcon,
     clearAll,
@@ -30,7 +30,7 @@ import {
     setupCryptoProxyForTesting,
 } from 'proton-mail/helpers/test/helper';
 import { render } from 'proton-mail/helpers/test/render';
-import { Conversation } from 'proton-mail/models/conversation';
+import type { Conversation } from 'proton-mail/models/conversation';
 import { addAttachment } from 'proton-mail/store/attachments/attachmentsActions';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
@@ -60,7 +60,12 @@ const generateAttachmentsMetadata = (numberOfAttachments: number, extension = 'p
 const setup = async (
     attachmentsMetadata: AttachmentsMetadata[],
     numAttachments: number,
-    { AddressID, fromAddress, fromKeys, showAttachmentThumbnails = true }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey; showAttachmentThumbnails?: boolean }
+    {
+        AddressID,
+        fromAddress,
+        fromKeys,
+        showAttachmentThumbnails = true,
+    }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey; showAttachmentThumbnails?: boolean }
 ) => {
     const element = {
         ID: 'conversationID',

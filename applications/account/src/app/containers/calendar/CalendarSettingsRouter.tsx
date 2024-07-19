@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
@@ -33,7 +34,7 @@ import {
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { getCalendarAppRoutes } from './routes';

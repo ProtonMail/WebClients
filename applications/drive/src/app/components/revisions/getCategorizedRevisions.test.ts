@@ -1,4 +1,4 @@
-import { DriveFileRevision } from '../../store';
+import type { DriveFileRevision } from '../../store';
 import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 describe('getCategorizedRevisions', () => {

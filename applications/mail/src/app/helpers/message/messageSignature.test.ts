@@ -1,4 +1,4 @@
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE as PM_SIGNATURE_ENUM } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';

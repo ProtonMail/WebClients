@@ -1,6 +1,7 @@
-import { ReactNode, useEffect, useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useMemo } from 'react';
 
-import { ThemeColor } from '@proton/colors/types';
+import type { ThemeColor } from '@proton/colors/types';
 import { useLocalState, useUser } from '@proton/components/hooks';
 import { QuickSettingsRemindersContext } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';

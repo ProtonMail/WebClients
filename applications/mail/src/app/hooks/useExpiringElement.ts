@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
+import type { Conversation } from '../models/conversation';
+import type { Element } from '../models/element';
 import { useGetAllMessages, useGetMessage } from './message/useMessage';
 
 const isConversationMode = (element: Element, conversationMode: boolean): element is Conversation => conversationMode;

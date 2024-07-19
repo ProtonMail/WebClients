@@ -1,4 +1,4 @@
-import { CommentResponseDto } from './CommentResponseDto'
+import type { CommentResponseDto } from './CommentResponseDto'
 
 export type AddCommentToThreadResponse = {
   Code: 1000

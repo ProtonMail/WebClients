@@ -1,10 +1,12 @@
-import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { DropdownSizeUnit, ModalOwnProps, Option, SelectTwo } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { DropdownSizeUnit, Option, SelectTwo } from '@proton/components/components';
 import { useKTVerifier } from '@proton/components/containers';
 import {
     useAddresses,
@@ -22,7 +24,7 @@ import { createAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 
 import { Button, Input, Modal } from '../../atoms';

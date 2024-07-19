@@ -1,10 +1,10 @@
-import { PublicKeyReference } from '@proton/crypto';
-import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
+import type { PublicKeyReference } from '@proton/crypto';
+import type { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
-import { MIME_TYPES } from '../../constants';
-import { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
-import { KeyTransparencyVerificationResult } from '../KeyTransparency';
-import { SimpleMap } from '../utils';
+import type { MIME_TYPES } from '../../constants';
+import type { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
+import type { KeyTransparencyVerificationResult } from '../KeyTransparency';
+import type { SimpleMap } from '../utils';
 
 export interface SendPreferences {
     encrypt: boolean;

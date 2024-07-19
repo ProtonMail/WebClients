@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

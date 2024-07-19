@@ -2,16 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import {
-    Form,
-    Loader,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    TextArea,
-} from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Form, Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextArea } from '../../../components';
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;

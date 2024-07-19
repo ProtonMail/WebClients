@@ -1,4 +1,4 @@
-import { ApiKeysConfig } from '../EncryptionPreferences';
+import type { ApiKeysConfig } from '../EncryptionPreferences';
 
 export type GetPublicKeysForInbox = ({
     email,

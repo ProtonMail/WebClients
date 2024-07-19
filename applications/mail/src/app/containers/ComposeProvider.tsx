@@ -1,8 +1,10 @@
-import { ReactNode, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext } from 'react';
 
 import { MESSAGE_ACTIONS } from '../constants';
 import { mailtoParser } from '../helpers/url';
-import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
+import type { OnCompose } from '../hooks/composer/useCompose';
+import { ComposeTypes } from '../hooks/composer/useCompose';
 
 const ComposeProviderContext = createContext<OnCompose>(null as any);
 

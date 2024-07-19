@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { useModalState } from '@proton/components/components';
 import { useUser } from '@proton/components/hooks';
 import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { OfferConfig } from '../interface';
+import type { OfferConfig } from '../interface';
 import useFetchOffer from './useFetchOffer';
 
 const useOfferModal = (offerConfig: OfferConfig) => {

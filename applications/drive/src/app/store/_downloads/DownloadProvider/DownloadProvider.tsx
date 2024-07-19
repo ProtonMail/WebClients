@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
 import * as React from 'react';
 
-import { TransferProgresses } from '../../../components/TransferManager/transfer';
-import { InitDownloadCallback, LinkDownload } from '../interface';
-import { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
+import type { TransferProgresses } from '../../../components/TransferManager/transfer';
+import type { InitDownloadCallback, LinkDownload } from '../interface';
+import type { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 
 interface DownloadProviderState {

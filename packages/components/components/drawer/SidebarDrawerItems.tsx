@@ -1,14 +1,16 @@
-import React, { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import React from 'react';
 
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import { baseUseSelector } from '@proton/react-redux-store';
-import { DRAWER_NATIVE_APPS, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
+import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
-import { IconName } from '../icon/Icon';
+import type { IconName } from '../icon/Icon';
 import SidebarListItemContent from '../sidebar/SidebarListItemContent';
 import SidebarListItemContentIcon from '../sidebar/SidebarListItemContentIcon';
 import { selectHasAccountSecurityIssue } from './views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';

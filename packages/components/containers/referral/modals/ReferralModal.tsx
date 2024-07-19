@@ -4,9 +4,9 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     FeatureCode,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

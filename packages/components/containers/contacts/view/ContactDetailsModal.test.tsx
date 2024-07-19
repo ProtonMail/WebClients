@@ -1,11 +1,12 @@
 import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/testing/lib/api';
 
 import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
-import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';
+import type { ContactDetailsProps } from './ContactDetailsModal';
+import ContactDetailsModal from './ContactDetailsModal';
 
 jest.mock('../../../hooks/useConfig', () => () => ({ API_URL: 'api' }));
 

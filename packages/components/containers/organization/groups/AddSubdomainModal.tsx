@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

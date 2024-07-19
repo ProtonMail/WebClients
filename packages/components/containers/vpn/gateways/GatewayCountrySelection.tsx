@@ -2,13 +2,13 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Field, Icon, Label, Option, Row, SelectTwo } from '@proton/components/components';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { vpnEnterpriseContactUrl } from '@proton/components/containers/payments/subscription/helpers';
 import { getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 
 import { ButtonNumberInput } from './ButtonNumberInput';
-import { GatewayDto } from './GatewayDto';
+import type { GatewayDto } from './GatewayDto';
 import { getCountryFlagAndName } from './getCountryFlagAndName';
 
 interface Props {
@@ -76,10 +76,7 @@ export const GatewayCountrySelection = ({
                 )}
             </p>
             {countries.map((country) => (
-                <div
-                    key={'country-' + country}
-                    className="flex *:min-size-auto md:flex-nowrap items-center mb-4"
-                >
+                <div key={'country-' + country} className="flex *:min-size-auto md:flex-nowrap items-center mb-4">
                     <Label htmlFor={'country-number-' + country} className="flex-1">
                         {getCountryFlagAndName(language, country, undefined, {
                             key: country + '-country-label-image',

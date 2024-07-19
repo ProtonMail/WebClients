@@ -1,8 +1,8 @@
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import ThemeCard from './ThemeCard';
-import { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';
+import type { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';
 
 export interface Theme {
     label: string;

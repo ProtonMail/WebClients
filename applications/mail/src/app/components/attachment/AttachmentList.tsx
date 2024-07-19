@@ -4,17 +4,18 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { FeatureCode, Icon, Tooltip, useFeature } from '@proton/components';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../hooks/attachments/useDownload';
-import { PendingUpload } from '../../hooks/composer/useAttachments';
-import { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
+import type { PendingUpload } from '../../hooks/composer/useAttachments';
+import type { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentItem from './AttachmentItem';
-import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
+import type { AttachmentPreviewControls } from './AttachmentPreview';
+import AttachmentPreview from './AttachmentPreview';
 
 export enum AttachmentAction {
     Download,

@@ -2,11 +2,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getHasConsumerVpnPlan, getPlanTitle } from '@proton/shared/lib/helpers/subscription';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
-import { ModalProps, Prompt, Time } from '../../../../components';
-import { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
-import { CancelSubscriptionResult } from './types';
+import type { ModalProps } from '../../../../components';
+import { Prompt, Time } from '../../../../components';
+import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
+import type { CancelSubscriptionResult } from './types';
 
 type PromiseHandlers = ModalTwoPromiseHandlers<CancelSubscriptionResult>;
 

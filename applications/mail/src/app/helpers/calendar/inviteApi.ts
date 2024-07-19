@@ -64,8 +64,8 @@ import {
 } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import {
+import type { Address, Api } from '@proton/shared/lib/interfaces';
+import type {
     CalendarEvent,
     CalendarEventEncryptionData,
     CalendarUserSettings,
@@ -80,26 +80,26 @@ import {
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import {
+import type {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
     CreateSinglePersonalEventData,
     DeleteCalendarEventSyncData,
     UpdateCalendarEventSyncData,
 } from '@proton/shared/lib/interfaces/calendar/Api';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
-import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
-import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
+import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import type { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { EventInvitation } from './invite';
 import {
-    EventInvitation,
     UPDATE_ACTION,
     getCanCreateSingleEdit,
     getInvitationHasAttendee,

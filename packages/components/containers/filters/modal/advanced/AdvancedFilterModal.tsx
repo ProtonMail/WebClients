@@ -1,4 +1,5 @@
-import { FormEvent, useMemo, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,9 +8,9 @@ import { useLoading } from '@proton/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import type { ModalProps } from '../../../../components';
 import {
     Form,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -19,7 +20,7 @@ import {
 } from '../../../../components';
 import { useApi, useEventManager, useFilters, useNotifications } from '../../../../hooks';
 import { FILTER_VERSION } from '../../constants';
-import { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
+import type { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
 import { convertModel, sieveTemplates } from '../../utils';
 import CloseFilterModal from '../CloseFilterModal';
 import FilterNameForm from '../FilterNameForm';

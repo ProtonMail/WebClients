@@ -1,4 +1,5 @@
-import { MouseEvent, MutableRefObject, useEffect, useRef, useState } from 'react';
+import type { MouseEvent, MutableRefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ContactSelectorModal, useContactModals, useToggle } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
@@ -6,11 +7,11 @@ import noop from '@proton/utils/noop';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { RecipientType } from '../../../models/address';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import type { RecipientType } from '../../../models/address';
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import { composerActions } from '../../../store/composers/composersSlice';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 

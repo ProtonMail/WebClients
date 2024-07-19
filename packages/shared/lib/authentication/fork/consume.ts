@@ -1,9 +1,5 @@
-import {
-    ForkState,
-    getCurrentUrl,
-    getForkStateData,
-    setForkStateData,
-} from '@proton/shared/lib/authentication/fork/forkState';
+import type { ForkState } from '@proton/shared/lib/authentication/fork/forkState';
+import { getCurrentUrl, getForkStateData, setForkStateData } from '@proton/shared/lib/authentication/fork/forkState';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
@@ -12,14 +8,16 @@ import { getUser } from '../../api/user';
 import { getAppHref } from '../../apps/helper';
 import { getKey } from '../../authentication/cryptoHelper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from '../../authentication/error';
-import { ExtraSessionForkData, PullForkResponse } from '../../authentication/interface';
-import { OfflineKey } from '../../authentication/offlineKey';
-import { ResumedSessionResult, persistSession, resumeSession } from '../../authentication/persistedSessionHelper';
-import { APPS, APP_NAMES, SSO_PATHS } from '../../constants';
+import type { ExtraSessionForkData, PullForkResponse } from '../../authentication/interface';
+import type { OfflineKey } from '../../authentication/offlineKey';
+import type { ResumedSessionResult } from '../../authentication/persistedSessionHelper';
+import { persistSession, resumeSession } from '../../authentication/persistedSessionHelper';
+import type { APP_NAMES } from '../../constants';
+import { APPS, SSO_PATHS } from '../../constants';
 import { withAuthHeaders } from '../../fetch/headers';
 import { replaceUrl } from '../../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
-import { Api, User as tsUser } from '../../interfaces';
+import type { Api, User as tsUser } from '../../interfaces';
 import { getForkDecryptedBlob } from './blob';
 import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkVersion } from './constants';
 

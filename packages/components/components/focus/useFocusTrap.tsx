@@ -1,6 +1,8 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { FocusableElement, isFocusable, tabbable } from 'tabbable';
+import type { FocusableElement } from 'tabbable';
+import { isFocusable, tabbable } from 'tabbable';
 
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 

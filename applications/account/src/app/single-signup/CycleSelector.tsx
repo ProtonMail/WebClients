@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,8 +7,8 @@ import { PassLogo, Radio } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import { Currency, CycleMapping, PlanIDs } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import type { Currency, CycleMapping, PlanIDs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import SaveLabel2 from './SaveLabel2';

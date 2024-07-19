@@ -1,8 +1,10 @@
-import { ChangeEvent, useEffect } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmFiatCurrencySymbol } from '@proton/andromeda';
+import type { WasmFiatCurrencySymbol } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -10,7 +12,6 @@ import {
     CollapsibleHeaderIconButton,
     DropdownSizeUnit,
     Icon,
-    ModalOwnProps,
     PasswordInputTwo,
     TextAreaTwo,
     useModalStateWithData,
@@ -19,8 +20,9 @@ import {
 import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
-import { SubTheme } from '../../utils';
-import { WalletInformationalModal, WalletInformationalModalOwnProps } from '../WalletInformationalModal';
+import type { SubTheme } from '../../utils';
+import type { WalletInformationalModalOwnProps } from '../WalletInformationalModal';
+import { WalletInformationalModal } from '../WalletInformationalModal';
 
 interface Props extends ModalOwnProps {
     theme?: SubTheme;

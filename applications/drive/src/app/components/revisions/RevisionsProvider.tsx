@@ -1,19 +1,22 @@
-import { PropsWithChildren, createContext, useContext, useMemo, useRef, useState } from 'react';
+import type { PropsWithChildren } from 'react';
+import { createContext, useContext, useMemo, useRef, useState } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 
-import { DecryptedLink, DriveFileRevision, useDownload, useRevisionsView } from '../../store';
+import type { DecryptedLink, DriveFileRevision } from '../../store';
+import { useDownload, useRevisionsView } from '../../store';
 import PortalPreview from '../PortalPreview';
 import { useRevisionDetailsModal } from '../modals/DetailsModal';
-import { CategorizedRevisions, getCategorizedRevisions } from './getCategorizedRevisions';
+import type { CategorizedRevisions } from './getCategorizedRevisions';
+import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 import './RevisionPreview.scss';
 

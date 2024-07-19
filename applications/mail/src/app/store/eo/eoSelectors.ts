@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { EOStoreState } from 'proton-mail/store/eo/eoStore';
+import type { EOStoreState } from 'proton-mail/store/eo/eoStore';
 
 const eoState = (state: EOStoreState) => state.eo;
 

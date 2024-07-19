@@ -3,8 +3,8 @@ import unary from '@proton/utils/unary';
 
 import { updateCalendarSettings, updateMember } from '../api/calendars';
 import { hasBit, toggleBit } from '../helpers/bitset';
-import { Address, Api } from '../interfaces';
-import {
+import type { Address, Api } from '../interfaces';
+import type {
     Calendar,
     CalendarCreateData,
     CalendarNotificationSettings,
@@ -14,8 +14,8 @@ import {
     SubscribedCalendar,
     VisualCalendar,
 } from '../interfaces/calendar';
-import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import { GetAddresses } from '../interfaces/hooks/GetAddresses';
+import type { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
+import type { GetAddresses } from '../interfaces/hooks/GetAddresses';
 import { getHasUserReachedCalendarsLimit } from './calendarLimits';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from './constants';
 import { reactivateCalendarsKeys } from './crypto/keys/reactivateCalendarKeys';

@@ -1,4 +1,4 @@
-import { DateFnsLocaleMap } from '../interfaces/Locale';
+import type { DateFnsLocaleMap } from '../interfaces/Locale';
 
 const dateFnLocales = import.meta.webpackContext!('date-fns/locale', {
     recursive: true,

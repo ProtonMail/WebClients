@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
@@ -55,10 +55,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
             </Table>
 
             {!contactEmails.length ? (
-                <div
-                    className="flex items-center justify-center min-h-custom"
-                    style={{ '--min-h-custom': '9.375rem' }}
-                >
+                <div className="flex items-center justify-center min-h-custom" style={{ '--min-h-custom': '9.375rem' }}>
                     {c('Info').t`No contacts added yet`}
                 </div>
             ) : null}

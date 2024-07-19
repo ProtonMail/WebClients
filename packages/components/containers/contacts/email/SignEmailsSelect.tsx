@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import { Option, SelectTwo } from '../../../components';
-import { SelectChangeEvent } from '../../../components/selectTwo/select';
+import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 
 interface Props {
     id?: string;

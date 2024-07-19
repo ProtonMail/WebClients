@@ -1,16 +1,8 @@
-import {
-    Children,
-    ComponentPropsWithoutRef,
-    Fragment,
-    ReactElement,
-    ReactNode,
-    cloneElement,
-    forwardRef,
-    isValidElement,
-} from 'react';
+import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
+import { Children, Fragment, cloneElement, forwardRef, isValidElement } from 'react';
 
 import { Vr } from '@proton/atoms';
-import { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors';
 import clsx from '@proton/utils/clsx';
 
 export type Color = `${ThemeColor.Norm | ThemeColor.Weak}`;

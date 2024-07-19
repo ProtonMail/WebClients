@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethodFlows, PlainPaymentMethodType } from '@proton/components/payments/core';
-import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { PaymentMethodFlows, PlainPaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import {
     MAX_PAYPAL_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MIN_PAYPAL_AMOUNT_INHOUSE,
 } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Price } from '../../components';
 import PayPalButton from './PayPalButton';

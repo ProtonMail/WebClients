@@ -1,13 +1,5 @@
-import {
-    KeyboardEvent,
-    MutableRefObject,
-    ReactNode,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useRef,
-    useState,
-} from 'react';
+import type { KeyboardEvent, MutableRefObject, ReactNode } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
@@ -17,7 +9,8 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { Challenge, ChallengeRef } from '@proton/components/containers';
+import type { ChallengeRef } from '@proton/components/containers';
+import { Challenge } from '@proton/components/containers';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
@@ -34,19 +27,20 @@ import {
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
-import { AccountData, SignupType } from '../signup/interfaces';
+import type { AccountData } from '../signup/interfaces';
+import { SignupType } from '../signup/interfaces';
 import { getAccountDetailsFromEmail } from './accountDetails';
 import { runAfterScroll } from './helper';
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, InteractFields, UserCheckoutEvents } from './measure';
+import type { AsyncValidationState } from './validateEmail';
 import {
-    AsyncValidationState,
     AsyncValidationStateValue,
     createAsyncValidator,
     defaultAsyncValidationState,

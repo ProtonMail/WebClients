@@ -3,7 +3,7 @@ import { findByText } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiContact } from '../../../helpers/test/contact';
@@ -13,8 +13,8 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
-    GeneratedKey,
     addApiKeys,
     addApiMock,
     api,
@@ -24,7 +24,7 @@ import {
     generateKeys,
 } from '../../../helpers/test/helper';
 import { X_PM_HEADERS } from '../../../models/crypto';
-import { MessageKeys } from '../../../store/messages/messagesTypes';
+import type { MessageKeys } from '../../../store/messages/messagesTypes';
 import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 
 jest.setTimeout(20000);

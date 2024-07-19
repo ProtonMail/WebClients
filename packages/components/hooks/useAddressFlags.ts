@@ -7,7 +7,7 @@ import { useAddressesKeys, useApi, useEventManager, useNotifications, useUser } 
 import { updateAddressFlags } from '@proton/shared/lib/api/members';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys/signedKeyList';
 

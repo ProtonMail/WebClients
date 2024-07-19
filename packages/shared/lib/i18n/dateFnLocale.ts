@@ -1,4 +1,4 @@
-import { Locale } from 'date-fns';
+import type { Locale } from 'date-fns';
 
 import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
 import { enGBLocale, enUSLocale, faIRLocale } from './dateFnLocales';
@@ -44,8 +44,8 @@ export const getDateFnLocaleWithDateFormat = (locale: Locale, dateFormat: SETTIN
         dateFormat === SETTINGS_DATE_FORMAT.DDMMYYYY
             ? enGBLocale
             : dateFormat === SETTINGS_DATE_FORMAT.MMDDYYYY
-            ? enUSLocale
-            : faIRLocale
+              ? enUSLocale
+              : faIRLocale
     ).formatLong?.date;
 
     return {

@@ -1,6 +1,6 @@
 import EditGroup from './EditGroup';
 import ViewGroup from './ViewGroup';
-import { GroupsManagementReturn } from './types';
+import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;

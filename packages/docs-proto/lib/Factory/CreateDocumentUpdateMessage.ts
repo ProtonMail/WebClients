@@ -1,5 +1,5 @@
 import { ClientMessageWithDocumentUpdates } from '../Generated'
-import { DocumentUpdateVersion } from '../Version'
+import type { DocumentUpdateVersion } from '../Version'
 import { CreateDocumentUpdate } from './CreateDocumentUpdate'
 import { CreateDocumentUpdateArray } from './CreateDocumentUpdateArray'
 

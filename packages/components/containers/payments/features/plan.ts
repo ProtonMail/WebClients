@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { getRequire2FA, getSSOIntegration } from './b2b';
@@ -15,7 +15,7 @@ import {
     getStorageFeatureB2B,
 } from './drive';
 import { get24x7Support, getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
-import { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
+import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
     getFoldersAndLabelsFeature,

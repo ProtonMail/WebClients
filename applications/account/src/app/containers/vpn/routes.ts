@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { SectionConfig } from '@proton/components';
-import { APPS, APP_NAMES, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import type { SectionConfig } from '@proton/components';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
     return <const>{

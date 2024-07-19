@@ -1,12 +1,11 @@
-import { ConditionComparator, FilterActions } from '@proton/components/containers/filters/interfaces';
+import type { FilterActions } from '@proton/components/containers/filters/interfaces';
+import { ConditionComparator } from '@proton/components/containers/filters/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { buildLabelValueObject, findLatest, unescapeCharacters, unescapeVariables } from '../helpers';
-import {
+import type {
     IfTest,
     ItType,
-    LABEL_KEYS,
-    LABEL_KEY_MATCHING,
     LABEL_KEY_TYPE,
     MainNodeType,
     PrepareType,
@@ -14,6 +13,7 @@ import {
     ValueTextPair,
     ValueTypePair,
 } from '../interface';
+import { LABEL_KEYS, LABEL_KEY_MATCHING } from '../interface';
 
 /**
  * Parse a specific comment annotation

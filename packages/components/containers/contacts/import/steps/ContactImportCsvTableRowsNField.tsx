@@ -1,5 +1,5 @@
-import { ContactValue } from '@proton/shared/lib/interfaces/contacts';
-import { PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { ContactValue } from '@proton/shared/lib/interfaces/contacts';
+import type { PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Checkbox } from '../../../../components';
 import ContactImportCsvSelectField from './ContactImportCsvSelectField';

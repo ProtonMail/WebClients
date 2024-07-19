@@ -5,7 +5,7 @@ import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proto
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import { useUpsellConfig } from '../..';
-import { ModalStateProps } from '../../../modalTwo';
+import type { ModalStateProps } from '../../../modalTwo';
 import { UpsellModal } from '../index';
 
 interface Props {

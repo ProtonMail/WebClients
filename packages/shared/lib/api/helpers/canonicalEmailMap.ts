@@ -1,7 +1,7 @@
 import { API_CODES } from '../../constants';
-import { Api } from '../../interfaces';
-import { GetCanonicalAddressesApiResponse } from '../../interfaces/calendar';
-import { SimpleMap } from '../../interfaces/utils';
+import type { Api } from '../../interfaces';
+import type { GetCanonicalAddressesApiResponse } from '../../interfaces/calendar';
+import type { SimpleMap } from '../../interfaces/utils';
 import { getCanonicalAddresses } from '../addresses';
 
 export const getCanonicalEmailMap = async (emails: string[] = [], api: Api) => {

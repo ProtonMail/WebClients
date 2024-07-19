@@ -1,29 +1,26 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { noop } from 'lodash';
-import { MockedFunction } from 'vitest';
+import type { MockedFunction } from 'vitest';
 
-import {
-    WasmAccount,
+import type {
     WasmApiWalletBitcoinAddresses,
     WasmBitcoinAddressClient,
-    WasmDerivationPath,
     WasmFiatCurrencySymbol,
-    WasmNetwork,
-    WasmScriptType,
-    WasmWallet,
 } from '@proton/andromeda';
+import { WasmAccount, WasmDerivationPath, WasmNetwork, WasmScriptType, WasmWallet } from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto/lib';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
-import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
 import { expectSignedBy, getAddressKey, getMockedApi, mockUseWalletApiClients } from '@proton/wallet/tests';
 
 import { useBitcoinAddressPool } from '.';
-import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
+import type { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
 import { mockUseGetBitcoinAddressHighestIndex } from '../../tests/mocks/useBitcoinAddressHighestIndex';
 
 const mockedPushBitcoinAddressesCreationPayload = vi.fn();
 vi.mock('@proton/andromeda', async (importOriginal) => {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('@proton/andromeda')>();
     return {
         ...mod,

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
+import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys';
 
 export type VCardContactModel = {

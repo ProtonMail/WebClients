@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import * as actions from './incomingDefaultsActions';
 import * as reducer from './incomingDefaultsReducer';
-import { IncomingDefaultsState } from './incomingDefaultsTypes';
+import type { IncomingDefaultsState } from './incomingDefaultsTypes';
 
 export const incomingDefaultsInitialState: IncomingDefaultsState = {
     list: [],

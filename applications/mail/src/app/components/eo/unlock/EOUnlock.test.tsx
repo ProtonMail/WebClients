@@ -15,7 +15,7 @@ import {
     validID,
 } from '../../../helpers/test/eo/helpers';
 import { waitForNotification } from '../../../helpers/test/helper';
-import { EOMessage } from '../../../store/eo/eoType';
+import type { EOMessage } from '../../../store/eo/eoType';
 import EOUnlock from './EOUnlock';
 
 const props = {

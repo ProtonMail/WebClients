@@ -1,13 +1,14 @@
-import { DragEvent, useCallback } from 'react';
+import type { DragEvent } from 'react';
+import { useCallback } from 'react';
 
 import { useDragMove } from '@proton/components';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
-import { DecryptedLink } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 interface Options {

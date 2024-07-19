@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { CalendarViewModelFull, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarViewModelFull, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetAddresses, useGetCalendarBootstrap, useNotifications } from '../../../hooks';
 import { getCalendarModel } from '../calendarModal/personalCalendarModal/calendarModalState';

@@ -1,5 +1,5 @@
-import { CommentThreadState } from './CommentThreadState'
-import { CommentPayload } from './CommentPayload'
+import type { CommentThreadState } from './CommentThreadState'
+import type { CommentPayload } from './CommentPayload'
 
 export type CommentThreadPayload = {
   id: string

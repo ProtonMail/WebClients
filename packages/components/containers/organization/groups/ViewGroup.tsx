@@ -3,9 +3,9 @@ import { c, msgid } from 'ttag';
 import { Panel, PanelHeader } from '@proton/atoms/Panel';
 import { Copy } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { Group } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces';
 
-import { GroupsManagementReturn } from './types';
+import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;

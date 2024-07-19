@@ -7,7 +7,8 @@ import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import { getStyle } from './helpers';
-import { BREACH_STATE, FetchedBreaches, ListType } from './models';
+import type { FetchedBreaches, ListType } from './models';
+import { BREACH_STATE } from './models';
 
 interface BreachesListProps {
     data: FetchedBreaches[];

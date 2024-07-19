@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, Ref, forwardRef, useRef } from 'react';
+import type { ComponentPropsWithRef, Ref } from 'react';
+import { forwardRef, useRef } from 'react';
 
 type Props = ComponentPropsWithRef<'details'>;
 

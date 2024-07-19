@@ -11,13 +11,13 @@ import {
     TableBody,
     TableRow,
 } from '@proton/components/components';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useSortedList } from '@proton/components/hooks';
 import { SERVER_FEATURES, SORT_DIRECTION, USER_ROLES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { GatewayDto } from './GatewayDto';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayDto } from './GatewayDto';
+import type { GatewayUser } from './GatewayUser';
 
 type PartialGateway = Pick<GatewayDto, 'features' | 'userIds'>;
 

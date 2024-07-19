@@ -1,4 +1,5 @@
-import { ChangeEvent, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,8 +12,8 @@ import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proto
 import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CHARS_API, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import { Nullable } from '@proton/shared/lib/interfaces';
-import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Nullable } from '@proton/shared/lib/interfaces';
+import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import {
     ColorPicker,
@@ -27,7 +28,7 @@ import {
     SelectTwo,
     TextArea,
 } from '../../../../components';
-import { SelectChangeEvent } from '../../../../components/selectTwo/select';
+import type { SelectChangeEvent } from '../../../../components/selectTwo/select';
 import { TruncatedText } from '../../../../components/truncatedText';
 import GenericError from '../../../error/GenericError';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';

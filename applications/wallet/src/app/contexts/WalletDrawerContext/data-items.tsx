@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { isUndefined } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
 import { Icon, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
@@ -13,9 +13,9 @@ import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
-import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
+import type { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
 import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
-import { TransactionData } from '../../hooks/useWalletTransactions';
+import type { TransactionData } from '../../hooks/useWalletTransactions';
 import {
     convertAmountStr,
     getFormattedPeriodSinceConfirmation,

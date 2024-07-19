@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { CYCLE } from '@proton/shared/lib/constants';
-import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { buildSubscription } from '@proton/testing/builders';
 

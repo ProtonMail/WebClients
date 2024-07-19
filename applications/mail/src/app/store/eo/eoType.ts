@@ -1,11 +1,11 @@
-import { PublicKeyReference } from '@proton/crypto';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Api, Recipient } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { PublicKeyReference } from '@proton/crypto';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { Api, Recipient } from '@proton/shared/lib/interfaces';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
-import { Preparation } from '../../helpers/transforms/transforms';
-import {
+import type { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
+import type { Preparation } from '../../helpers/transforms/transforms';
+import type {
     MessageErrors,
     MessageImages,
     MessageRemoteImage,

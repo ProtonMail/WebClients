@@ -1,18 +1,18 @@
-import { KeyboardEvent, RefObject, forwardRef, useCallback, useMemo, useRef, useState } from 'react';
+import type { KeyboardEvent, RefObject } from 'react';
+import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
-import { Input } from '@proton/atoms';
+import type { Input } from '@proton/atoms';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { AddressesAutocompleteItem, GroupsWithContactsMap } from '../../addressesAutocomplete/helper';
 import {
-    AddressesAutocompleteItem,
-    GroupsWithContactsMap,
     getContactGroupsAutocompleteItems,
     getContactsAutocompleteItems,
     getNumberOfMembersCount,
@@ -23,7 +23,8 @@ import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../../
 import Icon from '../../icon/Icon';
 import { Option } from '../../option';
 import { Marks } from '../../text';
-import InputField, { InputFieldProps } from '../field/InputField';
+import type { InputFieldProps } from '../field/InputField';
+import InputField from '../field/InputField';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'> {
     id: string;

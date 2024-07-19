@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationType, useNotifications } from '@proton/components';
+import type { NotificationType } from '@proton/components';
+import { useNotifications } from '@proton/components';
 
 import {
     isTransferCanceled,
@@ -10,7 +11,7 @@ import {
     isTransferFailed,
     isTransferPausedByConnection,
 } from '../../../utils/transfer';
-import { Download } from '../../TransferManager/transfer';
+import type { Download } from '../../TransferManager/transfer';
 
 export function useDownloadNotifications(downloads: Download[]) {
     const { createNotification, hideNotification } = useNotifications();

@@ -1,14 +1,15 @@
-import { Dispatch, SetStateAction, useCallback, useEffect } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { useCalendarModelEventManager, useNotifications } from '@proton/components';
 import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { Address } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { EventTargetAction } from '../containers/calendar/interface';
+import type { EventTargetAction } from '../containers/calendar/interface';
 import useOpenCalendarEvents from './useOpenCalendarEvents';
 import { useOpenEvent } from './useOpenEvent';
 

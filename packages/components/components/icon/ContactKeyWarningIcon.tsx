@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import { getEmailMismatchWarning } from '@proton/shared/lib/keys/publicKeys';
 
 import WarningIcon from './WarningIcon';

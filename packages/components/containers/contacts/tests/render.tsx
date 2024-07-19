@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Router } from 'react-router';
 
 import type { RenderOptions } from '@testing-library/react';
@@ -6,12 +6,13 @@ import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
-import { CryptoApiInterface, VERIFICATION_STATUS } from '@proton/crypto';
+import type { CryptoApiInterface } from '@proton/crypto';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import {
+import type {
     ApiEnvironmentConfig,
     CachedOrganizationKey,
     DecryptedKey,

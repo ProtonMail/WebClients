@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { globalReset } from '../actions';
 import { addAttachment, updateAttachment } from './attachmentsActions';
 import { globalReset as globalResetReducer, setAttachment as setAttachmentReducer } from './attachmentsReducers';
-import { AttachmentsState } from './attachmentsTypes';
+import type { AttachmentsState } from './attachmentsTypes';
 
 const name = 'attachments';
 

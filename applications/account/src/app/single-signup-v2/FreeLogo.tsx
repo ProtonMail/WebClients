@@ -1,6 +1,7 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import driveFree from './logo/plan-drive-free.svg';
 import mailFree from './logo/plan-mail-free.svg';

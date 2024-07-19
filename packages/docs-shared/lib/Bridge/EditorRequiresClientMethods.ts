@@ -1,9 +1,9 @@
 import { type ErrorInfo } from 'react'
-import { UserState } from '@lexical/yjs'
-import { CommentInterface } from '../CommentInterface'
-import { CommentThreadInterface } from '../CommentThreadInterface'
-import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
-import { BroadcastSource } from './BroadcastSource'
+import type { UserState } from '@lexical/yjs'
+import type { CommentInterface } from '../CommentInterface'
+import type { CommentThreadInterface } from '../CommentThreadInterface'
+import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
+import type { BroadcastSource } from './BroadcastSource'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>

@@ -9,7 +9,7 @@ import { ConditionComparator, ConditionType } from '@proton/components/container
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
 import newFilter, { computeTree } from '@proton/components/containers/filters/utils';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import identity from '@proton/utils/identity';
 
 type FiltersState = {
@@ -176,11 +176,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                                 checked={filtersState[filterType.value]}
                                 onChange={() => toggleFilterType(filterType.value)}
                             />
-                            <label
-                                htmlFor={filterType.value}
-                                title={filterType.label}
-                                className="flex-1 text-ellipsis"
-                            >
+                            <label htmlFor={filterType.value} title={filterType.label} className="flex-1 text-ellipsis">
                                 {filterType.label}
                             </label>
                         </li>

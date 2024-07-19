@@ -1,4 +1,5 @@
-import { IRunOptions, TextRun } from 'docx'
+import type { IRunOptions } from 'docx'
+import { TextRun } from 'docx'
 import { getTextRun as _getTextRun } from './getTextRun'
 import { createHeadlessEditor } from '@lexical/headless'
 import { LinkNode } from '@lexical/link'

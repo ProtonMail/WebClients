@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { OpenCallbackProps, useSubscriptionModal } from '../../SubscriptionModalProvider';
+import type { OpenCallbackProps } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 
 interface Props {

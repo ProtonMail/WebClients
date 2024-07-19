@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
-import { Key } from '@proton/shared/lib/interfaces';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Key } from '@proton/shared/lib/interfaces';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
+import type { ModalProps } from '../../../components';
 import {
     Alert,
     Copy,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -21,7 +21,7 @@ import {
 } from '../../../components';
 import { useNotifications, useUser } from '../../../hooks';
 import useContact from '../hooks/useContact';
-import { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
+import type { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 
 export interface ContactDecryptionErrorProps {
     contactID: string;

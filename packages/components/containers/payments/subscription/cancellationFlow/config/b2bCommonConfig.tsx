@@ -4,12 +4,12 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import { BRAND_NAME, MAIL_APP_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 import compliance from '@proton/styles/assets/img/cancellation-flow/testimonial_compliance.svg';
 import connected from '@proton/styles/assets/img/cancellation-flow/testimonial_connceted.svg';
 import standOut from '@proton/styles/assets/img/cancellation-flow/testimonial_stand_out.svg';
 
-import { ConfirmationModal, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
+import type { ConfirmationModal, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
 
 export const getDefaultTestimonial = (planName: string): PlanConfigTestimonial => {
     return {

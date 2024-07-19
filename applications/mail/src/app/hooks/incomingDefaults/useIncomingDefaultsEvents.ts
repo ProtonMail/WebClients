@@ -2,7 +2,7 @@ import { useSubscribeEventManager } from '@proton/components';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { Event } from '../../models/event';
+import type { Event } from '../../models/event';
 import { event } from '../../store/incomingDefaults/incomingDefaultsActions';
 
 export default () => {

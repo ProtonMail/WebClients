@@ -1,5 +1,5 @@
 import { render } from '../../../helpers/test/helper';
-import { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
 import ExtraErrors from './ExtraErrors';
 
 describe('Errors banner', () => {

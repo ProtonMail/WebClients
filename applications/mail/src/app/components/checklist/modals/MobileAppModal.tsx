@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader, QRCode } from '@proton/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader, QRCode } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';

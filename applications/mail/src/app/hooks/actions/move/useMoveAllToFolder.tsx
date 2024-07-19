@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
 import { useFlag } from '@proton/components/containers';
@@ -18,7 +19,7 @@ import {
 } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
-import { Element } from 'proton-mail/models/element';
+import type { Element } from 'proton-mail/models/element';
 import { backendActionStarted, moveAll } from 'proton-mail/store/elements/elementsActions';
 import { elementsMap as elementsMapSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';

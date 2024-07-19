@@ -1,9 +1,10 @@
-import { RefObject } from 'react';
+import type { RefObject } from 'react';
 
-import { DefaultFormat, Direction, EditorPlugin, IEditor } from 'roosterjs-editor-types';
+import type { DefaultFormat, EditorPlugin, IEditor } from 'roosterjs-editor-types';
+import { Direction } from 'roosterjs-editor-types';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import {
@@ -14,8 +15,8 @@ import {
     ROOSTER_SNAPSHOTS_MAX_SIZE,
 } from '../../constants';
 import { getFontFaceValueFromId } from '../../helpers/fontFace';
-import { ModalLinkProps } from '../../hooks/interface';
-import { EditorActions, OnEditorEventListened } from '../../interface';
+import type { ModalLinkProps } from '../../hooks/interface';
+import type { EditorActions, OnEditorEventListened } from '../../interface';
 import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
 import EditorEventListener from '../plugins/EditorEventListener';
 import UndoSnapshots from '../plugins/UndoSnapshots';

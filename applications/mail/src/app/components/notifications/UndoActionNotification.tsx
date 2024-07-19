@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { CustomNotificationProps } from '@proton/components';
+import type { CustomNotificationProps } from '@proton/components';
 
 import UndoNotificationButton from './UndoNotificationButton';
 

@@ -48,7 +48,8 @@ import BreachesList from './BreachesList';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import NoBreachesView from './NoBreachesView';
 import { BREACH_API_ERROR, getEnableString, getUpsellText, toCamelCase } from './helpers';
-import { BREACH_STATE, ListType, SampleBreach } from './models';
+import type { ListType, SampleBreach } from './models';
+import { BREACH_STATE } from './models';
 import { useBreaches } from './useBreaches';
 
 const LIST_STATES_MAP: Record<ListType, BREACH_STATE[]> = {

@@ -3,16 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    InputFieldTwo,
-    PhoneInput,
-    Prompt,
-    PromptProps,
-    useApi,
-    useConfig,
-    useFormErrors,
-    useModalState,
-} from '@proton/components';
+import type { PromptProps } from '@proton/components';
+import { InputFieldTwo, PhoneInput, Prompt, useApi, useConfig, useFormErrors, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';

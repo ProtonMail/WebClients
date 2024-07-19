@@ -1,4 +1,5 @@
-import { ReactNode, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 import { createContext, useContext } from 'react';
 
 import { useLocalState, useSessionRecoveryState, useUser } from '@proton/components/hooks';

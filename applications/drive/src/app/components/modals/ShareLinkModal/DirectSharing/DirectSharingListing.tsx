@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { Avatar, CircleLoader } from '@proton/atoms';
 import { useContactEmails, useUser } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../../../store';
+import type { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../../../store';
 import { DirectSharingListInvitation } from './DirectSharingListInvitation';
 import { MemberDropdownMenu } from './MemberDropdownMenu';
 

@@ -1,4 +1,5 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';

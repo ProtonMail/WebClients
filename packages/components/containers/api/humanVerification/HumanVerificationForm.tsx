@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Alert, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
@@ -13,7 +13,8 @@ import CodeMethod from './CodeMethod';
 import OwnershipMethod from './OwnershipMethod';
 import Text from './Text';
 import { getAvailableMethods } from './helper';
-import { CaptchaTheme, HumanVerificationSteps, OwnershipCache, VerificationModel } from './interface';
+import type { CaptchaTheme, OwnershipCache, VerificationModel } from './interface';
+import { HumanVerificationSteps } from './interface';
 
 import './HumanVerificationModal.scss';
 

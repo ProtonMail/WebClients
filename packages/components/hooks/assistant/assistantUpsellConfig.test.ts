@@ -1,6 +1,6 @@
 import { SelectedPlan } from '@proton/components/payments/core';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP } from '@proton/testing/data';
 
 import { SUBSCRIPTION_STEPS } from '../..';

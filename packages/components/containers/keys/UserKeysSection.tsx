@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlgorithmInfo } from '@proton/crypto';
-import { KeyGenConfig } from '@proton/shared/lib/interfaces';
+import type { AlgorithmInfo } from '@proton/crypto';
+import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
 import { Loader, useModalState } from '../../components';

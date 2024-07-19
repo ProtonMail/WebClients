@@ -1,6 +1,6 @@
-import { PaginationParams } from '@proton/shared/lib/api/interface';
+import type { PaginationParams } from '@proton/shared/lib/api/interface';
 
-import { CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
+import type { CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
 
 export enum CertificateMode {
     SESSION = 'session',

@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, Prompt } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { useConversationCounts, useMessageCounts } from '@proton/components/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 

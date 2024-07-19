@@ -1,4 +1,5 @@
-import React, { MutableRefObject, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { addHours } from 'date-fns';
 import { c } from 'ttag';
@@ -7,7 +8,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { useConfig, useNotifications } from '../../hooks';
 

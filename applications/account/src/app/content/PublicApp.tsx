@@ -1,17 +1,16 @@
 import { useCallback, useRef, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
-import * as H from 'history';
+import type * as H from 'history';
 
 import * as bootstrap from '@proton/account/bootstrap';
+import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components';
 import {
     ApiProvider,
     AuthenticationProvider,
     ErrorBoundary,
     ModalsChildren,
     NotificationsChildren,
-    OnLoginCallback,
-    OnLoginCallbackResult,
     ProtonApp,
     SSOForkProducer,
     StandardErrorPage,
@@ -19,10 +18,12 @@ import {
     UnAuthenticatedApiProvider,
     UnleashFlagProvider,
 } from '@proton/components';
-import { ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
+import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
+import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import type { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import { AppIntent, AuthSession, AuthType } from '@proton/components/containers/login/interface';
+import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
+import { AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
@@ -32,7 +33,8 @@ import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import createApi from '@proton/shared/lib/api/createApi';
-import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
+import type { OAuthLastAccess } from '@proton/shared/lib/api/oauth';
+import { getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api/organization';
 import {
     getAppHref,
@@ -52,20 +54,14 @@ import {
     produceForkConsumption,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
-import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import {
-    GetActiveSessionType,
+import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import type {
     GetActiveSessionsResult,
     LocalSessionPersisted,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
-    APPS,
-    APP_NAMES,
-    CLIENT_TYPES,
-    SETUP_ADDRESS_PATH,
-    SSO_PATHS,
-    UNPAID_STATE,
-} from '@proton/shared/lib/constants';
+import { GetActiveSessionType } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, SETUP_ADDRESS_PATH, SSO_PATHS, UNPAID_STATE } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -73,7 +69,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -84,8 +80,10 @@ import HandleLogout from '../containers/HandleLogout';
 import locales from '../locales';
 import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
-import AppSwitcherContainer, { AppSwitcherState } from '../public/AppSwitcherContainer';
-import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
+import type { AppSwitcherState } from '../public/AppSwitcherContainer';
+import AppSwitcherContainer from '../public/AppSwitcherContainer';
+import type { AuthExtensionState } from '../public/AuthExtension';
+import AuthExtension from '../public/AuthExtension';
 import CallScheduledPage from '../public/CallScheduledPage';
 import CloseTicketContainer from '../public/CloseTicketContainer';
 import DisableAccountContainer from '../public/DisableAccountContainer';
@@ -95,7 +93,8 @@ import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import JoinMagicLinkContainer from '../public/JoinMagicLinkContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
-import ReAuthContainer, { ReAuthState } from '../public/ReAuthContainer';
+import type { ReAuthState } from '../public/ReAuthContainer';
+import ReAuthContainer from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';

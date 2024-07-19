@@ -1,5 +1,5 @@
-import { EncryptionPreferences } from '../../mail/encryptionPreferences';
-import { ContactEmail } from '../contacts';
+import type { EncryptionPreferences } from '../../mail/encryptionPreferences';
+import type { ContactEmail } from '../contacts';
 
 export type GetEncryptionPreferences = ({
     email,

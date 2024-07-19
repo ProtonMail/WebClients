@@ -1,6 +1,7 @@
 import { hasBit } from '../helpers/bitset';
 import { generateSharedSecret, getUri } from '../helpers/twofa';
-import { SETTINGS_2FA_ENABLED, UserSettings } from '../interfaces';
+import type { UserSettings } from '../interfaces';
+import { SETTINGS_2FA_ENABLED } from '../interfaces';
 
 export const TWO_FA_CONFIG = {
     PERIOD: 30,

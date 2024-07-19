@@ -1,4 +1,5 @@
-import { MutableRefObject, useMemo, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -8,7 +9,8 @@ import { Avatar, Button } from '@proton/atoms';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
-import { APP_NAMES, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
@@ -19,13 +21,8 @@ import {
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import {
-    Address,
-    EnhancedMember,
-    MEMBER_STATE,
-    Member,
-    MemberUnprivatizationState,
-} from '@proton/shared/lib/interfaces';
+import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import {
     getIsDomainActive,
     getOrganizationKeyInfo,

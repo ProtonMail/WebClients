@@ -2,7 +2,7 @@ import { releaseCryptoProxy, setupCryptoProxyForTesting } from 'proton-mail/help
 
 import { EORender } from '../../helpers/test/eo/EORender';
 import { EOClearAll } from '../../helpers/test/eo/helpers';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import EORedirect from './EORedirect';
 
 describe('Encrypted Outside Redirection', () => {

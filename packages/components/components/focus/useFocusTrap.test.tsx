@@ -1,4 +1,5 @@
-import { ReactNode, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useRef, useState } from 'react';
 
 import { fireEvent, render, waitFor } from '@testing-library/react';
 

@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import {
+import type {
     BinData,
     CardFormRenderMode,
     CbCardConfig,
@@ -24,6 +24,8 @@ import {
     ThreeDsRequiredForSavedCardMessage,
     UnhandledErrorMessage,
     UpdateFieldsPayload,
+} from '../lib';
+import {
     paypalAuthorizedMessageType,
     paypalCancelledMessageType,
     paypalClickedMessageType,

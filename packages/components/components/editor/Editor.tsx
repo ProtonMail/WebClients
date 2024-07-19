@@ -1,14 +1,15 @@
-import { RefObject, useCallback } from 'react';
+import type { RefObject } from 'react';
+import { useCallback } from 'react';
 
 import { Dropzone } from '@proton/components/components';
-import { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { DropzoneContentProps } from '../dropzone/DropzoneContent';
+import type { DropzoneContentProps } from '../dropzone/DropzoneContent';
 import { EDITOR_DEFAULT_METADATA } from './constants';
-import { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';
+import type { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';
 import DefaultFontModal from './modals/DefaultFontModal';
 import InsertImageModal from './modals/InsertImageModal';
 import InsertLinkModal from './modals/InsertLinkModal/InsertLinkModal';

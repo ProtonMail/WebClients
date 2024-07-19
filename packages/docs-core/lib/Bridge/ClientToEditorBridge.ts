@@ -1,18 +1,16 @@
-import {
+import type {
   EditorToClientGenericMessage,
   EditorToClientInvokationMessage,
   EditorToClientReplyMessage,
   ClientToEditorReplyMessage,
   EditorRequiresClientMethods,
-  EditorBridgeMessageType,
-  BridgeOriginProvider,
-  DOCS_EDITOR_DEBUG_KEY,
   InternalEventBusInterface,
 } from '@proton/docs-shared'
+import { EditorBridgeMessageType, BridgeOriginProvider, DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared'
 import { EditorInvoker } from './EditorInvoker'
 import { EditorToClientRequestHandler } from './EditorToClientRequestHandler'
 import { Logger } from '@proton/utils/logs'
-import { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
+import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 
 export class ClientToEditorBridge {
   private logger = new Logger('DocsClient', DOCS_EDITOR_DEBUG_KEY)

@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
+import type { IconProps } from '@proton/components/components';
 import {
-    IconProps,
     SettingsLink,
     SidebarListItem,
     SidebarListItemButton,

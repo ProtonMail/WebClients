@@ -15,8 +15,8 @@ import { splitEncryptedContacts } from '@proton/shared/lib/contacts/helpers/impo
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
 import { combineProgress } from '@proton/shared/lib/contacts/helpers/progress';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Contact as ContactType, SimpleEncryptedContact } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { Contact as ContactType, SimpleEncryptedContact } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import chunk from '@proton/utils/chunk';
 

@@ -1,4 +1,5 @@
-import { MouseEvent, ReactNode, RefObject, useMemo, useRef } from 'react';
+import type { MouseEvent, ReactNode, RefObject } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +10,7 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { RecipientOrGroup } from '../../../models/address';
+import type { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
     label?: ReactNode;

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 export const getNextDefaultCalendar = (calendar: VisualCalendar | undefined) => {
     if (!calendar) {

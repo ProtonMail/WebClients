@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { SECOND } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isReceived } from '@proton/shared/lib/mail/messages';
 
 /**

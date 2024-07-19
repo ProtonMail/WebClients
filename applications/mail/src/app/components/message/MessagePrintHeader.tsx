@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import { getSender } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import ItemDate from '../list/ItemDate';
 import RecipientType from './recipients/RecipientType';
 import RecipientsDetails from './recipients/RecipientsDetails';

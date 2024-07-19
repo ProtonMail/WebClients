@@ -1,5 +1,5 @@
+import type { BrowserOptions } from '@sentry/browser';
 import {
-    BrowserOptions,
     Integrations as SentryIntegrations,
     captureException,
     configureScope,
@@ -7,14 +7,14 @@ import {
     makeFetchTransport,
     captureMessage as sentryCaptureMessage,
 } from '@sentry/browser';
-import { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
+import type { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
 
 import { Availability, AvailabilityTypes } from '@proton/utils/availability';
 
 import { VPN_HOSTNAME } from '../constants';
 import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
-import { ProtonConfig } from '../interfaces';
+import type { ProtonConfig } from '../interfaces';
 import { isElectronApp } from './desktop';
 
 type SentryContext = {

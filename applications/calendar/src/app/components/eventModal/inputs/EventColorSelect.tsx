@@ -14,7 +14,7 @@ import { FeatureCode } from '@proton/components/containers/features';
 import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
     model: EventModel;

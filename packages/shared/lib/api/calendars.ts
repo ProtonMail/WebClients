@@ -1,6 +1,11 @@
 import { CALENDAR_VALIDATION_MODE } from '../calendar/constants';
-import { Attendee, CalendarNotificationSettings, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
-import {
+import type {
+    Attendee,
+    CalendarNotificationSettings,
+    CalendarSettings,
+    CalendarUserSettings,
+} from '../interfaces/calendar';
+import type {
     CalendarCreateArguments,
     CalendarCreateOrUpdateEventBlobData,
     CalendarEventsIDsQuery,
@@ -18,8 +23,8 @@ import {
     UpdateCalendarInviteData,
     UpdateCalendarMemberData,
 } from '../interfaces/calendar/Api';
-import { Nullable, RequireOnly } from '../interfaces/utils';
-import { PaginationParams } from './interface';
+import type { Nullable, RequireOnly } from '../interfaces/utils';
+import type { PaginationParams } from './interface';
 
 const CALENDAR_V1 = 'calendar/v1';
 

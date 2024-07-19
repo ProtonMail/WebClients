@@ -1,7 +1,7 @@
-import { CommentThreadState } from './CommentThreadState'
-import { CommentInterface } from './CommentInterface'
-import { ServerTime } from './ServerTime'
-import { CommentThreadPayload } from './CommentThreadPayload'
+import type { CommentThreadState } from './CommentThreadState'
+import type { CommentInterface } from './CommentInterface'
+import type { ServerTime } from './ServerTime'
+import type { CommentThreadPayload } from './CommentThreadPayload'
 
 export type CommentThreadInterface = {
   id: string

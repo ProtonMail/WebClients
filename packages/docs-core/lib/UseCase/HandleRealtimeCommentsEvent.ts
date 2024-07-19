@@ -1,6 +1,5 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
-import {
-  CommentsMessageType,
+import type {
   AnyCommentMessageData,
   AddThreadData,
   AddCommentData,
@@ -10,11 +9,12 @@ import {
   BeganTypingData,
   StoppedTypingData,
 } from '@proton/docs-shared'
+import { CommentsMessageType } from '@proton/docs-shared'
 import { Comment, CommentThread } from '../Models'
-import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { LiveComments } from '../Realtime/LiveComments/LiveComments'
+import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
+import type { LiveComments } from '../Realtime/LiveComments/LiveComments'
 import { getErrorString } from '../Util/GetErrorString'
-import { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
+import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
 /**

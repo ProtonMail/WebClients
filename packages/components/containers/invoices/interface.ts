@@ -1,5 +1,5 @@
-import { INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 export interface Invoice {
     ID: string;

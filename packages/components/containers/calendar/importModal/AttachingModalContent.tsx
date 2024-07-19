@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,8 +9,8 @@ import {
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
 import { Alert, AttachedFile, Dropzone, FileInput, Label, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';

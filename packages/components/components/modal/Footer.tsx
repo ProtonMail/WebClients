@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -13,10 +13,7 @@ interface Props extends ComponentPropsWithoutRef<'footer'> {
 const Footer = ({
     children,
     isColumn,
-    className = clsx([
-        'flex flex-nowrap',
-        isColumn ? 'flex-column' : 'justify-space-between items-center',
-    ]),
+    className = clsx(['flex flex-nowrap', isColumn ? 'flex-column' : 'justify-space-between items-center']),
     ...rest
 }: Props) => {
     return (

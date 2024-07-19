@@ -1,12 +1,12 @@
 import { useHistory } from 'react-router-dom';
 
-import { History } from 'history';
+import type { History } from 'history';
 import { c } from 'ttag';
 
 import { useFolders, useSubscribeEventManager } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
 
 import notificationIcon from '../../assets/notification.png';
@@ -14,7 +14,7 @@ import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import { isElementReminded } from '../../helpers/snooze';
 import useMailModel from '../../hooks/useMailModel';
-import { Event } from '../../models/event';
+import type { Event } from '../../models/event';
 
 const displayNotification = (
     Message: Message,

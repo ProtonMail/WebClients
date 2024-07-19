@@ -1,4 +1,5 @@
-import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
+import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
+import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
 import supportedPreviews from './previews';
 

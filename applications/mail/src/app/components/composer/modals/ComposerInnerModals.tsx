@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { Alert, ErrorButton } from '@proton/components';
-import { Cancellable } from '@proton/components/hooks/useHandler';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
-import { MessageState } from '../../../store/messages/messagesTypes';
-import { MessageChange } from '../Composer';
+import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageChange } from '../Composer';
 import ComposerAssistantSettingModal from './ComposerAssistantSettingModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import ComposerInnerModal from './ComposerInnerModal';

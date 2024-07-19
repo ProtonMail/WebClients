@@ -1,8 +1,8 @@
 import { c } from 'ttag';
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
-import {
+import type {
     DriveFileBlock,
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
@@ -12,13 +12,14 @@ import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
-import { DecryptedLink, SignatureIssues, useLink, useLinksListing } from '../_links';
+import type { DecryptedLink, SignatureIssues } from '../_links';
+import { useLink, useLinksListing } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
-import {
+import type {
     DecryptFileKeys,
     DownloadControls,
     DownloadEventCallbacks,

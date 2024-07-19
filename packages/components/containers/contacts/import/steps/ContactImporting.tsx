@@ -1,18 +1,19 @@
-import { Dispatch, SetStateAction, useEffect } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
-import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
+import type { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
-import {
+import type {
     EncryptedContact,
-    IMPORT_STEPS,
     ImportContactsModel,
     ImportedContact,
 } from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { Alert, DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';

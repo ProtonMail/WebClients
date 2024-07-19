@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction, useEffect } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
+import type { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { processWithJails } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import {
@@ -15,13 +16,13 @@ import {
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
 import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
-import {
+import type {
     EncryptedEvent,
-    IMPORT_STEPS,
     ImportCalendarModel,
     ImportedEvent,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
 import { DynamicProgress } from '../../../components';
 import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';

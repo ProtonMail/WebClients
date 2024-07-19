@@ -1,4 +1,4 @@
-import { AnimationEvent, HTMLAttributes, ReactNode } from 'react';
+import type { AnimationEvent, HTMLAttributes, ReactNode } from 'react';
 
 import DrawerHeaderTitleDropdown from '@proton/components/components/drawer/views/DrawerHeaderTitleDropdown';
 import { DrawerAppFooter, DrawerAppHeader } from '@proton/components/containers';

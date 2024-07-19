@@ -2,10 +2,10 @@ import { useCallback, useState } from 'react';
 
 import { compact } from 'lodash';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
+import type { IWasmApiWalletData } from '@proton/wallet';
 import {
-    IWasmApiWalletData,
     POOL_FILLING_THRESHOLD,
     generateBitcoinAddressesPayloadForPoolFilling,
     signData,
@@ -13,7 +13,7 @@ import {
     verifySignedData,
 } from '@proton/wallet';
 
-import { WalletWithChainData } from '../../types';
+import type { WalletWithChainData } from '../../types';
 import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
 
 export const useBitcoinAddressPool = ({

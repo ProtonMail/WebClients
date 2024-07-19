@@ -1,14 +1,15 @@
 import { useCallback, useRef } from 'react';
 
 import { querySharedWithMeLinks } from '@proton/shared/lib/api/drive/sharing';
-import { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { useDebouncedRequest } from '../../_api';
 import { useVolumesState } from '../../_volumes';
-import { DecryptedLink } from '../interface';
+import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
-import { FetchLoadLinksMeta } from './interface';
-import { DEFAULT_SORTING, FetchMeta, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
+import type { FetchLoadLinksMeta } from './interface';
+import type { FetchMeta, SortParams } from './useLinksListingHelpers';
+import { DEFAULT_SORTING, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchSharedLinksMeta extends FetchMeta {
     lastPage: number;

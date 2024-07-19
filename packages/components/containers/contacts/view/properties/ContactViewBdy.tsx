@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { isDateTextValue, isValidDateValue } from '@proton/shared/lib/contacts/vcard';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { VCardContact, VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact, VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ContactViewProperties } from './ContactViewProperties';
 import ContactViewProperty from './ContactViewProperty';

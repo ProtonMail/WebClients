@@ -1,4 +1,5 @@
-import { FunctionComponent, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import FlagProvider from '@unleash/proxy-client-react';
@@ -20,7 +21,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 
 import * as config from '../config';
-import { AccountStore } from '../store/store';
+import type { AccountStore } from '../store/store';
 import { extraThunkArguments } from '../store/thunk';
 import AccountLoaderPage from './AccountLoaderPage';
 import { bootstrapApp } from './bootstrap';

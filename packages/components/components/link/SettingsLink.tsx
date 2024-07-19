@@ -1,12 +1,15 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 
 import { useConfig } from '../../hooks';
-import AppLink, { AppLinkProps } from './AppLink';
+import type { AppLinkProps } from './AppLink';
+import AppLink from './AppLink';
 
 const canOpenInSameTab = (APP_NAME: APP_NAMES, settingsApp: APP_NAMES | undefined, toSettingsForApp: APP_NAMES) => {
     const isIframe = getIsIframe();

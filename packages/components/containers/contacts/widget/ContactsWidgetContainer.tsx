@@ -1,4 +1,5 @@
-import { RefObject, useMemo, useState } from 'react';
+import type { RefObject } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -7,24 +8,24 @@ import { SearchInput, useGetUserKeys, useMailSettings } from '@proton/components
 import { useApi, useNotifications, useUser } from '@proton/components/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
-import { ContactEditProps } from '../edit/ContactEditModal';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type { ContactEditProps } from '../edit/ContactEditModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useContactList from '../hooks/useContactList';
 import ContactsList from '../lists/ContactsList';
-import { ContactMergeProps } from '../merge/ContactMergeModal';
-import { ContactDeleteProps } from '../modals/ContactDeleteModal';
-import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
-import { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import type { ContactMergeProps } from '../merge/ContactMergeModal';
+import type { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 import MergeContactBanner from '../widget/MergeContactBanner';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
-import { CustomAction } from './types';
+import type { CustomAction } from './types';
 
 import './ContactsWidget.scss';
 

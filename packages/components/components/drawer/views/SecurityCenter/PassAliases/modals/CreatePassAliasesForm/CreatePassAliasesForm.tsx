@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
-import { Input } from '@proton/atoms/Input';
+import type { Input } from '@proton/atoms/Input';
+import type { ModalProps } from '@proton/components/components';
 import {
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -29,7 +29,7 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
 
 import { usePassAliasesContext } from '../../PassAliasesProvider';
-import { CreateModalFormState } from '../../interface';
+import type { CreateModalFormState } from '../../interface';
 import useCreateModalForm from './useCreatePassAliasesForm';
 
 interface Props {

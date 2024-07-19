@@ -1,18 +1,17 @@
-import { LoggerInterface } from '@proton/utils/logs'
-import {
+import type { LoggerInterface } from '@proton/utils/logs'
+import type {
   EditorToClientInvokationMessage,
   ClientToEditorReplyMessage,
   EditorRequiresClientMethods,
-  EditorBridgeMessageType,
   PendingMessage,
   CommentInterface,
   CommentThreadInterface,
   ParamsExcludingFunctions,
   RtsMessagePayload,
   BroadcastSource,
-  BridgeOriginProvider,
 } from '@proton/docs-shared'
-import { UserState } from '@lexical/yjs'
+import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
+import type { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-core'
 
 /** Allows the editor to invoke methods on the client */

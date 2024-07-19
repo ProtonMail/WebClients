@@ -19,7 +19,7 @@ import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import PagingControls from './PagingControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
-import { Props as ToolbarProps } from './Toolbar';
+import type { Props as ToolbarProps } from './Toolbar';
 
 interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck'> {
     classname: string;

@@ -1,5 +1,5 @@
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import type { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
 
 const activeKey: AddressKey = {
     ID: 'key',

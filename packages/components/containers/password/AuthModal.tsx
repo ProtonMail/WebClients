@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
@@ -7,15 +8,17 @@ import { Button, InlineLinkButton } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
+import type { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Unwrap } from '@proton/shared/lib/interfaces';
-import { Credentials, SrpConfig, srpAuth } from '@proton/shared/lib/srp';
+import type { Unwrap } from '@proton/shared/lib/interfaces';
+import type { Credentials, SrpConfig } from '@proton/shared/lib/srp';
+import { srpAuth } from '@proton/shared/lib/srp';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     InputFieldTwo,
@@ -23,7 +26,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     Tabs,
     useFormErrors,

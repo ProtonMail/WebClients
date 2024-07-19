@@ -14,14 +14,14 @@ import {
 import { getApiError, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '@proton/shared/lib/api/helpers/refreshHandlers';
 import { createOnceHandler } from '@proton/shared/lib/apiHandlers';
-import { ChallengePayload } from '@proton/shared/lib/authentication/interface';
+import type { ChallengePayload } from '@proton/shared/lib/authentication/interface';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { createPromise, wait } from '@proton/shared/lib/helpers/promise';
 import { setUID } from '@proton/shared/lib/helpers/sentry';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 

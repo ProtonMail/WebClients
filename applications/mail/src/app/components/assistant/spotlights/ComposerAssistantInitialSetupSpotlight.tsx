@@ -1,4 +1,5 @@
-import { ReactNode, RefObject, forwardRef, useEffect, useImperativeHandle, useState } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 

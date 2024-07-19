@@ -7,8 +7,8 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
-    GeneratedKey,
     addApiKeys,
     addApiMock,
     clearAll,

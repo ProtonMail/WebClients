@@ -1,9 +1,10 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { useNotifications } from '@proton/components';
 
 import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
-import { ValidationError, isValidationError } from '../../utils/errorHandling/ValidationError';
+import type { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { isValidationError } from '../../utils/errorHandling/ValidationError';
 
 /**
  * generateErrorHandler generates error handler calling callback if the error
@@ -63,12 +64,15 @@ export function useErrorHandler() {
         }
 
         const validationErrors: ValidationError[] = Object.values(
-            nonIgnoredErrors.filter(isValidationError).reduce((acc, error) => {
-                if (!acc[error.message]) {
-                    acc[error.message] = error;
-                }
-                return acc;
-            }, {} as Record<string, ValidationError>)
+            nonIgnoredErrors.filter(isValidationError).reduce(
+                (acc, error) => {
+                    if (!acc[error.message]) {
+                        acc[error.message] = error;
+                    }
+                    return acc;
+                },
+                {} as Record<string, ValidationError>
+            )
         );
 
         validationErrors.forEach((error) => {

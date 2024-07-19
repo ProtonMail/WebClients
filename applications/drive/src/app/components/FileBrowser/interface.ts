@@ -1,6 +1,6 @@
-import React from 'react';
+import type React from 'react';
 
-import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;

@@ -7,7 +7,8 @@ import {
     verifyAddressIsObsolete,
 } from '@proton/key-transparency/lib';
 
-import { Api, FetchedSignedKeyList, KeyMigrationKTVerifier, KeyTransparencyActivation } from '../interfaces';
+import type { Api, FetchedSignedKeyList, KeyMigrationKTVerifier } from '../interfaces';
+import { KeyTransparencyActivation } from '../interfaces';
 
 const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, api: Api): KeyMigrationKTVerifier => {
     return async (email: string, signedKeyList: Partial<FetchedSignedKeyList> | null | undefined) => {

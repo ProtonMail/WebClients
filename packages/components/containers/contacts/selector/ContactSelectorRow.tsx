@@ -1,6 +1,6 @@
-import { CSSProperties, ChangeEvent } from 'react';
+import type { CSSProperties, ChangeEvent } from 'react';
 
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
 import { Checkbox } from '../../../components';
@@ -30,12 +30,7 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isSmallViewport 
                     aria-describedby={contact.ID}
                     id={contact.ID}
                 >
-                    <div
-                        className={clsx([
-                            'flex-1 items-center max-w-full h-full',
-                            !isSmallViewport && 'flex',
-                        ])}
-                    >
+                    <div className={clsx(['flex-1 items-center max-w-full h-full', !isSmallViewport && 'flex'])}>
                         <div
                             className={clsx(['pl-4 flex', !isSmallViewport && 'w-custom'])}
                             style={!isSmallViewport ? { '--w-custom': '45%' } : undefined}

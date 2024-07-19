@@ -9,7 +9,8 @@ import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPla
 import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 import clsx from '@proton/utils/clsx';
 
-import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
+import type { Props as OnboardingContentProps } from './OnboardingContent';
+import OnboardingContent from './OnboardingContent';
 
 interface Props extends Omit<OnboardingContentProps, 'decription' | 'img'> {
     handleNext: () => void;

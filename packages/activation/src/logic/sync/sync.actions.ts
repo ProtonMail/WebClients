@@ -10,19 +10,18 @@ import {
     resumeSync,
     updateImport,
 } from '@proton/activation/src/api';
-import { APIImportSyncListResponse } from '@proton/activation/src/api/api.interface';
-import {
-    AuthenticationMethod,
+import type { APIImportSyncListResponse } from '@proton/activation/src/api/api.interface';
+import type {
     CreateImportPayload,
     EASY_SWITCH_SOURCES,
     ImportToken,
-    ImportType,
     OAUTH_PROVIDER,
 } from '@proton/activation/src/interface';
-import { CreateNotificationOptions } from '@proton/components';
+import { AuthenticationMethod, ImportType } from '@proton/activation/src/interface';
+import type { CreateNotificationOptions } from '@proton/components';
 
-import { EasySwitchThunkExtra } from '../store';
-import { LoadingState } from './sync.interface';
+import type { EasySwitchThunkExtra } from '../store';
+import type { LoadingState } from './sync.interface';
 
 type SubmitError = { Code: number; Error: string };
 

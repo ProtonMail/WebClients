@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ErrorButton, ModalProps, Prompt } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { ErrorButton, Prompt } from '@proton/components/components';
 
 interface Props extends ModalProps {
     onResolve: () => void;

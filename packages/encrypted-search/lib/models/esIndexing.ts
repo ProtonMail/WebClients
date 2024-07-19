@@ -1,4 +1,4 @@
-import { IndexedDBRow } from '../esIDB';
+import type { IndexedDBRow } from '../esIDB';
 
 /**
  * Mutate progress ref to take into account newly indexed items and estimate new index time, and optionnally persist the progress state in the DB

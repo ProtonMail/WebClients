@@ -1,4 +1,4 @@
-import { DragEvent, MouseEvent, ReactNode } from 'react';
+import type { DragEvent, MouseEvent, ReactNode } from 'react';
 
 export interface Props {
     disabled?: boolean;

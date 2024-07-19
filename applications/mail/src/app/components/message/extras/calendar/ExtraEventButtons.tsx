@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { InvitationModel, getDoNotDisplayButtons } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { getDoNotDisplayButtons } from '../../../../helpers/calendar/invite';
 import { getCalendarEventLink } from '../../../../helpers/calendar/inviteLink';
-import { MessageState } from '../../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../../store/messages/messagesTypes';
 import ExtraEventAlert from './ExtraEventAlert';
 import ExtraEventAttendeeButtons from './ExtraEventAttendeeButtons';
 import ExtraEventImportButton from './ExtraEventImportButton';

@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import { Condition, ConditionComparator } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
+import { ConditionComparator } from '../filters/interfaces';
 import AttachmentsCondition from './AttachmentsCondition';
 
 describe('AttachmentsCondition', () => {

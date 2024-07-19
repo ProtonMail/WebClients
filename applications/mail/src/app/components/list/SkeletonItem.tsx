@@ -4,7 +4,7 @@ import { ItemCheckbox } from '@proton/components/containers';
 import type { Breakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 

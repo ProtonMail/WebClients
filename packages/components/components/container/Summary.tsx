@@ -1,6 +1,4 @@
-import { HTMLProps, ReactNode } from 'react';
-
-
+import type { HTMLProps, ReactNode } from 'react';
 
 import Icon from '../icon/Icon';
 

@@ -1,6 +1,6 @@
 import { addWeeks, eachDayOfInterval, endOfWeek, isSameDay, startOfMonth, startOfWeek, subWeeks } from 'date-fns';
 
-import { DateTuple, WeekStartsOn } from './index.d';
+import type { DateTuple, WeekStartsOn } from './index.d';
 
 /**
  * Get all days to display in the mini calendar for a given date.

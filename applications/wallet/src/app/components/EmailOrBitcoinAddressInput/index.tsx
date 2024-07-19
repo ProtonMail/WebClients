@@ -1,13 +1,14 @@
-import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { KeyboardEvent } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { QRCode } from 'jsqr';
+import type { QRCode } from 'jsqr';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmNetwork } from '@proton/andromeda';
+import type { WasmNetwork } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import type { AddressesAutocompleteItem } from '@proton/components/components';
 import {
-    AddressesAutocompleteItem,
     Dropdown,
     DropdownSizeUnit,
     Icon,
@@ -19,20 +20,21 @@ import {
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { useAddresses } from '@proton/components/hooks';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Address, Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
 
-import { CoreButton, Input, InputProps } from '../../atoms';
+import type { InputProps } from '../../atoms';
+import { CoreButton, Input } from '../../atoms';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
 import { isValidBitcoinAddress } from '../../utils';
 import { isSelfAddress } from '../../utils/email';
 import { EmailListItem } from '../EmailListItem';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
-import { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
+import type { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
 
 import './EmailOrBitcoinAddressInput.scss';
 

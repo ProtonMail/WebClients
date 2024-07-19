@@ -19,7 +19,7 @@ import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';

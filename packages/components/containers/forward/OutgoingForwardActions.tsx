@@ -6,13 +6,8 @@ import {
     resendForwardingInvitation,
     resumeForwarding,
 } from '@proton/shared/lib/api/forwardings';
-import {
-    Address,
-    ForwardingState,
-    ForwardingType,
-    OutgoingAddressForwarding,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState, useModalTwoStatic } from '../../components';

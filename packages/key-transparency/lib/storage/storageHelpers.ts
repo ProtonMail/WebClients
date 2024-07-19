@@ -1,8 +1,9 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
 import { ktSentryReportError, throwKTError } from '../helpers/utils';
-import { KTBlobContent, KTBlobValuesWithInfo, SelfAuditResult } from '../interfaces';
+import type { KTBlobContent, KTBlobValuesWithInfo, SelfAuditResult } from '../interfaces';
 
 /**
  * Get all KT-related blobs from localStorage for the specified user

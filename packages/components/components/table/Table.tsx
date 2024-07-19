@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, ReactNode, TableHTMLAttributes } from 'react';
+import type { DetailedHTMLProps, ReactNode, TableHTMLAttributes } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

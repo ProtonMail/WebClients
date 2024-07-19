@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,9 +11,9 @@ import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calend
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';

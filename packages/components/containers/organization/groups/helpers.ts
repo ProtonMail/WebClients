@@ -1,5 +1,5 @@
 import { addDomain } from '@proton/shared/lib/api/domains';
-import { Api, Domain } from '@proton/shared/lib/interfaces';
+import type { Api, Domain } from '@proton/shared/lib/interfaces';
 
 export const addSubdomain = async (api: Api, domainName: string) => {
     const { Domain } = await api<{ Domain: Domain }>(addDomain({ Name: `${domainName}` }));

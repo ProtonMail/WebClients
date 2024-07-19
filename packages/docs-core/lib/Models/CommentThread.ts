@@ -1,11 +1,11 @@
 import { Comment } from './Comments'
-import {
+import type {
   CommentThreadPayload,
   CommentThreadInterface,
-  ServerTime,
   CommentThreadState,
   CommentInterface,
 } from '@proton/docs-shared'
+import { ServerTime } from '@proton/docs-shared'
 
 export class CommentThread implements CommentThreadInterface {
   constructor(

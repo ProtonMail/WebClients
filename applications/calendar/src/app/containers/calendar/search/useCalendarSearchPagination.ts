@@ -7,7 +7,7 @@ import {
     parseSearchParams,
 } from '../../../helpers/encryptedSearch/esUtils';
 import { DEFAULT_MAX_ITEMS_PER_PAGE } from './constants';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 
 const getInitialPage = (items: VisualSearchItem[], maxItemsPerPage = DEFAULT_MAX_ITEMS_PER_PAGE) => {
     const index = items.findIndex(({ isClosestToDate }) => isClosestToDate);

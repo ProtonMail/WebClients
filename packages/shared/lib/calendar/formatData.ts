@@ -1,10 +1,13 @@
-import { CalendarNotificationSettings, CreateOrUpdateCalendarEventData } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    CalendarNotificationSettings,
+    CreateOrUpdateCalendarEventData,
+} from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { uint8ArrayToBase64String } from '../helpers/encoding';
-import { SimpleMap } from '../interfaces';
-import { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
-import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
+import type { SimpleMap } from '../interfaces';
+import type { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
+import type { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;

@@ -4,14 +4,15 @@ import { NavLink } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
-import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
+import type { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 import noop from '@proton/utils/noop';
 
-import { DriveFolder } from '../../hooks/drive/useActiveShare';
+import type { DriveFolder } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useLinkPath } from '../../store';
-import { Share, ShareType, useShare } from '../../store/_shares';
+import type { Share } from '../../store/_shares';
+import { ShareType, useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { sendErrorReport } from '../../utils/errorHandling';
 import SignatureIcon from '../SignatureIcon';

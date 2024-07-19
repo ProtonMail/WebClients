@@ -1,15 +1,15 @@
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import { Address, IncomingDefault, SimpleMap } from '@proton/shared/lib/interfaces';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Address, IncomingDefault, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { Conversation } from '../../models/conversation';
+import type { Element } from '../../models/element';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import {
     findSender,
     getNumParticipants,

@@ -5,8 +5,8 @@ import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
+import type { Breakpoints } from '@proton/components';
 import {
-    Breakpoints,
     ButtonGroup,
     DropdownMenu,
     DropdownMenuButton,
@@ -21,13 +21,13 @@ import {
     useNotifications,
     useUser,
 } from '@proton/components';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -38,17 +38,21 @@ import { isStarred as IsMessageStarred, getDate } from '../../../helpers/element
 import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
 import { getCurrentFolderID, getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
-import { MessageViewIcons } from '../../../helpers/message/icon';
+import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
 import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../../hooks/actions/useStar';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
 import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
-import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
+import type {
+    MessageState,
+    MessageStateWithData,
+    MessageWithOptionalBody,
+} from '../../../store/messages/messagesTypes';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
@@ -58,7 +62,8 @@ import MessageHeadersModal from '../modals/MessageHeadersModal';
 import MessagePermanentDeleteModal from '../modals/MessagePermanentDeleteModal';
 import MessagePhishingModal from '../modals/MessagePhishingModal';
 import MessagePrintModal from '../modals/MessagePrintModal';
-import HeaderDropdown, { DropdownRender } from './HeaderDropdown';
+import type { DropdownRender } from './HeaderDropdown';
+import HeaderDropdown from './HeaderDropdown';
 import { MESSAGE_FILTER_DROPDOWN_ID, MESSAGE_FOLDER_DROPDOWN_ID, MESSAGE_LABEL_DROPDOWN_ID } from './constants';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;

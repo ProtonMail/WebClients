@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import { ShareWithKey, useDriveSharingFlags, usePhotos, usePhotosFeatureFlag } from '../../../../store';
+import type { ShareWithKey } from '../../../../store';
+import { useDriveSharingFlags, usePhotos, usePhotosFeatureFlag } from '../../../../store';
 //TODO: This should be removed after full sharing rollout
 import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
 import DriveSidebarDevices from './DriveSidebarDevices';

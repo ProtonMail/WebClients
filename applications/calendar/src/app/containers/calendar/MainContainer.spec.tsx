@@ -10,7 +10,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import useCalendars from '@proton/components/hooks/useCalendars';
 import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import MainContainer from './MainContainer';
 import getSaveEventActions from './eventActions/getSaveEventActions';

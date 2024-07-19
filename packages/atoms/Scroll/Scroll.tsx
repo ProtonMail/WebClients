@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, Ref, useEffect, useRef, useState } from 'react';
+import type { ComponentPropsWithoutRef, Ref } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';

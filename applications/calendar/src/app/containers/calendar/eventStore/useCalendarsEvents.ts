@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useMemo, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature } from '@proton/components/hooks';
@@ -6,16 +7,16 @@ import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DAY } from '@proton/shared/lib/constants';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { generateEventUniqueId } from '../../../helpers/event';
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
-import { CalendarViewEvent, CalendarViewEventData } from '../interface';
+import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import type { CalendarViewEvent, CalendarViewEventData } from '../interface';
 import { getExistingFetch } from './cache/fetchCalendarEvents';
 import { getRecurringEvents } from './cache/getRecurringEvents';
 import { getIsCalendarEvent } from './cache/helper';
-import { CalendarsEventsCache } from './interface';
+import type { CalendarsEventsCache } from './interface';
 import useCalendarsEventsFetcher from './useCalendarsEventsFetcher';
 import useCalendarsEventsReader from './useCalendarsEventsReader';
 

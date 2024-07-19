@@ -1,6 +1,7 @@
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Parameters, getLoginDescription, getLoginTitle } from './interface';
+import type { Parameters } from './interface';
+import { getLoginDescription, getLoginTitle } from './interface';
 
 const data = (): Parameters => ({
     title: getLoginTitle(DRIVE_APP_NAME),

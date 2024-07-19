@@ -1,7 +1,7 @@
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
-import { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { isSubUser } from '@proton/shared/lib/user/helpers';
 
 const mutatePassword = async ({

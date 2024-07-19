@@ -1,8 +1,8 @@
-import { PaymentsApi } from '@proton/components/payments/core';
+import type { PaymentsApi } from '@proton/components/payments/core';
 import { CYCLE } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { DealWithPrices, OfferConfig } from '../interface';
+import type { DealWithPrices, OfferConfig } from '../interface';
 
 export const fetchDealPrices = async (paymentsApi: PaymentsApi, offerConfig: OfferConfig, currency: Currency) =>
     Promise.all(

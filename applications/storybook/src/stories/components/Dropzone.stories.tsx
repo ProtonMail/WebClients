@@ -1,7 +1,8 @@
-import { SetStateAction, useState } from 'react';
+import type { SetStateAction } from 'react';
+import { useState } from 'react';
 
 import { Checkbox, Dropzone, InputFieldTwo, RadioGroup } from '@proton/components';
-import { DropzoneShape, DropzoneSize } from '@proton/components/components/dropzone/Dropzone';
+import type { DropzoneShape, DropzoneSize } from '@proton/components/components/dropzone/Dropzone';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Dropzone.mdx';

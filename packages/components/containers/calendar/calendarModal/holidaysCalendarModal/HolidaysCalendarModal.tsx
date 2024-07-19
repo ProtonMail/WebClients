@@ -5,9 +5,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import { CalendarBootstrap, HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    CalendarBootstrap,
+    HolidaysDirectoryCalendar,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 
-import { Form, Loader, ModalTwo as Modal, ModalProps, ModalTwoContent, ModalTwoFooter } from '../../../../components';
+import type { ModalProps } from '../../../../components';
+import { Form, Loader, ModalTwo as Modal, ModalTwoContent, ModalTwoFooter } from '../../../../components';
 import { useGetCalendarBootstrap } from '../../../../hooks';
 import GenericError from '../../../error/GenericError';
 import HolidaysCalendarModalWithDirectory from './HolidaysCalendarModalWithDirectory';

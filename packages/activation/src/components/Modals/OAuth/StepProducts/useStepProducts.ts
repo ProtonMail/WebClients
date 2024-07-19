@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { EasySwitchFeatureFlag, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
+import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import {
     changeOAuthStep,
     displayConfirmLeaveModal,

@@ -1,13 +1,13 @@
-import { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
+import type { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
 
 import { getRoosterDirection } from '@proton/components/components/editor/rooster/helpers/initRoosterEditor';
-import { Optional } from '@proton/shared/lib/interfaces';
-import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
+import type { Optional } from '@proton/shared/lib/interfaces';
+import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
-import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
-import { EditorMetadata } from '../interface';
-import { Emoji } from '../toolbar/ToolbarEmojiDropdown';
+import type { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
+import type { EditorMetadata } from '../interface';
+import type { Emoji } from '../toolbar/ToolbarEmojiDropdown';
 import rgbToHex from './rgbToHex';
 
 interface ItemToggle {
@@ -78,7 +78,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         toggleItalic,
         toggleNumbering,
         toggleUnderline,
-        toggleStrikethrough
+        toggleStrikethrough,
     } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
     if (!editorInstance || editorInstance.isDisposed()) {
         return;

@@ -1,8 +1,9 @@
 import { ButtonLike } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import { useConfig } from '@proton/components/hooks';
-import { APPS, APP_NAMES, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { CHANGE_VIEW_TARGET } from '@proton/shared/lib/desktop/desktopTypes';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import clsx from '@proton/utils/clsx';
 

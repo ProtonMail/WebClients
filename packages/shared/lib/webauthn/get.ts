@@ -1,6 +1,6 @@
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 
-import {
+import type {
     AuthenticationCredentialsPayload,
     AuthenticationOptions,
     PublicKeyCredentialRequestOptionsSerialized,

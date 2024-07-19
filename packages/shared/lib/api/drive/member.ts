@@ -1,4 +1,4 @@
-import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
 
 //TODO: Add pagination
 export const queryShareMemberListing = (shareId: string) => ({

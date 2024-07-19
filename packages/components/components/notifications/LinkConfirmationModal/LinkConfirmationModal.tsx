@@ -10,7 +10,8 @@ import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import { useApi, useEventManager } from '../../../hooks';
 import { Form } from '../../form';
-import { ModalProps, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
+import type { ModalProps, ModalStateProps } from '../../modalTwo';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
 import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 

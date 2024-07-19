@@ -1,17 +1,18 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { ModalProps } from '../../../components';
 import {
     Alert,
     Checkbox,
     Field,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

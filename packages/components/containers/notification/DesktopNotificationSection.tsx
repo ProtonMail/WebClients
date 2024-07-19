@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Info, Label, Row } from '../../components';
-import DesktopNotificationPanel, { Props } from './DesktopNotificationPanel';
+import type { Props } from './DesktopNotificationPanel';
+import DesktopNotificationPanel from './DesktopNotificationPanel';
 
 const DesktopNotificationSection = ({ onTest, infoURL = getKnowledgeBaseUrl('/desktop-notifications') }: Props) => {
     return (

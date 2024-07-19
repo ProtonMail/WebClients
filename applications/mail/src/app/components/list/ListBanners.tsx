@@ -1,7 +1,8 @@
-import { ReactNode, memo } from 'react';
+import type { ReactNode } from 'react';
+import { memo } from 'react';
 
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';

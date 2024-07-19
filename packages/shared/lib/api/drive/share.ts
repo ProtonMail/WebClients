@@ -1,8 +1,8 @@
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
-import { MoveLink } from '../../interfaces/drive/link';
-import { CreateDrivePhotosShare, CreateDriveShare } from '../../interfaces/drive/share';
+import type { MoveLink } from '../../interfaces/drive/link';
+import type { CreateDrivePhotosShare, CreateDriveShare } from '../../interfaces/drive/share';
 
 export const queryCreateShare = (volumeID: string, data: CreateDriveShare) => ({
     method: 'post',

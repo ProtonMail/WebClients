@@ -1,8 +1,9 @@
-import { ReactNode, memo, useCallback } from 'react';
+import type { ReactNode } from 'react';
+import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import type { Breakpoints } from '@proton/components';
 import {
-    Breakpoints,
     FloatingButton,
     Icon,
     PrivateHeader,

@@ -1,6 +1,7 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
-import { Options, readableTime } from '@proton/shared/lib/helpers/time';
+import type { Options } from '@proton/shared/lib/helpers/time';
+import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const getValue = (value?: string | number | null) => {

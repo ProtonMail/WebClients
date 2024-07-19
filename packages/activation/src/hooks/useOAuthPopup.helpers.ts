@@ -1,4 +1,4 @@
-import { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
+import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
 
 import { ImportProvider, OAUTH_PROVIDER } from '../interface';
 import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH } from '../path';

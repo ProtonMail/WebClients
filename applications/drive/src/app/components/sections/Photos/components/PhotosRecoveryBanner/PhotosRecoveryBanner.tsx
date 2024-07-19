@@ -8,7 +8,7 @@ import { TopBanner } from '@proton/components/containers';
 import clsx from '@proton/utils/clsx';
 
 import { usePhotosRecovery } from '../../../../../store';
-import { RECOVERY_STATE } from '../../../../../store/_photos/usePhotosRecovery';
+import type { RECOVERY_STATE } from '../../../../../store/_photos/usePhotosRecovery';
 
 const getPhotosRecoveryProgressText = (
     recoveryState: RECOVERY_STATE,

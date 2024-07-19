@@ -1,21 +1,22 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-    ModalOwnProps,
 } from '@proton/components/components';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
 import { BitcoinViaEmailNote } from '../../atoms/BitcoinViaEmailNote';
-import { SubTheme, getBitcoinUnitOptions } from '../../utils';
+import type { SubTheme } from '../../utils';
+import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
 import { WalletDeletionModal } from '../WalletDeletionModal';
 import { useWalletPreferences } from './useWalletPreferences';

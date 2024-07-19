@@ -1,5 +1,5 @@
-import { useGetCalendarKeys } from '@proton/components/hooks';
-import { PublicKeyReference } from '@proton/crypto';
+import type { useGetCalendarKeys } from '@proton/components/hooks';
+import type { PublicKeyReference } from '@proton/crypto';
 import {
     getHasDefaultNotifications,
     getIsAutoAddedInvite,
@@ -13,16 +13,19 @@ import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import type {
+    CalendarEvent,
+    SyncMultipleApiResponse,
+    VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import unary from '@proton/utils/unary';
 
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import {
-    INVITE_ACTION_TYPES,
+import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import type { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import type {
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -31,9 +34,9 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { SyncEventActionOperations, UpdateEventActionOperation } from '../getSyncMultipleEventsPayload';
 import {
-    SyncEventActionOperations,
-    UpdateEventActionOperation,
     getCreateSyncOperation,
     getDeleteSyncOperation,
     getUpdateSyncOperation,

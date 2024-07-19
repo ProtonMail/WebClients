@@ -10,7 +10,8 @@ import {
 } from '@proton/shared/lib/constants';
 import onboardingDiscover from '@proton/styles/assets/img/onboarding/discover.svg';
 
-import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
+import type { Props as OnboardingContentProps } from './OnboardingContent';
+import OnboardingContent from './OnboardingContent';
 
 const OnboardingDiscoverApps = (props: Omit<OnboardingContentProps, 'decription' | 'img'>) => {
     return (

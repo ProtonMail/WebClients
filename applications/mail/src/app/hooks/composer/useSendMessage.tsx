@@ -4,20 +4,20 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import unique from '@proton/utils/unique';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
-import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
+import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { pickMessageInfosForSentry } from '../../helpers/errors';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
@@ -27,13 +27,14 @@ import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import { cancelSendMessage, endUndo, sent, updateExpires } from '../../store/messages/draft/messagesDraftActions';
-import { MessageStateWithData, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
+import type { MessageStateWithData, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import useDelaySendSeconds from '../useDelaySendSeconds';
-import { ComposeTypes, OnCompose } from './useCompose';
+import type { OnCompose } from './useCompose';
+import { ComposeTypes } from './useCompose';
 import { useSendModifications } from './useSendModifications';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js

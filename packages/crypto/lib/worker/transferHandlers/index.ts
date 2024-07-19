@@ -1,7 +1,8 @@
 import type { TransferHandler } from 'comlink';
 
 import type { ComputeHashStreamOptions, KeyReference } from '../api.models';
-import { ReadableStreamSerializer, SerializeWebStreamTypes } from './streamHandler';
+import type { SerializeWebStreamTypes } from './streamHandler';
+import { ReadableStreamSerializer } from './streamHandler';
 
 // return interface with same non-function fields as T, and with function fields type converted to their return type
 // e.g. ExtractFunctionReturnTypes<{ foo: () => string, bar: 3 }> returns { foo: string, bar: 3 }

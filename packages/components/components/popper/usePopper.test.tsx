@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import { Middleware, shift as mockedShift } from '@floating-ui/dom';
+import type { Middleware } from '@floating-ui/dom';
+import { shift as mockedShift } from '@floating-ui/dom';
 import { act, render, screen } from '@testing-library/react';
 
-import { PopperPlacement } from '@proton/components/components';
+import type { PopperPlacement } from '@proton/components/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import usePopper from './usePopper';

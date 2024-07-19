@@ -1,4 +1,4 @@
-import { Referral } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 /**

@@ -1,11 +1,12 @@
-import { ReactNode, useCallback, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import generateUID from '@proton/atoms/generateUID';
 import { InputFieldTwo, Option, SearchableSelect } from '@proton/components/components';
+import type { CountryOption } from '@proton/components/components/country/helpers';
 import {
-    CountryOption,
     PRESELECTED_COUNTRY_OPTION_SUFFIX,
     getAllDropdownOptions,
     getCleanCountryCode,
@@ -13,8 +14,8 @@ import {
     isPreselectedOption,
     optionToPreselectedOption,
 } from '@proton/components/components/country/helpers';
-import { Props as OptionProps } from '@proton/components/components/option/Option';
-import { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import type { Props as OptionProps } from '@proton/components/components/option/Option';
+import type { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
 
 import { defaultFilterFunction } from '../selectTwo/helpers';

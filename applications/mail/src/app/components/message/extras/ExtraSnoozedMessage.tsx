@@ -13,7 +13,7 @@ import { formatDateToHuman } from '../../../helpers/date';
 import { getSnoozeTimeFromElement } from '../../../helpers/snooze';
 import useSnooze from '../../../hooks/actions/useSnooze';
 import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageStateWithData;

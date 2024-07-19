@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
-import { Filter } from '../../models/tools';
+import type { Filter } from '../../models/tools';
 
 interface Props {
     filter: Filter;

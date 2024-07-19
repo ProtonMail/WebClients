@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
-import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import type { CONTACT_MIME_TYPES } from '@proton/shared/lib/constants';
+import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import {
@@ -14,8 +15,8 @@ import {
     fromVCardProperties,
     getVCardProperties,
 } from '@proton/shared/lib/contacts/properties';
-import { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import {
     getContactPublicKeyModel,
     getVerifyingKeys,
@@ -25,6 +26,7 @@ import {
 import clsx from '@proton/utils/clsx';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import type { ModalProps } from '../../../components';
 import {
     Alert,
     Collapsible,
@@ -35,7 +37,6 @@ import {
     Icon,
     Info,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -97,7 +98,9 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             verifyOutboundPublicKeys,
             silence: true,
         });
-        const apiKeysSourceMap = apiKeysConfig.publicKeys.reduce<ContactPublicKeyModelWithApiKeySource['apiKeysSourceMap']>((map, { publicKey, source }) => {
+        const apiKeysSourceMap = apiKeysConfig.publicKeys.reduce<
+            ContactPublicKeyModelWithApiKeySource['apiKeysSourceMap']
+        >((map, { publicKey, source }) => {
             const fingerprint = publicKey.getFingerprint();
             if (!map[source]) {
                 map[source] = new Set();
@@ -116,7 +119,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             // Encryption enforces signing, so we can ignore the signing preference so that if the user
             // disables encryption, the global default signing setting is automatically selected.
             sign: publicKeyModel.encrypt ? undefined : publicKeyModel.sign,
-            apiKeysSourceMap
+            apiKeysSourceMap,
         });
     };
 

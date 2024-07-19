@@ -1,6 +1,6 @@
-import { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@proton/crypto';
 
-import { DecryptedCalendarKey } from '../calendar';
+import type { DecryptedCalendarKey } from '../calendar';
 
 export type GetDecryptedPassphraseAndCalendarKeys = (calendarID: string) => Promise<{
     decryptedCalendarKeys: DecryptedCalendarKey[];

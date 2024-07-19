@@ -2,9 +2,9 @@ import { createContext, useContext } from 'react';
 
 import { noop } from 'lodash';
 
-import { WalletCreationModalOwnProps } from '../../components';
-import { WalletAccountCreationModalOwnProps } from '../../components/WalletAccountCreationModal';
-import { WalletBackupModalOwnProps } from '../../components/WalletBackupModal';
+import type { WalletCreationModalOwnProps } from '../../components';
+import type { WalletAccountCreationModalOwnProps } from '../../components/WalletAccountCreationModal';
+import type { WalletBackupModalOwnProps } from '../../components/WalletBackupModal';
 
 export enum WalletSetupModalKind {
     WalletCreation = 'WalletCreation',

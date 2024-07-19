@@ -3,8 +3,9 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DriveEvents, useDriveEventManager } from '../_events';
-import { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
+import type { DriveEvents } from '../_events';
+import { useDriveEventManager } from '../_events';
+import type { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
 import { isDecryptedLinkSame, isEncryptedLinkSame } from './link';
 
 export type LinksState = {

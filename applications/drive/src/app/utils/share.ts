@@ -1,4 +1,4 @@
-import { DecryptedLink } from '../store';
+import type { DecryptedLink } from '../store';
 
 export const getSharedStatus = (link?: DecryptedLink) => {
     if (!link?.isShared) {

@@ -3,9 +3,9 @@ import { getAuthVersionWithFallback } from '@proton/srp';
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
 import { endOfTrialIPCCall } from '../desktop/endOfTrialHelpers';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
-import { Api } from '../interfaces';
+import type { Api } from '../interfaces';
 import { srpAuth } from '../srp';
-import { AuthResponse, AuthVersion, ChallengePayload, InfoResponse } from './interface';
+import type { AuthResponse, AuthVersion, ChallengePayload, InfoResponse } from './interface';
 
 /**
  * Provides authentication with fallback behavior in case the user's auth version is unknown.

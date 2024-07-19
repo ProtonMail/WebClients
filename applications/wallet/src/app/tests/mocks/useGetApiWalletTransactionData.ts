@@ -1,4 +1,4 @@
-import { MockedFunction } from 'vitest';
+import type { MockedFunction } from 'vitest';
 
 import * as useApiWalletTransactionDataModule from '../../store/hooks/useApiWalletTransactionData';
 

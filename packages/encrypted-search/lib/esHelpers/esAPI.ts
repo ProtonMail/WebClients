@@ -3,11 +3,11 @@ import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
 import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_MAX_RETRIES, ES_TEMPORARY_ERRORS } from '../constants';
 import { contentIndexingProgress, readNumMetadata, readSize } from '../esIDB';
-import { ESIndexMetrics, ESSearchMetrics } from '../models';
+import type { ESIndexMetrics, ESSearchMetrics } from '../models';
 import { estimateIndexingDuration } from './esBuild';
 
 /**

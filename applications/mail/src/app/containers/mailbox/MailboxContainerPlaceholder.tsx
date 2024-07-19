@@ -1,4 +1,4 @@
-import { Cancellable } from '@proton/components/hooks/useHandler';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import UsersOnboardingChecklist from '../../components/checklist/UsersOnboardingChecklist';

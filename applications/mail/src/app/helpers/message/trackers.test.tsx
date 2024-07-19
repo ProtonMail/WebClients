@@ -1,7 +1,7 @@
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { Tracker } from '../../hooks/message/useMessageTrackers';
-import { MessageImage, MessageImages, MessageState } from '../../store/messages/messagesTypes';
+import type { Tracker } from '../../hooks/message/useMessageTrackers';
+import type { MessageImage, MessageImages, MessageState } from '../../store/messages/messagesTypes';
 import { createDocument } from '../test/message';
 import { getImageTrackersFromMessage, getUTMTrackersFromMessage } from './trackers';
 

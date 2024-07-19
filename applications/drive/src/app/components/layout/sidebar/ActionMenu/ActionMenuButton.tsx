@@ -1,4 +1,5 @@
-import { PropsWithChildren, useMemo } from 'react';
+import type { PropsWithChildren } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 

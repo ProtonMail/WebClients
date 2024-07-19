@@ -1,5 +1,6 @@
 import { $isTableCellNode, $isTableSelection } from '@lexical/table'
-import { $getSelection, LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
+import { $getSelection } from 'lexical'
 
 export function setBackgroundColorForSelection(editor: LexicalEditor, color: string | null) {
   editor.update(

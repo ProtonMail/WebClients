@@ -1,9 +1,8 @@
-import { ComponentType } from 'react';
+import type { ComponentType } from 'react';
 
 import ApiContext from '@proton/components/containers/api/apiContext';
-import AuthenticationProvider, {
-    Props as AuthenticationProviderProps,
-} from '@proton/components/containers/authentication/Provider';
+import type { Props as AuthenticationProviderProps } from '@proton/components/containers/authentication/Provider';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache';
 import { ConfigProvider } from '@proton/components/containers/config';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
@@ -11,7 +10,8 @@ import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled, ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { apiMock } from '../api';
 import { mockCache } from '../cache';

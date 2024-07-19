@@ -1,12 +1,8 @@
-import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
+import type { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 
-import {
-    Autopay,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
-    WrappedCryptoPayment,
-} from '@proton/components/payments/core';
-import {
+import type { Autopay, PAYMENT_TOKEN_STATUS, WrappedCryptoPayment } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type {
     AmountAndCurrency,
     BillingAddress,
     BillingAddressProperty,
@@ -18,14 +14,14 @@ import {
     V5PaymentToken,
     WrappedCardPayment,
     WrappedPaypalPayment,
-    isTokenPaymentMethod,
-    isV5PaymentToken,
 } from '@proton/components/payments/core/interface';
-import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+import { isTokenPaymentMethod, isV5PaymentToken } from '@proton/components/payments/core/interface';
+import type { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { ProductParam, getProductHeaders } from '../apps/product';
-import { Api, Currency, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
+import type { ProductParam } from '../apps/product';
+import { getProductHeaders } from '../apps/product';
+import type { Api, Currency, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
 
 export type PaymentsVersion = 'v4' | 'v5';
 let paymentsVersion: PaymentsVersion = 'v4';

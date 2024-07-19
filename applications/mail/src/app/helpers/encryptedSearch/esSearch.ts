@@ -1,8 +1,8 @@
 import { normalizeKeyword } from '@proton/encrypted-search';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+import type { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
+import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import { isExpired } from '../expiration';
 
 /**

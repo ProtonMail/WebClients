@@ -1,7 +1,7 @@
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { EncryptedLink } from './interface';
+import type { EncryptedLink } from './interface';
 
 export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"|?*]/;
 // eslint-disable-next-line no-control-regex

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { Copy } from '../../../../components';
 import { useNotifications } from '../../../../hooks';

@@ -7,7 +7,7 @@ import { useFeature } from '@proton/components/hooks';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { isConversation } from 'proton-mail/helpers/elements';
-import { Element } from 'proton-mail/models/element';
+import type { Element } from 'proton-mail/models/element';
 import { allConversations } from 'proton-mail/store/conversations/conversationsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 

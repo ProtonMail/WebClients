@@ -1,25 +1,17 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import {
-    ADDON_NAMES,
-    APPS,
-    CYCLE,
-    FreeSubscription,
-    PLANS,
-    PLAN_TYPES,
-    isFreeSubscription,
-} from '@proton/shared/lib/constants';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { FreeSubscription } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIpPricePerMonth,
     getOverriddenPricePerCycle,
     hasMaximumCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
+import type {
     Currency,
     Cycle,
     FreePlanDefault,
@@ -28,10 +20,10 @@ import {
     PlanIDs,
     PlansMap,
     PriceType,
-    Renew,
     SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
+import { Audience, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -50,7 +42,8 @@ import {
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';
-import { ShortPlanLike, isShortPlanLike } from '../features/interface';
+import type { ShortPlanLike } from '../features/interface';
+import { isShortPlanLike } from '../features/interface';
 import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {

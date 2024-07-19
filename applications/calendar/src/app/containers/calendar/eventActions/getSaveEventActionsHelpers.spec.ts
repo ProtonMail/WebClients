@@ -1,6 +1,6 @@
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { VcalValarmComponent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalValarmComponent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { getHasModifiedNotifications, getUpdateSingleEditMergeVevent } from './getSaveEventActionsHelpers';
 

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { useConfirmActionModal } from '@proton/components';
+import type { useConfirmActionModal } from '@proton/components';
 
-import { DecryptedLink, useSharedWithMeActions } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
+import { useSharedWithMeActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {

@@ -1,21 +1,22 @@
-import { CryptoProxy, KeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import {
+import type { KeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type {
     Api,
     FetchedSignedKeyList,
     GetLatestEpoch,
-    KT_VERIFICATION_STATUS,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
     SaveSKLToLS,
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchProof } from '../helpers/apiHelpers';
 import { KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
-import { Proof } from '../interfaces';
+import type { Proof } from '../interfaces';
 import {
     verifyProofOfAbsenceForAllRevision,
     verifyProofOfAbsenceForRevision,

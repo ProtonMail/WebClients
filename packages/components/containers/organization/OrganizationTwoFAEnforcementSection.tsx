@@ -7,7 +7,7 @@ import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/orga
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { Loader, Toggle } from '../../components';
 import { useConfig, useNotifications } from '../../hooks';

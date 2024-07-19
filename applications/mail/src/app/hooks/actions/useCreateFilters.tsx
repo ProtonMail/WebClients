@@ -4,21 +4,21 @@ import { c } from 'ttag';
 
 import { NotificationButton, useAddresses, useApi, useFilters, useNotifications } from '@proton/components';
 import { useAppLink } from '@proton/components/components';
-import { Filter } from '@proton/components/containers/filters/interfaces';
+import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
 import { useGetFolders, useGetLabels } from '@proton/components/hooks/useCategories';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 const DEFAULT_FOLDERS: Folder[] = [

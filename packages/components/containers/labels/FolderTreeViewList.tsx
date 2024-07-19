@@ -1,4 +1,5 @@
-import { DragEvent, useEffect, useRef, useState } from 'react';
+import type { DragEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,7 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { getParents, order } from '@proton/shared/lib/helpers/folder';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, TreeViewContainer, TreeViewItem } from '../../components';

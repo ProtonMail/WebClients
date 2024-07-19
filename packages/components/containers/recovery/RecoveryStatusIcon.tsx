@@ -1,6 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
-import Icon, { IconName, IconProps } from '../../components/icon/Icon';
+import type { IconName, IconProps } from '../../components/icon/Icon';
+import Icon from '../../components/icon/Icon';
 
 interface Props extends Omit<IconProps, 'name' | 'size'> {
     type: 'info' | 'success' | 'warning' | 'danger';

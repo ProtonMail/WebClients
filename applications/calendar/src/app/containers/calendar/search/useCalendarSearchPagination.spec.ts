@@ -1,11 +1,11 @@
-import { useHistory } from 'react-router-dom';
+import type { useHistory } from 'react-router-dom';
 
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { mockUseHistory } from '@proton/testing/index';
 
 import { DEFAULT_MAX_ITEMS_PER_PAGE } from './constants';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 import { useCalendarSearchPagination } from './useCalendarSearchPagination';
 
 const generateTestVisualItem = (index: number, isClosestToDate = false) => {

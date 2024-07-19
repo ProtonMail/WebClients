@@ -5,7 +5,7 @@ import {
     selectConversationCounts,
     selectMessageCounts,
 } from '@proton/mail';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
@@ -16,12 +16,12 @@ import {
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
     optimisticRestore as optimisticRestoreConversationsAction,
 } from '../../store/conversations/conversationsActions';
-import { ConversationState } from '../../store/conversations/conversationsTypes';
+import type { ConversationState } from '../../store/conversations/conversationsTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelElements,
     optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
 } from '../../store/elements/elementsActions';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelMessage,
     optimisticRestore as optimisticRestoreMessage,

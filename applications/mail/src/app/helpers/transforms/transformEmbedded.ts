@@ -1,10 +1,10 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
 import { getAttachments, hasProtonSender, isDraft } from '@proton/shared/lib/mail/messages';
 
-import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../store/messages/messagesTypes';
+import type { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../store/messages/messagesTypes';
 import {
     decryptEmbeddedImages,
     findEmbedded,

@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     Form,
     InputFieldTwo,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -25,7 +25,7 @@ import noop from '@proton/utils/noop';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { FileCard } from './FileCard';
-import { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPayload } from './types';
+import type { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPayload } from './types';
 
 const ABUSE_CATEGORIES: AbuseCategory[] = [
     {

@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import useAssistantSticky from '@proton/llm/lib/hooks/useAssistantSticky';
-import { OpenedAssistant, OpenedAssistantStatus } from '@proton/llm/lib/types';
+import type { OpenedAssistant } from '@proton/llm/lib/types';
+import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 
 interface Props {
     cleanSpecificErrors: (assistantID: string) => void;

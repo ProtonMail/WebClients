@@ -1,4 +1,4 @@
-import { EventTypeEnum } from './EventTypeEnum'
+import type { EventTypeEnum } from './EventTypeEnum'
 
 export interface EventTypeProps {
   type: EventTypeEnum

@@ -4,7 +4,7 @@ import { Route, Router } from 'react-router';
 import { createMemoryHistory } from 'history';
 
 import { APPS } from '@proton/shared/lib/constants';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import { ConfigProvider } from '../config';
 

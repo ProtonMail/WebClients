@@ -1,4 +1,5 @@
-import { Icon, IconName, Tooltip } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -6,7 +7,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isAllowedAutoDeleteLabelID } from '../../../helpers/autoDelete';
 import { isConversation, isMessage } from '../../../helpers/elements';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import useItemExpiration from './useItemExpiration';
 
 import './ItemExpiration.scss';

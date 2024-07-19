@@ -1,11 +1,12 @@
-import { Matcher, fireEvent } from '@testing-library/react';
+import type { Matcher } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';
 
 const [label1, label2, label3, label4] = labels;

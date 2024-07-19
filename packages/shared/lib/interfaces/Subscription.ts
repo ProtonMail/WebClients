@@ -1,6 +1,7 @@
-import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
+import type { CYCLE, PLAN_TYPES } from '../constants';
+import { ADDON_NAMES, PLANS } from '../constants';
 import { isScribeAddon } from '../helpers/planIDs';
-import { Nullable } from './utils';
+import type { Nullable } from './utils';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
 export type Cycle =

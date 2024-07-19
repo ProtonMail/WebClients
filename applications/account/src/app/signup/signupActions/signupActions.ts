@@ -1,10 +1,11 @@
 import { format } from 'date-fns';
 
 import { MAX_CHARS_API } from '@proton/account';
-import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { AppIntent } from '@proton/components/containers/login/interface';
+import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import type { AppIntent } from '@proton/components/containers/login/interface';
 import { getInitialStorage, getStorageRange } from '@proton/components/containers/members/MemberStorageSelector';
-import { V5PaymentToken, isTokenPayment, isWrappedPaymentsVersion } from '@proton/components/payments/core';
+import type { V5PaymentToken } from '@proton/components/payments/core';
+import { isTokenPayment, isWrappedPaymentsVersion } from '@proton/components/payments/core';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -16,7 +17,8 @@ import {
     getOrganization,
     updateOrganizationName,
 } from '@proton/shared/lib/api/organization';
-import { PaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
@@ -25,8 +27,8 @@ import {
     queryCheckUsernameAvailability,
     unlockPasswordChanges,
 } from '@proton/shared/lib/api/user';
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
@@ -42,7 +44,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { localeCode } from '@proton/shared/lib/i18n';
-import {
+import type {
     Api,
     HumanVerificationMethodType,
     KeyTransparencyActivation,
@@ -63,17 +65,15 @@ import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import {
-    HumanVerificationTrigger,
+import type {
     MnemonicData,
     ReferralData,
     SignupActionDoneResponse,
     SignupActionResponse,
     SignupCacheResult,
-    SignupSteps,
-    SignupType,
     SubscriptionData,
 } from '../interfaces';
+import { HumanVerificationTrigger, SignupSteps, SignupType } from '../interfaces';
 import { handleCreateUser } from './handleCreateUser';
 import { hvHandler } from './helpers';
 

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../../components/loader';
-import { CaptchaTheme } from './interface';
+import type { CaptchaTheme } from './interface';
 
 const getIframeUrl = (token: string, theme?: CaptchaTheme) => {
     const url = getApiSubdomainUrl('/core/v4/captcha', window.location.origin);

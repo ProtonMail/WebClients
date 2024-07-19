@@ -2,7 +2,7 @@ import { fromUnixTime, isBefore } from 'date-fns';
 
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 const FREE_DOWNGRADER_LIMIT = new Date(Date.UTC(2024, 2, 19, 0, 0, 0)); // 2024-03-19
 

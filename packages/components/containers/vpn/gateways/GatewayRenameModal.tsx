@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components';
 import {
     Form,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -13,7 +13,7 @@ import {
     useFormErrors,
 } from '@proton/components/components';
 
-import { GatewayDto } from './GatewayDto';
+import type { GatewayDto } from './GatewayDto';
 import { GatewayNameField } from './GatewayNameField';
 
 interface Props extends ModalProps<typeof Form> {

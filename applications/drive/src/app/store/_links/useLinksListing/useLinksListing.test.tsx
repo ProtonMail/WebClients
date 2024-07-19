@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
-import { EncryptedLink } from '../interface';
+import type { EncryptedLink } from '../interface';
 import { LinksStateProvider } from '../useLinksState';
 import { useLinksListingProvider } from './useLinksListing';
 import { PAGE_SIZE } from './useLinksListingHelpers';

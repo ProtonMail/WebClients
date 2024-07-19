@@ -4,30 +4,30 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import type { OnLoginCallback } from '@proton/components/containers';
+import { HumanVerificationSteps } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { BillingAddress } from '@proton/components/payments/core';
-import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
+import type { BillingAddress } from '@proton/components/payments/core';
+import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
-import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
+import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
+import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     BRAND_NAME,
-    CLIENT_TYPES,
     CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
@@ -42,7 +42,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -57,7 +57,8 @@ import { getSubscriptionData } from '../single-signup-v2/helper';
 import { getSignupTelemetryData } from '../single-signup-v2/measure';
 import { useFlowRef } from '../useFlowRef';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
-import { MetaTags, useMetaTags } from '../useMetaTags';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
@@ -70,17 +71,16 @@ import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
 import { getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup, isMailTrialSignup } from './helper';
-import {
+import type {
     InviteData,
     PlanIDs,
     SignupActionResponse,
     SignupCacheResult,
     SignupModel,
-    SignupSteps,
-    SignupType,
     SubscriptionData,
 } from './interfaces';
-import { TelemetryMeasurementData } from './measure';
+import { SignupSteps, SignupType } from './interfaces';
+import type { TelemetryMeasurementData } from './measure';
 import { getPlanIDsFromParams, getSignupSearchParams } from './searchParams';
 import {
     handleCreateAccount,

@@ -2,7 +2,8 @@ import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { ModalProps, Prompt, SettingsLink } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { Prompt, SettingsLink } from '@proton/components/components';
 import { PLANS } from '@proton/shared/lib/constants';
 
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';

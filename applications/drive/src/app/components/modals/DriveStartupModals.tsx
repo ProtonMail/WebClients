@@ -12,10 +12,8 @@ import {
     useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
-import {
-    ReminderFlag,
-    shouldOpenReminderModal,
-} from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 const DriveStartupModals = () => {

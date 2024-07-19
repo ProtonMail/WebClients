@@ -7,7 +7,8 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveCrypto } from '../_crypto';
 import { useDownload } from '../_downloads';
 import { useLink } from '../_links';
-import { ParsedExtendedAttributes, decryptExtendedAttributes } from '../_links/extendedAttributes';
+import type { ParsedExtendedAttributes } from '../_links/extendedAttributes';
+import { decryptExtendedAttributes } from '../_links/extendedAttributes';
 import useRevisions from './useRevisions';
 
 jest.mock('../_crypto');

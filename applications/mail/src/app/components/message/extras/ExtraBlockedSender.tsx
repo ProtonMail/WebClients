@@ -12,7 +12,7 @@ import {
     useIncomingDefaultsStatus,
 } from '../../../hooks/incomingDefaults/useIncomingDefaults';
 import { remove } from '../../../store/incomingDefaults/incomingDefaultsActions';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

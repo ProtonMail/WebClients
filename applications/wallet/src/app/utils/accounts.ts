@@ -1,10 +1,10 @@
 import { pick } from 'lodash';
 
-import { WasmApiWallet, WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
+import type { WasmApiWallet, WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
+import type { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
 
 export const removeMasterPrefix = (derivationPath: string) => {
     return derivationPath.replace(/m\//, '');

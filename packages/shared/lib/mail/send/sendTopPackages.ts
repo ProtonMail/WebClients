@@ -5,9 +5,9 @@ import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MIME_TYPES } from '../../constants';
-import { Message } from '../../interfaces/mail/Message';
-import { AttachmentDirect, PackageDirect, PackageStatus, SendPreferences } from '../../interfaces/mail/crypto';
-import { RequireOnly, SimpleMap } from '../../interfaces/utils';
+import type { Message } from '../../interfaces/mail/Message';
+import type { AttachmentDirect, PackageDirect, PackageStatus, SendPreferences } from '../../interfaces/mail/crypto';
+import type { RequireOnly, SimpleMap } from '../../interfaces/utils';
 import { constructMime } from './helpers';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;

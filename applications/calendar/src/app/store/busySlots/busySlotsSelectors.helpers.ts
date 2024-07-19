@@ -1,4 +1,4 @@
-import { BusySlot } from './busySlotsSlice';
+import type { BusySlot } from './busySlotsSlice';
 
 export const deduplicateBusySlots = (busySlots: BusySlot[]): BusySlot[] =>
     busySlots.reduce<BusySlot[]>((acc, busySlot) => {

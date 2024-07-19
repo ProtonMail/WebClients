@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 
 import { Button, Input } from '@proton/atoms';
-import { ButtonGroup, Icon, IconName, Mark } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { ButtonGroup, Icon, Mark } from '@proton/components';
 import iconSvg from '@proton/styles/assets/img/icons/sprite-icons.svg';
 
 import { getTitle } from '../../helpers/title';

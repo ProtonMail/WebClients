@@ -8,11 +8,12 @@ import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { Icon, Loader, Tooltip } from '../../../components';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components/modalTwo';
+import type { ModalProps } from '../../../components/modalTwo';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components/modalTwo';
 import {
     useAddresses,
     useConfig,
@@ -24,13 +25,13 @@ import {
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
-import { ContactEditProps } from '../edit/ContactEditModal';
-import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type { ContactEditProps } from '../edit/ContactEditModal';
+import type { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useContact from '../hooks/useContact';
 import useContactList from '../hooks/useContactList';
 import useVCardContact from '../hooks/useVCardContact';
-import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import type { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import ContactView from './ContactView';
 
 export interface ContactDetailsProps {

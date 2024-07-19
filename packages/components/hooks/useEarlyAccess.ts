@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { Feature, FeatureCode } from '@proton/features';
+import type { Feature } from '@proton/features';
+import { FeatureCode } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

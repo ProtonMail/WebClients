@@ -1,7 +1,7 @@
 import { fireEvent, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
 import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
@@ -66,7 +66,7 @@ describe('Contact resign modal', () => {
 
     it('should resign the contact and render email rows', async () => {
         const {
-            container: { getByText, getByTestId },
+            container: { getByText, getByTestId, findByText },
             senderKeys,
             updateSpy,
             onResignSpy,
@@ -77,7 +77,7 @@ describe('Contact resign modal', () => {
         getByText(children);
 
         // Email rows are rendered (Email + fingerprints)
-        await waitFor(() => getByText(`${sender.Address}:`));
+        await findByText(`${sender.Address}:`);
         const expectedFingerPrint = senderKeys.publicKeys[0].getFingerprint();
         getByText(expectedFingerPrint);
 

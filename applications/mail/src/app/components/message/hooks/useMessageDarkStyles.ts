@@ -1,4 +1,5 @@
-import { RefObject, useEffect, useMemo } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
@@ -6,7 +7,7 @@ import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import { applyDarkStyle } from '../../../store/messages/read/messagesReadActions';
 
 const useMessageDarkStyles = (

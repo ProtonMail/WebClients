@@ -1,4 +1,4 @@
-import { USER_ROLES } from '@proton/shared/lib/constants';
+import type { USER_ROLES } from '@proton/shared/lib/constants';
 
 export interface GatewayUser {
     ID: string;

@@ -1,7 +1,7 @@
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 
 interface Props {

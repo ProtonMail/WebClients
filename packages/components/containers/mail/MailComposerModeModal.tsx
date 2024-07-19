@@ -3,9 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
-import { COMPOSER_MODE, DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import type { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import type { ModalProps } from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 import ComposerModeCards from '../layouts/ComposerModeCards';
 

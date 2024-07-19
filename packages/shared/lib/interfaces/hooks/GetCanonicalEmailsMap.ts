@@ -1,3 +1,3 @@
-import { SimpleMap } from '../utils';
+import type { SimpleMap } from '../utils';
 
 export type GetCanonicalEmailsMap = (emails: string[]) => Promise<SimpleMap<string>>;

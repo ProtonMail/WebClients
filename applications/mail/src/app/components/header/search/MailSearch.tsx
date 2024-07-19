@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 
+import type { Breakpoints } from '@proton/components';
 import {
-    Breakpoints,
     FeatureCode,
     TopNavbarListItemSearchButton,
     generateUID,

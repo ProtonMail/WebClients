@@ -3,7 +3,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 
 import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES, getDefaultFolders } from './constants';
-import {
+import type {
     CreateFilter,
     Filter,
     FilterActions,

@@ -1,5 +1,9 @@
-import { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '../../drive/constants';
-import { LinkType } from './link';
+import type {
+    SHARE_EXTERNAL_INVITATION_STATE,
+    SHARE_MEMBER_PERMISSIONS,
+    SHARE_MEMBER_STATE,
+} from '../../drive/constants';
+import type { LinkType } from './link';
 
 interface InviteEmailDetailsPayload {
     Message?: string;

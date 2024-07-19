@@ -1,8 +1,8 @@
-import * as H from 'history';
+import type * as H from 'history';
 
 import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { DEFAULT_APP, getAppFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import {
     getIsCalendarApp,
@@ -15,7 +15,8 @@ import {
 } from '@proton/shared/lib/authentication/apps';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APPS, APP_NAMES, SETUP_ADDRESS_PATH, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation, getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';

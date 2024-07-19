@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmApiSimpleFiatCurrency, WasmGatewayProvider } from '@proton/andromeda';
+import type { ModelState } from '@proton/account';
+import { getInitialModelState } from '@proton/account';
+import type { WasmApiSimpleFiatCurrency, WasmGatewayProvider } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { WalletThunkArguments } from '../thunk';
+import type { WalletThunkArguments } from '../thunk';
 
 const name = 'fiat_currencies_by_provider' as const;
 

@@ -1,4 +1,5 @@
-import { ReactNode, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { Loader, useApi } from '@proton/components';
@@ -9,7 +10,7 @@ import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';
 import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';
 import { useGetEODecryptedToken, useGetEOPassword } from '../../hooks/eo/useLoadEOMessage';
 import { loadEOMessage } from '../../store/eo/eoActions';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     id?: string;

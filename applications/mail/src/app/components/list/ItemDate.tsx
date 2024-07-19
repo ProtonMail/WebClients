@@ -5,7 +5,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
 import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../helpers/snooze';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import { params } from '../../store/elements/elementsSelectors';
 import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
