@@ -93,8 +93,8 @@ export const IdentityCollapsibleSection: FC<IdentityCollapsibleSectionProps> = (
                                             value: fieldName,
                                             label: placeholder,
                                             onClick: () => {
-                                                if (isFreePlan) return openUpsell();
                                                 if (!fieldName.includes('extra')) return onAdd(fieldName);
+                                                if (isFreePlan) return openUpsell();
                                                 helpers.push(getNewField(type ?? 'text'));
                                             },
                                         })
