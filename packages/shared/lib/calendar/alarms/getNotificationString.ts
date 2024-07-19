@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { fromLocalDate, toUTCDate } from '../../date/timezone';
-import { NotificationModel } from '../../interfaces/calendar';
+import type { NotificationModel } from '../../interfaces/calendar';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 
 const getNotificationString = (notification: NotificationModel, formatTime: (date: Date) => string) => {

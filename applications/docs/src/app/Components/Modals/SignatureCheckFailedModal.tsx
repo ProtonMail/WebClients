@@ -4,9 +4,9 @@ import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button'
 
+import type { ModalStateProps } from '@proton/components'
 import {
   Form,
-  ModalStateProps,
   ModalTwo,
   ModalTwoContent,
   ModalTwoFooter,

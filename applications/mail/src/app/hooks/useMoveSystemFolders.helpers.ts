@@ -7,13 +7,13 @@ import move from '@proton/utils/move';
 import orderBy from '@proton/utils/orderBy';
 
 import { LABEL_IDS_TO_HUMAN } from '../constants';
-import {
+import type {
     BaseSystemFolder,
-    SYSTEM_FOLDER_SECTION,
     SystemFolder,
     SystemFolderPayload,
     UseMoveSystemFoldersProps,
 } from './useMoveSystemFolders';
+import { SYSTEM_FOLDER_SECTION } from './useMoveSystemFolders';
 
 interface MoveSystemFolders {
     (

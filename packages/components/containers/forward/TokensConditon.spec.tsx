@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Condition } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 import TokensCondition from './TokensCondition';
 
 describe('TokensCondition', () => {

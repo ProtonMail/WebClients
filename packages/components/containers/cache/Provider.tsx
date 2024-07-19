@@ -1,6 +1,8 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
-import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import type { Cache } from '@proton/shared/lib/helpers/cache';
+import createCache from '@proton/shared/lib/helpers/cache';
 
 import CacheContext from './cacheContext';
 

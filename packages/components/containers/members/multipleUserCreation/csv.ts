@@ -1,4 +1,5 @@
-import Papa, { ParseLocalConfig, ParseResult } from 'papaparse';
+import type { ParseLocalConfig, ParseResult } from 'papaparse';
+import Papa from 'papaparse';
 
 import { GIGA, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -8,7 +9,7 @@ import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';
 import { CSV_FORMAT_ERROR_TYPE, CsvFormatError, TooManyUsersError } from './errors/CsvFormatErrors';
 import ImportFileError, { IMPORT_ERROR_TYPE } from './errors/ImportFileError';
-import { ImportedCSVUser, SampleCsvUser, UserTemplate } from './types';
+import type { ImportedCSVUser, SampleCsvUser, UserTemplate } from './types';
 
 export interface CsvConfig {
     multipleAddresses?: boolean;

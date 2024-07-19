@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Prompt } from '../../components';
 
 interface Props extends ModalProps {
     isSaving?: boolean;

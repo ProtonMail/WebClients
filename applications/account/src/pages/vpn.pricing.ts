@@ -1,4 +1,4 @@
-import { Parameters } from './interface';
+import type { Parameters } from './interface';
 import signup from './vpn.signup';
 
 const data = (): Parameters => ({

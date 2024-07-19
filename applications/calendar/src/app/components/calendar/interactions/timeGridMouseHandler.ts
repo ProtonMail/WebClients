@@ -1,13 +1,14 @@
 import { addMinutes } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
 import { isBusySlotEvent } from '../../../helpers/busySlots';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
 import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
 import { getTargetIndex } from '../mouseHelpers/mathHelpers';
-import { getKey, splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
+import type { splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
+import { getKey } from '../splitTimeGridEventsPerDay';
 import { ACTIONS, TYPE } from './constants';
-import { MouseUpAction, OnMouseDown, StartEndResult } from './interface';
+import type { MouseUpAction, OnMouseDown, StartEndResult } from './interface';
 
 const DRAG_EVENT_MOVE = 1;
 const DRAG_EVENT_TIME_UP = 2;

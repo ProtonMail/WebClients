@@ -2,7 +2,7 @@ import { selectOrganization, selectUser } from '@proton/account';
 import { useFlag, useIsOrganizationBeforeBackfill, useScribePaymentsEnabled } from '@proton/components/containers';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { PLANS } from '@proton/shared/lib/constants';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 const PLANS_SUPPORTING_SCRIBE = [

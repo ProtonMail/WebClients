@@ -7,7 +7,7 @@ import { AppLink, Table, TableBody, TableHeader, TableRow, Time, Tooltip } from 
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { PassEvent } from '..';
+import type { PassEvent } from '..';
 import { useApi } from '../../..';
 import { getDesciptionText, getDescriptionTextWithLink, getEventNameText } from './helpers';
 

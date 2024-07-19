@@ -1,8 +1,9 @@
-import { CryptoProxy, KeyReference, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { KeyReference, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { extractEmailFromUserID } from '../helpers/email';
-import { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';
+import type { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';
 
 export const generateKeySaltAndPassphrase = async (password: string) => {
     const salt = generateKeySalt();

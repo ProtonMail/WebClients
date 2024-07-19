@@ -1,16 +1,7 @@
 import { useState } from 'react';
 
-import {
-    CalendarLogo,
-    DriveLogo,
-    Logo,
-    LogoProps,
-    MailLogo,
-    PassLogo,
-    ProtonLogo,
-    RadioGroup,
-    VpnLogo,
-} from '@proton/components';
+import type { LogoProps } from '@proton/components';
+import { CalendarLogo, DriveLogo, Logo, MailLogo, PassLogo, ProtonLogo, RadioGroup, VpnLogo } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getTitle } from '../../helpers/title';

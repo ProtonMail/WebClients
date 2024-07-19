@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
-import { SSO } from '@proton/shared/lib/interfaces';
+import type { SSO } from '@proton/shared/lib/interfaces';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';
 
 interface Props extends ModalProps {

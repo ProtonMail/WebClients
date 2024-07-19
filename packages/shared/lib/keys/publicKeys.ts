@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, PublicKeyReference, serverTime } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@proton/crypto';
 
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail, extractEmailFromUserID } from '../helpers/email';
 import { toBitMap } from '../helpers/object';
-import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
+import type { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 import { getKeyHasFlagsToEncrypt } from './keyFlags';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;

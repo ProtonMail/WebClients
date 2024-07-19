@@ -1,11 +1,12 @@
-import { ComponentPropsWithRef, KeyboardEvent, forwardRef } from 'react';
+import type { ComponentPropsWithRef, KeyboardEvent } from 'react';
+import { forwardRef } from 'react';
 
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import clsx from '@proton/utils/clsx';
 
 import DropdownCaret from '../dropdown/DropdownCaret';
-import { IconName } from '../icon';
-import { NodeOrBoolean } from '../v2/field/InputField';
+import type { IconName } from '../icon';
+import type { NodeOrBoolean } from '../v2/field/InputField';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {
     unstyled?: boolean;

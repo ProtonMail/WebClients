@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
 import { useApi } from '@proton/components/hooks';
 import { PASS_WEB_APP_URL } from '@proton/pass/constants';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';

@@ -2,10 +2,10 @@ import { apiHelper } from '@proton/encrypted-search';
 import { getConversation } from '@proton/shared/lib/api/conversations';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage } from '@proton/shared/lib/api/messages';
-import { Api } from '@proton/shared/lib/interfaces';
-import { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { Event } from '../../models/event';
+import type { Event } from '../../models/event';
 
 /**
  * Get the latest event or all events since a specified one

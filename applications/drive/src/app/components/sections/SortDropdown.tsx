@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { SortParams } from '../FileBrowser/interface';
+import type { SortParams } from '../FileBrowser/interface';
 
 export default function SortDropdown<T extends string>({
     sortFields,

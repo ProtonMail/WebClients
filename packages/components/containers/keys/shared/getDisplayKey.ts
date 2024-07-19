@@ -1,12 +1,13 @@
 import type { AlgorithmInfo } from '@proton/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getDefaultKeyFlags, getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 
 import getPermissions from './getPermissions';
-import { KeyDisplay, KeyStatus, KeyType } from './interface';
+import type { KeyDisplay, KeyStatus } from './interface';
+import { KeyType } from './interface';
 
 interface Arguments {
     User: UserModel;

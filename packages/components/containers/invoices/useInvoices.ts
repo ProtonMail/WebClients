@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 
-import { InvoiceDocument, PaymentsVersion, queryInvoices } from '@proton/shared/lib/api/payments';
-import { INVOICE_OWNER } from '@proton/shared/lib/constants';
+import type { InvoiceDocument, PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { queryInvoices } from '@proton/shared/lib/api/payments';
+import type { INVOICE_OWNER } from '@proton/shared/lib/constants';
 
 import { usePaginationAsync } from '../../components/pagination';
-import { Invoice, InvoiceResponse } from '../../containers/invoices/interface';
+import type { Invoice, InvoiceResponse } from '../../containers/invoices/interface';
 import { useApiResult } from '../../hooks';
 import { useReportRoutingError } from '../../payments/react-extensions/usePaymentsApi';
 

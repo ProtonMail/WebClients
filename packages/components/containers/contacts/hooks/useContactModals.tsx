@@ -1,25 +1,34 @@
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useModalTwo, useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
-import ContactEditModal, { ContactEditProps } from '../edit/ContactEditModal';
-import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
-import ContactGroupDeleteModal, { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
+import type { ContactEditProps } from '../edit/ContactEditModal';
+import ContactEditModal from '../edit/ContactEditModal';
+import type { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
+import ContactEmailSettingsModal from '../email/ContactEmailSettingsModal';
+import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
+import ContactGroupDeleteModal from '../group/ContactGroupDeleteModal';
 import ContactGroupDetailsModal from '../group/ContactGroupDetailsModal';
-import ContactGroupEditModal, { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import ContactClearDataConfirmModal, { ContactClearDataConfirmProps } from '../modals/ContactClearDataConfirmModal';
-import ContactClearDataExecutionModal, {
-    ContactClearDataExecutionProps,
-} from '../modals/ContactClearDataExecutionModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import ContactGroupEditModal from '../group/ContactGroupEditModal';
+import type { ContactClearDataConfirmProps } from '../modals/ContactClearDataConfirmModal';
+import ContactClearDataConfirmModal from '../modals/ContactClearDataConfirmModal';
+import type { ContactClearDataExecutionProps } from '../modals/ContactClearDataExecutionModal';
+import ContactClearDataExecutionModal from '../modals/ContactClearDataExecutionModal';
 import ContactDecryptionErrorModal from '../modals/ContactDecryptionErrorModal';
-import ContactDeleteModal, { ContactDeleteProps } from '../modals/ContactDeleteModal';
-import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
-import ContactGroupLimitReachedModal, { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
-import ContactImageModal, { ContactImageProps } from '../modals/ContactImageModal';
+import type { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import ContactDeleteModal from '../modals/ContactDeleteModal';
+import type { ContactExportingProps } from '../modals/ContactExportingModal';
+import ContactExportingModal from '../modals/ContactExportingModal';
+import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
+import type { ContactImageProps } from '../modals/ContactImageModal';
+import ContactImageModal from '../modals/ContactImageModal';
 import ContactResignExecutionModal from '../modals/ContactResignExecutionModal';
 import ContactSignatureErrorModal from '../modals/ContactSignatureErrorModal';
 import ContactUpgradeModal from '../modals/ContactUpgradeModal';
-import SelectEmailsModal, { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import SelectEmailsModal from '../modals/SelectEmailsModal';
 import ContactDetailsModal from '../view/ContactDetailsModal';
 
 interface Props {

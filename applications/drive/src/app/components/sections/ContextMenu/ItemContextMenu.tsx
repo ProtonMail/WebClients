@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { ContextMenu, DropdownSizeUnit } from '@proton/components';
 
-import { ContextMenuProps } from '../../FileBrowser/interface';
+import type { ContextMenuProps } from '../../FileBrowser/interface';
 
 export function ItemContextMenu({ anchorRef, isOpen, position, open, close, children }: ContextMenuProps) {
     useEffect(() => {

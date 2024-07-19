@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Switch } from 'react-router-dom';
 
 import type { getDocsAppRoutes } from './routes';

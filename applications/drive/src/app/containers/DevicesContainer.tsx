@@ -1,4 +1,5 @@
-import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
+import type { RouteComponentProps } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import DevicesView from '../components/sections/Devices/DevicesView';
 

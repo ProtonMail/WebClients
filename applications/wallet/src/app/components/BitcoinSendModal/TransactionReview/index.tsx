@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
@@ -12,12 +13,13 @@ import { secondaryAmount } from '../../../atoms/BitcoinAmountInputWithBalanceAnd
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
-import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
+import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import { isExchangeRate } from '../../../utils';
 import { EmailListItem } from '../../EmailListItem';
-import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
-import { RecipientDetailsModal, RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
+import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import type { RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
+import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { TextAreaModal } from '../../TextAreaModal';
 import { FeesModal } from './FeesModal';
 import { useTransactionReview } from './useTransactionReview';

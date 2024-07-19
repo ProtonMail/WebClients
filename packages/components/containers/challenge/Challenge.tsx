@@ -4,8 +4,9 @@ import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import ChallengeError from './ChallengeError';
-import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
-import { ChallengeLog } from './interface';
+import type { Props as ChallengeProps } from './ChallengeFrame';
+import ChallengeFrame from './ChallengeFrame';
+import type { ChallengeLog } from './interface';
 
 interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {
     type: number;

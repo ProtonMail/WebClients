@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { ConditionType } from '@proton/components/containers/filters/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { render, tick } from '../../../helpers/test/render';
 import CustomFilterDropdown from '../CustomFilterDropdown';

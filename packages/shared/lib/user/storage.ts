@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { APPS, APP_NAMES, PLANS } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS, PLANS } from '../constants';
 import { getHasMailB2BPlan, hasVisionary } from '../helpers/subscription';
 import type { Subscription, User, UserModel } from '../interfaces';
 

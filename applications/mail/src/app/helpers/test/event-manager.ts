@@ -1,6 +1,6 @@
 import { useEventManager } from '@proton/components';
 
-import { Event } from '../../models/event';
+import type { Event } from '../../models/event';
 
 export const eventManagerListeners: ((...args: any[]) => any)[] = [];
 

@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { ModalProps, PrimaryButton, Prompt } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { PrimaryButton, Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { Download } from '../../../helpers/attachment/attachmentDownloader';
+import type { Download } from '../../../helpers/attachment/attachmentDownloader';
 
 interface Props extends ModalProps {
     downloads: Download[];

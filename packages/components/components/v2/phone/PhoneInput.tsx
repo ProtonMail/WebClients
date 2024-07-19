@@ -1,6 +1,8 @@
-import { Ref, forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import { Input, InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms';
+import { Input } from '@proton/atoms';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 

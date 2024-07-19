@@ -3,9 +3,10 @@ import { c, msgid } from 'ttag';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
+import type { PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getMailAppFeature = (): PlanCardFeatureDefinition => {
     return {

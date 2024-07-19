@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +9,8 @@ import { Checkbox, Icon, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
-import { FOLDER_ICONS, FolderMapItem } from '../../CustomizeMailImportModal.interface';
+import type { FolderMapItem } from '../../CustomizeMailImportModal.interface';
+import { FOLDER_ICONS } from '../../CustomizeMailImportModal.interface';
 import ManageFoldersRowFolderErrors from './ManageFoldersRowFolderErrors';
 import ManageFolderRowInput from './ManageFoldersRowInput';
 import ManageFoldersRowLabelErrors from './ManageFoldersRowLabelErrors';

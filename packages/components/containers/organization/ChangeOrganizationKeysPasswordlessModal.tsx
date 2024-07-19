@@ -2,18 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    OrganizationKeyRotationPayload,
-    getKeyRotationPayload,
-    rotatePasswordlessOrganizationKeys,
-} from '@proton/account';
+import type { OrganizationKeyRotationPayload } from '@proton/account';
+import { getKeyRotationPayload, rotatePasswordlessOrganizationKeys } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../components';
+import type { ModalProps } from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../components';
 import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AuthModal from '../password/AuthModal';

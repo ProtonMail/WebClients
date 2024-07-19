@@ -21,16 +21,19 @@ import {
     PLANS,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
-import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
-import Benefits, { BenefitItem } from '../Benefits';
+import type { BenefitItem } from '../Benefits';
+import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
-import { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
+import type { PlanParameters, SignupConfiguration } from '../interface';
+import { SignupMode } from '../interface';
 import CustomStep from './CustomStep';
 import setupAccount from './account-setup.svg';
 

@@ -1,7 +1,8 @@
-import { MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import type { CalledKillSwitchString } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
-    CalledKillSwitchString,
     PaymentSwitcherContext,
     useChargebeeContext,
 } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -12,7 +13,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { useFlag } from '../../containers/unleash';
 import { useAuthentication, useConfig, useGetUser } from '../../hooks';

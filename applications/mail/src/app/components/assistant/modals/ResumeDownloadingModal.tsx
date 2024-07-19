@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { ModalProps, Prompt } from '@proton/components/index';
+import type { ModalProps } from '@proton/components/index';
+import { Prompt } from '@proton/components/index';
 
 interface Props extends ModalProps {
     onResumeDownload: () => void;

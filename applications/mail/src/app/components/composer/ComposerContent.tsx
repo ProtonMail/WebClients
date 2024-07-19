@@ -1,18 +1,21 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropzone, EditorMetadata, EllipsisLoader } from '@proton/components';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { EditorMetadata } from '@proton/components';
+import { Dropzone, EllipsisLoader } from '@proton/components';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { PendingUpload } from '../../hooks/composer/useAttachments';
-import { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
+import type { PendingUpload } from '../../hooks/composer/useAttachments';
+import type { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
-import { MessageChange } from './Composer';
-import EditorWrapper, { ExternalEditorActions } from './editor/EditorWrapper';
+import type { MessageChange } from './Composer';
+import type { ExternalEditorActions } from './editor/EditorWrapper';
+import EditorWrapper from './editor/EditorWrapper';
 
 interface Props {
     message: MessageState;

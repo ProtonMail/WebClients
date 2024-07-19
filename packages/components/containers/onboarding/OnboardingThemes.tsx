@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
-import ThemeCards, { Theme } from '../themes/ThemeCards';
-import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
+import type { Theme } from '../themes/ThemeCards';
+import ThemeCards from '../themes/ThemeCards';
+import type { Props as OnboardingContentProps } from './OnboardingContent';
+import OnboardingContent from './OnboardingContent';
 
 interface Props extends Omit<OnboardingContentProps, 'decription' | 'onChange'> {
     themes: Theme[];

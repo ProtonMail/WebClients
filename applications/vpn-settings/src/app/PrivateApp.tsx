@@ -1,4 +1,5 @@
-import { FunctionComponent, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
 
 import FlagProvider from '@unleash/proxy-client-react';
 
@@ -13,7 +14,7 @@ import {
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import { bootstrapApp } from './bootstrap';
 import type { AccountStore } from './store/store';

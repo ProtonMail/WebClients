@@ -1,4 +1,5 @@
-import { ReactNode, useLayoutEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useLayoutEffect } from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';

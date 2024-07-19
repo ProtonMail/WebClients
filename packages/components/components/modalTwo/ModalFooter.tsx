@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, useContext } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { useContext } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

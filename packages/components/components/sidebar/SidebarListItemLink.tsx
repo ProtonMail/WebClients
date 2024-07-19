@@ -1,5 +1,7 @@
-import { ReactNode, Ref, forwardRef } from 'react';
-import { NavLink, NavLinkProps } from 'react-router-dom';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
+import type { NavLinkProps } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import clsx from '@proton/utils/clsx';
 

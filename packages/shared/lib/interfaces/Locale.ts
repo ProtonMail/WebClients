@@ -1,7 +1,7 @@
-import { Locale } from 'date-fns';
-import { LocaleData } from 'ttag';
+import type { Locale } from 'date-fns';
+import type { LocaleData } from 'ttag';
 
-import { SimpleMap } from './utils';
+import type { SimpleMap } from './utils';
 
 export type TtagLocaleMap = SimpleMap<() => Promise<LocaleData>>;
 

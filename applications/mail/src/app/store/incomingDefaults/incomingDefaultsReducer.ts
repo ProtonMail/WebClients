@@ -1,11 +1,11 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { IncomingDefault } from '@proton/shared/lib/interfaces';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces';
 
-import { IncomingDefaultEvent } from '../../models/event';
-import { IncomingDefaultsState } from './incomingDefaultsTypes';
+import type { IncomingDefaultEvent } from '../../models/event';
+import type { IncomingDefaultsState } from './incomingDefaultsTypes';
 
 export const loadFulfilled = (
     state: Draft<IncomingDefaultsState>,

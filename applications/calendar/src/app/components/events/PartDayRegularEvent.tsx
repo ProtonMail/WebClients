@@ -4,10 +4,11 @@ import { Icon, useUser } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
 import { getEventStatusTraits } from '../../helpers/event';
-import { PartDayEventProps, PartDayEventView } from './PartDayEvent';
+import type { PartDayEventProps } from './PartDayEvent';
+import { PartDayEventView } from './PartDayEvent';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import getEventInformation from './getEventInformation';
 import useReadEvent from './useReadEvent';

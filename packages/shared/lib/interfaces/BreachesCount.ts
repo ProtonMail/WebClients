@@ -1,4 +1,4 @@
-import { EVENT_ACTIONS } from '../constants';
+import type { EVENT_ACTIONS } from '../constants';
 
 export interface BreachesCount {
     Count: number; //number of unread breach alerts

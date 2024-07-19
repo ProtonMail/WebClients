@@ -1,10 +1,11 @@
-import { MutableRefObject, useMemo } from 'react';
+import type { MutableRefObject } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { EditorMetadata } from '@proton/components';
 import {
-    EditorMetadata,
     FeatureCode,
     Icon,
     Tooltip,
@@ -26,10 +27,10 @@ import { useComposerAssistantProvider } from 'proton-mail/components/assistant/p
 import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
-import { MessageState } from '../../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../../store/messages/messagesTypes';
 import AttachmentsButton from '../../../attachment/AttachmentsButton';
-import { MessageChange, MessageChangeFlag } from '../../Composer';
-import { ExternalEditorActions } from '../../editor/EditorWrapper';
+import type { MessageChange, MessageChangeFlag } from '../../Composer';
+import type { ExternalEditorActions } from '../../editor/EditorWrapper';
 import ComposerMoreActions from '../ComposerMoreActions';
 import ComposerPasswordActions from '../ComposerPasswordActions';
 import ComposerSendButton from '../ComposerSendButton';

@@ -1,4 +1,5 @@
-import { CSSProperties, Ref, useMemo } from 'react';
+import type { CSSProperties, Ref } from 'react';
+import { useMemo } from 'react';
 
 import { Icon } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
@@ -6,7 +7,7 @@ import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactE
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
+import type { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
 import { useCalendarSelector } from '../../store/hooks';
 

@@ -1,11 +1,12 @@
-import { ReactNode, RefObject, useState } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import { useState } from 'react';
 
 import { Dropdown, DropdownMenu, DropdownSizeUnit, generateUID } from '@proton/components';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItemLayout from './RecipientItemLayout';

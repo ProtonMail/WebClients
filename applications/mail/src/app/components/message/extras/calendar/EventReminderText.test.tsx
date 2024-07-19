@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import EventReminderText, { EventReminderTextProps } from './EventReminderText';
+import type { EventReminderTextProps } from './EventReminderText';
+import EventReminderText from './EventReminderText';
 
 function renderComponent(props?: Partial<EventReminderTextProps>) {
     const defaultProps = {

@@ -1,21 +1,22 @@
-import { KeyboardEvent, RefObject, forwardRef, useCallback, useMemo, useRef, useState } from 'react';
+import type { KeyboardEvent, RefObject } from 'react';
+import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient } from '@proton/shared/lib/mail/recipient';
 
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../autocomplete';
 import Icon from '../icon/Icon';
-import Input, { Props as InputProps } from '../input/Input';
+import type { Props as InputProps } from '../input/Input';
+import Input from '../input/Input';
 import { Option } from '../option';
 import { Marks } from '../text';
 import { Tooltip } from '../tooltip';
+import type { AddressesAutocompleteItem, GroupsWithContactsMap } from './helper';
 import {
-    AddressesAutocompleteItem,
-    GroupsWithContactsMap,
     getContactGroupsAutocompleteItems,
     getContactsAutocompleteItems,
     getNumberOfMembersCount,

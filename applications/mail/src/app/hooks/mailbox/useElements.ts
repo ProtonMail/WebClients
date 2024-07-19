@@ -19,8 +19,8 @@ import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/stor
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
-import { Element } from '../../models/element';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+import type { Element } from '../../models/element';
+import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
 import {
     load as loadAction,
@@ -50,7 +50,7 @@ import {
     totalReturned as totalReturnedSelector,
 } from '../../store/elements/elementsSelectors';
 import { messageByID } from '../../store/messages/messagesSelectors';
-import { MailState } from '../../store/store';
+import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
 

@@ -1,4 +1,5 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,14 +7,13 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
+import type { EmojiScaleProps, ModalProps } from '../../components';
 import {
     EmojiScale,
-    EmojiScaleProps,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     TextArea,
 } from '../../components';
 import { useApi, useNotifications } from '../../hooks';

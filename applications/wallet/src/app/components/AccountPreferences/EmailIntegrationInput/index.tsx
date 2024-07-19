@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiEmailAddress } from '@proton/andromeda';
+import type { WasmApiEmailAddress } from '@proton/andromeda';
 import { Toggle, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import { useMembers, useUser } from '@proton/components/hooks';

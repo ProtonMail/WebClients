@@ -11,11 +11,8 @@ import { getIsDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/h
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import {
-    ThemeSetting,
-    electronAppTheme as defaultElectronAppTheme,
-    getDefaultThemeSetting,
-} from '@proton/shared/lib/themes/themes';
+import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
+import { electronAppTheme as defaultElectronAppTheme, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 

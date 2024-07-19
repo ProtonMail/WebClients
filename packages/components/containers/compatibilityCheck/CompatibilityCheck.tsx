@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { decryptData, encryptData, getKey } from '@proton/shared/lib/authentication/cryptoHelper';

@@ -9,7 +9,7 @@ import * as expireReducer from './expire/messagesExpireReducers';
 import { updateFromElements } from './helpers/messagesReducer';
 import * as msgImageAction from './images/messagesImagesActions';
 import * as msgImageReducer from './images/messagesImagesReducers';
-import { MessagesState } from './messagesTypes';
+import type { MessagesState } from './messagesTypes';
 import * as msgOptimisticAction from './optimistic/messagesOptimisticActions';
 import * as msgOptimisticReducer from './optimistic/messagesOptimisticReducers';
 import * as msgReadAction from './read/messagesReadActions';

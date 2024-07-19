@@ -1,19 +1,20 @@
-import { Ref, Suspense, lazy } from 'react';
+import type { Ref } from 'react';
+import { Suspense, lazy } from 'react';
 
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import { ErrorBoundary } from '@proton/components/containers';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveBreakpoint } from '../../../hooks';
 import { ButtonGroup } from '../../button';
 import Icon from '../../icon/Icon';
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '../constants';
-import { ToolbarConfig } from '../helpers/getToolbarConfig';
-import { EditorMetadata } from '../interface';
+import type { ToolbarConfig } from '../helpers/getToolbarConfig';
+import type { EditorMetadata } from '../interface';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
 import ToolbarButton from './ToolbarButton';
 import ToolbarColorsDropdown from './ToolbarColorsDropdown';

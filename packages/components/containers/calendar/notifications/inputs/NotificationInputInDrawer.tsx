@@ -5,7 +5,7 @@ import {
     NOTIFICATION_TYPE_API,
     NOTIFICATION_UNITS_MAX,
 } from '@proton/shared/lib/calendar/constants';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, IntegerInput, Option, SelectTwo, TimeInput, Tooltip } from '../../../../components';
@@ -78,10 +78,7 @@ const NotificationInputInDrawer = ({
     const errorProps = typeof error === 'string' ? { 'aria-invalid': true } : {};
 
     return (
-        <div
-            key={notification.id}
-            className={clsx('flex flex-column items-stretch flex-1 gap-2 mb-4', className)}
-        >
+        <div key={notification.id} className={clsx('flex flex-column items-stretch flex-1 gap-2 mb-4', className)}>
             {hasType && (
                 <span className="flex flex-nowrap gap-2">
                     <SelectTwo
@@ -122,10 +119,7 @@ const NotificationInputInDrawer = ({
             )}
             <span className={clsx('flex flex-column gap-2', fullWidth ? 'md:flex-row' : 'lg:flex-row')}>
                 <span
-                    className={clsx(
-                        'flex flex-nowrap gap-2 grow-custom',
-                        fullWidth ? 'md:flex-1' : 'lg:flex-1'
-                    )}
+                    className={clsx('flex flex-nowrap gap-2 grow-custom', fullWidth ? 'md:flex-1' : 'lg:flex-1')}
                     style={{ '--grow-custom': '1.5' }}
                 >
                     {hasValueInput && (

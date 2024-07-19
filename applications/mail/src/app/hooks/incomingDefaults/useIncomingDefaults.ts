@@ -1,4 +1,4 @@
-import { IncomingDefault, IncomingDefaultStatus } from '@proton/shared/lib/interfaces';
+import type { IncomingDefault, IncomingDefaultStatus } from '@proton/shared/lib/interfaces';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -6,7 +6,7 @@ import {
     getIncomingDefaultStatus,
     getIncomingDefaultsAddresses,
 } from '../../store/incomingDefaults/incomingDefaultsSelectors';
-import { MailState } from '../../store/store';
+import type { MailState } from '../../store/store';
 
 export const useIncomingDefaultsAddresses = (): IncomingDefault[] =>
     useMailSelector((state: MailState) => getIncomingDefaultsAddresses(state));

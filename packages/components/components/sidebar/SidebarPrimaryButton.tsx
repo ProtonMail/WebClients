@@ -1,6 +1,8 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 

@@ -5,17 +5,17 @@ import noop from '@proton/utils/noop';
 
 import { hasBit } from '../../../helpers/bitset';
 import { uint8ArrayToBase64String } from '../../../helpers/encoding';
-import { Address, DecryptedKey } from '../../../interfaces';
-import {
+import type { Address, DecryptedKey } from '../../../interfaces';
+import type {
     CalendarEvent,
-    CalendarKeyFlags,
     CalendarMember,
     CalendarSetupData,
     CreateOrResetCalendarPayload,
     DecryptedCalendarKey,
 } from '../../../interfaces/calendar';
-import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
-import { GetCalendarKeys } from '../../../interfaces/hooks/GetCalendarKeys';
+import { CalendarKeyFlags } from '../../../interfaces/calendar';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import type { GetCalendarKeys } from '../../../interfaces/hooks/GetCalendarKeys';
 import { getPrimaryKey, splitKeys } from '../../../keys';
 import { toSessionKey } from '../../../keys/sessionKey';
 import { getIsAutoAddedInvite } from '../../apiModels';

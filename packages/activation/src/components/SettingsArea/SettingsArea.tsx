@@ -3,12 +3,14 @@ import { c } from 'ttag';
 import { Loader } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers/account';
-import { PrivateMainSettingsArea, SettingsAreaConfig } from '@proton/components/containers/layout';
+import type { SettingsAreaConfig } from '@proton/components/containers/layout';
+import { PrivateMainSettingsArea } from '@proton/components/containers/layout';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { useFeature } from '@proton/components/hooks';
-import { APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { EasySwitchFeatureFlag } from '../../interface';
+import type { EasySwitchFeatureFlag } from '../../interface';
 import EasySwitchStoreProvider from '../../logic/StoreProvider';
 import ReportsTable from '../ReportsTable/ReportsTable';
 import GmailForwarding from './GmailForwarding';

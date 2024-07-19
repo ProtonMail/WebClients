@@ -1,7 +1,9 @@
 import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
 import ContactMergeDetailsModal from '../merge/ContactMergeDetailsModal';
-import ContactMergeModal, { ContactMergeProps } from '../merge/ContactMergeModal';
-import ContactMergePreviewModal, { ContactMergePreviewModalProps } from '../merge/ContactMergePreviewModal';
+import type { ContactMergeProps } from '../merge/ContactMergeModal';
+import ContactMergeModal from '../merge/ContactMergeModal';
+import type { ContactMergePreviewModalProps } from '../merge/ContactMergePreviewModal';
+import ContactMergePreviewModal from '../merge/ContactMergePreviewModal';
 
 export const useContactMergeModals = () => {
     const [contactMergeModal, handleShowContactMergeModal] = useModalTwoStatic(ContactMergeModal);

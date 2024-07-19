@@ -1,4 +1,4 @@
-import { ShareURL } from './sharing';
+import type { ShareURL } from './sharing';
 
 export interface CreateDriveVolume {
     AddressID: string;

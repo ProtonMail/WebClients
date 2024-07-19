@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { INVOICE_TYPE } from '@proton/shared/lib/constants';
 
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 
 const CREDIT_NOTE_PREFIX = 'CN';
 

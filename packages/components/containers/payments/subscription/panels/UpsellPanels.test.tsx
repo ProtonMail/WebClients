@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 
 import { COUPON_CODES } from '@proton/shared/lib/constants';
-import { Subscription } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import {
     familyUpsell,
@@ -10,7 +10,7 @@ import {
     trialMailPlusUpsell,
     unlimitedUpsell,
 } from '../__mocks__/data';
-import { Upsell } from '../helpers';
+import type { Upsell } from '../helpers';
 import UpsellPanels from './UpsellPanels';
 
 describe('UpsellPanel', () => {

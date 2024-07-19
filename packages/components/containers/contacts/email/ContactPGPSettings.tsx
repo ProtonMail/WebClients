@@ -1,13 +1,14 @@
-import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { CryptoProxy } from '@proton/crypto';
-import { BRAND_NAME, CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
+import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proton/shared/lib/interfaces';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import type { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proton/shared/lib/interfaces';
+import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
 import { Alert, Field, Info, Label, Row, Toggle } from '../../../components';

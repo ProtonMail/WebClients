@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import { WasmTxBuilder } from '@proton/andromeda';
+import type { WasmTxBuilder } from '@proton/andromeda';
 import { DEFAULT_TARGET_BLOCK } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../../contexts';

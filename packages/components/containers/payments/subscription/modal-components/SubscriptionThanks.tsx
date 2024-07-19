@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { CircleLoader, Href } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '@proton/components/payments/core';
+import type { PlainPaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { APPS } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';

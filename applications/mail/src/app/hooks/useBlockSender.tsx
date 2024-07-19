@@ -1,4 +1,5 @@
-import { MouseEvent, useMemo } from 'react';
+import type { MouseEvent } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +13,7 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/message/messageRecipients';
-import { Element } from '../models/element';
+import type { Element } from '../models/element';
 import { addBlockAddresses } from '../store/incomingDefaults/incomingDefaultsActions';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 

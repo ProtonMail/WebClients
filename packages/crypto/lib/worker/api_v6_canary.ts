@@ -43,10 +43,11 @@ import {
 } from 'pmcrypto-v6-canary';
 import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
 import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
-import { UserID, enums } from 'pmcrypto-v6-canary/lib/openpgp';
+import type { UserID } from 'pmcrypto-v6-canary/lib/openpgp';
+import { enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
-import {
+import type {
     ComputeHashStreamOptions,
     KeyInfo,
     KeyReference,

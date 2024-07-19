@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 
-import { IDBPDatabase } from 'idb';
+import type { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
@@ -24,8 +24,8 @@ import {
     defaultESProgress,
     defaultESStatus,
 } from './constants';
+import type { IndexingMetrics } from './esHelpers';
 import {
-    IndexingMetrics,
     buildContentDB,
     buildMetadataDB,
     cacheIDB,
@@ -47,8 +47,8 @@ import {
     syncItemEvents,
     uncachedSearch,
 } from './esHelpers';
+import type { IndexedDBRow } from './esIDB';
 import {
-    IndexedDBRow,
     checkVersionedESDB,
     contentIndexingProgress,
     deleteESDB,
@@ -63,7 +63,7 @@ import {
     toggleEnabled,
     writeAllEvents,
 } from './esIDB';
-import {
+import type {
     ESCache,
     ESCallbacks,
     ESEvent,

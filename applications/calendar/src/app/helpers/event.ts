@@ -1,7 +1,7 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import { Address } from '@proton/shared/lib/interfaces';
-import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 
 import { getParticipantsError } from '../components/eventModal/helpers';
 

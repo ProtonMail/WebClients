@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { DecryptedLink } from '../../../../store';
-import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
+import type { DecryptedLink } from '../../../../store';
+import type { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {

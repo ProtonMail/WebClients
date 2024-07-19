@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { OfferProps } from '../../interface';
+import type { OfferProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';
 
 const FamilyPlanFooter = (props: OfferProps) => {

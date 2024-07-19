@@ -1,20 +1,18 @@
 import { c } from 'ttag';
 
-import {
-    CryptoProxy,
-    PrivateKeyReference,
-    PublicKeyReference,
-    SessionKey,
-    VERIFICATION_STATUS,
-    toPublicKeyReference,
-} from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, toPublicKeyReference } from '@proton/crypto';
 import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../../constants';
 import { uint8ArrayToBase64String } from '../../../helpers/encoding';
-import { KeyGenConfig, SimpleMap } from '../../../interfaces';
-import { CreateOrResetCalendarPayload, DecryptedCalendarKey, CalendarKey as tsKey } from '../../../interfaces/calendar';
+import type { KeyGenConfig, SimpleMap } from '../../../interfaces';
+import type {
+    CreateOrResetCalendarPayload,
+    DecryptedCalendarKey,
+    CalendarKey as tsKey,
+} from '../../../interfaces/calendar';
 import { getEncryptedSessionKey } from '../encrypt';
 
 export const generatePassphrase = () => {

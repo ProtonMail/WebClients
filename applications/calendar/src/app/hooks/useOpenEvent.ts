@@ -13,8 +13,8 @@ import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calenda
 import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/veventHelper';
 import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import parseMainEventData from '../containers/calendar/event/parseMainEventData';
 import getAllEventsByUID from '../containers/calendar/getAllEventsByUID';

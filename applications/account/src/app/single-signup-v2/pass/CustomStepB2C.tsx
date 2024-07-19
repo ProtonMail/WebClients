@@ -12,7 +12,7 @@ import noop from '@proton/utils/noop';
 import { handleDone } from '../../signup/signupActions';
 import Layout from '../Layout';
 import Step2 from '../Step2';
-import { SignupCustomStepProps } from '../interface';
+import type { SignupCustomStepProps } from '../interface';
 import InstallExtensionStep from './InstallExtensionStep';
 import RecoveryStep from './RecoveryStep';
 

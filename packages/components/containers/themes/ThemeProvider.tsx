@@ -1,15 +1,8 @@
-import {
-    ReactNode,
-    createContext,
-    useCallback,
-    useContext,
-    useEffect,
-    useLayoutEffect,
-    useMemo,
-    useState,
-} from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
@@ -18,6 +11,7 @@ import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/in
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
 import {
     ColorScheme,
     MotionModeSetting,
@@ -29,7 +23,6 @@ import {
     ThemeFontSizeSetting,
     ThemeFontSizeSettingMap,
     ThemeModeSetting,
-    ThemeSetting,
     ThemeTypes,
     getDarkThemes,
     getDefaultThemeSetting,

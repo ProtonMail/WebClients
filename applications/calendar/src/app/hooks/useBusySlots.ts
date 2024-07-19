@@ -5,7 +5,7 @@ import { getUnixTime } from 'date-fns';
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-import { CalendarViewEventTemporaryEvent } from '../containers/calendar/interface';
+import type { CalendarViewEventTemporaryEvent } from '../containers/calendar/interface';
 import { busySlotsActions, busySlotsSliceName } from '../store/busySlots/busySlotsSlice';
 import { useCalendarDispatch, useCalendarStore } from '../store/hooks';
 

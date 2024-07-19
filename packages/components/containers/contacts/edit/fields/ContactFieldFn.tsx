@@ -1,11 +1,13 @@
-import { ChangeEvent, Ref, forwardRef } from 'react';
+import type { ChangeEvent, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Input, InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms';
+import { Input } from '@proton/atoms';
 import { isContactNameValid } from '@proton/shared/lib/contacts/property';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ErrorZone } from '../../../../components';
 

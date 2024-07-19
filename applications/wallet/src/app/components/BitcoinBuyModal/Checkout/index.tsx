@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import { Icon, Tooltip } from '@proton/components/components';
 import { useWalletApi } from '@proton/wallet';
 
-import { QuoteWithProvider } from '../Amount';
+import type { QuoteWithProvider } from '../Amount';
 
 import './Checkout.scss';
 

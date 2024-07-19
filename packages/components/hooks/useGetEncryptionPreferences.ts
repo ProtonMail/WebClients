@@ -4,8 +4,9 @@ import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { ApiKeysConfig, KT_VERIFICATION_STATUS, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces';
-import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import type { ApiKeysConfig, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
+import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys';
 import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';

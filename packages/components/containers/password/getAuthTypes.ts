@@ -1,6 +1,6 @@
-import { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { UserSettings } from '@proton/shared/lib/interfaces';
+import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { getHasFIDO2Enabled, getHasTOTPEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 

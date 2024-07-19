@@ -15,7 +15,8 @@ import {
 } from '@proton/components';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import { CryptoProxy, WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, arrayToHexString, decodeUtf8 } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -34,12 +35,12 @@ import {
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import {
+import type {
     VcalErrorComponent,
     VcalVcalendarWithMaybeErrors,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
@@ -48,8 +49,8 @@ import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
+import type { EventInvitation } from '../../../helpers/calendar/invite';
 import {
-    EventInvitation,
     filterAttachmentsForEvents,
     getSupportedEventInvitation,
     parseVcalendar,
@@ -60,7 +61,7 @@ import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
-import { MessageErrors, MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageErrors, MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { errors as errorsAction } from '../../../store/messages/read/messagesReadActions';
 import ExtraEvent from './calendar/ExtraEvent';
 

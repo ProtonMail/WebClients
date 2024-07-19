@@ -1,6 +1,6 @@
-import { DocStateInterface } from './DocStateInterface'
+import type { DocStateInterface } from './DocStateInterface'
 import { Observable } from 'lib0/observable'
-import { Provider, ProviderAwareness } from '@lexical/yjs'
+import type { Provider, ProviderAwareness } from '@lexical/yjs'
 
 export class LexicalDocProvider extends Observable<string> implements Provider {
   constructor(private docState: DocStateInterface) {

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { DecryptedLink } from '../../../../store';
-import { useRenameModal } from '../../../modals/RenameModal';
+import type { DecryptedLink } from '../../../../store';
+import type { useRenameModal } from '../../../modals/RenameModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {

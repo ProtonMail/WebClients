@@ -15,7 +15,8 @@ import {
     isUnread,
     toCamelCase,
 } from '@proton/components/containers/credentialLeak/helpers';
-import { BREACH_STATE, FetchedBreaches, SampleBreach } from '@proton/components/containers/credentialLeak/models';
+import type { FetchedBreaches, SampleBreach } from '@proton/components/containers/credentialLeak/models';
+import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';

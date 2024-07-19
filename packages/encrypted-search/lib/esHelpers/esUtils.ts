@@ -1,9 +1,9 @@
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/storage';
-import { AddressEvent } from '@proton/shared/lib/interfaces';
+import type { AddressEvent } from '@proton/shared/lib/interfaces';
 
 import { APOSTROPHES_REGEXP, DIACRITICS_REGEXP, QUOTES_REGEXP } from '../constants';
-import { AesGcmCiphertext, ESTimepoint, GetItemInfo } from '../models';
+import type { AesGcmCiphertext, ESTimepoint, GetItemInfo } from '../models';
 
 /**
  * Remove all ES blobs in local storage related to a user

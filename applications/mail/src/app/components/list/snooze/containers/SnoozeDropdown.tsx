@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,8 +9,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import useSnooze, { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
-import { Element } from '../../../../models/element';
+import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
+import useSnooze from '../../../../hooks/actions/useSnooze';
+import type { Element } from '../../../../models/element';
 import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';

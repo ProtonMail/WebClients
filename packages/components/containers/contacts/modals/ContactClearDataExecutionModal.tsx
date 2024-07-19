@@ -4,17 +4,10 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
-import { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces';
 
-import {
-    Alert,
-    DynamicProgress,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Alert, DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
 
 export interface ContactClearDataExecutionProps {

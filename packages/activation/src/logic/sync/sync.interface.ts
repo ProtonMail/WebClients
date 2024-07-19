@@ -1,5 +1,5 @@
-import { ApiSyncState } from '@proton/activation/src/api/api.interface';
-import { ImportType } from '@proton/activation/src/interface';
+import type { ApiSyncState } from '@proton/activation/src/api/api.interface';
+import type { ImportType } from '@proton/activation/src/interface';
 
 export type Sync = {
     account: string;

@@ -1,10 +1,13 @@
-import { RefObject, useRef } from 'react';
+import type { RefObject } from 'react';
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { HotkeyTuple, useEventManager, useFolders, useHotkeys } from '@proton/components';
+import type { HotkeyTuple } from '@proton/components';
+import { useEventManager, useFolders, useHotkeys } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
-import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
@@ -20,8 +23,8 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
-import { Element } from '../../models/element';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { Element } from '../../models/element';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';

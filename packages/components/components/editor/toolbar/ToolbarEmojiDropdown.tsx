@@ -1,4 +1,5 @@
-import { Ref, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import type { Ref } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
@@ -8,12 +9,13 @@ import { DropdownSizeUnit, Icon } from '@proton/components/components';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useTheme } from '../../../containers/themes';
-import ToolbarDropdown, { ToolbarDropdownAction } from './ToolbarDropdown';
+import type { ToolbarDropdownAction } from './ToolbarDropdown';
+import ToolbarDropdown from './ToolbarDropdown';
 
 import emojiPickerCss from './ToolbarEmojiDropdown.raw.scss';
 import './ToolbarEmojiDropdown.scss';

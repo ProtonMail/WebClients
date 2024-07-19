@@ -2,7 +2,7 @@ import { getTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, PLANS } from '../../lib/constants';
 import { clearPlanIDs, hasPlanIDs, setQuantity, switchPlan } from '../../lib/helpers/planIDs';
-import { Organization } from '../../lib/interfaces';
+import type { Organization } from '../../lib/interfaces';
 
 const MOCK_ORGANIZATION = {} as Organization;
 

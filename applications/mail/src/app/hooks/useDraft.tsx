@@ -20,7 +20,7 @@ import { MESSAGE_ACTIONS } from '../constants';
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
 import { findSender } from '../helpers/message/messageRecipients';
 import { createDraft as createDraftAction } from '../store/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData, PartialMessageState } from '../store/messages/messagesTypes';
 import { useGetAttachment } from './attachments/useAttachment';
 
 const CACHE_KEY = 'Draft';

@@ -1,7 +1,8 @@
 import { HD_THUMBNAIL_MAX_SIDE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { canvasToThumbnail } from './canvasUtil';
-import { ThumbnailInfo, ThumbnailType } from './interface';
+import type { ThumbnailInfo } from './interface';
+import { ThumbnailType } from './interface';
 import { calculateThumbnailSize } from './util';
 
 export const imageCannotBeLoadedError = new Error('Image cannot be loaded');

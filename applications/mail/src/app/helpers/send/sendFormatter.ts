@@ -1,7 +1,7 @@
 import { differenceInSeconds } from 'date-fns';
 
 import { sendMessageForm } from '@proton/shared/lib/api/messages';
-import { Packages } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { Packages } from '@proton/shared/lib/interfaces/mail/crypto';
 
 const serializeJsonToFormData = (payload: any, context: string, data: any) => {
     if (!data || typeof data === 'boolean' || typeof data === 'number' || typeof data === 'string') {

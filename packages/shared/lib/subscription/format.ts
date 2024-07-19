@@ -1,4 +1,4 @@
-import { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { isManagedByMozilla } from './helpers';
 

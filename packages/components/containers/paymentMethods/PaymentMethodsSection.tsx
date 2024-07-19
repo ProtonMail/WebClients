@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { MethodStorage, PAYMENT_METHOD_TYPES, isOnSessionMigration } from '@proton/components/payments/core';

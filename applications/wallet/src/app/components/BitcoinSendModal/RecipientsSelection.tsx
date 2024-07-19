@@ -2,29 +2,28 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useApi, useNotifications } from '@proton/components/hooks';
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference } from '@proton/crypto/lib';
+import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { ProcessedApiKey, Recipient } from '@proton/shared/lib/interfaces';
+import type { ProcessedApiKey, Recipient } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
 import { useBitcoinNetwork, useWalletApiClients, verifySignedData } from '@proton/wallet';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
 
 import { Button } from '../../atoms';
-import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
+import type { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
-import {
-    InvalidRecipientErrorCode,
-    useEmailAndBtcAddressesMaps,
-} from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import type { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { InvalidRecipientErrorCode } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import { RecipientDetailsModal } from '../RecipientDetailsModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';

@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { AlgorithmInfo, CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
+import type { AlgorithmInfo, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList, getSignedKeyListMap } from '@proton/shared/lib/keys';
 
 import { getDisplayKey } from './getDisplayKey';

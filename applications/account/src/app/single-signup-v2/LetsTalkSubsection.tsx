@@ -21,7 +21,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 const LetsTalkSubSection = ({ vpnServersCountData }: { vpnServersCountData: VPNServersCountData }) => {
     const logoSize = 8;

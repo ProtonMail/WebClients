@@ -1,7 +1,7 @@
 import { IMPORT_ERROR, ImportProvider } from '@proton/activation/src/interface';
 
 import { getDefaultImap, getDefaultPort, validateStepForm } from './useStepForm.helpers';
-import { StepFormBlur, StepFormState } from './useStepForm.interface';
+import type { StepFormBlur, StepFormState } from './useStepForm.interface';
 
 describe('useStepForm', () => {
     it('Should validate step form without any issue', () => {

@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { SubTheme } from '../../utils';
+import type { SubTheme } from '../../utils';
 
 interface AvatarProps {
     children: ReactNode;

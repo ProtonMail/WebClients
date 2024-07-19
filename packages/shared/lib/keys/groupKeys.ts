@@ -2,7 +2,7 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 
 import { createGroupAddressKeyRoute } from '../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
-import { Address, Api, CachedOrganizationKey, KeyGenConfig, KeyTransparencyVerify } from '../interfaces';
+import type { Address, Api, CachedOrganizationKey, KeyGenConfig, KeyTransparencyVerify } from '../interfaces';
 import { removePrimary } from './add/addAddressKeyHelper';
 import { generateAddressKey, getNewAddressKeyTokenFromOrgKey } from './addressKeys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';

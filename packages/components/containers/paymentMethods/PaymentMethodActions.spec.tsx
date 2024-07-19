@@ -1,6 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
-import { Autopay, PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
+import type { SavedPaymentMethod } from '@proton/components/payments/core';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing/index';
 

@@ -1,11 +1,13 @@
-import { ComponentProps, Ref, forwardRef } from 'react';
+import type { ComponentProps, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/components/hooks/useUserKeys';
-import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
-import { DropdownActions, OrderableTableBody, OrderableTableRow, TableRow } from '../../../../components';
+import type { OrderableTableBody } from '../../../../components';
+import { DropdownActions, OrderableTableRow, TableRow } from '../../../../components';
 import useContactConditionally from '../../hooks/useContactConditionally';
 import useVCardContact from '../../hooks/useVCardContact';
 import EmailsTableCell from './EmailsTableCell';

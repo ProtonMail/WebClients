@@ -7,8 +7,8 @@ import {
     getWeeklyDays,
 } from '@proton/shared/lib/calendar/recurrence/rruleProperties';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
-import { VcalRruleFreqValue, VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalRruleFreqValue, VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import unique from '@proton/utils/unique';
 
 const getSafeWeeklyDays = (startDate: Date, byday?: string | string[]) => {

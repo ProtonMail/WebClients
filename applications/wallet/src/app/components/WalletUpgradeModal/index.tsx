@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import upgradeWalletSrc from '@proton/styles/assets/img/illustrations/wallet-upgrade.svg';
 
 import { Button } from '../../atoms';
-import { SubTheme } from '../../utils';
+import type { SubTheme } from '../../utils';
 
 export interface WalletUpgradeModalOwnProps {
     title?: string;

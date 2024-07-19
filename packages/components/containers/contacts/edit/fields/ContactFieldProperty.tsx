@@ -1,8 +1,9 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { ContactImageProps } from '../../modals/ContactImageModal';
+import type { ContactImageProps } from '../../modals/ContactImageModal';
 import ContactFieldAdr from './ContactFieldAdr';
 import ContactFieldDate from './ContactFieldDate';
 import ContactFieldEmail from './ContactFieldEmail';

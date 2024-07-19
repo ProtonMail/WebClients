@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Device } from '../../../../../store';
-import { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
+import type { Device } from '../../../../../store';
+import type { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
 import { ContextMenuButton } from '../../../ContextMenu';
 
 interface Props {

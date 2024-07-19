@@ -1,15 +1,17 @@
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
 import { getKey } from '../../authentication/cryptoHelper';
-import { PushForkResponse } from '../../authentication/interface';
-import { OfflineKey } from '../../authentication/offlineKey';
-import { APP_NAMES, SSO_PATHS } from '../../constants';
+import type { PushForkResponse } from '../../authentication/interface';
+import type { OfflineKey } from '../../authentication/offlineKey';
+import type { APP_NAMES } from '../../constants';
+import { SSO_PATHS } from '../../constants';
 import { withUIDHeaders } from '../../fetch/headers';
 import { replaceUrl } from '../../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
-import { Api, User } from '../../interfaces';
+import type { Api, User } from '../../interfaces';
 import { getForkEncryptedBlob } from './blob';
-import { ForkSearchParameters, ForkType } from './constants';
+import type { ForkType } from './constants';
+import { ForkSearchParameters } from './constants';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,

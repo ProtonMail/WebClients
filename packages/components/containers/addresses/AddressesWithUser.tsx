@@ -9,7 +9,7 @@ import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } 
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import move from '@proton/utils/move';
 

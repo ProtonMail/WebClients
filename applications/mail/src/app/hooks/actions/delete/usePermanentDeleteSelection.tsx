@@ -21,7 +21,7 @@ import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isConversation } from '../../../helpers/elements';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useGetElementsFromIDs } from '../../mailbox/useElements';
 import useOptimisticDelete from '../../optimistic/useOptimisticDelete';

@@ -1,6 +1,6 @@
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
-import { ActiveKey, Address, Api, KeyGenConfig, KeyPair, KeyTransparencyVerify } from '../../interfaces';
+import type { ActiveKey, Address, Api, KeyGenConfig, KeyPair, KeyTransparencyVerify } from '../../interfaces';
 import { generateAddressKey, getNewAddressKeyToken } from '../addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getDefaultKeyFlags } from '../keyFlags';

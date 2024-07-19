@@ -1,9 +1,10 @@
 import { fireEvent } from '@testing-library/dom';
 
-import { BinData } from '../lib';
+import type { BinData } from '../lib';
 import { resetChargebee } from './chargebee';
 import { initialize } from './chargebee-entry';
-import { GetHeightEvent, SetConfigurationEvent, getMessageBus } from './message-bus';
+import type { GetHeightEvent, SetConfigurationEvent } from './message-bus';
+import { getMessageBus } from './message-bus';
 
 jest.mock('./ui-utils');
 

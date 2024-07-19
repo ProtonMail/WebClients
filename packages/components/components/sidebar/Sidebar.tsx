@@ -1,9 +1,11 @@
-import { ComponentPropsWithoutRef, ReactNode, useRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
     isElectronMail,
     isElectronOnLinux,
@@ -12,7 +14,7 @@ import {
 } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';

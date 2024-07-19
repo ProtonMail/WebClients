@@ -1,4 +1,5 @@
-import { EasySwitchFeatureFlag, ImportProvider } from '@proton/activation/src/interface';
+import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
+import { ImportProvider } from '@proton/activation/src/interface';
 
 const isEasySwitchMailsEnabled = (provider: ImportProvider, featureMap: EasySwitchFeatureFlag) => {
     if (provider === ImportProvider.GOOGLE) {

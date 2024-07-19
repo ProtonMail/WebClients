@@ -1,6 +1,6 @@
-import { CalendarNotificationSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { CalendarNotificationSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
-import {
+import type {
     ATTENDEE_STATUS_API,
     CALENDAR_CARD_TYPE,
     DAILY_TYPE,
@@ -12,16 +12,16 @@ import {
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     MONTHLY_TYPE,
-    SHARED_SIGNED_FIELDS,
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from '../../calendar/constants';
-import { API_CODES } from '../../constants';
+import { SHARED_SIGNED_FIELDS } from '../../calendar/constants';
+import type { API_CODES } from '../../constants';
 import { pick } from '../../helpers/object';
-import { Address } from '../Address';
-import { Nullable } from '../utils';
-import { NotificationModel } from './Notification';
-import { VcalRrulePropertyValue, VcalVeventComponent } from './VcalModel';
+import type { Address } from '../Address';
+import type { Nullable } from '../utils';
+import type { NotificationModel } from './Notification';
+import type { VcalRrulePropertyValue, VcalVeventComponent } from './VcalModel';
 
 export interface CalendarEventData {
     Type: CALENDAR_CARD_TYPE;

@@ -1,13 +1,5 @@
-import {
-    ChangeEvent,
-    DetailedHTMLProps,
-    InputHTMLAttributes,
-    KeyboardEvent,
-    ReactNode,
-    Ref,
-    forwardRef,
-    useRef,
-} from 'react';
+import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, ReactNode, Ref } from 'react';
+import { forwardRef, useRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms';
 import { useCombinedRefs } from '@proton/hooks';

@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { Key } from '@proton/shared/lib/interfaces';
+import type { Key } from '@proton/shared/lib/interfaces';
 
-import { Alert, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Row } from '../../../components';
-import { ContactClearDataExecutionProps } from './ContactClearDataExecutionModal';
+import type { ModalProps } from '../../../components';
+import { Alert, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Row } from '../../../components';
+import type { ContactClearDataExecutionProps } from './ContactClearDataExecutionModal';
 
 export interface ContactClearDataConfirmProps {
     errorKey: Key;

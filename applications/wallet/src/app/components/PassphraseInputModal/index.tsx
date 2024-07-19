@@ -1,10 +1,11 @@
-import { ChangeEvent, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
 import { PasswordInputTwo } from '@proton/components/components';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';

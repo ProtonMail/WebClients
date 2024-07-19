@@ -1,4 +1,4 @@
-import { WasmBlockchainClient } from '@proton/andromeda';
+import type { WasmBlockchainClient } from '@proton/andromeda';
 
 import * as useBlockchainClientModule from '../../hooks/useBlockchainClient';
 

@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -8,7 +9,7 @@ import { Icon, InputFieldTwo, PhoneInput, Tabs, useFlag, useFormErrors } from '@
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
-import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';

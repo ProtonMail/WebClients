@@ -1,7 +1,7 @@
 import { getEventByUID } from '../api/calendars';
-import { Api } from '../interfaces';
-import { CalendarEvent, GetEventByUIDArguments } from '../interfaces/calendar';
-import { CALENDAR_TYPE } from './constants';
+import type { Api } from '../interfaces';
+import type { CalendarEvent, GetEventByUIDArguments } from '../interfaces/calendar';
+import type { CALENDAR_TYPE } from './constants';
 
 const MAX_ITERATIONS = 100;
 

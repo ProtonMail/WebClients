@@ -4,7 +4,8 @@ import { FileNameDisplay } from '@proton/components/components';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
-import { DecryptedLink, useDownloadScanFlag } from '../../store';
+import type { DecryptedLink } from '../../store';
+import { useDownloadScanFlag } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import { useUpsellFloatingModal } from '../modals/UpsellFloatingModal';

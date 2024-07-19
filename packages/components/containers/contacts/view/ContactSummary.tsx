@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { formatImage } from '@proton/shared/lib/helpers/image';
-import { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact, VCardProperty, VcardNValue } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';

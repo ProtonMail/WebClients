@@ -1,6 +1,6 @@
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import DummyCalendarContainerView from '../calendar/DummyCalendarContainerView';
 import UnlockCalendarsModal from './UnlockCalendarsModal';

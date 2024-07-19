@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { ErrorsSieve } from '../../interfaces';
+import type { ErrorsSieve } from '../../interfaces';
 
 interface Props {
     onClose: () => void;

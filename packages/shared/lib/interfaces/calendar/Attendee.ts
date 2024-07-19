@@ -1,5 +1,5 @@
-import { ATTENDEE_STATUS_API } from '../../calendar/constants';
-import { VcalAttendeeProperty, VcalAttendeePropertyParameters } from './VcalModel';
+import type { ATTENDEE_STATUS_API } from '../../calendar/constants';
+import type { VcalAttendeeProperty, VcalAttendeePropertyParameters } from './VcalModel';
 
 export interface AttendeeClearPartResult {
     status: ATTENDEE_STATUS_API;

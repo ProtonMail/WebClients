@@ -2,16 +2,16 @@ import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { FeatureCode, useApi, useFeature } from '@proton/components/index';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { WorkerDecryptionResult } from '@proton/crypto';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import ConfirmDownloadAttachments from '../../components/attachment/modals/ConfirmDownloadAttachments';
+import type { Download } from '../../helpers/attachment/attachmentDownloader';
 import {
-    Download,
     formatDownload,
     formatDownloadAll,
     generateDownload,
@@ -19,7 +19,7 @@ import {
 } from '../../helpers/attachment/attachmentDownloader';
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import { MessageKeys, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
+import type { MessageKeys, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from './useAttachment';

@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { ShareType } from '../..';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isIgnoredError, sendErrorReport } from '../../../utils/errorHandling';
-import { DecryptedLink, useLink } from '../../_links';
+import type { DecryptedLink } from '../../_links';
+import { useLink } from '../../_links';
 import { useShareType } from './useShareType';
 
 export const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {

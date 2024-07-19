@@ -1,6 +1,6 @@
-import { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
+import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
 
-import {
+import type {
     Api,
     ForwardingState,
     ForwardingType,

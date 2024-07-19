@@ -1,4 +1,5 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,13 +16,13 @@ import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Alert,
     Checkbox,
     ErrorButton,
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

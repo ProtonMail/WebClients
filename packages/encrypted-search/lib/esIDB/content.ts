@@ -1,6 +1,6 @@
 import { STORING_OUTCOME } from '../constants';
 import { ciphertextSize, decryptFromDB } from '../esHelpers';
-import { EncryptedItemWithInfo } from '../models';
+import type { EncryptedItemWithInfo } from '../models';
 import { updateSize } from './configObjectStore';
 import { openESDB, safelyWriteToIDBConditionally } from './indexedDB';
 

@@ -1,4 +1,4 @@
-import { UserState } from '@lexical/yjs'
+import type { UserState } from '@lexical/yjs'
 
 export enum DocAwarenessEvent {
   AwarenessStateChange = 'AwarenessStateChange',

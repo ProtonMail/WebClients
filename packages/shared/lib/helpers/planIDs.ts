@@ -1,7 +1,7 @@
+import type { FreeSubscription } from '../constants';
 import {
     ADDON_NAMES,
     DOMAIN_ADDON_PREFIX,
-    FreeSubscription,
     IP_ADDON_PREFIX,
     MEMBER_ADDON_PREFIX,
     PLANS,
@@ -9,7 +9,8 @@ import {
     SCRIBE_ADDON_PREFIX,
     isFreeSubscription,
 } from '../constants';
-import { Addon, Organization, Plan, PlanIDs, PlansMap, SubscriptionModel, getMaxValue } from '../interfaces';
+import type { Addon, Organization, Plan, PlanIDs, PlansMap, SubscriptionModel } from '../interfaces';
+import { getMaxValue } from '../interfaces';
 
 const {
     MAIL,

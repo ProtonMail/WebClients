@@ -3,16 +3,19 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
-import { MnemonicKeyResponse, getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
+import type { MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';
+import { getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared/lib/keys';
+import type { DecryptedKey, KeySalt } from '@proton/shared/lib/interfaces';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import type { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared/lib/keys';
 import { getInitialStates } from '@proton/shared/lib/keys/getInactiveKeys';
-import {
+import type {
     KeyReactivationRequest,
     KeyReactivationRequestState,
     KeyReactivationRequestStateData,
@@ -21,10 +24,10 @@ import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { computeKeyPassword } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

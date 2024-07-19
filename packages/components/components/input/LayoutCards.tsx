@@ -1,6 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
-import LayoutCard, { LayoutCardProps } from './LayoutCard';
+import type { LayoutCardProps } from './LayoutCard';
+import LayoutCard from './LayoutCard';
 
 interface Props {
     list: LayoutCardProps[];

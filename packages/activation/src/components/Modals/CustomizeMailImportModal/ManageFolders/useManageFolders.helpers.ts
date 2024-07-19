@@ -1,10 +1,10 @@
-import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getMailMappingError } from '@proton/activation/src/helpers/getMailMappingErrors';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { FolderMapItem, MailImportFields } from '../CustomizeMailImportModal.interface';
+import type { FolderMapItem, MailImportFields } from '../CustomizeMailImportModal.interface';
 
 interface FormatItemsProps {
     mapping: MailImportFields['mapping'];

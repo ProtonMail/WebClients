@@ -2,9 +2,9 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     CYCLE,
     MAIL_APP_NAME,
     OPEN_OFFER_MODAL_EVENT,

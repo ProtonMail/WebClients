@@ -3,7 +3,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
+import type { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds

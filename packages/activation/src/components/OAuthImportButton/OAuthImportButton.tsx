@@ -1,11 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    EASY_SWITCH_SOURCES,
-    EasySwitchFeatureFlag,
-    ImportProvider,
-    ImportType,
-} from '@proton/activation/src/interface';
+import type { EASY_SWITCH_SOURCES, EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
+import { ImportProvider } from '@proton/activation/src/interface';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { FeatureCode } from '@proton/components/containers/features';

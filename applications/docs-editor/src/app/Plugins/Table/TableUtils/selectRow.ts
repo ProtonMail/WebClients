@@ -1,5 +1,6 @@
-import { TableRowNode } from '@lexical/table'
-import { $createRangeSelection, $setSelection, LexicalEditor } from 'lexical'
+import type { TableRowNode } from '@lexical/table'
+import type { LexicalEditor } from 'lexical'
+import { $createRangeSelection, $setSelection } from 'lexical'
 
 export function selectRow(editor: LexicalEditor, rowNode: TableRowNode) {
   editor.update(() => {

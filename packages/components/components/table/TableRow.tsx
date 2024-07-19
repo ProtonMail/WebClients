@@ -1,4 +1,5 @@
-import { HTMLAttributes, ReactNode, forwardRef } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 import Cell from './Cell';
 import TableCell from './TableCell';

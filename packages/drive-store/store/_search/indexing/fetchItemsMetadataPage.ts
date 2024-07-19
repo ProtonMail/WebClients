@@ -1,11 +1,11 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import retryOnError from '../../../utils/retryOnError';
 import { PAGE_SIZE, SESSION_EXPIRED_ERROR_CODE } from '../constants';
-import { Session } from '../types';
+import type { Session } from '../types';
 import { getDefaultSessionValue } from '../utils';
-import { FetchShareMap } from './useFetchShareMap';
+import type { FetchShareMap } from './useFetchShareMap';
 
 export const fetchItemsMetadataPage = async (
     shareId: string,

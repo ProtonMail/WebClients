@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef } from 'react';
+import type { ComponentPropsWithRef } from 'react';
 
 interface ScaleLabelProps extends ComponentPropsWithRef<'div'> {
     fromLabel: string;

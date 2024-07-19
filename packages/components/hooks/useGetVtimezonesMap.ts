@@ -3,9 +3,9 @@ import { useCallback } from 'react';
 import { getVtimezones } from '@proton/shared/lib/api/calendars';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { GET_VTIMEZONES_API_LIMIT } from '@proton/shared/lib/constants';
-import { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
-import { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import chunk from '@proton/utils/chunk';
 import unique from '@proton/utils/unique';
 

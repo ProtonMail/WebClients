@@ -1,9 +1,9 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
@@ -11,10 +11,10 @@ import unique from '@proton/utils/unique';
 
 import { MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
+import type { Conversation } from '../../models/conversation';
+import type { Element } from '../../models/element';
 import { newElementsState } from './elementsSlice';
-import {
+import type {
     ESResults,
     ElementsState,
     EventUpdates,

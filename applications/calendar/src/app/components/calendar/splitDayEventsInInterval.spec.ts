@@ -1,4 +1,4 @@
-import { CalendarViewEventData } from '../../containers/calendar/interface';
+import type { CalendarViewEventData } from '../../containers/calendar/interface';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';
 
 describe('splitDayEventsInInterval()', () => {

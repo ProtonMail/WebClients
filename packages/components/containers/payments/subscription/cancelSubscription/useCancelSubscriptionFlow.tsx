@@ -3,10 +3,12 @@ import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
 import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
-import { PaymentsVersion, changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import { PLANS, PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/shared/lib/constants';
+import { PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
@@ -42,16 +44,14 @@ import MemberDowngradeModal from '../../MemberDowngradeModal';
 import { getShortPlan } from '../../features/plan';
 import CalendarDowngradeModal from '../CalendarDowngradeModal';
 import CancelSubscriptionLoadingModal from '../CancelSubscriptionLoadingModal';
-import FeedbackDowngradeModal, {
-    FeedbackDowngradeData,
-    FeedbackDowngradeResult,
-    isKeepSubscription,
-} from '../FeedbackDowngradeModal';
-import HighlightPlanDowngradeModal, { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
+import type { FeedbackDowngradeData, FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
+import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
+import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
+import HighlightPlanDowngradeModal from '../HighlightPlanDowngradeModal';
 import InAppPurchaseModal from '../InAppPurchaseModal';
 import { DiscountWarningModal, VisionaryWarningModal } from '../PlanLossWarningModal';
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
-import { CancelSubscriptionResult } from './types';
+import type { CancelSubscriptionResult } from './types';
 
 const SUBSCRIPTION_KEPT: CancelSubscriptionResult = {
     status: 'kept',

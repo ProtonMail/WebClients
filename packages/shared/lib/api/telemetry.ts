@@ -1,4 +1,4 @@
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',

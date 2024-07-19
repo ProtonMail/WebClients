@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react';
 import { addDays, isBefore, startOfDay } from 'date-fns';
 
 import { useFeature } from '@proton/components/hooks';
-import { InboxDesktopFreeTrialDates, InboxDesktopFreeTrialReminders } from '@proton/shared/lib/desktop/desktopTypes';
+import type {
+    InboxDesktopFreeTrialDates,
+    InboxDesktopFreeTrialReminders,
+} from '@proton/shared/lib/desktop/desktopTypes';
 
 import { FeatureCode } from '../../features';
 import { shouldDisplayReminder } from './shouldDisplayReminder';

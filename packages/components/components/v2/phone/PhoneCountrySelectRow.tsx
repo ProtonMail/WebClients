@@ -1,9 +1,10 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from '../../dropdown';
-import { CountryOptionData } from './helper';
+import type { CountryOptionData } from './helper';
 
 interface Props {
     data: CountryOptionData;

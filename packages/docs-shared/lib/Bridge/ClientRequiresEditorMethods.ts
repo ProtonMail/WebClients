@@ -1,8 +1,8 @@
-import { DocumentRoleType } from '../Doc/DocumentRole'
-import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
-import { EditorInitializationConfig } from '../EditorInitializationConfig'
-import { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
-import { SerializedEditorState } from 'lexical'
+import type { DocumentRoleType } from '../Doc/DocumentRole'
+import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
+import type { EditorInitializationConfig } from '../EditorInitializationConfig'
+import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
+import type { SerializedEditorState } from 'lexical'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>

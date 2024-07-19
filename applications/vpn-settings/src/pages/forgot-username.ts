@@ -1,5 +1,5 @@
 import result from 'proton-account/src/pages/forgot-username';
-import { Parameters } from 'proton-account/src/pages/interface';
+import type { Parameters } from 'proton-account/src/pages/interface';
 
 const data = (): Parameters => ({
     ...result(),

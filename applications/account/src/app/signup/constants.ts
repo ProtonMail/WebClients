@@ -4,7 +4,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 
-import { SignupModel } from './interfaces';
+import type { SignupModel } from './interfaces';
 
 export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     domains: [],

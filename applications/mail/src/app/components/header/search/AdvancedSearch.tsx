@@ -1,19 +1,21 @@
-import { FormEvent, useMemo, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { add, fromUnixTime, getUnixTime, isAfter, isBefore, isEqual, sub } from 'date-fns';
-import { History } from 'history';
+import type { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
-import { ESIndexingState, contentIndexingProgress } from '@proton/encrypted-search';
+import type { ESIndexingState } from '@proton/encrypted-search';
+import { contentIndexingProgress } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
 import AddressInput from 'proton-mail/components/composer/addresses/AddressInput';

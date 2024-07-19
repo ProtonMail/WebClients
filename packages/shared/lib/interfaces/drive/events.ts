@@ -1,5 +1,5 @@
-import { EVENT_TYPES } from '../../drive/constants';
-import { LinkMeta } from './link';
+import type { EVENT_TYPES } from '../../drive/constants';
+import type { LinkMeta } from './link';
 
 export interface DriveEventsResult {
     Events: DriveEventResult[];

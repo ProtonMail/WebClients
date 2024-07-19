@@ -7,7 +7,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { WAIT_TIME } from '../constants';
-import {
+import type {
     ChildrenLinkMeta,
     DownloadCallbacks,
     DownloadStreamControls,
@@ -20,7 +20,7 @@ import {
 } from '../interface';
 import ArchiveGenerator from './archiveGenerator';
 import ConcurrentIterator from './concurrentIterator';
-import { NestedLinkDownload } from './interface';
+import type { NestedLinkDownload } from './interface';
 
 type FolderLoadInfo = {
     size: number;

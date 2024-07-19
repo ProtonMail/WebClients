@@ -1,5 +1,5 @@
 import { normalize } from '../helpers/string';
-import {
+import type {
     VcalAttendeeProperty,
     VcalAttendeePropertyWithCn,
     VcalAttendeePropertyWithPartstat,

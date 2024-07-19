@@ -7,7 +7,7 @@ import unary from '@proton/utils/unary';
 
 import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
-import { Options } from '../../date-fns-utc/format';
+import type { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
 import {
     buildMailTo,
@@ -18,8 +18,8 @@ import {
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
-import { Address } from '../../interfaces';
-import {
+import type { Address } from '../../interfaces';
+import type {
     Attendee,
     CalendarEvent,
     CalendarSettings,
@@ -33,9 +33,9 @@ import {
     VcalVeventComponent,
     VcalVtimezoneComponent,
 } from '../../interfaces/calendar';
-import { ContactEmail } from '../../interfaces/contacts';
-import { GetVTimezonesMap } from '../../interfaces/hooks/GetVTimezonesMap';
-import { RequireSome } from '../../interfaces/utils';
+import type { ContactEmail } from '../../interfaces/contacts';
+import type { GetVTimezonesMap } from '../../interfaces/hooks/GetVTimezonesMap';
+import type { RequireSome } from '../../interfaces/utils';
 import { getSupportedPlusAlias } from '../../mail/addresses';
 import { MESSAGE_FLAGS } from '../../mail/constants';
 import { RE_PREFIX, formatSubject } from '../../mail/messages';

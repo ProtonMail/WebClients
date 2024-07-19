@@ -4,7 +4,7 @@ import { ContextSeparator } from '@proton/components/components';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 
 import type { DriveFileRevision } from '../../store';
-import { ContextMenuProps } from '../FileBrowser';
+import type { ContextMenuProps } from '../FileBrowser';
 import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
 import {
     RevisionDeleteButton,

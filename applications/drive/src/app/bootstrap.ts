@@ -13,8 +13,8 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
-import { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';

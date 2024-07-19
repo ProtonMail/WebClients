@@ -1,4 +1,5 @@
-import DOMPurify, { Config } from 'dompurify';
+import type { Config } from 'dompurify';
+import DOMPurify from 'dompurify';
 
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 

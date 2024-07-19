@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
-import {
+import type {
     Address,
     AddressKey,
     CachedOrganizationKey,

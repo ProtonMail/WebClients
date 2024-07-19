@@ -7,19 +7,21 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
 import CreateUserAccountsModal from '@proton/components/containers/members/multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';
-import { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { CreateMemberMode, Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
+import type { ModalProps } from '../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useModalState,
 } from '../../components';
-import { CsvConfig, downloadSampleCSV } from './multipleUserCreation/csv';
+import type { CsvConfig } from './multipleUserCreation/csv';
+import { downloadSampleCSV } from './multipleUserCreation/csv';
 
 enum Step {
     INSTRUCTION,

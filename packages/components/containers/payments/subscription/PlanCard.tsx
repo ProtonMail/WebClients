@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { PLANS } from '@proton/shared/lib/constants';
-import { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Price, PrimaryButton } from '../../../components';

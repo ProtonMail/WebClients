@@ -1,4 +1,5 @@
-import { CryptoProxy, PublicKeyReference, SessionKey, toPublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -14,8 +15,8 @@ import { unwrap, wrap } from '../../lib/calendar/helper';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
 import { toCRLF } from '../../lib/helpers/string';
-import { RequireSome } from '../../lib/interfaces';
-import {
+import type { RequireSome } from '../../lib/interfaces';
+import type {
     Attendee,
     CalendarEventData,
     CreateOrUpdateCalendarEventData,

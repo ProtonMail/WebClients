@@ -4,7 +4,7 @@ import { useSettingsLink } from '@proton/components/components';
 import QuickSettingsReminder from '@proton/components/components/drawer/views/quickSettings/QuickSettingsReminder';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
 import { useRecoveryNotification } from '@proton/components/hooks';
-import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 interface Props {

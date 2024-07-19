@@ -1,15 +1,17 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
-import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { PaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
-import { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton, useModalState } from '../../../components';
-import { ChargebeePaypalWrapper, ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
+import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
+import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
 import EditCardModal from '../EditCardModal';
 import StyledPayPalButton from '../StyledPayPalButton';
-import { SUBSCRIPTION_STEPS } from './constants';
+import type { SUBSCRIPTION_STEPS } from './constants';
 
 type Props = {
     className?: string;

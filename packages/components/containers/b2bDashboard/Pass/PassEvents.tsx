@@ -8,11 +8,11 @@ import { Block, Pagination } from '@proton/components/components';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getPassLogs } from '@proton/shared/lib/api/b2blogs';
-import { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
+import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
 import { GenericError, SettingsSectionWide } from '../../..';
-import { PassEvent } from '../../..';
+import type { PassEvent } from '../../..';
 import { usePaginationAsync } from '../../..';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';

@@ -4,11 +4,11 @@ import type { WorkerDecryptionResult } from '@proton/crypto';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import { Api } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
+import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 import { getAndVerify } from './attachmentLoader';
 
 export interface Download {

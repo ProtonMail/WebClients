@@ -5,7 +5,7 @@ import {
 } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import { VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export const getStartDateTimeMerged = (
     newProperty: VcalDateOrDateTimeProperty,

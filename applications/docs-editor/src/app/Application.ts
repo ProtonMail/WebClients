@@ -1,5 +1,7 @@
-import { DocumentRole, DocumentRoleType, InternalEventBus } from '@proton/docs-shared'
-import { Logger, LoggerInterface } from '@proton/utils/logs'
+import type { DocumentRoleType } from '@proton/docs-shared'
+import { DocumentRole, InternalEventBus } from '@proton/docs-shared'
+import type { LoggerInterface } from '@proton/utils/logs'
+import { Logger } from '@proton/utils/logs'
 
 export class Application {
   public readonly eventBus = new InternalEventBus()

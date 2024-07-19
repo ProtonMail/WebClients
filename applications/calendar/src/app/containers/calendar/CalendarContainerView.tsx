@@ -1,4 +1,5 @@
-import { ReactNode, Ref, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
@@ -41,24 +42,21 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
-import {
-    CONTACT_WIDGET_TABS,
-    CustomAction,
-    CustomActionRenderProps,
-} from '@proton/components/containers/contacts/widget/types';
+import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
+import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Address } from '@proton/shared/lib/interfaces';
-import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
 

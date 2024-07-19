@@ -1,6 +1,6 @@
 import { enUS } from 'date-fns/locale';
 
-import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
+import type { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 
@@ -15,7 +15,7 @@ import {
 import { parse, parseVcalendarWithRecoveryAndMaybeErrors } from '../../lib/calendar/vcal';
 import { getIcalMethod } from '../../lib/calendar/vcalHelper';
 import { omit } from '../../lib/helpers/object';
-import {
+import type {
     VcalDateTimeProperty,
     VcalErrorComponent,
     VcalVcalendar,

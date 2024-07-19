@@ -1,10 +1,12 @@
-import { ElementType, ForwardedRef, ReactElement, cloneElement, forwardRef } from 'react';
+import type { ElementType, ForwardedRef, ReactElement } from 'react';
+import { cloneElement, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, ButtonLikeProps, NotificationDot } from '@proton/atoms';
-import { ThemeColor } from '@proton/colors/types';
-import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import type { ButtonLikeProps } from '@proton/atoms';
+import { ButtonLike, NotificationDot } from '@proton/atoms';
+import type { ThemeColor } from '@proton/colors/types';
+import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 type ButtonButtonLikeProps = ButtonLikeProps<'button'>;

@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { APP_NAMES, BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
+import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 
-import { ModalStateProps, Prompt, Tooltip, useModalState } from '../../components';
+import type { ModalStateProps } from '../../components';
+import { Prompt, Tooltip, useModalState } from '../../components';
 import { useCustomDomains } from '../../hooks';
 import SubUserCreateModal from './SubUserCreateModal';
 

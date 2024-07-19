@@ -1,4 +1,5 @@
-import { DragEvent, ReactNode, useEffect, useMemo, useRef } from 'react';
+import type { DragEvent, ReactNode } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 interface DragMoveContentProps<T> {

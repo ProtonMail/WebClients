@@ -1,4 +1,4 @@
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useDownload } from '../../store/_downloads';
@@ -8,8 +8,8 @@ import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper
 import { useAbortSignal } from '../../store/_views/utils';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../utils/stream';
-import { LegacyNodeMeta } from '../interface';
-import { DecryptedNode } from './interface';
+import type { LegacyNodeMeta } from '../interface';
+import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 
 export const useNode = () => {

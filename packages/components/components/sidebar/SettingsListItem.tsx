@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms';
-import { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors';
 
-import { IconName } from '../icon/Icon';
+import type { IconName } from '../icon/Icon';
 import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon, SidebarListItemLink } from './index';
 
 interface Props {

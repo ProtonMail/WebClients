@@ -1,4 +1,5 @@
-import { ForwardingType, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ForwardingType } from '@proton/shared/lib/interfaces';
 
 import { isLastOutgoingNonE2EEForwarding } from './helpers';
 

@@ -1,4 +1,5 @@
-import { DragEvent, KeyboardEvent, MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
+import type { DragEvent, KeyboardEvent, MouseEvent, RefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +16,7 @@ import {
 } from '@proton/components';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
@@ -25,7 +26,8 @@ import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useOnMailTo } from '../../../containers/ComposeProvider';
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageSendInfo, useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 

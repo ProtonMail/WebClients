@@ -1,7 +1,7 @@
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import type { VERIFICATION_STATUS } from '@proton/crypto';
 
-import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
-import { LinkDownload } from '../interface';
+import type { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
+import type { LinkDownload } from '../interface';
 
 export interface Download {
     // ID of the download for referencing (such as pausing and so on).

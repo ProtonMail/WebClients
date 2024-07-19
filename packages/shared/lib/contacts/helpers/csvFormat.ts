@@ -3,15 +3,15 @@ import capitalize from '@proton/utils/capitalize';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { normalize } from '../../helpers/string';
-import { ContactValue } from '../../interfaces/contacts';
-import {
+import type { ContactValue } from '../../interfaces/contacts';
+import type {
     Combine,
     Display,
     ParsedCsvContacts,
     PreVcardProperty,
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
-import { VCardOrg } from '../../interfaces/contacts/VCard';
+import type { VCardOrg } from '../../interfaces/contacts/VCard';
 import { getStringContactValue } from '../properties';
 import { icalValueToInternalAddress, icalValueToNValue, icalValueToOrgValue } from '../vcard';
 

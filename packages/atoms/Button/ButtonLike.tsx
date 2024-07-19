@@ -1,7 +1,8 @@
-import { ElementType, ForwardedRef, forwardRef } from 'react';
+import type { ElementType, ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 
-import { ThemeColorUnion } from '@proton/colors';
-import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import type { ThemeColorUnion } from '@proton/colors';
+import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { CircleLoader } from '../CircleLoader';

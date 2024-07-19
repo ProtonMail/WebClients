@@ -6,7 +6,7 @@ import { getLocation } from '@proton/shared/lib/api/vpn';
 import { singleCountryTimezoneDatabase } from '@proton/shared/lib/date/singleCountryTimezoneDatabase';
 import { manualFindTimeZone } from '@proton/shared/lib/date/timezoneDatabase';
 import { getNaiveCountryCode } from '@proton/shared/lib/i18n/helper';
-import { Api, MyLocationResponse } from '@proton/shared/lib/interfaces';
+import type { Api, MyLocationResponse } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import useApi from './useApi';

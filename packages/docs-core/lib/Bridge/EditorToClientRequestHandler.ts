@@ -1,4 +1,4 @@
-import {
+import type {
   BroadcastSource,
   CommentInterface,
   CommentThreadInterface,
@@ -6,10 +6,10 @@ import {
   InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
-import { UserState } from '@lexical/yjs'
-import { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
+import type { UserState } from '@lexical/yjs'
+import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
-import { ErrorInfo } from 'react'
+import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
 
 /** Handle messages sent by the editor to the client */

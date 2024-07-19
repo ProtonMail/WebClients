@@ -1,17 +1,19 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { OnLoginCallback, UnAuthenticated, useFlag } from '@proton/components/index';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { OnLoginCallback } from '@proton/components/index';
+import { UnAuthenticated, useFlag } from '@proton/components/index';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { passApps } from '@proton/shared/lib/authentication/apps';
-import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, APP_NAMES, CLIENT_TYPES, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
+import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import SignupContainer from '../signup/SignupContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
-import { MetaTags } from '../useMetaTags';
-import { Paths } from './helper';
+import type { MetaTags } from '../useMetaTags';
+import type { Paths } from './helper';
 
 interface Props {
     hasBFCoupon: boolean;

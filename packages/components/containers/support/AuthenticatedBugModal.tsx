@@ -1,5 +1,6 @@
 import { useAddresses, useUser, useUserSettings } from '../../hooks';
-import BugModal, { Props } from './BugModal';
+import type { Props } from './BugModal';
+import BugModal from './BugModal';
 
 const AuthenticatedBugModal = (props: Omit<Props, 'username' | 'email'>) => {
     const [{ Name = '', Email }] = useUser();

@@ -2,7 +2,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
 import type { ExtensionApp } from '../browser/extension';
-import { APPS, APPS_CONFIGURATION, APP_NAMES, EXTENSIONS, VPN_HOSTNAME } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS, APPS_CONFIGURATION, EXTENSIONS, VPN_HOSTNAME } from '../constants';
 import {
     isElectronMail,
     isElectronOnLinux,

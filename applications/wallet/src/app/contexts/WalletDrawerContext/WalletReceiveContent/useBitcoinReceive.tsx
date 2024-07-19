@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { WasmApiWalletAccount, WasmPaymentLink } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmPaymentLink } from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
 import { BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING } from '@proton/wallet';
 

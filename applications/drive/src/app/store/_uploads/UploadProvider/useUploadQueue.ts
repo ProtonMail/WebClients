@@ -13,8 +13,8 @@ import {
     isTransferInitializing,
     isTransferPending,
 } from '../../../utils/transfer';
-import { UploadFileItem, UploadFileList, UploadFolderItem } from '../interface';
-import {
+import type { UploadFileItem, UploadFileList, UploadFolderItem } from '../interface';
+import type {
     FileUpload,
     FileUploadReady,
     FolderUpload,
@@ -24,10 +24,9 @@ import {
     UpdateData,
     UpdateFilter,
     UpdateState,
-    UploadConflictError,
     UploadQueue,
-    UploadUserError,
 } from './interface';
+import { UploadConflictError, UploadUserError } from './interface';
 
 type LogCallback = (id: string, message: string) => void;
 

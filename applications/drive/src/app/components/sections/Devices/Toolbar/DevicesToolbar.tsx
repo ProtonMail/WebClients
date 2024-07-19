@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Toolbar } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Device } from '../../../../store';
+import type { Device } from '../../../../store';
 import { useSelection } from '../../../FileBrowser';
 import { LayoutButton } from '../../ToolbarButtons';
 import DesktopDownloadDropdown from '../../ToolbarButtons/DesktopDownloadDropdown';

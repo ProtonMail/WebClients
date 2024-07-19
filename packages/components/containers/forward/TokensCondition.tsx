@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { Icon } from '../../components';
-import { Condition } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 
 interface TokenProps {
     index: number;

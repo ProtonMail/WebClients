@@ -1,6 +1,6 @@
 import * as useConfigModule from '@proton/components/hooks/useConfig';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 export const mockUseConfig = (value?: Partial<ProtonConfig>) => {
     const spy = vi.spyOn(useConfigModule, 'default');

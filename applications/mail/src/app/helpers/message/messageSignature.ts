@@ -1,5 +1,5 @@
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
@@ -7,7 +7,7 @@ import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
 import { isHTMLEmpty } from '../dom';
 import { replaceLineBreaks } from '../string';

@@ -1,10 +1,11 @@
-import { ReactNode, Reducer, useEffect, useReducer, useState } from 'react';
+import type { ReactNode, Reducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import NotificationsChildrenContext from './childrenContext';
-import { Notification, NotificationOffset } from './interfaces';
+import type { Notification, NotificationOffset } from './interfaces';
 import createManager from './manager';
 import NotificationsContext from './notificationsContext';
 

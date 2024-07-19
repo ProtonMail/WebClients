@@ -3,12 +3,12 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, InlineLinkButton, Scroll } from '@proton/atoms';
+import type { OnLoginCallback } from '@proton/components';
 import {
     Alert,
     ConfirmSignOutModal,
     Icon,
     Loader,
-    OnLoginCallback,
     Prompt,
     useApi,
     useErrorHandler,
@@ -18,23 +18,22 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
-import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
+import type { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { ForkSearchParameters, getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
-import {
-    LocalSessionPersisted,
-    getActiveSessions,
-    resumeSession,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { MetaTags, useMetaTags } from '../useMetaTags';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';

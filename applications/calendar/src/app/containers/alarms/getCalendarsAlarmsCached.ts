@@ -1,6 +1,6 @@
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
-import { CalendarAlarmCache } from './CacheInterface';
+import type { CalendarAlarmCache } from './CacheInterface';
 import getPaginatedAlarms from './getPaginatedAlarms';
 
 const getCalendarsAlarmsCached = (api: Api, cache: CalendarAlarmCache, calendarIDs: string[], dateRange: Date[]) => {

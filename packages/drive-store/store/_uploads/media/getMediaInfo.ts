@@ -2,7 +2,8 @@ import { isSVG, isSupportedImage, isVideo } from '@proton/shared/lib/helpers/mim
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { imageCannotBeLoadedError, scaleImageFile } from './image';
-import { Media, ThumbnailInfo, ThumbnailType } from './interface';
+import type { Media, ThumbnailInfo } from './interface';
+import { ThumbnailType } from './interface';
 import { scaleSvgFile } from './svg';
 import { getVideoInfo } from './video';
 

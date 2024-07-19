@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { mockGlobalFile, testFile } from '../../../utils/test/file';
-import { UploadFileList } from '../interface';
-import { FileUpload, FolderUpload, UploadQueue } from './interface';
+import type { UploadFileList } from '../interface';
+import type { FileUpload, FolderUpload, UploadQueue } from './interface';
 import useUploadQueue, { addItemToQueue } from './useUploadQueue';
 
 function createEmptyQueue(): UploadQueue {

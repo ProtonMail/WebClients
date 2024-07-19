@@ -1,6 +1,8 @@
-import { ReactNode, Ref, forwardRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
 
-import ButtonGroup, { Color, Shape } from '@proton/components/components/button/ButtonGroup';
+import type { Color, Shape } from '@proton/components/components/button/ButtonGroup';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 
 interface Props {
     color: Color;

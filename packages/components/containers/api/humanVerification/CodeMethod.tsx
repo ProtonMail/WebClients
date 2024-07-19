@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +9,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../../components';
 import useNotifications from '../../../hooks/useNotifications';
@@ -18,7 +19,8 @@ import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';
 import { getRoute } from './helper';
-import { HumanVerificationSteps, VerificationModel } from './interface';
+import type { VerificationModel } from './interface';
+import { HumanVerificationSteps } from './interface';
 
 interface Props {
     api: Api;

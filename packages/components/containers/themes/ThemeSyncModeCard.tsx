@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import { PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, ThemeCards } from '../..';
-import { Theme } from './ThemeCards';
-import { ThemeSvgSize } from './ThemeSvg';
+import type { Theme } from './ThemeCards';
+import type { ThemeSvgSize } from './ThemeSvg';
 
 interface Props {
     mode: 'light' | 'dark';

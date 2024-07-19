@@ -1,4 +1,5 @@
-import React, { CSSProperties, FC, useCallback, useEffect, useRef, useState } from 'react';
+import type { CSSProperties, FC } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { formatDuration } from 'date-fns';
 import { c } from 'ttag';

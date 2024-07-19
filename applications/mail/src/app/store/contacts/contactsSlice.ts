@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { globalReset } from '../actions';
 import { refresh } from './contactsActions';
 import { refresh as refreshReducer, reset } from './contactsReducers';
-import { ContactsState } from './contactsTypes';
+import type { ContactsState } from './contactsTypes';
 
 export const mailContactsInitialState: ContactsState = {
     contactsMap: {},

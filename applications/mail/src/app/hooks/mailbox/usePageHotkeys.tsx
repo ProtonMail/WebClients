@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
-import { HotkeyTuple, useHotkeys } from '@proton/components';
+import type { HotkeyTuple } from '@proton/components';
+import { useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 

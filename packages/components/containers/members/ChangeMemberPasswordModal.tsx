@@ -25,15 +25,17 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, Api, User } from '@proton/shared/lib/interfaces';
-import { Member } from '@proton/shared/lib/interfaces/Member';
+import type { Address, Api, User } from '@proton/shared/lib/interfaces';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { generateKeySaltAndPassphrase, getDecryptedUserKeys, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
-import { Credentials, srpVerify } from '@proton/shared/lib/srp';
+import type { Credentials } from '@proton/shared/lib/srp';
+import { srpVerify } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     InputFieldTwo,
@@ -41,7 +43,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     useFormErrors,
 } from '../../components';

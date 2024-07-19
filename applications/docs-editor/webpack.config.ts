@@ -1,4 +1,4 @@
-import { Configuration } from 'webpack'
+import type { Configuration } from 'webpack'
 
 import getConfig from '@proton/pack/webpack.config'
 import { addDevEntry } from '@proton/pack/webpack/entries'

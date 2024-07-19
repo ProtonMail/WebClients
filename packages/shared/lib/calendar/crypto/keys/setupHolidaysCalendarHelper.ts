@@ -1,11 +1,11 @@
 import { joinHolidaysCalendar } from '../../../api/calendars';
-import { Address, Api } from '../../../interfaces';
-import {
+import type { Address, Api } from '../../../interfaces';
+import type {
     CalendarNotificationSettings,
     HolidaysDirectoryCalendar,
     JoinHolidayCalendarResponse,
 } from '../../../interfaces/calendar';
-import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getJoinHolidaysCalendarData } from '../../holidaysCalendar/holidaysCalendar';
 
 interface Props {

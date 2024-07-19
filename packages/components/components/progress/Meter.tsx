@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 import isBetween from '@proton/utils/isBetween';

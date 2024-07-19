@@ -4,7 +4,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import noop from '@proton/utils/noop';
 
-import { Notification } from './interfaces';
+import type { Notification } from './interfaces';
 import createNotificationManager from './manager';
 
 describe('notification manager', () => {

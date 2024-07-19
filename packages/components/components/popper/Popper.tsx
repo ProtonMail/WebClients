@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes, ReactNode, Ref } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode, Ref } from 'react';
 
 import Portal from '../portal/Portal';
 

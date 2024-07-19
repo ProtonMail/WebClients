@@ -3,11 +3,12 @@ import { fireEvent } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { addApiMock } from '@proton/testing/lib/api';
 
 import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
-import ContactExportingModal, { ContactExportingProps } from './ContactExportingModal';
+import type { ContactExportingProps } from './ContactExportingModal';
+import ContactExportingModal from './ContactExportingModal';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile', () => {
     return jest.fn();

@@ -6,9 +6,10 @@ import { NavigationControl } from '@proton/components/containers';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { DecryptedLink, useDownload, usePublicFolderView } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDownload, usePublicFolderView } from '../../../store';
 import { usePublicFileView } from '../../../store/_views/useFileView';
-import { SortParams } from '../../../store/_views/utils/useSorting';
+import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import { useUpsellFloatingModal } from '../../modals/UpsellFloatingModal';
@@ -19,7 +20,7 @@ import SharedPageFooter from '../Layout/SharedPageFooter';
 import SharedPageHeader from '../Layout/SharedPageHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
 import SharedPageTransferManager from '../TransferModal/SharedPageTransferManager';
-import { PublicLink } from '../interface';
+import type { PublicLink } from '../interface';
 import SharedFileBrowser from './FileBrowser';
 
 interface Props {

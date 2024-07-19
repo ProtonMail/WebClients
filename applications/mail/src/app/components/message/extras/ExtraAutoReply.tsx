@@ -5,7 +5,7 @@ import { Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
 
-import { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageWithOptionalBody;

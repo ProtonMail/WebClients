@@ -1,5 +1,5 @@
 import { CrossStorageTimeoutError, CrossStorageUnsupportedError } from './errors';
-import { CrossStorageMessage } from './interface';
+import type { CrossStorageMessage } from './interface';
 import { getIsSupported } from './support';
 
 enum States {

@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { Plan } from '@proton/shared/lib/interfaces';
+import type { Plan } from '@proton/shared/lib/interfaces';
 
 import { Info } from '../../../components';
 

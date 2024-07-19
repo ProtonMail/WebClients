@@ -8,9 +8,9 @@ import { HOUR } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { languageCode, localeCode } from '@proton/shared/lib/i18n';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { getRecipients, getRecipientsAddresses, isPlainText } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import unique from '@proton/utils/unique';
@@ -24,8 +24,8 @@ import SendWithWarningsModal from '../../components/composer/addresses/SendWithW
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import { MapSendInfo } from '../../models/crypto';
-import { MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MapSendInfo } from '../../models/crypto';
+import type { MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessage } from '../message/useMessage';
 

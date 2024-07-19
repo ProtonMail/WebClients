@@ -1,4 +1,5 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import React from 'react';
 
 import getVariableFromThemeColor from '@proton/colors/get-variable-from-theme-color';
 import { ThemeColor } from '@proton/colors/types';

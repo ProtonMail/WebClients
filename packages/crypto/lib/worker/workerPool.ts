@@ -1,4 +1,5 @@
-import { Remote, releaseProxy, transferHandlers, wrap } from 'comlink';
+import type { Remote } from 'comlink';
+import { releaseProxy, transferHandlers, wrap } from 'comlink';
 
 import { getIsNetworkError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

@@ -1,10 +1,7 @@
 import isNumber from 'lodash/isNumber';
 
-import {
-    NEWSLETTER_SUBSCRIPTIONS,
-    NEWSLETTER_SUBSCRIPTIONS_BITS,
-    NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
-} from '../constants';
+import type { NEWSLETTER_SUBSCRIPTIONS } from '../constants';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS, NEWSLETTER_SUBSCRIPTIONS_BY_BITS } from '../constants';
 import { hasBit } from './bitset';
 
 export type NewsletterSubscriptionUpdateData = Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>;

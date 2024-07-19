@@ -1,6 +1,6 @@
-import { GetItemInfo } from './esFunctions';
-import { RecordProgress } from './esIndexing';
-import { CachedItem, ESEvent, ESStatusBooleans, EventsObject } from './interfaces';
+import type { GetItemInfo } from './esFunctions';
+import type { RecordProgress } from './esIndexing';
+import type { CachedItem, ESEvent, ESStatusBooleans, EventsObject } from './interfaces';
 
 /**
  * Interface for all the callbacks that are required to run the basic

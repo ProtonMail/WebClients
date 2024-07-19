@@ -8,10 +8,11 @@ import {
     PLANS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { Included, getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
+import type { Included } from '@proton/shared/lib/helpers/checkout';
+import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
-import { FreePlanDefault, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import { getNUsersText } from '../../../features/highlights';

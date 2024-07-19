@@ -1,4 +1,5 @@
-import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { Point, utils } from '@noble/ed25519';
@@ -39,22 +40,18 @@ import {
     useVPNLogicals,
 } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
-import { Certificate } from '../Certificate';
-import { Logical } from '../Logical';
+import type { Certificate } from '../Certificate';
+import type { Logical } from '../Logical';
 import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';
 import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 import { getFlagSvg } from '../flag';
-import { CertificateDTO, CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
-import { KeyPair } from './KeyPair';
+import type { CertificateDTO, CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
+import type { KeyPair } from './KeyPair';
 import WireGuardCreationModal from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
+import type { FeatureFlagsConfig, FeatureOption, FeatureSelection, FeaturesConfig, FeaturesValues } from './feature';
 import {
-    FeatureFlagsConfig,
-    FeatureOption,
-    FeatureSelection,
-    FeaturesConfig,
-    FeaturesValues,
     clientConfigKeys,
     formatFeatureShortName,
     formatFeatureValue,

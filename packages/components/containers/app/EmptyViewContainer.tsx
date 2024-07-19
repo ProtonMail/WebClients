@@ -1,4 +1,5 @@
-import React, { ComponentPropsWithRef, ReactNode } from 'react';
+import type { ComponentPropsWithRef, ReactNode } from 'react';
+import React from 'react';
 
 interface Props extends ComponentPropsWithRef<'div'> {
     imageProps?: ComponentPropsWithRef<'img'>;

@@ -1,4 +1,4 @@
-import { Unwrap, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
+import type { Unwrap, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import {
     decryptAddressKeyToken,
     getDecryptedAddressKeysHelper,

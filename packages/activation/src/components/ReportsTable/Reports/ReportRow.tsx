@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
+import type { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
 import { selectReportById, selectReportSummaryById } from '@proton/activation/src/logic/reports/reports.selectors';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { TableCell, TableRow } from '@proton/components';

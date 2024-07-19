@@ -1,15 +1,16 @@
 import type { sha1 } from '@noble/hashes/sha1';
 
-import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import ChunkFileReader from '../ChunkFileReader';
 import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
-import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
-import { ThumbnailInfo } from '../media';
-import { Verifier } from './interface';
+import type { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
+import type { ThumbnailInfo } from '../media';
+import type { Verifier } from './interface';
 import { VerificationError } from './verifier';
 
 type LogCallback = (message: string) => void;

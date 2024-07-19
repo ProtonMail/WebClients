@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { PopperPlacement, RadioGroup, Spotlight, allPopperPlacements } from '@proton/components';
+import type { PopperPlacement } from '@proton/components';
+import { RadioGroup, Spotlight, allPopperPlacements } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Spotlight.mdx';

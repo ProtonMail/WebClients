@@ -3,23 +3,17 @@ import { createContext, useCallback, useContext, useRef } from 'react';
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
 import { queryLinkMetaBatch } from '@proton/shared/lib/api/drive/link';
 import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
-import { LinkChildrenResult, LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
+import type { LinkChildrenResult, LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { linkMetaToEncryptedLink, useDebouncedRequest } from '../../_api';
 import { waitFor } from '../../_utils';
-import { DecryptedLink } from './../interface';
+import type { DecryptedLink } from './../interface';
 import useLinksState, { isLinkDecrypted } from './../useLinksState';
-import { FetchLoadLinksMeta } from './interface';
-import {
-    FetchMeta,
-    FetchResponse,
-    PAGE_SIZE,
-    SortParams,
-    sortParamsToServerSortArgs,
-    useLinksListingHelpers,
-} from './useLinksListingHelpers';
+import type { FetchLoadLinksMeta } from './interface';
+import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';
+import { PAGE_SIZE, sortParamsToServerSortArgs, useLinksListingHelpers } from './useLinksListingHelpers';
 import { useSharedLinksListing } from './useSharedLinksListing';
 import { useSharedWithMeLinksListing } from './useSharedWithMeLinksListing';
 import { useTrashedLinksListing } from './useTrashedLinksListing';

@@ -1,14 +1,14 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import type { EditorActions, ModalProps } from '@proton/components';
 import {
     Editor,
-    EditorActions,
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -20,7 +20,7 @@ import {
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 interface Props extends ModalProps {
     address: Address;

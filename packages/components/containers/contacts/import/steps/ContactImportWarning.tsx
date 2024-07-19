@@ -1,10 +1,11 @@
-import { Dispatch, FormEvent, SetStateAction } from 'react';
+import type { Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { CONTACTS_APP_NAME } from '@proton/shared/lib/constants';
-import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
 import ErrorDetails from './ContactImportWarningErrorDetails';

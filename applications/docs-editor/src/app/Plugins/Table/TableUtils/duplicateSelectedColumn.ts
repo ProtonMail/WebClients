@@ -1,14 +1,14 @@
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
 import {
   $getTableColumnIndexFromTableCellNode,
   $isTableCellNode,
   $isTableNode,
   $isTableSelection,
-  TableCellNode,
-  TableRowNode,
 } from '@lexical/table'
 import { $findMatchingParent } from '@lexical/utils'
-import { $getSelection, LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
+import { $getSelection } from 'lexical'
 
 export function duplicateSelectedColumn(editor: LexicalEditor, cellNode: TableCellNode) {
   editor.update(

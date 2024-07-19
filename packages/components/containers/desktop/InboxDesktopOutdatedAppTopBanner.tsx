@@ -13,7 +13,8 @@ import {
 
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
-import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion';
+import type { DesktopVersion } from './useInboxDesktopVersion';
+import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 /**
  * Linux is different from Windows and MacOS. There is no auto updates, this means that any user running a version that is not the latest

@@ -1,4 +1,5 @@
-import { FormEvent, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,10 +10,12 @@ import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { RegisterCredentialsPayload, getCreatePayload } from '@proton/shared/lib/webauthn/create';
-import { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
+import type { RegisterCredentialsPayload } from '@proton/shared/lib/webauthn/create';
+import { getCreatePayload } from '@proton/shared/lib/webauthn/create';
+import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
+import type { ModalProps } from '../../../components';
 import {
     Checkbox,
     Form,
@@ -22,7 +25,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '../../../components';
 import { useApi, useErrorHandler, useEventManager } from '../../../hooks';

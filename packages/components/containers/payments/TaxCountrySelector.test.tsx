@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import TaxCountrySelector, { TaxCountrySelectorProps } from './TaxCountrySelector';
+import type { TaxCountrySelectorProps } from './TaxCountrySelector';
+import TaxCountrySelector from './TaxCountrySelector';
 
 const setSelectedCountry = jest.fn();
 const setFederalStateCode = jest.fn();

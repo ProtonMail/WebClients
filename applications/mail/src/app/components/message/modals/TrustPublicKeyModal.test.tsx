@@ -1,11 +1,12 @@
 import { fireEvent, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { PublicKeyReference } from '@proton/crypto';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { PublicKeyReference } from '@proton/crypto';
+import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
 import { addApiMock } from '../../../helpers/test/api';
-import { GeneratedKey, generateKeys, getStoredKey } from '../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../helpers/test/crypto';
+import { generateKeys, getStoredKey } from '../../../helpers/test/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { clearAll, waitForNotification } from '../../../helpers/test/helper';
 import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';

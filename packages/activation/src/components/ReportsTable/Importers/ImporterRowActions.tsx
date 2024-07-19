@@ -4,10 +4,11 @@ import { createToken, resumeImport, updateImport } from '@proton/activation/src/
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { AuthenticationMethod, EASY_SWITCH_SOURCES, ImportToken, OAuthProps } from '@proton/activation/src/interface';
+import type { ImportToken, OAuthProps } from '@proton/activation/src/interface';
+import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { reconnectImapImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { cancelImporter } from '@proton/activation/src/logic/importers/importers.actions';
-import { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
+import type { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
 import {
     selectActiveImporterById,
     selectImporterById,

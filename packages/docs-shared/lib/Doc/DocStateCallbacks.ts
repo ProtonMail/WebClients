@@ -1,6 +1,6 @@
-import { UserState } from '@lexical/yjs'
-import { RtsMessagePayload } from './RtsMessagePayload'
-import { BroadcastSource } from '../Bridge/BroadcastSource'
+import type { UserState } from '@lexical/yjs'
+import type { RtsMessagePayload } from './RtsMessagePayload'
+import type { BroadcastSource } from '../Bridge/BroadcastSource'
 
 export type DocStateCallbacks = {
   docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => void

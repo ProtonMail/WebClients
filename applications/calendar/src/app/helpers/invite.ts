@@ -1,7 +1,8 @@
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
-import { INVITE_ACTION_TYPES, InviteActions } from '../interfaces/Invite';
+import type { InviteActions } from '../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../interfaces/Invite';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION } = INVITE_ACTION_TYPES;
 

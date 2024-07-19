@@ -1,6 +1,6 @@
-import { MailImportPayloadError } from '@proton/activation/src/interface';
+import type { MailImportPayloadError } from '@proton/activation/src/interface';
 import { LabelStack } from '@proton/components';
-import { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces';
 
 import StepPrepareEmailsSummaryError from './StepPrepareOAuthEmailsSummaryError';
 

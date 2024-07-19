@@ -4,7 +4,7 @@ import {
     NOTIFICATION_TYPE_API,
     NOTIFICATION_UNITS_MAX,
 } from '@proton/shared/lib/calendar/constants';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownSizeUnit, IntegerInput, Option, SelectTwo, TimeInput } from '../../../../components';

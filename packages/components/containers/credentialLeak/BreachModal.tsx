@@ -2,14 +2,8 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import { Button } from '@proton/atoms/Button';
-import {
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    SettingsLink,
-} from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 import { updateBreachState } from '@proton/shared/lib/api/breaches';
 
@@ -20,7 +14,8 @@ import BreachRecommendations from './BreachRecommendations';
 import BreachTitle from './BreachTitle';
 import UserBreachInfo from './UserBreachInfo';
 import { getStyle } from './helpers';
-import { BREACH_STATE, FetchedBreaches } from './models';
+import type { FetchedBreaches } from './models';
+import { BREACH_STATE } from './models';
 
 interface BreachModalProps {
     modalProps: ModalProps;

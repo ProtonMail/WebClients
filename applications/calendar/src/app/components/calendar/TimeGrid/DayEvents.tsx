@@ -1,13 +1,16 @@
-import { Ref, useMemo } from 'react';
+import type { Ref } from 'react';
+import { useMemo } from 'react';
 
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
+import type { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
 import { isBusySlotEvent } from '../../../helpers/busySlots';
 import PartDayBusyEvent from '../../events/PartDayBusyEvent';
-import PartDayEvent, { EventSize } from '../../events/PartDayEvent';
+import type { EventSize } from '../../events/PartDayEvent';
+import PartDayEvent from '../../events/PartDayEvent';
 import getIsBeforeNow from '../getIsBeforeNow';
-import { LayoutEvent, layout } from '../layout';
+import type { LayoutEvent } from '../layout';
+import { layout } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';
 
 /**

@@ -1,4 +1,4 @@
-import { ContactGroup } from '../interfaces/contacts';
+import type { ContactGroup } from '../interfaces/contacts';
 
 export const orderContactGroups = (contactGroups: ContactGroup[]) => {
     return [...contactGroups].sort((contactGroupA, contactGroupB) =>

@@ -1,13 +1,13 @@
-import { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
 
-import { Address, Key, User, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
+import type { Address, Key, User, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import {
     getDecryptedAddressKeysHelper,
     getDecryptedUserKeysHelper,
     getHasMigratedAddressKey,
     reactivateKeysProcess,
 } from '../../lib/keys';
-import { KeyReactivationData, KeyReactivationRecord } from '../../lib/keys/reactivation/interface';
+import type { KeyReactivationData, KeyReactivationRecord } from '../../lib/keys/reactivation/interface';
 import { getAddressKey, getAddressKeyHelper, getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '1';

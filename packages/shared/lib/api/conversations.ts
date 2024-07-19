@@ -1,6 +1,6 @@
-import { SPAM_ACTION } from '../mail/mailSettings';
+import type { SPAM_ACTION } from '../mail/mailSettings';
 import { getAppropriateSort } from './helpers/snoozeSort';
-import { MailboxItemsQueryParams } from './mailbox';
+import type { MailboxItemsQueryParams } from './mailbox';
 
 export const queryConversations = ({
     Location,

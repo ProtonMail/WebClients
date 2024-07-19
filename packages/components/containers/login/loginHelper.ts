@@ -1,9 +1,10 @@
-import { AuthTypes } from '@proton/components/containers/login/interface';
+import type { AuthTypes } from '@proton/components/containers/login/interface';
 import { CryptoProxy } from '@proton/crypto';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { APP_NAMES, PASSWORD_MODE } from '@proton/shared/lib/constants';
-import { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
-import { User as tsUser } from '@proton/shared/lib/interfaces/User';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { PASSWORD_MODE } from '@proton/shared/lib/constants';
+import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
+import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
 import { getHasFIDO2Enabled, getHasTOTPEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';

@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, Ref, forwardRef } from 'react';
+import type { ComponentPropsWithRef, Ref } from 'react';
+import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

@@ -12,9 +12,9 @@ import {
     updateOrgIncomingDefault,
 } from '@proton/shared/lib/api/orgIncomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import { IncomingDefault } from '@proton/shared/lib/interfaces';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces';
 
-import { SpamItem, SpamLocation, SpamNavItem } from '../Spams.interfaces';
+import type { SpamItem, SpamLocation, SpamNavItem } from '../Spams.interfaces';
 
 const LOCATION_BY_TYPE: Record<SpamLocation, number> = {
     SPAM: INCOMING_DEFAULTS_LOCATION.SPAM,

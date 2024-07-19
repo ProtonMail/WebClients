@@ -8,7 +8,7 @@ import { useAddresses, useAuthentication, useNotifications, useUser } from '@pro
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
+import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -20,7 +20,7 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { filterPassAliases } from './PassAliases.helpers';
 import PassAliasesError, { PASS_ALIASES_ERROR_STEP } from './PassAliasesError';
 import { fetchPassAliases } from './PassAliasesProvider.helpers';
-import { CreateModalFormState, PassAliasesProviderReturnedValues, PassAliasesVault } from './interface';
+import type { CreateModalFormState, PassAliasesProviderReturnedValues, PassAliasesVault } from './interface';
 
 interface PassAliasesModel {
     passAliasVault: PassAliasesVault | undefined;

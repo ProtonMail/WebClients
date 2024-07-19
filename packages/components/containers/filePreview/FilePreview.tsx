@@ -1,4 +1,5 @@
-import { ReactNode, Ref, forwardRef, useEffect, useRef, useState } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,7 +22,8 @@ import { useFocusTrap, useModalState } from '../../components';
 import { useBeforeUnload, useHotkeys } from '../../hooks';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';
-import Header, { SharedStatus } from './Header';
+import type { SharedStatus } from './Header';
+import Header from './Header';
 import ImagePreview from './ImagePreview';
 import PDFPreview from './PDFPreview';
 import PreviewError from './PreviewError';

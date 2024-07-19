@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { Prompt, PromptProps, SettingsLink } from '../../components';
+import type { PromptProps } from '../../components';
+import { Prompt, SettingsLink } from '../../components';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features';
 

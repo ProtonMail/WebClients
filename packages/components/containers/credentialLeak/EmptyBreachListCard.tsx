@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import allGood from '@proton/styles/assets/img/breach-alert/img-no-breaches-found.svg';
 import clsx from '@proton/utils/clsx';
 
-import { ListType } from './models';
+import type { ListType } from './models';
 
 const EmptyBreachListCard = ({ listType, className = '' }: { listType: ListType; className?: string }) => {
     return (

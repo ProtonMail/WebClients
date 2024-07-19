@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
@@ -51,7 +51,7 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                                                     ...address,
                                                     CatchAll: address.ID === id ? value : false,
                                                 } as const;
-                                            }),
+                                            })
                                         );
                                         void call();
                                     }}

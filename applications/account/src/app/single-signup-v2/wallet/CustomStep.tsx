@@ -1,4 +1,4 @@
-import { SignupCustomStepProps } from '../interface';
+import type { SignupCustomStepProps } from '../interface';
 import MailCustomStep from '../mail/CustomStep';
 
 const CustomStep = (props: SignupCustomStepProps) => {

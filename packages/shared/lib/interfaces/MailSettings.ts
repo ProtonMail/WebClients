@@ -1,5 +1,5 @@
-import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
-import {
+import type { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
+import type {
     ALMOST_ALL_MAIL,
     ATTACH_PUBLIC_KEY,
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,

@@ -1,8 +1,9 @@
-import { ReactNode, useCallback, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useCallback, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
-import * as H from 'history';
-import { Paths } from 'proton-account/src/app/content/helper';
+import type * as H from 'history';
+import type { Paths } from 'proton-account/src/app/content/helper';
 import { getLocaleMapping } from 'proton-account/src/app/locales';
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
 import AccountResetPasswordContainer from 'proton-account/src/app/reset/ResetPasswordContainer';
@@ -10,10 +11,9 @@ import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupIn
 import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
+import type { OnLoginCallbackResult, ProtonLoginCallback } from '@proton/components';
 import {
     NotificationsChildren,
-    OnLoginCallbackResult,
-    ProtonLoginCallback,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
     UnleashFlagProvider,
@@ -24,7 +24,7 @@ import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitc
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import forgotUsernamePage from '../pages/forgot-username';
 import loginPage from '../pages/login';

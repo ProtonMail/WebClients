@@ -1,17 +1,12 @@
 import { $createLinkNode } from '@lexical/link'
-import { $createListItemNode, $createListNode, ListType } from '@lexical/list'
-import { $createHeadingNode, HeadingTagType } from '@lexical/rich-text'
+import type { ListType } from '@lexical/list'
+import { $createListItemNode, $createListNode } from '@lexical/list'
+import type { HeadingTagType } from '@lexical/rich-text'
+import { $createHeadingNode } from '@lexical/rich-text'
 import { $createTableCellNode, $createTableNode, $createTableRowNode, TableCellHeaderStates } from '@lexical/table'
 import { praseAsync } from 'docx-preview-cjs'
-import {
-  $createParagraphNode,
-  $createTextNode,
-  $insertNodes,
-  ElementFormatType,
-  LexicalEditor,
-  LexicalNode,
-  TextFormatType,
-} from 'lexical'
+import type { ElementFormatType, LexicalEditor, LexicalNode, TextFormatType } from 'lexical'
+import { $createParagraphNode, $createTextNode, $insertNodes } from 'lexical'
 
 import { $createImageNode } from '../Plugins/Image/ImageNode'
 import { sendErrorMessage } from '../Utils/errorMessage'

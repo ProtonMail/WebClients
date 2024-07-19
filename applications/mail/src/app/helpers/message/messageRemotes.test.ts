@@ -1,4 +1,4 @@
-import { MessageRemoteImage } from '../../store/messages/messagesTypes';
+import type { MessageRemoteImage } from '../../store/messages/messagesTypes';
 import { createDocument } from '../test/message';
 import { loadBackgroundImages, loadImages } from './messageRemotes';
 

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME, CALENDAR_SHORT_APP_NAME, DRIVE_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Parameters } from './interface';
+import type { Parameters } from './interface';
 
 const data = (): Parameters => ({
     title: c('Metadata title').t`Reset your ${BRAND_NAME} Account password`,

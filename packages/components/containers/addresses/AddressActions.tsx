@@ -15,7 +15,7 @@ import EditInternalAddressModal from '../../containers/addresses/EditInternalAdd
 import { useAddressFlags, useEventManager, useNotifications, useOrganizationKey } from '../../hooks';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
-import { AddressPermissions } from './helper';
+import type { AddressPermissions } from './helper';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 interface Props {

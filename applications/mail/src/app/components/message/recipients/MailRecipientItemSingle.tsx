@@ -1,16 +1,17 @@
-import { MouseEvent, useMemo } from 'react';
+import type { MouseEvent } from 'react';
+import { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { PublicKeyReference } from '@proton/crypto';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { PublicKeyReference } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -23,9 +24,9 @@ import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import useBlockSender from '../../../hooks/useBlockSender';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { Element } from '../../../models/element';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import type { Element } from '../../../models/element';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
 

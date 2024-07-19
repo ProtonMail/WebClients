@@ -1,13 +1,14 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback } from 'react';
 
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMoveSelectionToFolder } from 'proton-mail/hooks/actions/move/useMoveSelectionToFolder';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../../helpers/message/messages';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 
 export interface MoveParams {
     elements: Element[];

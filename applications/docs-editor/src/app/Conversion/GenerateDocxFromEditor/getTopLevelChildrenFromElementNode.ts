@@ -1,12 +1,13 @@
-import { ElementNode } from 'lexical'
-import { Paragraph, Table } from 'docx'
+import type { ElementNode } from 'lexical'
+import type { Table } from 'docx'
+import { Paragraph } from 'docx'
 import { $isHeadingNode } from '@lexical/rich-text'
 import { $isListNode } from '@lexical/list'
 import { $isTableNode } from '@lexical/table'
 import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode'
 import { getDocxChildrenFromListNode } from './getDocxChildrenFromListNode'
 import { getChildrenFromTableNode } from './getChildrenFromTableNode'
-import { DocxExportContext } from './Context'
+import type { DocxExportContext } from './Context'
 
 export type TopLevelChildren = Paragraph | Paragraph[] | Table
 

@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { postVerifyPhone } from '@proton/shared/lib/api/verify';
-import { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { ModalProps, Prompt } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Prompt } from '../../../components';
 import { useApi } from '../../../hooks';
 
 interface Props extends ModalProps {

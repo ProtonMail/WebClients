@@ -1,5 +1,6 @@
 import { omit } from '../../helpers/object';
-import { VcalDays, VcalRrulePropertyValue, VcalVeventComponent } from '../../interfaces/calendar/VcalModel';
+import type { VcalRrulePropertyValue, VcalVeventComponent } from '../../interfaces/calendar/VcalModel';
+import { VcalDays } from '../../interfaces/calendar/VcalModel';
 import { FREQUENCY } from '../constants';
 import { numericDayToDay } from '../vcalConverter';
 

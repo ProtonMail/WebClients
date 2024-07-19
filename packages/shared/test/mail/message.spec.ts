@@ -1,9 +1,9 @@
-import { Message } from '../../lib/interfaces/mail/Message';
+import type { Message } from '../../lib/interfaces/mail/Message';
 import { isBounced } from '../../lib/mail/messages';
 
 describe('isBounced helper', () => {
     const generateMessage = (sender: string, subject: string) =>
-        ({ Sender: { Name: 'dummy', Address: sender }, Subject: subject } as Message);
+        ({ Sender: { Name: 'dummy', Address: sender }, Subject: subject }) as Message;
 
     it('should return true for the typical bounced message by Proton', () => {
         expect(

@@ -23,7 +23,7 @@ import {
 import { useApi, useAuthentication, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SessionAction from './SessionAction';
-import { Session } from './interface';
+import type { Session } from './interface';
 
 const PAGE_SIZE = 10;
 

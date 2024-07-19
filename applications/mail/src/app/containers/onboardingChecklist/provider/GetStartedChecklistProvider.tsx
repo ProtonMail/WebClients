@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import { fromUnixTime, isBefore } from 'date-fns';
 
@@ -11,15 +12,12 @@ import {
     updateChecklistItem,
 } from '@proton/shared/lib/api/checklist';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    CHECKLIST_DISPLAY_TYPE,
-    ChecklistApiResponse,
-    ChecklistKey,
-    ChecklistKeyType,
-} from '@proton/shared/lib/interfaces';
+import type { ChecklistApiResponse, ChecklistKeyType } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import useCanCheckItem from '../hooks/useCanCheckItem';
-import useChecklist, { GetStartedChecklistApiResponse } from '../hooks/useChecklist';
+import type { GetStartedChecklistApiResponse } from '../hooks/useChecklist';
+import useChecklist from '../hooks/useChecklist';
 
 const { REDUCED, HIDDEN } = CHECKLIST_DISPLAY_TYPE;
 

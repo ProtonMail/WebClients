@@ -6,11 +6,8 @@ import {
     verifySKLSignature,
 } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    KeyTransparencyActivation,
-    ResignSKLWithPrimaryKey,
-    ResignSKLWithPrimaryKeyArguments,
-} from '@proton/shared/lib/interfaces';
+import type { ResignSKLWithPrimaryKey, ResignSKLWithPrimaryKeyArguments } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
 
 import { useApi } from '../../hooks';

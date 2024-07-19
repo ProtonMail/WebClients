@@ -5,7 +5,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import * as globalAction from '../actions';
 import * as action from './reports.actions';
 import { normalizeReport, normalizeReports } from './reports.helpers';
-import { ReportsState } from './reports.interface';
+import type { ReportsState } from './reports.interface';
 
 const initialState: ReportsState = { reports: {}, summaries: {}, loading: 'idle' };
 

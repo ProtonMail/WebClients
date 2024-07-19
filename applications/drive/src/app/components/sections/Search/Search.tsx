@@ -7,10 +7,11 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { EncryptedLink, LinkShareUrl, useSearchView, useThumbnailsDownload } from '../../../store';
+import type { EncryptedLink, LinkShareUrl, useSearchView } from '../../../store';
+import { useThumbnailsDownload } from '../../../store';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';

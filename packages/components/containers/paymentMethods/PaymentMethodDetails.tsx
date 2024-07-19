@@ -3,13 +3,8 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { getBankSvg } from '@proton/components/payments/client-extensions/credit-card-type';
-import {
-    PAYMENT_METHOD_TYPES,
-    PayPalDetails,
-    SavedCardDetails,
-    isPaypalDetails,
-    isSavedCardDetails,
-} from '@proton/components/payments/core';
+import type { PayPalDetails, SavedCardDetails } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails } from '@proton/components/payments/core';
 
 import { Bordered } from '../../components';
 import useSvgGraphicsBbox from '../../hooks/useSvgGraphicsBbox';

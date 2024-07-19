@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
 
 interface Props {

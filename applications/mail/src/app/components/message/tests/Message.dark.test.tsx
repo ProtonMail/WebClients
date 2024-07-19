@@ -1,11 +1,11 @@
 import { waitFor } from '@testing-library/react';
 
 import { FeatureCode } from '@proton/components';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
 import { addApiMock, clearAll, createDocument, minimalCache } from '../../../helpers/test/helper';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
 jest.mock('@proton/components/containers/themes/ThemeProvider', () => {

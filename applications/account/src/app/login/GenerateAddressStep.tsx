@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
 import { UnlockModal } from '@proton/components/containers';
-import { AddressGeneration } from '@proton/components/containers/login/interface';
+import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { useErrorHandler } from '@proton/components/hooks';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { Api } from '@proton/shared/lib/interfaces';
-import { AddressGenerationPayload, ClaimableAddressType } from '@proton/shared/lib/keys';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { AddressGenerationPayload } from '@proton/shared/lib/keys';
+import { ClaimableAddressType } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
 
 import { Badge } from '../../components';
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 
 const TYPES = {
     [INVOICE_STATE.UNPAID]: 'error',

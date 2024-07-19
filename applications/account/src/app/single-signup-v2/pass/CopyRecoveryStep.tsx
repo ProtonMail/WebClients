@@ -14,7 +14,7 @@ import noop from '@proton/utils/noop';
 import Content from '../../public/Content';
 import Header from '../../public/Header';
 import Main from '../../public/Main';
-import { MnemonicData } from '../../signup/interfaces';
+import type { MnemonicData } from '../../signup/interfaces';
 import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
 
 interface Props {

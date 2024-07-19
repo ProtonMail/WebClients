@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { DualPaneContent, DualPaneSidebar } from '@proton/atoms/DualPane';
 import { Loader, SettingsParagraph, SettingsSectionWide } from '@proton/components';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';

@@ -1,6 +1,7 @@
 import { c } from 'ttag'
 
-import { BasicModal, ModalStateProps, PrimaryButton, useModalTwoStatic } from '@proton/components'
+import type { ModalStateProps } from '@proton/components'
+import { BasicModal, PrimaryButton, useModalTwoStatic } from '@proton/components'
 import { useState } from 'react'
 
 type Props = {

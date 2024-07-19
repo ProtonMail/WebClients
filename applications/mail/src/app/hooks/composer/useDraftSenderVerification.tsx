@@ -5,14 +5,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Prompt, useGetAddresses, useModalState } from '@proton/components';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { MessageChange } from '../../components/composer/Composer';
+import type { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
 import { composerActions } from '../../store/composers/composersSlice';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     onChange: MessageChange;

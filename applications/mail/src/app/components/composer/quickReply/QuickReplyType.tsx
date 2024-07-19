@@ -1,16 +1,18 @@
-import React, { MutableRefObject, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenu, DropdownMenuButton, EditorActions, Icon, SimpleDropdown } from '@proton/components/components';
+import type { EditorActions } from '@proton/components/components';
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getRecipients, getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageState } from '../../../store/messages/messagesTypes';
-import { MessageChange } from '../Composer';
+import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageChange } from '../Composer';
 
 const { REPLY, REPLY_ALL } = MESSAGE_ACTIONS;
 

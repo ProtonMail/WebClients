@@ -5,7 +5,8 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useActions } from '../_actions';
-import { DecryptedLink, SignatureIssues, useLink } from '../_links';
+import type { DecryptedLink, SignatureIssues } from '../_links';
+import { useLink } from '../_links';
 import { useShareUrl } from '../_shares';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 

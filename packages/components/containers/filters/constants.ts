@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ConditionComparator, ConditionType, FilterStatement } from './interfaces';
-import { SelectOption } from './modal/FilterActionsFormFolderRow';
+import type { SelectOption } from './modal/FilterActionsFormFolderRow';
 
 export const FILTER_VERSION = 2;
 

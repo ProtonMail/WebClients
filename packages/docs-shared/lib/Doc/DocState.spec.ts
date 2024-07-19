@@ -1,7 +1,7 @@
-import { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/utils/logs'
 import { DocState, DocUpdateOrigin, PRESENCE_UPDATE_REPEAT_INTERVAL } from './DocState'
-import { DocStateCallbacks } from './DocStateCallbacks'
-import { DocsUserState } from './DocsAwareness'
+import type { DocStateCallbacks } from './DocStateCallbacks'
+import type { DocsUserState } from './DocsAwareness'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
 import { decodeUpdate } from 'yjs'
 

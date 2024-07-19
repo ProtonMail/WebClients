@@ -4,10 +4,10 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 
+import type { GeneratedKey } from '../../../helpers/test/crypto';
 import {
-    GeneratedKey,
     addApiKeys,
     generateKeys,
     getAddressKeyCache,

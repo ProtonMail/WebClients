@@ -1,10 +1,11 @@
-import { ChangeEvent, useMemo, useRef } from 'react';
+import type { ChangeEvent } from 'react';
+import { useMemo, useRef } from 'react';
 import { AutoSizer, List } from 'react-virtualized';
 
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';

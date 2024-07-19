@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,7 @@ import { Input } from '@proton/atoms/Input';
 import { Block, DateInput, Icon, Option, SelectTwo } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 
-import { FilterModel } from './Pass/PassEvents';
+import type { FilterModel } from './Pass/PassEvents';
 
 interface Props {
     filter: FilterModel;

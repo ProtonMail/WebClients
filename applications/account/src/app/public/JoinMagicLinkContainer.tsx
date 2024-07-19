@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
-import { GenericError, OnLoginCallback } from '@proton/components/containers';
+import type { OnLoginCallback } from '@proton/components/containers';
+import { GenericError } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { AuthStep } from '@proton/components/containers/login/interface';
@@ -19,16 +20,17 @@ import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customC
 import { queryMemberUnprivatizationInfo } from '@proton/shared/lib/api/members';
 import { getOrganization, getOrganizationLogo, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { getUser } from '@proton/shared/lib/api/user';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
-import { APPS, APP_NAMES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
     passwordLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import {
+import type {
     Address,
     Api,
     MemberUnprivatizationOutput,
@@ -36,8 +38,8 @@ import {
     OrganizationSettings,
     User,
 } from '@proton/shared/lib/interfaces';
+import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
 import {
-    ParsedUnprivatizationData,
     parseUnprivatizationData,
     setupKeysWithUnprivatization,
     validateUnprivatizationData,

@@ -4,8 +4,8 @@ import { triggerToModel } from '@proton/shared/lib/calendar/alarms/notificationM
 import { ICAL_ALARM_ACTION, NOTIFICATION_TYPE_API } from '@proton/shared/lib/calendar/constants';
 import { getSupportedAlarmAction } from '@proton/shared/lib/calendar/icsSurgery/valarm';
 import { getIsAlarmComponent } from '@proton/shared/lib/calendar/vcalHelper';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import unary from '@proton/utils/unary';
 
 export const propertiesToNotificationModel = (

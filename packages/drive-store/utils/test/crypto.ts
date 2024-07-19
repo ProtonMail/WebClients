@@ -1,5 +1,6 @@
-import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { Address, Key } from '@proton/shared/lib/interfaces';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
+import type { Address, Key } from '@proton/shared/lib/interfaces';
 
 export async function generatePrivateKey(name = 'name', email = 'name@example.com'): Promise<PrivateKeyReference> {
     const { privateKeys } = await generateKeys(name, email);

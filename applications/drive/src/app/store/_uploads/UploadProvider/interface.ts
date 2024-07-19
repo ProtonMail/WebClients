@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
-import { TransferConflictStrategy } from '../interface';
+import type { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
+import type { TransferConflictStrategy } from '../interface';
 
 interface LinkUpload {
     // ID of the upload for referencing (such as pausing and so on).

@@ -1,57 +1,57 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { c } from 'ttag'
-import { LoggerInterface } from '@proton/utils/logs'
-import { SquashDocument } from '../../UseCase/SquashDocument'
-import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
-import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
-import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
-import {
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { SquashDocument } from '../../UseCase/SquashDocument'
+import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
+import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
+import type { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
+import type {
   InternalEventBusInterface,
   ClientRequiresEditorMethods,
   RtsMessagePayload,
   DocumentMetaInterface,
-  DocAwarenessEvent,
   DocsAwarenessStateChangeData,
-  DocUpdateOrigin,
   InternalEventHandlerInterface,
   InternalEventInterface,
   BroadcastSource,
+  DataTypesThatDocumentCanBeExportedAs,
+} from '@proton/docs-shared'
+import {
+  DocAwarenessEvent,
+  DocUpdateOrigin,
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
-  DataTypesThatDocumentCanBeExportedAs,
   DocumentRole,
   assertUnreachableAndLog,
 } from '@proton/docs-shared'
 import { EventType, EventTypeEnum, ConnectionCloseReason } from '@proton/docs-proto'
-import { LoadDocument } from '../../UseCase/LoadDocument'
-import { DecryptedCommit } from '../../Models/DecryptedCommit'
-import { DocControllerInterface } from './DocControllerInterface'
-import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import { DocLoadSuccessResult } from './DocLoadSuccessResult'
-import { UserState } from '@lexical/yjs'
-import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
+import type { LoadDocument } from '../../UseCase/LoadDocument'
+import type { DecryptedCommit } from '../../Models/DecryptedCommit'
+import type { DocControllerInterface } from './DocControllerInterface'
+import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
+import type { DocLoadSuccessResult } from './DocLoadSuccessResult'
+import type { UserState } from '@lexical/yjs'
+import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { getErrorString } from '../../Util/GetErrorString'
 import { NativeVersionHistory } from '../../VersionHistory'
-import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
-import { DocControllerEvent, DocControllerEventPayloads } from './DocControllerEvent'
+import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import type { DocControllerEventPayloads } from './DocControllerEvent'
+import { DocControllerEvent } from './DocControllerEvent'
 import metrics from '@proton/metrics'
-import {
-  ApplicationEvent,
-  DocsClientSquashVerificationObjectionMadePayload,
-  PostApplicationError,
-} from '../../Application/ApplicationEvent'
-import { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
-import { LoadCommit } from '../../UseCase/LoadCommit'
+import type { DocsClientSquashVerificationObjectionMadePayload } from '../../Application/ApplicationEvent'
+import { ApplicationEvent, PostApplicationError } from '../../Application/ApplicationEvent'
+import type { SquashVerificationObjectionCallback } from '../../Types/SquashVerificationObjection'
+import type { LoadCommit } from '../../UseCase/LoadCommit'
 import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
-import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
-import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { DocSizeTracker } from './SizeTracker'
 import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
 import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipantTracker'
-import { SerializedEditorState } from 'lexical'
+import type { SerializedEditorState } from 'lexical'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
 
 /**

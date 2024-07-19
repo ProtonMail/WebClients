@@ -1,4 +1,4 @@
-import { SessionKey } from '@proton/crypto'
+import type { SessionKey } from '@proton/crypto'
 import { HKDF_SALT_SIZE } from './Constants'
 
 export async function deriveGcmKey(sessionKey: SessionKey, salt: Uint8Array, info: Uint8Array) {

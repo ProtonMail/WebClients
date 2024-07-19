@@ -1,13 +1,11 @@
-import {
-    NEWSLETTER_SUBSCRIPTIONS,
-    NEWSLETTER_SUBSCRIPTIONS_BITS,
-    NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
-} from '@proton/shared/lib/constants';
+import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
+import { NEWSLETTER_SUBSCRIPTIONS, NEWSLETTER_SUBSCRIPTIONS_BY_BITS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
 
 import { Info, Toggle } from '../../components';
-import { EmailSubscription, getEmailSubscriptions } from './constants/email-subscriptions';
+import type { EmailSubscription } from './constants/email-subscriptions';
+import { getEmailSubscriptions } from './constants/email-subscriptions';
 
 export type NewsletterSubscriptionUpdateData = Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>;
 export interface EmailSubscriptionCheckboxesProps {

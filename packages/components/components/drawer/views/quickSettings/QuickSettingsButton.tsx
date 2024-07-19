@@ -1,4 +1,5 @@
-import { ReactNode, Ref, forwardRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef } from 'react';
 
 interface Props {
     children: ReactNode;

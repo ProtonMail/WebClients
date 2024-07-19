@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,7 @@ import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from 
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 

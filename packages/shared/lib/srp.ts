@@ -1,8 +1,8 @@
 import { getRandomSrpVerifier, getSrp } from '@proton/srp';
 
 import { getInfo, getModulus } from './api/auth';
-import { Fido2Data, InfoResponse, ModulusResponse } from './authentication/interface';
-import { Api } from './interfaces';
+import type { Fido2Data, InfoResponse, ModulusResponse } from './authentication/interface';
+import type { Api } from './interfaces';
 
 export interface AuthCredentials {
     username?: string;

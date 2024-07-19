@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { EasySwitchState } from '../../store';
+import type { EasySwitchState } from '../../store';
 
 const selectImapDraft = (state: EasySwitchState) => state.imapDraft;
 export const selectImapDraftProvider = createSelector(selectImapDraft, (draft) => draft.provider);

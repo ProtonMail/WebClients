@@ -4,7 +4,7 @@ import { VpnLogo } from '@proton/components/components';
 import { getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
 import { CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
     if (plan && plan.Name === PLANS.VPN) {

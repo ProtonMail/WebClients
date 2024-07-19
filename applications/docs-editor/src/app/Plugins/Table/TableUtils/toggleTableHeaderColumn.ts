@@ -1,4 +1,4 @@
-import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { isCellHeaderRow } from './isCellHeaderRow'
 import { isCellHeaderColumn } from './isCellHeaderColumn'
 import { calculateHeaderCellState } from './calculateHeaderCellState'

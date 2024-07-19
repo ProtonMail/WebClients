@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
 
@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseFeature } from '@proton/testing/lib/mockUseFeature';
 
 import AddressesWithUser from './AddressesWithUser';

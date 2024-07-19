@@ -6,7 +6,7 @@ import { useUserSettings } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
-import { Element } from 'proton-mail/models/element';
+import type { Element } from 'proton-mail/models/element';
 
 import SnoozeCustomTime from './SnoozeCustomTime';
 

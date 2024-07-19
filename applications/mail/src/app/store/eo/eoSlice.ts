@@ -22,7 +22,7 @@ import {
     loadEOMessageFulfilled,
     loadEOTokenFulfilled,
 } from './eoReducers';
-import { EOState } from './eoType';
+import type { EOState } from './eoType';
 
 export const initialState = {
     encryptedToken: '',

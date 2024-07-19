@@ -10,10 +10,11 @@ import {
     VPN_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getB2BFreeVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(

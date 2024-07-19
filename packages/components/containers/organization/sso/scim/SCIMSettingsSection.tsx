@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
@@ -10,7 +11,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { DOMAIN_STATE, Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
+import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
 import { Icon, Info, useModalState } from '../../../../components';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
@@ -26,7 +28,8 @@ import { SubSettingsSection } from '../../../layout';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 import DisableSCIMModal from './DisableSCIMModal';
 import RegenerateSCIMConfirmModal from './RegenerateSCIMConfirmModal';
-import SetupSCIMModal, { SCIMConfiguration } from './SetupSCIMModal';
+import type { SCIMConfiguration } from './SetupSCIMModal';
+import SetupSCIMModal from './SetupSCIMModal';
 
 interface Props {
     domain?: Domain;

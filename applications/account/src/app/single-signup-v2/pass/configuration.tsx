@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { IconName, PassLogo } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
+import { PassLogo } from '@proton/components/components';
 import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
-import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     FREE_VAULTS,
     PAID_VAULTS,
@@ -38,20 +39,23 @@ import {
     VPN_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import { Audience, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../signup/interfaces';
-import Benefits, { BenefitItem } from '../Benefits';
+import type { BenefitItem } from '../Benefits';
+import Benefits from '../Benefits';
 import BundlePlanSubSection from '../BundlePlanSubSection';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import { getBasedString, getBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
-import { SignupConfiguration, SignupMode } from '../interface';
+import type { SignupConfiguration } from '../interface';
+import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
 import { getInfo } from './InstallExtensionStep';

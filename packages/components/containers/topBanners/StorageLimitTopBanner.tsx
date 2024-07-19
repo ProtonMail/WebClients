@@ -1,19 +1,18 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { useFlag } from '@proton/components';
+import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
-    PLANS,
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import {
     SpaceState,
     getAppStorage,

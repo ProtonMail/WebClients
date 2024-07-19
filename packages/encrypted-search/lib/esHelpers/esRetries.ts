@@ -5,7 +5,7 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { executeContentOperations, openESDB, readMetadataBatch, readRetries, setRetries } from '../esIDB';
-import { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
+import type { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
 import { encryptItem } from './esBuild';
 import { isObjectEmpty } from './esUtils';
 

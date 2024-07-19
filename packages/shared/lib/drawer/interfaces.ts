@@ -1,12 +1,12 @@
-import { ThemeColor } from '@proton/colors/types';
+import type { ThemeColor } from '@proton/colors/types';
 import type { IconName } from '@proton/components/components/icon';
-import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import { APPS } from '@proton/shared/lib/constants';
-import { Environment } from '@proton/shared/lib/interfaces';
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { APPS } from '@proton/shared/lib/constants';
+import type { Environment } from '@proton/shared/lib/interfaces';
 
-import { User as tsUser } from '../interfaces';
-import { VCardContact } from '../interfaces/contacts/VCard';
-import { ThemeSetting } from '../themes/themes';
+import type { User as tsUser } from '../interfaces';
+import type { VCardContact } from '../interfaces/contacts/VCard';
+import type { ThemeSetting } from '../themes/themes';
 
 export enum DRAWER_NATIVE_APPS {
     QUICK_SETTINGS = 'quick-settings',

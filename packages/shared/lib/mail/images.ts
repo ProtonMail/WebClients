@@ -1,4 +1,4 @@
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 export const hasShowEmbedded = ({ HideEmbeddedImages }: Partial<MailSettings> = {}) =>

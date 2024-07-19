@@ -1,6 +1,6 @@
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
-import { Event } from '../../models/event';
+import type { Event } from '../../models/event';
 
 /**
  * Cache of deleted conversation IDs.

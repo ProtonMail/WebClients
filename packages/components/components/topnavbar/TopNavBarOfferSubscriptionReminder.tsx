@@ -2,12 +2,12 @@ import { useRef } from 'react';
 
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import useVisitedOffer from '@proton/components/containers/offers/hooks/useVisitedOffer';
-import { Offer, OfferConfig } from '@proton/components/containers/offers/interface';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Offer, OfferConfig } from '@proton/components/containers/offers/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { ModalProps } from '../modalTwo';
+import type { ModalProps } from '../modalTwo';
 import { Spotlight } from '../spotlight';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 

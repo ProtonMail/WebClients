@@ -1,10 +1,10 @@
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
-import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { hasIcalExtension, hasKeyExtension } from 'proton-mail/helpers/attachment/attachment';
 import { hasLabel } from 'proton-mail/helpers/elements';
-import { Element } from 'proton-mail/models/element';
+import type { Element } from 'proton-mail/models/element';
 
 const { SPAM } = MAILBOX_LABEL_IDS;
 

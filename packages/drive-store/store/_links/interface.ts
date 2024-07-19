@@ -1,7 +1,7 @@
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import type { VERIFICATION_STATUS } from '@proton/crypto';
 
 import type { Photo } from '../_photos';
-import { ThumbnailType } from '../_uploads/media';
+import type { ThumbnailType } from '../_uploads/media';
 
 /**
  * Link should not be used directly. It is general set of attributes

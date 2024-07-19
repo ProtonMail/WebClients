@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
@@ -17,9 +17,10 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
-import { RequestParams, Upload, upload as uploadHelper } from '../upload';
+import type { RequestParams, Upload } from '../upload';
+import { upload as uploadHelper } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 

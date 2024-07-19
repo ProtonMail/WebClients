@@ -1,4 +1,4 @@
-import { Key, ReactNode } from 'react';
+import type { Key, ReactNode } from 'react';
 
 import type { IconName } from '../../components/icon';
 

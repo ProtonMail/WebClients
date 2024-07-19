@@ -4,7 +4,8 @@ import { Button, ButtonLike } from '@proton/atoms/Button';
 import { FeatureCode, useFeature } from '@proton/features';
 import illustration from '@proton/styles/assets/img/illustrations/light-labelling-feature-modal.svg';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, SettingsLink } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, SettingsLink } from '../../../components';
 
 interface Props extends ModalProps {}
 

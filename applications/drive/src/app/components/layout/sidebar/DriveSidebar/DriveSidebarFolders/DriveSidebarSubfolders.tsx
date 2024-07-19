@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { TreeItem } from '../../../../../store';
+import type { TreeItem } from '../../../../../store';
 import DriveSidebarSubfolder from './DriveSidebarSubfolder';
 
 interface Props {

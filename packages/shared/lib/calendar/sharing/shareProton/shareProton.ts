@@ -3,19 +3,21 @@ import { c } from 'ttag';
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
-import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 
 import { acceptInvitation, rejectInvitation } from '../../../api/calendars';
 import { SECOND } from '../../../constants';
 import { getContactDisplayNameEmail } from '../../../contacts/contactEmail';
 import { canonicalizeEmail } from '../../../helpers/email';
-import { Api, SimpleMap } from '../../../interfaces';
-import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } from '../../../interfaces/calendar';
-import { ContactEmail } from '../../../interfaces/contacts';
-import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import type { Api, SimpleMap } from '../../../interfaces';
+import type { CalendarMemberInvitation, VisualCalendar } from '../../../interfaces/calendar';
+import { MEMBER_INVITATION_STATUS } from '../../../interfaces/calendar';
+import type { ContactEmail } from '../../../interfaces/contacts';
+import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
 import { getIsSharedCalendar } from '../../calendar';
-import { CALENDAR_PERMISSIONS, CALENDAR_TYPE } from '../../constants';
+import type { CALENDAR_PERMISSIONS } from '../../constants';
+import { CALENDAR_TYPE } from '../../constants';
 import { decryptPassphrase, decryptPassphraseSessionKey, signPassphrase } from '../../crypto/keys/calendarKeys';
 import { getCanWrite } from '../../permissions';
 

@@ -1,15 +1,23 @@
-import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
+import type { TypedStartListening } from '@reduxjs/toolkit';
+import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 import { start } from './listener';
-import { AccountState, persistReducer, rootReducer } from './rootReducer';
+import type { AccountState } from './rootReducer';
+import { persistReducer, rootReducer } from './rootReducer';
 import { type AccountThunkArguments, extraThunkArguments } from './thunk';
 
 export type { AccountState } from './rootReducer';
 
-export const setupStore = ({ preloadedState, mode }: { preloadedState?: Partial<AccountState>, mode: 'public' | 'lite' | 'default' }) => {
+export const setupStore = ({
+    preloadedState,
+    mode,
+}: {
+    preloadedState?: Partial<AccountState>;
+    mode: 'public' | 'lite' | 'default';
+}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({

@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { setExpiration } from '@proton/shared/lib/api/messages';
 
-import { MailThunkExtra } from '../../store';
+import type { MailThunkExtra } from '../../store';
 
 export const expireMessages = createAsyncThunk<
     Promise<void>,

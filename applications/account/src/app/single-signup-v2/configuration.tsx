@@ -1,4 +1,5 @@
-import { DriveLogo, IconSize, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components/components';
+import type { IconSize } from '@proton/components/components';
+import { DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
@@ -28,7 +29,7 @@ import {
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
 import { FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
-import { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';

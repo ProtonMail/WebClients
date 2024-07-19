@@ -8,15 +8,8 @@ import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/exp
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
 
-import {
-    Alert,
-    DynamicProgress,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Alert, DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useContacts, useGetUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';

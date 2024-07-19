@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode, ThHTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode, ThHTMLAttributes } from 'react';
 
 import { Icon, TableCell } from '@proton/components/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';

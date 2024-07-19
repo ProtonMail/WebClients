@@ -1,4 +1,4 @@
-import { ImportType } from '@proton/activation/src/interface';
+import type { ImportType } from '@proton/activation/src/interface';
 import { Icon, TableCell } from '@proton/components/components';
 
 import { getImportIconNameByProduct, getImportProductName } from './ReportsTableCell.helpers';

@@ -1,27 +1,24 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { Draft } from 'immer';
 
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { isConversation, parseLabelIDsInEvent } from '../../helpers/elements';
 import { isNetworkError } from '../../helpers/errors';
-import {
-    LabelChanges,
-    UnreadStatus,
-    applyLabelChangesOnConversation,
-    applyLabelChangesOnMessage,
-} from '../../helpers/labels';
+import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
+import { applyLabelChangesOnConversation, applyLabelChangesOnMessage } from '../../helpers/labels';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
-import { MarkAsChanges, applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
-import { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
-import { MailState } from '../store';
+import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
+import { applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
+import type { Conversation } from '../../models/conversation';
+import type { Element } from '../../models/element';
+import type { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
+import type { MailState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
-import {
+import type {
     ConversationErrors,
     ConversationEvent,
     ConversationParams,

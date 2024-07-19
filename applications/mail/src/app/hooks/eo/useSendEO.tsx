@@ -3,11 +3,12 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components';
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -20,8 +21,8 @@ import { encryptFile } from '../../helpers/attachment/attachmentUploader';
 import { createBlob, readContentIDandLocation } from '../../helpers/message/messageEmbeddeds';
 import { prepareExport } from '../../helpers/message/messageExport';
 import { EOAddReply } from '../../store/eo/eoActions';
-import { EOMessageReply } from '../../store/eo/eoType';
-import { MessageKeys, MessageState } from '../../store/messages/messagesTypes';
+import type { EOMessageReply } from '../../store/eo/eoType';
+import type { MessageKeys, MessageState } from '../../store/messages/messagesTypes';
 
 interface EOAttachment {
     Filename: string[];

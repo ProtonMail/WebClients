@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

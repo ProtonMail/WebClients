@@ -1,4 +1,5 @@
-import { SetStateAction, useRef, useState } from 'react';
+import type { SetStateAction } from 'react';
+import { useRef, useState } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
 

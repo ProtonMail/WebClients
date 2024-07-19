@@ -5,7 +5,7 @@ import { Icon } from '@proton/components/components';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
-import { GroupsManagementReturn } from './types';
+import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;

@@ -4,7 +4,7 @@ import { Icon, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { isUnread } from '../../helpers/elements';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 interface Props {
     element: Element | undefined;

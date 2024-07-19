@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
+import type { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import ContactResignModal from '../modals/ContactResignModal';
 
 interface Props {

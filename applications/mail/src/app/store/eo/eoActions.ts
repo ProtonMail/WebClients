@@ -8,8 +8,8 @@ import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../con
 import { get } from '../../helpers/attachment/attachmentLoader';
 import { convertEOtoMessageState, eoDecrypt } from '../../helpers/eo/message';
 import { createBlob } from '../../helpers/message/messageEmbeddeds';
-import { MessageState, OutsideKey } from '../messages/messagesTypes';
-import {
+import type { MessageState, OutsideKey } from '../messages/messagesTypes';
+import type {
     EODocumentInitializeParams,
     EOInitParams,
     EOInitResult,

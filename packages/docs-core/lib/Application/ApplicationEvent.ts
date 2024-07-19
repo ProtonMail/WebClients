@@ -1,5 +1,5 @@
-import { InternalEventBusInterface } from '@proton/docs-shared'
-import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
+import type { InternalEventBusInterface } from '@proton/docs-shared'
+import type { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 
 export enum ApplicationEvent {
   SquashVerificationObjectionDecisionMade = 'SquashVerificationObjectionDecisionMade',

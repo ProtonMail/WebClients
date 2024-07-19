@@ -1,4 +1,5 @@
-import { ReactNode, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +10,8 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
-import Layout, { Background } from './Layout';
+import type { Background } from './Layout';
+import Layout from './Layout';
 
 const Step2 = ({
     onSetup,

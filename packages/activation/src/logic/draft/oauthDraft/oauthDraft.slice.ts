@@ -1,10 +1,11 @@
-import { Action, createSlice } from '@reduxjs/toolkit';
+import type { Action } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
 
 import { createImporterThunk } from './createImporter.action';
 import * as actions from './oauthDraft.actions';
-import { OauthDraftState } from './oauthDraft.interface';
+import type { OauthDraftState } from './oauthDraft.interface';
 
 const initialState: OauthDraftState = { step: 'idle' };
 

@@ -20,7 +20,7 @@ import throttle from '@proton/utils/throttle';
 
 import useAuthInfoByEmail from './useAuthInfoByEmail';
 import { getDefaultImap, getDefaultPort, validateStepForm } from './useStepForm.helpers';
-import { StepFormBlur, StepFormErrors, StepFormState } from './useStepForm.interface';
+import type { StepFormBlur, StepFormErrors, StepFormState } from './useStepForm.interface';
 
 const throttleValidateForm = throttle(validateStepForm, 150);
 

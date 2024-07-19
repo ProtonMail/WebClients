@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
@@ -9,7 +9,7 @@ import clsx from '@proton/utils/clsx';
 import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
 import { Icon } from '../icon';
 import { usePopperAnchor } from '../popper';
-import { LabelDescription } from './LabelStack';
+import type { LabelDescription } from './LabelStack';
 
 interface Props {
     label: LabelDescription;

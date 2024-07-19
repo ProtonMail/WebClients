@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import NewFeatureTag, { NewFeatureTagProps } from './NewFeatureTag';
+import type { NewFeatureTagProps } from './NewFeatureTag';
+import NewFeatureTag from './NewFeatureTag';
 
 export default function useNewFeatureTag(key: string) {
     const [wasShown, setWasShown] = useState<boolean>(Boolean(getItem(key, 'false')));

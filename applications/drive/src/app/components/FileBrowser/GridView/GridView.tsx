@@ -1,14 +1,16 @@
 import { useRef } from 'react';
-import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
+import type { GridChildComponentProps } from 'react-window';
+import { FixedSizeGrid } from 'react-window';
 
 import { Loader, Table, useElementRect, useRightToLeft } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { Features, useMeasureFeaturePerformanceOnMount } from '../../../utils/telemetry';
-import { FileBrowserProps } from '../FileBrowser';
-import { FileBrowserBaseItem } from '../interface';
+import type { FileBrowserProps } from '../FileBrowser';
+import type { FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
-import ItemCell, { ItemProps } from './ItemCell';
+import type { ItemProps } from './ItemCell';
+import ItemCell from './ItemCell';
 import { calculateCellDimensions } from './utils';
 
 interface ItemCellData<T extends FileBrowserBaseItem> {

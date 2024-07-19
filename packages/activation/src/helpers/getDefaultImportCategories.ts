@@ -1,6 +1,6 @@
 import { GMAIL_CATEGORIES } from '../constants';
 import { MailImportDestinationFolder } from '../interface';
-import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 
 export const getDefaultImportCategoriesDestination = (foldersMapping: MailImportFolder[]) => {
     const firstMappingItemWithCategory = foldersMapping.find(

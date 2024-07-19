@@ -1,6 +1,7 @@
-import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { MailImportDestinationFolder, MailImportPayloadError, TIME_PERIOD } from '@proton/activation/src/interface';
-import { Address, Label } from '@proton/shared/lib/interfaces';
+import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportPayloadError, TIME_PERIOD } from '@proton/activation/src/interface';
+import { MailImportDestinationFolder } from '@proton/activation/src/interface';
+import type { Address, Label } from '@proton/shared/lib/interfaces';
 
 export interface MailImportFields {
     mapping: MailImportFolder[];

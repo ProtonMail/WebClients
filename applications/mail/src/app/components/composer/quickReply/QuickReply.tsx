@@ -1,9 +1,11 @@
-import { Dispatch, SetStateAction, Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Editor, EditorActions, Icon, Tooltip, useModalState } from '@proton/components/components';
+import type { EditorActions } from '@proton/components/components';
+import { Editor, Icon, Tooltip, useModalState } from '@proton/components/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
@@ -24,7 +26,7 @@ import { EditorTypes, useComposerContent } from '../../../hooks/composer/useComp
 import { useGetConversation } from '../../../hooks/conversation/useConversation';
 import { useGetAllMessages } from '../../../hooks/message/useMessage';
 import { removeQuickReplyFlag } from '../../../store/messages/draft/messagesDraftActions';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import DeleteQuickReplyModal from './DeleteQuickReplyModal';
 import NoAttachmentsModal from './NoAttachmentsModal';
 import QuickReplyType from './QuickReplyType';

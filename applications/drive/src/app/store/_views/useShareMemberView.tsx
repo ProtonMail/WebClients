@@ -4,21 +4,18 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { useDriveEventManager } from '..';
 import { useLink } from '../_links';
-import {
+import type {
     ShareExternalInvitation,
     ShareInvitation,
     ShareInvitationEmailDetails,
     ShareInvitee,
     ShareMember,
-    useShare,
-    useShareActions,
-    useShareInvitation,
-    useShareMember,
 } from '../_shares';
+import { useShare, useShareActions, useShareInvitation, useShareMember } from '../_shares';
 
 const useShareMemberView = (rootShareId: string, linkId: string) => {
     const {

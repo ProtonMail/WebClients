@@ -1,7 +1,7 @@
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { DisplayNameEmail } from '../containers/calendar/interface';
+import type { DisplayNameEmail } from '../containers/calendar/interface';
 import { getOrganizerDisplayData } from './attendees';
 
 const generateDummyContactEmail = ({

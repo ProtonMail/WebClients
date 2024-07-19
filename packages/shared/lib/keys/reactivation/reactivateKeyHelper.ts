@@ -1,7 +1,8 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
-import {
+import type {
     DecryptedKey,
     Key,
     KeyPair,
@@ -12,7 +13,8 @@ import {
 } from '../../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
-import { OnSKLPublishSuccess, getSignedKeyListWithDeferredPublish } from '../signedKeyList';
+import type { OnSKLPublishSuccess } from '../signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 interface GetReactivatedAddressKeys {
     address: tsAddress;

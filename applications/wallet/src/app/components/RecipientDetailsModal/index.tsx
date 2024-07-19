@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Button } from '../../atoms';

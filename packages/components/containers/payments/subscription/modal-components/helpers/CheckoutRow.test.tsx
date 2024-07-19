@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import CheckoutRow, { Props } from './CheckoutRow';
+import type { Props } from './CheckoutRow';
+import CheckoutRow from './CheckoutRow';
 
 let props: Props;
 

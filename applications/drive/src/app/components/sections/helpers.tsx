@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store';
 
 export const selectMessageForItemList = (
     isFiles: boolean[],

@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, createContext } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { createContext } from 'react';
 
 interface FormOwnProps {
     dense?: boolean;

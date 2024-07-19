@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useCallback, useContext, useLayoutEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useCallback, useContext, useLayoutEffect, useState } from 'react';
 
 import noop from '@proton/utils/noop';
 

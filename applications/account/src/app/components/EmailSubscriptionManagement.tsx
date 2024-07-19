@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import { EmailSubscriptionToggles } from '@proton/components';
-import { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
+import type { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import PublicFooter from './PublicFooter';

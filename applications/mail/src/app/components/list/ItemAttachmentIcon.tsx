@@ -1,13 +1,15 @@
-import { MouseEvent, createElement } from 'react';
+import type { MouseEvent } from 'react';
+import { createElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Icon, IconName, Tooltip } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
 import { getNumAttachments } from '../../helpers/elements';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 interface Props {
     element?: Element;

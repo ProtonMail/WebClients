@@ -16,10 +16,8 @@ import {
 } from '../../../hooks/helpers/test';
 import { renderWithProviders } from '../../contacts/tests/render';
 import SubscriptionContainer from './SubscriptionContainer';
-import SubscriptionModalProvider, {
-    OpenSubscriptionModalCallback,
-    useSubscriptionModal,
-} from './SubscriptionModalProvider';
+import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
+import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';
 
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/components/portal/Portal');

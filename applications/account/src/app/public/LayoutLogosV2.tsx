@@ -1,4 +1,5 @@
-import { CalendarLogo, DriveLogo, IconSize, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import type { IconSize } from '@proton/components/components';
+import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import {
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,

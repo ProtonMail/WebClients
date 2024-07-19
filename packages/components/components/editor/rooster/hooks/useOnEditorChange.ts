@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 
-import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+import type { IEditor, PluginEvent } from 'roosterjs-editor-types';
+import { PluginEventType } from 'roosterjs-editor-types';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
 import debounce from '@proton/utils/debounce';
 
-import { SetEditorToolbarConfig } from '../../interface';
+import type { SetEditorToolbarConfig } from '../../interface';
 
 const EVENTS_TO_TRIGGER_ONCHANGE = [PluginEventType.Input, PluginEventType.ContentChanged];
 

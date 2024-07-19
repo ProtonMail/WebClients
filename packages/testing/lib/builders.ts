@@ -3,15 +3,15 @@ import { build } from '@jackfranklin/test-data-bot';
 import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Address, AddressKey } from '@proton/shared/lib/interfaces';
-import {
-    CALENDAR_SUBSCRIPTION_STATUS,
+import type { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import type {
     CalendarEvent,
     CalendarUserSettings,
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Message', {
     fields: {

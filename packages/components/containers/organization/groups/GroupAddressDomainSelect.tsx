@@ -11,7 +11,7 @@ import {
     useModalState,
     usePopperAnchor,
 } from '@proton/components/index';
-import { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
 
 import AddSubdomainModal from './AddSubdomainModal';
 import usePmMeDomain from './usePmMeDomain';

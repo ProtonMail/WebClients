@@ -4,10 +4,11 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 
-import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
+import type { CalendarViewBusyEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
 import { useCalendarSelector } from '../../store/hooks';
-import { PartDayEventProps, PartDayEventView } from './PartDayEvent';
+import type { PartDayEventProps } from './PartDayEvent';
+import { PartDayEventView } from './PartDayEvent';
 
 interface PartDayBusyEventProps
     extends Pick<

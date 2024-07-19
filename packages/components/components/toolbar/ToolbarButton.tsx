@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, ReactElement, ReactNode, Ref, cloneElement, forwardRef } from 'react';
+import type { ButtonHTMLAttributes, ReactElement, ReactNode, Ref } from 'react';
+import { cloneElement, forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

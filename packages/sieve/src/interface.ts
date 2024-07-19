@@ -1,4 +1,4 @@
-import { ConditionComparator, FilterStatement } from '@proton/components/containers/filters/interfaces';
+import type { ConditionComparator, FilterStatement } from '@proton/components/containers/filters/interfaces';
 
 export type SIEVE_VERSION = 1 | 2;
 

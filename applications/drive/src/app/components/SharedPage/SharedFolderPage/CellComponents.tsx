@@ -10,7 +10,7 @@ import { useDownload } from '../../../store';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { Cells, HeaderCellsPresets } from '../../FileBrowser';
 import { getLinkIconText } from '../../sections/FileBrowser/utils';
-import { PublicLink } from '../interface';
+import type { PublicLink } from '../interface';
 
 export const headerCellsLargeScreen = [
     {

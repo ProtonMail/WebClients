@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { SettingsLink, Time } from '../../components';
 import { useConfig, useSubscription } from '../../hooks';

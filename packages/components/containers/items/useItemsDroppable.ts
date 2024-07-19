@@ -1,4 +1,4 @@
-import { DragEvent } from 'react';
+import type { DragEvent } from 'react';
 
 import { useDragOver } from '../../hooks';
 import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';

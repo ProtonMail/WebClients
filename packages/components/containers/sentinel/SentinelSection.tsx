@@ -8,8 +8,8 @@ import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/con
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
-    APP_NAMES,
     PLANS,
     PLAN_NAMES,
     PROTON_SENTINEL_NAME,

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 
-import { SpamItem, SpamListAction, SpamListActionName, SpamLocation } from './Spams.interfaces';
+import type { SpamItem, SpamListAction, SpamListActionName, SpamLocation } from './Spams.interfaces';
 
 export const isSpamDomain = (item: SpamItem) => 'domain' in item;
 export const isSpamEmail = (item: SpamItem) => 'email' in item;

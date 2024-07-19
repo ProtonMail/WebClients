@@ -4,9 +4,10 @@ import { Banner } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getIsVeventCancelled } from '@proton/shared/lib/calendar/vcalHelper';
-import { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
 
-import { EVENT_TIME_STATUS, InvitationModel } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { EVENT_TIME_STATUS } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;

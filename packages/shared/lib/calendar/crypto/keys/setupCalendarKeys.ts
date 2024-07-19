@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { useGetAddressKeys } from '@proton/components/hooks';
+import type { useGetAddressKeys } from '@proton/components/hooks';
 
 import { setupCalendar } from '../../../api/calendars';
-import { Api } from '../../../interfaces';
-import { CalendarSetupResponse, CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import type { Api } from '../../../interfaces';
+import type { CalendarSetupResponse, CalendarWithOwnMembers } from '../../../interfaces/calendar';
 import { getPrimaryKey } from '../../../keys';
 import { generateCalendarKeyPayload } from './calendarKeys';
 import { isCalendarSetupData } from './helpers';

@@ -1,8 +1,10 @@
-import { ReactElement, ReactNode, cloneElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import { cloneElement } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll';
-import { ModalProps, ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 
 interface Props extends ModalProps {

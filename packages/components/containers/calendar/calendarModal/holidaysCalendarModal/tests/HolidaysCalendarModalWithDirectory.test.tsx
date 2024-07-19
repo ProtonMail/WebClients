@@ -5,7 +5,7 @@ import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/cale
 import { useCalendarUserSettings, useNotifications } from '@proton/components/hooks';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
-import { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 

@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { Condition } from '../interfaces';
+import type { Condition } from '../interfaces';
 import useFilterConditions from './useFilterConditions';
 
 describe('useFilterConditions', () => {

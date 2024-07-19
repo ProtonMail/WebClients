@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { DriveFileRevision } from '../../../store';
 import { ContextMenuButton } from '../../sections/ContextMenu';
-import { RevisionsProviderState } from '../RevisionsProvider';
+import type { RevisionsProviderState } from '../RevisionsProvider';
 
 interface Props {
     revision: DriveFileRevision;

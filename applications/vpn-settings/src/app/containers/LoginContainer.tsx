@@ -1,11 +1,11 @@
 import { useLocation } from 'react-router-dom';
 
-import * as H from 'history';
-import { Paths } from 'proton-account/src/app/content/helper';
+import type * as H from 'history';
+import type { Paths } from 'proton-account/src/app/content/helper';
 import AccountLoginContainer from 'proton-account/src/app/login/LoginContainer';
-import { MetaTags } from 'proton-account/src/app/useMetaTags';
+import type { MetaTags } from 'proton-account/src/app/useMetaTags';
 
-import { OnLoginCallback } from '@proton/components';
+import type { OnLoginCallback } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isMember } from '@proton/shared/lib/user/helpers';
 

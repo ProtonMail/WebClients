@@ -1,17 +1,16 @@
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import unary from '@proton/utils/unary';
 
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import {
-    INVITE_ACTION_TYPES,
+import type { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import type {
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -20,13 +19,14 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import {
-    SyncEventActionOperations,
     getCreateSyncOperation,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
-import { OnSaveConfirmationCb } from '../interface';
+import type { OnSaveConfirmationCb } from '../interface';
 import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
 import { createIntermediateEvent } from './getSaveEventActionsHelpers';

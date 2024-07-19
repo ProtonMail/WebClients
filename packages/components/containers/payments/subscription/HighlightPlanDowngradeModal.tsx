@@ -2,13 +2,14 @@ import { c, msgid } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { FreePlanDefault, PlansMap, UserModel } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, PlansMap, UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     Icon,
@@ -16,9 +17,8 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../components';
-import { ShortPlan } from '../features/interface';
+import type { ShortPlan } from '../features/interface';
 import { getFreePlan } from '../features/plan';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';
 

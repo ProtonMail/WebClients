@@ -1,16 +1,20 @@
-import { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useModalStateWithData } from '@proton/components/components';
-import { IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet';
 
-import { ModalData, WalletSetupModalContext, WalletSetupModalKind } from '.';
+import type { ModalData } from '.';
+import { WalletSetupModalContext, WalletSetupModalKind } from '.';
 import { WalletCreationModal } from '../../components';
 import { WalletAccountCreationModal } from '../../components/WalletAccountCreationModal';
 import { WalletBackupModal } from '../../components/WalletBackupModal';
 import { WalletTermsAndConditionsPrompt } from '../../components/WalletTermsAndConditionsPrompt';
-import { WalletUpgradeModal, WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
+import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
+import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
 import { MAX_WALLETS_FREE, MAX_WALLET_ACCOUNTS_PER_WALLET_FREE } from '../../constants/wallet';
 import { SubTheme } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';

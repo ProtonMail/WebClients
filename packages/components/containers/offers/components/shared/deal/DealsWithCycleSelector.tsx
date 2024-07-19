@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { CycleSelector } from '@proton/components/containers/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 
-import { OfferProps } from '../../../interface';
+import type { OfferProps } from '../../../interface';
 import Deal from './Deal';
 import DealCTA from './DealCTA';
 import DealFeatures from './DealFeatures';

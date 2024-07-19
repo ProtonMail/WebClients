@@ -1,7 +1,7 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { getUnixTime } from 'date-fns';
 
-import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import {
@@ -18,8 +18,8 @@ import {
     getPhotoDimensions,
     getPhotoExtendedAttributes,
 } from '../../_photos/exifInfo';
-import { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
-import { Media, ThumbnailInfo } from '../media';
+import type { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
+import type { Media, ThumbnailInfo } from '../media';
 import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
 import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';

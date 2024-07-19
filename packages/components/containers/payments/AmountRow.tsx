@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '@proton/components/payments/core';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { PlainPaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { Field, Row } from '../../components';
 import PaymentSelector from './PaymentSelector';

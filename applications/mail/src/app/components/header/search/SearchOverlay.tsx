@@ -1,18 +1,17 @@
-import {
+import type {
     AnimationEvent,
     CSSProperties,
     HTMLAttributes,
     MouseEvent as ReactMouseEvent,
     ReactNode,
     RefObject,
-    useLayoutEffect,
-    useRef,
 } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import type { HotkeyTuple } from '@proton/components';
 import {
-    HotkeyTuple,
     getCustomSizingClasses,
     useDropdownArrowNavigation,
     useFocusTrap,

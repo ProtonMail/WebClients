@@ -1,7 +1,7 @@
-import { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
-import { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants';
-import { KeyTransparencyError } from './helpers';
+import type { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants';
+import type { KeyTransparencyError } from './helpers';
 
 export enum KTPROOF_TYPE {
     ABSENCE,

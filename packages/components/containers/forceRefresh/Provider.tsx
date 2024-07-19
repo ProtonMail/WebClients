@@ -1,6 +1,8 @@
-import { ReactNode, forwardRef, useCallback, useImperativeHandle, useState } from 'react';
+import type { ReactNode } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';
 
-import Context, { RefreshFn } from './context';
+import type { RefreshFn } from './context';
+import Context from './context';
 
 interface Props {
     children: ReactNode;

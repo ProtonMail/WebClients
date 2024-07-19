@@ -1,25 +1,20 @@
-import {
-    ConditionComparator,
-    ConditionComparatorInvertedMap,
-    ConditionType,
+import type {
     FilterActions,
     FilterCondition,
     FilterRedirect,
     FilterStatement,
     SimpleObject,
 } from '@proton/components/containers/filters/interfaces';
+import {
+    ConditionComparator,
+    ConditionComparatorInvertedMap,
+    ConditionType,
+} from '@proton/components/containers/filters/interfaces';
 
 import { TEST_NODES, V1, V2 } from '../constants';
 import { escapeCharacters, escapeVariables, unique } from '../helpers';
-import {
-    BuildFileIntoType,
-    EscapeVariableType,
-    MATCH_KEYS,
-    OPERATOR_KEYS,
-    SIEVE_VERSION,
-    SieveCondition,
-    ValueTypePair,
-} from '../interface';
+import type { BuildFileIntoType, EscapeVariableType, SIEVE_VERSION, SieveCondition, ValueTypePair } from '../interface';
+import { MATCH_KEYS, OPERATOR_KEYS } from '../interface';
 
 /**
  * Builds a vacation action.

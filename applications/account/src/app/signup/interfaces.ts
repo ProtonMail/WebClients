@@ -1,14 +1,15 @@
-import { ChallengeResult } from '@proton/components';
-import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
-import { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core/interface';
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import {
+import type { ChallengeResult } from '@proton/components';
+import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
+import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
+import type { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
+import type { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core/interface';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type {
     Address,
     Api,
     Currency,

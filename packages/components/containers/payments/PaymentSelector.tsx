@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { Input, Label } from '../../components';
 import AmountButton from './AmountButton';

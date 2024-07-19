@@ -7,12 +7,12 @@ import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain, SSO } from '@proton/shared/lib/interfaces';
+import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import { Info, InputFieldTwo, TextAreaTwo, useFormErrors } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../../account';
-import { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
+import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 
 interface SSOInfo {

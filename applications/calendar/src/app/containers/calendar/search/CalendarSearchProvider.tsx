@@ -1,26 +1,22 @@
-import {SimpleMap} from '@proton/shared/lib/interfaces';
-import {
-    MutableRefObject,
-    ReactNode,
-    createContext,
-    useCallback,
-    useContext,
-    useEffect,
-    useRef,
-    useState,
-} from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { ESItem } from '@proton/encrypted-search/lib';
+import type { ESItem } from '@proton/encrypted-search/lib';
 import { useLoading } from '@proton/hooks';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { extractSearchParameters, generatePathnameWithSearchParams } from '../../../helpers/encryptedSearch/esUtils';
-import { ESCalendarContent, ESCalendarMetadata, ESCalendarSearchParams } from '../../../interfaces/encryptedSearch';
+import type {
+    ESCalendarContent,
+    ESCalendarMetadata,
+    ESCalendarSearchParams,
+} from '../../../interfaces/encryptedSearch';
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import { fromUrlParams } from '../getUrlHelper';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 
 interface UseCalendarSearch {
     searchParams: ESCalendarSearchParams;

@@ -2,7 +2,7 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/const
 
 import { FeatureCode } from '../../../../containers/features';
 import { getFamilyDriveFeatures } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import sideImage from './BF-Drive-App-Modal-400x1200.png';
 import sideImage2x from './BF-Drive-App-Modal-800x2400.png';
 import Layout from './Layout';

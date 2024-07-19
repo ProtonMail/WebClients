@@ -1,9 +1,9 @@
-import { Location } from 'history';
+import type { Location } from 'history';
 
 import { CryptoProxy } from '@proton/crypto';
-import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
-import { ESLink } from './types';
+import type { ESLink } from './types';
 
 export const createItemId = (shareId: string, linkId: string) => {
     return `${shareId}:${linkId}`;

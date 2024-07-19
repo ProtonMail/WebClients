@@ -1,7 +1,7 @@
-import { SimpleObject } from '@proton/components/containers/filters/interfaces';
+import type { SimpleObject } from '@proton/components/containers/filters/interfaces';
 
 import { V1 } from '../constants';
-import { SIEVE_VERSION } from '../interface';
+import type { SIEVE_VERSION } from '../interface';
 import {
     buildBasicTree,
     buildCondition,

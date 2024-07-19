@@ -8,8 +8,8 @@ import {
     TOKEN_EXPIRATION_TIME,
     WAIT_TIME,
 } from '../constants';
-import { EncryptedBlock, Link, ThumbnailEncryptedBlock } from '../interface';
-import { BlockHash, UploadingBlock, UploadingBlockControl } from './interface';
+import type { EncryptedBlock, Link, ThumbnailEncryptedBlock } from '../interface';
+import type { BlockHash, UploadingBlock, UploadingBlockControl } from './interface';
 import { waitForCondition } from './pauser';
 
 /**

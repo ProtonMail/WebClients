@@ -1,6 +1,6 @@
 import { differenceInDays, startOfDay } from 'date-fns';
 
-import { InboxDesktopFreeTrialReminders } from '@proton/shared/lib/desktop/desktopTypes';
+import type { InboxDesktopFreeTrialReminders } from '@proton/shared/lib/desktop/desktopTypes';
 
 import { FIRST_REMINDER_DAYS, SECOND_REMINDER_DAYS, THIRD_REMINDER_DAYS } from './useInboxFreeTrial';
 

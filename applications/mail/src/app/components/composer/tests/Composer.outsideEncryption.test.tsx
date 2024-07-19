@@ -1,10 +1,10 @@
-import { fireEvent, getByTestId as getByTestIdDefault, waitFor } from '@testing-library/react';
+import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/react';
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
-import { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
+import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
@@ -15,7 +15,7 @@ import {
     getDropdown,
     render,
     tick,
-    waitForNotification
+    waitForNotification,
 } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
@@ -126,7 +126,6 @@ describe('Composer outside encryption', () => {
         await waitForNotification('Password has been set successfully');
         await saveNow(container);
 
-
         // Edit encryption
         // Open the encryption dropdown
         const encryptionDropdownButton = getByTestId('composer:encryption-options-button');
@@ -142,11 +141,10 @@ describe('Composer outside encryption', () => {
         const passwordValue = passwordInputAfterUpdate.value;
 
         expect(passwordValue).toEqual(password);
-
     });
 
     it('should be able to remove encryption', async () => {
-        const { getByTestId, getByText, queryByText, container } = await setup({
+        const { getByTestId, getByText, queryByText, container, findByText } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
@@ -174,9 +172,7 @@ describe('Composer outside encryption', () => {
 
         const dropdown = await getDropdown();
 
-        await waitFor(
-            () => expect(getByText(/This message will expire on/)).toBeInTheDocument()
-        );
+        await findByText(/This message will expire on/);
         // Click on remove button
         const editEncryptionButton = getByTestIdDefault(dropdown, 'composer:remove-outside-encryption');
         fireEvent.click(editEncryptionButton);

@@ -1,5 +1,5 @@
-import { WeekStartsOn } from '../../date-fns-utc/interface';
-import { VisualCalendar } from './Calendar';
+import type { WeekStartsOn } from '../../date-fns-utc/interface';
+import type { VisualCalendar } from './Calendar';
 
 export enum EXPORT_STEPS {
     EXPORTING,

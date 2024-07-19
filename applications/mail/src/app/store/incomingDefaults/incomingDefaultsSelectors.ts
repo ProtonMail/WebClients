@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
+import type { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 
-import { MailState } from '../store';
+import type { MailState } from '../store';
 
 const incomingDefaults = (state: MailState) => state.incomingDefaults;
 const incomingDefaultLocation = (_: MailState, location: INCOMING_DEFAULTS_LOCATION) => location;

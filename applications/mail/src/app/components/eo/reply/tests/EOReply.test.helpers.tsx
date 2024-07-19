@@ -1,7 +1,8 @@
-import { RenderResult, fireEvent } from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 
 import { EORender } from '../../../../helpers/test/eo/EORender';
-import { EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
+import type { EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
 import { addApiMock, waitForNoNotification, waitForNotification } from '../../../../helpers/test/helper';
 import EOReply from '../EOReply';
 

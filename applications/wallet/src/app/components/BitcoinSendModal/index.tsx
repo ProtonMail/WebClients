@@ -3,19 +3,23 @@ import { useEffect, useState } from 'react';
 import { first } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
-import { ModalOwnProps, useModalState, useModalStateWithData } from '@proton/components/components';
+import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
+import { useModalState, useModalStateWithData } from '@proton/components/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { IWasmApiWalletData, toWalletAccountSelectorOptions } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { toWalletAccountSelectorOptions } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
-import { SubTheme, getAccountBalance, getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
+import type { SubTheme } from '../../utils';
+import { getAccountBalance, getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteModal } from '../InviteModal';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
-import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
+import type { Steps } from '../ModalHeaderWithStepper';
+import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
 import { AmountInput } from './AmountInput';
 import { RecipientsSelection } from './RecipientsSelection';

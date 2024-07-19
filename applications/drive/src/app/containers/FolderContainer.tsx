@@ -1,13 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Route, RouteComponentProps } from 'react-router';
+import type { RouteComponentProps } from 'react-router';
+import { Route } from 'react-router';
 
 import { useAppTitle } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
-import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
-import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
+import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
+import DriveView from '../components/sections/Drive/DriveView';
+import type { DriveFolder } from '../hooks/drive/useActiveShare';
+import useActiveShare from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useDefaultShare, useDriveEventManager } from '../store';

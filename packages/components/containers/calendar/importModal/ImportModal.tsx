@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -21,12 +22,8 @@ import {
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { APPS } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import {
-    IMPORT_STEPS,
-    ImportCalendarModel,
-    ImportedEvent,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { ImportCalendarModel, ImportedEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
 import { BasicModal } from '../../../components';

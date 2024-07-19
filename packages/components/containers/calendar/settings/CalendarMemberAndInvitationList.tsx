@@ -5,11 +5,8 @@ import { useApi, useNotifications } from '@proton/components/hooks';
 import { updateInvitation, updateMemberPermission } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import {
-    CalendarMember,
-    CalendarMemberInvitation,
-    MEMBER_INVITATION_STATUS,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
 import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';

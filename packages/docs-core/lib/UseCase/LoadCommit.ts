@@ -1,9 +1,9 @@
-import { DecryptCommit } from './DecryptCommit'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { DecryptCommit } from './DecryptCommit'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { GetCommitData } from './GetCommitData'
-import { DecryptedCommit } from '../Models/DecryptedCommit'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { GetCommitData } from './GetCommitData'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
 
 /**
  * Fetches commit data from the Docs server and decrypts it

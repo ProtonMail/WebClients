@@ -1,12 +1,12 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { attachmentsSize, isDraft, isReceived, isSent, isSentAndReceived } from '@proton/shared/lib/mail/messages';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
-import {
+import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
+import type {
     MessageImages,
     MessageState,
     MessageStateWithData,

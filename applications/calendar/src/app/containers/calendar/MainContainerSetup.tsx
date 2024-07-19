@@ -9,17 +9,17 @@ import {
     getPreferredActiveWritableCalendar,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
 import EncryptedSearchLibraryProvider from '../EncryptedSearchLibraryProvider';
 import AlarmContainer from '../alarms/AlarmContainer';
-import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
+import type { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
 import CalendarContainer from './CalendarContainer';
@@ -27,9 +27,9 @@ import CalendarStartupModals from './CalendarStartupModals';
 import EventActionContainer from './EventActionContainer';
 import ShareInvitationContainer from './ShareInvitationContainer';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
-import { CalendarsEventsCache } from './eventStore/interface';
+import type { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
-import { EventTargetAction } from './interface';
+import type { EventTargetAction } from './interface';
 import CalendarSearchProvider from './search/CalendarSearchProvider';
 
 interface Props {

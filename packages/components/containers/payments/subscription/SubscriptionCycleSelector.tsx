@@ -1,19 +1,14 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, FreeSubscription, PLANS } from '@proton/shared/lib/constants';
+import type { FreeSubscription, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
-import {
-    PricingMode,
-    TotalPricing,
-    getPlan,
-    getPlanFromIds,
-    getTotals,
-    isTrial,
-} from '@proton/shared/lib/helpers/subscription';
-import {
+import type { PricingMode, TotalPricing } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, getPlanFromIds, getTotals, isTrial } from '@proton/shared/lib/helpers/subscription';
+import type {
     Currency,
     PlanIDs,
     PlansMap,

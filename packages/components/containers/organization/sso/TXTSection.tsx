@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
 
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';

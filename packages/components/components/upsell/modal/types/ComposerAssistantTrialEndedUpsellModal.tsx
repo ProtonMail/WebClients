@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Loader, ModalStateProps, Price, UpsellModal } from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components/components';
+import { Loader, Price, UpsellModal } from '@proton/components/components';
 import { useSubscriptionModal } from '@proton/components/containers';
 import {
     useAssistantUpsellConfig,
@@ -12,14 +13,8 @@ import {
     useUser,
 } from '@proton/components/hooks';
 import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
-import {
-    ADDON_NAMES,
-    APP_UPSELL_REF_PATH,
-    MAIL_UPSELL_PATHS,
-    PLANS,
-    PLAN_TYPES,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, PLAN_TYPES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 

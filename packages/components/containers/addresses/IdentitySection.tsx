@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Info, Loader, Option, SelectTwo } from '../../components';

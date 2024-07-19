@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext } from 'react';
 
-import { UploadProviderState } from './UploadProviderState';
+import type { UploadProviderState } from './UploadProviderState';
 import useUpload from './useUpload';
 
 const UploadContext = createContext<UploadProviderState | null>(null);

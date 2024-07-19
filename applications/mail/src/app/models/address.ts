@@ -1,5 +1,5 @@
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 export type RecipientType = 'ToList' | 'CCList' | 'BCCList';
 export const recipientTypes: RecipientType[] = ['ToList', 'CCList', 'BCCList'];

@@ -1,8 +1,8 @@
-import { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
-import { IconName } from '../icon';
-import { Props as OptionProps } from '../option/Option';
-import { NodeOrBoolean } from '../v2/field/InputField';
+import type { IconName } from '../icon';
+import type { Props as OptionProps } from '../option/Option';
+import type { NodeOrBoolean } from '../v2/field/InputField';
 
 export type SelectChangeEvent<V> = {
     value: V;

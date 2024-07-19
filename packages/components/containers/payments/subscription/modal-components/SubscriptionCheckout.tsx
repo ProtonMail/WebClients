@@ -1,14 +1,15 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import type { PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { RequiredCheckResponse, getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
+import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
+import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import {
+import type {
     Currency,
     Cycle,
     FreePlanDefault,
@@ -23,9 +24,10 @@ import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
-import { OnBillingAddressChange, WrappedTaxCountrySelector } from '../../TaxCountrySelector';
+import type { OnBillingAddressChange } from '../../TaxCountrySelector';
+import { WrappedTaxCountrySelector } from '../../TaxCountrySelector';
 import { getTotalBillingText } from '../../helper';
-import { CheckoutModifiers } from '../useCheckoutModifiers';
+import type { CheckoutModifiers } from '../useCheckoutModifiers';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import { BilledText } from './helpers/BilledText';
 import CheckoutRow from './helpers/CheckoutRow';

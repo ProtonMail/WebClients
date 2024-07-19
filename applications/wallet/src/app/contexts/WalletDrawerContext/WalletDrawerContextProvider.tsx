@@ -1,9 +1,11 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 
-import { WalletDrawerContext, WalletDrawerContextData, WalletDrawerContextValue } from '.';
+import type { WalletDrawerContextData, WalletDrawerContextValue } from '.';
+import { WalletDrawerContext } from '.';
 import { Drawer } from './Drawer';
 import { WalletDiscoverContent } from './WalletDiscoverContent';
 import { WalletReceiveContent } from './WalletReceiveContent';

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ContainerGetter, SortEndHandler, arrayMove } from 'react-sortable-hoc';
+import type { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
+import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
@@ -12,7 +13,7 @@ import { useApi, useEventManager, useFilters, useNotifications } from '../../hoo
 import { SettingsParagraph, SettingsSection } from '../account';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
-import { Filter } from './interfaces';
+import type { Filter } from './interfaces';
 
 function FiltersSection() {
     const { call } = useEventManager();

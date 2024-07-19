@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { ExperimentGroup, Features, measureFeaturePerformance } from '../../../utils/telemetry';
 import { WAIT_TIME } from '../constants';
-import {
+import type {
     ChildrenLinkMeta,
     DownloadCallbacks,
     DownloadStreamControls,
@@ -22,7 +22,7 @@ import {
 } from '../interface';
 import ArchiveGenerator from './archiveGenerator';
 import ConcurrentIterator from './concurrentIterator';
-import { NestedLinkDownload } from './interface';
+import type { NestedLinkDownload } from './interface';
 
 type FolderLoadInfo = {
     size: number;

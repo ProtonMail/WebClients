@@ -13,7 +13,7 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/calendar/helpers';
-import {
+import type {
     Calendar,
     CalendarMember,
     CalendarSubscription,
@@ -22,7 +22,7 @@ import {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import {
+import type {
     CalendarEventManager,
     CalendarMemberEventManager,
     CalendarSubscriptionEventManager,

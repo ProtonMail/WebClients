@@ -1,8 +1,8 @@
 import examples from 'libphonenumber-js/examples.mobile.json';
 import metadata from 'libphonenumber-js/metadata.min.json';
+import type { CountryCode } from 'libphonenumber-js/min';
 import parsePhoneNumberFromString, {
     AsYouType,
-    CountryCode,
     formatIncompletePhoneNumber,
     getCountryCallingCode,
     getExampleNumber,

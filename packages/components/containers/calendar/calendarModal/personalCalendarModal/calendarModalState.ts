@@ -12,14 +12,14 @@ import {
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { CALENDAR_TYPE, DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { Address } from '@proton/shared/lib/interfaces';
-import {
+import type { Address } from '@proton/shared/lib/interfaces';
+import type {
     CalendarErrors,
     CalendarSettings,
     CalendarViewModelFull,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 
 export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings>) => {
     const {

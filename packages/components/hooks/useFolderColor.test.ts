@@ -1,4 +1,4 @@
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { FOLDER_COLOR, INHERIT_PARENT_FOLDER_COLOR } from '@proton/shared/lib/mail/mailSettings';
 
 import useFolderColor from './useFolderColor';

@@ -1,17 +1,11 @@
-import {
-    ESEvent,
-    ESTimepoint,
-    ES_SYNC_ACTIONS,
-    EventsObject,
-    hasReactivatedKey,
-    openESDB,
-} from '@proton/encrypted-search';
+import type { ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search';
+import { ES_SYNC_ACTIONS, hasReactivatedKey, openESDB } from '@proton/encrypted-search';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
 
 import { MAIL_EVENTLOOP_NAME } from '../../constants';
-import { ESBaseMessage } from '../../models/encryptedSearch';
-import { Event } from '../../models/event';
+import type { ESBaseMessage } from '../../models/encryptedSearch';
+import type { Event } from '../../models/event';
 import { getBaseMessage } from './esBuild';
 import { getTotalMessages } from './esUtils';
 

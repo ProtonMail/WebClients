@@ -1,4 +1,4 @@
-import { ChargebeeInstanceConfiguration } from '../lib';
+import type { ChargebeeInstanceConfiguration } from '../lib';
 import { createChargebee, getChargebeeInstance, isChargebeeLoaded, pollUntilLoaded, resetChargebee } from './chargebee';
 
 beforeEach(() => {

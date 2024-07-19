@@ -1,5 +1,7 @@
-import { APPS, APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
-import { DRAWER_ACTION, DRAWER_EVENTS, DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import type { DRAWER_ACTION } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS, DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import {
     addParentAppToUrl,

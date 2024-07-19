@@ -8,16 +8,16 @@ import {
     ktSentryReport,
     ktSentryReportError,
 } from '@proton/key-transparency';
-import {
+import type {
     Address,
     Api,
     DecryptedKey,
-    KeyTransparencyActivation,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     SignedKeyList,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useConfig } from '../../hooks';
 import useKTActivation from './useKTActivation';

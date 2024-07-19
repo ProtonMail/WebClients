@@ -13,7 +13,7 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import useFutureTimeDate from '../../../hooks/message/useFutureTimeDate';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import { updateScheduled } from '../../../store/messages/scheduled/scheduledActions';
 import ComposerInnerModal from './ComposerInnerModal';
 import { getChooseDateText } from './helper';

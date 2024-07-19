@@ -7,7 +7,7 @@ import { Href } from '@proton/atoms';
 import { Loader } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { EOUrlParams } from '../../../helpers/eo/eoUrl';
+import type { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import { useLoadEOToken } from '../../../hooks/eo/useLoadEOToken';
 import MessageDecryptForm from './MessageDecryptForm';

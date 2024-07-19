@@ -1,14 +1,15 @@
-import { FormEvent, useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import type { PaymentMethodCardDetails } from '@proton/components/payments/core';
 import {
     Autopay,
     PAYMENT_METHOD_TYPES,
-    PaymentMethodCardDetails,
     isV5PaymentToken,
     paymentMethodPaymentsVersion,
     v5PaymentTokenToLegacyPaymentToken,
@@ -24,10 +25,11 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import type { ModalProps } from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
-import { CardModel } from '../../payments/core';
+import type { CardModel } from '../../payments/core';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 

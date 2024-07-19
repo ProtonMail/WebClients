@@ -28,7 +28,7 @@ import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRo
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { closeDrawerFromChildApp } from '@proton/shared/lib/drawer/helpers';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarReactivateSection from './CalendarReactivateSection';
 import CalendarResetSection from './CalendarResetSection';

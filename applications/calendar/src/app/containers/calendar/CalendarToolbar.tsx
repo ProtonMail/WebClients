@@ -1,4 +1,5 @@
-import { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
 
 import { Vr } from '@proton/atoms';
 import { TimeZoneSelector, Toolbar, useElementBreakpoints } from '@proton/components';

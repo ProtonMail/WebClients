@@ -4,11 +4,11 @@ import { Copy, TableRow } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { Gateway } from './Gateway';
-import { GatewayLogical } from './GatewayLogical';
+import type { Gateway } from './Gateway';
+import type { GatewayLogical } from './GatewayLogical';
 import GatewayManageButton from './GatewayManageButton';
-import { GatewayServer } from './GatewayServer';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayServer } from './GatewayServer';
+import type { GatewayUser } from './GatewayUser';
 import { getCountryFlagAndName } from './getCountryFlagAndName';
 import { getFormattedLoad, getMembers, getSuffix } from './helpers';
 

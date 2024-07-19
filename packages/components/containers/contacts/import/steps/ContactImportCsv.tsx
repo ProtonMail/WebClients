@@ -1,4 +1,5 @@
-import { Dispatch, FormEvent, SetStateAction, useState } from 'react';
+import type { Dispatch, FormEvent, SetStateAction } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +12,8 @@ import {
     modifyContactType,
     toggleContactChecked,
 } from '@proton/shared/lib/contacts/helpers/importCsv';
-import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Table } from '../../../../components';
 import { useNotifications } from '../../../../hooks';

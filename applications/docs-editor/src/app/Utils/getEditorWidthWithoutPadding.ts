@@ -1,4 +1,4 @@
-import { LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 
 export function getEditorDimensionsWithoutPadding(editor: LexicalEditor) {
   const editorRootElement = editor.getRootElement()
