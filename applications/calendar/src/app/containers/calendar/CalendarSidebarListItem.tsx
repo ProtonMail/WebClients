@@ -29,7 +29,7 @@ import {
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { APPS } from '@proton/shared/lib/constants';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

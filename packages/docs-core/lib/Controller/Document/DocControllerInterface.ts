@@ -1,4 +1,4 @@
-import {
+import type {
   BroadcastSource,
   ClientRequiresEditorMethods,
   DocumentMetaInterface,
@@ -6,12 +6,12 @@ import {
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRole,
 } from '@proton/docs-shared'
-import { DocLoadSuccessResult } from './DocLoadSuccessResult'
-import { UserState } from '@lexical/yjs'
-import { NativeVersionHistory } from '../../VersionHistory'
-import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
-import { Result } from '../../Domain/Result/Result'
-import { SerializedEditorState } from 'lexical'
+import type { DocLoadSuccessResult } from './DocLoadSuccessResult'
+import type { UserState } from '@lexical/yjs'
+import type { NativeVersionHistory } from '../../VersionHistory'
+import type { TranslatedResult } from '../../Domain/Result/TranslatedResult'
+import type { Result } from '../../Domain/Result/Result'
+import type { SerializedEditorState } from 'lexical'
 
 export interface DocControllerInterface {
   userAddress?: string

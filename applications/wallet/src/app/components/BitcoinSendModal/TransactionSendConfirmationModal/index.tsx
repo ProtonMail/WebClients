@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletSendingPlane from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
 import clsx from '@proton/utils/clsx';
 
 import { Button, Modal } from '../../../atoms';
-import { SubTheme } from '../../../utils';
+import type { SubTheme } from '../../../utils';
 
 interface TransactionSendConfirmationModalOwnProps {
     theme?: SubTheme;

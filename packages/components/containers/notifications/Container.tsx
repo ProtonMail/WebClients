@@ -1,11 +1,12 @@
-import { Fragment, Key, useEffect, useRef, useState } from 'react';
+import type { Key } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import Notification from './Notification';
-import { NotificationOffset, Notification as NotificationType } from './interfaces';
+import type { NotificationOffset, Notification as NotificationType } from './interfaces';
 
 const notificationGap = 4;
 

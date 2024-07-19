@@ -1,8 +1,9 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Breakpoints, Icon, useToggle } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { Icon, useToggle } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
@@ -10,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ExtraImages from '../../message/extras/ExtraImages';

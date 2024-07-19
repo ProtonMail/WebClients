@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { Group } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import './GroupItem.scss';

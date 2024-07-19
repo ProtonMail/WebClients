@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';

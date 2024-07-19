@@ -2,7 +2,7 @@ import { DAY_IN_SECONDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { normalize } from '../../helpers/string';
-import {
+import type {
     DateTimeValue,
     VcalDateOrDateTimeProperty,
     VcalStringProperty,

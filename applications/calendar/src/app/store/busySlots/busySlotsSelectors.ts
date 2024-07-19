@@ -1,10 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { getBusyScheduledEvent } from '../../containers/calendar/eventHelper';
-import { CalendarViewBusyEvent } from '../../containers/calendar/interface';
-import { CalendarState } from '../store';
+import type { CalendarViewBusyEvent } from '../../containers/calendar/interface';
+import type { CalendarState } from '../store';
 import { deduplicateBusySlots } from './busySlotsSelectors.helpers';
-import { BusySlotFetchStatus, BusySlotsVisibility, busySlotsSliceName } from './busySlotsSlice';
+import type { BusySlotFetchStatus, BusySlotsVisibility } from './busySlotsSlice';
+import { busySlotsSliceName } from './busySlotsSlice';
 
 export const selectAttendeesBusySlots = createSelector(
     (state: CalendarState) => state[busySlotsSliceName].displayOnGrid,

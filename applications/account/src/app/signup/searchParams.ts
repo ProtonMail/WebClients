@@ -1,10 +1,10 @@
-import { Location } from 'history';
+import type { Location } from 'history';
 
-import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
+import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
+import { otherProductParamValues } from '@proton/shared/lib/apps/product';
+import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
 import {
-    ADDON_NAMES,
     APPS,
-    APP_NAMES,
     AddonLimit,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
@@ -16,12 +16,13 @@ import {
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon, getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
+import type { Currency, Plan } from '@proton/shared/lib/interfaces';
+import { getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clamp from '@proton/utils/clamp';
 
-import { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
+import type { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
 import { SERVICES } from './interfaces';
 
 export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {

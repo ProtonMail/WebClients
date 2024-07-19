@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { ThemeColorUnion } from '@proton/colors';
-import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
+import type { ThemeColorUnion } from '@proton/colors';
+import type { Referral } from '@proton/shared/lib/interfaces';
+import { ReferralState } from '@proton/shared/lib/interfaces';
 
 interface Props {
     referral: Referral;

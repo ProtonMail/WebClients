@@ -1,6 +1,7 @@
 import { useFlag } from '@unleash/proxy-client-react';
 
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 
 import useConfig from './useConfig';

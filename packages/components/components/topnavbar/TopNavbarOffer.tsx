@@ -4,10 +4,11 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
-import { APP_NAMES, CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 import { OfferModal, useOfferModal } from '../../containers';
-import { OfferConfig } from '../../containers/offers/interface';
+import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { useActiveBreakpoint, useSubscription, useUser, useWelcomeFlags } from '../../hooks';
 import { PromotionButton } from '../button/PromotionButton';

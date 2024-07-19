@@ -1,4 +1,4 @@
-import { APP_NAMES, CLIENT_TYPES } from '../constants';
+import type { APP_NAMES, CLIENT_TYPES } from '../constants';
 
 export interface ProtonConfig {
     CLIENT_TYPE: CLIENT_TYPES;

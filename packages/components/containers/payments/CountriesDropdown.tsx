@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react';
 
 import { Option } from '@proton/components/components';
-import SearchableSelect, {
-    Props as SearchableSelectProps,
-} from '@proton/components/components/selectTwo/SearchableSelect';
+import type { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { CountryItem, DEFAULT_SEPARATOR, getFullList } from '@proton/components/helpers/countries';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { CountryItem } from '@proton/components/helpers/countries';
+import { DEFAULT_SEPARATOR, getFullList } from '@proton/components/helpers/countries';
 
 export const useCountries = () => {
     const countries = useMemo(() => getFullList(), []);

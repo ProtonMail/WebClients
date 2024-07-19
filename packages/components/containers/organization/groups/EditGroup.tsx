@@ -10,11 +10,12 @@ import { InputFieldStacked } from '@proton/components/components/inputFieldStack
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Group, GroupPermissions } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces';
+import { GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
 import { getAddressSuggestedLocalPart } from './helpers';
-import { GroupsManagementReturn } from './types';
+import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;

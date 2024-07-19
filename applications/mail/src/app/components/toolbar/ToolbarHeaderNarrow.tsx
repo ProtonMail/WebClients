@@ -14,7 +14,7 @@ import MoreActions from './MoreActions';
 import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import ReadUnreadButtons from './ReadUnreadButtons';
-import { Props as ToolbarProps } from './Toolbar';
+import type { Props as ToolbarProps } from './Toolbar';
 
 interface Props extends ToolbarProps {
     classname: string;

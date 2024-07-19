@@ -1,5 +1,7 @@
-import { FC, useEffect } from 'react';
-import { RouteComponentProps, useLocation } from 'react-router-dom';
+import type { FC } from 'react';
+import { useEffect } from 'react';
+import type { RouteComponentProps } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { Loader } from '@proton/components/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';

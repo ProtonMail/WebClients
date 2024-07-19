@@ -7,8 +7,8 @@ import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
 import Icon from '../../icon/Icon';
-import { ToolbarConfig } from '../helpers/getToolbarConfig';
-import { EditorMetadata } from '../interface';
+import type { ToolbarConfig } from '../helpers/getToolbarConfig';
+import type { EditorMetadata } from '../interface';
 import ToolbarDropdown from './ToolbarDropdown';
 
 const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');

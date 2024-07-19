@@ -1,4 +1,4 @@
-import { DecryptedMessage } from '@proton/docs-shared'
+import type { DecryptedMessage } from '@proton/docs-shared'
 
 export type SingleMessageVerificationResult = {
   verified: boolean

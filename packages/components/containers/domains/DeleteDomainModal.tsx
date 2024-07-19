@@ -3,9 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
-import { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain } from '@proton/shared/lib/interfaces';
 
-import { ErrorButton, Prompt, PromptProps } from '../../components';
+import type { PromptProps } from '../../components';
+import { ErrorButton, Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {

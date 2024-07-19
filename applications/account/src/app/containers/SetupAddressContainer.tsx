@@ -17,15 +17,16 @@ import {
     useTheme,
 } from '@proton/components';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { AddressGeneration } from '@proton/components/containers/login/interface';
+import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { getValidatedApp } from '@proton/shared/lib/authentication/fork/validation';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
-import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     getAddressGenerationSetup,

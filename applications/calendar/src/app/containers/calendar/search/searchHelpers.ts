@@ -1,9 +1,10 @@
 import { getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { ESItem } from '@proton/encrypted-search/lib';
+import type { ESItem } from '@proton/encrypted-search/lib';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
-import { OccurrenceIterationCache, getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
+import type { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
+import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { DAY, SECOND } from '@proton/shared/lib/constants';
 import {
@@ -18,20 +19,20 @@ import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { MaybeArray, SimpleMap } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { MaybeArray, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getEventKey } from '../../../helpers/encryptedSearch/esUtils';
 import { generateEventUniqueId } from '../../../helpers/event';
-import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
+import type { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { getCurrentVevent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
-import { CalendarsEventsCache } from '../eventStore/interface';
-import { CalendarViewEvent } from '../interface';
+import type { CalendarsEventsCache } from '../eventStore/interface';
+import type { CalendarViewEvent } from '../interface';
 import { YEARS_TO_EXPAND_AHEAD } from './constants';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 
 /**
  * Given a UNIX timestamp, convert it into a fake UTC date for a given time zone.

@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';
 import {
-    ExternalForwardingResult,
     acceptExternalForwarding,
     getExternalForwarding,
     rejectExternalForwarding,

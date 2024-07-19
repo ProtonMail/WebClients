@@ -5,10 +5,12 @@ import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings'
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
-import { DecryptedLink, useThumbnailsDownload } from '../../../store';
-import { SortField } from '../../../store/_views/utils/useSorting';
-import FileBrowser, { BrowserItemId, SortParams } from '../../FileBrowser';
-import { PublicLink } from '../interface';
+import type { DecryptedLink } from '../../../store';
+import { useThumbnailsDownload } from '../../../store';
+import type { SortField } from '../../../store/_views/utils/useSorting';
+import type { BrowserItemId, SortParams } from '../../FileBrowser';
+import FileBrowser from '../../FileBrowser';
+import type { PublicLink } from '../interface';
 import {
     contentCellsLargeScreen,
     contentCellsSmallScreen,
@@ -48,7 +50,10 @@ export default function SharedFileBrowser({ folderName, items, isLoading, sortPa
     const contentCells = viewportWidth['<=small'] ? contentCellsSmallScreen : contentCellsLargeScreen;
     const headerCells = viewportWidth['<=small'] ? headerCellsSmallScreen : headerCellsLargeScreen;
 
-    const classname = clsx(['flex flex-column flex-nowrap shared-url-file-browser', viewportWidth['<=small'] && 'flex-1']);
+    const classname = clsx([
+        'flex flex-column flex-nowrap shared-url-file-browser',
+        viewportWidth['<=small'] && 'flex-1',
+    ]);
 
     const isListEmpty = items.length === 0 && !isLoading;
 

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
 import { useMultiSortedList } from '@proton/components';
-import { SortConfig } from '@proton/components/hooks/useSortedList';
+import type { SortConfig } from '@proton/components/hooks/useSortedList';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { logError } from '../../../utils/errorHandling';
-import { LinkShareUrl } from '../../_links/interface';
+import type { LinkShareUrl } from '../../_links/interface';
 
 export enum SortField {
     name = 'name',

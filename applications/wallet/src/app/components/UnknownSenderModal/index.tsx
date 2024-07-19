@@ -1,22 +1,24 @@
-import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiWalletTransaction } from '@proton/andromeda';
-import { Checkbox, ModalOwnProps } from '@proton/components/components';
+import type { WasmApiWalletTransaction } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Checkbox } from '@proton/components/components';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { useContactEmails, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { addVCardProperty } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 import clsx from '@proton/utils/clsx';
 import { encryptPgp, useWalletApi } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
-import { SenderObject, TransactionData } from '../../hooks/useWalletTransactions';
+import type { SenderObject, TransactionData } from '../../hooks/useWalletTransactions';
 
 export interface WalletCreationModalOwnProps {
     walletTransaction: TransactionData;

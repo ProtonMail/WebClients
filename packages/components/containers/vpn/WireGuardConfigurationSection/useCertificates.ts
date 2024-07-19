@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useApiResult } from '../../../hooks';
-import { CertificateDTO } from './Certificate';
+import type { CertificateDTO } from './Certificate';
 import { CertificateMode, queryCertificates } from './api';
 
 type ReplaceReturnType<T extends (...a: any) => any, TNewReturn> = (...a: Parameters<T>) => TNewReturn;

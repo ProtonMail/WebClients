@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import TimeGrid from '../../components/calendar/TimeGrid';
 import CalendarContainerView from './CalendarContainerView';
-import { TimeGridRef } from './interface';
+import type { TimeGridRef } from './interface';
 
 interface Props {
     drawerView?: VIEWS;

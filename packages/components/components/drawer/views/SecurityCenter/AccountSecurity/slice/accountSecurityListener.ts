@@ -5,7 +5,8 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getPrimaryRecoverySecret } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 
-import { AccountSecuritySlice, securityCenterSliceActions } from './accountSecuritySlice';
+import type { AccountSecuritySlice } from './accountSecuritySlice';
+import { securityCenterSliceActions } from './accountSecuritySlice';
 
 export const startAccountSecurityListener = (startListening: SharedStartListening<AccountSecuritySlice>) => {
     startListening({

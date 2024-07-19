@@ -3,7 +3,7 @@ import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calenda
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { fromUTCDate } from '@proton/shared/lib/date/timezone';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { getSafeRruleCount } from './helper';
 

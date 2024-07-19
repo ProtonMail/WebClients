@@ -1,10 +1,10 @@
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
-import createApi from '../api/createApi';
+import type createApi from '../api/createApi';
 import { getApiError } from '../api/helpers/apiErrorHelper';
-import { AuthenticationStore } from '../authentication/createAuthenticationStore';
+import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
 import { handleLogout } from '../authentication/logout';
-import { APP_NAMES } from '../constants';
+import type { APP_NAMES } from '../constants';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
 
 export const endOfTrialIPCCall = () => {

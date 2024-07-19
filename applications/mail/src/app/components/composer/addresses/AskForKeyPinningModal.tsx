@@ -1,10 +1,10 @@
-import { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -14,15 +14,15 @@ import {
     useNotifications,
     useUserKeys,
 } from '@proton/components';
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api } from '@proton/shared/lib/interfaces';
-import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import clsx from '@proton/utils/clsx';
 

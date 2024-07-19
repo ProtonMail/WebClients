@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { getFullCalendar } from '@proton/shared/lib/api/calendars';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 import useApi from './useApi';

@@ -1,4 +1,4 @@
-import { EventTypeEnum } from '../Event/EventTypeEnum'
+import type { EventTypeEnum } from '../Event/EventTypeEnum'
 import { ServerMessageWithEvents } from '../Generated'
 import { ServerEventVersion } from '../Version'
 import { CreateEvent } from './CreateEvent'

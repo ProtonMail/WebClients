@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
+import type { ModalProps } from '../../../components';
 import {
     Alert,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../components';
 
 interface Props extends ModalProps {

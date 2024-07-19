@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { DEFAULT_MAILSETTINGS, SPAM_ACTION, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info } from '../../components';
 import { useApi, useEventManager, useFeature, useMailSettings, useNotifications } from '../../hooks';

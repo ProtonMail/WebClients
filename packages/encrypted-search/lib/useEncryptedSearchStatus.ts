@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { INDEXING_STATUS, defaultESStatus } from './constants';
 import { getIndexKey } from './esHelpers';
@@ -11,7 +11,7 @@ import {
     readEnabled,
     readLimited,
 } from './esIDB';
-import { ESCache, ESStatus } from './models';
+import type { ESCache, ESStatus } from './models';
 
 /**
  * @returns a tuple composed of both the _esStatus_ and a setter for it

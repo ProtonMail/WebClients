@@ -1,12 +1,13 @@
-import { ReactNode, memo } from 'react';
+import type { ReactNode } from 'react';
+import { memo } from 'react';
 import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { getUnreadCount } from '../../helpers/sidebar';
-import { UnreadCounts } from './MailSidebarList';
+import type { UnreadCounts } from './MailSidebarList';
 import SidebarFolder from './SidebarFolder';
 
 interface Props {

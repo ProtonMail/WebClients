@@ -22,8 +22,8 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import {
     ButtonGroup,

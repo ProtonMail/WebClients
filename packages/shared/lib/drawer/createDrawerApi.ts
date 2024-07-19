@@ -1,8 +1,9 @@
 import { updateServerTime } from '@proton/crypto';
-import { ApiWithListener } from '@proton/shared/lib/api/createApi';
+import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import noop from '@proton/utils/noop';
 
-import { APP_NAMES, DEFAULT_TIMEOUT } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { DEFAULT_TIMEOUT } from '../constants';
 import { createTimeoutError, deserializeApiErrorData } from '../fetch/ApiError';
 import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
 import { DRAWER_EVENTS } from './interfaces';

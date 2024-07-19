@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 

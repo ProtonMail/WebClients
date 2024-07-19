@@ -1,4 +1,4 @@
-import { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
 
 export interface KeyImportData {
     id: string;

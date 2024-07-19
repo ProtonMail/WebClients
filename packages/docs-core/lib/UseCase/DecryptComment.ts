@@ -1,16 +1,16 @@
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { VERIFICATION_STATUS } from '@proton/crypto'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { EncryptionService } from '../Services/Encryption/EncryptionService'
-import { DocumentKeys } from '@proton/drive-store'
+import type { EncryptionService } from '../Services/Encryption/EncryptionService'
+import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
-import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
+import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
-import { CommentResponseDto } from '../Api/Types/CommentResponseDto'
+import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}

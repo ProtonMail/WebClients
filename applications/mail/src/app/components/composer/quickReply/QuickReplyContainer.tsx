@@ -1,4 +1,5 @@
-import { Dispatch, KeyboardEvent, SetStateAction, useState } from 'react';
+import type { Dispatch, KeyboardEvent, SetStateAction } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 

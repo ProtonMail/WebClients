@@ -1,4 +1,4 @@
-import { ReactElement, RefObject } from 'react';
+import type { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 

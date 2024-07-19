@@ -3,10 +3,8 @@ import { addDays } from 'date-fns';
 
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import {
-    ContextState,
-    useGetStartedChecklist,
-} from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import type { ContextState } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { render } from '../../helpers/test/helper';
 import EmptyListPlaceholder from './EmptyListPlaceholder';
 

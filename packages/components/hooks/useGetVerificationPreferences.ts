@@ -1,12 +1,13 @@
 import { useCallback } from 'react';
 
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { ADDRESS_STATUS, KEY_FLAG, MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { ApiKeysConfig, KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
-import { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
+import type { ApiKeysConfig } from '@proton/shared/lib/interfaces';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
+import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
 import { splitKeys } from '@proton/shared/lib/keys';
 import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';

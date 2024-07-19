@@ -2,7 +2,7 @@ import { addDays, fromUnixTime, isBefore } from 'date-fns';
 
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { getPlan, isManagedExternally, isTrial } from '@proton/shared/lib/helpers/subscription';
-import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     user: UserModel;

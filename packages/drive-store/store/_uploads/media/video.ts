@@ -3,7 +3,8 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { logError } from '../../../utils/errorHandling';
 import { canvasToThumbnail } from './canvasUtil';
-import { Media, ThumbnailInfo, ThumbnailType } from './interface';
+import type { Media, ThumbnailInfo } from './interface';
+import { ThumbnailType } from './interface';
 import { calculateThumbnailSize } from './util';
 
 type ListenerContainer = readonly {

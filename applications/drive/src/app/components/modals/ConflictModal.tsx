@@ -1,11 +1,12 @@
-import React, { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     Checkbox,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

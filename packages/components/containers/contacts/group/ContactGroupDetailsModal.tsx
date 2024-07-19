@@ -1,19 +1,20 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { Icon, ModalProps, ModalTwo } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Icon, ModalTwo } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import Tooltip from '../../../components/tooltip/Tooltip';
 import { useContactEmails, useContactGroups, useUser } from '../../../hooks';
-import { ContactExportingProps } from '../modals/ContactExportingModal';
+import type { ContactExportingProps } from '../modals/ContactExportingModal';
 import RecipientDropdownItem from '../view/RecipientDropdownItem';
-import { ContactGroupDeleteProps } from './ContactGroupDeleteModal';
-import { ContactGroupEditProps } from './ContactGroupEditModal';
+import type { ContactGroupDeleteProps } from './ContactGroupDeleteModal';
+import type { ContactGroupEditProps } from './ContactGroupEditModal';
 
 import './ContactGroupDetailsModal.scss';
 
@@ -188,11 +189,7 @@ const ContactGroupDetailsModal = ({
                         disabled={loading}
                         className="inline-flex justify-center"
                     >
-                        <Icon
-                            name="pen-square"
-                            className="self-center mr-2"
-                            alt={c('Action').t`New message`}
-                        />
+                        <Icon name="pen-square" className="self-center mr-2" alt={c('Action').t`New message`} />
                         {c('Action').t`New message`}
                     </Button>
                 )}

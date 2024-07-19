@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
 import EventManagerContext from './context';
 

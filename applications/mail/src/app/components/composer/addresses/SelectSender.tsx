@@ -1,18 +1,19 @@
-import { MutableRefObject, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Icon, Option, SelectTwo, SettingsLink, generateUID, useAddresses, useUser } from '@proton/components';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { getFromAddresses } from '../../../helpers/addresses';
 import { selectComposer } from '../../../store/composers/composerSelectors';
-import { ComposerID } from '../../../store/composers/composerTypes';
+import type { ComposerID } from '../../../store/composers/composerTypes';
 import { composerActions } from '../../../store/composers/composersSlice';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     composerID: ComposerID;

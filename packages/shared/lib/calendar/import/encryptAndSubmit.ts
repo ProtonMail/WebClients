@@ -5,8 +5,8 @@ import { syncMultipleEvents } from '../../api/calendars';
 import { HOUR, SECOND } from '../../constants';
 import { HTTP_ERROR_CODES } from '../../errors';
 import { wait } from '../../helpers/promise';
-import { Api, DecryptedKey } from '../../interfaces';
-import {
+import type { Api, DecryptedKey } from '../../interfaces';
+import type {
     DecryptedCalendarKey,
     EncryptedEvent,
     ImportedEvent,
@@ -14,7 +14,7 @@ import {
     SyncMultipleApiResponses,
     VcalVeventComponent,
 } from '../../interfaces/calendar';
-import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
+import type { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
 import { getCreationKeys } from '../crypto/keys/helpers';
 import { getIsSuccessSyncApiResponse } from '../helper';

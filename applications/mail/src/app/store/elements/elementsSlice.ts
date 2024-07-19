@@ -1,4 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -58,7 +59,7 @@ import {
     showSerializedElements as showSerializedElementsReducer,
     updatePage as updatePageReducer,
 } from './elementsReducers';
-import { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
+import type { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
 
 export const newElementsState = ({
     page = 0,

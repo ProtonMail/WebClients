@@ -11,10 +11,12 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 import clsx from '@proton/utils/clsx';
 
-import { DecryptedLink, useDownload } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDownload } from '../../../store';
 import { getPercentageFormatter } from '../../../utils/intl/numberFormatter';
 import { isTransferActive } from '../../../utils/transfer';
-import { Download, TransferState } from '../../TransferManager/transfer';
+import type { Download } from '../../TransferManager/transfer';
+import { TransferState } from '../../TransferManager/transfer';
 import ReportVirusButton from './ReportVirusButton';
 import Spinner from './Spinner';
 

@@ -1,6 +1,6 @@
 import { useLocalState, useUser } from '@proton/components/hooks';
 import { getIsAssistantOpened } from '@proton/llm/lib';
-import { OpenedAssistant } from '@proton/llm/lib/types';
+import type { OpenedAssistant } from '@proton/llm/lib/types';
 
 interface Props {
     openedAssistants: OpenedAssistant[];

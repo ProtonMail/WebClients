@@ -25,7 +25,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';

@@ -2,9 +2,9 @@ import { memo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { UnreadCounts } from './MailSidebarList';
+import type { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 

@@ -1,6 +1,6 @@
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import {
+import type {
     DownloadCallbacks,
     DownloadStreamControls,
     GetChildrenCallback,
@@ -14,7 +14,7 @@ import {
 import ArchiveGenerator from './archiveGenerator';
 import ConcurrentIterator from './concurrentIterator';
 import { FolderTreeLoader } from './downloadLinkFolder';
-import { NestedLinkDownload } from './interface';
+import type { NestedLinkDownload } from './interface';
 
 /**
  * initDownloadLinks prepares controls to download archive of passed `links`.

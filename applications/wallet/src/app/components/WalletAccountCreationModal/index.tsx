@@ -1,22 +1,23 @@
-import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-    ModalOwnProps,
 } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import type { IWasmApiWalletData } from '@proton/wallet';
 import {
     BASE_INDEX_OPTIONS,
     DEFAULT_INDEX,
-    IWasmApiWalletData,
     SCRIPT_TYPES,
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
@@ -29,7 +30,8 @@ import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { SubTheme, getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
+import type { SubTheme } from '../../utils';
+import { getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
 
 export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;

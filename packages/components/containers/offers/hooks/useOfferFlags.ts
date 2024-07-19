@@ -2,7 +2,8 @@ import { useFeature } from '@proton/components/hooks';
 import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { FeatureCode } from '../../features';
-import { OfferConfig, OfferGlobalFeatureCodeValue, OfferUserFeatureCodeValue } from '../interface';
+import type { OfferConfig, OfferGlobalFeatureCodeValue } from '../interface';
+import { OfferUserFeatureCodeValue } from '../interface';
 
 const { Default, Visited, Hide } = OfferUserFeatureCodeValue;
 

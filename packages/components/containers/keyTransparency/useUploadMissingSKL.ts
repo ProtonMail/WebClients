@@ -1,12 +1,12 @@
+import type { Epoch } from '@proton/key-transparency/lib';
 import {
-    Epoch,
     fetchProof,
     throwKTError,
     updateSignedKeyList,
     verifyProofOfAbsenceForAllRevision,
 } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { Address, SaveSKLToLS, UploadMissingSKL } from '@proton/shared/lib/interfaces';
+import type { Address, SaveSKLToLS, UploadMissingSKL } from '@proton/shared/lib/interfaces';
 import { getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 

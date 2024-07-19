@@ -1,4 +1,5 @@
-import { HTMLAttributes, useRef } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +13,7 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
@@ -23,12 +25,11 @@ import {
     NOTIFICATION_INPUT_ID,
     PARTICIPANTS_INPUT_ID,
     TITLE_INPUT_ID,
-    VIEWS,
 } from '@proton/shared/lib/calendar/constants';
 import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { Address } from '@proton/shared/lib/interfaces';
-import {
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type {
     AttendeeModel,
     EventModel,
     EventModelErrors,

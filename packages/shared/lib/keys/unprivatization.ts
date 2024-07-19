@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { fetchSignedKeyLists } from '@proton/key-transparency/lib';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
@@ -9,7 +10,7 @@ import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
 import noop from '@proton/utils/noop';
 
 import { setupKeys } from '../api/keys';
-import {
+import type {
     Address,
     Api,
     KeyTransparencyActivation,
@@ -18,13 +19,13 @@ import {
     MemberUnprivatization,
     MemberUnprivatizationOutput,
     MemberUnprivatizationReadyForUnprivatization,
-    MemberUnprivatizationState,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
     User,
     VerifyOutboundPublicKeys,
 } from '../interfaces';
+import { MemberUnprivatizationState } from '../interfaces';
 import { createPreAuthKTVerifier } from '../keyTransparency';
 import { srpVerify } from '../srp';
 import { generateKeySaltAndPassphrase } from './keys';

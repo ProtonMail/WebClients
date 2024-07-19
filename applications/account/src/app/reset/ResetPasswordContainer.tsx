@@ -4,9 +4,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
+import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
-    OnLoginCallback,
     useApi,
     useConfig,
     useErrorHandler,
@@ -18,12 +18,12 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import {
+import type {
     ResetActionResponse,
     ResetCacheResult,
-    STEPS,
     ValidateResetTokenResponse,
 } from '@proton/components/containers/resetPassword/interface';
+import { STEPS } from '@proton/components/containers/resetPassword/interface';
 import {
     handleNewPassword,
     handleNewPasswordMnemonic,
@@ -32,8 +32,9 @@ import {
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -47,7 +48,8 @@ import Main from '../public/Main';
 import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
-import { MetaTags, useMetaTags } from '../useMetaTags';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';

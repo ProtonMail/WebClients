@@ -1,15 +1,15 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
 import { useEventManager, useHandler, useNotifications } from '@proton/components';
-import { Cancellable } from '@proton/components/hooks/useHandler';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
+import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import SendingMessageNotification, {
-    SendingMessageNotificationManager,
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
 import {
@@ -19,12 +19,12 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
 } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { MapSendInfo } from '../../models/crypto';
+import type { MapSendInfo } from '../../models/crypto';
 import { endSending, startSending } from '../../store/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetMessage } from '../message/useMessage';
-import { PromiseHandlers } from '../usePromise';
+import type { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';

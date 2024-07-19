@@ -1,4 +1,5 @@
-import { DragEvent, useEffect, useRef, useState } from 'react';
+import type { DragEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
@@ -11,8 +12,9 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
-import { ComposerID } from '../../store/composers/composerTypes';
-import Composer, { ComposerAction } from './Composer';
+import type { ComposerID } from '../../store/composers/composerTypes';
+import type { ComposerAction } from './Composer';
+import Composer from './Composer';
 import ComposerTitleBar from './ComposerTitleBar';
 
 interface Props {

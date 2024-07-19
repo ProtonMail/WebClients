@@ -1,4 +1,5 @@
-import { ReactElement, cloneElement, useEffect } from 'react';
+import type { ReactElement } from 'react';
+import { cloneElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 

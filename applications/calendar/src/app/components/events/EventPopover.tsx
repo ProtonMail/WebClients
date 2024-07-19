@@ -27,23 +27,24 @@ import {
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import {
+import type {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
 import { getCanDeleteEvent, getCanDuplicateEvent, getCanEditEvent, getCanReplyToEvent } from '../../helpers/event';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
+import type { InviteActions } from '../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
 import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';

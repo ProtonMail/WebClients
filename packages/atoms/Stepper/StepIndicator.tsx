@@ -2,7 +2,8 @@ import { useContext } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import StepListItem, { StepListItemProps } from './StepListItem';
+import type { StepListItemProps } from './StepListItem';
+import StepListItem from './StepListItem';
 import StepperContext from './StepperContext';
 
 export interface StepIndicatorProps extends Omit<StepListItemProps, 'firstItem' | 'active' | 'complete'> {}

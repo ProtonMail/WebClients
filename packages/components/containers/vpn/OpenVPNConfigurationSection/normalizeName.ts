@@ -1,4 +1,4 @@
-import { Logical } from '../Logical';
+import type { Logical } from '../Logical';
 
 export const normalizeName = (server: Logical): string => {
     let name = server.Name.toLowerCase()

@@ -1,14 +1,14 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ButtonLikeShape } from '@proton/atoms/Button';
+import type { ButtonLikeShape } from '@proton/atoms/Button';
 import { Price } from '@proton/components/components';
 import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { hasBundle } from '@proton/shared/lib/helpers/subscription';
-import { Subscription } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Upsell } from '../helpers';
+import type { Upsell } from '../helpers';
 import UpsellPanel from './UpsellPanel';
 
 interface Props {

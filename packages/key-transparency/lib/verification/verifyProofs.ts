@@ -1,12 +1,13 @@
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray, hexStringToArray } from '@proton/crypto/lib/utils';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { KT_DOMAINS, KT_LEN, LEFT_N, vrfHexKeyDev, vrfHexKeyProd } from '../constants/constants';
 import { getBaseDomain, throwKTError } from '../helpers/utils';
-import { KTPROOF_TYPE, Proof } from '../interfaces';
+import type { Proof } from '../interfaces';
+import { KTPROOF_TYPE } from '../interfaces';
 import { vrfVerify } from './vrf';
 
 /**

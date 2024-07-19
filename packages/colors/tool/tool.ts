@@ -1,4 +1,5 @@
-import tinycolor, { Instance } from 'tinycolor2';
+import type { Instance } from 'tinycolor2';
+import tinycolor from 'tinycolor2';
 
 import genAccentShades from '../gen-accent-shades';
 import genButtonShades from '../gen-button-shades';

@@ -2,14 +2,16 @@ import { c } from 'ttag';
 
 import { SYNC_G_OAUTH_SCOPES, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { EASY_SWITCH_SOURCES, ImportProvider, OAuthProps } from '@proton/activation/src/interface';
+import type { EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
+import { ImportProvider } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { ModalProps, ModalTwo } from '@proton/components/index';
+import type { ModalProps } from '@proton/components/index';
+import { ModalTwo } from '@proton/components/index';
 
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';

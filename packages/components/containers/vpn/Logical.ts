@@ -1,4 +1,4 @@
-import { Server } from './Server';
+import type { Server } from './Server';
 
 export interface Logical {
     ID: string;

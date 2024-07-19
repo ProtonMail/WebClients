@@ -1,4 +1,4 @@
-import { CSSProperties, JSX } from 'react';
+import type { CSSProperties, JSX } from 'react';
 
 import { c } from 'ttag';
 

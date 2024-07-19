@@ -1,4 +1,5 @@
-import { Ref, forwardRef, useRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, useRef } from 'react';
 
 import { c } from 'ttag';
 

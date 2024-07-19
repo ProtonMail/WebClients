@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Domain, SSO } from '@proton/shared/lib/interfaces';
+import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import { useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';

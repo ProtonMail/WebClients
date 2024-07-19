@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { mockUseAddresses } from '@proton/testing/index';
 
 import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
-import { VisualSearchItem } from './interface';
+import type { VisualSearchItem } from './interface';
 
 jest.mock('@proton/components/hooks/useUser', () => () => [
     {

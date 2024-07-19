@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import { CANONICALIZE_SCHEME, canonicalizeEmail } from '../helpers/email';
 import { generateProtonWebUID } from '../helpers/uid';
-import { ContactCard } from '../interfaces/contacts';
-import { VCardProperty } from '../interfaces/contacts/VCard';
+import type { ContactCard } from '../interfaces/contacts';
+import type { VCardProperty } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
 import { readSigned } from './decrypt';
 import { toKeyProperty } from './keyProperties';

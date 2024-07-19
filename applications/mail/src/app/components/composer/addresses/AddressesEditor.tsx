@@ -1,16 +1,17 @@
-import { MouseEvent, MutableRefObject, useRef, useState } from 'react';
+import type { MouseEvent, MutableRefObject } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Label, Tooltip, generateUID } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { RecipientType } from '../../../models/address';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import type { RecipientType } from '../../../models/address';
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import { composerActions } from '../../../store/composers/composersSlice';
 import AddressesCCButton from './AddressesCCButton';

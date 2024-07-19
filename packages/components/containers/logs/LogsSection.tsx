@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -8,7 +9,7 @@ import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
-import { AuthLog } from '@proton/shared/lib/authlog';
+import type { AuthLog } from '@proton/shared/lib/authlog';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';

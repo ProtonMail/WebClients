@@ -2,16 +2,17 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { UnlockModal } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import accessKey from '@proton/styles/assets/img/illustrations/access-key.svg';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
-import { SubTheme } from '../../utils';
+import type { SubTheme } from '../../utils';
 
 export interface WalletBackupModalOwnProps {
     apiWalletData: IWasmApiWalletData;

@@ -1,21 +1,20 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
-import { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
-import { EncryptMessage } from '../../UseCase/EncryptMessage'
-import { EncryptionMetadata } from '../../Types/EncryptionMetadata'
-import { LoggerInterface } from '@proton/utils/logs'
+import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import type { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
+import type { EncryptMessage } from '../../UseCase/EncryptMessage'
+import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
+import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
-import {
-  InternalEventBusInterface,
-  WebsocketConnectionInterface,
-  RealtimeUrlAndToken,
-  BroadcastSource,
-  ProcessedIncomingRealtimeEventMessage,
-  assertUnreachableAndLog,
-} from '@proton/docs-shared'
-import { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
-import { WebsocketServiceInterface } from './WebsocketServiceInterface'
+import type { InternalEventBusInterface, WebsocketConnectionInterface, RealtimeUrlAndToken } from '@proton/docs-shared'
+import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
+import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
+import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import metrics from '@proton/metrics'
+import type {
+  ServerMessageWithEvents,
+  ServerMessageWithDocumentUpdates,
+  ServerMessageWithMessageAcks,
+} from '@proton/docs-proto'
 import {
   ClientMessage,
   ServerMessage,
@@ -26,20 +25,17 @@ import {
   ClientEventVersion,
   CreateDocumentUpdateMessage,
   DocumentUpdateVersion,
-  ServerMessageWithEvents,
-  ServerMessageWithDocumentUpdates,
   CreateClientMessageWithDocumentUpdates,
-  ServerMessageWithMessageAcks,
   ConnectionCloseReason,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
-import { DecryptMessage } from '../../UseCase/DecryptMessage'
-import { DocumentConnectionRecord } from './DocumentConnectionRecord'
+import type { DecryptMessage } from '../../UseCase/DecryptMessage'
+import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { GenerateUUID } from '../../Util/GenerateUuid'
 import { AckLedger } from './AckLedger/AckLedger'
-import { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
-import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
+import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { ApiResult } from '../../Domain/Result/ApiResult'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'

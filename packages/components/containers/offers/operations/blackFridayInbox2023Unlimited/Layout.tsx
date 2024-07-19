@@ -6,7 +6,7 @@ import OfferLayout from '../../components/shared/OfferLayout';
 import OfferLoader from '../../components/shared/OfferLoader';
 import Deals from '../../components/shared/deal/Deals';
 import hasOffer from '../../helpers/hasOffer';
-import { OfferLayoutProps } from '../../interface';
+import type { OfferLayoutProps } from '../../interface';
 
 const Layout = (props: OfferLayoutProps) => {
     return hasOffer(props) ? (

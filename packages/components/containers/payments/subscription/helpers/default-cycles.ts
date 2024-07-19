@@ -1,6 +1,7 @@
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import type { PLANS } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
-import { Cycle, PlanIDs, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Cycle, PlanIDs, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 /**
  * Excludes 24 months cycle for the specified plans

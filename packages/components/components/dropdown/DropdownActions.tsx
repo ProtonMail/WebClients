@@ -1,15 +1,18 @@
-import { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import ButtonGroup from '../button/ButtonGroup';
-import { Icon, IconName } from '../icon';
+import type { IconName } from '../icon';
+import { Icon } from '../icon';
 import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
-import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
+import type { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
+import DropdownMenuButton from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 
 const wrapTooltip = (text: string | ReactNode, tooltip?: string, fakeDisabled?: boolean) => {

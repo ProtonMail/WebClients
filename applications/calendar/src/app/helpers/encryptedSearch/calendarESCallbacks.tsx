@@ -1,14 +1,16 @@
-import { History } from 'history';
+import type { History } from 'history';
 
-import {
+import type {
     CachedItem,
     ESCallbacks,
     ESItemInfo,
     ESStatusBooleans,
-    ES_MAX_CONCURRENT,
-    ES_MAX_ITEMS_PER_BATCH,
     EventsObject,
     RecordProgress,
+} from '@proton/encrypted-search';
+import {
+    ES_MAX_CONCURRENT,
+    ES_MAX_ITEMS_PER_BATCH,
     checkVersionedESDB,
     esSentryReport,
     metadataIndexingProgress,
@@ -19,11 +21,11 @@ import {
 import { getEventsCount, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { Api } from '@proton/shared/lib/interfaces';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import chunk from '@proton/utils/chunk';
 
-import {
+import type {
     ESCalendarContent,
     ESCalendarMetadata,
     ESCalendarSearchParams,

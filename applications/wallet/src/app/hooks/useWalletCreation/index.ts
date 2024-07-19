@@ -4,13 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import {
-    WasmApiEmailAddress,
-    WasmDerivationPath,
-    WasmFiatCurrencySymbol,
-    WasmMnemonic,
-    WasmWallet,
-} from '@proton/andromeda';
+import type { WasmApiEmailAddress, WasmFiatCurrencySymbol } from '@proton/andromeda';
+import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { useAddresses, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
@@ -23,7 +18,7 @@ import {
     useUserWalletSettings,
     useWalletApiClients,
     walletCreation,
-    wordCountToNumber
+    wordCountToNumber,
 } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';

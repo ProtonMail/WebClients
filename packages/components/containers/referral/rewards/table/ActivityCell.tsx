@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces';
+import { ReferralState } from '@proton/shared/lib/interfaces';
 
 interface Props {
     referral: Referral;

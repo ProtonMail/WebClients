@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useState } from 'react';
 
 import noop from '@proton/utils/noop';
 

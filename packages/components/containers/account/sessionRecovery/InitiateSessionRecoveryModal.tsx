@@ -10,12 +10,12 @@ import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../components';
 import { useApi, useAvailableRecoveryMethods, useEventManager, useNotifications, useUser } from '../../../hooks';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';

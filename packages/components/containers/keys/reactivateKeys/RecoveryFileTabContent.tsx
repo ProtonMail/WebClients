@@ -1,12 +1,13 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { PrivateKeyReference } from '@proton/crypto';
-import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
+import type { PrivateKeyReference } from '@proton/crypto';
+import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 
 import KeyUploadContent from './KeyUploadContent';
-import SelectRecoveryFiles, { Props as SelectRecoveryFilesProps } from './SelectRecoveryFiles';
+import type { Props as SelectRecoveryFilesProps } from './SelectRecoveryFiles';
+import SelectRecoveryFiles from './SelectRecoveryFiles';
 
 interface Props {
     recoverySecrets: KeyWithRecoverySecret[];

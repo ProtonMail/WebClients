@@ -1,6 +1,7 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
-import Input, { Props as InputProps } from './Input';
+import type { Props as InputProps } from './Input';
+import Input from './Input';
 
 interface Props extends Omit<InputProps, 'onChange' | 'value' | 'min' | 'max'> {
     max?: number;

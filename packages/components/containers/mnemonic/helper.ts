@@ -1,5 +1,7 @@
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { Address, MNEMONIC_STATUS, User } from '@proton/shared/lib/interfaces';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type { Address, User } from '@proton/shared/lib/interfaces';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import { isPrivate } from '@proton/shared/lib/user/helpers';
 

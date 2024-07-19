@@ -1,7 +1,9 @@
-import { $getRoot, $isElementNode, LexicalEditor } from 'lexical'
-import { AlignmentType, Document, ILevelsOptions, LevelFormat, SectionType, convertInchesToTwip } from 'docx'
+import type { LexicalEditor } from 'lexical'
+import { $getRoot, $isElementNode } from 'lexical'
+import type { ILevelsOptions } from 'docx'
+import { AlignmentType, Document, LevelFormat, SectionType, convertInchesToTwip } from 'docx'
 import { getTopLevelChildrenFromElementNode } from './getTopLevelChildrenFromElementNode'
-import { DocxExportContext } from './Context'
+import type { DocxExportContext } from './Context'
 
 export const DummyElementUsedToConvertTextNodeCSSTextToComputedStyles = document.createElement('span')
 

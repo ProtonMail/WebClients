@@ -1,4 +1,4 @@
-import { DecryptedMessage } from '@proton/docs-shared'
+import type { DecryptedMessage } from '@proton/docs-shared'
 import { BatchDocumentUpdates } from './BatchDocumentUpdates'
 
 describe('BatchDocumentUpdates', () => {

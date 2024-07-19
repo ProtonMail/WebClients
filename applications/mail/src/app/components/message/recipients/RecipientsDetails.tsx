@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 
-import { MapStatusIcons } from '../../../models/crypto';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MapStatusIcons } from '../../../models/crypto';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import EORecipientsList from '../../eo/message/recipients/EORecipientsList';
 import MailRecipientList from './MailRecipientList';
 import RecipientItem from './RecipientItem';

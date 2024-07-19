@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Vr } from '@proton/atoms/Vr';
 import { Toolbar } from '@proton/components';
 
-import { PhotoLink } from '../../../../store';
+import type { PhotoLink } from '../../../../store';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';

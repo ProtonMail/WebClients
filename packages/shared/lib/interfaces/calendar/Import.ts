@@ -1,11 +1,11 @@
-import { ICAL_METHOD } from '../../calendar/constants';
-import { ImportEventError } from '../../calendar/icsSurgery/ImportEventError';
-import { ImportFatalError } from '../../calendar/import/ImportFatalError';
-import { ImportFileError } from '../../calendar/import/ImportFileError';
-import { CalendarCreateEventBlobData } from './Api';
-import { VisualCalendar } from './Calendar';
-import { SyncMultipleApiSuccessResponses } from './Event';
-import { VcalVeventComponent } from './VcalModel';
+import type { ICAL_METHOD } from '../../calendar/constants';
+import type { ImportEventError } from '../../calendar/icsSurgery/ImportEventError';
+import type { ImportFatalError } from '../../calendar/import/ImportFatalError';
+import type { ImportFileError } from '../../calendar/import/ImportFileError';
+import type { CalendarCreateEventBlobData } from './Api';
+import type { VisualCalendar } from './Calendar';
+import type { SyncMultipleApiSuccessResponses } from './Event';
+import type { VcalVeventComponent } from './VcalModel';
 
 export enum IMPORT_STEPS {
     ATTACHING,

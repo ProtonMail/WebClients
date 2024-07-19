@@ -1,11 +1,12 @@
 import { makeZip } from 'client-zip';
 import { fromUnixTime } from 'date-fns';
-import { ReadableStream, TransformStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
+import { TransformStream } from 'web-streams-polyfill';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../_links';
-import { StartedNestedLinkDownload } from './interface';
+import type { StartedNestedLinkDownload } from './interface';
 
 function getPathString(path: string[]): string {
     return path.length > 0 ? `/${path.join('/')}` : '';

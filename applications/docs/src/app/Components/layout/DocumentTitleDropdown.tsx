@@ -11,17 +11,13 @@ import {
   usePopperAnchor,
 } from '@proton/components'
 import { useCallback, useEffect, useState } from 'react'
-import {
-  DocControllerEvent,
-  DocControllerEventPayloads,
-  DocControllerInterface,
-  PostApplicationError,
-} from '@proton/docs-core'
+import type { DocControllerEventPayloads, DocControllerInterface } from '@proton/docs-core'
+import { DocControllerEvent, PostApplicationError } from '@proton/docs-core'
 import { useHistoryViewerModal } from '../HistoryViewer'
 import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
-import { DocumentAction } from '@proton/drive-store'
+import type { DocumentAction } from '@proton/drive-store'
 import { AutoGrowingInput } from '../AutoGrowingInput'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'

@@ -3,16 +3,16 @@ import { useCallback, useEffect, useState } from 'react';
 import { useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';
-import { Conversation } from '../../models/conversation';
+import type { Conversation } from '../../models/conversation';
 import { initialize, load as loadAction, retryLoading } from '../../store/conversations/conversationsActions';
 import { allConversations, conversationByID } from '../../store/conversations/conversationsSelectors';
-import { ConversationErrors, ConversationState } from '../../store/conversations/conversationsTypes';
+import type { ConversationErrors, ConversationState } from '../../store/conversations/conversationsTypes';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 
 export interface ConversationStateOptional {

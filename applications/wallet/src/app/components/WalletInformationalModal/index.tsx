@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import walletSeedphraseSrc from '@proton/styles/assets/img/illustrations/wallet-access-key.svg';
 import walletPassphraseSrc from '@proton/styles/assets/img/illustrations/wallet-passphrase.svg';
 

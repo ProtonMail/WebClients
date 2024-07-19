@@ -1,6 +1,7 @@
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Parameters, getSignupDescription, getSignupTitle } from './interface';
+import type { Parameters } from './interface';
+import { getSignupDescription, getSignupTitle } from './interface';
 
 const data = (): Parameters => ({
     title: getSignupTitle(MAIL_APP_NAME),

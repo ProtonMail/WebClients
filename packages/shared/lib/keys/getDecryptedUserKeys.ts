@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { DecryptedKey, KeyPair, User, Key as tsKey } from '../interfaces';
+import type { DecryptedKey, KeyPair, User, Key as tsKey } from '../interfaces';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { decryptMemberToken } from './memberToken';
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Device } from '../../../../../store';
-import { useRemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
+import type { Device } from '../../../../../store';
+import type { useRemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
 import { ContextMenuButton } from '../../../ContextMenu';
 
 interface Props {

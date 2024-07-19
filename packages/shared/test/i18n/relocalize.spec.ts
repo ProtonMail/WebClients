@@ -1,12 +1,13 @@
 import { format } from 'date-fns';
-import { LocaleData, c, useLocale as ttagUseLocale } from 'ttag';
+import type { LocaleData } from 'ttag';
+import { c, useLocale as ttagUseLocale } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../../lib/constants';
 import { dateLocale } from '../../lib/i18n';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { setTtagLocales } from '../../lib/i18n/locales';
 import { relocalizeText } from '../../lib/i18n/relocalize';
-import { UserSettings } from '../../lib/interfaces';
+import type { UserSettings } from '../../lib/interfaces';
 
 const dummyUserSettings: Pick<UserSettings, 'TimeFormat' | 'DateFormat' | 'WeekStart'> = {
     WeekStart: 1,

@@ -2,8 +2,8 @@ import { getUnixTime } from 'date-fns';
 
 import { queryEvents } from '@proton/shared/lib/api/calendars';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
-import { Api } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent, CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarEventsQueryType } from '@proton/shared/lib/interfaces/calendar/Api';
 
 interface ApiResponse<T> {

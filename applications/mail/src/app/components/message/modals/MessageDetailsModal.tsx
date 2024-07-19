@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     FeatureCode,
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -12,19 +12,19 @@ import {
     useFeatures,
     useFolders,
 } from '@proton/components';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { getSize } from '../../../helpers/elements';
 import { getCurrentFolders } from '../../../helpers/labels';
-import { MessageViewIcons } from '../../../helpers/message/icon';
+import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { getAttachmentCounts } from '../../../helpers/message/messages';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { Element } from '../../../models/element';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { Element } from '../../../models/element';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLocation from '../../list/ItemLocation';

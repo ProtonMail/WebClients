@@ -4,7 +4,7 @@ import { useUser } from '@proton/components/hooks';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
 import { estimateIndexingProgress } from './esHelpers';
-import { ESIndexingState, RecordProgress } from './models';
+import type { ESIndexingState, RecordProgress } from './models';
 
 /**
  * This hook provides helpers related to the progress of the ES indexing

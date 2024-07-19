@@ -1,4 +1,4 @@
-import {
+import type {
   CommentInterface,
   CommentThreadInterface,
   CommentServiceInterface,
@@ -9,10 +9,10 @@ import {
   DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
-import { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
-import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
-import { UserState } from '@lexical/yjs'
-import { DocsApi } from '../../Api/DocsApi'
+import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
+import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
+import type { UserState } from '@lexical/yjs'
+import type { DocsApi } from '../../Api/DocsApi'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,

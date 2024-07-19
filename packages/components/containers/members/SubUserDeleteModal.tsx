@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,12 +8,12 @@ import { useLoading } from '@proton/hooks';
 import { NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { removeDiacritics } from '@proton/shared/lib/helpers/string';
-import { Member } from '@proton/shared/lib/interfaces/Member';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 
+import type { ModalProps } from '../../components';
 import {
     Alert,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

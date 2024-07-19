@@ -1,4 +1,5 @@
-import { Fragment, MutableRefObject, ReactNode, useEffect, useState } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
@@ -13,7 +14,7 @@ import {
     verifyVerificationCode,
 } from '@proton/shared/lib/api/verification';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Loader, SettingsLink } from '../../../components';
 import { useNotifications } from '../../../hooks';
@@ -21,14 +22,14 @@ import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';
 import accountVerified from './account-verified.svg';
-import {
-    HumanVerificationSteps,
+import type {
     OwnershipCache,
     OwnershipVerificationModel,
     VerificationDataResult,
     VerificationModel,
     VerificationTokenResult,
 } from './interface';
+import { HumanVerificationSteps } from './interface';
 
 const formatMessage = (text: string, embolden: string) => {
     if (!embolden) {

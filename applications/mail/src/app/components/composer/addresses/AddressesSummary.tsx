@@ -1,18 +1,21 @@
-import { Fragment, MouseEvent, memo } from 'react';
+import type { MouseEvent } from 'react';
+import { Fragment, memo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Label, Tooltip } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { RecipientType, recipientTypes } from '../../../models/address';
-import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
+import type { RecipientType } from '../../../models/address';
+import { recipientTypes } from '../../../models/address';
+import type { MapSendInfo } from '../../../models/crypto';
+import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import AddressesCCButton from './AddressesCCButton';

@@ -1,9 +1,9 @@
-import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
-import { FileToDocConversionResult } from '../Types/FileToDocConversionResult'
-import { GetDocumentMeta } from './GetDocumentMeta'
+import type { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { FileToDocConversionResult } from '../Types/FileToDocConversionResult'
+import type { GetDocumentMeta } from './GetDocumentMeta'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 import { getErrorString } from '../Util/GetErrorString'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import { getNodeNameWithoutExtension } from '@proton/docs-shared'
 

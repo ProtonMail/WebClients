@@ -1,13 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -17,8 +17,9 @@ import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.
 import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
-import { Tracker, useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { Tracker } from '../../../hooks/message/useMessageTrackers';
+import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props extends ModalProps {

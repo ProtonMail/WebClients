@@ -1,10 +1,10 @@
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
-import { EncryptionService } from '../Services/Encryption/EncryptionService'
-import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { DocumentKeys } from '@proton/drive-store'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { Result } from '../Domain/Result/Result'
+import type { EncryptionService } from '../Services/Encryption/EncryptionService'
+import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
+import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
-import { EncryptionMetadata } from '../Types/EncryptionMetadata'
+import type { EncryptionMetadata } from '../Types/EncryptionMetadata'
 
 /**
  * Encrypts a message directed towards the RTS.

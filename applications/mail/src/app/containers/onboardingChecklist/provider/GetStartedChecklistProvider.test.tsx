@@ -1,5 +1,6 @@
 import useLoading from '@proton/hooks/useLoading';
-import { CHECKLIST_DISPLAY_TYPE, ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
+import type { ChecklistId } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import { renderHook } from 'proton-mail/helpers/test/render';
 

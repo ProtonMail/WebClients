@@ -3,7 +3,7 @@ import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
-import { PassAliasesVault } from './interface';
+import type { PassAliasesVault } from './interface';
 
 export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
     const filterNonTrashedItems = ({ item }: PassBridgeAliasItem) => !isTrashed(item);

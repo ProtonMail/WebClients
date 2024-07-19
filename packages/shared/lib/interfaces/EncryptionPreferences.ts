@@ -1,6 +1,6 @@
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 
-import {
+import type {
     API_KEY_SOURCE,
     CONTACT_MIME_TYPES,
     CONTACT_PGP_SCHEMES,
@@ -9,9 +9,9 @@ import {
     PGP_SCHEMES,
     RECIPIENT_TYPES,
 } from '../constants';
-import { Address } from './Address';
-import { KeyTransparencyVerificationResult } from './KeyTransparency';
-import { MailSettings } from './MailSettings';
+import type { Address } from './Address';
+import type { KeyTransparencyVerificationResult } from './KeyTransparency';
+import type { MailSettings } from './MailSettings';
 
 export interface PublicKeyWithPref {
     publicKey: PublicKeyReference;

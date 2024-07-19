@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useRef } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,7 +7,7 @@ import { useNotifications } from '@proton/components';
 
 import { logError } from '../../utils/errorHandling';
 import { useUploadProvider } from './UploadProvider';
-import { UploadFileItem, UploadFileList } from './interface';
+import type { UploadFileItem, UploadFileList } from './interface';
 
 export function useFileUploadInput(shareId: string, linkId: string, isForPhotos: boolean = false) {
     return useUploadInput(shareId, linkId, false, isForPhotos);

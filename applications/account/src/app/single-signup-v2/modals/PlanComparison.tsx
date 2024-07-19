@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { DriveLogo, IconSize, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import type { IconSize } from '@proton/components/components';
+import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,
@@ -13,7 +14,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

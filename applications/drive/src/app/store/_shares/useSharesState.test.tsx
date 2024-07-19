@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { Share, ShareState, ShareType } from './interface';
+import type { Share } from './interface';
+import { ShareState, ShareType } from './interface';
 import { useSharesStateProvider } from './useSharesState';
 
 function createTestShare(

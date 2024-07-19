@@ -1,8 +1,9 @@
 import { getModelState } from '@proton/account/test';
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
-import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { base64ToArray } from '../base64';
 import { addApiMock } from './api';

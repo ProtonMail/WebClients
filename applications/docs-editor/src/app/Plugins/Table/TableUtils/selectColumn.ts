@@ -1,6 +1,8 @@
-import { $getTableColumnIndexFromTableCellNode, $isTableNode, TableCellNode, TableRowNode } from '@lexical/table'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import { $getTableColumnIndexFromTableCellNode, $isTableNode } from '@lexical/table'
 import { $findMatchingParent } from '@lexical/utils'
-import { $createRangeSelection, $setSelection, LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
+import { $createRangeSelection, $setSelection } from 'lexical'
 
 export function selectColumn(editor: LexicalEditor, cellNode: TableCellNode) {
   editor.update(() => {

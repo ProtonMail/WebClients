@@ -3,10 +3,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import generateUID from '@proton/atoms/generateUID';
-import { DropdownSize, DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { DropdownSize } from '@proton/components/components/dropdown/utils';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import clsx from '@proton/utils/clsx';
-import { BITCOIN_CURRENCY } from '@proton/wallet';
+import type { BITCOIN_CURRENCY } from '@proton/wallet';
 
 import { SearchableSelect } from '../Select';
 import { currencyFilterFunction, getAllDropdownOptions, getIsCurrencyOption, getSerialisedOption } from './helpers';

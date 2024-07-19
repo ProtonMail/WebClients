@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
 import CurrencySelector from './CurrencySelector';

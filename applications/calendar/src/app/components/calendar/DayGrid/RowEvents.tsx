@@ -1,8 +1,8 @@
-import { Ref } from 'react';
+import type { Ref } from 'react';
 
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
-import {
+import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
     TargetEventData,
@@ -14,8 +14,8 @@ import FullDayEvent from '../../events/FullDayEvent';
 import MoreFullDayEvent from '../../events/MoreFullDayEvent';
 import getIsBeforeNow from '../getIsBeforeNow';
 import { TYPE } from '../interactions/constants';
-import { LayoutEvent } from '../layout';
-import { EventsInRowSummary, EventsStyleResult } from '../useDayGridEventLayout';
+import type { LayoutEvent } from '../layout';
+import type { EventsInRowSummary, EventsStyleResult } from '../useDayGridEventLayout';
 import { getEvent } from './helper';
 
 interface Props {

@@ -1,7 +1,9 @@
-import { ElementType, ForwardedRef, forwardRef } from 'react';
+import type { ElementType, ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
-import { InputField as CoreInput, InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import { InputField as CoreInput } from '@proton/components/components/v2/field/InputField';
 
 import '../InputFieldStacked/InputFieldStacked.scss';
 

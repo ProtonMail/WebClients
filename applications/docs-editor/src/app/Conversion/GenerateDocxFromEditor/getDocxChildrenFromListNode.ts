@@ -2,7 +2,7 @@ import { $nodesOfType } from 'lexical'
 import { Paragraph } from 'docx'
 import { $isListItemNode, $isListNode, ListNode } from '@lexical/list'
 import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode'
-import { DocxExportContext } from './Context'
+import type { DocxExportContext } from './Context'
 
 export async function getDocxChildrenFromListNode(node: ListNode, context: DocxExportContext): Promise<Paragraph[]> {
   const paragraphs: Paragraph[] = []

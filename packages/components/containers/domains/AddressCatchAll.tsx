@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
-import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Checkbox } from '../../components';
 import { useApi, useNotifications } from '../../hooks';

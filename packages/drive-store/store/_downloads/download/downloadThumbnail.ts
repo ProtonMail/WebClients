@@ -1,11 +1,12 @@
 // @ts-ignore missing `toStream` TS defs
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 
 import { streamToBuffer } from '../../../utils/stream';
-import { DecryptFileKeys } from '../interface';
+import type { DecryptFileKeys } from '../interface';
 import downloadBlock from './downloadBlock';
 
 type GetKeysCallback = () => Promise<DecryptFileKeys>;

@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
-import { DecryptedLink, useDriveSharingFlags } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useDriveSharingFlags } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,

@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount } from '@proton/andromeda';
 
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
-import { WalletChainDataByWalletId } from '../../types';
+import type { WalletChainDataByWalletId } from '../../types';
 import { getAccountWithChainDataFromManyWallets } from '../accounts';
 
 export const useComputeNextAddressToReceive = (walletsChainData: WalletChainDataByWalletId) => {

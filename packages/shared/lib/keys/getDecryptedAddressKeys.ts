@@ -2,7 +2,7 @@ import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/li
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { DecryptedAddressKey, KeyPair, User, AddressKey as tsAddressKey } from '../interfaces';
+import type { DecryptedAddressKey, KeyPair, User, AddressKey as tsAddressKey } from '../interfaces';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { splitKeys } from './keys';
 

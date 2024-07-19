@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
-import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
+import type { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 

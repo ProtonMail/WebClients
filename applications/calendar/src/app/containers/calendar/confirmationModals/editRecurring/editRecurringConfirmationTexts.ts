@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
-import { INVITE_ACTION_TYPES, InviteActions } from '../../../../interfaces/Invite';
+import type { InviteActions } from '../../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../../interfaces/Invite';
 
 const getDefaultTexts = () => {
     return {

@@ -4,7 +4,8 @@ import { Button } from '@proton/atoms/Button';
 
 import { Icon, Option, SelectTwo, Tooltip } from '../../components';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../filters/constants';
-import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../filters/interfaces';
+import type { Condition, ConditionComparator } from '../filters/interfaces';
+import { ConditionType, FilterStatement } from '../filters/interfaces';
 import AttachmentsCondition from './AttachmentsCondition';
 import InputCondition from './InputCondition';
 

@@ -3,13 +3,13 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, LabelStack } from '../../../components';
 import { getDefaultFolders } from '../constants';
-import { SimpleFilterModalModel } from '../interfaces';
+import type { SimpleFilterModalModel } from '../interfaces';
 
 interface Props {
     labels: Label[];

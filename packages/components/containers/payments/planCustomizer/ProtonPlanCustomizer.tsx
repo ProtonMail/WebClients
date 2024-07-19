@@ -1,12 +1,12 @@
-import { ComponentPropsWithoutRef, useCallback, useState } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { SelectedPlan } from '@proton/components/payments/core';
 import { ADDON_NAMES, AddonKey, AddonLimit, GIGA } from '@proton/shared/lib/constants';
+import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
-    AddonGuard,
-    SupportedAddons,
     getSupportedAddons,
     isDomainAddon,
     isIpAddon,
@@ -16,17 +16,8 @@ import {
     setQuantity,
 } from '@proton/shared/lib/helpers/planIDs';
 import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
-    Currency,
-    Cycle,
-    Plan,
-    PlanIDs,
-    Renew,
-    Subscription,
-    getMaxValue,
-    getPlanMaxIPs,
-} from '@proton/shared/lib/interfaces';
+import type { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import { Renew, getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Price } from '../../../components';
@@ -35,7 +26,7 @@ import { AccountSizeCustomiser } from './AccountSizeCustomiser';
 import { AdditionalOptionsCustomiser } from './AdditionalOptionsCustomiser';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
-import { DecreaseBlockedReason } from './helpers';
+import type { DecreaseBlockedReason } from './helpers';
 
 export type CustomiserMode = 'signup' | undefined;
 

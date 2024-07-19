@@ -1,6 +1,6 @@
-import { LoggerInterface } from '@proton/utils/logs'
-import { ClientMessageWithDocumentUpdates, DocumentUpdate, ServerMessageWithMessageAcks } from '@proton/docs-proto'
-import { AckLedgerInterface } from './AckLedgerInterface'
+import type { LoggerInterface } from '@proton/utils/logs'
+import type { ClientMessageWithDocumentUpdates, DocumentUpdate, ServerMessageWithMessageAcks } from '@proton/docs-proto'
+import type { AckLedgerInterface } from './AckLedgerInterface'
 import metrics from '@proton/metrics'
 
 const MAX_TIME_TO_WAIT_FOR_ACK = 10_000

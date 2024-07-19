@@ -11,6 +11,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -24,7 +25,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Option,
     SelectTwo,
     TextAreaTwo,
@@ -33,7 +33,8 @@ import {
 import { getClientName, getReportInfo } from '../../helpers/report';
 import { useApi, useConfig, useNotifications } from '../../hooks';
 import { useFlag } from '../unleash';
-import AttachScreenshot, { Screenshot } from './AttachScreenshot';
+import type { Screenshot } from './AttachScreenshot';
+import AttachScreenshot from './AttachScreenshot';
 
 export type BugModalMode = 'chat-no-agents';
 

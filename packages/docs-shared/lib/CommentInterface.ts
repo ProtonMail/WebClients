@@ -1,5 +1,5 @@
-import { ServerTime } from './ServerTime'
-import { CommentPayload } from './CommentPayload'
+import type { ServerTime } from './ServerTime'
+import type { CommentPayload } from './CommentPayload'
 
 export interface CommentInterface {
   id: string

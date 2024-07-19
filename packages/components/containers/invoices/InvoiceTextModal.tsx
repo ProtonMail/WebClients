@@ -7,10 +7,10 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

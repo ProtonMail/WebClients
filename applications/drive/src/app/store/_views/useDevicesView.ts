@@ -3,7 +3,8 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { useDevicesListing } from '../_devices';
 import { useUserSettings } from '../_settings';
 import { useMemoArrayNoMatterTheOrder } from './utils';
-import { SortField, useSortingWithDefault } from './utils/useSortingDevices';
+import type { SortField } from './utils/useSortingDevices';
+import { useSortingWithDefault } from './utils/useSortingDevices';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,

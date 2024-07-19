@@ -1,4 +1,4 @@
-import { VcalDateOrDateTimeProperty, VcalRruleProperty } from '../../interfaces/calendar/VcalModel';
+import type { VcalDateOrDateTimeProperty, VcalRruleProperty } from '../../interfaces/calendar/VcalModel';
 import { getUntilProperty } from '../vcalConverter';
 import { getIsPropertyAllDay, getPropertyTzid } from '../vcalHelper';
 

@@ -1,20 +1,20 @@
 import { c } from 'ttag';
 
-import {
-    CryptoProxy,
+import type {
     WorkerProcessMIMEResult as MimeProcessResult,
     PrivateKeyReference,
     PublicKeyReference,
     WorkerDecryptionResult,
 } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Address } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
 
-import { MessageErrors } from '../../store/messages/messagesTypes';
+import type { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;

@@ -16,12 +16,13 @@ import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPla
 import CongratulationsStep from '../../signup/CongratulationsStep';
 import ExploreStep from '../../signup/ExploreStep';
 import RecoveryStep from '../../signup/RecoveryStep';
-import { SignupCacheResult, SignupSteps, SignupType } from '../../signup/interfaces';
+import type { SignupCacheResult } from '../../signup/interfaces';
+import { SignupSteps, SignupType } from '../../signup/interfaces';
 import { handleDisplayName, handleDone, handleSaveRecovery, handleSetupOrg } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
-import { SignupCustomStepProps } from '../interface';
+import type { SignupCustomStepProps } from '../interface';
 import OrgSetupStep from '../pass/OrgSetupStep';
 
 enum Step {

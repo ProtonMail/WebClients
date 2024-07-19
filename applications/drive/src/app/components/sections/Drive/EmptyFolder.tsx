@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 

@@ -1,7 +1,7 @@
 import { format, fromUnixTime, isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import { formatFullDate } from '../date';
 
 export const getMessageExpirationDate = (message: MessageState) => {

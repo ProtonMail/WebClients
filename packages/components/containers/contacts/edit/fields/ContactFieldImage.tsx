@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import RemoteImage from '../../../../components/image/RemoteImage';
-import { ContactImageProps } from '../../modals/ContactImageModal';
+import type { ContactImageProps } from '../../modals/ContactImageModal';
 
 interface Props {
     vCardProperty: VCardProperty<string>;

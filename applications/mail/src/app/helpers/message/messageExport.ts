@@ -1,16 +1,22 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { Api } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { MessageKeys, MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
+import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
+import type {
+    MessageKeys,
+    MessageState,
+    MessageStateWithData,
+    PublicPrivateKey,
+} from '../../store/messages/messagesTypes';
 import { combineHeaders, splitMail } from '../mail';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { getPlainTextContent } from './messageContent';

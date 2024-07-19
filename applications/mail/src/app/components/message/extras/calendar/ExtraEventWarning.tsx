@@ -4,9 +4,9 @@ import { Alert } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { InvitationModel } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;

@@ -1,6 +1,6 @@
 import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 export const isProtonAddress = (protonDomains: Set<string>, address: string) => {
     const [, domain] = getEmailParts(address);

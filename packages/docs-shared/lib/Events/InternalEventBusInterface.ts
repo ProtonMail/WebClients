@@ -1,7 +1,7 @@
-import { InternalEventType } from './InternalEventType'
-import { InternalEventHandlerInterface } from './InternalEventHandlerInterface'
-import { InternalEventInterface } from './InternalEventInterface'
-import { InternalEventPublishStrategy } from './InternalEventPublishStrategy'
+import type { InternalEventType } from './InternalEventType'
+import type { InternalEventHandlerInterface } from './InternalEventHandlerInterface'
+import type { InternalEventInterface } from './InternalEventInterface'
+import type { InternalEventPublishStrategy } from './InternalEventPublishStrategy'
 
 export interface InternalEventBusInterface {
   /**

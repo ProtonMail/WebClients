@@ -1,6 +1,6 @@
-import { useGetAddressKeys } from '@proton/components';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
-import { PublicKeyReference } from '@proton/crypto';
+import type { useGetAddressKeys } from '@proton/components';
+import type { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import type { PublicKeyReference } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
@@ -8,16 +8,16 @@ import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getVeventColorValue, withoutRedundantDtEnd } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import {
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
-    DELETION_REASON,
     DeleteCalendarEventSyncData,
     UpdateCalendarEventSyncData,
 } from '@proton/shared/lib/interfaces/calendar/Api';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { DELETION_REASON } from '@proton/shared/lib/interfaces/calendar/Api';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export enum SyncOperationTypes {
     DELETE,

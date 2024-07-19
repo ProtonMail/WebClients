@@ -1,4 +1,4 @@
-import { ItemsGroup } from './useLocationFieldOptions';
+import type { ItemsGroup } from './useLocationFieldOptions';
 
 export const expectedAll = [
     {

@@ -1,10 +1,10 @@
-import { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
-import { NodeMeta } from '@proton/drive-store'
-import { SeedInitialCommit } from './SeedInitialCommit'
-import { GetDocumentMeta } from './GetDocumentMeta'
+import type { NodeMeta } from '@proton/drive-store'
+import type { SeedInitialCommit } from './SeedInitialCommit'
+import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 
 export class DuplicateDocument implements UseCaseInterface<DocumentNodeMeta> {

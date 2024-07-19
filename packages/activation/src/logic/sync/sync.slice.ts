@@ -5,7 +5,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import * as globalAction from '../actions';
 import { changeCreateLoadingState, createSyncItem, loadSyncList, resumeSyncItem } from './sync.actions';
 import { formatApiSync, formatApiSyncs } from './sync.helpers';
-import { SyncMap, SyncState } from './sync.interface';
+import type { SyncMap, SyncState } from './sync.interface';
 
 const initialState: SyncState = { listLoading: 'idle', creatingLoading: 'idle', syncs: {} };
 

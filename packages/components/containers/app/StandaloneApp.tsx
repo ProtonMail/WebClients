@@ -7,7 +7,7 @@ import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import '@proton/styles/scss/_proton-account.scss';
 
 import StandalonePublicApp from './StandalonePublicApp';

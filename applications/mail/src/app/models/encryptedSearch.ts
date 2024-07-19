@@ -1,7 +1,7 @@
-import { ESItem, ESStatus, EncryptedSearchFunctions } from '@proton/encrypted-search';
-import { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { ESItem, ESStatus, EncryptedSearchFunctions } from '@proton/encrypted-search';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { Filter, SearchParameters, Sort } from './tools';
+import type { Filter, SearchParameters, Sort } from './tools';
 
 export type ESBaseMessage = Pick<
     MessageMetadata,

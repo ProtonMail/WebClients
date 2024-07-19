@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,12 +15,13 @@ import { APPS } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { RequireSome } from '@proton/shared/lib/interfaces';
-import { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import noop from '@proton/utils/noop';
 
-import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 import { useContactsMap } from '../../../../hooks/contact/useContacts';
 
 interface Props {

@@ -1,12 +1,12 @@
 import { getUnixTime } from 'date-fns';
 
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
-import {
+import type {
     Attendee,
     CalendarEvent,
     CalendarEventData,

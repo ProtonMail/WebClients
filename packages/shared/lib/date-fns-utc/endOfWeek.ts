@@ -1,4 +1,4 @@
-import { WeekStartsOn } from './interface';
+import type { WeekStartsOn } from './interface';
 
 interface Options {
     weekStartsOn: WeekStartsOn;

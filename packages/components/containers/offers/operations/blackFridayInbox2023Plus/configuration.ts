@@ -2,7 +2,7 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/const
 
 import { FeatureCode } from '../../../../containers/features';
 import { getUnlimitedInboxFeatures, getVisionaryInboxFeatures } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import bannerImage from './BF-Mail-App-Modal-996x176.png';
 import bannerImage2x from './BF-Mail-App-Modal-1992x352.png';
 import Layout from './Layout';

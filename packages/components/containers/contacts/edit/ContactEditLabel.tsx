@@ -1,8 +1,8 @@
 import { getAllTypes, getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { Label, Option, SelectTwo } from '../../../components';
-import { SelectChangeEvent } from '../../../components/selectTwo/select';
+import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 import ContactLabelProperty from '../view/ContactLabelProperty';
 
 interface Props {

@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip } from '@proton/components/components';

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';

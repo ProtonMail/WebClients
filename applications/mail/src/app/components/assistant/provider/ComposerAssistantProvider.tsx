@@ -1,4 +1,5 @@
-import React, { ReactNode, RefObject, createContext, useContext, useMemo } from 'react';
+import type { ReactNode, RefObject } from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 
 import { useModalStateObject, useModalTwoPromise } from '@proton/components/components';
 import { AssistantIncompatibleBrowserModal, AssistantIncompatibleHardwareModal } from '@proton/components/containers';

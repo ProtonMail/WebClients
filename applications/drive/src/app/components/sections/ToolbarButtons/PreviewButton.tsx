@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import useOpenPreview from '../../useOpenPreview';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 

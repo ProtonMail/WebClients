@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 
 import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
 import { MEMBER_PRIVATE } from '../constants';
-import { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
+import type { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getPrimaryKey } from './getPrimaryKey';

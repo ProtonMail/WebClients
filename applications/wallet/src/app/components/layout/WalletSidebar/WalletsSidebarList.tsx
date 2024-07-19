@@ -17,11 +17,12 @@ import {
     useToggle,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../../atoms';
 import { useBitcoinBlockchainContext } from '../../../contexts';
-import { SubTheme, getThemeByIndex } from '../../../utils';
+import type { SubTheme } from '../../../utils';
+import { getThemeByIndex } from '../../../utils';
 import { WalletPreferencesModal } from '../../WalletPreferencesModal';
 import { WalletExpandButton } from './WalletExpandButton';
 

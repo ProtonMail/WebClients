@@ -8,7 +8,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { serverTime } from '../serverTime';
 import type { ApiInterface } from '../worker/api';
-import { WorkerVerifyOptions } from '../worker/api.models';
+import type { WorkerVerifyOptions } from '../worker/api.models';
 
 export type CryptoApiInterface = ApiInterface;
 

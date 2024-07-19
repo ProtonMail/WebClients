@@ -1,4 +1,5 @@
-import { InputHTMLAttributes, LabelHTMLAttributes, Ref, forwardRef, useEffect, useRef } from 'react';
+import type { InputHTMLAttributes, LabelHTMLAttributes, Ref } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';

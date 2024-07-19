@@ -13,8 +13,8 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { updateExpires } from '../../../store/messages/draft/messagesDraftActions';
-import { MessageState } from '../../../store/messages/messagesTypes';
-import { MessageChange } from '../Composer';
+import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
 

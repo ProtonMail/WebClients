@@ -1,11 +1,13 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { Hamburger } from '../../components';
-import Header, { Props as HeaderProps } from '../../components/header/Header';
+import type { Props as HeaderProps } from '../../components/header/Header';
+import Header from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import { useConfig, useIsPaidUserCookie, useIsProtonUserCookie } from '../../hooks';
 import { useTheme } from '../themes';

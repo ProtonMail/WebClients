@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import { Info, Toggle } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';

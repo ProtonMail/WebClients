@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import clsx from '@proton/utils/clsx';
 
-import { DropzoneProps } from './Dropzone';
+import type { DropzoneProps } from './Dropzone';
 
 export interface DropzoneContentProps
     extends Pick<

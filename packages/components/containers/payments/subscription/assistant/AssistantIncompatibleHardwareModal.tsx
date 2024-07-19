@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms/index';
 import { useNotifications } from '@proton/components/hooks';
-import { ModalProps, Prompt, useApi, useEventManager } from '@proton/components/index';
+import type { ModalProps } from '@proton/components/index';
+import { Prompt, useApi, useEventManager } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

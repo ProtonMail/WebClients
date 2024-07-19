@@ -1,4 +1,4 @@
-import { KeyStatus } from './interface';
+import type { KeyStatus } from './interface';
 
 interface Arguments extends KeyStatus {
     canModify: boolean;

@@ -3,7 +3,8 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Icon } from '../icon';
-import TopNavbarListItemButton, { TopNavbarListItemButtonProps } from './TopNavbarListItemButton';
+import type { TopNavbarListItemButtonProps } from './TopNavbarListItemButton';
+import TopNavbarListItemButton from './TopNavbarListItemButton';
 
 const TopNavbarListItemSearchButtonBase = (
     props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>,

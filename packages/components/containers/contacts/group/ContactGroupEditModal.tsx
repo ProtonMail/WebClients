@@ -1,4 +1,5 @@
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,19 +7,18 @@ import { Button, Input } from '@proton/atoms';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { AddressesAutocompleteItem, ModalProps } from '../../../components';
 import {
-    AddressesAutocompleteItem,
     Alert,
     Autocomplete,
     ColorPicker,
     Field,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

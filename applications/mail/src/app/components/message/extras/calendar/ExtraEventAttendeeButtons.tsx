@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,14 +22,15 @@ import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import type { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar';
+import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
-import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
-import { MessageState } from '../../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../../store/messages/messagesTypes';
 
 const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
 

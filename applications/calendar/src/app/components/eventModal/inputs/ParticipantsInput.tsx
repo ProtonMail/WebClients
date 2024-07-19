@@ -7,7 +7,8 @@ import { AddressesAutocompleteTwo, Alert, Details, Icon, Summary, useMailSetting
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_ROLE, VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import {
     CANONICALIZE_SCHEME,
@@ -15,8 +16,8 @@ import {
     canonicalizeInternalEmail,
     validateEmailAddress,
 } from '@proton/shared/lib/helpers/email';
-import { Address, Recipient } from '@proton/shared/lib/interfaces';
-import { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces';
+import type { AttendeeModel, OrganizerModel } from '@proton/shared/lib/interfaces/calendar';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 

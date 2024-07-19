@@ -2,14 +2,10 @@ import { useMemo } from 'react';
 
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
-import {
-    PlansMap,
-    SubscriptionCheckResponse,
-    SubscriptionMode,
-    SubscriptionModel,
-} from '@proton/shared/lib/interfaces';
+import type { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 
-import { Model } from './SubscriptionContainer';
+import type { Model } from './SubscriptionContainer';
 
 export interface CheckoutModifiers {
     isProration: boolean;

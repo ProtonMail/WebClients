@@ -1,4 +1,5 @@
-import { FormEvent, ReactNode, useState } from 'react';
+import type { FormEvent, ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,6 +15,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     Copy,
     Form,
@@ -23,7 +25,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     QRCode,
     TotpInput,
     useFormErrors,

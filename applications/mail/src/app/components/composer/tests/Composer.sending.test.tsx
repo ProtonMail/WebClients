@@ -3,18 +3,18 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
-import { WorkerDecryptionResult } from '@proton/crypto/lib';
+import type { WorkerDecryptionResult } from '@proton/crypto/lib';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
-import { MailState } from 'proton-mail/store/store';
+import type { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
+import type { MailState } from 'proton-mail/store/store';
 
 import { arrayToBase64 } from '../../../helpers/base64';
 import { addApiContact } from '../../../helpers/test/contact';
+import type { GeneratedKey } from '../../../helpers/test/crypto';
 import {
-    GeneratedKey,
     addApiKeys,
     generateKeys,
     getAddressKeyCache,

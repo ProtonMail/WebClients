@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { IconName, useFolders, useLabels } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { useFolders, useLabels } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
-import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

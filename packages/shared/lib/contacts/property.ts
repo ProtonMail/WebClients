@@ -1,8 +1,8 @@
 import { isValid, parseISO } from 'date-fns';
 
-import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { ContactValue } from '../interfaces/contacts';
+import type { ContactValue } from '../interfaces/contacts';
 import { CONTACT_FIRST_LAST_NAME_MAX_LENGTH, CONTACT_NAME_MAX_LENGTH } from './constants';
 import { isDateTextValue, isValidDateValue } from './vcard';
 

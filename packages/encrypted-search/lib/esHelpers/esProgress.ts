@@ -1,8 +1,10 @@
-import { ESProgress, estimateIndexingDuration, readSize } from '@proton/encrypted-search/lib';
+import type { ESProgress } from '@proton/encrypted-search/lib';
+import { estimateIndexingDuration, readSize } from '@proton/encrypted-search/lib';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { Unwrap } from '@proton/shared/lib/interfaces';
+import type { Unwrap } from '@proton/shared/lib/interfaces';
 
-import { IndexedDBRow, getIndexingProgressQueryHelpers } from '../esIDB';
+import type { IndexedDBRow } from '../esIDB';
+import { getIndexingProgressQueryHelpers } from '../esIDB';
 
 /**
  * Compute the estimated time remaining of indexing

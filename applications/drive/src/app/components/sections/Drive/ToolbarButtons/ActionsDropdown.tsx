@@ -2,20 +2,21 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { IconName } from '@proton/components';
 import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
-    IconName,
     ToolbarButton,
     generateUID,
     usePopperAnchor,
 } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
-import { DecryptedLink, useActions } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
+import { useActions } from '../../../../store';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';

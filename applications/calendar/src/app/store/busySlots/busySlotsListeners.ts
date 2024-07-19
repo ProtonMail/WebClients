@@ -1,7 +1,7 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-import { CalendarState } from '../store';
+import type { CalendarState } from '../store';
 import {
     fetchAttendeesBusySlots,
     getBusyAttendeesToFetch,

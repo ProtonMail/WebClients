@@ -1,4 +1,5 @@
-import { Fragment, MouseEvent, MutableRefObject, RefObject, useEffect, useRef, useState } from 'react';
+import type { MouseEvent, MutableRefObject, RefObject } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -13,7 +14,7 @@ import {
 } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -21,8 +22,8 @@ import { getRecipientOrGroupKey, recipientsWithoutGroup } from '../../../helpers
 import { useContactsMap, useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { RecipientGroup } from '../../../models/address';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import type { RecipientGroup } from '../../../models/address';
 import AddressesGroupItem from './AddressesGroupItem';
 import AddressesRecipientItem from './AddressesRecipientItem';
 

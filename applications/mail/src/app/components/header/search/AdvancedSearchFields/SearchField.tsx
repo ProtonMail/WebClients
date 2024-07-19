@@ -1,4 +1,5 @@
-import { ChangeEventHandler, MouseEventHandler, ReactNode, forwardRef } from 'react';
+import type { ChangeEventHandler, MouseEventHandler, ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 

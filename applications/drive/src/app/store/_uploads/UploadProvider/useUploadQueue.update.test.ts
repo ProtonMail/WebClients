@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { mockGlobalFile, testFile } from '../../../utils/test/file';
-import { UploadFileList } from '../interface';
-import { FileUpload, FolderUpload, UpdateCallback, UpdateData, UpdateFilter, UpdateState } from './interface';
+import type { UploadFileList } from '../interface';
+import type { FileUpload, FolderUpload, UpdateCallback, UpdateData, UpdateFilter, UpdateState } from './interface';
 import useUploadQueue from './useUploadQueue';
 
 describe("useUploadQueue's update functions", () => {

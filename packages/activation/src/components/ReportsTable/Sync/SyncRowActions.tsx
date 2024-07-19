@@ -3,12 +3,8 @@ import { c } from 'ttag';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import { SYNC_G_OAUTH_SCOPES } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import {
-    EASY_SWITCH_SOURCES,
-    EasySwitchFeatureFlag,
-    ImportProvider,
-    OAuthProps,
-} from '@proton/activation/src/interface';
+import type { EasySwitchFeatureFlag, OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';

@@ -1,7 +1,7 @@
 import { pick } from '@proton/shared/lib/helpers/object';
-import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
 
-import { CalendarEventsCache } from '../interface';
+import type { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';

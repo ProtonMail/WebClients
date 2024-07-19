@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 import useDragAndDrop from '../hooks/useDragAndDrop';
 import useFileBrowserItem from '../hooks/useFileBrowserItem';
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
 
 export interface ItemProps<T extends FileBrowserBaseItem> {
     className?: string;

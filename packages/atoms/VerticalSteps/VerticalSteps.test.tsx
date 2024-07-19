@@ -1,4 +1,5 @@
-import { RenderResult, render } from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import VerticalStep from './VerticalStep';
 import VerticalSteps from './VerticalSteps';
@@ -33,6 +34,7 @@ function renderBasicVerticalSteps() {
 }
 
 describe('<VerticalSteps /> with basic render', () => {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     let output: RenderResult<typeof import('@testing-library/dom/types/queries'), HTMLElement, HTMLElement>;
 
     beforeEach(() => {

@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '@proton/components';
 
 import OrganizationLogoTips from './OrganizationLogoTips';

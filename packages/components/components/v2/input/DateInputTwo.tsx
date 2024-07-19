@@ -1,9 +1,12 @@
-import { ChangeEvent, FocusEvent, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-import { Locale, addDays, format, parse } from 'date-fns';
+import type { Locale } from 'date-fns';
+import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
-import { Input, InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms';
+import { Input } from '@proton/atoms';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { generateUID } from '../../../helpers';

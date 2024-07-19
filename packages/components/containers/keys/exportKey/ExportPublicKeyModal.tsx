@@ -1,19 +1,20 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
 } from '../../../components';
 
 const handleExport = async (name: string, publicKey: PublicKeyReference) => {

@@ -2,7 +2,8 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../../AllNodes'
 import { $createTableNodeWithDimensions } from '../CreateTableNodeWithDimensions'
 import { $createParagraphNode, $createTextNode, $getRoot, $setSelection } from 'lexical'
-import { $createTableSelection, TableCellNode, TableRowNode } from '@lexical/table'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import { $createTableSelection } from '@lexical/table'
 import { $clearCellsInTableSelection } from './clearCellsInTableSelection'
 
 describe('clearCellsInTableSelection', () => {

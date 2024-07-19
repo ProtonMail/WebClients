@@ -1,7 +1,7 @@
 import { toVCardContacts } from '@proton/shared/lib/contacts/helpers/csv';
 import { fromVCardProperties, getVCardProperties } from '@proton/shared/lib/contacts/properties';
-import { PreVcardProperty, PreVcardsContact } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { PreVcardProperty, PreVcardsContact } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 const excludeFieldsForVerification = (contacts: VCardContact[]) => {
     return contacts.map((contact) => {

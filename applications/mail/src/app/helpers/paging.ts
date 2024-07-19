@@ -1,4 +1,4 @@
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 export const pageCount = (total: number, pageSize: MAIL_PAGE_SIZE) => Math.ceil(total / pageSize) || 0;
 

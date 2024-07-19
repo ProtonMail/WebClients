@@ -1,6 +1,7 @@
-import { Children, MouseEventHandler, PropsWithChildren, ReactElement, useEffect } from 'react';
+import type { MouseEventHandler, PropsWithChildren, ReactElement } from 'react';
+import { Children, useEffect } from 'react';
 
-import { SpotlightProps } from '@proton/components/components';
+import type { SpotlightProps } from '@proton/components/components';
 
 /**
  * Raw spotlight used as a mock for testing

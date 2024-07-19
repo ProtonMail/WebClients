@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

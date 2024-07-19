@@ -1,6 +1,6 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 const createHandlers = ({
     model,

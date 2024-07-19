@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Condition, ConditionComparator } from '@proton/components/containers/filters/interfaces';
+import type { Condition } from '@proton/components/containers/filters/interfaces';
+import { ConditionComparator } from '@proton/components/containers/filters/interfaces';
 
 export const getEmailSentLabel = (label: string) => {
     // Translator: the email was sent with attachments, or the email was sent without attachments

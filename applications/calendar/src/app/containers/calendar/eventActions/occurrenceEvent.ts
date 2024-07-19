@@ -1,9 +1,9 @@
 import { getDateOrDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasDtend, getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 // Merge the start and end of the occurrence into the dtstart and dtend of the original event component
 const withOccurrenceEvent = (vevent: VcalVeventComponent, recurring: CalendarEventRecurring): VcalVeventComponent => {

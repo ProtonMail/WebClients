@@ -1,19 +1,20 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
+import type { ModalProps } from '../../components';
 import {
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';

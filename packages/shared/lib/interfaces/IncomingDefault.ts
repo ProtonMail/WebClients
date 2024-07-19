@@ -1,4 +1,4 @@
-import { INCOMING_DEFAULTS_LOCATION } from '../constants';
+import type { INCOMING_DEFAULTS_LOCATION } from '../constants';
 
 export interface IncomingDefault {
     ID: string;

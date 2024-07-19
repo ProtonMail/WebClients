@@ -1,4 +1,5 @@
-import { Children, ComponentPropsWithoutRef, isValidElement } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { Children, isValidElement } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

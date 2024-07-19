@@ -9,10 +9,10 @@ import {
     useContactEmails,
     useContactGroups,
 } from '@proton/components/index';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
-import { ShareInvitee } from '../../../../store';
+import type { ShareInvitee } from '../../../../store';
 import { DirectSharingAddressesInputItem } from './DirectSharingAddressesInputItem';
 import { MemberDropdownMenu } from './MemberDropdownMenu';
 import { getGroupsWithContactsMap } from './helpers/getGroupsWithContactsMap';

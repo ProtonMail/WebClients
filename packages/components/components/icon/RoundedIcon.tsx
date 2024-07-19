@@ -1,8 +1,10 @@
-import { Ref, forwardRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import Icon, { IconName } from './Icon';
+import type { IconName } from './Icon';
+import Icon from './Icon';
 
 const TYPES = {
     success: 'bg-success',

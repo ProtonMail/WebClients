@@ -3,9 +3,9 @@ import { useCallback, useMemo, useRef } from 'react';
 import { useActiveBreakpoint } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { useDevicesView } from '../../../store';
+import type { useDevicesView } from '../../../store';
 import FileBrowser, { Cells, useItemContextMenu, useSelection } from '../../FileBrowser';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItemDevice } from '../FileBrowser/GridViewItemDevice';
 import { DeviceNameCell } from '../FileBrowser/contentCells';
 import headerCellsCommon from '../FileBrowser/headerCells';

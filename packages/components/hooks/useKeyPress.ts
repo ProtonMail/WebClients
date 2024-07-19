@@ -1,4 +1,5 @@
-import { DependencyList, useCallback, useEffect } from 'react';
+import type { DependencyList } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const useKeyPress = (cb: (e: KeyboardEvent) => void, deps: DependencyList = [], el = document) => {
     const callback = useCallback(cb, deps);

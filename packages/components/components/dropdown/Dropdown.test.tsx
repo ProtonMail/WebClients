@@ -1,9 +1,11 @@
-import { ReactNode, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useRef, useState } from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { DropdownProps, DropdownSizeUnit } from '@proton/components/components';
+import type { DropdownProps } from '@proton/components/components';
+import { DropdownSizeUnit } from '@proton/components/components';
 
 import Dropdown from './Dropdown';
 import DropdownButton from './DropdownButton';

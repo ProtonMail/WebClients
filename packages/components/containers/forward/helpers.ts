@@ -1,23 +1,24 @@
-import { CryptoProxy, MaybeArray, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { MaybeArray, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { updateForwarding } from '@proton/shared/lib/api/forwardings';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import {
+import type {
     ActiveKey,
     Address,
     Api,
     ApiKeysConfig,
     DecryptedKey,
-    ForwardingType,
     IncomingAddressForwarding,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     OutgoingAddressForwarding,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
+import { ForwardingType } from '@proton/shared/lib/interfaces';
 import {
     decryptMemberToken,
     getAddressKeyToken,
@@ -28,11 +29,12 @@ import {
 } from '@proton/shared/lib/keys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
-import { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
+import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
 
 import { generateUID } from '../..';
 import { COMPARATORS, OPERATORS, TYPES } from '../filters/constants';
-import { Condition, FilterCondition, FilterOperator, FilterStatement } from '../filters/interfaces';
+import type { Condition, FilterCondition, FilterOperator } from '../filters/interfaces';
+import { FilterStatement } from '../filters/interfaces';
 
 const toSieveOperator = (statement: FilterStatement): FilterOperator => {
     const operatorsMap = toMap(OPERATORS, 'value');

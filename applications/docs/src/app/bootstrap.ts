@@ -12,7 +12,7 @@ import { FeatureCode, fetchFeatures } from '@proton/features'
 import createApi from '@proton/shared/lib/api/createApi'
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames'
-import { ProtonConfig } from '@proton/shared/lib/interfaces'
+import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
 import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 

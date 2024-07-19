@@ -1,16 +1,18 @@
-import { KeyboardEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
+import type { KeyboardEvent, MutableRefObject } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-import Dropdown, { DropdownProps } from '../dropdown/Dropdown';
+import type { DropdownProps } from '../dropdown/Dropdown';
+import Dropdown from '../dropdown/Dropdown';
 import { DropdownSizeUnit } from '../dropdown/utils';
 import Option from '../option/Option';
-import { PopperPlacement } from '../popper';
+import type { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
-import { SelectProps } from './select';
+import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
 export interface Props<V> extends SelectProps<V> {

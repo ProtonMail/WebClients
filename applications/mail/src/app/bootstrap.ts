@@ -22,7 +22,7 @@ import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';

@@ -1,9 +1,12 @@
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { ExtendedTokenPayment, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { ExtendedTokenPayment } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { APPS, CLIENT_TYPES, CYCLE } from '@proton/shared/lib/constants';
-import { HumanVerificationMethodType, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import { SignupCacheResult, SignupType, SubscriptionData } from '../interfaces';
+import type { SignupCacheResult, SubscriptionData } from '../interfaces';
+import { SignupType } from '../interfaces';
 import { handleCreateUser } from './handleCreateUser';
 import { handlePayment } from './signupActions';
 

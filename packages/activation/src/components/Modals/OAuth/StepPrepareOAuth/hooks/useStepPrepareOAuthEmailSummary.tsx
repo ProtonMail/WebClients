@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
 import { ImportProvider } from '@proton/activation/src/interface';
 import { updateEmailsData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';

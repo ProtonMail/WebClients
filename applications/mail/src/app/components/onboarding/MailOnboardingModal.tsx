@@ -2,20 +2,15 @@ import { c } from 'ttag';
 
 import { SYNC_G_OAUTH_SCOPES, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { EASY_SWITCH_SOURCES, ImportProvider, OAuthProps } from '@proton/activation/src/interface';
+import type { OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import {
-    OnboardingContent,
-    OnboardingModal,
-    OnboardingStep,
-    OnboardingStepRenderCallback,
-    useActiveBreakpoint,
-    useFlag,
-} from '@proton/components';
+import type { OnboardingStepRenderCallback } from '@proton/components';
+import { OnboardingContent, OnboardingModal, OnboardingStep, useActiveBreakpoint, useFlag } from '@proton/components';
 import GmailSyncModalAnimation from '@proton/components/containers/gmailSyncModal/GmailSyncModalAnimation';
 import SignInWithGoogle from '@proton/components/containers/gmailSyncModal/SignInWithGoogle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

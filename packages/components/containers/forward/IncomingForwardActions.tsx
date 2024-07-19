@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import useLoading from '@proton/hooks/useLoading';
 import { deleteForwarding, rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
-import { Address, ForwardingState, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
+import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ForwardingState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens, splitKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 

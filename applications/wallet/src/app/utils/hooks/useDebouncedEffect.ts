@@ -1,4 +1,5 @@
-import { DependencyList, EffectCallback, useEffect, useRef, useState } from 'react';
+import type { DependencyList, EffectCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import generateUID from '@proton/atoms/generateUID';
 

@@ -1,7 +1,7 @@
 import { addDays, differenceInCalendarDays, endOfDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
-import { LayoutEvent } from './layout';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
+import type { LayoutEvent } from './layout';
 
 const getEndDate = (end: Date, maxDate: Date, isAllPartDay: boolean) => {
     const endsOnMidnight = +end === +startOfDay(end);

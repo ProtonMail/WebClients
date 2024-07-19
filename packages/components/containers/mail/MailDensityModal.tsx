@@ -3,9 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { DENSITY } from '@proton/shared/lib/constants';
+import type { DENSITY } from '@proton/shared/lib/constants';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import type { ModalProps } from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 

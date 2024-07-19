@@ -1,10 +1,9 @@
-import { ReactNode, memo, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { memo, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import type { HotkeyTuple, IconName, IconSize } from '@proton/components';
 import {
-    HotkeyTuple,
-    IconName,
-    IconSize,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,

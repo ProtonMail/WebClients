@@ -1,6 +1,6 @@
-import { ClientRequiresEditorMethods } from './ClientRequiresEditorMethods'
-import { EditorBridgeMessageType } from './EditorBridgeMessageType'
-import { ParamsExcludingFunctions } from './Utils'
+import type { ClientRequiresEditorMethods } from './ClientRequiresEditorMethods'
+import type { EditorBridgeMessageType } from './EditorBridgeMessageType'
+import type { ParamsExcludingFunctions } from './Utils'
 
 export type ClientToEditorGenericMessage = {
   type: EditorBridgeMessageType.ClientToEditorInvokation | EditorBridgeMessageType.ClientToEditorReply

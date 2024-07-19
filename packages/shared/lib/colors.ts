@@ -1,7 +1,8 @@
-import tinycolor, { ColorFormats } from 'tinycolor2';
+import type { ColorFormats } from 'tinycolor2';
+import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export const ACCENT_COLORS_MAP = {

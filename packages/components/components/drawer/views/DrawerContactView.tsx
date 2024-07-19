@@ -5,17 +5,19 @@ import { c } from 'ttag';
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms/Button';
 import { PrimaryButton, useModalTwoStatic } from '@proton/components/components';
-import DrawerView, { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
+import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 import { useContactModals } from '@proton/components/containers';
 import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
 import ContactsWidgetContainer from '@proton/components/containers/contacts/widget/ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetSettingsContainer';
-import { CONTACT_WIDGET_TABS, CustomAction } from '@proton/components/containers/contacts/widget/types';
+import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
+import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import { useUser } from '@proton/components/hooks';
 import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 export enum CONTACT_TAB {

@@ -1,6 +1,6 @@
-import { Filter } from '@proton/components/containers/filters/interfaces';
-import { MailSearchContext } from '@proton/shared/lib/api/messages';
-import { Nullable } from '@proton/shared/lib/interfaces';
+import type { Filter } from '@proton/components/containers/filters/interfaces';
+import type { MailSearchContext } from '@proton/shared/lib/api/messages';
+import type { Nullable } from '@proton/shared/lib/interfaces';
 
 type AddSieveFilterParams = Required<Pick<Filter, 'Name' | 'Sieve' | 'Version'>>;
 export const addSieveFilter = ({ Name, Sieve, Version }: AddSieveFilterParams) => ({

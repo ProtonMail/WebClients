@@ -1,7 +1,7 @@
 import { useConfig, useUser } from '@proton/components/hooks';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
-import { Operation } from '../../interface';
+import type { Operation } from '../../interface';
 import config from './configuration';
 import getIsEligible from './eligibility';
 

@@ -7,7 +7,7 @@ import xhr from '../fetch/fetch';
 import { withLocaleHeaders } from '../fetch/headers';
 import { getDateHeader } from '../fetch/helpers';
 import { localeCode } from '../i18n';
-import { Api } from '../interfaces';
+import type { Api } from '../interfaces';
 import { getApiError, getApiErrorMessage, getIsOfflineError, getIsUnreachableError } from './helpers/apiErrorHelper';
 import withApiHandlers from './helpers/withApiHandlers';
 

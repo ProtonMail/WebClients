@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
+import type { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,

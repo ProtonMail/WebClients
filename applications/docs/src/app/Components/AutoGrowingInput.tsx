@@ -1,6 +1,8 @@
-import { Input, InputProps } from '@proton/atoms/Input'
+import type { InputProps } from '@proton/atoms/Input'
+import { Input } from '@proton/atoms/Input'
 import clsx from '@proton/utils/clsx'
-import { ForwardedRef, forwardRef } from 'react'
+import type { ForwardedRef } from 'react'
+import { forwardRef } from 'react'
 
 export const AutoGrowingInput = forwardRef(function AutoGrowingInput(
   { value, className, inputClassName, ...rest }: InputProps,

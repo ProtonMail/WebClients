@@ -4,9 +4,9 @@ import mod from '@proton/utils/mod';
 import unique from '@proton/utils/unique';
 
 import { format } from '../../date-fns-utc';
-import { WeekStartsOn } from '../../date-fns-utc/interface';
+import type { WeekStartsOn } from '../../date-fns-utc/interface';
 import { toUTCDate } from '../../date/timezone';
-import {
+import type {
     VcalDateOrDateTimeProperty,
     VcalRruleProperty,
     VcalRrulePropertyValue,

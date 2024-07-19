@@ -1,18 +1,13 @@
-import {
-    CryptoProxy,
-    PrivateKeyReference,
-    PublicKeyReference,
-    SessionKey,
-    VERIFICATION_STATUS,
-    WorkerDecryptionOptions,
-} from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey, WorkerDecryptionOptions } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageEmbeddedImage, MessageImage, MessageImages } from '../../store/messages/messagesTypes';
+import type { MessageEmbeddedImage, MessageImage, MessageImages } from '../../store/messages/messagesTypes';
 import { arrayToBase64, base64ToArray } from '../base64';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
-import { GeneratedKey, encryptSessionKey, generateSessionKey } from './crypto';
+import type { GeneratedKey } from './crypto';
+import { encryptSessionKey, generateSessionKey } from './crypto';
 
 // Helper to make testing easier
 export const removeLineBreaks = (text: string) => {

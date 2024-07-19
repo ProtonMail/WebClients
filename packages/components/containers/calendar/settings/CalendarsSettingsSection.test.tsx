@@ -11,8 +11,8 @@ import {
     BRAND_NAME,
     MAIL_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { RequireOnly, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { RequireOnly, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     addressBuilder,
     generateHolidaysCalendars,
@@ -22,8 +22,9 @@ import {
 } from '@proton/testing/lib/builders';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
-import { IconName } from '../../../components';
-import CalendarsSettingsSection, { CalendarsSettingsSectionProps } from './CalendarsSettingsSection';
+import type { IconName } from '../../../components';
+import type { CalendarsSettingsSectionProps } from './CalendarsSettingsSection';
+import CalendarsSettingsSection from './CalendarsSettingsSection';
 
 jest.mock('../../../hooks/useCalendarShareInvitations', () =>
     jest.fn().mockReturnValue({

@@ -4,8 +4,9 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import useFeature from '../../hooks/useFeature';
 import { FeatureCode } from '../features';
-import FeedbackModal, { FeedbackModalProps } from './FeedbackModal';
-import { RebrandingFeatureValue } from './useRebrandingFeedback';
+import type { FeedbackModalProps } from './FeedbackModal';
+import FeedbackModal from './FeedbackModal';
+import type { RebrandingFeatureValue } from './useRebrandingFeedback';
 
 interface RebrandingModalProps extends Partial<FeedbackModalProps> {
     onMount?: () => void;

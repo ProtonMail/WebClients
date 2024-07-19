@@ -1,10 +1,9 @@
 import { getSupportedUID } from '@proton/shared/lib/calendar/helper';
-
-import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { getSafeRruleCount, getSafeRruleUntil } from './helper';
 
 const getRecurrenceOffsetID = (date: Date, isAllDay: boolean) => {

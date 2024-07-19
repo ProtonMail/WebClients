@@ -11,8 +11,8 @@ import {
 import { fromVCardProperties, getVCardProperties } from '../../lib/contacts/properties';
 import { extractVcards } from '../../lib/contacts/vcard';
 import { toCRLF } from '../../lib/helpers/string';
-import { ContactMetadata, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
-import { VCardContact, VCardProperty } from '../../lib/interfaces/contacts/VCard';
+import type { ContactMetadata, EncryptedContact, ImportedContact } from '../../lib/interfaces/contacts';
+import type { VCardContact, VCardProperty } from '../../lib/interfaces/contacts/VCard';
 
 const excludeUids = (contact: VCardContact | ImportContactError) => {
     if (contact instanceof ImportContactError) {

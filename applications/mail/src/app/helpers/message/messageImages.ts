@@ -1,6 +1,6 @@
-import { PrivateAuthenticationStore } from '@proton/components/containers';
+import type { PrivateAuthenticationStore } from '@proton/components/containers';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
@@ -8,7 +8,7 @@ import {
     loadRemoteDirectFromURL,
     loadRemoteProxyFromURL,
 } from '../../store/messages/images/messagesImagesActions';
-import {
+import type {
     LoadRemoteResults,
     MessageEmbeddedImage,
     MessageImage,

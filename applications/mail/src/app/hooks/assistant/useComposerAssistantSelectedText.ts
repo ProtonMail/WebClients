@@ -1,4 +1,5 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 

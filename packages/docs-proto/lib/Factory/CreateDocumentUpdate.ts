@@ -1,5 +1,5 @@
 import { DocumentUpdate } from '../Generated'
-import { DocumentUpdateVersion } from '../Version'
+import type { DocumentUpdateVersion } from '../Version'
 
 export function CreateDocumentUpdate(dto: {
   content: Uint8Array

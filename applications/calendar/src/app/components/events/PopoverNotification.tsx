@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 import getNotificationString from '@proton/shared/lib/calendar/alarms/getNotificationString';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
     notification: NotificationModel;

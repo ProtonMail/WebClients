@@ -1,6 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { SYSTEM_FOLDER_SECTION, SystemFolder } from './useMoveSystemFolders';
+import type { SystemFolder } from './useMoveSystemFolders';
+import { SYSTEM_FOLDER_SECTION } from './useMoveSystemFolders';
 import { moveSystemFolders } from './useMoveSystemFolders.helpers';
 
 const INBOX: SystemFolder = {

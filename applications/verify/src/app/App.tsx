@@ -1,9 +1,9 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import type { CreateNotificationOptions } from '@proton/components';
 import {
     ApiProvider,
     ConfigProvider,
-    CreateNotificationOptions,
     Icons,
     ModalsChildren,
     ModalsProvider,

@@ -1,14 +1,15 @@
-import { RefObject, useState } from 'react';
+import type { RefObject } from 'react';
+import { useState } from 'react';
 
 import { useHandler, useNotifications } from '@proton/components';
-import { PublicKeyReference } from '@proton/crypto';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { PublicKeyReference } from '@proton/crypto';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { MessageChange } from '../../components/composer/Composer';
-import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import type { MessageChange } from '../../components/composer/Composer';
+import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
@@ -17,7 +18,7 @@ import {
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
-import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

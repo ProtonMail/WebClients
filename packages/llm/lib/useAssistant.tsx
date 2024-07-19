@@ -1,8 +1,9 @@
 import { createContext, useContext, useMemo } from 'react';
 
-import { AssistantError, AssistantErrorTypes } from '@proton/llm/lib/hooks/useAssistantErrors';
+import type { AssistantError } from '@proton/llm/lib/hooks/useAssistantErrors';
+import { AssistantErrorTypes } from '@proton/llm/lib/hooks/useAssistantErrors';
 
-import {
+import type {
     Action,
     AssistantConfig,
     GenerationCallback,

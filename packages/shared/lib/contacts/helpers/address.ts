@@ -1,5 +1,5 @@
 // Remove all commas at the beginning and at the end of the string
-import { VCardAddress } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardAddress } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 const trimCommas = (string: string) => {
     return string.replace(/(^,+|,+$)/g, '');

@@ -1,4 +1,4 @@
-import { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
 
 import { Modal } from '../../../atoms';
 import { WalletNotFoundErrorContent } from './WalletNotFoundErrorContent';

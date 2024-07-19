@@ -1,13 +1,12 @@
-import {
+import type {
     ChangeEvent,
     ComponentPropsWithoutRef,
     MouseEvent as ReactMouseEvent,
     TouchEvent as ReactTouchEvent,
-    useRef,
-    useState,
 } from 'react';
+import { useRef, useState } from 'react';
 
-import { ThemeColorUnion } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft';

@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import { ESIndexingState, ESProgress, EncryptedSearchFunctions, OptionalESCallbacks } from './models';
+import type { ESIndexingState, ESProgress, EncryptedSearchFunctions, OptionalESCallbacks } from './models';
 
 /**
  * Number of items to add to the search results list during

@@ -2,7 +2,8 @@ import React from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { Icon, IconName } from '../icon';
+import type { IconName } from '../icon';
+import { Icon } from '../icon';
 
 export enum BannerBackgroundColor {
     NORM = 'norm',

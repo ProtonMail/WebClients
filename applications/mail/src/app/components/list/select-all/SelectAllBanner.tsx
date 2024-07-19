@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { Cancellable } from '@proton/components/hooks/useHandler';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 

@@ -6,20 +6,20 @@ import { Button, InlineLinkButton } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { reauthByEmailVerification, reauthBySmsVerification } from '@proton/shared/lib/api/verify';
-import { InfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { srpAuth } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Tabs,
     useFormErrors,
 } from '../../components';

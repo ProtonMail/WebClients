@@ -3,8 +3,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { FILE_CHUNK_SIZE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { LinkDownload } from '../interface';
-import { Download } from './interface';
+import type { LinkDownload } from '../interface';
+import type { Download } from './interface';
 import useDownloadControl from './useDownloadControl';
 
 function makeDownload(id: string, state: TransferState, links: LinkDownload[], setSize = true): Download {

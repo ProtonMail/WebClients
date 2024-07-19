@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
-import { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

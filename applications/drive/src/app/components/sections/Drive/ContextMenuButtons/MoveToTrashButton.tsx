@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DecryptedLink, useActions } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
+import { useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {

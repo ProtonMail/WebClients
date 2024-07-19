@@ -1,4 +1,5 @@
-import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useHandler } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';

@@ -1,6 +1,6 @@
 import type { CaptureContext } from '@sentry/types';
 
-import { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
+import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
 export const isEnrichedError = (err: unknown): err is EnrichedError => {
     return (

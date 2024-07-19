@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,11 +12,12 @@ import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { RequireSome } from '@proton/shared/lib/interfaces';
-import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
-import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
+import type { InvitationModel } from '../../../../helpers/calendar/invite';
+import { UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;

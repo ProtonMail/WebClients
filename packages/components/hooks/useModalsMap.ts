@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
 export const useModalsMap = <T extends Record<string, ModalWithProps<any>>>(map: T) => {
     const [modalsMap, setModalsMap] = useState<T>(map);

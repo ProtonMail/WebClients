@@ -23,7 +23,7 @@ import {
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
 import SettingsSection from '../../account/SettingsSection';

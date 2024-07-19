@@ -1,21 +1,21 @@
 import { format, formatRelative } from 'date-fns';
-import { Location } from 'history';
+import type { Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getSender, hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
 import { ELEMENT_TYPES } from '../constants';
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
-import { LabelIDsChanges } from '../models/event';
-import { Filter, SearchParameters, Sort } from '../models/tools';
+import type { Conversation } from '../models/conversation';
+import type { Element } from '../models/element';
+import type { LabelIDsChanges } from '../models/event';
+import type { Filter, SearchParameters, Sort } from '../models/tools';
 import {
     getLabelIDs as conversationGetLabelIDs,
     getSenders as conversationGetSenders,

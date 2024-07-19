@@ -7,7 +7,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ATTACH_PUBLIC_KEY, DEFAULT_MAILSETTINGS, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import { Info, Prompt, PromptProps, Toggle, useModalState } from '../../components';
+import type { PromptProps } from '../../components';
+import { Info, Prompt, Toggle, useModalState } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

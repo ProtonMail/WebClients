@@ -1,4 +1,4 @@
-import { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
 
 import { getTotal } from './elementTotal';
 

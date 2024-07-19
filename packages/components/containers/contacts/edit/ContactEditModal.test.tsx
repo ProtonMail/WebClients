@@ -7,7 +7,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/testing';
 
 import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
-import ContactEditModal, { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
+import type { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
+import ContactEditModal from './ContactEditModal';
 
 jest.mock('../../../hooks/useAuthentication', () => {
     return {

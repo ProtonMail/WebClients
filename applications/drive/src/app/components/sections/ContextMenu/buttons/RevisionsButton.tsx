@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { DecryptedLink } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
 import { useDocumentActions } from '../../../../store/_documents';
-import { useRevisionsModal } from '../../../modals/RevisionsModal/RevisionsModal';
+import type { useRevisionsModal } from '../../../modals/RevisionsModal/RevisionsModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {

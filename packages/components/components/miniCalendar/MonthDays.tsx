@@ -1,10 +1,11 @@
-import { MouseEvent, Ref, memo, useRef, useState } from 'react';
+import type { MouseEvent, Ref } from 'react';
+import { memo, useRef, useState } from 'react';
 
 import { isAfter, isBefore, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
 
 import clsx from '@proton/utils/clsx';
 
-import { DateTuple } from './index.d';
+import type { DateTuple } from './index.d';
 
 const getTargetDate = (target: any, days: Date[]) => {
     const idx = parseInt(target?.dataset?.i || '', 10);

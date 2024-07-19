@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
-import { BRAND_NAME, CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
-import {
+import type { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
+import { BRAND_NAME } from '../constants';
+import type {
     ContactPublicKeyModel,
     KeyTransparencyVerificationResult,
     MailSettings,

@@ -9,7 +9,7 @@ import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } 
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AUTH_VERSION, MAX_VALUE_ITERATIONS, SRP_LEN } from './constants';
-import { AuthCredentials, AuthInfo } from './interface';
+import type { AuthCredentials, AuthInfo } from './interface';
 import { expandHash, hashPassword } from './passwords';
 import { verifyAndGetModulus } from './utils/modulus';
 import { checkUsername } from './utils/username';

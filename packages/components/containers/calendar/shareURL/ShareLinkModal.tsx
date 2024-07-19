@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
+import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
@@ -14,7 +14,8 @@ import {
     getCreatePublicLinkPayload,
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
-import { ACCESS_LEVEL, CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
 
 import { BasicModal, Form, InputFieldTwo, Option, SelectTwo } from '../../../components';
@@ -109,9 +110,13 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
             footer={
                 <>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                    <Button type="submit" loading={isLoading} className="ml-auto" onClick={handleSubmit} color="norm">{c(
-                        'Action'
-                    ).t`Create`}</Button>
+                    <Button
+                        type="submit"
+                        loading={isLoading}
+                        className="ml-auto"
+                        onClick={handleSubmit}
+                        color="norm"
+                    >{c('Action').t`Create`}</Button>
                 </>
             }
             onClose={onClose}

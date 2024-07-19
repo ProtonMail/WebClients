@@ -1,4 +1,5 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useEffect, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import FlagProvider from '@unleash/proxy-client-react';
@@ -45,7 +46,7 @@ import { BitcoinBlockchainContextProvider } from './contexts/BitcoinBlockchainCo
 import { WalletDrawerContextProvider } from './contexts/WalletDrawerContext/WalletDrawerContextProvider';
 import { WalletSetupModalContextProvider } from './contexts/WalletSetupModalContext/WalletSetupModalContextProvider';
 import locales from './locales';
-import { WalletStore } from './store/store';
+import type { WalletStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
 setTtagLocales(locales);

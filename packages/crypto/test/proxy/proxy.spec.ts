@@ -1,7 +1,8 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import { CryptoApiInterface, CryptoProxy, VERIFICATION_STATUS, updateServerTime } from '../../lib';
+import type { CryptoApiInterface } from '../../lib';
+import { CryptoProxy, VERIFICATION_STATUS, updateServerTime } from '../../lib';
 import { Api as CryptoApi } from '../../lib/worker/api';
 
 chaiUse(chaiAsPromised);

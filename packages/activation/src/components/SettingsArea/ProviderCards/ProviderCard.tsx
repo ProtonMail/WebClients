@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ImportProvider } from '@proton/activation/src/interface';
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';

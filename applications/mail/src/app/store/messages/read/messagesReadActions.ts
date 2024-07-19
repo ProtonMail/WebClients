@@ -2,14 +2,14 @@ import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { LOAD_RETRY_DELAY } from '../../../constants';
-import { MessageEvent } from '../../../models/event';
-import { MailState, MailThunkExtra } from '../../store';
+import type { MessageEvent } from '../../../models/event';
+import type { MailState, MailThunkExtra } from '../../store';
 import { messageByID } from '../messagesSelectors';
-import {
+import type {
     DocumentInitializeParams,
     LoadParams,
     MessageErrors,

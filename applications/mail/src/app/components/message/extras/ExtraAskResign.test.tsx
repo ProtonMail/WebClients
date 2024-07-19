@@ -1,12 +1,12 @@
 import { fireEvent } from '@testing-library/react';
 
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { addApiMock, clearAll, generateKeys, render, tick } from '../../../helpers/test/helper';
 import { contactEmails, message, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
 import { refresh } from '../../../store/contacts/contactsActions';
-import { MessageVerification } from '../../../store/messages/messagesTypes';
+import type { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraAskResign from './ExtraAskResign';
 
 const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {

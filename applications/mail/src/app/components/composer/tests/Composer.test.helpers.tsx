@@ -1,10 +1,11 @@
-import { RenderResult, fireEvent } from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 
 import { pick } from '@proton/shared/lib/helpers/object';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
-import { MailStore } from 'proton-mail/store/store';
+import type { MailStore } from 'proton-mail/store/store';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import {
@@ -18,7 +19,7 @@ import {
 } from '../../../helpers/test/helper';
 import { EditorTypes } from '../../../hooks/composer/useComposerContent';
 import { composerActions } from '../../../store/composers/composersSlice';
-import { MessageStateWithData, PartialMessageState } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData, PartialMessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import Composer from '../Composer';
 

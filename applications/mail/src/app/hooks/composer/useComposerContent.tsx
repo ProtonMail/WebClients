@@ -1,13 +1,15 @@
-import { Dispatch, MutableRefObject, RefObject, SetStateAction, useEffect, useMemo, useRef, useState } from 'react';
+import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { EditorActions, EditorMetadata } from '@proton/components/components';
+import type { EditorActions, EditorMetadata } from '@proton/components/components';
 import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { getHasAssistantStatus } from '@proton/llm/lib';
-import { OpenedAssistant, OpenedAssistantStatus } from '@proton/llm/lib/types';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { OpenedAssistant } from '@proton/llm/lib/types';
+import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
@@ -24,8 +26,8 @@ import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 import { messageByID } from 'proton-mail/store/messages/messagesSelectors';
 
-import { MessageChange } from '../../components/composer/Composer';
-import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import type { MessageChange } from '../../components/composer/Composer';
+import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
@@ -40,7 +42,7 @@ import {
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { mergeMessages } from '../../helpers/message/messages';
-import { ComposerID } from '../../store/composers/composerTypes';
+import type { ComposerID } from '../../store/composers/composerTypes';
 import {
     deleteDraft as deleteDraftAction,
     removeInitialAttachments,
@@ -48,7 +50,7 @@ import {
     updateDraftContent,
     updateIsSavingFlag,
 } from '../../store/messages/draft/messagesDraftActions';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -57,7 +59,8 @@ import { useAttachments } from './useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
 import { ComposeTypes } from './useCompose';
-import { EditorHotkeysHandlers, useComposerHotkeys } from './useComposerHotkeys';
+import type { EditorHotkeysHandlers } from './useComposerHotkeys';
+import { useComposerHotkeys } from './useComposerHotkeys';
 import { useComposerInnerModals } from './useComposerInnerModals';
 import { useDraftSenderVerification } from './useDraftSenderVerification';
 import { useHandleMessageAlreadySent } from './useHandleMessageAlreadySent';

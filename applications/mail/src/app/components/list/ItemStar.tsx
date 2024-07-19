@@ -1,9 +1,10 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, IconSize, Tooltip } from '@proton/components';
+import type { IconSize } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -11,7 +12,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 interface Props {
     element?: Element;
@@ -30,8 +31,8 @@ const ItemStar = ({ element, size }: Props) => {
             ? c('Alt').t`Unstar message`
             : c('Alt').t`Star message`
         : isStarred
-        ? c('Alt').t`Unstar conversation`
-        : c('Alt').t`Star conversation`;
+          ? c('Alt').t`Unstar conversation`
+          : c('Alt').t`Star conversation`;
 
     const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
 

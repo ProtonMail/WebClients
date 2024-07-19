@@ -9,7 +9,7 @@ import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { removeDarkStyle } from '../../../store/messages/read/messagesReadActions';
 
 interface Props {

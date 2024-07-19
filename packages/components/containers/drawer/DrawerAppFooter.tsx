@@ -1,4 +1,5 @@
-import { ReactElement, cloneElement, useEffect, useRef } from 'react';
+import type { ReactElement } from 'react';
+import { cloneElement, useEffect, useRef } from 'react';
 
 import Footer from '@proton/components/components/footer/Footer';
 import { useElementRect, useNotifications } from '@proton/components/hooks';

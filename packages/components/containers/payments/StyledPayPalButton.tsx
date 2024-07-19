@@ -1,7 +1,8 @@
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal-color.svg';
 import clsx from '@proton/utils/clsx';
 
-import PayPalButton, { PayPalButtonProps } from './PayPalButton';
+import type { PayPalButtonProps } from './PayPalButton';
+import PayPalButton from './PayPalButton';
 
 import './StyledPayPalButton.scss';
 

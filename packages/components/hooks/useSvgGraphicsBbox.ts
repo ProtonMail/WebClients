@@ -1,4 +1,5 @@
-import { RefObject, useLayoutEffect, useState } from 'react';
+import type { RefObject } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 // These defaults do not matter
 const DEFAULT = {

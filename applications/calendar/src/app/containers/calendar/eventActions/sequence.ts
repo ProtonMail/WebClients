@@ -1,7 +1,7 @@
 import { getIsRruleSubset } from '@proton/shared/lib/calendar/recurrence/rruleSubset';
 import { getHasModifiedDateTimes } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { withUpdatedDtstamp } from './dtstamp';
 

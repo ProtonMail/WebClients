@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -16,7 +16,7 @@ import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
-import { AccountWithChainData } from '../../types';
+import type { AccountWithChainData } from '../../types';
 import {
     convertAmountStr,
     getAccountBalance,

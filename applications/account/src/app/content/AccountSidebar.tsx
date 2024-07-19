@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,11 +12,12 @@ import {
     StartUsingPassSpotlight,
     useAccountSpotlights,
 } from '@proton/components';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
-import { Routes } from './routes';
+import type { Routes } from './routes';
 
 interface AccountSidebarProps {
     app: APP_NAMES;

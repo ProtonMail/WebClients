@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { useApi } from '@proton/components';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { fetchCalendarEvents } from './cache/fetchCalendarEvents';
 import getCalendarEventsCache from './cache/getCalendarEventsCache';
-import { CalendarsEventsCache } from './interface';
+import type { CalendarsEventsCache } from './interface';
 
 const useCalendarsEventsFetcher = ({
     calendars,

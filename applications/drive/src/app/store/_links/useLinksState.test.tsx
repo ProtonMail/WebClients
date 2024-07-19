@@ -2,11 +2,10 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import { DriveEvents } from '../_events';
-import { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
+import type { DriveEvents } from '../_events';
+import type { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
+import type { Link, LinksState } from './useLinksState';
 import {
-    Link,
-    LinksState,
     addOrUpdate,
     deleteLinks,
     setCachedThumbnailUrl,

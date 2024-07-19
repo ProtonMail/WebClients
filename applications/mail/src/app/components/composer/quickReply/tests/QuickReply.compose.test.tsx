@@ -1,5 +1,5 @@
+import type { GeneratedKey } from '../../../../helpers/test/helper';
 import {
-    GeneratedKey,
     clearAll,
     generateKeys,
     releaseCryptoProxy,

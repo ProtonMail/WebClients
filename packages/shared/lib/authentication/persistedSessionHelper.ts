@@ -8,13 +8,14 @@ import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
 import { withUIDHeaders } from '../fetch/headers';
 import { captureMessage } from '../helpers/sentry';
-import { Api, User as tsUser } from '../interfaces';
+import type { Api, User as tsUser } from '../interfaces';
 import { appMode } from '../webpack.constants';
-import { PersistedSessionWithLocalID } from './SessionInterface';
+import type { PersistedSessionWithLocalID } from './SessionInterface';
 import { generateClientKey, getClientKey } from './clientKey';
 import { InvalidPersistentSessionError } from './error';
-import { LocalKeyResponse, LocalSessionResponse } from './interface';
-import { OfflineKey, generateOfflineKey } from './offlineKey';
+import type { LocalKeyResponse, LocalSessionResponse } from './interface';
+import type { OfflineKey } from './offlineKey';
+import { generateOfflineKey } from './offlineKey';
 import {
     getDecryptedPersistedSessionBlob,
     getPersistedSession,

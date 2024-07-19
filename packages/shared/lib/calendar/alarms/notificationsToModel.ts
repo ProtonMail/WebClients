@@ -1,6 +1,6 @@
 import generateUID from '../../helpers/generateUID';
-import { Nullable } from '../../interfaces';
-import { CalendarNotificationSettings, CalendarSettings } from '../../interfaces/calendar';
+import type { Nullable } from '../../interfaces';
+import type { CalendarNotificationSettings, CalendarSettings } from '../../interfaces/calendar';
 import { filterFutureNotifications } from '../alarms';
 import { fromTriggerString } from '../vcal';
 import { triggerToModel } from './notificationModel';

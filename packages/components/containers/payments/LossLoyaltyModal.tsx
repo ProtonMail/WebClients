@@ -3,9 +3,10 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { ModalProps, Prompt } from '../../components';
+import type { ModalProps } from '../../components';
+import { Prompt } from '../../components';
 
 interface Props extends ModalProps {
     organization: Organization;

@@ -3,7 +3,7 @@ import { decryptAddressKeyToken } from '@proton/shared/lib/keys/addressKeys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { ORGANIZATION_SIGNATURE_CONTEXT, getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 
-import { CachedOrganizationKey, DecryptedKey, KeyPair, OrganizationKey } from '../interfaces';
+import type { CachedOrganizationKey, DecryptedKey, KeyPair, OrganizationKey } from '../interfaces';
 
 export const getDecryptedOrganizationKey = async (armoredKey: string, passphrase: string) => {
     const privateKey = await CryptoProxy.importPrivateKey({

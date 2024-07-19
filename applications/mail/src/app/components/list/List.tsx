@@ -1,18 +1,14 @@
-import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
+import type { ChangeEvent, ReactNode, Ref, RefObject } from 'react';
+import { Fragment, forwardRef, memo, useEffect, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import {
-    Breakpoints,
-    useConversationCounts,
-    useFlag,
-    useItemsDraggable,
-    useLabels,
-    useMessageCounts,
-} from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { useConversationCounts, useFlag, useItemsDraggable, useLabels, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
-import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
@@ -27,8 +23,8 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
-import { Element } from '../../models/element';
-import { Filter } from '../../models/tools';
+import type { Element } from '../../models/element';
+import type { Filter } from '../../models/tools';
 import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../store/elements/elementsSelectors';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';

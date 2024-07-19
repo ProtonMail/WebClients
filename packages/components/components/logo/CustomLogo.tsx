@@ -1,4 +1,4 @@
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { Logo } from '..';

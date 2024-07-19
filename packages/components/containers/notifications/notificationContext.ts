@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-import { NotificationContextProps } from './interfaces';
+import type { NotificationContextProps } from './interfaces';
 
 export default createContext<NotificationContextProps>({ type: 'success' });

@@ -1,4 +1,5 @@
-import { ReactNode, memo } from 'react';
+import type { ReactNode } from 'react';
+import { memo } from 'react';
 
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';

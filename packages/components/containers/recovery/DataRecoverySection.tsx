@@ -6,7 +6,8 @@ import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { MNEMONIC_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import { Icon, Info, Toggle, useModalState } from '../../components';

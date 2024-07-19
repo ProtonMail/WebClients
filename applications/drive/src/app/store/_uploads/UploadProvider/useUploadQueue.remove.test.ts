@@ -1,8 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { mockGlobalFile, testFile } from '../../../utils/test/file';
-import { UploadFileList } from '../interface';
-import { FileUpload, FolderUpload, UpdateCallback, UpdateFilter } from './interface';
+import type { UploadFileList } from '../interface';
+import type { FileUpload, FolderUpload, UpdateCallback, UpdateFilter } from './interface';
 import useUploadQueue from './useUploadQueue';
 
 describe('useUploadQueue::remove', () => {

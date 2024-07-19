@@ -1,7 +1,7 @@
-import { NodeMeta } from '@proton/drive-store/lib'
+import type { NodeMeta } from '@proton/drive-store/lib'
 import { UpdateDebouncer } from './UpdateDebouncer'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
-import { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 describe('UpdateDebouncer', () => {
   let debouncer: UpdateDebouncer

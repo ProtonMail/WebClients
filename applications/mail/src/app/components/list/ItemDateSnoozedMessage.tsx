@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import { formatDateToHuman, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { isElementReminded } from '../../helpers/snooze';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
 
 import './ItemDateSnoozedMessage.scss';

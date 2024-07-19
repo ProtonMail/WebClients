@@ -5,13 +5,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useUser } from '@proton/components/hooks';
 import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
-import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, IconName, InputFieldTwo, Option, SearchableSelect, useModalState } from '../../../components';
-import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
+import type { IconName } from '../../../components';
+import { Icon, InputFieldTwo, Option, SearchableSelect, useModalState } from '../../../components';
+import type { LabelModel } from '../../labels/modals/EditLabelModal';
+import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';
-import { Actions } from '../interfaces';
+import type { Actions } from '../interfaces';
 
 interface Props {
     folders: Folder[];

@@ -1,6 +1,6 @@
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { Deal, Offer } from '../interface';
+import type { Deal, Offer } from '../interface';
 
 interface Props {
     offer: Offer;

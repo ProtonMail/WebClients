@@ -1,11 +1,12 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import { FeatureFlag, SettingsAreaConfig, useFlag } from '../..';
+import type { FeatureFlag, SettingsAreaConfig } from '../..';
+import { useFlag } from '../..';
 
 interface Props {
     config: SettingsAreaConfig;

@@ -1,4 +1,5 @@
-import { ChangeEvent, ReactNode, useEffect, useRef, useState } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,14 +7,16 @@ import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { toBase64 } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { extractBase64Image, resizeImage, toBlob } from '@proton/shared/lib/helpers/image';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     Dropzone,
     FileInput,
@@ -23,7 +26,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '../../../components';
 import { useApi, useEventManager } from '../../../hooks';

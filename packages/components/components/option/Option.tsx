@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, useEffect, useRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import usePrevious from '@proton/hooks/usePrevious';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';

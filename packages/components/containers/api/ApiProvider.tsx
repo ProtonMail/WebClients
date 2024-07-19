@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useReducer, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';

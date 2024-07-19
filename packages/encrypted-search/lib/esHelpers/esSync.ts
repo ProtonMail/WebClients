@@ -1,10 +1,10 @@
-import { IDBPDatabase } from 'idb';
+import type { IDBPDatabase } from 'idb';
 
 import chunk from '@proton/utils/chunk';
 
 import { ES_MAX_PARALLEL_ITEMS, ES_SYNC_ACTIONS, STORING_OUTCOME } from '../constants';
 import { executeContentOperations, executeMetadataOperations, openESDB, readLimited, setLimited } from '../esIDB';
-import {
+import type {
     CachedItem,
     ESCache,
     ESItem,

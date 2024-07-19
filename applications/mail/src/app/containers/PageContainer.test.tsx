@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 

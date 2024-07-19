@@ -1,5 +1,5 @@
 import { getIsValidAlarm, getSupportedAlarm } from '../../lib/calendar/icsSurgery/valarm';
-import { VcalDateProperty, VcalValarmComponent } from '../../lib/interfaces/calendar';
+import type { VcalDateProperty, VcalValarmComponent } from '../../lib/interfaces/calendar';
 
 describe('getIsValidAlarm', () => {
     const baseTriggerValue = { weeks: 0, days: 1, hours: 0, minutes: 0, seconds: 0, isNegative: true };

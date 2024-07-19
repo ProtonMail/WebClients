@@ -4,7 +4,7 @@ import prettier from 'prettier';
 import tiny from 'tinycolor2';
 
 import genButtonShades from './gen-button-shades';
-import { ThemeConfig, ThemeFileType } from './themes.config';
+import type { ThemeConfig, ThemeFileType } from './themes.config';
 
 function generateTheme({ source, type }: { source: string; type: ThemeFileType }) {
     const buttonBases = [

@@ -1,6 +1,6 @@
 import { ADDRESS_FLAGS, ADDRESS_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { getDefaultKeyFlags } from '../../lib/keys/keyFlags';
 

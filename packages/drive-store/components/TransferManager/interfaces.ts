@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { IconName } from '@proton/components';
+import type { IconName } from '@proton/components';
 
-import { Download, TransferType, Upload } from './transfer';
+import type { Download, TransferType, Upload } from './transfer';
 
 export interface DownloadProps {
     transfer: Download;

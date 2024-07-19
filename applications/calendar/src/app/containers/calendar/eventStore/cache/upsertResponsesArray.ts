@@ -1,18 +1,19 @@
 import { API_CODES } from '@proton/shared/lib/constants';
-import {
+import type {
     SyncMultipleApiResponse,
     SyncMultipleApiResponses,
     UpdateEventPartApiResponse,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
-import {
+import type { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import type {
     AttendeeDeleteSingleEditOperation,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../../interfaces/Invite';
-import { SyncEventActionOperations, getIsDeleteSyncOperation } from '../../getSyncMultipleEventsPayload';
-import { CalendarsEventsCache } from '../interface';
+import type { SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';
+import { getIsDeleteSyncOperation } from '../../getSyncMultipleEventsPayload';
+import type { CalendarsEventsCache } from '../interface';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 

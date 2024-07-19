@@ -1,7 +1,8 @@
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { EnrichedError, isEnrichedError } from './EnrichedError';
+import type { EnrichedError } from './EnrichedError';
+import { isEnrichedError } from './EnrichedError';
 import { isValidationError } from './ValidationError';
 
 const IGNORED_ERRORS = ['AbortError', 'TransferCancel'];

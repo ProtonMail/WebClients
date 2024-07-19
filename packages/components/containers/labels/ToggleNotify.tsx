@@ -1,10 +1,10 @@
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateLabel } from '@proton/shared/lib/api/labels';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { Toggle, Tooltip } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';

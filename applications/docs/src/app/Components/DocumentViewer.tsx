@@ -1,29 +1,30 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import type {
+  DocsClientSquashVerificationObjectionMadePayload,
+  EditorOrchestratorInterface,
+  GeneralUserDisplayableErrorOccurredPayload,
+  WebsocketConnectionEventPayloads,
+} from '@proton/docs-core'
 import {
   ClientToEditorBridge,
   DocControllerEvent,
   ApplicationEvent,
-  DocsClientSquashVerificationObjectionMadePayload,
-  EditorOrchestratorInterface,
   SquashVerificationObjectionDecision,
-  GeneralUserDisplayableErrorOccurredPayload,
   WebsocketConnectionEvent,
-  WebsocketConnectionEventPayloads,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
 import { useApplication } from '../Containers/ApplicationProvider'
-import {
+import type {
   CommentMarkNodeChangeData,
-  CommentsEvent,
   EditorInitializationConfig,
-  LiveCommentsEvent,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
+import { CommentsEvent, LiveCommentsEvent } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
-import { DocumentAction, NodeMeta } from '@proton/drive-store'
+import type { DocumentAction, NodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from './Modals/GenericAlert'
 

@@ -1,14 +1,5 @@
-import {
-    DragEvent,
-    Ref,
-    RefObject,
-    forwardRef,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useRef,
-    useState,
-} from 'react';
+import type { DragEvent, Ref, RefObject } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -32,12 +23,12 @@ import { EditorTypes, useComposerContent } from '../../hooks/composer/useCompose
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
-import { Event } from '../../models/event';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
+import type { Event } from '../../models/event';
+import type { MessageState, MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';
-import { ExternalEditorActions } from './editor/EditorWrapper';
+import type { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);

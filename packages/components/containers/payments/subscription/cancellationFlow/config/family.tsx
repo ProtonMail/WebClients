@@ -11,9 +11,9 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
-import {
+import type {
     ConfirmationModal,
     PlanConfig,
     PlanConfigFeatures,

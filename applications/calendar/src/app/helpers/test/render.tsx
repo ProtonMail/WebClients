@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import * as React from 'react';
 import { Router } from 'react-router';
 
@@ -10,7 +10,7 @@ import { CacheProvider, ModalsChildren, ModalsProvider } from '@proton/component
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import NotificationsTestProvider from './NotificationsTestProvider';
 

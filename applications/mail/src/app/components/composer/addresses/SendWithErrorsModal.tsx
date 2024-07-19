@@ -2,10 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import {
-    ENCRYPTION_PREFERENCES_ERROR_TYPES,
-    EncryptionPreferencesError,
-} from '@proton/shared/lib/mail/encryptionPreferences';
+import type { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
 
-import { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { FeatureCode, useApi, useAuthentication, useFeature, useProgressiveRollout } from '@proton/components';
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -25,10 +25,11 @@ import {
     handleDispatchLoadRemoteImagesDirect,
 } from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
-import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
+import type { Preparation } from '../../helpers/transforms/transforms';
+import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
-import {
+import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
     LoadRemoteResults,

@@ -1,8 +1,8 @@
-import { ImportContactError } from '../../contacts/errors/ImportContactError';
-import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
-import { ImportFileError } from '../../contacts/errors/ImportFileError';
-import { ContactCard, ContactGroup, ContactValue } from './Contact';
-import { VCardContact, VCardKey } from './VCard';
+import type { ImportContactError } from '../../contacts/errors/ImportContactError';
+import type { ImportFatalError } from '../../contacts/errors/ImportFatalError';
+import type { ImportFileError } from '../../contacts/errors/ImportFileError';
+import type { ContactCard, ContactGroup, ContactValue } from './Contact';
+import type { VCardContact, VCardKey } from './VCard';
 
 export enum IMPORT_STEPS {
     ATTACHING,

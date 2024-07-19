@@ -1,4 +1,4 @@
-import { Address, GroupFlags, GroupPermissions } from '../interfaces';
+import type { Address, GroupFlags, GroupPermissions } from '../interfaces';
 
 interface GroupParameters {
     Name: string;

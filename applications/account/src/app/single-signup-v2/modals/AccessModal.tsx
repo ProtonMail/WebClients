@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
 import { useLoading } from '@proton/hooks';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,

@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 
 import { useHandler } from '@proton/components';
-import { Cancellable } from '@proton/components/hooks/useHandler';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
-import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
 

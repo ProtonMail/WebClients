@@ -1,14 +1,14 @@
-import { MutableRefObject, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import type { ChallengeRef, ChallengeResult } from '@proton/components';
 import {
     Challenge,
     ChallengeError,
-    ChallengeRef,
-    ChallengeResult,
     Checkbox,
     Icon,
     Info,
@@ -26,15 +26,17 @@ import { handleExternalSSOLogin, handleLogin } from '@proton/components/containe
 import { useLoading } from '@proton/hooks';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { ProductParam, normalizeProduct } from '@proton/shared/lib/apps/product';
-import { AuthResponse, AuthVersion, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
-import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { normalizeProduct } from '@proton/shared/lib/apps/product';
+import type { AuthResponse, AuthVersion, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api, Unwrap } from '@proton/shared/lib/interfaces';
+import type { Api, Unwrap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';

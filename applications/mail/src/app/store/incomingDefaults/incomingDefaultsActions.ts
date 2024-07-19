@@ -6,11 +6,11 @@ import {
     getIncomingDefaults,
 } from '@proton/shared/lib/api/incomingDefaults';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import { IncomingDefault } from '@proton/shared/lib/interfaces';
+import type { IncomingDefault } from '@proton/shared/lib/interfaces';
 
-import { IncomingDefaultEvent } from '../../models/event';
-import { MailThunkExtra } from '../store';
-import { IncomingDefaultsState } from './incomingDefaultsTypes';
+import type { IncomingDefaultEvent } from '../../models/event';
+import type { MailThunkExtra } from '../store';
+import type { IncomingDefaultsState } from './incomingDefaultsTypes';
 
 type LoadResults = Pick<IncomingDefaultsState, 'list'>;
 

@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { uniqBy } from 'lodash';
 
-import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmApiWalletTransactionData } from '@proton/andromeda';
+import type { ModelState } from '@proton/account';
+import { getInitialModelState } from '@proton/account';
+import type { WasmApiWalletTransactionData } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 
-import { WalletThunkArguments } from '../thunk';
+import type { WalletThunkArguments } from '../thunk';
 
 export const apiWalletTransactionDataSliceName = 'api_wallet_transaction_data' as const;
 

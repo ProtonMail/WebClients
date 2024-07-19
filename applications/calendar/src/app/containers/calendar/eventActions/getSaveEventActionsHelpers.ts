@@ -6,17 +6,15 @@ import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { RequireSome } from '@proton/shared/lib/interfaces';
-import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
-import { EventOldData } from '../../../interfaces/EventData';
-import { INVITE_ACTION_TYPES, InviteActions, OnSendPrefsErrors, SendIcs } from '../../../interfaces/Invite';
-import {
-    SyncEventActionOperations,
-    getCreateSyncOperation,
-    getUpdateSyncOperation,
-} from '../getSyncMultipleEventsPayload';
+import type { EventOldData } from '../../../interfaces/EventData';
+import type { InviteActions, OnSendPrefsErrors, SendIcs } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import { getCreateSyncOperation, getUpdateSyncOperation } from '../getSyncMultipleEventsPayload';
 import { getStartDateTimeMerged } from '../recurrence/getDateTimeMerged';
 import {
     getAddedAttendeesPublicKeysMap,

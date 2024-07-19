@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect, useRef } from 'react';
 
 import {
     CancellationReminderModal,
@@ -12,10 +13,8 @@ import {
     useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
-import {
-    ReminderFlag,
-    shouldOpenReminderModal,
-} from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 

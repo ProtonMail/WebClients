@@ -3,7 +3,7 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { addApiMock, clearAll, getDropdown, minimalCache, render, tick } from '../../helpers/test/helper';

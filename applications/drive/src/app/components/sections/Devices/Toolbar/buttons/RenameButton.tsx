@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { Device } from '../../../../../store';
+import type { Device } from '../../../../../store';
 import { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
 import { isMultiSelect } from '../../../ToolbarButtons/utils';
 

@@ -1,11 +1,13 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
-import { UpgradeAddressKeyPayload, upgradeKeysRoute } from '../api/keys';
+import type { UpgradeAddressKeyPayload } from '../api/keys';
+import { upgradeKeysRoute } from '../api/keys';
 import { getOrganizationKeys } from '../api/organization';
 import { USER_ROLES } from '../constants';
 import { toMap } from '../helpers/object';
-import {
+import type {
     Api,
     CachedOrganizationKey,
     DecryptedKey,

@@ -3,7 +3,7 @@ import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { buildVcalOrganizer } from '@proton/shared/lib/calendar/vcalConverter';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 const buildVcalAttendee = ({
     email,

@@ -8,13 +8,8 @@ import useAssistantTelemetry, {
 } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useApi } from '@proton/components/hooks';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
-import {
-    AssistantRunningActionResolver,
-    GenerateAssistantResult,
-    PromptRejectedError,
-    getGenerationType,
-    sendAssistantRequest,
-} from '@proton/llm/lib';
+import type { AssistantRunningActionResolver, GenerateAssistantResult } from '@proton/llm/lib';
+import { PromptRejectedError, getGenerationType, sendAssistantRequest } from '@proton/llm/lib';
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';

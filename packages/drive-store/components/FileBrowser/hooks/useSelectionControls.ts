@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { BrowserItemId } from '../interface';
+import type { BrowserItemId } from '../interface';
 
 export enum SelectionState {
     NONE,

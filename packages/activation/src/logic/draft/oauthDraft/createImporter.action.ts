@@ -8,33 +8,30 @@ import {
     getContactsImportData,
     getMailImportData,
 } from '@proton/activation/src/api';
-import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
+import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import getDefaultLabel from '@proton/activation/src/components/Modals/Imap/ImapMailModal/StepPrepareImap/useStepPrepareImap.helpers';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getDefaultImportCategoriesDestination } from '@proton/activation/src/helpers/getDefaultImportCategories';
 import { getDefaultTimePeriod } from '@proton/activation/src/helpers/getDefaultTimePeriod';
-import {
-    AuthenticationMethod,
+import type {
     CreateImportPayload,
     EASY_SWITCH_SOURCES,
-    IMPORT_ERROR,
-    ImportProvider,
     ImportToken,
-    ImportType,
     ImportedCalendar,
     OAuthProps,
 } from '@proton/activation/src/interface';
+import { AuthenticationMethod, IMPORT_ERROR, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
 
-import { EasySwitchThunkExtra } from '../../store';
+import type { EasySwitchThunkExtra } from '../../store';
 import { OAUTH_ACTION_PREFIX } from './oauthDraft.actions';
-import { ImporterCalendar, ImporterData } from './oauthDraft.interface';
+import type { ImporterCalendar, ImporterData } from './oauthDraft.interface';
 
 type Props = {
     oAuthProps: OAuthProps;

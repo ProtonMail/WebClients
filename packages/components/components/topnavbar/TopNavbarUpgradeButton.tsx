@@ -15,7 +15,8 @@ import {
 import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';
-import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';

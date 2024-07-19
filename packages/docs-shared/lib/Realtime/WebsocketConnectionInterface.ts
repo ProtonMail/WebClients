@@ -1,4 +1,4 @@
-import { BroadcastSource } from '../Bridge/BroadcastSource'
+import type { BroadcastSource } from '../Bridge/BroadcastSource'
 
 export interface WebsocketConnectionInterface {
   connect(): Promise<void>

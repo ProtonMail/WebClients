@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, IconName, Info, Option, SelectTwo, Tooltip, useModalState } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
+import { Icon, Info, Option, SelectTwo, Tooltip, useModalState } from '@proton/components/components';
 import {
     DefaultQuickSettings,
     QuickSettingsButton,
@@ -25,7 +26,8 @@ import { useAssistant } from '@proton/llm/lib';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { KEY_TRANSPARENCY_REMINDER_UPDATE, QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
+import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

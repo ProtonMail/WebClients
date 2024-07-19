@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { useNotifications } from '../../hooks';
-import { Condition } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 import InputCondition from './InputCondition';
 
 jest.mock('@proton/components/hooks/useNotifications');

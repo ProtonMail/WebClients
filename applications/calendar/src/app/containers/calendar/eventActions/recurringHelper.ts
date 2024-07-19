@@ -7,10 +7,10 @@ import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import parseMainEventData from '../event/parseMainEventData';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 

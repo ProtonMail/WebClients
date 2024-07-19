@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 
-import { BrowserItemId } from '../../FileBrowser/interface';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
+import type { BrowserItemId } from '../../FileBrowser/interface';
+import type { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
     shareId: string;

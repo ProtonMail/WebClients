@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { LabelChanges } from '../../../helpers/labels';
-import { MarkAsChanges } from '../../../hooks/optimistic/useOptimisticMarkAs';
-import { MessageState } from '../messagesTypes';
+import type { LabelChanges } from '../../../helpers/labels';
+import type { MarkAsChanges } from '../../../hooks/optimistic/useOptimisticMarkAs';
+import type { MessageState } from '../messagesTypes';
 
 export const optimisticApplyLabels = createAction<{
     ID: string;

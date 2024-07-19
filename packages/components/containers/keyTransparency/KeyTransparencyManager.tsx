@@ -1,13 +1,15 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { serverTime } from '@proton/crypto';
 import { ktSentryReportError } from '@proton/key-transparency/lib';
-import { APP_NAMES, SECOND } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useOnline } from '../../hooks';
-import { KTContext } from './ktContext';
+import type { KTContext } from './ktContext';
 import useKTActivation from './useKTActivation';
 import useKTState from './useKTState';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';

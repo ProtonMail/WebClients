@@ -1,13 +1,15 @@
-import { MutableRefObject, ReactNode, useRef } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
+import { useRef } from 'react';
 
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import Option from '@proton/components/components/option/Option';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
-import CoreSearchableSelect, {
-    Props as _CoreSearchableSelectProps,
-} from '@proton/components/components/selectTwo/SearchableSelect';
-import SelectTwo, { Props as SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
-import InputField, { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import type { Props as _CoreSearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
+import CoreSearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import type { Props as SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import InputField from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 
 import '../InputFieldStacked/InputFieldStacked.scss';

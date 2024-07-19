@@ -2,7 +2,7 @@ import { isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
-import { EventModel, EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel, EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 
 import { getTimeInUtc } from './time';
 

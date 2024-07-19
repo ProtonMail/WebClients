@@ -1,10 +1,12 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
 import { getAppHref } from '../apps/helper';
 import { getLinkToCalendarEvent } from '../calendar/helper';
-import { APPS, APP_NAMES } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS } from '../constants';
 import { addParentAppToUrl, postMessageToIframe } from './helpers';
-import { DRAWER_EVENTS, DrawerApp, IframeSrcMap } from './interfaces';
+import type { DrawerApp, IframeSrcMap } from './interfaces';
+import { DRAWER_EVENTS } from './interfaces';
 
 const { PROTONCALENDAR: calendarApp } = APPS;
 

@@ -1,16 +1,17 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
-import { SubscriptionData } from '../../signup/interfaces';
+import type { SubscriptionData } from '../../signup/interfaces';
 import PlanComparison from './PlanComparison';
 
 interface Props extends Omit<ModalProps, 'title'> {

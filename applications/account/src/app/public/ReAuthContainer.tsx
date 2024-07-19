@@ -13,7 +13,7 @@ import {
     useFormErrors,
 } from '@proton/components/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers';
+import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -22,13 +22,14 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { SETTINGS_PASSWORD_MODE, User, UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
+import type { User, UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { srpAuth } from '@proton/shared/lib/srp';
 
-import { Paths } from '../content/helper';
+import type { Paths } from '../content/helper';
 import UnlockForm from '../login/UnlockForm';
 import Content from './Content';
 import Header from './Header';

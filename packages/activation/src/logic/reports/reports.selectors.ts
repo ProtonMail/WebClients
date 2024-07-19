@@ -2,8 +2,8 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import orderBy from '@proton/utils/orderBy';
 
-import { EasySwitchState } from '../store';
-import { Report, ReportSummariesMap, ReportSummary, ReportSummaryID, ReportsMap } from './reports.interface';
+import type { EasySwitchState } from '../store';
+import type { Report, ReportSummariesMap, ReportSummary, ReportSummaryID, ReportsMap } from './reports.interface';
 
 const selectReportsMap = (state: EasySwitchState): ReportsMap => state.reports.reports;
 const selectReportsSummariesMap = (state: EasySwitchState): ReportSummariesMap => state.reports.summaries;

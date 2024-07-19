@@ -1,4 +1,5 @@
-import { PropsWithChildren, useState } from 'react';
+import type { PropsWithChildren } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,9 +10,11 @@ import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Icon, IconName, Option, SelectTwo } from '../../components';
+import type { IconName } from '../../components';
+import { Icon, Option, SelectTwo } from '../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-import useInboxDesktopVersion, { DesktopVersion } from './useInboxDesktopVersion';
+import type { DesktopVersion } from './useInboxDesktopVersion';
+import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 interface DownloadSectionProps extends PropsWithChildren {
     version: string;

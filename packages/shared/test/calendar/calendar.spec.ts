@@ -1,6 +1,6 @@
 import { sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 describe('sortCalendars', () => {
     const holidaysCalendar = {

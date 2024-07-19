@@ -1,4 +1,4 @@
-import { CalendarViewEvent, CalendarViewEventData } from '../../containers/calendar/interface';
+import type { CalendarViewEvent, CalendarViewEventData } from '../../containers/calendar/interface';
 import { layout } from './layout';
 import { sortEvents } from './sortLayout';
 

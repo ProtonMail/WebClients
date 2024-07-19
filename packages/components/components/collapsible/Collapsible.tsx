@@ -1,9 +1,11 @@
-import { Children, ElementType, useState } from 'react';
+import type { ElementType } from 'react';
+import { Children, useState } from 'react';
 
-import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 
 import { generateUID } from '../../helpers';
-import CollapsibleContext, { CollapsibleContextValue } from './CollapsibleContext';
+import type { CollapsibleContextValue } from './CollapsibleContext';
+import CollapsibleContext from './CollapsibleContext';
 
 export interface CollapsibleOwnProps {
     /**

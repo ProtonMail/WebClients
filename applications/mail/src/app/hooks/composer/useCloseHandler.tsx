@@ -3,16 +3,15 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useHandler, useNotifications } from '@proton/components';
-import { Cancellable } from '@proton/components/hooks/useHandler';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import SavingDraftNotification, {
-    SavingDraftNotificationAction,
-} from '../../components/notifications/SavingDraftNotification';
+import type { SavingDraftNotificationAction } from '../../components/notifications/SavingDraftNotification';
+import SavingDraftNotification from '../../components/notifications/SavingDraftNotification';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { MessageState } from '../../store/messages/messagesTypes';
-import { PromiseHandlers } from '../usePromise';
+import type { MessageState } from '../../store/messages/messagesTypes';
+import type { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 
 export interface UseCloseHandlerParameters {

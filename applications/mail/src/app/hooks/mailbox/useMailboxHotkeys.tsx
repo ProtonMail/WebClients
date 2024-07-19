@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 
-import { HotkeyTuple, useFolders, useHotkeys } from '@proton/components';
+import type { HotkeyTuple } from '@proton/components';
+import { useFolders, useHotkeys } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -18,8 +19,8 @@ import { isStarred } from '../../helpers/elements';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
-import { Element } from '../../models/element';
-import { Filter } from '../../models/tools';
+import type { Element } from '../../models/element';
+import type { Filter } from '../../models/tools';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';

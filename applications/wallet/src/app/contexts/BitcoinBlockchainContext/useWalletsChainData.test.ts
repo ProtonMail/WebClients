@@ -1,8 +1,9 @@
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import { MockedFunction } from 'vitest';
+import type { MockedFunction } from 'vitest';
 
-import { WasmAccount, WasmBlockchainClient, WasmWallet } from '@proton/andromeda';
+import type { WasmBlockchainClient } from '@proton/andromeda';
+import { WasmAccount, WasmWallet } from '@proton/andromeda';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 import { apiWalletsData, mockUseGetBitcoinNetwork } from '@proton/wallet/tests';

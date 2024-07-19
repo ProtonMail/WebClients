@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
+import type { ModalProps } from '@proton/components/components';
 import {
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -13,7 +13,7 @@ import {
     StripedList,
 } from '@proton/components/components';
 
-import { ConfirmationModal } from './interface';
+import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';
 
 interface Props extends ModalProps, ConfirmationModal {

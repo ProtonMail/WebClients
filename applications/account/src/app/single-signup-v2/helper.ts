@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import {
+import type {
     BillingAddress,
     PAYMENT_METHOD_TYPES,
     PaymentsApi,
@@ -10,15 +10,8 @@ import {
 } from '@proton/components/payments/core';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import {
-    ADDON_NAMES,
-    APPS,
-    APP_NAMES,
-    COUPON_CODES,
-    CYCLE,
-    FREE_SUBSCRIPTION,
-    PLANS,
-} from '@proton/shared/lib/constants';
+import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -29,9 +22,8 @@ import {
     getPlanIDs,
     getPricingFromPlanIDs,
 } from '@proton/shared/lib/helpers/subscription';
-import {
+import type {
     Api,
-    Audience,
     Currency,
     CycleMapping,
     Organization,
@@ -42,6 +34,7 @@ import {
     SubscriptionPlan,
     User,
 } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import {
     canPay as getCanPay,
@@ -52,9 +45,10 @@ import {
 } from '@proton/shared/lib/user/helpers';
 
 import { getSubscriptionPrices } from '../signup/helper';
-import { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import type { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type { PlanCard } from './PlanCardSelector';
-import { Options, PlanParameters, SignupParameters2, Upsell, UpsellTypes } from './interface';
+import type { Options, PlanParameters, SignupParameters2, Upsell } from './interface';
+import { UpsellTypes } from './interface';
 
 export const getFreeTitle = (appName: string) => {
     return c('Title').t`${appName} Free`;

@@ -1,13 +1,14 @@
-import { CSSProperties, ChangeEvent, DragEvent, MouseEvent, useState } from 'react';
+import type { CSSProperties, ChangeEvent, DragEvent, MouseEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, Tooltip } from '@proton/components/components';
 import { addPlus } from '@proton/shared/lib/helpers/string';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
 import { Copy } from '../../../components/button';

@@ -1,4 +1,5 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, RefObject, useEffect, useState } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes, ReactNode, RefObject } from 'react';
+import { useEffect, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

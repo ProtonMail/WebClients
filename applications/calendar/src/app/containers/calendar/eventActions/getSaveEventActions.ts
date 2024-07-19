@@ -1,4 +1,4 @@
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import type { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
@@ -7,22 +7,21 @@ import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqu
 import withVeventRruleWkst from '@proton/shared/lib/calendar/recurrence/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Address, Api } from '@proton/shared/lib/interfaces';
-import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
-import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import type { Address, Api } from '@proton/shared/lib/interfaces';
+import type { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import noop from '@proton/utils/noop';
 
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import { getCanEditSharedEventData } from '../../../helpers/event';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import {
-    INVITE_ACTION_TYPES,
+import type { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import type {
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -31,13 +30,14 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
-import { GetDecryptedEventCb } from '../eventStore/interface';
+import type { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
-import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
-import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
+import type { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import type { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
 import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import { getOldDataHasVeventComponent } from './getSaveEventActionsHelpers';

@@ -1,7 +1,7 @@
 import { ImportType } from '@proton/activation/src/interface';
 import { ImportProvider } from '@proton/activation/src/interface';
 
-import { EasySwitchState } from '../store';
+import type { EasySwitchState } from '../store';
 import { selectDraftModal } from './draft.selector';
 
 const BASE_STATE: Omit<EasySwitchState, 'oauthDraft' | 'imapDraft'> = {

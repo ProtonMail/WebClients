@@ -8,7 +8,8 @@ import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/master
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure.svg';
 
-import { CardPayment, PaypalPayment, isCardPayment, isPaypalPayment } from '../../payments/core/interface';
+import type { CardPayment, PaypalPayment } from '../../payments/core/interface';
+import { isCardPayment, isPaypalPayment } from '../../payments/core/interface';
 
 const getImage = (type: string): string => {
     const images: Record<string, string> = {

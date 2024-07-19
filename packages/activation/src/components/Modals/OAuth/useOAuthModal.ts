@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
+import type { OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { createImporterThunk } from '@proton/activation/src/logic/draft/oauthDraft/createImporter.action';
 import { changeOAuthStep } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import {

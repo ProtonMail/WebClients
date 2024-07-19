@@ -5,7 +5,7 @@ import {
     SettingsSectionWide,
 } from '@proton/components/containers/account';
 
-import { PlanConfigTestimonial } from './interface';
+import type { PlanConfigTestimonial } from './interface';
 
 import './ReminderSectionTestimonials.scss';
 

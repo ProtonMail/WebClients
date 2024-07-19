@@ -1,7 +1,7 @@
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import type { KEY_FLAG } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 type Key = {
     Flags: KEY_FLAG;

@@ -3,7 +3,8 @@ import { renderWithProviders } from '@proton/components/containers/contacts/test
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
-import { Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock, applyHOCs, getSubscriptionState, withApi, withCache, withEventManager } from '@proton/testing';
 

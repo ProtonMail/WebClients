@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiKeys } from '../../../helpers/test/crypto';
 import { initialize } from '../../../store/messages/read/messagesReadActions';

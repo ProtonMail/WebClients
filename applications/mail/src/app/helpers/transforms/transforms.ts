@@ -1,11 +1,11 @@
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { Base64Cache } from '../../hooks/useBase64Cache';
-import {
+import type { Base64Cache } from '../../hooks/useBase64Cache';
+import type {
     LoadEmbeddedResults,
     MessageImage,
     MessageRemoteImage,

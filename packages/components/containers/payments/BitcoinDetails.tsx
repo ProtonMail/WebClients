@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,13 +26,10 @@ const BitcoinDetailsLine = ({
     return (
         <>
             <div className="text-rg text-semibold mb-1">{label}</div>
-            <div
-                className={clsx(
-                    'rounded bg-weak py-1 px-3 flex justify-space-between items-center',
-                    className
-                )}
-            >
-                <span className='text-break' {...rest}>{value}</span>
+            <div className={clsx('rounded bg-weak py-1 px-3 flex justify-space-between items-center', className)}>
+                <span className="text-break" {...rest}>
+                    {value}
+                </span>
                 <Copy
                     value={`${value}`}
                     shape="ghost"

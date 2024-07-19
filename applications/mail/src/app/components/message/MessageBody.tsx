@@ -1,4 +1,5 @@
-import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -10,7 +11,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
 import useMessageDarkStyles from './hooks/useMessageDarkStyles';
 

@@ -5,13 +5,8 @@ import { createSelector } from '@reduxjs/toolkit';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { createHooks } from '@proton/redux-utilities';
 
-import {
-    GetQuotesArgs,
-    QuotesByProvider,
-    getQuotesByProviderKey,
-    quotesByProviderThunk,
-    selectQuotesByProvider,
-} from '../slices/quotesByProvider';
+import type { GetQuotesArgs, QuotesByProvider } from '../slices/quotesByProvider';
+import { getQuotesByProviderKey, quotesByProviderThunk, selectQuotesByProvider } from '../slices/quotesByProvider';
 
 const hooks = createHooks(quotesByProviderThunk, selectQuotesByProvider);
 

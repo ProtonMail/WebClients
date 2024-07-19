@@ -15,7 +15,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { getMessageExpirationDate } from '../../../helpers/message/messageExpirationTime';
 import useExpiration from '../../../hooks/useExpiration';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

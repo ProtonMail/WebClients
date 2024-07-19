@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { EasySwitchState } from '../../store';
+import type { EasySwitchState } from '../../store';
 
 const selectOauthDraft = (state: EasySwitchState) => state.oauthDraft;
 export const selectOauthDraftProvider = createSelector(selectOauthDraft, (draft) => draft.provider);

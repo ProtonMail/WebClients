@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import {
     addDays,
@@ -22,7 +22,7 @@ import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg
 import clsx from '@proton/utils/clsx';
 
 import { formatSimpleDate } from '../../../../helpers/date';
-import { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
+import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import SnoozeHeader from './SnoozeHeader';
 
 interface Props {

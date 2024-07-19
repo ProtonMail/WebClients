@@ -7,7 +7,7 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { PAYMENT_METHOD_TYPES, onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
-import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import {
@@ -22,14 +22,15 @@ import {
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     Form,
     Loader,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

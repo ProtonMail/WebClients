@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalProps, Prompt } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface Props extends ModalProps {
     isMessage: boolean;

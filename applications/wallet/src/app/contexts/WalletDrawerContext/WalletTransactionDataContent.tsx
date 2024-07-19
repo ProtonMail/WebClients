@@ -10,8 +10,9 @@ import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
-import { RecipientDetailsModal, RecipientDetailsModalOwnProps } from '../../components/RecipientDetailsModal';
-import { TransactionData } from '../../hooks/useWalletTransactions';
+import type { RecipientDetailsModalOwnProps } from '../../components/RecipientDetailsModal';
+import { RecipientDetailsModal } from '../../components/RecipientDetailsModal';
+import type { TransactionData } from '../../hooks/useWalletTransactions';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {

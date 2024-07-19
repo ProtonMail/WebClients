@@ -1,12 +1,12 @@
 import { CryptoProxy } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { EOStore } from 'proton-mail/store/eo/eoStore';
+import type { EOStore } from 'proton-mail/store/eo/eoStore';
 
 import { loadEOMessage, loadEOToken } from '../../../store/eo/eoActions';
-import { EOMessage, EOMessageReply } from '../../../store/eo/eoType';
+import type { EOMessage, EOMessageReply } from '../../../store/eo/eoType';
 import { convertEOtoMessageState } from '../../eo/message';
 import { addApiMock, api, clearApiMocks } from '../api';
 import { base64Cache, clearCache } from '../cache';

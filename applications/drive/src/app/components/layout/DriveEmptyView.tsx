@@ -1,4 +1,5 @@
-import { PropsWithChildren, forwardRef } from 'react';
+import type { PropsWithChildren } from 'react';
+import { forwardRef } from 'react';
 
 import { EmptyViewContainer } from '@proton/components';
 import clsx from '@proton/utils/clsx';

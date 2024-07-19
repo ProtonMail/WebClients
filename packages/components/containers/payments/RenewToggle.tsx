@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +8,7 @@ import { Autopay } from '@proton/components/payments/core';
 import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 
 import { PrimaryButton } from '../../components/button';
-import { ModalProps } from '../../components/modalTwo';
+import type { ModalProps } from '../../components/modalTwo';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
 import { Prompt } from '../../components/prompt';
 import { Toggle } from '../../components/toggle';

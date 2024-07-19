@@ -1,4 +1,5 @@
-import { Ref, useRef, useState } from 'react';
+import type { Ref } from 'react';
+import { useRef, useState } from 'react';
 import { AutoSizer, CellMeasurer, CellMeasurerCache, List } from 'react-virtualized';
 
 import { c } from 'ttag';
@@ -10,7 +11,7 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import { Dropdown, DropdownButton } from '../../dropdown';
 import { Icon } from '../../icon';
 import CountrySelectRow from './PhoneCountrySelectRow';
-import { CountryOptionData } from './helper';
+import type { CountryOptionData } from './helper';
 
 interface Props {
     options: CountryOptionData[];

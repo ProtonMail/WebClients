@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { StandardErrorPage } from '@proton/components';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import AccountRecovery from './actions/AccountRecovery';
 import DeleteAccount from './actions/DeleteAccount';

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';

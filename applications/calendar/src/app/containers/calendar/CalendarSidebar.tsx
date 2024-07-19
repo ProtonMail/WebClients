@@ -1,4 +1,5 @@
-import React, { ReactNode, useMemo, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -41,8 +42,8 @@ import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';

@@ -9,7 +9,7 @@ import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import { usePopperAnchor } from '../popper';
 import Breadcrumb from './Breadcrumb';
-import { BreadcrumbInfo } from './interfaces';
+import type { BreadcrumbInfo } from './interfaces';
 
 interface Props {
     breadcrumbs: BreadcrumbInfo[];

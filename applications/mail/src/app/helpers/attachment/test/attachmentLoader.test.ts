@@ -1,10 +1,11 @@
 import { encodeBase64 } from '@proton/crypto/lib/utils';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
+import type { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
 import { addApiMock, api } from '../../test/api';
-import { GeneratedKey, generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
+import type { GeneratedKey } from '../../test/crypto';
+import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
 import { get, getAndVerify, getDecryptedAttachment, getRequest } from '../attachmentLoader';
 
 const me = 'me@pm.me';

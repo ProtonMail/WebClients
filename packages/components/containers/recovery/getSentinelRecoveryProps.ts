@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { RecoveryCardStatusProps } from './RecoveryCardStatus';
+import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 
 export type EmailSettings = Pick<UserSettings['Email'], 'Value' | 'Status' | 'Notify' | 'Reset'>;
 export type PhoneSettings = Pick<UserSettings['Phone'], 'Value' | 'Status' | 'Notify' | 'Reset'>;

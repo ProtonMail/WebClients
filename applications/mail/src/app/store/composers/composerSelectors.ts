@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
-import { MailState } from '../store';
-import { ComposerID } from './composerTypes';
+import type { MailState } from '../store';
+import type { ComposerID } from './composerTypes';
 
 const composers = (state: MailState) => state.composers.composers;
 const composerID = (_: MailState, ID: ComposerID) => ID;

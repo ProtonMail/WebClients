@@ -1,4 +1,4 @@
-import { ContactMetadata } from './Contact';
+import type { ContactMetadata } from './Contact';
 
 export interface AddContactsApiResponse {
     Index: number;

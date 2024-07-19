@@ -1,6 +1,6 @@
-import { USER_ROLES } from '../constants';
-import { Key } from './Key';
-import { Currency } from './Subscription';
+import type { USER_ROLES } from '../constants';
+import type { Key } from './Key';
+import type { Currency } from './Subscription';
 
 export enum MNEMONIC_STATUS {
     DISABLED = 0,

@@ -1,19 +1,22 @@
-import { FormEvent, KeyboardEvent, MouseEvent, MutableRefObject, ReactNode, useMemo, useRef, useState } from 'react';
+import type { FormEvent, KeyboardEvent, MouseEvent, MutableRefObject, ReactNode } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
 import Dropdown from '../dropdown/Dropdown';
-import { DropdownSize, DropdownSizeUnit } from '../dropdown/utils';
+import type { DropdownSize } from '../dropdown/utils';
+import { DropdownSizeUnit } from '../dropdown/utils';
 import SearchInput from '../input/SearchInput';
-import Option, { Props as OptionProps } from '../option/Option';
-import { PopperPlacement } from '../popper';
+import type { Props as OptionProps } from '../option/Option';
+import Option from '../option/Option';
+import type { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
 import { defaultFilterFunction } from './helpers';
-import { SelectProps } from './select';
+import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
 export interface Props<V> extends SelectProps<V> {

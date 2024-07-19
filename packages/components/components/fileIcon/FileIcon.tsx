@@ -12,7 +12,8 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
-import MimeIcon, { MimeIconProps, MimeName } from '../icon/MimeIcon';
+import type { MimeIconProps, MimeName } from '../icon/MimeIcon';
+import MimeIcon from '../icon/MimeIcon';
 
 const iconsMap: { [mimeType: string]: MimeName } = {
     Folder: 'folder',

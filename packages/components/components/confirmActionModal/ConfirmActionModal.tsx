@@ -1,17 +1,11 @@
-import React, { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    ModalSize,
-    ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useModalTwoStatic,
-} from '@proton/components';
+import type { ModalSize, ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalTwoStatic } from '@proton/components';
 
 export interface ConfirmActionModalProps {
     message: string | ReactNode;

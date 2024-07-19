@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Card, CardProps } from '@proton/atoms/Card';
+import type { CardProps } from '@proton/atoms/Card';
+import { Card } from '@proton/atoms/Card';
 
 import testflight from './testflight.png';
 

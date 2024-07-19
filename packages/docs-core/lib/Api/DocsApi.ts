@@ -1,44 +1,44 @@
-import { CreateDocumentResponse } from './Types/CreateDocumentResponse'
-import { GetDocumentMetaResponse } from './Types/GetDocumentMetaResponse'
-import { Api } from '@proton/shared/lib/interfaces'
+import type { Commit, SquashCommit } from '@proton/docs-proto'
+import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/drive-store'
 import {
+  addCommentToThreadInDocument,
   createDocument,
   createRealtimeValetToken,
-  getDocumentMeta,
-  getCommitData,
-  seedInitialCommit,
-  squashCommit,
-  lockDocument,
-  addCommentToThreadInDocument,
   createThreadInDocument,
   deleteCommentInThreadInDocument,
   deleteThreadInDocument,
   editCommentInThreadInDocument,
   getAllCommentThreadsInDocument,
   getCommentThreadInDocument,
+  getCommitData,
+  getDocumentMeta,
+  lockDocument,
   resolveThreadInDocument,
+  seedInitialCommit,
+  squashCommit,
   unresolveThreadInDocument,
 } from '@proton/shared/lib/api/docs'
-import { CreateValetTokenResponse } from './Types/CreateValetTokenResponse'
-import { DocumentMetaInterface } from '@proton/docs-shared'
-import { Commit, SquashCommit } from '@proton/docs-proto'
-import { NodeMeta } from '@proton/drive-store'
-import { getErrorString } from '../Util/GetErrorString'
-import { Result } from '../Domain/Result/Result'
-import { ApiResult } from '../Domain/Result/ApiResult'
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
-import { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
-import { CreateThreadResponse } from './Types/CreateThreadResponse'
-import { DeleteCommentResponse } from './Types/DeleteCommentResponse'
-import { DeleteThreadResponse } from './Types/DeleteThreadResponse'
-import { EditCommentResponse } from './Types/EditCommentResponse'
-import { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
-import { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
-import { ResolveThreadResponse } from './Types/ResolveThreadResponse'
-import { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
-import { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
 import { forgeImageURL } from '@proton/shared/lib/helpers/image'
-import { ImageProxyParams } from './Types/ImageProxyParams'
+import type { Api } from '@proton/shared/lib/interfaces'
+import { ApiResult } from '../Domain/Result/ApiResult'
+import { Result } from '../Domain/Result/Result'
+import { getErrorString } from '../Util/GetErrorString'
+import type { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
+import type { CreateDocumentResponse } from './Types/CreateDocumentResponse'
+import type { CreateThreadResponse } from './Types/CreateThreadResponse'
+import type { CreateValetTokenResponse } from './Types/CreateValetTokenResponse'
+import type { DeleteCommentResponse } from './Types/DeleteCommentResponse'
+import type { DeleteThreadResponse } from './Types/DeleteThreadResponse'
+import type { EditCommentResponse } from './Types/EditCommentResponse'
+import type { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
+import type { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
+import type { GetDocumentMetaResponse } from './Types/GetDocumentMetaResponse'
+import type { ImageProxyParams } from './Types/ImageProxyParams'
+import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
+import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
+import type { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
 
 export class DocsApi {
   constructor(

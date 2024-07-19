@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, ErrorButton, ModalProps, Prompt } from '@proton/components/components';
+import type { ModalProps } from '@proton/components/components';
+import { Alert, ErrorButton, Prompt } from '@proton/components/components';
 
 interface Props extends ModalProps {
     onDeleteDraft: () => void;

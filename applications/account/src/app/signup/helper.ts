@@ -1,14 +1,15 @@
-import { Location } from 'history';
+import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import { BillingAddress, PaymentsApi } from '@proton/components/payments/core';
-import { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
-import { APP_NAMES, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
+import type { BillingAddress, PaymentsApi } from '@proton/components/payments/core';
+import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
-import { PlanIDs } from './interfaces';
+import type { PlanIDs } from './interfaces';
 
 export async function getSubscriptionPrices(
     paymentsApi: PaymentsApi,

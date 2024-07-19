@@ -1,7 +1,7 @@
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DriveCompat, DocumentNodeMeta, NodeMeta, DecryptedNode } from '@proton/drive-store'
-import { GetDocumentMeta } from './GetDocumentMeta'
+import type { DriveCompat, DocumentNodeMeta, NodeMeta, DecryptedNode } from '@proton/drive-store'
+import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 
 /**

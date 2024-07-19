@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Icon, Tooltip } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageStateWithData;

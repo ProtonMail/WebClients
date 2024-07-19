@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,8 @@ import { Href } from '@proton/atoms/Href';
 import { Icon } from '@proton/components/components';
 import { getScribeUpsellLearnMore, getScribeUpsellText } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { Audience, Plan } from '@proton/shared/lib/interfaces';
+import type { Plan } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 
 import { AccountSizeCustomiser } from './planCustomizer/AccountSizeCustomiser';
 

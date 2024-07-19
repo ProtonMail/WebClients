@@ -1,8 +1,8 @@
-import { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/components';
 
 import { resetCalendars } from '../../../api/calendars';
-import { Api } from '../../../interfaces';
-import { VisualCalendar } from '../../../interfaces/calendar';
+import type { Api } from '../../../interfaces';
+import type { VisualCalendar } from '../../../interfaces/calendar';
 import { getPrimaryKey } from '../../../keys';
 import { generateCalendarKeyPayload } from './calendarKeys';
 

@@ -1,20 +1,21 @@
-import {useState} from "react";
-import {c} from "ttag";
+import { useState } from 'react';
 
+import { c } from 'ttag';
+
+import { Toggle } from '@proton/components/components';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import {Toggle} from "@proton/components/components";
-import {useApi, useEventManager, useNotifications} from "@proton/components/hooks";
-import {getTimezone} from "@proton/shared/lib/date/timezone";
-import {CalendarUserSettings} from "@proton/shared/lib/interfaces/calendar";
-import {updateCalendarUserSettings} from "@proton/shared/lib/api/calendars";
+import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
-    calendarUserSettings: CalendarUserSettings
+    calendarUserSettings: CalendarUserSettings;
 }
 
 const ShowSecondaryTimezoneToggle = ({
-                                         calendarUserSettings: { DisplaySecondaryTimezone, SecondaryTimezone },
-                                     }: Props) => {
+    calendarUserSettings: { DisplaySecondaryTimezone, SecondaryTimezone },
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -28,7 +29,6 @@ const ShowSecondaryTimezoneToggle = ({
     };
 
     const secondaryTimezoneValue = SecondaryTimezone || timezone;
-
 
     return (
         <Toggle

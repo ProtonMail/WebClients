@@ -7,7 +7,7 @@ import { Icon, Tooltip } from '@proton/components';
 
 import { usePublicShare } from '../../../store';
 import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';
-import { LinkInfo } from '../../modals/ReportAbuseModal/types';
+import type { LinkInfo } from '../../modals/ReportAbuseModal/types';
 
 interface Props {
     linkInfo: LinkInfo;

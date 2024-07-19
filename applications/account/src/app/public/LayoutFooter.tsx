@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 
 import { getLocaleTermsURL } from '../content/helper';

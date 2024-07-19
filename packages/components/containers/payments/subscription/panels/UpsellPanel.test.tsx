@@ -4,7 +4,8 @@ import { useActiveBreakpoint } from '@proton/components/hooks';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
-import UpsellPanel, { UpsellPanelProps } from './UpsellPanel';
+import type { UpsellPanelProps } from './UpsellPanel';
+import UpsellPanel from './UpsellPanel';
 
 jest.mock('@proton/components/hooks/useActiveBreakpoint');
 const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFn<typeof useActiveBreakpoint>;

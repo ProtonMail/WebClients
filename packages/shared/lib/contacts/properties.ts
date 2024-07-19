@@ -1,6 +1,6 @@
 import generateUID from '../helpers/generateUID';
-import { ContactValue } from '../interfaces/contacts';
-import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
+import type { ContactValue } from '../interfaces/contacts';
+import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { UID_PREFIX } from './constants';
 import { isMultiValue } from './vcard';
 

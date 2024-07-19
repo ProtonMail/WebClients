@@ -1,10 +1,11 @@
-import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import type { HotkeyTuple } from '@proton/components';
 import {
-    HotkeyTuple,
     Icon,
     SidebarList,
     SidebarListItem,
@@ -24,7 +25,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 

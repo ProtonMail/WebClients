@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
-import { LinkInfo, useActions } from '../../../../store';
+import type { LinkInfo } from '../../../../store';
+import { useActions } from '../../../../store';
 
 interface Props {
     selectedLinks: LinkInfo[];
