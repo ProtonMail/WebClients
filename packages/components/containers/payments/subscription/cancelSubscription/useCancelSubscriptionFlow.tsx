@@ -325,7 +325,12 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             // Splitted users should go to PUT v4 renew because they still have an active subscription in inhouse system
             // And we force them to to the renew cancellation instead of subscription deletion because this case is much
             // simpler to handle
-            const splittedUser = isSplittedUser(user, subscription);
+            const splittedUser = isSplittedUser(
+                user.ChargebeeUser,
+                user.ChargebeeUserExists,
+                subscription.BillingPlatform
+            );
+
             if (
                 hasCancellablePlan(subscription) ||
                 (isCancellationExtended && hasNewCancellablePlan(subscription, user)) ||

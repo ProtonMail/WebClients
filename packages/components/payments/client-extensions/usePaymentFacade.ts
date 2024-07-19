@@ -102,6 +102,8 @@ type PaymentFacadeProps = {
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
     user?: User;
+    forceInhouseSavedMethodProcessors?: boolean;
+    disableNewPaymentMethods?: boolean;
 };
 
 /**
@@ -130,6 +132,8 @@ export const usePaymentFacade = ({
     billingPlatform,
     chargebeeUserExists,
     user,
+    forceInhouseSavedMethodProcessors,
+    disableNewPaymentMethods,
 }: PaymentFacadeProps) => {
     const bitcoinChargebeeEnabled = useFlag('ChargebeeBitcoinFrontend');
 
@@ -201,6 +205,8 @@ export const usePaymentFacade = ({
             enableChargebeeB2B,
             billingPlatform,
             chargebeeUserExists,
+            forceInhouseSavedMethodProcessors,
+            disableNewPaymentMethods,
         },
         {
             api,

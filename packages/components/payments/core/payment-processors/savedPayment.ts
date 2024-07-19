@@ -7,6 +7,8 @@ import {
     ChargeablePaymentParameters,
     ChargeablePaymentToken,
     NonChargeablePaymentToken,
+    SavedPaymentMethod,
+    SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
     V5PaymentToken,
 } from '../interface';
@@ -19,6 +21,24 @@ interface SavedPaymentState {
     };
 }
 
+function convertType(
+    type:
+        | PAYMENT_METHOD_TYPES.CARD
+        | PAYMENT_METHOD_TYPES.PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+): PAYMENT_METHOD_TYPES.CARD | PAYMENT_METHOD_TYPES.PAYPAL {
+    switch (type) {
+        case PAYMENT_METHOD_TYPES.CARD:
+        case PAYMENT_METHOD_TYPES.PAYPAL:
+            return type;
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+            return PAYMENT_METHOD_TYPES.CARD;
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+            return PAYMENT_METHOD_TYPES.PAYPAL;
+    }
+}
+
 export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
     public fetchedPaymentToken: ChargeablePaymentToken | NonChargeablePaymentToken | null = null;
 
@@ -26,14 +46,14 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         public verifyPayment: PaymentVerificator,
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
-        savedMethod: SavedPaymentMethodInternal,
+        savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod,
         public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
                 method: {
                     paymentMethodId: savedMethod.ID,
-                    type: savedMethod.Type,
+                    type: convertType(savedMethod.Type),
                 },
             },
             amountAndCurrency
@@ -77,10 +97,10 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         return this.tokenCreated(token);
     }
 
-    updateSavedMethod(savedMethod: SavedPaymentMethodInternal) {
+    updateSavedMethod(savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod) {
         this.state.method = {
             paymentMethodId: savedMethod.ID,
-            type: savedMethod.Type,
+            type: convertType(savedMethod.Type),
         };
     }
 
