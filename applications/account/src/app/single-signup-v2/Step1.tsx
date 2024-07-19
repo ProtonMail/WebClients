@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import Href from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
 import type { IconName } from '@proton/components/components';
@@ -58,6 +59,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
+import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
@@ -340,6 +342,21 @@ const Step1 = ({
             : c('pass_signup_2023: Action').t`Start using ${appName} now`;
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
     const isOnboardingMode = mode === SignupMode.Onboarding;
+
+    const termsAndConditionsLink = (
+        <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
+            {
+                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+                c('new_plans: signup').t`terms and conditions`
+            }
+        </Href>
+    );
+
+    const termsAndConditions = (
+        <div className="mt-4 text-sm color-weak text-center">
+            {c('pass_signup_2023: Info').jt`By continuing, you agree to our ${termsAndConditionsLink}`}
+        </div>
+    );
 
     const isDarkBg = theme.dark;
 
@@ -957,6 +974,7 @@ const Step1 = ({
                                                                     </span>
                                                                 </div>
                                                             )}
+                                                            {hasSelectedFree && termsAndConditions}
                                                         </>
                                                     );
                                                 }}
@@ -977,6 +995,7 @@ const Step1 = ({
                                 selectedPlan={selectedPlan}
                                 measure={measure}
                                 cta={cta}
+                                terms={termsAndConditions}
                                 key={model.session?.UID || 'free'}
                                 defaultMethod={model.session?.defaultPaymentMethod}
                                 accountStepPaymentRef={accountStepPaymentRef}
