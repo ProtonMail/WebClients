@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import type { SortableContainerProps } from 'react-sortable-hoc';
 
+import { isModalOpen } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import OrderableContainer from '../orderable/OrderableContainer';
@@ -14,21 +15,31 @@ interface Props extends SortableContainerProps {
     helperClassname?: string;
     children?: ReactNode;
     caption?: string;
+    inModal?: boolean;
 }
 
 const OrderableTable = ({ children = [], className = '', helperClassname, caption, ...props }: Props) => {
-    let wrapperRef = useRef<HTMLDivElement | null>(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
+    const inModalRef = useRef(false);
 
     return (
         <div ref={wrapperRef}>
             <OrderableContainer
-                helperClass={clsx(['orderableHelper'])}
                 useDragHandle
                 helperContainer={() => {
-                    const tbodyElement = wrapperRef.current?.querySelector('tbody');
-                    return tbodyElement || document.body;
+                    inModalRef.current = isModalOpen();
+                    if (inModalRef.current) {
+                        return document.body;
+                    } else {
+                        const tbodyElement = wrapperRef.current?.querySelector('tbody');
+                        return tbodyElement || document.body;
+                    }
                 }}
                 onSortStart={({ node, helper }) => {
+                    helper.classList.add('orderableHelper');
+                    if (inModalRef.current) {
+                        helper.classList.add('orderableHelper--inModal');
+                    }
                     // Set the width of each cell in the helper to match the corresponding cell in the node
                     node.childNodes.forEach((child, index) => {
                         if (child instanceof HTMLElement) {
