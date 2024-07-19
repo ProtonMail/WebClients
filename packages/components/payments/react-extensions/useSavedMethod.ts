@@ -9,6 +9,8 @@ import {
     ChargeablePaymentParameters,
     ExistingPaymentMethod,
     PaymentVerificator,
+    SavedPaymentMethod,
+    SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
 } from '../core';
 import { SavedPaymentProcessor } from '../core/payment-processors/savedPayment';
@@ -16,7 +18,7 @@ import { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    savedMethod?: SavedPaymentMethodInternal;
+    savedMethod?: SavedPaymentMethodInternal | SavedPaymentMethodExternal | SavedPaymentMethod;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
     onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;

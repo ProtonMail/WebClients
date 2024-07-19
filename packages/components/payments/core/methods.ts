@@ -25,7 +25,7 @@ import {
     extendStatus,
     isSignupFlow,
 } from './interface';
-import { isOnSessionMigration } from './utils';
+import { isOnSessionMigration, isSplittedUser } from './utils';
 
 export class PaymentMethods {
     public get amount(): number {
@@ -77,7 +77,8 @@ export class PaymentMethods {
         private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
         public enableChargebeeB2B: boolean,
         public billingPlatform: BillingPlatform | undefined,
-        public chargebeeUserExists: ChargebeeUserExists | undefined
+        public chargebeeUserExists: ChargebeeUserExists | undefined,
+        public disableNewPaymentMethods: boolean
     ) {
         this._statusExtended = extendStatus(paymentMethodStatus);
     }
@@ -141,6 +142,10 @@ export class PaymentMethods {
      * payment flow.
      */
     getNewMethods(): AvailablePaymentMethod[] {
+        if (this.disableNewPaymentMethods) {
+            return [];
+        }
+
         const methods: AvailablePaymentMethod[] = [
             {
                 available: this.isCardAvailable(),
@@ -216,14 +221,13 @@ export class PaymentMethods {
     }
 
     private isBitcoinAvailable(): boolean {
-        const isSignup = this.flow === 'signup' || this.flow === 'signup-vpn'; // for signup-pass, bitcoin IS available
-
-        const isInvoice = this.flow === 'invoice';
+        // for signup-pass, bitcoin IS available
+        const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice'];
+        const isEnabledFlow = !disabledFlows.includes(this.flow);
 
         return (
             this.statusExtended.VendorStates.Bitcoin &&
-            !isSignup &&
-            !isInvoice &&
+            isEnabledFlow &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
             this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED &&
@@ -232,10 +236,11 @@ export class PaymentMethods {
     }
 
     private isChargebeeBitcoinAvailable(): boolean {
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
+        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || this.chargebeeMethodsDisabled()) {
             return false;
         }
 
+        // for signup-pass, bitcoin IS available
         const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice', 'credit'];
         const isEnabledFlow = !disabledFlows.includes(this.flow);
 
@@ -262,10 +267,7 @@ export class PaymentMethods {
     }
 
     private isChargebeeCardAvailable(): boolean {
-        const isAddCard = this.flow === 'add-card';
-        const disableCBCreditCard = isAddCard && this.isOnSessionMigration();
-
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || disableCBCreditCard) {
+        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || this.chargebeeMethodsDisabled()) {
             return false;
         }
 
@@ -280,6 +282,7 @@ export class PaymentMethods {
             this.flow === 'signup-pass-upgrade' ||
             this.flow === 'signup-vpn';
 
+        const isAddCard = this.flow === 'add-card';
         const isSubscription = this.flow === 'subscription';
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSignup || isAddCard || isSubscription || isCredit;
@@ -303,7 +306,7 @@ export class PaymentMethods {
     }
 
     private isChargebeePaypalAvailable(): boolean {
-        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
+        if (this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED || this.chargebeeMethodsDisabled()) {
             return false;
         }
 
@@ -340,6 +343,16 @@ export class PaymentMethods {
     private isOnSessionMigration() {
         return isOnSessionMigration(this.chargebeeEnabled, this.billingPlatform);
     }
+
+    private isSplittedUser() {
+        return isSplittedUser(this.chargebeeEnabled, this.chargebeeUserExists, this.billingPlatform);
+    }
+
+    private chargebeeMethodsDisabled() {
+        const isAddCard = this.flow === 'add-card';
+        const isCredit = this.flow === 'credit';
+        return (isAddCard || isCredit) && this.isOnSessionMigration() && !this.isSplittedUser();
+    }
 }
 
 async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
@@ -364,7 +377,8 @@ export async function initializePaymentMethods(
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
     enableChargebeeB2B: boolean,
     billingPlatform?: BillingPlatform,
-    chargebeeUserExists?: ChargebeeUserExists
+    chargebeeUserExists?: ChargebeeUserExists,
+    disableNewPaymentMethods?: boolean
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
@@ -413,6 +427,7 @@ export async function initializePaymentMethods(
         selectedPlanName,
         enableChargebeeB2B,
         billingPlatform,
-        chargebeeUserExists
+        chargebeeUserExists,
+        !!disableNewPaymentMethods
     );
 }
