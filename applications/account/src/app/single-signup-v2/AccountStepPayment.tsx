@@ -1,11 +1,10 @@
-import type { MutableRefObject } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 import { useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Href } from '@proton/atoms/Href';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
@@ -42,7 +41,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
-import { getLocaleTermsURL } from '../content/helper';
 import Guarantee from './Guarantee';
 import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
@@ -77,6 +75,7 @@ interface Props {
     takeNullCreditCard?: boolean;
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
     onBillingAddressChange: OnBillingAddressChange;
+    terms?: ReactNode;
 }
 
 const AccountStepPayment = ({
@@ -96,6 +95,7 @@ const AccountStepPayment = ({
     loadingSignup,
     withLoadingSignup,
     onBillingAddressChange,
+    terms,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -295,15 +295,6 @@ const AccountStepPayment = ({
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
 
-    const termsAndConditions = (
-        <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
-            {
-                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
-                c('new_plans: signup').t`terms and conditions`
-            }
-        </Href>
-    );
-
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">
@@ -464,12 +455,7 @@ const AccountStepPayment = ({
                                         <Guarantee />
                                     )}
                                 </div>
-                                {!isAuthenticated && (
-                                    <div className="mt-4 text-sm color-weak text-center">
-                                        {c('pass_signup_2023: Info')
-                                            .jt`By continuing, you agree to our ${termsAndConditions}`}
-                                    </div>
-                                )}
+                                {!isAuthenticated && terms}
                             </>
                         );
                     })()}
