@@ -32,7 +32,9 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
     }
 
     if (!hasPassword) {
-        return <UnlockModal open onSuccess={() => setHasPassword(true)} />;
+        return (
+            <UnlockModal open={modalProps.open} onCancel={modalProps.onClose} onSuccess={() => setHasPassword(true)} />
+        );
     }
 
     if (viewMnemonic) {
