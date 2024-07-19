@@ -1,6 +1,6 @@
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { PLANS } from '@proton/shared/lib/constants';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const isUserEligibleForBusySlots = (organization: Organization): boolean => {
     const isEligible = [
@@ -8,6 +8,7 @@ export const isUserEligibleForBusySlots = (organization: Organization): boolean 
         PLANS.BUNDLE_PRO_2024, // Business
         PLANS.VISIONARY, // Visionary
         PLANS.FAMILY, // Family
+        PLANS.DUO, // Duo
         PLANS.ENTERPRISE, // Enterprise
         PLANS.MAIL_PRO, // Mail Essentials
         PLANS.MAIL_BUSINESS, // Mail Business
