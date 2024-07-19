@@ -22,7 +22,7 @@ import {
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { APPS, BRAND_NAME, CYCLE, PLANS, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import type { PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -124,11 +124,13 @@ export const getWalletConfiguration = ({
     hideFreePlan,
     isLargeViewport,
     signedIn,
+    plan,
 }: {
     mode: SignupMode;
     audience: Audience.B2B | Audience.B2C;
     hideFreePlan: boolean;
     signedIn: boolean;
+    plan: Plan;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     plansMap?: PlansMap;
@@ -217,7 +219,7 @@ export const getWalletConfiguration = ({
                 </div>
             );
         }
-        if (signedIn) {
+        if (signedIn || plan.Name !== PLANS.FREE) {
             const benefitItems = getWalletBenefits();
             return (
                 benefitItems && (
