@@ -18,6 +18,7 @@ export const getMemberHasAccessToOrgKey = (member: Member) =>
 
 export const getMemberHasMissingOrgKey = (member: Member) => member.AccessToOrgKey === MEMBER_ORG_KEY_STATE.Missing;
 
+export const isOrganizationDuo = (organization?: Organization) => organization?.PlanName === PLANS.DUO;
 export const isOrganizationFamily = (organization?: Organization) => organization?.PlanName === PLANS.FAMILY;
 export const isOrganizationVisionary = (organization?: Organization) => organization?.PlanName === PLANS.VISIONARY;
 
@@ -30,6 +31,7 @@ export const isOrganizationB2B = (organization?: Organization) => {
         PLANS.BUNDLE_PRO_2024,
         PLANS.ENTERPRISE,
         PLANS.FAMILY,
+        PLANS.DUO,
         PLANS.VISIONARY,
     ].includes(organization?.PlanName as PLANS);
 };

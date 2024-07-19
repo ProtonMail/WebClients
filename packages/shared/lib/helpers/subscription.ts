@@ -49,6 +49,7 @@ const {
     BUNDLE_PRO,
     BUNDLE_PRO_2024,
     FAMILY,
+    DUO,
     VPN_PRO,
     VPN_BUSINESS,
     PASS_PRO,
@@ -158,6 +159,7 @@ export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(su
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
 export const hasBundlePro2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO_2024);
 export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, FAMILY);
+export const hasDuo = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DUO);
 export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PRO);
 export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_BUSINESS);
 export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PRO);
@@ -239,7 +241,7 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefin
 };
 
 export const canCheckItemPaidChecklist = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => [MAIL, DRIVE, FAMILY, BUNDLE].includes(Name as any));
+    return subscription?.Plans?.some(({ Name }) => [MAIL, DRIVE, FAMILY, DUO, BUNDLE].includes(Name as any));
 };
 
 export const canCheckItemGetStarted = (subscription: Subscription | undefined) => {
@@ -515,9 +517,9 @@ export interface AggregatedPricing {
 }
 
 function isMultiUserPersonalPlan(plan: Plan) {
-    // even though Family and Visionary plans can have up to 6 users in the org,
+    // even though Duo, Family and Visionary plans can have up to 6 users in the org,
     // for the price displaying purposes we count it as 1 member.
-    return plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY;
+    return plan.Name === PLANS.DUO || plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY;
 }
 
 export function getPlanMembers(plan: Plan, quantity: number, view = true): number {

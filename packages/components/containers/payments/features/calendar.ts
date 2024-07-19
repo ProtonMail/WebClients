@@ -1,7 +1,12 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_CALENDARS_FAMILY, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_APP_NAME, FAMILY_MAX_USERS, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import {
+    MAX_CALENDARS_DUO,
+    MAX_CALENDARS_FAMILY,
+    MAX_CALENDARS_FREE,
+    MAX_CALENDARS_PAID,
+} from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_APP_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -111,6 +116,9 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getNCalendarsPerUserFeature(
                     Math.floor((MAX_CALENDARS_FAMILY ?? plansMap[PLANS.FAMILY]?.MaxCalendars) / FAMILY_MAX_USERS)
                 ),
+                [PLANS.DUO]: getNCalendarsPerUserFeature(
+                    Math.floor((MAX_CALENDARS_DUO ?? plansMap[PLANS.DUO]?.MaxCalendars) / DUO_MAX_USERS)
+                ),
                 [PLANS.BUNDLE_PRO]: getNCalendarsPerUserFeature(
                     MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars
                 ),
@@ -142,6 +150,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS]: getEndToEndEncryption(),
                 [PLANS.WALLET]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
+                [PLANS.DUO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO_2024]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
@@ -163,6 +172,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS]: getShareFeature(plansMap, PLANS.PASS),
                 [PLANS.WALLET]: getShareFeature(plansMap, PLANS.WALLET),
                 [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
+                [PLANS.DUO]: getShareFeature(plansMap, PLANS.DUO),
                 [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
                 [PLANS.BUNDLE_PRO_2024]: getShareFeature(plansMap, PLANS.BUNDLE_PRO_2024, Audience.B2B),
                 [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
@@ -184,6 +194,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS]: getInvitation(),
                 [PLANS.WALLET]: getInvitation(),
                 [PLANS.FAMILY]: getInvitation(),
+                [PLANS.DUO]: getInvitation(),
                 [PLANS.BUNDLE_PRO]: getInvitation(),
                 [PLANS.BUNDLE_PRO_2024]: getInvitation(),
                 [PLANS.MAIL_PRO]: getInvitation(),
@@ -205,6 +216,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS]: null,
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: getTeamAvailability(),
+                [PLANS.DUO]: getTeamAvailability(),
                 [PLANS.BUNDLE_PRO]: getTeamAvailability(),
                 [PLANS.BUNDLE_PRO_2024]: getTeamAvailability(),
                 [PLANS.MAIL_PRO]: getTeamAvailability(),
