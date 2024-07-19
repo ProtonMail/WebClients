@@ -1,8 +1,8 @@
 import { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Router } from 'react-router';
 
-import { render as originalRender } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
+import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
@@ -11,8 +11,15 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import { ApiEnvironmentConfig, CachedOrganizationKey, ProtonConfig } from '@proton/shared/lib/interfaces';
-import { DecryptedKey, MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import {
+    ApiEnvironmentConfig,
+    CachedOrganizationKey,
+    DecryptedKey,
+    MailSettings,
+    ProtonConfig,
+    UserModel,
+    UserSettings,
+} from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock } from '@proton/testing/lib/api';
 import { mockCache } from '@proton/testing/lib/cache';
@@ -165,3 +172,14 @@ export const getCard = (cards: any[], encrypted = false) => {
             Type === (encrypted ? CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED : CONTACT_CARD_TYPE.SIGNED)
     ).Data;
 };
+
+const componentsHookWrapper = ({ children }: { children: any }) => {
+    const { Wrapper } = getStoreWrapper();
+    return (
+        <Wrapper>
+            <TestProvider>{children}</TestProvider>
+        </Wrapper>
+    );
+};
+
+export const componentsHookRenderer = (hook: any) => renderHook(() => hook(), { wrapper: componentsHookWrapper });

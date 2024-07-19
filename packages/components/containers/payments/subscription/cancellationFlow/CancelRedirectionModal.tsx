@@ -34,6 +34,7 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
                 fullWidth
                 path={path}
                 color="norm"
+                data-testid="cancellation-reminder-resubscribe-button"
             >{c('Subscription reminder').t`Reactivate`}</ButtonLike>
         );
     };
@@ -55,6 +56,7 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
                     onClick={() => {
                         sendResubscribeModalCloseReport();
                     }}
+                    data-testid="cancellation-reminder-dashboard-button"
                     path="/dashboard"
                 >{c('Subscription reminder').t`Close`}</ButtonLike>,
             ]}
