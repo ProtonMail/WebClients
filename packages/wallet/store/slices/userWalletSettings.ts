@@ -4,6 +4,7 @@ import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmBitcoinUnit, WasmUserSettings } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
+import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants';
 import { WalletThunkArguments } from '../thunk';
 
 const name = 'user_wallet_setting' as const;
@@ -13,7 +14,18 @@ export interface UserWalletSettingsState {
 }
 
 type SliceState = UserWalletSettingsState[typeof name];
-type Model = NonNullable<SliceState['value']>;
+type Model = NonNullable<SliceState['value']> | undefined;
+
+export const DEFAULT_SETTINGS: WasmUserSettings = {
+    BitcoinUnit: DEFAULT_DISPLAY_BITCOIN_UNIT,
+    FiatCurrency: DEFAULT_FIAT_CURRENCY,
+    HideEmptyUsedAddresses: 0,
+    TwoFactorAmountThreshold: null,
+    ReceiveEmailIntegrationNotification: null,
+    ReceiveInviterNotification: null,
+    WalletCreated: null,
+    AcceptTermsAndConditions: 0,
+};
 
 export const bitcoinUnitChange = createAction('bitcoin unit change', (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({
     payload,
@@ -23,6 +35,8 @@ export const acceptTermsAndConditions = createAction('accept terms and condition
 
 export const selectUserWalletSettings = (state: UserWalletSettingsState) => state[name];
 
+const initialState = getInitialModelState<Model>(DEFAULT_SETTINGS);
+
 const modelThunk = createAsyncModelThunk<Model, UserWalletSettingsState, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.walletApi
@@ -30,12 +44,11 @@ const modelThunk = createAsyncModelThunk<Model, UserWalletSettingsState, WalletT
             .settings.getUserSettings()
             .then((settings) => {
                 return settings[0];
-            });
+            })
+            .catch(() => DEFAULT_SETTINGS);
     },
     previous: previousSelector(selectUserWalletSettings),
 });
-
-const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name,
