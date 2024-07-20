@@ -86,6 +86,7 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
 
                 <iframe
                     className="banxa-iframe"
+                    allow="camera *;microphone *"
                     src={buildUrl(
                         Number(quote.FiatAmount),
                         btcAddress,
