@@ -19,11 +19,13 @@
 		--navigation-current-item-background-color: var(--interaction-norm-minor-2);
 		--navigation-current-item-text-color: var(--interaction-norm-major-1);
 
-		&.active .button {
+		&.active .button,
+		.button[aria-expanded='true']:focus-visible {
 			--button-hover-background-color: var(--interaction-norm-minor-1);
 			--button-default-text-color: var(--navigation-current-item-text-color);
 			--button-hover-text-color: var(--interaction-norm-major-2);
 			--button-active-text-color: var(--navigation-current-item-text-color);
+			--button-active-border-color: var(--focus-outline);
 		}
 
 		&[aria-current='page'] {
