@@ -5,9 +5,10 @@ import { generateUID } from '@proton/components';
 
 import type { LogoProps } from './Logo';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
+type Props = ComponentPropsWithoutRef<'svg'> &
+    Pick<LogoProps, 'variant' | 'size' | 'hasTitle'> & { withBackground?: boolean };
 
-const ProtonForBusinessLogo = ({ ...rest }: Props) => {
+const ProtonForBusinessLogo = ({ withBackground = true, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -23,7 +24,7 @@ const ProtonForBusinessLogo = ({ ...rest }: Props) => {
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
-            <rect width="146" height="36" fill="white" />
+            {withBackground && <rect width="146" height="36" fill="white" />}
             <path
                 d="M69.2681 24.7433V14.0742H75.3465V15.4235H70.6788V18.7812H75.1363V20.1305H70.6788V24.7433H69.2681Z"
                 fill="currentColor"
