@@ -28,6 +28,7 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
     StandardPrivateApp,
+    SubscriptionModalProvider,
 } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
@@ -121,13 +122,15 @@ const App = () => {
                                                         hasPrivateMemberKeyGeneration
                                                         loader={loader}
                                                     >
-                                                        <BitcoinBlockchainContextProvider>
-                                                            <WalletSetupModalContextProvider>
-                                                                <WalletDrawerContextProvider>
-                                                                    <state.MainContainer />
-                                                                </WalletDrawerContextProvider>
-                                                            </WalletSetupModalContextProvider>
-                                                        </BitcoinBlockchainContextProvider>
+                                                        <SubscriptionModalProvider app={config.APP_NAME}>
+                                                            <BitcoinBlockchainContextProvider>
+                                                                <WalletSetupModalContextProvider>
+                                                                    <WalletDrawerContextProvider>
+                                                                        <state.MainContainer />
+                                                                    </WalletDrawerContextProvider>
+                                                                </WalletSetupModalContextProvider>
+                                                            </BitcoinBlockchainContextProvider>
+                                                        </SubscriptionModalProvider>
                                                     </StandardPrivateApp>
                                                 </ErrorBoundary>
                                             </EventManagerProvider>
