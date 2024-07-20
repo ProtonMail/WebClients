@@ -1,3 +1,4 @@
+import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import type { IconProps } from '@proton/components';
 import { Icon } from '@proton/components';
@@ -10,9 +11,22 @@ interface Props {
     onClick: () => void;
     style?: React.CSSProperties;
     size?: IconProps['size'];
+    pill?: ButtonProps['pill'];
+    iconCollapsed?: IconProps['name'];
+    iconExpanded?: IconProps['name'];
 }
 
-export default function SidebarExpandButton({ className, title, expanded, onClick, style, size }: Props) {
+export default function SidebarExpandButton({
+    className,
+    title,
+    expanded,
+    onClick,
+    style,
+    size,
+    pill,
+    iconCollapsed = 'chevron-right-filled',
+    iconExpanded = 'chevron-down-filled',
+}: Props) {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         e.preventDefault();
@@ -30,8 +44,9 @@ export default function SidebarExpandButton({ className, title, expanded, onClic
             title={title}
             style={style}
             data-testid={expanded ? 'sidebar-expanded-folder' : 'sidebar-expand-folder'}
+            pill={pill}
         >
-            <Icon size={size} name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'} alt={title} />
+            <Icon size={size} name={expanded ? iconExpanded : iconCollapsed} alt={title} />
         </Button>
     );
 }
