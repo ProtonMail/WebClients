@@ -60,6 +60,12 @@
 	}
 }
 
+.userDropdown {
+	.dropdown-item .button {
+		border-radius: var(--border-radius-full);
+	}
+}
+
 .toggle-container {
 	&:not(.toggle-container--disabled):hover::before {
 		background-color: var(--interaction-weak-major-2);

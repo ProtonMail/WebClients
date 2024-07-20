@@ -28,18 +28,23 @@ import { WalletExpandButton } from './WalletExpandButton';
 
 interface WalletsSidebarListItemProps {
     wallet: IWasmApiWalletData;
+    decryptedApiWalletsData: IWasmApiWalletData[] | undefined;
     onAddWalletAccount: () => void;
     theme?: SubTheme;
 }
 
-const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme }: WalletsSidebarListItemProps) => {
+const WalletsSidebarListItem = ({
+    wallet,
+    onAddWalletAccount,
+    theme,
+    decryptedApiWalletsData,
+}: WalletsSidebarListItemProps) => {
     const { state: showAccounts, toggle: toggleShowAccounts, set } = useToggle(false);
 
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
 
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
-    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const walletIndex = useMemo(
         () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
@@ -86,7 +91,9 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme }: WalletsSi
                                 shape="ghost"
                                 color="weak"
                                 className="ml-auto shrink-0"
-                                onClick={() => {
+                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                                    e.stopPropagation();
+                                    e.preventDefault();
                                     setWalletPreferencesModalState(true);
                                 }}
                             >
@@ -171,10 +178,12 @@ export const WalletsSidebarList = ({
     onAddWallet,
     onAddWalletAccount,
 }: WalletsSidebarListProps) => {
+    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
+
     return (
         <SidebarListItem>
             <div
-                className="flex flex-nowrap justify-space-between items-center w-full relative"
+                className="flex flex-nowrap justify-space-between items-center w-full relative pr-2"
                 style={{ fontWeight: 'var(--font-weight-weak)' }}
             >
                 <h3 className="text-ellipsis text-lg text-semibold" title={'Wallet'}>
@@ -182,13 +191,20 @@ export const WalletsSidebarList = ({
                 </h3>
 
                 <Tooltip title={c('Wallet Sidebar').t`Create a new wallet`}>
-                    <CoreButton shape="ghost" pill icon onClick={onAddWallet} disabled={loadingApiWalletsData}>
+                    <CoreButton
+                        shape="ghost"
+                        pill
+                        icon
+                        size="small"
+                        onClick={onAddWallet}
+                        disabled={loadingApiWalletsData}
+                    >
                         <Icon name="plus-circle" />
                     </CoreButton>
                 </Tooltip>
             </div>
 
-            {loadingApiWalletsData ? (
+            {!decryptedApiWalletsData ? (
                 <div className="flex">
                     <CircleLoader className="color-primary mx-auto my-5" />
                 </div>
@@ -203,6 +219,7 @@ export const WalletsSidebarList = ({
                                         onAddWalletAccount(wallet);
                                     }}
                                     theme={getThemeByIndex(index)}
+                                    decryptedApiWalletsData={decryptedApiWalletsData}
                                 />
                             </SubSidebarListItem>
                         );
