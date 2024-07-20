@@ -12,10 +12,12 @@ import { WalletSetupModalContext, WalletSetupModalKind } from '.';
 import { WalletCreationModal } from '../../components';
 import { WalletAccountCreationModal } from '../../components/WalletAccountCreationModal';
 import { WalletBackupModal } from '../../components/WalletBackupModal';
+import { WalletEarlyAccessUpgradePrompt } from '../../components/WalletEarlyAccessUpgradePrompt';
 import { WalletTermsAndConditionsPrompt } from '../../components/WalletTermsAndConditionsPrompt';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
 import { MAX_WALLETS_FREE, MAX_WALLET_ACCOUNTS_PER_WALLET_FREE } from '../../constants/wallet';
+import { useUserEligibility } from '../../store/hooks';
 import { SubTheme } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
@@ -31,6 +33,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
     const onCloseRef = useRef<() => void>();
 
     const [settings, loadingSettings] = useUserWalletSettings();
+    const [isEligible, loadingIsEligible] = useUserEligibility();
 
     const [walletUpgradeModal, setWalletUpgradeModal, renderWalletUpgradeModal] =
         useModalStateWithData<WalletUpgradeModalOwnProps>();
@@ -84,6 +87,10 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             {children}
 
             {(() => {
+                if (!isEligible && !loadingIsEligible) {
+                    return <WalletEarlyAccessUpgradePrompt open />;
+                }
+
                 if (decryptedApiWalletsData && !decryptedApiWalletsData.length) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user
                     return <WalletCreationModal theme={SubTheme.ORANGE} open isFirstCreation />;
