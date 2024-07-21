@@ -2,16 +2,17 @@ import { c } from 'ttag';
 
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
-import {
-    type ItemRevision,
-    type ItemRevisionID,
-    type ItemSortFilter,
-    type ItemType,
-    type LoginItem,
-    type MaybeNull,
-    type SafeLoginItem,
-    type SelectedItem,
-    type UniqueItem,
+import type {
+    ItemRevision,
+    ItemRevisionID,
+    ItemSortFilter,
+    ItemType,
+    LoginItem,
+    MaybeNull,
+    SafeLoginItem,
+    SelectedItem,
+    UniqueItem,
+    UnsafeItemExtraField,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
@@ -161,3 +162,6 @@ export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem =>
     shareId: item.shareId,
     url: item.data.content.urls?.[0],
 });
+
+export const extraFieldIntoString = ({ type, data }: UnsafeItemExtraField): string =>
+    type !== 'totp' ? data.content : data.totpUri;
