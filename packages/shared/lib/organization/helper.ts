@@ -38,7 +38,10 @@ export const isOrganizationB2B = (organization?: Organization) => {
 
 /** True if user is part of an organization (works also for org admins) */
 export const isOrganization = (organization?: Organization) =>
-    isOrganizationFamily(organization) || isOrganizationB2B(organization) || isOrganizationVisionary(organization);
+    isOrganizationFamily(organization) ||
+    isOrganizationDuo(organization) ||
+    isOrganizationB2B(organization) ||
+    isOrganizationVisionary(organization);
 
 export enum OrganizationKeyState {
     NoKey,
