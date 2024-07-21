@@ -1,10 +1,12 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
 import { Loader } from '@proton/components/components/loader';
 import { useAddresses, useCalendars, useOrganization, useUser } from '@proton/components/hooks';
-import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
 import { UsagePanel } from '../payments/subscription/panels';
 import LeaveFamilyModal from './LeaveFamilyModal';
@@ -21,6 +23,17 @@ const FamilyPlanSection = () => {
     const isLoading = !organization || organisationLoading || userLoading || calendarsLoading || addressLoading;
 
     const isFamilyPlan = isOrganizationFamily(organization);
+    const isDuoPlan = isOrganizationDuo(organization);
+
+    const content = useMemo(() => {
+        if (isFamilyPlan) {
+            return c('familyOffer_2023:Family plan').t`Leave family plan`;
+        }
+        if (isDuoPlan) {
+            return c('familyOffer_2023:Family plan').t`Leave duo plan`;
+        }
+        return c('familyOffer_2023:Family plan').t`Leave visionary plan`;
+    }, [isFamilyPlan, isDuoPlan]);
 
     return isLoading ? (
         <Loader />
@@ -38,9 +51,7 @@ const FamilyPlanSection = () => {
                             setLeaveFamilyModal(true);
                         }}
                     >
-                        {isFamilyPlan
-                            ? c('familyOffer_2023:Family plan').t`Leave family plan`
-                            : c('familyOffer_2023:Family plan').t`Leave visionary plan`}
+                        {content}
                     </Button>
                 </UsagePanel>
             </div>

@@ -23,7 +23,11 @@ import {
 import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
-import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
+import {
+    isOrganizationDuo,
+    isOrganizationFamily,
+    isOrganizationVisionary,
+} from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
 import { recoveryIds } from './recoveryIds';
@@ -61,9 +65,9 @@ export const getAccountAppRoutes = ({
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
 
-    //Used to determine if a user is on a family plan
-    const isFamilyPlan = !!organization && isOrganizationFamily(organization);
-    const isFamilyPlanMember = isFamilyPlan && isMember && isPaid;
+    // Used to determine if a user is on a family plan or a duo plan
+    const isFamilyOrDuoPlan = !!organization && (isOrganizationFamily(organization) || isOrganizationDuo(organization));
+    const isFamilyOrDuoPlanMember = isFamilyOrDuoPlan && isMember && isPaid;
 
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
@@ -207,30 +211,30 @@ export const getAccountAppRoutes = ({
                         id: 'two-fa',
                     },
                     {
-                        text: isFamilyPlan
+                        text: isFamilyOrDuoPlan
                             ? c('familyOffer_2023:Title').t`Family plan`
                             : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
                         // We don't want admin to leave the organization, they need first to be demoted
-                        available: !isAdmin && (isFamilyPlan || (isVisionaryPlan && isMemberProton)),
+                        available: !isAdmin && (isFamilyOrDuoPlan || (isVisionaryPlan && isMemberProton)),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
-                        available: isFamilyPlanMember || (isVisionaryPlan && isMemberProton),
+                        available: isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the credits for them here
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
-                        available: isFamilyPlanMember || (isVisionaryPlan && isMemberProton),
+                        available: isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the invoices for them here
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: isFamilyPlanMember || (isVisionaryPlan && isMemberProton),
+                        available: isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton),
                     },
                     {
                         text: c('Title').t`Delete account`,
