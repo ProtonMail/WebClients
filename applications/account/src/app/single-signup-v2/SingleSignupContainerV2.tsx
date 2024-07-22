@@ -384,7 +384,7 @@ const SingleSignupContainerV2 = ({
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
         const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
 
-        if (toApp === APPS.PROTONDRIVE) {
+        if (toApp === APPS.PROTONDRIVE || toApp === APPS.PROTONDOCS) {
             return getDriveConfiguration({
                 audience,
                 freePlan: model.freePlan,
@@ -503,7 +503,7 @@ const SingleSignupContainerV2 = ({
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
         const flow = (() => {
-            if (toApp === APPS.PROTONDRIVE) {
+            if (toApp === APPS.PROTONDRIVE || toApp === APPS.PROTONDOCS) {
                 if (audience === Audience.B2B) {
                     return 'drive_signup_b2b';
                 }

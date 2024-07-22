@@ -17,6 +17,10 @@ export const normalizeProduct = (product: ProductParam) => {
     if (product === APPS.PROTONVPN_SETTINGS) {
         return 'vpn';
     }
+    // Docs is a sub-product of drive and doesn't have its own attribution as of now, so use drive
+    if (product === APPS.PROTONDOCS) {
+        return 'drive';
+    }
     return product.replace('proton-', '');
 };
 
@@ -27,7 +31,7 @@ export interface ProductHeaderContext {
 }
 
 function notifySentry(normalizedProduct: string | undefined, context?: ProductHeaderContext) {
-    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'pass', 'wallet', 'docs'].includes(
+    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'pass', 'wallet'].includes(
         '' + normalizedProduct
     );
     if (!isAllowed) {
