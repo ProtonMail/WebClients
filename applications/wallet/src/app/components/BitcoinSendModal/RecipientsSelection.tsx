@@ -202,41 +202,53 @@ export const RecipientsSelection = ({
                     }
                 } catch (error: any) {
                     const code = error.code as number;
+
                     if (code === 2028) {
                         createNotification({ text: error.details, type: 'error' });
                         return;
                     }
-                    const errorCode =
-                        code === 2001
-                            ? InvalidRecipientErrorCode.CouldNotFindProtonWallet
-                            : InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail;
-                    const type =
-                        errorCode === InvalidRecipientErrorCode.CouldNotFindProtonWallet
-                            ? 'Newcomer'
-                            : 'EmailIntegration';
 
-                    const hasRecipientSentInvite =
-                        !inviterAddressID ||
-                        checkHasSentInvite(recipientOrBitcoinAddress.Address) ||
-                        (await walletApi.invite
+                    if (code === 2000) {
+                        return addInvalidRecipient(
+                            recipientOrBitcoinAddress,
+                            InvalidRecipientErrorCode.NoBitcoinAddressAvailable
+                        );
+                    }
+
+                    const [errorCode, type, text] =
+                        code === 2001
+                            ? ([
+                                  InvalidRecipientErrorCode.CouldNotFindProtonWallet,
+                                  'Newcomer',
+                                  c('Bitcoin send')
+                                      .t`This email is not using a ${WALLET_APP_NAME} yet. Invite them to create their own wallet for easier transactions.`,
+                              ] as const)
+                            : ([
+                                  InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail,
+                                  'EmailIntegration',
+                                  c('Bitcoin send')
+                                      .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`,
+                              ] as const);
+
+                    const checkHasRecipientSentInvite = () => {
+                        if (!inviterAddressID || checkHasSentInvite(recipientOrBitcoinAddress.Address)) {
+                            return false;
+                        }
+
+                        return walletApi.invite
                             .checkInviteStatus(recipientOrBitcoinAddress.Address, type, inviterAddressID)
                             .then(() => false)
                             .catch(() => {
                                 setCanSendInvite(false);
-                            }));
+                            });
+                    };
 
-                    if (hasRecipientSentInvite) {
+                    if (await checkHasRecipientSentInvite()) {
                         addRecipientWithSentInvite(recipientOrBitcoinAddress.Address);
                     } else {
-                        const msg =
-                            errorCode === InvalidRecipientErrorCode.CouldNotFindProtonWallet
-                                ? c('Bitcoin send')
-                                      .t`This email is not using a ${WALLET_APP_NAME} yet. Invite them to create their own wallet for easier transactions.`
-                                : c('Bitcoin send')
-                                      .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`;
                         setWalletNotFoundModal({
                             email: recipientOrBitcoinAddress.Address,
-                            textContent: msg,
+                            textContent: text,
                             error: errorCode,
                             inviterAddressID: inviterAddressID,
                         });
@@ -309,6 +321,13 @@ export const RecipientsSelection = ({
                             return (
                                 <span className="block text-sm color-danger w-1/3">{c('Wallet send')
                                     .t`Address is neither a valid bitcoin or email address`}</span>
+                            );
+                        }
+
+                        if (error === InvalidRecipientErrorCode.NoBitcoinAddressAvailable) {
+                            return (
+                                <span className="block text-sm color-danger w-1/3">{c('Wallet send')
+                                    .t`Recipient has no bitcoin address available`}</span>
                             );
                         }
 

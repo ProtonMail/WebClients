@@ -24,7 +24,7 @@ export const InvitesButton = ({ walletAccount }: Props) => {
     const [sendInviteModal, setSendInviteModal] = useModalState();
     const [inviteSentConfirmationModal, setInviteSentConfirmationModal] = useModalStateWithData<{ email: string }>();
 
-    const address = walletAccount?.Addresses[0].ID ?? primaryAddress.ID;
+    const address = walletAccount?.Addresses?.[0]?.ID ?? primaryAddress.ID;
 
     const availableInvites = remainingInvites?.available ?? 0;
 
