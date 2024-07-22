@@ -8,14 +8,12 @@ import {
     LoaderPage,
     LocationErrorBoundary,
     ModalsChildren,
-    useWelcomeFlags,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
-import DriveOnboardingModal from '../components/modals/DriveOnboardingModal';
 import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
@@ -58,7 +56,6 @@ const InitContainer = () => {
     const [error, setError] = useState();
     const [defaultShareRoot, setDefaultShareRoot] =
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
-    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const { searchEnabled } = useSearchControl();
     const driveEventManager = useDriveEventManager();
     const [hasPhotosShare, setHasPhotosShare] = useState(false);
@@ -121,7 +118,6 @@ const InitContainer = () => {
             <ModalsChildren />
             <TransferManager />
             <GiftFloatingButton />
-            {!welcomeFlags.isDone && <DriveOnboardingModal open onDone={setWelcomeFlagsDone} />}
             <DriveWindow>
                 <Switch>
                     <Route path="/devices" component={DevicesContainer} />
