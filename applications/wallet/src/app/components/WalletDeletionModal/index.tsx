@@ -1,7 +1,11 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
+import { AuthModal } from '@proton/components/containers';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
@@ -15,6 +19,7 @@ interface Props extends ModalOwnProps {
 }
 
 export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
+    const [authed, setAuthed] = useState(false);
     const { loadingDeletion, handleWalletDeletion, openBackupModal } = useWalletDeletion({
         wallet,
         onDeletion: () => {
@@ -23,6 +28,19 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
     });
 
     const { totalBalance } = useBalance(wallet);
+
+    if (!authed) {
+        return (
+            <AuthModal
+                open={modalProps.open}
+                onCancel={modalProps.onClose}
+                config={unlockPasswordChanges()}
+                onSuccess={async () => {
+                    setAuthed(true);
+                }}
+            />
+        );
+    }
 
     return (
         <Prompt
