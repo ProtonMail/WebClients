@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { WasmApiEmailAddress } from '@proton/andromeda';
 import { Toggle, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
-import { useMembers, useUser } from '@proton/components/hooks';
+import { useAddresses, useOrganization, useUser } from '@proton/components/hooks';
 
 import { EmailAddressCreationModal } from '../../EmailAddressCreationModal';
 import { WalletUpgradeModal } from '../../WalletUpgradeModal';
@@ -34,12 +34,13 @@ export const EmailIntegrationInput = ({
     onAddAddress,
     onReplaceAddress,
 }: Props) => {
+    const [organization] = useOrganization();
     const [emailIntegrationModal, setEmailIntegrationModal] = useModalState();
     const [emailCreationModal, setEmailCreationModal] = useModalState();
     const [walletUpgradeModal, setWalletUpgradeModal] = useModalState();
 
     const [user] = useUser();
-    const [members] = useMembers();
+    const [addresses] = useAddresses();
 
     const linkedEmail: WasmApiEmailAddress | undefined = value?.[0];
 
@@ -88,7 +89,7 @@ export const EmailIntegrationInput = ({
                 }}
                 canCreateAddress={canCreateAddress}
                 onAddressCreation={() => {
-                    if (members?.length) {
+                    if ((addresses?.length ?? 0) < (organization?.MaxAddresses ?? 0)) {
                         setEmailCreationModal(true);
                     } else {
                         setWalletUpgradeModal(true);
