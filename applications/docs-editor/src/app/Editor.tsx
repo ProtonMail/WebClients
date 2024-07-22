@@ -4,16 +4,15 @@ import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useMemo } from 'react'
-import { Provider } from '@lexical/yjs'
+import type { Provider } from '@lexical/yjs'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
-import {
+import type {
   EditorRequiresClientMethods,
-  LexicalDocProvider,
   YDocMap,
   DocStateInterface,
-  getAccentColorForUsername,
   EditorInitializationConfig,
 } from '@proton/docs-shared'
+import { LexicalDocProvider, getAccentColorForUsername } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from './Tools/MarkdownTransformers'
@@ -29,11 +28,11 @@ import TableCellResizerPlugin from './Plugins/TableCellResizer'
 import { LinkInfoPlugin } from './Plugins/Link/LinkInfoPlugin'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { DefaultFont } from './Shared/Fonts'
-import { LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 import { sendErrorMessage } from './Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
-import { DocumentInteractionMode } from './DocumentInteractionMode'
+import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import { TablePlugin } from './Plugins/Table/TablePlugin'
 import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
@@ -130,7 +129,7 @@ export function Editor({
               }}
             >
               <ContentEditable
-                className="DocumentEditor w-full md:max-w-[80%] lg:max-w-[50%] print:w-full print:max-w-full"
+                className="DocumentEditor w-[80%] max-w-[80%] lg:w-[816px] lg:max-w-[816px] print:w-full print:max-w-full"
                 style={{
                   fontFamily: DefaultFont.value,
                   gridRow: 1,
