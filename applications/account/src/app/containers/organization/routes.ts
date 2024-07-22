@@ -68,7 +68,7 @@ export const getOrganizationAppRoutes = ({
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
     return {
-        available: canHaveOrganization,
+        available: canHaveOrganization && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
             users: <SectionConfig>{
