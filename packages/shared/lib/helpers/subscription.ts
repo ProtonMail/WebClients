@@ -197,7 +197,7 @@ export const hasPlanWithAIAssistantIncluded = (subscription: MaybeFreeSubscripti
     hasSomeAddonOrPlan(subscription, PLANS_WITH_AI_INCLUDED);
 
 export const hasAllProductsB2CPlan = (subscription: MaybeFreeSubscription) =>
-    hasFamily(subscription) || hasBundle(subscription) || hasVisionary(subscription);
+    hasDuo(subscription) || hasFamily(subscription) || hasBundle(subscription) || hasVisionary(subscription);
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
