@@ -54,10 +54,6 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
                 onBack();
             }
 
-            if ([RampInstantEventTypes.PURCHASE_CREATED, 'onTransactionCompleted'].includes(event?.data.type)) {
-                onDone();
-            }
-
             // eslint-disable-next-line no-console
             console.log('event', event);
         };
