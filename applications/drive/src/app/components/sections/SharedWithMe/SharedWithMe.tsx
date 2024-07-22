@@ -179,7 +179,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
             />
             <FileBrowser
                 caption={c('Title').t`Shared`}
-                items={[...browserItems, ...pendingInvitationsItems]}
+                items={[...pendingInvitationsItems, ...browserItems]}
                 headerItems={headerItems}
                 layout={layout}
                 loading={isLoading}
