@@ -49,7 +49,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         await call();
         modalProps.onClose();
         createNotification({
-            text: c('familyOffer_2023:Family plan').t`You have successfully joined the Family plan`,
+            text: c('familyOffer_2023:Family plan').t`You have successfully joined the organization`,
         });
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
             // Force refresh the organization since it's not present in the event manager
