@@ -2,28 +2,22 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type {
-    WasmApiExchangeRate,
-    WasmApiWalletAccount,
-    WasmBitcoinUnit,
-    WasmRecipient,
-    WasmTxBuilder,
-} from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmRecipient, WasmTxBuilder } from '@proton/andromeda';
 import { Icon, Tooltip } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { useUserWalletSettings } from '@proton/wallet';
 
-import { Button, CoreButton } from '../../atoms';
-import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
-import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
-import { usePsbt } from '../../hooks/usePsbt';
-import type { TxBuilderUpdater } from '../../hooks/useTxBuilder';
-import { useExchangeRate } from '../../store/hooks';
-import type { AccountWithChainData } from '../../types';
-import { getAccountBalance } from '../../utils';
-import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
-import { EmailListItem } from '../EmailListItem';
-import type { BtcAddressMap } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { Button, CoreButton } from '../../../atoms';
+import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { usePsbt } from '../../../hooks/usePsbt';
+import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
+import { useExchangeRate } from '../../../store/hooks';
+import type { AccountWithChainData } from '../../../types';
+import { getAccountBalance, getExchangeRateFromBitcoinUnit } from '../../../utils';
+import { useAsyncValue } from '../../../utils/hooks/useAsyncValue';
+import { EmailListItem } from '../../EmailListItem';
+import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { BitcoinAmountInputWithBalanceAndCurrencySelect } from './BitcoinAmountInputWithBalanceAndCurrencySelect';
 
 interface Props {
     txBuilder: WasmTxBuilder;
@@ -32,7 +26,7 @@ interface Props {
     account: AccountWithChainData;
     apiAccount: WasmApiWalletAccount;
     onBack: () => void;
-    onReview: (unit: WasmBitcoinUnit | WasmApiExchangeRate) => void;
+    onReview: (exchangeRate: WasmApiExchangeRate) => void;
 }
 
 export const AmountInput = ({
@@ -266,7 +260,7 @@ export const AmountInput = ({
                             }
                         });
 
-                        onReview(exchangeRate ?? settings.BitcoinUnit);
+                        onReview(exchangeRate ?? getExchangeRateFromBitcoinUnit(settings.BitcoinUnit));
                     }}
                     disabled={Boolean(err) || txBuilder.getRecipients().every((r) => !r[2])}
                 >{c('Wallet send').t`Review`}</Button>

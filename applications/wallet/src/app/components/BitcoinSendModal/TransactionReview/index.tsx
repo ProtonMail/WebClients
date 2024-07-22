@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -9,18 +9,17 @@ import { useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
-import { secondaryAmount } from '../../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
 import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
-import { isExchangeRate } from '../../../utils';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import type { RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { TextAreaModal } from '../../TextAreaModal';
+import { secondaryAmount } from '../AmountInput/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { FeesModal } from './FeesModal';
 import { useTransactionReview } from './useTransactionReview';
 
@@ -30,7 +29,7 @@ interface Props {
     isUsingBitcoinViaEmail: boolean;
     wallet: IWasmApiWalletData;
     account: WasmApiWalletAccount;
-    unit: WasmBitcoinUnit | WasmApiExchangeRate;
+    exchangeRate: WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
     btcAddressMap: BtcAddressMap;
@@ -44,7 +43,7 @@ export const TransactionReview = ({
     isUsingBitcoinViaEmail,
     wallet,
     account,
-    unit,
+    exchangeRate,
     txBuilder,
     btcAddressMap,
     onBackToEditRecipients,
@@ -75,7 +74,7 @@ export const TransactionReview = ({
         isUsingBitcoinViaEmail,
         wallet,
         account,
-        unit,
+        exchangeRate,
         txBuilder,
         btcAddressMap,
         onSent,
@@ -103,13 +102,13 @@ export const TransactionReview = ({
 
                     <div>
                         <BitcoinAmountInput
-                            unit={unit}
+                            unit={exchangeRate}
                             unstyled
                             className="h1 invisible-number-input-arrow"
                             inputClassName="p-0"
                             style={{ fontSize: '3.75rem' }}
                             value={totalSentAmount}
-                            prefix={typeof unit === 'object' ? unit.FiatCurrency : unit}
+                            prefix={typeof exchangeRate === 'object' ? exchangeRate.FiatCurrency : exchangeRate}
                         />
                     </div>
 
@@ -118,7 +117,7 @@ export const TransactionReview = ({
                             key: 'hint-secondary-amount',
                             settingsBitcoinUnit: settings.BitcoinUnit,
                             secondaryExchangeRate: accountExchangeRate,
-                            exchangeRateOrBitcoinUnit: unit,
+                            primaryExchangeRate: exchangeRate,
                             value: totalSentAmount,
                         })}
                     </span>
@@ -165,7 +164,9 @@ export const TransactionReview = ({
                                                         bitcoin={Number(amount)}
                                                         unit={{ value: settings.BitcoinUnit }}
                                                         exchangeRate={
-                                                            isExchangeRate(unit) ? { value: unit } : undefined
+                                                            'isBitcoinRate' in exchangeRate
+                                                                ? undefined
+                                                                : { value: exchangeRate }
                                                         }
                                                         firstClassName="text-right"
                                                         secondClassName="text-right"
@@ -224,14 +225,16 @@ export const TransactionReview = ({
                             <div className="color-weak mb-4 mt-3 text-semibold">{c('Wallet transaction')
                                 .t`Network fee`}</div>
 
-                            <div className="mb-1">{unit && <Price satsAmount={totalFees} unit={unit} />}</div>
+                            <div className="mb-1">
+                                {exchangeRate && <Price satsAmount={totalFees} unit={exchangeRate} />}
+                            </div>
 
                             <span className="block color-hint">
                                 {secondaryAmount({
                                     key: 'hint-fiat-amount',
                                     settingsBitcoinUnit: settings.BitcoinUnit,
                                     secondaryExchangeRate: accountExchangeRate,
-                                    exchangeRateOrBitcoinUnit: unit,
+                                    primaryExchangeRate: exchangeRate,
                                     value: totalFees,
                                 })}
                             </span>
@@ -252,7 +255,7 @@ export const TransactionReview = ({
                         </CoreButton>
 
                         <FeesModal
-                            unit={unit}
+                            exchangeRate={exchangeRate}
                             txBuilder={txBuilder}
                             updateTxBuilder={updateTxBuilder}
                             getFeesByBlockTarget={getFeesByBlockTarget}
@@ -268,14 +271,16 @@ export const TransactionReview = ({
                                 .t`Total (Amount + fee)`}</div>
                         </div>
 
-                        <div className="mb-1">{unit && <Price satsAmount={totalAmount} unit={unit} />}</div>
+                        <div className="mb-1">
+                            {exchangeRate && <Price satsAmount={totalAmount} unit={exchangeRate} />}
+                        </div>
 
                         <span className="block color-hint">
                             {secondaryAmount({
                                 key: 'hint-total-amount',
                                 settingsBitcoinUnit: settings.BitcoinUnit,
                                 secondaryExchangeRate: accountExchangeRate,
-                                exchangeRateOrBitcoinUnit: unit,
+                                primaryExchangeRate: exchangeRate,
                                 value: totalAmount,
                             })}
                         </span>
