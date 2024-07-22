@@ -30,7 +30,10 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
         <>
             <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run locally`}</div>
             <span className="shrink-0">
-                <Info title={c('Assistant option').t`No data transmitted while using, requires one-time download`} />
+                <Info
+                    title={c('Assistant option')
+                        .t`Prompts stay on your device but requires a one-time download and compatible hardware`}
+                />
             </span>
         </>
     );
