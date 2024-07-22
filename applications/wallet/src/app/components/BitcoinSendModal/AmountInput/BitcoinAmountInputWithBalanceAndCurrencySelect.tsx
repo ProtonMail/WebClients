@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiFiatCurrency, WasmBitcoinUnit } from '@proton/andromeda';
 import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY, useUserWalletSettings } from '@proton/wallet';
 
-import { useFiatCurrencies, useGetExchangeRate } from '../store/hooks';
-import { convertAmountStr, getExchangeRateFromBitcoinUnit, getLabelByUnit, isExchangeRate } from '../utils';
-import { BitcoinAmountInput } from './BitcoinAmountInput';
-import { CoreButton } from './Button';
-import type { BitcoinCurrency } from './CurrencySelect';
-import { CurrencySelect, DEFAULT_POPULAR_SYMBOLS } from './CurrencySelect';
-import { Price } from './Price';
+import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { CoreButton } from '../../../atoms/Button';
+import type { BitcoinCurrency } from '../../../atoms/CurrencySelect';
+import { CurrencySelect, DEFAULT_POPULAR_SYMBOLS } from '../../../atoms/CurrencySelect';
+import { Price } from '../../../atoms/Price';
+import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
+import { convertAmountStr, getExchangeRateFromBitcoinUnit, getLabelByUnit } from '../../../utils';
 
 interface Props {
     remainingBalance: number;
@@ -27,26 +27,18 @@ interface Props {
 
 export const secondaryAmount = ({
     key,
-    exchangeRateOrBitcoinUnit,
+    primaryExchangeRate,
     secondaryExchangeRate,
     value,
     settingsBitcoinUnit,
 }: {
     key: string;
-    exchangeRateOrBitcoinUnit: WasmApiExchangeRate | WasmBitcoinUnit;
+    primaryExchangeRate: WasmApiExchangeRate;
     secondaryExchangeRate?: WasmApiExchangeRate;
     value: number;
     settingsBitcoinUnit: WasmBitcoinUnit;
 }) => {
-    if (!isExchangeRate(exchangeRateOrBitcoinUnit)) {
-        return null;
-    }
-
-    if (
-        (['BTC', 'SATS', 'MBTC'] as WasmBitcoinUnit[]).includes(
-            exchangeRateOrBitcoinUnit.FiatCurrency as WasmBitcoinUnit
-        )
-    ) {
+    if ('isBitcoinRate' in primaryExchangeRate) {
         if (!secondaryExchangeRate) {
             return null;
         }
@@ -87,8 +79,8 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
         }
     };
 
-    const exchangeRateOrBitcoinUnit = exchangeRate ?? settings.BitcoinUnit;
-    const exchangeRateSymbolOrBitcoinUnit = exchangeRate?.FiatCurrency ?? settings.BitcoinUnit;
+    const exchangeRateOrBitcoinUnit = exchangeRate ?? getExchangeRateFromBitcoinUnit(settings.BitcoinUnit);
+    const exchangeRateSymbolOrBitcoinUnit = exchangeRate?.FiatCurrency;
 
     const price = <Price key="available-amount" satsAmount={remainingBalance} unit={exchangeRateOrBitcoinUnit} />;
 
@@ -144,7 +136,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                     key: 'amount-hint',
                     settingsBitcoinUnit: settings.BitcoinUnit,
                     secondaryExchangeRate,
-                    exchangeRateOrBitcoinUnit,
+                    primaryExchangeRate: exchangeRateOrBitcoinUnit,
                     value,
                 })}
             </span>

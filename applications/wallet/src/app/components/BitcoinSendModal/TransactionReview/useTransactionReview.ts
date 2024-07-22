@@ -3,20 +3,19 @@ import { useEffect, useState } from 'react';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
 import { useAddresses, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { usePsbt } from '../../../hooks/usePsbt';
-import { isExchangeRate } from '../../../utils';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
 export const useTransactionReview = ({
     isUsingBitcoinViaEmail,
     wallet,
     account,
-    unit,
+    exchangeRate,
     txBuilder,
     btcAddressMap,
     onSent,
@@ -24,7 +23,7 @@ export const useTransactionReview = ({
     isUsingBitcoinViaEmail: boolean;
     wallet: IWasmApiWalletData;
     account: WasmApiWalletAccount;
-    unit: WasmBitcoinUnit | WasmApiExchangeRate;
+    exchangeRate: WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
     btcAddressMap: BtcAddressMap;
     onSent: () => void;
@@ -73,7 +72,7 @@ export const useTransactionReview = ({
             await signAndBroadcastPsbt({
                 apiAccount: account,
                 apiWalletData: wallet,
-                exchangeRateId: isExchangeRate(unit) ? unit?.ID : undefined,
+                exchangeRateId: 'isBitcoinRate' in exchangeRate ? undefined : exchangeRate?.ID,
                 noteToSelf: noteToSelf || undefined,
                 /**
                  * We don't want to send message field to the API if:

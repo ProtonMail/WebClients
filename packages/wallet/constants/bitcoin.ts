@@ -1,26 +1,9 @@
-import { WasmBitcoinUnit, WasmScriptType, WasmWordCount } from '@proton/andromeda';
+import type { WasmBitcoinUnit} from '@proton/andromeda';
+import { WasmScriptType, WasmWordCount } from '@proton/andromeda';
 
 export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
 export const mBITCOIN = BITCOIN / 1000;
-
-export const BITCOIN_CURRENCY = {
-    Symbol: 'BTC' as WasmBitcoinUnit,
-    Name: 'Bitcoin',
-    Sign: '₿',
-    Cents: BITCOIN,
-    ID: '-1',
-    isBitcoinUnit: true,
-};
-
-export const SATS_CURRENCY = {
-    Symbol: 'SATS' as WasmBitcoinUnit,
-    Name: 'Sats',
-    Sign: '₿',
-    Cents: SATOSHI,
-    ID: '-2',
-    isBitcoinUnit: true,
-};
 
 export const CENTS_BY_BITCOIN_UNIT: Record<WasmBitcoinUnit, number> = {
     ['BTC']: BITCOIN,
@@ -71,3 +54,21 @@ export const wordCountToNumber: Record<WasmWordCount, number> = {
 };
 
 export const FIRST_INDEX = 0;
+
+export const BITCOIN_CURRENCY = {
+    Symbol: 'BTC' as WasmBitcoinUnit,
+    Name: 'Bitcoin',
+    Sign: '₿',
+    Cents: BITCOIN,
+    ID: '-1',
+    isBitcoinUnit: true,
+};
+
+export const SATS_CURRENCY = {
+    Symbol: 'SATS' as WasmBitcoinUnit,
+    Name: 'Sats',
+    Sign: '₿',
+    Cents: SATOSHI,
+    ID: '-2',
+    isBitcoinUnit: true,
+};

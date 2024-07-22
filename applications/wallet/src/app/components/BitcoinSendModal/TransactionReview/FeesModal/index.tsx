@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmTxBuilder } from '@proton/andromeda';
 import type { IconName } from '@proton/components/components';
 import { Icon, Tooltip } from '@proton/components/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
@@ -13,18 +13,17 @@ import { BitcoinAmount, Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
 import { usePsbt } from '../../../../hooks/usePsbt';
 import type { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
-import { isExchangeRate } from '../../../../utils';
 
 import './FeesModal.scss';
 
 interface Props extends ModalOwnProps {
-    unit: WasmBitcoinUnit | WasmApiExchangeRate;
+    exchangeRate: WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
     getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
-export const FeesModal = ({ unit, txBuilder, updateTxBuilder, getFeesByBlockTarget, ...modalProps }: Props) => {
+export const FeesModal = ({ exchangeRate, txBuilder, updateTxBuilder, getFeesByBlockTarget, ...modalProps }: Props) => {
     const [settings] = useUserWalletSettings();
     const { createDraftPsbt } = usePsbt({ txBuilder });
 
@@ -104,7 +103,7 @@ export const FeesModal = ({ unit, txBuilder, updateTxBuilder, getFeesByBlockTarg
                             <BitcoinAmount
                                 bitcoin={feesAtFeeRate}
                                 unit={{ value: settings.BitcoinUnit }}
-                                exchangeRate={isExchangeRate(unit) ? { value: unit } : undefined}
+                                exchangeRate={'isBitcoinRate' in exchangeRate ? undefined : { value: exchangeRate }}
                                 firstClassName="text-right"
                                 secondClassName="text-right"
                             />
