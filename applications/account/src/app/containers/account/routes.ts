@@ -212,7 +212,7 @@ export const getAccountAppRoutes = ({
                     },
                     {
                         text: isFamilyOrDuoPlan
-                            ? c('familyOffer_2023:Title').t`Family plan`
+                            ? c('familyOffer_2023:Title').t`Family`
                             : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
                         // We don't want admin to leave the organization, they need first to be demoted
