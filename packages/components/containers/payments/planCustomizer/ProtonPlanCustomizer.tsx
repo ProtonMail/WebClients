@@ -4,7 +4,8 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { SelectedPlan } from '@proton/components/payments/core';
-import { ADDON_NAMES, AddonKey, AddonLimit, GIGA } from '@proton/shared/lib/constants';
+import type { ADDON_NAMES } from '@proton/shared/lib/constants';
+import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
     getSupportedAddons,
@@ -97,7 +98,6 @@ const AddonCustomizer = ({
     const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
 
     const min: number = getMaxValue(currentPlan, addonMaxKey);
-    const max = AddonLimit[addonNameKey] * addonMultiplier;
 
     // Member addon comes with MaxSpace + MaxAddresses
     const value = isSupported
@@ -106,9 +106,6 @@ const AddonCustomizer = ({
               const multiplier: number = getMaxValue(plansMap[planName], addonMaxKey);
               return acc + quantity * multiplier;
           }, 0);
-
-    const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
-    let maxTotal = max / divider;
 
     const addonPricePerCycle = addon.Pricing[cycle] || 0;
     const addonPriceInline = (
@@ -166,29 +163,28 @@ const AddonCustomizer = ({
             return applyForbiddenModificationLimitation(minNumberOfServers);
         }
 
-        return applyForbiddenModificationLimitation(min / divider);
+        return applyForbiddenModificationLimitation(min);
     })();
 
     const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
-    if (isScribeAddon(addonNameKey)) {
-        // The total number of GPT addons can't be higher than the total number of members
-        maxTotal = selectedPlan.getTotalMembers();
-    }
+    // The total number of GPT addons can't be higher than the total number of members
+    const max = isScribeAddon(addonNameKey)
+        ? selectedPlan.getTotalMembers()
+        : AddonLimit[addonNameKey] * addonMultiplier;
 
-    const displayValue = value / divider;
     const input = (
         <ButtonNumberInput
             key={`${addon.Name}-input`}
             id={addon.Name}
-            value={displayValue}
+            value={value}
             min={displayMin}
-            max={maxTotal}
+            max={max}
             disabled={loading || !isSupported}
             onChange={(newQuantity) => {
-                const newValue = (newQuantity * divider - min) / addonMultiplier;
+                const newValue = (newQuantity - min) / addonMultiplier;
                 let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
                 if (isMemberAddon(addonNameKey) && scribeAddonKey) {
-                    const membersValue = displayValue;
+                    const membersValue = value;
                     const scribeValue = planIDs[scribeAddonKey];
                     const scribeConstrain = membersValue === scribeValue;
                     if (scribeConstrain) {
@@ -210,7 +206,7 @@ const AddonCustomizer = ({
                 addon={addon}
                 price={addonPriceInline}
                 input={input}
-                maxUsers={maxTotal}
+                maxUsers={max}
                 showDescription={showAddonDescriptions}
                 showTooltip={showUsersTooltip}
             />
@@ -237,7 +233,7 @@ const AddonCustomizer = ({
                 price={addonPriceInline}
                 input={input}
                 showDescription={showAddonDescriptions}
-                maxIPs={maxTotal}
+                maxIPs={max}
             />
         );
     }
@@ -249,11 +245,11 @@ const AddonCustomizer = ({
                 addon={addon}
                 price={addonPriceInline}
                 input={input}
-                maxUsers={maxTotal}
+                maxUsers={max}
                 showScribeBanner={showScribeBanner}
                 onShowScribeBanner={() => {
                     setShowScribeBanner(false);
-                    onChangePlanIDs(setQuantity(planIDs, addon.Name, maxTotal));
+                    onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
                 }}
                 showDescription={showAddonDescriptions}
                 showTooltip={showUsersTooltip}
