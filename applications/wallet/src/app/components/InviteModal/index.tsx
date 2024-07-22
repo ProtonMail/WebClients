@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components/components';
-import { Logo } from '@proton/components/components';
+import { Prompt, Tooltip } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import walletExclusiveInvites from '@proton/styles/assets/img/illustrations/wallet-exclusive-invites.svg';
 import { useWalletApiClients } from '@proton/wallet';
 
-import { Button, Input, Modal } from '../../atoms';
-import { APP_NAME } from '../../config';
+import { Button, Input } from '../../atoms';
 
 interface InviteModalOwnProps {
     onInviteSent: (email: string) => void;
@@ -50,17 +50,47 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
         }
     }, [email, error]);
 
+    const isInvitationSendingDisabled = Boolean(error || !email);
+
     return (
-        <Modal {...modalProps}>
+        <Prompt
+            {...modalProps}
+            buttons={[
+                <Tooltip
+                    title={
+                        email
+                            ? undefined
+                            : c('Wallet invite').t`You need to have an email set on your account to send invites`
+                    }
+                >
+                    <Button
+                        fullWidth
+                        color="weak"
+                        shape="solid"
+                        size="large"
+                        disabled={isInvitationSendingDisabled}
+                        onClick={() => {
+                            void handleSend();
+                        }}
+                    >{c('Wallet invite').t`Send invite email now`}</Button>
+                </Tooltip>,
+                <Button
+                    fullWidth
+                    color="weak"
+                    shape="solid"
+                    size="large"
+                    onClick={() => {
+                        modalProps.onClose?.();
+                    }}
+                >{c('Wallet invite').t`Close`}</Button>,
+            ]}
+        >
             <div className="flex flex-column">
                 <div className="flex items-center flex-column">
-                    <div className="mb-8 p-2 rounded-lg bg-weak flex items-center">
-                        <Logo appName={APP_NAME} variant="glyph-only" size={15} />
-                    </div>
-                    <div className="flex flex-column items-center">
-                        <span className="block text-4xl text-semibold text-center">{c('Wallet invite')
-                            .t`Share the gift of Bitcoin!`}</span>
-                    </div>
+                    <img src={walletExclusiveInvites} alt="" />
+
+                    <h1 className="block text-semibold text-4xl text-center">{c('Wallet invite')
+                        .t`Exclusive Invites`}</h1>
                 </div>
 
                 <p className="my-4 text-center color-weak">{c('Wallet invite')
@@ -78,19 +108,7 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
                         }}
                     />
                 </div>
-
-                <div className="w-full px-8 mt-6">
-                    <Button
-                        fullWidth
-                        color="norm"
-                        shape="solid"
-                        disabled={Boolean(error || !email)}
-                        onClick={() => {
-                            void handleSend();
-                        }}
-                    >{c('Wallet invite').t`Send invite email now`}</Button>
-                </div>
             </div>
-        </Modal>
+        </Prompt>
     );
 };
