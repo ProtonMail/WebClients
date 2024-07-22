@@ -41,7 +41,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
                     ? () =>
                           spotlight.setUpselling({
                               type: 'pass-plus',
-                              upsellRef: UpsellRef.FREE_TRIAL,
+                              upsellRef: UpsellRef.SECURE_LINKS,
                           })
                     : onClick
             }
