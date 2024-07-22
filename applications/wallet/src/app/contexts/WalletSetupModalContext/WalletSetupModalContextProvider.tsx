@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useModalStateWithData } from '@proton/components/components';
+import { useOrganization } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet';
 
@@ -16,7 +17,6 @@ import { WalletEarlyAccessUpgradePrompt } from '../../components/WalletEarlyAcce
 import { WalletTermsAndConditionsPrompt } from '../../components/WalletTermsAndConditionsPrompt';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
-import { MAX_WALLETS_FREE, MAX_WALLET_ACCOUNTS_PER_WALLET_FREE } from '../../constants/wallet';
 import { useUserEligibility } from '../../store/hooks';
 import { SubTheme } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
@@ -33,6 +33,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
     const onCloseRef = useRef<() => void>();
 
     const [settings, loadingSettings] = useUserWalletSettings();
+    const [organization] = useOrganization();
     const [isEligible, loadingIsEligible] = useUserEligibility();
 
     const [walletUpgradeModal, setWalletUpgradeModal, renderWalletUpgradeModal] =
@@ -54,7 +55,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
         if (data.kind === WalletSetupModalKind.WalletCreation) {
             // TODO: determine user plan
-            const hasReachedWalletLimit = (decryptedApiWalletsData?.length ?? 0) >= MAX_WALLETS_FREE;
+            const hasReachedWalletLimit = (decryptedApiWalletsData?.length ?? 0) >= (organization?.MaxWallets ?? 0);
 
             if (hasReachedWalletLimit) {
                 setWalletUpgradeModal({
@@ -67,7 +68,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
         } else if (data.kind === WalletSetupModalKind.WalletAccountCreation) {
             // TODO: determine user plan
             const hasReachedWalletAccountLimit =
-                (data.apiWalletData.WalletAccounts.length ?? 0) >= MAX_WALLET_ACCOUNTS_PER_WALLET_FREE;
+                (data.apiWalletData.WalletAccounts.length ?? 0) >= (organization?.MaxSubWallets ?? 0);
 
             if (hasReachedWalletAccountLimit) {
                 setWalletUpgradeModal({
