@@ -121,7 +121,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                 {...modal}
             >
                 <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
-                    <div className="sticky top-0">
+                    <div className="sticky top-0 w-full">
                         <WalletAccountSelector
                             doNotShowInvalidWalletAccounts
                             value={selectedWalletAccount}
