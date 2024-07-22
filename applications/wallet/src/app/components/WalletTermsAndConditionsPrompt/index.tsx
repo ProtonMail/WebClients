@@ -5,7 +5,7 @@ import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
 import { useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
-import { BRAND_NAME, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import walletPlaneImg from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
 import { acceptTermsAndConditions, useWalletApiClients } from '@proton/wallet';
@@ -73,10 +73,10 @@ export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) 
                     <p>{c('Wallet Terms and Conditions')
                         .t`This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${BRAND_NAME} can seize your assets.`}</p>
                     <p>{c('Wallet Terms and Conditions')
-                        .t`To avoid loss of assets from forget password or other access issues, back up your ${BRAND_NAME} recovery phrase and ${WALLET_SHORT_APP_NAME} seed phrase.`}</p>
+                        .t`To avoid losing assets due to forgetting your password or other access issues, back up your ${BRAND_NAME} recovery phrase and wallet seed phrase.`}</p>
                     {email && (
                         <p>{c('Wallet Terms and Conditions')
-                            .t`We have also enabled the Bitcoin via Email feature on this wallet so other ${WALLET_APP_NAME} users can easily send BTC to ${email}.`}</p>
+                            .t`Bitcoin via Email lets other ${WALLET_APP_NAME} users send BTC to you using your email ${email} (you can change this in wallet settings).`}</p>
                     )}
                 </ModalParagraph>
             </div>
