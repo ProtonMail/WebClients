@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
-import { Icon, Logo, Prompt, ProtonForBusinessLogo, useModalState } from '@proton/components/components';
-import { SUBSCRIPTION_STEPS, useAddresses, useSubscriptionModal } from '@proton/components/index';
+import { Icon, Logo, Prompt, ProtonForBusinessLogo, Tooltip, useModalState } from '@proton/components/components';
+import { SUBSCRIPTION_STEPS, useAddresses, useSubscriptionModal, useUser } from '@proton/components/index';
 import { CacheType } from '@proton/redux-utilities';
 import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -22,6 +22,7 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
     const [addresses] = useAddresses();
     const [primaryAddress] = addresses ?? [];
     const getUserEligibility = useGetUserEligibility();
+    const [user] = useUser();
 
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -58,26 +59,29 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
                 size="large"
                 footnote={c('Wallet Upgrade').jt`By continuing, you agree to our ${termsAndConditionsLink}`}
                 buttons={[
-                    <Button
-                        fullWidth
-                        size="large"
-                        shape="solid"
-                        color="norm"
-                        className="block"
-                        onClick={() => {
-                            openSubscriptionModal({
-                                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                disablePlanSelection: true,
-                                plan: PLANS.VISIONARY,
-                                onSubscribed: () => {
-                                    void getUserEligibility({ cache: CacheType.None });
-                                },
-                                metrics: {
-                                    source: 'automatic', // TODO: not let this like that, ask payments how to add `wallet-early-access`,
-                                },
-                            });
-                        }}
-                    >{c('Wallet').t`Upgrade to Visionary`}</Button>,
+                    <Tooltip title={!user.canPay && c('Wallet upgrade').t`Contact your administrator to upgrade`}>
+                        <Button
+                            fullWidth
+                            size="large"
+                            shape="solid"
+                            color="norm"
+                            className="block"
+                            disabled={!user.canPay}
+                            onClick={() => {
+                                openSubscriptionModal({
+                                    step: SUBSCRIPTION_STEPS.CHECKOUT,
+                                    disablePlanSelection: true,
+                                    plan: PLANS.VISIONARY,
+                                    onSubscribed: () => {
+                                        void getUserEligibility({ cache: CacheType.None });
+                                    },
+                                    metrics: {
+                                        source: 'upsells',
+                                    },
+                                });
+                            }}
+                        >{c('Wallet').t`Upgrade to Visionary`}</Button>
+                    </Tooltip>,
                     <Button
                         fullWidth
                         size="large"
