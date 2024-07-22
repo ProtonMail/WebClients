@@ -87,6 +87,10 @@ export const LockSettings: FC = () => {
                     });
                 case LockMode.PASSWORD:
                 case LockMode.BIOMETRICS:
+                    if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(mode)) {
+                        return resolve(undefined);
+                    }
+
                     return confirmPassword({
                         message: c('Info').t`Please confirm your password in order to unregister your current lock.`,
                         onSubmit: async (secret) => {
