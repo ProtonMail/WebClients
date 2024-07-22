@@ -32,7 +32,7 @@ const modelThunk = createAsyncModelThunk<Model, UserEligibilityState, WalletThun
     previous: previousSelector(selectUserEligibility),
 });
 
-const initialState = getInitialModelState<Model>(false);
+const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name,

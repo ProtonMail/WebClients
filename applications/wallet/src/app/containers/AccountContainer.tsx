@@ -12,6 +12,7 @@ import { CoreButton } from '../atoms';
 import { Balance } from '../components/Balance';
 import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
+import { InvitesButton } from '../components/InvitesButton';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
 import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
@@ -85,22 +86,28 @@ export const AccountContainer = () => {
                 className={clsx('wallet-main relative flex flex-row flex-nowrap w-full min-h-full flex-nowrap', theme)}
             >
                 <div className={clsx('flex flex-column flex-1 flex-nowrap grow p-8 pt-8')}>
-                    <div className="flex flex-row flex-nowrap m-4 items-center">
-                        <h1 className="mr-4 text-semibold text-ellipsis">{walletAccount.Label}</h1>
+                    <div className="flex flex-row justify-space-between m-4 items-center">
+                        <div className="flex flex-row flex-nowrap m-4 items-center">
+                            <h1 className="mr-4 text-semibold text-ellipsis">{walletAccount.Label}</h1>
 
-                        <CoreButton
-                            icon
-                            pill
-                            size="medium"
-                            shape="ghost"
-                            color="weak"
-                            className="ml-2 bg-weak shrink-0"
-                            onClick={() => {
-                                setWalletPreferencesModalState(true);
-                            }}
-                        >
-                            <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
-                        </CoreButton>
+                            <CoreButton
+                                icon
+                                pill
+                                size="medium"
+                                shape="ghost"
+                                color="weak"
+                                className="ml-2 bg-weak shrink-0"
+                                onClick={() => {
+                                    setWalletPreferencesModalState(true);
+                                }}
+                            >
+                                <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
+                            </CoreButton>
+                        </div>
+
+                        <div className="ui-standard">
+                            <InvitesButton walletAccount={walletAccount} />
+                        </div>
                     </div>
 
                     {/* Balance */}

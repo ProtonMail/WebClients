@@ -35,7 +35,7 @@ export const acceptTermsAndConditions = createAction('accept terms and condition
 
 export const selectUserWalletSettings = (state: UserWalletSettingsState) => state[name];
 
-const initialState = getInitialModelState<Model>(DEFAULT_SETTINGS);
+const initialState = getInitialModelState<Model>();
 
 const modelThunk = createAsyncModelThunk<Model, UserWalletSettingsState, WalletThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
