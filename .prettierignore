@@ -1,6 +1,8 @@
-# Ignore artifacts:
+.gitlab-ci.yml
+.webpack
 build
+ci
 coverage
 node_modules
 out
-.webpack
+src/locales
