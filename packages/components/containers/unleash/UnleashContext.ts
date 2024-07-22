@@ -45,7 +45,6 @@ enum AccountFlag {
     LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
     DisableLoginPageBugReport = 'DisableLoginPageBugReport',
-    ForgotRecoveryMethodStep = 'ForgotRecoveryMethodStep',
     ExtendCancellationProcess = 'ExtendCancellationProcess',
     B2BLogsPass = 'B2BLogsPass',
     SingleSignup = 'SingleSignup',

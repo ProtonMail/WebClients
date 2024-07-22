@@ -392,7 +392,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
                     <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
                         <RequestResetTokenForm
-                            loginUrl={loginUrl}
                             onForgotRecoveryMethodClick={() => setStep(STEPS.FORGOT_RECOVERY_METHOD)}
                             defaultCountry={defaultCountry}
                             defaultEmail={
