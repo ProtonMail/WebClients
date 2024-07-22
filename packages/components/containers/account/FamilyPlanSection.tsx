@@ -27,12 +27,12 @@ const FamilyPlanSection = () => {
 
     const content = useMemo(() => {
         if (isFamilyPlan) {
-            return c('familyOffer_2023:Family plan').t`Leave family plan`;
+            return c('familyOffer_2023:Family plan').t`Leave Family plan`;
         }
         if (isDuoPlan) {
-            return c('familyOffer_2023:Family plan').t`Leave duo plan`;
+            return c('familyOffer_2023:Family plan').t`Leave Duo plan`;
         }
-        return c('familyOffer_2023:Family plan').t`Leave visionary plan`;
+        return c('familyOffer_2023:Family plan').t`Leave Visionary plan`;
     }, [isFamilyPlan, isDuoPlan]);
 
     return isLoading ? (
