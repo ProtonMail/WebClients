@@ -61,7 +61,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
         return apiWalletData.WalletAccounts.reduce((acc: Partial<Record<WasmScriptType, Set<number>>>, cur) => {
             const set = acc[cur.ScriptType as WasmScriptType] ?? new Set();
 
-            // TODO: find a better to get index, maybe store on db side?
+            // TODO: find a better way to get index, maybe store on db side?
             const i = Number(cur.DerivationPath.split('/')[3]?.replace("'", '') ?? null);
 
             if (!Number.isFinite(i)) {
