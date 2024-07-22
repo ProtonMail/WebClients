@@ -15,6 +15,7 @@ import { unlock } from '@proton/pass/store/actions';
 import { unlockRequest } from '@proton/pass/store/actions/requests';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import { usePassCore } from '../Core/PassCoreProvider';
 
@@ -36,7 +37,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
          * in the service's `onLoginComplete` callback */
         const localID = authStore?.getLocalID();
         history.replace(getBasename(localID) ?? '/');
-        const secret = (await getBiometricsKey?.(authStore!)) ?? '';
+        const secret = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
         biometricsUnlock.dispatch({ mode: LockMode.BIOMETRICS, secret });
     }, []);
 

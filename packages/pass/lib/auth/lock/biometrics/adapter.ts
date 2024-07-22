@@ -161,11 +161,19 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
 
                 return hash;
             } catch (err) {
-                if (err instanceof PassCryptoError) throw err;
+                if (err instanceof PassCryptoError) {
+                    // Fall back to password lock in case the biometrics key can't be decrypted
+                    authStore.setUnlockRetryCount(0);
+                    authStore.setEncryptedOfflineKD(undefined);
+                    authStore.setLockMode(LockMode.PASSWORD);
+                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
+                    throw err;
+                }
 
                 if (retryCount >= 3) {
                     authStore.setEncryptedOfflineKD(undefined);
                     authStore.setLockMode(LockMode.PASSWORD);
+                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
                     throw new Error(c('Warning').t`Too many attempts`);
                 }
 
