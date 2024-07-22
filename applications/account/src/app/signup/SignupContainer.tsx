@@ -1112,6 +1112,7 @@ const SignupContainer = ({
 
     return (
         <Layout
+            toApp={toApp}
             centeredContent={isCurrentStepSignup}
             onBack={handleBackStep}
             bottomRight={<SignupSupportDropdown />}
