@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button, Card } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { useSubscription } from '../..';
@@ -31,19 +31,20 @@ const MemberDowngradeModal = ({ organization, onConfirm, onClose, ...rest }: Pro
     const { validator, onFormSubmit } = useFormErrors();
     const [confirmText, setConfirmText] = useState('');
     const organizationName = organization.Name;
+    const hasFamilyOrDuo = hasFamily(subscription) || hasDuo(subscription);
 
-    const modalTitle = hasFamily(subscription)
+    const modalTitle = hasFamilyOrDuo
         ? c('familyOffer_2023:Title').t`Delete family group?`
         : c('familyOffer_2023:Title').t`Delete organization?`;
-    const warningMessage = hasFamily(subscription)
+    const warningMessage = hasFamilyOrDuo
         ? c('familyOffer_2023:Member downgrade modal')
               .t`This will remove all ${BRAND_NAME} premium features for every family member.`
         : c('familyOffer_2023:Member downgrade modal')
               .t`This will permanently delete all sub-users, accounts, and data associated with your organization.`;
-    const label = hasFamily(subscription)
+    const label = hasFamilyOrDuo
         ? c('familyOffer_2023:Label').t`Enter family group name to confirm`
         : c('familyOffer_2023:Label').t`Enter organization name to confirm`;
-    const validatorError = hasFamily(subscription)
+    const validatorError = hasFamilyOrDuo
         ? c('familyOffer_2023:Error').t`Family group not recognized. Try again.`
         : c('familyOffer_2023:Error').t`Organization not recognized. Try again.`;
 

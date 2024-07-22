@@ -15,7 +15,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getHasMemberCapablePlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasMemberCapablePlan, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -92,7 +92,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
 
     const { createNotification } = useNotifications();
-    const isPartOfFamily = hasFamily(subscription);
+    const isPartOfFamily = hasFamily(subscription) || hasDuo(subscription);
 
     const [organizationLogoModal, setOrganizationLogoModal, renderOrganizationLogoModal] = useModalState();
     const [organizationLogoTipsModal, setOrganizationLogoTipsModal, renderOrganizationLogoTipsModal] = useModalState();
@@ -184,7 +184,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 }
 
                 if (!organization.RequiresKey && !organization.Name) {
-                    const buttonCTA = hasFamily(subscription)
+                    const buttonCTA = isPartOfFamily
                         ? c('familyOffer_2023:Action').t`Set up family group`
                         : c('Action').t`Enable multi-user support`;
 
