@@ -1,13 +1,14 @@
 import { c, msgid } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { useModalState } from '@proton/components/components';
+import { useModalState, useModalStateWithData } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 
 import { Button } from '../../atoms';
 import { useRemainingInvites, useWalletDispatch } from '../../store/hooks';
 import { decrementAvailableInvites } from '../../store/slices/remainingInvites';
 import { InviteModal } from '../InviteModal';
+import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 
 interface Props {
     walletAccount?: WasmApiWalletAccount;
@@ -20,7 +21,8 @@ export const InvitesButton = ({ walletAccount }: Props) => {
     const [remainingInvites] = useRemainingInvites();
     const dispatch = useWalletDispatch();
 
-    const [modal, setModal] = useModalState();
+    const [sendInviteModal, setSendInviteModal] = useModalState();
+    const [inviteSentConfirmationModal, setInviteSentConfirmationModal] = useModalStateWithData<{ email: string }>();
 
     const address = walletAccount?.Addresses[0].ID ?? primaryAddress.ID;
 
@@ -34,7 +36,7 @@ export const InvitesButton = ({ walletAccount }: Props) => {
                 color="norm"
                 className="my-2 ml-2"
                 onClick={() => {
-                    setModal(true);
+                    setSendInviteModal(true);
                 }}
                 disabled={!availableInvites}
             >
@@ -47,11 +49,20 @@ export const InvitesButton = ({ walletAccount }: Props) => {
 
             <InviteModal
                 inviterAddressID={address}
-                onInviteSent={() => {
+                onInviteSent={(email: string) => {
                     dispatch(decrementAvailableInvites());
+                    sendInviteModal.onClose();
+                    setInviteSentConfirmationModal({ email });
                 }}
-                {...modal}
+                {...sendInviteModal}
             />
+
+            {inviteSentConfirmationModal.data && (
+                <InviteSentConfirmModal
+                    email={inviteSentConfirmationModal.data.email}
+                    {...inviteSentConfirmationModal}
+                />
+            )}
         </>
     );
 };
