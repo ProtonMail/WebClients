@@ -1,7 +1,7 @@
 import { Environment } from "../interfaces/Environment";
 import { ThemeSetting } from "../themes/themes";
 
-export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
+export type CHANGE_VIEW_TARGET = "mail" | "calendar" | "account";
 export type ElectronNotification = {
     title: string;
     body: string;
@@ -10,7 +10,7 @@ export type ElectronNotification = {
     labelID?: string;
 };
 
-export type IPCInboxDesktopFeature = 'ThemeSelection' | 'InAppPayments' | 'EarlyAccess' | 'MultiAccount';
+export type IPCInboxDesktopFeature = "ThemeSelection" | "InAppPayments" | "EarlyAccess" | "MultiAccount";
 export type IPCGetInfoMessage = { type: "theme"; result: ThemeSetting };
 export type IPCClientUpdateMessage =
     | { type: "updateNotification"; payload: number }

@@ -16,7 +16,7 @@
         "copyright": "Copyright (c) 2024, Proton AG <contact@protonmail.com>",
         "githubUser": "ProtonMail",
         "githubRepo": "inbox-desktop",
-        "updateInterval": 3.6e6
+        "updateInterval": 3600000
     },
     "main": ".webpack/main",
     "scripts": {

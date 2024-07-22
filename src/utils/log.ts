@@ -4,7 +4,8 @@ import { CHANGE_VIEW_TARGET } from "./external/shared/lib/desktop/desktopTypes";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) => (viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net"));
+export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
+    viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const squirrelLogger = Logger.scope("squirrel");
 export const updateLogger = Logger.scope("update");

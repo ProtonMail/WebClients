@@ -37,4 +37,3 @@ export interface ThemeSetting {
     FontFace: ThemeFontFaceSetting;
     Features: ThemeFeatureSetting;
 }
-

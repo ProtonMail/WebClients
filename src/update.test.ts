@@ -3,14 +3,14 @@ import { describe } from "@jest/globals";
 import { RELEASE_CATEGORIES } from "./utils/external/shared/lib/apps/desktopVersions";
 
 jest.mock("./utils/view/viewManagement", () => ({
-    getCalendarView: () => { },
-    getMailView: () => { },
+    getCalendarView: () => {},
+    getMailView: () => {},
 }));
 
 jest.mock("electron", () => ({
     app: { isPackaged: true },
     autoUpdater: {
-        on: () => { },
+        on: () => {},
     },
 }));
 

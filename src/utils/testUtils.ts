@@ -2,7 +2,7 @@ export interface Singleton<T> {
     INSTANCE: T;
 }
 
-export function getSingleton<T extends Record<string, any>>(getInstance: () => T) {
+export function getSingleton<T extends Record<string, unknown>>(getInstance: () => T) {
     return class SingletonImpl {
         static INSTANCE: T;
 

@@ -1,4 +1,4 @@
-import { WebContents, app, shell } from "electron";
+import { WebContents, shell } from "electron";
 import {
     isAccount,
     isAccountAuthorize,
