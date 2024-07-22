@@ -39,12 +39,12 @@ import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding'
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import SetPasswordForm from '../login/SetPasswordForm';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
+import PublicHelpLink from '../public/PublicHelpLink';
 import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
@@ -553,7 +553,7 @@ const ResetPasswordContainer = ({ toApp, metaTags, onLogin, setupVPN, loginUrl, 
             toApp={toApp}
             hasDecoration={step === STEPS.REQUEST_RECOVERY_METHODS}
             onBack={handleBackStep}
-            bottomRight={<LoginSupportDropdown />}
+            bottomRight={<PublicHelpLink />}
         >
             {children}
         </Layout>
