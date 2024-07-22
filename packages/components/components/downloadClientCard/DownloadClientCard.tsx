@@ -11,14 +11,14 @@ import { Icon } from '../icon';
 
 interface Props {
     title: string;
-    link: string;
+    link?: string;
     icon: IconName;
     items?: ReactNode[];
 }
 
 const DownloadClientCard = ({ title, link, items, icon }: Props) => {
     const downloadButton = (
-        <ButtonLike as={Href} href={link}>
+        <ButtonLike as={Href} href={link} disabled={!link}>
             {c('Action').t`Download`}
             <span className="sr-only">{title}</span>
         </ButtonLike>
