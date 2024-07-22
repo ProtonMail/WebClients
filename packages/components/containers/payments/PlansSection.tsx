@@ -174,28 +174,30 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
             />
-            <Button
-                color="norm"
-                shape="ghost"
-                className="flex mx-auto items-center mb-4"
-                onClick={() => {
-                    if (isElectronApp && !hasInboxDesktopInAppPayments) {
-                        openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
-                        return;
-                    }
-                    open({
-                        step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                        defaultAudience: audience,
-                        defaultSelectedProductPlans: selectedProductPlans,
-                        metrics: {
-                            source: 'plans',
-                        },
-                    });
-                }}
-            >
-                {c('Action').t`View plans details`}
-                <Icon name="arrow-right" className="ml-2 rtl:mirror" />
-            </Button>
+            {app !== APPS.PROTONWALLET && (
+                <Button
+                    color="norm"
+                    shape="ghost"
+                    className="flex mx-auto items-center mb-4"
+                    onClick={() => {
+                        if (isElectronApp && !hasInboxDesktopInAppPayments) {
+                            openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
+                            return;
+                        }
+                        open({
+                            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                            defaultAudience: audience,
+                            defaultSelectedProductPlans: selectedProductPlans,
+                            metrics: {
+                                source: 'plans',
+                            },
+                        });
+                    }}
+                >
+                    {c('Action').t`View plans details`}
+                    <Icon name="arrow-right" className="ml-2 rtl:mirror" />
+                </Button>
+            )}
         </>
     );
 };
