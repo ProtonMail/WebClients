@@ -203,9 +203,9 @@ export const getWalletConfiguration = ({
                             },
                         ].map(({ title, message }, i) => {
                             return (
-                                <div className="flex flex-nowrap gap-2">
+                                <div className="flex flex-nowrap gap-2" key={title}>
                                     <div className="shrink-0">
-                                        <StepLabel step={i} size={StepLabelSize.small} className="color-primary" />
+                                        <StepLabel step={i + 1} size={StepLabelSize.small} className="color-primary" />
                                     </div>
                                     <div>
                                         <div className="text-semibold mb-1">{title}</div>
