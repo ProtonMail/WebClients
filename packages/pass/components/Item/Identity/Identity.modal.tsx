@@ -30,7 +30,7 @@ export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd })
     const openUpsell = () =>
         spotlight.setUpselling({
             type: 'early-access',
-            upsellRef: UpsellRef.DEFAULT,
+            upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS,
         });
 
     const closeModal = (resetForm: FormikHelpers<{ value: string }>['resetForm']) => {

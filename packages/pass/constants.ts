@@ -68,8 +68,8 @@ export enum UpsellRefPrefix {
 
 export enum UpsellRef {
     DEFAULT = 'banner',
-    EARLY_ACCESS = 'early_access_banner',
     FREE_TRIAL = 'free_trial_banner',
+    IDENTITY_CUSTOM_FIELDS = 'identity_custom_fields',
     LIMIT_2FA = '2fa_limit',
     LIMIT_ALIAS = 'alias_limit',
     LIMIT_AUTOFILL = 'autofill_limit',
@@ -79,7 +79,7 @@ export enum UpsellRef {
     LIMIT_SHARING = 'limit_share',
     LIMIT_VAULT = 'vault_limit',
     MENU = 'menu',
-    PERSISTENT_BAR = 'persistent_bar',
+    SECURE_LINKS = 'secure_links',
     SETTING = 'setting',
     PASS_MONITOR = 'pass_monitor',
 }
