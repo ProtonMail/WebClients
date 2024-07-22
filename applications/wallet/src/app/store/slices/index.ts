@@ -9,6 +9,7 @@ import { fiatCurrenciesByProviderReducer } from './fiatCurrenciesByProvider';
 import { gatewaysPublicApiKeysReducer } from './gatewaysPublicApiKeys';
 import { paymentMethodsByProviderReducer } from './paymentMethodByProvider';
 import { quotesByProviderReducer } from './quotesByProvider';
+import { remainingInvitesReducer } from './remainingInvites';
 import { userEligibilityReducer } from './userEligibility';
 
 export { apiWalletTransactionDataThunk, selectApiWalletTransactionData } from './apiWalletTransactionData';
@@ -17,6 +18,7 @@ export { exchangeRateThunk, selectExchangeRate } from './exchangeRate';
 export { fiatCurrenciesThunk, selectSortedFiatCurrencies as selectFiatCurrencies } from './fiatCurrencies';
 export { selectGatewaysPublicApiKeys, gatewaysPublicApiKeysThunk } from './gatewaysPublicApiKeys';
 export { selectUserEligibility, userEligibilityThunk } from './userEligibility';
+export { selectRemainingInvites, remainingInvitesThunk } from './remainingInvites';
 
 export const walletReducers = {
     ...exchangeRateReducer,
@@ -30,4 +32,5 @@ export const walletReducers = {
     ...quotesByProviderReducer,
     ...gatewaysPublicApiKeysReducer,
     ...userEligibilityReducer,
+    ...remainingInvitesReducer,
 };
