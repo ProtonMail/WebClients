@@ -4,6 +4,7 @@ import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getRequire2FA, getSSOIntegration } from './b2b';
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
@@ -19,6 +20,7 @@ import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './inte
 import {
     getContactGroupsManagement,
     getFoldersAndLabelsFeature,
+    getMailAppFeature,
     getNAddressesFeature,
     getNAddressesFeatureB2B,
     getNDomainsFeature,
@@ -82,6 +84,7 @@ import {
     WALLET_PLUS_WALLET_EMAIL,
     getBitcoinViaEmail,
     getWalletAccounts,
+    getWalletAppFeature,
     getWalletEmailAddresses,
     getWallets,
 } from './wallet';
@@ -447,26 +450,37 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
+export const getVisionaryPlan = ({
+    serversCount,
+    plan,
+    freePlan,
+    walletEnabled,
+}: {
+    serversCount: VPNServersCountData;
+    plan: Plan;
+    freePlan: FreePlanDefault;
+    walletEnabled?: boolean;
+}): ShortPlan => {
+    const planName = plan.Title;
     return {
         plan: PLANS.VISIONARY,
         title: plan.Title,
         label: '',
-        description: '',
+        description: c('Subscription reminder')
+            .t`${planName} gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace, { freePlan }),
-            getNAddressesFeature({ n: plan.MaxAddresses }),
-            getNDomainsFeature({ n: plan.MaxDomains }),
-            getFoldersAndLabelsFeature('unlimited'),
-            getContactGroupsManagement(),
+            getUsersFeature(plan.MaxMembers),
+            getEarlyAccessFeature(),
+            getSentinel(true),
+            getMailAppFeature(),
             getCalendarAppFeature(),
             getDriveAppFeature(),
             getPassAppFeature(),
-            getB2BHighSpeedVPNConnections(),
-            getNetShield(true),
-            getSecureCore(true),
-        ],
+            getVPNAppFeature({ serversCount, family: false }),
+            walletEnabled && getWalletAppFeature(),
+        ].filter(isTruthy),
     };
 };
 
@@ -614,6 +628,7 @@ export const getShortPlan = (
         boldStorageSize?: boolean;
         vpnServers: VPNServersCountData;
         freePlan: FreePlanDefault;
+        walletEnabled?: boolean;
     }
 ) => {
     if (plan === PLANS.FREE) {
@@ -625,7 +640,7 @@ export const getShortPlan = (
         return null;
     }
 
-    const { vpnServers, boldStorageSize, freePlan } = options;
+    const { vpnServers, boldStorageSize, freePlan, walletEnabled } = options;
 
     switch (plan) {
         case PLANS.MAIL:
@@ -649,7 +664,7 @@ export const getShortPlan = (
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan(planData);
         case PLANS.VISIONARY:
-            return getVisionaryPlan({ plan: planData, freePlan });
+            return getVisionaryPlan({ walletEnabled, serversCount: vpnServers, plan: planData, freePlan });
         case PLANS.FAMILY:
             return getFamilyPlan({ plan: planData, serversCount: vpnServers, freePlan });
         case PLANS.VPN_PRO:
