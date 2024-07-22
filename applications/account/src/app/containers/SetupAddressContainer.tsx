@@ -260,7 +260,7 @@ const SetupAddressContainer = () => {
     }
 
     return (
-        <Layout onBack={handleBack} hasDecoration={false}>
+        <Layout onBack={handleBack} hasDecoration={false} toApp={toApp}>
             <Main>
                 <GenerateAddressStep
                     onBack={handleBack}

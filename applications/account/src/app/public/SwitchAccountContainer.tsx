@@ -66,6 +66,7 @@ const compareSessions = (a: LocalSessionPersisted, b: LocalSessionPersisted) => 
 
 const SwitchAccountContainer = ({
     metaTags,
+    toApp,
     toAppName,
     onLogin,
     activeSessions,
@@ -337,7 +338,7 @@ const SwitchAccountContainer = ({
             </Content>
         </Main>
     );
-    return <Layout>{children}</Layout>;
+    return <Layout toApp={toApp}>{children}</Layout>;
 };
 
 export default SwitchAccountContainer;

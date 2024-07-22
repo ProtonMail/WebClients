@@ -63,7 +63,7 @@ interface Props {
     productParam: ProductParam;
 }
 
-const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, productParam }: Props) => {
+const ResetPasswordContainer = ({ toApp, metaTags, onLogin, setupVPN, loginUrl, productParam }: Props) => {
     const { APP_NAME } = useConfig();
 
     useMetaTags(metaTags);
@@ -550,6 +550,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
     );
     return (
         <Layout
+            toApp={toApp}
             hasDecoration={step === STEPS.REQUEST_RECOVERY_METHODS}
             onBack={handleBackStep}
             bottomRight={<LoginSupportDropdown />}
