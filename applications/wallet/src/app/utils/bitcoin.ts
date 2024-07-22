@@ -154,14 +154,20 @@ export const getBitcoinUnitOptions: () => { unit: WasmBitcoinUnit; label: string
 ];
 
 export const getExchangeRateFromBitcoinUnit = (unit: WasmBitcoinUnit): WasmApiExchangeRate => {
-    return {
+    const rate = {
         ID: '-1',
         BitcoinUnit: unit,
         FiatCurrency: unit as WasmFiatCurrencySymbol,
         ExchangeRateTime: '-1',
         ExchangeRate: CENTS_BY_BITCOIN_UNIT[unit],
         Cents: CENTS_BY_BITCOIN_UNIT[unit],
+        isBitcoinRate: true,
     };
+
+    // Used to distinguish from real exchange rates
+    rate.isBitcoinRate = true;
+
+    return rate;
 };
 
 export const isExchangeRateFromBitcoinUnit = (rate: WasmApiExchangeRate) => {
