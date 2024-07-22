@@ -3,18 +3,23 @@ import { useEffect, useState } from 'react';
 import { first } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components/components';
 import { useModalState, useModalStateWithData } from '@proton/components/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { toWalletAccountSelectorOptions } from '@proton/wallet';
+import { toWalletAccountSelectorOptions, useUserWalletSettings } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
 import type { SubTheme } from '../../utils';
-import { getAccountBalance, getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
+import {
+    getAccountBalance,
+    getAccountWithChainDataFromManyWallets,
+    getExchangeRateFromBitcoinUnit,
+    isWalletAccountSet,
+} from '../../utils';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteModal } from '../InviteModal';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
@@ -51,7 +56,8 @@ const getSteps = (): Steps<StepKey> => [
 
 export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Props) => {
     const [stepKey, setStepKey] = useState<StepKey>(StepKey.RecipientsSelection);
-    const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>('BTC');
+    const [settings] = useUserWalletSettings();
+    const [exchangeRate, setUnit] = useState<WasmApiExchangeRate>(getExchangeRateFromBitcoinUnit(settings.BitcoinUnit));
     const recipientHelpers = useEmailAndBtcAddressesMaps();
     const [sendConfirmModal, setSendConfirmModal] = useModalState();
     const [inviteModal, setInviteModal] = useModalState();
@@ -153,8 +159,8 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                                 updateTxBuilder={updateTxBuilder}
                                 btcAddressMap={recipientHelpers.btcAddressMap}
                                 onBack={() => setStepKey(StepKey.RecipientsSelection)}
-                                onReview={(unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
-                                    setUnit(unit);
+                                onReview={(exchangeRate: WasmApiExchangeRate) => {
+                                    setUnit(exchangeRate);
                                     setStepKey(StepKey.ReviewTransaction);
                                 }}
                             />
@@ -165,7 +171,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                                 isUsingBitcoinViaEmail={isUsingBitcoinViaEmail}
                                 wallet={wallet}
                                 account={walletAccount}
-                                unit={unit}
+                                exchangeRate={exchangeRate}
                                 txBuilder={txBuilder}
                                 updateTxBuilder={updateTxBuilder}
                                 btcAddressMap={recipientHelpers.btcAddressMap}
