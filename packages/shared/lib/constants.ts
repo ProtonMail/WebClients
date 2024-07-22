@@ -25,7 +25,6 @@ export const MAX_MEMBER_SCRIBE_ADDON = 5000;
 export const MAX_DOMAIN_PRO_ADDON = 99;
 export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
-export const MAX_SPACE_ADDON = 20;
 // VPN B2B limits
 export const MAX_MEMBER_VPN_B2B_ADDON = 5000;
 export const MAX_IPS_ADDON = 100;
@@ -784,11 +783,6 @@ export const IP_ADDON_PREFIX = '1ip';
 export const SCRIBE_ADDON_PREFIX = '1scribe';
 
 export enum ADDON_NAMES {
-    ADDRESS = '5address',
-    MEMBER = '1member',
-    DOMAIN = '1domain',
-    SPACE = '1gb',
-    VPN = '1vpn',
     MEMBER_DRIVE_PRO = `${MEMBER_ADDON_PREFIX}-drivepro2022`,
     MEMBER_MAIL_PRO = `${MEMBER_ADDON_PREFIX}-mailpro2022`,
     MEMBER_MAIL_BUSINESS = `${MEMBER_ADDON_PREFIX}-mailbiz2024`,
@@ -824,14 +818,9 @@ export enum ADDON_NAMES {
 export const AddonKey: Readonly<{
     [K in ADDON_NAMES]: MaxKeys;
 }> = {
-    [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
-    [ADDON_NAMES.MEMBER]: 'MaxMembers',
-    [ADDON_NAMES.DOMAIN]: 'MaxDomains',
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 'MaxDomains',
     [ADDON_NAMES.DOMAIN_ENTERPRISE]: 'MaxDomains',
-    [ADDON_NAMES.VPN]: 'MaxVPN',
-    [ADDON_NAMES.SPACE]: 'MaxSpace',
     [ADDON_NAMES.MEMBER_MAIL_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
@@ -862,14 +851,9 @@ export const AddonKey: Readonly<{
 } as const;
 
 export const AddonLimit = {
-    [ADDON_NAMES.SPACE]: MAX_SPACE_ADDON,
-    [ADDON_NAMES.MEMBER]: MAX_MEMBER_ADDON,
-    [ADDON_NAMES.DOMAIN]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.DOMAIN_ENTERPRISE]: MAX_DOMAIN_PRO_ADDON,
-    [ADDON_NAMES.ADDRESS]: MAX_ADDRESS_ADDON,
-    [ADDON_NAMES.VPN]: MAX_VPN_ADDON,
     [ADDON_NAMES.MEMBER_MAIL_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,

@@ -1,4 +1,5 @@
-import { ADDON_NAMES, AddonKey, AddonLimit, GIGA } from '@proton/shared/lib/constants';
+import type { ADDON_NAMES } from '@proton/shared/lib/constants';
+import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import type { Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import { getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
@@ -66,7 +67,6 @@ export default function getAddonsPricing({
 
                       return acc + quantity * multiplier;
                   }, 0);
-            const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
 
             const addonPricePerCycle = addon.Pricing[cycle] || 0;
 
@@ -80,7 +80,6 @@ export default function getAddonsPricing({
                 value,
                 min,
                 max,
-                divider,
                 addon,
                 isSupported,
                 addonMultiplier,
