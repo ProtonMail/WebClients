@@ -125,7 +125,10 @@ export const isSupportedText = (mimeType: string) =>
     ].includes(mimeType);
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
 export const isAudio = (mimeType: string) => mimeType.startsWith('audio/');
-export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
+export const isPDF = (mimeType: string) =>
+    mimeType === SupportedMimeTypes.pdf ||
+    // Some e-mail clients will use this legacy value
+    mimeType === 'application/x-pdf';
 
 /**
  * A helper function to determine if a mimetype can be converted by Proton Docs.
