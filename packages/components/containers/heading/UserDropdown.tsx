@@ -245,7 +245,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
 
     return (
         <>
-            {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
+            {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={app} />}
             {renderSessionRecoverySignOutConfirmPrompt && (
                 <SessionRecoverySignOutConfirmPrompt
                     onSignOut={() => handleSignout(false)}
