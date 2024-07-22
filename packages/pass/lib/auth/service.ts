@@ -440,7 +440,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         const result = await resumeSession(persistedSession, localID, config, options);
 
                         logger.info(`[AuthService] Session successfully resumed`);
-                        options.forcePersist = result.repersist;
+                        options.forcePersist = options.forcePersist || result.repersist;
                         return await authService.login(result.session, options);
                     } catch (error: unknown) {
                         if (error instanceof Error) {
