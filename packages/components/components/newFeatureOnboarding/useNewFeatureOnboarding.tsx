@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { isAfter, isBefore } from 'date-fns';
+
 import { useWelcomeFlags } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
@@ -7,31 +9,38 @@ type Props = {
     key: string;
     featureFlagsEnabled?: boolean;
     shouldWelcomeFlowBeDone?: boolean;
+    startDate?: string;
     expirationDate?: string;
 };
 
-const getIsExpired = (expirationDate?: string) => {
-    if (!expirationDate) {
+const getIsActive = (startDate?: string, expirationDate?: string) => {
+    const today = new Date();
+
+    if (startDate && isBefore(today, new Date(startDate))) {
         return false;
     }
-    const expirationTimestamp = new Date(expirationDate).getTime();
-    const currentTimestamp = new Date().getTime();
-    return expirationTimestamp < currentTimestamp;
+
+    if (expirationDate && isAfter(today, new Date(expirationDate))) {
+        return false;
+    }
+
+    return true;
 };
 
 export default function useNewFeatureOnboarding({
     key,
     featureFlagsEnabled = true,
     shouldWelcomeFlowBeDone = true,
+    startDate,
     expirationDate,
 }: Props) {
     const onboardingKey = `onboarding-${key}`;
     const [wasShown, setWasShown] = useState<boolean>(Boolean(getItem(onboardingKey, 'false')));
     const [welcomeFlags] = useWelcomeFlags();
 
-    const isExpired = getIsExpired(expirationDate);
-    const showOnboarding =
-        !wasShown && !isExpired && featureFlagsEnabled && (!shouldWelcomeFlowBeDone || !welcomeFlags.isWelcomeFlow);
+    const isExpired = getIsActive(startDate, expirationDate);
+    const isWelcomeDone = shouldWelcomeFlowBeDone && welcomeFlags.isDone;
+    const showOnboarding = !wasShown && !isExpired && featureFlagsEnabled && isWelcomeDone;
 
     const onWasShown = () => {
         if (!wasShown) {
