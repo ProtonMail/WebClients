@@ -38,9 +38,9 @@ export default function useNewFeatureOnboarding({
     const [wasShown, setWasShown] = useState<boolean>(Boolean(getItem(onboardingKey, 'false')));
     const [welcomeFlags] = useWelcomeFlags();
 
-    const isExpired = getIsActive(startDate, expirationDate);
+    const isActive = getIsActive(startDate, expirationDate);
     const isWelcomeDone = shouldWelcomeFlowBeDone && welcomeFlags.isDone;
-    const showOnboarding = !wasShown && !isExpired && featureFlagsEnabled && isWelcomeDone;
+    const showOnboarding = !wasShown && isActive && featureFlagsEnabled && isWelcomeDone;
 
     const onWasShown = () => {
         if (!wasShown) {
