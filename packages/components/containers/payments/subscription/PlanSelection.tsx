@@ -204,6 +204,7 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
+    const walletEnabled = useFlag('Wallet');
 
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
@@ -264,13 +265,13 @@ const PlanSelection = ({
         return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
     }
 
-    const IndividualPlans = filterPlans([
+    let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
     ]);
 
-    const FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]);
+    let FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]);
 
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],
@@ -303,6 +304,12 @@ const PlanSelection = ({
         B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
     }
 
+    if (app === APPS.PROTONWALLET && !canAccessWalletPlan) {
+        IndividualPlans = filterPlans([plansMap[PLANS.VISIONARY]]);
+        FamilyPlans = [];
+        B2BPlans = [];
+    }
+
     const isSignupMode = mode === 'signup';
     const features = getAllFeatures({
         plansMap,
@@ -321,7 +328,7 @@ const PlanSelection = ({
             return null;
         }
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan });
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan, walletEnabled });
 
         if (!shortPlan) {
             return null;
