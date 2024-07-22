@@ -1,16 +1,18 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { PublicKeyReference } from '@proton/crypto/lib';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
-import { DocumentKeys, DocumentNodeMeta, useDocuments } from './_documents';
-import { DecryptedNode } from './_nodes/interface';
+import { getNewWindow } from '../utils/window';
+import type { DocumentKeys, DocumentNodeMeta} from './_documents';
+import { useDocuments } from './_documents';
+import type { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
 import { useMyFiles, useResolveShareId } from './_shares';
-import { NodeMeta } from './interface';
+import type { NodeMeta } from './interface';
 
 export interface DriveCompat {
     /**
@@ -107,7 +109,8 @@ export const useDriveCompat = (): DriveCompat => {
 
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
-    const openDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open' });
+    const openDocument = (meta: NodeMeta) =>
+        openDocumentWindow({ ...meta, mode: 'open', window: getNewWindow().handle });
 
     return {
         isDocsEnabled,
