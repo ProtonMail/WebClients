@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS } from '@proton/shared/lib/constants';
+import { PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -63,6 +63,15 @@ export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
     return {
         text: getBitcoinViaEmailText(),
         included: true,
+    };
+};
+
+export const getWalletAppFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: WALLET_APP_NAME,
+        tooltip: c('wallet_signup_2024:app-switcher').t`Securely hold and transfer your bitcoins`,
+        included: true,
+        icon: 'wallet',
     };
 };
 
