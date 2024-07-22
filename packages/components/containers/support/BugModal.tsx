@@ -5,10 +5,12 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
@@ -39,7 +41,13 @@ import AttachScreenshot from './AttachScreenshot';
 export type BugModalMode = 'chat-no-agents';
 
 type OptionLabelItem = { type: 'label'; value: string };
-type OptionOptionItem = { type: 'option'; title: string; value: string; clientType?: CLIENT_TYPES };
+type OptionOptionItem = {
+    type: 'option';
+    title: string;
+    value: string;
+    clientType?: CLIENT_TYPES;
+    app?: APP_NAMES;
+};
 type OptionItem = OptionOptionItem | OptionLabelItem;
 
 interface Model extends ReturnType<typeof getReportInfo> {
@@ -56,38 +64,73 @@ export interface Props {
     onClose: ModalProps['onClose'];
     onExit: ModalProps['onExit'];
     open: ModalProps['open'];
+    app?: APP_NAMES;
 }
 
 const getMailOptions = ({ canAccessWallet }: { canAccessWallet: boolean }): OptionItem[] => {
+    const optionType = 'option' as const;
+    const labelType = 'label' as const;
     return [
-        { type: 'label', value: c('Group').t`Account` },
-        { type: 'option', value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
-        { type: 'option', value: 'Sign up problem', title: c('Bug category').t`Sign up problem` },
-        { type: 'option', value: 'Payments problem', title: c('Bug category').t`Payments problem` },
-        { type: 'option', value: 'Custom domain problem', title: c('Bug category').t`Custom domain problem` },
-        { type: 'label', value: c('Group').t`Apps` },
-        { type: 'option', value: 'Bridge problem', title: c('Bug category').t`Bridge problem` },
-        { type: 'option', value: 'Import / export problem', title: c('Bug category').t`Import / export problem` },
-        { type: 'label', value: c('Group').t`Network` },
-        { type: 'option', value: 'Connection problem', title: c('Bug category').t`Connection problem` },
-        { type: 'option', value: 'Slow speed problem', title: c('Bug category').t`Slow speed problem` },
-        { type: 'label', value: c('Group').t`Services` },
-        { type: 'option', value: 'Calendar problem', title: c('Bug category').t`Calendar problem` },
-        { type: 'option', value: 'Contacts problem', title: c('Bug category').t`Contacts problem` },
-        { type: 'option', value: 'Drive problem', title: c('Bug category').t`Drive problem` },
-        { type: 'option', value: 'Docs problem', title: c('Bug category').t`Docs problem` },
-        { type: 'option', value: 'Mail problem', title: c('Bug category').t`Mail problem` },
-        { type: 'option', value: 'VPN problem', title: c('Bug category').t`VPN problem`, clientType: CLIENT_TYPES.VPN },
-        { type: 'option', value: 'Pass problem', title: c('Bug category').t`Pass problem` },
+        { type: labelType, value: c('Group').t`Account` },
+        { type: optionType, value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
+        { type: optionType, value: 'Sign up problem', title: c('Bug category').t`Sign up problem` },
+        { type: optionType, value: 'Payments problem', title: c('Bug category').t`Payments problem` },
+        { type: optionType, value: 'Custom domain problem', title: c('Bug category').t`Custom domain problem` },
+        { type: labelType, value: c('Group').t`Apps` },
+        { type: optionType, value: 'Bridge problem', title: c('Bug category').t`Bridge problem` },
+        { type: optionType, value: 'Import / export problem', title: c('Bug category').t`Import / export problem` },
+        { type: labelType, value: c('Group').t`Network` },
+        { type: optionType, value: 'Connection problem', title: c('Bug category').t`Connection problem` },
+        { type: optionType, value: 'Slow speed problem', title: c('Bug category').t`Slow speed problem` },
+        { type: labelType, value: c('Group').t`Services` },
+        {
+            type: optionType,
+            value: 'Calendar problem',
+            title: c('Bug category').t`Calendar problem`,
+            app: APPS.PROTONCALENDAR,
+        },
+        { type: optionType, value: 'Contacts problem', title: c('Bug category').t`Contacts problem` },
+        {
+            type: optionType,
+            value: 'Drive problem',
+            title: c('Bug category').t`Drive problem`,
+            app: APPS.PROTONDRIVE,
+        },
+        {
+            type: optionType,
+            value: 'Docs problem',
+            title: c('Bug category').t`Docs problem`,
+            app: APPS.PROTONDOCS,
+        },
+        {
+            type: optionType,
+            value: 'Mail problem',
+            title: c('Bug category').t`Mail problem`,
+            app: APPS.PROTONMAIL,
+        },
+        {
+            type: optionType,
+            value: 'VPN problem',
+            title: c('Bug category').t`VPN problem`,
+            clientType: CLIENT_TYPES.VPN,
+            app: APPS.PROTONVPN_SETTINGS,
+        },
+        {
+            type: optionType,
+            value: 'Pass problem',
+            title: c('Bug category').t`Pass problem`,
+            app: APPS.PROTONPASS,
+        },
         canAccessWallet && {
-            type: 'option',
+            type: optionType,
             value: 'Wallet problem',
             title: c('wallet_signup_2024:Bug category').t`Wallet problem`,
+            app: APPS.PROTONWALLET,
         },
-        { type: 'label', value: c('Group').t`Other category` },
-        { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
-        { type: 'option', value: 'Other', title: c('Bug category').t`Other` },
-    ].filter((opt): opt is OptionItem => !!opt);
+        { type: labelType, value: c('Group').t`Other category` },
+        { type: optionType, value: 'Feature request', title: c('Bug category').t`Feature request` },
+        { type: optionType, value: 'Other', title: c('Bug category').t`Other` },
+    ].filter(isTruthy);
 };
 
 const getVPNOptions = (): OptionItem[] => {
@@ -107,7 +150,7 @@ const getVPNOptions = (): OptionItem[] => {
     ];
 };
 
-const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit }: Props) => {
+const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit, app: maybeApp }: Props) => {
     const api = useApi();
     const location = useLocation();
     const [loading, setLoading] = useState(false);
@@ -144,9 +187,13 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     });
 
     const [model, setModel] = useState<Model>(() => {
+        const app = maybeApp || APP_NAME;
+        const defaultCategory = options.find(
+            (option): option is OptionOptionItem => option.type === 'option' && option.app === app
+        );
         return {
             ...getReportInfo(),
-            Category: undefined,
+            Category: defaultCategory,
             Description: '',
             Email: email || '',
             Username: Username || '',
