@@ -14,6 +14,7 @@ import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
 import { Balance } from '../components/Balance';
 import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
+import { InvitesButton } from '../components/InvitesButton';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
 import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
@@ -89,6 +90,8 @@ export const WalletContainer = () => {
         void syncSingleWallet({ walletId: wallet.Wallet.ID });
     };
 
+    const [firstWalletAccount] = wallet.WalletAccounts;
+
     return (
         <>
             <div
@@ -127,6 +130,7 @@ export const WalletContainer = () => {
                                 {c('Wallet header').t`Secure your wallet`}
                                 <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
                             </Button>
+                            <InvitesButton walletAccount={firstWalletAccount} />
                         </div>
                     </div>
 
