@@ -33,7 +33,7 @@ export interface ThemeSetting {
     Mode: ThemeModeSetting;
     LightTheme: ThemeTypes;
     DarkTheme: ThemeTypes;
-    FontSize: ThemeFontSizeSetting;
-    FontFace: ThemeFontFaceSetting;
-    Features: ThemeFeatureSetting;
+    // FontSize: ThemeFontSizeSetting;
+    // FontFace: ThemeFontFaceSetting;
+    // Features: ThemeFeatureSetting;
 }

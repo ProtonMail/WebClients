@@ -3,10 +3,11 @@ import { setReleaseCategory } from "../store/settingsStore";
 import { clearStorage } from "../utils/helpers";
 import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
-import { DESKTOP_FEATURES, IPCClientUpdateMessage, IPCGetInfoMessage } from "./ipcConstants";
+import { DESKTOP_FEATURES } from "./ipcConstants";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import { getConfig } from "../utils/config";
 import { ipcLogger } from "../utils/log";
+import { IPCClientUpdateMessage, IPCGetInfoMessage } from "../utils/external/shared/lib/desktop/desktopTypes";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
