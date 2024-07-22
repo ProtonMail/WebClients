@@ -101,7 +101,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                 {...modal}
             >
                 <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
-                    <div className="sticky top-0">
+                    <div className="sticky top-0 w-full">
                         <WalletAccountSelector
                             disabled={stepKey === StepKey.Onramp}
                             value={selectedWalletAccount}
