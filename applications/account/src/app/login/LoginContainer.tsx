@@ -419,7 +419,7 @@ const LoginContainer = ({
 
     if (isElectronPass) {
         return (
-            <Layout>
+            <Layout toApp={toApp}>
                 <Main>{children}</Main>
             </Layout>
         );
@@ -427,6 +427,7 @@ const LoginContainer = ({
 
     return (
         <Layout
+            toApp={toApp}
             hasWelcome
             onBack={handleBackStep}
             hasDecoration={step === AuthStep.LOGIN}

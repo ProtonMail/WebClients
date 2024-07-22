@@ -24,8 +24,9 @@ const LayoutFooter = ({ className, app, version }: FooterProps) => {
             </div>
             <div className="text-center m-0 pt-4 pb-0 sm:pb-4 shrink-0">
                 <span className="block sm:inline">
-                    <Href key="terms" className="signup-link link-focus" href={getLocaleTermsURL()}>{c('Link')
-                        .t`Terms`}</Href>
+                    <Href key="terms" className="signup-link link-focus" href={getLocaleTermsURL(app)}>
+                        {c('Link').t`Terms`}
+                    </Href>
                 </span>
                 <span className="color-border px-2 hidden sm:inline" aria-hidden="true">
                     |

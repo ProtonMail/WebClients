@@ -732,7 +732,7 @@ const Step1 = ({
     const upsellPlanName = upsellShortPlan?.title || '';
 
     const termsHref = (() => {
-        return getLocaleTermsURL();
+        return getLocaleTermsURL(APPS.PROTONVPN_SETTINGS);
     })();
     const termsAndConditions = (
         <Href key="terms" href={termsHref}>

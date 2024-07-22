@@ -66,7 +66,7 @@ const InboxDesktopFreeTrialEnded = () => {
 
     const webAppMessage = <WebAppLink key="web-app" />;
     return (
-        <Layout layoutClassName="free-trial-blur" hasDecoration={false}>
+        <Layout layoutClassName="free-trial-blur" hasDecoration={false} toApp={APPS.PROTONMAIL}>
             <img
                 src={theme.information.dark ? inboxPlaceholderDark : inboxPlaceholder}
                 alt=""

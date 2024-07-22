@@ -54,7 +54,11 @@ const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) 
             </Content>
         </Main>
     );
-    return <Layout hasDecoration={false}>{children}</Layout>;
+    return (
+        <Layout hasDecoration={false} toApp={undefined}>
+            {children}
+        </Layout>
+    );
 };
 
 export default OAuthConfirmForkContainer;

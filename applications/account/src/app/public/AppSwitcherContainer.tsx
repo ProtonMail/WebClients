@@ -32,6 +32,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
 
     return (
         <Layout
+            toApp={undefined}
             hasDecoration={false}
             topRight={
                 <SimpleDropdown

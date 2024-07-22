@@ -15,7 +15,7 @@ import {
     getAppVersion,
     useConfig,
 } from '@proton/components';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -39,7 +39,9 @@ export interface Props {
 
 const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const { APP_VERSION } = useConfig();
-    const termsLink = <Href key="terms" className="eo-footer-link" href={getTermsURL()}>{c('Link').t`Terms`}</Href>;
+    const termsLink = (
+        <Href key="terms" className="eo-footer-link" href={getTermsURL(APPS.PROTONMAIL)}>{c('Link').t`Terms`}</Href>
+    );
     const privacyLink = (
         <Href key="privacy" className="eo-footer-link" href={getPrivacyPolicyURL()}>{c('Link').t`Privacy policy`}</Href>
     );

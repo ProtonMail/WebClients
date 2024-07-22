@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme } from '@proton/components';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -29,9 +30,11 @@ export interface Props {
     stepper?: ReactNode;
     centeredContent?: boolean;
     layoutClassName?: string;
+    toApp: APP_NAMES | undefined;
 }
 
 const Layout = ({
+    toApp,
     children,
     stepper,
     hasDecoration,
@@ -120,7 +123,7 @@ const Layout = ({
             </div>
             {hasDecoration ? (
                 <>
-                    <LayoutFooter app={APP_NAME} className="shrink-0 text-center p-4" version={appVersion} />
+                    <LayoutFooter app={toApp || APP_NAME} className="shrink-0 text-center p-4" version={appVersion} />
                     <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom-0 right-0 text-center lg:text-right text-sm sm:text-rg">
                         {bottomRight}
                     </div>
