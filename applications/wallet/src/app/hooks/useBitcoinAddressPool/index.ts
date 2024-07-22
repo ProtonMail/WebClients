@@ -1,9 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import { compact } from 'lodash';
+import { compact, uniq } from 'lodash';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import {
     POOL_FILLING_THRESHOLD,
@@ -29,6 +30,8 @@ export const useBitcoinAddressPool = ({
     const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
     const [isLoading, setIsLoading] = useState(false);
 
+    const { subscribe } = useEventManager();
+
     const fillBitcoinAddressPoolForAccount = useCallback(
         async (walletAccount: WasmApiWalletAccount, walletWithChainData: WalletWithChainData) => {
             const walletId = walletAccount.WalletID;
@@ -50,6 +53,8 @@ export const useBitcoinAddressPool = ({
                 .getBitcoinAddresses(walletId, walletAccountId)
                 .then((data) => data[0]);
 
+            const availableBitcoinAddresses = unusedBitcoinAddresses.filter((a) => !a.Data.Fetched);
+
             const computeAddressDataFromIndex = async (index: number) => {
                 const { address } = await wasmAccount.account.getAddress(index);
                 const signature = await signData(address, 'wallet.bitcoin-address', [primaryAddressKey.privateKey]);
@@ -62,7 +67,7 @@ export const useBitcoinAddressPool = ({
             };
 
             // Create missing addresses
-            const addressesToCreate = Math.max(0, POOL_FILLING_THRESHOLD - unusedBitcoinAddresses.length);
+            const addressesToCreate = Math.max(0, POOL_FILLING_THRESHOLD - availableBitcoinAddresses.length);
 
             // Fill bitcoin address pool
             const addressesPoolPayload = await generateBitcoinAddressesPayloadForPoolFilling({
@@ -151,6 +156,39 @@ export const useBitcoinAddressPool = ({
         },
         [decryptedApiWalletsData, fillBitcoinAddressPoolForAccount, walletsChainData]
     );
+
+    useEffect(() => {
+        return subscribe(
+            async ({
+                WalletBitcoinAddresses = [],
+            }: {
+                WalletBitcoinAddresses: {
+                    WalletBitcoinAddress: {
+                        WalletAccountID: string;
+                        BitcoinAddress?: string;
+                        Fetched: boolean;
+                        Used: boolean;
+                    };
+                }[];
+            }) => {
+                const walletAccountIds = uniq(
+                    /**
+                     * We want to keep only address events for
+                     * - Address request creation (!b.BitcoinAddress)
+                     * - Address lookup (b.Fetched)
+                     * - Address use (b.Used)
+                     *
+                     * And fill the pool for every wallet account related
+                     */
+                    WalletBitcoinAddresses.filter(
+                        ({ WalletBitcoinAddress: b }) => !b.BitcoinAddress || b.Fetched || b.Used
+                    ).map(({ WalletBitcoinAddress: b }) => b.WalletAccountID)
+                );
+
+                await fillBitcoinAddressPools({ walletAccountIds });
+            }
+        );
+    }, [fillBitcoinAddressPools, subscribe]);
 
     return { isLoading, fillBitcoinAddressPools, fillBitcoinAddressPoolForAccount };
 };

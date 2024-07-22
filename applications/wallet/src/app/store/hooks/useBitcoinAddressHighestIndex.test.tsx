@@ -18,6 +18,8 @@ describe('useBitcoinAddressHighestIndex', () => {
             mockedGetBitcoinAddressHighestIndex = vi
                 .fn()
                 .mockResolvedValueOnce(BigInt(3))
+                .mockResolvedValueOnce(BigInt(16))
+                .mockResolvedValueOnce(BigInt(3))
                 .mockResolvedValueOnce(BigInt(16));
 
             extendStore({
@@ -29,7 +31,7 @@ describe('useBitcoinAddressHighestIndex', () => {
             });
         });
 
-        it('should cache result for each account', async () => {
+        it('should not cache result for each account', async () => {
             const store = setupStore();
 
             function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
@@ -52,10 +54,12 @@ describe('useBitcoinAddressHighestIndex', () => {
             mockedGetBitcoinAddressHighestIndex.mockClear();
 
             expect(await result.current('01', '001')).toBe(3);
-            expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledTimes(0);
+            expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledTimes(1);
+            expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledWith('01', '001');
 
             expect(await result.current('01', '002')).toBe(16);
-            expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledTimes(0);
+            expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledTimes(2);
+            expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledWith('01', '002');
         });
     });
 });
