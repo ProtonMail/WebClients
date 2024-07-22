@@ -3,6 +3,8 @@ import { useEffect, useMemo } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
+import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LinkDownload } from '../_downloads';
 import { useDownloadProvider } from '../_downloads';
 import type { DriveEvents } from '../_events';
@@ -155,16 +157,42 @@ export const usePhotosView = () => {
         }
 
         if (meta.errors.length > 0) {
-            console.error(new Error('Failed to load links meta for download'), {
-                shareId,
-                linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
-                errors: meta.errors,
-            });
+            sendErrorReport(
+                new EnrichedError('Failed to load links meta for download', {
+                    tags: {
+                        shareId,
+                    },
+                    extra: {
+                        linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
+                        errors: meta.errors,
+                    },
+                })
+            );
 
             return;
         }
 
-        const links: LinkDownload[] = meta.links.map(
+        const relatedLinkIds = meta.links.flatMap((link) => link.activeRevision?.photo?.relatedPhotosLinkIds || []);
+
+        const relatedMeta = await loadLinksMeta(ac.signal, 'photos-related-download', shareId, relatedLinkIds);
+
+        if (relatedMeta.errors.length > 0) {
+            sendErrorReport(
+                new EnrichedError('Failed to load links meta for download', {
+                    tags: {
+                        shareId,
+                    },
+                    extra: {
+                        linkIds: linkIds.filter((id) => !relatedMeta.links.find((link) => link.linkId === id)),
+                        errors: relatedMeta.errors,
+                    },
+                })
+            );
+
+            return;
+        }
+
+        const links: LinkDownload[] = [...meta.links, ...relatedMeta.links].map(
             (link) =>
                 ({
                     ...link,
