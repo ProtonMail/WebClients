@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import { Prompt, Tooltip } from '@proton/components/components';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
+import { useUser } from '@proton/components/hooks';
+import { PLANS } from '@proton/shared/lib/constants';
 import upgradeWalletSrc from '@proton/styles/assets/img/illustrations/wallet-upgrade.svg';
 
 import { Button } from '../../atoms';
@@ -16,15 +19,39 @@ export interface WalletUpgradeModalOwnProps {
 type Props = WalletUpgradeModalOwnProps & ModalOwnProps;
 
 export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Props) => {
+    const [openSubscriptionModal] = useSubscriptionModal();
+    const [user] = useUser();
+
     return (
         <Prompt
             {...modalProps}
             className={theme}
             buttons={[
-                <Button fullWidth size="large" shape="solid" color="norm">
-                    {c('Action').t`Upgrade now`}
-                </Button>,
-                <Button fullWidth size="large" shape="solid" color="weak" onClick={modalProps.onClose}>{c('Wallet')
+                <Tooltip title={!user.canPay && c('Wallet upgrade').t`Contact your administrator to upgrade`}>
+                    <Button
+                        fullWidth
+                        size="large"
+                        shape="solid"
+                        color="norm"
+                        disabled={!user.canPay}
+                        onClick={() => {
+                            openSubscriptionModal({
+                                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                                disablePlanSelection: true,
+                                plan: PLANS.VISIONARY,
+                                onSubscribed: () => {
+                                    modalProps.onClose?.();
+                                },
+                                metrics: {
+                                    source: 'upsells',
+                                },
+                            });
+                        }}
+                    >
+                        {c('Action').t`Upgrade now`}
+                    </Button>
+                </Tooltip>,
+                <Button fullWidth size="large" shape="solid" color="weak" onClick={modalProps.onClose}>{c('Action')
                     .t`Close`}</Button>,
             ]}
         >

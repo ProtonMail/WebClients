@@ -14,9 +14,10 @@ import {
     SidebarListItemSettingsLink,
     useModalState,
 } from '@proton/components/components';
-import { AuthenticatedBugModal } from '@proton/components/containers';
-import { useToggle } from '@proton/components/hooks';
+import { AuthenticatedBugModal, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
+import { useOrganization, useToggle, useUser } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
+import { PLANS } from '@proton/shared/lib/constants';
 
 import { APP_NAME } from '../../../config';
 
@@ -46,6 +47,11 @@ const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
 
 export const OtherSidebarListItems = () => {
     const dispatch = useDispatch();
+    const [openSubscriptionModal] = useSubscriptionModal();
+
+    const [org] = useOrganization();
+    const [user] = useUser();
+
     const { state: showSettings, toggle: toggleShowSettings } = useToggle(false);
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
 
@@ -66,14 +72,32 @@ export const OtherSidebarListItems = () => {
 
     return (
         <>
-            <SidebarListItem className="my-2">
-                <SidebarItemContent
-                    icon="upgrade"
-                    to="/upgrade"
-                    data-testid="wallet-sidebar:upgrade"
-                    label={upgradeLabel}
-                />
-            </SidebarListItem>
+            {org?.PlanName !== PLANS.VISIONARY && user.canPay && (
+                <SidebarListItem className="my-2">
+                    <SidebarListItemButton
+                        data-testid="wallet-sidebar:upgrade"
+                        onClick={() => {
+                            openSubscriptionModal({
+                                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                                disablePlanSelection: true,
+                                plan: PLANS.VISIONARY,
+                                metrics: {
+                                    source: 'upsells',
+                                },
+                            });
+                        }}
+                    >
+                        <SidebarListItemContent
+                            left={<SidebarListItemContentIcon size={5} className="color-weak" name={'upgrade'} />}
+                            className="sidebar-item-content flex gap-2 max-w-full"
+                        >
+                            <div className="block text-ellipsis" title={upgradeLabel}>
+                                {upgradeLabel}
+                            </div>
+                        </SidebarListItemContent>
+                    </SidebarListItemButton>
+                </SidebarListItem>
+            )}
             <SidebarListItem className="my-2">
                 <SidebarListItemSettingsLink path={'/'} target="_blank">
                     <SidebarListItemContent
