@@ -4,7 +4,7 @@ import type { FactoryOpts } from 'imask/masked/factory';
 import cloneDeep from 'lodash/cloneDeep';
 import { c } from 'ttag';
 
-import type { ExtraFieldType, IdentityItemFormValues, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { ExtraFieldType, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
 
 type FieldName = keyof Omit<IdentityValues, 'extraSections'>;
@@ -29,8 +29,7 @@ export type IdentityFieldSection = {
     };
 };
 
-export const getInitialState = (shareId: string): IdentityItemFormValues => ({
-    shareId,
+export const getIdentityInitialValues = (): IdentityValues => ({
     fullName: '',
     email: '',
     phoneNumber: '',
@@ -68,8 +67,6 @@ export const getInitialState = (shareId: string): IdentityItemFormValues => ({
     extraContactDetails: [],
     extraWorkDetails: [],
     extraPersonalDetails: [],
-    name: '',
-    note: '',
 });
 
 type IdentityFormFields = Record<string, IdentityField>;
@@ -116,13 +113,13 @@ const getIdentityFields = (): IdentityFormFields => ({
     },
     extraPersonalDetails: {
         name: 'extraPersonalDetails',
-        label: c('Label').t`Text field`,
-        placeholder: c('Label').t`Text field`,
+        label: c('Label').t`Custom text field`,
+        placeholder: c('Label').t`Custom text field`,
     },
     extraPersonalDetailsHidden: {
         name: 'extraPersonalDetails',
-        label: c('Label').t`Hidden field`,
-        placeholder: c('Label').t`Hidden field`,
+        label: c('Label').t`Custom hidden field`,
+        placeholder: c('Label').t`Custom hidden field`,
         type: 'hidden',
     },
     organization: {
@@ -217,13 +214,13 @@ const getIdentityFields = (): IdentityFormFields => ({
     },
     extraWorkDetails: {
         name: 'extraWorkDetails',
-        label: c('Label').t`Text field`,
-        placeholder: c('Label').t`Text field`,
+        label: c('Label').t`Custom text field`,
+        placeholder: c('Label').t`Custom text field`,
     },
     extraWorkDetailsHidden: {
         name: 'extraWorkDetails',
-        label: c('Label').t`Hidden field`,
-        placeholder: c('Label').t`Hidden field`,
+        label: c('Label').t`Custom hidden field`,
+        placeholder: c('Label').t`Custom hidden field`,
         type: 'hidden',
     },
 });

@@ -1,3 +1,4 @@
+import { getIdentityInitialValues } from '@proton/pass/hooks/identity/useIdentityFormSections';
 import type {
     Item,
     ItemType,
@@ -45,45 +46,7 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeI
             return objectHandler<UnsafeItemContent<'note'>>({}) as R;
         }
         case 'identity': {
-            return objectHandler<UnsafeItemContent<'identity'>>({
-                fullName: '',
-                email: '',
-                phoneNumber: '',
-                firstName: '',
-                middleName: '',
-                lastName: '',
-                birthdate: '',
-                gender: '',
-                organization: '',
-                streetAddress: '',
-                zipOrPostalCode: '',
-                city: '',
-                stateOrProvince: '',
-                countryOrRegion: '',
-                floor: '',
-                county: '',
-                socialSecurityNumber: '',
-                passportNumber: '',
-                licenseNumber: '',
-                website: '',
-                xHandle: '',
-                linkedin: '',
-                reddit: '',
-                facebook: '',
-                yahoo: '',
-                instagram: '',
-                secondPhoneNumber: '',
-                company: '',
-                jobTitle: '',
-                personalWebsite: '',
-                workPhoneNumber: '',
-                workEmail: '',
-                extraAddressDetails: [],
-                extraSections: [],
-                extraContactDetails: [],
-                extraWorkDetails: [],
-                extraPersonalDetails: [],
-            }) as R;
+            return objectHandler<UnsafeItemContent<'identity'>>(getIdentityInitialValues()) as R;
         }
     }
 
