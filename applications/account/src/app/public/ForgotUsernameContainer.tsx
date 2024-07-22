@@ -17,6 +17,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -134,9 +135,10 @@ interface Props {
     onBack?: () => void;
     loginUrl: string;
     metaTags: MetaTags;
+    toApp?: APP_NAMES;
 }
 
-const ForgotUsernameContainer = ({ metaTags, onBack, loginUrl }: Props) => {
+const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl }: Props) => {
     useMetaTags(metaTags);
     const history = useHistory();
     const normalApi = useApi();
@@ -191,7 +193,7 @@ const ForgotUsernameContainer = ({ metaTags, onBack, loginUrl }: Props) => {
         </Main>
     );
     return (
-        <Layout onBack={handleBackStep} bottomRight={<LoginSupportDropdown />} hasDecoration={true}>
+        <Layout onBack={handleBackStep} bottomRight={<LoginSupportDropdown />} hasDecoration={true} toApp={toApp}>
             {children}
         </Layout>
     );

@@ -827,6 +827,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                 <Route path={SSO_PATHS.FORGOT_USERNAME}>
                                                     <UnAuthenticated>
                                                         <ForgotUsernameContainer
+                                                            toApp={maybePreAppIntent}
                                                             metaTags={forgotUsernamePage()}
                                                             loginUrl={paths.login}
                                                         />
@@ -868,6 +869,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                     <Route path={SSO_PATHS.REAUTH}>
                                                         <UnAuthenticated>
                                                             <ReAuthContainer
+                                                                toApp={maybePreAppIntent}
                                                                 onSwitch={() => {
                                                                     history.push(SSO_PATHS.SWITCH);
                                                                 }}
