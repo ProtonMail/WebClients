@@ -115,6 +115,7 @@ export const getLocalizedDescription = (mimeType: string): string | undefined =>
         case SupportedMimeTypes.pages:
             return c('Mimetype').t`Apple Pages`;
         case SupportedMimeTypes.pdf:
+        case 'application/x-pdf':
             return c('Mimetype').t`Adobe Portable Document Format (PDF)`;
         case SupportedMimeTypes.rtf:
             return c('Mimetype').t`Rich Text Format (RTF)`;
