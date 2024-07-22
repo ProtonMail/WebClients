@@ -13,7 +13,7 @@
   "dependencies": {
     "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.16.1#~/.yarn/patches/@lexical-yjs-npm-0.16.1-498ef5e9f8.patch",
     "@proton/docs-proto": "workspace:^",
-    "google-protobuf": "^3.21.2",
+    "google-protobuf": "^3.21.4",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.15"
   },
@@ -27,7 +27,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-junit": "^16.0.0",
     "jest-when": "3.6.0",
-    "ts-jest": "^29.2.2",
+    "ts-jest": "^29.2.3",
     "typescript": "^5.5.3"
   }
 }
