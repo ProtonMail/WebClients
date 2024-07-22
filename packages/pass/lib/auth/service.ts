@@ -496,7 +496,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         /** Online extra password verification will happen on
                          * first login after a successful fork. At this point
                          * we can enable the password lock automatically. */
-                        if (!EXTENSION_BUILD && authStore.getLockMode() === LockMode.NONE) {
+                        if (
+                            !EXTENSION_BUILD &&
+                            [LockMode.NONE, LockMode.BIOMETRICS].includes(authStore.getLockMode())
+                        ) {
                             authStore.setLockMode(LockMode.PASSWORD);
                             authStore.setLockTTL(DEFAULT_LOCK_TTL);
                         }
@@ -523,6 +526,17 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const { offlineConfig, offlineKD } = await getOfflineComponents(password);
             await registerExtraPassword({ password });
 
+            // Clear biometrics
+            if (authStore.getLockMode() === LockMode.BIOMETRICS) {
+                authStore.setEncryptedOfflineKD(undefined);
+                authStore.setLockMode(LockMode.PASSWORD);
+                await authService.config.onLockUpdate?.(
+                    { mode: LockMode.PASSWORD, locked: false, ttl: authStore.getLockTTL() },
+                    authStore.getLocalID(),
+                    true
+                );
+            }
+
             authStore.setExtraPassword(true);
             authStore.setOfflineConfig(offlineConfig);
             authStore.setOfflineKD(offlineKD);
@@ -533,6 +547,16 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         removeExtraPassword: async (password: string) => {
+            // Clear biometrics
+            if (authStore.getLockMode() === LockMode.BIOMETRICS) {
+                authStore.setEncryptedOfflineKD(undefined);
+                await authService.config.onLockUpdate?.(
+                    { mode: LockMode.PASSWORD, locked: false },
+                    authStore.getLocalID(),
+                    true
+                );
+            }
+
             await verifyExtraPassword({ password });
             await removeExtraPassword();
             await authService.logout({ soft: true, broadcast: true });
