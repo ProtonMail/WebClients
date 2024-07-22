@@ -8,6 +8,7 @@ import {
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     getHasVpnOrPassB2BPlan,
+    hasDuo,
     hasFamily,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
@@ -53,7 +54,7 @@ export const getOrganizationAppRoutes = ({
         canHaveOrganization &&
         (hasOrganizationKey || hasOrganization);
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
-    const isPartOfFamily = hasFamily(subscription);
+    const isPartOfFamily = hasFamily(subscription) || hasDuo(subscription);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`

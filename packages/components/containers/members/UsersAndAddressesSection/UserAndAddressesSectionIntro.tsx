@@ -7,6 +7,7 @@ import {
     getHasMailB2BPlan,
     getHasVpnOrPassB2BPlan,
     hasAnyBundlePro,
+    hasDuo,
     hasFamily,
 } from '@proton/shared/lib/helpers/subscription';
 
@@ -24,7 +25,7 @@ const UserAndAddressesSectionIntro = () => {
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
     const hasInboxB2BPlan = hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
 
-    if (hasFamily(subscription)) {
+    if (hasFamily(subscription) || hasDuo(subscription)) {
         return c('familyOffer_2023:Info for members section')
             .t`Add, remove, and make changes to user accounts in your family group.`;
     }

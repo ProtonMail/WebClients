@@ -17,6 +17,7 @@ import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import {
     getHasPassB2BPlan,
     getHasVpnOrPassB2BPlan,
+    hasDuo,
     hasFamily,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
@@ -128,7 +129,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
 
-    const canInviteProtonUsers = hasVisionary(subscription) || hasFamily(subscription);
+    const canInviteProtonUsers = hasVisionary(subscription) || hasFamily(subscription) || hasDuo(subscription);
     const { createNotification } = useNotifications();
 
     const cleanOption = {
@@ -292,7 +293,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleAddUser = () => {
         // Visionary can either create a sub user or invite existing users
-        if (hasVisionary(subscription) || hasFamily(subscription)) {
+        if (hasVisionary(subscription) || hasFamily(subscription) || hasDuo(subscription)) {
             setInviteOrCreateUserModalOpen(true);
             return;
         }
@@ -583,6 +584,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                             )}
                                                             {allowPrivateMemberConfiguration &&
                                                                 !hasFamily(subscription) &&
+                                                                !hasDuo(subscription) &&
                                                                 Boolean(member.Private) && (
                                                                     <UserTableBadge
                                                                         type="info"

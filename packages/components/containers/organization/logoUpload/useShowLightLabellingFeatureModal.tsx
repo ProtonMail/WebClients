@@ -10,7 +10,7 @@ import {
 } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 
 import { FeatureCode } from '../../features';
 import { useOrganizationTheme } from './useOrganizationTheme';
@@ -19,7 +19,7 @@ export const useShowLightLabellingFeatureModal = () => {
     const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
     const [{ isAdmin }] = useUser();
-    const isPartOfFamily = hasFamily(subscription);
+    const isPartOfFamily = hasFamily(subscription) || hasDuo(subscription);
     const [organization] = useOrganization();
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const organizationTheme = useOrganizationTheme();

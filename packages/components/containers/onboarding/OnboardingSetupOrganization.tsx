@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import { useSettingsLink } from '@proton/components/components';
 import useSubscription from '@proton/components/hooks/useSubscription';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 import clsx from '@proton/utils/clsx';
@@ -18,23 +18,23 @@ interface Props extends Omit<OnboardingContentProps, 'decription' | 'img'> {
 
 const OnboardingSetupOrganization = (props: Props) => {
     const [subscription] = useSubscription();
-    const hasFamilyPlan = hasFamily(subscription);
+    const hasFamilyOrDuoPlan = hasFamily(subscription) || hasDuo(subscription);
     const goToSettings = useSettingsLink();
 
-    const title = hasFamilyPlan
+    const title = hasFamilyOrDuoPlan
         ? c('familyOffer_2023:Onboarding Proton').t`Set up your family account`
         : c('Onboarding Proton').t`Set up your organization`;
 
-    const description = hasFamilyPlan
+    const description = hasFamilyOrDuoPlan
         ? c('familyOffer_2023:Onboarding Proton').t`Configure your family account and invite users `
         : c('Onboarding Proton')
               .t`Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.`;
 
-    const imgAlt = hasFamilyPlan
+    const imgAlt = hasFamilyOrDuoPlan
         ? c('familyOffer_2023:Onboarding Proton').t`Set up your family`
         : c('Onboarding Proton').t`Set up your organization`;
 
-    const img = hasFamilyPlan ? onboardingFamilyPlan : onboardingOrganization;
+    const img = hasFamilyOrDuoPlan ? onboardingFamilyPlan : onboardingOrganization;
 
     return (
         <OnboardingContent title={title} description={description} {...props}>
