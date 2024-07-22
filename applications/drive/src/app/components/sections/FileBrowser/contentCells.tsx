@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
 import { FileIcon, Icon, TableCell, Tooltip, useActiveBreakpoint, useContactEmails } from '@proton/components';
-import useWindowSize from '@proton/components/hooks/useWindowSize';
 import useLoading from '@proton/hooks/useLoading';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
@@ -21,6 +20,8 @@ import type { TrashItem } from '../Trash/Trash';
 import CopyLinkIcon from './CopyLinkIcon';
 import ShareIcon from './ShareIcon';
 import { getDeviceIconText, getLinkIconText } from './utils';
+
+import './contentCells.scss';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
 
@@ -227,11 +228,11 @@ export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
 
 export const AcceptOrRejectInvite = ({ item }: { item: SharedWithMeItem }) => {
     const [isLoading, withLoading] = useLoading();
-    // We need to use custom breakpoint to show proper Accept/Decline UI.
-    const [windowWidth] = useWindowSize();
-    const showButtonText = windowWidth >= 1300;
     return (
-        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-accept-reject">
+        <TableCell
+            className="flex flex-nowrap items-center m-0 w-1/6 accept-decline-cell"
+            data-testid="column-share-accept-reject"
+        >
             {item.invitationDetails && item.acceptInvitation && (
                 <div className={clsx('flex', 'gap-1')}>
                     <Button
@@ -240,7 +241,6 @@ export const AcceptOrRejectInvite = ({ item }: { item: SharedWithMeItem }) => {
                         color="norm"
                         shape="ghost"
                         size="small"
-                        icon={!showButtonText}
                         data-testid="share-accept-button"
                         onClick={async (e) => {
                             e.stopPropagation();
@@ -249,31 +249,29 @@ export const AcceptOrRejectInvite = ({ item }: { item: SharedWithMeItem }) => {
                             );
                         }}
                     >
-                        {showButtonText ? (
-                            c('Action').t`Accept`
-                        ) : (
-                            <Tooltip title={c('Action').t`Accept`}>
-                                <Icon name="checkmark-circle" alt={c('Action').t`Accept`} />
-                            </Tooltip>
-                        )}
+                        <Tooltip className="accept-decline-button-icon" title={c('Action').t`Accept`}>
+                            <Icon name="checkmark-circle" alt={c('Action').t`Accept`} />
+                        </Tooltip>
+                        <span className="accept-decline-button-text">{c('Action').t`Accept`}</span>
                     </Button>
                     {!isLoading && (
-                        <Button
-                            color="norm"
-                            shape="ghost"
-                            size="small"
-                            icon={!showButtonText}
-                            data-testid="share-decline-button"
-                            onClick={() => item.rejectInvitation?.(item.invitationDetails?.invitation.invitationId!)}
-                        >
-                            {showButtonText ? (
-                                c('Action').t`Decline`
-                            ) : (
-                                <Tooltip title={c('Action').t`Decline`}>
+                        <>
+                            <Button
+                                color="norm"
+                                shape="ghost"
+                                size="small"
+                                data-testid="share-decline-button"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    void item.rejectInvitation?.(item.invitationDetails?.invitation.invitationId!);
+                                }}
+                            >
+                                <Tooltip className="accept-decline-button-icon" title={c('Action').t`Decline`}>
                                     <Icon name="cross-circle" alt={c('Action').t`Decline`} />
                                 </Tooltip>
-                            )}
-                        </Button>
+                                <span className="accept-decline-button-text">{c('Action').t`Decline`}</span>
+                            </Button>
+                        </>
                     )}
                 </div>
             )}
