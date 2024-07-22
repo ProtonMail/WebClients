@@ -1,7 +1,7 @@
 import { BrowserView, app, dialog } from "electron";
-import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { c } from "ttag";
 import { viewLogger } from "../log";
+import { CHANGE_VIEW_TARGET } from "../external/shared/lib/desktop/desktopTypes";
 
 const beforeUnloadChoice = () => {
     return dialog.showMessageBoxSync({
@@ -15,7 +15,7 @@ const beforeUnloadChoice = () => {
     });
 };
 
-export const handleBeforeHandle = (viewID: VIEW_TARGET, view: BrowserView) => {
+export const handleBeforeHandle = (viewID: CHANGE_VIEW_TARGET, view: BrowserView) => {
     view.webContents.on("will-prevent-unload", (ev) => {
         viewLogger(viewID).info("will-prevent-unload");
         const choice = beforeUnloadChoice();

@@ -1,20 +1,6 @@
 import { nativeTheme } from "electron";
 import { getSettings, saveSettings } from "../store/settingsStore";
-
-export enum ThemeTypes {
-    Carbon = 1,
-    Snow = 2,
-}
-export enum ThemeModeSetting {
-    Auto,
-    Dark,
-    Light,
-}
-export type ThemeSetting = {
-    Mode: ThemeModeSetting;
-    LightTheme: ThemeTypes;
-    DarkTheme: ThemeTypes;
-};
+import { ThemeFeatureSetting, ThemeFontFaceSetting, ThemeFontSizeSetting, ThemeModeSetting, ThemeSetting, ThemeTypes } from "./external/shared/lib/themes/themes";
 
 const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",

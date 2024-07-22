@@ -1,13 +1,7 @@
 import { app } from "electron";
 import { getCalendarView, getMailView } from "./view/viewManagement";
 import { clearLogs, mainLogger } from "./log";
-
-// TODO import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
-export enum DESKTOP_PLATFORMS {
-    LINUX = "linux",
-    MACOS = "macos",
-    WINDOWS = "windows",
-}
+import { DESKTOP_PLATFORMS } from "./external/shared/lib/constants";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";

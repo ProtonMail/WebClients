@@ -1,12 +1,13 @@
 import { autoUpdater, session, app } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
-import { getPlatform, DESKTOP_PLATFORMS, semver } from "./utils/helpers";
-import { RELEASE_CATEGORIES } from "./constants";
+import { getPlatform, semver } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
 import { z } from "zod";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
+import { RELEASE_CATEGORIES } from "./utils/external/shared/lib/apps/desktopVersions";
+import { DESKTOP_PLATFORMS } from "./utils/external/shared/lib/constants";
 
 const releaseInfoSchema = z.object({
     Version: z.string(),

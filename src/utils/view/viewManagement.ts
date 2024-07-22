@@ -1,5 +1,4 @@
 import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
-import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { getConfig } from "../config";
 import { isLinux, isMac, isWindows } from "../helpers";
@@ -11,6 +10,7 @@ import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
 import { mainLogger, viewLogger } from "../log";
+import { CHANGE_VIEW_TARGET } from "../external/shared/lib/desktop/desktopTypes";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -143,7 +143,7 @@ async function updateLocalID(urlString: string) {
     return url.toString();
 }
 
-export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
+export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "") {
     const url = targetURL ? await updateLocalID(targetURL) : targetURL;
 
     if (!mainWindow) {

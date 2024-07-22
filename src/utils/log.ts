@@ -1,14 +1,14 @@
 import { Session, WebContents } from "electron";
 import Logger from "electron-log";
-import { VIEW_TARGET } from "../ipc/ipcConstants";
+import { CHANGE_VIEW_TARGET } from "./external/shared/lib/desktop/desktopTypes";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-export const netLogger = (viewID: VIEW_TARGET | null) => (viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net"));
+export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) => (viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net"));
 export const settingsLogger = Logger.scope("settings");
 export const squirrelLogger = Logger.scope("squirrel");
 export const updateLogger = Logger.scope("update");
-export const viewLogger = (viewID: VIEW_TARGET) => Logger.scope(viewID);
+export const viewLogger = (viewID: CHANGE_VIEW_TARGET) => Logger.scope(viewID);
 
 export function initializeLog() {
     Logger.initialize({ preload: true });
@@ -17,7 +17,7 @@ export function initializeLog() {
 
 export async function connectNetLogger(
     session: Session,
-    getWebContentsViewName: (webContents: WebContents) => VIEW_TARGET | null,
+    getWebContentsViewName: (webContents: WebContents) => CHANGE_VIEW_TARGET | null,
 ) {
     session.webRequest.onCompleted((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
