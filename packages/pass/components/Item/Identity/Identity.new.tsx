@@ -3,7 +3,7 @@ import { type FC, useMemo } from 'react';
 import { useFormik } from 'formik';
 
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { getInitialState } from '@proton/pass/hooks/identity/useIdentityFormSections';
+import { getIdentityInitialValues } from '@proton/pass/hooks/identity/useIdentityFormSections';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import type { IdentityItemFormValues } from '@proton/pass/types';
@@ -14,7 +14,10 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { IdentityForm } from './Identity.form';
 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
-    const initialValues: IdentityItemFormValues = useMemo(() => getInitialState(shareId), []);
+    const initialValues: IdentityItemFormValues = useMemo(
+        () => ({ shareId, name: '', note: '', ...getIdentityInitialValues() }),
+        []
+    );
 
     const form = useFormik<IdentityItemFormValues>({
         initialValues,
