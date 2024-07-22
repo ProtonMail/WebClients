@@ -37,7 +37,7 @@ export const IdentityCollapsibleSection: FC<IdentityCollapsibleSectionProps> = (
             name={optionalFields?.extraFieldKey || name}
             render={(helpers) => {
                 const extraFieldName = optionalFields?.extraFieldKey || name;
-                const extraFields = helpers.form.values[extraFieldName];
+                const extraFields: IdentityField[] = helpers.form.values[extraFieldName];
 
                 return (
                     <>
@@ -51,7 +51,7 @@ export const IdentityCollapsibleSection: FC<IdentityCollapsibleSectionProps> = (
                                     {...item}
                                 />
                             ))}
-                            {extraFields?.map(({ type }: IdentityField, index: number) => (
+                            {extraFields?.map(({ type }, index) => (
                                 <Field
                                     key={`${extraFieldName}[${index}]`}
                                     component={ExtraFieldComponent}
