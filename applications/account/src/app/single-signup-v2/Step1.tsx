@@ -344,7 +344,7 @@ const Step1 = ({
     const isOnboardingMode = mode === SignupMode.Onboarding;
 
     const termsAndConditionsLink = (
-        <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
+        <Href className="color-weak" key="terms" href={getLocaleTermsURL(app)}>
             {
                 // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                 c('new_plans: signup').t`terms and conditions`
