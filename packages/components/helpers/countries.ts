@@ -108,6 +108,7 @@ const getCountries = () => [
     { value: 'GD', label: c('Country name').t`Grenada` },
     { value: 'GP', label: c('Country name').t`Guadeloupe` },
     { value: 'GT', label: c('Country name').t`Guatemala` },
+    { value: 'GG', label: c('Country name').t`Guernsey` },
     { value: 'GN', label: c('Country name').t`Guinea` },
     { value: 'GW', label: c('Country name').t`Guinea-Bissau` },
     { value: 'GY', label: c('Country name').t`Guyana` },
