@@ -136,8 +136,8 @@ export const getPaths = (
     };
 };
 
-export const getLocaleTermsURL = () => {
-    return getTermsURL(getLocaleMapping(localeCode));
+export const getLocaleTermsURL = (app: APP_NAMES) => {
+    return getTermsURL(app, getLocaleMapping(localeCode));
 };
 
 export const UNAUTHENTICATED_ROUTES = {

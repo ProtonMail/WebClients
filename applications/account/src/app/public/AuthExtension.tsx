@@ -72,7 +72,7 @@ const AuthExtension = () => {
     const defaultData = defaults[type] || defaults.error;
 
     return (
-        <Layout hasDecoration={false}>
+        <Layout toApp={app} hasDecoration={false}>
             <Main>
                 <Content className="text-center">
                     {logo && (

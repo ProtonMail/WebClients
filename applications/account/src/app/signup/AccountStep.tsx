@@ -22,6 +22,7 @@ import {
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
@@ -77,6 +78,7 @@ export interface AccountStepProps {
 const AccountStep = ({
     onBack,
     title,
+    toApp,
     subTitle,
     defaultEmail,
     signupTypes,
@@ -425,7 +427,9 @@ const AccountStep = ({
 
                     <hr className="my-4" />
 
-                    <div className="color-weak text-center text-sm px-0 md:px-7">{getTerms()}</div>
+                    <div className="color-weak text-center text-sm px-0 md:px-7">
+                        {getTerms(toApp || APPS.PROTONACCOUNT)}
+                    </div>
                 </form>
             </Content>
         </Main>

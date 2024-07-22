@@ -23,6 +23,7 @@ import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { User, UserSettings, KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces';
@@ -53,11 +54,13 @@ export type ReAuthState = {
 };
 
 const ReAuthContainer = ({
+    toApp,
     paths,
     onLogin,
     onSwitch,
     state,
 }: {
+    toApp?: APP_NAMES;
     paths: Paths;
     onLogin: OnLoginCallback;
     onSwitch: () => void;
@@ -200,6 +203,7 @@ const ReAuthContainer = ({
 
     return (
         <Layout
+            toApp={toApp}
             topRight={
                 <SimpleDropdown
                     as={PublicUserItem}

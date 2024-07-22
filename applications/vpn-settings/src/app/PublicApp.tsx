@@ -88,6 +88,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                         </Route>
                                         <Route path="/forgot-username">
                                             <AccountForgotUsernameContainer
+                                                toApp={APPS.PROTONVPN_SETTINGS}
                                                 metaTags={forgotUsernamePage()}
                                                 loginUrl={paths.login}
                                             />

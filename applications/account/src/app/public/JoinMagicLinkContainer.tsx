@@ -296,7 +296,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
     );
 
     return (
-        <Layout hasDecoration={true}>
+        <Layout hasDecoration={true} toApp={toApp}>
             <Main>
                 <div>
                     {organizationName && <Header title={organizationName} className="text-break-all" />}
@@ -368,7 +368,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
                     <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
                         {c('Action').t`Continue`}
                     </Button>
-                    <div className="color-weak text-sm text-center mt-4">{getTerms()}</div>
+                    <div className="color-weak text-sm text-center mt-4">{getTerms(toApp || APPS.PROTONACCOUNT)}</div>
                 </form>
             </Main>
         </Layout>
