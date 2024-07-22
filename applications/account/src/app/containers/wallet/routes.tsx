@@ -9,6 +9,7 @@ export const getWalletAppRoutes = (): SidebarConfig => {
         header: WALLET_APP_NAME,
         routes: {
             authorization: {
+                available: false,
                 text: c('wallet_signup_2024:Wallet Settings').t`Authorization`,
                 to: '/authorize',
                 icon: 'checkmark',
