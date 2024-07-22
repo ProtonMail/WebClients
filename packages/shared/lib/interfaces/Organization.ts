@@ -18,6 +18,8 @@ export interface Organization {
     MaxSpace: number;
     MaxMembers: number;
     MaxAI: number;
+    MaxWallets: number;
+    MaxSubWallets: number;
     IsScimEnabled: boolean;
     MaxVPN: number;
     Features: number; // bits: 1 = catch-all addresses
