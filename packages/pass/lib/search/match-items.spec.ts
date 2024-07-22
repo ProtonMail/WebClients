@@ -109,15 +109,13 @@ describe('searchItems', () => {
                     extraPersonalDetails: [
                         { fieldName: '::field::', type: 'text', data: { content: '::personal-detail-1::' } },
                         { fieldName: '::field::', type: 'hidden', data: { content: '::personal-detail-2::' } },
-                        { fieldName: '::field::', type: 'text', data: { content: '::personal-detail-3::' } },
                     ],
                     streetAddress: '::street-address::',
                     city: '::city::',
                     workEmail: '::work-email::',
                     extraWorkDetails: [
-                        { fieldName: '::field::', type: 'text', data: { content: '::work-detail-1::' } },
+                        { fieldName: '::field::', type: 'hidden', data: { content: '::work-detail-1::' } },
                         { fieldName: '::field::', type: 'text', data: { content: '::work-detail-2::' } },
-                        { fieldName: '::field::', type: 'hidden', data: { content: '::work-detail-3::' } },
                     ],
                     extraSections: [
                         {
@@ -125,15 +123,13 @@ describe('searchItems', () => {
                             sectionFields: [
                                 { fieldName: '::field::', type: 'text', data: { content: '::first-section-1::' } },
                                 { fieldName: '::field::', type: 'hidden', data: { content: '::first-section-2::' } },
-                                { fieldName: '::field::', type: 'hidden', data: { content: '::first-section-3::' } },
                             ],
                         },
                         {
                             sectionName: '::section-2::',
                             sectionFields: [
                                 { fieldName: '::field::', type: 'hidden', data: { content: '::second-section-1::' } },
-                                { fieldName: '::field::', type: 'hidden', data: { content: '::second-section-2::' } },
-                                { fieldName: '::field::', type: 'text', data: { content: '::second-section-3::' } },
+                                { fieldName: '::field::', type: 'text', data: { content: '::second-section-2::' } },
                             ],
                         },
                     ],
@@ -160,6 +156,8 @@ describe('searchItems', () => {
                 'street-address',
                 'city',
                 'work-email',
+                '::personal-detail-2::',
+                '::work-detail-1::',
                 'detail-2',
                 'first-section-1::',
                 'second-section',
