@@ -30,17 +30,7 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
-import {
-    Badge,
-    Block,
-    Info,
-    SearchInput,
-    Table,
-    TableBody,
-    TableCell,
-    TableRow,
-    useModalState,
-} from '../../../components';
+import { Block, Info, SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
 import {
     useAddresses,
     useApi,
@@ -604,14 +594,14 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     </UserTableBadge>
                                                                 )}
                                                             {member.NumAI > 0 && (
-                                                                <Badge type="origin">
+                                                                <UserTableBadge type="weak">
                                                                     {c('Users table: badge').t`Writing assistant`}
-                                                                </Badge>
+                                                                </UserTableBadge>
                                                             )}
                                                             {member['2faStatus'] > 0 && (
-                                                                <Badge type="origin">
+                                                                <UserTableBadge type="weak">
                                                                     {c('Users table: badge').t`2FA`}
-                                                                </Badge>
+                                                                </UserTableBadge>
                                                             )}
                                                             {Boolean(member.SSO) && (
                                                                 <UserTableBadge
