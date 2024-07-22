@@ -12,7 +12,7 @@ describe('hasPlanIDs', () => {
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 1,
                 [PLANS.VPN]: 0,
-                [ADDON_NAMES.VPN]: 3,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
             })
         ).toBeTrue();
 
@@ -31,13 +31,13 @@ describe('hasPlanIDs', () => {
         expect(
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 1,
-                [ADDON_NAMES.VPN]: -1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: -1,
             })
         ).toBeTrue();
 
         expect(
             hasPlanIDs({
-                [ADDON_NAMES.VPN]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
             })
         ).toBeTrue();
     });
@@ -72,17 +72,17 @@ describe('setQuantity', () => {
             setQuantity(
                 {
                     [PLANS.MAIL_PRO]: 1,
-                    [ADDON_NAMES.ADDRESS]: 1,
+                    [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
                 },
-                ADDON_NAMES.ADDRESS,
+                ADDON_NAMES.MEMBER_MAIL_PRO,
                 0
             )
         ).toEqual({
             [PLANS.MAIL_PRO]: 1,
         });
-        expect(setQuantity({}, ADDON_NAMES.ADDRESS, 0)).toEqual({});
-        expect(setQuantity({}, ADDON_NAMES.ADDRESS, 1)).toEqual({
-            [ADDON_NAMES.ADDRESS]: 1,
+        expect(setQuantity({}, ADDON_NAMES.MEMBER_MAIL_PRO, 0)).toEqual({});
+        expect(setQuantity({}, ADDON_NAMES.MEMBER_MAIL_PRO, 1)).toEqual({
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
         });
     });
 });
@@ -92,11 +92,11 @@ describe('clearPlanIDs', () => {
         const planIDs = {
             [PLANS.MAIL_PRO]: 1,
             [PLANS.VPN]: 0,
-            [ADDON_NAMES.VPN]: 3,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
         };
         expect(clearPlanIDs(planIDs)).toEqual({
             [PLANS.MAIL_PRO]: 1,
-            [ADDON_NAMES.VPN]: 3,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
         });
     });
 });
