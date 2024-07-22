@@ -12,7 +12,6 @@ import type {
     SafeLoginItem,
     SelectedItem,
     UniqueItem,
-    UnsafeItemExtraField,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
@@ -162,6 +161,3 @@ export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem =>
     shareId: item.shareId,
     url: item.data.content.urls?.[0],
 });
-
-export const extraFieldIntoString = ({ type, data }: UnsafeItemExtraField): string =>
-    type !== 'totp' ? data.content : data.totpUri;
