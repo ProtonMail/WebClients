@@ -65,20 +65,18 @@ const PlanCustomizer = ({
 
     return (
         <div className={clsx(['flex flex-column gap-8', className])} {...rest}>
-            {addonsPricing.map(({ value, min, max, divider, addon, isSupported, addonMultiplier }) => {
+            {addonsPricing.map(({ value, min, max, addon, isSupported, addonMultiplier }) => {
                 const id = addon.Name;
 
                 const buttonNumberInput = (
                     <ButtonNumberInput
                         id={id}
-                        min={min / divider}
-                        max={max / divider}
+                        min={min}
+                        max={max}
                         step={addonMultiplier}
-                        value={value / divider}
+                        value={value}
                         onValue={(newQuantity) => {
-                            onChangePlanIDs(
-                                setQuantity(planIDs, addon.Name, (newQuantity * divider - min) / addonMultiplier)
-                            );
+                            onChangePlanIDs(setQuantity(planIDs, addon.Name, (newQuantity - min) / addonMultiplier));
                         }}
                         disabled={!isSupported}
                     />
