@@ -79,7 +79,7 @@ enum DriveFeatureFlag {
     DriveDocsDisabled = 'DriveDocsDisabled',
     DocsAppSwitcher = 'DocsAppSwitcher',
     // Bookmarks
-    DriveShareURLBookmarks = 'DriveShareURLBookmarks',
+    DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
     // TODO: DRVWEB-4064 - Clean this up
     DriveWebDownloadNewFolderLoaderAlgorithm = 'DriveWebDownloadNewFolderLoaderAlgorithm',
