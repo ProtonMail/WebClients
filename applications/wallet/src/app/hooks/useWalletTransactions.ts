@@ -523,10 +523,10 @@ export const useWalletTransactions = ({
                     }
 
                     return updatedTransactionData;
-                } catch (e) {
+                } catch (error: any) {
                     createNotification({
                         type: 'error',
-                        text: c('Wallet Transaction').t`Could not load updated transaction`,
+                        text: error?.error ?? c('Wallet Transaction').t`Could not load updated transaction`,
                     });
                 }
             }
