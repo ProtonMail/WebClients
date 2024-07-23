@@ -1,6 +1,7 @@
 import { Icon } from '@proton/components/components'
 import { CommentsPanelList } from './CommentsPanelList'
-import { CommentThreadInterface, CommentThreadState } from '@proton/docs-shared'
+import type { CommentThreadInterface } from '@proton/docs-shared'
+import { CommentThreadState } from '@proton/docs-shared'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { c } from 'ttag'
 import { memo, useMemo } from 'react'

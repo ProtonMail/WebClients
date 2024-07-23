@@ -1,4 +1,4 @@
-import type { TableDOMCell } from '@lexical/table'
+import type { TableDOMCell, TableCellNode } from '@lexical/table'
 import type { LexicalEditor } from 'lexical'
 
 import './index.css'
@@ -12,12 +12,12 @@ import {
   $isTableCellNode,
   $isTableRowNode,
   getDOMCellFromTarget,
-  TableCellNode,
 } from '@lexical/table'
 import { calculateZoomLevel } from '@lexical/utils'
 import { $getNearestNodeFromDOMNode } from 'lexical'
 import * as React from 'react'
-import { MouseEventHandler, ReactPortal, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { MouseEventHandler, ReactPortal } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 type MousePosition = {

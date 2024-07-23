@@ -1,4 +1,4 @@
-import { CommentThreadInterface } from '@proton/docs-shared'
+import type { CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

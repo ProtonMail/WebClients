@@ -10,9 +10,10 @@ import {
 } from '@lexical/yjs'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { Doc, Transaction, UndoManager, YEvent } from 'yjs'
+import type { Doc, Transaction, YEvent } from 'yjs'
+import { UndoManager } from 'yjs'
 
-import { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 

@@ -1,13 +1,13 @@
-import { $isLinkNode, LinkNode } from '@lexical/link'
+import type { LinkNode } from '@lexical/link'
+import { $isLinkNode } from '@lexical/link'
+import type { RangeSelection, TextNode } from 'lexical'
 import {
   $getSelection,
   $isRangeSelection,
   $isTextNode,
   COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_EDITOR,
-  RangeSelection,
   SELECTION_CHANGE_COMMAND,
-  TextNode,
   createCommand,
 } from 'lexical'
 import { useCallback, useEffect, useState } from 'react'

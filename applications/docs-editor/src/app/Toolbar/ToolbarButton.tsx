@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, ForwardedRef, forwardRef } from 'react'
+import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
+import { forwardRef } from 'react'
 import clsx from '@proton/utils/clsx'
 import { Tooltip } from '@proton/components'
 
