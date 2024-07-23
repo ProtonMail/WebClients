@@ -1179,6 +1179,9 @@
       "British Indian Ocean Territory": [
         "Britanya Hint Okyanusu Toprakları"
       ],
+      "British Virgin Islands": [
+        "Britanya Virjin Adaları"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1233,6 +1236,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratik Cumhuriyeti"
       ],
@@ -1271,6 +1277,9 @@
       ],
       "Dominican Republic": [
         "Dominik Cumhuriyeti"
+      ],
+      "East Timor": [
+        "Doğu Timor"
       ],
       "Ecuador": [
         "Ekvador"
@@ -1413,6 +1422,9 @@
       "Ireland": [
         "İrlanda"
       ],
+      "Islamic Republic of Iran": [
+        "İran İslam Cumhuriyeti"
+      ],
       "Isle of Man": [
         "Man Adası"
       ],
@@ -1443,6 +1455,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kore Demokratik Halk Cumhuriyeti"
+      ],
+      "Korea (Republic of)": [
+        "Kore Cumhuriyeti"
+      ],
       "Kosovo": [
         "Kosova"
       ],
@@ -1451,6 +1469,9 @@
       ],
       "Kyrgyzstan": [
         "Kırgızistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos Demokratik Halk Cumhuriyeti"
       ],
       "Laos": [
         "Laos"
@@ -1470,6 +1491,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya Arap Cemahiriyesi"
+      ],
       "Liechtenstein": [
         "Lihtenştayn"
       ],
@@ -1481,6 +1505,9 @@
       ],
       "Macao": [
         "Makao"
+      ],
+      "Macedonia": [
+        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -1734,6 +1761,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
+      "Swaziland": [
+        "Svaziland"
+      ],
       "Sweden": [
         "İsveç"
       ],
@@ -1754,6 +1784,9 @@
       ],
       "Tanzania": [
         "Tanzanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Birleşik Tanzaya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -1913,6 +1946,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -2707,6 +2743,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -3331,6 +3370,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
@@ -3887,6 +3929,12 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "No version history available": [
+        "Herhangi bir sürüm geçmişi kaydı yok"
+      ],
+      "No version history batches available": [
+        "Herhangi bir sürüm geçmişi kaydı yok"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini kapatın."
       ],
@@ -4081,6 +4129,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Belgedeki düzenlemelerin sahibi doğrulanamadı. Bu belgeyi doğrulanmış olarak işaretlemek ister misiniz? Daha sonra karar vermek için Yok say üzerine tıklayın."
       ],
+      "The Beginning": [
+        "Başlangıç"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
@@ -4204,6 +4255,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar hemen geri ödenir."
+      ],
+      "View only": [
+        "Yalnızca görüntüleme"
       ],
       "Visa Secure logo": [
         "Visa Secure logosu"
@@ -5050,6 +5104,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -5479,6 +5536,9 @@
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
       ],
+      "Collaborative document editor": [
+        "İşbirlikli çalışabileceğiniz belge düzenleyici"
+      ],
       "Contact groups": [
         "Kişi grupları"
       ],
@@ -5692,7 +5752,7 @@
         "Sınırsız etiket"
       ],
       "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -7257,6 +7317,11 @@
         "${ totalPrice } için"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Emin misiniz?"
@@ -8105,6 +8170,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "Bitcoin via email": [
+        "E-posta ile Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Cüzdan sorunu"
       ]
     },
     "Warning": {

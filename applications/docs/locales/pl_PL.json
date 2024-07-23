@@ -2594,6 +2594,9 @@
       "Validation error": [
         "Błąd weryfikacji"
       ],
+      "We are having trouble saving recent edits. Please refresh the page.": [
+        "Mamy problem z zapisaniem ostatnich zmian. Odśwież stronę."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
@@ -6746,6 +6749,9 @@
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Dodaj metodę płatności w pulpicie, aby kontynuować."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -7622,6 +7628,11 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -8277,6 +8288,9 @@
       "Sign out": [
         "Wyloguj"
       ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ],
       "Start a new import": [
         "Rozpocznij nowy import"
       ],
@@ -8514,6 +8528,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto na portfel",
+        "${ n } konta na portfel",
+        "${ n } kont na portfel",
+        "${ n } konta na portfel"
+      ],
+      "${ n } email address": [
+        "${ n } adres e-mail",
+        "${ n } adresy e-mail",
+        "${ n } adresów e-mail",
+        "${ n } adresu e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portfel",
+        "${ n } portfele",
+        "${ n } portfeli",
+        "${ n } portfela"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoiny przez e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem z portfelem"
       ]
     },
     "Warning": {

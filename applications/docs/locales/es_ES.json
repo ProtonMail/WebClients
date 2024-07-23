@@ -433,7 +433,7 @@
         "Borrar"
       ],
       "Remove access": [
-        "Eliminar el acceso"
+        "Borrar el acceso"
       ],
       "Remove bonuses": [
         "Borrar los beneficios"
@@ -1179,6 +1179,9 @@
       "British Indian Ocean Territory": [
         "Territorio Británico del Océano Índico"
       ],
+      "British Virgin Islands": [
+        "Islas Vírgenes Británicas"
+      ],
       "Brunei Darussalam": [
         "Brunéi"
       ],
@@ -1233,6 +1236,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (República Democrática)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democrática del"
       ],
@@ -1271,6 +1277,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor Oriental"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1413,6 +1422,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Irán (República Islámica de Irán)"
+      ],
       "Isle of Man": [
         "Isla de Man"
       ],
@@ -1443,6 +1455,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (República Popular Democrática)"
+      ],
+      "Korea (Republic of)": [
+        "Corea (República)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1470,6 +1488,9 @@
       "Libya": [
         "Líbia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libia, Yamahiriya Árabe"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1481,6 +1502,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -1734,6 +1758,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazilandia"
+      ],
       "Sweden": [
         "Suecia"
       ],
@@ -1744,7 +1771,7 @@
         "Siria"
       ],
       "Syrian Arab Republic": [
-        "Siria"
+        "Siria, República Árabe"
       ],
       "Taiwan": [
         "Taiwán"
@@ -1754,6 +1781,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, República Unida"
       ],
       "Thailand": [
         "Tailandia"
@@ -6276,7 +6306,7 @@
         "Error al renombrar el dispositivo"
       ],
       "Device removed": [
-        "Dispositivo borrado"
+        "El dispositivo está borrado."
       ],
       "Device renamed": [
         "Dispositivo renombrado"
@@ -7281,6 +7311,11 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Estás seguro?"
@@ -7908,6 +7943,9 @@
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Something went wrong": [
+        "Se ha producido un error."
+      ],
       "Start a new import": [
         "Iniciar una nueva importación"
       ],
@@ -8129,6 +8167,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener tu Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retén y transfiere tus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {

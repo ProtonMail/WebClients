@@ -1199,6 +1199,9 @@
       "British Indian Ocean Territory": [
         "Британская территория в Индийском океане"
       ],
+      "British Virgin Islands": [
+        "Британские Виргинские Острова"
+      ],
       "Brunei Darussalam": [
         "Бруней-Даруссалам"
       ],
@@ -1253,6 +1256,9 @@
       "Congo": [
         "Конго"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Конго (Демократическая Республика)"
+      ],
       "Congo, Democratic Republic of the": [
         "Демократическая Республика Конго"
       ],
@@ -1291,6 +1297,9 @@
       ],
       "Dominican Republic": [
         "Доминиканская Республика"
+      ],
+      "East Timor": [
+        "Восточный Тимор"
       ],
       "Ecuador": [
         "Эквадор"
@@ -1433,6 +1442,9 @@
       "Ireland": [
         "Ирландия"
       ],
+      "Islamic Republic of Iran": [
+        "Исламская Республика Иран"
+      ],
       "Isle of Man": [
         "Остров Мэн"
       ],
@@ -1463,6 +1475,12 @@
       "Kiribati": [
         "Кирибати"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Корея (Народно-Демократическая Республика)"
+      ],
+      "Korea (Republic of)": [
+        "Корея (Республика)"
+      ],
       "Kosovo": [
         "Косово"
       ],
@@ -1471,6 +1489,9 @@
       ],
       "Kyrgyzstan": [
         "Кыргызстан"
+      ],
+      "Lao People's Democratic Republic": [
+        "Лаосская Народная Демократическая Республика"
       ],
       "Laos": [
         "Лаос"
@@ -1490,6 +1511,9 @@
       "Libya": [
         "Ливия"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Ливийская Арабская Джамахирия"
+      ],
       "Liechtenstein": [
         "Лихтенштейн"
       ],
@@ -1501,6 +1525,9 @@
       ],
       "Macao": [
         "Макао"
+      ],
+      "Macedonia": [
+        "Македония"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -4005,6 +4032,9 @@
       "No results found": [
         "Результаты не найдены"
       ],
+      "No version history available": [
+        "История версий отсутствует"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ни один из загруженных ключей не действителен для шифрования. Чтобы отправить сообщения по этому адресу, пожалуйста, загрузите действующий ключ или отключите функцию \"Зашифровать электронные письма\"."
       ],
@@ -4203,6 +4233,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Не удалось проверить авторство правок в этом документе. Хотите ли вы отметить этот документ как проверенный? Вы можете выбрать Игнорировать, чтобы решить это позже."
       ],
+      "The Beginning": [
+        "Начало"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
@@ -4328,6 +4361,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
+      ],
+      "View only": [
+        "Режим просмотра"
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
@@ -7520,6 +7556,11 @@
         "Для ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы уверены?"
@@ -8409,6 +8450,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } счёт на один кошелёк",
+        "${ n } счёта на один кошелёк",
+        "${ n } счетов на один кошелёк",
+        "${ n } счетов на один кошелёк"
+      ],
+      "${ n } email address": [
+        "${ n } адрес эл. почты",
+        "${ n } адреса эл. почты",
+        "${ n } адресов эл. почты",
+        "${ n } адресов эл. почты"
+      ],
+      "${ n } wallet": [
+        "${ n } кошелёк",
+        "${ n } кошелька",
+        "${ n } кошельков",
+        "${ n } кошельков"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Безопасный способ держать свои Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin по эл. почте"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Безопасно храните и переводите Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема с Wallet"
       ]
     },
     "Warning": {
