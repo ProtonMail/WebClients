@@ -14,12 +14,13 @@ const VERSION_SEPARATOR = '.';
  * ⚠️ WARNING: UPDATING KEYS HERE WILL CAUSE EXISTING DIGESTS TO FAIL
  * VALIDATION - BUMP THE `SESSION_DIGEST_VERSION` WHEN DOING SO.  */
 export const SESSION_INTEGRITY_KEYS_V1: IntegrityKey[] = [
+    'extraPassword',
     'LocalID',
     'lockMode',
     'lockTTL',
+    'offlineVerifier',
     'payloadVersion',
     'persistent',
-    'offlineVerifier',
     'UID',
     'UserID',
 ];
@@ -35,7 +36,9 @@ export const getSessionIntegrityKeys = (version: number): IntegrityKey[] => {
 
 export const getSessionDigestVersion = (digest: string): number => {
     try {
-        const [, versionStr] = digest.split(VERSION_SEPARATOR);
+        const [versionStr] = digest.split(VERSION_SEPARATOR);
+
+        if (versionStr.length === digest.length) return SESSION_DIGEST_VERSION;
         const version = parseInt(versionStr, 10);
         return Number.isFinite(version) ? version : SESSION_DIGEST_VERSION;
     } catch {
@@ -55,5 +58,5 @@ export const digestSession = async (
     const sessionBuffer = stringToUint8Array(sessionDigest);
     const digest = await crypto.subtle.digest('SHA-256', sessionBuffer);
 
-    return `${uint8ArrayToBase64String(new Uint8Array(digest))}${VERSION_SEPARATOR}${version}`;
+    return `${version}${VERSION_SEPARATOR}${uint8ArrayToBase64String(new Uint8Array(digest))}`;
 };
