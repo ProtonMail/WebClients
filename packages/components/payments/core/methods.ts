@@ -1,20 +1,19 @@
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
-    ADDON_NAMES,
     BLACK_FRIDAY,
     MIN_BITCOIN_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MIN_PAYPAL_AMOUNT_INHOUSE,
-    PLANS,
 } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
+import type { Api, BillingPlatform, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { isExpired as getIsExpired } from './cardDetails';
 import { PAYMENT_METHOD_TYPES } from './constants';
-import {
+import type {
     AvailablePaymentMethod,
-    MethodStorage,
     PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
@@ -22,9 +21,8 @@ import {
     PlainPaymentMethodType,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
-    extendStatus,
-    isSignupFlow,
 } from './interface';
+import { MethodStorage, extendStatus, isSignupFlow } from './interface';
 import { isOnSessionMigration, isSplittedUser } from './utils';
 
 export class PaymentMethods {
@@ -241,7 +239,7 @@ export class PaymentMethods {
         }
 
         // for signup-pass, bitcoin IS available
-        const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice', 'credit'];
+        const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice'];
         const isEnabledFlow = !disabledFlows.includes(this.flow);
 
         const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
