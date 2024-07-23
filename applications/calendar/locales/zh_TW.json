@@ -787,6 +787,9 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains }額外自訂網域"
+      ],
       "${ ips } server": [
         "${ ips } 台伺服器"
       ],
@@ -1575,6 +1578,9 @@
       "British Indian Ocean Territory": [
         "英屬印度洋領地"
       ],
+      "British Virgin Islands": [
+        "英屬維京群島"
+      ],
       "Brunei Darussalam": [
         "汶萊"
       ],
@@ -2251,9 +2257,6 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "於…後結束"
-      ],
       "Never": [
         "從不"
       ],
@@ -2395,6 +2398,9 @@
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "這可能需要幾分鐘的時間。同時，您可以像往常一樣繼續使用行事曆。"
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "以確保您帳戶的最高可能的安全，設置復原詞句。"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
@@ -3272,6 +3278,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "別名無法在額外密碼於${ PASS_APP_NAME }啟用時使用。"
+      ],
       "App currently unavailable": [
         "App 目前無法使用"
       ],
@@ -5525,6 +5534,9 @@
       "What happened?": [
         "發生了甚麼問題？"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "請問退訂或降級的主要理由?"
+      ],
       "Wonderful": [
         "太棒了"
       ],
@@ -5719,6 +5731,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "添加${ BRAND_NAME }訂閱撰寫扳手"
+      ],
       "for ${ price }": [
         "${ price } 版"
       ]
@@ -6369,6 +6384,9 @@
       "Unlimited logins and notes": [
         "無限登入資訊與筆記"
       ],
+      "Unlimited logins, notes and credit cards": [
+        "無限登入，筆記和信用卡"
+      ],
       "Unlimited messages per day": [
         "每日郵件無上限"
       ],
@@ -6685,6 +6703,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "上傳企業標誌以於${ BRAND_NAME }網頁自訂團隊體驗"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "使用您擁有的自訂電子郵件網域位址，例如 you@yourname.com"
@@ -7088,6 +7109,9 @@
       ],
       "Payment Processing": [
         "付款處理中"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "請先重新啟用訂閱以減少添加數量。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
@@ -8029,6 +8053,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME }保護您企業的資料安全和讓您傳送安全加密電郵給任何人。"
+      ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME }與自動郵件轉寄"
       ],
@@ -8124,6 +8151,9 @@
       ],
       "Read the story": [
         "已讀的訊息"
+      ],
+      "Stay secure and connected anywhere": [
+        "保護安全和連接至任何地方"
       ],
       "Sync files on devices": [
         "於裝置同步"
@@ -8780,6 +8810,9 @@
       ],
       "Import failed": [
         "匯入失敗"
+      ],
+      "Import groups": [
+        "匯入群組"
       ],
       "Invalid verification code": [
         "驗證碼無效"
