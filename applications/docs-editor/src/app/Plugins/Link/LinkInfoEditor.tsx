@@ -1,18 +1,17 @@
+import type { LexicalEditor, RangeSelection, TextNode } from 'lexical'
 import {
   $isTextNode,
   $createTextNode,
   COMMAND_PRIORITY_LOW,
-  LexicalEditor,
-  RangeSelection,
   SELECTION_CHANGE_COMMAND,
-  TextNode,
   $getSelection,
   $isRangeSelection,
   $insertNodes,
 } from 'lexical'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { getSelectedNode } from '../../Utils/getSelectedNode'
-import { $createLinkNode, $isLinkNode, LinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
+import type { getSelectedNode } from '../../Utils/getSelectedNode'
+import type { LinkNode } from '@lexical/link'
+import { $createLinkNode, $isLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { createPortal } from 'react-dom'

@@ -1,12 +1,6 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import {
-  $createTableSelection,
-  $isTableNode,
-  $isTableSelection,
-  TableCellNode,
-  TableNode,
-  TableRowNode,
-} from '@lexical/table'
+import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import { $createTableSelection, $isTableNode, $isTableSelection } from '@lexical/table'
 import { $findMatchingParent, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
 import { Button } from '@proton/atoms'
 import { ButtonGroup, DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, Toggle } from '@proton/components'

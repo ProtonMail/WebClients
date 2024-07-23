@@ -1,5 +1,5 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { TableNode } from '@lexical/table'
+import type { TableNode } from '@lexical/table'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import debounce from '@proton/utils/debounce'
 import clsx from '@proton/utils/clsx'

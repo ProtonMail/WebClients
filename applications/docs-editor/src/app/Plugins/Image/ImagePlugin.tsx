@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $wrapNodeInElement, CAN_USE_DOM, mergeRegister } from '@lexical/utils'
+import type { LexicalCommand } from 'lexical'
 import {
   $createParagraphNode,
   $createRangeSelection,
@@ -17,11 +18,11 @@ import {
   DRAGOVER_COMMAND,
   DRAGSTART_COMMAND,
   DROP_COMMAND,
-  LexicalCommand,
   createCommand,
 } from 'lexical'
 
-import { $createImageNode, $isImageNode, ImageNode, SerializedImageNode } from './ImageNode'
+import type { SerializedImageNode } from './ImageNode'
+import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
 
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'

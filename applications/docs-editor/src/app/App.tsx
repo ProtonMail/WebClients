@@ -1,35 +1,37 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
-import {
-  BridgeOriginProvider,
+import type {
   BroadcastSource,
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
+  RtsMessagePayload,
+  YDocMap,
+  DocumentRoleType,
+  DocsAwarenessStateChangeData,
+  EditorInitializationConfig,
+} from '@proton/docs-shared'
+import {
+  BridgeOriginProvider,
   CommentsEvent,
   DocState,
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
-  RtsMessagePayload,
-  YDocMap,
-  DocumentRoleType,
   DocAwarenessEvent,
-  DocsAwarenessStateChangeData,
-  EditorInitializationConfig,
 } from '@proton/docs-shared'
-import { Doc as YDoc } from 'yjs'
+import type { Doc as YDoc } from 'yjs'
 import { Icons } from '@proton/components'
 import { ApplicationProvider } from './ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
-import { LexicalEditor, SerializedEditorState } from 'lexical'
+import type { LexicalEditor, SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
 import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
 import { Application } from './Application'
 import { ThemeStyles } from './Theme'
-import { DocumentInteractionMode } from './DocumentInteractionMode'
+import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
 
 type Props = {

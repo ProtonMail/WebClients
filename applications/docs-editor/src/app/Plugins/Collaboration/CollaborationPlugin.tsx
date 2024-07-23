@@ -2,12 +2,13 @@ import type { Doc } from 'yjs'
 
 import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { ExcludedProperties, Provider } from '@lexical/yjs'
+import type { ExcludedProperties, Provider } from '@lexical/yjs'
 import { useEffect, useMemo } from 'react'
 
-import { CursorsContainerRef, useYjsCollaboration } from './useYjsCollaboration'
+import type { CursorsContainerRef } from './useYjsCollaboration'
+import { useYjsCollaboration } from './useYjsCollaboration'
 import { useYjsHistory } from './useYjsHistory'
-import { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
 
 type Props = {

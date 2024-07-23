@@ -1,5 +1,5 @@
 import React from 'react'
-import { InitialConfigType } from '@lexical/react/LexicalComposer'
+import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
