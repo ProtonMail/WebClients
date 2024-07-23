@@ -1,9 +1,9 @@
-import { WasmApiWalletAccount, WasmScriptType } from '@proton/andromeda';
-import { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { type WasmApiWalletAccount, WasmScriptType } from '@proton/andromeda';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 
 import { apiWalletsData } from '../../tests/fixtures';
-import { IWasmApiWalletData } from '../../types';
+import type { IWasmApiWalletData } from '../../types';
 import {
     apiWalletsDataReducer,
     selectApiWalletsData,
@@ -75,6 +75,7 @@ describe('apiWalletsData', () => {
                 Addresses: [],
                 Priority: 1,
                 LastUsedIndex: 0,
+                PoolSize: 0,
             };
 
             store.dispatch(walletAccountCreation(account));
