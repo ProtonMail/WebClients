@@ -267,6 +267,11 @@ it('should initialize payment methods (with chargebee)', async () => {
         },
         {
             isSaved: false,
+            type: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            value: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+        },
+        {
+            isSaved: false,
             type: PAYMENT_METHOD_TYPES.CASH,
             value: PAYMENT_METHOD_TYPES.CASH,
         },
