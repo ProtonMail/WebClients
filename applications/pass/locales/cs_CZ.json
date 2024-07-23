@@ -1047,6 +1047,9 @@
         "${ count } zobrazení",
         "${ count } zobrazení"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } zobrazení"
+      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členové",
@@ -1437,11 +1440,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Přesunutím položky do jiného trezoru se smaže její historie a všechny bezpečné odkazy."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Přesunutím položky do jiného trezoru se smaže její historie."
       ],
       "Moving items": [
         "Přesouvání položek"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Přesunutím položek do jiného trezoru se smaže jejich historie a všechny bezpečné odkazy."
       ],
       "Moving items to another vault will erase their history.": [
         "Přesunutím položek do jiného trezoru se smaže jejich historie."
@@ -2667,6 +2676,15 @@
       ],
       "Modified": [
         "Upraveno"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Přesunout všechny položky do \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Přesunout položku do \"${ vaultName }\"?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Přesunout položky do \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Žádné vyloučené položky"
