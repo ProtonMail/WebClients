@@ -4,10 +4,13 @@ import { uniqBy } from 'lodash';
 import { c } from 'ttag';
 
 import type { WasmApiCountry } from '@proton/andromeda';
+import { Href } from '@proton/atoms/Href';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
+import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, SearchableSelect } from '../../../atoms';
+import { ModalParagraph } from '../../../atoms/ModalParagraph';
 import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvider';
 
 interface Props {
@@ -21,12 +24,24 @@ export const Location = ({ onConfirm }: Props) => {
     const allCountries = uniqBy(Object.values(countriesByProviders ?? {}).flat(), (country) => country.Code);
     const allCountryOptions = allCountries.map((country) => ({ countryCode: country.Code, countryName: country.Name }));
 
+    const rampLink = <Href href="https://ramp.network">{c('bitcoin buy').t`Ramp`}</Href>;
+    const banxaLink = <Href href="https://banxa.com">{c('bitcoin buy').t`Banxa`}</Href>;
+    const binanceLink = <Href href="https://binance.com">{c('bitcoin buy').t`Binance`}</Href>;
+    const coinbaseLink = <Href href="https://coinbase.com">{c('bitcoin buy').t`Coinbase`}</Href>;
+    const krakenLink = <Href href="https://kraken.com">{c('bitcoin buy').t`Kraken`}</Href>;
+
     return (
         <div className="flex flex-column max-w-full justify-center items-center">
-            <h2 className="text-center text-semibold">{c('bitcoin buy').t`Location`}</h2>
+            <h2 className="text-center text-semibold mb-3">{c('bitcoin buy').t`Location`}</h2>
 
-            <p className="text-center mb-8 px-6 color-weak">{c('bitcoin buy')
-                .t`Based on your location, we recommend the best provider and payment method for you.`}</p>
+            <ModalParagraph className="max-w-custom" style={{ '--max-w-custom': '26rem' }}>
+                <p>{c('bitcoin buy')
+                    .jt`${WALLET_APP_NAME} has partnered with ${rampLink} and ${banxaLink}, two registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.`}</p>
+                <p>{c('bitcoin buy')
+                    .t`Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.`}</p>
+                <p>{c('bitcoin buy')
+                    .jt`You can also buy BTC on exchanges like ${binanceLink}, ${coinbaseLink}, or ${krakenLink} and then send the BTC to your Receive address.`}</p>
+            </ModalParagraph>
 
             <div className="mb-8 w-full">
                 <CountrySelect
