@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import {
     hasEmail,
+    hasOTP,
     hasUserIdentifier,
     isActive,
     isItemType,
@@ -25,6 +26,7 @@ import type {
     SelectAutosaveCandidatesOptions,
     SelectItemsByDomainOptions,
     SelectItemsOptions,
+    SelectOTPAutofillCandidateOptions,
 } from '@proton/pass/lib/search/types';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
@@ -261,6 +263,15 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
             return candidates.filter(hasUserIdentifier(userIdentifier));
         }
     );
+
+export const selectOTPCandidate = ({ submission, ...url }: SelectOTPAutofillCandidateOptions) =>
+    createSelector(selectAutofillCandidates(url), (candidates) => {
+        const otpItems = candidates.filter(hasOTP);
+        const userIdentifier = submission?.data.userIdentifier;
+
+        if (userIdentifier) return otpItems.find(hasUserIdentifier(userIdentifier));
+        else return otpItems.slice().sort(sortOn('lastUseTime'))[0];
+    });
 
 export const selectPasskeys = (payload: PasskeyQueryPayload) =>
     createSelector(selectAllItems, (items): SelectedPasskey[] => {
