@@ -1,4 +1,5 @@
-import { LexicalEditor, FORMAT_ELEMENT_COMMAND, ElementFormatType } from 'lexical'
+import type { LexicalEditor, ElementFormatType } from 'lexical'
+import { FORMAT_ELEMENT_COMMAND } from 'lexical'
 import { c } from 'ttag'
 import { memo } from 'react'
 import { DropdownMenuButton, Icon } from '@proton/components'

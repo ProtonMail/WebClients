@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { ReactNode, useRef, useState } from 'react'
-import { CommentEditor, CommentEditorHandle } from './CommentEditor'
+import type { ReactNode } from 'react'
+import { useRef, useState } from 'react'
+import type { CommentEditorHandle } from './CommentEditor'
+import { CommentEditor } from './CommentEditor'
 import clsx from '@proton/utils/clsx'
 import { isMac } from '@proton/shared/lib/helpers/browser'
 
