@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Accepta"
+      ],
       "Activate recovery": [
         "Activa la recuperació"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Personalitzar importació"
+      ],
+      "Decline": [
+        "Rebutja"
       ],
       "Decrease": [
         "Redueix"
@@ -854,6 +860,9 @@
       ],
       "Upload file": [
         "Puja un fitxer"
+      ],
+      "Upload files": [
+        "Carrega fitxers"
       ],
       "Upload folder": [
         "Puja una carpeta"
@@ -1514,6 +1523,9 @@
       "British Indian Ocean Territory": [
         "Territori Britànic de l'Oceà Índic"
       ],
+      "British Virgin Islands": [
+        "Illes Verges britàniques"
+      ],
       "Brunei Darussalam": [
         "Brunei"
       ],
@@ -1606,6 +1618,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor oriental"
       ],
       "Ecuador": [
         "Equador"
@@ -1778,6 +1793,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Republic of)": [
+        "Corea (República)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1816,6 +1834,9 @@
       ],
       "Macao": [
         "Macau"
+      ],
+      "Macedonia": [
+        "Macedònia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2069,6 +2090,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazilàndia"
+      ],
       "Sweden": [
         "Suècia"
       ],
@@ -2089,6 +2113,9 @@
       ],
       "Tanzania": [
         "Tanzània"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzània (República Unida)"
       ],
       "Thailand": [
         "Tailàndia"
@@ -7556,9 +7583,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Entesos"
-      ],
       "Next": [
         "Següent"
       ],
@@ -7570,17 +7594,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Comenceu a utilitzar ${ DRIVE_APP_NAME } i millorarem el vostre emmagatzematge a 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Convideu a altres persones per correu electrònic a veure i editar els vostres fitxers o creeu un enllaç públic per a un accés ràpid"
-      ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
       ],
       "Share a file": [
         "Comparteix un fitxer"
-      ],
-      "Share files with one click": [
-        "Comparteix fitxers amb un clic"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Completeu els següents passos abans d'${ expiresInDays } dia:",
@@ -9256,16 +9274,16 @@
         "${ emailsCount } adreces de correu electrònic"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } descàrrega fallida",
-        "${ numberOfFailedTransfer.total } descàrregues fallides"
+        "Ha fallat ${ numberOfFailedTransfer.total } descàrrega",
+        "Han fallat ${ numberOfFailedTransfer.total } descàrregues"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } transferència no completada",
         "${ numberOfFailedTransfer.total } transferències no completades"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } càrrega fallida",
-        "${ numberOfFailedTransfer.total } càrregues fallides"
+        "Ha fallat ${ numberOfFailedTransfer.total } càrrega",
+        "Han fallat ${ numberOfFailedTransfer.total } càrregues"
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -9739,6 +9757,9 @@
       ],
       "Show actions": [
         "Mostra accions"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"

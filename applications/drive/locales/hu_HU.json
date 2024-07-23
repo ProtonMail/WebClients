@@ -2338,6 +2338,9 @@
       "Missing signature": [
         "Hiányzó aláírás"
       ],
+      "Name is required": [
+        "Név megadása kötelező"
+      ],
       "No calendars found to import": [
         "Nincs importálandó naptár"
       ],
@@ -3075,6 +3078,9 @@
     "Header": {
       "Contacts": [
         "Névjegyek"
+      ],
+      "Security Center": [
+        "Biztonsági központ"
       ]
     },
     "Hint": {
@@ -3966,6 +3972,9 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
+      "Important note": [
+        "Fontos megjegyzés"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
       ],
@@ -4541,6 +4550,9 @@
       ],
       "Visa Secure logo": [
         "Visa biztonsági logó"
+      ],
+      "Warning": [
+        "Figyelmeztetés"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "Műszaki problémák merültek fel. Az új fényképek feltöltése ideiglenesen nem lehetséges."
@@ -5425,6 +5437,11 @@
         "Az importálás indul"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "váltson nagyobb csomagra több tárhelyért"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } engedélyezése"
@@ -5640,6 +5657,9 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
       ],
       "Admin console": [
         "Admin konzol"
@@ -7815,6 +7835,9 @@
       ],
       "Show actions": [
         "Műveletek megjelenítése"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
