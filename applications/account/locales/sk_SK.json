@@ -697,11 +697,14 @@
       "No, thanks": [
         "Nie, ďakujem"
       ],
+      "OK": [
+        "OK"
+      ],
       "Ok": [
         "Ok"
       ],
-      "OK": [
-        "OK"
+      "Open": [
+        "Otvoriť"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -1227,6 +1230,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } dodatočná vlastná doména",
+        "${ domains } dodatočné vlastné domény",
+        "${ domains } dodatočných vlastných domén",
+        "${ domains } dodatočných vlastných domén"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servery",
@@ -1393,9 +1402,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Rýchlejší a väčšia kompatibilita so zariadeniami"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Počas používania sa neprenášajú žiadne údaje, vyžaduje jednorazové stiahnutie"
       ],
       "Run locally": [
         "Funguje lokálne"
@@ -2444,6 +2450,9 @@
       "British Indian Ocean Territory": [
         "Britské indické oceánske územie"
       ],
+      "British Virgin Islands": [
+        "Britské Panenské ostrovy"
+      ],
       "Brunei Darussalam": [
         "Brunej Darussalam"
       ],
@@ -2498,6 +2507,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Demokratická republika)"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratická republika"
       ],
@@ -2536,6 +2548,9 @@
       ],
       "Dominican Republic": [
         "Dominikánská republika"
+      ],
+      "East Timor": [
+        "Východný Timor"
       ],
       "Ecuador": [
         "Ekvádor"
@@ -2678,6 +2693,9 @@
       "Ireland": [
         "Írsko"
       ],
+      "Islamic Republic of Iran": [
+        "Iránska islamská republika"
+      ],
       "Isle of Man": [
         "Ostrov Man"
       ],
@@ -2708,6 +2726,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kórea (Ľudovodemokratická republika)"
+      ],
+      "Korea (Republic of)": [
+        "Kórea (Južná)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2716,6 +2740,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgizsko"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laoská ľudovo-demokratická republika"
       ],
       "Laos": [
         "Laos"
@@ -2735,6 +2762,9 @@
       "Libya": [
         "Líbya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Líbyjská arabská džamahírija"
+      ],
       "Liechtenstein": [
         "Lichtenštajnsko"
       ],
@@ -2746,6 +2776,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedónsko"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2999,6 +3032,9 @@
       "Svalbard and Jan Mayen": [
         "Špicbergy a Jan Mayen"
       ],
+      "Swaziland": [
+        "Svazijsko"
+      ],
       "Sweden": [
         "Švédsko"
       ],
@@ -3019,6 +3055,9 @@
       ],
       "Tanzania": [
         "Tanzánia"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzánijská zjednotená Republika"
       ],
       "Thailand": [
         "Thajsko"
@@ -7957,6 +7996,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
       ],
+      "Session Ended": [
+        "Koniec relácie"
+      ],
+      "Session Started": [
+        "Začiatok relácie"
+      ],
       "Session timed out": [
         "Relácia vypršala"
       ],
@@ -10807,6 +10852,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Pridať asistenta písania ${ BRAND_NAME } Scribe"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Všetky firemné aplikácie a prémiové funkcie ${ BRAND_NAME } na ochranu vašej firmy"
       ],
@@ -11473,6 +11521,9 @@
       ],
       "Collaborate and share large files": [
         "Spolupracujte a zdieľajte veľké súbory"
+      ],
+      "Collaborative document editor": [
+        "Spoločný editor dokumentov"
       ],
       "Contact groups": [
         "Skupiny kontaktov"
@@ -12930,9 +12981,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ale môžete si odomknúť **${ unlockPlanTitle }** a všetky prémiové služby ${ BRAND_NAME } upgradovaním na **${ upsellPlanTitle }**."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Pokračovaním súhlasíte s našimi ${ termsAndConditions }"
       ],
       "Creating your account": [
         "Vytvárame váš účet"
@@ -16303,6 +16351,9 @@
       ],
       "Import failed": [
         "Import zlyhal"
+      ],
+      "Import groups": [
+        "Importovať skupiny"
       ],
       "Import key": [
         "Importovať kľúč"
