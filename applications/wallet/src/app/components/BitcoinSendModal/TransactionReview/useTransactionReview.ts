@@ -44,6 +44,8 @@ export const useTransactionReview = ({
 
     const { psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder }, true);
 
+    const psbtExpectedSize = psbt?.computeTxSize();
+
     const totalFees = Number(psbt?.total_fees ?? 0);
     const totalSentAmount = txBuilderRecipients.reduce((acc, r) => {
         return acc + Number(r[2]);
@@ -118,6 +120,7 @@ export const useTransactionReview = ({
         totalSentAmount,
         totalFees,
         totalAmount,
+        psbtExpectedSize,
 
         handleSendTransaction,
     };
