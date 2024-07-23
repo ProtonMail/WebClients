@@ -343,7 +343,7 @@ export const RecipientsSelection = ({
                         }
 
                         return (
-                            <span className="mr-1 color-weak">
+                            <span className="mr-1 color-weak shrink-0">
                                 <Icon name="chevron-right" className="my-auto" />
                             </span>
                         );

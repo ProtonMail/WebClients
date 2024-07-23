@@ -1,6 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import { last } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
@@ -61,8 +62,12 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
         return apiWalletData.WalletAccounts.reduce((acc: Partial<Record<WasmScriptType, Set<number>>>, cur) => {
             const set = acc[cur.ScriptType as WasmScriptType] ?? new Set();
 
+            const derivationPathByPart = cur.DerivationPath.split('/');
+            const indexPart = last(derivationPathByPart);
+            const unhardenedIndexStr = indexPart?.replace("'", '');
+
             // TODO: find a better way to get index, maybe store on db side?
-            const i = Number(cur.DerivationPath.split('/')[3]?.replace("'", '') ?? null);
+            const i = Number(unhardenedIndexStr);
 
             if (!Number.isFinite(i)) {
                 return acc;
