@@ -11,7 +11,6 @@ import { useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
-import { usePsbt } from '../../../../hooks/usePsbt';
 import type { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
 
 import './FeesModal.scss';
@@ -19,37 +18,35 @@ import './FeesModal.scss';
 interface Props extends ModalOwnProps {
     exchangeRate: WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
+    psbtExpectedSize: number | undefined;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
     getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
-export const FeesModal = ({ exchangeRate, txBuilder, updateTxBuilder, getFeesByBlockTarget, ...modalProps }: Props) => {
+export const FeesModal = ({
+    exchangeRate,
+    txBuilder,
+    updateTxBuilder,
+    getFeesByBlockTarget,
+    psbtExpectedSize,
+    ...modalProps
+}: Props) => {
     const [settings] = useUserWalletSettings();
-    const { createDraftPsbt } = usePsbt({ txBuilder });
-
-    const getTransactionFeesAtFeeRate = useCallback(
-        async (feeRate: number) => {
-            const updatedTxBuilder = await txBuilder.setFeeRate(BigInt(feeRate));
-            const psbt = await createDraftPsbt(updatedTxBuilder);
-            return Number(psbt?.total_fees ?? 0);
-        },
-        [createDraftPsbt, txBuilder]
-    );
 
     const getFeeOption = useCallback(
         async (icon: IconName, text: string, blockTarget: number): Promise<[IconName, string, number, number]> => {
             const feeRate = getFeesByBlockTarget(blockTarget) ?? 0;
             //  expected to be non-deterministic since input selection during PSBT creation is random
-            return [icon, text, feeRate, await getTransactionFeesAtFeeRate(feeRate)];
+            return [icon, text, feeRate, feeRate * (psbtExpectedSize ?? 0)];
         },
-        [getFeesByBlockTarget, getTransactionFeesAtFeeRate]
+        [getFeesByBlockTarget, psbtExpectedSize]
     );
 
     const [feeOptions, setFeeOptions] = useState<[IconName, string, number, number][]>([]);
 
     useEffect(() => {
         Promise.all([
-            getFeeOption('chevron-up', c('Wallet send').t`High priority`, 2),
+            getFeeOption('chevron-up', c('Wallet send').t`High priority`, 1),
             getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
             getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
         ])
