@@ -92,7 +92,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     const changeChecklistDisplay = (newState: CHECKLIST_DISPLAY_TYPE) => {
         setDisplayState(newState);
-        withSubmitting(async () => {
+        void withSubmitting(async () => {
             // Reduce the checklist and mark first checklist item as done
             if (newState === REDUCED) {
                 const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
