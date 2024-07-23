@@ -130,8 +130,10 @@ export const RecipientsSelection = ({
 
             addRecipientWithSentInvite(email);
             createNotification({ text: c('Bitcoin send').t`Invitation sent to the recipient` });
-        } catch {
-            createNotification({ text: c('Bitcoin send').t`Could not send invitation to the recipient` });
+        } catch (error: any) {
+            createNotification({
+                text: error?.error ?? c('Bitcoin send').t`Could not send invitation to the recipient`,
+            });
         }
     };
 
@@ -144,8 +146,10 @@ export const RecipientsSelection = ({
 
             addRecipientWithSentInvite(email);
             createNotification({ text: c('Bitcoin send').t`Invitation sent to the recipient` });
-        } catch {
-            createNotification({ text: c('Bitcoin send').t`Could not send invitation to the recipient` });
+        } catch (error: any) {
+            createNotification({
+                text: error?.error ?? c('Bitcoin send').t`Could not send invitation to the recipient`,
+            });
         }
     };
 
