@@ -69,6 +69,7 @@ export const TransactionReview = ({
         totalSentAmount,
         totalFees,
         totalAmount,
+        psbtExpectedSize,
         handleSendTransaction,
     } = useTransactionReview({
         isUsingBitcoinViaEmail,
@@ -259,6 +260,7 @@ export const TransactionReview = ({
                             txBuilder={txBuilder}
                             updateTxBuilder={updateTxBuilder}
                             getFeesByBlockTarget={getFeesByBlockTarget}
+                            psbtExpectedSize={psbtExpectedSize}
                             {...feesModal}
                         />
                     </div>
