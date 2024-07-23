@@ -46,22 +46,43 @@ type Trainee = TrainingResults & {
 };
 declare enum FormType {
     LOGIN = 'login',
-    REGISTER = 'register',
-    PASSWORD_CHANGE = 'password-change',
-    RECOVERY = 'recovery',
     MFA = 'mfa',
     NOOP = 'noop',
+    PASSWORD_CHANGE = 'password-change',
+    RECOVERY = 'recovery',
+    REGISTER = 'register',
 }
 declare enum FieldType {
     EMAIL = 'email',
-    USERNAME = 'username',
-    USERNAME_HIDDEN = 'username-hidden',
+    IDENTITY = 'identity',
+    OTP = 'otp',
     PASSWORD_CURRENT = 'password',
     PASSWORD_NEW = 'new-password',
-    OTP = 'otp',
+    USERNAME = 'username',
+    USERNAME_HIDDEN = 'username-hidden',
 }
 declare const formTypes: FormType[];
 declare const fieldTypes: FieldType[];
+declare enum IdentityFieldType {
+    ADDITIONAL_NAME = 'additional-name',
+    ADDRESS = 'street-address',
+    ADDRESS_LEVEL1 = 'address-level1',
+    ADDRESS_LEVEL2 = 'address-level2',
+    ADDRESS_LINE1 = 'address-line1',
+    ADDRESS_LINE2 = 'address-line2',
+    ADDRESS_LINE3 = 'address-line3',
+    COUNTRY = 'country',
+    COUNTRY_NAME = 'country-name',
+    FAMILY_NAME = 'family-name',
+    GIVEN_NAME = 'given-name',
+    NAME = 'name',
+    ORGANIZATION = 'organization',
+    POSTAL_CODE = 'postal-code',
+    TEL = 'tel',
+    TEL_LOCAL = 'tel-local',
+    TEL_NATIONAL = 'tel-national',
+}
+declare const IdentityFieldTypes: IdentityFieldType[];
 
 declare const trainees: {
     forms: Record<string, Trainee>;
@@ -85,6 +106,7 @@ declare const maybePassword: (fnode: Fnode) => boolean;
 declare const maybeOTP: (fnode: Fnode) => boolean;
 declare const maybeUsername: (fnode: Fnode) => boolean;
 declare const maybeHiddenUsername: (fnode: Fnode) => boolean;
+declare const maybeIdentity: (fnode: Fnode) => boolean;
 declare const isUsernameCandidate: (el: HTMLElement) => boolean;
 declare const isEmailCandidate: (el: HTMLElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
@@ -154,6 +176,8 @@ export {
     FieldType,
     type FormInputIterator,
     FormType,
+    IdentityFieldType,
+    IdentityFieldTypes,
     type Ruleset,
     type RulesetAggregation,
     TEXT_ATTRIBUTES,
@@ -213,6 +237,7 @@ export {
     kUsernameSelector,
     maybeEmail,
     maybeHiddenUsername,
+    maybeIdentity,
     maybeOTP,
     maybePassword,
     maybeUsername,
