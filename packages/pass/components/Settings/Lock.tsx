@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { RadioGroup, useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
@@ -18,6 +19,7 @@ import { selectLockMode, selectLockTTL, selectUserSettings } from '@proton/pass/
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { SettingsPanel } from './SettingsPanel';
 
@@ -26,6 +28,7 @@ export const LockSettings: FC = () => {
     const confirmPassword = usePasswordUnlock();
     const authStore = useAuthStore();
     const { createNotification } = useNotifications();
+    const online = useConnectivity();
 
     const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const lockTTL = useSelector(selectLockTTL);
@@ -146,8 +149,8 @@ export const LockSettings: FC = () => {
                 name="lock-mode"
                 onChange={handleLockModeSwitch}
                 value={nextLock?.mode ?? lockMode}
-                className="flex-nowrap gap-3"
-                disableChange={createLock.loading}
+                className={clsx('flex-nowrap gap-3', !online && 'opacity-70 pointer-events-none')}
+                disableChange={!online || createLock.loading}
                 options={[
                     {
                         label: (
@@ -190,7 +193,7 @@ export const LockSettings: FC = () => {
 
             <LockTTLField
                 ttl={nextLock?.ttl ?? lockTTL}
-                disabled={!canToggleTTL || createLock.loading}
+                disabled={!online || !canToggleTTL || createLock.loading}
                 onChange={handleLockTTLChange}
             />
         </SettingsPanel>
