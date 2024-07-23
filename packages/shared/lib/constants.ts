@@ -1122,6 +1122,7 @@ export enum CLIENT_TYPES {
     MAIL = 1,
     VPN = 2,
     PASS = 5,
+    WALLET = 6,
 }
 
 export enum TOKEN_TYPES {
