@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import type { WasmApiEmailAddress, WasmFiatCurrencySymbol } from '@proton/andromeda';
@@ -161,7 +160,14 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                               encryptedFirstAccountLabel,
                               DEFAULT_SCRIPT_TYPE
                           )
-                          .catch(noop)
+                          .catch((error: any) => {
+                              createNotification({
+                                  text: error?.error ?? c('Wallet setup').t`Could not create wallet account`,
+                                  type: 'error',
+                              });
+
+                              return null;
+                          })
                     : undefined;
 
                 const addedEmailAddresses: WasmApiEmailAddress[] = [];
@@ -173,7 +179,12 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                             try {
                                 await api.wallet.addEmailAddress(Wallet.ID, account.Data.ID, address.ID);
                                 addedEmailAddresses.push({ ID: address.ID, Email: address.Email });
-                            } catch (e) {}
+                            } catch (error: any) {
+                                createNotification({
+                                    text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
+                                    type: 'error',
+                                });
+                            }
                         }
                     }
                 }
@@ -192,8 +203,11 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 history.push(`/wallets/${Wallet.ID}`);
                 onSetupFinish();
             })
-            .catch(() => {
-                createNotification({ text: c('Wallet setup').t`Could not create wallet`, type: 'error' });
+            .catch((error: any) => {
+                createNotification({
+                    text: error?.error ?? c('Wallet setup').t`Could not create wallet`,
+                    type: 'error',
+                });
             });
     };
 
