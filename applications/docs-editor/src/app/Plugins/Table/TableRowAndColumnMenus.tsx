@@ -1,5 +1,5 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'

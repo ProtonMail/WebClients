@@ -3,19 +3,16 @@ import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
-import {
-  CommentThreadState,
-  CommentThreadInterface,
-  LiveCommentsEvent,
-  LiveCommentsTypeStatusChangeData,
-} from '@proton/docs-shared'
+import type { CommentThreadInterface, LiveCommentsTypeStatusChangeData } from '@proton/docs-shared'
+import { CommentThreadState, LiveCommentsEvent } from '@proton/docs-shared'
 import { Icon, ToolbarButton } from '@proton/components'
 import { useApplication } from '../../ApplicationProvider'
 import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $isCommentThreadMarkNode, CommentThreadMarkNode } from './CommentThreadMarkNode'
+import type { CommentThreadMarkNode } from './CommentThreadMarkNode'
+import { $isCommentThreadMarkNode } from './CommentThreadMarkNode'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()

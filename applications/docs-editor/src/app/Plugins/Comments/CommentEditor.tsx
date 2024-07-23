@@ -2,11 +2,12 @@ import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
-import { FocusEventHandler, KeyboardEventHandler, forwardRef, useEffect, useImperativeHandle, useState } from 'react'
+import type { FocusEventHandler, KeyboardEventHandler } from 'react'
+import { forwardRef, useEffect, useImperativeHandle, useState } from 'react'
+import type { LexicalEditor } from 'lexical'
 import {
   $nodesOfType,
   CLEAR_EDITOR_COMMAND,
-  LexicalEditor,
   ParagraphNode,
   KEY_ENTER_COMMAND,
   COMMAND_PRIORITY_CRITICAL,

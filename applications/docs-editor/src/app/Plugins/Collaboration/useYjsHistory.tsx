@@ -1,14 +1,13 @@
 import { mergeRegister } from '@lexical/utils'
 import { type Binding, createUndoManager } from '@lexical/yjs'
+import type { LexicalCommand, LexicalEditor } from 'lexical'
 import {
-  type LexicalEditor,
   UNDO_COMMAND,
   COMMAND_PRIORITY_EDITOR,
   REDO_COMMAND,
   CAN_UNDO_COMMAND,
   CAN_REDO_COMMAND,
   createCommand,
-  LexicalCommand,
 } from 'lexical'
 import { useMemo, useCallback, useEffect } from 'react'
 
