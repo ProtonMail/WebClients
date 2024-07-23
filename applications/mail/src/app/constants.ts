@@ -141,6 +141,7 @@ export const MAIL_UPSELL_BANNERS_OPTIONS_URLS = {
     protonBusiness: '/upgrade?business',
     vpn: getAppHref('/vpn/vpn-apps', APPS.PROTONACCOUNT),
     drive: getAppHref('/', APPS.PROTONDRIVE),
+    pass: getAppHref('/', APPS.PROTONPASS),
     securityAndPrivacy: '/security',
 };
 
