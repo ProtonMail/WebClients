@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import type { WasmGatewayProvider } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
-import { Checkbox } from '@proton/components/components';
+import { Checkbox, Prompt } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Button, Modal } from '../../../atoms';
+import { Button } from '../../../atoms';
+import { ModalParagraph } from '../../../atoms/ModalParagraph';
 
 interface Props extends ModalOwnProps {
     provider: WasmGatewayProvider;
@@ -68,29 +69,11 @@ export const DisclaimerModal = ({ provider, onConfirm, ...modalProps }: Props) =
     );
 
     return (
-        <Modal title={c('Gateway disclaimer').t`Disclaimer`} {...modalProps}>
-            <div className="color-weak text-lg mt-2">
-                {
-                    // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: Moonpay, Banxa and Ramp. The text contains the name of the provider as well as links to their own policies. An example with Ramp: You are now leaving Proton Wallet for Ramp (https://ramp.network/). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp, a separate third-party platform. By proceeding and procuring services from Ramp, you acknowledge that you have read and agreed to Ramp's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp's services, please contact Ramp at support.ramp.network.
-                    c('Gateway disclaimer')
-                        .jt`You are now leaving ${WALLET_APP_NAME} for ${provider} (${websiteLink}). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${provider}, a separate third-party platform. By proceeding and procuring services from ${provider}, you acknowledge that you have read and agreed to ${provider}'s Terms of Service (${termOfUseLink}) and Privacy and Cookies Policy (${privacyAndCookiesPolicyLink}). For any questions related to ${provider}'s services, please contact ${provider} at ${supportEmailLink}`
-                }
-            </div>
-
-            <div className="flex flex-row items-start mt-12">
-                <Checkbox
-                    onClick={() => {
-                        setHasReadAndAgree((prev) => !prev);
-                    }}
-                >
-                    <label className="ml-2">{c('Gateway disclaimer').t`I have read and agree to the disclaimer`}</label>
-                </Checkbox>
-            </div>
-
-            <div className="w-full px-8">
+        <Prompt
+            buttons={[
                 <Button
                     fullWidth
-                    className="my-8 mx-auto"
+                    className="mx-auto"
                     size="large"
                     shape="solid"
                     color="norm"
@@ -98,8 +81,29 @@ export const DisclaimerModal = ({ provider, onConfirm, ...modalProps }: Props) =
                     onClick={() => {
                         onConfirm();
                     }}
-                >{c('Gateway disclaimer').t`Confirm`}</Button>
-            </div>
-        </Modal>
+                >{c('Gateway disclaimer').t`Confirm`}</Button>,
+            ]}
+            actions={[
+                <Checkbox
+                    onClick={() => {
+                        setHasReadAndAgree((prev) => !prev);
+                    }}
+                >
+                    <label className="ml-2">{c('Gateway disclaimer').t`I have read and agree to the disclaimer`}</label>
+                </Checkbox>,
+            ]}
+            {...modalProps}
+        >
+            <h1 className="text-bold text-break text-3xl mt-3 mb-4 text-center">
+                {c('Gateway disclaimer').t`Disclaimer`}
+            </h1>
+            <ModalParagraph>
+                <p>{
+                    // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: Moonpay, Banxa and Ramp. The text contains the name of the provider as well as links to their own policies. An example with Ramp: You are now leaving Proton Wallet for Ramp (https://ramp.network/). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp, a separate third-party platform. By proceeding and procuring services from Ramp, you acknowledge that you have read and agreed to Ramp's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp's services, please contact Ramp at support.ramp.network.
+                    c('Gateway disclaimer')
+                        .jt`You are now leaving ${WALLET_APP_NAME} for ${provider} (${websiteLink}). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${provider}, a separate third-party platform. By proceeding and procuring services from ${provider}, you acknowledge that you have read and agreed to ${provider}'s Terms of Service (${termOfUseLink}) and Privacy and Cookies Policy (${privacyAndCookiesPolicyLink}). For any questions related to ${provider}'s services, please contact ${provider} at ${supportEmailLink}`
+                }</p>
+            </ModalParagraph>
+        </Prompt>
     );
 };
