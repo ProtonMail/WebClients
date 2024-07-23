@@ -1455,6 +1455,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (Repubblica Democratica Popolare di)"
+      ],
       "Korea (Republic of)": [
         "Corea (Repubblica di)"
       ],
@@ -2190,6 +2193,9 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Si è verificato un errore durante la duplicazione del documento. Riprova."
       ],
+      "An error occurred while attempting to seed the document. Please try again.": [
+        "Si è verificato un errore durante l'inizializzazione del documento. Riprova."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Si è verificato un errore durante la creazione del documento. Riprova."
       ],
@@ -2556,6 +2562,9 @@
       ],
       "Validation error": [
         "Errore nella convalida"
+      ],
+      "We are having trouble saving recent edits. Please refresh the page.": [
+        "Stiamo riscontrando problemi nel salvare le modifiche recenti. Aggiorna la pagina."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
@@ -5584,6 +5593,9 @@
       "Collaborate and share large files": [
         "Collabora e condividi file di grandi dimensioni"
       ],
+      "Collaborative document editor": [
+        "Editor di documenti collaborativo"
+      ],
       "Contact groups": [
         "Gruppi di contatti"
       ],
@@ -6536,6 +6548,9 @@
       "Payment Processing": [
         "Elaborazione del pagamento"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Aggiungi un metodo di pagamento nella dashboard per continuare."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
@@ -7367,6 +7382,11 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Sei sicuro?"
@@ -7994,6 +8014,9 @@
       "Sign out": [
         "Esci dall'account"
       ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
+      ],
       "Start a new import": [
         "Avvia una nuova importazione"
       ],
@@ -8215,6 +8238,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portafoglio",
+        "${ n } account per portafoglio"
+      ],
+      "${ n } email address": [
+        "${ n } indirizzo email",
+        "${ n } indirizzi email"
+      ],
+      "${ n } wallet": [
+        "${ n } portafoglio",
+        "${ n } portafogli"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Un modo più sicuro per conservare il tuo Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {
