@@ -8,6 +8,7 @@ export const WALLET_CLIENTS: { [key in WalletClientKeys]: WalletClient } = {
     [WalletClientKeys.Android]: {
         title: 'Android',
         icon: 'brand-android',
+        link: 'https://play.google.com/store/apps/details?id=me.proton.wallet.android',
     },
     [WalletClientKeys.iOS]: {
         title: 'iOS',
