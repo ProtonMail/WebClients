@@ -34,8 +34,10 @@ export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) 
             await walletApi.settings.acceptTermsAndConditions();
             createNotification({ text: c('Wallet terms and conditions').t`Terms and conditions were accepted` });
             dispatch(acceptTermsAndConditions());
-        } catch (e) {
-            createNotification({ text: c('Wallet terms and conditions').t`Could not accept terms and conditions` });
+        } catch (error: any) {
+            createNotification({
+                text: error?.error ?? c('Wallet terms and conditions').t`Could not accept terms and conditions`,
+            });
         }
     };
 

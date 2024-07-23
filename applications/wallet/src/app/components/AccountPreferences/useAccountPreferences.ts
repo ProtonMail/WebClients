@@ -58,8 +58,11 @@ export const useAccountPreferences = (
 
                 createNotification({ text: c('Wallet Settings').t`Account name changed` });
                 dispatch(walletAccountUpdate(updatedAccount));
-            } catch (e) {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Account name could not be change` });
+            } catch (error: any) {
+                createNotification({
+                    type: 'error',
+                    text: error?.error ?? c('Wallet Settings').t`Account name could not be change`,
+                });
             }
         };
 
@@ -84,8 +87,11 @@ export const useAccountPreferences = (
 
                 createNotification({ text: c('Wallet Settings').t`Account was deleted` });
                 dispatch(walletAccountDeletion({ walletID: wallet.Wallet.ID, walletAccountID: walletAccount.ID }));
-            } catch (e) {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Account could not be deleted` });
+            } catch (error: any) {
+                createNotification({
+                    type: 'error',
+                    text: error?.error ?? c('Wallet Settings').t`Account could not be deleted`,
+                });
             }
         };
 
@@ -111,10 +117,10 @@ export const useAccountPreferences = (
 
                 createNotification({ text: c('Wallet Settings').t`New fiat currency applied` });
                 dispatch(walletAccountUpdate(updatedAccount));
-            } catch (e) {
+            } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: c('Wallet Settings').t`New fiat currency could not be applied`,
+                    text: error?.error ?? c('Wallet Settings').t`New fiat currency could not be applied`,
                 });
             }
         };
@@ -144,8 +150,11 @@ export const useAccountPreferences = (
 
                 createNotification({ text: c('Wallet Settings').t`Email address has been added` });
                 dispatch(walletAccountUpdate(updatedAccount));
-            } catch {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Could not add email address` });
+            } catch (error: any) {
+                createNotification({
+                    type: 'error',
+                    text: error?.error ?? c('Wallet Settings').t`Could not add email address`,
+                });
             }
         };
 
@@ -163,8 +172,11 @@ export const useAccountPreferences = (
 
                 createNotification({ text: c('Wallet Settings').t`Email address has been removed` });
                 dispatch(walletAccountUpdate(updatedAccount));
-            } catch (e) {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Could not remove email address` });
+            } catch (error: any) {
+                createNotification({
+                    type: 'error',
+                    text: error?.error ?? c('Wallet Settings').t`Could not remove email address`,
+                });
             }
         };
 
@@ -196,8 +208,11 @@ export const useAccountPreferences = (
 
                 dispatch(walletAccountUpdate(updatedAccount));
                 createNotification({ text: c('Wallet Settings').t`Email address has been replaced` });
-            } catch (e) {
-                createNotification({ type: 'error', text: c('Wallet Settings').t`Could not be replaced` });
+            } catch (error: any) {
+                createNotification({
+                    type: 'error',
+                    text: error?.error ?? c('Wallet Settings').t`Could not be replaced`,
+                });
             }
         };
 

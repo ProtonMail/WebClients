@@ -37,8 +37,8 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
 
             onInviteSent(email);
             createNotification({ text: c('Bitcoin send').t`Invitation sent` });
-        } catch {
-            createNotification({ text: c('Bitcoin send').t`Could not send invitation` });
+        } catch (error: any) {
+            createNotification({ text: error?.error ?? c('Bitcoin send').t`Could not send invitation` });
         }
     };
 
