@@ -452,6 +452,9 @@
       "Font": [
         "फॉन्ट"
       ],
+      "Forgot password?": [
+        "पासवर्ड भूल गए?"
+      ],
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
       ],
@@ -753,10 +756,10 @@
       "Not saved": [
         "सहेजा नहीं गया"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -8532,6 +8535,9 @@
       "Please insert link first": [
         "कृपया पहले लिंक डालें"
       ],
+      "Search date, name, email address, or subject line": [
+        "तिथि, नाम, ईमेल पता, या विषय की खोज करें"
+      ],
       "Search for group name": [
         "समूह का नाम खोजें"
       ],
@@ -8747,6 +8753,9 @@
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } खोलें"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } आज़माएँ"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8882,6 +8891,11 @@
     "session_recovery:available:notification": {
       "Password saved": [
         "पासवर्ड सहेजा गया"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "पासवर्ड रीसेट करें"
       ]
     },
     "session_recovery:cancellation:notification": {

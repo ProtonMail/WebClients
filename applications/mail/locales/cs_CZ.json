@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
@@ -495,6 +498,9 @@
       "Get in touch": [
         "Kontaktujte nás"
       ],
+      "Get it": [
+        "Získat"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Získejte ho jen za ${ addonPriceWithCurrency } /měsíc"
       ],
@@ -825,11 +831,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otevřít"
@@ -1140,6 +1146,9 @@
       "Show more search options": [
         "Zobrazit další možnosti vyhledávání"
       ],
+      "Show navigation bar": [
+        "Zobrazit navigační panel"
+      ],
       "Show preview": [
         "Zobrazit náhled"
       ],
@@ -1428,6 +1437,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } další vlastní doména",
+        "${ domains } další vlastní domény",
+        "${ domains } dalších vlastních domén",
+        "${ domains } dalších vlastních domén"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servery",
@@ -1536,9 +1551,6 @@
       ],
       "Faster, broader device compatibility": [
         "Rychlejší a s širší kompatibilitou se zařízeními"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Během používání se nepřenášejí žádná data, vyžaduje jednorázové stažení"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Vyžaduje jednorázové stažení a kompatibilní hardware."
@@ -2589,6 +2601,9 @@
       "British Indian Ocean Territory": [
         "Britské indickooceánské území"
       ],
+      "British Virgin Islands": [
+        "Britské Panenské ostrovy"
+      ],
       "Brunei Darussalam": [
         "Brunej Darussalam"
       ],
@@ -2643,6 +2658,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Konžská demokratická republika)"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratická republika Kongo"
       ],
@@ -2681,6 +2699,9 @@
       ],
       "Dominican Republic": [
         "Dominikánská republika"
+      ],
+      "East Timor": [
+        "Východní Timor"
       ],
       "Ecuador": [
         "Ekvádor"
@@ -2823,6 +2844,9 @@
       "Ireland": [
         "Irsko"
       ],
+      "Islamic Republic of Iran": [
+        "Íránská islámská republika"
+      ],
       "Isle of Man": [
         "Ostrov Man"
       ],
@@ -2853,6 +2877,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korejská lidově demokratická republika (Severní Korea)"
+      ],
+      "Korea (Republic of)": [
+        "Korejská republika (Jižní Korea)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2861,6 +2891,9 @@
       ],
       "Kyrgyzstan": [
         "Kyrgyzstán"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laoská lidově demokratická republika"
       ],
       "Laos": [
         "Laos"
@@ -2880,6 +2913,9 @@
       "Libya": [
         "Libye"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libyjská arabská džamáhírije"
+      ],
       "Liechtenstein": [
         "Lichtenštejnsko"
       ],
@@ -2891,6 +2927,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Makedonie"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3144,6 +3183,9 @@
       "Svalbard and Jan Mayen": [
         "Špicberky a Jan Mayen"
       ],
+      "Swaziland": [
+        "Svazijsko"
+      ],
       "Sweden": [
         "Švédsko"
       ],
@@ -3164,6 +3206,9 @@
       ],
       "Tanzania": [
         "Tanzanie"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanie, Tanzanská sjednocená republika"
       ],
       "Thailand": [
         "Thajsko"
@@ -3428,6 +3473,9 @@
       ],
       "To continue to use the writing assistant, request access from your admin.": [
         "Pro pokračování v používání asistenta psaní, požádejte o přístup vašeho správce."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
@@ -4029,6 +4077,9 @@
       "Please select a category and what went wrong with the generated text": [
         "Prosím, vyberte kategorii a co se stalo špatně s generovaným textem"
       ],
+      "Please try again or refresh the page.": [
+        "Prosím zkuste akci opakovat nebo obnovte stránku."
+      ],
       "Please try generating the text again": [
         "Zkuste text vygenerovat znovu"
       ],
@@ -4466,6 +4517,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasy nelze použít, pokud je v ${ PASS_APP_NAME } povoleno další heslo."
+      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -6055,6 +6109,9 @@
       "Country code": [
         "Kód země"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Vytvářejte lepší e-maily rychle a bez námahy. Vyzkoušejte tuto funkci teď."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
         "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
@@ -7141,6 +7198,12 @@
       "Unlock message": [
         "Odemknout zprávu"
       ],
+      "Unread conversations": [
+        "Nepřečtené konverzace"
+      ],
+      "Unread messages": [
+        "Nepřečtené zprávy"
+      ],
       "Unsaved changes": [
         "Neuložené změny"
       ],
@@ -7847,6 +7910,9 @@
       ],
       " and ${ l }": [
         " a ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -8762,6 +8828,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Přidat asistenta psaní ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -9244,6 +9313,9 @@
       ],
       "Collaborate and share large files": [
         "Spolupráce a sdílení velkých souborů"
+      ],
+      "Collaborative document editor": [
+        "Editor pro spolupráci na dokumentech"
       ],
       "Contact groups": [
         "Skupiny kontaktů"
@@ -12711,6 +12783,9 @@
       ],
       "Import failed": [
         "Import selhal"
+      ],
+      "Import groups": [
+        "Importovat skupiny"
       ],
       "Insert contacts": [
         "Vložte kontakty"
