@@ -35,20 +35,20 @@ describe('Session integrity', () => {
 
     describe('`getSessionDigestVersion`', () => {
         it('should extract the correct version from a valid digest', () => {
-            expect(getSessionDigestVersion('7f83b1657ff1fc53b92dc.2')).toBe(2);
-            expect(getSessionDigestVersion('18148a1d65dfc2d4b1k9d.24')).toBe(24);
-            expect(getSessionDigestVersion('a3d677284addd200126d9.004')).toBe(4);
+            expect(getSessionDigestVersion('2.7f83b1657ff1fc53b92dc')).toBe(2);
+            expect(getSessionDigestVersion('24.18148a1d65dfc2d4b1k9d')).toBe(24);
+            expect(getSessionDigestVersion('004.a3d677284addd200126d9')).toBe(4);
         });
 
         it('should return `SESSION_DIGEST_VERSION` for invalid digests', () => {
             expect(getSessionDigestVersion('7f83b1657ff1fc53b92dc')).toBe(SESSION_DIGEST_VERSION);
-            expect(getSessionDigestVersion('18148a1d65dfc2d4b1k9d.notanumber')).toBe(SESSION_DIGEST_VERSION);
+            expect(getSessionDigestVersion('notanumber.18148a1d65dfc2d4b1k9d')).toBe(SESSION_DIGEST_VERSION);
         });
     });
 
     describe('`digestSession`', () => {
         it('should generate a correct digest', async () => {
-            const digest = 'HdpbQ1FnYnwi3eR8M57YyCgkp7aAsdh+5BwcBNy128A=.1';
+            const digest = '1.rpaFGlfkJtY27MfCzrnooGceeEfun+khBXvWr4U0hWM=';
             const result = await digestSession(MOCK_SESSION, 1);
             expect(result).toEqual(digest);
         });
