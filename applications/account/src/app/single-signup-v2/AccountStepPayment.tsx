@@ -455,10 +455,10 @@ const AccountStepPayment = ({
                                         <Guarantee />
                                     )}
                                 </div>
-                                {!isAuthenticated && terms}
                             </>
                         );
                     })()}
+                    {!isAuthenticated && terms}
                 </form>
             </div>
             {(() => {
