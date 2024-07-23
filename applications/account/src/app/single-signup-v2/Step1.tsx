@@ -88,11 +88,9 @@ import type {
     OptimisticOptions,
     SignupConfiguration,
     SignupModelV2,
-    SignupParameters2} from './interface';
-import {
-    SignupMode,
-    UpsellTypes,
+    SignupParameters2,
 } from './interface';
+import { SignupMode, UpsellTypes } from './interface';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { getFreePassFeatures } from './pass/configuration';
 
@@ -342,7 +340,12 @@ const Step1 = ({
         if (mode === SignupMode.MailReferral && selectedPlan.Name !== PLANS.FREE) {
             return c('Action in trial plan').t`Try free for 30 days`;
         }
-        if (app === APPS.PROTONWALLET && selectedPlan.Name === PLANS.FREE && mode !== SignupMode.Invite) {
+        if (
+            app === APPS.PROTONWALLET &&
+            selectedPlan.Name === PLANS.FREE &&
+            mode !== SignupMode.Invite &&
+            !model.session
+        ) {
             return c('wallet_signup_2024: Info').t`Create ${BRAND_NAME} Account now`;
         }
         return c('pass_signup_2023: Action').t`Start using ${appName} now`;
