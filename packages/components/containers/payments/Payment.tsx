@@ -223,7 +223,6 @@ export const PaymentsNoApi = ({
                         method={method}
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
-                        forceDropdown={isSingleSignup}
                         narrow={isSingleSignup}
                     />
                 </div>
