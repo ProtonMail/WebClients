@@ -243,7 +243,7 @@ export const canCheckItemPaidChecklist = (subscription: Subscription | undefined
 };
 
 export const canCheckItemGetStarted = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => [VPN, PASS, VPN_PASS_BUNDLE].includes(Name as any));
+    return subscription?.Plans?.some(({ Name }) => [VPN, VPN2024, WALLET, PASS, VPN_PASS_BUNDLE].includes(Name as any));
 };
 
 export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => {
