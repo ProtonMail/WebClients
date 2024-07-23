@@ -391,6 +391,9 @@
       "Retry": [
         "Poskusite znova"
       ],
+      "Right click and download this CSV": [
+        "Desni klik in prenesite ta CSV"
+      ],
       "Save": [
         "Shrani"
       ],
@@ -414,6 +417,9 @@
       ],
       "Set extra password": [
         "Nastavite dodatno geslo"
+      ],
+      "Setup 2FA": [
+        "Nastavitev 2FA"
       ],
       "Share": [
         "Deli"
@@ -746,6 +752,9 @@
       "File could not be parsed": [
         "Datoteke ni bilo mogoče razčleniti"
       ],
+      "File could not be read": [
+        "Datoteke ni bilo mogoče prebrati"
+      ],
       "File does not match expected format": [
         "Datoteka se ne ujema s pričakovano obliko"
       ],
@@ -1050,6 +1059,9 @@
       "Auto-lock successfully disabled.": [
         "Samodejno zaklepanje je onemogočeno."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Pred izvozom podatkov v tej obliki odprite nastavitve Safarija -> zavihek \"Splošno\" -> onemogočite možnost \"Odpri varne datoteke po prenosu\". To bo Safariju preprečilo nepravilno ekstrahiranje izvožene datoteke."
+      ],
       "Breaches detected": [
         "Zaznana kršitev"
       ],
@@ -1073,6 +1085,9 @@
       ],
       "Change your password": [
         "Spremenite vaše geslo"
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Potrdite svoje dodatno geslo, da nadaljujete z njegovo odstranitvijo."
       ],
       "Congratulations, your access has been confirmed": [
         "Čestitamo, vaš dostop je potrjen"
@@ -1103,6 +1118,9 @@
       ],
       "Drop to import": [
         "Spusti za uvoz."
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Zaradi omejitev razširitev brskalnika Safari po izvozu podatkov v datotečni priponi manjka ».pgp«. Po izvozu preimenujte datoteko tako, da bo vključevala pripono .pgp (npr. datoteka.pgp)."
       ],
       "Editor": [
         "Urejevalnik"
@@ -1136,6 +1154,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "Poteče ${ remainingTime }"
+      ],
+      "Extra password successfuly created": [
+        "Dodatno geslo je bilo uspešno ustvarjeno"
+      ],
+      "Extra password successfuly removed": [
+        "Dodatno geslo je bilo uspešno odstranjeno"
       ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
@@ -1362,6 +1386,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }."
       ],
+      "Please confirm your password": [
+        "Prosim potrdite svoje geslo"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Prosimo, potrdite svoje geslo, da se samodejno zaklene z vašim geslom."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Prosimo, potrdite svoje geslo, da odjavite svojo trenutno ključavnico."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Potrdite svoje geslo, da posodobite čas samodejnega zaklepanja."
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "Za urejanje te nastavitve potrdite kodo PIN."
       ],
@@ -1388,6 +1424,12 @@
       ],
       "Reconnecting": [
         "Ponovno povezovanje"
+      ],
+      "Registering extra password...": [
+        "Registracija dodatnega gesla ..."
+      ],
+      "Removing extra password...": [
+        "Odstranjevanje dodatnega gesla.."
       ],
       "Restoring items from trash": [
         "Obnavljanje predmetov iz smetnjaka"
@@ -1461,6 +1503,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Za uporabo ${ PASS_APP_NAME } bo potrebno dodatno geslo. Deluje kot dodatno geslo poleg vašega gesla ${ BRAND_NAME }."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Tega predmeta ${ result.ignored.length } ni bilo mogoče uvoziti:",
         "Teh dveh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
@@ -1499,6 +1544,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov ide-my-email"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odklenite ${ PASS_SHORT_APP_NAME } z geslom ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Odklenite ${ PASS_SHORT_APP_NAME } z dodatnim geslom"
       ],
       "Unpinning item...": [
         "Odpenjanje predmeta..."
@@ -1578,6 +1629,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Odjavljeni boste in se boste morali znova prijaviti na vseh svojih drugih napravah."
+      ],
       "You will be notified of data breaches for these email addresses.": [
         "O kršitvah varstva podatkov za te e-poštne naslove boste obveščeni."
       ],
@@ -1652,6 +1706,9 @@
       "10 minutes": [
         "10 minut"
       ],
+      "14 days": [
+        "14 dni"
+      ],
       "15 minutes": [
         "15 minut"
       ],
@@ -1660,6 +1717,9 @@
       ],
       "2FA token (TOTP)": [
         "Koda 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 dni"
       ],
       "30 minutes": [
         "30 minut"
@@ -1781,8 +1841,14 @@
       "Expired": [
         "Poteklo"
       ],
+      "Expired link": [
+        "Povezava je potekla"
+      ],
       "Export": [
         "Izvozi"
+      ],
+      "Extra password": [
+        "Dodatno geslo"
       ],
       "Field name": [
         "Ime polja"
@@ -1792,6 +1858,9 @@
       ],
       "Forwards to": [
         "Posreduje na"
+      ],
+      "Free forever": [
+        "Brezplačno za vedno."
       ],
       "General": [
         "Splošno"
@@ -1949,6 +2018,9 @@
       "Prefix": [
         "Predpona"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Zaščitite ${ PASS_APP_NAME } z dodatnim geslom"
+      ],
       "Rate us": [
         "Ocenite nas"
       ],
@@ -1984,6 +2056,9 @@
       ],
       "Session locking": [
         "Zaklepanje seje"
+      ],
+      "Share": [
+        "Deli"
       ],
       "Show website favicons": [
         "Pokaži ikone spletnega mesta"
@@ -2431,6 +2506,9 @@
       "Remove email address?": [
         "Želite odstraniti e-poštni naslov?"
       ],
+      "Remove extra password": [
+        "Odstranite dodatno geslo"
+      ],
       "Resolved breaches": [
         "Odpravljene kršitve"
       ],
@@ -2582,6 +2660,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Nabiralnikov za ta vzdevek trenutno ni mogoče pridobiti"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Pozor: če izgubite to geslo, ne boste mogli dostopati do svojega računa ${ PASS_APP_NAME }."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Ni bilo mogoče ustvariti trezorja »${ vaultName }«"
       ],
@@ -2605,6 +2686,9 @@
       ],
       "Extra password cannot be empty": [
         "Dodatno geslo ne more biti prazno"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Dodatno geslo mora imeti vsaj 8 znakov"
       ],
       "Failed to load breaches.": [
         "Nalaganje kršitev ni uspelo."
@@ -2677,6 +2761,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati skupno rabo trezorja"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Če odstranite dodatno geslo, se boste odjavili iz vseh naprav in končali vse aktivne seje."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."

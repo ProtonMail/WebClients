@@ -1014,6 +1014,9 @@
       "${ count } view": [
         "${ count }명 조회"
       ],
+      "${ count }/${ maxReads } views": [
+        "조회수 ${ count }건/${ maxReads }건"
+      ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
@@ -1386,11 +1389,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "타 금고로의 항목을 이동하면 기록 및 안전한 링크가 삭제됩니다."
+      ],
       "Moving an item to another vault will erase its history.": [
         "항목을 다른 금고로 이동하면 그 기록이 지워집니다."
       ],
       "Moving items": [
         "항목 이동 중"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "타 금고로의 항목을 이동하면 기록 및 안전한 링크가 삭제됩니다."
       ],
       "Moving items to another vault will erase their history.": [
         "항목들을 다른 금고로 이동하면 그 기록이 지워집니다."
@@ -2581,6 +2590,15 @@
       "Modified": [
         "수정됨"
       ],
+      "Move all items to \"${ vaultName }\"?": [
+        "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
+      ],
       "No excluded items": [
         "제외된 항목 없음"
       ],
@@ -2880,7 +2898,7 @@
         "문제 조사를 위해 연락을 부탁드립니다."
       ],
       "Please update the extension to its latest version": [
-        "최신 버전의 확장 프로그램으로 업데이트하세요."
+        "확장 프로그램을 최신 버전으로 업데이트해 주세요."
       ],
       "Please verify your email address in order to use email aliases": [
         "이메일 별칭을 사용하려면 이메일 주소를 인증해 주세요."
