@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, useModalStateWithData } from '@proton/components/components';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
@@ -126,6 +127,8 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                             amount={transaction.networkData.fee}
                             label={c('Wallet transaction').t`Network fee`}
                             exchangeRate={exchangeRate}
+                            infoTitle={c('Wallet info')
+                                .t`This fee incentivizes Bitcoin miners to include your transaction in the blockchain. None of the fee goes to ${BRAND_NAME}.`}
                         />
 
                         <hr className="my-4" />
