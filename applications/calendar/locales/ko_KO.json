@@ -152,6 +152,9 @@
       "Close this banner": [
         "이 배너 닫기"
       ],
+      "Collapse navigation bar": [
+        "네비게이션 바 접기"
+      ],
       "Compose": [
         "메일 쓰기"
       ],
@@ -250,6 +253,9 @@
       ],
       "Dismiss": [
         "무시"
+      ],
+      "Display navigation bar": [
+        "네비게이션 바 보이기"
       ],
       "Done": [
         "완료"
@@ -632,6 +638,9 @@
       "Show more": [
         "더보기"
       ],
+      "Show navigation bar": [
+        "네비게이션 바 보기"
+      ],
       "Show side panel": [
         "사이드 패널 열기"
       ],
@@ -807,6 +816,9 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "사용자 지정 이메일 도메인 ${ domains }개"
+      ],
       "${ ips } server": [
         "${ ips }개 서버"
       ],
@@ -1603,6 +1615,9 @@
       "British Indian Ocean Territory": [
         "영국령 인도양 지역"
       ],
+      "British Virgin Islands": [
+        "영국령 버진 아일랜드"
+      ],
       "Brunei Darussalam": [
         "브루나이 다루살람"
       ],
@@ -1657,6 +1672,9 @@
       "Congo": [
         "콩고"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "콩고 민주 공화국"
+      ],
       "Congo, Democratic Republic of the": [
         "콩고민주공화국"
       ],
@@ -1695,6 +1713,9 @@
       ],
       "Dominican Republic": [
         "도미니카 공화국"
+      ],
+      "East Timor": [
+        "동티모르"
       ],
       "Ecuador": [
         "에콰도르"
@@ -1837,6 +1858,9 @@
       "Ireland": [
         "아일랜드"
       ],
+      "Islamic Republic of Iran": [
+        "이란"
+      ],
       "Isle of Man": [
         "맨섬"
       ],
@@ -1867,6 +1891,12 @@
       "Kiribati": [
         "키리바시"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "조선민주주의인민공화국"
+      ],
+      "Korea (Republic of)": [
+        "대한민국"
+      ],
       "Kosovo": [
         "코소보"
       ],
@@ -1875,6 +1905,9 @@
       ],
       "Kyrgyzstan": [
         "키르기스스탄"
+      ],
+      "Lao People's Democratic Republic": [
+        "라오인민민주공화국"
       ],
       "Laos": [
         "라오스"
@@ -1894,6 +1927,9 @@
       "Libya": [
         "리비아"
       ],
+      "Libyan Arab Jamahiriya": [
+        "리비아"
+      ],
       "Liechtenstein": [
         "리히텐슈타인"
       ],
@@ -1905,6 +1941,9 @@
       ],
       "Macao": [
         "마카오"
+      ],
+      "Macedonia": [
+        "마케도니아"
       ],
       "Madagascar": [
         "마다가스카르"
@@ -2158,6 +2197,9 @@
       "Svalbard and Jan Mayen": [
         "스발바르와 얀마옌"
       ],
+      "Swaziland": [
+        "스위스"
+      ],
       "Sweden": [
         "스웨덴"
       ],
@@ -2177,6 +2219,9 @@
         "타지키스탄"
       ],
       "Tanzania": [
+        "탄자니아"
+      ],
+      "Tanzania, United Republic of": [
         "탄자니아"
       ],
       "Thailand": [
@@ -2279,9 +2324,6 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "이 이후 종료됨…"
-      ],
       "Never": [
         "절대"
       ],
@@ -2426,6 +2468,9 @@
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "약간의 시간이 걸릴 수 있습니다. 진행되고 있는 동안에도 지금처럼 캘린더를 사용할 수 있습니다."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -3303,6 +3348,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "별명은 추가 비밀번호가 ${ PASS_APP_NAME }에서 활성화 된 상태에서 사용할 수 없습니다."
+      ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
       ],
@@ -4005,6 +4053,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 당신의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
@@ -5761,6 +5812,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
+      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -6200,6 +6254,9 @@
       ],
       "Collaborate and share large files": [
         "큰 파일을 공동으로 작업하고 공유하세요"
+      ],
+      "Collaborative document editor": [
+        "협동 가능한 문서 편집기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -7187,6 +7244,9 @@
       ],
       "Payment Processing": [
         "결제 처리중"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "계속하려면 결제 수단을 대시보드에 추가해 주십시오."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -9075,6 +9135,9 @@
       ],
       "Import failed": [
         "불러오기 실패함"
+      ],
+      "Import groups": [
+        "그룹 가져오기"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"

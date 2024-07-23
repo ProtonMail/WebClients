@@ -153,6 +153,9 @@
       "Close this banner": [
         "Chiudi questo banner"
       ],
+      "Collapse navigation bar": [
+        "Nascondi la barra di navigazione"
+      ],
       "Compose": [
         "Componi"
       ],
@@ -253,6 +256,9 @@
       ],
       "Dismiss": [
         "Ignora"
+      ],
+      "Display navigation bar": [
+        "Visualizza la barra di navigazione"
       ],
       "Done": [
         "Fatto"
@@ -634,6 +640,9 @@
       ],
       "Show more": [
         "Mostra di più"
+      ],
+      "Show navigation bar": [
+        "Mostra la barra di navigazione"
       ],
       "Show side panel": [
         "Mostra pannello laterale"
@@ -1898,6 +1907,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (Repubblica Democratica Popolare di)"
+      ],
       "Korea (Republic of)": [
         "Corea (Repubblica di)"
       ],
@@ -2328,8 +2340,8 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "Termina dopo…"
+      "After…": [
+        "Dopo…"
       ],
       "Never": [
         "Mai"
@@ -6352,6 +6364,9 @@
       "Collaborate and share large files": [
         "Collabora e condividi file di grandi dimensioni"
       ],
+      "Collaborative document editor": [
+        "Editor di documenti collaborativo"
+      ],
       "Contact groups": [
         "Gruppi di contatti"
       ],
@@ -7376,6 +7391,9 @@
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Aggiungi un metodo di pagamento nella dashboard per continuare."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -9747,6 +9765,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portafoglio",
+        "${ n } account per portafoglio"
+      ],
+      "${ n } email address": [
+        "${ n } indirizzo email",
+        "${ n } indirizzi email"
+      ],
+      "${ n } wallet": [
+        "${ n } portafoglio",
+        "${ n } portafogli"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Un modo più sicuro per conservare il tuo Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {

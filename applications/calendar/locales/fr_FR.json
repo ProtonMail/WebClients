@@ -153,6 +153,9 @@
       "Close this banner": [
         "Fermer cette bannière"
       ],
+      "Collapse navigation bar": [
+        "Réduire la barre de navigation"
+      ],
       "Compose": [
         "Rédiger"
       ],
@@ -253,6 +256,9 @@
       ],
       "Dismiss": [
         "Annuler"
+      ],
+      "Display navigation bar": [
+        "Afficher la barre de navigation"
       ],
       "Done": [
         "Terminé"
@@ -635,6 +641,9 @@
       "Show more": [
         "Afficher plus"
       ],
+      "Show navigation bar": [
+        "Afficher la barre de navigation"
+      ],
       "Show side panel": [
         "Afficher le panneau latéral"
       ],
@@ -888,7 +897,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "applications ${ BRAND_NAME }"
+        "Applications ${ BRAND_NAME }"
       ]
     },
     "Assistant toggle": {
@@ -1622,6 +1631,9 @@
       "British Indian Ocean Territory": [
         "Territoire britannique de l'océan Indien"
       ],
+      "British Virgin Islands": [
+        "Îles Vierges britanniques"
+      ],
       "Brunei Darussalam": [
         "Brunéi Darussalam"
       ],
@@ -1676,6 +1688,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (République démocratique)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo - République démocratique du Congo"
       ],
@@ -1714,6 +1729,9 @@
       ],
       "Dominican Republic": [
         "République dominicaine"
+      ],
+      "East Timor": [
+        "Timor oriental"
       ],
       "Ecuador": [
         "Équateur"
@@ -1856,6 +1874,9 @@
       "Ireland": [
         "Irlande"
       ],
+      "Islamic Republic of Iran": [
+        "République Islamique d'Iran"
+      ],
       "Isle of Man": [
         "Île de Man"
       ],
@@ -1886,6 +1907,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corée (République populaire démocratique)"
+      ],
+      "Korea (Republic of)": [
+        "Corée (République)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1894,6 +1921,9 @@
       ],
       "Kyrgyzstan": [
         "Kirghizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "République démocratique populaire lao"
       ],
       "Laos": [
         "Laos"
@@ -1913,6 +1943,9 @@
       "Libya": [
         "Libye"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya arabe libyenne"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1924,6 +1957,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macédoine"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2177,6 +2213,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard et Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suède"
       ],
@@ -2187,7 +2226,7 @@
         "Syrie"
       ],
       "Syrian Arab Republic": [
-        "Syrie"
+        "République arabe syrienne"
       ],
       "Taiwan": [
         "Taïwan"
@@ -2197,6 +2236,9 @@
       ],
       "Tanzania": [
         "Tanzanie"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanie, République-Unie"
       ],
       "Thailand": [
         "Thaïlande"
@@ -2298,8 +2340,8 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "Se termine après…"
+      "After…": [
+        "Après…"
       ],
       "Never": [
         "Jamais"
@@ -2452,7 +2494,7 @@
         "Cette opération peut prendre quelques minutes. Pendant ce temps, vous pouvez continuer à utiliser Proton Calendar comme d'habitude."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
+        "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -5184,7 +5226,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui avec l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
+        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Information about why calendar event cannot be saved": {
@@ -8428,7 +8470,7 @@
         "${ VPN_APP_NAME } comprenant un accès à tous les serveurs ultra-rapides dans ${ vpnCountries } pays"
       ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } avec blocage de logiciels malveillants et publicités"
+        "${ VPN_APP_NAME } avec blocage de logiciels malveillants et de publicités"
       ],
       "10 email addresses": [
         "10 adresses e-mail"
@@ -9712,6 +9754,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte par portefeuille",
+        "${ n } comptes par portefeuille"
+      ],
+      "${ n } email address": [
+        "${ n } adresse e-mail",
+        "${ n } adresses e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portefeuille",
+        "${ n } portefeuilles"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Une manière plus sûre de détenir votre Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin par e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Constituez une réserve de bitcoins et réalisez des transactions en toute sécurité"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problème avec Wallet"
       ]
     },
     "Warning": {

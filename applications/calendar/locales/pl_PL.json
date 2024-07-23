@@ -155,6 +155,9 @@
       "Close this banner": [
         "Zamknij powiadomienie"
       ],
+      "Collapse navigation bar": [
+        "Zwiń pasek nawigacji"
+      ],
       "Compose": [
         "Napisz"
       ],
@@ -259,6 +262,9 @@
       ],
       "Dismiss": [
         "Odrzuć"
+      ],
+      "Display navigation bar": [
+        "Pokaż pasek nawigacji"
       ],
       "Done": [
         "Gotowe"
@@ -640,6 +646,9 @@
       ],
       "Show more": [
         "Pokaż więcej"
+      ],
+      "Show navigation bar": [
+        "Pokaż pasek nawigacji"
       ],
       "Show side panel": [
         "Pokaż panel boczny"
@@ -2357,8 +2366,8 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "Po powtórzeniu…"
+      "After…": [
+        "Po…"
       ],
       "Never": [
         "Nigdy"
@@ -7638,6 +7647,9 @@
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Dodaj metodę płatności w pulpicie, aby kontynuować."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -10113,6 +10125,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto na portfel",
+        "${ n } konta na portfel",
+        "${ n } kont na portfel",
+        "${ n } konta na portfel"
+      ],
+      "${ n } email address": [
+        "${ n } adres e-mail",
+        "${ n } adresy e-mail",
+        "${ n } adresów e-mail",
+        "${ n } adresu e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portfel",
+        "${ n } portfele",
+        "${ n } portfeli",
+        "${ n } portfela"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoiny przez e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem z portfelem"
       ]
     },
     "Warning": {
