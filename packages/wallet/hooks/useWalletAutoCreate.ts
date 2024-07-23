@@ -9,6 +9,7 @@ import type {
     WasmUserSettings,
     WasmWallet,
 } from '@proton/andromeda';
+import type andromedaModule from '@proton/andromeda';
 import { useGetAddresses } from '@proton/components/hooks/useAddresses';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -32,7 +33,7 @@ const FIRST_INDEX = 0;
 const WALLET_AUTOCREATE_FLAG = true;
 
 let userWalletSettings: WasmUserSettings;
-let wasm: typeof import('@proton/andromeda');
+let wasm: typeof andromedaModule;
 
 /**
  * Utility hook creating a wallet if user don't have any
@@ -155,7 +156,7 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
             // Encrypt wallet data
             const [
                 [encryptedName, encryptedMnemonic, encryptedFirstAccountLabel],
-                [walletKey, walletKeySignature, userKeyId],
+                [walletKey, walletKeySignature /** decryptedWalletKey */, , userKeyId],
             ] = await encryptWalletData([compelledWalletName, mnemonic, DEFAULT_ACCOUNT_LABEL], primaryUserKey);
 
             const wasmWallet = new wasm.WasmWallet(network, mnemonic, '');

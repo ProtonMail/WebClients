@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { WasmFiatCurrencySymbol } from '@proton/andromeda';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
@@ -181,7 +182,10 @@ export const WalletImportModal = ({
                         onClick={() => {
                             void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation, isImported: true });
                         }}
-                    >{c('Wallet setup').t`Import`}</Button>
+                    >
+                        {c('Wallet setup').t`Import`}
+                        {loadingWalletSubmit && <CircleLoader className="ml-2" />}
+                    </Button>
                 </div>
             </Modal>
 

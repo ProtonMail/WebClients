@@ -1,11 +1,18 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiEmailAddress, WasmFiatCurrencySymbol } from '@proton/andromeda';
+import type {
+    WasmApiEmailAddress,
+    WasmFiatCurrencySymbol,
+    WasmNetwork,
+    WasmProtonWalletApiClient,
+    WasmScriptType,
+} from '@proton/andromeda';
 import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
-import { useAddresses, useNotifications, useUserKeys } from '@proton/components/hooks';
+import { useAddresses, useNotifications, useOrganization, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     DEFAULT_ACCOUNT_LABEL,
@@ -13,8 +20,10 @@ import {
     FIRST_INDEX,
     WalletType,
     encryptWalletData,
+    encryptWalletDataWithWalletKey,
     getDefaultWalletName,
     useUserWalletSettings,
+    useWalletApi,
     useWalletApiClients,
     walletCreation,
     wordCountToNumber,
@@ -39,16 +48,58 @@ const parseMnemonic = (value?: string): { mnemonic: WasmMnemonic } | { error: st
     }
 };
 
+const getWalletAccountsToCreate = async ({
+    isImported,
+    walletApi,
+    wasmWallet,
+    decryptedWalletKey,
+    network,
+}: {
+    isImported: boolean;
+    wasmWallet: WasmWallet;
+    walletApi: WasmProtonWalletApiClient;
+    decryptedWalletKey: CryptoKey;
+    network: WasmNetwork;
+}): Promise<[WasmDerivationPath, string, WasmScriptType][]> => {
+    if (isImported) {
+        const discoveredAccounts = await wasmWallet.discoverAccounts(walletApi);
+
+        const encryptedLabels = await encryptWalletDataWithWalletKey(
+            new Array(discoveredAccounts.data.length).fill('').map((a, index) => `Wallet account ${index}`),
+            decryptedWalletKey
+        );
+
+        const accountsToCreate = discoveredAccounts.data.map((account, index) => {
+            const args: [WasmDerivationPath, string, WasmScriptType] = [account[2], encryptedLabels[index], account[0]];
+
+            return args;
+        });
+
+        if (accountsToCreate.length) {
+            return accountsToCreate;
+        }
+    }
+
+    const derivationPath = WasmDerivationPath.fromParts(DEFAULT_SCRIPT_TYPE, network, FIRST_INDEX);
+    const [encryptedFirstAccountLabel] = await encryptWalletDataWithWalletKey(
+        [DEFAULT_ACCOUNT_LABEL],
+        decryptedWalletKey
+    );
+
+    return [[derivationPath, encryptedFirstAccountLabel, DEFAULT_SCRIPT_TYPE]];
+};
+
 interface Props {
     /**
      * Called when wallet setup is finished without any wallet created
      */
-    onSetupFinish: () => void;
+    onSetupFinish: (data: { notCreatedAccounts: number }) => void;
 }
 
 export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const history = useHistory();
     const [settings, loadingSettings] = useUserWalletSettings();
+    const [organization] = useOrganization();
 
     const [addresses] = useAddresses();
 
@@ -63,6 +114,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const [error, setError] = useState<string>('');
 
     const [walletName, setWalletName] = useState<string>('');
+    const walletApi = useWalletApi();
 
     const [currencies, loadingCurrencies] = useFiatCurrencies();
     const [selectedCurrency, setSelectedCurrency] = useState<WasmFiatCurrencySymbol>();
@@ -125,90 +177,95 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
         // TODO: add public key support here
         const [
-            [encryptedName, encryptedMnemonic, encryptedFirstAccountLabel],
-            [walletKey, walletKeySignature, userKeyId],
-        ] = await encryptWalletData([compelledWalletName, mnemonicStr, DEFAULT_ACCOUNT_LABEL], primaryUserKey);
+            [encryptedName, encryptedMnemonic],
+            [encryptedWalletKey, walletKeySignature, decryptedWalletKey, userKeyId],
+        ] = await encryptWalletData([compelledWalletName, mnemonicStr], primaryUserKey);
 
-        const fingerprint = new WasmWallet(network, mnemonicStr, passphrase).getFingerprint();
+        const wasmWallet = new WasmWallet(network, mnemonicStr, passphrase);
+        const fingerprint = wasmWallet.getFingerprint();
 
-        if (!encryptedName) {
-            return;
-        }
+        try {
+            const accounts = await getWalletAccountsToCreate({
+                isImported,
+                walletApi,
+                decryptedWalletKey,
+                network,
+                wasmWallet,
+            });
 
-        await api.wallet
-            .createWallet(
+            const wallet = await api.wallet.createWallet(
                 encryptedName,
                 isImported,
                 WalletType.OnChain,
                 hasPassphrase,
                 userKeyId,
-                walletKey,
+                encryptedWalletKey,
                 walletKeySignature,
                 encryptedMnemonic,
                 fingerprint,
                 undefined
-            )
-            .then(async ({ Wallet, WalletKey, WalletSettings }): Promise<void> => {
-                const derivationPath = WasmDerivationPath.fromParts(DEFAULT_SCRIPT_TYPE, network, FIRST_INDEX);
+            );
 
-                // Typeguard
-                const account = encryptedFirstAccountLabel
-                    ? await api.wallet
-                          .createWalletAccount(
-                              Wallet.ID,
-                              derivationPath,
-                              encryptedFirstAccountLabel,
-                              DEFAULT_SCRIPT_TYPE
-                          )
-                          .catch((error: any) => {
-                              createNotification({
-                                  text: error?.error ?? c('Wallet setup').t`Could not create wallet account`,
-                                  type: 'error',
-                              });
+            const { Wallet, WalletKey, WalletSettings } = wallet;
 
-                              return null;
-                          })
-                    : undefined;
+            const walletAccountPerWalletLimit = organization?.MaxSubWallets ?? 0;
 
-                const addedEmailAddresses: WasmApiEmailAddress[] = [];
-                if (account) {
-                    await api.wallet.updateWalletAccountFiatCurrency(Wallet.ID, account.Data.ID, selectedCurrency);
+            const accountsWithinUserLimit = accounts.slice(0, walletAccountPerWalletLimit);
+            const accountsAboveLimits = accounts.slice(walletAccountPerWalletLimit);
 
-                    if (shouldAutoAddEmailAddress) {
-                        for (const address of addresses ?? []) {
-                            try {
-                                await api.wallet.addEmailAddress(Wallet.ID, account.Data.ID, address.ID);
-                                addedEmailAddresses.push({ ID: address.ID, Email: address.Email });
-                            } catch (error: any) {
-                                createNotification({
-                                    text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
-                                    type: 'error',
-                                });
-                            }
-                        }
-                    }
-                }
+            const createdAccounts = [];
+            for (const account of accountsWithinUserLimit) {
+                const created = await api.wallet.createWalletAccount(Wallet.ID, ...account).catch((error: any) => {
+                    createNotification({
+                        text: error?.error ?? c('Wallet setup').t`Could not create wallet account`,
+                        type: 'error',
+                    });
 
-                dispatch(
-                    walletCreation({
-                        Wallet,
-                        WalletKey,
-                        WalletSettings,
-                        WalletAccounts: account
-                            ? [{ ...account.Data, FiatCurrency: selectedCurrency, Addresses: addedEmailAddresses }]
-                            : [],
-                    })
-                );
-
-                history.push(`/wallets/${Wallet.ID}`);
-                onSetupFinish();
-            })
-            .catch((error: any) => {
-                createNotification({
-                    text: error?.error ?? c('Wallet setup').t`Could not create wallet`,
-                    type: 'error',
+                    return null;
                 });
+
+                if (created) {
+                    await api.wallet
+                        .updateWalletAccountFiatCurrency(Wallet.ID, created.Data.ID, selectedCurrency)
+                        .catch(noop);
+
+                    createdAccounts.push({ ...created.Data, FiatCurrency: selectedCurrency });
+                }
+            }
+
+            const [firstWalletAccount, ...others] = createdAccounts;
+            const [firstAddress] = addresses ?? [];
+
+            const addedEmailAddresses: WasmApiEmailAddress[] = [];
+            if (firstWalletAccount && shouldAutoAddEmailAddress) {
+                try {
+                    await api.wallet.addEmailAddress(Wallet.ID, firstWalletAccount.ID, firstAddress.ID);
+                    addedEmailAddresses.push({ ID: firstAddress.ID, Email: firstAddress.Email });
+                } catch (error: any) {
+                    createNotification({
+                        text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
+                        type: 'error',
+                    });
+                }
+            }
+
+            dispatch(
+                walletCreation({
+                    Wallet,
+                    WalletKey,
+                    WalletSettings,
+                    WalletAccounts: [{ ...firstWalletAccount, Addresses: addedEmailAddresses }, ...others],
+                })
+            );
+
+            history.push(`/wallets/${Wallet.ID}`);
+            onSetupFinish({ notCreatedAccounts: accountsAboveLimits.length });
+        } catch (error: any) {
+            createNotification({
+                text: error?.error ?? c('Wallet setup').t`Could not create wallet`,
+                type: 'error',
             });
+        }
     };
 
     useEffect(() => {
