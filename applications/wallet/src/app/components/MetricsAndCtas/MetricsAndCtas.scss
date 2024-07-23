@@ -1,0 +1,11 @@
+@import '~@proton/styles/scss/lib';
+
+.metrics-and-ctas {
+	&-hr-large {
+		display: none;
+
+		@include media('>=#{rem(1300)}') {
+			display: block;
+		}
+	}
+}

@@ -1,13 +1,12 @@
 import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
+import { Line } from 'react-chartjs-2';
 
-import { sub } from 'date-fns';
+import { type ChartOptions } from 'chart.js';
+import { first, last } from 'lodash';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { Tooltip } from '@proton/components/components';
-import { SECOND } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
@@ -16,8 +15,22 @@ import { Button, CoreButton } from '../../atoms/Button';
 import { CorePrice } from '../../atoms/Price';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
-import { useGetExchangeRate } from '../../store/hooks';
+import { usePriceGraphData } from '../../store/hooks/usePriceGraphData';
 import { useBalance } from '../Balance/useBalance';
+
+import './MetricsAndCtas.scss';
+
+const lineChartOptions: ChartOptions<'line'> = {
+    maintainAspectRatio: false,
+    scales: {
+        x: { display: false, beginAtZero: false },
+        y: { display: false, beginAtZero: false },
+    },
+    plugins: {
+        legend: { display: false },
+        title: { display: false },
+    },
+};
 
 interface Props {
     apiWalletData: IWasmApiWalletData;
@@ -43,30 +56,11 @@ export const MetricsAndCtas = ({
     const { totalBalance } = useBalance(apiWalletData, apiAccount);
 
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
+    const [priceGraphData = { GraphData: [] }] = usePriceGraphData(account.FiatCurrency, 'OneDay');
 
-    const [twentyFourHourChange, setTwentyFourHourChange] = useState<number>();
-
-    const getExchangeRate = useGetExchangeRate();
-
-    useEffect(() => {
-        const yesterday = sub(new Date(Number(exchangeRate?.ExchangeRateTime) * SECOND), { days: 1 });
-
-        if (account?.FiatCurrency && exchangeRate?.ExchangeRate && !loadingExchangeRate) {
-            const fetch = async () => {
-                // This is needed because promiseCache directly returns promise if still pending
-                await wait(1);
-                await getExchangeRate(account?.FiatCurrency, yesterday).then((prevExchangeRate) => {
-                    if (prevExchangeRate) {
-                        const absoluteChange = exchangeRate.ExchangeRate - prevExchangeRate?.ExchangeRate;
-                        const relativeChange = absoluteChange / prevExchangeRate.ExchangeRate;
-                        setTwentyFourHourChange(relativeChange * 100);
-                    }
-                });
-            };
-
-            void fetch();
-        }
-    }, [account?.FiatCurrency, exchangeRate, getExchangeRate, loadingExchangeRate]);
+    const firstDataPoint = first(priceGraphData.GraphData)?.ExchangeRate ?? 0;
+    const absoluteChange = (last(priceGraphData.GraphData)?.ExchangeRate ?? 0) - firstDataPoint;
+    const percentChange = (absoluteChange / firstDataPoint) * 100;
 
     const canSend = totalBalance > 0;
     const commonProps = {
@@ -86,20 +80,17 @@ export const MetricsAndCtas = ({
     return (
         <div
             className={clsx(
-                'flex bg-weak rounded-xl justify-space-between',
+                'metrics-and-ctas flex bg-weak rounded-xl justify-space-between',
                 isNarrow ? 'flex-column items-start p-4 mx-2 my-4' : 'flex-row items-center p-6 m-4'
             )}
         >
-            <div
-                className="flex flex-row max-w-custom my-2 items-center"
-                style={{ flexGrow: '1', '--max-w-custom': '50rem' }}
-            >
+            <div className="flex flex-row max-w-custom my-2 items-center" style={{ '--max-w-custom': '50rem' }}>
                 <div className="mr-3">
                     <img src={btcSvg} alt={c('Info').t`Bitcoin`} />
                 </div>
 
-                <div className="flex flex-row justify-space-between gap-3">
-                    <div className="flex flex-column mx-1">
+                <div className="flex flex-row justify-space-between gap-6">
+                    <div className="flex flex-column">
                         <div className="block color-hint mb-1">{c('Wallet dashboard').t`Current price`}</div>
                         <div className="w-full grow">
                             <span className={clsx('block', loadingExchangeRate && 'skeleton-loader')}>
@@ -112,32 +103,57 @@ export const MetricsAndCtas = ({
                         </div>
                     </div>
 
-                    <div className="flex flex-column mx-1">
+                    <div className="flex flex-column">
                         <span className="block color-hint mb-1">{c('Wallet dashboard').t`24h change`}</span>
                         <div className="w-full grow">
-                            <span className={clsx('block', loadingExchangeRate && 'skeleton-loader')}>
-                                {Number.isFinite(twentyFourHourChange) && (
-                                    <span
-                                        className={clsx(
-                                            'block',
-                                            (twentyFourHourChange ?? 0) >= 0 ? 'color-success' : 'color-danger'
-                                        )}
-                                    >
-                                        {twentyFourHourChange ? twentyFourHourChange.toFixed(2) : 0}%
-                                    </span>
+                            <span
+                                className={clsx(
+                                    'block',
+                                    loadingExchangeRate && 'skeleton-loader',
+                                    percentChange >= 0 ? 'color-success' : 'color-danger'
                                 )}
+                            >
+                                {percentChange.toFixed(2)}%
                             </span>
                         </div>
+                    </div>
+
+                    <div style={{ height: '3rem', width: '10rem' }}>
+                        <Line
+                            id="line-chart"
+                            options={lineChartOptions}
+                            data={{
+                                datasets: [
+                                    {
+                                        borderColor: window
+                                            .getComputedStyle(document.body)
+                                            .getPropertyValue('--signal-success'),
+                                        borderWidth: 2,
+                                        tension: 0,
+                                        pointRadius: 0,
+                                        data: priceGraphData.GraphData.map((d) => ({
+                                            x: d.Timestamp,
+                                            y: d.ExchangeRate / d.Cents,
+                                        })),
+                                    },
+                                ],
+                                labels: priceGraphData.GraphData.map((d) => d.Timestamp),
+                            }}
+                        />
                     </div>
                 </div>
             </div>
 
-            {isNarrow && <hr className="w-full my-3" />}
+            {isNarrow ? (
+                <hr className="w-full my-3" />
+            ) : (
+                <hr className="metrics-and-ctas-hr-large h-full border-right mx-3 m-0" />
+            )}
 
             <div
                 className={clsx(
                     'flex flex-row max-w-custom my-2 flex-nowrap',
-                    isNarrow ? 'w-full justify-space-between' : 'justify-center mx-auto'
+                    isNarrow ? 'w-full justify-space-between' : 'justify-center'
                 )}
                 style={isNarrow ? {} : { '--max-w-custom': '30rem' }}
             >
