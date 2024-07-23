@@ -94,7 +94,7 @@ const PopoverPill = ({
     <div className="flex gap-2 py-1 text-[--text-hint]">
       <Icon name="lock-check" />
       <span>
-        {c('Info').t`End to end encrypted.`}{' '}
+        {c('Info').t`End-to-end encrypted.`}{' '}
         <a
           data-connection-popover
           ref={linkRef}
