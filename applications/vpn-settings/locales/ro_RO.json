@@ -358,6 +358,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Deschidere"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
       ],
@@ -671,6 +674,11 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domeniu personal adițional",
+        "${ domains } domenii personale adiționale",
+        "${ domains } de domenii personale adiționale"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servere",
@@ -1274,6 +1282,9 @@
       "British Indian Ocean Territory": [
         "Teritoriul Britanic al Oceanului Indian"
       ],
+      "British Virgin Islands": [
+        "Insulele Virgine Britanice"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1328,6 +1339,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Republica Democrată)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, Republica Democrată"
       ],
@@ -1366,6 +1380,9 @@
       ],
       "Dominican Republic": [
         "Republica Dominicană"
+      ],
+      "East Timor": [
+        "Timorul de Est"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1508,6 +1525,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Republica Islamică Iran"
+      ],
       "Isle of Man": [
         "Insula Man"
       ],
@@ -1538,6 +1558,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Coreea (Republica Populară Democrată)"
+      ],
+      "Korea (Republic of)": [
+        "Coreea (Republica)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1546,6 +1572,9 @@
       ],
       "Kyrgyzstan": [
         "Kârgâzstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Republica Populară Democrată Laos"
       ],
       "Laos": [
         "Laos"
@@ -1565,6 +1594,9 @@
       "Libya": [
         "Libia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya Arabă Libiană"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1576,6 +1608,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -1829,6 +1864,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suedia"
       ],
@@ -1849,6 +1887,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania (Republica Unită)"
       ],
       "Thailand": [
         "Tailanda"
@@ -5534,6 +5575,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "cu ${ price }"
       ]
@@ -5865,6 +5909,9 @@
       ],
       "Collaborate and share large files": [
         "Colaborare și partajare fișiere mari"
+      ],
+      "Collaborative document editor": [
+        "Editor colaborativ de documente"
       ],
       "Contact groups": [
         "Grupuri de contacte"

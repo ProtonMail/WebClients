@@ -674,6 +674,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } další vlastní doména",
+        "${ domains } další vlastní domény",
+        "${ domains } dalších vlastních domén",
+        "${ domains } dalších vlastních domén"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servery",
@@ -1285,6 +1291,9 @@
       "British Indian Ocean Territory": [
         "Britské indickooceánské území"
       ],
+      "British Virgin Islands": [
+        "Britské Panenské ostrovy"
+      ],
       "Brunei Darussalam": [
         "Brunej Darussalam"
       ],
@@ -1339,6 +1348,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Konžská demokratická republika)"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratická republika Kongo"
       ],
@@ -1377,6 +1389,9 @@
       ],
       "Dominican Republic": [
         "Dominikánská republika"
+      ],
+      "East Timor": [
+        "Východní Timor"
       ],
       "Ecuador": [
         "Ekvádor"
@@ -1519,6 +1534,9 @@
       "Ireland": [
         "Irsko"
       ],
+      "Islamic Republic of Iran": [
+        "Íránská islámská republika"
+      ],
       "Isle of Man": [
         "Ostrov Man"
       ],
@@ -1549,6 +1567,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korejská lidově demokratická republika (Severní Korea)"
+      ],
+      "Korea (Republic of)": [
+        "Korejská republika (Jižní Korea)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1557,6 +1581,9 @@
       ],
       "Kyrgyzstan": [
         "Kyrgyzstán"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laoská lidově demokratická republika"
       ],
       "Laos": [
         "Laos"
@@ -1576,6 +1603,9 @@
       "Libya": [
         "Libye"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libyjská arabská džamáhírije"
+      ],
       "Liechtenstein": [
         "Lichtenštejnsko"
       ],
@@ -1587,6 +1617,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Makedonie"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -1840,6 +1873,9 @@
       "Svalbard and Jan Mayen": [
         "Špicberky a Jan Mayen"
       ],
+      "Swaziland": [
+        "Svazijsko"
+      ],
       "Sweden": [
         "Švédsko"
       ],
@@ -1860,6 +1896,9 @@
       ],
       "Tanzania": [
         "Tanzanie"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanie, Tanzanská sjednocená republika"
       ],
       "Thailand": [
         "Thajsko"
@@ -3160,6 +3199,12 @@
       "${ vaultLink } created": [
         "${ vaultLink } byl vytvořen"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } byl smazán"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } sdílený e-mailem"
+      ],
       "${ vaultLink } updated": [
         "${ vaultLink } byl aktualizován"
       ],
@@ -3409,8 +3454,17 @@
       "Custom branding": [
         "Vlastní značka"
       ],
+      "Custom email added": [
+        "Přidán vlastní e-mail"
+      ],
+      "Custom email deleted": [
+        "Vlastní e-mail smazán"
+      ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
+      ],
+      "Custom email validated": [
+        "Vlastní e-mail ověřen"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
@@ -3709,6 +3763,9 @@
       "Invite Deleted": [
         "Pozvánka smazána"
       ],
+      "Invite for new user deleted": [
+        "Pozvánka pro nového uživatele smazána"
+      ],
       "Invite for organization accepted": [
         "Pozvánka pro organizaci přijata"
       ],
@@ -3724,6 +3781,9 @@
       "Item Autofilled": [
         "Položka automaticky vyplněna"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Položka automaticky vyplněna v ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Položka automaticky vyplněna v trezoru"
       ],
@@ -3733,20 +3793,44 @@
       "Item Created": [
         "Položka vytvořena"
       ],
+      "Item created in ${ vaultLink }": [
+        "Položka vytvořena v ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Položka v trezoru vytvořena"
       ],
       "Item Deleted": [
         "Položka odstraněna"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Položka smazána z ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Položka smazána z trezoru"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Příznaky položky změněny v ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Příznaky položky změněny v trezoru"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Položka v ${ vaultLink } přesunuta do koše"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Položka v ${ vaultLink } přesunuta z koše"
+      ],
+      "Item in vault trashed": [
+        "Položka v trezoru přesunuta do koše"
       ],
       "Item in vault untrashed": [
         "Položka v trezoru přesunuta z koše"
       ],
       "Item Read": [
         "Položka přečtena"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Položka přečtena v ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezoru přečtena"
@@ -3759,6 +3843,9 @@
       ],
       "Item Updated": [
         "Položka aktualizována"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Položka aktualizována v ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Položka v trezoru aktualizována"
@@ -3852,6 +3939,9 @@
       ],
       "New User Invite Deleted": [
         "Nová uživatelská pozvánka smazána"
+      ],
+      "New user invited to organization": [
+        "Nový uživatel byl pozván do organizace"
       ],
       "No addresses exist": [
         "Neexistují žádné adresy"
@@ -4084,6 +4174,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
+      "Session Ended": [
+        "Relace ukončena"
+      ],
+      "Session Started": [
+        "Relace vytvořena"
+      ],
       "Session timed out": [
         "Relace vypršela"
       ],
@@ -4098,6 +4194,12 @@
       ],
       "Share Updated": [
         "Sdílení aktualizováno"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Sdílený ${ vaultLink } smazán"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Sdílený ${ vaultLink } aktualizován"
       ],
       "Shared vault deleted": [
         "Sdílený trezor smazán"
@@ -5508,6 +5610,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Přidat asistenta psaní ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -5853,6 +5958,9 @@
       ],
       "Collaborate and share large files": [
         "Spolupráce a sdílení velkých souborů"
+      ],
+      "Collaborative document editor": [
+        "Editor pro spolupráci na dokumentech"
       ],
       "Contact groups": [
         "Skupiny kontaktů"
@@ -9059,6 +9167,9 @@
       "Confirm phone number": [
         "Potvrzení telefonního čísla"
       ],
+      "Connection events": [
+        "Události připojení"
+      ],
       "Contact us": [
         "Kontaktujte nás"
       ],
@@ -9227,6 +9338,9 @@
       "Forgot recovery method": [
         "Zapomenutá metoda obnovení"
       ],
+      "Gateway": [
+        "Brána"
+      ],
       "Gateways": [
         "Brány"
       ],
@@ -9301,6 +9415,9 @@
       ],
       "Organization name": [
         "Název organizace"
+      ],
+      "Origin": [
+        "Původ"
       ],
       "Password": [
         "Heslo"
@@ -9747,6 +9864,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
       ],
