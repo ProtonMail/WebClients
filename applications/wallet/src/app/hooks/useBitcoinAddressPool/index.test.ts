@@ -59,6 +59,7 @@ const wallet = {
             FiatCurrency: 'USD' as WasmFiatCurrencySymbol,
             Priority: 1,
             LastUsedIndex: 0,
+            PoolSize: 0,
         },
     ],
     WalletKey: {
