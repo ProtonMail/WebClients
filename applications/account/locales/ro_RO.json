@@ -697,11 +697,14 @@
       "No, thanks": [
         "Nu, mulțumesc"
       ],
+      "OK": [
+        "OK"
+      ],
       "Ok": [
         "OK"
       ],
-      "OK": [
-        "OK"
+      "Open": [
+        "Deschidere"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -1227,6 +1230,11 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domeniu personal adițional",
+        "${ domains } domenii personale adiționale",
+        "${ domains } de domenii personale adiționale"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servere",
@@ -1390,9 +1398,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Compatibilitate cu mai multe dispozitive și mai rapid."
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Nu sunt transmise date în timpul utilizării. Necesită descărcare o singură dată."
       ],
       "Run locally": [
         "Rulare locală"
@@ -2435,6 +2440,9 @@
       "British Indian Ocean Territory": [
         "Teritoriul Britanic al Oceanului Indian"
       ],
+      "British Virgin Islands": [
+        "Insulele Virgine Britanice"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2489,6 +2497,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Republica Democrată)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, Republica Democrată"
       ],
@@ -2527,6 +2538,9 @@
       ],
       "Dominican Republic": [
         "Republica Dominicană"
+      ],
+      "East Timor": [
+        "Timorul de Est"
       ],
       "Ecuador": [
         "Ecuador"
@@ -2669,6 +2683,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Republica Islamică Iran"
+      ],
       "Isle of Man": [
         "Insula Man"
       ],
@@ -2699,6 +2716,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Coreea (Republica Populară Democrată)"
+      ],
+      "Korea (Republic of)": [
+        "Coreea (Republica)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2707,6 +2730,9 @@
       ],
       "Kyrgyzstan": [
         "Kârgâzstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Republica Populară Democrată Laos"
       ],
       "Laos": [
         "Laos"
@@ -2726,6 +2752,9 @@
       "Libya": [
         "Libia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya Arabă Libiană"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2737,6 +2766,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2990,6 +3022,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suedia"
       ],
@@ -3010,6 +3045,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania (Republica Unită)"
       ],
       "Thailand": [
         "Tailanda"
@@ -10771,6 +10809,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Toate aplicațiile comerciale ${ BRAND_NAME } și funcțiile premium pentru a vă proteja întreaga afacere"
       ],
@@ -11418,6 +11459,9 @@
       ],
       "Collaborate and share large files": [
         "Colaborare și partajare fișiere mari"
+      ],
+      "Collaborative document editor": [
+        "Editor colaborativ de documente"
       ],
       "Contact groups": [
         "Grupuri de contacte"
@@ -12881,9 +12925,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Continuând, sunteți de acord cu acești ${ termsAndConditions }"
       ],
       "Creating your account": [
         "Se creează contul"
@@ -16203,6 +16244,9 @@
       ],
       "Import failed": [
         "Importare eșuată"
+      ],
+      "Import groups": [
+        "Importare grupuri"
       ],
       "Import key": [
         "Importare cheie"

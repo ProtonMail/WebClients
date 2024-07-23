@@ -190,6 +190,9 @@
       "Change password": [
         "Spremeni geslo"
       ],
+      "Change second password": [
+        "Spremenite drugo geslo"
+      ],
       "Chat with us": [
         "Klepetajte z nami"
       ],
@@ -682,6 +685,9 @@
       "Need help?": [
         "Potrebujete pomoč?"
       ],
+      "New group": [
+        "Nova skupina"
+      ],
       "Next": [
         "Naprej"
       ],
@@ -694,11 +700,14 @@
       "No, thanks": [
         "Ne, hvala"
       ],
+      "OK": [
+        "V redu"
+      ],
       "Ok": [
         "V redu"
       ],
-      "OK": [
-        "V redu"
+      "Open": [
+        "Odpri"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
@@ -1393,6 +1402,9 @@
       ]
     },
     "Assistant toggle": {
+      "New": [
+        "Novo"
+      ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ],
@@ -2723,6 +2735,9 @@
       "Macao": [
         "Makav"
       ],
+      "Macedonia": [
+        "Makedonija"
+      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2974,6 +2989,9 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard in Jan Mayen"
+      ],
+      "Swaziland": [
+        "Svaziland"
       ],
       "Sweden": [
         "Švedska"
@@ -4117,6 +4135,9 @@
       ],
       "Incorrect password": [
         "Napačno geslo"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Prosim poskusite ponovno."
       ],
       "Incorrect username": [
         "Nepravilno uporabniško ime"
@@ -6230,6 +6251,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } želi deliti podatke z vami v ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } lahko uporabljate tudi z enim geslom, ki nadomesti tako prijavo kot drugo geslo. Če želite preklopiti na način z enim geslom, vnesite eno geslo, ki ga želite uporabiti, in kliknite Shrani."
+      ],
       "${ n } address": [
         "${ n } naslov",
         "${ n } naslova",
@@ -8159,6 +8183,12 @@
       "Two-factor authentication enabled": [
         "Dvojno preverjanje pristnosti je omogočeno"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in drugo za dešifriranje vaših podatkov. (Napredno)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Način z dvema gesloma uporablja ločena gesla za prijavo in dešifriranje podatkov. To v nekaterih situacijah zagotavlja manjšo varnostno prednost, vendar za večino uporabnikov priporočamo način z enim geslom. Če želite preklopiti na način dveh gesel, najprej nastavite geslo za prijavo in nato nastavite drugo geslo."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ni mogoče preveriti podpisa datoteke za obnovitev. Prosim, obrnite se na podporo."
       ],
@@ -8248,6 +8278,15 @@
       ],
       "Users": [
         "Uporabniki"
+      ],
+      "Vault created": [
+        "Trezor ustvarjen"
+      ],
+      "Vault deleted": [
+        "Trezor je izbrisan"
+      ],
+      "Vault updated": [
+        "Trezor posodobljen"
       ],
       "Verification can take a few minutes.": [
         "Preverjanje lahko traja nekaj minut."
@@ -9283,6 +9322,9 @@
       "Awarded": [
         "Podeljeno."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Naslov za izstavitev računa"
       ],
@@ -9387,6 +9429,9 @@
       ],
       "Confirm password": [
         "Potrdi geslo."
+      ],
+      "Confirm second password": [
+        "Potrdite drugo geslo"
       ],
       "Contacts": [
         "Stiki"
@@ -9745,6 +9790,9 @@
       "New password": [
         "Novo geslo"
       ],
+      "New second password": [
+        "Novo drugo geslo"
+      ],
       "No filter": [
         "Ni filtra"
       ],
@@ -9886,6 +9934,9 @@
       "Reveal password": [
         "Razkrij geslo"
       ],
+      "Second password": [
+        "Drugo geslo"
+      ],
       "Security code (${ codeName })": [
         "Varnostna koda (${ codeName })"
       ],
@@ -9963,6 +10014,12 @@
       ],
       "Subscription options": [
         "Možnosti naročnine"
+      ],
+      "Swipe left action": [
+        "Povlecite v levo"
+      ],
+      "Swipe right action": [
+        "Povlecite v desno"
       ],
       "Synchronize with system": [
         "Usklajeno s sistemom."
@@ -10367,6 +10424,9 @@
       ],
       "Upgrade your plan": [
         "Nadgradite trenutni paket"
+      ],
+      "Vault": [
+        "Trezor"
       ],
       "View guide": [
         "Ogled vodnika."
@@ -12173,6 +12233,9 @@
       "Add to existing group": [
         "Dodaj v obstoječo skupino"
       ],
+      "Archive": [
+        "Arhiv"
+      ],
       "Ask each time": [
         "Vedno vprašaj"
       ],
@@ -12211,6 +12274,9 @@
       ],
       "Left to Right": [
         "Z leve proti desni"
+      ],
+      "Mark as read": [
+        "Označi kot prebrano"
       ],
       "My reason isn't listed": [
         "Moj razlog ni naveden"
@@ -12269,11 +12335,20 @@
       "Setup incomplete": [
         "Nastavitev ni dokončana"
       ],
+      "Spam": [
+        "Neželena pošta"
+      ],
       "Standard server configs": [
         "Standardne konfiguracije strežnikov"
       ],
+      "Star": [
+        "Označi z zvezdico"
+      ],
       "The whole organization": [
         "Celotna organizacija"
+      ],
+      "Trash": [
+        "Smeti"
       ]
     },
     "Option delay send seconds": {
@@ -12557,9 +12632,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Lahko pa odklenete **${ unlockPlanTitle }** in vse premium storitve ${ BRAND_NAME } z nadgradnjo na **${ upsellPlanTitle }**."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Z nadaljevanjem soglašate z našimi ${ termsAndConditions }."
       ],
       "Creating your account": [
         "Ustvarjanje vašega računa"
@@ -15342,6 +15414,9 @@
       "Change role": [
         "Spremeni vlogo"
       ],
+      "Change second password": [
+        "Spremenite drugo geslo"
+      ],
       "Choose an account": [
         "Izberite račun"
       ],
@@ -15669,6 +15744,15 @@
       "Folders and labels": [
         "Mape in oznake"
       ],
+      "For Linux": [
+        "Za Linux"
+      ],
+      "For macOS": [
+        "Za macOS"
+      ],
+      "For Windows": [
+        "Za Windows"
+      ],
       "Forgot recovery method": [
         "Pozabljen način obnovitve"
       ],
@@ -15791,6 +15875,9 @@
       ],
       "Link confirmation": [
         "Potrditvena povezava"
+      ],
+      "Main password": [
+        "Glavno geslo"
       ],
       "Messages": [
         "Sporočila"
@@ -16142,6 +16229,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Unlock your data": [
+        "Odklenite svoje podatke"
       ],
       "Upgrade plan": [
         "Nadgradnja paketa"
@@ -16643,11 +16733,23 @@
       "Add multiple users": [
         "Dodaj več uporabnikov"
       ],
+      "Admin": [
+        "Skrbnik"
+      ],
       "Confirm password": [
         "Potrdi geslo."
       ],
       "Create password": [
         "Ustvarite geslo"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Name": [
+        "Ime"
+      ],
+      "Optional": [
+        "Neobvezno"
       ],
       "Remember to share the user's sign in details with them.": [
         "Ne pozabite deliti podrobnosti za prijavo z uporabnikom."
@@ -16660,6 +16762,12 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "Uporabnik SSO, ki ga je zagotovil vaš ponudnik identitete"
       ],

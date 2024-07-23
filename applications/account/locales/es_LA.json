@@ -685,6 +685,9 @@
       "Need help?": [
         "¿Necesita ayuda?"
       ],
+      "New group": [
+        "Grupo nuevo"
+      ],
       "Next": [
         "Siguiente"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Añadir dominio pm.me"
+      ],
       "Resuming forward": [
         "Reanudar reenvío"
       ]
@@ -1395,8 +1401,8 @@
       "Faster, broader device compatibility": [
         "Compatibilidad con dispositivos más rápida y amplia"
       ],
-      "No data transmitted while using, requires one-time download": [
-        "No se transmiten datos durante el uso. Requiere una descarga única."
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Los prompts se mantienen en su dispositivo pero se requiere una descarga única y hardware compatible"
       ],
       "Run locally": [
         "Ejecutar localmente"
@@ -3172,6 +3178,11 @@
         "Hemos detectado errores en varias filas durante la importación, revise el archivo CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Más información"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mes"
@@ -3979,6 +3990,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Advertencia"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sin nombre"
       ]
     },
     "eof2023: Deal details": {
@@ -6375,6 +6391,9 @@
       "30-day money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Un ${ protonSubdomain } es alojado por ${ BRAND_NAME }, que fácilmente le permite configurar un subdominio. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que le ayude a identificar dónde lo usa para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
@@ -6416,6 +6435,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añada una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
+      ],
+      "Add a recovery ${ type }": [
+        "Añadir una recuperación ${ type }"
       ],
       "Add a recovery email address": [
         "Añadir una dirección de correo de recuperación"
@@ -7404,6 +7426,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Mencione a los contactos que se preocupa por su privacidad."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Comience por pulsar el botón Grupo nuevo abajo"
       ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
@@ -9795,6 +9820,15 @@
       "Gift code": [
         "Código de regalo"
       ],
+      "Group address": [
+        "Dirección del grupo"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "Group name": [
+        "Nombre del grupo"
+      ],
       "Hide password": [
         "Ocultar contraseña"
       ],
@@ -10062,6 +10096,9 @@
       "Public certificate (X.509)": [
         "Certificado público (X.509)"
       ],
+      "Purpose": [
+        "Propósito"
+      ],
       "Read": [
         "Leídos"
       ],
@@ -10259,6 +10296,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "¿Cuál es su motivo principal por el que cancela o baja de plan?"
+      ],
+      "Who can send to this group address?": [
+        "¿Quién puede enviar a la dirección del grupo?"
       ],
       "Why would you like to cancel?": [
         "¿Por qué quiere cancelar?"
@@ -12495,6 +12535,20 @@
         "Enviar a papelera"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Todos, incluso externos"
+      ],
+      "Members": [
+        "Miembros"
+      ],
+      "Nobody by default": [
+        "Nadie por defecto"
+      ],
+      "Organization members": [
+        "Miembros de la organización"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 segundos"
@@ -12771,8 +12825,8 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Pero puede desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar el plan a **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Al continuar, acepta nuestros ${ termsAndConditions }"
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Al continuar, acepta nuestros ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Creando la cuenta"
@@ -13118,6 +13172,9 @@
       "Payment Processing": [
         "Procesando el pago"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Añada un método de pago en el panel de control para continuar."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -13310,6 +13367,23 @@
       ],
       "yourdomain.com": [
         "sudominio.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Añadir un nombre al grupo"
+      ],
+      "Add member": [
+        "Añadir miembro"
+      ],
+      "e.g. distribution list for marketing team": [
+        "p. ej., lista de distribución para equipo de mercadeo"
+      ],
+      "e.g. marketing": [
+        "p. ej. mercadeo"
+      ],
+      "Members": [
+        "Miembros"
       ]
     },
     "plan customizer, ips": {
@@ -15519,6 +15593,9 @@
       "Add PayPal payment method": [
         "Añadir PayPal como método de pago"
       ],
+      "Add pm.me subdomain": [
+        "Añadir subdominio pm.me"
+      ],
       "Add servers": [
         "Añadir servidores"
       ],
@@ -15583,7 +15660,7 @@
         "¿Firmar automáticamente los mensajes salientes?"
       ],
       "Backup and export": [
-        "Hacer copias de seguridad y exportar"
+        "Respaldar y exportar"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
@@ -16418,6 +16495,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no groups": [
+        "No hay grupos"
+      ],
       "This field cannot be empty": [
         "Este campo no puede estar vacío"
       ],
@@ -17176,6 +17256,93 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "¡**Obtenga ${ plan }** para un acceso anticipado a ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener su Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Como usuario invitado, regístrese para obtener una cuenta ${ BRAND_NAME } gratis y obtenga acceso exclusivo a ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ],
+      "Early access to new features": [
+        "Acceso anticipado a nuevas funciones"
+      ],
+      "Early access waitlist": [
+        "Lista de espera de acceso anticipado"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Acceso exclusivo anticipado a ${ appName }."
+      ],
+      "Get started": [
+        "Comenzar"
+      ],
+      "Invite Friends": [
+        "Invitar a amigos"
+      ],
+      "Join ${ appName } early access!": [
+        "¡Únase al acceso anticipado de ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Regístrese para obtener una cuenta ${ BRAND_NAME } gratis y asegure su lugar. Cuanto antes se registre, antes obtendrá acceso a ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Acceda a las funciones premium de ${ appName } al actualizar su plan"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Los usuarios de Visionary y sus amigos invitados pueden compartir acceso anticipado con otros, ¡invite a sus amigos a probar ${ appName } gratis!"
+      ],
+      "You're Invited.": [
+        "Usted está invitado."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retenga y transfiera sus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Retenga y transfiera bitcoins fácilmente. Instale las aplicaciones de ${ WALLET_APP_NAME } necesarias."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Volver a la cartera"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorización"
+      ],
+      "Downloads": [
+        "Descargas"
       ]
     },
     "Warning": {

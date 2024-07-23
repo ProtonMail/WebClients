@@ -25,7 +25,7 @@
     },
     "account": {
       "Delete forward": [
-        "Eliminar reenvío"
+        "Eliminar el reenvío"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "El reenvío iniciará pronto. Los correos nuevos aparecerán en tu bandeja de entrada."
@@ -37,7 +37,7 @@
         "Reconectar"
       ],
       "Remove forward": [
-        "Eliminar el reenvío"
+        "Borrar el reenvío"
       ],
       "You will stop the mail forwarding.": [
         "Detendrás el reenvío de correos."
@@ -685,6 +685,9 @@
       "Need help?": [
         "¿Necesitas ayuda?"
       ],
+      "New group": [
+        "Nuevo grupo"
+      ],
       "Next": [
         "Siguiente"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
       "Open": [
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Añadir un dominio pm.me"
+      ],
       "Resuming forward": [
         "Reanudar el reenvío"
       ]
@@ -1258,7 +1264,7 @@
     },
     "Address action": {
       "Delete address": [
-        "Borrar la dirección"
+        "Eliminar la dirección"
       ],
       "Disable": [
         "Desactivar"
@@ -1288,7 +1294,7 @@
         "Guardando"
       ],
       "Set as default": [
-        "Establecer como predeterminado"
+        "Establecer por defecto"
       ]
     },
     "Address status": {
@@ -1394,9 +1400,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Compatibilidad con dispositivos más rápida y amplia"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "No se transmiten datos durante el uso. Requiere una descarga única."
       ],
       "Run locally": [
         "Ejecutar localmente"
@@ -1825,7 +1828,7 @@
         "La etiqueta ha sido eliminada."
       ],
       "Label edited": [
-        "La etiqueta ha sido editada."
+        "Se ha editado la etiqueta."
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -2433,6 +2436,9 @@
       "British Indian Ocean Territory": [
         "Territorio Británico del Océano Índico"
       ],
+      "British Virgin Islands": [
+        "Islas Vírgenes Británicas"
+      ],
       "Brunei Darussalam": [
         "Brunéi"
       ],
@@ -2487,6 +2493,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (República Democrática)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democrática del"
       ],
@@ -2525,6 +2534,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor Oriental"
       ],
       "Ecuador": [
         "Ecuador"
@@ -2667,6 +2679,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Irán (República Islámica de Irán)"
+      ],
       "Isle of Man": [
         "Isla de Man"
       ],
@@ -2697,6 +2712,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (República Popular Democrática)"
+      ],
+      "Korea (Republic of)": [
+        "Corea (República)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2724,6 +2745,9 @@
       "Libya": [
         "Líbia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libia, Yamahiriya Árabe"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2735,6 +2759,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2988,6 +3015,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazilandia"
+      ],
       "Sweden": [
         "Suecia"
       ],
@@ -2998,7 +3028,7 @@
         "Siria"
       ],
       "Syrian Arab Republic": [
-        "Siria"
+        "Siria, República Árabe"
       ],
       "Taiwan": [
         "Taiwán"
@@ -3008,6 +3038,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, República Unida"
       ],
       "Thailand": [
         "Tailandia"
@@ -3137,6 +3170,11 @@
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Se han detectado errores en varias filas durante la importación. Verifica tu archivo CSV."
+      ]
+    },
+    "cta": {
+      "Learn more": [
+        "Más información"
       ]
     },
     "Cycle": {
@@ -3946,6 +3984,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Advertencia"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sin nombre"
       ]
     },
     "eof2023: Deal details": {
@@ -7213,13 +7256,13 @@
         "Se ha aceptado la invitación."
       ],
       "Invite Created": [
-        "La invitación ha sido creada."
+        "Se ha creado la invitación."
       ],
       "Invite deleted": [
-        "La invitación ha sido eliminada."
+        "Se ha eliminado la invitación."
       ],
       "Invite Deleted": [
-        "La invitación ha sido eliminada."
+        "Se ha eliminado la invitación."
       ],
       "Invite for new user deleted": [
         "Se ha eliminado la invitación para el nuevo usuario."
@@ -7256,7 +7299,7 @@
         "Los marcadores del elemento han sido cambiados."
       ],
       "Item Created": [
-        "El elemento ha sido creado."
+        "Se ha creado el elemento."
       ],
       "Item created in ${ vaultLink }": [
         "Elemento creado en ${ vaultLink }"
@@ -7265,7 +7308,7 @@
         "El elemento en la caja fuerte ha sido creado."
       ],
       "Item Deleted": [
-        "El elemento ha sido eliminado."
+        "Se ha eliminado el elemento."
       ],
       "Item deleted from ${ vaultLink }": [
         "Elemento eliminado de ${ vaultLink }"
@@ -7307,7 +7350,7 @@
         "El elemento está restaurado."
       ],
       "Item Updated": [
-        "El elemento ha sido actualizado."
+        "Se ha actualizado el elemento."
       ],
       "Item updated in ${ vaultLink }": [
         "Elemento actualizado en ${ vaultLink }"
@@ -7337,7 +7380,7 @@
         "¡La eliminación de la clave es irreversible!"
       ],
       "Keys created": [
-        "Las claves han sido creadas."
+        "Se han creado las claves."
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -7379,7 +7422,7 @@
         "Enlace creado"
       ],
       "Link deleted": [
-        "El enlace ha sido eliminado."
+        "Se ha eliminado el enlace."
       ],
       "Link expired": [
         "Enlace caducado"
@@ -7859,7 +7902,7 @@
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
       "Session Ended": [
-        "Sesión terminada"
+        "La sesión está terminada."
       ],
       "Session Roaming": [
         "Sesión itinerante"
@@ -7883,13 +7926,13 @@
         "Se han actualizado los ajustes."
       ],
       "Share Created": [
-        "El elemento compartido ha sido creado."
+        "Se ha creado el elemento compartido."
       ],
       "Share Deleted": [
-        "El elemento compartido ha sido eliminado."
+        "Se ha eliminado el elemento compartido."
       ],
       "Share Updated": [
-        "El elemento compartido ha sido actualizado."
+        "Se ha actualizado el elemento compartido."
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartido eliminado"
@@ -8376,7 +8419,7 @@
         "Utiliza la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como la contraseña SMTP."
       ],
       "User activated": [
-        "El usuario ha sido activado."
+        "Se ha activado el usuario."
       ],
       "username": [
         "nombre de usuario"
@@ -8385,16 +8428,16 @@
         "Usuarios"
       ],
       "Vault created": [
-        "La caja fuerte ha sido creada."
+        "Se ha creado la caja fuerte."
       ],
       "Vault Created": [
-        "La caja fuerte ha sido creada."
+        "Se ha creado la caja fuerte."
       ],
       "Vault deleted": [
-        "La caja fuerte ha sido eliminada."
+        "Se ha eliminado la caja fuerte."
       ],
       "Vault Deleted": [
-        "La caja fuerte ha sido eliminada."
+        "Se ha eliminado la caja fuerte."
       ],
       "Vault either deleted or requires access permissions": [
         "Se ha eliminado la caja fuerte o requiere permisos de acceso."
@@ -8403,10 +8446,10 @@
         "Caja fuerte compartida por correo electrónico"
       ],
       "Vault updated": [
-        "La caja fuerte ha sido actualizada."
+        "Se ha actualizado la caja fuerte."
       ],
       "Vault Updated": [
-        "La caja fuerte ha sido actualizada."
+        "Se ha actualizado la caja fuerte."
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -9535,7 +9578,7 @@
         "Configurar para conectarse a ${ serverName }"
       ],
       "Confirm email": [
-        "Confirmar correo electrónico"
+        "Confirmar el correo electrónico"
       ],
       "Confirm link URLs": [
         "Confirmar los enlaces de las URL"
@@ -9761,6 +9804,15 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Group address": [
+        "Dirección del grupo"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "Group name": [
+        "Nombre del grupo"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -10028,6 +10080,9 @@
       ],
       "Public certificate (X.509)": [
         "Certificado público (X.509)"
+      ],
+      "Purpose": [
+        "Propósito"
       ],
       "Read": [
         "Leídos"
@@ -12171,7 +12226,7 @@
         "Miembros añadidos"
       ],
       "Member deleted": [
-        "El miembro ha sido eliminado."
+        "Se ha eliminado el miembro."
       ]
     },
     "Notification in shared calendar modal": {
@@ -12459,6 +12514,17 @@
         "Enviar a la papelera"
       ]
     },
+    "option": {
+      "Members": [
+        "Miembros"
+      ],
+      "Nobody by default": [
+        "Nadie por defecto"
+      ],
+      "Organization members": [
+        "Miembros de la organización"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 segundos"
@@ -12735,9 +12801,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Al continuar, aceptas nuestros ${ termsAndConditions }"
-      ],
       "Creating your account": [
         "Creando tu cuenta"
       ],
@@ -12949,7 +13012,7 @@
     },
     "pass_signup_2023: title": {
       "For businesses": [
-        "Para empresas"
+        "Para negocios"
       ],
       "For individuals": [
         "Para particulares"
@@ -13274,6 +13337,17 @@
       ],
       "yourdomain.com": [
         "tudominio.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Añadir un nombre al grupo"
+      ],
+      "Add member": [
+        "Añadir un miembro"
+      ],
+      "Members": [
+        "Miembros"
       ]
     },
     "plan customizer, ips": {
@@ -15187,7 +15261,7 @@
     },
     "Success message after sorting folders": {
       "Folders sorted": [
-        "Las carpetas han sido ordenadas."
+        "Se han ordenado las carpetas."
       ]
     },
     "Success message after sorting labels": {
@@ -15221,13 +15295,13 @@
         "Creando archivo de configuración para ${ serverName }"
       ],
       "Filter removed": [
-        "El filtro ha sido eliminado"
+        "Se ha borrado el filtro."
       ],
       "Preference updated": [
         "Preferencia actualizada"
       ],
       "Status updated": [
-        "El estado ha sido actualizado."
+        "Se ha actualizado el estado."
       ]
     },
     "Suffix": {
@@ -15482,6 +15556,9 @@
       ],
       "Add PayPal payment method": [
         "Añadir PayPal como método de pago"
+      ],
+      "Add pm.me subdomain": [
+        "Añadir un subdominio pm.me"
       ],
       "Add servers": [
         "Añadir servidores"
@@ -16382,6 +16459,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no groups": [
+        "No hay grupos."
+      ],
       "This field cannot be empty": [
         "Este campo no puede estar vacío."
       ],
@@ -16580,7 +16660,7 @@
         "Direcciones"
       ],
       "Email": [
-        "Correo"
+        "Correo electrónico"
       ],
       "Features": [
         "Funciones"
@@ -17140,6 +17220,93 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "¡**Obtén ${ plan }** para tener acceso anticipado a ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener tu Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Como usuario invitado, regístrate para obtener una cuenta gratuita de ${ BRAND_NAME } y consigue acceso exclusivo a ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ],
+      "Early access to new features": [
+        "Acceso anticipado a nuevas funciones"
+      ],
+      "Early access waitlist": [
+        "Lista de espera de acceso anticipado"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Acceso anticipado exclusivo a ${ appName }."
+      ],
+      "Get started": [
+        "Comenzar"
+      ],
+      "Invite Friends": [
+        "Invitar amigos"
+      ],
+      "Join ${ appName } early access!": [
+        "¡Únete al acceso anticipado de ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Regístrate para obtener una cuenta gratuita de ${ BRAND_NAME } y asegura tu lugar. Cuanto antes te registres, antes tendrás acceso a ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Consigue acceso a las funciones prémium de ${ appName } al mejorar tu plan"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "¡Los usuarios de Visionary y sus amigos invitados pueden compartir acceso anticipado con otros, invita a tus amigos a probar ${ appName } gratis!"
+      ],
+      "You're Invited.": [
+        "Estás invitado."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retén y transfiere tus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Retén y transfiere bitcoins fácilmente. Instala las aplicaciones de ${ WALLET_APP_NAME } necesarias."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Volver a la cartera"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorización"
+      ],
+      "Downloads": [
+        "Descargas"
       ]
     },
     "Warning": {
