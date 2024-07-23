@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { PasswordModal, type PasswordModalProps } from '@proton/pass/components/Lock/PasswordModal';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -15,6 +16,7 @@ import { extraPasswordToggleRequest } from '@proton/pass/store/actions/requests'
 import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { SettingsPanel } from './SettingsPanel';
 
@@ -29,6 +31,7 @@ const getInitialModalState = (): PasswordModalProps => ({
 });
 
 const ExtraPasswordSetting: FC = () => {
+    const online = useConnectivity();
     const confirmPassword = usePasswordUnlock();
     const toggle = useRequest(extraPasswordToggle, { initialRequestId: extraPasswordToggleRequest() });
     const enabled = useSelector(selectExtraPasswordEnabled);
@@ -64,11 +67,19 @@ const ExtraPasswordSetting: FC = () => {
 
     return (
         <SettingsPanel title={c('Label').t`Extra password`}>
-            <Checkbox className="mb-4" checked={enabled} onChange={handleExtraPasswordToggle} loading={toggle.loading}>
+            <Checkbox
+                className={clsx('mb-4', !online && 'opacity-70 pointer-events-none')}
+                checked={enabled}
+                onChange={handleExtraPasswordToggle}
+                loading={toggle.loading}
+                disabled={!online}
+            >
                 <span>
                     {c('Label').t`Protect ${PASS_APP_NAME} with an extra password`}
-                    <span className="block color-weak text-sm">{c('Info')
-                        .t`The extra password will be required to use ${PASS_APP_NAME}. It acts as an additional password on top of your ${BRAND_NAME} password.`}</span>
+                    <span className="block color-weak text-sm">
+                        {c('Info')
+                            .t`The extra password will be required to use ${PASS_APP_NAME}. It acts as an additional password on top of your ${BRAND_NAME} password.`}
+                    </span>
                 </span>
             </Checkbox>
 
