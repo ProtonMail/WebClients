@@ -225,6 +225,7 @@ export const createAuthService = ({
         onLogoutComplete: (userID, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
+            localStorage.removeItem(getSessionKey(localID));
 
             flushSync(() => {
                 client.setBooted(false);
