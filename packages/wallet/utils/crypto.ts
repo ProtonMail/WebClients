@@ -1,7 +1,8 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import type { PrivateKeyReference, PublicKeyReference} from '@proton/crypto/lib';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 const IV_LENGTH = 12;
@@ -224,12 +225,12 @@ export const encryptWalletDataWithWalletKey = async (dataToEncrypt: string[], ke
  *
  * @param dataToEncrypt an array containing the data to encrypt with the generated wallet key
  * @param userKey user key to use to encrypt generated wallet key
- * @returns a tupple containing encrypted data and a nested tupple with the encrypted wallet key, its signature and the id of the user key used to encrypt the wallet key
+ * @returns a tupple containing encrypted data and a nested tupple with the encrypted wallet key, its signature, the decrypted wallet key and the id of the user key used to encrypt the wallet key
  */
 export const encryptWalletData = async (
     dataToEncrypt: string[],
     userKey: DecryptedKey
-): Promise<[string[], [string, string, string]]> => {
+): Promise<[string[], [string, string, CryptoKey, string]]> => {
     const entropy = generateEntropy(KEY_LENGTH);
     const key = await getSymmetricKey(entropy);
 
@@ -238,7 +239,7 @@ export const encryptWalletData = async (
     const entropySignature = await signData(entropy, 'wallet.key', [userKey.privateKey]);
     const encryptedEntropy = await encryptPgp(entropy, [userKey.publicKey]);
 
-    return [encryptedData, [encryptedEntropy, entropySignature, userKey.ID]];
+    return [encryptedData, [encryptedEntropy, entropySignature, key, userKey.ID]];
 };
 
 /**
