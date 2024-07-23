@@ -1,4 +1,5 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
@@ -76,7 +77,8 @@ const YourPlanSection = ({ app }: Props) => {
     /**
      * for VPN B2B, we display the upsells in {@link UpgradeVpnSection}
      */
-    const shouldRenderUpsells = !isVpnB2b;
+    const isWalletEA = app === APPS.PROTONWALLET;
+    const shouldRenderUpsells = !isVpnB2b && !isWalletEA;
     // VPN B2B plans must not have a usage panel
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
