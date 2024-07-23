@@ -1,10 +1,11 @@
-import {
+import type {
     WasmBitcoinAddressClient,
     WasmEmailIntegrationClient,
     WasmExchangeRateClient,
     WasmInviteClient,
     WasmNetworkClient,
     WasmPaymentGatewayClient,
+    WasmPriceGraphClient,
     WasmProtonWalletApiClient,
     WasmSettingsClient,
     WasmWalletClient,
@@ -22,6 +23,7 @@ type PartiallyMockedWalletApiClient = Partial<{
     wallet: Partial<Omit<WasmWalletClient, 'free'>>;
     invite: Partial<Omit<WasmInviteClient, 'free'>>;
     payment_gateway: Partial<Omit<WasmPaymentGatewayClient, 'free'>>;
+    price_graph: Partial<Omit<WasmPriceGraphClient, 'free'>>;
 }>;
 
 export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): WasmProtonWalletApiClient => {
@@ -92,6 +94,9 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             sendNewcomerInvite: mockedValue?.invite?.sendNewcomerInvite ?? vi.fn(),
             sendEmailIntegrationInvite: mockedValue?.invite?.sendEmailIntegrationInvite ?? vi.fn(),
             getRemainingMonthlyInvitation: mockedValue?.invite?.getRemainingMonthlyInvitation ?? vi.fn(),
+        }),
+        price_graph: freeable({
+            getGraphData: mockedValue?.price_graph?.getGraphData ?? vi.fn(),
         }),
     });
 

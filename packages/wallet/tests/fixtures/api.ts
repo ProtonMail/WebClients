@@ -1,19 +1,21 @@
-import {
+import type {
     WasmApiExchangeRate,
     WasmApiWallet,
     WasmApiWalletAccount,
     WasmApiWalletKey,
     WasmApiWalletSettings,
-    WasmScriptType,
-    WasmUserSettings,
+    WasmUserSettings} from '@proton/andromeda';
+import {
+    WasmScriptType
 } from '@proton/andromeda';
 
-import {
+import type {
     BitcoinUnit,
     FiatCurrency,
     IWasmApiWalletData,
     UserWalletSettings,
-    Wallet,
+    Wallet} from '../../types';
+import {
     WalletPassphrase,
     WalletSetupMode,
     WalletStatus,
@@ -151,6 +153,7 @@ export const apiWalletAccountOneA: WasmApiWalletAccount = {
     FiatCurrency: 'USD',
     Priority: 1,
     LastUsedIndex: 0,
+    PoolSize: 0,
 };
 
 export const apiWalletAccountOneB: WasmApiWalletAccount = {
@@ -163,6 +166,7 @@ export const apiWalletAccountOneB: WasmApiWalletAccount = {
     FiatCurrency: 'USD',
     Priority: 2,
     LastUsedIndex: 0,
+    PoolSize: 0,
 };
 
 export const apiWalletAccountTwoA: WasmApiWalletAccount = {
@@ -175,6 +179,7 @@ export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     FiatCurrency: 'USD',
     Priority: 1,
     LastUsedIndex: 0,
+    PoolSize: 0,
 };
 
 export const apiWalletAccountTwoB: WasmApiWalletAccount = {
@@ -186,6 +191,7 @@ export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     Addresses: [],
     FiatCurrency: 'USD',
     Priority: 2,
+    PoolSize: 0,
     LastUsedIndex: 0,
 };
 
@@ -199,6 +205,7 @@ export const apiWalletAccountThree: WasmApiWalletAccount = {
     FiatCurrency: 'USD',
     Priority: 1,
     LastUsedIndex: 0,
+    PoolSize: 0,
 };
 
 export const apiWalletsData: IWasmApiWalletData[] = [
