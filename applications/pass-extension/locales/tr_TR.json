@@ -994,6 +994,9 @@
         "${ count } görüntülenme",
         "${ count } görüntülenme"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } görüntüleme"
+      ],
       "${ memberCount } member": [
         "${ memberCount } üye",
         "${ memberCount } üye"
@@ -1095,6 +1098,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Oluşturulan parola otomatik olarak panoya kopyalansın"
       ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } üzerinden otomatik olarak kaydedildi"
@@ -1369,11 +1375,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Başka bir kasaya taşınan ögenin geçmişi ve tüm güvenli bağlantıları silinir."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Başka bir kasaya taşınan ögenin geçmişi silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Başka bir kasaya taşınan ögelerin geçmişleri ve tüm güvenli bağlantıları silinir."
       ],
       "Moving items to another vault will erase their history.": [
         "Başka bir kasaya taşınan ögelerin geçmişi silinir."
@@ -1873,6 +1885,9 @@
       ],
       "Copy": [
         "Kopyala"
+      ],
+      "Copy password": [
+        "Parolayı kopyala"
       ],
       "Create a credit card": [
         "Kredi kartı ekle"
@@ -2465,6 +2480,9 @@
       "Fill & copy password": [
         "Doldur ve parolayı kopyala"
       ],
+      "Fill password": [
+        "Parolayı doldur"
+      ],
       "Get Started": [
         "Başlayalım"
       ],
@@ -2509,6 +2527,15 @@
       ],
       "Modified": [
         "Değiştirilme"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Tüm ögeler \"${ vaultName }\" kasasına taşınsın mı?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Öge \"${ vaultName }\" kasasına taşınsın mı?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Ögeler \"${ vaultName }\" kasasına taşınsın mı?"
       ],
       "No items selected": [
         "Herhangi bir öge seçilmemiş"
