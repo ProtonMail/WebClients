@@ -275,6 +275,7 @@ describe('useWalletTransactions', () => {
                     FiatCurrency: 'USD',
                     LastUsedIndex: 0,
                     Priority: 1,
+                    PoolSize: 0,
                     // match address defined in getAddressKey utils
                     Addresses: [{ Email: 'pro@prootn.test', ID: '0000001' }],
                 },
