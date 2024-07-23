@@ -149,7 +149,7 @@ const LoginForm = ({
         </Href>
     );
 
-    const signUp = <SignupButton paths={paths} key="signup" />;
+    const signUp = paths.signup ? <SignupButton paths={paths} key="signup" /> : undefined;
 
     const updateErrorMessage = (error: any) => {
         setErrorMsg(getApiErrorMessage(error) || c('Error').t`Unknown error`);

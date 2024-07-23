@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 import { useCallback, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
@@ -47,6 +47,13 @@ const getPaths = (maybeLocalePrefix: string): Paths => {
     };
 };
 
+const Effect = ({ onEffect, children }: { onEffect: () => void; children: ReactNode }) => {
+    useEffect(() => {
+        onEffect();
+    }, []);
+    return children;
+};
+
 const completeResult: OnLoginCallbackResult = { state: 'complete' };
 
 interface InnerPublicAppProps {
@@ -59,6 +66,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
     const history = useHistory();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
+    const [initialLocation, setInitialLocation] = useState<H.Location | undefined>();
 
     const paths = getPaths(location.localePrefix);
 
@@ -124,6 +132,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                         </Route>
                                         <Route path="/login">
                                             <LoginContainer
+                                                initialLocation={initialLocation}
                                                 metaTags={loginPage()}
                                                 onLogin={async (args) => {
                                                     onLogin(args);
@@ -132,15 +141,15 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 paths={paths}
                                             />
                                         </Route>
-                                        <Redirect
-                                            to={{
-                                                pathname: paths.login,
-                                                state: {
-                                                    ...(typeof location.state === 'object' ? location.state : {}),
-                                                    from: location,
-                                                },
-                                            }}
-                                        />
+                                        <Route path="*">
+                                            <Effect
+                                                onEffect={() => {
+                                                    setInitialLocation(location);
+                                                }}
+                                            >
+                                                <Redirect to={paths.login} />
+                                            </Effect>
+                                        </Route>
                                     </Switch>
                                 </PaymentSwitcher>
                             </UnAuthenticated>
