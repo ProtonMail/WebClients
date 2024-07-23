@@ -52,6 +52,7 @@ export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys> &
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
     'cookies',
+    'extraPassword',
     'keyPassword',
     'LocalID',
     'lockMode',
