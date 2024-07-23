@@ -342,6 +342,12 @@
       "Expand folder": [
         "Klasörü genişlet"
       ],
+      "Explore on my own": [
+        "Kendi başıma keşfedeceğim"
+      ],
+      "Explore while you wait": [
+        "Beklerken keşfedin"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -853,6 +859,9 @@
         "Yine de yükle"
       ],
       "Upload file": [
+        "Dosya yükle"
+      ],
+      "Upload files": [
         "Dosya yükle"
       ],
       "Upload folder": [
@@ -1514,6 +1523,9 @@
       "British Indian Ocean Territory": [
         "Britanya Hint Okyanusu Toprakları"
       ],
+      "British Virgin Islands": [
+        "Britanya Virjin Adaları"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1568,6 +1580,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratik Cumhuriyeti"
       ],
@@ -1606,6 +1621,9 @@
       ],
       "Dominican Republic": [
         "Dominik Cumhuriyeti"
+      ],
+      "East Timor": [
+        "Doğu Timor"
       ],
       "Ecuador": [
         "Ekvador"
@@ -1748,6 +1766,9 @@
       "Ireland": [
         "İrlanda"
       ],
+      "Islamic Republic of Iran": [
+        "İran İslam Cumhuriyeti"
+      ],
       "Isle of Man": [
         "Man Adası"
       ],
@@ -1778,6 +1799,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kore Demokratik Halk Cumhuriyeti"
+      ],
+      "Korea (Republic of)": [
+        "Kore Cumhuriyeti"
+      ],
       "Kosovo": [
         "Kosova"
       ],
@@ -1786,6 +1813,9 @@
       ],
       "Kyrgyzstan": [
         "Kırgızistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos Demokratik Halk Cumhuriyeti"
       ],
       "Laos": [
         "Laos"
@@ -1805,6 +1835,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya Arap Cemahiriyesi"
+      ],
       "Liechtenstein": [
         "Lihtenştayn"
       ],
@@ -1816,6 +1849,9 @@
       ],
       "Macao": [
         "Makao"
+      ],
+      "Macedonia": [
+        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2069,6 +2105,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
+      "Swaziland": [
+        "Svaziland"
+      ],
       "Sweden": [
         "İsveç"
       ],
@@ -2089,6 +2128,9 @@
       ],
       "Tanzania": [
         "Tanzanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Birleşik Tanzaya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -2248,6 +2290,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -3060,6 +3105,9 @@
       "Access denied": [
         "Erişim reddedildi"
       ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -3742,6 +3790,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
@@ -6174,6 +6225,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -6629,6 +6683,9 @@
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
       ],
+      "Collaborative document editor": [
+        "İşbirlikli çalışabileceğiniz belge düzenleyici"
+      ],
       "Contact groups": [
         "Kişi grupları"
       ],
@@ -6842,7 +6899,7 @@
         "Sınırsız etiket"
       ],
       "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -7550,9 +7607,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Anladım"
-      ],
       "Next": [
         "Sonraki"
       ],
@@ -7564,21 +7618,21 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME } kullanmaya başladığınızda ücretsiz depolama alanınızı 5 GB yapacağız!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Dosyalarınızı görüntülemeleri ve düzenlemeleri için insanları e-posta ile davet edin ya da hızlı erişim için herkese açık bir bağlantı oluşturun"
-      ],
       "Set a recovery method": [
         "Bir kurtarma yöntemi ayarlayın"
       ],
       "Share a file": [
         "Bir dosya paylaş"
       ],
-      "Share files with one click": [
-        "Dosyaları tek tıklamayla paylaşın"
-      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Yalnızca gelecek ${ expiresInDays } günde şu işlemleri yapın:",
         "Yalnızca gelecek ${ expiresInDays } günde şu işlemleri yapın:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Dosyalarınızı saklayın ve güvenle paylaşın. Kimlikler, sözleşmeler ve kişisel fotoğraflar gibi en özel dosyalarınızın güvenliğini sağlayarak başlayın."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Sahibinin paylaşım erişimine onay varmesi gerekir. İşlem tamamlandığında bir bildirim e-postası alacaksınız."
       ],
       "Upload a file": [
         "Bir dosya yükleyin"
@@ -7608,6 +7662,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Onay bekleniyor"
+      ],
+      "Hang tight!": [
+        "Sıkı durun!"
+      ],
+      "Upload and protect your important files": [
+        "Önemli dosyalarınızı yükleyin ve koruyun"
+      ],
       "Your welcome bonus": [
         "Karşılama hediyeniz"
       ]
@@ -9731,6 +9794,9 @@
       "Show actions": [
         "İşlemleri görüntüle"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
@@ -10030,6 +10096,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "Bitcoin via email": [
+        "E-posta ile Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Cüzdan sorunu"
       ]
     },
     "Warning": {

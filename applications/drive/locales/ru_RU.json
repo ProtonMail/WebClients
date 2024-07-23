@@ -1534,6 +1534,9 @@
       "British Indian Ocean Territory": [
         "Британская территория в Индийском океане"
       ],
+      "British Virgin Islands": [
+        "Британские Виргинские Острова"
+      ],
       "Brunei Darussalam": [
         "Бруней-Даруссалам"
       ],
@@ -1588,6 +1591,9 @@
       "Congo": [
         "Конго"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Конго (Демократическая Республика)"
+      ],
       "Congo, Democratic Republic of the": [
         "Демократическая Республика Конго"
       ],
@@ -1626,6 +1632,9 @@
       ],
       "Dominican Republic": [
         "Доминиканская Республика"
+      ],
+      "East Timor": [
+        "Восточный Тимор"
       ],
       "Ecuador": [
         "Эквадор"
@@ -1768,6 +1777,9 @@
       "Ireland": [
         "Ирландия"
       ],
+      "Islamic Republic of Iran": [
+        "Исламская Республика Иран"
+      ],
       "Isle of Man": [
         "Остров Мэн"
       ],
@@ -1798,6 +1810,12 @@
       "Kiribati": [
         "Кирибати"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Корея (Народно-Демократическая Республика)"
+      ],
+      "Korea (Republic of)": [
+        "Корея (Республика)"
+      ],
       "Kosovo": [
         "Косово"
       ],
@@ -1806,6 +1824,9 @@
       ],
       "Kyrgyzstan": [
         "Кыргызстан"
+      ],
+      "Lao People's Democratic Republic": [
+        "Лаосская Народная Демократическая Республика"
       ],
       "Laos": [
         "Лаос"
@@ -1825,6 +1846,9 @@
       "Libya": [
         "Ливия"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Ливийская Арабская Джамахирия"
+      ],
       "Liechtenstein": [
         "Лихтенштейн"
       ],
@@ -1836,6 +1860,9 @@
       ],
       "Macao": [
         "Макао"
+      ],
+      "Macedonia": [
+        "Македония"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -7809,9 +7836,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Применить"
-      ],
       "Next": [
         "Далее"
       ],
@@ -7823,17 +7847,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Начните использовать ${ DRIVE_APP_NAME }, и мы увеличим объем вашего хранилища до 5 ГБ!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Приглашайте других людей по электронной почте для просмотра и редактирования ваших файлов или создайте общедоступную ссылку для быстрого доступа."
-      ],
       "Set a recovery method": [
         "Установить способ восстановления"
       ],
       "Share a file": [
         "Поделиться файлом"
-      ],
-      "Share files with one click": [
-        "Делитесь файлами одним нажатием"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Просто выполните следующее в ближайший ${ expiresInDays } день:",
@@ -10095,6 +10113,9 @@
       "Show actions": [
         "Показать действия"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
       ],
@@ -10410,6 +10431,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } счёт на один кошелёк",
+        "${ n } счёта на один кошелёк",
+        "${ n } счетов на один кошелёк",
+        "${ n } счетов на один кошелёк"
+      ],
+      "${ n } email address": [
+        "${ n } адрес эл. почты",
+        "${ n } адреса эл. почты",
+        "${ n } адресов эл. почты",
+        "${ n } адресов эл. почты"
+      ],
+      "${ n } wallet": [
+        "${ n } кошелёк",
+        "${ n } кошелька",
+        "${ n } кошельков",
+        "${ n } кошельков"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Безопасный способ держать свои Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin по эл. почте"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Безопасно храните и переводите Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема с Wallet"
       ]
     },
     "Warning": {

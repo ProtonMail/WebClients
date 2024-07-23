@@ -493,7 +493,7 @@
         "Bizimle görüşün"
       ],
       "Get it": [
-        "Al"
+        "Alın"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "${ addonPriceWithCurrency } /ay tutarla alın"
@@ -823,10 +823,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open": [
@@ -1530,9 +1530,6 @@
       ],
       "Faster, broader device compatibility": [
         "Daha hızlı, daha geniş aygıt uyumluluğu"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Kullanırken veri aktarılmaz, tek seferlik indirme gerekir"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Tek seferlik indirme ve uyumlu donanım gerekir."
@@ -2573,6 +2570,9 @@
       "British Indian Ocean Territory": [
         "Britanya Hint Okyanusu Toprakları"
       ],
+      "British Virgin Islands": [
+        "Britanya Virjin Adaları"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2627,6 +2627,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratik Cumhuriyeti"
       ],
@@ -2665,6 +2668,9 @@
       ],
       "Dominican Republic": [
         "Dominik Cumhuriyeti"
+      ],
+      "East Timor": [
+        "Doğu Timor"
       ],
       "Ecuador": [
         "Ekvador"
@@ -2807,6 +2813,9 @@
       "Ireland": [
         "İrlanda"
       ],
+      "Islamic Republic of Iran": [
+        "İran İslam Cumhuriyeti"
+      ],
       "Isle of Man": [
         "Man Adası"
       ],
@@ -2837,6 +2846,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kore Demokratik Halk Cumhuriyeti"
+      ],
+      "Korea (Republic of)": [
+        "Kore Cumhuriyeti"
+      ],
       "Kosovo": [
         "Kosova"
       ],
@@ -2845,6 +2860,9 @@
       ],
       "Kyrgyzstan": [
         "Kırgızistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos Demokratik Halk Cumhuriyeti"
       ],
       "Laos": [
         "Laos"
@@ -2864,6 +2882,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya Arap Cemahiriyesi"
+      ],
       "Liechtenstein": [
         "Lihtenştayn"
       ],
@@ -2875,6 +2896,9 @@
       ],
       "Macao": [
         "Makao"
+      ],
+      "Macedonia": [
+        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3128,6 +3152,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
+      "Swaziland": [
+        "Svaziland"
+      ],
       "Sweden": [
         "İsveç"
       ],
@@ -3148,6 +3175,9 @@
       ],
       "Tanzania": [
         "Tanzanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Birleşik Tanzaya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -3402,6 +3432,9 @@
       ],
       "To continue to use the writing assistant, request access from your admin.": [
         "Yazma yardımcısını kullanmayı sürdürmek için yöneticinizden erişim isteğinde bulunun."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -3988,7 +4021,7 @@
         "Lütfen bir kategori seçin ve oluşturulan metinde neyin yanlış olduğunu belirtin"
       ],
       "Please try again or refresh the page.": [
-        "Sayfayı yenileyerek tekrar deneyin."
+        "Sayfayı yenileyip yeniden deneyin."
       ],
       "Please try generating the text again": [
         "Lütfen metni yeniden oluşturmayı deneyin"
@@ -4415,6 +4448,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -5432,6 +5468,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
@@ -5877,7 +5916,7 @@
         "Ülke kodu"
       ],
       "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Daha iyi e-postaları hızlı ve zahmetsizce oluşturun. Hemen deneyin."
+        "Hızla ve kolayca daha iyi e-postalar oluşturun. Hemen deneyin."
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim ekle",
@@ -7604,6 +7643,9 @@
       " and ${ l }": [
         " ve ${ l }"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -8506,6 +8548,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -8955,6 +9000,9 @@
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
       ],
+      "Collaborative document editor": [
+        "İşbirlikli çalışabileceğiniz belge düzenleyici"
+      ],
       "Contact groups": [
         "Kişi grupları"
       ],
@@ -9168,7 +9216,7 @@
         "Sınırsız etiket"
       ],
       "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -12824,6 +12872,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "Bitcoin via email": [
+        "E-posta ile Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Wallet uygulamasına erişim"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Cüzdan sorunu"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Hesap ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "İçe aktarılmış cüzdanım${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Cüzdanım${ indexStr }"
       ]
     },
     "Warning": {

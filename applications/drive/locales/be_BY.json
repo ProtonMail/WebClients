@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Прыняць"
+      ],
       "Activate recovery": [
         "Актываваць аднаўленне"
       ],
@@ -239,6 +242,9 @@
       ],
       "Customize import": [
         "Наладзіць імпартаванне"
+      ],
+      "Decline": [
+        "Адхіліць"
       ],
       "Decrease": [
         "Паменшыць"
@@ -1607,7 +1613,7 @@
         "Конга"
       ],
       "Congo (The Democratic Republic of the)": [
-        "Конга"
+        "Дэмакратычная Рэспубліка Конга"
       ],
       "Congo, Democratic Republic of the": [
         "Дэмакратычная Рэспубліка Конга"
@@ -4637,6 +4643,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
+      ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Бяспечна захоўвайце свае файлы з дапамогай скразнога шыфравання ў ${ DRIVE_APP_NAME }."
       ],
       "Key fingerprint": [
         "Адбітак ключа"
@@ -7800,6 +7809,9 @@
       "Failed to open document": [
         "Не ўдалося адкрыць дакумент"
       ],
+      "Failed to reject share invitation": [
+        "Не ўдалося адхіліць абагуленае запрашэнне"
+      ],
       "Failed to remove the file": [
         "Не ўдалося выдаліць файл"
       ],
@@ -7853,6 +7865,9 @@
       ],
       "Share invitation accepted successfully": [
         "Абагуленае запрашэнне паспяхова прынята"
+      ],
+      "Share invitation declined": [
+        "Абагуленае запрашэнне адхілена"
       ],
       "Stopping to share this item has failed": [
         "Збой спынення абагулення гэтага элемента"
@@ -7914,31 +7929,34 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Зразумела"
+      "Create new document": [
+        "Стварыць новы дакумент"
       ],
       "Next": [
         "Далей"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Пачаць выкарыстоўваць ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Паспрабуйце пазней"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Стварэнне і сумесная праца над дакументамі. Усе яны абаронены скразным шыфраваннем."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME } і мы палепшым ваша сховішча да 5 ГБ!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Запрасіце іншых праз электронную пошту, каб праглядаць або рэдагаваць вашы файлы. Вы таксама можаце ствараць публічныя спасылкі для хуткага доступу."
+      "Introducing ${ DOCS_APP_NAME }": [
+        "Прадстаўляем ${ DOCS_APP_NAME }"
       ],
       "Set a recovery method": [
         "Задаць спосаб аднаўлення"
       ],
       "Share a file": [
         "Абагульванне файла"
-      ],
-      "Share files with one click": [
-        "Абагуліць файлы адным націскам"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Проста завяршыце наступнае на працягу ${ expiresInDays } дня:",
@@ -7947,7 +7965,7 @@
         "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:"
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
-        "Захоўвайце свае файлы і абагульвайце іх бяспечна. Пачніце з абароны вашых самых прыватных файлаў, такіх як пасведчанні асобы, кантакты і асабістыя фатаграфіі."
+        "Захоўвайце свае файлы і бяспечна іх абагульвайце. Пачніце з абароны вашых самых прыватных файлаў, такіх як пасведчанні асобы, кантракты і асабістыя фатаграфіі."
       ],
       "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
         "Уладальнік патрабуе пацвердзіць абагульванне доступу. Вы атрымаеце ліст, калі пацвярджэнне будзе атрымана."
@@ -8086,6 +8104,9 @@
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Дадайце спосаб аплаты ў панэль кіравання для працягу."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
@@ -10220,6 +10241,9 @@
       ],
       "Show actions": [
         "Паказаць дзеянні"
+      ],
+      "Sign in": [
+        "Увайсці"
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"

@@ -685,6 +685,9 @@
       "Need help?": [
         "Potrzebujesz pomocy?"
       ],
+      "New group": [
+        "Nowa grupa"
+      ],
       "Next": [
         "Dalej"
       ],
@@ -697,11 +700,11 @@
       "No, thanks": [
         "Nie, dziękuję"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otwórz"
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Dodaj domenę pm.me"
+      ],
       "Resuming forward": [
         "Wznawianie przekierowania"
       ]
@@ -1402,9 +1408,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Szybsza i większa kompatybilność urządzeń"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Działa offline, wymaga jednorazowego pobrania"
       ],
       "Run locally": [
         "Uruchom lokalnie"
@@ -3186,6 +3189,11 @@
         "Wykryliśmy błędy w wielu wierszach. Sprawdź plik CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ miesiąc"
@@ -4001,6 +4009,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Ostrzeżenie"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Bez nazwy"
       ]
     },
     "eof2023: Deal details": {
@@ -6481,6 +6494,9 @@
       "30-day money-back guarantee.": [
         "30-dniowa gwarancja zwrotu pieniędzy."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Subdomena ${ protonSubdomain } jest hostowana przez ${ BRAND_NAME }, co pozwala szybko ją skonfigurować. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Nazwa ułatwiająca identyfikację miejsca, w którym jest używany, aby można było łatwo odwołać lub przedłużyć konfigurację."
       ],
@@ -7539,6 +7555,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Pokaż swoim kontaktom, że dbasz o ich prywatność."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Rozpocznij od kliknięcia przycisku Nowa grupa"
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
@@ -9971,6 +9990,15 @@
       "Gift code": [
         "Kod podarunkowy"
       ],
+      "Group address": [
+        "Adres grupy"
+      ],
+      "Group members": [
+        "Członkowie grupy"
+      ],
+      "Group name": [
+        "Nazwa grupy"
+      ],
       "Hide password": [
         "Ukryj hasło"
       ],
@@ -10238,6 +10266,9 @@
       "Public certificate (X.509)": [
         "Certyfikat publiczny (X.509)"
       ],
+      "Purpose": [
+        "Cel"
+      ],
       "Read": [
         "Przeczytane"
       ],
@@ -10435,6 +10466,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Jaki jest główny powód anulowania lub obniżenia planu?"
+      ],
+      "Who can send to this group address?": [
+        "Kto może wysyłać wiadomości do tej grupy?"
       ],
       "Why would you like to cancel?": [
         "Dlaczego chcesz anulować plan?"
@@ -12745,6 +12779,20 @@
         "Przenieś do Kosza"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Wszyscy, w tym osoby z zewnątrz"
+      ],
+      "Members": [
+        "Członkowie"
+      ],
+      "Nobody by default": [
+        "Domyślnie nikt"
+      ],
+      "Organization members": [
+        "Użytkownicy organizacji"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekund"
@@ -13027,8 +13075,8 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Odblokuj plan **${ unlockPlanTitle }** i wszystkie usługi ${ BRAND_NAME } premium, przechodząc do planu **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Kontynuując, akceptujesz ${ termsAndConditions }"
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Kontynuując, akceptujesz ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Tworzenie konta"
@@ -13378,6 +13426,9 @@
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Dodaj metodę płatności w pulpicie, aby kontynuować."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -13567,6 +13618,23 @@
       ],
       "yourdomain.com": [
         "twojadomena.pl"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Dodaj nazwę grupy"
+      ],
+      "Add member": [
+        "Dodaj członka"
+      ],
+      "e.g. distribution list for marketing team": [
+        "np. lista dystrybucyjna dla zespołu marketingowego"
+      ],
+      "e.g. marketing": [
+        "np. marketing"
+      ],
+      "Members": [
+        "Członkowie"
       ]
     },
     "plan customizer, ips": {
@@ -15872,6 +15940,9 @@
       "Add PayPal payment method": [
         "Dodaj PayPal jako metodę płatności"
       ],
+      "Add pm.me subdomain": [
+        "Dodaj subdomenę pm.me"
+      ],
       "Add servers": [
         "Dodaj serwery"
       ],
@@ -16778,6 +16849,9 @@
       "Theme": [
         "Motyw"
       ],
+      "There are no groups": [
+        "Brak grup"
+      ],
       "This field cannot be empty": [
         "Pole nie może być puste"
       ],
@@ -17556,6 +17630,99 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto na portfel",
+        "${ n } konta na portfel",
+        "${ n } kont na portfel",
+        "${ n } konta na portfel"
+      ],
+      "${ n } email address": [
+        "${ n } adres e-mail",
+        "${ n } adresy e-mail",
+        "${ n } adresów e-mail",
+        "${ n } adresu e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portfel",
+        "${ n } portfele",
+        "${ n } portfeli",
+        "${ n } portfela"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Uzyskaj plan ${ plan }** dla wcześniejszego dostępu do ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Jako zaproszony użytkownik, zarejestruj się do darmowego konta ${ BRAND_NAME }, aby uzyskać ekskluzywny dostęp do ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoiny przez e-mail"
+      ],
+      "Early access to new features": [
+        "Wczesny dostęp do nowych funkcji"
+      ],
+      "Early access waitlist": [
+        "Lista oczekujących wcześniejszego dostępu"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Ekskluzywny wcześniejszy dostęp do ${ appName }."
+      ],
+      "Get started": [
+        "Rozpocznij"
+      ],
+      "Invite Friends": [
+        "Zaproś znajomych"
+      ],
+      "Join ${ appName } early access!": [
+        "Dołącz do wcześniejszego dostępu ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Zarejestruj się do darmowego konta ${ BRAND_NAME }, aby zabezpieczyć swoje miejsce. Im szybciej się zarejestrujesz, tym szybciej uzyskasz dostęp do ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Ulepsz konto, aby odblokować funkcje premium ${ appName }"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Użytkownicy Visionary oraz ich zaproszeni znajomi mogą udostępniać wcześniejszy dostęp innym, zaproś swoich znajomych do wypróbowania ${ appName } za darmo!"
+      ],
+      "You're Invited.": [
+        "Jesteś zaproszony."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem z portfelem"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Z łatwością przechowuj i wysyłaj Bitcoiny. Zainstaluj odpowiednie aplikacje ${ WALLET_APP_NAME }."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Powrót do portfela"
+      ],
+      "Wallet": [
+        "Portfel"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autoryzacja"
+      ],
+      "Downloads": [
+        "Do pobrania"
       ]
     },
     "Warning": {

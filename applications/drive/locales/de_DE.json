@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "Accept": [
+        "Annehmen"
+      ],
       "Activate recovery": [
         "Wiederherstellung aktivieren"
       ],
@@ -238,6 +241,9 @@
       "Customize import": [
         "Import anpassen"
       ],
+      "Decline": [
+        "Ablehnen"
+      ],
       "Decrease": [
         "Verkleinern"
       ],
@@ -341,6 +347,12 @@
       ],
       "Expand folder": [
         "Ordner ausklappen"
+      ],
+      "Explore on my own": [
+        "Selbst erkunden"
+      ],
+      "Explore while you wait": [
+        "Erkunde, während du wartest"
       ],
       "Export": [
         "Exportieren"
@@ -854,6 +866,9 @@
       ],
       "Upload file": [
         "Datei hochladen"
+      ],
+      "Upload files": [
+        "Dateien hochladen"
       ],
       "Upload folder": [
         "Ordner hochladen"
@@ -1514,6 +1529,9 @@
       "British Indian Ocean Territory": [
         "Britisches Territorium im Indischen Ozean"
       ],
+      "British Virgin Islands": [
+        "Britische Jungferninseln"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1568,6 +1586,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Demokratische Republik Kongo"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratische Republik Kongo"
       ],
@@ -1607,6 +1628,9 @@
       "Dominican Republic": [
         "Dominikanische Republik"
       ],
+      "East Timor": [
+        "Osttimor"
+      ],
       "Ecuador": [
         "Ekuador"
       ],
@@ -1633,6 +1657,9 @@
       ],
       "Falkland Islands": [
         "Falklandinseln"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandinseln (Malvinen)"
       ],
       "Faroe Islands": [
         "Färöer-Inseln"
@@ -1745,6 +1772,9 @@
       "Ireland": [
         "Irland"
       ],
+      "Islamic Republic of Iran": [
+        "Islamische Republik Iran"
+      ],
       "Isle of Man": [
         "Isle of Man"
       ],
@@ -1775,6 +1805,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Nordkorea"
+      ],
+      "Korea (Republic of)": [
+        "Südkorea"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1783,6 +1819,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgisistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Demokratische Volksrepublik Laos"
       ],
       "Laos": [
         "Laos"
@@ -1802,6 +1841,9 @@
       "Libya": [
         "Libyen"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libysch-Arabische Dschamahirija"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1813,6 +1855,9 @@
       ],
       "Macao": [
         "Macau"
+      ],
+      "Macedonia": [
+        "Mazedonien"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2066,6 +2111,9 @@
       "Svalbard and Jan Mayen": [
         "Spitzbergen und Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Schweden"
       ],
@@ -2075,6 +2123,9 @@
       "Syria": [
         "Syrien"
       ],
+      "Syrian Arab Republic": [
+        "Arabische Republik Syrien"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -2083,6 +2134,9 @@
       ],
       "Tanzania": [
         "Tansania"
+      ],
+      "Tanzania, United Republic of": [
+        "Vereinigte Republik Tansania"
       ],
       "Thailand": [
         "Thailand"
@@ -3053,6 +3107,9 @@
     "Error message": {
       "Access denied": [
         "Zugriff verweigert"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasse können nicht verwendet werden, wenn ein zusätzliches Passwort in ${ PASS_APP_NAME } aktiviert ist."
       ],
       "App currently unavailable": [
         "Die App ist derzeit nicht verfügbar."
@@ -6686,6 +6743,9 @@
       "Collaborate and share large files": [
         "Arbeite mit anderen zusammen und tausche große Dateien aus"
       ],
+      "Collaborative document editor": [
+        "Gemeinsame Dokumentbearbeitung"
+      ],
       "Contact groups": [
         "Kontaktgruppen"
       ],
@@ -7607,9 +7667,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Verstanden"
-      ],
       "Next": [
         "Weiter"
       ],
@@ -7621,17 +7678,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Fange an, ${ DRIVE_APP_NAME } zu nutzen und wir upgraden deinen kostenlosen Speicherplatz auf 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Lade andere per E-Mail ein, um deine Dateien zu sehen und zu bearbeiten, oder erstelle einen öffentlichen Link für Schnellzugriffe"
-      ],
       "Set a recovery method": [
         "Wiederherstellungsmethode festlegen"
       ],
       "Share a file": [
         "Teile eine Datei"
-      ],
-      "Share files with one click": [
-        "Teile Dateien mit einem Klick"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Führe einfach die folgenden Schritte in ${ expiresInDays } Tag aus:",
@@ -7665,6 +7716,9 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Endgültige Genehmigung in Bearbeitung"
+      ],
       "Your welcome bonus": [
         "Dein Willkommensbonus"
       ]
@@ -7759,6 +7813,9 @@
       "Payment Processing": [
         "Zahlungsabwicklung"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Bitte füge im Dashboard eine Zahlungsmethode hinzu, um fortzufahren."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
@@ -7773,6 +7830,9 @@
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
       ]
     },
     "Payments.Error": {
@@ -8749,6 +8809,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } gibt deinem Team das, was es braucht, um produktiver und organisierter zu arbeiten, mit Zugang zu allen ${ BRAND_NAME }-Apps und deren Premium-Funktionen."
+      ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "${ planName } gibt deinem Team alles, was es braucht, um produktiver und organisierter zu sein und die Kontrolle über seinen Posteingang, seinen Zeitplan und mehr zu behalten."
       ],
@@ -8763,6 +8826,12 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } bietet ${ planMaxSpace } Speicherplatz für deine Dateien und Fotos. Du hast auch Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } bietet ${ planMaxSpace } Speicherplatz pro Benutzer für E-Mails, Anhänge, Termine und Dateien. Du hast außerdem Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } bietet ${ planMaxSpace } Speicherplatz pro Benutzer für E-Mails, Anhänge, Termine, Dateien und Passwörter. Du hast außerdem Anspruch auf jährliche Speicherplatzboni."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }-Programm"
@@ -8790,6 +8859,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf den kostenlosen ${ BRAND_NAME } Plan zurückgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Dein Team wird in seiner Arbeit unterbrochen werden, da zusätzliche Benutzer im kostenlosen Abonnement nicht unterstützt werden."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
@@ -8875,6 +8947,9 @@
       "Online privacy, for your whole family": [
         "Online-Privatsphäre für deine ganze Familie"
       ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Organisationen, zusätzliche Benutzer und eigene E-Mail-Domains werden im kostenlosen Abonnement nicht unterstützt. Das bedeutet:"
+      ],
       "Our fight against censorship in Russia": [
         "Unser Kampf gegen die Zensur in Russland"
       ],
@@ -8943,6 +9018,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherplatzboni."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Dein Team wird in seiner Arbeit unterbrochen werden, da zusätzliche Benutzer im kostenlosen Abonnement nicht unterstützt werden."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 5 GB Drive-Speicher und bis zu 1 GB Mail-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherplatzboni."
@@ -9770,6 +9848,9 @@
       "Show actions": [
         "Aktionen anzeigen"
       ],
+      "Sign in": [
+        "Melde dich an,"
+      ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
       ],
@@ -10069,6 +10150,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } Konto pro Wallet",
+        "${ n } Konten pro Wallet"
+      ],
+      "${ n } email address": [
+        "${ n } E-Mail-Adresse",
+        "${ n } E-Mail-Adressen"
+      ],
+      "${ n } wallet": [
+        "${ n } Wallet",
+        "${ n } Wallets"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via E-Mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoins sicher aufbewahren und überweisen"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem mit Wallet"
       ]
     },
     "Warning": {

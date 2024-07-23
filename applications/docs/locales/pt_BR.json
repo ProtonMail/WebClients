@@ -1953,6 +1953,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para prevenir a perda de acesso à sua conta."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar seus contatos do Google o Outlook, ${ easySwitchLink }."
       ],
@@ -2195,6 +2198,9 @@
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Ocorreu um erro ao tentar duplicar o documento. Tente novamente."
+      ],
+      "An error occurred while attempting to seed the document. Please try again.": [
+        "Ocorreu um erro ao tentar publicar o documento. Tente novamente."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Ocorreu um erro ao criar um novo documento. Tente novamente."
@@ -2746,6 +2752,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliases não podem ser usados quando uma senha extra está ativada em ${ PASS_APP_NAME }"
+      ],
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
       ],
@@ -3940,6 +3949,9 @@
       ],
       "No version history available": [
         "Nenhum histórico de versão disponível"
+      ],
+      "No version history batches available": [
+        "Nenhum lote de histórico de versão disponíveis"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nenhuma das chaves enviadas é válida para criptografia. Para poder enviar mensagens para este endereço, envie uma chave válida ou desligue \"Criptografar e-mails\"."
@@ -6566,6 +6578,9 @@
       "Payment Processing": [
         "Processando pagamento"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Por favor, reative sua assinatura para decrescer o número de complementos."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
@@ -6577,6 +6592,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
       ]
     },
     "Payments.Error": {
@@ -7391,6 +7409,11 @@
         "Por ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Você tem certeza?"
@@ -8018,6 +8041,9 @@
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
       "Start a new import": [
         "Iniciar uma nova importação"
       ],
@@ -8239,6 +8265,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, e mais."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } conta por carteira",
+        "${ n } contas por carteira"
+      ],
+      "${ n } email address": [
+        "${ n } endereço de e-mail",
+        "${ n } endereços de e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } carteira",
+        "${ n } carteiras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Uma maneira mais segura de guardar seu Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Guarde e transfira suas bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemas no Wallet"
       ]
     },
     "Warning": {

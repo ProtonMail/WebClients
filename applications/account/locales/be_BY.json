@@ -685,6 +685,9 @@
       "Need help?": [
         "Неабходна дапамога?"
       ],
+      "New group": [
+        "Новая група"
+      ],
       "Next": [
         "Далей"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open": [
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Дадаць дамен pm.me"
+      ],
       "Resuming forward": [
         "Перасылка ўзнаўляецца"
       ]
@@ -1403,8 +1409,8 @@
       "Faster, broader device compatibility": [
         "Хутчэйшая і больш шырокая сумяшчальнасць прылад"
       ],
-      "No data transmitted while using, requires one-time download": [
-        "Падчас выкарыстання даныя не перададзены. Патрабуецца аднаразовае спампоўванне"
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Запыты застануцца на вашай прыладзе, але неабходна будзе аднаразовае спампоўванне і сумяшчальнае абсталяванне."
       ],
       "Run locally": [
         "Выканаць лакальна"
@@ -2511,7 +2517,7 @@
         "Конга"
       ],
       "Congo (The Democratic Republic of the)": [
-        "Конга"
+        "Дэмакратычная Рэспубліка Конга"
       ],
       "Congo, Democratic Republic of the": [
         "Дэмакратычная Рэспубліка Конга"
@@ -3190,6 +3196,11 @@
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Мы выявілі памылкі ў некаторых радках падчас імпартавання, праверце ваш файл CSV."
+      ]
+    },
+    "cta": {
+      "Learn more": [
+        "Даведацца больш"
       ]
     },
     "Cycle": {
@@ -4007,6 +4018,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Папярэджанне"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Без назвы"
       ]
     },
     "eof2023: Deal details": {
@@ -6487,6 +6503,9 @@
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Субдамен ${ protonSubdomain } размешчаны на ${ BRAND_NAME }, які дазваляе вам хутка наладжваць субдамены. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
       ],
@@ -7442,7 +7461,7 @@
         "Элемент выдалены"
       ],
       "Item deleted from ${ vaultLink }": [
-        "Элемент выдалены ў ${ vaultLink }"
+        "Элемент выдалены з ${ vaultLink }"
       ],
       "Item deleted from vault": [
         "Элемент выдалены са сховішча"
@@ -7545,6 +7564,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Няхай вашы кантакты ведаюць, што вы клапоціцеся аб іх прыватнасці."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Пачніце са стварэння новай групы націснуўшы адпаведную кнопку вышэй"
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
@@ -9980,6 +10002,15 @@
       "Gift code": [
         "Падарункавы код"
       ],
+      "Group address": [
+        "Адрас групы"
+      ],
+      "Group members": [
+        "Удзельнікі групы"
+      ],
+      "Group name": [
+        "Назва групы"
+      ],
       "Hide password": [
         "Схаваць пароль"
       ],
@@ -10247,6 +10278,9 @@
       "Public certificate (X.509)": [
         "Публічны сертыфікат (X.509)"
       ],
+      "Purpose": [
+        "Мэта"
+      ],
       "Read": [
         "Прачытана"
       ],
@@ -10444,6 +10478,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
+      ],
+      "Who can send to this group address?": [
+        "Хто можа адпраўляць лісты на гэты адрас групы?"
       ],
       "Why would you like to cancel?": [
         "Чаму вы вырашылі скасаваць?"
@@ -12754,6 +12791,20 @@
         "Сметніца"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Усе, у тым ліку староннія"
+      ],
+      "Members": [
+        "Удзельнікі"
+      ],
+      "Nobody by default": [
+        "Прадвызначана ніхто"
+      ],
+      "Organization members": [
+        "Удзельнікі арганізацыі"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 секунд"
@@ -13036,8 +13087,8 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME } , палепшыўшы да **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Працягнуўшы, вы пагаджаецеся з нашымі ${ termsAndConditions }"
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Працягнуўшы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
@@ -13387,6 +13438,9 @@
       "Payment Processing": [
         "Апрацоўка плацяжу"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Дадайце спосаб аплаты ў панэль кіравання для працягу."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -13579,6 +13633,23 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Дадаць назву групы"
+      ],
+      "Add member": [
+        "Дадаць удзельніка"
+      ],
+      "e.g. distribution list for marketing team": [
+        "напрыклад, спіс размеркавання для маркетынгавай каманды"
+      ],
+      "e.g. marketing": [
+        "напрыклад, маркетынг"
+      ],
+      "Members": [
+        "Удзельнікі"
       ]
     },
     "plan customizer, ips": {
@@ -15884,6 +15955,9 @@
       "Add PayPal payment method": [
         "Дадаць спосаб аплаты PayPal"
       ],
+      "Add pm.me subdomain": [
+        "Дадаць паддамен pm.me"
+      ],
       "Add servers": [
         "Дадаць серверы"
       ],
@@ -16792,6 +16866,9 @@
       ],
       "Theme": [
         "Тэма"
+      ],
+      "There are no groups": [
+        "Няма ніводнай групы"
       ],
       "This field cannot be empty": [
         "Гэта поле не можа быць пустым"

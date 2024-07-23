@@ -1179,6 +1179,9 @@
       "British Indian Ocean Territory": [
         "Territoire britannique de l'océan Indien"
       ],
+      "British Virgin Islands": [
+        "Îles Vierges britanniques"
+      ],
       "Brunei Darussalam": [
         "Brunéi Darussalam"
       ],
@@ -1233,6 +1236,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (République démocratique)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo - République démocratique du Congo"
       ],
@@ -1271,6 +1277,9 @@
       ],
       "Dominican Republic": [
         "République dominicaine"
+      ],
+      "East Timor": [
+        "Timor oriental"
       ],
       "Ecuador": [
         "Équateur"
@@ -1413,6 +1422,9 @@
       "Ireland": [
         "Irlande"
       ],
+      "Islamic Republic of Iran": [
+        "République Islamique d'Iran"
+      ],
       "Isle of Man": [
         "Île de Man"
       ],
@@ -1443,6 +1455,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corée (République populaire démocratique)"
+      ],
+      "Korea (Republic of)": [
+        "Corée (République)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1451,6 +1469,9 @@
       ],
       "Kyrgyzstan": [
         "Kirghizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "République démocratique populaire lao"
       ],
       "Laos": [
         "Laos"
@@ -1470,6 +1491,9 @@
       "Libya": [
         "Libye"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya arabe libyenne"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1481,6 +1505,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macédoine"
       ],
       "Madagascar": [
         "Madagascar"
@@ -1734,6 +1761,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard et Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suède"
       ],
@@ -1744,7 +1774,7 @@
         "Syrie"
       ],
       "Syrian Arab Republic": [
-        "Syrie"
+        "République arabe syrienne"
       ],
       "Taiwan": [
         "Taïwan"
@@ -1754,6 +1784,9 @@
       ],
       "Tanzania": [
         "Tanzanie"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanie, République-Unie"
       ],
       "Thailand": [
         "Thaïlande"
@@ -1915,7 +1948,7 @@
         "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
+        "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -2159,6 +2192,9 @@
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Une erreur s'est produite lors de la tentative de duplication du document. Veuillez réessayer."
+      ],
+      "An error occurred while attempting to seed the document. Please try again.": [
+        "Une erreur s'est produite lors de la tentative d'initialisation du document. Veuillez réessayer."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Une erreur est survenue lors de la création d'un nouveau document. Veuillez réessayer."
@@ -3700,7 +3736,7 @@
         "Le lien sécurisé n'a pas pu être ouvert : ${ error }."
       ],
       "Failing signatures will be re-signed by you": [
-        "Les signatures avec des erreurs seront signées à nouveau par vous."
+        "Vous signerez à nouveau les signatures avec des erreurs."
       ],
       "File \"${ name }\" was deleted during download": [
         "Le fichier « ${ name } » a été supprimé pendant le téléchargement."
@@ -3882,7 +3918,7 @@
         "Aucun contact n'a encore été ajouté."
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Document manquant dans l'URL. Veuillez retourner dans ${ DRIVE_APP_NAME } et sélectionner un document."
+        "Aucun document n'est indiqué dans l'URL. Retournez à ${ DRIVE_APP_NAME } et sélectionnez un document."
       ],
       "No email address": [
         "Aucune adresse e-mail"
@@ -4118,7 +4154,7 @@
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
-        "Ce document a beaucoup d'activité. Certaines fonctionnalités peuvent être temporairement indisponibles."
+        "Ce document comporte un nombre important d'activités. Certaines fonctionnalités peuvent être temporairement indisponibles."
       ],
       "This item already exists in your library": [
         "Cet élément existe déjà dans votre bibliothèque."
@@ -4452,7 +4488,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui avec l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
+        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Item": {
@@ -7284,6 +7320,11 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmez-vous ?"
@@ -7911,6 +7952,9 @@
       "Sign out": [
         "Se déconnecter"
       ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
+      ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
       ],
@@ -8132,6 +8176,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte par portefeuille",
+        "${ n } comptes par portefeuille"
+      ],
+      "${ n } email address": [
+        "${ n } adresse e-mail",
+        "${ n } adresses e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portefeuille",
+        "${ n } portefeuilles"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Une manière plus sûre de détenir votre Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin par e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Constituez une réserve de bitcoins et réalisez des transactions en toute sécurité"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problème avec Wallet"
       ]
     },
     "Warning": {

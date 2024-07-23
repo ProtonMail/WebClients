@@ -685,6 +685,9 @@
       "Need help?": [
         "Behöver du hjälp?"
       ],
+      "New group": [
+        "Ny grupp"
+      ],
       "Next": [
         "Nästa"
       ],
@@ -697,11 +700,11 @@
       "No, thanks": [
         "Nej tack"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Öppna"
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Lägg till pm.me-domän"
+      ],
       "Resuming forward": [
         "Återupptar vidarebefordran"
       ]
@@ -1390,9 +1396,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Snabbare, bredare enhetskompatibilitet"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Ingen data överförs under användning, kräver en engångsnedladdning"
       ],
       "Run locally": [
         "Kör lokalt"
@@ -3168,6 +3171,11 @@
         "Vi upptäckte fel på flera rader under importen. Granska din CSV-fil."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Lär dig mer"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/månad"
@@ -3971,6 +3979,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Varning"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Namnlös"
       ]
     },
     "eof2023: Deal details": {
@@ -7369,6 +7382,9 @@
       "Let your contacts know you care about their privacy.": [
         "Låt dina kontakter veta att du bryr dig om deras integritet."
       ],
+      "Let's get started by pressing the New group button above": [
+        "Låt oss komma igång genom att trycka på knappen ”Ny grupp” ovan"
+      ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
@@ -9742,6 +9758,15 @@
       "Gift code": [
         "Presentkod"
       ],
+      "Group address": [
+        "Gruppadress"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "Group name": [
+        "Gruppnamn"
+      ],
       "Hide password": [
         "Dölj lösenord"
       ],
@@ -10009,6 +10034,9 @@
       "Public certificate (X.509)": [
         "Offentligt certifikat (X.509)"
       ],
+      "Purpose": [
+        "Syfte"
+      ],
       "Read": [
         "Läs"
       ],
@@ -10206,6 +10234,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
+      ],
+      "Who can send to this group address?": [
+        "Vem kan skicka till denna gruppadress?"
       ],
       "Why would you like to cancel?": [
         "Vad vill du avbryta?"
@@ -11287,6 +11318,9 @@
       ],
       "Collaborate and share large files": [
         "Samarbeta och dela stora filer"
+      ],
+      "Collaborative document editor": [
+        "Dokumentredigerare för samarbete"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -12460,6 +12494,20 @@
         "Windows"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Alla, inkl. utanför"
+      ],
+      "Members": [
+        "Medlemmar"
+      ],
+      "Nobody by default": [
+        "Ingen som standard"
+      ],
+      "Organization members": [
+        "Organisationsmedlemmar"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekunder"
@@ -12736,8 +12784,8 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Genom att fortsätta godkänner du våra ${ termsAndConditions }"
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Genom att fortsätta godkänner du våra ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Skapar ditt konto"
@@ -13089,6 +13137,9 @@
       "Payment Processing": [
         "Betalning behandlas"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Lägg till en betalningsmetod i adminpanelen för att fortsätta."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
@@ -13278,6 +13329,23 @@
       ],
       "yourdomain.com": [
         "dindomän.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Lägg till ett gruppnamn"
+      ],
+      "Add member": [
+        "Lägg till medlem"
+      ],
+      "e.g. distribution list for marketing team": [
+        "t.ex. distributionslista för marknadsföringsteam"
+      ],
+      "e.g. marketing": [
+        "t.ex. marknadsföring"
+      ],
+      "Members": [
+        "Medlemmar"
       ]
     },
     "plan customizer, ips": {
@@ -15442,6 +15510,9 @@
       "Add PayPal payment method": [
         "Lägg till PayPal betalningsmetod"
       ],
+      "Add pm.me subdomain": [
+        "Lägg till pm.me-underdomän"
+      ],
       "Add servers": [
         "Lägg till servrar"
       ],
@@ -16346,6 +16417,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "There are no groups": [
+        "Det finns inga grupper"
       ],
       "This field cannot be empty": [
         "Detta fält kan inte vara tomt"

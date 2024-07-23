@@ -329,6 +329,9 @@
       "Ok": [
         "確定"
       ],
+      "Open": [
+        "開啟"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
@@ -642,6 +645,9 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains }額外自訂網域"
+      ],
       "${ ips } server": [
         "${ ips } 台伺服器"
       ],
@@ -1205,6 +1211,9 @@
       ],
       "British Indian Ocean Territory": [
         "英屬印度洋領地"
+      ],
+      "British Virgin Islands": [
+        "英屬維京群島"
       ],
       "Brunei Darussalam": [
         "汶萊"
@@ -4935,6 +4944,9 @@
       "What is the main reason you are deleting your account?": [
         "請您告訴我們，是什麼原因讓您決定刪除帳號？"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "請問退訂或降級的主要理由?"
+      ],
       "Why would you like to cancel?": [
         "為什麼您想要取消呢？"
       ],
@@ -5179,6 +5191,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "添加${ BRAND_NAME }訂閱撰寫扳手"
+      ],
       "for ${ price }": [
         "${ price } 版"
       ]
@@ -5708,6 +5723,9 @@
       "Unlimited logins and notes": [
         "無限登入資訊與筆記"
       ],
+      "Unlimited logins, notes and credit cards": [
+        "無限登入，筆記和信用卡"
+      ],
       "Unlimited messages per day": [
         "每日郵件無上限"
       ],
@@ -6054,6 +6072,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "上傳企業標誌以於${ BRAND_NAME }網頁自訂團隊體驗"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "使用您擁有的自訂電子郵件網域位址，例如 you@yourname.com"
@@ -6473,6 +6494,9 @@
       "Payment Processing": [
         "付款處理中"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "請先重新啟用訂閱以減少添加數量。"
+      ],
       "Processing payment": [
         "正在處理付款"
       ],
@@ -6746,6 +6770,11 @@
       ],
       "SCIM token": [
         "SMTP 憑證"
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "停用SCIM整合?"
       ]
     },
     "Security Center - Info": {
@@ -7473,6 +7502,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME }保護您企業的資料安全和讓您傳送安全加密電郵給任何人。"
+      ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME }與自動郵件轉寄"
       ],
@@ -7589,6 +7621,9 @@
       ],
       "Read the story": [
         "已讀的訊息"
+      ],
+      "Stay secure and connected anywhere": [
+        "保護安全和連接至任何地方"
       ],
       "Subscription canceled": [
         "訂閱已取消"
@@ -8704,6 +8739,9 @@
       ],
       "Create user": [
         "創建使用者"
+      ],
+      "Invitation email": [
+        "邀請電子郵件"
       ],
       "New ${ BRAND_NAME } email address": [
         "新的${ BRAND_NAME }電子郵件地址"

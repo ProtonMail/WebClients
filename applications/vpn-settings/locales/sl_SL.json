@@ -88,6 +88,9 @@
       "Change password": [
         "Spremeni geslo"
       ],
+      "Change second password": [
+        "Spremenite drugo geslo"
+      ],
       "Chat with us": [
         "Klepetajte z nami"
       ],
@@ -354,6 +357,9 @@
       ],
       "Ok": [
         "V redu"
+      ],
+      "Open": [
+        "Odpri"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Odprite nastavitve za ${ CALENDAR_APP_NAME }"
@@ -1579,6 +1585,9 @@
       "Macao": [
         "Makav"
       ],
+      "Macedonia": [
+        "Makedonija"
+      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -1830,6 +1839,9 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard in Jan Mayen"
+      ],
+      "Swaziland": [
+        "Svaziland"
       ],
       "Sweden": [
         "Švedska"
@@ -2214,6 +2226,9 @@
       ],
       "Incorrect password": [
         "Napačno geslo"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Prosim poskusite ponovno."
       ],
       "Incorrect username": [
         "Nepravilno uporabniško ime"
@@ -3084,6 +3099,9 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: predogled nizke ločljivosti"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } lahko uporabljate tudi z enim geslom, ki nadomesti tako prijavo kot drugo geslo. Če želite preklopiti na način z enim geslom, vnesite eno geslo, ki ga želite uporabiti, in kliknite Shrani."
       ],
       "${ n } address": [
         "${ n } naslov",
@@ -4207,6 +4225,12 @@
       "Two-factor authentication enabled": [
         "Dvojno preverjanje pristnosti je omogočeno"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in drugo za dešifriranje vaših podatkov. (Napredno)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Način z dvema gesloma uporablja ločena gesla za prijavo in dešifriranje podatkov. To v nekaterih situacijah zagotavlja manjšo varnostno prednost, vendar za večino uporabnikov priporočamo način z enim geslom. Če želite preklopiti na način dveh gesel, najprej nastavite geslo za prijavo in nato nastavite drugo geslo."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Na žalost ni shranjenega načina za obnovitev tega računa."
       ],
@@ -4251,6 +4275,15 @@
       ],
       "Users": [
         "Uporabniki"
+      ],
+      "Vault created": [
+        "Trezor ustvarjen"
+      ],
+      "Vault deleted": [
+        "Trezor je izbrisan"
+      ],
+      "Vault updated": [
+        "Trezor posodobljen"
       ],
       "Verification can take a few minutes.": [
         "Preverjanje lahko traja nekaj minut."
@@ -4770,6 +4803,9 @@
       "Confirm password": [
         "Potrdi geslo."
       ],
+      "Confirm second password": [
+        "Potrdite drugo geslo"
+      ],
       "Copy": [
         "Kopiraj"
       ],
@@ -4914,6 +4950,9 @@
       "New password": [
         "Novo geslo"
       ],
+      "New second password": [
+        "Novo drugo geslo"
+      ],
       "No filter": [
         "Ni filtra"
       ],
@@ -5006,6 +5045,9 @@
       ],
       "Reveal password": [
         "Razkrij geslo"
+      ],
+      "Second password": [
+        "Drugo geslo"
       ],
       "Security code (${ codeName })": [
         "Varnostna koda (${ codeName })"
@@ -8659,6 +8701,9 @@
       "Change role": [
         "Spremeni vlogo"
       ],
+      "Change second password": [
+        "Spremenite drugo geslo"
+      ],
       "Close": [
         "Zapri"
       ],
@@ -8878,6 +8923,9 @@
       "Invoices": [
         "Izdani računi"
       ],
+      "Main password": [
+        "Glavno geslo"
+      ],
       "Minicalendar": [
         "Mini koledar"
       ],
@@ -9084,6 +9132,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Unlock your data": [
+        "Odklenite svoje podatke"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Nadgradite zaščito omrežja z namenskimi strežniki"
@@ -9297,11 +9348,23 @@
       "Add multiple users": [
         "Dodaj več uporabnikov"
       ],
+      "Admin": [
+        "Skrbnik"
+      ],
       "Confirm password": [
         "Potrdi geslo."
       ],
       "Create password": [
         "Ustvarite geslo"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Name": [
+        "Ime"
+      ],
+      "Optional": [
+        "Neobvezno"
       ],
       "Remember to share the user's sign in details with them.": [
         "Ne pozabite deliti podrobnosti za prijavo z uporabnikom."
@@ -9314,6 +9377,12 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "Uporabnik SSO, ki ga je zagotovil vaš ponudnik identitete"
       ],

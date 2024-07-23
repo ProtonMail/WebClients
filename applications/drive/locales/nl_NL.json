@@ -7473,9 +7473,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Begrepen"
-      ],
       "Next": [
         "Volgende"
       ],
@@ -7487,17 +7484,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Ga aan de slag met ${ DRIVE_APP_NAME } en we zullen uw opslag upgraden naar 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Nodig anderen uit via e-mail om uw bestanden te bekijken en te bewerken of maak een openbare link aan voor snelle toegang"
-      ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
       ],
       "Share a file": [
         "Een bestand delen"
-      ],
-      "Share files with one click": [
-        "Bestanden delen met één klik"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Vul eenvoudigweg het volgende vandaag nog in:",
@@ -9436,6 +9427,9 @@
       "Show actions": [
         "Actie weergeven"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
       ],
@@ -9735,6 +9729,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bewaar uw bitcoins en zet ze veilig over"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Probleem met Wallet"
       ]
     },
     "Warning": {

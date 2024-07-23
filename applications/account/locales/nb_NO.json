@@ -685,6 +685,9 @@
       "Need help?": [
         "Trenger du hjelp?"
       ],
+      "New group": [
+        "Ny gruppe"
+      ],
       "Next": [
         "Neste"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "Nei, takk"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Legg til pm.me domene"
+      ],
       "Resuming forward": [
         "Gjenopptar videresending"
       ]
@@ -1395,8 +1401,8 @@
       "Faster, broader device compatibility": [
         "Raskere, bredere enhetskompatibilitet"
       ],
-      "No data transmitted while using, requires one-time download": [
-        "Ingen data overføres under bruk, krever engangsnedlasting"
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Forespørsler forblir på enheten, men krever en engangsnedlasting og kompatibel maskinvare"
       ],
       "Run locally": [
         "Kjør lokalt"
@@ -3172,6 +3178,11 @@
         "Vi oppdaget feil i flere rader under importen, vennligst se over CSV-filen."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Lær mer"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/måned"
@@ -3979,6 +3990,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Advarsel"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Uten navn"
       ]
     },
     "eof2023: Deal details": {
@@ -6375,6 +6391,9 @@
       "30-day money-back guarantee.": [
         "30 dager pengene-tilbake-garanti."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Et ${ protonSubdomain } er vertet av ${ BRAND_NAME }, som lar deg raskt sette opp et underdomene. ${ learnMoreLink }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn for å hjelpe med å identifisere hvor du bruker den slik at du lett kan oppheve den eller utvide den senere."
       ],
@@ -7407,6 +7426,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "La dine kontakter vite at du bryr deg om personvernet deres."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "La oss komme i gang ved å trykke på Ny gruppe-knappen ovenfor"
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
@@ -9801,6 +9823,15 @@
       "Gift code": [
         "Gavekode"
       ],
+      "Group address": [
+        "Gruppeadresse"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "Group name": [
+        "Gruppenavn"
+      ],
       "Hide password": [
         "Skjul passord"
       ],
@@ -10068,6 +10099,9 @@
       "Public certificate (X.509)": [
         "Offentlig sertifikat (X.509)"
       ],
+      "Purpose": [
+        "Hensikt"
+      ],
       "Read": [
         "Lest"
       ],
@@ -10268,6 +10302,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Hva er hovedgrunnen til å kansellere eller nedgradere?"
+      ],
+      "Who can send to this group address?": [
+        "Hvem kan sende til denne gruppeadressen?"
       ],
       "Why would you like to cancel?": [
         "Hvorfor ønsker du å avbryte?"
@@ -12525,6 +12562,20 @@
         "Windows"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Alle, inkl. utenfor"
+      ],
+      "Members": [
+        "Medlemmer"
+      ],
+      "Nobody by default": [
+        "Ingen som standard"
+      ],
+      "Organization members": [
+        "Organisasjonsmedlemmer"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekunder"
@@ -12801,8 +12852,8 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låse opp **${ unlockPlanTitle }** og alle ${ BRAND_NAME }-premiumtjenester ved å oppgradere til **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Ved å fortsette sier du deg enig med våre ${ termsAndConditions }"
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Ved å fortsette sier du deg enig med våre ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Oppretter kontoen din"
@@ -13148,6 +13199,9 @@
       "Payment Processing": [
         "Betalingsbehandling"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Vennligst legg til en betalingsmåte i kontrollpanelet for å fortsette."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -13340,6 +13394,23 @@
       ],
       "yourdomain.com": [
         "dittdomene.no"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Legg til et gruppenavn"
+      ],
+      "Add member": [
+        "Legg til medlem"
+      ],
+      "e.g. distribution list for marketing team": [
+        "f.eks. distribusjonsliste for markedsføringsteam"
+      ],
+      "e.g. marketing": [
+        "f.eks. markedsføring"
+      ],
+      "Members": [
+        "Medlemmer"
       ]
     },
     "plan customizer, ips": {
@@ -15546,6 +15617,9 @@
       "Add PayPal payment method": [
         "Legg til PayPal som betalingsmåte"
       ],
+      "Add pm.me subdomain": [
+        "Legg til pm.me underdomene"
+      ],
       "Add servers": [
         "Legg til tjenere"
       ],
@@ -16444,6 +16518,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "There are no groups": [
+        "Det er ingen grupper"
       ],
       "This field cannot be empty": [
         "Feltet kan ikke stå tomt"

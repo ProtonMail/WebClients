@@ -670,11 +670,11 @@
       "No, thanks": [
         "Nee, bedankt"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -12131,9 +12131,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Maar u kunt **${ unlockPlanTitle }** en alle premium ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditions }"
-      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -16103,6 +16100,93 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Krijg ${ plan }** voor vroegtijdige toegang tot ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Als een uitgenodigde gebruiker, schrijf u in voor een gratis ${ BRAND_NAME } account om exclusief toegang te krijgen tot ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ],
+      "Early access to new features": [
+        "Vroegtijdige toegang tot nieuwe functies"
+      ],
+      "Early access waitlist": [
+        "Vroegtijdige toegangs wachtlijst"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Exclusieve vroegtijdige toegang tot ${ appName }."
+      ],
+      "Get started": [
+        "Aan de slag"
+      ],
+      "Invite Friends": [
+        "Vrienden uitnodigen"
+      ],
+      "Join ${ appName } early access!": [
+        "Doe mee met ${ appName } vroegtijdige toegang!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Schrijf u in voor een gratis ${ BRAND_NAME } account om uw plek veilig te stellen. Hoe eerder u zich inschrijft, hoe sneller u toegang krijgt tot ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Ontgrendel ${ appName } premium functies door te upgraden"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary gebruikers en hun uitgenodigde vrienden kunnen vroegtijdige toegang met anderen delen, nodig uw vrienden uit om ${ appName } gratis te proberen!"
+      ],
+      "You're Invited.": [
+        "U bent uitgenodigd."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bewaar uw bitcoins en zet ze veilig over"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Probleem met Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Bewaar bitcoins en zet ze over zonder problemen. Installeer de relevante ${ WALLET_APP_NAME }-apps."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Terug naar portemonnee"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorisatie"
+      ],
+      "Downloads": [
+        "Downloads"
       ]
     },
     "Warning": {

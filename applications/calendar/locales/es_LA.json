@@ -153,6 +153,9 @@
       "Close this banner": [
         "Cerrar este banner"
       ],
+      "Collapse navigation bar": [
+        "Contraer la barra de navegación"
+      ],
       "Compose": [
         "Escribir"
       ],
@@ -253,6 +256,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Display navigation bar": [
+        "Mostrar la barra de navegación"
       ],
       "Done": [
         "Hecho"
@@ -634,6 +640,9 @@
       ],
       "Show more": [
         "Mostrar más"
+      ],
+      "Show navigation bar": [
+        "Mostrar la barra de navegación"
       ],
       "Show side panel": [
         "Mostrar el panel lateral"
@@ -2331,8 +2340,8 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "Termina después de..."
+      "After…": [
+        "Después de…"
       ],
       "Never": [
         "Nunca"
@@ -7378,6 +7387,9 @@
       "Payment Processing": [
         "Procesando el pago"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Añada un método de pago en el panel de control para continuar."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -9748,6 +9760,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener su Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retenga y transfiera sus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {
