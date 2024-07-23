@@ -702,7 +702,7 @@
     },
     "Address action": {
       "Delete address": [
-        "Borrar la dirección"
+        "Eliminar la dirección"
       ],
       "Disable": [
         "Desactivar"
@@ -732,7 +732,7 @@
         "Guardando"
       ],
       "Set as default": [
-        "Establecer como predeterminado"
+        "Establecer por defecto"
       ]
     },
     "Address status": {
@@ -1273,6 +1273,9 @@
       "British Indian Ocean Territory": [
         "Territorio Británico del Océano Índico"
       ],
+      "British Virgin Islands": [
+        "Islas Vírgenes Británicas"
+      ],
       "Brunei Darussalam": [
         "Brunéi"
       ],
@@ -1327,6 +1330,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (República Democrática)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democrática del"
       ],
@@ -1365,6 +1371,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor Oriental"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1507,6 +1516,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Irán (República Islámica de Irán)"
+      ],
       "Isle of Man": [
         "Isla de Man"
       ],
@@ -1537,6 +1549,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (República Popular Democrática)"
+      ],
+      "Korea (Republic of)": [
+        "Corea (República)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1564,6 +1582,9 @@
       "Libya": [
         "Líbia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libia, Yamahiriya Árabe"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1575,6 +1596,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -1828,6 +1852,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazilandia"
+      ],
       "Sweden": [
         "Suecia"
       ],
@@ -1838,7 +1865,7 @@
         "Siria"
       ],
       "Syrian Arab Republic": [
-        "Siria"
+        "Siria, República Árabe"
       ],
       "Taiwan": [
         "Taiwán"
@@ -1848,6 +1875,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, República Unida"
       ],
       "Thailand": [
         "Tailandia"
@@ -3668,13 +3698,13 @@
         "Se ha aceptado la invitación."
       ],
       "Invite Created": [
-        "La invitación ha sido creada."
+        "Se ha creado la invitación."
       ],
       "Invite deleted": [
-        "La invitación ha sido eliminada."
+        "Se ha eliminado la invitación."
       ],
       "Invite Deleted": [
-        "La invitación ha sido eliminada."
+        "Se ha eliminado la invitación."
       ],
       "Invite for new user deleted": [
         "Se ha eliminado la invitación para el nuevo usuario."
@@ -3704,7 +3734,7 @@
         "Los marcadores del elemento han sido cambiados."
       ],
       "Item Created": [
-        "El elemento ha sido creado."
+        "Se ha creado el elemento."
       ],
       "Item created in ${ vaultLink }": [
         "Elemento creado en ${ vaultLink }"
@@ -3713,7 +3743,7 @@
         "El elemento en la caja fuerte ha sido creado."
       ],
       "Item Deleted": [
-        "El elemento ha sido eliminado."
+        "Se ha eliminado el elemento."
       ],
       "Item deleted from ${ vaultLink }": [
         "Elemento eliminado de ${ vaultLink }"
@@ -3755,7 +3785,7 @@
         "El elemento está restaurado."
       ],
       "Item Updated": [
-        "El elemento ha sido actualizado."
+        "Se ha actualizado el elemento."
       ],
       "Item updated in ${ vaultLink }": [
         "Elemento actualizado en ${ vaultLink }"
@@ -3767,7 +3797,7 @@
         "Logo de JCB"
       ],
       "Keys created": [
-        "Las claves han sido creadas."
+        "Se han creado las claves."
       ],
       "Lean more about gateways": [
         "Más información sobre puertas de enlace"
@@ -4081,7 +4111,7 @@
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
       "Session Ended": [
-        "Sesión terminada"
+        "La sesión está terminada."
       ],
       "Session Roaming": [
         "Sesión itinerante"
@@ -4096,13 +4126,13 @@
         "Configurando tu organización"
       ],
       "Share Created": [
-        "El elemento compartido ha sido creado."
+        "Se ha creado el elemento compartido."
       ],
       "Share Deleted": [
-        "El elemento compartido ha sido eliminado."
+        "Se ha eliminado el elemento compartido."
       ],
       "Share Updated": [
-        "El elemento compartido ha sido actualizado."
+        "Se ha actualizado el elemento compartido."
       ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartido eliminado"
@@ -4382,7 +4412,7 @@
         "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como con Tunnelblick en macOSu OpenVPN en GNU/Linux."
       ],
       "User activated": [
-        "El usuario ha sido activado."
+        "Se ha activado el usuario."
       ],
       "username": [
         "nombre de usuario"
@@ -4391,25 +4421,25 @@
         "Usuarios"
       ],
       "Vault created": [
-        "La caja fuerte ha sido creada."
+        "Se ha creado la caja fuerte."
       ],
       "Vault Created": [
-        "La caja fuerte ha sido creada."
+        "Se ha creado la caja fuerte."
       ],
       "Vault deleted": [
-        "La caja fuerte ha sido eliminada."
+        "Se ha eliminado la caja fuerte."
       ],
       "Vault Deleted": [
-        "La caja fuerte ha sido eliminada."
+        "Se ha eliminado la caja fuerte."
       ],
       "Vault shared with email": [
         "Caja fuerte compartida por correo electrónico"
       ],
       "Vault updated": [
-        "La caja fuerte ha sido actualizada."
+        "Se ha actualizado la caja fuerte."
       ],
       "Vault Updated": [
-        "La caja fuerte ha sido actualizada."
+        "Se ha actualizado la caja fuerte."
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -4918,7 +4948,7 @@
         "Configurar para conectarse a ${ serverName }"
       ],
       "Confirm email": [
-        "Confirmar correo electrónico"
+        "Confirmar el correo electrónico"
       ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
@@ -9384,7 +9414,7 @@
         "Direcciones"
       ],
       "Email": [
-        "Correo"
+        "Correo electrónico"
       ],
       "Features": [
         "Funciones"
@@ -9734,6 +9764,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener tu Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retén y transfiere tus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {

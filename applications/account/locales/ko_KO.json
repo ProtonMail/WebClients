@@ -191,7 +191,7 @@
         "비밀번호 변경"
       ],
       "Change second password": [
-        "이중 비밀번호 변경"
+        "2차 비밀번호 변경하기"
       ],
       "Chat with us": [
         "채팅으로 문의하기"
@@ -697,11 +697,14 @@
       "No, thanks": [
         "아니요, 괜찮아요"
       ],
+      "OK": [
+        "확인"
+      ],
       "Ok": [
         "확인"
       ],
-      "OK": [
-        "확인"
+      "Open": [
+        "열기"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
@@ -1227,6 +1230,9 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "사용자 지정 이메일 도메인 ${ domains }개"
+      ],
       "${ ips } server": [
         "${ ips }개 서버"
       ],
@@ -1383,10 +1389,7 @@
     },
     "Assistant option": {
       "Faster, broader device compatibility": [
-        "더 빠른, 더 다양한 기기 호환성"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "사용 중 데이터 이동이 없으며, 1회 다운로드가 필요 합니다."
+        "빨라지고, 폭넓어진 기기 호환성"
       ],
       "Run locally": [
         "로컬에서 실행"
@@ -1406,7 +1409,7 @@
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ],
       "Trial expires on ${ formattedDate }": [
-        "체험이 ${ formattedDate }에 만료됩니다."
+        "${ formattedDate }에 체험이 만료됩니다."
       ],
       "Trial in progress": [
         "체험판 진행 중"
@@ -2417,6 +2420,9 @@
       "British Indian Ocean Territory": [
         "영국령 인도양 지역"
       ],
+      "British Virgin Islands": [
+        "영국령 버진 아일랜드"
+      ],
       "Brunei Darussalam": [
         "브루나이 다루살람"
       ],
@@ -2471,6 +2477,9 @@
       "Congo": [
         "콩고"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "콩고 민주 공화국"
+      ],
       "Congo, Democratic Republic of the": [
         "콩고민주공화국"
       ],
@@ -2509,6 +2518,9 @@
       ],
       "Dominican Republic": [
         "도미니카 공화국"
+      ],
+      "East Timor": [
+        "동티모르"
       ],
       "Ecuador": [
         "에콰도르"
@@ -2651,6 +2663,9 @@
       "Ireland": [
         "아일랜드"
       ],
+      "Islamic Republic of Iran": [
+        "이란"
+      ],
       "Isle of Man": [
         "맨섬"
       ],
@@ -2681,6 +2696,12 @@
       "Kiribati": [
         "키리바시"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "조선민주주의인민공화국"
+      ],
+      "Korea (Republic of)": [
+        "대한민국"
+      ],
       "Kosovo": [
         "코소보"
       ],
@@ -2689,6 +2710,9 @@
       ],
       "Kyrgyzstan": [
         "키르기스스탄"
+      ],
+      "Lao People's Democratic Republic": [
+        "라오인민민주공화국"
       ],
       "Laos": [
         "라오스"
@@ -2708,6 +2732,9 @@
       "Libya": [
         "리비아"
       ],
+      "Libyan Arab Jamahiriya": [
+        "리비아"
+      ],
       "Liechtenstein": [
         "리히텐슈타인"
       ],
@@ -2719,6 +2746,9 @@
       ],
       "Macao": [
         "마카오"
+      ],
+      "Macedonia": [
+        "마케도니아"
       ],
       "Madagascar": [
         "마다가스카르"
@@ -2972,6 +3002,9 @@
       "Svalbard and Jan Mayen": [
         "스발바르와 얀마옌"
       ],
+      "Swaziland": [
+        "스위스"
+      ],
       "Sweden": [
         "스웨덴"
       ],
@@ -2991,6 +3024,9 @@
         "타지키스탄"
       ],
       "Tanzania": [
+        "탄자니아"
+      ],
+      "Tanzania, United Republic of": [
         "탄자니아"
       ],
       "Thailand": [
@@ -3121,6 +3157,11 @@
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "불러오기 중 다중 행 오류를 감지했습니다, CSV 파일을 확인해 주십시오."
+      ]
+    },
+    "cta": {
+      "Learn more": [
+        "더 알아보기"
       ]
     },
     "Cycle": {
@@ -3462,7 +3503,7 @@
     },
     "drive_signup_2023: Feature": {
       "${ totalStorageSize } of storage for free": [
-        "무료 ${ totalStorageSize } 저장 공간"
+        "${ totalStorageSize }의 저장공간을 무료로"
       ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
@@ -3481,16 +3522,16 @@
     },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
-        "안전하게 파일을 접근하려면 ${ DRIVE_APP_NAME } 계정을 무료로 생성하세요"
+        "파일에 안전하게 접근하기 위해 무료 ${ DRIVE_APP_NAME } 계정을 생성하세요"
       ],
       "Free, encrypted, and secure cloud storage": [
-        "무료, 암호화된 안전한 클라우드 스토리지"
+        "무료이고, 암호화되었으며 안전한 클라우드 저장소"
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }내에 있는 파일 접근에 초대되었습니다."
+        "${ DRIVE_APP_NAME }의 파일을 이용할 수 있는 초대를 받으셨습니다."
       ]
     },
     "Duration": {
@@ -4110,7 +4151,7 @@
         "잘못된 비밀번호입니다"
       ],
       "Incorrect second password. Please try again.": [
-        "이중 비밀번호가 알맞지 않습니다. 다시 시도하세요."
+        "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
       ],
       "Incorrect username": [
         "잘못된 사용자 이름"
@@ -4305,7 +4346,7 @@
         "하나 이상 조건 필요"
       ],
       "Session expired. Please refresh the page.": [
-        "세션 만료됨. 페이지를 새로고침하세요."
+        "세션이 만료되었습니다. 페이지를 새로고침해 주세요."
       ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
@@ -6127,6 +6168,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME }이 사용자의 계정이 적은 공간으로 계속되고 있어 불러오기를 중단했습니다. 이를 수행할 수 있습니다:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME }이(가) 이메일 공급자가 계정의 ${ bandwidthLimitLink }를 재설정하자마자 가져오기를 재개하려고 시도합니다. 수행할 작업이 없습니다. 불러오기를 취소하면, 재개할 수 없으며 다시 시작해야 합니다."
       ],
@@ -6220,6 +6264,12 @@
       "${ vaultLink } created": [
         "${ vaultLink } 생성됨"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } 삭제됨"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink }이(가) 이메일로 공유되었습니다."
+      ],
       "${ vaultLink } updated": [
         "${ vaultLink } 업데이트됨"
       ],
@@ -6312,6 +6362,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
+      ],
+      "Add a recovery ${ type }": [
+        "${ type } 복구 추가"
       ],
       "Add a recovery email address": [
         "복구 이메일 주소 추가"
@@ -6547,6 +6600,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
+      "Breach Custom Email Added": [
+        "침해된 커스텀 이메일 추가됨"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "기본적으로 조직의 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
       ],
@@ -6664,8 +6720,17 @@
       "Custom daily": [
         "일간 사용자 지정"
       ],
+      "Custom email added": [
+        "사용자 지정 이메일 추가됨"
+      ],
+      "Custom email deleted": [
+        "사용자 지정 이메일 삭제됨"
+      ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
+      ],
+      "Custom email validated": [
+        "사용자 지정 이메일 검증됨"
       ],
       "Custom monthly": [
         "월간 사용자 지정"
@@ -6702,6 +6767,9 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
+      ],
+      "Disable recovery by ${ type }": [
+        "${ type }(으)로 복구 비활성화"
       ],
       "Discount": [
         "할인"
@@ -6965,7 +7033,7 @@
         "이전 비밀번호 재설정으로 인한 것이라면 메시지가 다시 표시되지 않도록 할 수 있어요."
       ],
       "If this option is turned on, organization members will only be able to share vaults within the organization": [
-        "이 옵션이 켜져 있다면, 조직 구성원이 오직 조직 내에서만 금고 공유가 가능해집니다."
+        "이 옵션이 활성화되어 있다면, 조직 구성원의 금고 공유가 조직 내에서만 가능하도록 할 수 있습니다."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -7117,6 +7185,9 @@
       "Invite Deleted": [
         "초대를 삭제했습니다"
       ],
+      "Invite for new user deleted": [
+        "새 사용자의 초대가 삭제되었습니다."
+      ],
       "Invite for organization accepted": [
         "조직에 대한 초대가 수락되었습니다."
       ],
@@ -7138,6 +7209,9 @@
       "Item Autofilled": [
         "항목을 자동 입력했습니다"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "${ vaultLink }에 항목이 자동 완성되었습니다."
+      ],
       "Item autofilled in vault": [
         "금고 내에 항목을 자동 완성했습니다."
       ],
@@ -7147,20 +7221,44 @@
       "Item Created": [
         "항목을 생성했습니다"
       ],
+      "Item created in ${ vaultLink }": [
+        "${ vaultLink }에 항목이 추가되었습니다."
+      ],
       "Item created in vault": [
         "금고 내에 항목을 생성했습니다."
       ],
       "Item Deleted": [
         "항목 삭제됨"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "${ vaultLink }에서 항목이 삭제되었습니다."
+      ],
+      "Item deleted from vault": [
+        "항목이 금고에서 제거되었습니다."
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "${ vaultLink }내에서 항목 플래그가 변경되었습니다."
+      ],
       "Item flags changed in vault": [
         "금고의 항목 플래그가 변경되었습니다"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "${ vaultLink }의 항목이 휴지통에 이동되었습니다."
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "${ vaultLink }내의 항목이 복원되었습니다."
+      ],
+      "Item in vault trashed": [
+        "금고의 항목이 휴지통에 이동되었습니다."
       ],
       "Item in vault untrashed": [
         "금고의 항목이 복원되었습니다"
       ],
       "Item Read": [
         "항목을 읽었습니다"
+      ],
+      "Item read in ${ vaultLink }": [
+        "${ vaultLink }에서 항목을 읽었습니다."
       ],
       "Item read in vault": [
         "항목 내에 항목을 읽었습니다."
@@ -7173,6 +7271,9 @@
       ],
       "Item Updated": [
         "항목을 업데이트했습니다"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "${ vaultLink }에 항목이 업데이트되었습니다."
       ],
       "Item updated in vault": [
         "금고 내에 항목을 업데이트했습니다."
@@ -7341,6 +7442,9 @@
       ],
       "New User Invite Deleted": [
         "새로운 사용자 초대를 삭제했습니다"
+      ],
+      "New user invited to organization": [
+        "새 사용자가 조직에 초대되었습니다."
       ],
       "No account keys exist": [
         "계정 키가 존재하지 않음"
@@ -7717,6 +7821,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
       ],
+      "Session Ended": [
+        "세션이 종료됨"
+      ],
+      "Session Roaming": [
+        "세션 로밍"
+      ],
+      "Session Started": [
+        "세션이 시작됨"
+      ],
       "Session timed out": [
         "세션 시간 초과됨"
       ],
@@ -7740,6 +7853,12 @@
       ],
       "Share Updated": [
         "공유를 업데이트했습니다"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "공유된 ${ vaultLink }이(가) 삭제됨"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "공유된 ${ vaultLink }이(가) 업데이트됨"
       ],
       "Shared vault deleted": [
         "공유 금고를 삭제했습니다"
@@ -7988,7 +8107,7 @@
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
-        "인증 절차가 최대 한 시간 정도 소요될 수 있습니다. 인증에 성공하면, 등록한 도메인을 계소 소유하고 있는지에 대한 확인을 위해 TXT 레코드를 삭제하지 마십시오."
+        "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
@@ -8024,7 +8143,7 @@
         "임시 비밀번호를 대체하게 됩니다. 추후 ${ BRAND_NAME } 계정에 접근하는데 사용할 수 있습니다."
       ],
       "This will send a new invite to **${ email }**.": [
-        "이 초대가 **${ email }**(으)로 전송됩니다."
+        "새 초대장이 **${ email }**에 보내집니다."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "현재 로그인된 모든 계정에서 로그아웃하게 됩니다."
@@ -8039,7 +8158,7 @@
         "${ product } 비즈니스로"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "SAML SSO에 사용하기 위해 **${ domainName }** 도메인을 허용하려면, 다음 DNS TXT 레코드를 사용자의 DNS 제공자 입력란에 추가하여 소유권 인증 절차를 밟아야 합니다."
+        "도메인 **${ domainName }**에서 SAML SSO를 사용하려면, DNS 제공자의 DNS TXT 레코드에 다음을 추가하여 소유권을 인증하셔야 합니다."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "데이터 손실을 피할려면, 복사본을 가지고 있거나 지금 무엇을 하고 있는지 확실히 알고 지우십시오."
@@ -8064,6 +8183,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "계정에 지속적으로 접근하기 위해 복구 수단이 필요함"
+      ],
+      "To ensure highest possible security of your account": [
+        "계정에 가능한 최상의 보안 상태를 유지하기 위해, "
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "중요한 데이터가 손실되지 않도록 하기 위해, ${ DRIVE_APP_NAME }이(가) 사용자와 공동 작업자가 파일을 변경할 때 이전 버전의 파일을 저장합니다. ${ BRAND_NAME }이(가) 이전 버전을 얼마나 오래 유지해야 하는지 선택하세요."
@@ -8120,10 +8242,10 @@
         "2단계 인증이 활성화되었습니다."
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
-        "이중 비밀번호 방식은 두 개의 비밀번호가 필요합니다. 하나는 계정에 로그인 하는 경우에, 다른 하나는 데이터를 여는 데 필요합니다. (고급 설정)"
+        "2차 비밀번호 모드는 두 개의 비밀번호를 필요로 합니다. 하나는 계정에 로그인하기 위한 것이고, 하나는 데이터의 복호화를 위한 것입니다. (고급 사용자용)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "이중 암호 모드는 로그인 및 사서함 암호 해독에 별도의 암호를 사용합니다. 일부 상황에서는 약간의 보안 이점이 있지만 대부분의 사용자에게는 단일 암호 모드를 권장합니다. 이중 암호 모드로 전환하려면 먼저 로그인 암호를 설정한 다음 메일함 암호를 설정하십시오."
+        "2차 비밀번호 모드는 로그인과 데이터 복호화에 다른 비밀번호를 사용합니다. 이것으로 일부 상황에서 사소한 보안 이점을 얻을 수 있으나, 대부분의 사용자에게는 1차 비밀번호 모드를 권장합니다. 2차 비밀번호 모드로 변경하려면 먼저 로그인 비밀번호를 설정한 다음 두 번째 비밀번호를 설정하십시오."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "복구 파일의 서명을 검증할 수 없습니다. 고객지원으로 문의해 주십시오."
@@ -8230,6 +8352,9 @@
       "Vault Deleted": [
         "금고를 지웠습니다"
       ],
+      "Vault either deleted or requires access permissions": [
+        "삭제되었거나 접근 권한이 필요한 금고입니다"
+      ],
       "Vault shared with email": [
         "이메일로 공유한 금고"
       ],
@@ -8250,6 +8375,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
+      ],
+      "Verify ${ type }": [
+        "${ type } 인증"
       ],
       "Verify domain": [
         "도메인 소유권 인증"
@@ -8402,7 +8530,7 @@
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
       ],
       "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "사용자 그룹으로, 한 번에 특정 사용자 그룹을 대상으로 이메일을 전송하고, 데이터를 공유하거나 설정을 변경할 수 있습니다."
+        "사용자 그룹을 이용하면, 특정한 유저 그룹에 대해 이메일을 보내거나 데이터를 공유하고 설정을 변경하는 것이 한 번에 간편하게 가능합니다."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "현재 요금제에서는, 오직 @pm.me 주소로만 메시지를 받으실 수 있습니다. 업그레이드 하여 @pm.me를 사용하는 추가적인 주소를 만들어 메시지를 전송하세요."
@@ -8453,7 +8581,7 @@
         "도중에 탭이나 브라우저를 닫으셔도 됩니다."
       ],
       "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
-        "조직 구성원을 위해 ${ PASS_APP_NAME } 정책을 설정하실 수 있습니다."
+        "조직 구성원에 대한 ${ PASS_APP_NAME } 정책을 설정할 수 있습니다."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "인증을 위해 올바른 이메일 주소를 사용할 수 있도록 한 번 편집할 수 있습니다."
@@ -8552,7 +8680,7 @@
         "여전히 호스트가 응답을 볼 수 있도록 초대 회신이 필요합니다."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
-        "초대를 수락하면 사용자를 관리자로 승격할 수 있습니다."
+        "사용자가 초대를 받아들이고 나서 관리자로 승격시킬 수 있습니다."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
@@ -9360,7 +9488,7 @@
         "비밀번호 확인"
       ],
       "Confirm second password": [
-        "이중 비밀번호 확인"
+        "2차 비밀번호 확인하기"
       ],
       "Contacts": [
         "연락처"
@@ -9723,7 +9851,7 @@
         "새 비밀번호"
       ],
       "New second password": [
-        "새로운 이중 비밀번호"
+        "새로운 2차 비밀번호"
       ],
       "No filter": [
         "필터 없음"
@@ -9867,7 +9995,7 @@
         "비밀번호 표시"
       ],
       "Second password": [
-        "이중 비밀번호"
+        "2차 비밀번호"
       ],
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
@@ -10472,11 +10600,17 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "제한된 시간 동안 **${ plan }을(를) 받으세요!**"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Visionary가 되어 ${ BRAND_NAME }의 이야기와 하나가 되어주세요"
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다"
       ],
@@ -10594,7 +10728,7 @@
         "삭제"
       ],
       "Delete and revoke invite": [
-        "초대장 삭제 및 취소"
+        "초대를 삭제하고 취소하기"
       ],
       "Edit": [
         "수정"
@@ -10603,7 +10737,7 @@
         "제거"
       ],
       "Resend invite link": [
-        "초대 링크 다시 보내기"
+        "초대 링크를 다시 보내기"
       ],
       "Revoke sessions": [
         "세션 비활성화"
@@ -11087,6 +11221,9 @@
       "Collaborate and share large files": [
         "큰 파일을 공동으로 작업하고 공유하세요"
       ],
+      "Collaborative document editor": [
+        "협동 가능한 문서 편집기"
+      ],
       "Contact groups": [
         "연락처 그룹"
       ],
@@ -11292,7 +11429,7 @@
         "엄격한 무로그 정책"
       ],
       "Tailored to your needs": [
-        "필요에 따라 조정"
+        "필요에 맞추어졌습니다"
       ],
       "Tor over VPN": [
         "VPN을 통한 Tor"
@@ -12112,7 +12249,7 @@
         "Android"
       ],
       "Archive": [
-        "보관 편지함"
+        "보관한 편지함"
       ],
       "Ask each time": [
         "항상 묻기"
@@ -12223,7 +12360,7 @@
         "설치가 완료되지 않음"
       ],
       "Spam": [
-        "스팸함"
+        "스팸 메일함"
       ],
       "Standard server configs": [
         "기본 서버 구성"
@@ -12520,9 +12657,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "계속하면, ${ termsAndConditions }에 동의하는 것으로 간주합니다."
-      ],
       "Creating your account": [
         "계정을 생성하는 중"
       ],
@@ -12530,7 +12664,7 @@
         "현재 플랜"
       ],
       "Customizable services for large teams.": [
-        "더 큰 팀을 위한 커스텀 서비스"
+        "큰 팀을 위한 커스텀 가능한 서비스"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }을 사용하려면 관련된 앱 또는 확장을 다운로드 및 설치해주세요"
@@ -12865,6 +12999,9 @@
       "Payment Processing": [
         "결제 처리중"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "계속하려면 결제 수단을 대시보드에 추가해 주십시오."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
@@ -12978,7 +13115,7 @@
         "이메일 주소"
       ],
       "Email or IP": [
-        "이메일 또는 IP"
+        "이메일 혹은 IP"
       ],
       "End date": [
         "종료일"
@@ -13286,7 +13423,7 @@
         "**설정 필요:** SCIM 프로비저닝을 사용하려면 SAML 인증이 구성되어 있어야 합니다."
       ],
       "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**설정 필요:** SCIM 프로비저닝을 활성화하려면, 도메인 **${ domainName }**에 대한 소유권 인증이 필요합니다. 이 인증 절차는 한 시간 정도 소요될 수 있습니다."
+        "**설정 필요:** SCIM 프로비저닝을 활성화하시려면, 도메인 **${ domainName }**에 대한 소유권 인증이 필요합니다. 이 인증은 최대 한 시간까지 걸릴 수 있습니다."
       ],
       "Enter token into your identity provider": [
         "사용자의 신원 제공자로 이 토큰을 입력하십시오"
@@ -14894,13 +15031,13 @@
         "인증 성공"
       ],
       "Writing assistant disabled": [
-        "글쓰기 도우미가 비활성화 되었습니다."
+        "글쓰기 도우미 비활성화"
       ],
       "Writing assistant enabled": [
-        "글쓰기 도우미가 활성화 되었습니다."
+        "글쓰기 도우미 활성화"
       ],
       "Writing assistant setting updated": [
-        "글쓰기 도우미 설정이 업데이트 되었습니다."
+        "글쓰기 도우미의 설정을 업데이트했습니다"
       ],
       "You have successfully canceled your subscription.": [
         "구독을 성공적으로 취소하셨습니다."
@@ -14914,7 +15051,7 @@
         "도메인 삭제됨"
       ],
       "Invitation resent": [
-        "초대장을 보냈습니다."
+        "초대를 다시 보냈습니다"
       ],
       "Sessions revoked": [
         "세션 취소됨"
@@ -15662,6 +15799,9 @@
       "Forward emails": [
         "이메일 전달"
       ],
+      "Gateway": [
+        "게이트웨이"
+      ],
       "Gateways": [
         "게이트웨이"
       ],
@@ -15727,6 +15867,9 @@
       ],
       "Import failed": [
         "불러오기 실패함"
+      ],
+      "Import groups": [
+        "그룹 가져오기"
       ],
       "Import key": [
         "키 가져오기"
@@ -15829,6 +15972,9 @@
       ],
       "Organization name": [
         "조직명"
+      ],
+      "Origin": [
+        "출발지"
       ],
       "Other calendars": [
         "다른 달력"
@@ -16625,16 +16771,16 @@
         "다중 사용자 추가"
       ],
       "Add new user": [
-        "새 사용자 추가"
+        "새 사용자 추가하기"
       ],
       "Admin": [
         "관리자"
       ],
       "An invitation will be sent to this email address.": [
-        "초대장이 이메일 주소로 전송됩니다."
+        "이 이메일 주소로 초대를 보냅니다."
       ],
       "Cancel": [
-        "취소"
+        "취소하기"
       ],
       "Confirm password": [
         "비밀번호 확인"
@@ -16643,10 +16789,10 @@
         "비밀번호 생성"
       ],
       "Create password instead": [
-        "대신 비밀번호 생성"
+        "대신 비밀번호 생성하기"
       ],
       "Create user": [
-        "사용자 생성"
+        "사용자 만들기"
       ],
       "Email": [
         "이메일"
@@ -16661,7 +16807,7 @@
         "새로운 ${ BRAND_NAME } 이메일 주소"
       ],
       "Optional": [
-        "선택 사항"
+        "선택사항"
       ],
       "Private": [
         "개인"
@@ -16670,7 +16816,7 @@
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
       ],
       "Send invite link via email instead": [
-        "대신 이메일을 통해 초대 링크 보내기"
+        "대신 이메일로 초대 링크 보내기"
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "이 작업은 새로운 ${ MAIL_APP_NAME } 주소를 생성합니다."
@@ -16686,14 +16832,17 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],
       "Invitation sent, awaiting reply from the invited member": [
-        "초대장을 전송했으며 초대된 사용자로부터의 응답을 대기 중입니다."
+        "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
       ],
       "Invite sent": [
-        "초대장 전송됨"
+        "초대를 보냈습니다"
       ],
       "It's you": [
         "나"
@@ -16908,7 +17057,7 @@
         "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
       ],
       "Please update the extension to its latest version": [
-        "최신 버전의 확장 프로그램으로 업데이트하세요."
+        "확장 프로그램을 최신 버전으로 업데이트해 주세요."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."

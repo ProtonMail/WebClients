@@ -820,10 +820,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open": [
@@ -1421,6 +1421,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } დამატებითი მორგებული დომენი",
+        "${ domains } დამატებითი მორგებული დომენი"
+      ],
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
@@ -1523,9 +1527,6 @@
       ],
       "Faster, broader device compatibility": [
         "უფრო სწრაფი, თავსებადი უფრო მეტ მოწყობილობასთან"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "გამოყენებისას მონაცემების გადაცემა არ ხდება. სჭირდება ერთჯერადი გადმოწერა"
       ],
       "Requires a one-time download and compatible hardware.": [
         "ესაჭიროება ერთჯერადი გადმოწერა და თავსებადი აპარატურა."
@@ -2566,6 +2567,9 @@
       "British Indian Ocean Territory": [
         "ბრიტანული ინდოეთის ოკეანის ტერიტორია"
       ],
+      "British Virgin Islands": [
+        "ბრიტანული ვირჯინიის კუნძულები"
+      ],
       "Brunei Darussalam": [
         "ბრუნეი"
       ],
@@ -2620,6 +2624,9 @@
       "Congo": [
         "კონგო"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "კონგოს დემოკრატიული რესპუბლიკა"
+      ],
       "Congo, Democratic Republic of the": [
         "კონგო, დემოკრატიული რესპუბლიკა"
       ],
@@ -2658,6 +2665,9 @@
       ],
       "Dominican Republic": [
         "დომინიკის რესპუბლიკა"
+      ],
+      "East Timor": [
+        "აღმოსავლეთის ტიმორი"
       ],
       "Ecuador": [
         "ეკვადორი"
@@ -2800,6 +2810,9 @@
       "Ireland": [
         "ირლანდია"
       ],
+      "Islamic Republic of Iran": [
+        "ირანის ისლამური რესპუბლიკა"
+      ],
       "Isle of Man": [
         "მენის კუნძული"
       ],
@@ -2830,6 +2843,12 @@
       "Kiribati": [
         "კირიბატი"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "კორეის დემოკრატიული სახალხო რესპუბლიკა"
+      ],
+      "Korea (Republic of)": [
+        "კორეის რესპუბლიკა"
+      ],
       "Kosovo": [
         "კოსოვო"
       ],
@@ -2838,6 +2857,9 @@
       ],
       "Kyrgyzstan": [
         "ყირგიზეთი"
+      ],
+      "Lao People's Democratic Republic": [
+        "ლაოს სახალხო დემოკრატიული რესპუბლიკა"
       ],
       "Laos": [
         "ლაოსი"
@@ -2857,6 +2879,9 @@
       "Libya": [
         "ლიბია"
       ],
+      "Libyan Arab Jamahiriya": [
+        "ლიბიის არაბული სახელმწიფო"
+      ],
       "Liechtenstein": [
         "ლიხტენშტეინი"
       ],
@@ -2868,6 +2893,9 @@
       ],
       "Macao": [
         "მაკაო"
+      ],
+      "Macedonia": [
+        "მაკედონია"
       ],
       "Madagascar": [
         "მადაგასკარი"
@@ -3121,6 +3149,9 @@
       "Svalbard and Jan Mayen": [
         "შპიცბერგენი და იან-მაიენი"
       ],
+      "Swaziland": [
+        "ესვატინი"
+      ],
       "Sweden": [
         "შვედეთი"
       ],
@@ -3141,6 +3172,9 @@
       ],
       "Tanzania": [
         "ტანზანია"
+      ],
+      "Tanzania, United Republic of": [
+        "ტანზანიის გაერთიანებული რესპუბლიკა"
       ],
       "Thailand": [
         "ტაილანდი"
@@ -3395,6 +3429,9 @@
       ],
       "To continue to use the writing assistant, request access from your admin.": [
         "იმისათვის, რომ გააგრძელოთ წერის დამხმარის გამოყენება, მოითხოვეთ წვდომა თქევნი ადმინისტრატორისგან."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "იმისათვის, რომ გქონდეთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის, დააყენეთ აღდგენის ფრაზა."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
@@ -3979,6 +4016,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "აირჩიეთ კატეგორია და რა ეტაკა შექმნილ ტექსტს"
+      ],
+      "Please try again or refresh the page.": [
+        "თავიდან სცადეთ ან განაახლეთ გვერდი."
       ],
       "Please try generating the text again": [
         "სცადეთ ტექსტის გენერაცია კიდევ ერთხელ"
@@ -5866,6 +5906,9 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "შექმენით უკეთესი ელფოსტები უფრო სწრაფად და კონფორტულად. ახლავე სცადეთ."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი",
         "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი"
@@ -7582,6 +7625,9 @@
       " and ${ l }": [
         " და ${ l }"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
@@ -8484,6 +8530,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "${ price }-თვის"
       ]
@@ -8932,6 +8981,9 @@
       ],
       "Collaborate and share large files": [
         "იმუშავეთ ერთად და გააზიარეთ დიდი ფაილები"
+      ],
+      "Collaborative document editor": [
+        "კოლაბორაციული დოკუმენტის რედაქტორი"
       ],
       "Contact groups": [
         "კონტაქტის ჯგუფები"
@@ -9836,6 +9888,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
@@ -12154,6 +12209,9 @@
       ],
       "Import failed": [
         "შემოტანის შეცდომა"
+      ],
+      "Import groups": [
+        "ჯგუფების შემოტანა"
       ],
       "Insert contacts": [
         "კონტაქტების ჩასმა"

@@ -153,6 +153,9 @@
       "Close this banner": [
         "Fechar este painel"
       ],
+      "Collapse navigation bar": [
+        "Esconder barra de navegação"
+      ],
       "Compose": [
         "Escrever"
       ],
@@ -253,6 +256,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Display navigation bar": [
+        "Mostrar barra de navegação"
       ],
       "Done": [
         "Concluído"
@@ -634,6 +640,9 @@
       ],
       "Show more": [
         "Mostrar mais"
+      ],
+      "Show navigation bar": [
+        "Mostrar barra de navegação"
       ],
       "Show side panel": [
         "Mostrar o painel lateral"
@@ -2334,8 +2343,8 @@
       ]
     },
     "Custom frequency option": {
-      "Ends after…": [
-        "Termina depois de…"
+      "After…": [
+        "Depois…"
       ],
       "Never": [
         "Nunca"
@@ -2486,6 +2495,9 @@
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Isso pode demorar alguns minutos. Enquanto isso, você pode continuar usando Calendar normalmente."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar seus contatos do Google o Outlook, ${ easySwitchLink }."
@@ -3376,6 +3388,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliases não podem ser usados quando uma senha extra está ativada em ${ PASS_APP_NAME }"
+      ],
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
       ],
@@ -7398,6 +7413,9 @@
       "Payment Processing": [
         "Processando pagamento"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Por favor, reative sua assinatura para decrescer o número de complementos."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
@@ -7409,6 +7427,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
       ]
     },
     "Payments.Error": {
@@ -8411,6 +8432,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
+      ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME } com encaminhamento de e-mail automático"
       ],
@@ -8443,6 +8467,18 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } proporciona à sua equipe o que eles necessitam para serem mais produtivos e organizados no trabalho com acesso a todos os aplicativos ${ BRAND_NAME } e seus recursos exclusivos."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } dá à sua equipe o que eles necessitam para serem mais produtivos, organizados, e sobre o controle de sua caixa de entrada, agenda e mais."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } vai além do básico para ajudar você a ter mais produtividade, organização e controle sobre sua caixa de entrada, identidade de email e mais."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } ajuda você a se assegurar que os membros de sua família, e os seus dados, estejam protegidos sempre que estiverem on-line."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas e arquivos. Você também tem direito a bônus anuais de armazenamento."
@@ -8552,11 +8588,17 @@
       "Invited members will be removed from your organization": [
         "Usuários convidados serão removidos da sua organização"
       ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Mantenha sua equipe segura em qualquer lugar com nossos aplicativos para Web, iOS, Android, Windows, Mac e Linux."
+      ],
       "Learn more": [
         "Saiba mais"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre nosso impacto"
+      ],
+      "Make your business stand out": [
+        "Faça sua empresa se destacar"
       ],
       "Manage your calendar": [
         "Gerencie seu calendário"
@@ -8644,6 +8686,21 @@
       ],
       "Yearly free storage bonuses": [
         "Bônus anuais de armazenamento gratuito"
+      ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Você ainda tem ${ expiryDate } na sua assinatura ${ planName }. Nós adicionaremos os créditos para o tempo restante na sua conta ${ BRAND_NAME }. Certifique-se de não exceder os limites do plano gratuito antes de cancelar. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Você ainda tem ${ expiryDate } na sua assinatura ${ planName }. Nós adicionaremos os créditos para o tempo restante na sua conta ${ BRAND_NAME }. Certifique-se de não exceder os limites do plano gratuito antes de cancelar. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Seu plano ${ planName } não apenas mantém seus dados empresariais e uma comunicação segura. Ele apoia seus objetivos de conformidade, destaca seu negócio, e mantém sua equipe conectada."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "A sua assinatura ${ planName } se encerra em ${ expiryDate }. Após o encerramento, você passará para o plano ${ BRAND_NAME } Free. Se a sua utilização exceder os limites do plano gratuito, o seu acesso aos recursos do produto e aos seus dados poderá ser limitado. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "A sua assinatura ${ planName } se encerra em ${ expiryDate }. Após o encerramento, você passará para o plano ${ BRAND_NAME } Free. Se a sua utilização exceder os limites do plano gratuito, o seu acesso aos recursos do produto e aos seus dados poderá ser limitado. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Seu domínio de e-mail personalizado"
@@ -9726,6 +9783,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, e mais."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } conta por carteira",
+        "${ n } contas por carteira"
+      ],
+      "${ n } email address": [
+        "${ n } endereço de e-mail",
+        "${ n } endereços de e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } carteira",
+        "${ n } carteiras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Uma maneira mais segura de guardar seu Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Guarde e transfira suas bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemas no Wallet"
       ]
     },
     "Warning": {

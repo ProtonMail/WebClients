@@ -1,0 +1,2344 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "de_DE"
+  },
+  "contexts": {
+    "Account container": {
+      "Edit": [
+        "Bearbeiten"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME }-Shop"
+      ],
+      "Activate recovery": [
+        "Wiederherstellung aktivieren"
+      ],
+      "Attach screenshot(s)": [
+        "Screenshot(s) anhängen"
+      ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
+      "Back": [
+        "Zurück"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Chat with us": [
+        "Chatte mit uns"
+      ],
+      "Close": [
+        "Schließen"
+      ],
+      "Close navigation": [
+        "Navigation schließen"
+      ],
+      "Close this banner": [
+        "Dieses Banner schließen"
+      ],
+      "Close tip": [
+        "Hinweis schließen"
+      ],
+      "Collapse wallets": [
+        "Wallets ausblenden"
+      ],
+      "Continue": [
+        "Fortfahren"
+      ],
+      "Copy address": [
+        "E-Mail-Adresse kopieren"
+      ],
+      "Copy version number to clipboard": [
+        "Versionsnummer in die Zwischenablage kopieren"
+      ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
+      "Edit phone number": [
+        "Telefonnummer bearbeiten"
+      ],
+      "Edit sign-in details": [
+        "Anmeldeinformationen bearbeiten"
+      ],
+      "Expand wallets": [
+        "Wallets einblenden"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
+      "Get verification code": [
+        "Bestätigungscode abrufen"
+      ],
+      "Help": [
+        "Hilfe"
+      ],
+      "More info: ${ safeTitle }": [
+        "Weitere Informationen: ${ safeTitle }"
+      ],
+      "More options": [
+        "Weitere Optionen"
+      ],
+      "Open navigation": [
+        "Navigation öffnen"
+      ],
+      "Refer a friend": [
+        "Wirb einen Freund"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
+      ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
+      "Request a call": [
+        "Einen Anruf anfordern"
+      ],
+      "Request a feature": [
+        "Funktion vorschlagen"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Resend code": [
+        "Code erneut senden"
+      ],
+      "Search countries": [
+        "Länder durchsuchen"
+      ],
+      "Set recovery phrase": [
+        "Wiederherstellungsphrase festlegen"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Sign out": [
+        "Abmelden"
+      ],
+      "Submit": [
+        "Senden"
+      ],
+      "Switch or add account": [
+        "Konto wechseln oder hinzufügen"
+      ],
+      "Try another method": [
+        "Eine andere Methode ausprobieren"
+      ],
+      "Unlock data": [
+        "Daten entsperren"
+      ],
+      "Update recovery file": [
+        "Wiederherstellungsdatei aktualisieren"
+      ],
+      "Update recovery phrase": [
+        "Wiederherstellungsphrase aktualisieren"
+      ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
+      "Use recovery code": [
+        "Wiederherstellungsschlüssel verwenden"
+      ],
+      "Verify": [
+        "Verifizieren"
+      ],
+      "Verify account": [
+        "Konto verifizieren"
+      ],
+      "View invoice": [
+        "Rechnung anzeigen"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-Anwendungen"
+      ]
+    },
+    "Bitcoin Script Type": {
+      "Legacy": [
+        "Legacy"
+      ],
+      "Native Segwit": [
+        "Native Segwit"
+      ],
+      "Nested Segwit": [
+        "Nested Segwit"
+      ]
+    },
+    "Bitcoin send": {
+      "No wallet found": [
+        "Keine Wallet gefunden"
+      ],
+      "Recipient email or BTC address": [
+        "E-Mail-Adresse oder BTC-Adresse des Empfängers"
+      ],
+      "Send invite email": [
+        "Einladungs-E-Mail senden"
+      ],
+      "Send invite to ${ email }": [
+        "Einladung an ${ email } senden"
+      ],
+      "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
+        "Dieser Benutzer hat möglicherweise noch kein ${ WALLET_APP_NAME } in seinen E-Mail-Dienst integriert. Informiere die Person per E-Mail, dass du ihr Bitcoin schicken möchtest."
+      ],
+      "To": [
+        "An"
+      ]
+    },
+    "Bitcoin Unit": {
+      "BTC": [
+        "BTC"
+      ],
+      "Sats": [
+        "Sats"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Desktopanwendung"
+      ]
+    },
+    "Bug category": {
+      "Application problem": [
+        "Anwendungsproblem"
+      ],
+      "Bridge problem": [
+        "Problem mit „Bridge“"
+      ],
+      "Calendar problem": [
+        "Kalenderproblem"
+      ],
+      "Connection problem": [
+        "Verbindungsproblem"
+      ],
+      "Contacts problem": [
+        "Probleme mit Kontakten"
+      ],
+      "Custom domain problem": [
+        "Problem mit eigener Domain"
+      ],
+      "Drive problem": [
+        "Problem mit Drive"
+      ],
+      "Feature request": [
+        "Funktionswünsche"
+      ],
+      "Import / export problem": [
+        "Im-/Exportproblem"
+      ],
+      "Installation problem": [
+        "Installationsproblem"
+      ],
+      "Mail problem": [
+        "Problem mit Mail"
+      ],
+      "Manual setup problem": [
+        "Problem mit der manuellen Einrichtung"
+      ],
+      "Other": [
+        "Andere"
+      ],
+      "Pass problem": [
+        "Problem mit Pass"
+      ],
+      "Payments problem": [
+        "Zahlungsproblem"
+      ],
+      "Sign in problem": [
+        "Problem bei der Anmeldung"
+      ],
+      "Sign up problem": [
+        "Problem bei der Registrierung"
+      ],
+      "Signup problem": [
+        "Problem bei der Registrierung"
+      ],
+      "Slow speed problem": [
+        "Problem mit langsamer Geschwindigkeit"
+      ],
+      "Speed problem": [
+        "Geschwindigkeitsproblem"
+      ],
+      "Streaming problem": [
+        "Streaming‐Problem"
+      ],
+      "Update problem": [
+        "Aktualisierungsproblem"
+      ],
+      "VPN problem": [
+        "Problem mit VPN"
+      ],
+      "Wallet problem": [
+        "Problem mit Wallet"
+      ],
+      "Website access problem": [
+        "Zugriffsproblem auf eine Website"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Ausblenden"
+      ],
+      "Expand": [
+        "Einblenden"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhazia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albanien"
+      ],
+      "Algeria": [
+        "Algerien"
+      ],
+      "American Samoa": [
+        "Amerikanisch‐Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktis"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua und Barbuda"
+      ],
+      "Argentina": [
+        "Argentinien"
+      ],
+      "Armenia": [
+        "Armenien"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension‐Inseln"
+      ],
+      "Australia": [
+        "Australien"
+      ],
+      "Austria": [
+        "Österreich"
+      ],
+      "Azerbaijan": [
+        "Aserbaidschan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesch"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Weißrussland"
+      ],
+      "Belgium": [
+        "Belgien"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivien"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius und Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnien und Herzegowina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetinsel"
+      ],
+      "Brazil": [
+        "Brasilien"
+      ],
+      "British Indian Ocean Territory": [
+        "Britisches Territorium im Indischen Ozean"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgarien"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodscha"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Kap Verde"
+      ],
+      "Cayman Islands": [
+        "Kaimaninseln"
+      ],
+      "Central African Republic": [
+        "Zentralafrikanische Republik"
+      ],
+      "Chad": [
+        "Tschad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "China"
+      ],
+      "Christmas Island": [
+        "Weihnachtsinsel"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kokos‐/Keelingsinseln"
+      ],
+      "Colombia": [
+        "Kolumbien"
+      ],
+      "Comoros": [
+        "Komoren"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Demokratische Republik Kongo"
+      ],
+      "Cook Islands": [
+        "Cookinseln"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Kroatien"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Zypern"
+      ],
+      "Czech Republic": [
+        "Tschechische Republik"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbeinküste"
+      ],
+      "Denmark": [
+        "Dänemark"
+      ],
+      "Djibouti": [
+        "Dschibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominikanische Republik"
+      ],
+      "Ecuador": [
+        "Ekuador"
+      ],
+      "Egypt": [
+        "Ägypten"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Äquatorialguinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Eswatini": [
+        "Swasiland"
+      ],
+      "Ethiopia": [
+        "Äthiopien"
+      ],
+      "Falkland Islands": [
+        "Falklandinseln"
+      ],
+      "Faroe Islands": [
+        "Färöer"
+      ],
+      "Federated States of Micronesia": [
+        "Föderierte Staaten von Mikronesien"
+      ],
+      "Fiji": [
+        "Fidschi"
+      ],
+      "Finland": [
+        "Finnland"
+      ],
+      "France": [
+        "Frankreich"
+      ],
+      "French Guiana": [
+        "Französisch‐Guayana"
+      ],
+      "French Polynesia": [
+        "Französisch‐Polynesien"
+      ],
+      "French Southern Territories": [
+        "Französische Südgebiete"
+      ],
+      "Gabon": [
+        "Gabun"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Deutschland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Griechenland"
+      ],
+      "Greenland": [
+        "Grönland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea‐Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard und McDonaldinseln"
+      ],
+      "Holy See (Vatican City State)": [
+        "Heiliger Stuhl (Vatikanstaat)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hongkong"
+      ],
+      "Hungary": [
+        "Ungarn"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Indien"
+      ],
+      "Indonesia": [
+        "Indonesien"
+      ],
+      "International": [
+        "International"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irland"
+      ],
+      "Isle of Man": [
+        "Isle of Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italien"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordanien"
+      ],
+      "Kazakhstan": [
+        "Kasachstan"
+      ],
+      "Kenya": [
+        "Kenia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgisistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Lettland"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libyen"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litauen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Malediven"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshallinseln"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauretanien"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexiko"
+      ],
+      "Moldova": [
+        "Republik Moldau"
+      ],
+      "Monaco": [
+        "Monaco"
+      ],
+      "Mongolia": [
+        "Mongolei"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mosambik"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Niederlande"
+      ],
+      "New Caledonia": [
+        "Neukaledonien"
+      ],
+      "New Zealand": [
+        "Neuseeland"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolkinsel"
+      ],
+      "North Korea": [
+        "Nordkorea"
+      ],
+      "North Macedonia": [
+        "Nordmazedonien"
+      ],
+      "Northern Mariana Islands": [
+        "Nördliche Marianen"
+      ],
+      "Norway": [
+        "Norwegen"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palästina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua‐Neuguinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Philippinen"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Rumänien"
+      ],
+      "Russia": [
+        "Russland"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint‐Barthélemy"
+      ],
+      "Saint Helena": [
+        "St. Helena (Insel)"
+      ],
+      "Saint Kitts and Nevis": [
+        "St. Kitts und Nevis"
+      ],
+      "Saint Lucia": [
+        "St. Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "St. Martin (französischer Teil)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint‐Pierre und Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "St. Vincent und die Grenadinen"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé und Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Saudi‐Arabien"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbien"
+      ],
+      "Seychelles": [
+        "Seychellen"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slowakei"
+      ],
+      "Slovenia": [
+        "Slowenien"
+      ],
+      "Solomon Islands": [
+        "Salomon‐Inseln"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Südafrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Südgeorgien und die Südlichen Sandwichinseln"
+      ],
+      "South Korea": [
+        "Südkorea"
+      ],
+      "South Ossetia": [
+        "Süd-Ossetien"
+      ],
+      "South Sudan": [
+        "Südsudan"
+      ],
+      "Spain": [
+        "Spanien"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Spitzbergen und Jan Mayen"
+      ],
+      "Sweden": [
+        "Schweden"
+      ],
+      "Switzerland": [
+        "Schweiz"
+      ],
+      "Syria": [
+        "Syrien"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadschikistan"
+      ],
+      "Tanzania": [
+        "Tansania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Osttimor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad und Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunesien"
+      ],
+      "Turkey": [
+        "Türkei"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks‐ und Caicosinseln"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraine"
+      ],
+      "United Arab Emirates": [
+        "Vereinigte Arabische Emirate"
+      ],
+      "United Kingdom": [
+        "Vereinigtes Königreich"
+      ],
+      "United States": [
+        "Vereinigte Staaten"
+      ],
+      "United States Minor Outlying Islands": [
+        "Kleinere Amerikanische Überseeinseln"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Usbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britische Jungferninseln"
+      ],
+      "Virgin Islands, U.S.": [
+        "Amerikanische Jungferninseln"
+      ],
+      "Wallis and Futuna": [
+        "Wallis und Futuna"
+      ],
+      "Western Sahara": [
+        "Westsahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Sambia"
+      ],
+      "Zimbabwe": [
+        "Simbabwe"
+      ],
+      "Åland Islands": [
+        "Åland‐Inseln"
+      ]
+    },
+    "Currency select": {
+      "Others": [
+        "Andere"
+      ],
+      "Popular": [
+        "Beliebt"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Überfällige Rechnung"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Domain nicht verfügbar. Bitte versuche es später noch einmal."
+      ],
+      "Email is not valid": [
+        "E-Mail-Adresse ungültig"
+      ],
+      "Enter 6 digits": [
+        "6 Ziffern eingeben"
+      ],
+      "Incorrect username": [
+        "Falscher Benutzername"
+      ],
+      "Input isn't a valid email or bitcoin address": [
+        "Die Eingabe ist keine gültige E-Mail-Adresse oder Bitcoin-Adresse"
+      ],
+      "Invalid verification code": [
+        "Bestätigungscode ungültig"
+      ],
+      "Not a valid number": [
+        "Keine gültige Zahl"
+      ],
+      "Passwords do not match": [
+        "Die Passwörter stimmen nicht überein"
+      ],
+      "Request timed out": [
+        "Zeitüberschreitung bei der Anfrage"
+      ],
+      "Signature verification failed": [
+        "Signaturprüfung fehlgeschlagen"
+      ],
+      "The email addresses do not match": [
+        "Die E-Mail-Adressen stimmen nicht überein"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
+      "This field is required": [
+        "Pflichtfeld"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Unknown error": [
+        "Unbekannter Fehler"
+      ],
+      "Username must begin with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
+      ],
+      "Username must end with a letter or digit": [
+        "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Die App ist derzeit nicht verfügbar."
+      ],
+      "Error: ${ errorMessage }": [
+        "Fehler: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Es ist ein Problem aufgetreten"
+      ],
+      "Open in browser": [
+        "Im Browser öffnen"
+      ],
+      "Please refresh the page or try again later.": [
+        "Aktualisiere die Seite oder versuche es später erneut."
+      ],
+      "Something went wrong": [
+        "Etwas ist schiefgelaufen"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Bitte wechsle zur Webversion, um ${ MAIL_APP_NAME } oder ${ CALENDAR_APP_NAME } zu verwenden."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Kein Bild ausgewählt"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Design-Schriftart"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groß"
+      ],
+      "Medium (recommended)": [
+        "Mittel (empfohlen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Sehr groß"
+      ],
+      "Very small": [
+        "Sehr klein"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netzwerk"
+      ],
+      "Other category": [
+        "Andere Kategorie"
+      ],
+      "Services": [
+        "Dienste"
+      ]
+    },
+    "Human verification method": {
+      "Email": [
+        "E-Mail"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Keine Verifizierungsmethode verfügbar"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "(${ memberCount } member)": [
+        "(${ memberCount } Mitglied)",
+        "(${ memberCount } Mitglieder)"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
+      ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
+      ],
+      "Country code": [
+        "Ländercode"
+      ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur einmal verwendet werden"
+      ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
+      "Enter the code from your authenticator app": [
+        "Code aus der Authenticator App eingeben"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "Internet connection lost": [
+        "Internetverbindung unterbrochen"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Loading": [
+        "Wird geladen"
+      ],
+      "Loading ${ appName }": [
+        "${ appName } wird geladen"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
+      ],
+      "New": [
+        "Neu"
+      ],
+      "No results found": [
+        "Keine Ergebnisse gefunden"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
+      ],
+      "Session timed out": [
+        "Zeitüberschreitung der Sitzung"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Versionsnummer erfolgreich in die Zwischenablage kopiert"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Möchtest du einen neuen Bestätigungscode erhalten oder eine alternative Bestätigungsmethode verwenden?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Möchtest du einen neuen Verifizierungscode erhalten?"
+      ],
+      "You can now return to the application to continue": [
+        "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME }-Benutzername"
+      ],
+      "Attach screenshot(s)": [
+        "Screenshot(s) anhängen"
+      ],
+      "Authenticator app": [
+        "Authenticator App"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browserversion"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "Code is 6 digits without spaces": [
+        "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
+      "Copy": [
+        "Kopieren"
+      ],
+      "Currency": [
+        "Währung"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Delete recovery-related information.": [
+        "Wiederherstellungsbezogene Informationen löschen."
+      ],
+      "Email address": [
+        "E‐Mail‐Adresse"
+      ],
+      "Hide password": [
+        "Passwort verbergen"
+      ],
+      "Main": [
+        "Primär"
+      ],
+      "Navigation": [
+        "Navigation"
+      ],
+      "Operating system": [
+        "Betriebssystem"
+      ],
+      "Operating system version": [
+        "Version des Betriebssystems"
+      ],
+      "Password": [
+        "Passwort"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Reveal password": [
+        "Passwort anzeigen"
+      ],
+      "System information": [
+        "Systeminformationen"
+      ],
+      "Verification code": [
+        "Bestätigungsschlüssel"
+      ],
+      "What happened?": [
+        "Problembeschreibung"
+      ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "Leeren des Browser-Cache"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Request an invite": [
+        "Anfrage einreichen"
+      ],
+      "View on blockchain": [
+        "Auf Blockchain anzeigen"
+      ],
+      "What’s this?": [
+        "Was ist das?"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
+      ]
+    },
+    "Pagination": {
+      "Next": [
+        "Weiter"
+      ],
+      "Previous": [
+        "Zurück"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Eine Möglichkeit, dich zu kontaktieren"
+      ],
+      "Leave empty if you don't want to add passphrase": [
+        "Leer lassen, wenn du keine Passphrase hinzufügen möchtest"
+      ],
+      "Password": [
+        "Passwort"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
+      ],
+      "Search": [
+        "Suchen"
+      ],
+      "Select": [
+        "Auswählen"
+      ]
+    },
+    "QRCode Reader": {
+      "Could not run QR code reader": [
+        "QR-Codeleser konnte nicht ausgeführt werden"
+      ]
+    },
+    "QRCode reader": {
+      "Loading QRCode reader": [
+        "QR-Codeleser wird geladen"
+      ]
+    },
+    "Receive bitcoin": {
+      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "Hier ist deine Bitcoin-Adresse. Für mehr Privatsphäre solltest du für jede Transaktion eine andere Adresse verwenden."
+      ],
+      "Your bitcoin address": [
+        "Deine Bitcoin-Adresse"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Keine Ergebnisse gefunden"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Abmelden"
+      ],
+      "Stay signed in": [
+        "Angemeldet bleiben"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } Stunde",
+        "${ gracePeriodHoursRemaining } Stunden"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ist jetzt verfügbar."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Wenn du dich abmeldest, ohne dass du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Du kannst dein Passwort in ${ boldTimeLeft } zurücksetzen."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Passwort zurückgesetzt"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Abmelden ohne Passwortzurücksetzung?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Zu Abonnements wechseln"
+      ],
+      "Upgrade": [
+        "Upgrade durchführen"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Erhalte bis zu ${ credits } als Guthaben."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Lade Freunde zu ${ BRAND_NAME } ein"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Speicher erweitern"
+      ],
+      "Your current storage:": [
+        "Dein aktueller Speicherplatz:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app }-Speicherplatz"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% voll."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dein ${ appStorage }-Speicherplatz ist fast voll."
+      ],
+      "Your ${ appStorage } is full": [
+        "Dein ${ appStorage }-Speicherplatz ist voll."
+      ],
+      "Your storage is full": [
+        "Dein Speicherplatz ist voll."
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Fehler gemeldet"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Code gesendet an ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "E-Mail-Adresse in die Zwischenablage kopiert"
+      ],
+      "Verification successful": [
+        "Verifizierung erfolgreich"
+      ]
+    },
+    "Title": {
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
+      "Human verification": [
+        "Menschliche Verifizierung"
+      ],
+      "Invalid verification code": [
+        "Bestätigungscode ungültig"
+      ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Sign in with 2FA": [
+        "Mit 2FA anmelden"
+      ],
+      "Sign out": [
+        "Abmelden"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
+      ]
+    },
+    "Wallet": {
+      "An error occured": [
+        "Ein Fehler ist aufgetreten."
+      ]
+    },
+    "Wallet Account": {
+      "Account label": [
+        "Kontobezeichnung"
+      ],
+      "Add": [
+        "Hinzufügen"
+      ],
+      "Add account": [
+        "Konto hinzufügen"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Could not add account to wallet": [
+        "Konto konnte nicht zur Wallet hinzugefügt werden"
+      ],
+      "Custom account index": [
+        "Benutzerdefinierter Kontoindex"
+      ],
+      "Custom index": [
+        "Benutzerdefinierter Index"
+      ],
+      "Index": [
+        "Index"
+      ],
+      "Index of the account to add": [
+        "Index des Kontos, das hinzugefügt werden soll"
+      ],
+      "Savings for holiday": [
+        "Ersparnisse für den Urlaub"
+      ],
+      "Script Type": [
+        "Skripttyp"
+      ],
+      "Script type used in account. This will have an impact on account derivation path.": [
+        "Im Konto verwendeter Skripttyp. Dieser hat Auswirkungen auf den Ableitungspfad des Kontos."
+      ],
+      "Your account was successfully created": [
+        "Dein Konto wurde erfolgreich angelegt"
+      ]
+    },
+    "Wallet account": {
+      "This account is already created": [
+        "Dieses Konto wurde bereits erstellt"
+      ]
+    },
+    "Wallet container": {
+      "Edit": [
+        "Bearbeiten"
+      ]
+    },
+    "Wallet dashboard": {
+      "24h change": [
+        "24 h Änderung"
+      ],
+      "All accounts": [
+        "Alle Konten"
+      ],
+      "Buy": [
+        "Kaufen"
+      ],
+      "Current price": [
+        "Aktueller Preis"
+      ],
+      "Receive": [
+        "Erhalten"
+      ],
+      "Send": [
+        "Senden"
+      ],
+      "The current fingerprint doesn't match stored one": [
+        "Der aktuelle Fingerabdruck stimmt nicht mit dem gespeicherten überein"
+      ]
+    },
+    "Wallet deletion": {
+      "Confirm to delete '${ wallet.Wallet.Name }'": [
+        "Löschen von '${ wallet.Wallet.Name }' bestätigen"
+      ],
+      "Warning:'": [
+        "Warnung:'"
+      ]
+    },
+    "Wallet discover": {
+      "Backup your ${ BRAND_NAME } account": [
+        "Dein ${ BRAND_NAME }-Konto sichern"
+      ],
+      "Backup your wallet's mnemonic": [
+        "Die Mnemonik deiner Wallet sichern"
+      ],
+      "Claim your wallet": [
+        "Deine Wallet in Anspruch nehmen"
+      ],
+      "Discover": [
+        "Entdecken"
+      ],
+      "Finish your account setup": [
+        "Richte dein Konto fertig ein"
+      ],
+      "Set up your 2FA": [
+        "Deine 2FA einrichten"
+      ]
+    },
+    "Wallet header": {
+      "Secure your wallet": [
+        "Schütze deine Wallet"
+      ]
+    },
+    "Wallet information": {
+      "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
+        "Eine Wallet-Passphrase ist ein zusätzliches Passwort, das du erstellst, um deine Kryptowährungs-Wallet sicherer zu machen. Sie wird zusammen mit deiner Seed-Phrase verwendet. Bewahre sie sicher auf, denn wenn du sie verlierst, kannst du deine Wallet nicht mehr öffnen."
+      ],
+      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Eine Wallet-Seed-Phrase ist eine Folge von 12 oder 24 Wörtern, die von deiner Wallet generiert wird. Sie dient als Hauptschlüssel, mit dem du dein Guthaben abrufen kannst. Bewahre sie sicher auf und gib sie niemals weiter, da sie Zugriff auf dein Guthaben gewährt."
+      ],
+      "What’s a wallet passphrase?": [
+        "Was ist eine Wallet-Passphrase?"
+      ],
+      "What’s a wallet seed phrase?": [
+        "Was ist eine Wallet-Seed-Phrase?"
+      ]
+    },
+    "Wallet passphrase": {
+      "Fingerprint doesn't match stored one": [
+        "Fingerabdruck stimmt nicht mit dem gespeicherten überein"
+      ],
+      "My wallet passphrase": [
+        "Meine Wallet-Passphrase"
+      ],
+      "To access this wallet, you need to input the passphrase": [
+        "Um auf diese Wallet zuzugreifen, musst du die Passphrase eingeben"
+      ],
+      "Wallet passphrase": [
+        "Wallet-Passphrase"
+      ]
+    },
+    "Wallet preference": {
+      "Account label": [
+        "Kontobezeichnung"
+      ],
+      "Accounts": [
+        "Konten"
+      ],
+      "Advanced options": [
+        "Erweiterte Optionen"
+      ],
+      "Back up wallet": [
+        "Wallet sichern"
+      ],
+      "Back up wallet first": [
+        "Sichere zuerst deine Wallet"
+      ],
+      "Clear browser storage": [
+        "Browserspeicher löschen"
+      ],
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "Delete this wallet": [
+        "Diese Wallet löschen"
+      ],
+      "Delete wallet": [
+        "Wallet löschen"
+      ],
+      "My super account": [
+        "Mein Super-Konto"
+      ],
+      "My super wallet": [
+        "Mein Super-Wallet"
+      ],
+      "Wallet name": [
+        "Name der Wallet"
+      ],
+      "Your wallet preferences": [
+        "Deine Wallet-Einstellungen"
+      ]
+    },
+    "Wallet preferences": {
+      "Add": [
+        "Hinzufügen"
+      ],
+      "Add a new email address": [
+        "Neue E-Mail-Adresse hinzufügen"
+      ],
+      "Email integration": [
+        "E-Mail-Integration"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Local currency": [
+        "Landeswährung"
+      ],
+      "Select your currency": [
+        "Wähle deine Währung"
+      ],
+      "Send and receive Bitcoin by email with email integration.": [
+        "Sende und erhalte Bitcoin per E-Mail mithilfe einer E-Mail-Integration."
+      ]
+    },
+    "Wallet Receive": {
+      "Amount": [
+        "Betrag"
+      ],
+      "Amount to receive": [
+        "Zu erhaltender Betrag"
+      ],
+      "Discover Bitcoin Via Email": [
+        "Bitcoin via E-Mail entdecken"
+      ],
+      "Enter custom amount": [
+        "Benutzerdefinierten Betrag eingeben"
+      ],
+      "Leave empty to let the sender choose the amount": [
+        "Leer lassen, um dem Absender die Wahl des Betrags zu überlassen"
+      ],
+      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
+        "Andere ${ WALLET_APP_NAME }-Benutzer können Bitcoin an deine E-Mail-Adresse senden."
+      ]
+    },
+    "Wallet receive": {
+      "Address generation in progress": [
+        "Adressgenerierung läuft"
+      ],
+      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
+        "Die Lücke zwischen der nächsten und der zuletzt verwendeten Adresse ist zu groß. Bitte verwende eine der Adressen, die du vorher generiert hast"
+      ],
+      "Generate new address": [
+        "Neue Adresse erzeugen"
+      ],
+      "Share address": [
+        "Adresse teilen"
+      ]
+    },
+    "Wallet send": {
+      "${ price } available": [
+        "${ price } verfügbar"
+      ],
+      "A user icon with an exclamation mark, meaning that something unexpected happened": [
+        "Ein Benutzersymbol mit einem Ausrufezeichen, was bedeutet, dass etwas Unerwartetes passiert ist"
+      ],
+      "Add Message to recipient": [
+        "Nachricht an Empfänger hinzufügen"
+      ],
+      "Add private note to myself": [
+        "Privaten Hinweis an mich selbst hinzufügen"
+      ],
+      "Added address is invalid": [
+        "Hinzugefügte Adresse ist ungültig"
+      ],
+      "Amount": [
+        "Betrag"
+      ],
+      "Bitcoin address signature could not be verified": [
+        "Signatur der Bitcoin-Adresse konnte nicht bestätigt werden"
+      ],
+      "Confirm": [
+        "Bestätigen"
+      ],
+      "Could not create PSBT": [
+        "PSBT konnte nicht erstellt werden"
+      ],
+      "Could not find address linked to this email": [
+        "Die mit dieser E-Mail-Adresse verknüpfte Adresse konnte nicht gefunden werden"
+      ],
+      "Edit": [
+        "Bearbeiten"
+      ],
+      "Edit recipients": [
+        "Empfänger bearbeiten"
+      ],
+      "High priority": [
+        "Hohe Priorität"
+      ],
+      "How much are you sending?": [
+        "Wie viel sendest du?"
+      ],
+      "Low priority": [
+        "Niedrige Priorität"
+      ],
+      "Max recipients per transaction limit reached (${ MAX_RECIPIENTS_PER_TRANSACTIONS })": [
+        "Maximale Anzahl von Empfängern pro Transaktion erreicht (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
+      ],
+      "Median priority": [
+        "Mittlere Priorität"
+      ],
+      "Money is on the way": [
+        "Das Geld ist unterwegs"
+      ],
+      "Network fees": [
+        "Netzwerkgebühren"
+      ],
+      "No address set on this BitcoinAddress": [
+        "Für diese Bitcoin-Adresse wurde keine Adresse festgelegt"
+      ],
+      "No signature set on this BitcoinAddress": [
+        "Für diese Bitcoin-Adresse wurde keine Signatur festgelegt"
+      ],
+      "Recent recipients": [
+        "Letzte Empfänger"
+      ],
+      "Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.": [
+        "Der Empfängerbetrag wurde nicht aktualisiert. Bitte überprüfe, ob du genug hast, um den eingegebenen Betrag + Gebühren zu bezahlen."
+      ],
+      "Recipients": [
+        "Empfänger"
+      ],
+      "Remove email": [
+        "E-Mail entfernen"
+      ],
+      "Review": [
+        "Überprüfen"
+      ],
+      "Send": [
+        "Senden"
+      ],
+      "Send all": [
+        "Alle senden"
+      ],
+      "The transaction could not be sent. Please try again later": [
+        "Die Transaktion konnte nicht gesendet werden. Bitte versuche es später erneut"
+      ],
+      "Transaction was succesfully sent": [
+        "Transaktion wurde erfolgreich gesendet"
+      ],
+      "Try adding an email address to start sending Bitcoin!": [
+        "Versuche, eine E-Mail-Adresse hinzuzufügen, um mit dem Senden von Bitcoin zu beginnen!"
+      ],
+      "View details": [
+        "Details anzeigen"
+      ],
+      "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Während du wartest, kannst du deine Familie und Freunde zu ${ WALLET_APP_NAME } einladen, damit ihr alle Bitcoin via E-Mail versenden könnt."
+      ],
+      "Who are you sending Bitcoin to?": [
+        "An wen sendest du Bitcoin?"
+      ],
+      "You are sending": [
+        "Du sendest"
+      ],
+      "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
+        "Deine Transaktion wurde an das Bitcoin-Netzwerk weitergeleitet. Es kann etwa eine Stunde dauern, bis das Netzwerk die Transaktion bestätigt."
+      ]
+    },
+    "Wallet Send": {
+      "Could not broadcast transaction": [
+        "Transaktion konnte nicht übertragen werden"
+      ],
+      "Could not sign transaction": [
+        "Transaktion konnte nicht signiert werden"
+      ]
+    },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Bitcoin-Einheit"
+      ],
+      "Unit in which bitcoin will be displayed": [
+        "Einheit, in der Bitcoin angezeigt wird"
+      ]
+    },
+    "Wallet Settings": {
+      "Account could not be deleted": [
+        "Konto konnte nicht gelöscht werden"
+      ],
+      "Account name changed": [
+        "Kontoname geändert"
+      ],
+      "Account name could not be change": [
+        "Kontoname konnte nicht geändert werden"
+      ],
+      "Account was deleted": [
+        "Konto wurde gelöscht"
+      ],
+      "Could not add email address": [
+        "E-Mail-Adresse konnte nicht hinzugefügt werden"
+      ],
+      "Could not be replaced": [
+        "Konnte nicht ersetzt werden"
+      ],
+      "Could not fill the pool after email address adition": [
+        "Nachdem die E-Mail-Adresse hinzugefügt wurde, konnte der Pool nicht gefüllt werden"
+      ],
+      "Could not fill the pool after email address replacement": [
+        "Nachdem die E-Mail-Adresse ersetzt wurde, konnte der Pool nicht gefüllt werden"
+      ],
+      "Could not remove email address": [
+        "E-Mail-Adresse konnte nicht entfernt werden"
+      ],
+      "Email address has been added": [
+        "E-Mail-Adresse wurde hinzugefügt"
+      ],
+      "Email address has been removed": [
+        "E-Mail-Adresse wurde entfernt"
+      ],
+      "Email address has been replaced": [
+        "E-Mail-Adresse wurde ersetzt"
+      ],
+      "Local storage cleared": [
+        "Lokalen Speicher bereinigt"
+      ],
+      "New fiat currency applied": [
+        "Neue Fiat-Währung angewendet"
+      ],
+      "New fiat currency could not be applied": [
+        "Neue Fiat-Währung konnte nicht angewendet werden"
+      ],
+      "Preferred bitcoin unit could not be changed": [
+        "Bevorzugte Bitcoin-Einheit konnte nicht geändert werden"
+      ],
+      "Preferred bitcoin unit was changed": [
+        "Bevorzugte Bitcoin-Einheit wurde geändert"
+      ],
+      "Wallet could not be deleted": [
+        "Wallet konnte nicht gelöscht werden"
+      ],
+      "Wallet name changed": [
+        "Wallet-Namen geändert"
+      ],
+      "Wallet name could not be changed": [
+        "Wallet-Name konnte nicht geändert werden"
+      ],
+      "Wallet was deleted": [
+        "Wallet wurde gelöscht"
+      ]
+    },
+    "Wallet setup": {
+      "Add a passphrase (optional)": [
+        "Passphrase hinzufügen (optional)"
+      ],
+      "Choose your local fiat currency to see the value of your transactions.": [
+        "Wähle deine lokale Fiat-Währung, um den Wert deiner Transaktionen zu sehen."
+      ],
+      "Confirm": [
+        "Bestätigen"
+      ],
+      "Could not create wallet": [
+        "Wallet konnte nicht erstellt werden"
+      ],
+      "Create a new wallet": [
+        "Eine neue Wallet erstellen"
+      ],
+      "Done": [
+        "Fertig"
+      ],
+      "Give a name to this wallet": [
+        "Gib dieser Wallet einen Namen"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Import wallet": [
+        "Wallet importieren"
+      ],
+      "Important:": [
+        "Wichtig:"
+      ],
+      "Input mnemonic is invalid, please double check.": [
+        "Eingegebene Mnemonik ist ungültig, bitte überprüfen."
+      ],
+      "Invite a friend": [
+        "Einen Freund einladen"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ],
+      "Mnemonic length is not valid.": [
+        "Mnemonik-Länge ist nicht gültig."
+      ],
+      "My imported wallet${ indexStr }": [
+        "Meine importierte Wallet ${ indexStr }"
+      ],
+      "My wallet account ${ indexStr }": [
+        "Mein Wallet-Konto ${ indexStr }"
+      ],
+      "My wallet had a passphrase": [
+        "Meine Wallet hatte eine Passphrase"
+      ],
+      "My wallet${ indexStr }": [
+        "Meine Wallet ${ indexStr }"
+      ],
+      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
+        "Gib sie niemals an jemand anderen weiter. ${ BRAND_NAME } wird nie danach fragen. Notiere sie sorgfältig und verstecke sie an einem sicheren Ort."
+      ],
+      "Passphrase": [
+        "Passphrase"
+      ],
+      "Please backup your secret recovery phrase before you delete your wallet.": [
+        "Sichere bitte deine geheime Wiederherstellungsphrase, bevor du die Wallet löschst."
+      ],
+      "Seed phrase (12-24 words)": [
+        "Seed-Phrase (12–24 Wörter)"
+      ],
+      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
+        "Bewahre deine Seed-Phrase sicher auf: Ohne sie kann ${ BRAND_NAME } dein Guthaben nicht abrufen."
+      ],
+      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
+        "Diese 12 Wörter sollten nur als letzter Ausweg verwendet werden, um das digitale Guthaben dieser Wallet abzurufen, z. B. wenn du keinen Zugriff mehr auf dein ${ BRAND_NAME }-Konto hast."
+      ],
+      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
+        "Diese Mnemonik kann dir helfen, deine Wallet beim nächsten Mal oder mit einer anderen kompatiblen Software wiederherzustellen."
+      ],
+      "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
+        "Diese Wallet ist nicht mehr entschlüsselbar. Um sie wieder entschlüsseln zu können, musst du die bei ihrer Erstellung verwendeten Schlüssel in deinem Konto wiederherstellen. Andernfalls kannst du sie auch entfernen, um Platz in deiner Wallet zu schaffen."
+      ],
+      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
+        "Verwende diese geheime Wiederherstellungsphrase, um deine Wallet wiederherzustellen, wenn du nicht mehr auf dein Konto zugreifen kannst."
+      ],
+      "View wallet seed phrase": [
+        "Wallet-Seed-Phrase anzeigen"
+      ],
+      "Wallet name": [
+        "Name der Wallet"
+      ],
+      "Wallet seed phrase": [
+        "Wallet-Seed-Phrase"
+      ],
+      "Wallet seed phrases encode the private key that controls your digital assets.": [
+        "Wallet-Seed-Phrasen kodieren den privaten Schlüssel, mit dem dein digitales Guthaben verwaltet wird."
+      ],
+      "Wallet setup": [
+        "Wallet-Einrichtung"
+      ],
+      "What's a wallet passphrase": [
+        "Was ist eine Wallet-Passphrase"
+      ],
+      "What's a wallet seed phrase": [
+        "Was ist eine Wallet-Seed-Phrase"
+      ],
+      "Your keys, your coins.": [
+        "Deine Schlüssel, deine Coins."
+      ]
+    },
+    "Wallet Sidebar": {
+      "Discover": [
+        "Entdecken"
+      ],
+      "Recovery": [
+        "Wiederherstellung"
+      ],
+      "Security": [
+        "Sicherheit"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Upgrade": [
+        "Upgrade durchführen"
+      ],
+      "Wallets": [
+        "Wallets"
+      ]
+    },
+    "Wallet transaction": {
+      "${ address } (me)": [
+        "${ address } (ich)"
+      ],
+      "+ Add": [
+        "+ Hinzufügen"
+      ],
+      "Add bitcoins to your wallet": [
+        "Füge Bitcoins zu deiner Wallet hinzu"
+      ],
+      "Amount": [
+        "Betrag"
+      ],
+      "Buy": [
+        "Kaufen"
+      ],
+      "From": [
+        "Von"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Loading": [
+        "Wird geladen"
+      ],
+      "Message": [
+        "Nachricht"
+      ],
+      "Network fee": [
+        "Netzwerkgebühr"
+      ],
+      "Network fees": [
+        "Netzwerkgebühren"
+      ],
+      "Note": [
+        "Hinweis"
+      ],
+      "Receive": [
+        "Erhalten"
+      ],
+      "Save note": [
+        "Hinweis speichern"
+      ],
+      "Start your journey": [
+        "Es kann losgehen"
+      ],
+      "To": [
+        "An"
+      ],
+      "Total (sent amount + fee)": [
+        "Gesamt (gesendeter Betrag + Gebühr)"
+      ],
+      "Total (sent amount + fees)": [
+        "Gesamt (gesendeter Betrag + Gebühren)"
+      ],
+      "Transaction note": [
+        "Transaktionshinweis"
+      ],
+      "Unknown": [
+        "Unbekannt"
+      ],
+      "View advanced settings": [
+        "Erweiterte Einstellungen ansehen"
+      ],
+      "View more": [
+        "Mehr anzeigen"
+      ]
+    },
+    "Wallet Transaction": {
+      "Could not update transaction label": [
+        "Transaktionsbezeichnung konnte nicht aktualisiert werden"
+      ],
+      "Transaction label successfully updated": [
+        "Transaktionsbezeichnung erfolgreich aktualisiert"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ displayedPageNumber }": [
+        "Seite ${ displayedPageNumber }"
+      ]
+    },
+    "Wallet transactions": {
+      "Recipient": [
+        "Empfänger",
+        "Empfänger"
+      ],
+      "Sender": [
+        "Absender",
+        "Absender"
+      ],
+      "Syncing transactions": [
+        "Transaktionen werden synchronisiert"
+      ],
+      "Transactions": [
+        "Transaktionen"
+      ]
+    },
+    "Wallet transactions list": {
+      "Ascending order": [
+        "Aufsteigende Reihenfolge"
+      ],
+      "Descending order": [
+        "Absteigende Reihenfolge"
+      ],
+      "Sync": [
+        "Synchronisieren"
+      ]
+    },
+    "Wallet upgrade": {
+      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
+        "Um ein neues Wallet-Konto hinzuzufügen, kannst du entweder ein bestehendes Wallet-Konto von dieser Wallet entfernen oder dein aktuelles Abonnement erweitern, um pro Wallet mehr Wallet-Konten zu erhalten."
+      ],
+      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
+        "Um eine neue Wallet hinzuzufügen, kannst du entweder eine bestehende Wallet von deinem Konto entfernen oder dein aktuelles Abonnement erweitern, um mehr Wallets zu erhalten."
+      ]
+    },
+    "Wallet Upgrade": {
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade your privacy": [
+        "Verbessere deine Privatsphäre"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
+      ]
+    }
+  }
+}

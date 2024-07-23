@@ -1068,7 +1068,7 @@
         "L'accès a été confirmé."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "L'accès à ${ PASS_APP_NAME } nécessitera votre mot de passe ${ BRAND_NAME }."
+        "L'accès à ${ PASS_APP_NAME } nécessitera toujours votre mot de passe ${ BRAND_NAME }."
       ],
       "Add a username field": [
         "Ajouter un champ Nom d’utilisateur"
@@ -1407,7 +1407,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera son historique et tous les liens sécurisés."
+        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique et tous les liens sécurisés."
       ],
       "Moving an item to another vault will erase its history.": [
         "Le déplacement d'un élément vers un autre coffre-fort effacera son historique."
@@ -1495,7 +1495,7 @@
         "Veuillez confirmer votre mot de passe."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Veuillez confirmer votre mot de passe afin de verrouiller automatiquement avec votre mot de passe."
+        "Veuillez confirmer votre mot de passe afin de verrouiller automatiquement avec ce dernier."
       ],
       "Please confirm your password in order to unregister your current lock.": [
         "Veuillez confirmer votre mot de passe afin d'enlever votre verrouillage actuel."
@@ -2126,7 +2126,7 @@
         "Du plus ancien au plus récent"
       ],
       "Open-source password manager for effortless protection.": [
-        "Gestionnaire de mot de passe open-source pour une protection sans effort."
+        "Gestionnaire de mot de passe open-source pour une protection facile."
       ],
       "Organization": [
         "Organisation"

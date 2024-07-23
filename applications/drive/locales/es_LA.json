@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Aceptar"
+      ],
       "Activate recovery": [
         "Activar recuperación"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Personalizar importación"
+      ],
+      "Decline": [
+        "Rechazar"
       ],
       "Decrease": [
         "Reducir"
@@ -4490,6 +4496,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar la selección y nosotros haremos el resto."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Mantenga su archivo seguro con cifrado de extremo a extremo en ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Huella digital de la clave"
       ],
@@ -7561,6 +7570,9 @@
       "Failed to open document": [
         "Error al abrir el documento"
       ],
+      "Failed to reject share invitation": [
+        "Ocurrió un error al rechazar la invitación compartida"
+      ],
       "Failed to remove the file": [
         "Error al borrar el archivo"
       ],
@@ -7606,6 +7618,9 @@
       ],
       "Share invitation accepted successfully": [
         "La invitación compartida fue aceptada."
+      ],
+      "Share invitation declined": [
+        "Invitación compartida rechazada"
       ],
       "Stopping to share this item has failed": [
         "Error al dejar de compartir este elemento"
@@ -7667,31 +7682,34 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Entendido"
+      "Create new document": [
+        "Crear un documento"
       ],
       "Next": [
         "Siguiente"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Comenzar con ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Probar después"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Cree y colabore en documentos. Todo protegido con cifrado de extremo a extremo."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "¡Comience a usar ${ DRIVE_APP_NAME } y mejoraremos el almacenamiento a 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Invite a otras personas a través de correo electrónico para que vean y editen sus archivos o cree un enlace público para un rápido acceso."
+      "Introducing ${ DOCS_APP_NAME }": [
+        "Presentamos ${ DOCS_APP_NAME }"
       ],
       "Set a recovery method": [
         "Establecer un método de recuperación"
       ],
       "Share a file": [
         "Compartir un archivo"
-      ],
-      "Share files with one click": [
-        "Comparta archivos con un clic"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Simplemente complete lo siguiente en el próximo ${ expiresInDays } día:",
@@ -7833,6 +7851,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Añada un método de pago en el panel de control para continuar."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
@@ -9866,6 +9887,9 @@
       "Show actions": [
         "Mostrar acciones"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
       ],
@@ -10165,6 +10189,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener su Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retenga y transfiera sus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {

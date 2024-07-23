@@ -345,6 +345,12 @@
       "Expand folder": [
         "Extindere folder"
       ],
+      "Explore on my own": [
+        "Explorez pe cont propriu"
+      ],
+      "Explore while you wait": [
+        "Explorați în timp ce așteptați"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -545,6 +551,9 @@
       ],
       "Ok": [
         "OK"
+      ],
+      "Open": [
+        "Deschidere"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -855,6 +864,9 @@
       "Upload file": [
         "Încărcare fișier"
       ],
+      "Upload files": [
+        "Încărcare fișiere"
+      ],
       "Upload folder": [
         "Încărcare folder"
       ],
@@ -938,6 +950,11 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domeniu personal adițional",
+        "${ domains } domenii personale adiționale",
+        "${ domains } de domenii personale adiționale"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servere",
@@ -1519,6 +1536,9 @@
       "British Indian Ocean Territory": [
         "Teritoriul Britanic al Oceanului Indian"
       ],
+      "British Virgin Islands": [
+        "Insulele Virgine Britanice"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1573,6 +1593,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Republica Democrată)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, Republica Democrată"
       ],
@@ -1611,6 +1634,9 @@
       ],
       "Dominican Republic": [
         "Republica Dominicană"
+      ],
+      "East Timor": [
+        "Timorul de Est"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1753,6 +1779,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Republica Islamică Iran"
+      ],
       "Isle of Man": [
         "Insula Man"
       ],
@@ -1783,6 +1812,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Coreea (Republica Populară Democrată)"
+      ],
+      "Korea (Republic of)": [
+        "Coreea (Republica)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1791,6 +1826,9 @@
       ],
       "Kyrgyzstan": [
         "Kârgâzstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Republica Populară Democrată Laos"
       ],
       "Laos": [
         "Laos"
@@ -1810,6 +1848,9 @@
       "Libya": [
         "Libia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya Arabă Libiană"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1821,6 +1862,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2074,6 +2118,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suedia"
       ],
@@ -2094,6 +2141,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania (Republica Unită)"
       ],
       "Thailand": [
         "Tailanda"
@@ -2253,6 +2303,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Setați o metodă de recuperare pentru a preveni pierderea accesului la cont."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
@@ -3073,6 +3126,9 @@
     "Error message": {
       "Access denied": [
         "Acces respins"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasurile nu pot fi folosite atunci când este activată o parolă suplimentară în ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
@@ -6262,6 +6318,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "cu ${ price }"
       ]
@@ -6730,6 +6789,9 @@
       ],
       "Collaborate and share large files": [
         "Colaborare și partajare fișiere mari"
+      ],
+      "Collaborative document editor": [
+        "Editor colaborativ de documente"
       ],
       "Contact groups": [
         "Grupuri de contacte"
@@ -7673,9 +7735,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Am înțeles"
-      ],
       "Next": [
         "Înainte"
       ],
@@ -7687,22 +7746,22 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Începeți să folosiți ${ DRIVE_APP_NAME } și vă vom mări spațiul de stocare la 5 GiB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Invitați alte persoane prin e-mail să vă vadă și să vă editeze fișierele sau să creați o legătură web publică pentru acces rapid"
-      ],
       "Set a recovery method": [
         "Setați metodă de recuperare"
       ],
       "Share a file": [
         "Partajare fișier"
       ],
-      "Share files with one click": [
-        "Partajați fișiere cu un clic"
-      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Completați următoarele sarcini în următoarea zi:",
         "Completați următoarele sarcini în următoarele ${ expiresInDays } zile:",
         "Completați următoarele sarcini în următoarele ${ expiresInDays } de zile:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Stocați fișierele și partajați-le în siguranță. Începeți prin a vă securiza cele mai private fișiere, cum ar fi ID-uri, contracte și fotografii personale."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Proprietarul trebuie să confirme accesul la partajare. Veți primi un e-mail după confirmare."
       ],
       "Upload a file": [
         "Încărcați un fișier"
@@ -7732,6 +7791,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Aprobarea finală e în desfășurare"
+      ],
+      "Hang tight!": [
+        "Așteptați puțin!"
+      ],
+      "Upload and protect your important files": [
+        "Încărcați și protejați-vă fișierele importante"
+      ],
       "Your welcome bonus": [
         "Bonusul de bun venit"
       ]
@@ -9713,6 +9781,9 @@
       "Import failed": [
         "Importare eșuată"
       ],
+      "Import groups": [
+        "Importare grupuri"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
@@ -9904,6 +9975,9 @@
       ],
       "Show actions": [
         "Afișare acțiuni"
+      ],
+      "Sign in": [
+        "Autentificare"
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"

@@ -611,10 +611,10 @@
       "No, thanks": [
         "不，谢谢"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3561,6 +3561,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "未能获取已登录的账户，请${ refresh }或稍后再试。"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "文件过大。您的 Logo 必须是 30 KB 以内。"
       ],
       "Filter with this name already exists": [
         "此名称与现有筛选规则重复"
@@ -6549,6 +6552,9 @@
       ],
       "Preview for this file type is not supported": [
         "此文件类型暂不支持预览"
+      ],
+      "Preview of documents is not yet supported.": [
+        "暂不支持文档预览。"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
@@ -10719,9 +10725,6 @@
     "pass_signup_2023: Info": {
       "Advanced protection that goes beyond industry standards": [
         "超越行业标准的高级保护功能"
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "继续操作即表示您同意我们的${ termsAndConditions }"
       ],
       "Creating your account": [
         "正在为您创建账户"

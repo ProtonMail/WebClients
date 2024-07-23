@@ -479,7 +479,7 @@
         "Letra"
       ],
       "Forgot password?": [
-        "Esqueci-me da palavra-passe?"
+        "Esqueceu-se da palavra-passe?"
       ],
       "Generate": [
         "Gerar"
@@ -676,11 +676,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -803,7 +803,7 @@
         "Repor palavra-passe"
       ],
       "Reset to default": [
-        "Reposição padrão"
+        "Reposição predefinida"
       ],
       "Restore": [
         "Restaurar"
@@ -1040,7 +1040,7 @@
         "Desbloquear dados"
       ],
       "Unordered list": [
-        "Lista com marcadores"
+        "Lista não ordenada"
       ],
       "Unsubscribe": [
         "Cancelar subscrição"
@@ -1079,7 +1079,7 @@
         "Enviar o logo"
       ],
       "Upload picture": [
-        "Enviar a imagem"
+        "Enviar imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -3840,6 +3840,9 @@
       "Impossible to rename the gateway": [
         "Foi impossível renomear o gateway"
       ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Formato do ficheiro incorreto. Envie um ficheiro em formato PNG ou JPEG."
+      ],
       "Incorrect login credentials. Please try again.": [
         "Credenciais de início de sessão incorretas. Tente novamente."
       ],
@@ -5918,7 +5921,7 @@
         "${ vaultLink } criada"
       ],
       "${ vaultLink } updated": [
-        "${ vaultLink } actualizada"
+        "${ vaultLink } atualizada"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "É obrigatória ${ vpnPlus } para ligação ao nível de país."
@@ -6746,7 +6749,7 @@
         "Tenho utilizado o @ProtonMail e pensei que poderia gostar dele. É um serviço de e-mail seguro que protege a sua privacidade. Inscreva-se com a minha ligação de referência para obter 1 mês de funcionalidades premium gratuitamente: ${ referrerLink }"
       ],
       "JCB logo": [
-        "Logotipo JCB"
+        "Logótipo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirme apenas a sua seleção e faremos o resto."
@@ -7617,7 +7620,7 @@
         "Atualize para desbloquear"
       ],
       "Upload picture": [
-        "Enviar a imagem"
+        "Enviar imagem"
       ],
       "Upload your completed CSV file to create accounts": [
         "Envie o seu ficheiro CSV preenchido para criar contas"
@@ -7686,7 +7689,7 @@
         "Histórico das versões"
       ],
       "Version number successfully copied to clipboard": [
-        "O número de versão foi copiado para a área de transferência."
+        "O número da versão foi copiado para a área de transferência."
       ],
       "View, download, and manage your invoices.": [
         "Ver, transferir, e gerir as suas faturas."
@@ -7974,10 +7977,10 @@
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá enviar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor efetue o pagamento das faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas em atraso."
       ],
       "Your ${ BRAND_NAME } password": [
         "A sua palavra-passe do ${ BRAND_NAME }"
@@ -9429,7 +9432,7 @@
         "Comunicados das betas da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
+        "Boletim informativo ${ BRAND_NAME } para Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Anúncios importantes da ${ BRAND_NAME }"
@@ -9771,7 +9774,7 @@
         "Para empresas"
       ],
       "For individuals": [
-        "Para indivíduos"
+        "Para particulares"
       ]
     },
     "mailtrial2024: Action": {
@@ -10420,7 +10423,7 @@
         "Acordo de tratamento de dados do RGPD"
       ],
       "Group management (coming soon)": [
-        "Gerenciamento de grupo (em breve)"
+        "Gestão de grupos (em breve)"
       ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
@@ -11363,7 +11366,7 @@
         "Definições padrão do servidor"
       ],
       "Star": [
-        "Marcar com estrela"
+        "Estrela"
       ],
       "TCP": [
         "TCP"
@@ -11372,7 +11375,7 @@
         "Toda a organização"
       ],
       "Trash": [
-        "Lixeira"
+        "Lixo"
       ],
       "UDP": [
         "UDP"
@@ -11585,9 +11588,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mas pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } com uma atualização para o **${ upsellPlanTitle }** — por apenas ${ relativePrice } extras por mês."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Ao continuar, concorda com os nossos ${ termsAndConditions }"
       ],
       "Creating your account": [
         "A criar a sua conta"
@@ -13595,7 +13595,7 @@
         "Importar"
       ],
       "Invitation email": [
-        "E-mail do convite"
+        "E-mail de convite"
       ],
       "List": [
         "Lista"

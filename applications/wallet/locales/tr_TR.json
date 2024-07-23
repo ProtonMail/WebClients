@@ -1,0 +1,2344 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "tr_TR"
+  },
+  "contexts": {
+    "Account container": {
+      "Edit": [
+        "Düzenle"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } mağazası"
+      ],
+      "Activate recovery": [
+        "Kurtarma özelliğini aç"
+      ],
+      "Attach screenshot(s)": [
+        "Ekran görüntüsü ekle"
+      ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Chat with us": [
+        "Bizimle canlı görüşün"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Close navigation": [
+        "Gezinmeyi kapat"
+      ],
+      "Close this banner": [
+        "Bu uyarıyı kapat"
+      ],
+      "Close tip": [
+        "İpucunu kapat"
+      ],
+      "Collapse wallets": [
+        "Cüzdanları daralt"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Copy address": [
+        "Adresi kopyala"
+      ],
+      "Copy version number to clipboard": [
+        "Sürüm numarasını kopyala"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Edit phone number": [
+        "Telefon numarasını düzenle"
+      ],
+      "Edit sign-in details": [
+        "Oturum açma bilgilerini düzenle"
+      ],
+      "Expand wallets": [
+        "Cüzdanları genişlet"
+      ],
+      "Forgot password?": [
+        "Parolanızı mı unuttunuz?"
+      ],
+      "Get verification code": [
+        "Doğrulama kodu al"
+      ],
+      "Help": [
+        "Yardım"
+      ],
+      "More info: ${ safeTitle }": [
+        "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More options": [
+        "Diğer seçenekler"
+      ],
+      "Open navigation": [
+        "Gezinmeyi aç"
+      ],
+      "Refer a friend": [
+        "Arkadaşınıza önerin"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
+      ],
+      "Report a problem": [
+        "Sorun bildireceğim"
+      ],
+      "Request a call": [
+        "Arama isteği gönder"
+      ],
+      "Request a feature": [
+        "Bir özellik istiyorum"
+      ],
+      "Request new code": [
+        "Yeni kod iste"
+      ],
+      "Resend code": [
+        "Kodu yeniden gönder"
+      ],
+      "Search countries": [
+        "Ülke ara"
+      ],
+      "Set recovery phrase": [
+        "Kurtarma ifadesini ayarla"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Submit": [
+        "Gönder"
+      ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ],
+      "Try another method": [
+        "Başka bir yöntem deneyin"
+      ],
+      "Unlock data": [
+        "Verilerin kilidini aç"
+      ],
+      "Update recovery file": [
+        "Kurtarma dosyasını güncelle"
+      ],
+      "Update recovery phrase": [
+        "Kurtarma ifadesini güncelle"
+      ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodu kullan"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullan"
+      ],
+      "Verify": [
+        "Doğrula"
+      ],
+      "Verify account": [
+        "Hesabı doğrula"
+      ],
+      "View invoice": [
+        "Faturayı görüntüle"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
+      ]
+    },
+    "Bitcoin Script Type": {
+      "Legacy": [
+        "Legacy"
+      ],
+      "Native Segwit": [
+        "Native Segwit"
+      ],
+      "Nested Segwit": [
+        "Nested Segwit"
+      ]
+    },
+    "Bitcoin send": {
+      "No wallet found": [
+        "Cüzdan bulunamadı"
+      ],
+      "Recipient email or BTC address": [
+        "Alıcı e-postası veya BTC adresi"
+      ],
+      "Send invite email": [
+        "Davet e-postası gönder"
+      ],
+      "Send invite to ${ email }": [
+        "${ email } adresine davet gönder"
+      ],
+      "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
+        "Bu kullanıcının henüz e-postasıyla entegre edilmiş bir ${ WALLET_APP_NAME } olmayabilir. Onlara Bitcoin göndermek istediğinizi bildiren bir e-posta gönderin."
+      ],
+      "To": [
+        "Alıcı"
+      ]
+    },
+    "Bitcoin Unit": {
+      "BTC": [
+        "BTC"
+      ],
+      "Sats": [
+        "Sat"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ]
+    },
+    "Bug category": {
+      "Application problem": [
+        "Uygulama sorunu"
+      ],
+      "Bridge problem": [
+        "Bridge sorunu"
+      ],
+      "Calendar problem": [
+        "Calendar sorunu"
+      ],
+      "Connection problem": [
+        "Bağlantı sorunu"
+      ],
+      "Contacts problem": [
+        "Contacts sorunu"
+      ],
+      "Custom domain problem": [
+        "Özel etki alanı sorunu"
+      ],
+      "Drive problem": [
+        "Drive sorunu"
+      ],
+      "Feature request": [
+        "Özellik isteği"
+      ],
+      "Import / export problem": [
+        "İçe / dışa aktarma sorunu"
+      ],
+      "Installation problem": [
+        "Kurulum sorunu"
+      ],
+      "Mail problem": [
+        "Mail sorunu"
+      ],
+      "Manual setup problem": [
+        "El ile kurulum sorunu"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Pass problem": [
+        "Parola sorunu"
+      ],
+      "Payments problem": [
+        "Ödeme sorunu"
+      ],
+      "Sign in problem": [
+        "Oturum açma sorunu"
+      ],
+      "Sign up problem": [
+        "Hesap açma sorunu"
+      ],
+      "Signup problem": [
+        "Hesap açma sorunu"
+      ],
+      "Slow speed problem": [
+        "Hız yavaşlığı sorunu"
+      ],
+      "Speed problem": [
+        "Hız sorunu"
+      ],
+      "Streaming problem": [
+        "Yayın akışı sorunu"
+      ],
+      "Update problem": [
+        "Güncelleme sorunu"
+      ],
+      "VPN problem": [
+        "VPN sorunu"
+      ],
+      "Wallet problem": [
+        "Cüzdan sorunu"
+      ],
+      "Website access problem": [
+        "Site erişim sorunu"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Daralt"
+      ],
+      "Expand": [
+        "Genişlet"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazya"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Arnavutluk"
+      ],
+      "Algeria": [
+        "Cezayir"
+      ],
+      "American Samoa": [
+        "Amerikan Samoası"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua ve Barbuda"
+      ],
+      "Argentina": [
+        "Arjantin"
+      ],
+      "Armenia": [
+        "Ermenistan"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension Adası"
+      ],
+      "Australia": [
+        "Avustralya"
+      ],
+      "Austria": [
+        "Avusturya"
+      ],
+      "Azerbaijan": [
+        "Azerbaycan"
+      ],
+      "Bahamas": [
+        "Bahamalar"
+      ],
+      "Bahrain": [
+        "Bahreyn"
+      ],
+      "Bangladesh": [
+        "Bangladeş"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belçika"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivya"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Karayip Hollandası"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosna Hersek"
+      ],
+      "Botswana": [
+        "Botsvana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Adası"
+      ],
+      "Brazil": [
+        "Brezilya"
+      ],
+      "British Indian Ocean Territory": [
+        "Britanya Hint Okyanusu Toprakları"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaristan"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kamboçya"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Yeşil Burun Adaları"
+      ],
+      "Cayman Islands": [
+        "Cayman Adaları"
+      ],
+      "Central African Republic": [
+        "Orta Afrika Cumhuriyeti"
+      ],
+      "Chad": [
+        "Çad"
+      ],
+      "Chile": [
+        "Şili"
+      ],
+      "China": [
+        "Çin"
+      ],
+      "Christmas Island": [
+        "Christmas Adası"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocos (Keeling) Adaları"
+      ],
+      "Colombia": [
+        "Kolombiya"
+      ],
+      "Comoros": [
+        "Komorlar"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongo, Demokratik Cumhuriyeti"
+      ],
+      "Cook Islands": [
+        "Cook Adaları"
+      ],
+      "Costa Rica": [
+        "Kosta Rika"
+      ],
+      "Croatia": [
+        "Hırvatistan"
+      ],
+      "Cuba": [
+        "Küba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kıbrıs"
+      ],
+      "Czech Republic": [
+        "Çekya"
+      ],
+      "Côte d'Ivoire": [
+        "Fildişi Sahili"
+      ],
+      "Denmark": [
+        "Danimarka"
+      ],
+      "Djibouti": [
+        "Cibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominik Cumhuriyeti"
+      ],
+      "Ecuador": [
+        "Ekvador"
+      ],
+      "Egypt": [
+        "Mısır"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvator Ginesi"
+      ],
+      "Eritrea": [
+        "Eritre"
+      ],
+      "Estonia": [
+        "Estonya"
+      ],
+      "Eswatini": [
+        "Esvatini"
+      ],
+      "Ethiopia": [
+        "Etiyopya"
+      ],
+      "Falkland Islands": [
+        "Falkland Adaları"
+      ],
+      "Faroe Islands": [
+        "Faroe Adaları"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronezya Federal Devletleri"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandiya"
+      ],
+      "France": [
+        "Fransa"
+      ],
+      "French Guiana": [
+        "Fransız Guyanası"
+      ],
+      "French Polynesia": [
+        "Fransız Polinezyası"
+      ],
+      "French Southern Territories": [
+        "Fransız Güney Toprakları"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambiya"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Almanya"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Cebelitarık"
+      ],
+      "Greece": [
+        "Yunanistan"
+      ],
+      "Greenland": [
+        "Grönland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Gine"
+      ],
+      "Guinea-Bissau": [
+        "Gine-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard Adası ve McDonald Adaları"
+      ],
+      "Holy See (Vatican City State)": [
+        "Vatikan"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Macaristan"
+      ],
+      "Iceland": [
+        "İzlanda"
+      ],
+      "India": [
+        "Hindistan"
+      ],
+      "Indonesia": [
+        "Endonezya"
+      ],
+      "International": [
+        "Uluslararası"
+      ],
+      "Iran": [
+        "İran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "İrlanda"
+      ],
+      "Isle of Man": [
+        "Man Adası"
+      ],
+      "Israel": [
+        "İsrail"
+      ],
+      "Italy": [
+        "İtalya"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Japonya"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Ürdün"
+      ],
+      "Kazakhstan": [
+        "Kazakistan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosova"
+      ],
+      "Kuwait": [
+        "Kuveyt"
+      ],
+      "Kyrgyzstan": [
+        "Kırgızistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letonya"
+      ],
+      "Lebanon": [
+        "Lübnan"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberya"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Lihtenştayn"
+      ],
+      "Lithuania": [
+        "Litvanya"
+      ],
+      "Luxembourg": [
+        "Lüksemburg"
+      ],
+      "Macao": [
+        "Makao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malavi"
+      ],
+      "Malaysia": [
+        "Malezya"
+      ],
+      "Maldives": [
+        "Maldivler"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshall Adaları"
+      ],
+      "Martinique": [
+        "Martinik"
+      ],
+      "Mauritania": [
+        "Moritanya"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksika"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Moğolistan"
+      ],
+      "Montenegro": [
+        "Karadağ"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Fas"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibya"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Hollanda"
+      ],
+      "New Caledonia": [
+        "Yeni Kaledonya"
+      ],
+      "New Zealand": [
+        "Yeni Zelanda"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Nijer"
+      ],
+      "Nigeria": [
+        "Nijerya"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolk Adası"
+      ],
+      "North Korea": [
+        "Kuzey Kore"
+      ],
+      "North Macedonia": [
+        "Kuzey Makedonya"
+      ],
+      "Northern Mariana Islands": [
+        "Kuzey Mariana Adaları"
+      ],
+      "Norway": [
+        "Norveç"
+      ],
+      "Oman": [
+        "Umman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Filistin"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Yeni Gine"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipinler"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polonya"
+      ],
+      "Portugal": [
+        "Portekiz"
+      ],
+      "Puerto Rico": [
+        "Porto Riko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Romanya"
+      ],
+      "Russia": [
+        "Rusya"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts ve Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Fransız bölümü)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre ve Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent ve Grenadinler"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome ve Principe"
+      ],
+      "Saudi Arabia": [
+        "Suudi Arabistan"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sırbistan"
+      ],
+      "Seychelles": [
+        "Seyşeller"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovakya"
+      ],
+      "Slovenia": [
+        "Slovenya"
+      ],
+      "Solomon Islands": [
+        "Solomon Adaları"
+      ],
+      "Somalia": [
+        "Somali"
+      ],
+      "South Africa": [
+        "Güney Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Güney Georgia ve Güney Sandwich Adaları"
+      ],
+      "South Korea": [
+        "Güney Kore"
+      ],
+      "South Ossetia": [
+        "Güney Osetya"
+      ],
+      "South Sudan": [
+        "Güney Sudan"
+      ],
+      "Spain": [
+        "İspanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard ve Jan Mayen"
+      ],
+      "Sweden": [
+        "İsveç"
+      ],
+      "Switzerland": [
+        "İsviçre"
+      ],
+      "Syria": [
+        "Suriye"
+      ],
+      "Taiwan": [
+        "Tayvan"
+      ],
+      "Tajikistan": [
+        "Tacikistan"
+      ],
+      "Tanzania": [
+        "Tanzanya"
+      ],
+      "Thailand": [
+        "Tayland"
+      ],
+      "Timor-Leste": [
+        "Doğu Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad ve Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunus"
+      ],
+      "Turkey": [
+        "Türkiye"
+      ],
+      "Turkmenistan": [
+        "Türkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks ve Caicos Adaları"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukrayna"
+      ],
+      "United Arab Emirates": [
+        "Birleşik Arap Emirlikleri"
+      ],
+      "United Kingdom": [
+        "Birleşik Krallık"
+      ],
+      "United States": [
+        "Birleşik Devletler"
+      ],
+      "United States Minor Outlying Islands": [
+        "Birleşik Devletler Küçük Dış Adaları"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Özbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Britanya Virjin Adaları"
+      ],
+      "Virgin Islands, U.S.": [
+        "Birleşik Devletler Virjin Adaları"
+      ],
+      "Wallis and Futuna": [
+        "Wallis ve Futuna"
+      ],
+      "Western Sahara": [
+        "Batı Sahra"
+      ],
+      "Yemen": [
+        "Yemen"
+      ],
+      "Zambia": [
+        "Zambiya"
+      ],
+      "Zimbabwe": [
+        "Zimbabve"
+      ],
+      "Åland Islands": [
+        "Aland Adaları"
+      ]
+    },
+    "Currency select": {
+      "Others": [
+        "Diğerleri"
+      ],
+      "Popular": [
+        "Beğenilen"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Süresi geçmiş fatura"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
+      "Email is not valid": [
+        "E-posta geçersiz"
+      ],
+      "Enter 6 digits": [
+        "6 rakam yazın"
+      ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
+      ],
+      "Input isn't a valid email or bitcoin address": [
+        "Girdi geçerli bir e-posta veya Bitcoin adresi değil"
+      ],
+      "Invalid verification code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "Not a valid number": [
+        "Numara geçerli değil"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
+      ],
+      "Request timed out": [
+        "İstek zaman aşımına uğradı"
+      ],
+      "Signature verification failed": [
+        "İmza doğrulanamadı"
+      ],
+      "The email addresses do not match": [
+        "E-posta adresleri eşleşmiyor"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
+      "This field is required": [
+        "Bu alan zorunludur"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unknown error": [
+        "Bilinmeyen sorun"
+      ],
+      "Username must begin with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile başlamalı"
+      ],
+      "Username must end with a letter or digit": [
+        "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Uygulama şu anda kullanılamıyor"
+      ],
+      "Error: ${ errorMessage }": [
+        "Hata: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Bir şeyler ters gitti"
+      ],
+      "Open in browser": [
+        "Tarayıcıda aç"
+      ],
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Herhangi bir görsel seçilmemiş"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Sistem varsayılanı"
+      ],
+      "Theme font": [
+        "Tema yazı tipi"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Büyük"
+      ],
+      "Medium (recommended)": [
+        "Orta (önerilen)"
+      ],
+      "Small": [
+        "Küçük"
+      ],
+      "Very large": [
+        "Çok büyük"
+      ],
+      "Very small": [
+        "Çok küçük"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Hesap"
+      ],
+      "Apps": [
+        "Uygulamalar"
+      ],
+      "Network": [
+        "Ağ"
+      ],
+      "Other category": [
+        "Diğer kategori"
+      ],
+      "Services": [
+        "Hizmetler"
+      ]
+    },
+    "Human verification method": {
+      "Email": [
+        "E-posta"
+      ],
+      "Manual": [
+        "El ile"
+      ],
+      "No verification method available": [
+        "Kullanılabilecek bir doğrulama yöntemi yok"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Info": {
+      "(${ memberCount } member)": [
+        "(${ memberCount } üye)",
+        "(${ memberCount } üye)"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
+      ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
+      ],
+      "Country code": [
+        "Ülke kodu"
+      ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Edit email address": [
+        "E-posta adresini düzenle"
+      ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "Internet connection lost": [
+        "İnternet bağlantısı kesildi"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "Loading ${ appName }": [
+        "${ appName } yükleniyor"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+      ],
+      "New": [
+        "Yeni"
+      ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
+      ],
+      "Session timed out": [
+        "Oturum zaman aşımına uğradı"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Sürüm numarası kopyalandı"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Yeni bir doğrulama kodu almak için ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Yeni bir doğrulama kodu almak ister misiniz?"
+      ],
+      "You can now return to the application to continue": [
+        "Şimdi uygulamaya dönebilirsiniz"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } kullanıcı adı"
+      ],
+      "Attach screenshot(s)": [
+        "Ekran görüntüsü ekle"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
+      "Browser": [
+        "Tarayıcı"
+      ],
+      "Browser version": [
+        "Tarayıcı sürümü"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "Code is 6 digits without spaces": [
+        "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Currency": [
+        "Para birimi"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete recovery-related information.": [
+        "Kurtarma ile ilgili bilgileri sil."
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Hide password": [
+        "Parolayı gizle"
+      ],
+      "Main": [
+        "Ana"
+      ],
+      "Navigation": [
+        "Gezinme"
+      ],
+      "Operating system": [
+        "İşletim sistemi"
+      ],
+      "Operating system version": [
+        "İşletim sistemi sürümü"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Phone number": [
+        "Telefon numarası"
+      ],
+      "Reveal password": [
+        "Parolayı göster"
+      ],
+      "System information": [
+        "Sistem bilgileri"
+      ],
+      "Verification code": [
+        "Doğrulama kodu"
+      ],
+      "What happened?": [
+        "Ne oldu?"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "tarayıcınızın ön belleğini temizlemek"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Request an invite": [
+        "Davet isteğinde bulun"
+      ],
+      "View on blockchain": [
+        "Blockchain'de görüntüleyin"
+      ],
+      "What’s this?": [
+        "Bu nedir?"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Geçerli seçimdeki yinelenen dosya adları nedeniyle bazı görseller yüklenmedi."
+      ]
+    },
+    "Pagination": {
+      "Next": [
+        "İleri"
+      ],
+      "Previous": [
+        "Önceki"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Sizinle iletişim kurmak için bir yol"
+      ],
+      "Leave empty if you don't want to add passphrase": [
+        "Parola eklemek istemiyorsanız boş bırakın"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Search": [
+        "Arama"
+      ],
+      "Select": [
+        "Seçin"
+      ]
+    },
+    "QRCode Reader": {
+      "Could not run QR code reader": [
+        "Kare kod okuyucu çalıştırılamadı"
+      ]
+    },
+    "QRCode reader": {
+      "Loading QRCode reader": [
+        "Kare kod okuyucu yükleniyor"
+      ]
+    },
+    "Receive bitcoin": {
+      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "Bitcoin adresiniz aşağıdadır. Gizliliği arttırmak için her işlemde farklı bir adres kullanın."
+      ],
+      "Your bitcoin address": [
+        "Bitcoin adresiniz"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Stay signed in": [
+        "Oturum açık kalsın"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } saat",
+        "${ gracePeriodHoursRemaining } saat"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } işlemi yapılabilir."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Parolanızı sıfırlamadan önce oturumu kapattıysanız, hesabınıza erişimi kaybedebilirsiniz."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Parolanızı sıfırlamadan oturumu kapattıysanız, hesabınıza erişimi kaybedebilirsiniz."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Parolanızı ${ boldTimeLeft } içinde sıfırlayabilirsiniz."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Parola sıfırlama"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Parolayı sıfırlamadan oturum kapatılsın mı?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Abonelik tarifelerini görüntüle"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "${ credits } tutarına kadar kredi kazanın."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Depolama alanını artır"
+      ],
+      "Your current storage:": [
+        "Geçerli depolama alanınız:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } depolama alanı"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } %${ percentage } dolu"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Kullandığınız ${ appStorage } dolmak üzere"
+      ],
+      "Your ${ appStorage } is full": [
+        "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your storage is full": [
+        "Depolama alanınız dolu"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Hata bildirildi"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kod ${ methodTo } alıcısına gönderildi"
+      ],
+      "Email address copied to clipboard": [
+        "E-posta adresi panoya kopyalandı"
+      ],
+      "Verification successful": [
+        "Doğrulandı"
+      ]
+    },
+    "Title": {
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
+      "Human verification": [
+        "İnsan olduğunuzu doğrulayın"
+      ],
+      "Invalid verification code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "Report a problem": [
+        "Sorun bildireceğim"
+      ],
+      "Request new code": [
+        "Yeni kod iste"
+      ],
+      "Sign in with 2FA": [
+        "2 adımlı doğrulama ile oturum aç"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Wallet": [
+        "Cüzdan"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
+    "Wallet": {
+      "An error occured": [
+        "Bir sorun çıktı"
+      ]
+    },
+    "Wallet Account": {
+      "Account label": [
+        "Hesap etiketi"
+      ],
+      "Add": [
+        "Ekle"
+      ],
+      "Add account": [
+        "Hesap ekle"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Could not add account to wallet": [
+        "Cüzdana hesap eklenemedi"
+      ],
+      "Custom account index": [
+        "Özel hesap dizini"
+      ],
+      "Custom index": [
+        "Özel dizin"
+      ],
+      "Index": [
+        "Dizin"
+      ],
+      "Index of the account to add": [
+        "Eklenecek hesabın dizini"
+      ],
+      "Savings for holiday": [
+        "Tatil için birikim"
+      ],
+      "Script Type": [
+        "Betik Türü"
+      ],
+      "Script type used in account. This will have an impact on account derivation path.": [
+        "Hesapta kullanılan betik türü. Bu hesap türetme yolunu etkileyecektir."
+      ],
+      "Your account was successfully created": [
+        "Hesabınız başarıyla oluşturuldu"
+      ]
+    },
+    "Wallet account": {
+      "This account is already created": [
+        "Bu hesap zaten oluşturuldu"
+      ]
+    },
+    "Wallet container": {
+      "Edit": [
+        "Düzenle"
+      ]
+    },
+    "Wallet dashboard": {
+      "24h change": [
+        "24 saatlik değişim"
+      ],
+      "All accounts": [
+        "Tüm hesaplar"
+      ],
+      "Buy": [
+        "Satın al"
+      ],
+      "Current price": [
+        "Güncel fiyat"
+      ],
+      "Receive": [
+        "Al"
+      ],
+      "Send": [
+        "Gönder"
+      ],
+      "The current fingerprint doesn't match stored one": [
+        "Mevcut parmak izi kayıtlı olanla eşleşmiyor"
+      ]
+    },
+    "Wallet deletion": {
+      "Confirm to delete '${ wallet.Wallet.Name }'": [
+        "'${ wallet.Wallet.Name }' cüzdanını silmek için onaylayın"
+      ],
+      "Warning:'": [
+        "Uyarı:'"
+      ]
+    },
+    "Wallet discover": {
+      "Backup your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesabınızı yedekleyin"
+      ],
+      "Backup your wallet's mnemonic": [
+        "Cüzdanınızın mnemonic yedekleyin"
+      ],
+      "Claim your wallet": [
+        "Cüzdanınızı talep edin"
+      ],
+      "Discover": [
+        "Keşfet"
+      ],
+      "Finish your account setup": [
+        "Hesap kurulumunuzu tamamlayın"
+      ],
+      "Set up your 2FA": [
+        "İki adımlı doğrulamanızı kurun"
+      ]
+    },
+    "Wallet header": {
+      "Secure your wallet": [
+        "Cüzdanınızı güvenceye alın"
+      ]
+    },
+    "Wallet information": {
+      "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
+        "Cüzdan parola ifadesi, kripto para cüzdanınıza güvenlik eklemek için oluşturduğunuz ek bir şifredir. Bu, kurtarma ifadenizle birlikte çalışır. Onu güvenli bir şekilde saklayın, çünkü kaybetmek cüzdanınıza erişiminizi engelleyebilir."
+      ],
+      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Cüzdan seed ifadesi, cüzdanınız tarafından oluşturulan 12 veya 24 kelimeden oluşan bir dizi kelimedir. Bu, fonlarınızı kurtarmanıza olanak tanıyan bir anahtar görevi görür. Onu güvende tutun ve asla paylaşmayın, çünkü fonlarınıza erişim sağlar."
+      ],
+      "What’s a wallet passphrase?": [
+        "Cüzdan parola ifadesi nedir?"
+      ],
+      "What’s a wallet seed phrase?": [
+        "Cüzdan seed ifadesi nedir?"
+      ]
+    },
+    "Wallet passphrase": {
+      "Fingerprint doesn't match stored one": [
+        "Mevcut parmak izi kayıtlı olanla eşleşmiyor"
+      ],
+      "My wallet passphrase": [
+        "Cüzdan parola ifadem"
+      ],
+      "To access this wallet, you need to input the passphrase": [
+        "Bu cüzdana erişmek için parola ifadesini girmelisiniz"
+      ],
+      "Wallet passphrase": [
+        "Cüzdan parola ifadesi"
+      ]
+    },
+    "Wallet preference": {
+      "Account label": [
+        "Hesap etiketi"
+      ],
+      "Accounts": [
+        "Hesaplar"
+      ],
+      "Advanced options": [
+        "Gelişmiş seçenekler"
+      ],
+      "Back up wallet": [
+        "Cüzdanı yedekle"
+      ],
+      "Back up wallet first": [
+        "Önce cüzdanı yedekle"
+      ],
+      "Clear browser storage": [
+        "Tarayıcı verilerini temizle"
+      ],
+      "Delete account": [
+        "Hesabı sil"
+      ],
+      "Delete this wallet": [
+        "Bu cüzdanı sil"
+      ],
+      "Delete wallet": [
+        "Cüzdanı sil"
+      ],
+      "My super account": [
+        "Süper hesabım"
+      ],
+      "My super wallet": [
+        "Süper cüzdanım"
+      ],
+      "Wallet name": [
+        "Cüzdan adı"
+      ],
+      "Your wallet preferences": [
+        "Cüzdan tercihleriniz"
+      ]
+    },
+    "Wallet preferences": {
+      "Add": [
+        "Ekle"
+      ],
+      "Add a new email address": [
+        "Yeni e-posta adresi ekle"
+      ],
+      "Email integration": [
+        "E-posta entegrasyonu"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Local currency": [
+        "Yerel para birimi"
+      ],
+      "Select your currency": [
+        "Para biriminizi seçin"
+      ],
+      "Send and receive Bitcoin by email with email integration.": [
+        "E-posta entegrasyonu sayesinde e-posta ile Bitcoin gönderin ve alın."
+      ]
+    },
+    "Wallet Receive": {
+      "Amount": [
+        "Tutar"
+      ],
+      "Amount to receive": [
+        "Alınacak miktar"
+      ],
+      "Discover Bitcoin Via Email": [
+        "E-posta ile Bitcoin'i Keşfedin"
+      ],
+      "Enter custom amount": [
+        "Özel bir miktar girin"
+      ],
+      "Leave empty to let the sender choose the amount": [
+        "Gönderenin miktarı seçmesine izin vermek için boş bırakın"
+      ],
+      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
+        "Diğer ${ WALLET_APP_NAME } kullanıcıları size e-posta ile Bitcoin gönderebilir."
+      ]
+    },
+    "Wallet receive": {
+      "Address generation in progress": [
+        "Adres oluşturulma sürecinde"
+      ],
+      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
+        "Son kullanılan adres ile sıradaki adres arasındaki boşluk çok büyük. Lütfen daha önce oluşturduğunuz adreslerden birini kullanın"
+      ],
+      "Generate new address": [
+        "Yeni adres oluştur"
+      ],
+      "Share address": [
+        "Adresi paylaş"
+      ]
+    },
+    "Wallet send": {
+      "${ price } available": [
+        "${ price } kullanılabilir"
+      ],
+      "A user icon with an exclamation mark, meaning that something unexpected happened": [
+        "Beklenmedik bir şey olduğunu belirten ünlem işareti olan bir kullanıcı simgesi"
+      ],
+      "Add Message to recipient": [
+        "Alıcıya Mesaj Ekle"
+      ],
+      "Add private note to myself": [
+        "Kendime özel not ekle"
+      ],
+      "Added address is invalid": [
+        "Eklenen adres geçersiz."
+      ],
+      "Amount": [
+        "Tutar"
+      ],
+      "Bitcoin address signature could not be verified": [
+        "Bitcoin adresi imzası doğrulanamadı"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Could not create PSBT": [
+        "PSBT oluşturulamadı"
+      ],
+      "Could not find address linked to this email": [
+        "Bu e-postayla bağlantılı adres bulunamadı"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Edit recipients": [
+        "Alıcıları düzenle"
+      ],
+      "High priority": [
+        "Yüksek Öncelik"
+      ],
+      "How much are you sending?": [
+        "Ne kadar gönderiyorsunuz?"
+      ],
+      "Low priority": [
+        "Düşük Öncelik"
+      ],
+      "Max recipients per transaction limit reached (${ MAX_RECIPIENTS_PER_TRANSACTIONS })": [
+        "Kişi başına işlem limiti aşıldı (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
+      ],
+      "Median priority": [
+        "Orta Öncelik"
+      ],
+      "Money is on the way": [
+        "Para yolda"
+      ],
+      "Network fees": [
+        "Ağ ücretleri"
+      ],
+      "No address set on this BitcoinAddress": [
+        "Bu Bitcoin Adresine ayarlanmış bir adres yok"
+      ],
+      "No signature set on this BitcoinAddress": [
+        "Bu Bitcoin Adresine ayarlanmış bir imza yok"
+      ],
+      "Recent recipients": [
+        "Son alıcılar"
+      ],
+      "Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.": [
+        "Alıcı tutarı güncellenemedi. Lütfen giriş tutarını + ücretleri karşılayacak kadar para miktarına sahip olduğunuzu kontrol edin."
+      ],
+      "Recipients": [
+        "Alıcılar"
+      ],
+      "Remove email": [
+        "E-postayı kaldır"
+      ],
+      "Review": [
+        "İncele"
+      ],
+      "Send": [
+        "Gönder"
+      ],
+      "Send all": [
+        "Tümünü gönder"
+      ],
+      "The transaction could not be sent. Please try again later": [
+        "İşlem gönderilemedi. Lütfen daha sonra tekrar deneyin."
+      ],
+      "Transaction was succesfully sent": [
+        "İşlem başarılı bir şekilde gönderildi."
+      ],
+      "Try adding an email address to start sending Bitcoin!": [
+        "Bitcoin göndermeye başlamak için bir e-posta adresi eklemeyi deneyin!"
+      ],
+      "View details": [
+        "Bilgileri görüntüle"
+      ],
+      "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Beklerken, tüm ailenizi ve arkadaşlarınızı ${ WALLET_APP_NAME }  davet edin ki hepinize E-posta yoluyla Bitcoin gönderebilirsin."
+      ],
+      "Who are you sending Bitcoin to?": [
+        "Bitcoini kime gönderiyorsunuz?"
+      ],
+      "You are sending": [
+        "Gönderiyorsunuz"
+      ],
+      "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
+        "İşleminiz Bitcoin ağına yayınlandı. Ağın işlemi onaylaması yaklaşık bir saat sürebilir."
+      ]
+    },
+    "Wallet Send": {
+      "Could not broadcast transaction": [
+        "İşlem yayınlanamadı"
+      ],
+      "Could not sign transaction": [
+        "İşlem imzalanamadı"
+      ]
+    },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Bitcoin birimi"
+      ],
+      "Unit in which bitcoin will be displayed": [
+        "Bitcoinin gösterileceği birim"
+      ]
+    },
+    "Wallet Settings": {
+      "Account could not be deleted": [
+        "Hesap silinemedi"
+      ],
+      "Account name changed": [
+        "Hesap adı değiştirildi"
+      ],
+      "Account name could not be change": [
+        "Hesap adı değiştirilemedi"
+      ],
+      "Account was deleted": [
+        "Hesap silindi"
+      ],
+      "Could not add email address": [
+        "E-posta adresi eklenemedi"
+      ],
+      "Could not be replaced": [
+        "Değiştirilemedi"
+      ],
+      "Could not fill the pool after email address adition": [
+        "E-posta adresi eklenmesinden sonra havuz doldurulamadı"
+      ],
+      "Could not fill the pool after email address replacement": [
+        "E-posta adresi değiştirilmesinden sonra havuz doldurulamadı"
+      ],
+      "Could not remove email address": [
+        "E-posta adresi kaldırılamadı"
+      ],
+      "Email address has been added": [
+        "E-posta adresi eklendi"
+      ],
+      "Email address has been removed": [
+        "E-posta adresi kaldırıldı"
+      ],
+      "Email address has been replaced": [
+        "E-posta adresi değiştirildi"
+      ],
+      "Local storage cleared": [
+        "Yerel depolama alanı temizlendi"
+      ],
+      "New fiat currency applied": [
+        "Yeni itibari para birimi uygulandı"
+      ],
+      "New fiat currency could not be applied": [
+        "Yeni itibari para birimi uygulanamadı"
+      ],
+      "Preferred bitcoin unit could not be changed": [
+        "Tercih edilen Bitcoin birimi değiştirilemedi"
+      ],
+      "Preferred bitcoin unit was changed": [
+        "Tercih edilen Bitcoin birimi değiştirildi"
+      ],
+      "Wallet could not be deleted": [
+        "Cüzdan silinemedi"
+      ],
+      "Wallet name changed": [
+        "Cüzdan adı değiştirildi"
+      ],
+      "Wallet name could not be changed": [
+        "Cüzdan adı değiştirilemedi"
+      ],
+      "Wallet was deleted": [
+        "Cüzdan silindi"
+      ]
+    },
+    "Wallet setup": {
+      "Add a passphrase (optional)": [
+        "Parola ifadesi ekleyin (isteğe bağlı)"
+      ],
+      "Choose your local fiat currency to see the value of your transactions.": [
+        "İşlemlerinizin değerini göstermek için yerel itibari para birimini seçin."
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Could not create wallet": [
+        "Cüzdan oluşturulamadı"
+      ],
+      "Create a new wallet": [
+        "Yeni bir cüzdan oluştur"
+      ],
+      "Done": [
+        "Tamam"
+      ],
+      "Give a name to this wallet": [
+        "Bu cüzdana bir isim verin"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Import wallet": [
+        "Cüzdanı içe aktar"
+      ],
+      "Important:": [
+        "Önemli:"
+      ],
+      "Input mnemonic is invalid, please double check.": [
+        "Girdiğiniz anımsatıcı geçersiz, lütfen tekrar kontrol edin."
+      ],
+      "Invite a friend": [
+        "Bir arkadaş davet et"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Mnemonic length is not valid.": [
+        "Anımsatıcı uzunluğu geçerli değil."
+      ],
+      "My imported wallet${ indexStr }": [
+        "İçe aktarılan cüzdanım ${ indexStr }"
+      ],
+      "My wallet account ${ indexStr }": [
+        "Cüzdan hesabım ${ indexStr }"
+      ],
+      "My wallet had a passphrase": [
+        "Cüzdanımın bir parola ifadesi vardı"
+      ],
+      "My wallet${ indexStr }": [
+        "Cüzdanım ${ indexStr }"
+      ],
+      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
+        "Bu kelimeleri asla başkalarına vermeyin. ${ BRAND_NAME } asla bu kelimeleri talep etmeyecek. Onları dikkatlice yazın ve güvenli bir yerde saklayın."
+      ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
+      "Please backup your secret recovery phrase before you delete your wallet.": [
+        "Cüzdanınızı silmeden önce gizli kurtarma ifadenizi yedekleyin."
+      ],
+      "Seed phrase (12-24 words)": [
+        "Seed ifadesi (12-24 kelime)"
+      ],
+      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
+        "Seed ifadesini güvenli bir şekilde saklayın; ${ BRAND_NAME } bu olmadan fonlarınızı kurtaramaz."
+      ],
+      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
+        "Bu 12 kelime, sadece ${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz bu cüzdanın dijital varlıklarını kurtarmak için kullanılmalıdır."
+      ],
+      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
+        "Bu anımsatıcı, bir sonraki sefere veya başka bir uyumlu yazılımda cüzdanınızı geri yüklemenize yardımcı olabilir."
+      ],
+      "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
+        "Bu cüzdan artık şifre çözülemez durumda. Tekrar şifre çözülebilir hale getirmek için, oluşturulması sırasında kullanılan anahtarları hesabınızda geri yüklemeniz gerekir. Aksi takdirde, bir cüzdan alanı boşaltmak için cüzdanı kaldırabilirsiniz."
+      ],
+      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
+        "Cüzdanınızı geri yüklemek için bu gizli kurtarma ifadesini kullanın."
+      ],
+      "View wallet seed phrase": [
+        "Cüzdan seed ifadesini görüntüle"
+      ],
+      "Wallet name": [
+        "Cüzdan adı"
+      ],
+      "Wallet seed phrase": [
+        "Cüzdan seed ifadesi"
+      ],
+      "Wallet seed phrases encode the private key that controls your digital assets.": [
+        "Cüzdan seed ifadeleri, dijital varlıklarınızı kontrol eden özel anahtarı kodlar."
+      ],
+      "Wallet setup": [
+        "Cüzdan kurulumu"
+      ],
+      "What's a wallet passphrase": [
+        "Cüzdan parola ifadesi nedir"
+      ],
+      "What's a wallet seed phrase": [
+        "Cüzdan seed ifadesi nedir"
+      ],
+      "Your keys, your coins.": [
+        "Anahtarlarınız, coinleriniz."
+      ]
+    },
+    "Wallet Sidebar": {
+      "Discover": [
+        "Keşfet"
+      ],
+      "Recovery": [
+        "Kurtarma"
+      ],
+      "Security": [
+        "Güvenlik"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Wallets": [
+        "Cüzdanlar"
+      ]
+    },
+    "Wallet transaction": {
+      "${ address } (me)": [
+        "${ address } (ben)"
+      ],
+      "+ Add": [
+        "+ Ekle"
+      ],
+      "Add bitcoins to your wallet": [
+        "Yolculuğunuza başlayınCüzdanınıza bitcoin ekleyin"
+      ],
+      "Amount": [
+        "Tutar"
+      ],
+      "Buy": [
+        "Al"
+      ],
+      "From": [
+        "Gönderen"
+      ],
+      "In progress": [
+        "İşleniyor"
+      ],
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "Message": [
+        "İleti"
+      ],
+      "Network fee": [
+        "Ağ ücreti"
+      ],
+      "Network fees": [
+        "Ağ ücretleri"
+      ],
+      "Note": [
+        "Not"
+      ],
+      "Receive": [
+        "Al"
+      ],
+      "Save note": [
+        "Notu kaydet"
+      ],
+      "Start your journey": [
+        "Yolculuğunuza başlayınCüzdanınıza bitcoin ekleyin"
+      ],
+      "To": [
+        "Alıcı"
+      ],
+      "Total (sent amount + fee)": [
+        "Toplam (gönderilen miktar + ücret)"
+      ],
+      "Total (sent amount + fees)": [
+        "Toplam (gönderilen miktar + ücretler)"
+      ],
+      "Transaction note": [
+        "İşlem notu"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
+      ],
+      "View advanced settings": [
+        "Gelişmiş ayarları göster"
+      ],
+      "View more": [
+        "Daha fazlasını göster"
+      ]
+    },
+    "Wallet Transaction": {
+      "Could not update transaction label": [
+        "İşlem etiketi güncellenemedi"
+      ],
+      "Transaction label successfully updated": [
+        "İşlem etiketi başarıyla güncellendi"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ displayedPageNumber }": [
+        "${ displayedPageNumber }. sayfa"
+      ]
+    },
+    "Wallet transactions": {
+      "Recipient": [
+        "Alıcı",
+        "Alıcılar"
+      ],
+      "Sender": [
+        "Gönderici",
+        "Gönderici"
+      ],
+      "Syncing transactions": [
+        "İşlemler eşitleniyor"
+      ],
+      "Transactions": [
+        "İşlemler"
+      ]
+    },
+    "Wallet transactions list": {
+      "Ascending order": [
+        "Artan sırada"
+      ],
+      "Descending order": [
+        "Azalan sırada"
+      ],
+      "Sync": [
+        "Eşitle"
+      ]
+    },
+    "Wallet upgrade": {
+      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
+        "Yeni bir cüzdan hesabı eklemek için ya bu cüzdandaki mevcut bir cüzdan hesabını kaldırabilir ya da cüzdan başına daha fazla cüzdan hesabı almak için planınızı yükseltebilirsiniz."
+      ],
+      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
+        "Yeni bir cüzdan eklemek için ya hesabınızdan mevcut bir cüzdanı kaldırabilir ya da daha fazla cüzdan almak için planınızı yükseltebilirsiniz."
+      ]
+    },
+    "Wallet Upgrade": {
+      "Upgrade now": [
+        "Şimdi yükseltin"
+      ],
+      "Upgrade your privacy": [
+        "Gizlilik düzeyinizi yükseltin"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
+      ]
+    }
+  }
+}

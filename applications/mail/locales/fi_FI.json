@@ -241,6 +241,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Collapse navigation bar": [
+        "Supista navigointipalkki"
+      ],
       "Collapse URL": [
         "Pienennä URL-osoite"
       ],
@@ -375,6 +378,9 @@
       "Dismiss": [
         "Sulje"
       ],
+      "Display navigation bar": [
+        "Näytä navigointipalkki"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -446,6 +452,12 @@
       ],
       "Expand composer": [
         "Laajenna viestin kirjoitus"
+      ],
+      "Expand navigation bar to see folders": [
+        "Laajenna navigointipalkki nähdäksesi kansiot"
+      ],
+      "Expand navigation bar to see labels": [
+        "Laajenna navigointipalkki nähdäksesi tunnisteet"
       ],
       "Expand URL": [
         "Laajenna URL"
@@ -823,10 +835,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1137,6 +1149,9 @@
       ],
       "Show more search options": [
         "Näytä lisää hakuvalintoja"
+      ],
+      "Show navigation bar": [
+        "Näytä navigointipalkki"
       ],
       "Show preview": [
         "Näytä esikatselu"
@@ -1530,9 +1545,6 @@
       ],
       "Faster, broader device compatibility": [
         "Nopeampi ja kattavampi laiteyhteensopivuus"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Tietoja ei siirretä käytön aikana, vaatii kertalatauksen"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Vaatii kertaluonteisen latauksen ja yhteensopivan laitteiston."
@@ -2573,6 +2585,9 @@
       "British Indian Ocean Territory": [
         "Brittiläinen Intian valtameren alue"
       ],
+      "British Virgin Islands": [
+        "Brittiläiset Neitsytsaaret"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2627,6 +2642,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongon demokraattinen tasavalta"
       ],
@@ -2665,6 +2683,9 @@
       ],
       "Dominican Republic": [
         "Dominikaaninen tasavalta"
+      ],
+      "East Timor": [
+        "Itä-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -2807,6 +2828,9 @@
       "Ireland": [
         "Irlanti"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Mansaari"
       ],
@@ -2837,6 +2861,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Pohjois-Korea"
+      ],
+      "Korea (Republic of)": [
+        "Etelä-Korea"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2845,6 +2875,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgisia"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -2864,6 +2897,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2875,6 +2911,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Pohjois-Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3128,6 +3167,9 @@
       "Svalbard and Jan Mayen": [
         "Huippuvuoret ja Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazimaa"
+      ],
       "Sweden": [
         "Ruotsi"
       ],
@@ -3147,6 +3189,9 @@
         "Tadžikistan"
       ],
       "Tanzania": [
+        "Tansania"
+      ],
+      "Tanzania, United Republic of": [
         "Tansania"
       ],
       "Thailand": [
@@ -6946,6 +6991,12 @@
       "Unlock message": [
         "Avaa viestin lukitus"
       ],
+      "Unread conversations": [
+        "Lukemattomat keskustelut"
+      ],
+      "Unread messages": [
+        "Lukemattomat viestit"
+      ],
       "Unsaved changes": [
         "Tallentamattomia muutoksia"
       ],
@@ -7693,7 +7744,7 @@
         "Piilokopio"
       ],
       "Beta Access": [
-        "Beta-käyttö"
+        "Käytä beetaversiota"
       ],
       "Billing address": [
         "Laskutusosoite"
@@ -9077,7 +9128,7 @@
         "Järjestele kohteita useilla holveilla"
       ],
       "Passkeys supported": [
-        "Suojausavaimia tuetaan"
+        "Tuki suojausavaimille"
       ],
       "Password health": [
         "Salasanaterveys"
@@ -9919,7 +9970,7 @@
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Korttiasi ei hyväksytty. Kokeile toista korttia tai ota yhteyttä pankkiisi veloituksen hyväksymiseksi."
+        "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
     "PGP key encryption warning": {
@@ -10480,8 +10531,8 @@
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
       "This permission expires soon": [
         "Tämä käyttöoikeus vanhenee pian"

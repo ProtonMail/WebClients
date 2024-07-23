@@ -767,10 +767,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3550,6 +3550,9 @@
       "Missing signature": [
         "Hiányzó aláírás"
       ],
+      "Name is required": [
+        "Név megadása kötelező"
+      ],
       "Network error: Please check your connection and try again.": [
         "Hálózati hiba: Ellenőrizze a kapcsolatot és próbálkozzon újra."
       ],
@@ -3685,6 +3688,9 @@
       ],
       "Tab closed": [
         "Fül bezárva"
+      ],
+      "Thanks for the feedback!": [
+        "Köszönjük a visszajelzést!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
@@ -4666,6 +4672,9 @@
       ],
       "Search": [
         "Keresés"
+      ],
+      "Security Center": [
+        "Biztonsági központ"
       ]
     },
     "Hint": {
@@ -5297,6 +5306,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Erősítse szervezetének márkaidentitását, és hozzon létre egységesebb online élményt a felhasználók számára."
       ],
+      "Browser not supported": [
+        "A böngésző nem támogatott"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
@@ -5611,6 +5623,9 @@
       ],
       "Import mailbox": [
         "E-mail fiók importálása"
+      ],
+      "Important note": [
+        "Fontos megjegyzés"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
@@ -6320,6 +6335,9 @@
       ],
       "Visa Secure logo": [
         "Visa biztonsági logó"
+      ],
+      "Warning": [
+        "Figyelmeztetés"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
@@ -7632,6 +7650,11 @@
         "Az importálás indul"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "váltson nagyobb csomagra több tárhelyért"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } engedélyezése"
@@ -8024,6 +8047,9 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
       ],
       "Admin console": [
         "Admin konzol"
@@ -9938,6 +9964,9 @@
       ],
       "Self-destruction set": [
         "Önmegsemmisítés beállítva"
+      ],
+      "Thanks for the feedback!": [
+        "Köszönjük a visszajelzést!"
       ],
       "Undo in progress": [
         "Visszavonás folyamatban"

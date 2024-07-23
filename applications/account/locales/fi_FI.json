@@ -685,6 +685,9 @@
       "Need help?": [
         "Tarvitsetko apua?"
       ],
+      "New group": [
+        "Uusi ryhmä"
+      ],
       "Next": [
         "Seuraava"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "Ei kiitos"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Lisää pm.me-verkkotunnus"
+      ],
       "Resuming forward": [
         "Jatketaan uudelleenohjausta"
       ]
@@ -1394,9 +1400,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Nopeampi ja kattavampi laiteyhteensopivuus"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Tietoja ei siirretä käytön aikana, vaatii kertalatauksen"
       ],
       "Run locally": [
         "Suorita paikallisesti"
@@ -1811,7 +1814,7 @@
     },
     "Calendar invite status label": {
       "Declined": [
-        "Hylätty"
+        "Kieltäytyi"
       ],
       "Invite sent": [
         "Kutsu lähetetty"
@@ -2433,6 +2436,9 @@
       "British Indian Ocean Territory": [
         "Brittiläinen Intian valtameren alue"
       ],
+      "British Virgin Islands": [
+        "Brittiläiset Neitsytsaaret"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2487,6 +2493,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongon demokraattinen tasavalta"
       ],
@@ -2525,6 +2534,9 @@
       ],
       "Dominican Republic": [
         "Dominikaaninen tasavalta"
+      ],
+      "East Timor": [
+        "Itä-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -2667,6 +2679,9 @@
       "Ireland": [
         "Irlanti"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Mansaari"
       ],
@@ -2697,6 +2712,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Pohjois-Korea"
+      ],
+      "Korea (Republic of)": [
+        "Etelä-Korea"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2705,6 +2726,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgisia"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -2724,6 +2748,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2735,6 +2762,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Pohjois-Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2988,6 +3018,9 @@
       "Svalbard and Jan Mayen": [
         "Huippuvuoret ja Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazimaa"
+      ],
       "Sweden": [
         "Ruotsi"
       ],
@@ -3007,6 +3040,9 @@
         "Tadžikistan"
       ],
       "Tanzania": [
+        "Tansania"
+      ],
+      "Tanzania, United Republic of": [
         "Tansania"
       ],
       "Thailand": [
@@ -3137,6 +3173,11 @@
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Useilla riveillä havaittiin tuonnin aikana virheitä. Tarkista CSV-tiedostosi."
+      ]
+    },
+    "cta": {
+      "Learn more": [
+        "Lue lisää"
       ]
     },
     "Cycle": {
@@ -3946,6 +3987,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Varoitus"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Nimetön"
       ]
     },
     "eof2023: Deal details": {
@@ -6342,6 +6388,9 @@
       "30-day money-back guarantee.": [
         "30 päivän rahat takaisin -takuu."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } on ${ BRAND_NAME }in isännöimä, jonka ansiosta voit määrittä aliverkkotunnuksen nopeasti. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Nimi, josta tunnistat missä käytät sitä, jotta voit helposti mitätöidä tai pidentää sen käyttöä myöhemmin."
       ],
@@ -6614,7 +6663,7 @@
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
       ],
       "Beta": [
-        "Beta"
+        "Beeta"
       ],
       "Billed at ${ price }": [
         "Laskutettu ${ price }"
@@ -7014,7 +7063,7 @@
         "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
       ],
       "Free forever": [
-        "Ikuisesti ilmainen"
+        "Pysyvästi ilmainen"
       ],
       "free up space by deleting older messages or other data": [
         "vapauttaa tilaa poistamalla vanhoja viestejä tai muita tietoja"
@@ -7374,6 +7423,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Ilmoita yhteystiedoillesi välittäväsi heidän yksityisyydestään."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Aloitetaan painamalla yläpuolelta \"Uusi ryhmä\""
       ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
@@ -7920,6 +7972,9 @@
       ],
       "Single sign-on removed": [
         "Kertakirjautuminen poistettiin"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-lähetyksen avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-lähetys mahdollistaa sähköpostin lähettämisen ulkoisten palvelujen tai laitteiden ${ MAIL_APP_NAME }n avulla omasta verkkotunnuksestasi. Saadaksesi toiminnon käyttöön, ${ createTicket } jossa kuvailet käyttötarpeen, mitä verkkotunnuksia haluat käyttää, sekä arviosi lähetettävistä sähköpostimääristä tunneittain ja päivittäin."
@@ -9442,7 +9497,7 @@
         "Palkittu"
       ],
       "Beta": [
-        "Beta"
+        "Beeta"
       ],
       "Billing address": [
         "Laskutusosoite"
@@ -9759,6 +9814,15 @@
       "Gift code": [
         "Lahjakoodi"
       ],
+      "Group address": [
+        "Ryhmän osoite"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "Group name": [
+        "Ryhmän nimi"
+      ],
       "Hide password": [
         "Piilota salasana"
       ],
@@ -10026,6 +10090,9 @@
       "Public certificate (X.509)": [
         "Julkinen sertifikaatti (X.509)"
       ],
+      "Purpose": [
+        "Tarkoitus"
+      ],
       "Read": [
         "Luetuksi"
       ],
@@ -10224,6 +10291,9 @@
       "What is your main reason for canceling or downgrading?": [
         "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
       ],
+      "Who can send to this group address?": [
+        "Kuka voi lähettää tähän ryhmäosoitteeseen?"
+      ],
       "Why would you like to cancel?": [
         "Miksi haluat perua tilauksen?"
       ],
@@ -10299,7 +10369,7 @@
         "${ app } -tuotepäivitykset"
       ],
       "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME }in beta-julkaisut"
+        "${ BRAND_NAME }in beetajulkaisut"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME }in yritysuutiskirje"
@@ -10347,7 +10417,7 @@
     },
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
-        "Beta"
+        "Beeta"
       ]
     },
     "Label to change composer mode": {
@@ -11424,7 +11494,7 @@
         "Järjestele kohteita useilla holveilla"
       ],
       "Passkeys supported": [
-        "Suojausavaimia tuetaan"
+        "Tuki suojausavaimille"
       ],
       "Password health": [
         "Salasanaterveys"
@@ -12176,7 +12246,7 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "Kieltäydyttiin kalenterikutsusta"
+        "Kieltäydyit kalenterikutsusta"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Liityttiin kalenteriin ${ calendarName } (${ senderEmail })"
@@ -12459,6 +12529,20 @@
         "Poista"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Kaikki, myös ulkopuoliset"
+      ],
+      "Members": [
+        "Jäsenet"
+      ],
+      "Nobody by default": [
+        "Oletusarvoisesti ei ketään"
+      ],
+      "Organization members": [
+        "Organisaation jäsenet"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekuntia"
@@ -12735,9 +12819,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Jatkaessasi hyväksyt ${ termsAndConditions }"
-      ],
       "Creating your account": [
         "Tiliäsi luodaan"
       ],
@@ -12784,7 +12865,7 @@
         "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
       ],
       "Free forever": [
-        "Ikuisesti ilmainen"
+        "Pysyvästi ilmainen"
       ],
       "From the team that knows encryption": [
         "Salauksen tuntevalta tiimiltä"
@@ -13121,7 +13202,7 @@
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Korttiasi ei hyväksytty. Kokeile toista korttia tai ota yhteyttä pankkiisi veloituksen hyväksymiseksi."
+        "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
     "Permission": {
@@ -13274,6 +13355,23 @@
       ],
       "yourdomain.com": [
         "verkkotunnuksesi.fi"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Lisää ryhmän nimi"
+      ],
+      "Add member": [
+        "Lisää jäsen"
+      ],
+      "e.g. distribution list for marketing team": [
+        "esim. markkinointitiimin jakelulista"
+      ],
+      "e.g. marketing": [
+        "esim. markkinointi"
+      ],
+      "Members": [
+        "Jäsenet"
       ]
     },
     "plan customizer, ips": {
@@ -13505,6 +13603,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Edellytys:** SCIM-provisioinnin käyttöönotto vaatii SAML-todennuksen määritystä."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Edellytys:** käyttääksesi SCIM-provisiointia sinun on vahvistettava, että omistat verkkotunnuksen **${ domainName }**. Tämä vahvistus voi kestää tunnin."
+      ],
       "Enter token into your identity provider": [
         "Syötä tunniste identiteetin tarjoajaasi"
       ],
@@ -13683,8 +13784,8 @@
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
       "This permission expires soon": [
         "Tämä käyttöoikeus vanhenee pian"
@@ -15480,6 +15581,9 @@
       "Add PayPal payment method": [
         "Lisää PayPal-maksutapa"
       ],
+      "Add pm.me subdomain": [
+        "Lisää pm.me-aliverkkotunnus"
+      ],
       "Add servers": [
         "Lisää palvelimia"
       ],
@@ -15550,7 +15654,7 @@
         "Laskutusjakso"
       ],
       "Block trackers and malware": [
-        "Estä seurantoja ja haittaohjelmia"
+        "Estä seurannat ja haittasisältö"
       ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform }-alustalle"
@@ -15867,7 +15971,7 @@
         "Syötä SAML-metatiedot"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Syötä ${ BRAND_NAME }-tilisi tiedot liittyäksesi ${ app } Beta-ohjelmaan"
+        "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
       ],
       "Enter your password": [
         "Syötä salasanasi"
@@ -16124,7 +16228,7 @@
         "Salasanan uudelleenasetuksen asetukset"
       ],
       "Passwords made easy": [
-        "Salasanojen hallinta on nyt helppoa"
+        "Helppoa salasanojen hallintaa"
       ],
       "Pay invoice": [
         "Maksa lasku"
@@ -16140,6 +16244,9 @@
       ],
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
+      ],
+      "Personalise your e-mail footer": [
+        "Mukauta viestiesi alatunnistetta"
       ],
       "Phone": [
         "Puhelin"
@@ -16304,7 +16411,7 @@
         "Kirjaudu ja myönnä käyttöoikeus"
       ],
       "Sign in to join the Beta program": [
-        "Liity Beta-ohjelmaan kirjautumalla"
+        "Liity beetaohjelmaan kirjautumalla"
       ],
       "Sign in to your organization": [
         "Kirjaudu organisaatioosi"
@@ -16375,6 +16482,9 @@
       ],
       "Theme": [
         "Teema"
+      ],
+      "There are no groups": [
+        "Ryhmiä ei ole"
       ],
       "This field cannot be empty": [
         "Kenttä ei voi olla tyhjä"
@@ -16746,7 +16856,7 @@
         "Ominaisuus on vain maksavien käyttäjien käytettävissä"
       ],
       "This feature is only available on Beta": [
-        "Tämä ominaisuus on käytettävissä vain Beta-versiossa"
+        "Tämä ominaisuus on käytettävissä vain beetaversiossa"
       ],
       "This key cannot be used for encryption": [
         "Tätä avainta ei voi käyttää salaukseen"
@@ -16969,6 +17079,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Kaksivaiheinen tunnistautuminen"
+      ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
       ],

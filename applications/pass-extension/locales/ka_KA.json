@@ -991,6 +991,9 @@
         "${ count } ხედი",
         "${ count } ხედი"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } ნახვა"
+      ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
@@ -1092,6 +1095,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "გენერირებული პაროლების ავტომატური დაკოპირება ბუფერში."
       ],
       "Autosaved on ${ payload.domain }": [
         "ავტომატურად შენახულია ბმულზე ${ payload.domain }"
@@ -1360,11 +1366,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის."
+      ],
       "Moving an item to another vault will erase its history.": [
         "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "ელემენტების გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის."
       ],
       "Moving items to another vault will erase their history.": [
         "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის."
@@ -1864,6 +1876,9 @@
       ],
       "Copy": [
         "კოპირება"
+      ],
+      "Copy password": [
+        "პაროლის კოპირება"
       ],
       "Create a credit card": [
         "საკრედიტო ბარათის შექმნა"
@@ -2456,6 +2471,9 @@
       "Fill & copy password": [
         "შევსება და პაროლის კოპირება"
       ],
+      "Fill password": [
+        "შეავსეთ პაროლი"
+      ],
       "Get Started": [
         "დაიწყეთ"
       ],
@@ -2500,6 +2518,15 @@
       ],
       "Modified": [
         "შეცვლილია"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "გადავიტანო ყველა ელემენტი საცავში \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "გადავიტანო ელემენტი საცავში \"${ vaultName }\"?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "გადავიტანო ელემენტები საცავში \"${ vaultName }\"?"
       ],
       "No items selected": [
         "ელემენტები მონიშნული არაა"

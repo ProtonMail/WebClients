@@ -697,10 +697,10 @@
       "No, thanks": [
         "Нет, спасибо"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1396,9 +1396,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Более быстрая и широкая совместимость устройств"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Во время использования данные не передаются, требуется одноразовое скачиваение"
       ],
       "Run locally": [
         "Запустить локально"
@@ -2444,6 +2441,9 @@
       "British Indian Ocean Territory": [
         "Британская территория в Индийском океане"
       ],
+      "British Virgin Islands": [
+        "Британские Виргинские Острова"
+      ],
       "Brunei Darussalam": [
         "Бруней-Даруссалам"
       ],
@@ -2498,6 +2498,9 @@
       "Congo": [
         "Конго"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Конго (Демократическая Республика)"
+      ],
       "Congo, Democratic Republic of the": [
         "Демократическая Республика Конго"
       ],
@@ -2536,6 +2539,9 @@
       ],
       "Dominican Republic": [
         "Доминиканская Республика"
+      ],
+      "East Timor": [
+        "Восточный Тимор"
       ],
       "Ecuador": [
         "Эквадор"
@@ -2678,6 +2684,9 @@
       "Ireland": [
         "Ирландия"
       ],
+      "Islamic Republic of Iran": [
+        "Исламская Республика Иран"
+      ],
       "Isle of Man": [
         "Остров Мэн"
       ],
@@ -2708,6 +2717,12 @@
       "Kiribati": [
         "Кирибати"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Корея (Народно-Демократическая Республика)"
+      ],
+      "Korea (Republic of)": [
+        "Корея (Республика)"
+      ],
       "Kosovo": [
         "Косово"
       ],
@@ -2716,6 +2731,9 @@
       ],
       "Kyrgyzstan": [
         "Кыргызстан"
+      ],
+      "Lao People's Democratic Republic": [
+        "Лаосская Народная Демократическая Республика"
       ],
       "Laos": [
         "Лаос"
@@ -2735,6 +2753,9 @@
       "Libya": [
         "Ливия"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Ливийская Арабская Джамахирия"
+      ],
       "Liechtenstein": [
         "Лихтенштейн"
       ],
@@ -2746,6 +2767,9 @@
       ],
       "Macao": [
         "Макао"
+      ],
+      "Macedonia": [
+        "Македония"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -12890,9 +12914,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Но вы можете разблокировать **${ unlockPlanTitle }** и все платные сервисы ${ BRAND_NAME } если улучшите до **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Продолжая, вы соглашаетесь с нашими ${ termsAndConditions }"
-      ],
       "Creating your account": [
         "Создание вашего аккаунта"
       ],
@@ -17398,6 +17419,99 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } счёт на один кошелёк",
+        "${ n } счёта на один кошелёк",
+        "${ n } счетов на один кошелёк",
+        "${ n } счетов на один кошелёк"
+      ],
+      "${ n } email address": [
+        "${ n } адрес эл. почты",
+        "${ n } адреса эл. почты",
+        "${ n } адресов эл. почты",
+        "${ n } адресов эл. почты"
+      ],
+      "${ n } wallet": [
+        "${ n } кошелёк",
+        "${ n } кошелька",
+        "${ n } кошельков",
+        "${ n } кошельков"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Получите ${ plan }** для раннего доступа к ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Безопасный способ держать свои Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Как приглашенный пользователь, зарегистрируйтесь для Free аккаунта ${ BRAND_NAME }, чтобы исключетельно получить доступ к ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin по эл. почте"
+      ],
+      "Early access to new features": [
+        "Ранний доступ к новым функциям"
+      ],
+      "Early access waitlist": [
+        "Список ожидания для раннего доступа"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Эксклюзивный ранний доступ к ${ appName }."
+      ],
+      "Get started": [
+        "Начать работу"
+      ],
+      "Invite Friends": [
+        "Пригласить друзей"
+      ],
+      "Join ${ appName } early access!": [
+        "Присоединитесь к ${ appName } для раннего доступа!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Зарегистрируйтесь для Free аккаунта ${ BRAND_NAME }, чтобы закрепить свое место. Чем раньше вы зарегистрируетесь, тем скорее получите доступ к ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Разблокируйте платные функции ${ appName }, улучшив тариф"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Пользователи Visionary и их приглашенные друзья могут поделиться ранним доступом с другими, пригласите своих друзей попробовать ${ appName } бесплатно!"
+      ],
+      "You're Invited.": [
+        "Вас пригласили."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Безопасно храните и переводите Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема с Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Без проблем храните и переводите Bitcoin. Установите необходимые для этого приложения ${ WALLET_APP_NAME }."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Назад к кошельку"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Авторизация"
+      ],
+      "Downloads": [
+        "Скачивания"
       ]
     },
     "Warning": {

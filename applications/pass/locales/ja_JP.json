@@ -4,6 +4,23 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "追加"
@@ -24,7 +41,7 @@
         "管理者パネル"
       ],
       "Advanced": [
-        "高度な"
+        "詳細設定"
       ],
       "Advanced options": [
         "詳細設定"
@@ -82,6 +99,9 @@
       ],
       "Continue": [
         "続行"
+      ],
+      "Continue offline": [
+        "オフラインで続行"
       ],
       "Copy and close": [
         "コピーして閉じる"
@@ -263,6 +283,9 @@
       "Manually sync your data": [
         "手動でデータを同期する"
       ],
+      "Mark as resolved": [
+        "解決済みにする"
+      ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
@@ -385,6 +408,9 @@
       ],
       "Set extra password": [
         "追加のパスワードを設定する"
+      ],
+      "Setup 2FA": [
+        "2要素認証を設定"
       ],
       "Share": [
         "共有"
@@ -735,6 +761,9 @@
       "Moving item failed": [
         "アイテムの移動に失敗しました"
       ],
+      "Network error": [
+        "ネットワークエラーが発生しました"
+      ],
       "Offline mode is currently not available for two password mode.": [
         "現在、オフライン モードは 2 パスワード モードでは利用できません。"
       ],
@@ -797,6 +826,9 @@
       ],
       "Unknown item": [
         "不明なアイテム"
+      ],
+      "Unlock failure": [
+        "ロック解除に失敗しました"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "サポートされていない ${ PASS_APP_NAME } ファイル形式"
@@ -934,6 +966,9 @@
       "Access successfully confirmed": [
         "アクセスが正常に確認されました"
       ],
+      "Add a username field": [
+        "ユーザー名フィールドを追加"
+      ],
       "Add your custom email address to monitor :": [
         "監視するカスタム電子メール アドレスを追加します。"
       ],
@@ -1021,6 +1056,15 @@
       "Didn't receive the code?": [
         "コードを受け取っていませんか?"
       ],
+      "Disabling auto-lock": [
+        "自動ロックを無効にしています"
+      ],
+      "Disabling auto-lock failed": [
+        "自動ロックを無効にできませんでした"
+      ],
+      "Disabling offline mode...": [
+        "オフラインモードを無効にしています..."
+      ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
       ],
@@ -1047,6 +1091,18 @@
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
         "${ PASS_SHORT_APP_NAME } ベータ版を有効にする"
+      ],
+      "Enable auto-locking to secure your data": [
+        "自動ロックを有効にしてデータを保護します"
+      ],
+      "Enabling offline mode...": [
+        "オフラインモードを有効にしています..."
+      ],
+      "Enabling password auto-lock": [
+        "パスワードの自動ロックを有効にしています"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN の自動ロックを有効にしています"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
@@ -1360,6 +1416,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "エクスポートされるファイルを PGP を使用して暗号化するため、強力なパスフレーズが必要です。"
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
       ],
@@ -1635,6 +1694,12 @@
       "Email": [
         "メールアドレス"
       ],
+      "Email (alias)": [
+        "メール (エイリアス)"
+      ],
+      "Email (new alias)": [
+        "メール (新しいエイリアス)"
+      ],
       "Email address": [
         "メールアドレス"
       ],
@@ -1814,6 +1879,9 @@
       ],
       "PIN": [
         "PIN"
+      ],
+      "PIN code": [
+        "PIN コード"
       ],
       "Prefix": [
         "プレフィックス"
@@ -2024,11 +2092,17 @@
       "Enter a prefix": [
         "プレフィックスを入力"
       ],
+      "Enter email": [
+        "メールアドレスを入力"
+      ],
       "Enter email or username": [
         "メールアドレスまたはユーザー名を入力"
       ],
       "Enter password": [
         "パスワードを入力"
+      ],
+      "Enter username": [
+        "ユーザー名を入力"
       ],
       "Full Name": [
         "氏名"
@@ -2086,6 +2160,20 @@
       ],
       "Write your note": [
         "メモを書く"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
       ]
     },
     "Success": {
