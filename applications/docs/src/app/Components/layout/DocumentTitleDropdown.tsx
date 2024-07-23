@@ -333,7 +333,7 @@ const DocumentTitleDropdown = ({
             data-testid="e2e-info"
           >
             <Icon name="lock-check" className="color-weak mr-2 align-middle" />
-            <span className="align-middle">{c('Info').t`End to end encrypted.`} </span>
+            <span className="align-middle">{c('Info').t`End-to-end encrypted.`} </span>
             <a
               data-connection-popover
               className="align-middle underline hover:underline"
