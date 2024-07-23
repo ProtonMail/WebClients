@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { compact, pick, uniq, uniqBy } from 'lodash';
+import { compact, orderBy, pick, uniq, uniqBy } from 'lodash';
 import { c } from 'ttag';
 
 import type {
@@ -12,7 +12,7 @@ import type {
     WasmQuote,
 } from '@proton/andromeda';
 import type { IconName } from '@proton/components/components';
-import { DropdownSizeUnit, Icon, useDebounceInput, useModalState } from '@proton/components/components';
+import { DropdownSizeUnit, Icon, useModalState } from '@proton/components/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';
@@ -28,6 +28,7 @@ import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvi
 import { useFiatCurrenciesByProvider } from '../../../store/hooks/useFiatCurrenciesByProvider';
 import { useGetQuotesByProvider } from '../../../store/hooks/useQuotesByProvider';
 import type { GetQuotesArgs } from '../../../store/slices/quotesByProvider';
+import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';
 import { DisclaimerModal } from './DisclaimerModal';
 
 export type QuoteWithProvider = WasmQuote & {
@@ -118,7 +119,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
     );
 
     const [amount, setAmount] = useState(DEFAULT_AMOUNT);
-    const debouncedAmount = useDebounceInput(amount);
 
     const [countriesByProviders, loadingCountries] = useCountriesByProvider();
     const [fiatCurrenciesByProvider, loadingCurrencies] = useFiatCurrenciesByProvider();
@@ -142,7 +142,14 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
         // We only want to keep providers supporting selected country, so that we only propose currencies
         const providersSubset = pick(fiatCurrenciesByProvider, providersSupportingSelectedCountry);
 
-        return uniqBy(Object.values(providersSubset).flat(), (c) => c.Symbol);
+        // We sort by MinimumAmount DESC to display all possible quotes
+        const sortedCurrencies = orderBy(
+            Object.values(providersSubset).flat(),
+            ({ MinimumAmount }) => Number(MinimumAmount) || 0,
+            ['desc']
+        );
+
+        return uniqBy(sortedCurrencies, (c) => c.Symbol);
     }, [countriesByProviders, fiatCurrenciesByProvider, selectedCountry.Code]);
 
     useEffect(() => {
@@ -158,10 +165,10 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
         setSelectedCurrency((selectedCountry.FiatCurrency ?? 'USD') as WasmFiatCurrencySymbol);
     }, [selectedCountry.FiatCurrency]);
 
-    useEffect(() => {
+    useDebounceEffect(() => {
         const run = async () => {
-            if (selectedCurrency && debouncedAmount) {
-                const args: GetQuotesArgs = [debouncedAmount, selectedCurrency];
+            if (selectedCurrency && amount) {
+                const args: GetQuotesArgs = [amount, selectedCurrency];
 
                 const quotes = await getQuotesByProviders(args);
                 const sortedQuotes = Object.entries(quotes ?? {})
@@ -194,7 +201,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
         };
 
         void withLoadingQuotes(run());
-    }, [createNotification, debouncedAmount, getQuotesByProviders, selectedCurrency, withLoadingQuotes]);
+    }, [createNotification, amount, getQuotesByProviders, selectedCurrency, withLoadingQuotes]);
 
     const availableProviders = useMemo(() => {
         return uniqBy(sortedQuotes, (q) => q.provider).map((q) => q.provider);
@@ -251,6 +258,11 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                         stackedFieldWrapper={false}
                                         onSelect={(currency) => {
                                             setSelectedCurrency(currency.Symbol as WasmFiatCurrencySymbol);
+                                            setAmount(
+                                                Number.isFinite(currency.MinimumAmount)
+                                                    ? Number(currency.MinimumAmount)
+                                                    : DEFAULT_AMOUNT
+                                            );
                                         }}
                                     />
                                 </div>
