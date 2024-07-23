@@ -84,7 +84,6 @@ export interface NoApiProps extends Props {
     bitcoinInhouse: BitcoinHook;
     bitcoinChargebee: BitcoinHook;
     isChargebeeEnabled: () => ChargebeeEnabled;
-    disableNewPaymentMethods?: boolean;
 }
 
 export const PaymentsNoApi = ({
@@ -125,7 +124,6 @@ export const PaymentsNoApi = ({
     bitcoinChargebee,
     isChargebeeEnabled,
     user,
-    disableNewPaymentMethods,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -212,25 +210,21 @@ export const PaymentsNoApi = ({
                 className={clsx('payment-container center', noMaxWidth === false && 'max-w-full md:max-w-custom')}
                 style={noMaxWidth === false ? { '--md-max-w-custom': '37em' } : undefined}
             >
-                {disableNewPaymentMethods && allMethods.length === 0 ? (
-                    <p>{c('Payments').t`Please add a payment method in the dashboard to continue.`}</p>
-                ) : (
-                    <div>
-                        {!isSingleSignup && !hideFirstLabel && (
-                            <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
-                                {c('Label').t`Payment method`}
-                            </h2>
-                        )}
-                        <PaymentMethodSelector
-                            options={allMethods}
-                            method={method}
-                            onChange={(value) => onMethod(value)}
-                            lastUsedMethod={lastUsedMethod}
-                            forceDropdown={isSingleSignup}
-                            narrow={isSingleSignup}
-                        />
-                    </div>
-                )}
+                <div>
+                    {!isSingleSignup && !hideFirstLabel && (
+                        <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
+                            {c('Label').t`Payment method`}
+                        </h2>
+                    )}
+                    <PaymentMethodSelector
+                        options={allMethods}
+                        method={method}
+                        onChange={(value) => onMethod(value)}
+                        lastUsedMethod={lastUsedMethod}
+                        forceDropdown={isSingleSignup}
+                        narrow={isSingleSignup}
+                    />
+                </div>
                 <div className="mt-4">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>

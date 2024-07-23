@@ -52,7 +52,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
 
-    const amount = AmountDue ?? 0;
+    const amountDue = AmountDue ?? 0;
     const currency = Currency as Currency;
 
     const chargebeeContext = useChargebeeContext();
@@ -62,7 +62,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         forceInhouseSavedMethodProcessors && user.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED;
 
     const paymentFacade = usePaymentFacade({
-        amount,
+        amount: amountDue,
         currency,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
@@ -85,19 +85,40 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
     const process = async (processor?: PaymentProcessorHook) =>
         withLoading(async () => {
-            if (!processor) {
-                return;
+            let selectedProcessor = processor;
+
+            // Here we have a unique case when the payment can happen even if no payment methods are offered.
+            // Even in the SubscriptionContainer, we select a payment method underhood when the amount due is 0.
+            // In the PayInvoiceModal, there is an exception for splitted users when when we disable all the new payment
+            // methods. In this case amountDue > 0 check is a traditional one: the payment processor MUST exist if
+            // the AmountDue is greater than 0. There are several UI cases for this:
+            //   - user has saved payment method. Then the payment processor will exist here. It will be payment
+            //       processor for the saved payment method.
+            //   - user does not have saved payment method. Then user will see a prompt to add a payment method (see
+            //       it below). In this case the payment processor will be undefined and this code will never be called
+            //       because the Pay button is supposed to be disabled.
+            //   - finally, amountDue is 0 and there is no payment processor, then it means that the user doesn't have
+            //       saved payment methods. But they are still allowed to pay. In this case we can select any "neutral"
+            //       payment processor. It will behave exactly like in the SubscriptionContainer when the
+            //       amount due is 0.
+            if (!selectedProcessor) {
+                if (amountDue > 0) {
+                    return;
+                }
+
+                // The case of selecting the "neutral" payment processor.
+                selectedProcessor = paymentFacade.card;
             }
 
             try {
-                await processor.processPaymentToken();
+                await selectedProcessor.processPaymentToken();
             } catch (e) {
                 const error = getSentryError(e);
                 if (error) {
                     const context = {
                         invoiceId: invoice.ID,
                         currency,
-                        amount,
+                        amount: amountDue,
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
@@ -119,7 +140,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                 <StyledPayPalButton
                     type="submit"
                     paypal={paymentFacade.paypal}
-                    amount={amount}
+                    amount={amountDue}
                     currency={paymentFacade.currency}
                     loading={loading}
                     data-testid="paypal-button"
@@ -145,17 +166,23 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             );
         }
 
+        // userCanTriggerSelected can be false when no payment method selected. It can happen when splitted user
+        // tries to pay for the inhouse invoice. In this case they won't have any new payment methods available by
+        // design. And if it happens that they also don't have any old payment methods, then userCanTriggerSelected
+        // will remain false. However it might happen that they do have enough credits to pay for the invoice. In this
+        // case we should not disable the pay button.
+        const disablePayButton =
+            paymentFacade.methods.loading || (!paymentFacade.userCanTriggerSelected && amountDue > 0);
+
         return (
-            <PrimaryButton
-                loading={loading}
-                disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected}
-                type="submit"
-                data-testid="pay-invoice-button"
-            >
+            <PrimaryButton loading={loading} disabled={disablePayButton} type="submit" data-testid="pay-invoice-button">
                 {c('Action').t`Pay`}
             </PrimaryButton>
         );
     })();
+
+    const userMustAddMethod =
+        disableNewPaymentMethods && paymentFacade.methods.allMethods.length === 0 && amountDue > 0;
 
     return (
         <FormModal
@@ -197,17 +224,23 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             <Input
                                 className="field--highlight pointer-events-none text-strong text-right"
                                 readOnly
-                                value={toPrice(amount, currency)}
+                                value={toPrice(amountDue, currency)}
                             />
                         </Field>
                     </Row>
-                    {amount > 0 ? (
+                    {userMustAddMethod && (
+                        <p>{c('Payments').t`Please add a payment method in the dashboard to continue.`}</p>
+                    )}
+                    {/* "Duplicated amountDue > 0 condition isn't a mistake. Even if we don't show the message above,
+                     we still will hide the PaymentWrapper if the amount is 0. This handles the case when user has 
+                     enough credits to pay for the invoice without adding a new payment method. So the amount to pay 
+                     will remain 0." */}
+                    {amountDue > 0 && !userMustAddMethod ? (
                         <PaymentWrapper
                             {...paymentFacade}
                             onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                             noMaxWidth
                             hasSomeVpnPlan={hasSomeVpnPlan}
-                            disableNewPaymentMethods={disableNewPaymentMethods}
                         />
                     ) : null}
                 </>
