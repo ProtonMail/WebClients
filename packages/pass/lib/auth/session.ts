@@ -14,6 +14,7 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { SESSION_DIGEST_VERSION, digestSession, getSessionDigestVersion } from './integrity';
 import type { LockMode } from './lock/types';
 import type { AuthOptions, AuthServiceConfig } from './service';
 import type { AuthStore } from './store';
@@ -46,7 +47,7 @@ export type AuthSession = {
  * an encrypted blob using the BE local key for the user's session */
 export type EncryptedSessionKeys = 'keyPassword' | 'offlineKD' | 'sessionLockToken';
 export type EncryptedAuthSession = Omit<AuthSession, EncryptedSessionKeys> & { blob: string };
-export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys>;
+export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys> & { digest?: string };
 
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
@@ -69,17 +70,16 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array> =>
     version === 2 ? stringToUtf8Array('session') : undefined;
 
-/** Given a local session key, encrypts the `AuthSession` before persisting.
- * Only the `keyPassword` & `sessionLockToken` will be encrypted. If you need
- * to re-create a random encryption key, use `encryptPersistedSession` directly. */
-export const encryptPersistedSessionWithKey = async (
-    { keyPassword, offlineKD, payloadVersion = SESSION_VERSION, sessionLockToken, ...session }: AuthSession,
-    clientKey: CryptoKey
-): Promise<string> => {
-    const blob: DecryptedAuthSessionBlob = { keyPassword, offlineKD, sessionLockToken };
+/* Given a local session key, encrypts sensitive session components of
+ * the `AuthSession` before persisting. Additionally stores a SHA-256
+ * integrity digest of the session data to validate when resuming */
+export const encryptPersistedSessionWithKey = async (session: AuthSession, clientKey: CryptoKey): Promise<string> => {
+    const { keyPassword, offlineKD, payloadVersion = SESSION_VERSION, sessionLockToken, ...rest } = session;
+    const digest = await digestSession(session, SESSION_DIGEST_VERSION);
+    const blob: DecryptedAuthSessionBlob = { keyPassword, offlineKD, sessionLockToken, digest };
 
     const value: EncryptedAuthSession = {
-        ...session,
+        ...rest,
         blob: await getEncryptedBlob(clientKey, JSON.stringify(blob), getSessionEncryptionTag(payloadVersion)),
         payloadVersion,
     };
@@ -128,6 +128,7 @@ export const decryptSessionBlob = async (
             keyPassword: parsedValue.keyPassword,
             offlineKD: parsedValue.offlineKD,
             sessionLockToken: parsedValue.sessionLockToken,
+            digest: parsedValue.digest,
         };
     } catch (err) {
         throw new InvalidPersistentSessionError(getErrorMessage(err));
@@ -167,6 +168,12 @@ export const resumeSession = async (
         const payloadVersion = session.payloadVersion ?? SESSION_VERSION;
         const decryptedBlob = await decryptSessionBlob(clientKey, blob, payloadVersion);
 
+        if (decryptedBlob.digest) {
+            const version = getSessionDigestVersion(decryptedBlob.digest);
+            const digest = await digestSession(persistedSession, version);
+            if (digest !== decryptedBlob.digest) throw new InvalidPersistentSessionError();
+        }
+
         if (cookieUpgrade) {
             /** Upgrade the session to cookie-based authentication.
              * This occurs after a successful token-based API call to ensure
@@ -188,7 +195,7 @@ export const resumeSession = async (
 
         return {
             clientKey,
-            repersist: cookieUpgrade,
+            repersist: cookieUpgrade || !decryptedBlob.digest,
             session: syncedSession,
         };
     } catch (error: unknown) {
