@@ -495,6 +495,9 @@
       "Get in touch": [
         "Contactați-ne"
       ],
+      "Get it": [
+        "Am înțeles"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Luați-l pentru numai ${ addonPriceWithCurrency }/lună"
       ],
@@ -824,11 +827,14 @@
       "Not saved": [
         "Nesalvat"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
+      "Open": [
+        "Deschidere"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Deschidere ${ CALENDAR_APP_NAME }"
@@ -1423,6 +1429,11 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } domeniu personal adițional",
+        "${ domains } domenii personale adiționale",
+        "${ domains } de domenii personale adiționale"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servere",
@@ -1528,9 +1539,6 @@
       ],
       "Faster, broader device compatibility": [
         "Compatibilitate cu mai multe dispozitive și mai rapid."
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Nu sunt transmise date în timpul utilizării. Necesită descărcare o singură dată."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Necesită o singură descărcare și dispozitiv fizic compatibil."
@@ -2576,6 +2584,9 @@
       "British Indian Ocean Territory": [
         "Teritoriul Britanic al Oceanului Indian"
       ],
+      "British Virgin Islands": [
+        "Insulele Virgine Britanice"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2630,6 +2641,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Republica Democrată)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, Republica Democrată"
       ],
@@ -2668,6 +2682,9 @@
       ],
       "Dominican Republic": [
         "Republica Dominicană"
+      ],
+      "East Timor": [
+        "Timorul de Est"
       ],
       "Ecuador": [
         "Ecuador"
@@ -2810,6 +2827,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Republica Islamică Iran"
+      ],
       "Isle of Man": [
         "Insula Man"
       ],
@@ -2840,6 +2860,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Coreea (Republica Populară Democrată)"
+      ],
+      "Korea (Republic of)": [
+        "Coreea (Republica)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2848,6 +2874,9 @@
       ],
       "Kyrgyzstan": [
         "Kârgâzstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Republica Populară Democrată Laos"
       ],
       "Laos": [
         "Laos"
@@ -2867,6 +2896,9 @@
       "Libya": [
         "Libia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya Arabă Libiană"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2878,6 +2910,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -3131,6 +3166,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suedia"
       ],
@@ -3151,6 +3189,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania (Republica Unită)"
       ],
       "Thailand": [
         "Tailanda"
@@ -3410,6 +3451,9 @@
       ],
       "To continue to use the writing assistant, request access from your admin.": [
         "Pentru a continua să utilizați asistentul de scriere, solicitați acces de la administrator."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
@@ -4003,6 +4047,9 @@
       "Please select a category and what went wrong with the generated text": [
         "Selectați o categorie și ce nu a fost bine cu textul generat."
       ],
+      "Please try again or refresh the page.": [
+        "Mai reîncercați sau reîmprospătați pagina."
+      ],
       "Please try generating the text again": [
         "Încercați să generați din nou textul."
       ],
@@ -4434,6 +4481,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasurile nu pot fi folosite atunci când este activată o parolă suplimentară în ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
@@ -5961,6 +6011,9 @@
       ],
       "Country code": [
         "Cod țară"
+      ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Creați e-mailuri mai bune, rapid și fără efort. Încercați acum."
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Creare un calendar",
@@ -7721,6 +7774,9 @@
       " and ${ l }": [
         " și ${ l }"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
@@ -8629,6 +8685,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "cu ${ price }"
       ]
@@ -9094,6 +9153,9 @@
       ],
       "Collaborate and share large files": [
         "Colaborare și partajare fișiere mari"
+      ],
+      "Collaborative document editor": [
+        "Editor colaborativ de documente"
       ],
       "Contact groups": [
         "Grupuri de contacte"
@@ -12473,6 +12535,9 @@
       ],
       "Import failed": [
         "Importare eșuată"
+      ],
+      "Import groups": [
+        "Importare grupuri"
       ],
       "Insert contacts": [
         "Inserare contacte"

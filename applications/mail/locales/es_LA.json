@@ -241,6 +241,9 @@
       "Close this banner": [
         "Cerrar este banner"
       ],
+      "Collapse navigation bar": [
+        "Contraer la barra de navegación"
+      ],
       "Collapse URL": [
         "Contraer URL"
       ],
@@ -375,6 +378,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Display navigation bar": [
+        "Mostrar la barra de navegación"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -446,6 +452,12 @@
       ],
       "Expand composer": [
         "Expandir el editor"
+      ],
+      "Expand navigation bar to see folders": [
+        "Expandir la barra de navegación para ver las carpetas"
+      ],
+      "Expand navigation bar to see labels": [
+        "Expandir la barra de navegación para ver las etiquetas"
       ],
       "Expand URL": [
         "Ampliar URL"
@@ -823,10 +835,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1137,6 +1149,9 @@
       ],
       "Show more search options": [
         "Mostrar más opciones de búsqueda"
+      ],
+      "Show navigation bar": [
+        "Mostrar la barra de navegación"
       ],
       "Show preview": [
         "Vista previa"
@@ -1531,8 +1546,8 @@
       "Faster, broader device compatibility": [
         "Compatibilidad con dispositivos más rápida y amplia"
       ],
-      "No data transmitted while using, requires one-time download": [
-        "No se transmiten datos durante el uso. Requiere una descarga única."
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Los prompts se mantienen en su dispositivo pero se requiere una descarga única y hardware compatible"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Requiere una sola descarga y hardware compatible."
@@ -6979,6 +6994,12 @@
       "Unlock message": [
         "Desbloquear mensaje"
       ],
+      "Unread conversations": [
+        "Conversaciones sin leer"
+      ],
+      "Unread messages": [
+        "Mensajes sin leer"
+      ],
       "Unsaved changes": [
         "Cambios sin guardar"
       ],
@@ -9918,6 +9939,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Añada un método de pago en el panel de control para continuar."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
@@ -12881,6 +12905,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener su Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Acceder a la aplicación Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retenga y transfiera sus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Cuenta ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Mi cartera importada ${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Mi cartera ${ indexStr }"
       ]
     },
     "Warning": {

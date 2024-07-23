@@ -641,10 +641,10 @@
       "Not saved": [
         "Nije spremljeno"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6553,6 +6553,9 @@
       "Get the deal": [
         "Ugrabite ponudu"
       ],
+      "Save ${ discount }%": [
+        "Uštedite ${ discount }%"
+      ],
       "Standard price ${ amount } for 12 months": [
         "Standardna cijena ${ amount } za 12 mjeseci"
       ],
@@ -6599,6 +6602,11 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "storage_split: info": {
+      "Your storage is full": [
+        "Pohrana je puna"
       ]
     },
     "Subscription": {

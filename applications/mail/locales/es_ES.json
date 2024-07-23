@@ -241,6 +241,9 @@
       "Close this banner": [
         "Cerrar este banner"
       ],
+      "Collapse navigation bar": [
+        "Minimizar la barra de navegación"
+      ],
       "Collapse URL": [
         "Minimizar tamaño URL"
       ],
@@ -491,6 +494,9 @@
       ],
       "Get in touch": [
         "Ponte en contacto"
+      ],
+      "Get it": [
+        "Obtenerlo"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Obtenlo por solo ${ addonPriceWithCurrency }/mes"
@@ -820,10 +826,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
       "Open": [
@@ -1134,6 +1140,9 @@
       ],
       "Show more search options": [
         "Mostrar más opciones de búsqueda"
+      ],
+      "Show navigation bar": [
+        "Mostrar la barra de navegación"
       ],
       "Show preview": [
         "Mostrar vista previa"
@@ -1527,9 +1536,6 @@
       ],
       "Faster, broader device compatibility": [
         "Compatibilidad con dispositivos más rápida y amplia"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "No se transmiten datos durante el uso. Requiere una descarga única."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Requiere una sola descarga y hardware compatible."
@@ -2570,6 +2576,9 @@
       "British Indian Ocean Territory": [
         "Territorio Británico del Océano Índico"
       ],
+      "British Virgin Islands": [
+        "Islas Vírgenes Británicas"
+      ],
       "Brunei Darussalam": [
         "Brunéi"
       ],
@@ -2624,6 +2633,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (República Democrática)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democrática del"
       ],
@@ -2662,6 +2674,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor Oriental"
       ],
       "Ecuador": [
         "Ecuador"
@@ -2804,6 +2819,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Irán (República Islámica de Irán)"
+      ],
       "Isle of Man": [
         "Isla de Man"
       ],
@@ -2834,6 +2852,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (República Popular Democrática)"
+      ],
+      "Korea (Republic of)": [
+        "Corea (República)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2861,6 +2885,9 @@
       "Libya": [
         "Líbia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libia, Yamahiriya Árabe"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2872,6 +2899,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -3125,6 +3155,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazilandia"
+      ],
       "Sweden": [
         "Suecia"
       ],
@@ -3135,7 +3168,7 @@
         "Siria"
       ],
       "Syrian Arab Republic": [
-        "Siria"
+        "Siria, República Árabe"
       ],
       "Taiwan": [
         "Taiwán"
@@ -3145,6 +3178,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, República Unida"
       ],
       "Thailand": [
         "Tailandia"
@@ -3986,6 +4022,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Selecciona una categoría y lo que salió mal con el texto generado"
+      ],
+      "Please try again or refresh the page.": [
+        "Inténtalo de nuevo o actualiza la página."
       ],
       "Please try generating the text again": [
         "Intenta generar el texto de nuevo."
@@ -6934,6 +6973,12 @@
       "Unlock message": [
         "Desbloquear mensaje"
       ],
+      "Unread conversations": [
+        "Conversaciones sin leer"
+      ],
+      "Unread messages": [
+        "Mensajes sin leer"
+      ],
       "Unsaved changes": [
         "Cambios no guardados"
       ],
@@ -9631,7 +9676,7 @@
         "Se ha activado ${ reason }."
       ],
       "Block removed": [
-        "Bloqueo borrado"
+        "Se ha borrado el bloqueo."
       ],
       "Contact group created": [
         "Grupo de contactos creado"
@@ -12833,6 +12878,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo electrónico",
+        "${ n } direcciones de correo electrónico"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una forma más segura de mantener tu Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin vía correo electrónico"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Acceder a la aplicación Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Retén y transfiere tus bitcoins de forma segura"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Cuenta ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Mi cartera importada ${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Mi cartera ${ indexStr }"
       ]
     },
     "Warning": {
