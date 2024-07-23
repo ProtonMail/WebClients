@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { MoonPayProvider } from '@moonpay/moonpay-react';
 import { first } from 'lodash';
@@ -13,7 +13,6 @@ import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useGatewaysPublicApiKeys } from '../../store/hooks/useGatewaysPublicApiKeys';
 import { getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
-import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
 import type { Steps } from '../ModalHeaderWithStepper';
 import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
@@ -59,8 +58,9 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
 
     const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
 
-    const btcAddress = useAsyncValue(
-        (async () => {
+    const [btcAddress, setBtcAddress] = useState<string | null>();
+    useEffect(() => {
+        const run = async () => {
             if (isWalletAccountSet(selectedWalletAccount)) {
                 const wasmAccount = getAccountWithChainDataFromManyWallets(
                     walletsChainData,
@@ -70,13 +70,17 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
 
                 const index = await computeNextIndexToReceive(selectedWalletAccount[1]);
                 const address = await wasmAccount?.account.getAddress(index);
-                return address?.address;
-            } else {
-                return null;
+
+                if (address?.address) {
+                    setBtcAddress(address.address);
+                }
             }
-        })(),
-        null
-    );
+
+            setBtcAddress(null);
+        };
+
+        void run();
+    }, [computeNextIndexToReceive, selectedWalletAccount, walletsChainData]);
 
     if (!apikeys || !isWalletAccountSet(selectedWalletAccount)) {
         return null;
