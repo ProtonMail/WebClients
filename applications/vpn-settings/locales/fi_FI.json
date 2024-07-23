@@ -1273,6 +1273,9 @@
       "British Indian Ocean Territory": [
         "Brittiläinen Intian valtameren alue"
       ],
+      "British Virgin Islands": [
+        "Brittiläiset Neitsytsaaret"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1327,6 +1330,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongon demokraattinen tasavalta"
       ],
@@ -1365,6 +1371,9 @@
       ],
       "Dominican Republic": [
         "Dominikaaninen tasavalta"
+      ],
+      "East Timor": [
+        "Itä-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1507,6 +1516,9 @@
       "Ireland": [
         "Irlanti"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Mansaari"
       ],
@@ -1537,6 +1549,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Pohjois-Korea"
+      ],
+      "Korea (Republic of)": [
+        "Etelä-Korea"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1545,6 +1563,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgisia"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -1564,6 +1585,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1575,6 +1599,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Pohjois-Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -1828,6 +1855,9 @@
       "Svalbard and Jan Mayen": [
         "Huippuvuoret ja Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazimaa"
+      ],
       "Sweden": [
         "Ruotsi"
       ],
@@ -1847,6 +1877,9 @@
         "Tadžikistan"
       ],
       "Tanzania": [
+        "Tansania"
+      ],
+      "Tanzania, United Republic of": [
         "Tansania"
       ],
       "Thailand": [
@@ -3287,7 +3320,7 @@
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
       ],
       "Beta": [
-        "Beta"
+        "Beeta"
       ],
       "Billed at ${ price }": [
         "Laskutettu ${ price }"
@@ -3554,7 +3587,7 @@
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
       "Free forever": [
-        "Ikuisesti ilmainen"
+        "Pysyvästi ilmainen"
       ],
       "Gateways": [
         "Yhdyskäytävät"
@@ -5276,7 +5309,7 @@
         "${ app } -tuotepäivitykset"
       ],
       "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME }in beta-julkaisut"
+        "${ BRAND_NAME }in beetajulkaisut"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME }in yritysuutiskirje"
@@ -5920,7 +5953,7 @@
         "Järjestele kohteita useilla holveilla"
       ],
       "Passkeys supported": [
-        "Suojausavaimia tuetaan"
+        "Tuki suojausavaimille"
       ],
       "Password health": [
         "Salasanaterveys"
@@ -6761,7 +6794,7 @@
         "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
       ],
       "Free forever": [
-        "Ikuisesti ilmainen"
+        "Pysyvästi ilmainen"
       ],
       "Get in touch with our sales team": [
         "Ota yhteyttä myyntitiimiimme"
@@ -6985,7 +7018,7 @@
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Korttiasi ei hyväksytty. Kokeile toista korttia tai ota yhteyttä pankkiisi veloituksen hyväksymiseksi."
+        "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
     "Permission": {
@@ -7235,6 +7268,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Edellytys:** SCIM-provisioinnin käyttöönotto vaatii SAML-todennuksen määritystä."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Edellytys:** käyttääksesi SCIM-provisiointia sinun on vahvistettava, että omistat verkkotunnuksen **${ domainName }**. Tämä vahvistus voi kestää tunnin."
+      ],
       "Enter token into your identity provider": [
         "Syötä tunniste identiteetin tarjoajaasi"
       ],
@@ -7399,8 +7435,8 @@
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
       "This permission expires soon": [
         "Tämä käyttöoikeus vanhenee pian"
@@ -9026,7 +9062,7 @@
         "Syötä SAML-metatiedot"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Syötä ${ BRAND_NAME }-tilisi tiedot liittyäksesi ${ app } Beta-ohjelmaan"
+        "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
       ],
       "Enter your password": [
         "Syötä salasanasi"
@@ -9240,7 +9276,7 @@
         "Kirjaudu sisään"
       ],
       "Sign in to join the Beta program": [
-        "Liity Beta-ohjelmaan kirjautumalla"
+        "Liity beetaohjelmaan kirjautumalla"
       ],
       "Sign in to your organization": [
         "Kirjaudu organisaatioosi"
@@ -9574,6 +9610,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Kaksivaiheinen tunnistautuminen"
+      ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
       ],
