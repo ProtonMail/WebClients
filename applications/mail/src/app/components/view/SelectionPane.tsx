@@ -221,11 +221,6 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                 <SimpleLoginPlaceholder />
             ) : (
                 <>
-                    {checkeds === 0 && labelName && (
-                        <h3 className="text-bold lh-rg text-ellipsis" title={labelName}>
-                            {labelName}
-                        </h3>
-                    )}
                     <div className="mb-8">
                         {isSearch && !encryptedSearchEnabled && (
                             <>
@@ -246,14 +241,20 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                             </>
                         )}
                     </div>
-                    <div className="mb-8">
+                    <div className="mb-2">
                         <img
                             src={conversationSvg}
-                            alt={c('Alternative text for conversation image').t`Conversation`}
-                            className="h-auto"
+                            width={144}
+                            height={101}
+                            alt=""
                         />
                     </div>
-                    <p className="mb-2 text-keep-space">{showText ? text : null}</p>
+                    {checkeds === 0 && labelName && (
+                        <h3 className="lh-rg text-ellipsis" title={labelName}>
+                            {labelName}
+                        </h3>
+                    )}
+                    <p className="my-2 text-keep-space">{showText ? text : null}</p>
                     {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
                 </>
             )}
