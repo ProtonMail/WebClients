@@ -1,7 +1,7 @@
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { createContext, useContext } from 'react'
 import type { NodeKey } from 'lexical'
-import { UserState } from '@lexical/yjs'
+import type { UserState } from '@lexical/yjs'
 
 type CommentsContextValue = {
   username: string

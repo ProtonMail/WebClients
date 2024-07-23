@@ -1,17 +1,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $createCodeNode, $isCodeNode } from '@lexical/code'
+import type { ListType } from '@lexical/list'
 import {
   $isListNode,
   INSERT_CHECK_LIST_COMMAND,
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
   ListNode,
-  ListType,
 } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
-import { $createHeadingNode, $createQuoteNode, $isHeadingNode, $isQuoteNode, HeadingTagType } from '@lexical/rich-text'
+import type { HeadingTagType } from '@lexical/rich-text'
+import { $createHeadingNode, $createQuoteNode, $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
 import { $getSelectionStyleValueForProperty, $patchStyleText, $setBlocksType } from '@lexical/selection'
 import {
   $findMatchingParent,
@@ -19,6 +20,7 @@ import {
   $getNearestNodeOfType,
   mergeRegister,
 } from '@lexical/utils'
+import type { ElementFormatType } from 'lexical'
 import {
   $createParagraphNode,
   $getSelection,
@@ -30,7 +32,6 @@ import {
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_NORMAL,
-  ElementFormatType,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
   KEY_MODIFIER_COMMAND,
@@ -65,7 +66,7 @@ import { sendErrorMessage } from '../Utils/errorMessage'
 import TableIcon from '../Icons/TableIcon'
 import { useActiveBreakpoint } from '@proton/components'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
-import { DocumentInteractionMode } from '../DocumentInteractionMode'
+import type { DocumentInteractionMode } from '../DocumentInteractionMode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
 import { FontColorMenu } from '../Components/ColorMenu'
 import { BackgroundColors, TextColors } from '../Shared/Color'
