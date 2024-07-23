@@ -17,7 +17,6 @@ import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';
 import rampLogo from '@proton/styles/assets/img/brand/ramp.svg';
@@ -72,7 +71,7 @@ const getContentForPaymentMethod = (paymentMethod: WasmPaymentMethod): { text: s
         case 'BankTransfer':
             return {
                 text: c('bitcoin buy').t`Bank transfer`,
-                icon: 'paper-plane',
+                icon: 'pass-credit-card',
             };
         case 'Card':
             return {
@@ -110,7 +109,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
     const [disclaimerModal, setDisclaimerModal] = useModalState();
 
     const [sortedQuotes, setSortedQuotes] = useState<QuoteWithProvider[]>([]);
-    const [recommendedQuote = undefined] = sortedQuotes;
     const selectedQuote = useMemo(
         () =>
             sortedQuotes.find(
@@ -118,11 +116,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
             ),
         [selectedPaymentMethod, selectedPaymentProvider, sortedQuotes]
     );
-
-    const isRecommendedQuoteSelected =
-        recommendedQuote &&
-        selectedPaymentMethod === recommendedQuote.PaymentMethod &&
-        selectedPaymentProvider === recommendedQuote.provider;
 
     const [amount, setAmount] = useState(DEFAULT_AMOUNT);
     const debouncedAmount = useDebounceInput(amount);
@@ -211,36 +204,31 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
         return uniq(sortedQuotes.filter((q) => q.provider === selectedPaymentProvider).map((q) => q.PaymentMethod));
     }, [selectedPaymentProvider, sortedQuotes]);
 
-    const expectedBitcoinRate =
-        selectedQuote && (Number(selectedQuote.FiatAmount) / Number(selectedQuote.BitcoinAmount)).toFixed(2);
-
     return (
         <>
             <div className="flex flex-column max-w-full justify-center items-center">
                 <h2 className="text-center mb-4 text-semibold">{c('bitcoin buy').t`Amount`}</h2>
 
-                <div className="w-full">
-                    <div className="flex flex-row mb-4">
-                        <CountrySelect
-                            label={null}
-                            value={{ countryCode: selectedCountry.Code, countryName: selectedCountry.Name }}
-                            onSelectCountry={(code) => {
-                                const country = allCountries.find((country) => country.Code === code);
-                                if (country) {
-                                    setSelectedCountry(country);
-                                }
-                            }}
-                            disabled={loadingCountries || loadingQuotes}
-                            options={allCountryOptions}
-                            as={(props: CoreSearchableSelectProps<string>) => (
-                                <SearchableSelect
-                                    label={c('bitcoin buy').t`Your location`}
-                                    placeholder={c('bitcoin buy').t`Choose a country`}
-                                    {...props}
-                                />
-                            )}
-                        />
-                    </div>
+                <div className="w-full flex flex-column gap-2">
+                    <CountrySelect
+                        label={null}
+                        value={{ countryCode: selectedCountry.Code, countryName: selectedCountry.Name }}
+                        onSelectCountry={(code) => {
+                            const country = allCountries.find((country) => country.Code === code);
+                            if (country) {
+                                setSelectedCountry(country);
+                            }
+                        }}
+                        disabled={loadingCountries || loadingQuotes}
+                        options={allCountryOptions}
+                        as={(props: CoreSearchableSelectProps<string>) => (
+                            <SearchableSelect
+                                label={c('bitcoin buy').t`Your location`}
+                                placeholder={c('bitcoin buy').t`Choose a country`}
+                                {...props}
+                            />
+                        )}
+                    />
 
                     <InputFieldStackedGroup>
                         <Input
@@ -276,14 +264,8 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                             value={selectedQuote?.BitcoinAmount}
                             disabled={loadingQuotes}
                             suffix={
-                                <div className="flex grow items-center flex-row flex-nowrap">
-                                    {isRecommendedQuoteSelected && (
-                                        <span className="color-primary mt-1 mr-2 block shrink-0 text-sm">{c(
-                                            'bitcoin buy'
-                                        ).t`Recommended`}</span>
-                                    )}
-
-                                    <div>
+                                (availableProviders.length || !loadingQuotes) && (
+                                    <div className="flex grow items-center flex-row flex-nowrap">
                                         <Select
                                             value={selectedPaymentProvider}
                                             onChange={(event) => {
@@ -295,7 +277,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                             }}
                                             containerClassName="provider-select-dense"
                                             stackedFieldWrapper={false}
-                                            disabled={!availableProviders.length || loadingQuotes}
                                             renderSelected={(provider) => {
                                                 if (!provider) {
                                                     return null;
@@ -347,77 +328,70 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                             )}
                                         />
                                     </div>
-                                </div>
+                                )
                             }
                         />
                     </InputFieldStackedGroup>
+
+                    <InputFieldStackedGroup>
+                        <Select
+                            prefix={(() => {
+                                if (!selectedPaymentMethod) {
+                                    return undefined;
+                                }
+
+                                const content = getContentForPaymentMethod(selectedPaymentMethod);
+
+                                if (!content) {
+                                    return undefined;
+                                }
+
+                                return (
+                                    <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-2">
+                                        <Icon size={4} name={content.icon} className="color-weak" />
+                                    </div>
+                                );
+                            })()}
+                            label={c('bitcoin buy').t`Pay with`}
+                            disabled={!selectedPaymentProvider || loadingQuotes}
+                            value={selectedPaymentMethod}
+                            onChange={(e) => {
+                                setSelectedPaymentMethod(e.value);
+                            }}
+                            options={compact(
+                                availablePaymentMethods.map((paymentMethod) => {
+                                    const content = getContentForPaymentMethod(paymentMethod);
+                                    if (!content) {
+                                        return null;
+                                    }
+
+                                    return {
+                                        value: paymentMethod,
+                                        id: paymentMethod,
+                                        label: content.text,
+                                    };
+                                })
+                            )}
+                        />
+                    </InputFieldStackedGroup>
+
+                    <div className="w-full px-8 my-5">
+                        <Button
+                            fullWidth
+                            shape="solid"
+                            color="norm"
+                            size="large"
+                            disabled={!selectedQuote || loadingQuotes}
+                            onClick={() => {
+                                setDisclaimerModal(true);
+                            }}
+                        >
+                            {!!selectedPaymentProvider
+                                ? c('bitcoin buy').t`Continue with ${selectedPaymentProvider}`
+                                : c('bitcoin buy').t`Continue`}
+                        </Button>
+                    </div>
                 </div>
-
-                <div className="color-hint text-sm my-5">
-                    {expectedBitcoinRate &&
-                        c('bitcoin buy')
-                            .t`1 BTC ≈ ${expectedBitcoinRate} ${selectedQuote.FiatCurrencySymbol} (Includes fee)`}
-                </div>
-
-                <Select
-                    prefix={(() => {
-                        if (!selectedPaymentMethod) {
-                            return undefined;
-                        }
-
-                        const content = getContentForPaymentMethod(selectedPaymentMethod);
-
-                        if (!content) {
-                            return undefined;
-                        }
-
-                        return (
-                            <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-2">
-                                <Icon size={4} name={content.icon} className="color-weak" />
-                            </div>
-                        );
-                    })()}
-                    label={c('bitcoin buy').t`Pay with`}
-                    disabled={!selectedPaymentProvider || loadingQuotes}
-                    value={selectedPaymentMethod}
-                    onChange={(e) => {
-                        setSelectedPaymentMethod(e.value);
-                    }}
-                    options={compact(
-                        availablePaymentMethods.map((paymentMethod) => {
-                            const content = getContentForPaymentMethod(paymentMethod);
-                            if (!content) {
-                                return null;
-                            }
-
-                            return {
-                                value: paymentMethod,
-                                id: paymentMethod,
-                                label: content.text,
-                            };
-                        })
-                    )}
-                />
-
-                <div className="w-full px-8  my-5">
-                    <Button
-                        fullWidth
-                        shape="solid"
-                        color="norm"
-                        size="large"
-                        disabled={!selectedQuote || loadingQuotes}
-                        onClick={() => {
-                            setDisclaimerModal(true);
-                        }}
-                    >
-                        {!!selectedPaymentProvider
-                            ? c('bitcoin buy').t`Continue with ${selectedPaymentProvider}`
-                            : c('bitcoin buy').t`Continue`}
-                    </Button>
-                </div>
-
-                <div className="color-hint text-sm">{c('bitcoin buy')
-                    .t`${BRAND_NAME} suggests the best provider based on your input and current market prices.`}</div>
             </div>
 
             {selectedPaymentProvider && (
