@@ -23,6 +23,8 @@ interface Props {
 
     value: number;
     onAmountChange?: (v: number) => void;
+
+    min?: number;
 }
 
 export const secondaryAmount = ({
@@ -63,6 +65,8 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     value,
     onAmountChange,
     onSendAll,
+
+    min = 0,
 }: Props) => {
     const [currencies] = useFiatCurrencies();
     const [settings] = useUserWalletSettings();
@@ -116,6 +120,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                         value={value}
                         readOnly={!onAmountChange}
                         prefix={exchangeRateSymbolOrBitcoinUnit}
+                        min={min}
                     />
                 </div>
 

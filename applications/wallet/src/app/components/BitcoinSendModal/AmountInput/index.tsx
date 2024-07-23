@@ -13,11 +13,13 @@ import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import type { AccountWithChainData } from '../../../types';
-import { getAccountBalance, getExchangeRateFromBitcoinUnit } from '../../../utils';
+import { convertAmount, getAccountBalance, getExchangeRateFromBitcoinUnit } from '../../../utils';
 import { useAsyncValue } from '../../../utils/hooks/useAsyncValue';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from './BitcoinAmountInputWithBalanceAndCurrencySelect';
+
+const DEFAULT_MINIMUM_SATS_AMOUNT = 1000;
 
 interface Props {
     txBuilder: WasmTxBuilder;
@@ -49,6 +51,13 @@ export const AmountInput = ({
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
 
     const accountBalance = useAsyncValue(getAccountBalance(account), 0);
+
+    const exchangeRateOrBitcoinUnit = exchangeRate ?? settings.BitcoinUnit;
+
+    // Inverted conversion is necessary because SATS conversion to Fiat does not always guarantee a valid amount
+    // Supposedly, 1000 SATS = 1,001€, in reality, it is going to be rounded to 1€, so constraint min now becomes 999 SATS
+    const constrainedMin = convertAmount(DEFAULT_MINIMUM_SATS_AMOUNT, 'SATS', exchangeRateOrBitcoinUnit);
+    const constrainedSatMin = convertAmount(constrainedMin, exchangeRateOrBitcoinUnit, 'SATS');
 
     const totalSentAmount = txBuilder.getRecipients().reduce((acc, r) => {
         return acc + Number(r[2]);
@@ -88,7 +97,7 @@ export const AmountInput = ({
         updateTxBuilder(async (txBuilder) => {
             const initialAmount = recipient[2];
             const updated = await txBuilder.updateRecipient(recipientIndex, undefined, BigInt(newAmount));
-            if (updated.getRecipients()[recipientIndex][2] === initialAmount) {
+            if (updated.getRecipients()[recipientIndex][2] === initialAmount && constrainedSatMin > newAmount) {
                 createNotification({
                     type: 'warning',
                     text: c('Wallet send')
@@ -132,6 +141,10 @@ export const AmountInput = ({
         });
     };
 
+    useEffect(() => {
+        handleUpdateSingleAmountForMultiRecipients(constrainedSatMin * txBuilder.getRecipients().length);
+    }, [constrainedSatMin]);
+
     return (
         <div className="flex flex-column max-w-full">
             <h2 className="text-center mb-8 text-semibold">{c('Wallet send').t`How much are you sending?`}</h2>
@@ -147,6 +160,7 @@ export const AmountInput = ({
                             remainingBalance={remainingAmount}
                             onAmountChange={(v) => handleUpdateSingleAmountForMultiRecipients(v)}
                             onSendAll={handleSendAllFromSingleAmount}
+                            min={constrainedMin * txBuilder.getRecipients().length}
                         />
                     </div>
                 </>
@@ -166,6 +180,7 @@ export const AmountInput = ({
                                 onAmountChange={(v) => handleUpdateSingleAmount(v)}
                                 onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                                 remainingBalance={remainingAmount}
+                                min={constrainedMin}
                             />
                         );
                     })()}
@@ -231,6 +246,7 @@ export const AmountInput = ({
                                                 tryUpdateRecipientAmount(txBuilderRecipient, index, v);
                                             }}
                                             inputClassName="text-right bg-norm"
+                                            min={constrainedMin}
                                         />
                                     </div>
                                 ) : null
