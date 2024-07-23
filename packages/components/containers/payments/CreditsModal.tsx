@@ -73,12 +73,21 @@ const CreditsModal = (props: ModalProps) => {
         currency,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
-        onChargeable: (operations) => {
+        onChargeable: (operations, data) => {
             const run = async () => {
                 await operations.buyCredit();
                 await call();
                 props.onClose?.();
-                createNotification({ text: c('Success').t`Credits added` });
+
+                if (data.sourceType === 'chargebee-bitcoin') {
+                    createNotification({
+                        text: c('Payments')
+                            .t`The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.`,
+                        expiration: 20000,
+                    });
+                } else {
+                    createNotification({ text: c('Success').t`Credits added` });
+                }
             };
 
             const promise = run();
