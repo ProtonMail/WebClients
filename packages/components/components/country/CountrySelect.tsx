@@ -155,6 +155,7 @@ const CountrySelect = ({
             hint={hint}
             data-testid="country-select"
             disabled={disabled}
+            assistContainerClassName="empty:hidden"
         >
             {optionsComponents}
         </InputFieldTwo>
