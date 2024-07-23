@@ -45,7 +45,7 @@
         "Poista roskakorista useita kohteita"
       ],
       "Bulk move items to another vault": [
-        "Siirrä useita kohteita eri holviin"
+        "Siirrä useita kohteita toiseen holviin"
       ],
       "Bulk move items to trash": [
         "Siirrä useita kohteita roskakoriin"
@@ -222,13 +222,13 @@
         "Luo salasana"
       ],
       "Generate secure link": [
-        "Luo turvallinen linkki"
+        "Luo suojattu linkki"
       ],
       "Generated passwords": [
         "Luodut salasanat"
       ],
       "Generating secure link...": [
-        "Turvallinen linkkiä luodaan..."
+        "Suojattua linkkiä luodaan..."
       ],
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
@@ -306,7 +306,7 @@
         "Synkronoi tietosi"
       ],
       "Maximum views": [
-        "Katselujen enimmäismäärä"
+        "Avausten enimmäismäärä"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -336,7 +336,7 @@
         "Monivalinta"
       ],
       "No expired links": [
-        "Ei erääntyneitä linkkejä"
+        "Erääntyneitä linkkejä ei ole"
       ],
       "Not now": [
         "Ei nyt"
@@ -405,7 +405,7 @@
         "Palauta kohde"
       ],
       "Restrict number of views": [
-        "Rajoita tarkastelumäärää"
+        "Rajoita näyttökertoja"
       ],
       "Retry": [
         "Yritä uudelleen"
@@ -426,7 +426,7 @@
         "Tallennetaan suojausavainta..."
       ],
       "Secure links": [
-        "Turvalliset linkit"
+        "Suojatut linkit"
       ],
       "See all": [
         "Näytä kaikki"
@@ -447,13 +447,13 @@
         "Aseta lisäsalasana"
       ],
       "Setup 2FA": [
-        "Määritä 2FA"
+        "Määritä kaksivaiheinen tunnistautuminen"
       ],
       "Share": [
         "Jaa"
       ],
       "Share secure link": [
-        "Jaa turvallinen linkki"
+        "Jaa suojattu linkki"
       ],
       "Share this vault": [
         "Jaa tämä holvi"
@@ -522,7 +522,7 @@
         "Jaa useammalle henkilölle päivittämällä tilauksesi"
       ],
       "Via secure link": [
-        "Turvallisen linkin kautta"
+        "Suojatun linkin välityksellä"
       ],
       "View app logs": [
         "Näytä sovelluksen lokit"
@@ -548,7 +548,7 @@
     },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Säästä fiksusti. Hanki Pass Plus vuodeksi vain ${ relativePrice } kuukausihinnalla."
+        "Säästä fiksusti. Hanki Pass Plus vuodeksi edulliseen ${ relativePrice } kuukausihintaan."
       ]
     },
     "bf2023: Label": {
@@ -730,7 +730,7 @@
         "Ulkoisen sähköpostiosoitteen vahvistuksen uudelleenlähetys epäonnistui"
       ],
       "Failed to resolve breaches for this address": [
-        "Tietomurtojen ratkaiseminen tälle osoitteelle epäonnistui"
+        "Osoitteen tietomurtojen merkintä katkaistuiksi epäonnistui"
       ],
       "Failed to restore items from trash": [
         "Kohteiden palautus roskakorista epäonnistui"
@@ -742,16 +742,16 @@
         "Kohteen irrotus epäonnistui"
       ],
       "Failed to update monitoring settings": [
-        "Valvonta-asetusten päivitys epäonnistui"
+        "Valvonta-asetusten muutos epäonnistui"
       ],
       "Failed to verify email address": [
         "Sähköpostiosoitteen vahvistus epäonnistui"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
-        "${ PROTON_SENTINEL_NAME } -asetuksen päivitys epäonnistui"
+        "${ PROTON_SENTINEL_NAME } -asetuksen muutos epäonnistui"
       ],
       "Failed updating monitor flag of the item": [
-        "Kohteen valvontalipun päivittäminen epäonnistui"
+        "Kohteen valvontatilan muutos epäonnistui"
       ],
       "Failed updating monitoring status for this email address": [
         "Shköpostiosoitteen valvontatilan päivitys epäonnistui"
@@ -772,7 +772,7 @@
         "Kohteiden tuonti epäonnistui"
       ],
       "Inactive secure links could not be removed.": [
-        "Käytöstä poistettuja turvallisia linkkejä ei voitu poistaa."
+        "Käytöstä poistuneita suojattuja linkkejä ei voitu poistaa."
       ],
       "Invalid password manager": [
         "Virheellinen salasanahallinta"
@@ -835,10 +835,10 @@
         "Roskakorin kohteiden palautus epäonnistui"
       ],
       "Secure link could not be created.": [
-        "Turvallista linkkiä ei voitu luoda."
+        "Suojattua linkkiä ei voitu luoda."
       ],
       "Secure link could not be opened.": [
-        "Turvallista linkkiä ei voitu avata."
+        "Suojattua linkkiä ei voitu avata."
       ],
       "Settings update failed": [
         "Asetusten tallennus epäonnistui"
@@ -862,7 +862,7 @@
         "URL-osoite on jo listalla"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
-        "Virhe poistettaessa turvallista linkkiä. Yritä uudelleen muutaman minuutin kuluttua."
+        "Virhe poistettaessa suojattua linkkiä. Yritä muutaman minuutin kuluttua uudelleen."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
@@ -910,7 +910,7 @@
         "Holvin nimi ei täsmää"
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
-        "Tapahtui virhe sovellusta ${ PASS_SHORT_APP_NAME } käynnistettäessä. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluun saadaksesi apua."
+        "Ongelma käynnistettäessä ${ PASS_SHORT_APP_NAME }ia. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluun saadaksesi apua."
       ],
       "Wrong password": [
         "Väärä salasana"
@@ -991,11 +991,11 @@
         "${ count } kertaa"
       ],
       "${ count } view": [
-        "${ count } tarkastelukerta",
-        "${ count } tarkastelukertaa"
+        "${ count } avaus",
+        "${ count } avausta"
       ],
       "${ count }/${ maxReads } views": [
-        "${ count } / ${ maxReads } katselua"
+        "${ count }/${ maxReads } avausta"
       ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -1006,7 +1006,7 @@
         "${ n } kohdetta"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
-        "${ PASS_APP_NAME } on aina saatavilla"
+        "${ PASS_APP_NAME } on aina käytettävissä."
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
@@ -1055,7 +1055,7 @@
         "Käyttöoikeus vahvistettiin"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "${ PASS_APP_NAME }ssin avaus vaatii aina ${ BRAND_NAME }-salasanasi."
+        "${ PASS_APP_NAME }in avaus vaatii aina ${ BRAND_NAME }-salasanasi."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
@@ -1076,7 +1076,7 @@
         "Kaikki tämän osoitteet tietomurrot ratkaistiin"
       ],
       "All inactive secure links were removed": [
-        "Kaikki käytöstä poistetut turvalliset linkit on poistettu"
+        "Käytöstä poistuneet suojatut linkit poistettiin"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Kohteen \"${ payload.content.name }\" kaikki kohteet on siirretty"
@@ -1109,10 +1109,10 @@
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
       ],
       "Built in 2FA authenticator": [
-        "Sisäänrakennettu toisen vaiheen todentaja"
+        "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
       "Can be viewed": [
-        "Voi katsella"
+        "Avattavissa:"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
@@ -1130,7 +1130,7 @@
         "Valitse tallennettu suojausavain, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
       "Click here to add a field for a username.": [
-        "Lisää kenttä käyttäjätunnukselle klikkaamalla tästä."
+        "Lisää kenttä käyttäjätunnukselle panamalla tästä."
       ],
       "Click the icon to open it anytime.": [
         "Avaa se koska tahansa klikkaamalla kuvaketta."
@@ -1235,16 +1235,16 @@
         "Syötä PIN-koodisi"
       ],
       "Expires in": [
-        "Erääntyy"
+        "Erääntymiseen:"
       ],
       "Expires in ${ remainingTime }": [
-        "Vanhenee: ${ remainingTime }"
+        "Erääntymiseen: ${ remainingTime }"
       ],
       "Extra password successfuly created": [
-        "Lisäsalasanan luonti onnistui"
+        "Lisäsalasana luotiin"
       ],
       "Extra password successfuly removed": [
-        "Lisäsalasanan poisto onnistui"
+        "Lisäsalasana poistettiin"
       ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
@@ -1376,19 +1376,19 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen historiatiedot ja turvalliset linkit."
+        "Kohteen siirto toiseen holviin poistaa sen historiatiedot ja suojatut linkit."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Kohteen siirto toiseen holviin poistaa sen historiatiedot."
+        "Kohteen historia poistetaan, kun se siirretään toiseen holviin"
       ],
       "Moving items": [
         "Siirretään kohteita"
       ],
       "Moving items to another vault will erase their history and all secure links.": [
-        "Kohteiden siirto toiseen holviin poistaa niiden historiatiedot ja turvalliset linkit."
+        "Kohteiden siirto toiseen holviin poistaa niiden historiatiedot ja suojatut linkit."
       ],
       "Moving items to another vault will erase their history.": [
-        "Kohteiden siirto toiseen holviin poistaa niiden historian."
+        "Kohteiden historiat poistetaan, kun ne siirretään toiseen holviin"
       ],
       "Moving items to trash": [
         "Kohteita siirretään roskakoriin"
@@ -1403,7 +1403,7 @@
         "Ei mitään"
       ],
       "Offline mode could not be disabled at the moment": [
-        "Yhteydetöntä tilaa ei voi poistaa käytöstä tällä hetkellä"
+        "Yhteydetöntä tilaa ei voitu nyt poistaa käytöstä"
       ],
       "Offline mode could not be enabled at the moment": [
         "Yhteydetöntä tilaa ei voitu nyt ottaa käyttöön"
@@ -1412,7 +1412,7 @@
         "Yhteydetön tila poistettiin käytöstä"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Yhteydellistä käyttöä varten ${ PASS_APP_NAME } -istuntosi on avattava PIN-koodillasi. Kolmen epäonnistuneen yrityksen jälkeen tilisi kirjataan ulos."
+        "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii istunnon avaamisen PIN-koodilla. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
       ],
       "Open the Extensions menu": [
         "Avaa laajennusvalikko"
@@ -1436,8 +1436,8 @@
         "Salasanalukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi."
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti.",
-        "Yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ikäiset salasanat poistetaan historiasta automaattisesti."
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti."
       ],
       "Pending access to the shared data": [
         "Odotetaan pääsyä jaettuihin tietoihin"
@@ -1458,10 +1458,10 @@
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
       "Please confirm your password": [
-        "Ole hyvä ja vahvista salasanasi"
+        "Vahvista salasanasi"
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Vahvista salasanasi käyttääksesi automaattista salasanalukitusta."
+        "Käytä automaattista salasanalukitusta vahvistamalla salasanasi."
       ],
       "Please confirm your password in order to unregister your current lock.": [
         "Poista nykyinen lukitustapa vahvistamalla salasanasi."
@@ -1485,7 +1485,7 @@
         "Jatka syöttämällä nykyinen PIN-koodisi"
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
-        "Syötä lisäsalasanasi aloittaaksesi ${ PASS_SHORT_APP_NAME }n käytön."
+        "Aloita ${ PASS_SHORT_APP_NAME }n käyttäminen syöttämällä lisäsalasanasi."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
@@ -1506,13 +1506,13 @@
         "PIN-lukituksen käyttöönotto epäonnistui"
       ],
       "Removing all inactive secure links...": [
-        "Kaikkia käytöstä poistetttuja turvallisia linkkejä poistetaan..."
+        "Poistetaan käytöstä poistuneita suojattuja linkkejä..."
       ],
       "Removing extra password...": [
         "Lisäsalasanaa poistetaan..."
       ],
       "Removing secure link...": [
-        "Turvallista linkkiä poistetaan..."
+        "Suojattua linkkiä poistetaan..."
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1527,7 +1527,7 @@
         "Tallenna suojausavain"
       ],
       "Select an existing login item to update.": [
-        "Valitse päivitettävä olemassa oleva kirjautumiskohde."
+        "Valitse päivitettävä olemassa oleva kirjautumistieto."
       ],
       "Select an existing login or create a new one.": [
         "Valitse olemassa oleva kirjautumistieto tai luo uusi."
@@ -1596,14 +1596,14 @@
         "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "${ PASS_APP_NAME } -sovelluksen käyttäminen vaatii lisäsalasanan. Se toimii ylimääräisenä salasanana ${ BRAND_NAME } -salasanasi lisäksi."
+        "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
         "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
       ],
       "The secure link has been removed": [
-        "Turvallinen linkki on poistettu"
+        "Suojattu linkki poistettiin"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
@@ -1642,7 +1642,7 @@
         "Tallenna suojausavain avaamalla ${ PASS_APP_NAME } PIN-koodillasi."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi."
+        "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
@@ -1718,7 +1718,7 @@
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Et voi lisätä enempää maksukortteja. Lisää maksukortteja rajoittamasti päivittämällä tilauksesi."
+        "Et voi lisätä enempää maksukortteja. Lisää maksukortteja rajattomasti päivittämällä tilauksesi."
       ],
       "You have reached the limit of vaults you can create.": [
         "Luotujen holvien enimmäismäärä on saavutettu."
@@ -1727,7 +1727,7 @@
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Sinut kirjataan ulos ja sinun on kirjauduttava uudelleen sisään kaikilla muilla laitteillasi."
+        "Sinut kirjataan ulos ja joudut kirjautumaan uudelleen sisään kaikilla muilla laitteillasi."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
@@ -1758,7 +1758,7 @@
         "${ config.options.wordCount } sanaa"
       ],
       "${ days } day": [
-        "${ days } päivä",
+        "${ days } vuorokausi",
         "${ days } päivää"
       ],
       "${ hours } hour": [
@@ -1770,7 +1770,7 @@
         "${ minutes } minuuttia"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } -valvonta"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versio"
@@ -1785,22 +1785,22 @@
         "10 minuutin kuluttua"
       ],
       "14 days": [
-        "14 päivää"
+        "Kahden viikon kuluttua"
       ],
       "15 minutes": [
         "15 minuutin kuluttua"
       ],
       "24 hours": [
-        "24 tuntia"
+        "Vuorokauden kuluttua"
       ],
       "2FA secret key (TOTP)": [
-        "Salainen 2FA-avain (TOTP)"
+        "2FA-salaisuus (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA-tunniste (TOTP)"
+        "Todennuskoodi (TOTP)"
       ],
       "30 days": [
-        "30 päivää"
+        "30 päivän kuluttua"
       ],
       "30 minutes": [
         "30 minuutin kuluttua"
@@ -1809,10 +1809,10 @@
         "30 sekunnin kuluttua"
       ],
       "5 minutes": [
-        "5 minuutin kuluttua"
+        "Viiden minuutin kuluttua"
       ],
       "7 days": [
-        "7 päivää"
+        "Viikon kuluttua"
       ],
       "A-Z": [
         "A-Ö"
@@ -1851,7 +1851,7 @@
         "Automaattitäyttö"
       ],
       "Autofill 2FA": [
-        "Automaattitäytä 2FA-koodi"
+        "Automaattitäytä todennuskoodi"
       ],
       "Automatically open autofill when a login field is focused": [
         "Näytä automaattitäyttö kirjautumiskentän aktivoituessa."
@@ -1860,7 +1860,7 @@
         "Automaattitallennus"
       ],
       "Autosave vault": [
-        "Automaattitallennuksen holvi"
+        "Automaattitallennukseen käytettävä holvi"
       ],
       "Autosuggest": [
         "Automaattiehdotus"
@@ -1935,10 +1935,10 @@
         "Sähköposti"
       ],
       "Email (alias)": [
-        "Sähköposti (alias)"
+        "Sähköpostiosoite (alias)"
       ],
       "Email (new alias)": [
-        "Sähköposti (uusi alias)"
+        "Sähköpostiosoite (uusi alias)"
       ],
       "Email aliases": [
         "Sähköpostialiakset"
@@ -1974,7 +1974,7 @@
         "Yleiset"
       ],
       "Generate a secure link for this item": [
-        "Luo turvallinen linkki tälle kohteelle"
+        "Luo suojattu linkki tähän kohteeseen"
       ],
       "Generic CSV": [
         "Yleispätevä CSV"
@@ -2022,13 +2022,13 @@
         "Kieli"
       ],
       "Last 2 weeks": [
-        "Kahden viikon aikana"
+        "Kahden viikon sisällä"
       ],
       "Last month": [
-        "Neljän viikon aikana"
+        "Neljän viikon sisällä"
       ],
       "Last week": [
-        "Viikon aikana"
+        "Viikon sisällä"
       ],
       "Latest import": [
         "Edellinen tuonti"
@@ -2052,7 +2052,7 @@
         "Määritä kaikki tarkastelijoiksi"
       ],
       "max views reached": [
-        "katselukertojen enimmäismäärä saavutettu"
+        "avausrajoitus on saavutettu"
       ],
       "Members": [
         "Jäsenet"
@@ -2196,7 +2196,7 @@
         "Jaa"
       ],
       "Share this vault or create a new vault": [
-        "Jaa tämä holvi, tai luo uusi holvi"
+        "Jaa tämä holvi tai luo uusi"
       ],
       "Shared link": [
         "Jaettu linkki"
@@ -2220,11 +2220,11 @@
         "Teksti"
       ],
       "The item's vault is currently shared with ${ targetMembers } person": [
-        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilön kanssa",
-        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilön kanssa"
+        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilölle",
+        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilölle"
       ],
       "The URL has been copied to the clipboard": [
-        "URL-osoite on kopioitu leikepöydälle"
+        "URL-osoite kopioitiin leikepöydälle"
       ],
       "Title": [
         "Nimi"
@@ -2269,7 +2269,7 @@
         "Käyttäjätunnus"
       ],
       "Username/email": [
-        "Käyttäjätunnus/sähköposti"
+        "Käyttäjätunnus/sähköpostiosoite"
       ],
       "Vault ID": [
         "Holvin ID"
@@ -2341,7 +2341,7 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Lisää salainen 2FA-avain"
+        "Lisää 2FA-salaisuus"
       ],
       "Add hidden text": [
         "Lisää piilotettu teksti"
@@ -2362,7 +2362,7 @@
         "Syötä etuliite"
       ],
       "Enter email": [
-        "Syötä sähköposti"
+        "Syötä sähköpostiosoite"
       ],
       "Enter email or username": [
         "Syötä sähköpostiosoite tai käyttäjätunnus"
@@ -2541,7 +2541,7 @@
         "Kohteita ei ole valittu"
       ],
       "No shared secure links": [
-        "Jaettuja turvallisia linkkejä ei ole"
+        "Jaettuja suojattuja linkkejä ei ole"
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
@@ -2568,7 +2568,7 @@
         "Poista lisäsalasana"
       ],
       "Remove secure link?": [
-        "Poista turvallinen linkki?"
+        "Poistetaanko suojattu linkki?"
       ],
       "Restore this version?": [
         "Palautetaanko tämä versio?"
@@ -2586,10 +2586,10 @@
         "Aseta lisäsalasana"
       ],
       "Set up 2FA for more security": [
-        "Tehosta suojausta määrittämällä 2FA"
+        "Tehosta suojausta määrittämällä kaksivaiheinen tunnistautuminen"
       ],
       "Share with": [
-        "Jaa henkilölle"
+        "Jaa henkilöille"
       ],
       "Stay safer online": [
         "Suojaudu paremmin verkossa"
@@ -2722,7 +2722,7 @@
         "Lisäsalasana ei voi olla tyhjä"
       ],
       "Extra password should have at least 8 characters": [
-        "Lisäsalasanan on oltava vähintään 8 merkkiä"
+        "Lisäsalasanan täytyy sisältää vähintään 8 merkkiä"
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
@@ -2783,7 +2783,7 @@
         "Käytä hovijakoa vahvistamalla sähköpostiosoitteesi."
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
-        "Lisäsalasanasi poistaminen kirjaa sinut ulos kaikista laitteista ja lopettaa kaikki aktiiviset istunnot."
+        "Lisäsalasanan poistaminen kirjaa sinut ulos kaikista laitteista katkaisten kaikki aktiiviset istunnot."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."

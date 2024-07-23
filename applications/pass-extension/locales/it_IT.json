@@ -1099,6 +1099,9 @@
       "Auto-lock successfully disabled.": [
         "Blocco automatico disabilitato."
       ],
+      "Automatically copy the generated password to the clipboard": [
+        "Copia automaticamente la password generata negli appunti"
+      ],
       "Autosaved on ${ payload.domain }": [
         "Salvato automaticamente su ${ payload.domain }"
       ],
@@ -1372,11 +1375,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia e tutti i collegamenti sicuri."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia."
       ],
       "Moving items": [
         "Spostamento degli elementi"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia e tutti i collegamenti sicuri."
       ],
       "Moving items to another vault will erase their history.": [
         "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia."
@@ -2470,6 +2479,9 @@
       ],
       "Fill & copy password": [
         "Compila e copia la password"
+      ],
+      "Fill password": [
+        "Inserisci password"
       ],
       "Get Started": [
         "Inizia ora"
