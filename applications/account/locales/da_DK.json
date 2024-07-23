@@ -685,6 +685,9 @@
       "Need help?": [
         "Brug for hjælp?"
       ],
+      "New group": [
+        "Ny gruppe"
+      ],
       "Next": [
         "Næste"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "Nej tak"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open": [
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Tilføj pm.me-domæne"
+      ],
       "Resuming forward": [
         "Genoptager videresendelse"
       ]
@@ -1395,8 +1401,8 @@
       "Faster, broader device compatibility": [
         "Hurtigere, bredere enhedskompatibilitet"
       ],
-      "No data transmitted while using, requires one-time download": [
-        "Ingen data overføres under brug, kræver engangsoverførsel"
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Beskeder forbliver på din enhed, men kræver en engangsoverførsel og kompatibel hardware"
       ],
       "Run locally": [
         "Kør lokalt"
@@ -3172,6 +3178,11 @@
         "Vi fandt fejl i flere rækker under import, gennemse venligst din CSV-fil."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Få mere at vide"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/måned"
@@ -3979,6 +3990,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Advarsel"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Unavngiven"
       ]
     },
     "eof2023: Deal details": {
@@ -6375,6 +6391,9 @@
       "30-day money-back guarantee.": [
         "30 dages tilbagebetalingsgaranti."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Et ${ protonSubdomain } hostes af ${ BRAND_NAME }, hvor du hurtigt kan oprette et underdomæne. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
       ],
@@ -7407,6 +7426,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Lad dine kontakter vide, at du bekymrer dig om beskyttelsen af deres privatliv."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Lad os starte med at trykke på knappen Ny gruppe ovenfor."
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -9798,6 +9820,15 @@
       "Gift code": [
         "Gavekode"
       ],
+      "Group address": [
+        "Gruppeadresse"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "Group name": [
+        "Gruppenavn"
+      ],
       "Hide password": [
         "Skjul adgangskode"
       ],
@@ -10065,6 +10096,9 @@
       "Public certificate (X.509)": [
         "Offentligt certifikat (X.509)"
       ],
+      "Purpose": [
+        "Formål"
+      ],
       "Read": [
         "Læst"
       ],
@@ -10262,6 +10296,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Hvad er årsagen til, at du har opsagt eller nedgraderet?"
+      ],
+      "Who can send to this group address?": [
+        "Hvem kan sende til denne gruppeadresse?"
       ],
       "Why would you like to cancel?": [
         "Hvorfor ønsker du at opsige?"
@@ -12498,6 +12535,20 @@
         "Papirkurv"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Alle, inkl. dem udenfor"
+      ],
+      "Members": [
+        "Medlemmer"
+      ],
+      "Nobody by default": [
+        "Ingen som standard"
+      ],
+      "Organization members": [
+        "Organisationsmedlemmer"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekunder"
@@ -12774,8 +12825,8 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan låse op for **${ unlockPlanTitle }** og alle ekstra ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Ved at fortsætte, accepterer du vores ${ termsAndConditions }"
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Du fortsætter ved at acceptere vores ${ termsAndConditionsLink }."
       ],
       "Creating your account": [
         "Opretter din konto"
@@ -13121,6 +13172,9 @@
       "Payment Processing": [
         "Betalingsbehandling"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Tilføj en betalingsmetode i betjeningspanelet for at fortsætte."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
@@ -13313,6 +13367,23 @@
       ],
       "yourdomain.com": [
         "ditdomæne.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Tilføj en gruppenavn"
+      ],
+      "Add member": [
+        "Tilføj medlem"
+      ],
+      "e.g. distribution list for marketing team": [
+        "f.eks. distributionsliste til markedsføringsteam"
+      ],
+      "e.g. marketing": [
+        "f.eks. markedsføring"
+      ],
+      "Members": [
+        "Medlemmer"
       ]
     },
     "plan customizer, ips": {
@@ -15522,6 +15593,9 @@
       "Add PayPal payment method": [
         "Tilføj PayPal-betalingsmetode"
       ],
+      "Add pm.me subdomain": [
+        "Tilføj pm.me-underdomæne"
+      ],
       "Add servers": [
         "Tilføj servere"
       ],
@@ -16420,6 +16494,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "There are no groups": [
+        "Der er ingen grupper"
       ],
       "This field cannot be empty": [
         "Dette felt må ikke være tomt"

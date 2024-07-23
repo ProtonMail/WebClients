@@ -694,10 +694,10 @@
       "No, thanks": [
         "არა, მადლობა"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open": [
@@ -1227,6 +1227,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } დამატებითი მორგებული დომენი",
+        "${ domains } დამატებითი მორგებული დომენი"
+      ],
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
@@ -1387,9 +1391,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "უფრო სწრაფი, თავსებადი უფრო მეტ მოწყობილობასთან"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "გამოყენებისას მონაცემების გადაცემა არ ხდება. სჭირდება ერთჯერადი გადმოწერა"
       ],
       "Run locally": [
         "ლოკალურად გაშვება"
@@ -2426,6 +2427,9 @@
       "British Indian Ocean Territory": [
         "ბრიტანული ინდოეთის ოკეანის ტერიტორია"
       ],
+      "British Virgin Islands": [
+        "ბრიტანული ვირჯინიის კუნძულები"
+      ],
       "Brunei Darussalam": [
         "ბრუნეი"
       ],
@@ -2480,6 +2484,9 @@
       "Congo": [
         "კონგო"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "კონგოს დემოკრატიული რესპუბლიკა"
+      ],
       "Congo, Democratic Republic of the": [
         "კონგო, დემოკრატიული რესპუბლიკა"
       ],
@@ -2518,6 +2525,9 @@
       ],
       "Dominican Republic": [
         "დომინიკის რესპუბლიკა"
+      ],
+      "East Timor": [
+        "აღმოსავლეთის ტიმორი"
       ],
       "Ecuador": [
         "ეკვადორი"
@@ -2660,6 +2670,9 @@
       "Ireland": [
         "ირლანდია"
       ],
+      "Islamic Republic of Iran": [
+        "ირანის ისლამური რესპუბლიკა"
+      ],
       "Isle of Man": [
         "მენის კუნძული"
       ],
@@ -2690,6 +2703,12 @@
       "Kiribati": [
         "კირიბატი"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "კორეის დემოკრატიული სახალხო რესპუბლიკა"
+      ],
+      "Korea (Republic of)": [
+        "კორეის რესპუბლიკა"
+      ],
       "Kosovo": [
         "კოსოვო"
       ],
@@ -2698,6 +2717,9 @@
       ],
       "Kyrgyzstan": [
         "ყირგიზეთი"
+      ],
+      "Lao People's Democratic Republic": [
+        "ლაოს სახალხო დემოკრატიული რესპუბლიკა"
       ],
       "Laos": [
         "ლაოსი"
@@ -2717,6 +2739,9 @@
       "Libya": [
         "ლიბია"
       ],
+      "Libyan Arab Jamahiriya": [
+        "ლიბიის არაბული სახელმწიფო"
+      ],
       "Liechtenstein": [
         "ლიხტენშტეინი"
       ],
@@ -2728,6 +2753,9 @@
       ],
       "Macao": [
         "მაკაო"
+      ],
+      "Macedonia": [
+        "მაკედონია"
       ],
       "Madagascar": [
         "მადაგასკარი"
@@ -2981,6 +3009,9 @@
       "Svalbard and Jan Mayen": [
         "შპიცბერგენი და იან-მაიენი"
       ],
+      "Swaziland": [
+        "ესვატინი"
+      ],
       "Sweden": [
         "შვედეთი"
       ],
@@ -3001,6 +3032,9 @@
       ],
       "Tanzania": [
         "ტანზანია"
+      ],
+      "Tanzania, United Republic of": [
+        "ტანზანიის გაერთიანებული რესპუბლიკა"
       ],
       "Thailand": [
         "ტაილანდი"
@@ -10621,6 +10655,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ"
       ],
@@ -11249,6 +11286,9 @@
       ],
       "Collaborate and share large files": [
         "იმუშავეთ ერთად და გააზიარეთ დიდი ფაილები"
+      ],
+      "Collaborative document editor": [
+        "კოლაბორაციული დოკუმენტის რედაქტორი"
       ],
       "Contact groups": [
         "კონტაქტის ჯგუფები"
@@ -12671,9 +12711,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "მაგრამ, შეგიძლიათ, განბლოკოთ **${ unlockPlanTitle }** და ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი **${ upsellPlanTitle }** ტარიფზე გადასვლით."
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "გაგრძელების შემთხვევაში თქვენ ეთანხმებით ჩვენს ${ termsAndConditions }"
-      ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
       ],
@@ -13020,6 +13057,9 @@
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
@@ -15860,6 +15900,9 @@
       ],
       "Import failed": [
         "შემოტანის შეცდომა"
+      ],
+      "Import groups": [
+        "ჯგუფების შემოტანა"
       ],
       "Import key": [
         "გასაღების შემოტანა"

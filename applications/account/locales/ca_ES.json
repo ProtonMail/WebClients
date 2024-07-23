@@ -685,6 +685,9 @@
       "Need help?": [
         "Necessiteu ajuda?"
       ],
+      "New group": [
+        "Grup nou"
+      ],
       "Next": [
         "Següent"
       ],
@@ -697,10 +700,10 @@
       "No, thanks": [
         "No, gràcies"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -1394,9 +1397,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Compatibilitat amb dispositius més ràpida i àmplia"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "No es transmeten dades mentre s'utilitza. Requereix una sola descàrrega."
       ],
       "Run locally": [
         "Executa localment"
@@ -2433,6 +2433,9 @@
       "British Indian Ocean Territory": [
         "Territori Britànic de l'Oceà Índic"
       ],
+      "British Virgin Islands": [
+        "Illes Verges britàniques"
+      ],
       "Brunei Darussalam": [
         "Brunei"
       ],
@@ -2525,6 +2528,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor oriental"
       ],
       "Ecuador": [
         "Equador"
@@ -2697,6 +2703,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Republic of)": [
+        "Corea (República)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2735,6 +2744,9 @@
       ],
       "Macao": [
         "Macau"
+      ],
+      "Macedonia": [
+        "Macedònia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2988,6 +3000,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazilàndia"
+      ],
       "Sweden": [
         "Suècia"
       ],
@@ -3008,6 +3023,9 @@
       ],
       "Tanzania": [
         "Tanzània"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzània (República Unida)"
       ],
       "Thailand": [
         "Tailàndia"
@@ -3137,6 +3155,11 @@
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Hem detectat errors en múltiples files durant la importació. Reviseu el vostre fitxer CSV."
+      ]
+    },
+    "cta": {
+      "Learn more": [
+        "Més informació"
       ]
     },
     "Cycle": {
@@ -3946,6 +3969,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Advertència"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sense nom"
       ]
     },
     "eof2023: Deal details": {
@@ -9753,6 +9781,15 @@
       "Gift code": [
         "Codi regal"
       ],
+      "Group address": [
+        "Adreça del grup"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "Group name": [
+        "Nom del grup"
+      ],
       "Hide password": [
         "Amaga la contrasenya"
       ],
@@ -12447,6 +12484,14 @@
         "Paperera"
       ]
     },
+    "option": {
+      "Members": [
+        "Membres"
+      ],
+      "Organization members": [
+        "Membres de l'organització"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 segons"
@@ -12722,9 +12767,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Però podeu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } millorant el pla a **${ upsellPlanTitle }**."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "En continuar, accepteu els nostres ${ termsAndConditions }."
       ],
       "Creating your account": [
         "S'està creant el compte"
@@ -13262,6 +13304,14 @@
       ],
       "yourdomain.com": [
         "elteudomini.com"
+      ]
+    },
+    "placeholder": {
+      "Add member": [
+        "Afegeix un membre"
+      ],
+      "Members": [
+        "Membres"
       ]
     },
     "plan customizer, ips": {

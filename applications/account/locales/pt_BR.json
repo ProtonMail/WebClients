@@ -685,6 +685,9 @@
       "Need help?": [
         "Precisa de ajuda?"
       ],
+      "New group": [
+        "Novo grupo"
+      ],
       "Next": [
         "Próximo"
       ],
@@ -697,11 +700,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -1197,6 +1200,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Adicionar domínio pm.me"
+      ],
       "Resuming forward": [
         "Continuar encaminhamento"
       ]
@@ -1394,9 +1400,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Compatibilidade de dispositivos mais rápida e ampla"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Nenhuma transmissão de dados durante o uso, requer download único"
       ],
       "Run locally": [
         "Executar localmente"
@@ -3175,6 +3178,11 @@
         "Detectamos erros em várias linhas durante a importação. Revise o seu arquivo CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mês"
@@ -3982,6 +3990,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Alerta"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sem nome"
       ]
     },
     "eof2023: Deal details": {
@@ -6331,6 +6344,9 @@
       "${ vaultLink } deleted": [
         "${ vaultLink } excluído"
       ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } compartilhado por e-mail"
+      ],
       "${ vaultLink } updated": [
         "${ vaultLink } atualizado"
       ],
@@ -6383,6 +6399,9 @@
       ],
       "30-day money-back guarantee.": [
         "Garantia de devolução do seu dinheiro por até 30 dias."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Um ${ protonSubdomain } é hospedo pela ${ BRAND_NAME }, que permite que você configure rapidamente um subdomínio. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
@@ -7288,6 +7307,15 @@
       "It appears some of your data is encrypted and locked.": [
         "Parece que alguns de seus dados estão criptografados e bloqueados."
       ],
+      "Item Autofilled": [
+        "Item preenchido automaticamente"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "Item preenchido automaticamente no ${ vaultLink }"
+      ],
+      "Item autofilled in vault": [
+        "Item preenchido automaticamente no cofre"
+      ],
       "Item Created": [
         "Item criado"
       ],
@@ -7306,6 +7334,15 @@
       "Item deleted from vault": [
         "Item excluído do cofre"
       ],
+      "Item in ${ vaultLink } trashed": [
+        "Item no ${ vaultLink } excluído"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Item no ${ vaultLink } recuperado"
+      ],
+      "Item in vault trashed": [
+        "Item do cofre excluído"
+      ],
       "Item in vault untrashed": [
         "Item do cofre restaurado"
       ],
@@ -7317,6 +7354,12 @@
       ],
       "Item read in vault": [
         "Item lido no cofre"
+      ],
+      "Item Trashed": [
+        "Item excluído"
+      ],
+      "Item Untrashed": [
+        "Item recuperado"
       ],
       "Item Updated": [
         "Item atualizado"
@@ -8243,6 +8286,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Para garantir acesso permanente à sua conta, defina um método de recuperação de conta"
       ],
+      "To ensure highest possible security of your account": [
+        "Para assegurar a máxima proteção de sua conta"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Para garantir que você não perca dados importantes, ${ DRIVE_APP_NAME } salva as versões antigas dos seus arquivos à medida que você e seus colaboradores fazem alterações. Selecione por quanto tempo o ${ BRAND_NAME } deve manter as versões anteriores."
       ],
@@ -8407,6 +8453,9 @@
       ],
       "Vault Deleted": [
         "Cofre excluído"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Cofre foi excluído ou requer permissões de acesso"
       ],
       "Vault shared with email": [
         "Cofre compartilhado por e-mail"
@@ -8581,6 +8630,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Com os grupos de usuários, você pode facilmente enviar e-mails, compartilhar dados, ou mudar configurações para grupos específicos de usuários de uma vez."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Com o seu plano atual, você pode apenas receber mensagens através do seu endereço @pm.me. Faça upgrade de plano para enviar mensagens e criar endereços adicionais usando @pm.me"
@@ -9768,6 +9820,15 @@
       "Gift code": [
         "Código do vale-presente"
       ],
+      "Group address": [
+        "Endereço do grupo"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "Group name": [
+        "Nome do grupo"
+      ],
       "Hide password": [
         "Ocultar senha"
       ],
@@ -10035,6 +10096,9 @@
       "Public certificate (X.509)": [
         "Certificado público (X.509)"
       ],
+      "Purpose": [
+        "Propósito"
+      ],
       "Read": [
         "Lidos"
       ],
@@ -10235,6 +10299,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Qual é o seu motivo principal do cancelamento ou downgrade?"
+      ],
+      "Who can send to this group address?": [
+        "Quem pode enviar para esse endereço de grupo?"
       ],
       "Why would you like to cancel?": [
         "Porque você gostaria de cancelar?"
@@ -10537,6 +10604,9 @@
       ],
       "Paypal without credit card": [
         "Paypal sem cartão de crédito"
+      ],
+      "perform a password reset from your active session": [
+        "redefinir a senha a partir de uma sessão ativa"
       ],
       "Privacy policy": [
         "Política de privacidade"
@@ -12495,6 +12565,20 @@
         "Windows"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Todos, incluso externos"
+      ],
+      "Members": [
+        "Membros"
+      ],
+      "Nobody by default": [
+        "Ninguém por padrão"
+      ],
+      "Organization members": [
+        "Membros da organização"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 segundos"
@@ -12770,9 +12854,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mas você pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } atualizando para o **${ upsellPlanTitle }**."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "Ao continuar, você concorda com nosso ${ termsAndConditions }"
       ],
       "Creating your account": [
         "Criando sua conta"
@@ -13124,6 +13205,9 @@
       "Payment Processing": [
         "Processando pagamento"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Por favor, reative sua assinatura para decrescer o número de complementos."
+      ],
       "Processing payment": [
         "Processando pagamento"
       ],
@@ -13138,6 +13222,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
       ]
     },
     "Payments.Error": {
@@ -13310,6 +13397,20 @@
       ],
       "yourdomain.com": [
         "seudominio.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Adicionar um nome do grupo"
+      ],
+      "Add member": [
+        "Adicionar membro"
+      ],
+      "e.g. marketing": [
+        "por exemplo, marketing"
+      ],
+      "Members": [
+        "Membros"
       ]
     },
     "plan customizer, ips": {
@@ -13540,6 +13641,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Pré-requisito:** autenticação SAML deve ser configurada para ativar o provisionamento SCIM"
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Pré-requisito:** para ativar o provisionamento do SCIM, você deve verificar a propriedade do domínio **${ domainName }**. Essa verificação pode levar até uma hora."
       ],
       "Enter token into your identity provider": [
         "Insira o token em seu provedor de identidade"
@@ -14623,6 +14727,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
+      ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME } com encaminhamento de e-mail automático"
       ],
@@ -14655,6 +14762,18 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } proporciona à sua equipe o que eles necessitam para serem mais produtivos e organizados no trabalho com acesso a todos os aplicativos ${ BRAND_NAME } e seus recursos exclusivos."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } dá à sua equipe o que eles necessitam para serem mais produtivos, organizados, e sobre o controle de sua caixa de entrada, agenda e mais."
+      ],
+      "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planName } vai além do básico para ajudar você a ter mais produtividade, organização e controle sobre sua caixa de entrada, identidade de email e mais."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } ajuda você a se assegurar que os membros de sua família, e os seus dados, estejam protegidos sempre que estiverem on-line."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas e arquivos. Você também tem direito a bônus anuais de armazenamento."
@@ -14782,11 +14901,17 @@
       "Keep ${ config.planName }": [
         "Manter o ${ config.planName }"
       ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Mantenha sua equipe segura em qualquer lugar com nossos aplicativos para Web, iOS, Android, Windows, Mac e Linux."
+      ],
       "Learn more": [
         "Saiba mais"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre nosso impacto"
+      ],
+      "Make your business stand out": [
+        "Faça sua empresa se destacar"
       ],
       "Manage your calendar": [
         "Gerencie seu calendário"
@@ -14884,8 +15009,23 @@
       "Yearly free storage bonuses": [
         "Bônus anuais de armazenamento gratuito"
       ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "Você ainda tem ${ expiryDate } na sua assinatura ${ planName }. Nós adicionaremos os créditos para o tempo restante na sua conta ${ BRAND_NAME }. Certifique-se de não exceder os limites do plano gratuito antes de cancelar. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "Você ainda tem ${ expiryDate } na sua assinatura ${ planName }. Nós adicionaremos os créditos para o tempo restante na sua conta ${ BRAND_NAME }. Certifique-se de não exceder os limites do plano gratuito antes de cancelar. ${ learnMoreLink }"
+      ],
       "Your ${ planName } has been canceled.": [
         "Seu ${ planName } foi cancelado."
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Seu plano ${ planName } não apenas mantém seus dados empresariais e uma comunicação segura. Ele apoia seus objetivos de conformidade, destaca seu negócio, e mantém sua equipe conectada."
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
+        "A sua assinatura ${ planName } se encerra em ${ expiryDate }. Após o encerramento, você passará para o plano ${ BRAND_NAME } Free. Se a sua utilização exceder os limites do plano gratuito, o seu acesso aos recursos do produto e aos seus dados poderá ser limitado. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
+        "A sua assinatura ${ planName } se encerra em ${ expiryDate }. Após o encerramento, você passará para o plano ${ BRAND_NAME } Free. Se a sua utilização exceder os limites do plano gratuito, o seu acesso aos recursos do produto e aos seus dados poderá ser limitado. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Seu domínio de e-mail personalizado"
@@ -15482,6 +15622,9 @@
       ],
       "Add PayPal payment method": [
         "Adicionar o Paypal como método de pagamento"
+      ],
+      "Add pm.me subdomain": [
+        "Adicionar subdomínio pm.me"
       ],
       "Add servers": [
         "Adicionar servidores"
@@ -16388,6 +16531,9 @@
       "Theme": [
         "Tema"
       ],
+      "There are no groups": [
+        "Não há nenhum grupo"
+      ],
       "This field cannot be empty": [
         "Este campo não pode ficar vazio"
       ],
@@ -17172,6 +17318,93 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } conta por carteira",
+        "${ n } contas por carteira"
+      ],
+      "${ n } email address": [
+        "${ n } endereço de e-mail",
+        "${ n } endereços de e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } carteira",
+        "${ n } carteiras"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Obter ${ plan }** para acesso antecipado para ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Uma maneira mais segura de guardar seu Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Como usuário convidado, crie uma conta free no ${ BRAND_NAME } para obter acesso exclusivo ao ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ],
+      "Early access to new features": [
+        "Acesso antecipado a novos recursos"
+      ],
+      "Early access waitlist": [
+        "Lista de espera para acesso antecipado"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Acesso antecipado exclusivo para ${ appName }."
+      ],
+      "Get started": [
+        "Começar"
+      ],
+      "Invite Friends": [
+        "Convidar Amigos"
+      ],
+      "Join ${ appName } early access!": [
+        "Junte-se ao acesso antecipado de ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Crie uma conta free no ${ BRAND_NAME } para garantir seu lugar. Quanto mais cedo você criar a conta, mais cedo terá acesso ao ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Faça o upgrade para desbloquear recursos premium do ${ appName }"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Usuários Visionary e seus amigos convidados podem compartilhar o acesso antecipado com outros, convide seus amigos para experimentar ${ appName } gratuitamente!"
+      ],
+      "You're Invited.": [
+        "Você está convidado."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Guarde e transfira suas bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemas no Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Guarde e transfira bitcoins facilmente. Instale os aplicativos ${ WALLET_APP_NAME } relevantes."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Voltar à carteira"
+      ],
+      "Wallet": [
+        "Carteira"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorização"
+      ],
+      "Downloads": [
+        "Downloads"
       ]
     },
     "Warning": {

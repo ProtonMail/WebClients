@@ -697,10 +697,10 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open": [
@@ -1394,9 +1394,6 @@
     "Assistant option": {
       "Faster, broader device compatibility": [
         "Daha hızlı, daha geniş aygıt uyumluluğu"
-      ],
-      "No data transmitted while using, requires one-time download": [
-        "Kullanırken veri aktarılmaz, tek seferlik indirme gerekir"
       ],
       "Run locally": [
         "Yerel olarak çalışır"
@@ -2433,6 +2430,9 @@
       "British Indian Ocean Territory": [
         "Britanya Hint Okyanusu Toprakları"
       ],
+      "British Virgin Islands": [
+        "Britanya Virjin Adaları"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2487,6 +2487,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratik Cumhuriyeti"
       ],
@@ -2525,6 +2528,9 @@
       ],
       "Dominican Republic": [
         "Dominik Cumhuriyeti"
+      ],
+      "East Timor": [
+        "Doğu Timor"
       ],
       "Ecuador": [
         "Ekvador"
@@ -2667,6 +2673,9 @@
       "Ireland": [
         "İrlanda"
       ],
+      "Islamic Republic of Iran": [
+        "İran İslam Cumhuriyeti"
+      ],
       "Isle of Man": [
         "Man Adası"
       ],
@@ -2697,6 +2706,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kore Demokratik Halk Cumhuriyeti"
+      ],
+      "Korea (Republic of)": [
+        "Kore Cumhuriyeti"
+      ],
       "Kosovo": [
         "Kosova"
       ],
@@ -2705,6 +2720,9 @@
       ],
       "Kyrgyzstan": [
         "Kırgızistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos Demokratik Halk Cumhuriyeti"
       ],
       "Laos": [
         "Laos"
@@ -2724,6 +2742,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya Arap Cemahiriyesi"
+      ],
       "Liechtenstein": [
         "Lihtenştayn"
       ],
@@ -2735,6 +2756,9 @@
       ],
       "Macao": [
         "Makao"
+      ],
+      "Macedonia": [
+        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2988,6 +3012,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
+      "Swaziland": [
+        "Svaziland"
+      ],
       "Sweden": [
         "İsveç"
       ],
@@ -3008,6 +3035,9 @@
       ],
       "Tanzania": [
         "Tanzanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Birleşik Tanzaya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -6172,6 +6202,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME }, hesabınızda yeterli alan olmadığı için içe aktarma işlemini duraklattı. Şunları yapabilirsiniz:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "E-posta hizmeti sağlayıcınız hesabınızın ${ bandwidthLimitLink } değerini sıfırladığı anda ${ BRAND_NAME } içe aktarma işlemini sürdürmeye çalışacaktır. Herhangi bir şey yapmanıza gerek yok. İçe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz ve baştan başlamanız gerekir."
       ],
@@ -6380,6 +6413,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
+      ],
+      "Add a recovery ${ type }": [
+        "${ type } kurtarması ekle"
       ],
       "Add a recovery email address": [
         "Bir kurtarma e-postası adresi ekle"
@@ -6622,6 +6658,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
+      "Breach Custom Email Added": [
+        "Verilerin ele geçirilmesi özel e-posta adresi eklendi"
+      ],
+      "Breach Custom Email Deleted": [
+        "Verilerin ele geçirilmesi özel e-posta adresi silindi"
+      ],
+      "Breach Custom Email Validated": [
+        "Verilerin ele geçirilmesi özel e-posta adresi doğrulandı"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Varsayılan olarak kuruluş üyeleri yalnızca sahibi oldukları kasaları dışa aktarabilir. Bu seçenek açıksa, hiçbir veriyi dışa aktaramazlar"
       ],
@@ -6789,6 +6834,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
+      ],
+      "Disable recovery by ${ type }": [
+        "${ type } kurtarmasını kapat"
       ],
       "Discount": [
         "İndirim"
@@ -7844,10 +7892,13 @@
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
       "Session Ended": [
-        "Oturum Sona Erdi"
+        "Oturum sona erdi"
+      ],
+      "Session Roaming": [
+        "Oturum dolaşımı"
       ],
       "Session Started": [
-        "Oturum Başladı"
+        "Oturum başladı"
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
@@ -8207,6 +8258,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Hesabınıza erişimi kaybetmemek için, bir hesap kurtarma yöntemi belirleyin"
       ],
+      "To ensure highest possible security of your account": [
+        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe öncekli sürümlerini kaydeder. Önceki sürümlerin ${ BRAND_NAME } tarafından ne kadar süreyle tutulacağını seçin."
       ],
@@ -8395,6 +8449,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar hemen geri ödenir."
+      ],
+      "Verify ${ type }": [
+        "${ type } doğrula"
       ],
       "Verify domain": [
         "Etki alanını doğrula"
@@ -10535,6 +10592,9 @@
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
       ],
+      "Vault": [
+        "Kasa"
+      ],
       "View guide": [
         "Rehberi görüntüle"
       ],
@@ -10638,11 +10698,17 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Sınırlı süreyle ${ plan }** alın!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Visionary tarifesine geçin ve ${ BRAND_NAME } öyküsünün bir parçası olun"
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler"
       ],
@@ -11272,6 +11338,9 @@
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
       ],
+      "Collaborative document editor": [
+        "İşbirlikli çalışabileceğiniz belge düzenleyici"
+      ],
       "Contact groups": [
         "Kişi grupları"
       ],
@@ -11510,7 +11579,7 @@
         "Sınırsız etiket"
       ],
       "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -12698,9 +12767,6 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
-      ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "İlerleyerek ${ termsAndConditions } metnini kabul etmiş olursunuz"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -17095,6 +17161,93 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**${ plan } edinin** ${ appName } erken erişim için!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Davetli bir kullanıcı olarak, ${ appName } uygulamasına özel erişim sağlamak için ücretsiz bir ${ BRAND_NAME } hesap aç."
+      ],
+      "Bitcoin via email": [
+        "E-posta ile Bitcoin"
+      ],
+      "Early access to new features": [
+        "Yeni özelliklere erken erişim"
+      ],
+      "Early access waitlist": [
+        "Erken erişim bekleme listesi"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "${ appName } için özel erken erişim."
+      ],
+      "Get started": [
+        "Başlayalım"
+      ],
+      "Invite Friends": [
+        "Arkadaşlarını Davet Et"
+      ],
+      "Join ${ appName } early access!": [
+        "${ appName } erken erişimine katılın!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Ücretsiz bir ${ BRAND_NAME } hesap açarak yerinizi garantiye alın. Ne kadar erken hesap açarsanız, ${ appName } erişiminiz o kadar çabuk olur."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Tarifenizi yükselterek ücretli ${ appName } özelliklerine erişin"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary kullanıcıları ve davet ettikleri arkadaşları erken erişimi başkalarıyla paylaşabilir, arkadaşlarını ${ appName } uygulamasını ücretsiz denemeleri için davet et!"
+      ],
+      "You're Invited.": [
+        "Davetlisiniz."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Cüzdan sorunu"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
+        "Sorunsuz bir şekilde bitcoin tutun ve transfer edin. İlgili ${ WALLET_APP_NAME } uygulamalarını yükleyin."
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Cüzdana geri dön"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Yetkilendirme"
+      ],
+      "Downloads": [
+        "İndirmeler"
       ]
     },
     "Warning": {
