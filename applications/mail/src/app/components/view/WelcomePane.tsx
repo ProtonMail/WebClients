@@ -78,12 +78,16 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     return (
         <>
             <Container>
-                <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
-                <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
-                <hr className="my-8" />
-                <div className="text-rg">
-                    <img className="h-auto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
+                <div className="text-rg mb-4">
+                    <img
+                        src={envelope}
+                        width={96}
+                        height={90}
+                        alt=""
+                    />
                 </div>
+                <h3>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h3>
+                <p className="my-2 p-0 text-keep-space">{labelCount ? counterMessage : null}</p>
             </Container>
         </>
     );
