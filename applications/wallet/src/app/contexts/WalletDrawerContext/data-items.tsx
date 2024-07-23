@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Info, MiddleEllipsis, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -35,6 +35,14 @@ export const RecipientsDataItem = ({
     const [settings] = useUserWalletSettings();
 
     const { walletMap } = useBitcoinBlockchainContext();
+    const filteredRecipientsList = tx.networkData.outputs.filter(
+        (o) =>
+            (tx.networkData.outputs.filter((o) => isSentTx && !o.is_mine).length === 0
+                ? isSentTx
+                : isSentTx && !o.is_mine) ||
+            (!isSentTx && o.is_mine)
+    );
+    const isSingleRecipient = filteredRecipientsList.length === 1;
 
     return (
         <div className="w-full">
@@ -44,31 +52,29 @@ export const RecipientsDataItem = ({
                  * On send, filter will remove all addresses that belong to user.
                  * Current limitation is, when sending to itself, it will display all addresses in To, even change address.
                  */}
-                {tx.networkData.outputs
-                    .filter(
-                        (o) =>
-                            (tx.networkData.outputs.filter((o) => isSentTx && !o.is_mine).length === 0
-                                ? isSentTx
-                                : isSentTx && !o.is_mine) ||
-                            (!isSentTx && o.is_mine)
-                    )
-                    .map((output, index) => {
-                        const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
+                {filteredRecipientsList.map((output, index) => {
+                    const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
+                    const isBtcAddress = recipient == output.address;
 
-                        return (
-                            <li key={index} className="flex flex-row w-full items-center my-1">
-                                <button
-                                    className="flex flex-row flex-nowrap items-center w-full"
-                                    onClick={() => onClick(recipient, output.address, index)}
-                                >
-                                    <div className="flex flex-column items-start grow mr-2">
-                                        <span className="block color-weak">{c('Wallet transaction').t`To`}</span>
+                    return (
+                        <li key={index} className="flex flex-row w-full items-center my-1">
+                            <button
+                                className="flex flex-row flex-nowrap items-center w-full"
+                                onClick={() => onClick(recipient, output.address, index)}
+                            >
+                                <div className="flex flex-column items-start grow mr-2">
+                                    <span className="block color-weak">{c('Wallet transaction').t`To`}</span>
 
-                                        <Tooltip title={recipient}>
+                                    <Tooltip title={recipient}>
+                                        {isBtcAddress ? (
+                                            <MiddleEllipsis text={recipient} className="w-2/3" />
+                                        ) : (
                                             <span className="block text-left w-full text-ellipsis">{recipient}</span>
-                                        </Tooltip>
-                                    </div>
+                                        )}
+                                    </Tooltip>
+                                </div>
 
+                                {!isSingleRecipient && (
                                     <div className="shrink-0 text-sm">
                                         <div className={clsx('ml-auto flex flex-row flex-nowrap justify-end')}>
                                             <Price
@@ -91,12 +97,13 @@ export const RecipientsDataItem = ({
                                             </div>
                                         )}
                                     </div>
+                                )}
 
-                                    <Icon className="ml-2 shrink-0" name="chevron-right" />
-                                </button>
-                            </li>
-                        );
-                    })}
+                                <Icon className="ml-2 shrink-0" name="chevron-right" />
+                            </button>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     );
@@ -191,27 +198,23 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
         <div className="w-full max-h-custom overflow-auto">
             <div className="flex flex-row items-center">
                 <span className="block color-hint text-rg">{c('Wallet transaction').t`Private note to myself`}</span>
-                {tx.apiData?.Label && (
-                    <CoreButton
-                        size="small"
-                        shape="ghost"
-                        color="weak"
-                        className="p-1 ml-2 color-weak"
-                        onClick={() => onClick(tx)}
-                        icon
-                    >
-                        <Icon
-                            size={3}
-                            name="pen-square"
-                            className="color-hint"
-                            alt={c('Action').t`Edit a private note to myself`}
-                        />
-                    </CoreButton>
-                )}
             </div>
-            <div className="w-full flex">
+            <div className="w-full flex flex-row flex-nowrap items-center">
                 {tx.apiData?.Label ? (
-                    <span className="text-pre-wrap text-break text-left text-lg">{tx.apiData.Label}</span>
+                    <>
+                        <span className="text-pre-wrap text-break text-left text-lg grow mr-4">{tx.apiData.Label}</span>
+                        <Tooltip title={c('Action').t`Edit`}>
+                            <CoreButton
+                                className="rounded-full bg-norm shrink-0"
+                                icon
+                                shape="solid"
+                                data-testid="modal:edit"
+                                onClick={() => onClick(tx)}
+                            >
+                                <Icon name="pen" alt={c('Action').t`Edit`} />
+                            </CoreButton>
+                        </Tooltip>
+                    </>
                 ) : (
                     <CoreButton
                         shape="ghost"
@@ -247,16 +250,21 @@ export const AmountDataItem = ({
     exchangeRate,
     amount,
     label = c('Wallet transaction').t`Amount`,
+    infoTitle,
 }: {
     amount?: number | null;
     label?: string;
     exchangeRate?: WasmApiExchangeRate;
+    infoTitle?: string;
 }) => {
     const [settings] = useUserWalletSettings();
 
     return (
         <div className="w-full">
-            <span className="block color-hint text-rg">{label}</span>
+            <span className="block color-hint text-rg flex items-center gap-2">
+                {label}
+                {infoTitle && <Info title={infoTitle} className="color-hint" />}
+            </span>
             <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
                 <div className="text-semibold">
                     <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
