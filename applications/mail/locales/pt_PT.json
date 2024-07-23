@@ -457,10 +457,10 @@
         "Letra"
       ],
       "Forgot password?": [
-        "Esqueci-me da palavra-passe?"
+        "Esqueceu-se da palavra-passe?"
       ],
       "Formalize": [
-        "Formal"
+        "Formalizar"
       ],
       "Forward as attachment": [
         "Encaminhar como anexo"
@@ -478,7 +478,7 @@
         "Começar"
       ],
       "Get the writing assistant": [
-        "Obtenha o assistente de escrita"
+        "Obter o assistente de escrita"
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -790,11 +790,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -944,7 +944,7 @@
         "Redefinir o formulário de pesquisa"
       ],
       "Reset to default": [
-        "Reposição padrão"
+        "Reposição predefinida"
       ],
       "Restore": [
         "Restaurar"
@@ -1199,7 +1199,7 @@
         "Desmarcar para eliminação"
       ],
       "Unordered list": [
-        "Lista com marcadores"
+        "Lista não ordenada"
       ],
       "Unsnooze": [
         "Retomar"
@@ -1235,7 +1235,7 @@
         "Actualizar agora"
       ],
       "Upload picture": [
-        "Enviar a imagem"
+        "Enviar imagem"
       ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
@@ -5263,8 +5263,8 @@
         "${ elementsCount } mensagens serão movidas."
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } mensagem não terá esta etiqueta:",
-        "${ elementsCount } mensagens não terão esta etiqueta:"
+        "${ elementsCount } mensagem não terá etiqueta de:",
+        "${ elementsCount } mensagens não terão etiqueta de:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imagem incorporada",
@@ -5942,7 +5942,7 @@
         "Ligação à Internet reposta."
       ],
       "JCB logo": [
-        "Logotipo JCB"
+        "Logótipo JCB"
       ],
       "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
         "Aderir ao programa ${ PROTON_SENTINEL_NAME } para o nível mais alto de segurança de conta e apoio ao cliente."
@@ -6107,7 +6107,7 @@
         "que não utilizam o ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Nenhuma das chaves enviadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative «Encriptar os e-mails»."
+        "Nenhuma das chaves enviadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative \"Encriptar os e-mails\"."
       ],
       "Normal": [
         "Normal"
@@ -6672,7 +6672,7 @@
         "Actualize para utilizar a resposta automática quando estiver ausente."
       ],
       "Upload picture": [
-        "Enviar a imagem"
+        "Enviar imagem"
       ],
       "URL link": [
         "Hiperligação do URL"
@@ -6702,7 +6702,7 @@
         "Versão ${ appVersion }"
       ],
       "Version number successfully copied to clipboard": [
-        "O número de versão foi copiado para a área de transferência."
+        "O número da versão foi copiado para a área de transferência."
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -6929,10 +6929,10 @@
         "A sua conta ${ BRAND_NAME } inclui SimpleLogin. Instale a extensão do navegador com um clique para começar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá enviar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor efetue o pagamento das faturas em atraso."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode enviar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas em atraso."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -7773,7 +7773,7 @@
         "Destinatários não divulgados"
       ],
       "Upload picture": [
-        "Enviar a imagem"
+        "Enviar imagem"
       ],
       "VAT": [
         "IVA"
@@ -8626,7 +8626,7 @@
         "Acordo de tratamento de dados do RGPD"
       ],
       "Group management (coming soon)": [
-        "Gerenciamento de grupo (em breve)"
+        "Gestão de grupos (em breve)"
       ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"

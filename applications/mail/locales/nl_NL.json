@@ -808,11 +808,11 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
@@ -12473,6 +12473,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Open Wallet-app"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bewaar uw bitcoins en zet ze veilig over"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Probleem met Wallet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Account ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Mijn geïmporteerde portemonnee${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Mijn portemonnee${ indexStr }"
       ]
     },
     "Warning": {
