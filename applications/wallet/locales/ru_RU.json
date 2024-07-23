@@ -1,0 +1,2368 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "ru_RU"
+  },
+  "contexts": {
+    "Account container": {
+      "Edit": [
+        "Изменить"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "Магазин «${ BRAND_NAME }»"
+      ],
+      "Activate recovery": [
+        "Активировать восстановление"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
+      "Authenticate": [
+        "Аутентифицировать"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Chat with us": [
+        "Поговорите с нами"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
+      "Close navigation": [
+        "Закрыть панель навигации"
+      ],
+      "Close this banner": [
+        "Закрыть этот баннер"
+      ],
+      "Close tip": [
+        "Закрыть подсказку"
+      ],
+      "Collapse wallets": [
+        "Свернуть кошельки"
+      ],
+      "Continue": [
+        "Продолжить"
+      ],
+      "Copy address": [
+        "Копировать адрес"
+      ],
+      "Copy version number to clipboard": [
+        "Скопировать номер версии в буфер обмена"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Edit phone number": [
+        "Изменить номер телефона"
+      ],
+      "Edit sign-in details": [
+        "Изменить информацию о входе в систему"
+      ],
+      "Expand wallets": [
+        "Развернуть кошельки"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
+      "Get verification code": [
+        "Получить код подтверждения"
+      ],
+      "Help": [
+        "Помощь"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больше информации: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дополнительные параметры"
+      ],
+      "Open navigation": [
+        "Открыть панель навигации"
+      ],
+      "Refer a friend": [
+        "Порекомендуйте другу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "Request a call": [
+        "Запросить звонок"
+      ],
+      "Request a feature": [
+        "Запросить функцию"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Resend code": [
+        "Повторно отправить код"
+      ],
+      "Search countries": [
+        "Поиск стран"
+      ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Sign out": [
+        "Выйти"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Switch or add account": [
+        "Переключить или добавить аккаунт"
+      ],
+      "Try another method": [
+        "Попробуйте другой способ"
+      ],
+      "Unlock data": [
+        "Разблокировать данные"
+      ],
+      "Update recovery file": [
+        "Обновить файл восстановления"
+      ],
+      "Update recovery phrase": [
+        "Обновить фразу для восстановления"
+      ],
+      "Use authentication code": [
+        "Используйте код аутентификации"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановления"
+      ],
+      "Verify": [
+        "Подтвердить"
+      ],
+      "Verify account": [
+        "Подтвердить аккаунт"
+      ],
+      "View invoice": [
+        "Посмотреть счет"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Приложения ${ BRAND_NAME }"
+      ]
+    },
+    "Bitcoin Script Type": {
+      "Legacy": [
+        "Legacy"
+      ],
+      "Native Segwit": [
+        "Native Segwit"
+      ],
+      "Nested Segwit": [
+        "Nested Segwit"
+      ]
+    },
+    "Bitcoin send": {
+      "No wallet found": [
+        "Кошельки не обнаружены"
+      ],
+      "Recipient email or BTC address": [
+        "Адрес эл. почты или BTC-адрес получателя"
+      ],
+      "Send invite email": [
+        "Отправить письмо с приглашением"
+      ],
+      "Send invite to ${ email }": [
+        "Отправить приглашение на ${ email }"
+      ],
+      "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
+        "Пока невозможно интегрировать ${ WALLET_APP_NAME } в эл. почту этого пользователя. Отправьте ему эл. письмо и сообщите, что хотите отправить ему bitcoin."
+      ],
+      "To": [
+        "Кому"
+      ]
+    },
+    "Bitcoin Unit": {
+      "BTC": [
+        "BTC"
+      ],
+      "Sats": [
+        "сатоши"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } для ПК"
+      ]
+    },
+    "Bug category": {
+      "Application problem": [
+        "Проблема в приложении"
+      ],
+      "Bridge problem": [
+        "Проблема Bridge"
+      ],
+      "Calendar problem": [
+        "Проблема календаря"
+      ],
+      "Connection problem": [
+        "Проблема с соединением"
+      ],
+      "Contacts problem": [
+        "Проблема контактов"
+      ],
+      "Custom domain problem": [
+        "Проблема своих доменов"
+      ],
+      "Drive problem": [
+        "Проблема Drive"
+      ],
+      "Feature request": [
+        "Запрос функционала"
+      ],
+      "Import / export problem": [
+        "Проблема импорта / экспорта"
+      ],
+      "Installation problem": [
+        "Проблема с установкой ПО"
+      ],
+      "Mail problem": [
+        "Проблема с почтой"
+      ],
+      "Manual setup problem": [
+        "Проблема при ручной установке"
+      ],
+      "Other": [
+        "Другая"
+      ],
+      "Pass problem": [
+        "Проблема с Proton Pass"
+      ],
+      "Payments problem": [
+        "Проблема с платежами"
+      ],
+      "Sign in problem": [
+        "Проблема со входом"
+      ],
+      "Sign up problem": [
+        "Проблема при регистрации"
+      ],
+      "Signup problem": [
+        "Проблема при регистрации"
+      ],
+      "Slow speed problem": [
+        "Проблема: низкая скорость соединения"
+      ],
+      "Speed problem": [
+        "Проблема со скоростью"
+      ],
+      "Streaming problem": [
+        "Проблема стриминга"
+      ],
+      "Update problem": [
+        "Проблема с обновлением"
+      ],
+      "VPN problem": [
+        "Проблема VPN"
+      ],
+      "Wallet problem": [
+        "Проблема с кошельком"
+      ],
+      "Website access problem": [
+        "Проблема с доступом к сайту"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Свернуть"
+      ],
+      "Expand": [
+        "Развернуть"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазия"
+      ],
+      "Afghanistan": [
+        "Афганистан"
+      ],
+      "Albania": [
+        "Албания"
+      ],
+      "Algeria": [
+        "Алжир"
+      ],
+      "American Samoa": [
+        "Американское Самоа"
+      ],
+      "Andorra": [
+        "Андорра"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангилья"
+      ],
+      "Antarctica": [
+        "Антарктида"
+      ],
+      "Antigua and Barbuda": [
+        "Антигуа и Барбуда"
+      ],
+      "Argentina": [
+        "Аргентина"
+      ],
+      "Armenia": [
+        "Армения"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Остров Вознесения"
+      ],
+      "Australia": [
+        "Австралия"
+      ],
+      "Austria": [
+        "Австрия"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамские Острова"
+      ],
+      "Bahrain": [
+        "Бахрейн"
+      ],
+      "Bangladesh": [
+        "Бангладеш"
+      ],
+      "Barbados": [
+        "Барбадос"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгия"
+      ],
+      "Belize": [
+        "Белиз"
+      ],
+      "Benin": [
+        "Бенин"
+      ],
+      "Bermuda": [
+        "Бермуды"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Боливия"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Бонэйр, Синт-Эстатиус и Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Босния и Герцеговина"
+      ],
+      "Botswana": [
+        "Ботсвана"
+      ],
+      "Bouvet Island": [
+        "Остров Буве"
+      ],
+      "Brazil": [
+        "Бразилия"
+      ],
+      "British Indian Ocean Territory": [
+        "Британская Территория в Индийском Океане"
+      ],
+      "Brunei Darussalam": [
+        "Бруней-Даруссалам"
+      ],
+      "Bulgaria": [
+        "Болгария"
+      ],
+      "Burkina Faso": [
+        "Буркина-Фасо"
+      ],
+      "Burundi": [
+        "Бурунди"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Кабо-Верде"
+      ],
+      "Cayman Islands": [
+        "Острова Кайман"
+      ],
+      "Central African Republic": [
+        "Центральноафриканская Республика"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чили"
+      ],
+      "China": [
+        "Китай"
+      ],
+      "Christmas Island": [
+        "Остров Рождества"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Кокосовые острова или Килинг"
+      ],
+      "Colombia": [
+        "Колумбия"
+      ],
+      "Comoros": [
+        "Коморские острова"
+      ],
+      "Congo": [
+        "Конго"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Демократическая Республика Конго"
+      ],
+      "Cook Islands": [
+        "Острова Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рика"
+      ],
+      "Croatia": [
+        "Хорватия"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасао"
+      ],
+      "Cyprus": [
+        "Кипр"
+      ],
+      "Czech Republic": [
+        "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Ивуар"
+      ],
+      "Denmark": [
+        "Дания"
+      ],
+      "Djibouti": [
+        "Джибути"
+      ],
+      "Dominica": [
+        "Доминика"
+      ],
+      "Dominican Republic": [
+        "Доминиканская Республика"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Египет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экваториальная Гвинея"
+      ],
+      "Eritrea": [
+        "Эритрея"
+      ],
+      "Estonia": [
+        "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
+      ],
+      "Ethiopia": [
+        "Эфиопия"
+      ],
+      "Falkland Islands": [
+        "Фолклендские острова"
+      ],
+      "Faroe Islands": [
+        "Фарерские острова"
+      ],
+      "Federated States of Micronesia": [
+        "Федеративные Штаты Микронезии"
+      ],
+      "Fiji": [
+        "Фиджи"
+      ],
+      "Finland": [
+        "Финляндия"
+      ],
+      "France": [
+        "Франция"
+      ],
+      "French Guiana": [
+        "Французская Гвиана"
+      ],
+      "French Polynesia": [
+        "Французская Полинезия"
+      ],
+      "French Southern Territories": [
+        "Французские Южные территории"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбия"
+      ],
+      "Georgia": [
+        "Джорджия"
+      ],
+      "Germany": [
+        "Германия"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гибралтар"
+      ],
+      "Greece": [
+        "Греция"
+      ],
+      "Greenland": [
+        "Гренландия"
+      ],
+      "Grenada": [
+        "Гренада"
+      ],
+      "Guadeloupe": [
+        "Гваделупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватемала"
+      ],
+      "Guernsey": [
+        "Гернси"
+      ],
+      "Guinea": [
+        "Гвинея"
+      ],
+      "Guinea-Bissau": [
+        "Гвинея-Бисау"
+      ],
+      "Guyana": [
+        "Гайана"
+      ],
+      "Haiti": [
+        "Гаити"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Остров Херд и острова Макдональд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святой Престол (Государство-Город Ватикан)"
+      ],
+      "Honduras": [
+        "Гондурас"
+      ],
+      "Hong Kong": [
+        "Гонконг"
+      ],
+      "Hungary": [
+        "Венгрия"
+      ],
+      "Iceland": [
+        "Исландия"
+      ],
+      "India": [
+        "Индия"
+      ],
+      "Indonesia": [
+        "Индонезия"
+      ],
+      "International": [
+        "Международный"
+      ],
+      "Iran": [
+        "Иран"
+      ],
+      "Iraq": [
+        "Ирак"
+      ],
+      "Ireland": [
+        "Ирландия"
+      ],
+      "Isle of Man": [
+        "Остров Мэн"
+      ],
+      "Israel": [
+        "Израиль"
+      ],
+      "Italy": [
+        "Италия"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Япония"
+      ],
+      "Jersey": [
+        "Джерси"
+      ],
+      "Jordan": [
+        "Иордания"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кения"
+      ],
+      "Kiribati": [
+        "Кирибати"
+      ],
+      "Kosovo": [
+        "Косово"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Киргизия"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвия"
+      ],
+      "Lebanon": [
+        "Ливан"
+      ],
+      "Lesotho": [
+        "Лесото"
+      ],
+      "Liberia": [
+        "Либерия"
+      ],
+      "Libya": [
+        "Ливия"
+      ],
+      "Liechtenstein": [
+        "Лихтенштейн"
+      ],
+      "Lithuania": [
+        "Литва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макао"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малави"
+      ],
+      "Malaysia": [
+        "Малайзия"
+      ],
+      "Maldives": [
+        "Мальдивы"
+      ],
+      "Mali": [
+        "Мали"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалловы Острова"
+      ],
+      "Martinique": [
+        "Мартиника"
+      ],
+      "Mauritania": [
+        "Мавритания"
+      ],
+      "Mauritius": [
+        "Маврикий"
+      ],
+      "Mayotte": [
+        "Майотта"
+      ],
+      "Mexico": [
+        "Мексика"
+      ],
+      "Moldova": [
+        "Молдавия"
+      ],
+      "Monaco": [
+        "Монако"
+      ],
+      "Mongolia": [
+        "Монголия"
+      ],
+      "Montenegro": [
+        "Черногория"
+      ],
+      "Montserrat": [
+        "Монтсеррат"
+      ],
+      "Morocco": [
+        "Марокко"
+      ],
+      "Mozambique": [
+        "Мозамбик"
+      ],
+      "Myanmar": [
+        "Мьянма"
+      ],
+      "Namibia": [
+        "Намибия"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нидерланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледония"
+      ],
+      "New Zealand": [
+        "Новая Зеландия"
+      ],
+      "Nicaragua": [
+        "Никарагуа"
+      ],
+      "Niger": [
+        "Нигер"
+      ],
+      "Nigeria": [
+        "Нигерия"
+      ],
+      "Niue": [
+        "Ниуэ"
+      ],
+      "Norfolk Island": [
+        "Остров Норфолк"
+      ],
+      "North Korea": [
+        "Северная Корея"
+      ],
+      "North Macedonia": [
+        "Северная Македония"
+      ],
+      "Northern Mariana Islands": [
+        "Северные Марианские Острова"
+      ],
+      "Norway": [
+        "Норвегия"
+      ],
+      "Oman": [
+        "Оман"
+      ],
+      "Pakistan": [
+        "Пакистан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палестина"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвинея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Филиппины"
+      ],
+      "Pitcairn": [
+        "Острова Питкэрн"
+      ],
+      "Poland": [
+        "Польша"
+      ],
+      "Portugal": [
+        "Португалия"
+      ],
+      "Puerto Rico": [
+        "Пуэрто-Рико"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Реюньон"
+      ],
+      "Romania": [
+        "Румыния"
+      ],
+      "Russia": [
+        "Россия"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартельми"
+      ],
+      "Saint Helena": [
+        "Остров Святой Елены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сент-Китс и Невис"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсия"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартен (французская часть)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-Пьер и Микелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Винсент и Гренадины"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марино"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Томе и Принсипи"
+      ],
+      "Saudi Arabia": [
+        "Саудовская Аравия"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербия"
+      ],
+      "Seychelles": [
+        "Сейшелы"
+      ],
+      "Sierra Leone": [
+        "Сьерра-Леоне"
+      ],
+      "Singapore": [
+        "Сингапур"
+      ],
+      "Sint Maarten": [
+        "Сен-Мартен"
+      ],
+      "Slovakia": [
+        "Словакия"
+      ],
+      "Slovenia": [
+        "Словения"
+      ],
+      "Solomon Islands": [
+        "Соломоновы Острова"
+      ],
+      "Somalia": [
+        "Сомали"
+      ],
+      "South Africa": [
+        "ЮАР"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Южная Георгия и Южные Сандвичевы Острова"
+      ],
+      "South Korea": [
+        "Южная Корея"
+      ],
+      "South Ossetia": [
+        "Южная Осетия"
+      ],
+      "South Sudan": [
+        "Южный Судан"
+      ],
+      "Spain": [
+        "Испания"
+      ],
+      "Sri Lanka": [
+        "Шри-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Суринам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпицберген и Ян-Майен"
+      ],
+      "Sweden": [
+        "Швеция"
+      ],
+      "Switzerland": [
+        "Швейцария"
+      ],
+      "Syria": [
+        "Сирия"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджикистан"
+      ],
+      "Tanzania": [
+        "Танзания"
+      ],
+      "Thailand": [
+        "Таиланд"
+      ],
+      "Timor-Leste": [
+        "Восточный Тимор"
+      ],
+      "Togo": [
+        "Того"
+      ],
+      "Tokelau": [
+        "Токелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Тринидад и Тобаго"
+      ],
+      "Tristan da Cunha": [
+        "Тристан да Кунья"
+      ],
+      "Tunisia": [
+        "Тунис"
+      ],
+      "Turkey": [
+        "Турция"
+      ],
+      "Turkmenistan": [
+        "Туркменистан"
+      ],
+      "Turks and Caicos Islands": [
+        "Острова Теркс и Кайкос"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украина"
+      ],
+      "United Arab Emirates": [
+        "Объединённые Арабские Эмираты"
+      ],
+      "United Kingdom": [
+        "Великобритания"
+      ],
+      "United States": [
+        "США"
+      ],
+      "United States Minor Outlying Islands": [
+        "Внешние малые острова США"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекистан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "Вьетнам"
+      ],
+      "Virgin Islands, British": [
+        "Британские Виргинские острова"
+      ],
+      "Virgin Islands, U.S.": [
+        "Американские Виргинские острова"
+      ],
+      "Wallis and Futuna": [
+        "Уоллис и Футуна"
+      ],
+      "Western Sahara": [
+        "Западная Сахара"
+      ],
+      "Yemen": [
+        "Йемен"
+      ],
+      "Zambia": [
+        "Замбия"
+      ],
+      "Zimbabwe": [
+        "Зимбабве"
+      ],
+      "Åland Islands": [
+        "Аландские острова"
+      ]
+    },
+    "Currency select": {
+      "Others": [
+        "Другие"
+      ],
+      "Popular": [
+        "Популярные"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Просроченный счёт"
+      ]
+    },
+    "Error": {
+      "Domain not available, try again later": [
+        "Домен недоступен, повторите попытку позже"
+      ],
+      "Email is not valid": [
+        "Эл. почта недействительна"
+      ],
+      "Enter 6 digits": [
+        "Введите 6 цифр"
+      ],
+      "Incorrect username": [
+        "Некорректное имя пользователя"
+      ],
+      "Input isn't a valid email or bitcoin address": [
+        "Введён неверный адрес эл. почты или bitcoin-адрес"
+      ],
+      "Invalid verification code": [
+        "Неверный код подтверждения"
+      ],
+      "Not a valid number": [
+        "Номер недействителен"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
+      ],
+      "Request timed out": [
+        "Время запроса истекло"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
+      ],
+      "The email addresses do not match": [
+        "Адреса электронной почты не совпадают"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
+      ],
+      "This field is required": [
+        "Это обязательное поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Минимальная длина для этого поля ${ minimumLength } символов."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
+      ],
+      "Unknown error": [
+        "Неизвестная ошибка"
+      ],
+      "Username must begin with a letter or digit": [
+        "Имя пользователя должно начинаться с буквы или цифры"
+      ],
+      "Username must end with a letter or digit": [
+        "Имя пользователя должно заканчиваться буквой или цифрой"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "Приложение в настоящее время недоступно"
+      ],
+      "Error: ${ errorMessage }": [
+        "Ошибка: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Хм. Что-то пошло не так"
+      ],
+      "Open in browser": [
+        "Открыть в браузере"
+      ],
+      "Please refresh the page or try again later.": [
+        "Пожалуйста, обновите страницу или повторите попытку позже."
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Чтобы использовать ${ MAIL_APP_NAME } или ${ CALENDAR_APP_NAME }, переключитесь на веб-версию."
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Изображение не выбрано"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
+      "GB": [
+        "ГБ"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "TB": [
+        "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme font": [
+        "Шрифт темы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Счёт"
+      ],
+      "Apps": [
+        "Приложения"
+      ],
+      "Network": [
+        "Сеть"
+      ],
+      "Other category": [
+        "Другая категория"
+      ],
+      "Services": [
+        "Службы"
+      ]
+    },
+    "Human verification method": {
+      "Email": [
+        "Эл. почта"
+      ],
+      "Manual": [
+        "Вручную"
+      ],
+      "No verification method available": [
+        "Нет доступных способов проверки"
+      ],
+      "SMS": [
+        "СМС"
+      ]
+    },
+    "Info": {
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участников)"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
+      ],
+      "Country code": [
+        "Код страны"
+      ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
+      "Edit email address": [
+        "Изменить адрес эл. почты"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения для аутентификации"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите собственный пароль (как администратор организации)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
+      ],
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "Loading ${ appName }": [
+        "Загрузка ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "Подождите пока загружается календарь. Вы будете перенаправлены на нашу платформу для составления расписаний Calendly в новой вкладке."
+      ],
+      "New": [
+        "Новый"
+      ],
+      "No results found": [
+        "Ничего не найдено"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Обновление страницы или ${ link } автоматически решит большую часть проблем."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недоступны. Попробуйте снова через несколько минут"
+      ],
+      "Session timed out": [
+        "Время сеанса истекло"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "Version number successfully copied to clipboard": [
+        "Номер версии скопирован в буфер обмена"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы отправим новый код подтверждения на ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Хотите ли вы получить новый код подтверждения?"
+      ],
+      "You can now return to the application to continue": [
+        "Теперь вы можете вернуться в приложение, чтобы продолжить"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваш адрес электронной почты будет использован только для этой разовой проверки."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш номер телефона будет использован только для этой разовой проверки."
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "имя пользователя ${ BRAND_NAME }"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
+      "Browser": [
+        "Браузер"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
+      "Category": [
+        "Категория"
+      ],
+      "Code is 6 digits without spaces": [
+        "Код состоит из 6 цифр без пробелов"
+      ],
+      "Copy": [
+        "Копировать"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Delete": [
+        "Удалить"
+      ],
+      "Delete recovery-related information.": [
+        "Удалите информацию, связанную с восстановлением."
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
+      "Hide password": [
+        "Скрыть пароль"
+      ],
+      "Main": [
+        "Главная"
+      ],
+      "Navigation": [
+        "Панель навигации"
+      ],
+      "Operating system": [
+        "Операционная система"
+      ],
+      "Operating system version": [
+        "Версия операционной системы"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Phone number": [
+        "Номер телефона"
+      ],
+      "Reveal password": [
+        "Показать пароль"
+      ],
+      "System information": [
+        "Сведения о системе"
+      ],
+      "Verification code": [
+        "Код подтверждения"
+      ],
+      "What happened?": [
+        "Что случилось?"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ]
+    },
+    "Link": {
+      "clearing your browser cache": [
+        "очистка кеша браузера"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Request an invite": [
+        "Запросить приглашение"
+      ],
+      "View on blockchain": [
+        "Просмотреть в блокчейне"
+      ],
+      "What’s this?": [
+        "Что это такое?"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "Некоторые изображения не были загружены из-за дублирования имён файлов в текущей выборке."
+      ]
+    },
+    "Pagination": {
+      "Next": [
+        "Далее"
+      ],
+      "Previous": [
+        "Назад"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "Способ связаться с вами"
+      ],
+      "Leave empty if you don't want to add passphrase": [
+        "Не заполняйте, если не хотите добавить кодовую фразу"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Search": [
+        "Поиск"
+      ],
+      "Select": [
+        "Выбрать"
+      ]
+    },
+    "QRCode Reader": {
+      "Could not run QR code reader": [
+        "Не удалось запустить сканер QR-кода"
+      ]
+    },
+    "QRCode reader": {
+      "Loading QRCode reader": [
+        "Загружаем сканер QR-кода"
+      ]
+    },
+    "Receive bitcoin": {
+      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "Это ваш Bitcoin-адрес. Чтобы повысить конфиденциальность, используйте разные адреса для каждой транзакции."
+      ],
+      "Your bitcoin address": [
+        "Ваш bitcoin-адрес"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Ничего не найдено"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Выйти"
+      ],
+      "Stay signed in": [
+        "Оставаться в системе"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } час",
+        "${ gracePeriodHoursRemaining } часа",
+        "${ gracePeriodHoursRemaining } часов",
+        "${ gracePeriodHoursRemaining } часов"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } теперь доступен."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Если вы выйдете из системы до восстановления пароля, вы можете потерять доступ к своему аккаунту."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Если вы выйдете из системы, не восстановив пароль, вы можете потерять доступ к своему аккаунту."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Вы сможете восстановить пароль через ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сброс пароля"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Выйти без восстановления пароля?"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "Перейти к тарифам"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Вы можете получить до ${ credits } в кредитах."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Пригласите друзей в ${ BRAND_NAME }"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "Увеличить дисковое пространство"
+      ],
+      "Your current storage:": [
+        "Текущее хранилище:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } хранилище"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } заполнено на ${ percentage }%"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваше ${ appStorage } почти заполнено"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваше ${ appStorage } заполнено"
+      ],
+      "Your storage is full": [
+        "Ваше хранилище заполнено"
+      ]
+    },
+    "Success": {
+      "Bug reported": [
+        "Отчёт об ошибке отправлен"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Код отправлен на ${ methodTo }"
+      ],
+      "Email address copied to clipboard": [
+        "Адрес скопирован в буфер обмена"
+      ],
+      "Verification successful": [
+        "Проверка прошла успешно"
+      ]
+    },
+    "Title": {
+      "Enter your password": [
+        "Введите свой пароль"
+      ],
+      "Human verification": [
+        "Проверка пользователя"
+      ],
+      "Invalid verification code": [
+        "Неверный код подтверждения"
+      ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
+      "Request new code": [
+        "Запросить новый код"
+      ],
+      "Sign in with 2FA": [
+        "Войти с помощью двухфакторной аутентификации"
+      ],
+      "Sign out": [
+        "Выйти"
+      ],
+      "Wallet": [
+        "Кошелёк"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символа",
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
+      ]
+    },
+    "Wallet": {
+      "An error occured": [
+        "Произошла ошибка"
+      ]
+    },
+    "Wallet Account": {
+      "Account label": [
+        "Метка счёта"
+      ],
+      "Add": [
+        "Добавить"
+      ],
+      "Add account": [
+        "Добавить счёт"
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Could not add account to wallet": [
+        "Не удалось добавить в кошелёк счёт"
+      ],
+      "Custom account index": [
+        "Пользовательский индекс счёта"
+      ],
+      "Custom index": [
+        "Пользовательский индекс"
+      ],
+      "Index": [
+        "Индекс"
+      ],
+      "Index of the account to add": [
+        "Индекс добавляемого счёта"
+      ],
+      "Savings for holiday": [
+        "Сбережения на отпуск"
+      ],
+      "Script Type": [
+        "Формат сценария"
+      ],
+      "Script type used in account. This will have an impact on account derivation path.": [
+        "Формат сценария, используемого для счёта. Он будет влиять на путь деривации для счёта."
+      ],
+      "Your account was successfully created": [
+        "Счёт успешно создан"
+      ]
+    },
+    "Wallet account": {
+      "This account is already created": [
+        "Этот счёт уже создан"
+      ]
+    },
+    "Wallet container": {
+      "Edit": [
+        "Изменить"
+      ]
+    },
+    "Wallet dashboard": {
+      "24h change": [
+        "Изменение (24 ч.)"
+      ],
+      "All accounts": [
+        "Все счета"
+      ],
+      "Buy": [
+        "Купить"
+      ],
+      "Current price": [
+        "Текущая цена"
+      ],
+      "Receive": [
+        "Получить"
+      ],
+      "Send": [
+        "Отправить"
+      ],
+      "The current fingerprint doesn't match stored one": [
+        "Текущий отпечаток не совпадает с сохранённым"
+      ]
+    },
+    "Wallet deletion": {
+      "Confirm to delete '${ wallet.Wallet.Name }'": [
+        "Подтвердите удаление «${ wallet.Wallet.Name }»"
+      ],
+      "Warning:'": [
+        "Предупреждение."
+      ]
+    },
+    "Wallet discover": {
+      "Backup your ${ BRAND_NAME } account": [
+        "Обезопасьте аккаунт ${ BRAND_NAME }"
+      ],
+      "Backup your wallet's mnemonic": [
+        "Сохраните мнемоническую фразу для кошелька"
+      ],
+      "Claim your wallet": [
+        "Получите кошелёк"
+      ],
+      "Discover": [
+        "Знакомство"
+      ],
+      "Finish your account setup": [
+        "Завершите настройку аккаунта"
+      ],
+      "Set up your 2FA": [
+        "Настройте двухфакторную аутентификацию"
+      ]
+    },
+    "Wallet header": {
+      "Secure your wallet": [
+        "Защитите кошелёк"
+      ]
+    },
+    "Wallet information": {
+      "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
+        "Кодовая фраза — это дополнительный пароль, который вы создаёте, чтобы повысить защиту своего криптокошелька. Её можно использовать вместе с мнемонической фразой. Храните её в надёжном месте, поскольку без неё вы не получите доступ к кошельку."
+      ],
+      "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Мнемоническая фраза — это последовательность 12-24 слов, созданных вашим кошельком. Она служит главным ключом для восстановления средств. Храните её в надёжном месте и никому не сообщайте, поскольку она даёт доступ к вашим средствам."
+      ],
+      "What’s a wallet passphrase?": [
+        "Что такое кодовая фраза для кошелька?"
+      ],
+      "What’s a wallet seed phrase?": [
+        "Что такое мнемоническая фраза?"
+      ]
+    },
+    "Wallet passphrase": {
+      "Fingerprint doesn't match stored one": [
+        "Отпечаток не совпадает с сохранённым"
+      ],
+      "My wallet passphrase": [
+        "Кодовая фраза для моего кошелька"
+      ],
+      "To access this wallet, you need to input the passphrase": [
+        "Введите кодовую фразу для доступа к кошельку"
+      ],
+      "Wallet passphrase": [
+        "Кодовая фраза для кошелька"
+      ]
+    },
+    "Wallet preference": {
+      "Account label": [
+        "Метка счёта"
+      ],
+      "Accounts": [
+        "Счета"
+      ],
+      "Advanced options": [
+        "Расширенные настройки"
+      ],
+      "Back up wallet": [
+        "Обезопасить кошелёк"
+      ],
+      "Back up wallet first": [
+        "Сначала обезопасьте кошелёк"
+      ],
+      "Clear browser storage": [
+        "Очистить хранилище браузера"
+      ],
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Delete this wallet": [
+        "Удалить этот кошелёк"
+      ],
+      "Delete wallet": [
+        "Удалить кошелёк"
+      ],
+      "My super account": [
+        "Мой суперсчёт"
+      ],
+      "My super wallet": [
+        "Мой суперкошелёк"
+      ],
+      "Wallet name": [
+        "Название кошелька"
+      ],
+      "Your wallet preferences": [
+        "Настройки кошелька"
+      ]
+    },
+    "Wallet preferences": {
+      "Add": [
+        "Добавить"
+      ],
+      "Add a new email address": [
+        "Добавить новый адрес эл. почты"
+      ],
+      "Email integration": [
+        "Интеграция электронной почты"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Local currency": [
+        "Местная валюта"
+      ],
+      "Select your currency": [
+        "Выберите свою валюту"
+      ],
+      "Send and receive Bitcoin by email with email integration.": [
+        "Интегрировав эл. почту, можно отправлять и получать Bitcoin по эл. почте."
+      ]
+    },
+    "Wallet Receive": {
+      "Amount": [
+        "Сумма"
+      ],
+      "Amount to receive": [
+        "Сумма к получению"
+      ],
+      "Discover Bitcoin Via Email": [
+        "Ознакомиться с «Bitcoin по эл. почте»"
+      ],
+      "Enter custom amount": [
+        "Введите свою сумму"
+      ],
+      "Leave empty to let the sender choose the amount": [
+        "Не заполняйте, чтобы сумму мог выбрать отправитель"
+      ],
+      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
+        "Другие пользователи ${ WALLET_APP_NAME } могут отправлять Bitcoin по вашему адресу эл. почты."
+      ]
+    },
+    "Wallet receive": {
+      "Address generation in progress": [
+        "Создаётся адрес"
+      ],
+      "Gap between next address and last used one is too large. Please use one of the address you generate before": [
+        "Слишком большая разница между следующим адресом и последним использованным. Используйте один из адресов, созданных ранее"
+      ],
+      "Generate new address": [
+        "Создать новый адрес"
+      ],
+      "Share address": [
+        "Поделиться адресом"
+      ]
+    },
+    "Wallet send": {
+      "${ price } available": [
+        "${ price } доступно"
+      ],
+      "A user icon with an exclamation mark, meaning that something unexpected happened": [
+        "Значок пользователя с восклицательным знаком. Значит, произошло что-то неожиданное"
+      ],
+      "Add Message to recipient": [
+        "Добавить сообщение для получателя"
+      ],
+      "Add private note to myself": [
+        "Добавить личный комментарий для себя"
+      ],
+      "Added address is invalid": [
+        "Добавленный адрес недействителен"
+      ],
+      "Amount": [
+        "Сумма"
+      ],
+      "Bitcoin address signature could not be verified": [
+        "Не удалось проверить подпись Bitcoin-адреса"
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Could not create PSBT": [
+        "Не удалось создать PSBT"
+      ],
+      "Could not find address linked to this email": [
+        "Не удалось найти адрес, связанный с этим адресом эл. почты"
+      ],
+      "Edit": [
+        "Изменить"
+      ],
+      "Edit recipients": [
+        "Изменить получателей"
+      ],
+      "High priority": [
+        "Высокий приоритет"
+      ],
+      "How much are you sending?": [
+        "Сколько вы отправляете?"
+      ],
+      "Low priority": [
+        "Низкий приоритет"
+      ],
+      "Max recipients per transaction limit reached (${ MAX_RECIPIENTS_PER_TRANSACTIONS })": [
+        "Достигнуто максимальное количество получателей на транзакцию (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
+      ],
+      "Median priority": [
+        "Средний приоритет"
+      ],
+      "Money is on the way": [
+        "Деньги уже в пути"
+      ],
+      "Network fees": [
+        "Комиссия сети"
+      ],
+      "No address set on this BitcoinAddress": [
+        "Для BitcoinAddress отсутствует адрес"
+      ],
+      "No signature set on this BitcoinAddress": [
+        "Для BitcoinAddress отсутствует подпись"
+      ],
+      "Recent recipients": [
+        "Недавние получатели"
+      ],
+      "Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.": [
+        "Сумма получателя не обновлялась. Проверьте, достаточно ли у вас средств для отправки указанной суммы и комиссии."
+      ],
+      "Recipients": [
+        "Получатели"
+      ],
+      "Remove email": [
+        "Удалить адрес эл. почты"
+      ],
+      "Review": [
+        "Просмотреть"
+      ],
+      "Send": [
+        "Отправить"
+      ],
+      "Send all": [
+        "Отправить всё"
+      ],
+      "The transaction could not be sent. Please try again later": [
+        "Не удалось отправить транзакцию. Попробуйте позже"
+      ],
+      "Transaction was succesfully sent": [
+        "Транзакция успешно отправлена"
+      ],
+      "Try adding an email address to start sending Bitcoin!": [
+        "Попробуйте добавить адрес эл. почты, и начните отправлять Bitcoin!"
+      ],
+      "View details": [
+        "Просмотреть информацию"
+      ],
+      "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
+        "Пока ожидаете, пригласите родных и друзей в ${ WALLET_APP_NAME }, чтобы вы все могли отправлять Bitcoin по эл. почте."
+      ],
+      "Who are you sending Bitcoin to?": [
+        "Кому вы отправляете Bitcoin?"
+      ],
+      "You are sending": [
+        "Вы отправляете"
+      ],
+      "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
+        "Транзакция передана в сеть Bitcoin. Для её подтверждения сетью может потребоваться около часа."
+      ]
+    },
+    "Wallet Send": {
+      "Could not broadcast transaction": [
+        "Не удалось передать транзакцию"
+      ],
+      "Could not sign transaction": [
+        "Не удалось подписать транзакцию"
+      ]
+    },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Единица Bitcoin"
+      ],
+      "Unit in which bitcoin will be displayed": [
+        "Единица, в которой будет отображаться bitcoin"
+      ]
+    },
+    "Wallet Settings": {
+      "Account could not be deleted": [
+        "Не удалось удалить счёт"
+      ],
+      "Account name changed": [
+        "Название счёта изменено"
+      ],
+      "Account name could not be change": [
+        "Не удалось изменить название счёта"
+      ],
+      "Account was deleted": [
+        "Счёт был удалён"
+      ],
+      "Could not add email address": [
+        "Не удалось добавить адрес эл. почты"
+      ],
+      "Could not be replaced": [
+        "Не удалить сменить"
+      ],
+      "Could not fill the pool after email address adition": [
+        "Не удалось заполнить пул после добавления адреса эл. почты"
+      ],
+      "Could not fill the pool after email address replacement": [
+        "Не удалось заполнить пул после смены адреса эл. почты"
+      ],
+      "Could not remove email address": [
+        "Не удалось удалить адрес эл. почты"
+      ],
+      "Email address has been added": [
+        "Адрес эл. почты добавлен"
+      ],
+      "Email address has been removed": [
+        "Адрес эл. почты удалён"
+      ],
+      "Email address has been replaced": [
+        "Адрес эл. почты сменён"
+      ],
+      "Local storage cleared": [
+        "Локальное хранилище очищено"
+      ],
+      "New fiat currency applied": [
+        "Применена новая официальная валюта"
+      ],
+      "New fiat currency could not be applied": [
+        "Не удалось применить новую официальную валюту"
+      ],
+      "Preferred bitcoin unit could not be changed": [
+        "Не удалось изменить предпочитаемую единицу bitcoin"
+      ],
+      "Preferred bitcoin unit was changed": [
+        "Предпочитаемая единица bitcoin изменена"
+      ],
+      "Wallet could not be deleted": [
+        "Не удалось удалить кошелёк"
+      ],
+      "Wallet name changed": [
+        "Название кошелька изменено"
+      ],
+      "Wallet name could not be changed": [
+        "Не удалось изменить название кошелька"
+      ],
+      "Wallet was deleted": [
+        "Кошелёк был удалён"
+      ]
+    },
+    "Wallet setup": {
+      "Add a passphrase (optional)": [
+        "Добавьте кодовую фразу (необязательно)"
+      ],
+      "Choose your local fiat currency to see the value of your transactions.": [
+        "Выберите официальную валюту своей страны, в которой будет указана сумма транзакций."
+      ],
+      "Confirm": [
+        "Подтвердить"
+      ],
+      "Could not create wallet": [
+        "Не удалось создать кошелёк"
+      ],
+      "Create a new wallet": [
+        "Создать новый кошелёк"
+      ],
+      "Done": [
+        "Готово"
+      ],
+      "Give a name to this wallet": [
+        "Назовите этот кошелёк"
+      ],
+      "Import": [
+        "Импортировать"
+      ],
+      "Import wallet": [
+        "Импортировать кошелёк"
+      ],
+      "Important:": [
+        "Важно."
+      ],
+      "Input mnemonic is invalid, please double check.": [
+        "Введена неверная мнемоническая фраза. Проверьте ещё раз."
+      ],
+      "Invite a friend": [
+        "Пригласить друга"
+      ],
+      "Learn more": [
+        "Подробнее"
+      ],
+      "Mnemonic length is not valid.": [
+        "Длина мнемонической фразы неверна."
+      ],
+      "My imported wallet${ indexStr }": [
+        "Мой импортированный кошелёк${ indexStr }"
+      ],
+      "My wallet account ${ indexStr }": [
+        "Счёт в моём кошельке ${ indexStr }"
+      ],
+      "My wallet had a passphrase": [
+        "У моего кошелька была кодовая фраза"
+      ],
+      "My wallet${ indexStr }": [
+        "Мой кошелёк${ indexStr }"
+      ],
+      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
+        "Никому их не передавайте. ${ BRAND_NAME } никогда их не запрашивает. Внимательно их запишите и спрячьте в надёжном месте."
+      ],
+      "Passphrase": [
+        "Кодовая фраза"
+      ],
+      "Please backup your secret recovery phrase before you delete your wallet.": [
+        "Прежде чем удалить кошелёк, сохраните секретную фразу для его восстановления."
+      ],
+      "Seed phrase (12-24 words)": [
+        "Мнемоническая фраза (12–24 слова)"
+      ],
+      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
+        "Храните мнемоническую фразу в надёжном месте. Без неё ${ BRAND_NAME } не восстановит ваши средства."
+      ],
+      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
+        "Эти 12 слов следует использовать для восстановления цифровых активов этого кошелька только в крайнем случае, например при потере доступа к аккаунту ${ BRAND_NAME }."
+      ],
+      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
+        "Эта мнемоническая фраза поможет восстановить кошелёк в следующий раз или в другой совместимой программе."
+      ],
+      "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
+        "Этот кошелёк уже невозможно расшифровать. Чтобы его снова можно было расшифровать, восстановите ключи, которые использовались во время его создания в аккаунте. Или удалите его, чтобы освободить место для одного кошелька."
+      ],
+      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
+        "Если потеряете доступ к аккаунту, используйте эту секретную фразу для восстановления кошелька."
+      ],
+      "View wallet seed phrase": [
+        "Просмотреть мнемоническую фразу"
+      ],
+      "Wallet name": [
+        "Название кошелька"
+      ],
+      "Wallet seed phrase": [
+        "Мнемоническая фраза для кошелька"
+      ],
+      "Wallet seed phrases encode the private key that controls your digital assets.": [
+        "В мнемонических фразах зашифрован секретный ключ, контролирующий ваши цифровые активы."
+      ],
+      "Wallet setup": [
+        "Настройка кошелька"
+      ],
+      "What's a wallet passphrase": [
+        "Что такое кодовая фраза для кошелька"
+      ],
+      "What's a wallet seed phrase": [
+        "Что такое мнемоническая фраза"
+      ],
+      "Your keys, your coins.": [
+        "Ваши ключи — ваши монеты."
+      ]
+    },
+    "Wallet Sidebar": {
+      "Discover": [
+        "Знакомство"
+      ],
+      "Recovery": [
+        "Восстановление"
+      ],
+      "Security": [
+        "Безопасность"
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Upgrade": [
+        "Улучшение тарифа"
+      ],
+      "Wallets": [
+        "Кошельки"
+      ]
+    },
+    "Wallet transaction": {
+      "${ address } (me)": [
+        "${ address } (me)"
+      ],
+      "+ Add": [
+        "+ Добавить"
+      ],
+      "Add bitcoins to your wallet": [
+        "Пополните Bitcoin-кошелёк"
+      ],
+      "Amount": [
+        "Сумма"
+      ],
+      "Buy": [
+        "Купить"
+      ],
+      "From": [
+        "От"
+      ],
+      "In progress": [
+        "Выполняется"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "Message": [
+        "Сообщение"
+      ],
+      "Network fee": [
+        "Комиссия сети"
+      ],
+      "Network fees": [
+        "Комиссия сети"
+      ],
+      "Note": [
+        "Комментарий"
+      ],
+      "Receive": [
+        "Получить"
+      ],
+      "Save note": [
+        "Сохранить комментарий"
+      ],
+      "Start your journey": [
+        "Всё готово!"
+      ],
+      "To": [
+        "Кому"
+      ],
+      "Total (sent amount + fee)": [
+        "Итого (отправленная сумма + комиссия)"
+      ],
+      "Total (sent amount + fees)": [
+        "Итого (отправленная сумма + комиссии)"
+      ],
+      "Transaction note": [
+        "Комментарий по транзакции"
+      ],
+      "Unknown": [
+        "Неизвестный тип"
+      ],
+      "View advanced settings": [
+        "Посмотреть расширенные настройки"
+      ],
+      "View more": [
+        "Показать больше"
+      ]
+    },
+    "Wallet Transaction": {
+      "Could not update transaction label": [
+        "Не удалось обновить метку транзакции"
+      ],
+      "Transaction label successfully updated": [
+        "Метка транзакции успешно обновлена"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ displayedPageNumber }": [
+        "Страница ${ displayedPageNumber }"
+      ]
+    },
+    "Wallet transactions": {
+      "Recipient": [
+        "Получатель",
+        "Получатели",
+        "Получатели",
+        "Получатели"
+      ],
+      "Sender": [
+        "Отправитель",
+        "Отправители",
+        "Отправители",
+        "Отправители"
+      ],
+      "Syncing transactions": [
+        "Синхронизируем транзакции"
+      ],
+      "Transactions": [
+        "Транзакции"
+      ]
+    },
+    "Wallet transactions list": {
+      "Ascending order": [
+        "По возрастанию"
+      ],
+      "Descending order": [
+        "По убыванию"
+      ],
+      "Sync": [
+        "Синхронизировать"
+      ]
+    },
+    "Wallet upgrade": {
+      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
+        "Чтобы добавить новый счёт, удалите из кошелька существующий счёт или улучшите тариф, чтобы создавать больше счетов в кошельке."
+      ],
+      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
+        "Чтобы добавить новый кошелёк, удалите из аккаунта существующий кошелёк или улучшите тариф, чтобы создавать больше кошельков."
+      ]
+    },
+    "Wallet Upgrade": {
+      "Upgrade now": [
+        "Улучшить"
+      ],
+      "Upgrade your privacy": [
+        "Улучшите свою конфиденциальность"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
+      ]
+    }
+  }
+}
