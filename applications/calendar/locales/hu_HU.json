@@ -2662,6 +2662,9 @@
       "Missing signature": [
         "Hiányzó aláírás"
       ],
+      "Name is required": [
+        "Név megadása kötelező"
+      ],
       "Name required": [
         "Név megadása kötelező"
       ],
@@ -3454,6 +3457,9 @@
       ],
       "Search": [
         "Keresés"
+      ],
+      "Security Center": [
+        "Biztonsági központ"
       ]
     },
     "Hint": {
@@ -4142,6 +4148,9 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
+      "Important note": [
+        "Fontos megjegyzés"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
       ],
@@ -4469,6 +4478,9 @@
       ],
       "Visa Secure logo": [
         "Visa biztonsági logó"
+      ],
+      "Warning": [
+        "Figyelmeztetés"
       ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
@@ -5340,6 +5352,11 @@
         "Az importálás indul"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "upgrade for more storage": [
+        "váltson nagyobb csomagra több tárhelyért"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } engedélyezése"
@@ -5740,6 +5757,9 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
       ],
       "Admin console": [
         "Admin konzol"

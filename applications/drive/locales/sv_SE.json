@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "Accept": [
+        "Acceptera"
+      ],
       "Activate recovery": [
         "Aktivera återställning"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Anpassa import"
+      ],
+      "Decline": [
+        "Avböj"
       ],
       "Decrease": [
         "Minska"
@@ -4495,6 +4501,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Håll din fil säker med end-to-end-kryptering i ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
       ],
@@ -6748,6 +6757,9 @@
       "Collaborate and share large files": [
         "Samarbeta och dela stora filer"
       ],
+      "Collaborative document editor": [
+        "Dokumentredigerare för samarbete"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -7565,6 +7577,9 @@
       "Failed to open document": [
         "Misslyckades att öppna dokument"
       ],
+      "Failed to reject share invitation": [
+        "Misslyckades att avvisa delningsinbjudan"
+      ],
       "Failed to remove the file": [
         "Misslyckades att ta bort filen"
       ],
@@ -7610,6 +7625,9 @@
       ],
       "Share invitation accepted successfully": [
         "Delningsinbjudan accepterades"
+      ],
+      "Share invitation declined": [
+        "Delningsinbjudan avböjd"
       ],
       "Stopping to share this item has failed": [
         "Misslyckades att stoppa delning till detta objekt"
@@ -7671,9 +7689,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Jag förstår"
-      ],
       "Next": [
         "Nästa"
       ],
@@ -7685,17 +7700,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Kom igång med ${ DRIVE_APP_NAME } så kommer vi uppgradera ditt lagringsutrymme till 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Bjud in andra via e-post för att visa och redigera dina filer, eller skapa en offentlig länk för snabb åtkomst"
-      ],
       "Set a recovery method": [
         "Ställ in en återställningsmetod"
       ],
       "Share a file": [
         "Dela en fil"
-      ],
-      "Share files with one click": [
-        "Dela filer med ett klick"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Slutför helt enkelt följande inom ${ expiresInDays } dag:",
@@ -7843,6 +7852,9 @@
       ],
       "Payment Processing": [
         "Betalning behandlas"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Lägg till en betalningsmetod i adminpanelen för att fortsätta."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
@@ -9857,6 +9869,9 @@
       ],
       "Show actions": [
         "Visa åtgärder"
+      ],
+      "Sign in": [
+        "Logga in"
       ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"

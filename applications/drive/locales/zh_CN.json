@@ -4507,6 +4507,9 @@
       "Preview for this file type is not supported": [
         "此文件类型暂不支持预览"
       ],
+      "Preview of documents is not yet supported.": [
+        "暂不支持文档预览。"
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "以前的版本将为 ${ retentionLabel } 保留"
       ],
@@ -7131,9 +7134,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "好的"
-      ],
       "Next": [
         "下一步"
       ],
@@ -7145,17 +7145,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "开始使用 ${ DRIVE_APP_NAME }，我们将会把您的存储空间升级到 5 GB！"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "通过电子邮件邀请其他人查看和编辑您的文件，或创建公开链接以便快速访问"
-      ],
       "Set a recovery method": [
         "设置恢复方法"
       ],
       "Share a file": [
         "共享文件"
-      ],
-      "Share files with one click": [
-        "一键共享文件"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "只需在接下来的 ${ expiresInDays } 天内完成以下任务："
@@ -8832,6 +8826,9 @@
       ],
       "Show actions": [
         "显示操作"
+      ],
+      "Sign in": [
+        "登录"
       ],
       "Sign in and grant access": [
         "登录并授予权限"

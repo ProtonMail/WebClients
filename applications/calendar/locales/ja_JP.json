@@ -20,6 +20,23 @@
         "メールの転送を停止しました"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
@@ -390,6 +407,9 @@
       "Manage labels": [
         "ラベルを管理"
       ],
+      "Mark as resolved": [
+        "解決済みにする"
+      ],
       "Mark for deletion": [
         "削除マーク"
       ],
@@ -701,6 +721,9 @@
       ],
       "View": [
         "表示"
+      ],
+      "View all reports": [
+        "すべてのレポートを表示"
       ],
       "View contact details": [
         "連絡先の詳細を表示"
@@ -4419,6 +4442,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
+      ],
       "The following participants cannot be notified about your changes:": [
         "以下の参加者は、予定の変更に関する通知がされません。"
       ],
@@ -7044,6 +7070,15 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "第三者のサービスから、あなたのパスワードやその他のデータが漏洩した場合に通知します。${ learnMoreLink }"
       ],
@@ -7052,6 +7087,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinelは**有効**であり、アカウントを保護しています。"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
       ]
     },
     "Select files": {

@@ -1036,6 +1036,9 @@
         "${ count } vizualizări",
         "${ count } de vizualizări"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } vizualizări"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -1420,8 +1423,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Mutarea unui articol într-un alt seif va șterge istoricul acestuia și toate legăturile securizate."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Mutarea unui articol în alt seif îi va șterge istoricul."
+      ],
       "Moving items": [
         "Se mută articolele."
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile securizate."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Mutarea articolelor în alt seif le va șterge istoricul."
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."
@@ -2632,6 +2647,15 @@
       ],
       "Modified": [
         "Modificat"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Mutați toate articolele în „${ vaultName }”?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Mutați articolul în „${ vaultName }”?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Mutați articolele în „${ vaultName }”?"
       ],
       "No excluded items": [
         "Nu sunt articole excluse"

@@ -4,6 +4,23 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
@@ -4818,6 +4835,9 @@
       "Create account": [
         "アカウントを作成"
       ],
+      "Don't have access to your 2FA?": [
+        "2要素認証にアクセスできませんか？"
+      ],
       "Forgot password?": [
         "パスワードを忘れた?"
       ],
@@ -6564,6 +6584,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "IdP プロビジョニング エージェントが SCIM データを転送する先の SCIM コネクタの URL"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
       ]
     },
     "Select file": {

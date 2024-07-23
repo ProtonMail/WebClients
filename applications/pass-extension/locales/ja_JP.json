@@ -30,7 +30,7 @@
         "ユーザー名フィールドを追加"
       ],
       "Advanced": [
-        "高度な"
+        "詳細設定"
       ],
       "Advanced options": [
         "詳細設定"
@@ -91,6 +91,9 @@
       ],
       "Continue": [
         "続行"
+      ],
+      "Continue offline": [
+        "オフラインで続行"
       ],
       "Continue without pinning": [
         "ピンを留めずに続ける"
@@ -409,6 +412,9 @@
       ],
       "Set extra password": [
         "追加のパスワードを設定する"
+      ],
+      "Setup 2FA": [
+        "2要素認証を設定"
       ],
       "Share": [
         "共有"
@@ -744,6 +750,9 @@
       "Moving item failed": [
         "アイテムの移動に失敗しました"
       ],
+      "Network error": [
+        "ネットワークエラーが発生しました"
+      ],
       "Passphrase is incorrect": [
         "パスフレーズが間違っています"
       ],
@@ -815,6 +824,9 @@
       ],
       "Unknown passkey": [
         "不明なパスキー"
+      ],
+      "Unlock failure": [
+        "ロック解除に失敗しました"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "サポートされていない ${ PASS_APP_NAME } ファイル形式"
@@ -956,6 +968,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
       ],
+      "Add a username field": [
+        "ユーザー名フィールドを追加"
+      ],
       "Admin": [
         "管理者"
       ],
@@ -1040,6 +1055,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "「${ payload.content.name }」を削除しています"
       ],
+      "Disabling auto-lock": [
+        "自動ロックを無効にしています"
+      ],
+      "Disabling auto-lock failed": [
+        "自動ロックを無効にできませんでした"
+      ],
+      "Disabling offline mode...": [
+        "オフラインモードを無効にしています..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "${ PASS_APP_NAME } の YouTube 動画をご覧ください"
       ],
@@ -1069,6 +1093,18 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを接続して ${ PASS_APP_NAME } を有効にします"
+      ],
+      "Enable auto-locking to secure your data": [
+        "自動ロックを有効にしてデータを保護します"
+      ],
+      "Enabling offline mode...": [
+        "オフラインモードを有効にしています..."
+      ],
+      "Enabling password auto-lock": [
+        "パスワードの自動ロックを有効にしています"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN の自動ロックを有効にしています"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
@@ -1624,6 +1660,9 @@
       "Copy": [
         "コピー"
       ],
+      "Copy password": [
+        "パスワードをコピー"
+      ],
       "Create a credit card": [
         "クレジットカード情報を作成"
       ],
@@ -1662,6 +1701,12 @@
       ],
       "Email": [
         "メールアドレス"
+      ],
+      "Email (alias)": [
+        "メール (エイリアス)"
+      ],
+      "Email (new alias)": [
+        "メール (新しいエイリアス)"
       ],
       "Email aliases": [
         "メールエイリアス"
@@ -1842,6 +1887,9 @@
       ],
       "PIN": [
         "PIN"
+      ],
+      "PIN code": [
+        "PIN コード"
       ],
       "Prefix": [
         "プレフィックス"
@@ -2043,11 +2091,17 @@
       "Enter a prefix": [
         "プレフィックスを入力"
       ],
+      "Enter email": [
+        "メールアドレスを入力"
+      ],
       "Enter email or username": [
         "メールアドレスまたはユーザー名を入力"
       ],
       "Enter password": [
         "パスワードを入力"
+      ],
+      "Enter username": [
+        "ユーザー名を入力"
       ],
       "Full Name": [
         "氏名"
@@ -2151,6 +2205,9 @@
       ],
       "Fill & copy password": [
         "パスワードを入力してコピー"
+      ],
+      "Fill password": [
+        "パスワードを入力"
       ],
       "Get Started": [
         "利用開始"

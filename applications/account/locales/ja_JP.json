@@ -43,6 +43,23 @@
         "メールの転送を停止します。"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
@@ -626,6 +643,9 @@
       "Mark as open": [
         "オープンとしてマークする"
       ],
+      "Mark as resolved": [
+        "解決済みにする"
+      ],
       "mark emails as": [
         "メールをマーク"
       ],
@@ -659,11 +679,11 @@
       "No, thanks": [
         "いいえ"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -1102,6 +1122,9 @@
       ],
       "View": [
         "表示"
+      ],
+      "View all reports": [
+        "すべてのレポートを表示"
       ],
       "View invoice": [
         "請求書を参照する"
@@ -7303,6 +7326,9 @@
       "Single sign-on removed": [
         "シングルサインオンが削除されました"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタムドメインアドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 この機能は、カスタムドメインを持つ ${ BRAND_NAME } for business ユーザーのみが利用できます。"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとの電子メールの量を説明する ${ createTicket } を送信してください。"
       ],
@@ -7413,6 +7439,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "データのセキュリティを保証する暗号化と署名のオーバーヘッドの分、暗号化済みデータはサイズが大きくなります。"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
       ],
       "The following address is available:": [
         "以下のアドレスが利用可能です："
@@ -9656,6 +9685,9 @@
       "Create an alias": [
         "エイリアスを作成"
       ],
+      "Don't have access to your 2FA?": [
+        "2要素認証にアクセスできませんか？"
+      ],
       "Encryption and keys": [
         "暗号化と鍵"
       ],
@@ -11694,9 +11726,6 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。"
       ],
-      "By continuing, you agree to our ${ termsAndConditions }": [
-        "続行すると、${ termsAndConditions } に同意したことになります。"
-      ],
       "Creating your account": [
         "アカウントの作成"
       ],
@@ -12467,6 +12496,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "IdP プロビジョニング エージェントが SCIM データを転送する先の SCIM コネクタの URL"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } および他 1 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
       ]
     },
     "Select file": {
@@ -14511,7 +14554,7 @@
         "夜間のテーマ"
       ],
       "No account information was found in any data breaches": [
-        "データ侵害ではアカウント情報は見つからなかった"
+        "アカウント情報の漏洩は見つかりませんでした"
       ],
       "No recovery method": [
         "回復手段がありません"

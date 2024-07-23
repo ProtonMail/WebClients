@@ -1273,6 +1273,9 @@
       "British Indian Ocean Territory": [
         "Britanya Hint Okyanusu Toprakları"
       ],
+      "British Virgin Islands": [
+        "Britanya Virjin Adaları"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1327,6 +1330,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratik Cumhuriyeti"
       ],
@@ -1365,6 +1371,9 @@
       ],
       "Dominican Republic": [
         "Dominik Cumhuriyeti"
+      ],
+      "East Timor": [
+        "Doğu Timor"
       ],
       "Ecuador": [
         "Ekvador"
@@ -1507,6 +1516,9 @@
       "Ireland": [
         "İrlanda"
       ],
+      "Islamic Republic of Iran": [
+        "İran İslam Cumhuriyeti"
+      ],
       "Isle of Man": [
         "Man Adası"
       ],
@@ -1537,6 +1549,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kore Demokratik Halk Cumhuriyeti"
+      ],
+      "Korea (Republic of)": [
+        "Kore Cumhuriyeti"
+      ],
       "Kosovo": [
         "Kosova"
       ],
@@ -1545,6 +1563,9 @@
       ],
       "Kyrgyzstan": [
         "Kırgızistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos Demokratik Halk Cumhuriyeti"
       ],
       "Laos": [
         "Laos"
@@ -1564,6 +1585,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya Arap Cemahiriyesi"
+      ],
       "Liechtenstein": [
         "Lihtenştayn"
       ],
@@ -1575,6 +1599,9 @@
       ],
       "Macao": [
         "Makao"
+      ],
+      "Macedonia": [
+        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -1828,6 +1855,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
+      "Swaziland": [
+        "Svaziland"
+      ],
       "Sweden": [
         "İsveç"
       ],
@@ -1848,6 +1878,9 @@
       ],
       "Tanzania": [
         "Tanzanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Birleşik Tanzaya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -3058,6 +3091,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
@@ -3291,6 +3327,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
+      ],
+      "Breach Custom Email Added": [
+        "Verilerin ele geçirilmesi özel e-posta adresi eklendi"
+      ],
+      "Breach Custom Email Deleted": [
+        "Verilerin ele geçirilmesi özel e-posta adresi silindi"
+      ],
+      "Breach Custom Email Validated": [
+        "Verilerin ele geçirilmesi özel e-posta adresi doğrulandı"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -4069,10 +4114,13 @@
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
       "Session Ended": [
-        "Oturum Sona Erdi"
+        "Oturum sona erdi"
+      ],
+      "Session Roaming": [
+        "Oturum dolaşımı"
       ],
       "Session Started": [
-        "Oturum Başladı"
+        "Oturum başladı"
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
@@ -5471,6 +5519,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -5789,6 +5840,9 @@
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
       ],
+      "Collaborative document editor": [
+        "İşbirlikli çalışabileceğiniz belge düzenleyici"
+      ],
       "Contact groups": [
         "Kişi grupları"
       ],
@@ -6021,7 +6075,7 @@
         "Sınırsız etiket"
       ],
       "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+        "Sınırsız sayıda oturum açma ve not kaydı"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -9710,6 +9764,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "Bitcoin via email": [
+        "E-posta ile Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Cüzdan sorunu"
       ]
     },
     "Warning": {

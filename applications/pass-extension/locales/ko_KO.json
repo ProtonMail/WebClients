@@ -983,6 +983,9 @@
       "${ count } view": [
         "${ count }명 조회"
       ],
+      "${ count }/${ maxReads } views": [
+        "조회수 ${ count }건/${ maxReads }건"
+      ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
@@ -1081,6 +1084,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "자동으로 생성된 비밀번호를 클립보드로 복사"
       ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain }에 자동 저장됨"
@@ -1352,11 +1358,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "타 금고로의 항목을 이동하면 기록 및 안전한 링크가 삭제됩니다."
+      ],
       "Moving an item to another vault will erase its history.": [
         "항목을 다른 금고로 이동하면 그 기록이 지워집니다."
       ],
       "Moving items": [
         "항목 이동 중"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "타 금고로의 항목을 이동하면 기록 및 안전한 링크가 삭제됩니다."
       ],
       "Moving items to another vault will erase their history.": [
         "항목들을 다른 금고로 이동하면 그 기록이 지워집니다."
@@ -1848,6 +1860,9 @@
       ],
       "Copy": [
         "복사"
+      ],
+      "Copy password": [
+        "비밀번호 복사"
       ],
       "Create a credit card": [
         "신용 카드 생성"
@@ -2437,6 +2452,9 @@
       "Fill & copy password": [
         "비밀번호 복사 및 채우기"
       ],
+      "Fill password": [
+        "비밀번호 채우기"
+      ],
       "Get Started": [
         "시작하기"
       ],
@@ -2481,6 +2499,15 @@
       ],
       "Modified": [
         "수정됨"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
       ],
       "No items selected": [
         "선택된 항목 없음"
