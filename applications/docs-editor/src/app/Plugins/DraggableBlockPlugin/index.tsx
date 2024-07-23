@@ -2,6 +2,7 @@ import { $createListNode, $isListNode } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { eventFiles } from '@lexical/rich-text'
 import { mergeRegister } from '@lexical/utils'
+import type { LexicalEditor, LexicalNode } from 'lexical'
 import {
   $getNearestNodeFromDOMNode,
   $getNodeByKey,
@@ -11,13 +12,13 @@ import {
   DRAGOVER_COMMAND,
   DRAGEND_COMMAND,
   DROP_COMMAND,
-  LexicalEditor,
-  LexicalNode,
   PASTE_COMMAND,
 } from 'lexical'
-import { DragEvent as ReactDragEvent, TouchEvent, useCallback, useEffect, useRef, useState } from 'react'
+import type { DragEvent as ReactDragEvent, TouchEvent } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { ContainsPointReturn, Rect } from '../../Utils/rect'
+import type { ContainsPointReturn } from '../../Utils/rect'
+import { Rect } from '../../Utils/rect'
 import { Point } from '../../Utils/point'
 import { isHTMLElement } from '../../Utils/guard'
 import { Icon } from '@proton/components'

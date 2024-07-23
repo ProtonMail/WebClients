@@ -16,14 +16,10 @@ import { createPortal } from 'react-dom'
 import { CommentInputBox } from './CommentInputBox'
 import { FloatingAddCommentButton } from './FloatingAddCommentButton'
 import CommentsPanel from './CommentsPanel'
-import {
-  CommentMarkNodeChangeData,
-  CommentThreadInterface,
-  CommentThreadState,
-  CommentsEvent,
-} from '@proton/docs-shared'
+import type { CommentMarkNodeChangeData, CommentThreadInterface } from '@proton/docs-shared'
+import { CommentThreadState, CommentsEvent } from '@proton/docs-shared'
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
-import { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'

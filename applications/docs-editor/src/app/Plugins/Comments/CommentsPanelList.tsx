@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CommentThreadInterface } from '@proton/docs-shared'
+import type { CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 
 export function CommentsPanelList({ threads }: { threads: CommentThreadInterface[] }): JSX.Element {

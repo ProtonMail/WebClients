@@ -1,4 +1,4 @@
-import { InitialConfigType } from '@lexical/react/LexicalComposer'
+import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import { AllNodes } from './AllNodes'
 import DocumentEditorTheme from './Theme/Theme'
 import { sendErrorMessage } from './Utils/errorMessage'
