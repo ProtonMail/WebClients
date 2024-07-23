@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { omit } from 'lodash';
 
 import type { PublicKeyReference } from '@proton/crypto/lib';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
 export enum InvalidRecipientErrorCode {
@@ -41,7 +42,7 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     };
 
     const exists = (recipient: Recipient) => {
-        return Boolean(recipientEmailMap[recipient.Address] || btcAddressMap[recipient.Address]);
+        return Boolean(recipientEmailMap[canonicalizeEmail(recipient.Address)] || btcAddressMap[recipient.Address]);
     };
 
     const addValidRecipient = (
@@ -51,7 +52,7 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     ) => {
         setRecipientEmailMap((prev) => ({
             ...prev,
-            [recipient.Address]: { btcAddress: { value }, recipient, addressKey },
+            [canonicalizeEmail(recipient.Address)]: { btcAddress: { value }, recipient, addressKey },
         }));
 
         if (value) {
@@ -64,9 +65,10 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     };
 
     const removeRecipient = (recipient: Recipient) => {
-        const recipientToRemove = recipientEmailMap[recipient.Address];
+        const email = canonicalizeEmail(recipient.Address);
+        const recipientToRemove = recipientEmailMap[email];
 
-        setRecipientEmailMap((prev) => omit(prev, recipient.Address));
+        setRecipientEmailMap((prev) => omit(prev, email));
         setBtcAddressMap((prev) => omit(prev, recipientToRemove?.btcAddress.value ?? ''));
     };
 
