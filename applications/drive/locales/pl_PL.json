@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Akceptuj"
+      ],
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
@@ -239,6 +242,9 @@
       ],
       "Customize import": [
         "Dostosuj proces importowania"
+      ],
+      "Decline": [
+        "Odrzuć"
       ],
       "Decrease": [
         "Zmniejsz"
@@ -4632,6 +4638,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Przechowuj bezpiecznie swoje pliki za pomocą szyfrowania end-to-end w ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Odcisk klucza"
       ],
@@ -7797,6 +7806,9 @@
       "Failed to open document": [
         "Nie udało się otworzyć dokumentu"
       ],
+      "Failed to reject share invitation": [
+        "Nie udało się odrzucić zaproszenia"
+      ],
       "Failed to remove the file": [
         "Nie udało się usunąć pliku"
       ],
@@ -7850,6 +7862,9 @@
       ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"
+      ],
+      "Share invitation declined": [
+        "Zaproszenie zostało odrzucone"
       ],
       "Stopping to share this item has failed": [
         "Zatrzymanie udostępniania elementu nie powiodło się"
@@ -7911,9 +7926,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Ok"
-      ],
       "Next": [
         "Dalej"
       ],
@@ -7925,17 +7937,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Skorzystaj z dysku ${ DRIVE_APP_NAME }, a zwiększymy Twoją przestrzeń dyskową do 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Zaproś użytkowników do przeglądania i edytowania plików lub utwórz link, aby uzyskać szybki dostęp"
-      ],
       "Set a recovery method": [
         "Ustaw metodę odzyskiwania"
       ],
       "Share a file": [
         "Udostępnij plik"
-      ],
-      "Share files with one click": [
-        "Udostępniaj pliki jednym kliknięciem"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Ukończ następujące kroki w ciągu najbliższego dnia:",
@@ -8083,6 +8089,9 @@
       ],
       "Payment Processing": [
         "Przetwarzanie płatności"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Dodaj metodę płatności w pulpicie, aby kontynuować."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
@@ -10215,6 +10224,9 @@
       "Show actions": [
         "Pokaż akcje"
       ],
+      "Sign in": [
+        "Zaloguj się"
+      ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
       ],
@@ -10530,6 +10542,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto na portfel",
+        "${ n } konta na portfel",
+        "${ n } kont na portfel",
+        "${ n } konta na portfel"
+      ],
+      "${ n } email address": [
+        "${ n } adres e-mail",
+        "${ n } adresy e-mail",
+        "${ n } adresów e-mail",
+        "${ n } adresu e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portfel",
+        "${ n } portfele",
+        "${ n } portfeli",
+        "${ n } portfela"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoiny przez e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem z portfelem"
       ]
     },
     "Warning": {

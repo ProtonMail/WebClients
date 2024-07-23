@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
+      "Accept": [
+        "Aksepter"
+      ],
       "Activate recovery": [
         "Aktiver gjennoppretting"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Tilpass import"
+      ],
+      "Decline": [
+        "Avslå"
       ],
       "Decrease": [
         "Reduser"
@@ -4490,6 +4496,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Hold filen sikker med ende-til-ende-kryptering i ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
       ],
@@ -7558,6 +7567,9 @@
       "Failed to open document": [
         "Kunne ikke åpne dokumentet"
       ],
+      "Failed to reject share invitation": [
+        "Kunne ikke avvise delingsinvitasjon"
+      ],
       "Failed to remove the file": [
         "Fjerning av filen mislyktes"
       ],
@@ -7603,6 +7615,9 @@
       ],
       "Share invitation accepted successfully": [
         "Delingsinvitasjonen ble godtatt"
+      ],
+      "Share invitation declined": [
+        "Delingsinvitasjon avslått"
       ],
       "Stopping to share this item has failed": [
         "Å stoppe delingen av dette elementet mislyktes"
@@ -7664,9 +7679,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Forstått"
-      ],
       "Next": [
         "Neste"
       ],
@@ -7678,17 +7690,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Begynn å bruke ${ DRIVE_APP_NAME } og vi vil oppgradere lagringsplassen din til 5 GB."
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Inviter andre via e-post til å vise og redigere filene dine, eller opprett en offentlig kobling for rask tilgang"
-      ],
       "Set a recovery method": [
         "Angi en gjenopprettingsmetode"
       ],
       "Share a file": [
         "Del en fil"
-      ],
-      "Share files with one click": [
-        "Del filer med ett klikk"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Bare fullfør følgende i løpet av neste ${ expiresInDays } dag:",
@@ -7830,6 +7836,9 @@
       ],
       "Payment Processing": [
         "Betalingsbehandling"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Vennligst legg til en betalingsmåte i kontrollpanelet for å fortsette."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
@@ -9862,6 +9871,9 @@
       ],
       "Show actions": [
         "Vis handlinger"
+      ],
+      "Sign in": [
+        "Logg på"
       ],
       "Sign in and grant access": [
         "Logg på og gi tilgang"

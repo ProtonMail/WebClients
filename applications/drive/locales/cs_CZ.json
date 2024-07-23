@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Přijmout"
+      ],
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
@@ -240,6 +243,9 @@
       "Customize import": [
         "Přizpůsobit import"
       ],
+      "Decline": [
+        "Odmítnout"
+      ],
       "Decrease": [
         "Snížit"
       ],
@@ -347,6 +353,12 @@
       ],
       "Expand folder": [
         "Rozbalit složku"
+      ],
+      "Explore on my own": [
+        "Prozkoumávejte sami"
+      ],
+      "Explore while you wait": [
+        "Prozkoumávejte, zatímco čekáte"
       ],
       "Export": [
         "Exportovat"
@@ -948,6 +960,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } další vlastní doména",
+        "${ domains } další vlastní domény",
+        "${ domains } dalších vlastních domén",
+        "${ domains } dalších vlastních domén"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servery",
@@ -1537,6 +1555,9 @@
       "British Indian Ocean Territory": [
         "Britské indickooceánské území"
       ],
+      "British Virgin Islands": [
+        "Britské Panenské ostrovy"
+      ],
       "Brunei Darussalam": [
         "Brunej Darussalam"
       ],
@@ -1591,6 +1612,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Konžská demokratická republika)"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratická republika Kongo"
       ],
@@ -1629,6 +1653,9 @@
       ],
       "Dominican Republic": [
         "Dominikánská republika"
+      ],
+      "East Timor": [
+        "Východní Timor"
       ],
       "Ecuador": [
         "Ekvádor"
@@ -1771,6 +1798,9 @@
       "Ireland": [
         "Irsko"
       ],
+      "Islamic Republic of Iran": [
+        "Íránská islámská republika"
+      ],
       "Isle of Man": [
         "Ostrov Man"
       ],
@@ -1801,6 +1831,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korejská lidově demokratická republika (Severní Korea)"
+      ],
+      "Korea (Republic of)": [
+        "Korejská republika (Jižní Korea)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1809,6 +1845,9 @@
       ],
       "Kyrgyzstan": [
         "Kyrgyzstán"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laoská lidově demokratická republika"
       ],
       "Laos": [
         "Laos"
@@ -1828,6 +1867,9 @@
       "Libya": [
         "Libye"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libyjská arabská džamáhírije"
+      ],
       "Liechtenstein": [
         "Lichtenštejnsko"
       ],
@@ -1839,6 +1881,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Makedonie"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2092,6 +2137,9 @@
       "Svalbard and Jan Mayen": [
         "Špicberky a Jan Mayen"
       ],
+      "Swaziland": [
+        "Svazijsko"
+      ],
       "Sweden": [
         "Švédsko"
       ],
@@ -2112,6 +2160,9 @@
       ],
       "Tanzania": [
         "Tanzanie"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanie, Tanzanská sjednocená republika"
       ],
       "Thailand": [
         "Thajsko"
@@ -2271,6 +2322,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavte metodu obnovení, abyste zabránili ztrátě přístupu k účtu."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
@@ -3100,6 +3154,9 @@
     "Error message": {
       "Access denied": [
         "Přístup zamítnut"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasy nelze použít, pokud je v ${ PASS_APP_NAME } povoleno další heslo."
       ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
@@ -6357,6 +6414,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Přidat asistenta psaní ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -6839,6 +6899,9 @@
       ],
       "Collaborate and share large files": [
         "Spolupráce a sdílení velkých souborů"
+      ],
+      "Collaborative document editor": [
+        "Editor pro spolupráci na dokumentech"
       ],
       "Contact groups": [
         "Skupiny kontaktů"
@@ -7803,9 +7866,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Rozumím"
-      ],
       "Next": [
         "Další"
       ],
@@ -7817,23 +7877,23 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Začněte používat ${ DRIVE_APP_NAME } a my vám navýšíme úložiště na 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Pozvěte ostatní prostřednictvím e-mailu k prohlížení a úpravám vašich souborů nebo vytvořte veřejný odkaz pro rychlý přístup"
-      ],
       "Set a recovery method": [
         "Nastavit metodu obnovení"
       ],
       "Share a file": [
         "Sdílet soubor"
       ],
-      "Share files with one click": [
-        "Sdílejte soubory jedním kliknutím"
-      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Stačí, když během následujícího ${ expiresInDays } dne vyplníte následující údaje:",
         "Stačí, když během následujících ${ expiresInDays } dnů vyplníte následující údaje:",
         "Stačí, když během následujících ${ expiresInDays } dnů vyplníte následující údaje:",
         "Stačí, když během následujících ${ expiresInDays } dnů vyplníte následující údaje:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Ukládejte své soubory a bezpečně je sdílejte. Začněte zabezpečením svých nejosobnějších souborů, jako jsou průkazy totožnosti, smlouvy a osobní fotografie."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Vlastník musí potvrdit sdílení přístupu. Jakmile se tak stane, obdržíte e-mail."
       ],
       "Upload a file": [
         "Nahrát soubor"
@@ -7863,6 +7923,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Probíhá konečné schvalování"
+      ],
+      "Hang tight!": [
+        "Chvíli počkejte."
+      ],
+      "Upload and protect your important files": [
+        "Nahrajte a chraňte své důležité soubory"
+      ],
       "Your welcome bonus": [
         "Váš uvítací bonus"
       ]
@@ -9897,6 +9966,9 @@
       "Import failed": [
         "Import selhal"
       ],
+      "Import groups": [
+        "Importovat skupiny"
+      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
@@ -10088,6 +10160,9 @@
       ],
       "Show actions": [
         "Zobrazit akce"
+      ],
+      "Sign in": [
+        "Přihlásit se"
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"

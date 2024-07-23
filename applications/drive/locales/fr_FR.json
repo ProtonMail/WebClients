@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Accepter"
+      ],
       "Activate recovery": [
         "Activer la récupération"
       ],
@@ -238,6 +241,9 @@
       "Customize import": [
         "Personnaliser l'importation"
       ],
+      "Decline": [
+        "Refuser"
+      ],
       "Decrease": [
         "Diminuer"
       ],
@@ -346,7 +352,7 @@
         "Explorer par moi-même"
       ],
       "Explore while you wait": [
-        "Explorez pendant que vous attendez"
+        "Découvrez l'application en attendant."
       ],
       "Export": [
         "Exporter"
@@ -982,7 +988,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "applications ${ BRAND_NAME }"
+        "Applications ${ BRAND_NAME }"
       ]
     },
     "Assistant toggle": {
@@ -1523,6 +1529,9 @@
       "British Indian Ocean Territory": [
         "Territoire britannique de l'océan Indien"
       ],
+      "British Virgin Islands": [
+        "Îles Vierges britanniques"
+      ],
       "Brunei Darussalam": [
         "Brunéi Darussalam"
       ],
@@ -1577,6 +1586,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (République démocratique)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo - République démocratique du Congo"
       ],
@@ -1615,6 +1627,9 @@
       ],
       "Dominican Republic": [
         "République dominicaine"
+      ],
+      "East Timor": [
+        "Timor oriental"
       ],
       "Ecuador": [
         "Équateur"
@@ -1757,6 +1772,9 @@
       "Ireland": [
         "Irlande"
       ],
+      "Islamic Republic of Iran": [
+        "République Islamique d'Iran"
+      ],
       "Isle of Man": [
         "Île de Man"
       ],
@@ -1787,6 +1805,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corée (République populaire démocratique)"
+      ],
+      "Korea (Republic of)": [
+        "Corée (République)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1795,6 +1819,9 @@
       ],
       "Kyrgyzstan": [
         "Kirghizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "République démocratique populaire lao"
       ],
       "Laos": [
         "Laos"
@@ -1814,6 +1841,9 @@
       "Libya": [
         "Libye"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya arabe libyenne"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1825,6 +1855,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macédoine"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2078,6 +2111,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard et Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Suède"
       ],
@@ -2088,7 +2124,7 @@
         "Syrie"
       ],
       "Syrian Arab Republic": [
-        "Syrie"
+        "République arabe syrienne"
       ],
       "Taiwan": [
         "Taïwan"
@@ -2098,6 +2134,9 @@
       ],
       "Tanzania": [
         "Tanzanie"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanie, République-Unie"
       ],
       "Thailand": [
         "Thaïlande"
@@ -2259,7 +2298,7 @@
         "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
+        "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -4457,6 +4496,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Gardez vos fichiers en sécurité avec le chiffrement de bout en bout dans ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Empreinte de la clé"
       ],
@@ -5397,7 +5439,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "L'assistant qui avec l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
+        "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
     "Item": {
@@ -7468,6 +7510,9 @@
       "Failed to open document": [
         "L'ouverture du document n'a pas abouti."
       ],
+      "Failed to reject share invitation": [
+        "L'invitation au partage n'a pas pu être refusée."
+      ],
       "Failed to remove the file": [
         "Le fichier n'a pu être retiré."
       ],
@@ -7513,6 +7558,9 @@
       ],
       "Share invitation accepted successfully": [
         "L'invitation partagée a été acceptée."
+      ],
+      "Share invitation declined": [
+        "L'invitation au partage a été refusée."
       ],
       "Stopping to share this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
@@ -7574,9 +7622,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "J'ai compris"
-      ],
       "Next": [
         "Suivant"
       ],
@@ -7588,17 +7633,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Commencez à utiliser ${ DRIVE_APP_NAME } et nous augmenterons votre espace de stockage pour atteindre 5 Go !"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Invitez d'autres personnes par e-mail pour afficher et modifier vos fichiers ou créer un lien public pour un accès rapide."
-      ],
       "Set a recovery method": [
         "Définir une méthode de récupération"
       ],
       "Share a file": [
         "Partager un fichier"
-      ],
-      "Share files with one click": [
-        "Partagez des fichiers en un clic"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jour :",
@@ -7608,7 +7647,7 @@
         "Stockez vos fichiers et partagez-les en toute sécurité. Commencez par sécuriser vos fichiers les plus confidentiels, comme vos pièces d'identité, vos contrats et vos photos personnelles."
       ],
       "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois confirmation."
+        "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois que ce sera fait."
       ],
       "Upload a file": [
         "Importer un fichier"
@@ -8765,7 +8804,7 @@
         "${ VPN_APP_NAME } comprenant un accès à tous les serveurs ultra-rapides dans ${ vpnCountries } pays"
       ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } avec blocage de logiciels malveillants et publicités"
+        "${ VPN_APP_NAME } avec blocage de logiciels malveillants et de publicités"
       ],
       "10 email addresses": [
         "10 adresses e-mail"
@@ -9773,6 +9812,9 @@
       "Show actions": [
         "Afficher les actions"
       ],
+      "Sign in": [
+        "Se connecter"
+      ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
@@ -10072,6 +10114,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte par portefeuille",
+        "${ n } comptes par portefeuille"
+      ],
+      "${ n } email address": [
+        "${ n } adresse e-mail",
+        "${ n } adresses e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portefeuille",
+        "${ n } portefeuilles"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Une manière plus sûre de détenir votre Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin par e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Constituez une réserve de bitcoins et réalisez des transactions en toute sécurité"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problème avec Wallet"
       ]
     },
     "Warning": {
