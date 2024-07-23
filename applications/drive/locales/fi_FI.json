@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
+      "Accept": [
+        "Hyväksy"
+      ],
       "Activate recovery": [
         "Aktivoi palautus"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Mukauta tuontia"
+      ],
+      "Decline": [
+        "Kieltäydy"
       ],
       "Decrease": [
         "Vähennä"
@@ -1523,6 +1529,9 @@
       "British Indian Ocean Territory": [
         "Brittiläinen Intian valtameren alue"
       ],
+      "British Virgin Islands": [
+        "Brittiläiset Neitsytsaaret"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1577,6 +1586,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongon demokraattinen tasavalta"
       ],
@@ -1615,6 +1627,9 @@
       ],
       "Dominican Republic": [
         "Dominikaaninen tasavalta"
+      ],
+      "East Timor": [
+        "Itä-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1757,6 +1772,9 @@
       "Ireland": [
         "Irlanti"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Mansaari"
       ],
@@ -1787,6 +1805,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Pohjois-Korea"
+      ],
+      "Korea (Republic of)": [
+        "Etelä-Korea"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1795,6 +1819,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgisia"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -1814,6 +1841,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1825,6 +1855,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Pohjois-Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2078,6 +2111,9 @@
       "Svalbard and Jan Mayen": [
         "Huippuvuoret ja Jan Mayen"
       ],
+      "Swaziland": [
+        "Swazimaa"
+      ],
       "Sweden": [
         "Ruotsi"
       ],
@@ -2097,6 +2133,9 @@
         "Tadžikistan"
       ],
       "Tanzania": [
+        "Tansania"
+      ],
+      "Tanzania, United Republic of": [
         "Tansania"
       ],
       "Thailand": [
@@ -4292,13 +4331,13 @@
         "Epäonnistui"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Turvallisen linkin luonti epäonnistui, koska: ${ error }"
+        "Suojatun linkin luonti epäonnistui, koska: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Turvallisen linkin luonti epäonnistui. Yritä myöhemmin uudelleen."
+        "Suojatun linkin luonti epäonnistui. Yritä myöhemmin uudelleen."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Turvallisen linkin avaus epäonnistui, koska: ${ error }"
+        "Suojatun linkin avaus epäonnistui, koska: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" poistettiin latauksen aikana"
@@ -4456,6 +4495,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
+      ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Suojaa tiedostosi päästä päähän -salauksella ${ DRIVE_APP_NAME }ssa."
       ],
       "Key fingerprint": [
         "Avaimen sormenjälki"
@@ -5054,7 +5096,7 @@
         "Roskakori on tyhjä"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
-        "Kokeile ${ DRIVE_APP_NAME }a: ikuisesti ilmainen"
+        "Kokeile ${ DRIVE_APP_NAME }a: pysyvästi ilmainen"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
@@ -5514,7 +5556,7 @@
         "Huono"
       ],
       "Beta Access": [
-        "Beta-käyttö"
+        "Käytä beetaversiota"
       ],
       "Billing address": [
         "Laskutusosoite"
@@ -6757,7 +6799,7 @@
         "Järjestele kohteita useilla holveilla"
       ],
       "Passkeys supported": [
-        "Suojausavaimia tuetaan"
+        "Tuki suojausavaimille"
       ],
       "Password health": [
         "Salasanaterveys"
@@ -7468,6 +7510,9 @@
       "Failed to open document": [
         "Dokumentin avaaminen epäonnistui"
       ],
+      "Failed to reject share invitation": [
+        "Jakokutsusta kieltäytyminen epäonnistui"
+      ],
       "Failed to remove the file": [
         "Tiedoston poisto epäonnistui"
       ],
@@ -7513,6 +7558,9 @@
       ],
       "Share invitation accepted successfully": [
         "Jakokutsu hyväksyttiin"
+      ],
+      "Share invitation declined": [
+        "Kieltäydyit jakokutsusta"
       ],
       "Stopping to share this item has failed": [
         "Tämän kohteen jakamisen lopettaminen epäonnistui"
@@ -7574,9 +7622,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Selvä"
-      ],
       "Next": [
         "Seuraava"
       ],
@@ -7588,17 +7633,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin korotamme ilmaisen tallennustilasi 5 gigatavuun!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Kutsu muita sähköpostilla katselemaan ja muokkaamaan tiedostojasi, tai luo julkinen linkki nopeaa pääsyä varten"
-      ],
       "Set a recovery method": [
         "Määritä palautustapa"
       ],
       "Share a file": [
         "Jaa tiedosto"
-      ],
-      "Share files with one click": [
-        "Jaa tiedostoja yhdellä klikkauksella"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Tee vain nämä tehtävät seuraavan ${ expiresInDays } päivän aikana:",
@@ -7777,7 +7816,7 @@
         "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Korttiasi ei hyväksytty. Kokeile toista korttia tai ota yhteyttä pankkiisi veloituksen hyväksymiseksi."
+        "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
       ]
     },
     "PGP key encryption warning": {
@@ -8110,8 +8149,8 @@
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
       ],
       "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
       "This permission expires soon": [
         "Tämä käyttöoikeus vanhenee pian"
@@ -9130,7 +9169,7 @@
         "Palautus on aloitettu"
       ],
       "Secure link copied": [
-        "Turvallinen linkki kopioitiin"
+        "Suojattu linkki kopioitiin"
       ],
       "The link to your file was successfully copied": [
         "Tiedoston linkki on kopioitu"
@@ -9597,7 +9636,7 @@
         "Sijainti"
       ],
       "Manage secure link": [
-        "Hallitse turvallista linkkiä"
+        "Hallitse suojattua linkkiä"
       ],
       "Merge contacts": [
         "Yhdistä yhteystietoja"
@@ -9772,6 +9811,9 @@
       ],
       "Show actions": [
         "Näytä toiminnot"
+      ],
+      "Sign in": [
+        "Kirjaudu sisään"
       ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"

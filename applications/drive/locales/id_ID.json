@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Terima"
+      ],
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
@@ -236,6 +239,9 @@
       ],
       "Customize import": [
         "Sesuaikan impor"
+      ],
+      "Decline": [
+        "Tolak"
       ],
       "Decrease": [
         "Kurangi"
@@ -4416,6 +4422,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Jaga agar berkas Anda tetap aman dengen enkripsi end-to-end di ${ DRIVE_APP_NAME }"
+      ],
       "Key fingerprint": [
         "Sidik jari kunci"
       ],
@@ -7434,6 +7443,9 @@
       "Failed to open document": [
         "Dokumen gagal dibuka"
       ],
+      "Failed to reject share invitation": [
+        "Undangan untuk berbagi gagal ditolak"
+      ],
       "Failed to remove the file": [
         "Gagal menghapus berkas"
       ],
@@ -7475,6 +7487,9 @@
       ],
       "Share invitation accepted successfully": [
         "Undangan pembagian berhasil diterima"
+      ],
+      "Share invitation declined": [
+        "Undangan untuk berbagi ditolak"
       ],
       "Stopping to share this item has failed": [
         "Gagal menghentikan pembagian item"
@@ -7536,9 +7551,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Mengerti"
-      ],
       "Next": [
         "Selanjutnya"
       ],
@@ -7550,17 +7562,14 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Mulai gunakan ${ DRIVE_APP_NAME } dan kami akan meningkatkan ruang penyimpanan Anda ke 5 GB!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Undang pengguna lain melalui email untuk melihat dan menyunting berkas Anda, atau buat tautan publik untuk akses yang cepat"
+      "Introducing ${ DOCS_APP_NAME }": [
+        "Memperkenalkan ${ DOCS_APP_NAME }"
       ],
       "Set a recovery method": [
         "Tentukan metode pemulihan"
       ],
       "Share a file": [
         "Bagikan berkas"
-      ],
-      "Share files with one click": [
-        "Bagikan berkas hanya dengan satu klik"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ expiresInDays } hari ke depan:"
@@ -7699,6 +7708,9 @@
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Silakan tambahkan metode pembayaran di dasbor untuk melanjutkan."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -9680,6 +9692,9 @@
       ],
       "Show actions": [
         "Tampilkan tindakan"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"

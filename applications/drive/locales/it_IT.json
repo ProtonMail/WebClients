@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Accetta"
+      ],
       "Activate recovery": [
         "Attiva il ripristino"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Personalizza importazione"
+      ],
+      "Decline": [
+        "Rifiuta"
       ],
       "Decrease": [
         "Riduci"
@@ -1798,6 +1804,9 @@
       ],
       "Kiribati": [
         "Kiribati"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (Repubblica Democratica Popolare di)"
       ],
       "Korea (Republic of)": [
         "Corea (Repubblica di)"
@@ -4487,6 +4496,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Mantieni i tuoi file al sicuro con la crittografia end-to-end di ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Impronta digitale della chiave"
       ],
@@ -6731,6 +6743,9 @@
       "Collaborate and share large files": [
         "Collabora e condividi file di grandi dimensioni"
       ],
+      "Collaborative document editor": [
+        "Editor di documenti collaborativo"
+      ],
       "Contact groups": [
         "Gruppi di contatti"
       ],
@@ -7551,6 +7566,9 @@
       "Failed to open document": [
         "Impossibile aprire il documento"
       ],
+      "Failed to reject share invitation": [
+        "Impossibile rifiutare l'invito alla condivisione"
+      ],
       "Failed to remove the file": [
         "Impossibile rimuovere il file"
       ],
@@ -7596,6 +7614,9 @@
       ],
       "Share invitation accepted successfully": [
         "Invito alla condivisione accettato con successo"
+      ],
+      "Share invitation declined": [
+        "Invito alla condivisione rifiutato"
       ],
       "Stopping to share this item has failed": [
         "Impossibile interrompere la condivisione di questo elemento"
@@ -7657,9 +7678,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "Ho capito"
-      ],
       "Next": [
         "Avanti"
       ],
@@ -7671,17 +7689,11 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Inizia a utilizzare ${ DRIVE_APP_NAME } e aumenteremo il tuo spazio di archiviazione a 5 GB."
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "Invita altri utenti a visualizzare e modificare i tuoi file tramite email oppure crea un link pubblico per un accesso rapido"
-      ],
       "Set a recovery method": [
         "Impostare un metodo di recupero"
       ],
       "Share a file": [
         "Condividi un file"
-      ],
-      "Share files with one click": [
-        "Condividi i file con un clic"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Completa le azioni seguenti entro ${ expiresInDays } giorno:",
@@ -7823,6 +7835,9 @@
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Aggiungi un metodo di pagamento nella dashboard per continuare."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -9856,6 +9871,9 @@
       "Show actions": [
         "Mostra azioni"
       ],
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
       ],
@@ -10155,6 +10173,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portafoglio",
+        "${ n } account per portafoglio"
+      ],
+      "${ n } email address": [
+        "${ n } indirizzo email",
+        "${ n } indirizzi email"
+      ],
+      "${ n } wallet": [
+        "${ n } portafoglio",
+        "${ n } portafogli"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Un modo più sicuro per conservare il tuo Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
       ]
     },
     "Warning": {

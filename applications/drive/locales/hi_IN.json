@@ -329,6 +329,12 @@
       "Expand folder": [
         "ज़्यादा"
       ],
+      "Explore on my own": [
+        "स्वयं अन्वेषण करें"
+      ],
+      "Explore while you wait": [
+        "प्रतीक्षा करते समय अन्वेषण करें"
+      ],
       "Export": [
         "निर्यात करें"
       ],
@@ -340,6 +346,9 @@
       ],
       "Fit to window": [
         "विंडो में फिट करें"
+      ],
+      "Forgot password?": [
+        "पासवर्ड भूल गए?"
       ],
       "Forward as attachment": [
         "अटैचमेंट जैसे फॉरवर्ड करें"
@@ -817,6 +826,9 @@
       ],
       "Upload file": [
         "फाइल अपलोड करें"
+      ],
+      "Upload files": [
+        "फाइलें अपलोड करें"
       ],
       "Upload folder": [
         "फोल्डर अपलोड करें"
@@ -6819,9 +6831,6 @@
       ]
     },
     "Onboarding Action": {
-      "Got it": [
-        "ठीक है"
-      ],
       "Next": [
         "अगला"
       ],
@@ -6833,21 +6842,21 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME } का उपयोग शुरू करें और हम आपके स्टोरेज को 5 GB तक बढ़ा देंगे!"
       ],
-      "Invite others via email to view and edit your files, or create a public link for quick access": [
-        "ईमेल के माध्यम से अन्य लोगों को अपनी फ़ाइलों को देखने और संपादित करने के लिए आमंत्रित करें, या त्वरित पहुंच के लिए एक सार्वजनिक लिंक बनाएं।"
-      ],
       "Set a recovery method": [
         "रिकवरी तरीका सेट करें"
       ],
       "Share a file": [
         "फ़ाइल साझा करें"
       ],
-      "Share files with one click": [
-        "एक क्लिक में फ़ाइलें साझा करें"
-      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "बस इसे अगले ${ expiresInDays } दिन में खत्म कर देना:",
         "बस इसे अगले ${ expiresInDays } दिन में खत्म कर देना:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "फाइलें संग्रहीत करें और सुरक्षित रूप से शेयर करें। सबसे निजी फाइलों, जैसे आईडी, अनुबंध और व्यक्तिगत फोटो को सुरक्षित करके आरंभ करें।"
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "मालिक को शेयरिंग एक्सेस की पुष्टि करनी होगी। ऐसा होने पर ईमेल मिलेगा।"
       ],
       "Upload a file": [
         "फाइल अपलोड करें"
@@ -6877,6 +6886,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "अंतिम स्वीकृति प्रगति पर है"
+      ],
+      "Hang tight!": [
+        "प्रतीक्षा करें"
+      ],
+      "Upload and protect your important files": [
+        "महत्वपूर्ण फाइलें अपलोड करें और सुरक्षित रखें"
+      ],
       "Your welcome bonus": [
         "आपका स्वागत बोनस"
       ]
@@ -7158,6 +7176,9 @@
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } खोलें"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } आज़माएँ"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -7208,6 +7229,11 @@
     "session_recovery:available:notification": {
       "Password saved": [
         "पासवर्ड सहेजा गया"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "पासवर्ड रीसेट करें"
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -8362,6 +8388,9 @@
       ],
       "Show actions": [
         "कार्रवाई दिखाएं"
+      ],
+      "Sign in": [
+        "साइन इन करें"
       ],
       "Sign in and grant access": [
         "साइन इन करें और पहुंच प्रदान करें"
