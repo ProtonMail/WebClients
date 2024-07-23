@@ -18,6 +18,7 @@ import {
     hasPass,
     hasVPN,
     hasVPNPassBundle,
+    hasVisionary,
     hasVpnBusiness,
     hasWallet,
     isTrial,
@@ -350,9 +351,11 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
+    // In walletEA, we only show Visionary as the suggested plan, but if the user has that, there's no point in exploring other plans
+    const isWalletEA = app === APPS.PROTONWALLET && hasVisionary(subscription);
     // For the VPN B2B plan, we don't want to show the action buttons
     // The user can still open the subscription or customization flow using the other buttons, e.g. "Get more" users
-    const showActionButtons = !hasVpnB2BPlan;
+    const showActionButtons = !hasVpnB2BPlan && !isWalletEA;
 
     return (
         <Panel
