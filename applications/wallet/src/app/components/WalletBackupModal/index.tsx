@@ -2,15 +2,17 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
 import { UnlockModal } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import accessKey from '@proton/styles/assets/img/wallet/wallet-key.png';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button } from '../../atoms';
+import { Button, ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import type { SubTheme } from '../../utils';
 
@@ -99,9 +101,19 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
                 <Button fullWidth shape="solid" color="norm" onClick={() => setViewMnemonic(true)}>
                     {c('Wallet setup').t`View wallet seed phrase`}
                 </Button>,
-                <Button fullWidth shape="ghost" color="norm" onClick={() => modalProps.onClose?.()}>
-                    {c('Wallet setup').t`Done`}
+                <Button fullWidth shape="solid" color="weak" onClick={() => modalProps.onClose?.()}>
+                    {c('Wallet setup').t`Not now`}
                 </Button>,
+                <ButtonLike
+                    fullWidth
+                    shape="underline"
+                    color="norm"
+                    className="mx-auto"
+                    as={Href}
+                    href={getKnowledgeBaseUrl('/wallet-protection#seed-phrase')}
+                >
+                    {c('Wallet setup').t`Learn more`}
+                </ButtonLike>,
             ]}
             {...modalProps}
         >

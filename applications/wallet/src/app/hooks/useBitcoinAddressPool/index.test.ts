@@ -18,6 +18,11 @@ import { useBitcoinAddressPool } from '.';
 import type { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
 import { mockUseGetBitcoinAddressHighestIndex } from '../../tests/mocks/useBitcoinAddressHighestIndex';
 
+vi.mock('@proton/wallet/constants/settings', async () => {
+    const m = await vi.importActual('@proton/wallet/constants/settings');
+    return { ...m, POOL_FILLING_THRESHOLD: 3 };
+});
+
 const mockedPushBitcoinAddressesCreationPayload = vi.fn();
 vi.mock('@proton/andromeda', async (importOriginal) => {
     // eslint-disable-next-line @typescript-eslint/consistent-type-imports

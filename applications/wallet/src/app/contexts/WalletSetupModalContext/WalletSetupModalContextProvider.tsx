@@ -17,6 +17,7 @@ import { WalletEarlyAccessUpgradePrompt } from '../../components/WalletEarlyAcce
 import { WalletTermsAndConditionsPrompt } from '../../components/WalletTermsAndConditionsPrompt';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
+import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '../../constants/wallet';
 import { useUserEligibility } from '../../store/hooks';
 import { SubTheme } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
@@ -34,6 +35,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
     const [settings, loadingSettings] = useUserWalletSettings();
     const [organization] = useOrganization();
+
     const [isEligible, loadingIsEligible] = useUserEligibility();
 
     const [walletUpgradeModal, setWalletUpgradeModal, renderWalletUpgradeModal] =
@@ -55,7 +57,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
         if (data.kind === WalletSetupModalKind.WalletCreation) {
             // TODO: determine user plan
-            const hasReachedWalletLimit = (decryptedApiWalletsData?.length ?? 0) >= (organization?.MaxWallets ?? 0);
+            const hasReachedWalletLimit =
+                (decryptedApiWalletsData?.length ?? 0) >= (organization?.MaxWallets ?? DEFAULT_MAX_WALLETS);
 
             if (hasReachedWalletLimit) {
                 setWalletUpgradeModal({
@@ -68,7 +71,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
         } else if (data.kind === WalletSetupModalKind.WalletAccountCreation) {
             // TODO: determine user plan
             const hasReachedWalletAccountLimit =
-                (data.apiWalletData.WalletAccounts.length ?? 0) >= (organization?.MaxSubWallets ?? 0);
+                (data.apiWalletData.WalletAccounts.length ?? 0) >=
+                (organization?.MaxSubWallets ?? DEFAULT_MAX_SUB_WALLETS);
 
             if (hasReachedWalletAccountLimit) {
                 setWalletUpgradeModal({
