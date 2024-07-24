@@ -763,11 +763,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1546,14 +1546,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1575,6 +1567,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6902,11 +6902,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -11242,23 +11242,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11286,6 +11269,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -15837,10 +15837,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -17452,6 +17452,9 @@
       "Bitcoin via email": [
         "Bitcoin по эл. почте"
       ],
+      "Create ${ BRAND_NAME } Account now": [
+        "Создайте аккаунт ${ BRAND_NAME } сейчас"
+      ],
       "Early access to new features": [
         "Ранний доступ к новым функциям"
       ],
@@ -17494,8 +17497,8 @@
       ]
     },
     "wallet_signup_2024:Info": {
-      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
-        "Без проблем храните и переводите Bitcoin. Установите необходимые для этого приложения ${ WALLET_APP_NAME }."
+      "Coming soon": [
+        "Скоро"
       ]
     },
     "wallet_signup_2024:Navigation": {
