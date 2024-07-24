@@ -71,6 +71,7 @@ export const EmailIntegrationInput = ({
                     <Toggle
                         id={walletAccountId}
                         checked={value.length > 0}
+                        loading={loading}
                         onChange={() => {
                             if (value.length < 1) {
                                 setEmailIntegrationModal(true);
