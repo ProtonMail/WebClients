@@ -11,6 +11,7 @@ import {
     SidebarListItemButton,
     SidebarListItemContent,
     SidebarListItemContentIcon,
+    SidebarListItemLink,
     SidebarListItemSettingsLink,
     useModalState,
 } from '@proton/components/components';
@@ -63,6 +64,7 @@ export const OtherSidebarListItems = () => {
         handleSignout(false);
     };
 
+    const discoverLabel = c('Wallet Sidebar').t`Discover`;
     const recoveryLabel = c('Wallet Sidebar').t`Recovery`;
     const upgradeLabel = c('Wallet Sidebar').t`Upgrade`;
     const securityLabel = c('Wallet Sidebar').t`Security`;
@@ -72,6 +74,21 @@ export const OtherSidebarListItems = () => {
 
     return (
         <>
+            <SidebarListItem>
+                <SidebarListItemLink to={'/discover'}>
+                    <SidebarListItemContent
+                        data-testid="wallet-sidebar:discover"
+                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="grid-3" />}
+                        className="sidebar-item-content flex gap-2 max-w-full"
+                    >
+                        <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
+                            <span className="text-ellipsis" title={discoverLabel}>
+                                {discoverLabel}
+                            </span>
+                        </div>
+                    </SidebarListItemContent>
+                </SidebarListItemLink>
+            </SidebarListItem>
             {org?.PlanName !== PLANS.VISIONARY && user.canPay && (
                 <SidebarListItem className="my-2">
                     <SidebarListItemButton

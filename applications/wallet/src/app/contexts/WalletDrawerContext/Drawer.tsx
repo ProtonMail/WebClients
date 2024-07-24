@@ -7,6 +7,8 @@ import clsx from '@proton/utils/clsx';
 
 import { DrawerHeader } from './DrawerHeader';
 
+import './Drawer.scss';
+
 export interface Props {
     open: boolean;
     onClose?: () => void;
@@ -59,8 +61,8 @@ export const Drawer = ({
                 style={{ ...style, transform: open ? undefined : 'translateX(100%)', transitionDuration: '300ms' }}
             >
                 <DrawerHeader title={title} onClose={() => onClose?.()} bg={bg} />
-                <Scroll>
-                    <div className="pb-3 px-6">{children}</div>
+                <Scroll className="drawer-scroll-container">
+                    <div className="pb-3 px-6 h-full">{children}</div>
                 </Scroll>
             </div>
         </>
