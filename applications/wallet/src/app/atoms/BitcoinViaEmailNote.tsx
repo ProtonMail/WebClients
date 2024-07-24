@@ -6,6 +6,7 @@ import { Href } from '@proton/atoms/Href';
 import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import Icon from '@proton/components/components/icon/Icon';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import bitcoinEmailActive from '@proton/styles/assets/img/illustrations/proton-wallet-active-email.svg';
 import bitcoinEmailInactive from '@proton/styles/assets/img/illustrations/proton-wallet-inactive-email.svg';
 
@@ -46,8 +47,12 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
             <div className="flex flex-column mx-4">
                 <p className="my-0 pt-2 pr-1 w-full">{text}</p>
                 <div>
-                    <CoreButtonLike shape="underline" color="norm" as={Href} href="kb-post">{c('Bitcoin via Email')
-                        .t`Learn more`}</CoreButtonLike>
+                    <CoreButtonLike
+                        shape="underline"
+                        color="norm"
+                        as={Href}
+                        href={getKnowledgeBaseUrl('/wallet-bitcoin-via-email')}
+                    >{c('Action').t`Learn more`}</CoreButtonLike>
                 </div>
             </div>
             <div className="absolute top-0 right-0 shrink-0 m-1">

@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import walletSeedphraseSrc from '@proton/styles/assets/img/wallet/wallet-key.png';
 import walletPassphraseSrc from '@proton/styles/assets/img/wallet/wallet-lock.png';
 
-import { Button } from '../../atoms';
+import { Button, CoreButtonLike } from '../../atoms';
 
 type ContentKind = 'wallet-seedphrase-introduction' | 'wallet-passphrase-introduction';
 
@@ -39,9 +41,8 @@ export const WalletInformationalModal = ({ kind, ...modalProps }: WalletInformat
         <Prompt
             size="medium"
             buttons={
-                <Button onClick={modalProps.onClose} fullWidth size="large" shape="solid" color="norm">{c(
-                    'Wallet setup'
-                ).t`Close`}</Button>
+                <Button onClick={modalProps.onClose} fullWidth size="large" shape="solid" color="norm">{c('Action')
+                    .t`Close`}</Button>
             }
             {...modalProps}
         >
@@ -51,6 +52,18 @@ export const WalletInformationalModal = ({ kind, ...modalProps }: WalletInformat
                 <h1 className="my-4 text-semibold text-3xl">{title ?? c('Wallet Upgrade').t`Upgrade your privacy`}</h1>
 
                 <p className="m-0 color-hint text-center">{text}</p>
+
+                <CoreButtonLike
+                    className="my-3"
+                    shape="underline"
+                    color="norm"
+                    as={Href}
+                    href={
+                        kind === 'wallet-seedphrase-introduction'
+                            ? getKnowledgeBaseUrl('/wallet-protection#seed-phrase')
+                            : getKnowledgeBaseUrl('/wallet-protection#optional-passphrase')
+                    }
+                >{c('Action').t`Learn more`}</CoreButtonLike>
             </div>
         </Prompt>
     );
