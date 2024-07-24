@@ -628,7 +628,6 @@ export const getShortPlan = (
         boldStorageSize?: boolean;
         vpnServers: VPNServersCountData;
         freePlan: FreePlanDefault;
-        walletEnabled?: boolean;
     }
 ) => {
     if (plan === PLANS.FREE) {
@@ -640,7 +639,7 @@ export const getShortPlan = (
         return null;
     }
 
-    const { vpnServers, boldStorageSize, freePlan, walletEnabled } = options;
+    const { vpnServers, boldStorageSize, freePlan } = options;
 
     switch (plan) {
         case PLANS.MAIL:
@@ -664,7 +663,7 @@ export const getShortPlan = (
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan(planData);
         case PLANS.VISIONARY:
-            return getVisionaryPlan({ walletEnabled, serversCount: vpnServers, plan: planData, freePlan });
+            return getVisionaryPlan({ serversCount: vpnServers, plan: planData, freePlan });
         case PLANS.FAMILY:
             return getFamilyPlan({ plan: planData, serversCount: vpnServers, freePlan });
         case PLANS.VPN_PRO:
