@@ -32,7 +32,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private socket?: WebSocket
   readonly state: WebsocketStateInterface = new WebsocketState()
   private pingTimeout: ReturnType<typeof setTimeout> | undefined = undefined
-  private reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
+  reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   private destroyed = false
 
   private didReceiveReadyMessageFromRTS = false
@@ -66,6 +66,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
         this.logger.info('Closing connection due to user being away for too long')
         this.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
       }, TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES)
+
+      if (this.reconnectTimeout) {
+        clearTimeout(this.reconnectTimeout)
+        this.reconnectTimeout = undefined
+      }
     }
   }
 
