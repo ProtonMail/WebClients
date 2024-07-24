@@ -370,6 +370,11 @@ export class WebsocketService implements WebsocketServiceInterface {
       }
     }
 
+    if (!record.connection.canBroadcastMessages()) {
+      this.logger.info(`Not sending event ${EventTypeEnum[type]} because connection is not ready`)
+      return
+    }
+
     const metadata: EncryptionMetadata = {
       authorAddress: keys.userOwnAddress,
       timestamp: Date.now(),

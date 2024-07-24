@@ -29,7 +29,7 @@ export const DebugConnection = {
 }
 
 export class WebsocketConnection implements WebsocketConnectionInterface {
-  private socket?: WebSocket
+  socket?: WebSocket
   readonly state: WebsocketStateInterface = new WebsocketState()
   private pingTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
@@ -103,6 +103,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   destroy(): void {
     this.destroyed = true
+    this.state.destroy()
 
     clearTimeout(this.pingTimeout)
     clearTimeout(this.reconnectTimeout)
@@ -281,17 +282,30 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
   }
 
+  public canBroadcastMessages(): boolean {
+    if (
+      !this.didReceiveReadyMessageFromRTS ||
+      !this.socket ||
+      this.socket.readyState !== WebSocket.OPEN ||
+      !this.state.isConnected
+    ) {
+      return false
+    }
+
+    return true
+  }
+
   async broadcastMessage(data: Uint8Array): Promise<void> {
     if (!this.didReceiveReadyMessageFromRTS) {
       this.logger.error('Cannot send message, RTS is not ready to accept messages')
       return
     }
 
-    if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
+    if (!this.canBroadcastMessages()) {
       this.logger.error('Cannot send message, socket is not open')
       return
     }
 
-    this.socket.send(data)
+    this.socket?.send(data)
   }
 }
