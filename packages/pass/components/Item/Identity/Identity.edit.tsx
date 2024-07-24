@@ -30,6 +30,7 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ vault, revisio
         },
         validate: validateIdentityForm,
         validateOnBlur: true,
+        validateOnMount: true,
     });
 
     useItemDraft<IdentityItemFormValues>(form, {
@@ -39,5 +40,5 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ vault, revisio
         shareId: form.values.shareId,
     });
 
-    return <IdentityForm form={form} onCancel={onCancel} content={content} editing />;
+    return <IdentityForm form={form} onCancel={onCancel} editing />;
 };

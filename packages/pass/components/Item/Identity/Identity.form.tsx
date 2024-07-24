@@ -11,24 +11,23 @@ import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPicker
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { useIdentityFormSections } from '@proton/pass/hooks/identity/useIdentityFormSections';
+import { useIdentityForm } from '@proton/pass/hooks/identity/useIdentityForm';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { IdentityItemFormValues, IdentityValues } from '@proton/pass/types';
+import type { IdentityItemFormValues } from '@proton/pass/types';
 
-import { IdentityCollapsibleSection } from './Form/IdentityCollapsibleSection';
 import { IdentityCustomSections } from './Form/IdentityCustomSections';
+import { IdentitySection } from './Form/IdentitySection';
 
 type IdentityFormType = {
     form: FormikContextType<IdentityItemFormValues>;
-    onCancel: () => void;
     editing?: boolean;
-    content?: IdentityValues;
+    onCancel: () => void;
 };
 
-export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = false, onCancel }) => {
+export const IdentityForm: FC<IdentityFormType> = ({ form, editing = false, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
-    const { sections, updateSectionFields } = useIdentityFormSections({ initialValues: content });
+    const { sections, addOptionalField } = useIdentityForm(form.values, editing);
     const { ParentPortal, openPortal } = usePortal();
     const [ItemPanel, formId] = useMemo(
         () => (editing ? [ItemEditPanel, 'edit-identity'] : [ItemCreatePanel, 'new-identity']),
@@ -41,7 +40,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
             formId={formId}
             handleCancelClick={onCancel}
             type="identity"
-            valid={form.isValid}
+            valid={form.isValid && form.dirty}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
@@ -63,11 +62,11 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                             />
                         </FieldsetCluster>
 
-                        {sections.map((section, index) => (
-                            <IdentityCollapsibleSection
+                        {sections.map((section, sectionIndex) => (
+                            <IdentitySection
                                 key={section.name}
                                 form={form}
-                                onAdd={(field: string) => updateSectionFields?.(index, field)}
+                                onAddOptionalField={(field) => addOptionalField?.(sectionIndex, field)}
                                 {...section}
                             />
                         ))}
