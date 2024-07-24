@@ -31,7 +31,7 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: 
     const labelHeader = (
         <span className="flex items-center">
             <span className="mr-2">{c('Header').t`Label`}</span>
-            <Info title={c('Info').t`Only you can see the labels.`} />
+            <Info title={c('Info').t`Only you can see the label`} />
         </span>
     );
 
