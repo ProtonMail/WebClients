@@ -26,6 +26,10 @@ export type ColorRGB = `${number} ${number} ${number}`;
  * matches any of the OriginalTypes in U. If a match is found, the property's type
  * is replaced with the corresponding NewType. If no match is found, the property's
  * type remains unchanged. */
-export type ObjectTypeMap<T, U extends [unknown, unknown][]> = {
-    [K in keyof T]: T[K] extends U[number][0] ? Extract<U[number], [T[K], unknown]>[1] : T[K];
-};
+export type TypeMapper<T, U extends [unknown, unknown][]> = T extends U[number][0]
+    ? Extract<U[number], [T, unknown]>[1]
+    : T extends (infer A)[]
+      ? TypeMapper<A, U>[]
+      : T extends Record<any, any>
+        ? { [K in keyof T]: TypeMapper<T[K], U> }
+        : T;
