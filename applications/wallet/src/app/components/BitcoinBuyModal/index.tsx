@@ -72,7 +72,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                 const address = await wasmAccount?.account.getAddress(index);
 
                 if (address?.address) {
-                    setBtcAddress(address.address);
+                    return setBtcAddress(address.address);
                 }
             }
 
@@ -128,29 +128,56 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                             />
                         )}
 
-                        {stepKey === StepKey.Amount && country && (
-                            <Amount
-                                country={country}
-                                preselectedQuote={quote}
-                                onConfirm={(quote) => {
-                                    setQuote(quote);
-                                    setStepKey(StepKey.Onramp);
-                                }}
-                            />
-                        )}
+                        {stepKey === StepKey.Amount &&
+                            (() => {
+                                if (!country) {
+                                    return (
+                                        <div className="color-danger text-center">{c('Wallet buy')
+                                            .t`Missing country. Please refresh and try again or contact support`}</div>
+                                    );
+                                }
 
-                        {stepKey === StepKey.Onramp && quote && btcAddress && (
-                            <Checkout
-                                quote={quote}
-                                btcAddress={btcAddress}
-                                onDone={() => {
-                                    onDone?.();
-                                }}
-                                onBack={() => {
-                                    setStepKey(StepKey.Amount);
-                                }}
-                            />
-                        )}
+                                return (
+                                    <Amount
+                                        country={country}
+                                        preselectedQuote={quote}
+                                        onConfirm={(quote) => {
+                                            setQuote(quote);
+                                            setStepKey(StepKey.Onramp);
+                                        }}
+                                    />
+                                );
+                            })()}
+
+                        {stepKey === StepKey.Onramp &&
+                            (() => {
+                                if (!quote) {
+                                    return (
+                                        <div className="color-danger text-center">{c('Wallet buy')
+                                            .t`Missing quote. Please refresh and try again or contact support`}</div>
+                                    );
+                                }
+
+                                if (!btcAddress) {
+                                    return (
+                                        <div className="color-danger text-center">{c('Wallet buy')
+                                            .t`Missing bitcoin address. Please refresh and try again or contact support`}</div>
+                                    );
+                                }
+
+                                return (
+                                    <Checkout
+                                        quote={quote}
+                                        btcAddress={btcAddress}
+                                        onDone={() => {
+                                            onDone?.();
+                                        }}
+                                        onBack={() => {
+                                            setStepKey(StepKey.Amount);
+                                        }}
+                                    />
+                                );
+                            })()}
                     </div>
                 </div>
 
