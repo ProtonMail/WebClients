@@ -51,15 +51,15 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
 
     const form = useFormik<EditAliasFormValues>({
-        initialValues: { name: metadata.name, note, mailboxes: [] },
-        onSubmit: ({ name, note, mailboxes }) => {
+        initialValues: { name: metadata.name, note, mailboxes: [], shareId: vault.shareId },
+        onSubmit: ({ name, note, mailboxes, shareId }) => {
             onSubmit({
                 ...uneditable,
                 extraData: { aliasOwner, mailboxes, aliasEmail },
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
-                shareId: vault.shareId,
+                shareId,
             });
         },
         validate: validateEditAliasForm,
