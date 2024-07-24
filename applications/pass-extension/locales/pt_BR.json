@@ -410,6 +410,9 @@
       "Retry": [
         "Tentar novamente"
       ],
+      "Right click and download this CSV": [
+        "Clique com o botão direito para baixar este CSV"
+      ],
       "Save": [
         "Salvar"
       ],
@@ -1090,6 +1093,9 @@
       "Auto-lock successfully disabled.": [
         "Bloqueio automático desativado."
       ],
+      "Automatically copy the generated password to the clipboard": [
+        "Copiar automaticamente a senha gerada para a área de transferência"
+      ],
       "Autosaved on ${ payload.domain }": [
         "Salvo automaticamente em ${ payload.domain }"
       ],
@@ -1170,6 +1176,9 @@
       ],
       "Drop to import": [
         "Solte para importar"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Devido a uma limitação das extensões do navegador Safari, após exportar os dados, faltará a extensão \".pgp\" nos arquivos. Renomeie o arquivo para incluir a extensão \".pgp\" (ex: arquivo.pgp) após exportar."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Transfira suas senhas existentes para o ${ PASS_APP_NAME } de forma simples e rápida."
@@ -1462,6 +1471,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Insira o seu código PIN atual para continuar"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Digite sua senha adicional para começar a usar ${ PASS_SHORT_APP_NAME }"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
