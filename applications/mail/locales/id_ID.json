@@ -831,10 +831,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1493,11 +1493,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Percakapan"
-      ]
-    },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Selamat Datang"
       ]
     },
     "Animation": {
@@ -3420,6 +3415,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Hemat waktu Anda dengan fitur pengiriman email atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Tentukan metode pemulihan untuk mencegah hilangnya data."
       ],
@@ -3446,6 +3444,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Buka pilih sendiri waktu penundaan setelah meningkatkan langganan"
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Dapatkan alamat email yang lebih pendek dan berbagai fitur premium lainnya dengan meningkatkan akun."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Dapatkan filter tanpa batas yang menyortir kotak masuk Anda dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
@@ -5680,6 +5681,9 @@
       "and": [
         "dan"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Pesan tips lainnya akan ditampilkan pada saat Anda kembali membuka Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Seluruh pesan yang terjadwal atau ditunda akan dibatalkan."
       ],
@@ -5842,6 +5846,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Buat folder dengan nama seperti \"${ suggestedFolderName }\" untuk menyimpan seluruh resi online Anda di satu tempat."
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder yang ingin Anda impor."
       ],
@@ -5893,6 +5900,9 @@
       "Default email application": [
         "Aplikasi email bawaan"
       ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Tahukah Anda bahwa kami menyimpan alamat email yang lebih pendek khusus untuk Anda? Alamat email ini merupakan kombinasi dari nama pengguna Anda yang disertai dengan \"@${ PM_DOMAIN }\"."
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -5907,6 +5917,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Sedang tidak memiliki waktu untuk membalas email penting, namun tidak ingin sampai Anda lupa akan email ini? Tentukan waktu yang lebih sesuai bagi email yang masuk untuk muncul pada kotak surat Anda."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
@@ -6064,6 +6077,9 @@
       "Generate text": [
         "Hasilkan teks"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Berikan tagihan yang masuk label dengan keterangan warna yang khusus, semisal \"${ suggestedLabelName }\". Setelah tagihan ini terbayar, ubah label ini menjadi \"${ suggestedPaidLabelName }\"."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Memiliki ${ numAttachments } lampiran (${ numAttachmentsSize })"
       ],
@@ -6102,6 +6118,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Apabila alias Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Apabila kata sandi Anda muncul pada dark web, ${ BRAND_NAME } dapat memberi tahu Anda dari layanan mana kata sandi ini dibocorkan serta bagaimana cara untuk menghentikan dampak kebocoran ini."
       ],
       "Image description": [
         "Keterangan gambar"
@@ -6951,6 +6970,9 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Gunakan alamat email yang berbeda untuk masing-masing kebutuhan yang berbeda agar Anda dapat dengan mudah memisahkan email Anda berdasarkan pekerjaan, pribadi, atau bidang lainnya."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gunakan pintasan keyboard untuk mengelola email secara lebih ringkas."
@@ -9775,9 +9797,6 @@
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Silakan tambahkan metode pembayaran di dasbor untuk melanjutkan."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
@@ -11748,6 +11767,17 @@
         "${ minutes } menit"
       ]
     },
+    "Tip Action": {
+      "Create label “${ suggestedLabelName }“": [
+        "Buat label \"${ suggestedLabelName }“"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Dapatkan alamat \"@${ PM_DOMAIN }\" saya"
+      ],
+      "Show me how": [
+        "Tunjukkan caranya kepada saya"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
@@ -11778,6 +11808,9 @@
       ],
       "Action all messages": [
         "Terapkan pada seluruh pesan"
+      ],
+      "Activate @pm.me": [
+        "Aktifkan @pm.me"
       ],
       "Add a custom logo": [
         "Tambah logo khusus"
@@ -12084,6 +12117,9 @@
       ],
       "Import groups": [
         "Impor grup"
+      ],
+      "Increase your privacy with more addresses": [
+        "Tingkatkan privasi Anda dengan lebih banyak alamat"
       ],
       "Insert contacts": [
         "Sisipkan kontak"
