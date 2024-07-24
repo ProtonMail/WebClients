@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { RampInstantEventTypes } from '@ramp-network/ramp-instant-sdk';
 import { c } from 'ttag';
 
 import type { WasmGatewayProvider, WasmPaymentMethod } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip } from '@proton/components/components';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
@@ -48,14 +49,13 @@ const buildUrl = (
 };
 
 export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         const handleEvent = (event?: MessageEvent<any>) => {
             if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
                 onBack();
             }
-
-            // eslint-disable-next-line no-console
-            console.log('event', event);
         };
 
         window.addEventListener('message', handleEvent);
@@ -67,10 +67,10 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
 
     return (
         <div className="flex flex-column max-w-full justify-center items-center">
-            <div className="banxa-iframe-container w-full h-full">
+            <div className="onramp-iframe-container w-full h-full">
                 <Tooltip title={c('Action').t`Close`}>
                     <Button
-                        className="banxa-close-button shrink-0 rounded-full bg-norm"
+                        className="onramp-close-button shrink-0 rounded-full bg-norm"
                         icon
                         shape="solid"
                         data-testid="modal:close"
@@ -80,8 +80,10 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
                     </Button>
                 </Tooltip>
 
+                {isLoading && <CircleLoader className="onramp-loader color-primary" />}
+
                 <iframe
-                    className="banxa-iframe"
+                    className="onramp-iframe"
                     allow="camera *;microphone *"
                     src={buildUrl(
                         Number(quote.FiatAmount),
@@ -91,6 +93,9 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
                         quote.provider
                     )}
                     title={c('Bitcoin buy').t`${quote.provider} checkout`}
+                    onLoad={() => {
+                        setIsLoading(false);
+                    }}
                 />
             </div>
         </div>
