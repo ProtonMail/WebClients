@@ -6,7 +6,7 @@ import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
 import { UnlockModal } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import accessKey from '@proton/styles/assets/img/illustrations/access-key.svg';
+import accessKey from '@proton/styles/assets/img/wallet/wallet-key.png';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
@@ -106,7 +106,12 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
             {...modalProps}
         >
             <div className="flex flex-column items-center">
-                <img className="my-3" src={accessKey} alt="" />
+                <img
+                    className="my-3 h-custom w-custom"
+                    src={accessKey}
+                    alt=""
+                    style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
+                />
 
                 <h1 className={'text-bold text-break text-3xl mt-3 mb-4'}>{c('Wallet setup')
                     .t`Your keys, your coins.`}</h1>
