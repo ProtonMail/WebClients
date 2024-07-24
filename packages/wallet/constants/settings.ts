@@ -16,3 +16,7 @@ export const WALLET_CLIENTS: { [key in WalletClientKeys]: WalletClient } = {
         link: 'https://testflight.apple.com/join/6OIcXtQN',
     },
 } as const;
+
+export const POOL_FILLING_THRESHOLD = 10;
+
+export const MAX_RECIPIENTS_PER_TRANSACTIONS = 10;

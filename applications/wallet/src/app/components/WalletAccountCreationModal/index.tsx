@@ -5,6 +5,7 @@ import { last } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
+import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
@@ -15,6 +16,7 @@ import {
 } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import {
     BASE_INDEX_OPTIONS,
@@ -26,7 +28,7 @@ import {
     walletAccountCreation,
 } from '@proton/wallet';
 
-import { Button, CoreButton, Input, Modal, Select, SelectOption } from '../../atoms';
+import { Button, CoreButtonLike, Input, Modal, Select, SelectOption } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -184,8 +186,13 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                             renderSelected={(selected) => getLabelByScriptType(selected as WasmScriptType)}
                         />
 
-                        <CoreButton className="my-3 mr-auto" shape="underline" color="norm">{c('Wallet account')
-                            .t`Learn more`}</CoreButton>
+                        <CoreButtonLike
+                            className="my-3 mr-auto"
+                            shape="underline"
+                            color="norm"
+                            as={Href}
+                            href={getKnowledgeBaseUrl('/wallet-create-btc-account#bitcoin-address-type')}
+                        >{c('Action').t`Learn more`}</CoreButtonLike>
                     </div>
 
                     <div className="flex flex-column items-center">
@@ -239,8 +246,13 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                             )}
                         </div>
 
-                        <CoreButton className="my-3 mr-auto" shape="underline" color="norm">{c('Wallet account')
-                            .t`Learn more`}</CoreButton>
+                        <CoreButtonLike
+                            className="my-3 mr-auto"
+                            shape="underline"
+                            color="norm"
+                            as={Href}
+                            href={getKnowledgeBaseUrl('/wallet-create-btc-account#bitcoin-address-index-type')}
+                        >{c('Action').t`Learn more`}</CoreButtonLike>
                     </div>
                 </CollapsibleContent>
             </Collapsible>

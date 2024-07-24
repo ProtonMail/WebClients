@@ -26,7 +26,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
+import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet';
 
 import type { InputProps } from '../../atoms';
 import { CoreButton, Input } from '../../atoms';
