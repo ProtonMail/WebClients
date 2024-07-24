@@ -25,7 +25,7 @@ export const DiscoverContainer = () => {
                         <div className="ui-standard">
                             <ButtonLike
                                 as={Href}
-                                href={getKnowledgeBaseUrl('')}
+                                href={getKnowledgeBaseUrl('/wallet')}
                                 size="small"
                                 shape="solid"
                                 color="norm"
