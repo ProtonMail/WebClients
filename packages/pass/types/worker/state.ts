@@ -16,6 +16,7 @@ export enum AppStatus {
     SESSION_LOCKED = 'SESSION_LOCKED' /* session is locked back-end side */,
     UNAUTHORIZED = 'UNAUTHORIZED' /* app is pending login */,
     MISSING_SCOPE = 'MISSING_SCOPE' /* app needs extra password */,
+    LOCK_SETUP = 'LOCK_SETUP' /* user must setup a lock method (for B2B users) */,
 }
 
 export type AppState = {

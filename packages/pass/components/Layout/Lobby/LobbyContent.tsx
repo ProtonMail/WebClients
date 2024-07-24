@@ -8,6 +8,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { LockOnboarding } from '@proton/pass/components/Layout/Lobby/LockOnboarding';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
@@ -40,6 +41,7 @@ type Props = {
     onRegister: () => void;
     renderError: () => ReactNode;
     renderFooter?: () => ReactNode;
+    setAppStatus: (status: AppStatus) => void;
 };
 
 export const LobbyContent: FC<Props> = ({
@@ -52,6 +54,7 @@ export const LobbyContent: FC<Props> = ({
     onRegister,
     renderError,
     renderFooter,
+    setAppStatus,
 }) => {
     const { getOfflineEnabled } = usePassCore();
     const online = useConnectivity();
@@ -117,6 +120,23 @@ export const LobbyContent: FC<Props> = ({
                     })()}
                 </span>
             </div>
+        );
+    }
+
+    if (status === AppStatus.LOCK_SETUP) {
+        return (
+            <>
+                <LockOnboarding setAppStatus={setAppStatus} />
+                <Button
+                    className="w-full text-sm mt-6"
+                    color="weak"
+                    onClick={() => onLogout({ soft: true })}
+                    pill
+                    shape="ghost"
+                >
+                    {c('Action').t`Sign out`}
+                </Button>
+            </>
         );
     }
 
