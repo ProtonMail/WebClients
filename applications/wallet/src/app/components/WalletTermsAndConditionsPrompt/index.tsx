@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
-import walletPlaneImg from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
+import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.png';
 import { acceptTermsAndConditions, useWalletApiClients } from '@proton/wallet';
 
 import { Button } from '../../atoms';
@@ -67,7 +67,7 @@ export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) 
                     src={walletPlaneImg}
                     alt=""
                     className="w-custom h-custom"
-                    style={{ '--w-custom': '240px', '--h-custom': '135px' }}
+                    style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                 />
                 <h1 className="my-3 text-semibold text-3xl">{c('Wallet Welcome').t`Welcome to ${WALLET_APP_NAME}`}</h1>
                 <ModalParagraph prompt>
