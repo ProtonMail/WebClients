@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import bitcoinEmailActive from '@proton/styles/assets/img/illustrations/proton-wallet-active-email.svg';
@@ -56,17 +57,19 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
                 </div>
             </div>
             <div className="absolute top-0 right-0 shrink-0 m-1">
-                <CoreButton
-                    icon
-                    pill
-                    size="small"
-                    shape="ghost"
-                    onClick={() => {
-                        setIsHidden(true);
-                    }}
-                >
-                    <Icon name="cross" size={4} />
-                </CoreButton>
+                <Tooltip title={c('Action').t`Close`}>
+                    <CoreButton
+                        icon
+                        pill
+                        size="small"
+                        shape="ghost"
+                        onClick={() => {
+                            setIsHidden(true);
+                        }}
+                    >
+                        <Icon name="cross" size={4} alt={c('Action').t`Close`} />
+                    </CoreButton>
+                </Tooltip>
             </div>
         </div>
     );
