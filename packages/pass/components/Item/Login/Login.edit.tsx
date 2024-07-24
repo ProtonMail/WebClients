@@ -30,7 +30,7 @@ import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pas
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
-import type { EditLoginItemFormValues } from '@proton/pass/types';
+import type { LoginItemFormValues } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -54,7 +54,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
 
     const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername }, usernameSplit);
 
-    const initialValues: EditLoginItemFormValues = {
+    const initialValues: LoginItemFormValues = {
         aliasPrefix: '',
         aliasSuffix: undefined,
         extraFields,
@@ -72,7 +72,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         withAlias: false,
     };
 
-    const form = useFormik<EditLoginItemFormValues>({
+    const form = useFormik<LoginItemFormValues>({
         initialValues,
         onSubmit: ({
             name,
@@ -169,7 +169,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
 
     const { aliasOptions } = useAliasForLoginModal(form);
 
-    useItemDraft<EditLoginItemFormValues>(form, {
+    useItemDraft<LoginItemFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
         shareId: form.values.shareId,

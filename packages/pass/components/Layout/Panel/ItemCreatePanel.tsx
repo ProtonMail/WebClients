@@ -32,6 +32,8 @@ function getItemTypeSubmitButtonLabel(type: ItemType) {
             return c('Action').t`Create note`;
         case 'creditCard':
             return c('Action').t`Create card`;
+        case 'identity':
+            return c('Action').t`Create identity`;
         default:
             return c('Action').t`Create`;
     }

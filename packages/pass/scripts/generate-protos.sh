@@ -15,7 +15,7 @@ echo ${os}
 
 SCRIPT_DIR=$(dirname "$0")
 ROOT_DIR="$SCRIPT_DIR/.."
-PLUGIN_DIR="$ROOT_DIR"/../../node_modules/.bin/protoc-gen-ts
+PLUGIN_DIR="$ROOT_DIR"/../../node_modules/@protobuf-ts/plugin/bin/protoc-gen-ts
 OUT_DIR="$ROOT_DIR"/types/protobuf
 
 function process_file() {

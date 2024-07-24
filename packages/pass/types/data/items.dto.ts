@@ -30,6 +30,7 @@ export type ItemEditIntentDTO = {
     login: never;
     note: never;
     creditCard: never;
+    identity: never;
 };
 
 export type ItemImportIntentDTO = {

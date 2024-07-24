@@ -43,6 +43,7 @@ export enum TelemetryItemType {
     login = 'login',
     alias = 'alias',
     creditCard = 'credit_card',
+    identity = 'identity',
 }
 
 export type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {

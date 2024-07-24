@@ -1,32 +1,22 @@
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { AliasMailbox } from '@proton/pass/types';
+import type { AliasMailbox, ItemContent } from '@proton/pass/types';
 
 import type { ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
-export type BaseItemValues = { name: string; note: string };
+export type BaseItemValues = { name: string; note: string; shareId: string };
 
-export type NoteFormValues = {
-    name: string;
-    note: string;
-    shareId: string;
-};
+export type NoteFormValues = BaseItemValues;
 
-export type LoginItemFormValues = {
-    name: string;
-    note: string;
-    passkeys: SanitizedPasskey[];
-    password: string;
-    shareId: string;
-    totpUri: string;
+export type LoginItemFormValues = BaseItemValues & {
     itemEmail: string;
     itemUsername: string;
+    passkeys: SanitizedPasskey[];
+    password: string;
+    totpUri: string;
     withAlias: boolean;
 } & AliasFormValues &
     UrlGroupValues &
     ExtraFieldGroupValues;
-
-export type EditLoginItemFormValues = LoginItemFormValues;
-export type NewLoginItemFormValues = LoginItemFormValues;
 
 export type AliasFormValues = {
     aliasPrefix: string;
@@ -34,13 +24,9 @@ export type AliasFormValues = {
     mailboxes: AliasMailbox[];
 };
 
-export type NewAliasFormValues = AliasFormValues & {
-    name: string;
-    note: string;
-    shareId: string;
-};
+export type NewAliasFormValues = BaseItemValues & AliasFormValues;
+export type EditAliasFormValues = BaseItemValues & Pick<AliasFormValues, 'mailboxes'>;
 
-export type EditAliasFormValues = Pick<AliasFormValues, 'mailboxes'> & {
-    name: string;
-    note: string;
-};
+export type IdentityValues = ItemContent<'identity'>;
+export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;
+export type IdentitySectionFormValues = { sectionName: string };
