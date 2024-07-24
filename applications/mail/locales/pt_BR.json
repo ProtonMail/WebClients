@@ -838,11 +838,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -1512,11 +1512,6 @@
         "SimpleLogin"
       ]
     },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Bem-vindo"
-      ]
-    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "E-mail de ${ nameToDisplay }"
@@ -1553,6 +1548,9 @@
       ],
       "Faster, broader device compatibility": [
         "Compatibilidade de dispositivos mais rápida e ampla"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Os prompts ficam no seu dispositivo, mas requerem um único download e hardware compatível."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Requer um download único e hardware compatível."
@@ -3447,6 +3445,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Defina um método de recuperação para prevenir a perda de dados."
       ],
@@ -3473,6 +3474,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Desbloqueie tempos de adiamento personalizados ao fazer upgrade do seu plano."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Consiga endereços de e-mail mais curtos e outras funcionalidades premium ao fazer upgrade do seu plano"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Desbloqueie filtros ilimitados que classificam sua caixa de entrada para você e mais recursos premium ao atualizar."
@@ -5791,6 +5795,9 @@
       "and": [
         "e"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Outra dica será exibida na próxima vez que você abrir o Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Todas as mensagens agendadas ou adiadas serão canceladas."
       ],
@@ -5956,6 +5963,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Criar ${ calendarsToBeCreatedCount } novo calendário",
         "Criar ${ calendarsToBeCreatedCount } novos calendários"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Crie uma pasta como “${ suggestedFolderName }” para manter todos os seus comprovantes on-line em um só lugar."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
@@ -10545,7 +10555,7 @@
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
       ],
       "Please generate keys before you try to change your password": [
-        "Por favor, gere chaves antes de tentar alterar sua senha"
+        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
@@ -11871,6 +11881,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " agora está ativo"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } removido"
       ]
@@ -12012,6 +12025,41 @@
         "${ minutes } minutos"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Ativar"
+      ],
+      "Create an alias": [
+        "Criar um alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Criar o marcador “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Criar endereço de e-mail"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Criar pasta “${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Baixar ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Baixar aplicativo para computador"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Ativar monitoramento da Dark Web"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Obter meu endereço “@${ PM_DOMAIN }“"
+      ],
+      "Open ": [
+        "Abrir "
+      ],
+      "Show me how": [
+        "Mostre-me como"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
@@ -12044,6 +12092,9 @@
       ],
       "Action all messages": [
         "Ação em todas as mensagens"
+      ],
+      "Activate @pm.me": [
+        "Ativar @pm.me"
       ],
       "Add a custom logo": [
         "Adicionar um logotipo personalizado"
@@ -12357,6 +12408,9 @@
       ],
       "Import groups": [
         "Importar grupo"
+      ],
+      "Increase your privacy with more addresses": [
+        "Aumente sua privacidade com mais endereços"
       ],
       "Insert contacts": [
         "Inserir contatos"

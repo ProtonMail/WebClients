@@ -835,10 +835,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1504,11 +1504,6 @@
         "Keskustelu"
       ]
     },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Tervetuloa"
-      ]
-    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "Postilaatikko: ${ nameToDisplay }"
@@ -1545,6 +1540,9 @@
       ],
       "Faster, broader device compatibility": [
         "Nopeampi ja kattavampi laiteyhteensopivuus"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Kehotteet pysyvät laitteellasi, mutta vaativat kertalatauksen ja yhteensopivan laitteiston"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Vaatii kertaluonteisen latauksen ja yhteensopivan laitteiston."
@@ -3436,6 +3434,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Aseta tiedoillesi palautusmenetelmä, jottet menetä niitä."
       ],
@@ -3462,6 +3463,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Päivitä tilauksesi määrittääksesi omia torkutusaikojasi."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Avaa lyhyemmät sähköpostiosoitteet ja myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Päivitä tilauksesi ja avaa rajaton määrä postilaatikkosi puolestasi lajittelevia suodattimia sekä muita premium-ominaisuuksia."
@@ -12008,6 +12012,9 @@
       "Action all messages": [
         "Käytä kaikkiin viesteihin"
       ],
+      "Activate @pm.me": [
+        "Aktivoi @pm.me"
+      ],
       "Add a custom logo": [
         "Lisää oma logo"
       ],
@@ -12320,6 +12327,9 @@
       ],
       "Import groups": [
         "Tuo ryhmiä"
+      ],
+      "Increase your privacy with more addresses": [
+        "Paranna yksityisyyttäsi lisäosoitteilla"
       ],
       "Insert contacts": [
         "Lisää yhteystietoja"

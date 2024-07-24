@@ -766,11 +766,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reload": [
         "Neu laden"
@@ -1401,6 +1401,9 @@
       "Faster, broader device compatibility": [
         "Schnellere, umfassendere Gerätekompatibilität"
       ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Die Prompts bleiben auf deinem Gerät, erfordern aber einen einmaligen Download und kompatible Hardware"
+      ],
       "Run locally": [
         "Lokal ausführen"
       ],
@@ -1553,14 +1556,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1582,6 +1577,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -6814,11 +6817,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -10704,6 +10707,9 @@
       "Encrypted email and calendar to get you started": [
         "Verschlüsselter Kalender und E-Mails, um loszulegen"
       ],
+      "Encrypted solutions to protect your entire business": [
+        "Verschlüsselte Lösungen zum Schutz deines gesamten Unternehmens"
+      ],
       "Enhanced security and premium features for teams": [
         "Erweiterte Sicherheits- und Premiumfunktionen für Teams"
       ],
@@ -11137,23 +11143,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11181,6 +11170,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -12762,11 +12768,17 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Aber du kannst **${ unlockPlanTitle }** und alle Premium-Dienste von ${ BRAND_NAME } freischalten, indem du auf **${ upsellPlanTitle }** upgradest."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditionsLink } einverstanden"
+      ],
       "Creating your account": [
         "Dein Konto wird erstellt"
       ],
       "Current plan": [
         "Aktuelles Abonnement"
+      ],
+      "Customizable services for large teams.": [
+        "Anpassbare Dienstleistungen für große Teams."
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Lade die entsprechenden Apps und Erweiterungen herunter und installiere sie, um ${ PASS_APP_NAME } zu verwenden."
@@ -15614,11 +15626,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -15670,6 +15682,9 @@
       ],
       "Connect ${ name }": [
         "Verbinde ${ name }"
+      ],
+      "Connection events": [
+        "Verbindungsereignisse"
       ],
       "Contact us": [
         "Kontaktiere uns"
@@ -17208,6 +17223,9 @@
       "Bitcoin via email": [
         "Bitcoin via E-Mail"
       ],
+      "Create ${ BRAND_NAME } Account now": [
+        "${ BRAND_NAME }-Konto erstellen"
+      ],
       "Early access to new features": [
         "Frühzeitiger Zugriff auf neue Funktionen"
       ],
@@ -17250,8 +17268,8 @@
       ]
     },
     "wallet_signup_2024:Info": {
-      "Seamlessly hold and transfer bitcoins. Install the relevant ${ WALLET_APP_NAME } apps.": [
-        "Bewahre Bitcoins auf und überweise sie nahtlos. Installiere die entsprechenden ${ WALLET_APP_NAME }-Apps."
+      "Coming soon": [
+        "Demnächst verfügbar"
       ]
     },
     "wallet_signup_2024:Navigation": {

@@ -7582,6 +7582,9 @@
       "Share invitation accepted successfully": [
         "Convite de compartilhamento aceito com sucesso"
       ],
+      "Share invitation declined": [
+        "Convite compartilhado recusado"
+      ],
       "Stopping to share this item has failed": [
         "Falha ao parar de compartilhar este item"
       ],
@@ -7656,8 +7659,14 @@
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Crie e colabore em documentos. Tudo isso é protegido por criptografia de ponta a ponta."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Comece a usar o ${ DRIVE_APP_NAME } e atualizaremos seu armazenamento para 5 GB!"
+      ],
+      "Introducing ${ DOCS_APP_NAME }": [
+        "Apresentamos ${ DOCS_APP_NAME }"
       ],
       "Set a recovery method": [
         "Definir um método de recuperação"
@@ -8158,7 +8167,7 @@
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
       ],
       "Please generate keys before you try to change your password": [
-        "Por favor, gere chaves antes de tentar alterar sua senha"
+        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {

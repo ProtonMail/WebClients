@@ -831,10 +831,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open": [
@@ -1495,11 +1495,6 @@
         "대화"
       ]
     },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "환영합니다"
-      ]
-    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "${ nameToDisplay }님의 받은 편지함"
@@ -1536,6 +1531,9 @@
       ],
       "Faster, broader device compatibility": [
         "빨라지고, 폭넓어진 기기 호환성"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "프롬포트가 기기 내에서만 존재합니다. 1회 다운로드 및 호환 기기가 필요합니다."
       ],
       "Requires a one-time download and compatible hardware.": [
         "1회 다운로드와 호환 가능한 기기가 필요합니다."
@@ -3417,6 +3415,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
       ],
@@ -3443,6 +3444,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "플랜 업그레이드로 사용자 지정 방해 금지 모드를 잠금해제 하세요."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "업그레이드하여 더 짧은 이메일 주소와 기타 프리미엄 기능을 잠금 해제하세요."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "업그레이드하여 받은 편지함을 정렬하는 무제한 필터와 더 많은 프리미엄 기능을 잠금 해제하세요."
@@ -9772,9 +9776,6 @@
       "Payment Processing": [
         "결제 처리중"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "계속하려면 결제 수단을 대시보드에 추가해 주십시오."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
@@ -11773,6 +11774,9 @@
       "Action all messages": [
         "모든 메시지 조치"
       ],
+      "Activate @pm.me": [
+        "@pm.me 활성화"
+      ],
       "Add a custom logo": [
         "커스텀 로고 추가하기"
       ],
@@ -12078,6 +12082,9 @@
       ],
       "Import groups": [
         "그룹 가져오기"
+      ],
+      "Increase your privacy with more addresses": [
+        "더 많은 주소로 프라이버시를 한 층 향상시키세요"
       ],
       "Insert contacts": [
         "연락처 입력"
