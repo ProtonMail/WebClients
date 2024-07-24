@@ -2297,6 +2297,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Lege eine Wiederherstellungsmethode fest, um zu verhindern, dass du den Zugriff auf dein Konto verlierst."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, solltest du eine Wiederherstellungsphrase festlegen."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
       ],
@@ -4492,6 +4495,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
+      ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Sichere deine Datei mit der Ende-zu-Ende-Verschlüsselung in ${ DRIVE_APP_NAME }."
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
@@ -7667,16 +7673,28 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "Neues Dokument erstellen"
+      ],
       "Next": [
         "Weiter"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Beginnen, ${ DRIVE_APP_NAME } zu verwenden"
+      ],
+      "Try it later": [
+        "Später ausprobieren"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Erstelle Dokumente und arbeite gemeinsam daran. Alles geschützt durch Ende-zu-Ende-Verschlüsselung."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Fange an, ${ DRIVE_APP_NAME } zu nutzen und wir upgraden deinen kostenlosen Speicherplatz auf 5 GB!"
+      ],
+      "Introducing ${ DOCS_APP_NAME }": [
+        "Wir stellen vor: ${ DOCS_APP_NAME }"
       ],
       "Set a recovery method": [
         "Wiederherstellungsmethode festlegen"
@@ -7687,6 +7705,9 @@
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Führe einfach die folgenden Schritte in ${ expiresInDays } Tag aus:",
         "Führe einfach die folgenden Schritte in den nächsten ${ expiresInDays } Tagen aus:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Speichere deine Dateien und gib sie auf sichere Weise weiter. Beginne mit der Sicherung deiner privatesten Dateien wie Ausweise, Verträge und persönliche Fotos."
       ],
       "Upload a file": [
         "Datei hochladen"
@@ -7812,9 +7833,6 @@
       ],
       "Payment Processing": [
         "Zahlungsabwicklung"
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Bitte füge im Dashboard eine Zahlungsmethode hinzu, um fortzufahren."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
