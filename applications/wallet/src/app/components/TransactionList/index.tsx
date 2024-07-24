@@ -222,7 +222,7 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
                     <div className="flex flex-column grow flex-nowrap mb-2 grow overflow-auto">
                         <div
                             className={clsx(
-                                'relative flex flex-column bg-weak rounded-xl overflow-hidden',
+                                'relative flex flex-column bg-weak rounded-2xl overflow-hidden',
                                 !isNarrow && 'mx-4'
                             )}
                         >
