@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
+      "Accept": [
+        "수락"
+      ],
       "Activate recovery": [
         "복구 활성화"
       ],
@@ -237,6 +240,9 @@
       "Customize import": [
         "사용자 지정 설정값 가져오기"
       ],
+      "Decline": [
+        "거절"
+      ],
       "Decrease": [
         "감소"
       ],
@@ -338,6 +344,9 @@
       ],
       "Expand folder": [
         "폴더 확장"
+      ],
+      "Explore on my own": [
+        "직접 살펴보기"
       ],
       "Explore while you wait": [
         "기다리면서 살펴보세요"
@@ -4413,6 +4422,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "${ DRIVE_APP_NAME }에서 종단간 암호화로 파일을 안전히 보관하세요"
+      ],
       "Key fingerprint": [
         "지문 키"
       ],
@@ -7374,6 +7386,9 @@
       "Failed to open document": [
         "문서 열기에 실패했습니다"
       ],
+      "Failed to reject share invitation": [
+        "초대장 공유 거절 실패"
+      ],
       "Failed to remove the file": [
         "이 파일을 지우는데 실패했습니다."
       ],
@@ -7415,6 +7430,9 @@
       ],
       "Share invitation accepted successfully": [
         "초대장 공유가 성공적으로 수락되었습니다."
+      ],
+      "Share invitation declined": [
+        "캘린더 공유 거부됨"
       ],
       "Stopping to share this item has failed": [
         "이 항목의 공유 정지가 실패했습니다."
@@ -7476,16 +7494,28 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "새 문서 생성"
+      ],
       "Next": [
         "다음"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } 사용 시작"
+      ],
+      "Try it later": [
+        "나중에"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "문서에서 생성하고 협동하세요. 종단 간 암호화되어 안전합니다."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME }를 이용하시면 저장공간을 5GB로 확장해 드립니다!"
+      ],
+      "Introducing ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME }을 소개합니다"
       ],
       "Set a recovery method": [
         "복구 방법 설정"
@@ -7627,9 +7657,6 @@
       ],
       "Payment Processing": [
         "결제 처리중"
-      ],
-      "Please add a payment method in the dashboard to continue.": [
-        "계속하려면 결제 수단을 대시보드에 추가해 주십시오."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
