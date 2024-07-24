@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { FieldArrayRenderProps} from 'formik';
+import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
@@ -74,6 +74,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
                                                         type={type}
                                                         name={`${sectionKey}[${index}]`}
                                                         onDelete={() => helpers.remove(index)}
+                                                        showIcon={false}
                                                     />
                                                 ))}
                                             </FieldsetCluster>
