@@ -1,4 +1,4 @@
-import { waitFor, act } from '@testing-library/react';
+import { act, waitFor } from '@testing-library/react';
 
 import { useEventManager } from '@proton/components';
 
@@ -8,13 +8,13 @@ import { clearApiContacts } from './contact';
 import { clearApiKeys } from './crypto';
 import { eventManagerListeners } from './event-manager';
 
+export * from './api';
+export * from './assertion';
 export * from './cache';
 export * from './crypto';
-export * from './render';
-export * from './api';
 export * from './event-manager';
 export * from './message';
-export * from './assertion';
+export * from './render';
 
 const savedConsole = { ...console };
 
@@ -35,14 +35,14 @@ export const mockConsole = (level: keyof Console = 'error') => {
     console[level] = jest.fn();
 };
 
-export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>({ 
+export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>({
     spy,
     callTimes,
     disableFakeTimers = false,
 }: {
-    spy: jest.Mock<T, Y>,
+    spy: jest.Mock<T, Y>;
     /** Expected number of calls (defaults to >= 1) */
-    callTimes?: number,
+    callTimes?: number;
     /**
      * If fake timers are being used, they need to be temporarily disabled for the `waitFor` timeout to work if the CryptoProxy
      * is being used with a non-mocked CryptoApi.
@@ -51,8 +51,8 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
      * operations will run in "real time" and timeout as a result.
      * NB: the fake timers are re-enabled before returning.
      */
-    disableFakeTimers?: boolean,
-}) => (
+    disableFakeTimers?: boolean;
+}) =>
     act(async () => {
         if (disableFakeTimers) {
             jest.runOnlyPendingTimers();
@@ -61,11 +61,7 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
 
         try {
             await waitFor(
-                async () => (
-                    callTimes ? 
-                        expect(spy).toHaveBeenCalledTimes(callTimes) :
-                        expect(spy).toHaveBeenCalled()
-                ),
+                async () => (callTimes ? expect(spy).toHaveBeenCalledTimes(callTimes) : expect(spy).toHaveBeenCalled()),
                 { timeout: 10000 }
             );
         } finally {
@@ -73,8 +69,7 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
                 jest.useFakeTimers();
             }
         }
-    })
-);
+    });
 
 export const waitForEventManagerCall = async () => {
     // Hard override of the typing as event manager is mocked
@@ -117,8 +112,8 @@ export const waitForNotification = (content: string, timeout = 8000) =>
     waitFor(
         () => {
             const notifications = document.querySelectorAll('div[role="alert"].notification');
-            const matchingNotification = [...notifications].find(
-                (notification) => notification.textContent?.includes(content)
+            const matchingNotification = [...notifications].find((notification) =>
+                notification.textContent?.includes(content)
             );
             if (matchingNotification) {
                 return matchingNotification;
