@@ -1,0 +1,11 @@
+.discover-preview {
+	text-decoration: none;
+	color: var(--color-norm);
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: var(--color-norm);
+		text-decoration: underline;
+	}
+}
