@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { TipData } from 'proton-mail/models/tip';
@@ -19,8 +21,10 @@ const useGetRandomTip = (tipMessages: TipData[]) => {
         return randomOption;
     };
 
+    const randomOption = useMemo(() => getRandomOption(), []);
+
     return {
-        getRandomOption,
+        randomOption,
     };
 };
 

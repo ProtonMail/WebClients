@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import type { CustomNotificationProps } from '@proton/components';
-import { NotificationButton, useNotifications, useUser } from '@proton/components';
+import { FeatureCode, NotificationButton, useFeature, useNotifications, useUser } from '@proton/components';
 import { Icon } from '@proton/components/components/icon';
 
+import useGetRandomTip from 'proton-mail/components/list/tip/useGetRandomTip';
 import type { TipData } from 'proton-mail/models/tip';
 
 import './TipBox.scss';
@@ -27,18 +28,21 @@ const SnoozeTipsNotification = ({ onSnooze, onClose }: NotificationProps) => {
 };
 
 interface Props {
-    data: TipData;
+    tips: TipData[];
     isDismissed: boolean;
     setIsDismissed: (value: boolean) => void;
-    updateLastSnoozeTime: (value: any) => void;
 }
 
-const TipBox = ({ data, updateLastSnoozeTime, isDismissed, setIsDismissed }: Props) => {
-    const { createNotification } = useNotifications();
+const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
     const [user] = useUser();
+    const { createNotification } = useNotifications();
+
+    const { randomOption } = useGetRandomTip(tips);
+
+    const { update } = useFeature(FeatureCode.ProtonTipsSnoozeTime);
 
     const onSnooze = () => {
-        updateLastSnoozeTime(Date.now());
+        void update(Date.now());
     };
 
     const onCancel = () => {
@@ -63,11 +67,11 @@ const TipBox = ({ data, updateLastSnoozeTime, isDismissed, setIsDismissed }: Pro
                         backgroundColor: 'var(--primary-minor-1)',
                     }}
                 >
-                    <Icon className="m-auto color-primary" size={5} name={data.icon} />
+                    <Icon className="m-auto color-primary" size={5} name={randomOption.icon} />
                 </span>
                 <div className="tip-box-text flex flex-nowrap flex-column gap-1">
-                    <p className="m-0">{data.message}</p>
-                    <span className="shrink-0">{data.cta}</span>
+                    <p className="m-0">{randomOption.message}</p>
+                    <span className="shrink-0">{randomOption.cta}</span>
                 </div>
             </div>
             {user.isPaid && (

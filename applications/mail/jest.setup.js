@@ -109,3 +109,8 @@ jest.mock('@proton/llm/lib/useAssistant.tsx', () => {
         })),
     };
 });
+
+jest.mock('proton-mail/components/list/tip/useTips.tsx', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({}),
+}));
