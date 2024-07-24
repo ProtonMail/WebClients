@@ -97,6 +97,21 @@ describe('WebsocketConnection', () => {
 
       expect(connection.closeConnectionDueToGoingAwayTimer).toBeUndefined()
     })
+
+    it('should cancel reconnection timeout if present', () => {
+      jest.useFakeTimers()
+
+      connection.reconnectTimeout = setTimeout(() => {}, 1000)
+
+      Object.defineProperty(document, 'visibilityState', {
+        value: 'hidden',
+        writable: true,
+      })
+
+      connection.handleVisibilityChangeEvent()
+
+      expect(connection.reconnectTimeout).toBeUndefined()
+    })
   })
 
   describe('handleWindowCameOnlineEvent', () => {
