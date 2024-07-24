@@ -28,7 +28,7 @@ import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
-import type { LoginItemFormValues, NewLoginItemFormValues } from '@proton/pass/types';
+import type { LoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -74,7 +74,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
         };
     }, []);
 
-    const form = useFormik<NewLoginItemFormValues>({
+    const form = useFormik<LoginItemFormValues>({
         initialValues,
         initialErrors: validateLoginForm({ values: initialValues, shouldValidateEmail: usernameSplit }),
         onSubmit: ({
@@ -171,7 +171,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
 
     const { aliasOptions } = useAliasForLoginModal(form);
 
-    const draft = useItemDraft<NewLoginItemFormValues>(form, {
+    const draft = useItemDraft<LoginItemFormValues>(form, {
         type: 'login',
         mode: 'new',
         sanitizeSave: sanitizeLoginAliasSave,

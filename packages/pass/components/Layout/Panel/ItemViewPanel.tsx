@@ -186,7 +186,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                 ? () =>
                                                       spotlight.setUpselling({
                                                           type: 'pass-plus',
-                                                          upsellRef: UpsellRef.FREE_TRIAL,
+                                                          upsellRef: UpsellRef.SECURE_LINKS,
                                                       })
                                                 : handleSecureLinkClick
                                         }

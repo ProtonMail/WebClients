@@ -3,7 +3,7 @@ import type { ChangeEvent, FC } from 'react';
 import type { FieldInputProps, FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button, type ButtonProps } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
@@ -31,6 +31,7 @@ export type ExtraFieldProps = FieldBoxProps &
         field: FieldInputProps<UnsafeItemExtraField>;
         error?: ExtraFieldError<ExtraFieldType>;
         touched?: boolean;
+        showIcon?: boolean;
         autoFocus?: boolean;
         onDelete: () => void;
     };
@@ -56,26 +57,40 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
 
 export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];
 
-const DeleteButton: FC<{ onDelete: () => void }> = ({ onDelete }) => (
-    <Button icon pill color="weak" onClick={onDelete} shape="solid" size="medium" title={c('Action').t`Delete`}>
+type DeleteButtonProps = ButtonProps & { onDelete: () => void };
+export const DeleteButton: FC<DeleteButtonProps> = ({ onDelete, size = 'medium' }) => (
+    <Button icon pill color="weak" onClick={onDelete} shape="solid" size={size} title={c('Action').t`Delete`}>
         <Icon name="cross" size={5} />
     </Button>
 );
 
-export const ExtraFieldComponent: FC<ExtraFieldProps> = (props) => {
-    const { className, field, onDelete, type, error, touched, autoFocus, ...rest } = props;
+export const ExtraFieldComponent: FC<ExtraFieldProps> = ({
+    autoFocus,
+    className,
+    error,
+    field,
+    onDelete,
+    showIcon = true,
+    touched,
+    type,
+    ...rest
+}) => {
     const { icon, placeholder } = getExtraFieldOption(type);
 
     const onChangeHandler =
         (merge: (evt: ChangeEvent<HTMLInputElement>, field: UnsafeItemExtraField) => UnsafeItemExtraField) =>
         (evt: ChangeEvent<HTMLInputElement>) => {
-            void props.form.setFieldValue(field.name, merge(evt, props.field.value));
+            void rest.form.setFieldValue(field.name, merge(evt, field.value));
         };
 
     const fieldValueEmpty = Object.values(field.value.data).every((value) => !value);
 
     return (
-        <FieldBox actions={[<DeleteButton onDelete={onDelete} />]} className={className} icon={icon}>
+        <FieldBox
+            actions={[<DeleteButton onDelete={onDelete} />]}
+            className={className}
+            icon={showIcon ? icon : undefined}
+        >
             <BaseTextField
                 inputClassName={clsx(
                     'text-sm',

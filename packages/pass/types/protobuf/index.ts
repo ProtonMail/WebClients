@@ -4,13 +4,14 @@
  * this way, or better said, protobuf doesn't produce very easy-to-consume
  * types.
  */
-import type { ExtraField, PlatformSpecific } from './item-v1';
+import type { ExtraField, ExtraIdentitySection, PlatformSpecific } from './item-v1';
 import {
     Content,
     Metadata,
     Item as ProtobufItem,
     ItemAlias as ProtobufItemAlias,
     ItemCreditCard as ProtobufItemCreditCard,
+    ItemIdentity as ProtobufItemIdentity,
     ItemLogin as ProtobufItemLogin,
     ItemNote as ProtobufItemNote,
 } from './item-v1';
@@ -19,10 +20,12 @@ import { Vault } from './vault-v1';
 export {
     Content,
     ExtraField,
+    ExtraIdentitySection,
     Metadata,
     ProtobufItem,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
+    ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
     Vault,

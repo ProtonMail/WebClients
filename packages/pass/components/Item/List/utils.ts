@@ -28,6 +28,10 @@ const itemListPresenter: ItemListPresenterMap = {
         heading: data.metadata.name,
         subheading: cardNumberHiddenValue(deobfuscate(data.content.number)),
     }),
+    identity: ({ data }) => ({
+        heading: data.metadata.name,
+        subheading: '',
+    }),
 };
 
 export const presentListItem = <T extends ItemType>(revision: ItemRevision<T>): PresentedListItem =>

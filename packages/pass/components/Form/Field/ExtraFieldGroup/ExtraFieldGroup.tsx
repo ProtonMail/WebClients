@@ -14,7 +14,7 @@ import { ExtraFieldComponent } from './ExtraField';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
-const getNewField = <T extends ExtraFieldType>(type: T): UnsafeItemExtraField => {
+export const createExtraField = <T extends ExtraFieldType>(type: T): UnsafeItemExtraField => {
     switch (type) {
         case 'text':
         case 'hidden':
@@ -35,7 +35,7 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
             name="extraFields"
             render={(helpers) => {
                 const addCustomField = (type: ExtraFieldType) => {
-                    helpers.push(getNewField(type));
+                    helpers.push(createExtraField(type));
                     setAutofocusIndex(form.values.extraFields.length);
                 };
 

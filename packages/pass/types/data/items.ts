@@ -6,11 +6,12 @@ import type {
     Metadata,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
+    ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
 } from '@proton/pass/types/protobuf';
-import type { ExtraHiddenField, ExtraTotp, PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { ExtraField, ExtraHiddenField, ExtraTotp, PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
+import type { MaybeNull, TypeMapper } from '@proton/pass/types/utils';
 import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
 import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
@@ -39,6 +40,7 @@ export type ItemContent<T extends ItemType> = {
     note: ProtobufItemNote;
     login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'password' | 'totpUri'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
+    identity: TypeMapper<ProtobufItemIdentity, [[ExtraField, UnsafeItemExtraField]]>;
 }[T];
 
 export type UnsafeItemContent<T extends ItemType = ItemType> = Deobfuscate<ItemContent<T>>;
