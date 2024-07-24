@@ -21,7 +21,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import { useFlowRef } from '../useFlowRef';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
@@ -29,6 +28,7 @@ import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
+import PublicHelpLink from './PublicHelpLink';
 
 type Method = 'email' | 'phone';
 const ForgotUsernameForm = ({
@@ -193,7 +193,7 @@ const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl }: Props) =
         </Main>
     );
     return (
-        <Layout onBack={handleBackStep} bottomRight={<LoginSupportDropdown />} hasDecoration={true} toApp={toApp}>
+        <Layout onBack={handleBackStep} bottomRight={<PublicHelpLink />} hasDecoration={true} toApp={toApp}>
             {children}
         </Layout>
     );
