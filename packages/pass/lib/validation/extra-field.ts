@@ -6,9 +6,11 @@ import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { ExtraFieldGroupValues, UnsafeItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
+export type ExtraFieldErrors = FormikErrors<UnsafeItemExtraField>;
+
 export const validateExtraFields = <T extends ExtraFieldGroupValues>(values: T) => {
     const errors = values.extraFields.map((field) => {
-        const fieldErrors: FormikErrors<UnsafeItemExtraField> = {};
+        const fieldErrors: ExtraFieldErrors = {};
 
         if (isEmptyString(field.fieldName)) fieldErrors.fieldName = c('Validation').t`Field name is required`;
 

@@ -2,60 +2,60 @@ import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import { validateItemErrors } from '@proton/pass/lib/validation/item';
-import type { IdentityItemFormValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityItemFormValues, IdentitySectionFormValues, UnsafeItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
-const validateExtraFields = (values: IdentityItemFormValues) => {
-    const extraFields: (keyof Pick<
-        IdentityItemFormValues,
-        'extraPersonalDetails' | 'extraAddressDetails' | 'extraContactDetails' | 'extraWorkDetails'
-    >)[] = ['extraPersonalDetails', 'extraAddressDetails', 'extraContactDetails', 'extraWorkDetails'];
+import type { ExtraFieldErrors } from './extra-field';
 
-    const errors = extraFields.reduce<FormikErrors<IdentityItemFormValues>>((acc, key) => {
-        const fieldErrors = values[key].map(({ fieldName }) => {
-            const fieldError: FormikErrors<UnsafeItemExtraField> = {};
+const EXTRA_FIELD_KEYS = [
+    'extraPersonalDetails',
+    'extraAddressDetails',
+    'extraContactDetails',
+    'extraWorkDetails',
+] as const;
 
-            if (isEmptyString(fieldName)) fieldError.fieldName = c('Validation').t`Field name is required`;
+const validateExtraField = ({ fieldName }: UnsafeItemExtraField): ExtraFieldErrors => {
+    const errors: ExtraFieldErrors = {};
+    if (isEmptyString(fieldName)) errors.fieldName = c('Validation').t`Field name is required`;
+    return errors;
+};
 
-            return fieldError;
-        });
-
-        if (fieldErrors.some((error) => Object.keys(error).length > 0)) {
-            acc[key] = fieldErrors;
-        }
-
+const validateExtraFields = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
+    const errors = EXTRA_FIELD_KEYS.reduce<FormikErrors<IdentityItemFormValues>>((acc, key) => {
+        const fieldErrors = values[key].map(validateExtraField);
+        if (fieldErrors.some((err) => Object.keys(err).length)) acc[key] = fieldErrors;
         return acc;
     }, {});
 
-    return Object.keys(errors).length > 0 ? (errors as FormikErrors<IdentityItemFormValues>) : undefined;
+    return Object.keys(errors).length ? errors : {};
 };
 
-type ExtraSectionsErrors = FormikErrors<UnsafeItemExtraField>[];
-const validateExtraSections = ({ extraSections }: IdentityItemFormValues) => {
-    const errors = extraSections.reduce<ExtraSectionsErrors[]>((acc, { sectionFields }, index) => {
-        const fieldErrors = sectionFields.map(({ fieldName }) => {
-            const fieldError: FormikErrors<UnsafeItemExtraField> = {};
+/** Formik union error type narrowing */
+export type ExtraSectionsError = { sectionFields?: ExtraFieldErrors[] };
 
-            if (isEmptyString(fieldName)) fieldError.fieldName = c('Validation').t`Field name is required`;
-
-            return fieldError;
-        });
-
-        if (fieldErrors.some((error) => Object.keys(error).length > 0)) {
-            acc[index] = fieldErrors;
-        }
+const validateExtraSections = ({ extraSections }: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
+    const errors = extraSections.reduce<ExtraSectionsError[]>((acc, { sectionFields }, index) => {
+        const sectionErrors: ExtraSectionsError = {};
+        const fieldErrors = sectionFields.map(validateExtraField);
+        if (fieldErrors.some((error) => Object.keys(error).length)) sectionErrors.sectionFields = fieldErrors;
+        if (Object.keys(sectionErrors).length) acc[index] = sectionErrors;
 
         return acc;
     }, []);
 
-    return errors.length > 0 ? (errors as FormikErrors<IdentityItemFormValues>) : undefined;
+    return errors.length > 0 ? { extraSections: errors } : {};
 };
 
-export const validateIdentityForm = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
-    const errors: FormikErrors<IdentityItemFormValues> = validateItemErrors(values);
+export const validateIdentityForm = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => ({
+    ...validateItemErrors(values),
+    ...validateExtraFields(values),
+    ...validateExtraSections(values),
+});
 
-    const extraFieldsErrors = validateExtraFields(values);
-    const extraSectionsErrors = validateExtraSections(values);
-
-    return { ...errors, ...extraFieldsErrors, ...extraSectionsErrors };
+export const validateIdentitySection = ({
+    sectionName,
+}: IdentitySectionFormValues): FormikErrors<IdentitySectionFormValues> => {
+    const errors: FormikErrors<IdentitySectionFormValues> = {};
+    if (isEmptyString(sectionName)) errors.sectionName = c('Validation').t`Section name cannot be empty`;
+    return errors;
 };
