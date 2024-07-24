@@ -124,7 +124,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
             as={Form}
         >
             <InputFieldTwo
-                label={c('Input label').t`Access`}
+                label={c('Link label (optional)').t`Access`}
                 as={SelectTwo}
                 value={accessLevel}
                 onValue={(value: any) => setAccessLevel(value)}
@@ -136,7 +136,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
                 value={purpose}
                 onValue={setPurpose}
                 maxLength={MAX_CHARS_CLEARTEXT.PURPOSE}
-                label={c('Input label').t`Label (optional)`}
+                label={c('Input label').t`Link label (optional)`}
                 assistiveText={c('Calendar link sharing label input assistive text').t`Only you can see the label`}
                 placeholder={c('Input placeholder').t`Add label`}
             />
