@@ -85,6 +85,7 @@ const ComposerAssistantInput = ({
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
     const [inputOnFocus, setInputOnFocus] = useState(false);
+    const [{ Locale: locale }] = useUserSettings();
 
     const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -158,6 +159,7 @@ const ComposerAssistantInput = ({
                 prompt: assistantRequest,
                 recipient: recipients?.[0]?.Name,
                 sender: sender?.Name,
+                locale,
             };
         }
 

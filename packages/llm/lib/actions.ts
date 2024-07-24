@@ -40,6 +40,7 @@ import { AssistantEvent } from './types';
 
 const INSTRUCTIONS_WRITE_FULL_EMAIL = [
     "You're a harmless email generator. The user asks you to write emails, and you write emails that they can send.",
+    'Today is {DATE}.',
     "You're given a list of toxic content categories as below:",
     '- illegal',
     '- child abuse: child sexual abuse material or any content that exploits or harms children.',
@@ -72,6 +73,7 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
         'Be mindful to direct the message to the recipient as indicated by the user.',
         'Match the style and tone of the email (friendly, formal, tu/vous, etc)',
         'with the type of relationship the user is likely to have with the recipient.',
+        'Separate paragraphs with two newlines.',
         '{RECIPIENT_INSTRUCTIONS}',
     ].join(' '),
 ].join('\n');
@@ -203,7 +205,18 @@ function makePromptFromTurns(turns: Turn[]): string {
 
 function makeInstructions(recipient?: string) {
     let system = INSTRUCTIONS_WRITE_FULL_EMAIL;
-    recipient = recipient?.replaceAll('["\']', '')?.trim();
+
+    // {DATE}
+    const date = new Date().toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+    system = system.replace('{DATE}', date);
+
+    // {RECIPIENT_INSTRUCTIONS}
+    recipient = recipient?.replaceAll(/["']/, '')?.trim();
     if (recipient) {
         system = system.replace(
             '{RECIPIENT_INSTRUCTIONS}',
@@ -212,8 +225,9 @@ function makeInstructions(recipient?: string) {
                 'only the first or last name, or none.'
         );
     } else {
-        system = system.replace('{RECIPIENT_INSTRUCTIONS}', 'Who is the recipient? Write their name in the opening.');
+        system = system.replace('{RECIPIENT_INSTRUCTIONS}', '');
     }
+
     return system;
 }
 
@@ -245,6 +259,9 @@ function formatPromptShorten(action: ShortenAction): string {
 }
 
 function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
+    const userPrompt = action.locale
+        ? `locale: ${action.locale}\n${action.prompt}`
+        : `${action.prompt} ${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX}`;
     return makePromptFromTurns([
         {
             role: 'instructions',
@@ -252,7 +269,7 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
         },
         {
             role: 'user',
-            contents: `${action.prompt} ${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX}`,
+            contents: userPrompt,
         },
         {
             role: 'assistant',

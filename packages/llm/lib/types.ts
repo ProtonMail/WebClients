@@ -55,6 +55,7 @@ export type WriteFullEmailAction = {
     prompt: string;
     recipient?: string;
     sender?: string;
+    locale?: string;
 };
 
 // Identifies a substring to refine along with its context. Only for refine actions.
