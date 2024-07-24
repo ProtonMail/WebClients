@@ -243,6 +243,25 @@ describe('WebsocketConnection', () => {
     })
   })
 
+  describe('canBroadcastMessages', () => {
+    it('should return false if connection is not ready to accept messages', () => {
+      expect(connection.canBroadcastMessages()).toBe(false)
+    })
+
+    it('should return true if socket is fully ready', () => {
+      connection.markAsReadyToAcceptMessages()
+
+      connection.socket = {
+        readyState: 1,
+        close: jest.fn(),
+      } as unknown as WebSocket
+
+      connection.state.didOpen()
+
+      expect(connection.canBroadcastMessages()).toBe(true)
+    })
+  })
+
   describe('getWebSocketServerURL', () => {
     test('should add docs-rts subdomain if there is no subdomain', () => {
       setWindowLocationHref('https://proton.me')
