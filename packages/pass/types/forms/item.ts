@@ -29,3 +29,4 @@ export type EditAliasFormValues = BaseItemValues & Pick<AliasFormValues, 'mailbo
 
 export type IdentityValues = ItemContent<'identity'>;
 export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;
+export type IdentitySectionFormValues = { sectionName: string };
