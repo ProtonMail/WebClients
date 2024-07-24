@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
+import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { useAddresses, useMailSettings, useUser } from '@proton/components';
+import { FeatureCode, useAddresses, useFeature, useFlag, useMailSettings, useUser } from '@proton/components';
 import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
@@ -31,7 +32,21 @@ const useTips = () => {
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const activeAddresses = getActiveAddresses(addresses ?? []);
+
     const [isTipDismissed, setIsTipDismissed] = useState(false);
+    const [shouldDisplayTips, setShouldDisplayTips] = useState(false);
+
+    const protonTipsEnabled = useFlag('ProtonTips');
+    const { feature } = useFeature(FeatureCode.ProtonTipsSnoozeTime);
+
+    useEffect(() => {
+        if (!feature) {
+            return;
+        }
+
+        const displayTips = differenceInDays(new Date(), feature.Value) >= 60;
+        setShouldDisplayTips(displayTips);
+    }, [feature]);
 
     // Suggested folder/label name shouldn't get translated
     const suggestedFolderName = 'Receipts';
@@ -253,7 +268,12 @@ const useTips = () => {
         }
     };
 
-    return { tips: tipMessages.filter((tip) => showTip(tip.action)), isTipDismissed, setIsTipDismissed };
+    return {
+        tips: tipMessages.filter((tip) => showTip(tip.action)),
+        isTipDismissed,
+        setIsTipDismissed,
+        shouldDisplayTips: shouldDisplayTips && protonTipsEnabled,
+    };
 };
 
 export default useTips;
