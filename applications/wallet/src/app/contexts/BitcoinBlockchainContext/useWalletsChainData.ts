@@ -10,8 +10,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useGetBitcoinNetwork } from '@proton/wallet';
-import { POOL_FILLING_THRESHOLD } from '@proton/wallet/utils/email-integration';
+import { POOL_FILLING_THRESHOLD, useGetBitcoinNetwork } from '@proton/wallet';
 
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
