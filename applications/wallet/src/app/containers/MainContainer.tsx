@@ -7,6 +7,7 @@ import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/
 import { PrivateWalletLayout } from '../components';
 import { ResponsiveContainerContextProvider } from '../contexts/ResponsiveContainerContext/ResponsiveContainerContextProvider';
 import { AccountContainer } from './AccountContainer';
+import { DiscoverContainer } from './DiscoverContainer';
 import { EmptyViewContainer } from './EmptyViewContainer';
 import { LockedWalletContainer } from './LockedWalletContainer';
 import { WalletContainer } from './WalletContainer';
@@ -34,6 +35,12 @@ const MainContainer = () => {
                         <Route exact path={'/wallets/:walletId'}>
                             <PrivateWalletLayout>
                                 <WalletContainer />
+                            </PrivateWalletLayout>
+                        </Route>
+
+                        <Route exact path={'/discover'}>
+                            <PrivateWalletLayout>
+                                <DiscoverContainer />
                             </PrivateWalletLayout>
                         </Route>
 

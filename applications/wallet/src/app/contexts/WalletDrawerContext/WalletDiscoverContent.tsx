@@ -1,5 +1,8 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { Icon, SettingsLink } from '@proton/components/components';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -9,9 +12,12 @@ import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { disabledWalletShowRecovery, useWalletApi } from '@proton/wallet';
 
+import { type DiscoverArticle, articles } from '../../constants/discover';
 import { getThemeForWallet } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../WalletSetupModalContext';
+
+import './WalletDiscoverContent.scss';
 
 interface ChecklistItemProps {
     done?: boolean;
@@ -47,19 +53,37 @@ const ChecklistItem = ({ text, done, onClick, path }: ChecklistItemProps) => {
     );
 };
 
-const DiscoverPreview = () => {
-    return (
-        <div className="flex flex-row flex-nowrap">
-            <div
-                className="w-custom h-custom bg-danger shrink-0 mr-4"
-                style={{ '--w-custom': '6rem', '--h-custom': '6rem', borderRadius: '24px' }}
-            ></div>
+const DiscoverPreview = ({ title, text, previewSrc, coverSrc, link }: DiscoverArticle) => {
+    const imageStyles = { borderRadius: '24px', width: '6rem' };
 
-            <div className="flex flex-column">
-                <span className="block mb-1">Your First Bitcoin Purchase: A Step-by-Step Guide</span>
-                <span className="block color-weak">37m</span>
+    return (
+        <Href
+            className="discover-preview h-custom flex flex-row flex-nowrap items-center w-full"
+            target="_blank"
+            href={link}
+            style={{ '--h-custom': '6rem' }}
+        >
+            {previewSrc ? (
+                <img src={previewSrc} alt="" className="shrink-0 mr-4 h-full" style={imageStyles} />
+            ) : (
+                <div
+                    className="shrink-0 mr-4 h-full"
+                    style={{
+                        background: `url(${coverSrc})`,
+                        // eslint-disable-next-line custom-rules/deprecate-classes
+                        backgroundPosition: 'center center',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        ...imageStyles,
+                    }}
+                ></div>
+            )}
+
+            <div className="h-full flex flex-column flex-nowrap">
+                <h3 className="text-lg my-0 w-full mb-2 text-ellipsis-two-lines">{title}</h3>
+                <p className="my-0 w-full color-hint text-ellipsis-two-lines">{text}</p>
             </div>
-        </div>
+        </Href>
     );
 };
 
@@ -75,6 +99,8 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
     const { open } = useWalletSetupModalContext();
     const walletApi = useWalletApi();
     const dispatch = useDispatch();
+
+    const discoverArticles = useMemo(() => articles(), []);
 
     const wallet = decryptedApiWalletsData.find((wa) => wa.Wallet.ID === initWallet.Wallet.ID);
     if (!wallet) {
@@ -104,8 +130,8 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
     };
 
     return (
-        <div className="block">
-            <div className="block h-full">
+        <div className="block h-full">
+            <div className="flex flex-column h-full">
                 <div className="flex flex-column flex-nowrap mb-10">
                     <div className="text-3xl text-semibold mb-6">{c('Wallet discover').t`Secure your wallet`}</div>
 
@@ -134,15 +160,14 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
                     </div>
                 </div>
 
-                <div className="block grow">
+                <div className="block grow overflow-y-auto" style={{ height: 0 }}>
                     <div className="flex flex-column mb-10">
-                        <div className="text-3xl text-semibold mb-6">{c('Wallet discover').t`Discover`}</div>
+                        <div className="w-full text-3xl text-semibold mb-6">{c('Wallet discover').t`Discover`}</div>
 
-                        <div className="flex flex-column gap-2">
-                            <DiscoverPreview />
-                            <DiscoverPreview />
-                            <DiscoverPreview />
-                            <DiscoverPreview />
+                        <div className="w-full flex flex-column gap-8">
+                            {discoverArticles.map((article) => {
+                                return <DiscoverPreview {...article} key={article.id} />;
+                            })}
                         </div>
                     </div>
                 </div>

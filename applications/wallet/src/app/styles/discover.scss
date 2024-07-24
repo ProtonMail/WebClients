@@ -1,0 +1,28 @@
+@import '~@proton/styles/scss/lib';
+
+.discover-articles-container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 1rem;
+
+	@include media('>=small') {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 2rem;
+	}
+
+	@include media('>=medium') {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 3rem;
+	}
+
+	.discover-articles-link {
+		text-decoration: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: initial;
+			text-decoration: underline;
+		}
+	}
+}
