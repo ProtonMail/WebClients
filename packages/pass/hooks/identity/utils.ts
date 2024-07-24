@@ -5,7 +5,7 @@ import type { ExtractKeysOfType, IdentityValues } from '@proton/pass/types';
 import type { IdentityFormField, IdentityFormSection } from './useIdentityForm';
 
 type FieldType = ExtractKeysOfType<IdentityValues, string>;
-type IdentityFormFields = Record<FieldType, IdentityFormField>;
+export type IdentityFormFields = Record<FieldType, IdentityFormField>;
 
 export const getIdentityFields = (): IdentityFormFields => ({
     fullName: {
