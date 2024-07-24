@@ -1,4 +1,4 @@
-import type { IdentityValues } from '@proton/pass/types';
+import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
 import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
 import { addFormSectionOptionalField, buildFormSections } from './useIdentityForm';
@@ -13,9 +13,15 @@ describe('`buildFormSections`', () => {
     afterEach(() => jest.resetAllMocks());
 
     it('should build form sections correctly', () => {
-        const values = { fullName: 'John Doe', email: 'john@example.com' } as IdentityValues;
-        const result = buildFormSections(values, true);
+        const item = itemBuilder('identity');
 
+        item.set('content', (content) => {
+            content.set('fullName', 'John Doe');
+            content.set('email', 'john@example.com');
+            return content;
+        });
+
+        const result = buildFormSections(item.data.content, true);
         expect(result.length).toBe(2);
 
         expect(result[0].name).toBe('Personal');
@@ -30,23 +36,30 @@ describe('`buildFormSections`', () => {
     });
 
     it('should use default `expand` value when editing is false and fields are empty', () => {
-        const values = {} as IdentityValues;
-        const result = buildFormSections(values, false);
+        const item = itemBuilder('identity');
+        const result = buildFormSections(item.data.content, false);
         expect(result[0].expanded).toBe(true);
         expect(result[1].expanded).toBe(false);
     });
 
     it('should expand sections when editing is true only if fields have values', () => {
-        const values = { email: 'john@example.com' } as IdentityValues;
-        const result = buildFormSections(values, true);
+        const item = itemBuilder('identity');
+        item.set('content', (content) => content.set('email', 'john@example.com'));
+
+        const result = buildFormSections(item.data.content, true);
         expect(result[0].expanded).toBe(false);
         expect(result[1].expanded).toBe(true);
     });
 
     it('should handle optional fields correctly', () => {
-        const values = { email: 'john@example.com', phoneNumber: '1234567890' } as IdentityValues;
-        const result = buildFormSections(values, true);
+        const item = itemBuilder('identity');
+        item.set('content', (content) => {
+            content.set('email', 'john@example.com');
+            content.set('phoneNumber', '1234567890');
+            return content;
+        });
 
+        const result = buildFormSections(item.data.content, true);
         expect(result[0].fields).toEqual(MOCK_SECTIONS[0].fields);
         expect(result[0].optionalFields).toEqual(MOCK_SECTIONS[0].optionalFields);
 
@@ -54,9 +67,9 @@ describe('`buildFormSections`', () => {
         expect(result[1].optionalFields?.length).toBe(0);
     });
 
-    it('should handle empty string values', () => {
-        const values = { fullName: '', email: '' } as IdentityValues;
-        const result = buildFormSections(values, true);
+    it('should handle empty values', () => {
+        const item = itemBuilder('identity');
+        const result = buildFormSections(item.data.content, true);
 
         expect(result[0].fields).toEqual(MOCK_SECTIONS[0].fields);
         expect(result[0].optionalFields).toEqual(MOCK_SECTIONS[0].optionalFields);
