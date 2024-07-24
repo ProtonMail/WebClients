@@ -14,6 +14,7 @@ import { PinUnlockProvider } from '@proton/pass/components/Lock/PinUnlockProvide
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
+import { AppStatus } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -43,7 +44,7 @@ export const AppGuard: FC = () => {
             <Route
                 path="*"
                 render={() =>
-                    state.booted ? (
+                    state.booted && state.status !== AppStatus.LOCK_SETUP ? (
                         <LockProbeProvider onProbe={handleProbe}>
                             <PasswordUnlockProvider>
                                 <PinUnlockProvider>

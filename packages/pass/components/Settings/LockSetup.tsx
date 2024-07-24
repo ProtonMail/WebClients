@@ -29,9 +29,9 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { SettingsPanel } from './SettingsPanel';
+type Props = { onSuccess?: () => void };
 
-export const LockSettings: FC = () => {
+export const LockSetup: FC<Props> = ({ onSuccess }) => {
     const { getBiometricsKey } = usePassCore();
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
@@ -67,7 +67,10 @@ export const LockSettings: FC = () => {
         initialRequestId: lockCreateRequest(),
         onStart: ({ data }) => setNextLock({ ttl: data.lock.ttl, mode: data.lock.mode }),
         onFailure: () => setNextLock(null),
-        onSuccess: () => setNextLock(null),
+        onSuccess: () => {
+            setNextLock(null);
+            onSuccess?.();
+        },
     });
 
     const handleLockModeSwitch = async (mode: LockMode) => {
@@ -206,7 +209,7 @@ export const LockSettings: FC = () => {
     }, [currentLockMode, biometricsRolledOut]);
 
     return (
-        <SettingsPanel title={c('Label').t`Unlock with`}>
+        <>
             <RadioGroup<LockMode>
                 name="lock-mode"
                 onChange={handleLockModeSwitch}
@@ -233,7 +236,7 @@ export const LockSettings: FC = () => {
                             <span className="block">
                                 {c('Label').t`PIN code`}
                                 <span className="block color-weak text-sm">{c('Info')
-                                    .t`Online access to ${PASS_APP_NAME} will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.`}</span>
+                                    .t`Online access to ${PASS_APP_NAME} will require a PIN code. You'll be logged out after 3 failed attempts.`}</span>
                             </span>
                         ),
                         value: LockMode.SESSION,
@@ -297,6 +300,6 @@ export const LockSettings: FC = () => {
                     </>
                 }
             />
-        </SettingsPanel>
+        </>
     );
 };

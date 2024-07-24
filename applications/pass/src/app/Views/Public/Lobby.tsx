@@ -57,6 +57,7 @@ export const Lobby: FC = () => {
                 onOffline={() => client.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
+                setAppStatus={client.setStatus}
             />
 
             {connectivityBar}

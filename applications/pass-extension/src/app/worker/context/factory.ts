@@ -113,6 +113,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
     });
 
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SET_APP_STATUS, ({ payload }) => {
+        context.setStatus(payload.status);
+        return true;
+    });
+
     context.service.onboarding.init().catch(noop);
     context.service.apiProxy.clean?.().catch(noop);
     context.service.i18n.init().catch(noop);
