@@ -35,6 +35,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
+import PublicHelpLink from '../public/PublicHelpLink';
 import Text from '../public/Text';
 import { getContinueToString } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
@@ -42,7 +43,6 @@ import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import type { LoginFormRef } from './LoginForm';
 import LoginForm from './LoginForm';
-import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
 import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
@@ -431,7 +431,7 @@ const LoginContainer = ({
             hasWelcome
             onBack={handleBackStep}
             hasDecoration={step === AuthStep.LOGIN}
-            bottomRight={<LoginSupportDropdown />}
+            bottomRight={<PublicHelpLink />}
         >
             <Main>{children}</Main>
         </Layout>
