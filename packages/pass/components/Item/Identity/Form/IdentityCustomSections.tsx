@@ -1,32 +1,46 @@
 import type { FC } from 'react';
 
+import type { FieldArrayRenderProps} from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Icon, useModalStateWithData } from '@proton/components/components';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import {
-    DeleteButton,
-    ExtraFieldComponent,
-    type ExtraFieldProps,
-} from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import { getNewField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import { Icon } from '@proton/components/components';
+import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
+import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
-import type { IdentityItemFormValues } from '@proton/pass/types';
+import { autofocusIdentityField } from '@proton/pass/hooks/identity/utils';
+import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
+import type { ExtraFieldType, IdentityItemFormValues, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 
-type FormTouched = { extraSections?: { sectionFields?: boolean[] }[] };
-type FormErrors = ExtraFieldProps['error'][][];
+type Props = { form: FormikContextType<IdentityItemFormValues> };
 
-type IdentityCustomSectionsProps = {
-    form: FormikContextType<IdentityItemFormValues>;
+const getSectionFieldProps = (
+    form: FormikContextType<IdentityItemFormValues>,
+    sectionIndex: number,
+    fieldIndex: number
+) => {
+    const touched = Boolean(form.touched.extraSections?.[sectionIndex]?.sectionFields?.[fieldIndex]);
+    const sectionErrors = form.errors?.extraSections?.[sectionIndex] as Maybe<ExtraSectionsError>;
+    const fieldErrors = sectionErrors?.sectionFields?.[fieldIndex];
+    return { touched, error: fieldErrors };
 };
 
-export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }) => {
-    const [showWarningMessage, setShowWarningMessage] = useModalStateWithData<number>();
+export const IdentityCustomSections: FC<Props> = ({ form }) => {
+    const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
+        const createCustomField = (type: ExtraFieldType) => {
+            helpers.push<UnsafeItemExtraField>(createExtraField(type));
+            autofocusIdentityField(`${helpers.name}[${focusIndex}]`);
+        };
+
+        return [
+            { value: 'text', label: c('Label').t`Custom text field`, onClick: () => createCustomField('text') },
+            { value: 'hidden', label: c('Label').t`Custom hidden field`, onClick: () => createCustomField('hidden') },
+        ];
+    };
 
     return (
         <FieldArray
@@ -54,38 +68,18 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                                             <FieldsetCluster>
                                                 {sectionFields.map(({ type }, index) => (
                                                     <Field
-                                                        key={`${sectionName}[${index}]`}
+                                                        {...getSectionFieldProps(form, sectionIndex, index)}
+                                                        key={`${sectionName}::${index}`}
                                                         component={ExtraFieldComponent}
                                                         type={type}
                                                         name={`${sectionKey}[${index}]`}
-                                                        onDelete={() =>
-                                                            sectionFields.length === 1
-                                                                ? setShowWarningMessage(sectionIndex)
-                                                                : helpers.remove(index)
-                                                        }
-                                                        touched={
-                                                            (form.touched as FormTouched).extraSections?.[sectionIndex]
-                                                                ?.sectionFields?.[index]
-                                                        }
-                                                        error={(form.errors as FormErrors)?.[sectionIndex]?.[index]}
-                                                        autoFocus
+                                                        onDelete={() => helpers.remove(index)}
                                                     />
                                                 ))}
                                             </FieldsetCluster>
                                             <DropdownMenuBase
                                                 className="mb-2"
-                                                dropdownOptions={[
-                                                    {
-                                                        value: 'text',
-                                                        label: c('Label').t`Custom text field`,
-                                                        onClick: () => helpers.push(getNewField('text')),
-                                                    },
-                                                    {
-                                                        value: 'hidden',
-                                                        label: c('Label').t`Custom hidden field`,
-                                                        onClick: () => helpers.push(getNewField('hidden')),
-                                                    },
-                                                ]}
+                                                dropdownOptions={getDropdownOptions(helpers, sectionFields.length)}
                                             >
                                                 <div className="flex items-center">
                                                     <Icon name="plus" />
@@ -98,22 +92,16 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                             </CollapsibleSection>
                         );
                     })}
-                    <hr />
+
+                    <hr className="my-4" />
+
                     <IdentityAddNewSection
-                        onAdd={(sectionName: string) => {
+                        onAdd={(sectionName: string) =>
                             extraSectionsHelpers.push({
                                 sectionName,
-                                sectionFields: [getNewField('text')],
-                            });
-                        }}
-                    />
-                    <ConfirmationModal
-                        open={showWarningMessage.open}
-                        onClose={showWarningMessage.onClose}
-                        onSubmit={() => extraSectionsHelpers.remove(showWarningMessage.data ?? 0)}
-                        submitText={c('Action').t`Delete section`}
-                        title={c('Title').t`Remove section?`}
-                        alertText={c('Warning').t`Removing the last field will remove the custom section.`}
+                                sectionFields: [],
+                            })
+                        }
                     />
                 </>
             )}
