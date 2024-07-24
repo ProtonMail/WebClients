@@ -109,7 +109,6 @@ import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
-import UnauthorizedRedirect from './UnauthorizedRedirect';
 import { UNAUTHENTICATED_ROUTES, getLocalRedirect, getPaths } from './helper';
 import { addSession } from './session';
 
@@ -199,7 +198,6 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const [
         {
             data: { product: maybeQueryAppIntent, productParam },
-            initialLocation,
             initialSearchParams,
             maybeLocalRedirect,
         },
@@ -664,7 +662,6 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                 <PublicAppSetup loader={loader}>
                                     <PaymentSwitcher loader={loader}>
                                         <ForceRefreshContext.Provider value={refresh}>
-                                            <UnauthorizedRedirect initialLocation={initialLocation} />
                                             <Switch location={location}>
                                                 <Route path={`${SSO_PATHS.JOIN_MAGIC_LINK}`}>
                                                     <UnAuthenticated>
