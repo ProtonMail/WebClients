@@ -50,7 +50,7 @@ export const OtherSidebarListItems = () => {
     const dispatch = useDispatch();
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    const [org] = useOrganization();
+    const [organization, isLoadingOrganization] = useOrganization();
     const [user] = useUser();
 
     const { state: showSettings, toggle: toggleShowSettings } = useToggle(false);
@@ -89,7 +89,7 @@ export const OtherSidebarListItems = () => {
                     </SidebarListItemContent>
                 </SidebarListItemLink>
             </SidebarListItem>
-            {org?.PlanName !== PLANS.VISIONARY && user.canPay && (
+            {organization?.PlanName !== PLANS.VISIONARY && !isLoadingOrganization && user.canPay && (
                 <SidebarListItem className="my-2">
                     <SidebarListItemButton
                         data-testid="wallet-sidebar:upgrade"

@@ -21,8 +21,8 @@ import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
 import { WalletType } from '..';
+import { POOL_FILLING_THRESHOLD } from '../constants/settings';
 import { encryptWalletData } from '../utils/crypto';
-import { POOL_FILLING_THRESHOLD } from '../utils/email-integration';
 import { getDefaultWalletName } from '../utils/wallet';
 
 const DEFAULT_ACCOUNT_LABEL = 'Primary Account';

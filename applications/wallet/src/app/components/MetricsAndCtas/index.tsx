@@ -9,7 +9,7 @@ import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
 import { Tooltip } from '@proton/components/components';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import { DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../atoms/Button';
 import { CorePrice } from '../../atoms/Price';
@@ -56,14 +56,17 @@ export const MetricsAndCtas = ({
     onClickReceive,
     onClickBuy,
 }: Props) => {
-    const account = apiAccount ?? apiWalletData.WalletAccounts[0];
+    const account = apiAccount ?? apiWalletData.WalletAccounts.at(0);
     const localDisabled = !account || disabled;
     const { isNarrow } = useResponsiveContainerContext();
 
     const { totalBalance } = useBalance(apiWalletData, apiAccount);
 
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
-    const [priceGraphData = { GraphData: [] }] = usePriceGraphData(account.FiatCurrency, 'OneDay');
+    const [priceGraphData = { GraphData: [] }] = usePriceGraphData(
+        account?.FiatCurrency ?? DEFAULT_FIAT_CURRENCY,
+        'OneDay'
+    );
 
     const percentChange = getPercentChange(priceGraphData.GraphData);
 

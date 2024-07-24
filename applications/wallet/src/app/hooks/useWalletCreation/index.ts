@@ -29,6 +29,7 @@ import {
     wordCountToNumber,
 } from '@proton/wallet';
 
+import { DEFAULT_MAX_SUB_WALLETS } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useFiatCurrencies, useWalletDispatch } from '../../store/hooks';
 import { isUndefined } from '../../utils';
@@ -208,7 +209,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
             const { Wallet, WalletKey, WalletSettings } = wallet;
 
-            const walletAccountPerWalletLimit = organization?.MaxSubWallets ?? 0;
+            const walletAccountPerWalletLimit = organization?.MaxSubWallets ?? DEFAULT_MAX_SUB_WALLETS;
 
             const accountsWithinUserLimit = accounts.slice(0, walletAccountPerWalletLimit);
             const accountsAboveLimits = accounts.slice(walletAccountPerWalletLimit);

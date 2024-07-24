@@ -15,8 +15,12 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { ProcessedApiKey, Recipient } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
-import { useBitcoinNetwork, useWalletApiClients, verifySignedData } from '@proton/wallet';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
+import {
+    MAX_RECIPIENTS_PER_TRANSACTIONS,
+    useBitcoinNetwork,
+    useWalletApiClients,
+    verifySignedData,
+} from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import type { TxBuilderUpdater } from '../../hooks/useTxBuilder';
