@@ -34,7 +34,6 @@ import {
 } from '../../components';
 import { getClientName, getReportInfo } from '../../helpers/report';
 import { useApi, useConfig, useNotifications } from '../../hooks';
-import { useFlag } from '../unleash';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
 
@@ -67,7 +66,7 @@ export interface Props {
     app?: APP_NAMES;
 }
 
-const getMailOptions = ({ canAccessWallet }: { canAccessWallet: boolean }): OptionItem[] => {
+const getMailOptions = (): OptionItem[] => {
     const optionType = 'option' as const;
     const labelType = 'label' as const;
     return [
@@ -122,7 +121,7 @@ const getMailOptions = ({ canAccessWallet }: { canAccessWallet: boolean }): Opti
             clientType: CLIENT_TYPES.PASS,
             app: APPS.PROTONPASS,
         },
-        canAccessWallet && {
+        {
             type: optionType,
             value: 'Wallet problem',
             title: c('wallet_signup_2024:Bug category').t`Wallet problem`,
@@ -168,10 +167,9 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
     const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
-    const canAccessWallet = useFlag('Wallet');
 
     const options = useMemo(() => {
-        return isVpn ? getVPNOptions() : getMailOptions({ canAccessWallet });
+        return isVpn ? getVPNOptions() : getMailOptions();
     }, []);
 
     const categoryOptions = options.map((option) => {

@@ -204,7 +204,6 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
-    const walletEnabled = useFlag('Wallet');
 
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
@@ -328,7 +327,7 @@ const PlanSelection = ({
             return null;
         }
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan, walletEnabled });
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan });
 
         if (!shortPlan) {
             return null;
