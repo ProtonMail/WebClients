@@ -21,6 +21,7 @@ export class LoadDocument implements UseCaseInterface<LoadDocumentResult> {
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
   ) {}
+
   async execute(lookup: NodeMeta): Promise<Result<LoadDocumentResult>> {
     try {
       const [keysResult, fetchResult, permissionsResult] = await Promise.all([
