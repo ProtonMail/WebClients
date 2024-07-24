@@ -69,8 +69,8 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: EditLin
             as={Form}
         >
             <InputFieldTwo
-                label={c('Label').t`Link label`}
-                assistiveText={c('Info').t`Only you can see the labels.`}
+                label={c('Label').t`Link label (optional)`}
+                assistiveText={c('Info').t`Only you can see the label`}
                 placeholder={c('Shared calendar label input placeholder').t`Add label`}
                 id="your-calendar-url-label"
                 maxLength={MAX_CHARS_CLEARTEXT.PURPOSE}
