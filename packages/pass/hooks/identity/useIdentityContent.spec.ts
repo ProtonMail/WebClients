@@ -1,4 +1,4 @@
-import type { IdentityValues } from '@proton/pass/types';
+import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
 import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
 import { buildContentSections } from './useIdentityContent';
@@ -13,14 +13,15 @@ describe('`buildContentSections`', () => {
     afterEach(() => jest.resetAllMocks());
 
     it('should build content sections correctly', () => {
-        const values = {
-            fullName: 'John Doe',
-            email: 'john@example.com',
-            extraContactDetails: [],
-            extraSections: [],
-        } as unknown as IdentityValues;
+        const item = itemBuilder('identity');
 
-        const result = buildContentSections(values);
+        item.set('content', (content) => {
+            content.set('fullName', 'John Doe');
+            content.set('email', 'john@example.com');
+            return content;
+        });
+
+        const result = buildContentSections(item.data.content);
 
         expect(result).toEqual([
             { name: 'Personal', fields: [{ ...MOCK_FIELDS.fullName, value: 'John Doe' }] },
@@ -29,15 +30,16 @@ describe('`buildContentSections`', () => {
     });
 
     it('should handle optional fields', () => {
-        const values = {
-            fullName: 'John Doe',
-            phoneNumber: '1234567890',
-            email: 'john@example.com',
-            extraContactDetails: [],
-            extraSections: [],
-        } as unknown as IdentityValues;
+        const item = itemBuilder('identity');
 
-        const result = buildContentSections(values);
+        item.set('content', (content) => {
+            content.set('fullName', 'John Doe');
+            content.set('email', 'john@example.com');
+            content.set('phoneNumber', '1234567890');
+            return content;
+        });
+
+        const result = buildContentSections(item.data.content);
 
         expect(result[1].fields).toEqual([
             { ...MOCK_FIELDS.email, value: 'john@example.com' },
@@ -46,10 +48,11 @@ describe('`buildContentSections`', () => {
     });
 
     it('should handle extra sections', () => {
-        const values = {
-            fullName: 'John Doe',
-            extraContactDetails: [],
-            extraSections: [
+        const item = itemBuilder('identity');
+
+        item.set('content', (content) => {
+            content.set('fullName', 'John Doe');
+            content.set('extraSections', [
                 {
                     sectionName: 'Extra Section',
                     sectionFields: [
@@ -60,10 +63,11 @@ describe('`buildContentSections`', () => {
                         },
                     ],
                 },
-            ],
-        } as unknown as IdentityValues;
+            ]);
+            return content;
+        });
 
-        const result = buildContentSections(values);
+        const result = buildContentSections(item.data.content);
 
         expect(result).toEqual([
             { name: 'Personal', fields: [{ ...MOCK_FIELDS.fullName, value: 'John Doe' }] },
@@ -72,19 +76,21 @@ describe('`buildContentSections`', () => {
     });
 
     it('should handle custom fields', () => {
-        const values = {
-            email: 'john@example.com',
-            extraContactDetails: [
+        const item = itemBuilder('identity');
+
+        item.set('content', (content) => {
+            content.set('email', 'john@example.com');
+            content.set('extraContactDetails', [
                 {
                     fieldName: 'Custom Field',
                     type: 'text',
                     data: { content: 'Custom Value' },
                 },
-            ],
-            extraSections: [],
-        } as unknown as IdentityValues;
+            ]);
+            return content;
+        });
 
-        const result = buildContentSections(values);
+        const result = buildContentSections(item.data.content);
 
         expect(result[0].fields).toEqual([
             { ...MOCK_FIELDS.email, value: 'john@example.com' },
@@ -93,19 +99,21 @@ describe('`buildContentSections`', () => {
     });
 
     it('should handle hidden fields', () => {
-        const values = {
-            email: 'john@example.com',
-            extraContactDetails: [
+        const item = itemBuilder('identity');
+
+        item.set('content', (content) => {
+            content.set('email', 'john@example.com');
+            content.set('extraContactDetails', [
                 {
                     fieldName: 'Hidden Field',
                     type: 'hidden',
                     data: { content: 'Hidden Value' },
                 },
-            ],
-            extraSections: [],
-        } as unknown as IdentityValues;
+            ]);
+            return content;
+        });
 
-        const result = buildContentSections(values);
+        const result = buildContentSections(item.data.content);
 
         expect(result[0].fields).toEqual([
             { ...MOCK_FIELDS.email, value: 'john@example.com' },
@@ -113,20 +121,10 @@ describe('`buildContentSections`', () => {
         ]);
     });
 
-    it('should handle empty values', () => {
-        const values = {
-            fullName: '',
-            email: '',
-            extraContactDetails: [],
-            extraSections: [],
-        } as unknown as IdentityValues;
+    it('should handle empty values/sections', () => {
+        const item = itemBuilder('identity');
+        const result = buildContentSections(item.data.content);
 
-        expect(buildContentSections(values as any)).toEqual([]);
-    });
-
-    it('should handle empty sections', () => {
-        const values = { extraContactDetails: [], extraSections: [] } as unknown as IdentityValues;
-        const result = buildContentSections(values);
         expect(result).toEqual([]);
     });
 });
