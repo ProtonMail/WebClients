@@ -88,17 +88,20 @@ export const MetricsAndCtas = ({
     return (
         <div
             className={clsx(
-                'metrics-and-ctas flex bg-weak rounded-xl justify-space-between',
+                'metrics-and-ctas flex gap-4 bg-weak rounded-2xl justify-space-between',
                 isNarrow ? 'flex-column items-start p-4 mx-2 my-4' : 'flex-row items-center p-6 m-4'
             )}
         >
-            <div className="flex flex-row max-w-custom my-2 items-center" style={{ '--max-w-custom': '50rem' }}>
-                <div className="mr-3">
+            <div className="flex flex-row gap-6 max-w-custom my-2 items-center" style={{ '--max-w-custom': '50rem' }}>
+                <div className="flex gap-4 flex-nowrap items-center">
                     <img src={btcSvg} alt={c('Info').t`Bitcoin`} />
+                    <span className="metrics-and-ctas-btc-text">
+                        <span>{c('Info').t`Bitcoin`}</span> <span className="color-weak">BTC</span>
+                    </span>
                 </div>
 
                 <div className="flex flex-row justify-space-between gap-6">
-                    <div className="flex flex-column">
+                    <div className="flex flex-column text-right">
                         <div className="block color-hint mb-1">{c('Wallet dashboard').t`Current price`}</div>
                         <div className="w-full grow">
                             <span className={clsx('block', loadingExchangeRate && 'skeleton-loader')}>
@@ -111,7 +114,7 @@ export const MetricsAndCtas = ({
                         </div>
                     </div>
 
-                    <div className="flex flex-column">
+                    <div className="flex-column text-right">
                         <span className="block color-hint mb-1">{c('Wallet dashboard').t`24h change`}</span>
                         <div className="w-full grow">
                             <span
@@ -126,7 +129,7 @@ export const MetricsAndCtas = ({
                         </div>
                     </div>
 
-                    <div style={{ height: '3rem', width: '10rem' }}>
+                    <div className="metrics-and-ctas-chart" style={{ height: '3rem', width: '10rem' }}>
                         <Line
                             id="line-chart"
                             options={lineChartOptions}
