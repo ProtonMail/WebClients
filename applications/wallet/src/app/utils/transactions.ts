@@ -97,6 +97,13 @@ export const getTransactionRecipientHumanReadableName = (
 
     // If output is owned by wallet account and transaction wasn't sent from it, we display the Wallet - WalletAccount as recipient
     if (!isSentTransaction(transaction) && output.is_mine && wallet && account) {
+        const otherReceivingAccount = wallet?.wallet?.WalletAccounts?.find(
+            (account) => account.DerivationPath === transaction.networkData.account_derivation_path
+        );
+
+        if (otherReceivingAccount) {
+            return `${wallet.wallet.Wallet.Name} - ${otherReceivingAccount.Label}`;
+        }
         return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
     }
 
