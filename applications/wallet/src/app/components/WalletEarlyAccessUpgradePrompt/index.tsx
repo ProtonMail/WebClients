@@ -7,7 +7,7 @@ import { SUBSCRIPTION_STEPS, useAddresses, useSubscriptionModal, useUser } from 
 import { CacheType } from '@proton/redux-utilities';
 import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
-import walletPlaneImg from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
+import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.png';
 import clsx from '@proton/utils/clsx';
 
 import { Button, CoreButtonLike, Modal } from '../../atoms';
@@ -97,10 +97,10 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
             >
                 <div className="flex flex-column items-center text-center">
                     <img
-                        src={walletPlaneImg}
+                        src={walletClock}
                         alt=""
                         className="w-custom h-custom"
-                        style={{ '--w-custom': '240px', '--h-custom': '135px' }}
+                        style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                     />
                     <h1 className="my-3 text-semibold text-3xl">{c('Wallet Welcome').t`Early Access Waitlist`}</h1>
                     <ModalParagraph prompt>
