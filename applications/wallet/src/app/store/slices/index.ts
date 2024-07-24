@@ -8,6 +8,7 @@ import { fiatCurrenciesReducer } from './fiatCurrencies';
 import { fiatCurrenciesByProviderReducer } from './fiatCurrenciesByProvider';
 import { gatewaysPublicApiKeysReducer } from './gatewaysPublicApiKeys';
 import { paymentMethodsByProviderReducer } from './paymentMethodByProvider';
+import { priceGraphDataReducer } from './priceGraphData';
 import { quotesByProviderReducer } from './quotesByProvider';
 import { remainingInvitesReducer } from './remainingInvites';
 import { userEligibilityReducer } from './userEligibility';
@@ -33,4 +34,5 @@ export const walletReducers = {
     ...gatewaysPublicApiKeysReducer,
     ...userEligibilityReducer,
     ...remainingInvitesReducer,
+    ...priceGraphDataReducer,
 };
