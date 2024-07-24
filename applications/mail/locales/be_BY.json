@@ -843,10 +843,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open": [
@@ -1520,11 +1520,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Размова"
-      ]
-    },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Вітаем"
       ]
     },
     "Animation": {
@@ -3477,6 +3472,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ашчаджайце час адпраўляючы лісты або запрашэнні ўсім адрасатам адначасова. Адна з прэміяльных функцый сярод многіх іншых. Палепшыце свой тарыфны план, каб скарыстацца ёй."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту даных."
       ],
@@ -3503,6 +3501,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Разблакіруйце карыстальніцкі час адкладання пасля паляпшэння тарыфнага плана."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Палепшыце бягучы тарыфны план і атрымайце кароткі адрас электроннай пошты разам з іншымі прэміяльнымі функцыямі."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Разблакіруйце неабмежаваную колькасць фільтраў, якія дапамогуць сартаваць вашу паштовую скрыню і іншыя прэміяльныя функцыі пасля паляпшэння."
@@ -5962,6 +5963,9 @@
       "and": [
         "і"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Іншая парада будзе адлюстравана наступны раз пры адкрыцці Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Любыя запланаваныя або адкладзеныя паведамленні будуць скасаваны."
       ],
@@ -6112,6 +6116,9 @@
       "Confirm phishing report": [
         "Пацвердзіць скаргу на фішынг"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Заплануйце адпраўку электроннага ліста іменна тады, калі вашаму атрымальніку найбольш пасуе атрымаць яго."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
@@ -6135,6 +6142,9 @@
         "Стварыць ${ calendarsToBeCreatedCount } новыя календары",
         "Стварыць ${ calendarsToBeCreatedCount } новых календароў",
         "Стварыць ${ calendarsToBeCreatedCount } новыя календары"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Стварэнне такой папкі як “${ suggestedFolderName }“ прывядзе да захавання ўсіх вашых квітанцый з інтэрнэту ў адным месцы."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя папкі, якія вы хочаце імпартаваць."
@@ -6187,6 +6197,12 @@
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Ці ведаеце вы, што ў вас ёсць зашыфраванае воблачнае сховішча, якое ўключае ваш уліковы запіс ${ BRAND_NAME }? Пераходзьце ў ${ DRIVE_APP_NAME } і па максімуму выкарыстоўвайце сваю прастору. Гэта абсалютна бясплатна."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Ці ведаеце вы, што мы зарэзервавалі кароткі адрас электроннай пошты адмыслова для вас. Гэта ваша імя карыстальніка перад @${ PM_DOMAIN }”?"
+      ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
@@ -6204,6 +6220,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Не забудзьце абагуліць ваш пароль з атрымальнікам"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Няма часу на важны электронны ліст, але вам неабходна памятаць пра яго? Прызначце лепшы час для з'яўлення яго ў вашай паштовай скрыні."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
@@ -6376,6 +6395,9 @@
       "Generate text": [
         "Генерыраваць тэкст"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Давайце сваім уваходным рахункам маркіраваныя колерам меткі такія, як “${ suggestedLabelName }“. Змяніце метку на “${ suggestedPaidLabelName }“ пасля правядзення аплаты."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Мае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
         "Мае ${ numAttachments } далучэнні (${ numAttachmentsSize })",
@@ -6417,6 +6439,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Калі ваш псеўданім прададзены, трапіў у базы спамераў або падвергся злоўжыванню, вы можаце проста адключыць яго і спыніць атрыманне спама."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Калі ваш пароль усё ж такі з'явіцца ў Dark Web, то ${ BRAND_NAME } зможа папярэдзіць вас у якім сэрвісе адбылася ўцечка даных і як ліквідаваць шкоду."
       ],
       "Image description": [
         "Апісанне відарыса"
@@ -6489,6 +6514,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Захоўвайце запісы ўваходу і падрабязнасці крэдытных картак у бяспечным месцы, але заўсёды дасяжнымі для вас. Перанясіце паролі і іншыя асабістыя звесткі ў ${ PASS_APP_NAME }. Гэта абсалютна бясплатна і ўключана ў ваш уліковы запіс ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Аўтаматычна выдаляйце са сметніцы спам і непатрэбныя электронныя лісты, якія знаходзяцца ў ёй больш за 30 дзён і падтрымлівайце парадак у сваёй паштовай скрыні."
       ],
       "Key fingerprint": [
         "Адбітак ключа"
@@ -7159,6 +7190,9 @@
       "to ${ destinationElement } folder.": [
         "у папку ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Выкарыстоўвайце настольную праграму, каб не адцягваць увагу на іншых адкрытых укладках у вашым браўзеры."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
@@ -7285,6 +7319,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL-адрас: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Выкарыстоўвайце разнастайныя адрасы электроннай пошты для разнастайных мэт. Такім чынам, вы без намаганняў зможаце размежаваць электронныя лісты на працоўныя, асабістыя і г.д."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Выкарыстоўваць спалучэнні клавіш для больш хуткага кіравання вашымі лістамі."
       ],
@@ -7374,6 +7411,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на навіны. Ваша ідэнтычнасць застанецца схаванай дзякуючы таму, што псеўданім можна адключыць у любы момант."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Падключайцеся да ${ VPN_APP_NAME }, каб прадухіліць адсочванне вашай актыўнасці ў інтэрнэце або крадзеж вашых даных падчас падарожжаў або выкарыстання публічных сетак Wi-Fi. Гэта абсалютна бясплатна."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -10261,9 +10304,6 @@
       "Payment Processing": [
         "Апрацоўка плацяжу"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Дадайце спосаб аплаты ў панэль кіравання для працягу."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -12294,6 +12334,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " цяпер актыўна"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } выдалена"
       ]
@@ -12447,6 +12490,41 @@
         "${ minutes } хвіліны"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Актываваць"
+      ],
+      "Create an alias": [
+        "Стварыць псеўданім"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Стварыць метку \"${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Стварыць новы паштовы адрас"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Стварыць папку “${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Спампаваць ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Спампаваць настольную праграму"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Уключыць Dark Web Monitoring"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Атрымаць адрас з маім імем “@${ PM_DOMAIN }“"
+      ],
+      "Open ": [
+        "Адкрыць "
+      ],
+      "Show me how": [
+        "Пакажыце мне як"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } адрас электроннай пошты",
@@ -12483,6 +12561,9 @@
       ],
       "Action all messages": [
         "Прымяніць да ўсіх паведамленняў"
+      ],
+      "Activate @pm.me": [
+        "Актываваць @pm.me"
       ],
       "Add a custom logo": [
         "Дадаць карыстальніцкі лагатып"
@@ -12810,6 +12891,9 @@
       ],
       "Import groups": [
         "Імпартаванне груп"
+      ],
+      "Increase your privacy with more addresses": [
+        "Павялічце сваю прыватнасць з большай колькасцю адрасоў"
       ],
       "Insert contacts": [
         "Уставіць кантакты"

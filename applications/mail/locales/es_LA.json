@@ -835,10 +835,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1502,11 +1502,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversación"
-      ]
-    },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Bienvenido"
       ]
     },
     "Animation": {
@@ -3439,6 +3434,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ahorre tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualice hoy mismo."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Separe diferentes aspectos de su vida con múltiples direcciones de correo y desbloquee funciones premium cuando actualiza el plan."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Establezca un método de recuperación para evitar pérdida de datos."
       ],
@@ -3465,6 +3463,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Desbloquee las pausas personalizadas al mejorar el plan."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Desbloquee direcciones de correo cortas y otras funciones premium al mejorar."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Desbloquee filtros ilimitados que ordenan el buzón para usted y más funciones premium cuando actualiza el plan."
@@ -5774,6 +5775,9 @@
       "and": [
         "y"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Se mostrará otro consejo la próxima vez que abra Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Se cancelará cualquier programación o mensajes pausados."
       ],
@@ -5918,6 +5922,9 @@
       "Confirm phishing report": [
         "Confirmar informe de suplantación"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Considere cuándo es el mejor momento para enviar un correo y prográmelo para enviarlo después."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
@@ -5939,6 +5946,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crear ${ calendarsToBeCreatedCount } calendario nuevo",
         "Crear ${ calendarsToBeCreatedCount } calendarios nuevos"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Cree una carpeta como «${ suggestedFolderName }» o mantenga sus facturas en un solo lugar."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
@@ -5991,6 +6001,12 @@
       "Default email application": [
         "Aplicación de correo por defecto"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "¿Sabía que tiene un almacenamiento cifrado en la nube incluido con su cuenta de ${ BRAND_NAME }? Vaya a ${ DRIVE_APP_NAME } y aproveche su espacio. Es gratuito."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "¿Lo sabía? Hemos reservado una dirección de correo corta para usted. Es su usuario seguido de «@${ PM_DOMAIN }»."
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -6006,6 +6022,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "¿No tiene tiempo para abordar un correo electrónico importante ahora, pero no quiere olvidarlo? Establezca un mejor momento para que aparezca en su bandeja de entrada."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
@@ -6168,6 +6187,9 @@
       "Generate text": [
         "Generar texto"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Etiquete con color las facturas entrantes como «${ suggestedLabelName }». Una vez pagadas, cambie la etiqueta a «${ suggestedPaidLabelName }»."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tiene ${ numAttachments } adjunto (${ numAttachmentsSize })",
         "Tiene ${ numAttachments } adjuntos (${ numAttachmentsSize })"
@@ -6207,6 +6229,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si el alias es vendido, filtrado o abusado, simplemente desactívelo para dejar de recibir spam."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Si su contraseña termina en la dark web, ${ BRAND_NAME } puede decirle de cuál servicio fueron filtrados sus datos y cómo detener el daño."
       ],
       "Image description": [
         "Descripción de la imagen"
@@ -6277,6 +6302,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar la selección y nosotros haremos el resto."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Mantenga a salvo sus credenciales y datos de sus tarjetas pero siempre a mano al añadirlos a ${ PASS_APP_NAME }. Es gratis y está incluido en su cuenta de ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Mantenga ordenado su buzón eliminando automáticamente la basura y el spam que hayan estado allí durante más de 30 días."
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
@@ -6937,6 +6968,9 @@
       "to ${ destinationElement } folder.": [
         "a la carpeta ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Para evitar el rastreo de sitios por las pestañas abiertas en su navegador, use la aplicación de escritorio."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar el pago, envíe ${ btcAmountBold } a la dirección de abajo."
       ],
@@ -7063,6 +7097,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Use direcciones de correo para propósitos diferentes así puede separar fácilmente sus correos del trabajo, personales y otros ámbitos."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Use atajos de teclado para gestionar el correo más rápido."
       ],
@@ -7152,6 +7189,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a la aplicación de autenticación."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Cuando se registra en un boletín, use un alias en lugar de su dirección de correo. Su identidad se mantiene oculta y podrá desactivar el alias en cualquier momento."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Cuando viaje o use WiFi público, conéctese a ${ VPN_APP_NAME } para que nadie rastree su actividad en línea o robe sus datos. Es gratuito."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -9940,9 +9983,6 @@
       "Payment Processing": [
         "Procesando el pago"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Añada un método de pago en el panel de control para continuar."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -11843,6 +11883,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " ahora está activo"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } borrado"
       ]
@@ -11984,6 +12027,41 @@
         "${ minutes } minutos"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Activar"
+      ],
+      "Create an alias": [
+        "Crear un alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Crear la etiqueta «${ suggestedLabelName }»"
+      ],
+      "Create new email address": [
+        "Crear una dirección de correo"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Crear la carpeta «${ suggestedFolderName }»"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descargar ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Descargar la aplicación de escritorio"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Activar el monitoreo de la Dark Web"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Obtener mi dirección «@${ PM_DOMAIN }»"
+      ],
+      "Open ": [
+        "Abrir "
+      ],
+      "Show me how": [
+        "Mostrarme cómo"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } dirección de correo",
@@ -12016,6 +12094,9 @@
       ],
       "Action all messages": [
         "Aplicar a todos los mensajes"
+      ],
+      "Activate @pm.me": [
+        "Activar @pm.me"
       ],
       "Add a custom logo": [
         "Añada un logo personalizado"
@@ -12329,6 +12410,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Increase your privacy with more addresses": [
+        "Incremente su privacidad con más direcciones"
       ],
       "Insert contacts": [
         "Insertar contactos"
