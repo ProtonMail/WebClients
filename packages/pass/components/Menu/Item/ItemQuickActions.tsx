@@ -12,12 +12,16 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
+
+type QuickAction = { label: string; type: ItemType };
 
 type Props = {
     disabled?: boolean;
@@ -31,6 +35,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
     const { matchItemList } = useNavigation();
     const passwordContext = usePasswordContext();
     const copyToClipboard = useCopyToClipboard();
+    const identityItemEnabled = useFeatureFlag(PassFeature.PassIdentityV1);
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
@@ -57,16 +62,18 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
         });
     };
 
-    const quickActions = useMemo(
-        () =>
-            [
-                { label: c('Label').t`Login`, type: 'login' },
-                { label: c('Label').t`Alias`, type: 'alias' },
-                { label: c('Label').t`Card`, type: 'creditCard' },
-                { label: c('Label').t`Note`, type: 'note' },
-            ] as const,
-        []
-    );
+    const quickActions = useMemo(() => {
+        const actions: QuickAction[] = [
+            { label: c('Label').t`Login`, type: 'login' },
+            { label: c('Label').t`Alias`, type: 'alias' },
+            { label: c('Label').t`Card`, type: 'creditCard' },
+            { label: c('Label').t`Note`, type: 'note' },
+        ];
+
+        if (identityItemEnabled) actions.push({ label: c('Label').t`Identity`, type: 'identity' });
+
+        return actions;
+    }, [identityItemEnabled]);
 
     return (
         <>

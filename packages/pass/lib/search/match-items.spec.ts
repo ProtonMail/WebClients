@@ -4,6 +4,11 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { searchItems } from './match-items';
 
+const searchAndExpect = (items: ItemRevision[], expected: ItemRevision[]) => (search: string) => {
+    const result = searchItems(items, search);
+    expect(result).toEqual(expected);
+};
+
 describe('searchItems', () => {
     const items = [
         {
@@ -90,66 +95,84 @@ describe('searchItems', () => {
                 extraFields: [],
             },
         },
+        {
+            data: {
+                type: 'identity',
+                metadata: {
+                    name: 'Identity item',
+                    note: obfuscate('This is item 5'),
+                    itemUuid: '4',
+                },
+                content: {
+                    fullName: '::full-name::',
+                    birthdate: '::birthdate::',
+                    extraPersonalDetails: [
+                        { fieldName: '::field::', type: 'text', data: { content: '::personal-detail-1::' } },
+                        { fieldName: '::field::', type: 'hidden', data: { content: '::personal-detail-2::' } },
+                    ],
+                    streetAddress: '::street-address::',
+                    city: '::city::',
+                    workEmail: '::work-email::',
+                    extraWorkDetails: [
+                        { fieldName: '::field::', type: 'hidden', data: { content: '::work-detail-1::' } },
+                        { fieldName: '::field::', type: 'text', data: { content: '::work-detail-2::' } },
+                    ],
+                    extraSections: [
+                        {
+                            sectionName: '::section-1::',
+                            sectionFields: [
+                                { fieldName: '::field::', type: 'text', data: { content: '::first-section-1::' } },
+                                { fieldName: '::field::', type: 'hidden', data: { content: '::first-section-2::' } },
+                            ],
+                        },
+                        {
+                            sectionName: '::section-2::',
+                            sectionFields: [
+                                { fieldName: '::field::', type: 'hidden', data: { content: '::second-section-1::' } },
+                                { fieldName: '::field::', type: 'text', data: { content: '::second-section-2::' } },
+                            ],
+                        },
+                    ],
+                },
+                extraFields: [],
+            },
+        },
     ] as ItemRevision[];
 
-    it('should return all items when search is empty', () => {
-        const result = searchItems(items, '');
-        expect(result).toEqual(items);
+    it.each([
+        { key: 'no search', search: [''], expected: items },
+        { key: 'note', search: ['this is item'], expected: [items[0], items[1], items[2], items[3], items[4]] },
+        {
+            key: 'login item',
+            search: ['Login item', 'user1@example.com', 'user1', 'example.com', 'text label', 'text value'],
+            expected: [items[0]],
+        },
+        { key: 'card item', search: ['John Doe', '1234567890'], expected: [items[2]] },
+        {
+            key: 'identity item',
+            search: [
+                'full-name',
+                'birthdate',
+                'street-address',
+                'city',
+                'work-email',
+                '::personal-detail-2::',
+                '::work-detail-1::',
+                'detail-2',
+                'first-section-1::',
+                'second-section',
+            ],
+            expected: [items[4]],
+        },
+    ])('should return matching items based on $key', ({ search, expected }) => {
+        search.forEach(searchAndExpect(items, expected));
     });
 
-    it('should return matching items based on title', () => {
-        const result = searchItems(items, 'Login item');
-        expect(result).toEqual([items[0]]);
-    });
-
-    it('should return matching items based on note', () => {
-        const result = searchItems(items, 'this is item');
-        expect(result).toEqual([items[0], items[1], items[2], items[3]]);
-    });
-
-    it('should return matching items based on itemEmail', () => {
-        const result = searchItems(items, 'user1@example.com');
-        expect(result).toEqual([items[0]]);
-    });
-
-    it('should return matching items based on itemUsername', () => {
-        const result = searchItems(items, 'user1');
-        expect(result).toEqual([items[0]]);
-    });
-
-    it('should return matching items based on URLs', () => {
-        const result = searchItems(items, 'example.com');
-        expect(result).toEqual([items[0]]);
-    });
-
-    it('should return matching items based on cardholder name', () => {
-        const result = searchItems(items, 'John Doe');
-        expect(result).toEqual([items[2]]);
-    });
-
-    it('should return matching items based on card number', () => {
-        const result = searchItems(items, '1234567890');
-        expect(result).toEqual([items[2]]);
-    });
-
-    it('should return matching items based on extra fields label and value', () => {
-        const result = searchItems(items, 'text label');
-        expect(result).toEqual([items[0]]);
-
-        const result2 = searchItems(items, 'text value');
-        expect(result2).toEqual([items[0]]);
-    });
-
-    it('should not match otp fields', () => {
-        const result = searchItems(items, 'otpauth://totp/label?secret=secret&issuer=issuer');
-        expect(result).toEqual([]);
-
-        const result2 = searchItems(items, 'otpauth://totp/label?secret=extrafieldsecret&issuer=issuer');
-        expect(result2).toEqual([]);
-    });
-
-    it('should return empty array when no match', () => {
-        const result = searchItems(items, 'db');
-        expect(result).toEqual([]);
+    it.each([
+        { key: 'query', search: 'db' },
+        { key: 'otp fields', search: 'otpauth://totp/label?secret=secret&issuer=issuer' },
+        { key: 'otp fields with extra fields', search: 'otpauth://totp/label?secret=extrafieldsecret&issuer=issuer' },
+    ])('should return empty array when no match $key', ({ search }) => {
+        searchAndExpect(items, [])(search);
     });
 });

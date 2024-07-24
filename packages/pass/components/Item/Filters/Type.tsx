@@ -7,7 +7,9 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { ItemRevisionWithOptimistic, ItemTypeFilter } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 type Props = {
     items: ItemRevisionWithOptimistic[];
@@ -17,7 +19,7 @@ type Props = {
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '12rem' };
 
-export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string; icon: IconName } } => ({
+export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; icon: IconName }> => ({
     '*': {
         label: c('Label').t`All`,
         icon: 'grid-2',
@@ -38,20 +40,27 @@ export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string
         label: c('Label').t`Notes`,
         icon: itemTypeToIconName.note,
     },
+    identity: {
+        label: c('Label').t`Identities`,
+        icon: itemTypeToIconName.identity,
+    },
 });
 
 export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+    const identityItemEnabled = useFeatureFlag(PassFeature.PassIdentityV1);
 
     const options = useMemo(
         () =>
-            Object.entries(getItemTypeOptions()).map(([type, { label, icon }]) => ({
-                type: type as ItemTypeFilter,
-                label,
-                icon,
-                count: type === '*' ? items.length : items.filter((item) => item.data.type === type).length,
-            })),
-        [items]
+            Object.entries(getItemTypeOptions())
+                .filter(([type]) => identityItemEnabled || type !== 'identity')
+                .map(([type, { label, icon }]) => ({
+                    type: type as ItemTypeFilter,
+                    label,
+                    icon,
+                    count: type === '*' ? items.length : items.filter((item) => item.data.type === type).length,
+                })),
+        [items, identityItemEnabled]
     );
 
     const selectedOption = options.find(({ type }) => type === value)!;
