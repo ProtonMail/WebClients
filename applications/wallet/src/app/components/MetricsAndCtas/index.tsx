@@ -9,10 +9,10 @@ import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
 import { Tooltip } from '@proton/components/components';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
-import { DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton/wallet';
+import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../atoms/Button';
-import { CorePrice } from '../../atoms/Price';
+import { Price } from '../../atoms/Price';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { usePriceGraphData } from '../../store/hooks/usePriceGraphData';
@@ -105,11 +105,7 @@ export const MetricsAndCtas = ({
                         <div className="block color-hint mb-1">{c('Wallet dashboard').t`Current price`}</div>
                         <div className="w-full grow">
                             <span className={clsx('block', loadingExchangeRate && 'skeleton-loader')}>
-                                {exchangeRate && (
-                                    <CorePrice currency={exchangeRate.FiatCurrency} divisor={exchangeRate.Cents}>
-                                        {exchangeRate?.ExchangeRate}
-                                    </CorePrice>
-                                )}
+                                {exchangeRate && <Price unit={exchangeRate} satsAmount={1 * BITCOIN} />}
                             </span>
                         </div>
                     </div>
