@@ -5,7 +5,7 @@ import { Prompt, Tooltip } from '@proton/components/components';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { useUser } from '@proton/components/hooks';
 import { PLANS } from '@proton/shared/lib/constants';
-import upgradeWalletSrc from '@proton/styles/assets/img/illustrations/wallet-upgrade.svg';
+import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.png';
 
 import { Button } from '../../atoms';
 import type { SubTheme } from '../../utils';
@@ -56,7 +56,12 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
             ]}
         >
             <div className="flex flex-column items-center text-center">
-                <img src={upgradeWalletSrc} alt="" />
+                <img
+                    src={upgradeWalletSrc}
+                    alt=""
+                    className="w-custom h-custom"
+                    style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
+                />
                 <h1 className="my-4 text-semibold text-3xl">
                     {title ?? c('Wallet Upgrade').t`Upgrade to support financial freedom`}
                 </h1>
