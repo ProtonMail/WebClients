@@ -12,7 +12,7 @@ import {
   SquashVerificationObjectionDecision,
   WebsocketConnectionEvent,
 } from '@proton/docs-core'
-import { CircleLoader } from '@proton/atoms'
+import { Button, CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
 import { useApplication } from '../Containers/ApplicationProvider'
 import type {
@@ -27,6 +27,8 @@ import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal
 import type { DocumentAction, NodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from './Modals/GenericAlert'
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
 
 type Props = {
   lookup: NodeMeta
@@ -243,7 +245,23 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   }, [application, lookup, docOrchestrator, editorFrame, createBridge, initializing])
 
   if (error) {
-    return <div className="flex h-full w-full items-center justify-center text-[color:--signal-danger]">{error}</div>
+    return (
+      <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
+        <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
+        <div className="mt-1 max-w-lg text-center">
+          {c('Info')
+            .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
+        </div>
+        <div className="mt-4 flex gap-2">
+          <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS), '_blank')}>
+            {c('Action').t`Create new document`}
+          </Button>
+          <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE), '_blank')}>
+            {c('Action').t`Open ${DRIVE_APP_NAME}`}
+          </Button>
+        </div>
+      </div>
+    )
   }
 
   return (
