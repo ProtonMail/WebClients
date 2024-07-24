@@ -228,7 +228,6 @@ export class PaymentMethods {
             isEnabledFlow &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            this.chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED &&
             !this.isChargebeeBitcoinAvailable()
         );
     }
@@ -242,15 +241,12 @@ export class PaymentMethods {
         const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice'];
         const isEnabledFlow = !disabledFlows.includes(this.flow);
 
-        const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
-
         const bitcoinAvailable =
             this.statusExtended.VendorStates.Bitcoin &&
             this.bitcoinChargebeeEnabled &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             isEnabledFlow &&
-            !isB2BPlan &&
             this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
         return bitcoinAvailable;
