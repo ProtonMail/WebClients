@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помічник у написанні ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
@@ -225,6 +228,9 @@
       "Close & discard": [
         "Закрити й відхилити"
       ],
+      "Close AI refine suggestion": [
+        "Закрити пропозицію по вдосконаленню від ШІ"
+      ],
       "Close composer": [
         "Закрити редактор"
       ],
@@ -236,6 +242,9 @@
       ],
       "Close this banner": [
         "Закрити цей банер"
+      ],
+      "Collapse navigation bar": [
+        "Згорнути панель навігації"
       ],
       "Collapse URL": [
         "Згорнути URL"
@@ -375,6 +384,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Display navigation bar": [
+        "Показувати панель навігації"
+      ],
       "Done": [
         "Готово"
       ],
@@ -447,6 +459,12 @@
       "Expand composer": [
         "Розгорнути редактор"
       ],
+      "Expand navigation bar to see folders": [
+        "Розгорнути панель навігації, щоби побачити теки"
+      ],
+      "Expand navigation bar to see labels": [
+        "Розгорнути панель навігації для перегляду міток"
+      ],
       "Expand URL": [
         "Розгорнути URL"
       ],
@@ -480,17 +498,32 @@
       "Forgot password?": [
         "Забули пароль?"
       ],
+      "Formalize": [
+        "Формалізувати"
+      ],
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Generate text": [
+        "Згенерувати текст"
+      ],
       "Get in touch": [
         "Зв'яжіться з нами"
+      ],
+      "Get it": [
+        "Отримати"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Отримайте його лише за ${ addonPriceWithCurrency } / місяця"
       ],
       "Get SimpleLogin extension": [
         "Отримати розширення SimpleLogin"
       ],
       "Get started": [
         "Розпочнімо"
+      ],
+      "Get the writing assistant": [
+        "Отримати помічника у написанні"
       ],
       "Get verification code": [
         "Отримати код підтвердження"
@@ -651,6 +684,9 @@
       "Loading${ ellipsis }": [
         "Завантаження${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Зробити його дружнім"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -713,6 +749,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Удосконалити свої дії"
       ],
       "More search options": [
         "Більше варіантів пошуку"
@@ -804,11 +843,14 @@
       "Not saved": [
         "Не збережено"
       ],
+      "OK": [
+        "Застосувати"
+      ],
       "Ok": [
         "OK"
       ],
-      "OK": [
-        "Застосувати"
+      "Open": [
+        "Відкрити"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -866,6 +908,9 @@
       ],
       "Print": [
         "Друкувати"
+      ],
+      "Proofread": [
+        "Корегувати"
       ],
       "Quit": [
         "Вийти"
@@ -930,6 +975,9 @@
       "Reply securely": [
         "Захищена відповідь"
       ],
+      "Report a good content": [
+        "Повідомити про хороший вміст"
+      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -966,11 +1014,17 @@
       "Resume": [
         "Продовжити"
       ],
+      "Resume downloading": [
+        "Відновити завантаження"
+      ],
       "Retry": [
         "Повторити спробу"
       ],
       "Revert to original display": [
         "Повернути оригінальний вигляд"
+      ],
+      "Run on servers": [
+        "Запустити на серверах"
       ],
       "Save": [
         "Зберегти"
@@ -980,6 +1034,9 @@
       ],
       "Schedule message": [
         "Запланувати повідомлення"
+      ],
+      "Scroll to bottom": [
+        "Прокрутити вниз"
       ],
       "Search": [
         "Пошук"
@@ -1074,6 +1131,9 @@
       "Sharing options": [
         "Варіанти спільного доступу"
       ],
+      "Shorten": [
+        "Скоротити"
+      ],
       "Show": [
         "Показати"
       ],
@@ -1097,6 +1157,9 @@
       ],
       "Show more search options": [
         "Більше варіантів пошуку"
+      ],
+      "Show navigation bar": [
+        "Показати панель навігації"
       ],
       "Show preview": [
         "Показати попередній перегляд"
@@ -1133,6 +1196,12 @@
       ],
       "Stay": [
         "Залишитися"
+      ],
+      "Stop downloading the writing assistant": [
+        "Зупинити завантаження помічника у написанні"
+      ],
+      "Stop generating result": [
+        "Зупинити генерування тексту"
       ],
       "Strikethrough": [
         "Закреслений"
@@ -1445,11 +1514,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Розмова"
-      ]
-    },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Вітаємо"
       ]
     },
     "Animation": {
@@ -3319,6 +3383,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті даних."
       ],
@@ -3336,6 +3403,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Після покращення плану ви зможете встановлювати власний час відкладення."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Передплатіть тарифний план і розблокуйте короткі адреси електронної пошти та інші преміальні функції."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Отримайте доступ до безмежної кількості фільтрів для впорядкування поштової скриньки, передплативши тарифний план."
@@ -5576,6 +5646,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } про помічника у написанні ${ BRAND_NAME }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
         "Знайдено ${ providerFoldersNumLocalized } теки",
@@ -5927,6 +6000,9 @@
       "Country code": [
         "Код країни"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Пишіть кращі листи, швидко та без зусиль. Спробуйте зараз."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Створити ${ calendarsToBeCreatedCount } новий календар",
         "Створити ${ calendarsToBeCreatedCount } нові календарі",
@@ -6016,6 +6092,12 @@
       ],
       "Downloading paused": [
         "Завантаження призупинено"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Завантаження призупинено: ${ progressDisplay } ГБ"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Завантаження помічника у написанні: ${ progressDisplay } ГБ"
       ],
       "Draft": [
         "Чернетка"
@@ -6110,6 +6192,12 @@
       "Estimating time remaining...": [
         "Приблизний залишок часу..."
       ],
+      "Expand selection": [
+        "Розгорнути вибір"
+      ],
+      "Expand text": [
+        "Розгорнути текст"
+      ],
       "Expiration time": [
         "Час завершення"
       ],
@@ -6151,6 +6239,9 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Щоб отримати більше результатів пошуку, спробуйте шукати за цим ключовим словом у вмісті повідомлень вашої пошти."
+      ],
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Безплатно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів"
       ],
       "From": [
         "Від"
@@ -6383,6 +6474,9 @@
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
       ],
+      "More refine actions": [
+        "Удосконалити свої дії"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
@@ -6521,6 +6615,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
+      "Please share what the issue is": [
+        "Будь ласка, поділіться цією проблемою"
+      ],
       "Please share what you expected": [
         "Будь ласка, поділіться тим, що ви очікували"
       ],
@@ -6571,6 +6668,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Захистіть свою електронну пошту від потрапляння до списків розсилки або спамерів за допомогою ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Загальнодоступний обмін документами ще не підтримується."
       ],
       "Recipient: ": [
         "Отримувач: "
@@ -6679,6 +6779,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
+      ],
+      "Shorten selection": [
+        "Згорнути вибір"
+      ],
+      "Shorten text": [
+        "Скоротити текст"
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
@@ -6833,6 +6939,9 @@
       "This invitation is saved in a disabled calendar.": [
         "Це запрошення збережено у вимкненому календарі."
       ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Це посібник для написання тексту. Перевірте запропонований текст на точність. ${ learnMoreResult }"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
@@ -6970,6 +7079,12 @@
       ],
       "Unlock message": [
         "Розблокувати повідомлення"
+      ],
+      "Unread conversations": [
+        "Непрочитані розмови"
+      ],
+      "Unread messages": [
+        "Непрочитані повідомлення"
       ],
       "Unsaved changes": [
         "Незбережені зміни"
@@ -7132,6 +7247,9 @@
       ],
       "Writing assistant": [
         "Помічник з написання"
+      ],
+      "writing assistant iframe": [
+        "iframe помічника у написанні"
       ],
       "Yearly": [
         "Щороку"
@@ -7337,6 +7455,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Ваш браузер не підтримує помічника у написанні. Спробуйте запустити його на серверах."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
       ],
@@ -7351,6 +7472,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Ваше обладнання не підтримує локальний запуск помічника у написанні. Спробуйте запустити його на серверах."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
@@ -11938,6 +12062,9 @@
       "Action all messages": [
         "Застосувати до всіх повідомлень"
       ],
+      "Activate @pm.me": [
+        "Активувати @pm.me"
+      ],
       "Add a custom logo": [
         "Додати власний логотип"
       ],
@@ -12261,6 +12388,9 @@
       ],
       "Import failed": [
         "Не вдалося імпортувати"
+      ],
+      "Increase your privacy with more addresses": [
+        "Вдоскональте свою приватність за допомогою більшої кількості адрес"
       ],
       "Insert contacts": [
         "Вставити контакти"

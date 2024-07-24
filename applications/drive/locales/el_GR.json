@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Accept": [
+        "Αποδοχή"
+      ],
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
@@ -237,6 +240,9 @@
       ],
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
+      ],
+      "Decline": [
+        "Απόρριψη"
       ],
       "Decrease": [
         "Μείωση"
@@ -4490,6 +4496,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Διατηρήστε το αρχείο σας ασφαλές με κρυπτογράφηση από άκρο σε άκρο σε ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
       ],
@@ -7501,6 +7510,9 @@
       "Failed to open document": [
         "Αποτυχία ανοίγματος εγγράφου"
       ],
+      "Failed to reject share invitation": [
+        "Αποτυχία απόρριψης πρόσκλησης κοινής χρήσης"
+      ],
       "Failed to remove the file": [
         "Αποτυχία κατάργησης του αρχείου"
       ],
@@ -7546,6 +7558,9 @@
       ],
       "Share invitation accepted successfully": [
         "Η κοινοποίηση πρόσκλησης έγινε αποδεκτή με επιτυχία"
+      ],
+      "Share invitation declined": [
+        "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
       "Stopping to share this item has failed": [
         "Η διακοπή της κοινής χρήσης αυτού του στοιχείου απέτυχε"
@@ -7607,16 +7622,28 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "Δημιουργία νέου εγγράφου"
+      ],
       "Next": [
         "Επόμενο"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Έναρξη χρήσης του ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Δοκιμάστε το αργότερα"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Δημιουργήστε και συνεργαστείτε σε έγγραφα. Όλα προστατεύονται από κρυπτογράφηση από άκρο σε άκρο."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Αρχίστε να χρησιμοποιείτε το ${ DRIVE_APP_NAME } και θα αναβαθμίστε τον αποθηκευτικό χώρο σας σε 5 GB!"
+      ],
+      "Introducing ${ DOCS_APP_NAME }": [
+        "Παρουσιάζουμε το ${ DOCS_APP_NAME }"
       ],
       "Set a recovery method": [
         "Ορίστε μέθοδο ανάκτησης"
