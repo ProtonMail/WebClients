@@ -8,4 +8,28 @@
 			display: block;
 		}
 	}
+
+	&-btc-text {
+		display: block;
+
+		@include media('>=#{rem(1000)}') {
+			display: none;
+		}
+
+		@include media('>=#{rem(1400)}') {
+			display: block;
+		}
+	}
+
+	&-chart {
+		display: none;
+
+		@include media('>=#{rem(1000)}') {
+			display: none;
+		}
+
+		@include media('>=#{rem(1270)}') {
+			display: block;
+		}
+	}
 }
