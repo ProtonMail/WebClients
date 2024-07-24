@@ -835,11 +835,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Öppna"
@@ -1505,11 +1505,6 @@
         "SimpleLogin"
       ]
     },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Välkommen"
-      ]
-    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "Inkorg för ${ nameToDisplay }"
@@ -1546,6 +1541,9 @@
       ],
       "Faster, broader device compatibility": [
         "Snabbare, bredare enhetskompatibilitet"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Promptar finns kvar på din enhet men kräver en engångsnedladdning och kompatibel hårdvara"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Kräver en engångsnedladdning och kompatibel hårdvara."
@@ -3433,6 +3431,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spara tid genom att skicka e-post eller inbjudningar till alla samtidigt, en premiumfunktion bland många andra. Uppgradera idag."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Ställ in en dataåterställningsmetod för att förhindra dataförlust."
       ],
@@ -3459,6 +3460,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Lås upp anpassade tider för snooze när du uppgraderar ditt paket."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Lås upp kortare e-postadresser och andra premiumfunktioner genom att uppgradera."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Lås upp obegränsade filter som sorterar din inkorg åt dig och fler premiumfunktioner när du uppgraderar."
@@ -5779,6 +5783,9 @@
       "and": [
         "och"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Ett annat tips kommer att visas nästa gång du öppnar Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Alla schemalagda eller snoozade meddelanden kommer att avbrytas."
       ],
@@ -5923,6 +5930,9 @@
       "Confirm phishing report": [
         "Bekräfta nätfiskerapport"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Fundera på när det är bäst för din mottagare att ta emot din e-post och schemalägg att det ska skickas då."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
@@ -5944,6 +5954,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Skapa ${ calendarsToBeCreatedCount } ny kalender",
         "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Skapa en mapp som t.ex. “${ suggestedFolderName }“ för att hålla alla dina onlinekvitton på ett ställe."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för denna import och de mappar du vill importera."
@@ -5996,6 +6009,12 @@
       "Default email application": [
         "Standardapplikation för e-post"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Visste du att du har krypterad molnlagring inkluderat med ditt ${ BRAND_NAME }-konto? Gå till ${ DRIVE_APP_NAME } och få ut det mesta av ditt utrymme. Det är gratis."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Visste du detta ? Vi har reserverat en kortare e-postadress för dig. Det är ditt användarnamn följt av “@${ PM_DOMAIN }“."
+      ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
@@ -6011,6 +6030,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Glöm inte att dela lösenordet med mottagaren"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Har du inte tid att ta itu med ett viktigt e-post nu, men vill inte glömma det? Ställ in en bättre tid för att den ska visas i din inkorg."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du inget? Kom ihåg att stänga av popup-blockerare."
@@ -6173,6 +6195,9 @@
       "Generate text": [
         "Generera text"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Ge inkommande räkningar en färgkodad etikett, t.ex. “${ suggestedLabelName }“. När de har betalats ändrar du etiketten till “${ suggestedPaidLabelName }“."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Har ${ numAttachments } bilaga (${ numAttachmentsSize })",
         "Har ${ numAttachments } bilagor (${ numAttachmentsSize })"
@@ -6212,6 +6237,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Om ditt alias säljs, läcker eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Om ditt lösenord hamnar på den mörka webben kan ${ BRAND_NAME } berätta för dig vilken tjänst din data läckte från och hur du stoppar skadan."
       ],
       "Image description": [
         "Bildbeskrivning"
@@ -6282,6 +6310,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Håll dina inloggningsuppgifter och kreditkortsuppgifter säkra men alltid till hands genom att lägga till dem i ${ PASS_APP_NAME }. Det är gratis och inkluderat med ditt ${ BRAND_NAME }-konto."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Håll ordning i din brevlåda genom att automatiskt rensa bort skräp och skräppost som har funnits där i mer än 30 dagar."
       ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
@@ -6942,6 +6976,9 @@
       "to ${ destinationElement } folder.": [
         "till ${ destinationElement }-mapp."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "För att undvika att bli av med de öppna flikarna i din webbläsare, använd appen för stationär dator."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
       ],
@@ -7068,6 +7105,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Använd olika e-postadresser för olika ändamål så att du enkelt kan separera din e-post efter arbete, personligt eller andra områden."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Använd tangentbordsgenvägar för att hantera din e-post snabbare."
       ],
@@ -7157,6 +7197,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "När du registrerar dig för ett nyhetsbrev, använd ett alias istället för din e-postadress. Din identitet förblir dold och du kan inaktivera aliaset när som helst."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "När du reser eller använder offentligt WiFi, anslut till ${ VPN_APP_NAME } för att förhindra att någon spårar din aktivitet online eller stjäl din data. Det är gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
@@ -9953,9 +9999,6 @@
       "Payment Processing": [
         "Betalning behandlas"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Lägg till en betalningsmetod i adminpanelen för att fortsätta."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
@@ -11835,6 +11878,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " är nu aktiv"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } borttagen"
       ]
@@ -11976,6 +12022,41 @@
         "${ minutes } minuter"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Aktivera"
+      ],
+      "Create an alias": [
+        "Skapa ett alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Skapa etikett “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Skapa ny e-postadress"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Skapa “${ suggestedFolderName }“-mapp"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Ladda ner ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Ladda ner appen för stationär dator"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Aktivera övervakning för mörka webben"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Skaffa min “@${ PM_DOMAIN }“-adress"
+      ],
+      "Open ": [
+        "Öppna "
+      ],
+      "Show me how": [
+        "Visa mig hur"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadress",
@@ -12008,6 +12089,9 @@
       ],
       "Action all messages": [
         "Åtgärda alla meddelanden"
+      ],
+      "Activate @pm.me": [
+        "Aktivera @pm.me"
       ],
       "Add a custom logo": [
         "Lägg till en anpassad logga"
@@ -12321,6 +12405,9 @@
       ],
       "Import groups": [
         "Importera grupper"
+      ],
+      "Increase your privacy with more addresses": [
+        "Öka din integritet med fler adresser"
       ],
       "Insert contacts": [
         "Infoga kontakter"

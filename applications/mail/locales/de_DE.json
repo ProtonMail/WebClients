@@ -453,6 +453,12 @@
       "Expand composer": [
         "Verfassen-Fenster vergrößern"
       ],
+      "Expand navigation bar to see folders": [
+        "Erweitere die Navigationsleiste, um Ordner zu sehen"
+      ],
+      "Expand navigation bar to see labels": [
+        "Erweitere die Navigationsleiste, um Kategorien zu sehen"
+      ],
       "Expand URL": [
         "Vollständige URL anzeigen"
       ],
@@ -826,11 +832,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Geöffnet"
@@ -1492,11 +1498,6 @@
         "Unterhaltung"
       ]
     },
-    "Alternative text for welcome image": {
-      "Welcome": [
-        "Willkommen"
-      ]
-    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "${ nameToDisplay }'s Posteingang"
@@ -1533,6 +1534,9 @@
       ],
       "Faster, broader device compatibility": [
         "Schnellere, umfassendere Gerätekompatibilität"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Die Prompts bleiben auf deinem Gerät, erfordern aber einen einmaligen Download und kompatible Hardware"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Erfordert einen einmaligen Download und kompatible Hardware."
@@ -3424,6 +3428,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spare Zeit, indem du E-Mails oder Einladungen an alle gleichzeitig sendest - eine Premiumfunktion neben vielen anderen. Upgrade noch heute."
       ],
+      "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
+        "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Lege eine Methode zur Datenwiederherstellung fest, um Datenverluste zu vermeiden."
       ],
@@ -3436,6 +3443,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Wenn du den Schreibassistenten weiterhin nutzen möchtest, beantrage den Zugang bei deinem Administrator."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, solltest du eine Wiederherstellungsphrase festlegen."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
       ],
@@ -3447,6 +3457,9 @@
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
         "Schalte eigene Nicht-Stören Zeiten frei, wenn du dein Abonnement erhöhst."
+      ],
+      "Unlock shorter email addresses and other premium features by upgrading.": [
+        "Schalte mit einem Upgrade kürzere E-Mail-Adressen und weitere Premiumfunktionen frei."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Schalte durch ein Upgrade unbegrenzte Filter, die deinen Posteingang für dich sortieren und weitere Premiumfunktionen frei."
@@ -5914,6 +5927,9 @@
       ],
       "Country code": [
         "Ländercode"
+      ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Verfasse bessere E-Mails, schnell und mühelos. Probiere es jetzt aus."
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuen Kalender erstellen",
@@ -9916,9 +9932,6 @@
       "Payment Processing": [
         "Zahlungsabwicklung"
       ],
-      "Please add a payment method in the dashboard to continue.": [
-        "Bitte füge im Dashboard eine Zahlungsmethode hinzu, um fortzufahren."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
@@ -11993,6 +12006,9 @@
       "Action all messages": [
         "Aktion für alle Nachrichten ausführen"
       ],
+      "Activate @pm.me": [
+        "@pm.me aktivieren"
+      ],
       "Add a custom logo": [
         "Benutzerdefiniertes Logo hinzufügen"
       ],
@@ -12305,6 +12321,9 @@
       ],
       "Import groups": [
         "Gruppen importieren"
+      ],
+      "Increase your privacy with more addresses": [
+        "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
       "Insert contacts": [
         "Kontakte einfügen"
