@@ -1,7 +1,7 @@
 @use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
-.banxa {
+.onramp {
 	&-iframe-container {
 		z-index: 1;
 		position: fixed;
@@ -20,6 +20,13 @@
 		z-index: map.get($z-indexes, 'dropzone');
 	}
 
+	&-loader {
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+
 	&-iframe {
 		position: absolute;
 		inline-size: 100%;
@@ -27,10 +34,10 @@
 
 		iframe {
 			html {
-				height: 100%;
+				block-size: 100%;
 
 				body {
-					height: 100%;
+					block-size: 100%;
 					justify-content: center;
 					align-items: center;
 					display: flex;
