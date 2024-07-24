@@ -7,7 +7,7 @@ import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities
 
 import type { WalletThunkArguments } from '../thunk';
 
-const name = 'exchange_rate' as const;
+const name = 'price_graph' as const;
 
 type WasmPriceGraphByFiatAndTimeframe = Partial<Record<string, WasmPriceGraph>>;
 

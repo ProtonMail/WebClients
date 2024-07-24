@@ -5,7 +5,7 @@ import { type ChartOptions } from 'chart.js';
 import { first, last } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
 import { Tooltip } from '@proton/components/components';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
@@ -42,6 +42,12 @@ interface Props {
     onClickBuy: () => void;
 }
 
+const getPercentChange = (graphData: WasmPriceGraph['GraphData']) => {
+    const firstDataPoint = first(graphData)?.ExchangeRate;
+    const absoluteChange = (last(graphData)?.ExchangeRate ?? 0) - (firstDataPoint ?? 0);
+    return firstDataPoint ? (absoluteChange / firstDataPoint) * 100 : 0;
+};
+
 export const MetricsAndCtas = ({
     apiAccount,
     apiWalletData,
@@ -59,9 +65,7 @@ export const MetricsAndCtas = ({
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
     const [priceGraphData = { GraphData: [] }] = usePriceGraphData(account.FiatCurrency, 'OneDay');
 
-    const firstDataPoint = first(priceGraphData.GraphData)?.ExchangeRate ?? 0;
-    const absoluteChange = (last(priceGraphData.GraphData)?.ExchangeRate ?? 0) - firstDataPoint;
-    const percentChange = (absoluteChange / firstDataPoint) * 100;
+    const percentChange = getPercentChange(priceGraphData.GraphData);
 
     const canSend = totalBalance > 0;
     const commonProps = {
