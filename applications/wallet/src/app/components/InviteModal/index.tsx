@@ -8,7 +8,7 @@ import { Prompt, Tooltip } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import walletExclusiveInvites from '@proton/styles/assets/img/illustrations/wallet-exclusive-invites.svg';
+import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.png';
 import { useWalletApiClients } from '@proton/wallet';
 
 import { Button, Input } from '../../atoms';
@@ -87,16 +87,24 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
         >
             <div className="flex flex-column">
                 <div className="flex items-center flex-column">
-                    <img src={walletExclusiveInvites} alt="" />
+                    <img
+                        src={walletExclusiveInvites}
+                        alt=""
+                        className="w-custom h-custom"
+                        style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
+                    />
 
                     <h1 className="block text-semibold text-4xl text-center">{c('Wallet invite')
                         .t`Exclusive Invites`}</h1>
                 </div>
 
                 <p className="my-4 text-center color-weak">{c('Wallet invite')
-                    .t`Share the ${WALLET_APP_NAME} Bitcoin experience with your friends and family! Enter their email to invite them to ${WALLET_APP_NAME} so you can all send Bitcoin via Email.`}</p>
+                    .t`${WALLET_APP_NAME} Early Access is limited to Visionary supporters and invited users.`}</p>
 
-                <div className="flex flex-row my-6">
+                <p className="my-4 text-center color-weak">{c('Wallet invite')
+                    .t`Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.`}</p>
+
+                <div className="flex flex-row mt-2">
                     <Input
                         id="invitee-email-input"
                         label={c('Wallet invite').t`Email address`}
