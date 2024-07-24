@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { FieldArrayRenderProps} from 'formik';
+import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
@@ -114,6 +114,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
                                             onDelete={() => helpers.remove(index)}
                                             touched={Boolean(form.touched?.[customFieldsKey]?.[index])}
                                             error={form.errors?.[customFieldsKey]?.[index] as Maybe<ExtraFieldErrors>}
+                                            showIcon={false}
                                         />
                                     ))}
 
