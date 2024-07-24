@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import type { WasmApiEmailAddress } from '@proton/andromeda';
+import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Button, CoreButton, Modal } from '../../../atoms';
+import { Button, ButtonLike, CoreButton, Modal } from '../../../atoms';
 
 interface Props extends ModalOwnProps {
     loading: boolean;
@@ -65,8 +67,15 @@ export const EmailIntegrationModal = ({
                         }}
                     >{c('Wallet Settings').t`Create new email address`}</Button>
                 )}
-                <Button disabled={loading} fullWidth shape="ghost" color="norm" className="mt-2">{c('Wallet Settings')
-                    .t`Learn more about Bitcoin via Email`}</Button>
+                <ButtonLike
+                    as={Href}
+                    href={getKnowledgeBaseUrl('/wallet-bitcoin-via-email')}
+                    disabled={loading}
+                    fullWidth
+                    shape="underline"
+                    color="norm"
+                    className="mt-2"
+                >{c('Action').t`Learn more about Bitcoin via Email`}</ButtonLike>
             </div>
         </Modal>
     );

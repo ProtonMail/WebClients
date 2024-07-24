@@ -12,6 +12,11 @@ import { mockUseBlockchainClient } from '../../tests';
 import { mockUseDebounceEffect } from '../../tests/mocks/useDebounceEffect';
 import { useWalletsChainData } from './useWalletsChainData';
 
+vi.mock('@proton/wallet/constants/settings', async () => {
+    const m = await vi.importActual('@proton/wallet/constants/settings');
+    return { ...m, POOL_FILLING_THRESHOLD: 3 };
+});
+
 const accounts = {
     '0': {
         wallet: expect.any(WasmWallet),
