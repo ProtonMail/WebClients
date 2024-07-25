@@ -88,6 +88,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getWallets(FREE_WALLETS),
                 [PLANS.PASS]: getWallets(FREE_WALLETS),
                 [PLANS.FAMILY]: getWallets(UNLIMITED_WALLETS),
+                [PLANS.DUO]: getWallets(UNLIMITED_WALLETS), // TODO validate with product
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,
@@ -109,6 +110,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.PASS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.FAMILY]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
+                [PLANS.DUO]: getWallets(UNLIMITED_WALLET_ACCOUNTS), // TODO validate with product
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,
@@ -130,6 +132,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.PASS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.FAMILY]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
+                [PLANS.DUO]: getWallets(UNLIMITED_WALLET_EMAIL), // TODO validate with product
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,
@@ -151,6 +154,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getBitcoinViaEmail(),
                 [PLANS.PASS]: getBitcoinViaEmail(),
                 [PLANS.FAMILY]: getBitcoinViaEmail(),
+                [PLANS.DUO]: getBitcoinViaEmail(), // TODO validate with product
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
                 [PLANS.BUNDLE_PRO]: null,

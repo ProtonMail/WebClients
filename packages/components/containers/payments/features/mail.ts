@@ -22,10 +22,12 @@ export const getNAddressesFeature = ({
     n,
     highlight,
     family,
+    duo,
 }: {
     n: number;
     highlight?: boolean;
     family?: boolean;
+    duo?: boolean;
 }): PlanCardFeatureDefinition => {
     const domain = 'proton.me';
 
@@ -35,7 +37,7 @@ export const getNAddressesFeature = ({
             .t`Create multiple email addresses for your online identities, e.g., JohnShopper@${domain} for shopping accounts, JohnNews@${domain} for news subscription`;
     }
 
-    if (family) {
+    if (family || duo) {
         tooltip = c('new_plans: tooltip')
             .t`Create up to ${n} email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${domain} for shopping accounts.`;
     }
