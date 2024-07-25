@@ -39,7 +39,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
 
   constructor(
-    private callbacks: WebsocketCallbacks,
+    readonly callbacks: WebsocketCallbacks,
     private logger: LoggerInterface,
   ) {
     window.addEventListener('offline', this.handleWindowWentOfflineEvent)
@@ -117,6 +117,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   disconnect(code: number): void {
     this.socket?.close(code)
+
+    if (this.reconnectTimeout) {
+      clearTimeout(this.reconnectTimeout)
+      this.reconnectTimeout = undefined
+    }
   }
 
   buildConnectionUrl(params: { serverUrl: string; token: string }): string {
@@ -142,7 +147,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     return ApiResult.ok(urlAndTokenResult.getValue())
   }
 
-  async connect(): Promise<void> {
+  async connect(abortSignal?: () => boolean): Promise<void> {
     if (this.destroyed) {
       throw new Error('Attempted to connect to a destroyed WebsocketConnection')
     }
@@ -172,6 +177,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       serverUrl: url,
       token,
     })
+
+    if (abortSignal && abortSignal()) {
+      this.logger.info('Aborting connection attempt due to abort signal')
+      return
+    }
 
     this.logger.info('Opening websocket connection')
 
@@ -229,7 +239,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.logDisconnectMetric(reason)
 
-    if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED) {
+    if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED && !this.destroyed) {
       this.queueReconnection()
     }
   }

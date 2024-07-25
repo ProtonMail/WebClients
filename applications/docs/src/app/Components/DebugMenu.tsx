@@ -33,7 +33,7 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
   }
 
   const closeConnection = async () => {
-    void application.websocketService.debugCloseConnection(docController.getSureDocument())
+    void application.websocketService.closeConnection(docController.getSureDocument())
   }
 
   const createInitialCommit = async () => {

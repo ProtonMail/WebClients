@@ -6,4 +6,5 @@ export interface DocLoaderInterface {
   initialize(lookup: NodeMeta): Promise<void>
   getDocController(): DocControllerInterface
   addStatusObserver(observer: StatusObserver): () => void
+  destroy(): void
 }
