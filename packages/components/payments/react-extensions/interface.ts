@@ -1,4 +1,4 @@
-import { PaymentProcessor } from '../core';
+import type { PaymentProcessor } from '../core';
 
 export type PaymentProcessorType =
     | 'paypal'

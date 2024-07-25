@@ -7,10 +7,11 @@ import type { SelectChangeEvent } from '@proton/components/components/selectTwo/
 import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
-import { Option } from '../../components';
+import { Option, Tooltip } from '../../components';
 import type { Props as SearchableSelectProps } from '../../components/selectTwo/SearchableSelect';
 import SearchableSelect from '../../components/selectTwo/SearchableSelect';
 import CountriesDropdown, { useCountries } from './CountriesDropdown';
+import { countriesWithStates, getBillingAddressStatus } from './subscription/helpers';
 
 function getStateList(countryCode: string) {
     if (countryCode === 'US') {
@@ -123,8 +124,6 @@ export const DEFAULT_TAX_BILLING_ADDRESS: BillingAddress = {
     State: null,
 };
 
-const countriesWithStates = ['US', 'CA'];
-
 export const useTaxCountry = (props: HookProps): HookResult => {
     const billingAddress: BillingAddress = props.statusExtended
         ? ({
@@ -216,6 +215,27 @@ const TaxCountrySelector = ({
     const selectedCountry = getCountryByCode(selectedCountryCode);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+    const { valid: billingAddressValid, reason: billingAddressInvalidReason } = getBillingAddressStatus({
+        CountryCode: selectedCountryCode,
+        State: federalStateCode,
+    });
+
+    const [showTooltip, setShowTooltip] = useState(false);
+    useEffect(() => {
+        let timeout: any;
+        if (!billingAddressValid) {
+            timeout = setTimeout(() => {
+                setShowTooltip(true);
+            }, 2000);
+        } else {
+            setShowTooltip(false);
+        }
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [billingAddressValid]);
+
     const collapsedText = (() => {
         if (selectedCountry?.label) {
             let text = selectedCountry.label;
@@ -229,10 +249,25 @@ const TaxCountrySelector = ({
         return c('Action').t`Select country`;
     })();
 
+    const tooltipText = (() => {
+        if (billingAddressInvalidReason === 'missingCountry') {
+            return c('Payments').t`Please select billing country`;
+        }
+
+        if (billingAddressInvalidReason === 'missingState') {
+            // translator: "state" as in "United States of America"
+            return c('Payments').t`Please select billing state`;
+        }
+
+        return null;
+    })();
+
     return (
         <div className={clsx('field-two-container', className)}>
             <div className="pt-1 mb-1" data-testid="billing-country">
-                <span className="text-bold">{c('Payments').t`Billing Country`}</span>
+                <Tooltip title={tooltipText} isOpen={showTooltip && !!tooltipText}>
+                    <span className="text-bold">{c('Payments').t`Billing Country`}</span>
+                </Tooltip>
                 {collapsed && (
                     <>
                         <span className="text-bold mr-2">:</span>

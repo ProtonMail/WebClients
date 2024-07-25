@@ -24,7 +24,7 @@ import { getMonthFreeText } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
 import PlanDiscount from './helpers/PlanDiscount';
 import PlanPrice from './helpers/PlanPrice';
-import { notHigherThanAvailableOnBackend } from './helpers/notHigherThanAvailableOnBackend';
+import { notHigherThanAvailableOnBackend } from './helpers/payment';
 
 type TotalPricings = {
     [key in CYCLE]: TotalPricing;
