@@ -12,9 +12,10 @@ interface Props {
     textContent: string;
     dense?: boolean;
     onSendInvite: (email: string) => void;
+    loading?: boolean;
 }
 
-export const WalletNotFoundErrorContent = ({ email, textContent, dense, onSendInvite }: Props) => {
+export const WalletNotFoundErrorContent = ({ email, textContent, dense, onSendInvite, loading }: Props) => {
     return (
         <div className="flex flex-column p-6">
             <div className={clsx('flex items-center', dense ? 'flex-row flex-nowrap mb-6' : 'flex-column')}>
@@ -43,6 +44,7 @@ export const WalletNotFoundErrorContent = ({ email, textContent, dense, onSendIn
                 onClick={() => {
                     onSendInvite(email);
                 }}
+                loading={loading}
             >{c('Bitcoin send').t`Send invite email`}</Button>
         </div>
     );
