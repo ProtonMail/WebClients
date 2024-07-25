@@ -35,7 +35,7 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
             createBlackFridayRule(store),
             createSecurityRule(store),
             createUserRatingRule(store),
-            createMonitorRule(store),
+            createMonitorRule(),
             createUsernameTooltipRule(),
         ],
     });

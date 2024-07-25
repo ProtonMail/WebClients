@@ -11,19 +11,16 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { selectPinnedItems } from '@proton/pass/store/selectors';
 import type { ItemRevision } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
 
 import './PinnedItemsBar.scss';
 
 export const PinnedItemsBar: FC = () => {
-    const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const { selectedItem, selectItem, filters } = useNavigation();
     const { filtered } = useItems();
 
@@ -45,7 +42,7 @@ export const PinnedItemsBar: FC = () => {
             });
         };
 
-    return items.length === 0 || !pinningEnabled ? null : (
+    return items.length === 0 ? null : (
         <div className="pass-pinned-items-list flex flex-auto w-full shrink-0 flex-1 items-center flex-nowrap py-1 px-3 border-bottom border-norm">
             <span className="flex items-center justify-center flex-nowrap text-sm text-no-wrap shrink-0 pr-4 border-right border-norm mr-2">
                 <Icon name="pin-angled" className="ml-1 mr-2" />

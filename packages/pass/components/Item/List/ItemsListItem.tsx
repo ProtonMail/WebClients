@@ -10,12 +10,10 @@ import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/compone
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevision, ShareType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
@@ -43,7 +41,6 @@ const ItemsListItemRaw: FC<Props> = ({
     const { data, shareId } = item;
     const { heading, subheading } = presentListItem(item);
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-    const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const bulk = useBulkSelect();
     const bulkSelected = bulk.isSelected(item);
     const bulkInFlight = useBulkInFlight(item);
@@ -91,7 +88,7 @@ const ItemsListItemRaw: FC<Props> = ({
                                     <ItemIconIndicators size={size} loading={loading} error={failed} />
                                 )}
 
-                                {pinningEnabled && item.pinned && (
+                                {item.pinned && (
                                     <IconBox
                                         size={2.5}
                                         mode="transparent"
