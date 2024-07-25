@@ -4,11 +4,6 @@
     "language": "tr_TR"
   },
   "contexts": {
-    "Account container": {
-      "Edit": [
-        "Düzenle"
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -39,9 +34,6 @@
       ],
       "Close this banner": [
         "Bu uyarıyı kapat"
-      ],
-      "Close tip": [
-        "İpucunu kapat"
       ],
       "Collapse wallets": [
         "Cüzdanları daralt"
@@ -163,9 +155,6 @@
       ],
       "Native Segwit": [
         "Native Segwit"
-      ],
-      "Nested Segwit": [
-        "Nested Segwit"
       ]
     },
     "Bitcoin send": {
@@ -270,9 +259,6 @@
       ],
       "VPN problem": [
         "VPN sorunu"
-      ],
-      "Wallet problem": [
-        "Cüzdan sorunu"
       ],
       "Website access problem": [
         "Site erişim sorunu"
@@ -1474,20 +1460,9 @@
         "Geçerli seçimdeki yinelenen dosya adları nedeniyle bazı görseller yüklenmedi."
       ]
     },
-    "Pagination": {
-      "Next": [
-        "İleri"
-      ],
-      "Previous": [
-        "Önceki"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
-      ],
-      "Leave empty if you don't want to add passphrase": [
-        "Parola eklemek istemiyorsanız boş bırakın"
       ],
       "Password": [
         "Parola"
@@ -1510,14 +1485,6 @@
     "QRCode reader": {
       "Loading QRCode reader": [
         "Kare kod okuyucu yükleniyor"
-      ]
-    },
-    "Receive bitcoin": {
-      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Bitcoin adresiniz aşağıdadır. Gizliliği arttırmak için her işlemde farklı bir adres kullanın."
-      ],
-      "Your bitcoin address": [
-        "Bitcoin adresiniz"
       ]
     },
     "Select search results": {
@@ -1658,15 +1625,6 @@
       ]
     },
     "Wallet Account": {
-      "Account label": [
-        "Hesap etiketi"
-      ],
-      "Add": [
-        "Ekle"
-      ],
-      "Add account": [
-        "Hesap ekle"
-      ],
       "Cancel": [
         "İptal"
       ],
@@ -1679,20 +1637,8 @@
       "Custom index": [
         "Özel dizin"
       ],
-      "Index": [
-        "Dizin"
-      ],
-      "Index of the account to add": [
-        "Eklenecek hesabın dizini"
-      ],
       "Savings for holiday": [
         "Tatil için birikim"
-      ],
-      "Script Type": [
-        "Betik Türü"
-      ],
-      "Script type used in account. This will have an impact on account derivation path.": [
-        "Hesapta kullanılan betik türü. Bu hesap türetme yolunu etkileyecektir."
       ],
       "Your account was successfully created": [
         "Hesabınız başarıyla oluşturuldu"
@@ -1701,11 +1647,6 @@
     "Wallet account": {
       "This account is already created": [
         "Bu hesap zaten oluşturuldu"
-      ]
-    },
-    "Wallet container": {
-      "Edit": [
-        "Düzenle"
       ]
     },
     "Wallet dashboard": {
@@ -1731,32 +1672,9 @@
         "Mevcut parmak izi kayıtlı olanla eşleşmiyor"
       ]
     },
-    "Wallet deletion": {
-      "Confirm to delete '${ wallet.Wallet.Name }'": [
-        "'${ wallet.Wallet.Name }' cüzdanını silmek için onaylayın"
-      ],
-      "Warning:'": [
-        "Uyarı:'"
-      ]
-    },
     "Wallet discover": {
-      "Backup your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesabınızı yedekleyin"
-      ],
-      "Backup your wallet's mnemonic": [
-        "Cüzdanınızın mnemonic yedekleyin"
-      ],
-      "Claim your wallet": [
-        "Cüzdanınızı talep edin"
-      ],
       "Discover": [
         "Keşfet"
-      ],
-      "Finish your account setup": [
-        "Hesap kurulumunuzu tamamlayın"
-      ],
-      "Set up your 2FA": [
-        "İki adımlı doğrulamanızı kurun"
       ]
     },
     "Wallet header": {
@@ -1793,29 +1711,14 @@
       ]
     },
     "Wallet preference": {
-      "Account label": [
-        "Hesap etiketi"
-      ],
       "Accounts": [
         "Hesaplar"
-      ],
-      "Advanced options": [
-        "Gelişmiş seçenekler"
-      ],
-      "Back up wallet": [
-        "Cüzdanı yedekle"
-      ],
-      "Back up wallet first": [
-        "Önce cüzdanı yedekle"
       ],
       "Clear browser storage": [
         "Tarayıcı verilerini temizle"
       ],
       "Delete account": [
         "Hesabı sil"
-      ],
-      "Delete this wallet": [
-        "Bu cüzdanı sil"
       ],
       "Delete wallet": [
         "Cüzdanı sil"
@@ -1825,55 +1728,14 @@
       ],
       "My super wallet": [
         "Süper cüzdanım"
-      ],
-      "Wallet name": [
-        "Cüzdan adı"
-      ],
-      "Your wallet preferences": [
-        "Cüzdan tercihleriniz"
       ]
     },
     "Wallet preferences": {
-      "Add": [
-        "Ekle"
-      ],
-      "Add a new email address": [
-        "Yeni e-posta adresi ekle"
-      ],
-      "Email integration": [
-        "E-posta entegrasyonu"
-      ],
-      "Learn more": [
-        "Ayrıntılı bilgi alın"
-      ],
       "Local currency": [
         "Yerel para birimi"
       ],
       "Select your currency": [
         "Para biriminizi seçin"
-      ],
-      "Send and receive Bitcoin by email with email integration.": [
-        "E-posta entegrasyonu sayesinde e-posta ile Bitcoin gönderin ve alın."
-      ]
-    },
-    "Wallet Receive": {
-      "Amount": [
-        "Tutar"
-      ],
-      "Amount to receive": [
-        "Alınacak miktar"
-      ],
-      "Discover Bitcoin Via Email": [
-        "E-posta ile Bitcoin'i Keşfedin"
-      ],
-      "Enter custom amount": [
-        "Özel bir miktar girin"
-      ],
-      "Leave empty to let the sender choose the amount": [
-        "Gönderenin miktarı seçmesine izin vermek için boş bırakın"
-      ],
-      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
-        "Diğer ${ WALLET_APP_NAME } kullanıcıları size e-posta ile Bitcoin gönderebilir."
       ]
     },
     "Wallet receive": {
@@ -1885,9 +1747,6 @@
       ],
       "Generate new address": [
         "Yeni adres oluştur"
-      ],
-      "Share address": [
-        "Adresi paylaş"
       ]
     },
     "Wallet send": {
@@ -1897,17 +1756,8 @@
       "A user icon with an exclamation mark, meaning that something unexpected happened": [
         "Beklenmedik bir şey olduğunu belirten ünlem işareti olan bir kullanıcı simgesi"
       ],
-      "Add Message to recipient": [
-        "Alıcıya Mesaj Ekle"
-      ],
       "Add private note to myself": [
         "Kendime özel not ekle"
-      ],
-      "Added address is invalid": [
-        "Eklenen adres geçersiz."
-      ],
-      "Amount": [
-        "Tutar"
       ],
       "Bitcoin address signature could not be verified": [
         "Bitcoin adresi imzası doğrulanamadı"
@@ -1917,9 +1767,6 @@
       ],
       "Could not create PSBT": [
         "PSBT oluşturulamadı"
-      ],
-      "Could not find address linked to this email": [
-        "Bu e-postayla bağlantılı adres bulunamadı"
       ],
       "Edit": [
         "Düzenle"
@@ -1942,17 +1789,8 @@
       "Median priority": [
         "Orta Öncelik"
       ],
-      "Money is on the way": [
-        "Para yolda"
-      ],
       "Network fees": [
         "Ağ ücretleri"
-      ],
-      "No address set on this BitcoinAddress": [
-        "Bu Bitcoin Adresine ayarlanmış bir adres yok"
-      ],
-      "No signature set on this BitcoinAddress": [
-        "Bu Bitcoin Adresine ayarlanmış bir imza yok"
       ],
       "Recent recipients": [
         "Son alıcılar"
@@ -1969,23 +1807,14 @@
       "Review": [
         "İncele"
       ],
-      "Send": [
-        "Gönder"
-      ],
       "Send all": [
         "Tümünü gönder"
       ],
       "The transaction could not be sent. Please try again later": [
         "İşlem gönderilemedi. Lütfen daha sonra tekrar deneyin."
       ],
-      "Transaction was succesfully sent": [
-        "İşlem başarılı bir şekilde gönderildi."
-      ],
       "Try adding an email address to start sending Bitcoin!": [
         "Bitcoin göndermeye başlamak için bir e-posta adresi eklemeyi deneyin!"
-      ],
-      "View details": [
-        "Bilgileri görüntüle"
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Beklerken, tüm ailenizi ve arkadaşlarınızı ${ WALLET_APP_NAME }  davet edin ki hepinize E-posta yoluyla Bitcoin gönderebilirsin."
@@ -2006,14 +1835,6 @@
       ],
       "Could not sign transaction": [
         "İşlem imzalanamadı"
-      ]
-    },
-    "Wallet settings": {
-      "Bitcoin unit": [
-        "Bitcoin birimi"
-      ],
-      "Unit in which bitcoin will be displayed": [
-        "Bitcoinin gösterileceği birim"
       ]
     },
     "Wallet Settings": {
@@ -2081,21 +1902,20 @@
         "Cüzdan silindi"
       ]
     },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Bitcoin birimi"
+      ]
+    },
     "Wallet setup": {
       "Add a passphrase (optional)": [
         "Parola ifadesi ekleyin (isteğe bağlı)"
-      ],
-      "Choose your local fiat currency to see the value of your transactions.": [
-        "İşlemlerinizin değerini göstermek için yerel itibari para birimini seçin."
       ],
       "Confirm": [
         "Onayla"
       ],
       "Could not create wallet": [
         "Cüzdan oluşturulamadı"
-      ],
-      "Create a new wallet": [
-        "Yeni bir cüzdan oluştur"
       ],
       "Done": [
         "Tamam"
@@ -2109,9 +1929,6 @@
       "Import wallet": [
         "Cüzdanı içe aktar"
       ],
-      "Important:": [
-        "Önemli:"
-      ],
       "Input mnemonic is invalid, please double check.": [
         "Girdiğiniz anımsatıcı geçersiz, lütfen tekrar kontrol edin."
       ],
@@ -2124,65 +1941,26 @@
       "Mnemonic length is not valid.": [
         "Anımsatıcı uzunluğu geçerli değil."
       ],
-      "My imported wallet${ indexStr }": [
-        "İçe aktarılan cüzdanım ${ indexStr }"
-      ],
-      "My wallet account ${ indexStr }": [
-        "Cüzdan hesabım ${ indexStr }"
-      ],
       "My wallet had a passphrase": [
         "Cüzdanımın bir parola ifadesi vardı"
-      ],
-      "My wallet${ indexStr }": [
-        "Cüzdanım ${ indexStr }"
-      ],
-      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
-        "Bu kelimeleri asla başkalarına vermeyin. ${ BRAND_NAME } asla bu kelimeleri talep etmeyecek. Onları dikkatlice yazın ve güvenli bir yerde saklayın."
       ],
       "Passphrase": [
         "Parola ifadesi"
       ],
-      "Please backup your secret recovery phrase before you delete your wallet.": [
-        "Cüzdanınızı silmeden önce gizli kurtarma ifadenizi yedekleyin."
-      ],
       "Seed phrase (12-24 words)": [
         "Seed ifadesi (12-24 kelime)"
-      ],
-      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
-        "Seed ifadesini güvenli bir şekilde saklayın; ${ BRAND_NAME } bu olmadan fonlarınızı kurtaramaz."
-      ],
-      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
-        "Bu 12 kelime, sadece ${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz bu cüzdanın dijital varlıklarını kurtarmak için kullanılmalıdır."
-      ],
-      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
-        "Bu anımsatıcı, bir sonraki sefere veya başka bir uyumlu yazılımda cüzdanınızı geri yüklemenize yardımcı olabilir."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
         "Bu cüzdan artık şifre çözülemez durumda. Tekrar şifre çözülebilir hale getirmek için, oluşturulması sırasında kullanılan anahtarları hesabınızda geri yüklemeniz gerekir. Aksi takdirde, bir cüzdan alanı boşaltmak için cüzdanı kaldırabilirsiniz."
       ],
-      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
-        "Cüzdanınızı geri yüklemek için bu gizli kurtarma ifadesini kullanın."
-      ],
       "View wallet seed phrase": [
         "Cüzdan seed ifadesini görüntüle"
-      ],
-      "Wallet name": [
-        "Cüzdan adı"
       ],
       "Wallet seed phrase": [
         "Cüzdan seed ifadesi"
       ],
-      "Wallet seed phrases encode the private key that controls your digital assets.": [
-        "Cüzdan seed ifadeleri, dijital varlıklarınızı kontrol eden özel anahtarı kodlar."
-      ],
       "Wallet setup": [
         "Cüzdan kurulumu"
-      ],
-      "What's a wallet passphrase": [
-        "Cüzdan parola ifadesi nedir"
-      ],
-      "What's a wallet seed phrase": [
-        "Cüzdan seed ifadesi nedir"
       ],
       "Your keys, your coins.": [
         "Anahtarlarınız, coinleriniz."
@@ -2197,9 +1975,6 @@
       ],
       "Security": [
         "Güvenlik"
-      ],
-      "Settings": [
-        "Ayarlar"
       ],
       "Upgrade": [
         "Yükselt"
@@ -2216,13 +1991,13 @@
         "+ Ekle"
       ],
       "Add bitcoins to your wallet": [
-        "Yolculuğunuza başlayınCüzdanınıza bitcoin ekleyin"
+        "Cüzdanınıza bitcoin ekleyin"
       ],
       "Amount": [
         "Tutar"
       ],
       "Buy": [
-        "Al"
+        "Satın al"
       ],
       "From": [
         "Gönderen"
@@ -2233,17 +2008,8 @@
       "Loading": [
         "Yükleniyor"
       ],
-      "Message": [
-        "İleti"
-      ],
       "Network fee": [
         "Ağ ücreti"
-      ],
-      "Network fees": [
-        "Ağ ücretleri"
-      ],
-      "Note": [
-        "Not"
       ],
       "Receive": [
         "Al"
@@ -2252,7 +2018,7 @@
         "Notu kaydet"
       ],
       "Start your journey": [
-        "Yolculuğunuza başlayınCüzdanınıza bitcoin ekleyin"
+        "Yolculuğunuza başlayın"
       ],
       "To": [
         "Alıcı"
@@ -2260,17 +2026,11 @@
       "Total (sent amount + fee)": [
         "Toplam (gönderilen miktar + ücret)"
       ],
-      "Total (sent amount + fees)": [
-        "Toplam (gönderilen miktar + ücretler)"
-      ],
       "Transaction note": [
         "İşlem notu"
       ],
       "Unknown": [
         "Bilinmiyor"
-      ],
-      "View advanced settings": [
-        "Gelişmiş ayarları göster"
       ],
       "View more": [
         "Daha fazlasını göster"
@@ -2290,14 +2050,6 @@
       ]
     },
     "Wallet transactions": {
-      "Recipient": [
-        "Alıcı",
-        "Alıcılar"
-      ],
-      "Sender": [
-        "Gönderici",
-        "Gönderici"
-      ],
       "Syncing transactions": [
         "İşlemler eşitleniyor"
       ],
@@ -2316,20 +2068,50 @@
         "Eşitle"
       ]
     },
-    "Wallet upgrade": {
-      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
-        "Yeni bir cüzdan hesabı eklemek için ya bu cüzdandaki mevcut bir cüzdan hesabını kaldırabilir ya da cüzdan başına daha fazla cüzdan hesabı almak için planınızı yükseltebilirsiniz."
-      ],
-      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
-        "Yeni bir cüzdan eklemek için ya hesabınızdan mevcut bir cüzdanı kaldırabilir ya da daha fazla cüzdan almak için planınızı yükseltebilirsiniz."
-      ]
-    },
     "Wallet Upgrade": {
-      "Upgrade now": [
-        "Şimdi yükseltin"
-      ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
+      ],
+      "Bitcoin via email": [
+        "E-posta ile Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Cüzdan sorunu"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Hesap ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "İçe aktarılmış cüzdanım${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Cüzdanım${ indexStr }"
       ]
     },
     "Warning": {
