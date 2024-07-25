@@ -107,14 +107,6 @@ const WalletsSidebarListItem = ({
                         {wallet.Wallet.Name}
                     </div>
                 </SidebarListItemContent>
-                {renderWalletPreferencesModalState && (
-                    <WalletPreferencesModal
-                        wallet={wallet}
-                        theme={theme}
-                        otherWallets={otherWallets}
-                        {...walletPreferencesModalState}
-                    />
-                )}
             </SidebarListItemLink>
 
             {showAccounts && !wallet.IsNotDecryptable && (
@@ -160,6 +152,15 @@ const WalletsSidebarListItem = ({
                         </SidebarListItemButton>
                     </SidebarListItem>
                 </ul>
+            )}
+
+            {renderWalletPreferencesModalState && (
+                <WalletPreferencesModal
+                    wallet={wallet}
+                    theme={theme}
+                    otherWallets={otherWallets}
+                    {...walletPreferencesModalState}
+                />
             )}
         </>
     );
