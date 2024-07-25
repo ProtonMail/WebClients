@@ -23,10 +23,10 @@ type Props = { onClose: () => void };
 type FormValues = { email: string };
 
 export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
-    const monitor = useMonitor();
+    const { verifyAddress } = useMonitor();
 
     const { loading, dispatch } = useRequest(addCustomAddress, {
-        onSuccess: ({ data }) => monitor.verifyAddress(intoCustomMonitorAddress(data), getEpoch()),
+        onSuccess: ({ data }) => verifyAddress(intoCustomMonitorAddress(data), getEpoch()),
     });
 
     const form = useFormik<FormValues>({

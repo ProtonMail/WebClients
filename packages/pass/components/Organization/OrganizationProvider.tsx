@@ -2,13 +2,11 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
@@ -33,10 +31,6 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
     const org = useSelector(selectOrganizationState);
     const b2bAdmin = user ? isB2BAdmin(user, passPlan) : false;
 
-    const enableOrganizationSharing = useFeatureFlag(PassFeature.PassEnableOrganizationSharing);
-    const enableOrganizationExport = useFeatureFlag(PassFeature.PassEnableOrganizationExport);
-    const enabled = enableOrganizationSharing || enableOrganizationExport;
-
     const context = useMemo<MaybeNull<OrganizationContextValue>>(
         () =>
             org
@@ -45,12 +39,12 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
                       organization: org.organization,
                       settings: {
                           ...org.settings,
-                          enabled: org.canUpdate && enabled,
+                          enabled: org.canUpdate,
                           sync: () => dispatch(withRevalidate(getOrganizationSettingsIntent())),
                       },
                   }
                 : null,
-        [b2bAdmin, org, enabled]
+        [b2bAdmin, org]
     );
 
     return <OrganizationContext.Provider value={context}>{children}</OrganizationContext.Provider>;
