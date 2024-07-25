@@ -1,5 +1,5 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
-import type { Item, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
+import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -52,3 +52,5 @@ export const hasDomain = (item: LoginItem) => item.data.content.urls.length > 0;
 
 export const hasOTP = ({ data: { content, extraFields } }: LoginItem) =>
     Boolean(content.totpUri.v || extraFields.some((field) => field.type === 'totp' && field.data.totpUri.v));
+
+export const isExtraOTPField = (field: ItemExtraField): field is ItemExtraField<'totp'> => field.type === 'totp';

@@ -1,8 +1,11 @@
+import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { State } from '@proton/pass/store/types';
+import type { FormSubmission} from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
-import { selectAutofillCandidates, selectItemsByDomain } from './items';
+import { selectAutofillCandidates, selectItemsByDomain, selectOTPCandidate } from './items';
 
 const withOptimistics = (item: {}) => ({ ...item, failed: expect.any(Boolean), optimistic: expect.any(Boolean) });
 
@@ -15,50 +18,56 @@ const stateMock = {
                     itemId: 'share1-item1',
                     state: ItemState.Active,
                     shareId: 'share1',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://proton.me', 'https://subdomain.proton.me'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('urls', ['https://proton.me', 'https://subdomain.proton.me'])
+                            .set('itemEmail', 'test@proton.me')
+                            .set('totpUri', '424242424242424242424242')
+                    ).data,
                 },
                 item2: {
                     /* item with unsecure protocol */
                     itemId: 'share1-item2',
                     state: ItemState.Active,
                     shareId: 'share1',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['http://proton.me'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) => content.set('urls', ['http://proton.me']))
+                        .data,
                 },
                 item3: {
                     /* item with private domain */
                     itemId: 'share1-item3',
                     state: ItemState.Active,
                     shareId: 'share1',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://github.io'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://github.io']))
+                        .data,
                 },
                 item4: {
                     /* item with private sub-domain */
                     itemId: 'share1-item4',
                     state: ItemState.Active,
                     shareId: 'share1',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://private.subdomain.github.io'] },
-                    },
+                    data: itemBuilder('login')
+                        .set('content', (content) =>
+                            content
+                                .set('urls', ['https://private.subdomain.github.io'])
+                                .set('itemUsername', 'test@github.io')
+                        )
+                        .set('extraFields', [
+                            {
+                                type: 'totp',
+                                data: { totpUri: '424242424242424242424242' },
+                                fieldName: 'totp',
+                            },
+                        ]).data,
                 },
                 item5: {
                     /* item with another private sub-domain */
                     itemId: 'share1-item5',
                     state: ItemState.Active,
                     shareId: 'share1',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://othersubdomain.github.io'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) =>
+                        content.set('urls', ['https://othersubdomain.github.io'])
+                    ).data,
                 },
             },
             share2: {
@@ -67,20 +76,16 @@ const stateMock = {
                     itemId: 'share2-item1',
                     state: ItemState.Trashed,
                     shareId: 'share2',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://proton.me'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) => content.set('urls', ['https://proton.me']))
+                        .data,
                 },
                 item2: {
                     /* active item with unsecure protocol */
                     itemId: 'share2-item2',
                     state: ItemState.Active,
                     shareId: 'share2',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['http://proton.me'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) => content.set('urls', ['http://proton.me']))
+                        .data,
                 },
             },
             share3: {
@@ -89,58 +94,55 @@ const stateMock = {
                     itemId: 'share3-item1',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['ftp://proton.me', 'htp::://invalid'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) =>
+                        content.set('urls', ['ftp://proton.me', 'htp::://invalid'])
+                    ).data,
                 },
                 item2: {
                     /* type note */
                     itemId: 'share3-item2',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    data: {
-                        type: 'note',
-                    },
+                    data: itemBuilder('note').data,
                 },
                 item3: {
                     /* type alias */
                     itemId: 'share3-item3',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    data: {
-                        type: 'alias',
-                    },
+                    data: itemBuilder('alias').data,
                 },
                 item4: {
                     /* active item with nested subdomain */
                     itemId: 'share3-item4',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://sub.domain.google.com'] },
-                    },
+                    lastUseTime: getEpoch(),
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('urls', ['https://sub.domain.google.com'])
+                            .set('totpUri', '4242424242424242424242424242')
+                    ).data,
                 },
                 item5: {
                     /* active item with nested subdomain */
                     itemId: 'share3-item5',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['https://my.sub.domain.google.com'] },
-                    },
+                    lastUseTime: getEpoch() + 1_000,
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('urls', ['https://my.sub.domain.google.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
                 },
                 item6: {
                     /* active item with unsecure nested subdomain */
                     state: ItemState.Active,
                     itemId: 'share3-item6',
                     shareId: 'share3',
-                    data: {
-                        type: 'login',
-                        content: { urls: ['http://google.com'] },
-                    },
+                    data: itemBuilder('login').set('content', (content) => content.set('urls', ['http://google.com']))
+                        .data,
                 },
             },
             share4: {
@@ -343,6 +345,33 @@ describe('item selectors', () => {
             const candidates = selectAutofillCandidates(parseUrl('https://subdomain.github.io'))(stateMock);
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item4));
+        });
+    });
+
+    describe('selectOTPCandidate', () => {
+        test('should match item for domain and username when matching top-level `totpUri`', () => {
+            const submission = { data: { userIdentifier: 'test@proton.me' } } as FormSubmission;
+            const candidate = selectOTPCandidate({ ...parseUrl('https://proton.me'), submission })(stateMock);
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
+        });
+
+        test('should match item for domain and username when matching extra totp field', () => {
+            const submission = { data: { userIdentifier: 'test@github.io' } } as FormSubmission;
+            const candidate = selectOTPCandidate({
+                ...parseUrl('https://private.subdomain.github.io'),
+                submission,
+            })(stateMock);
+
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item4));
+        });
+
+        test('should match last used item for domain if username not provided', () => {
+            const candidate = selectOTPCandidate({
+                ...parseUrl('https://google.com'),
+                submission: undefined,
+            })(stateMock);
+
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
         });
     });
 });
