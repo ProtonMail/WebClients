@@ -96,16 +96,7 @@ export const SAFARI_URL_SCHEME = 'proton-pass:';
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
-    [PassFeature.PassEnableOrganizationExport]: true,
-    [PassFeature.PassEnableOrganizationSharing]: true,
-    [PassFeature.PassItemHistoryV1]: true,
-    [PassFeature.PassMonitor]: true,
-    [PassFeature.PassPinningV1]: true,
-    [PassFeature.PassRemovePrimaryVault]: true,
-    [PassFeature.PassSharingNewUsers]: true,
-    [PassFeature.PassSharingV1]: true,
     [PassFeature.PassUsernameSplit]: false,
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
-    [PassFeature.PassAccessKeyV1]: false,
 };

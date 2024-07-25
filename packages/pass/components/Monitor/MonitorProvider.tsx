@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useInsecurePasswords } from '@proton/pass/hooks/monitor/useInsecurePasswords';
 import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { AddressType, CustomAddressID, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import { breachesRequest } from '@proton/pass/store/actions/requests';
@@ -19,7 +18,6 @@ import {
     selectTotalBreaches,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, UniqueItem } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 
 import { CustomAddressAddModal } from './Address/CustomAddressAddModal';
 import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
@@ -29,7 +27,6 @@ type MonitorAction =
     | { type: 'verify'; data: MonitorAddress<AddressType.CUSTOM> & { sentAt?: number } };
 
 export interface MonitorContextValue {
-    enabled: boolean;
     didLoad: boolean;
     breaches: {
         data: {
@@ -55,7 +52,6 @@ const MonitorContext = createContext<MaybeNull<MonitorContextValue>>(null);
 export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
 
-    const enabled = useFeatureFlag(PassFeature.PassMonitor);
     const didLoad = useSelector(selectMonitorState) !== null;
 
     const alias = useSelector(selectAliasBreaches) ?? [];
@@ -80,7 +76,6 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const context = useMemo<MonitorContextValue>(
         () => ({
-            enabled,
             didLoad,
             breaches: { data: { alias, proton, custom }, loading: breaches.loading, count },
             insecure,
@@ -92,7 +87,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             deleteAddress: (addressId) => dispatch(deleteCustomAddress.intent(addressId)),
             sync: breaches.revalidate,
         }),
-        [enabled, breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, didLoad]
+        [breaches, insecure, duplicates, missing2FAs, excluded, alias, proton, custom, didLoad]
     );
     return (
         <MonitorContext.Provider value={context}>
