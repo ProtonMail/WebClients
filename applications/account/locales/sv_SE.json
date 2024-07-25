@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -766,11 +766,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1552,6 +1552,14 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1573,14 +1581,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6826,11 +6826,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7570,9 +7570,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändra bara dessa inställningar om du använder PGP med mottagare som inte använder ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Endast du kan se etiketterna."
       ],
       "Open source": [
         "Öppen källkod"
@@ -8935,14 +8932,6 @@
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
-    "Input label": {
-      "Access": [
-        "Åtkomst"
-      ],
-      "Label (optional)": [
-        "Etikett (valfritt)"
-      ]
-    },
     "Input placeholder": {
       "Add label": [
         "Lägg till etikett"
@@ -9844,9 +9833,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
-      ],
-      "Link label": [
-        "Länketikett"
       ],
       "Logo": [
         "Logga"
@@ -11138,6 +11124,23 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11165,23 +11168,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -13154,6 +13140,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt den första månaden. Sedan kommer det förnyas automatiskt med ${ price } varje månad. Du kan avbryta när som helst."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transaktionen har upptäckts. Krediterna kommer att läggas till ditt konto när transaktionen är fullständigt bekräftad."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
@@ -15603,10 +15592,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [

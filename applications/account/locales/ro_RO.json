@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -763,11 +763,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -1399,6 +1399,9 @@
       "Faster, broader device compatibility": [
         "Compatibilitate cu mai multe dispozitive și mai rapid."
       ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Interogările rămân pe dispozitiv, dar necesită o descărcare unică și hardware compatibil."
+      ],
       "Run locally": [
         "Rulare locală"
       ],
@@ -1551,6 +1554,14 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1572,14 +1583,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6881,11 +6884,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7656,9 +7659,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Numai dvs. puteți vedea etichetele."
       ],
       "Open source": [
         "Cod sursă public"
@@ -9056,14 +9056,6 @@
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ]
     },
-    "Input label": {
-      "Access": [
-        "Accesare"
-      ],
-      "Label (optional)": [
-        "Etichetă (opțional)"
-      ]
-    },
     "Input placeholder": {
       "Add label": [
         "Adăugare etichetă"
@@ -9960,9 +9952,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
-      ],
-      "Link label": [
-        "Etichetă legătură web"
       ],
       "Logo": [
         "Logo"
@@ -11262,6 +11251,23 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11289,23 +11295,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -15805,10 +15794,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [

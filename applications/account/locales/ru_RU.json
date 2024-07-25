@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -763,11 +763,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1546,6 +1546,14 @@
         "Выберите Новогоднее предложение"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1567,14 +1575,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6902,11 +6902,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -7642,9 +7642,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Только вы можете видеть ярлыки."
       ],
       "Open source": [
         "Открытый исходный код"
@@ -9030,14 +9027,6 @@
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ]
     },
-    "Input label": {
-      "Access": [
-        "Доступ"
-      ],
-      "Label (optional)": [
-        "Ярлык (необязательно)"
-      ]
-    },
     "Input placeholder": {
       "Add label": [
         "Добавить ярлык"
@@ -9938,9 +9927,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
-      ],
-      "Link label": [
-        "Ярлык ссылки"
       ],
       "Logo": [
         "Логотип"
@@ -11242,6 +11228,23 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11269,23 +11272,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -15837,10 +15823,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
