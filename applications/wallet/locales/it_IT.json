@@ -4,11 +4,6 @@
     "language": "it_IT"
   },
   "contexts": {
-    "Account container": {
-      "Edit": [
-        "Modifica"
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
@@ -39,9 +34,6 @@
       ],
       "Close this banner": [
         "Chiudi questo banner"
-      ],
-      "Close tip": [
-        "Chiudi suggerimento"
       ],
       "Collapse wallets": [
         "Comprimi wallet"
@@ -163,9 +155,6 @@
       ],
       "Native Segwit": [
         "Native Segwit"
-      ],
-      "Nested Segwit": [
-        "Nested Segwit"
       ]
     },
     "Bitcoin send": {
@@ -270,9 +259,6 @@
       ],
       "VPN problem": [
         "Problema con VPN"
-      ],
-      "Wallet problem": [
-        "Problema relativo al wallet"
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
@@ -1474,20 +1460,9 @@
         "Alcune immagini non sono state caricate a causa di nomi di file duplicati nell'attuale selezione."
       ]
     },
-    "Pagination": {
-      "Next": [
-        "Successivo"
-      ],
-      "Previous": [
-        "Precedente"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Un modo per contattarti"
-      ],
-      "Leave empty if you don't want to add passphrase": [
-        "Lascia vuoto se non desideri aggiungere una passphrase"
       ],
       "Password": [
         "Password"
@@ -1510,14 +1485,6 @@
     "QRCode reader": {
       "Loading QRCode reader": [
         "Caricamento del lettore di codici QR"
-      ]
-    },
-    "Receive bitcoin": {
-      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Ecco qui il tuo indirizzo Bitcoin. Per proteggere al meglio la tua privacy, utilizza un indirizzo diverso per ciascuna transazione."
-      ],
-      "Your bitcoin address": [
-        "Il tuo indirizzo bitcoin"
       ]
     },
     "Select search results": {
@@ -1658,15 +1625,6 @@
       ]
     },
     "Wallet Account": {
-      "Account label": [
-        "Etichetta dell'account"
-      ],
-      "Add": [
-        "Aggiungi"
-      ],
-      "Add account": [
-        "Aggiungi un account"
-      ],
       "Cancel": [
         "Annulla"
       ],
@@ -1679,20 +1637,8 @@
       "Custom index": [
         "Indice personalizzato"
       ],
-      "Index": [
-        "Indice"
-      ],
-      "Index of the account to add": [
-        "Indice dell'account da aggiungere"
-      ],
       "Savings for holiday": [
         "Risparmi per le vacanze"
-      ],
-      "Script Type": [
-        "Tipo di script"
-      ],
-      "Script type used in account. This will have an impact on account derivation path.": [
-        "Tipo di script utilizzato nell'account. Ciò influirà sul percorso di derivazione dell'account."
       ],
       "Your account was successfully created": [
         "Il tuo account è stato creato."
@@ -1701,11 +1647,6 @@
     "Wallet account": {
       "This account is already created": [
         "Questo account è già creato"
-      ]
-    },
-    "Wallet container": {
-      "Edit": [
-        "Modifica"
       ]
     },
     "Wallet dashboard": {
@@ -1731,32 +1672,9 @@
         "L'impronta digitale corrente non corrisponde a quella archiviata"
       ]
     },
-    "Wallet deletion": {
-      "Confirm to delete '${ wallet.Wallet.Name }'": [
-        "Conferma per eliminare '${ wallet.Wallet.Name }'"
-      ],
-      "Warning:'": [
-        "Avviso:"
-      ]
-    },
     "Wallet discover": {
-      "Backup your ${ BRAND_NAME } account": [
-        "Backup del tuo account ${ BRAND_NAME }"
-      ],
-      "Backup your wallet's mnemonic": [
-        "Backup della frase mnemonica del wallet"
-      ],
-      "Claim your wallet": [
-        "Richiedi il tuo wallet"
-      ],
       "Discover": [
         "Scopri"
-      ],
-      "Finish your account setup": [
-        "Termina la configurazione del tuo account"
-      ],
-      "Set up your 2FA": [
-        "Imposta la 2FA"
       ]
     },
     "Wallet header": {
@@ -1793,29 +1711,14 @@
       ]
     },
     "Wallet preference": {
-      "Account label": [
-        "Etichetta dell'account"
-      ],
       "Accounts": [
         "Account"
-      ],
-      "Advanced options": [
-        "Mostra le opzioni avanzate"
-      ],
-      "Back up wallet": [
-        "Backup del wallet"
-      ],
-      "Back up wallet first": [
-        "Per prima cosa esegui il backup del wallet"
       ],
       "Clear browser storage": [
         "Cancella l'archiviazione del browser"
       ],
       "Delete account": [
         "Elimina account"
-      ],
-      "Delete this wallet": [
-        "Elimina questo portafoglio"
       ],
       "Delete wallet": [
         "Elimina il portafoglio"
@@ -1825,55 +1728,14 @@
       ],
       "My super wallet": [
         "Il mio super wallet"
-      ],
-      "Wallet name": [
-        "Nome del portafoglio"
-      ],
-      "Your wallet preferences": [
-        "Preferenze wallet"
       ]
     },
     "Wallet preferences": {
-      "Add": [
-        "Aggiungi"
-      ],
-      "Add a new email address": [
-        "Aggiungi un nuovo indirizzo email"
-      ],
-      "Email integration": [
-        "Integrazione email"
-      ],
-      "Learn more": [
-        "Scopri di più"
-      ],
       "Local currency": [
         "Valuta locale"
       ],
       "Select your currency": [
         "Seleziona la tua valuta"
-      ],
-      "Send and receive Bitcoin by email with email integration.": [
-        "Invia e ricevi bitcoin via email utilizzando l'integrazione dell'email."
-      ]
-    },
-    "Wallet Receive": {
-      "Amount": [
-        "Importo"
-      ],
-      "Amount to receive": [
-        "Importo da ricevere"
-      ],
-      "Discover Bitcoin Via Email": [
-        "Scopri bitcoin via email"
-      ],
-      "Enter custom amount": [
-        "Inserisci importo personalizzato"
-      ],
-      "Leave empty to let the sender choose the amount": [
-        "Lascia vuoto per consentire al mittente di scegliere l'importo"
-      ],
-      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
-        "Altri utenti ${ WALLET_APP_NAME } possono inviare bitcoin al tuo indirizzo email."
       ]
     },
     "Wallet receive": {
@@ -1885,9 +1747,6 @@
       ],
       "Generate new address": [
         "Genera nuovo indirizzo"
-      ],
-      "Share address": [
-        "Condividi l'indirizzo"
       ]
     },
     "Wallet send": {
@@ -1897,17 +1756,8 @@
       "A user icon with an exclamation mark, meaning that something unexpected happened": [
         "Un'icona utente con un punto esclamativo indica che si è verificato un problema inaspettato"
       ],
-      "Add Message to recipient": [
-        "Aggiungi messaggio al destinatario"
-      ],
       "Add private note to myself": [
         "Aggiungi una nota personale per me"
-      ],
-      "Added address is invalid": [
-        "L'indirizzo aggiunto non è valido"
-      ],
-      "Amount": [
-        "Importo"
       ],
       "Bitcoin address signature could not be verified": [
         "La firma dell'indirizzo bitcoin non può essere verificata"
@@ -1917,9 +1767,6 @@
       ],
       "Could not create PSBT": [
         "Impossibile creare PSBT"
-      ],
-      "Could not find address linked to this email": [
-        "Impossibile trovare un indirizzo associato a questa email"
       ],
       "Edit": [
         "Modifica"
@@ -1942,17 +1789,8 @@
       "Median priority": [
         "Priorità mediana"
       ],
-      "Money is on the way": [
-        "I soldi sono in arrivo"
-      ],
       "Network fees": [
         "Commissioni di rete"
-      ],
-      "No address set on this BitcoinAddress": [
-        "Nessun indirizzo impostato su questo indirizzo bitcoin"
-      ],
-      "No signature set on this BitcoinAddress": [
-        "Nessuna firma impostata su questo indirizzo bitcoin"
       ],
       "Recent recipients": [
         "Destinatari recenti"
@@ -1969,23 +1807,14 @@
       "Review": [
         "Revisiona"
       ],
-      "Send": [
-        "Invia"
-      ],
       "Send all": [
         "Invia tutto"
       ],
       "The transaction could not be sent. Please try again later": [
         "Impossibile inviare la transazione. Riprova più tardi"
       ],
-      "Transaction was succesfully sent": [
-        "Transazione inviata correttamente"
-      ],
       "Try adding an email address to start sending Bitcoin!": [
         "Prova ad aggiungere un indirizzo email per iniziare a inviare bitcoin!"
-      ],
-      "View details": [
-        "Visualizza i dettagli"
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Nel frattempo, invita la tua famiglia e gli amici a ${ WALLET_APP_NAME } per poter inviare loro bitcoin via email."
@@ -2006,14 +1835,6 @@
       ],
       "Could not sign transaction": [
         "Impossibile firmare la transazione"
-      ]
-    },
-    "Wallet settings": {
-      "Bitcoin unit": [
-        "Unità bitcoin"
-      ],
-      "Unit in which bitcoin will be displayed": [
-        "Unità in cui verranno visualizzati i bitcoin"
       ]
     },
     "Wallet Settings": {
@@ -2081,21 +1902,20 @@
         "Il wallet è stato eliminato"
       ]
     },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Unità bitcoin"
+      ]
+    },
     "Wallet setup": {
       "Add a passphrase (optional)": [
         "Aggiungi una passphrase (facoltativo)"
-      ],
-      "Choose your local fiat currency to see the value of your transactions.": [
-        "Scegli la tua valuta fiat locale per visualizzare il valore delle tue transazioni."
       ],
       "Confirm": [
         "Conferma"
       ],
       "Could not create wallet": [
         "Impossibile creare il portafoglio"
-      ],
-      "Create a new wallet": [
-        "Crea un nuovo wallet"
       ],
       "Done": [
         "Fatto"
@@ -2109,9 +1929,6 @@
       "Import wallet": [
         "Importa un portafoglio"
       ],
-      "Important:": [
-        "Importante:"
-      ],
       "Input mnemonic is invalid, please double check.": [
         "La frase mnemonica inserita non è valida, ricontrolla."
       ],
@@ -2124,65 +1941,26 @@
       "Mnemonic length is not valid.": [
         "La lunghezza della frase mnemonica non è valida."
       ],
-      "My imported wallet${ indexStr }": [
-        "I miei wallet importati${ indexStr }"
-      ],
-      "My wallet account ${ indexStr }": [
-        "Il mio account wallet ${ indexStr }"
-      ],
       "My wallet had a passphrase": [
         "Il mio wallet disponeva di una passphrase"
-      ],
-      "My wallet${ indexStr }": [
-        "Il mio wallet${ indexStr }"
-      ],
-      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
-        "Non condividerle mai con nessuno. ${ BRAND_NAME } non ti chiederà mai di fornirle. Annotale e conservale in un posto sicuro."
       ],
       "Passphrase": [
         "Frase d'accesso"
       ],
-      "Please backup your secret recovery phrase before you delete your wallet.": [
-        "Prima di eliminare il tuo wallet, esegui il backup della tua frase di recupero segreta."
-      ],
       "Seed phrase (12-24 words)": [
         "Seed phrase (12-24 parole)"
-      ],
-      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
-        "Archivia la tua seed phrase in un posto sicuro; ${ BRAND_NAME } non può recuperare i tuoi fondi."
-      ],
-      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
-        "Utilizza queste 12 parole come ultima risorsa per recuperare gli asset digitali di questo wallet, come nel caso di problemi di accesso al tuo account ${ BRAND_NAME }."
-      ],
-      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
-        "Questa frase mnemonica può aiutarti a recuperare il tuo wallet in un secondo momento o su un altro software compatibile."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
         "Questo wallet non è più decrittabile. Per renderlo di nuovo decrittabile, è necessario recuperare le chiavi utilizzate durante la creazione nel tuo account. Altrimenti è possibile rimuoverlo per liberare spazio nel wallet."
       ],
-      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
-        "Utilizza questa frase di recupero segreta per recuperare il tuo wallet in caso di problemi di accesso al tuo account."
-      ],
       "View wallet seed phrase": [
         "Visualizza la seed phrase del wallet"
-      ],
-      "Wallet name": [
-        "Nome del portafoglio"
       ],
       "Wallet seed phrase": [
         "Seed phrase del wallet"
       ],
-      "Wallet seed phrases encode the private key that controls your digital assets.": [
-        "Le seed phrase del wallet codificano la chiave privata che controlla i tuoi asset digitali."
-      ],
       "Wallet setup": [
         "Configurazione del portafoglio"
-      ],
-      "What's a wallet passphrase": [
-        "Cos'è una passphrase del wallet?"
-      ],
-      "What's a wallet seed phrase": [
-        "Cos'è una seed phrase del wallet?"
       ],
       "Your keys, your coins.": [
         "Le tue chiavi, le tue monete."
@@ -2197,9 +1975,6 @@
       ],
       "Security": [
         "Sicurezza"
-      ],
-      "Settings": [
-        "Impostazioni"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -2233,17 +2008,8 @@
       "Loading": [
         "Caricamento"
       ],
-      "Message": [
-        "Messaggio"
-      ],
       "Network fee": [
         "Commissione di rete"
-      ],
-      "Network fees": [
-        "Commissioni di rete"
-      ],
-      "Note": [
-        "Nota"
       ],
       "Receive": [
         "Ricevi"
@@ -2260,17 +2026,11 @@
       "Total (sent amount + fee)": [
         "Totale (importo inviato + commissione)"
       ],
-      "Total (sent amount + fees)": [
-        "Totale (importo inviato + commissioni)"
-      ],
       "Transaction note": [
         "Nota transazione"
       ],
       "Unknown": [
         "Sconosciuta"
-      ],
-      "View advanced settings": [
-        "Visualizza impostazioni avanzate"
       ],
       "View more": [
         "Mostra di più"
@@ -2290,14 +2050,6 @@
       ]
     },
     "Wallet transactions": {
-      "Recipient": [
-        "Destinatario",
-        "Destinatari"
-      ],
-      "Sender": [
-        "Mittente",
-        "Mittenti"
-      ],
       "Syncing transactions": [
         "Sincronizzazione delle transazioni"
       ],
@@ -2316,20 +2068,50 @@
         "Sincronizza"
       ]
     },
-    "Wallet upgrade": {
-      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
-        "Per aggiungere un nuovo account wallet, puoi rimuoverne uno da questo wallet o aggiornare il tuo piano attuale per ottenere più account wallet per wallet."
-      ],
-      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
-        "Per aggiungere un nuovo wallet, puoi rimuoverne uno esistente dal tuo account o aggiornare il piano attuale per ottenere più wallet."
-      ]
-    },
     "Wallet Upgrade": {
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
       "Upgrade your privacy": [
         "Migliora la tua privacy"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portafoglio",
+        "${ n } account per portafoglio"
+      ],
+      "${ n } email address": [
+        "${ n } indirizzo email",
+        "${ n } indirizzi email"
+      ],
+      "${ n } wallet": [
+        "${ n } portafoglio",
+        "${ n } portafogli"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Un modo più sicuro per conservare il tuo Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema con Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Account ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "I miei portafogli importati${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "I miei portafogli${ indexStr }"
       ]
     },
     "Warning": {
