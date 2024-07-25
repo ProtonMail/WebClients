@@ -36,7 +36,7 @@ const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
             <SidebarListItemContent
                 data-testid={props['data-testid']}
                 left={<SidebarListItemContentIcon size={5} className="color-weak" name={icon} />}
-                className="sidebar-item-content flex gap-2 max-w-full"
+                className="sidebar-item-content flex gap-2 max-w-full pl-6"
             >
                 <div className="block text-ellipsis" title={label}>
                     {label}
@@ -78,7 +78,7 @@ export const OtherSidebarListItems = () => {
                 <SidebarListItemLink to={'/discover'}>
                     <SidebarListItemContent
                         data-testid="wallet-sidebar:discover"
-                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="grid-3" />}
+                        left={<SidebarListItemContentIcon size={5} className="color-weak" name="squares-in-square" />}
                         className="sidebar-item-content flex gap-2 max-w-full"
                     >
                         <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
