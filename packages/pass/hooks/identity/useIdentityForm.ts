@@ -35,13 +35,13 @@ export const buildFormSections = (values: IdentityValues, editing: boolean): Ide
         const filteredOptionalFields = section.optionalFields?.filter((field) => values[field.name]);
         const fields = [...section.fields, ...(filteredOptionalFields ?? [])];
         const currentFieldNames = new Set(fields.map(prop('name')));
+        const customFields = section.customFieldsKey ? values[section.customFieldsKey] : [];
+        const optionalFields = section.optionalFields?.filter((field) => !currentFieldNames.has(field.name));
+        const expanded = editing
+            ? fields.some((field) => values[field.name]) || customFields.length > 0
+            : section.expanded;
 
-        return {
-            ...section,
-            fields,
-            optionalFields: section.optionalFields?.filter((field) => !currentFieldNames.has(field.name)),
-            expanded: editing ? fields.some((field) => values[field.name]) : section.expanded,
-        };
+        return { ...section, fields, optionalFields, expanded };
     });
 };
 
