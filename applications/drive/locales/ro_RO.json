@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Acceptare"
+      ],
       "Activate recovery": [
         "Activare recuperare"
       ],
@@ -238,6 +241,9 @@
       ],
       "Customize import": [
         "Personalizare importare"
+      ],
+      "Decline": [
+        "Refuzare"
       ],
       "Decrease": [
         "Reducere"
@@ -4564,6 +4570,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
       ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Păstrați fișierele în siguranță cu criptare bilaterală în ${ DRIVE_APP_NAME }."
+      ],
       "Key fingerprint": [
         "Amprentă cheie"
       ],
@@ -7625,6 +7634,9 @@
       "Failed to open document": [
         "Deschiderea documentului a eșuat."
       ],
+      "Failed to reject share invitation": [
+        "Eșuare refuzare invitație la partajare."
+      ],
       "Failed to remove the file": [
         "Eliminarea fișierului a eșuat."
       ],
@@ -7674,6 +7686,9 @@
       ],
       "Share invitation accepted successfully": [
         "Invitația partajată a fost acceptată"
+      ],
+      "Share invitation declined": [
+        "Invitația la partajare a fost refuzată."
       ],
       "Stopping to share this item has failed": [
         "Oprirea partajării acestui articol a eșuat."
@@ -7735,14 +7750,23 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "Creați un document"
+      ],
       "Next": [
         "Înainte"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Începeți să utilizați ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Mai târziu"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Creați și colaborați la documente. Totul este protejat cu criptare bilaterală."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Începeți să folosiți ${ DRIVE_APP_NAME } și vă vom mări spațiul de stocare la 5 GiB!"
       ],

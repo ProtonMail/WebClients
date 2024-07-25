@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "ka_KA"
+    "language": "ka_GE"
   },
   "contexts": {
     "account": {
@@ -32,6 +32,9 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
+      ],
+      "Accept": [
+        "დასტური"
       ],
       "Activate recovery": [
         "აღდგენის აქტივაცია"
@@ -234,6 +237,9 @@
       ],
       "Customize import": [
         "შემოტანის მორგება"
+      ],
+      "Decline": [
+        "უარყოფა"
       ],
       "Decrease": [
         "შემცირება"
@@ -7588,6 +7594,9 @@
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }-ის გამოყენების დაწყება"
+      ],
+      "Try it later": [
+        "მოგვანებით სცადეთ"
       ]
     },
     "Onboarding Info": {
