@@ -454,10 +454,10 @@
         "Agrandir l'éditeur"
       ],
       "Expand navigation bar to see folders": [
-        "Étendre la barre de navigation pour voir les dossiers"
+        "Élargir la barre de navigation pour afficher les dossiers"
       ],
       "Expand navigation bar to see labels": [
-        "Étendre la barre de navigation pour voir les labels"
+        "Élargir la barre de navigation pour afficher les labels"
       ],
       "Expand URL": [
         "Afficher toute l'URL"
@@ -1233,6 +1233,10 @@
       ],
       "Trust": [
         "Faire confiance"
+      ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -11835,6 +11839,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " est maintenant actif"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } a été retiré."
       ]
@@ -11974,6 +11981,41 @@
       "${ minutes } minute": [
         "${ minutes } minute",
         "${ minutes } minutes"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Activer"
+      ],
+      "Create an alias": [
+        "Créer un alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Créer un label « ${ suggestedLabelName } »"
+      ],
+      "Create new email address": [
+        "Créer une adresse e-mail"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Créer un dossier « ${ suggestedFolderName } »"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Télécharger ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Télécharger l’application de bureau"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Activer la surveillance du dark web"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Obtenir mon adresse « @${ PM_DOMAIN } »"
+      ],
+      "Open ": [
+        "Ouvrir "
+      ],
+      "Show me how": [
+        "Montrez-moi comment faire"
       ]
     },
     "Title": {
