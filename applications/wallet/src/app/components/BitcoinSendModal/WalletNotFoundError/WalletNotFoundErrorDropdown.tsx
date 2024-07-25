@@ -12,6 +12,7 @@ interface Props {
     hasSentInvite: boolean;
     onSendInvite: (email: string) => void;
     canSendInvite: boolean;
+    loading?: boolean;
 }
 
 export const WalletNotFoundErrorDropdown = ({
@@ -20,6 +21,7 @@ export const WalletNotFoundErrorDropdown = ({
     onSendInvite,
     textContent,
     canSendInvite,
+    loading,
 }: Props) => {
     const { anchorRef, isOpen, close, open } = usePopperAnchor<HTMLButtonElement>();
 
@@ -59,7 +61,13 @@ export const WalletNotFoundErrorDropdown = ({
                 }}
                 contentProps={{ className: 'wallet-not-found-dropdown' }}
             >
-                <WalletNotFoundErrorContent onSendInvite={onSendInvite} email={email} textContent={textContent} dense />
+                <WalletNotFoundErrorContent
+                    onSendInvite={onSendInvite}
+                    email={email}
+                    textContent={textContent}
+                    loading={loading}
+                    dense
+                />
             </Dropdown>
         </>
     );
