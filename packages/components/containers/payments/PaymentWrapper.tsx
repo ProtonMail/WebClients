@@ -3,6 +3,7 @@ import type { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { useAuthentication } from '../../hooks';
 import { PaymentsNoApi } from './Payment';
+import type { BillingAddressStatus } from './subscription/helpers';
 
 export type Props = ReturnType<typeof usePaymentFacade> & {
     onPaypalCreditClick?: () => void;
@@ -16,6 +17,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     hasSomeVpnPlan: boolean;
     themeCode: ThemeCode;
     onMethod?: (method: string | undefined) => void;
+    billingAddressStatus?: BillingAddressStatus;
 };
 
 const PaymentWrapper = ({
@@ -45,6 +47,7 @@ const PaymentWrapper = ({
     isChargebeeEnabled,
     onMethod,
     user,
+    billingAddressStatus,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -88,6 +91,7 @@ const PaymentWrapper = ({
             bitcoinChargebee={bitcoinChargebee}
             isChargebeeEnabled={isChargebeeEnabled}
             user={user}
+            billingAddressStatus={billingAddressStatus}
         />
     );
 };

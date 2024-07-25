@@ -20,6 +20,7 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { useConfig, useHandler } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -323,6 +324,7 @@ const PaymentStep = ({
                                 onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                                 noMaxWidth
                                 hasSomeVpnPlan={hasSomeVpnPlan}
+                                billingAddressStatus={getBillingAddressStatus(subscriptionData.billingAddress)}
                             />
                         ) : (
                             <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>

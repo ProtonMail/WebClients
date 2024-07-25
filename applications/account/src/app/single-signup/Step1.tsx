@@ -54,6 +54,7 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
+import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import type { Breakpoints } from '@proton/components/hooks';
 import { useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
@@ -1420,6 +1421,9 @@ const Step1 = ({
                                                 hideFirstLabel
                                                 noMaxWidth
                                                 hasSomeVpnPlan={hasSomeVpnPlan}
+                                                billingAddressStatus={getBillingAddressStatus(
+                                                    model.subscriptionData.billingAddress
+                                                )}
                                             />
                                         ) : (
                                             <div className="mb-4">{c('Info')

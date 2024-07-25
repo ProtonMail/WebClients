@@ -99,7 +99,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import type { SelectedProductPlans } from './helpers';
 import { exclude24Months, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
-import { notHigherThanAvailableOnBackend } from './helpers/notHigherThanAvailableOnBackend';
+import { getBillingAddressStatus, notHigherThanAvailableOnBackend } from './helpers/payment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
@@ -836,6 +836,8 @@ const SubscriptionContainer = ({
 
     const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
 
+    const billingAddressStatus = getBillingAddressStatus(model.taxBillingAddress);
+
     const subscriptionCheckoutSubmit = (
         <>
             <SubscriptionSubmitButton
@@ -849,6 +851,7 @@ const SubscriptionContainer = ({
                     paymentFacade.bitcoinChargebee.bitcoinLoading
                 }
                 paymentMethodValue={paymentFacade.selectedMethodValue}
+                paymentMethodType={paymentFacade.selectedMethodType}
                 checkResult={checkResult}
                 className="w-full"
                 disabled={isFreeUserWithFreePlanSelected}
@@ -857,6 +860,8 @@ const SubscriptionContainer = ({
                 noPaymentNeeded={model.noPaymentNeeded}
                 subscription={subscription}
                 hasPaymentMethod={hasPaymentMethod}
+                billingAddressStatus={billingAddressStatus}
+                paymentProcessorType={paymentFacade.selectedProcessor?.meta.type}
             />
             {paymentFacade.showInclusiveTax && (
                 <InclusiveVatText
@@ -892,25 +897,6 @@ const SubscriptionContainer = ({
             )}
         </>
     );
-
-    const subscriptionCheckoutProps = {
-        freePlan,
-        subscription,
-        plansMap,
-        checkResult,
-        vpnServers,
-        gift,
-        submit: subscriptionCheckoutSubmit,
-        loading: loadingCheck,
-        currency: model.currency,
-        cycle: model.cycle,
-        planIDs: model.planIDs,
-        onChangeCurrency: handleChangeCurrency,
-        showTaxCountry: paymentFacade.showTaxCountry,
-        statusExtended: paymentFacade.statusExtended,
-        onBillingAddressChange: handleBillingAddressChange,
-        ...checkoutModifiers,
-    };
 
     const { currentPlan, hasPlanCustomizer } = getHasPlanCustomizer({ plansMap, planIDs: model.planIDs });
 
@@ -1064,6 +1050,7 @@ const SubscriptionContainer = ({
                                     hideFirstLabel={true}
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
+                                    billingAddressStatus={billingAddressStatus}
                                     onMethod={(value) => {
                                         if (
                                             value === PAYMENT_METHOD_TYPES.BITCOIN &&
@@ -1090,10 +1077,25 @@ const SubscriptionContainer = ({
                             data-testid="subscription-checkout"
                         >
                             <SubscriptionCheckout
-                                {...subscriptionCheckoutProps}
+                                freePlan={freePlan}
+                                subscription={subscription}
+                                plansMap={plansMap}
+                                checkResult={checkResult}
+                                vpnServers={vpnServers}
+                                gift={gift}
+                                submit={subscriptionCheckoutSubmit}
+                                loading={loadingCheck}
+                                currency={model.currency}
+                                cycle={model.cycle}
+                                planIDs={model.planIDs}
+                                onChangeCurrency={handleChangeCurrency}
+                                showTaxCountry={paymentFacade.showTaxCountry}
+                                statusExtended={paymentFacade.statusExtended}
+                                onBillingAddressChange={handleBillingAddressChange}
                                 showDiscount={!hasPlanCustomizer}
                                 enableDetailedAddons={!!hasPlanCustomizer}
                                 showPlanDescription={!hasPlanCustomizer}
+                                {...checkoutModifiers}
                             />
                         </div>
                     </div>

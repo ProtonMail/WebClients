@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
-import type { PaymentMethodType } from '@proton/components/payments/core';
+import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/components/payments/core';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { isChargebeePaymentMethod } from '@proton/components/payments/core/helpers';
+import { isChargebeePaymentProcessor } from '@proton/components/payments/react-extensions/helpers';
+import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
@@ -12,6 +15,7 @@ import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWra
 import EditCardModal from '../EditCardModal';
 import StyledPayPalButton from '../StyledPayPalButton';
 import type { SUBSCRIPTION_STEPS } from './constants';
+import type { BillingAddressStatus } from './helpers';
 
 type Props = {
     className?: string;
@@ -21,11 +25,14 @@ type Props = {
     checkResult?: SubscriptionCheckResponse;
     loading?: boolean;
     paymentMethodValue?: PaymentMethodType;
+    paymentMethodType: PlainPaymentMethodType | undefined;
     paypal: PaypalProcessorHook;
     disabled?: boolean;
     noPaymentNeeded?: boolean;
     subscription: SubscriptionModel;
     hasPaymentMethod: boolean;
+    billingAddressStatus: BillingAddressStatus;
+    paymentProcessorType: PaymentProcessorType | undefined;
 } & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
@@ -34,6 +41,7 @@ const SubscriptionSubmitButton = ({
     currency,
     loading,
     paymentMethodValue,
+    paymentMethodType,
     checkResult,
     disabled,
     onDone,
@@ -42,6 +50,8 @@ const SubscriptionSubmitButton = ({
     noPaymentNeeded,
     hasPaymentMethod,
     subscription,
+    billingAddressStatus,
+    paymentProcessorType,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
 
@@ -71,13 +81,19 @@ const SubscriptionSubmitButton = ({
         );
     }
 
+    const chargebeeInvalidBillingAddress =
+        !billingAddressStatus.valid &&
+        // the isChargebeePaymentProcessor condition checks if user has inhouse saved payment method used in the
+        // chargebee saved payment processor
+        (isChargebeePaymentMethod(paymentMethodType) || isChargebeePaymentProcessor(paymentProcessorType));
+
     const amountDue = checkResult?.AmountDue || 0;
     if (amountDue === 0) {
         return (
             <PrimaryButton
                 className={className}
                 loading={loading}
-                disabled={disabled}
+                disabled={disabled || chargebeeInvalidBillingAddress}
                 type="submit"
                 data-testid="confirm"
             >
@@ -99,7 +115,16 @@ const SubscriptionSubmitButton = ({
         );
     }
 
+    const billingAddressPlaceholder = (
+        <PrimaryButton className={className} disabled={true}>{c('Payments')
+            .t`Select billing country to pay`}</PrimaryButton>
+    );
+
     if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+        if (chargebeeInvalidBillingAddress) {
+            return billingAddressPlaceholder;
+        }
+
         return <ChargebeePaypalWrapper chargebeePaypal={chargebeePaypal} iframeHandles={iframeHandles} />;
     }
 
@@ -115,11 +140,19 @@ const SubscriptionSubmitButton = ({
         paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN ||
         paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN
     ) {
+        if (chargebeeInvalidBillingAddress) {
+            return billingAddressPlaceholder;
+        }
+
         return (
             <PrimaryButton className={className} disabled={true} loading={loading}>
                 {c('Info').t`Awaiting transaction`}
             </PrimaryButton>
         );
+    }
+
+    if (chargebeeInvalidBillingAddress) {
+        return billingAddressPlaceholder;
     }
 
     const price = (
