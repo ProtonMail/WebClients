@@ -42,9 +42,20 @@ describe('`buildFormSections`', () => {
         expect(result[1].expanded).toBe(false);
     });
 
-    it('should expand sections when editing is true only if fields have values', () => {
+    it('should expand sections when editing is true if section has non-empty fields', () => {
         const item = itemBuilder('identity');
         item.set('content', (content) => content.set('email', 'john@example.com'));
+
+        const result = buildFormSections(item.data.content, true);
+        expect(result[0].expanded).toBe(false);
+        expect(result[1].expanded).toBe(true);
+    });
+
+    it('should expand sections when editing is true if section has custom fields', () => {
+        const item = itemBuilder('identity');
+        item.set('content', (content) =>
+            content.set('extraContactDetails', [{ type: 'text', fieldName: 'test', data: { content: 'test' } }])
+        );
 
         const result = buildFormSections(item.data.content, true);
         expect(result[0].expanded).toBe(false);
