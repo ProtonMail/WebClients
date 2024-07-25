@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -766,11 +766,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Reload": [
         "Last inn på nytt"
@@ -1556,6 +1556,14 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1577,14 +1585,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3529,7 +3529,7 @@
         "${ totalStorageSize } gratis lagringsplass"
       ],
       "End-to-end encrypted": [
-        "Ende-til-ende kryptert"
+        "Ende-til-ende-kryptert"
       ]
     },
     "drive_signup_2023: Info": {
@@ -6838,11 +6838,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -7090,7 +7090,7 @@
         "Gi tokenet et beskrivende navn, slik som tjenesten du planlegger å bruke det med, og velg en av dine aktive egendefinerte domeneadresser. Kun denne adressen vil være i stand til å sende e-poster med dette tokenet."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Gi din offentlige nøkkel til dine venner, eller publiser den på nettet, slik at alle kan sende deg ende-til-ende kryptert e-post"
+        "Gi din offentlige nøkkel til dine venner, eller publiser den på nettet, slik at alle kan sende deg ende-til-ende-kryptert e-post"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
@@ -7612,9 +7612,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kun endre disse innstillingene hvis du bruker PGP med ikke-${ BRAND_NAME } mottakere."
-      ],
-      "Only you can see the labels.": [
-        "Bare du kan se etikettene."
       ],
       "Open source": [
         "Åpen kildekode"
@@ -8997,14 +8994,6 @@
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
-    "Input label": {
-      "Access": [
-        "Tilgang"
-      ],
-      "Label (optional)": [
-        "Etikett (valgfritt)"
-      ]
-    },
     "Input placeholder": {
       "Add label": [
         "Legg til etikett"
@@ -9906,9 +9895,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blokkeringsfiltrering for NetShield"
-      ],
-      "Link label": [
-        "Etikett på kobling"
       ],
       "Logo": [
         "Logo"
@@ -11203,6 +11189,23 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11230,23 +11233,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -12765,7 +12751,7 @@
     },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
-        "Ende-til-ende kryptert"
+        "Ende-til-ende-kryptert"
       ],
       "Open source": [
         "Åpen kildekode"
@@ -12877,7 +12863,7 @@
         "Kryptert passordbehandler som også ivaretar personvernet ditt"
       ],
       "End-to-end encrypted notes": [
-        "Ende-til-ende krypterte notater"
+        "Ende-til-ende-krypterte notater"
       ],
       "End-to-end encryption": [
         "Ende-til-ende kryptering"
@@ -13216,6 +13202,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ price } hver måned. Du kan avbryte når som helst."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transaksjonen er oppdaget. Kredittene vil bli lagt til kontoen din når transaksjonen er fullstendig bekreftet."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
@@ -15707,10 +15696,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -16984,10 +16973,10 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "Delt ende-til-ende kryptert"
+        "Delt ende-til-ende-kryptert"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Delt ende-til-ende kryptert med bekreftet kontakt"
+        "Delt ende-til-ende-kryptert med bekreftet kontakt"
       ]
     },
     "Tor out of date": {
@@ -17352,7 +17341,7 @@
         "Vennligst oppdater utvidelsen til siste versjon"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Feilrapporter er ikke ende-til-ende kryptert, vennligst ikke send noe sensitiv informasjon."
+        "Feilrapporter er ikke ende-til-ende-kryptert, vennligst ikke send noe sensitiv informasjon."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"

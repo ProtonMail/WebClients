@@ -1,24 +1,35 @@
 {
   "headers": {
     "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
-    "language": "sl_SL"
+    "language": "sl_SI"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ]
+    },
     "Action": {
-      "Account": [
-        "Račun"
-      ],
-      "Account settings": [
-        "Nastavitve računa"
-      ],
       "Add": [
         "Dodaj"
       ],
       "Add current URL": [
         "Dodajte trenutni URL"
-      ],
-      "Add domain": [
-        "Dodaj domeno"
       ],
       "Add more": [
         "Dodaj več"
@@ -28,6 +39,9 @@
       ],
       "Add username field": [
         "Dodajte polje za uporabniško ime"
+      ],
+      "Admin panel": [
+        "Administratorska plošča"
       ],
       "Advanced": [
         "Napredno"
@@ -86,17 +100,8 @@
       "Confirm access": [
         "Potrdite dostop"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Povežite svoj račun ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Nadaljuj"
-      ],
-      "Continue without pinning": [
-        "Nadaljujte brez pripenjanja"
-      ],
-      "Copy & fill in": [
-        "Kopirajte in izpolnite"
       ],
       "Copy and close": [
         "Kopiraj in zapri"
@@ -110,11 +115,11 @@
       "Create": [
         "Ustvari"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Ustvarite račun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Ustvarite svoj račun ${ BRAND_NAME }."
+      ],
+      "Create a new vault": [
+        "Ustvari nov trezor"
       ],
       "Create a new vault to share": [
         "Ustvarite nov trezor za skupno rabo"
@@ -122,17 +127,14 @@
       "Create alias": [
         "Ustvari vzdevek"
       ],
-      "Create an account": [
-        "Ustvarite račun"
-      ],
       "Create card": [
         "Ustvari kartico"
       ],
       "Create login": [
         "Ustvarite prijavo"
       ],
-      "Create new login": [
-        "Ustvarite novo prijavo"
+      "Create new items": [
+        "Ustvari nov predmet"
       ],
       "Create note": [
         "Ustvari opombo"
@@ -167,23 +169,11 @@
       "Deselect": [
         "Prekliči izbor"
       ],
-      "Disable autosave on this website": [
-        "Onemogoči samodejno shranjevanje na tem spletnem mestu"
-      ],
       "Discard": [
         "Zavrzi"
       ],
       "Dismiss": [
         "Opusti"
-      ],
-      "Do not show on this website": [
-        "Ne prikaži na tej spletni strani"
-      ],
-      "Do not suggest on this website": [
-        "Ne predlagaj na tem spletnem mestu"
-      ],
-      "Done": [
-        "Opravljeno"
       ],
       "Download this CSV template": [
         "Prenesite to predlogo CSV"
@@ -194,14 +184,17 @@
       "Edit vault": [
         "Uredi trezor"
       ],
+      "Enable Dark Web Monitoring": [
+        "Omogoči nadzor temnega spleta"
+      ],
       "Exclude from monitoring": [
         "Izključi iz spremljanja"
       ],
       "Export": [
         "Izvozi"
       ],
-      "Feedback & Help": [
-        "Povratne informacije in pomoč"
+      "Feedback": [
+        "Povratne informacije"
       ],
       "Fill password": [
         "Izpolni geslo"
@@ -218,6 +211,9 @@
       "Generated passwords": [
         "Ustvarjena gesla"
       ],
+      "Get ${ PASS_APP_NAME }": [
+        "Pridobi ${ PASS_APP_NAME }."
+      ],
       "Get mobile apps": [
         "Priskrbite si mobilno aplikacijo"
       ],
@@ -226,6 +222,9 @@
       ],
       "Get Pass Plus": [
         "Pridobite Pass Plus"
+      ],
+      "Get Started": [
+        "Začnite"
       ],
       "Help us improve": [
         "Pomagajte nam izboljšati"
@@ -236,20 +235,17 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Kako izvozim svoje podatke iz ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
-      "How to use ${ PASS_APP_NAME }": [
-        "Kako uporabljati ${ PASS_APP_NAME }"
-      ],
       "Import": [
         "Uvoz"
-      ],
-      "Import your passwords": [
-        "Uvozi gesla"
       ],
       "Importing": [
         "Uvažanje"
       ],
       "Include in monitoring": [
         "Vključi v spremljanje"
+      ],
+      "Install extension": [
+        "Namestite razširitev"
       ],
       "Invite others": [
         "Povabi druge"
@@ -272,8 +268,8 @@
       "Link expires after": [
         "Povezava poteče čez"
       ],
-      "Lock extension": [
-        "Podaljšek ključavnice"
+      "Lock ${ PASS_APP_NAME }": [
+        "Zakleni ${ PASS_APP_NAME }"
       ],
       "Make admin": [
         "Ustvari administratorja"
@@ -289,6 +285,9 @@
       ],
       "Manually sync your data": [
         "Ročno sinhroniziraj vaše podatke"
+      ],
+      "Mark as resolved": [
+        "Označi kot rešeno"
       ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
@@ -308,35 +307,32 @@
       "Move to another vault": [
         "Premakni se v drug trezor"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Premakni v smetnjak"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Premakni v smetnjak"
       ],
       "Multiple select": [
         "Več izbir"
       ],
-      "Not now": [
-        "Ne zdaj"
-      ],
       "OK": [
         "V redu"
       ],
-      "Open in a window": [
-        "Odprite v oknu"
-      ],
       "Open navigation": [
         "Odpri krmarjenje"
-      ],
-      "Open web app": [
-        "Odpri spletno aplikacijo"
       ],
       "Pass for Android": [
         "ProtonPass za Android"
       ],
       "Pass for iOS": [
         "ProtonPass za iOS"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Začasno ustavi spremljanje"
       ],
       "Pin item": [
         "Pripni predmet"
@@ -353,8 +349,8 @@
       "Reject invitation": [
         "Zavrni povabilo"
       ],
-      "Reload extension": [
-        "Ponovno naloži razširitev"
+      "Reload": [
+        "Osveži"
       ],
       "Remove": [
         "Odstrani"
@@ -371,6 +367,12 @@
       "Request a feature": [
         "Predlagajte novo funkcijo"
       ],
+      "Resend code": [
+        "Znova pošlji kodo"
+      ],
+      "Resend code (in ${ remaining }s)": [
+        "Znova pošlji kodo (v ${ remaining }s)"
+      ],
       "Resend invitation": [
         "Ponovno pošlji povabilo"
       ],
@@ -383,6 +385,9 @@
       "Restrict number of views": [
         "Omejite število dostopov"
       ],
+      "Resume monitoring": [
+        "Nadaljuj spremljanje"
+      ],
       "Retry": [
         "Poskusite znova"
       ],
@@ -392,14 +397,8 @@
       "Save": [
         "Shrani"
       ],
-      "Save passkey": [
-        "Shrani identifikacijski ključ"
-      ],
       "Saving": [
         "Shranjeno"
-      ],
-      "Saving passkey...": [
-        "Shranjevanje identifikacijskega ključa ..."
       ],
       "See all": [
         "Poglejte vse"
@@ -434,14 +433,8 @@
       "Show": [
         "Pokaži"
       ],
-      "Show advanced options": [
-        "Prikaži napredne možnosti"
-      ],
       "Sign back in": [
         "Ponovno se prijavite"
-      ],
-      "Sign in": [
-        "Prijava"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Prijavljeni ste z ${ BRAND_NAME }."
@@ -464,20 +457,17 @@
       "Trash": [
         "Smeti"
       ],
-      "Try again": [
-        "Poskusi znova"
+      "Try again.": [
+        "Poskusite ponovno."
+      ],
+      "Try for free": [
+        "Preizkusite brezplačno"
       ],
       "Unpin item": [
         "Odpni predmet"
       ],
-      "Update": [
-        "Posodobi"
-      ],
       "Update vault": [
         "Posodobi trezor"
-      ],
-      "Updating": [
-        "Posodabljanje"
       ],
       "Upgrade": [
         "Nadgradi"
@@ -488,8 +478,11 @@
       "Upgrade now to share with more people": [
         "Nadgradite zdaj za skupno rabo z več ljudmi"
       ],
-      "View app logs": [
-        "Oglejte si dnevnike aplikacij"
+      "Verify": [
+        "Preveri"
+      ],
+      "View details": [
+        "Prikaži podrobnosti"
       ],
       "View history": [
         "Pokaži zgodovino"
@@ -550,14 +543,41 @@
         "${ total } druge prijave uporabljajo isto geslo",
         "${ total } druge prijave uporabljajo isto geslo"
       ],
-      "A checked box means the feature is disabled.": [
-        "Potrjeno polje pomeni, da je funkcija onemogočena."
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA doda še eno raven varnosti vašim prijavam. ${ PASS_APP_NAME } olajša 2FA s shranjevanjem in samodejnim izpolnjevanjem vaših 2FA kod."
+      ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "E-poštni vzdevek deluje kot e-poštni naslov, vendar zmanjša neželeno pošto in skriva vaš dejanski e-poštni naslov in identiteto."
+      ],
+      "Change your passwords": [
+        "Spremenite svoja gesla"
+      ],
+      "Create unique passwords": [
+        "Ustvarite edinstvena gesla"
       ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "Spremljanje Dark Web je na voljo s plačljivim paketom. Nadgradite za takojšen dostop."
       ],
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Seznam domen, kjer se nekatere samodejne funkcije v ${ PASS_SHORT_APP_NAME } (samodejno izpolnjevanje, samodejni predlogi, samodejno shranjevanje) ne smejo izvajati.${ infoText }"
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Prejmite obvestilo, če so bili e-poštni naslov, geslo ali drugi osebni podatki razkriti."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
+      ],
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Naša vrhunska varnostna rešitev, ki temelji na umetni inteligenci, je zasnovana za uporabnike, ki iščejo večjo zaščito za svoje račune. ${ learnMoreLink }"
+      ],
+      "Set up 2FA for more security": [
+        "Nastavite 2FA za večjo varnost"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "Začnite nadzorovati kršitve varstva podatkov, povezane z računi, ustvarjenimi z vašim e-poštnim naslovom in vašimi vzdevki hide-my-email."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Temni splet je skriti del interneta, kjer je mogoče kupiti in prodati ukradene osebne podatke, kot je identiteta."
+      ],
+      "These items remain at risk": [
+        "Ti predmeti ostajajo ogroženi"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Vaš račun je ranljiv, pojdite v nastavitve in spremenite geslo."
@@ -567,6 +587,15 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svojo spletno prisotnost."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Z ${ PASS_SHORT_APP_NAME } nadzorom bodite korak pred grožnjami, tako da prejmete takojšnja opozorila, če so vaše poverilnice ogrožene. Odklenite napredne varnostne funkcije in podrobne dnevnike, da zaščitite svoje spletne aktivnosti."
+      ],
+      "Your email addresses were leaked in at least 1 data breach.": [
+        "Vaši e-poštni naslovi so bili razkriti zaradi vsaj 1 kršitve podatkov"
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "Vaši osebni podatki so bili razkriti zaradi kršitve varstva podatkov storitve tretje osebe"
       ]
     },
     "Error": {
@@ -581,12 +610,6 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Preverjanje ni uspelo. Če želite nadaljevati z izvozom, potrdite svoje geslo ${ BRAND_NAME }"
-      ],
-      "Authentication failure: ${ message }": [
-        "Neuspešno preverjanje pristnosti: ${ message }"
-      ],
-      "Cannot create alias (${ error }).": [
-        "Vzdevka ni mogoče ustvariti (${ error })."
       ],
       "Cannot send invitation at the moment": [
         "Trenutno ni mogoče poslati povabila",
@@ -744,9 +767,6 @@
       "Invalid password manager": [
         "Neveljaven upravitelj gesel"
       ],
-      "Invalid URL": [
-        "Neveljaven URL"
-      ],
       "Invitation could not be accepted": [
         "Povabila ni bilo mogoče sprejeti"
       ],
@@ -759,14 +779,8 @@
       "Item creation failed": [
         "Ustvarjanje predmeta ni uspelo"
       ],
-      "Item does not exist": [
-        "Predmet ne obstaja"
-      ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
         "LastPass bo izvozil poškodovano datoteko CSV, če katero od polj vašega predmeta vsebuje nepričakovane vejice, narekovaje ali več vrstic"
-      ],
-      "Missing passkey": [
-        "Manjka identifikacijski ključ"
       ],
       "Moving item failed": [
         "Premikanje predmeta ni uspelo"
@@ -774,20 +788,17 @@
       "Network error": [
         "Omrežna napaka"
       ],
+      "Offline mode is currently not available for two password mode.": [
+        "Način brez povezave trenutno ni na voljo za način z dvema gesloma."
+      ],
+      "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
+        "Način brez povezave trenutno ni na voljo za vaš paket in ni združljiv z načinom z dvema gesloma."
+      ],
       "Passphrase is incorrect": [
         "Geslo ni pravilno"
       ],
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Če želite nadaljevati, podelite ${ PASS_APP_NAME } potrebna dovoljenja za razširitev"
-      ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Pripnite razširitev ali izberite »Nadaljuj brez pripenjanja«."
-      ],
-      "Registration failure: ${ message }": [
-        "Neuspešna registracija: ${ message }"
       ],
       "Request timed out": [
         "Zahteva se je iztekla"
@@ -813,14 +824,11 @@
       "Something went wrong": [
         "Nekaj je šlo narobe"
       ],
-      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Nekaj ​​je šlo narobe. Znova naložite razširitev ${ PASS_APP_NAME }. Ta težava je bila zabeležena"
-      ],
       "The file you are trying to import is empty": [
         "Datoteka, ki jo poskušate uvoziti, je prazna"
       ],
-      "The URL is in the list": [
-        "URL je na seznamu"
+      "The session has expired. Please sign in again.": [
+        "Seja je potekla. Prosimo, znova se prijavite."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Preveč neuspešnih poskusov. Prosimo, prijavite se znova."
@@ -842,9 +850,6 @@
       ],
       "Unknown item": [
         "Neznan predmet"
-      ],
-      "Unknown passkey": [
-        "Neznan identifikacijski ključ"
       ],
       "Unlock failure": [
         "Napaka odklepanja"
@@ -878,11 +883,28 @@
       ]
     },
     "Error message": {
+      "Oops, something went wrong": [
+        "Ups, nekaj je šlo narobe"
+      ],
       "Please refresh the page or try again later.": [
         "Osvežite stran ali poskusite znova pozneje."
       ],
       "Something went wrong": [
         "Nekaj je šlo narobe"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Spremljanje Dark Web"
+      ],
+      "Integrated 2FA authenticator": [
+        "Vgrajen modul za preverjanje pristnosti 2FA"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomejeno število vzdevkov hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Delitev trezorja (z do ${ MAX_VAULT_MEMBERS } osebami)"
       ]
     },
     "file size format": {
@@ -974,23 +996,8 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bo uvozil samo prijave, zapiske in plačilne kartice."
       ],
-      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } vas bo pozval, ko bodo ustvarjena gesla samodejno izpolnjena."
-      ],
-      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
-        "${ PASS_APP_NAME } vas bo pozval, da shranite ali posodobite poverilnice."
-      ],
-      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } bo predlagal preverjanje pristnosti z uporabo shranjenih identifikacijskih ključev"
-      ],
-      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } bo predlagal ustvarjanje e-poštnega vzdevka na obrazcih za prijavo."
-      ],
-      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } bo predlagal ustvarjanje močnih gesel na obrazcih za prijavo."
-      ],
-      "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } bo predlagal shranjevanje identifikacijskih ključev."
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } bo zahteval ${ BRAND_NAME } geslo za dostop do podatkov v načinu brez povezave."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } je uspešno onemogočen"
@@ -998,11 +1005,11 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } je uspešno omogočeno"
       ],
-      "${ trialDaysLeft } day left": [
-        "Še ${ trialDaysLeft } dan",
-        "Še ${ trialDaysLeft } dneva",
-        "Še ${ trialDaysLeft } dni",
-        "Še ${ trialDaysLeft } dni"
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } zaznana kršitev",
+        "${ row.breachCount } zaznani kršitvi",
+        "${ row.breachCount } zaznanih kršitev",
+        "${ row.breachCount } zaznanih kršitev"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Sedem dni, da brezplačno preizkusite premijske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
@@ -1010,14 +1017,11 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
       ],
-      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Identifikacijski ključ za \"${ username }\" bo shranjen in na voljo v napravah, kjer je nameščen ${ PASS_APP_NAME }."
-      ],
       "Access successfully confirmed": [
         "Dostop je potrjen"
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Z našimi mobilnimi aplikacijami dostopajte do svojih gesel na poti."
+      "Add your custom email address to monitor :": [
+        "Dodajte svoj e-poštni naslov po meri v nadzor:"
       ],
       "Admin": [
         "Administrator"
@@ -1028,8 +1032,14 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Vzdevki z domenami po meri se ne nadzorujejo, dodajte jih kot e-poštni naslov po meri za spremljanje."
+      ],
       "All breaches for this address were resolved": [
         "Vse kršitve za ta naslov so bile odpravljene"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Vse trenutne kršitve bodo označene kot odpravljene. V primeru prihodnjih kršitev boste obveščeni."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Vsi premeti iz »${ payload.content.name }« so bili premaknjeni."
@@ -1049,11 +1059,14 @@
       "Auto-lock successfully disabled.": [
         "Samodejno zaklepanje je onemogočeno."
       ],
-      "Autosaved on ${ payload.domain }": [
-        "Samodejno shranjeno na ${ payload.domain }"
-      ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred izvozom podatkov v tej obliki odprite nastavitve Safarija -> zavihek \"Splošno\" -> onemogočite možnost \"Odpri varne datoteke po prenosu\". To bo Safariju preprečilo nepravilno ekstrahiranje izvožene datoteke."
+      ],
+      "Breaches detected": [
+        "Zaznana kršitev"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Prenesite svoja obstoječa gesla v ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Vgrajen overitelj 2FA"
@@ -1070,17 +1083,8 @@
       "Can view items in this vault.": [
         "Lahko si ogleda predmete v tem trezorju."
       ],
-      "Choose a saved passkey to sign-in to ${ domain }": [
-        "Za prijavo v ${ domain } izberite shranjen identifikacijski ključ"
-      ],
-      "Click the icon to open it anytime.": [
-        "Kliknite ikono, da jo odprete kadar koli."
-      ],
-      "Close this window in order to use a security key or another passkey.": [
-        "Če želite uporabiti varnostni ali drug identifikacijski ključ, zaprite to okno."
-      ],
-      "Close this window in order to use another passkey manager.": [
-        "Za uporabo drugega upravljavca identifikacijskih ključev najprej zaprite to okno."
+      "Change your password": [
+        "Spremenite vaše geslo"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potrdite svoje dodatno geslo, da nadaljujete z njegovo odstranitvijo."
@@ -1090,9 +1094,6 @@
       ],
       "Copied to clipboard": [
         "Kopirano v odložišče"
-      ],
-      "Creating alias...": [
-        "Ustvarjanje vzdevka ..."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
         "CSV ponuja priročno obliko za ogled vaših podatkov. Vendar zaradi enostavnosti nekateri podatki ne bodo vključeni (polja po meri, gesla ...). Za celoten izvoz priporočamo uporabo drugega formata."
@@ -1109,8 +1110,8 @@
       "Deleting \"${ payload.content.name }\"": [
         "Brisanje »${ payload.content.name }«"
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Odkrijte ${ PASS_APP_NAME } Youtube Video"
+      "Didn't receive the code?": [
+        "Niste prejeli kode?"
       ],
       "Drop file here to upload": [
         "Spusti datoteko tukaj za nalaganje."
@@ -1121,11 +1122,11 @@
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
         "Zaradi omejitev razširitev brskalnika Safari po izvozu podatkov v datotečni priponi manjka ».pgp«. Po izvozu preimenujte datoteko tako, da bo vključevala pripono .pgp (npr. datoteka.pgp)."
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Preprosto uvozite obstoječa gesla v ${ PASS_APP_NAME }."
-      ],
       "Editor": [
         "Urejevalnik"
+      ],
+      "email": [
+        "e-pošta"
       ],
       "Email address successfully deleted from monitoring": [
         "E-poštni naslov uspešno izbrisan iz nadzora"
@@ -1139,8 +1140,8 @@
       "Emptying trash...": [
         "Praznim smetnjak ..."
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Omogočite ${ PASS_APP_NAME } tako, da povežete svoj račun ${ BRAND_NAME }"
+      "Enable ${ PASS_SHORT_APP_NAME } beta": [
+        "Omogoči ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Vnesite potrditveno kodo. Števka ${ digit }."
@@ -1163,14 +1164,11 @@
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
       ],
+      "finance": [
+        "finance"
+      ],
       "Follow those steps to import your data with a generic CSV :": [
         "Za uvoz podatkov z generičnim CSV sledite tem korakom:"
-      ],
-      "For easy access to your passwords and more.": [
-        "Za enostaven dostop do vaših gesel in več."
-      ],
-      "For security reason, your access needs to be confirmed": [
-        "Iz varnostnih razlogov mora biti vaš dostop potrjen"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Iz varnostnih razlogov mora biti vaš dostop potrjen"
@@ -1181,14 +1179,17 @@
         "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
         "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne."
       ],
-      "Generating alias...": [
-        "Ustvarjanje vzdevka ..."
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Kar najbolje izkoristite Pass tako, da ustvarite trezor za vsako ekipo ali projekt."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
       ],
-      "Here you will find all the necessary information to get you started.": [
-        "Tukaj boste našli vse potrebne informacije za začetek."
+      "High Priority": [
+        "Visoka pomembnost"
+      ],
+      "How does monitoring work?": [
+        "Kako poteka nadzor?"
       ],
       "Import in progress:": [
         "Uvoz v teku:"
@@ -1208,6 +1209,12 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Za najboljšo izkušnjo aplikacije ${ PASS_APP_NAME } podelite potrebna dovoljenja za razširitev"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Namestite ${ PASS_APP_NAME } za ${ browser.title } za hitro samodejno izpolnjevanje vaših prijav."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Namestite ${ PASS_APP_NAME } za ${ browser.title } za hitro samodejno izpolnjevanje vaših prijav. "
+      ],
       "Internet connection lost": [
         "Internetna povezava je prekinjena"
       ],
@@ -1216,6 +1223,9 @@
       ],
       "Invitation sent": [
         "Povabilo poslano."
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Povabite določene ljudi in nastavite prava dovoljenja."
       ],
       "Invite successfully removed": [
         "Vabilo je bilo odstranjeno"
@@ -1268,6 +1278,12 @@
       "Item successfully unpinned": [
         "Predmet je bil odpet."
       ],
+      "Latest breach on ${ formattedDate }": [
+        "Zadnja kršitev dne ${ formattedDate }"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Naučite se ${ staySaferOnlineLink }"
+      ],
       "Leaving vault...": [
         "Zapuščam trezor ..."
       ],
@@ -1280,11 +1296,20 @@
       "Loading ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } se nalaga"
       ],
-      "Loading...": [
-        "Nalaganje ..."
+      "Logging you out...": [
+        "Izpisujem..."
+      ],
+      "Low Priority": [
+        "Nizka pomembnost"
       ],
       "me": [
         "jaz"
+      ],
+      "Medium Priority": [
+        "Srednja pomembnost"
+      ],
+      "Monitor accounts": [
+        "Nadzor računov"
       ],
       "Monitoring settings successfully updated": [
         "Nastavitve nadzora so bile uspešno posodobljene"
@@ -1304,20 +1329,23 @@
       "Never": [
         "Nikoli"
       ],
-      "No login found": [
-        "Ni prijave"
+      "No breaches detected": [
+        "Ni odkritih uhajanj podatkov"
+      ],
+      "No network connection": [
+        "Ni omrežne povezave"
       ],
       "None": [
         "Brez"
+      ],
+      "Offline mode": [
+        "Način brez povezave"
       ],
       "Offline mode could not be enabled at the moment": [
         "Način brez povezave trenutno ne more biti vključen"
       ],
       "Offline support successfully disabled": [
         "Način brez povezave je bil onemogočen."
-      ],
-      "Open the Extensions menu": [
-        "Odprite meni Razširitve"
       ],
       "Owner": [
         "Lastnik"
@@ -1328,11 +1356,8 @@
       "Pass Plus trial": [
         "Pass Plus preizkus"
       ],
-      "Passkey sign-in": [
-        "Prijava z identifikacijskim ključem"
-      ],
-      "Password copied": [
-        "Geslo je bilo kopirano"
+      "password": [
+        "geslo"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden, se samodejno izbrišejo iz zgodovine.",
@@ -1340,20 +1365,23 @@
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine.",
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne, se samodejno izbrišejo iz zgodovine."
       ],
-      "Pending access to the shared data": [
-        "Čakanje na dostop do podatkov v skupni rabi"
+      "Paused": [
+        "Začasno zaustavljeno"
       ],
       "Permanently deleting selected items": [
         "Trajno brisanje izbranih predmetov"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Pripni ${ PASS_APP_NAME } v orodno vrstico"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN koda registrirana. Uporabite jo za odklepanje ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Pripenjanje predmeta ..."
+        "Pripenjanje predmeta..."
+      ],
+      "Please check your spam folder or try resending the code.": [
+        "Preverite mapo z vsiljeno pošto ali poskusite znova poslati kodo."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potrdite svoje ${ BRAND_NAME } geslo, da omogočite način brez povezave."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potrdite geslo za ${ BRAND_NAME }, če želite izvoziti podatke o aplikaciji ${ PASS_APP_NAME }."
@@ -1379,9 +1407,6 @@
       "Please enter your current PIN code to continue": [
         "Za nadaljevanje vnesite veljaven PIN."
       ],
-      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
-        "Vnesite svoje dodatno geslo, če želite začeti uporabljati ${ PASS_SHORT_APP_NAME }."
-      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Nadgradite za zgodnji dostop do spletne aplikacije ${ PASS_APP_NAME }"
       ],
@@ -1393,6 +1418,12 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Račun je zaščiten z ${ PROTON_SENTINEL_LINK }, našim naprednim programom"
+      ],
+      "Reconnect": [
+        "Ponovno vzpostavite povezavo"
+      ],
+      "Reconnecting": [
+        "Ponovno povezovanje"
       ],
       "Registering extra password...": [
         "Registracija dodatnega gesla ..."
@@ -1406,20 +1437,11 @@
       "Restoring trashed items...": [
         "Obnovitev predmetov v smetnjaku ..."
       ],
-      "Save login": [
-        "Shrani prijavo"
-      ],
-      "Save passkey": [
-        "Shrani identifikacijski ključ"
-      ],
-      "Select an existing login item to update.": [
-        "Izberite podatke za prijavo, katere želite posodobiti."
-      ],
-      "Select an existing login or create a new one.": [
-        "Izberite obstoječo prijavo ali ustvarite novo."
-      ],
       "Select destination vault": [
         "Izberite ciljni trezor"
+      ],
+      "Select vault to share": [
+        "Izberite trezor za skupno rabo"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Izberite, kam želite shraniti uvožene trezorje."
@@ -1445,9 +1467,6 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Delite svoje prijave, varne zapiske z do 10 osebami"
       ],
-      "Sign in or create an account to continue.": [
-        "Za nadaljevanje se vpišite ali ustvarite račun."
-      ],
       "Sign in to your account": [
         "Vpišite se v svoj račun"
       ],
@@ -1463,6 +1482,9 @@
       "Successfully synced all vaults": [
         "Uspešno so sinhronizirani vsi trezorji"
       ],
+      "Suggested": [
+        "Predlagano"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Preklopite v drug trezor ali ustvarite predmet v tem trezorju"
       ],
@@ -1472,14 +1494,14 @@
       "Thank you, the problem has been reported": [
         "Hvala, težava je bila prijavljena"
       ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Spustni meni za samodejno izpolnjevanje se samodejno odpre, ko kliknete ali se osredotočite na polje."
-      ],
       "The export will only contain vaults that you own.": [
         "Izvoz bo vseboval le trezorje, ki so v vaši lasti."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Izvožena datoteka bo šifrirana s PGP in zahteva močno geslo."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Za uporabo ${ PASS_APP_NAME } bo potrebno dodatno geslo. Deluje kot dodatno geslo poleg vašega gesla ${ BRAND_NAME }."
@@ -1514,17 +1536,14 @@
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
       ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
+      ],
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
       ],
       "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Za dostop do identifikacijskih ključev odklenite ${ PASS_APP_NAME } z vašo PIN kodo"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Odklenite ${ PASS_APP_NAME } z vašo PIN kodo in shranili boste identifikacijski ključ"
+        "Neomejeno število vzdevkov ide-my-email"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odklenite ${ PASS_SHORT_APP_NAME } z geslom ${ BRAND_NAME }"
@@ -1532,17 +1551,11 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odklenite ${ PASS_SHORT_APP_NAME } z dodatnim geslom"
       ],
-      "Unlock it with your PIN to access the settings": [
-        "Odklenite ga s kodo PIN za dostop do nastavitev"
-      ],
       "Unpinning item...": [
-        "Odpenjanje predmeta ..."
+        "Odpenjanje predmeta..."
       ],
-      "Update login": [
-        "Posodobi prijavo"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "Nadgradi ${ PASS_APP_NAME }."
+      "Unverified": [
+        "Nepotrjeno"
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Nadgradite zdaj, da odklenete premijske funkcije"
@@ -1556,6 +1569,9 @@
       "User's access sucessfuly updated": [
         "Uporabnikov dostop je bil uspešno posodobljen"
       ],
+      "username": [
+        "uporabniško ime"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" je izbrisan"
       ],
@@ -1568,8 +1584,8 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" je bil odstranjen"
       ],
-      "Verification code": [
-        "Koda za preverjanje"
+      "Verification code sent.": [
+        "Koda za preverjanje je poslana."
       ],
       "Viewer": [
         "Preglednik"
@@ -1577,14 +1593,14 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Imamo težave pri sinhronizaciji podatkov z vašo lokalno shrambo. Prepričajte se, da imate dovolj prostora na disku za nemoteno delovanje aplikacije ${ PASS_SHORT_APP_NAME }."
       ],
+      "We’ve sent a verification code to ${ email }. Please enter it below:": [
+        "Poslali smo potrditveno kodo na ${ email }. Vnesite jo spodaj:"
+      ],
       "You are about to create:": [
         "Ustvarili boste:"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Sedaj lahko uporabljate ${ BRAND_NAME } geslo za dostop do ${ PASS_SHORT_APP_NAME } v načinu brez povezave"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Svoje poverilnice lahko hitro samodejno izpolnite s klikom na ikono ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nabiralnikov za ta vzdevek ne morete spremeniti."
@@ -1616,20 +1632,29 @@
       "You will be logged out and need to log in again on all of your other devices.": [
         "Odjavljeni boste in se boste morali znova prijaviti na vseh svojih drugih napravah."
       ],
+      "You will be notified of data breaches for these email addresses.": [
+        "O kršitvah varstva podatkov za te e-poštne naslove boste obveščeni."
+      ],
+      "You will be notified of data breaches for this email address.": [
+        "O kršitvah varstva podatkov za ta e-poštni naslov boste obveščeni."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "Ne boste več obveščeni o kršitvah varstva podatkov za ta e-poštni naslov."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "Ne boste več obveščeni o kršitvah varstva podatkov za ta e-poštni naslov."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "S to kodo PIN boste odklenili aplikacijo ${ PASS_APP_NAME }, ko se samodejno zaklene po obdobju nedejavnosti."
-      ],
-      "You're about to create": [
-        "Ustvarili boste"
       ],
       "You're invited to a vault.": [
         "Vabljeni ste v trezor."
       ],
-      "Your ${ PASS_APP_NAME } session is locked": [
-        "Vaša seja ${ PASS_APP_NAME } je zaklenjena"
-      ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Vaše informacije so bile najdene ${ displayedDate }"
       ]
     },
     "Label": {
@@ -1663,11 +1688,14 @@
         "${ minutes } minute",
         "${ minutes } minut"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } nadzor"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Različica ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } vpis",
+        "${ usageCount } vpisa",
+        "${ usageCount } vpisi",
+        "${ usageCount } vpisi"
       ],
       "1 hour": [
         "1 ura"
@@ -1729,29 +1757,11 @@
       "Application logs": [
         "Dnevniki aplikacij"
       ],
-      "Authenticate with passkeys": [
-        "Preverjanje pristnosti z identifikacijskimi ključi"
-      ],
       "Auto-lock after": [
         "Samodejno zaklepanje po"
       ],
-      "Autofill": [
-        "Samodejno izpolnjevanje"
-      ],
-      "Autofill 2FA": [
-        "Samodejno izpolnjevanje 2FA"
-      ],
-      "Automatically open autofill when a login field is focused": [
-        "Samodejno odpri samodejno izpolnjevanje, ko je izbrano polje za prijavo"
-      ],
-      "Autosave": [
-        "Samodejno shranjevanje"
-      ],
-      "Autosave vault": [
-        "Samodejno shranjevanje trezorja"
-      ],
-      "Autosuggest": [
-        "Samodejni predlog"
+      "Beta Access": [
+        "Dostop beta"
       ],
       "Capital letters (A-Z)": [
         "Velike črke (A-Z)"
@@ -1767,6 +1777,9 @@
       ],
       "Cards": [
         "Kartice"
+      ],
+      "Code": [
+        "Koda"
       ],
       "Confirm vault name": [
         "Potrdite ime trezorja"
@@ -1795,20 +1808,17 @@
       "Created at": [
         "Ustvarjeno ob"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Device": [
         "Naprava"
       ],
       "Display": [
         "Zaslon"
       ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Prikaži ikono ${ PASS_APP_NAME } v poljih za prijavo"
-      ],
       "Domain": [
         "Domena"
-      ],
-      "Domains": [
-        "Domene"
       ],
       "Download logs": [
         "Prenesite dnevnike"
@@ -1816,11 +1826,14 @@
       "Email": [
         "E-pošta"
       ],
-      "Email aliases": [
-        "E-poštni vzdevki"
+      "Email address": [
+        "E-poštni naslov"
       ],
       "Empty trash": [
         "Izprazni smetnjak"
+      ],
+      "Enable offline access": [
+        "Omogoči način brez povezave"
       ],
       "Expiration date": [
         "Datum poteka"
@@ -1845,6 +1858,9 @@
       ],
       "Forwards to": [
         "Posreduje na"
+      ],
+      "Free forever": [
+        "Brezplačno za vedno."
       ],
       "General": [
         "Splošno"
@@ -1900,6 +1916,9 @@
       "Last month": [
         "Prejšnji mesec"
       ],
+      "Last updated": [
+        "Nazadnje posodobljeno"
+      ],
       "Last week": [
         "Prejšnji teden"
       ],
@@ -1916,7 +1935,7 @@
         "Prijave"
       ],
       "Make all admins": [
-        "Omogoči vsem pravice skrbnika"
+        "Omogoči vsem adminstratorja"
       ],
       "Make all editors": [
         "Omogoči vsem urejanje"
@@ -1966,6 +1985,9 @@
       "Notes": [
         "Opombe"
       ],
+      "Offline mode": [
+        "Način brez povezave"
+      ],
       "Old-New": [
         "Staro-novo"
       ],
@@ -1978,9 +2000,6 @@
       "Passkey": [
         "Identifikacijski ključ"
       ],
-      "Passkeys": [
-        "Identifikacijski ključi"
-      ],
       "Passphrase": [
         "Geslo"
       ],
@@ -1990,12 +2009,6 @@
       "Password history": [
         "Zgodovina gesel"
       ],
-      "Passwords": [
-        "Gesla"
-      ],
-      "Pause list": [
-        "Zaustavi seznam"
-      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP šifriran JSON (priporočeno)"
       ],
@@ -2004,12 +2017,6 @@
       ],
       "Prefix": [
         "Predpona"
-      ],
-      "Prompt for auto-save": [
-        "Poziv za samodejno shranjevanje"
-      ],
-      "Prompt for auto-save when generating passwords": [
-        "Poziv za samodejno shranjevanje ustvarjenih gesel"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Zaščitite ${ PASS_APP_NAME } z dodatnim geslom"
@@ -2028,9 +2035,6 @@
       ],
       "Reveal password": [
         "Razkrij geslo"
-      ],
-      "Save passkeys": [
-        "Shrani identifikacijske ključe"
       ],
       "Security": [
         "Varnost"
@@ -2053,9 +2057,6 @@
       "Session locking": [
         "Zaklepanje seje"
       ],
-      "Settings": [
-        "Nastavitve"
-      ],
       "Share": [
         "Deli"
       ],
@@ -2064,6 +2065,9 @@
       ],
       "Special characters (!&*)": [
         "Posebni znaki (!&*)"
+      ],
+      "Status": [
+        "Stanje"
       ],
       "Strong": [
         "Močno"
@@ -2098,9 +2102,6 @@
       "Type": [
         "Vrsta"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Odkleni ${ PASS_APP_NAME }"
-      ],
       "Unnamed Credit Card": [
         "Neimenovana plačilna kartica"
       ],
@@ -2116,11 +2117,17 @@
       "Update": [
         "Posodobi"
       ],
+      "Used in": [
+        "Uporablja se v"
+      ],
       "Username": [
         "Uporabniško ime"
       ],
       "Vault ID": [
         "ID trezorja"
+      ],
+      "Vaults": [
+        "Trezorji"
       ],
       "View details": [
         "Prikaži podrobnosti"
@@ -2134,14 +2141,24 @@
       "Weak": [
         "Šibko"
       ],
-      "Website": [
-        "Spletna stran"
-      ],
       "Websites": [
         "Spletne strani"
       ],
       "You are about to create": [
         "Ustvarili boste"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Več o tem"
+      ],
+      "stay safer online": [
+        "izboljšajte svojo spletno varnost"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
       ]
     },
     "Message": {
@@ -2155,9 +2172,20 @@
         "V tem trezorju ste izbrali ${ semiboldText }"
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Dobrodošli v ${ appName }"
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Za organizacijo zahtevajte 2FA"
+      ],
+      "SSO integration (coming soon)": [
+        "Integracija SSO (kmalu na voljo)"
+      ]
+    },
+    "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
       ]
     },
     "Option": {
@@ -2223,6 +2251,9 @@
       "Full Name": [
         "Polno ime"
       ],
+      "me@example.com": [
+        "ime@primer.si"
+      ],
       "MM/YY": [
         "MM/LL"
       ],
@@ -2275,6 +2306,20 @@
         "Napišite svojo opombo"
       ]
     },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezorji ne smejo vsebovati več kot ${ vault.targetMaxMembers } uporabnika.",
@@ -2284,11 +2329,26 @@
       ]
     },
     "Title": {
-      "${ PASS_APP_NAME } Settings": [
-        "${ PASS_APP_NAME } Nastavitve"
+      "${ BRAND_NAME } addresses": [
+        "${ BRAND_NAME } naslovov"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Nadzor"
+      ],
+      "Account protection": [
+        "Zaščita računa"
       ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
+      ],
+      "Breach detected": [
+        "Odkrito je uhajanje podatkov"
+      ],
+      "Breaches": [
+        "Kršitve"
+      ],
+      "Breaches detected for": [
+        "Zaznane kršitve za"
       ],
       "Confirm extra password": [
         "Potrdite dodatno geslo"
@@ -2296,8 +2356,11 @@
       "Confirm PIN code": [
         "Potrdi PIN kodo"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Povežite svoj račun ${ BRAND_NAME }"
+      "Confirm your email": [
+        "Potrdite svoj elektronski naslov."
+      ],
+      "Create a vault": [
+        "Ustvari nov trezor"
       ],
       "Create PIN code": [
         "Ustvari PIN kodo"
@@ -2308,14 +2371,29 @@
       "Current version": [
         "Trenutna različica"
       ],
+      "Custom addresses": [
+        "Naslovi po meri"
+      ],
+      "Custom email monitoring": [
+        "Nadzor elektronske pošte po meri"
+      ],
+      "Custom emails": [
+        "E-poštni naslovi po meri"
+      ],
+      "Dark Web Monitoring": [
+        "Spremljanje Dark Web"
+      ],
       "Delete vault \"${ vaultName }\" ?": [
         "Želite izbrisati trezor \"${ vaultName }\"?"
+      ],
+      "Details": [
+        "Podrobnosti"
       ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
-      "Email": [
-        "E-pošta"
+      "Email address": [
+        "E-poštni naslov"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
@@ -2326,20 +2404,17 @@
       "Enter your PIN": [
         "Vnesite PIN"
       ],
-      "Fill & copy password": [
-        "Izpolni in kopiraj geslo"
+      "Excluded items": [
+        "Izključeni predmeti"
       ],
       "Get Started": [
         "Začnite"
       ],
-      "Get the mobile apps": [
-        "Pridobite mobilne aplikacije"
-      ],
       "Grant permissions": [
         "Odobrite dovoljenja"
       ],
-      "Hide my email": [
-        "Hide my email"
+      "Hide-my-email aliases": [
+        "Vzdevki hide-my-email"
       ],
       "History": [
         "Zgodovina"
@@ -2350,6 +2425,15 @@
       "Import to vault(s)": [
         "Uvozi v trezor(je)"
       ],
+      "Import your data": [
+        "Uvozi svoje podatke"
+      ],
+      "Inactive 2FA": [
+        "Neaktiven 2FA"
+      ],
+      "Install extension": [
+        "Namestite razširitev"
+      ],
       "Last autofill": [
         "Zadnje samodejno izpolnjevanje"
       ],
@@ -2359,11 +2443,14 @@
       "Leave vault ?": [
         "Zapuščate trezor ?"
       ],
-      "Log in as...": [
-        "Prijavite se kot ..."
+      "Loading breaches...": [
+        "Nalaganje kršitev..."
       ],
       "Low disk space": [
         "Malo prostora na disku"
+      ],
+      "Mark as resolved?": [
+        "Označi kot rešeno?"
       ],
       "Member limit": [
         "Omejitev članov"
@@ -2374,8 +2461,20 @@
       "Modified": [
         "Spremenjeno"
       ],
+      "No excluded items": [
+        "Izključeni predmeti"
+      ],
+      "No inactive 2FAs": [
+        "Ni neaktivnih 2FA"
+      ],
+      "No insecure passwords": [
+        "Brez nevarnih gesel"
+      ],
       "No items selected": [
         "Izbran ni noben predmet"
+      ],
+      "No reused passwords": [
+        "Ni ponovno uporabljenih gesel"
       ],
       "Our welcome gift to you": [
         "Naše darilo dobrodošlice za vas"
@@ -2386,23 +2485,47 @@
       "Password": [
         "Geslo"
       ],
+      "Password Health": [
+        "Kakovost gesla"
+      ],
+      "Pause monitoring?": [
+        "Začasno ustavi spremljanje?"
+      ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
       ],
       "Permanently remove all items ?": [
         "Ali želite trajno odstraniti vse predmete?"
       ],
-      "Pin the extension": [
-        "Pripnite razširitev"
-      ],
       "Pinned (${ items.length })": [
         "Pripeto (${ items.length })"
+      ],
+      "Recommended actions": [
+        "Priporočena dejanja"
+      ],
+      "Remove email address?": [
+        "Želite odstraniti e-poštni naslov?"
       ],
       "Remove extra password": [
         "Odstranite dodatno geslo"
       ],
+      "Resolved breaches": [
+        "Odpravljene kršitve"
+      ],
       "Restore this version?": [
         "Obnovi to različico?"
+      ],
+      "Resume monitoring?": [
+        "Nadaljuj spremljanje?"
+      ],
+      "Reused ${ count } time": [
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat"
+      ],
+      "Reused passwords": [
+        "Ponovno uporabljena gesla"
       ],
       "Review and share": [
         "Preglejte in delite"
@@ -2416,8 +2539,17 @@
       "Set extra password": [
         "Nastavite dodatno geslo"
       ],
+      "Set up 2FA for better security": [
+        "Nastavite 2FA za večjo varnost"
+      ],
       "Set up 2FA for more security": [
         "Nastavite 2FA za večjo varnost"
+      ],
+      "Settings": [
+        "Nastavitve"
+      ],
+      "Share vaults with your team": [
+        "Delite trezorje s svojo ekipo"
       ],
       "Share with": [
         "Deli z"
@@ -2427,15 +2559,6 @@
       ],
       "Suggestions": [
         "Predlogi"
-      ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "Preklopite na ${ PASS_APP_NAME }?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "Hvala, ker ste namestili ${ PASS_APP_NAME }"
-      ],
-      "The extension is now ready to use.": [
-        "Razširitev je zdaj pripravljena za uporabo."
       ],
       "Transfer ownership": [
         "Prenos lastništva"
@@ -2452,26 +2575,35 @@
       "Upgrade to Unlock Premium Features": [
         "Nadgradite za odklepanje premijskih funkcij"
       ],
-      "Use my email": [
-        "Uporabi mojo e-pošto"
-      ],
       "Vault": [
         "Trezor"
       ],
       "Vault shared with you": [
         "Trezor v skupni rabi z vami"
       ],
+      "Want to learn more?": [
+        "Si želite izvedeti več?"
+      ],
       "Weak password": [
         "Šibko geslo."
+      ],
+      "Weak passwords": [
+        "Šibka gesla"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Dobrodošli v ${ brandNameJSX }"
       ],
-      "Welcome to your new password manager!": [
-        "Dobrodošli v svojem novem upravitelju gesel!"
+      "What is an alias?": [
+        "Kaj je vzdevek?"
+      ],
+      "What is the dark web?": [
+        "Kaj je temni splet (Dark Web)?"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Zakaj ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Vaša razkrita informacija"
       ],
       "Your vault is empty": [
         "Vaša košarica je prazna"
@@ -2540,6 +2672,9 @@
       "Duplicate email addresses.": [
         "Podvojeni e-poštni naslovi."
       ],
+      "Email is required": [
+        "E-poštni naslov je obvezen"
+      ],
       "Empty note": [
         "Prazna opomba"
       ],
@@ -2555,8 +2690,17 @@
       "Extra password should have at least 8 characters": [
         "Dodatno geslo mora imeti vsaj 8 znakov"
       ],
+      "Failed to load breaches.": [
+        "Nalaganje kršitev ni uspelo."
+      ],
       "Invalid alias prefix": [
         "Neveljavna predpona vzdevka"
+      ],
+      "Invalid code": [
+        "Neveljavna koda"
+      ],
+      "Invalid email": [
+        "Neveljaven e-poštni naslov"
       ],
       "Invalid email addresses.": [
         "Neveljavni e-poštni naslovi."
@@ -2594,6 +2738,9 @@
       "No results": [
         "Ni rezultatov"
       ],
+      "Offline": [
+        "Brez povezave"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dovoljeni so samo alfanumerični znaki, pike, vezaji in podčrtaji"
       ],
@@ -2621,23 +2768,23 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."
       ],
-      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "Med zagonom ${ PASS_APP_NAME } je šlo nekaj narobe. Poskusite osvežiti ali znova naložiti razširitev"
-      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Predpona vzdevka ne sme biti daljša od 40 znakov"
       ],
+      "This email address will no longer be monitored for data breaches.": [
+        "Ta e-poštni naslov ne bo več nadzorovan zaradi kršitev varstva podatkov."
+      ],
       "Title is required": [
         "Naslov je obvezen"
+      ],
+      "Too many attempts": [
+        "Preveč poskusov"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Želite prenesti lastništvo tega trezorja na ${ email }?"
       ],
       "Trash alias ?": [
         "Vzdevke v smetnjak?"
-      ],
-      "Unable to save": [
-        "Ni mogoče shraniti."
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Ni se mogoče prijaviti v ${ PASS_APP_NAME }. ${ additionalMessage }"
@@ -2647,6 +2794,9 @@
       ],
       "Vault name is required": [
         "Zahtevano je ime trezorja"
+      ],
+      "Verification code is required": [
+        "Zahtevana je koda za preverjanje"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Ne morete ustvariti več trezorjev, kot dovoljuje vaša naročnina."
@@ -2658,7 +2808,7 @@
         "Dosegli ste omejitev uporabnikov v tem trezorju. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Dosegli ste omejitev trezorjev, ki jih lahko imate v načrtu."
+        "Dosegli ste omejitev trezorjev, ki jih lahko imate v vašem paketu."
       ],
       "You have unsaved changes.": [
         "Imate neshranjene spremembe."
@@ -2668,12 +2818,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ne boste več imeli dostopa do tega trezorja. Če se mu želite ponovno pridružiti, potrebujete novo povabilo."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "Vaš paket vam ne dovoljuje ustvarjanja več vzdevkov"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "Vaš paket vam omogoča samo samodejno izpolnjevanje iz prvih dveh trezorjev"
       ],
       "Your session could not be authorized.": [
         "Vaše seje ni mogoče avtorizirati"
