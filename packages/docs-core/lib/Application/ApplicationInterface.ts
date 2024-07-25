@@ -8,4 +8,5 @@ export interface ApplicationInterface {
   docLoader: DocLoaderInterface
   createEmptyDocumentForConversionUseCase: CreateEmptyDocumentForConversion
   get logger(): LoggerInterface
+  destroy(): void
 }
