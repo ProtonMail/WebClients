@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button, type ButtonLikeShape } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -15,15 +15,19 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
 
 type ItemQuickAction = {
+    hidden?: boolean;
     icon: IconName;
     label: string;
+    shape?: ButtonLikeShape;
     subTheme?: SubTheme;
     type: ItemType | 'import';
     onClick: (event: MouseEvent<HTMLElement>) => void;
@@ -39,6 +43,8 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     const { navigate, matchTrash, filters } = useNavigation();
     const { search, selectedShareId } = filters;
     const { totalCount } = useItems();
+
+    const identityEnabled = useFeatureFlag(PassFeature.PassIdentityV1);
 
     const { didDowngrade } = useSelector(selectVaultLimits);
     const selectedShare = useSelector(selectShare(selectedShareId));
@@ -80,15 +86,22 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                 type: 'note',
                 onClick: () => navigate(getNewItemRoute('note')),
             },
-
+            {
+                icon: itemTypeToIconName.identity,
+                label: c('Label').t`Create an Identity`,
+                type: 'identity',
+                hidden: !identityEnabled,
+                onClick: () => navigate(getNewItemRoute('identity')),
+            },
             {
                 type: 'import',
                 icon: 'arrow-up-line',
+                shape: identityEnabled ? 'outline' : 'solid',
                 label: c('Label').t`Import passwords`,
                 onClick: () => openSettings?.('import'),
             },
         ],
-        []
+        [identityEnabled]
     );
 
     if (showUpgrade && !matchTrash) {
@@ -110,33 +123,38 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     if (empty && !matchTrash) {
         return (
             <div className="flex flex-column gap-3 text-center">
-                <strong className="inline-block">{c('Title').t`Your vault is empty`}</strong>
-                <span className="color-weak inline-block mb-4">
-                    {hasMultipleVaults
-                        ? c('Info').t`Switch to another vault or create an item in this vault`
-                        : c('Info').t`Let's get you started by creating your first item`}
-                </span>
+                <div className="flex flex-column gap-1">
+                    <strong className="inline-block">{c('Title').t`Your vault is empty`}</strong>
+                    <span className="color-weak inline-block mb-2">
+                        {hasMultipleVaults
+                            ? c('Info').t`Switch to another vault or create an item in this vault`
+                            : c('Info').t`Let's get you started by creating your first item`}
+                    </span>
+                </div>
 
                 {!noActions &&
-                    quickActions.map(({ type, icon, label, onClick, subTheme }) => (
-                        <Button
-                            pill
-                            shape="solid"
-                            color="weak"
-                            key={`quick-action-${type}`}
-                            className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
-                            onClick={onClick}
-                            disabled={selectedShare && !isWritableVault(selectedShare)}
-                        >
-                            <Icon
-                                name={icon}
-                                color="var(--interaction-norm)"
-                                className="absolute left-custom top-0 bottom-0 my-auto"
-                                style={{ '--left-custom': '1rem' }}
-                            />
-                            <span className="max-w-full px-8 text-ellipsis">{label}</span>
-                        </Button>
-                    ))}
+                    quickActions
+                        .filter(({ hidden }) => !hidden)
+                        .map(({ type, icon, label, shape, subTheme, onClick }) => (
+                            <Button
+                                pill
+                                shape={shape ?? 'solid'}
+                                color="weak"
+                                key={`quick-action-${type}`}
+                                className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
+                                onClick={onClick}
+                                disabled={selectedShare && !isWritableVault(selectedShare)}
+                                size={EXTENSION_BUILD ? 'small' : 'medium'}
+                            >
+                                <Icon
+                                    name={icon}
+                                    color="var(--interaction-norm)"
+                                    className="absolute left-custom top-0 bottom-0 my-auto"
+                                    style={{ '--left-custom': '1rem' }}
+                                />
+                                <span className="max-w-full px-8 text-ellipsis">{label}</span>
+                            </Button>
+                        ))}
             </div>
         );
     }
