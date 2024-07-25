@@ -54,6 +54,7 @@ describe('WebsocketService', () => {
     connection = {
       broadcastMessage: jest.fn(),
       markAsReadyToAcceptMessages: jest.fn(),
+      canBroadcastMessages: jest.fn().mockReturnValue(true),
     } as unknown as WebsocketConnectionInterface
 
     debouncer = {
@@ -281,6 +282,19 @@ describe('WebsocketService', () => {
       )
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
+    })
+
+    it('should not broadcast if connection cannot send messages', async () => {
+      connection.canBroadcastMessages = jest.fn().mockReturnValue(false)
+
+      await service.sendEventMessage(
+        {} as NodeMeta,
+        stringToUtf8Array('123'),
+        EventTypeEnum.ClientIsBroadcastingItsPresenceState,
+        BroadcastSource.AwarenessUpdateHandler,
+      )
+
+      expect(connection.broadcastMessage).not.toHaveBeenCalled()
     })
   })
 

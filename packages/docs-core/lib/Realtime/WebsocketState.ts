@@ -13,6 +13,7 @@ export interface WebsocketStateInterface {
   didClose(): void
   isConnected: boolean
   getBackoff(): number
+  destroy(): void
 }
 
 export class WebsocketState implements WebsocketStateInterface {
