@@ -18,7 +18,7 @@ import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-bre
 import { BreachGroupList } from './Group/BreachGroupList';
 
 export const Breaches: FC = () => {
-    const monitor = useMonitor();
+    const { breaches } = useMonitor();
     const proton = useBreachesTable(AddressType.PROTON);
     const alias = useBreachesTable(AddressType.ALIAS);
     const custom = useBreachesTable(AddressType.CUSTOM);
@@ -43,7 +43,7 @@ export const Breaches: FC = () => {
                     <div className="relative w-full ratio-2/1">
                         <img
                             className="w-full h-full absolute object-contain"
-                            src={monitor.breaches.count > 0 ? headerBreachImg : headerNoBreachImg}
+                            src={breaches.count > 0 ? headerBreachImg : headerNoBreachImg}
                             alt=""
                         />
                     </div>
@@ -70,7 +70,7 @@ export const Breaches: FC = () => {
                 <BreachGroupList
                     data={custom.data}
                     displayLimit={5}
-                    title={`${custom.title} (${monitor.breaches.data.custom.length})`}
+                    title={`${custom.title} (${breaches.data.custom.length})`}
                     loading={custom.loading}
                     seeAllHref={getLocalPath(`monitor/dark-web/${AddressType.CUSTOM}`)}
                     actions={<CustomAddressAddButton />}

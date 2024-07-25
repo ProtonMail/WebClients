@@ -17,14 +17,12 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { Panel } from './Panel';
@@ -67,11 +65,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
-    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
-    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
-    const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
-    const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
-    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor) && !EXTENSION_BUILD;
     const monitored = isMonitored(revision);
 
     const hasMultipleVaults = vaults.length > 1;
@@ -87,7 +80,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
-    const monitorActions = monitorEnabled && !trashed && (
+    const monitorActions = !EXTENSION_BUILD && !trashed && (
         <DropdownMenuButton
             disabled={optimistic}
             onClick={handleToggleFlagsClick}
@@ -179,7 +172,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     maxWidth: '20rem',
                                 }}
                             >
-                                {secureLinkEnabled && type !== 'alias' && (
+                                {type !== 'alias' && (
                                     <DropdownMenuButton
                                         onClick={
                                             free
@@ -201,7 +194,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         extra={free && <PassPlusPromotionButton className="ml-2 button-xs" />}
                                     />
                                 )}
-                                {sharingEnabled && !shared && (
+                                {!shared && (
                                     <DropdownMenuButton
                                         onClick={
                                             free && isVaultMemberLimitReached(vault)
@@ -259,17 +252,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                                 {quickActions}
 
-                                {pinningEnabled && (
-                                    <DropdownMenuButton
-                                        onClick={handlePinClick}
-                                        label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
-                                        icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
-                                        disabled={optimistic || !canTogglePinned}
-                                        loading={!canTogglePinned}
-                                    />
-                                )}
+                                <DropdownMenuButton
+                                    onClick={handlePinClick}
+                                    label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
+                                    icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
+                                    disabled={optimistic || !canTogglePinned}
+                                    loading={!canTogglePinned}
+                                />
 
-                                {historyEnabled && isPaidPlan(plan) && (
+                                {isPaidPlan(plan) && (
                                     <DropdownMenuButton
                                         onClick={handleHistoryClick}
                                         label={c('Action').t`View history`}
