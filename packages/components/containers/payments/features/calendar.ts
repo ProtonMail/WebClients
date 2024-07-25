@@ -88,13 +88,17 @@ const getTeamAvailability = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCalendarAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
+export const getCalendarAppFeature = (options?: { family?: boolean; duo?: boolean }): PlanCardFeatureDefinition => {
+    let tooltip = c('new_plans: tooltip')
+        .t`${CALENDAR_APP_NAME}: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.`;
+
+    if (options?.duo || options?.family) {
+        tooltip = c('new_plans: tooltip').t`Keep your plans private to you and your family with an encrypted calendar`;
+    }
+
     return {
         text: CALENDAR_APP_NAME,
-        tooltip: options?.family
-            ? c('new_plans: tooltip').t`Keep your plans private to you and your family with an encrypted calendar`
-            : c('new_plans: tooltip')
-                  .t`${CALENDAR_APP_NAME}: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.`,
+        tooltip,
         included: true,
         icon: 'brand-proton-calendar',
     };
