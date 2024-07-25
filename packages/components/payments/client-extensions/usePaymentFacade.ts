@@ -2,43 +2,48 @@ import { useEffect, useRef } from 'react';
 
 import { useFlag } from '@unleash/proxy-client-react';
 
-import { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { ADDON_NAMES, APPS, PLANS } from '@proton/shared/lib/constants';
-import { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import {
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
+import type {
     Api,
     BillingPlatform,
     ChargebeeEnabled,
     ChargebeeUserExists,
     Currency,
-    User,
+    User} from '@proton/shared/lib/interfaces';
+import {
     isTaxInclusive,
 } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
-import {
+import type {
     BillingAddress,
     ChargeablePaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PlainPaymentMethodType,
-    SavedPaymentMethod,
+    SavedPaymentMethod} from '../core';
+import {
+    PAYMENT_METHOD_TYPES,
     canUseChargebee,
 } from '../core';
-import {
+import type {
     OnMethodChangedHandler,
     Operations,
-    OperationsData,
+    OperationsData} from '../react-extensions';
+import {
     usePaymentFacade as useInnerPaymentFacade,
 } from '../react-extensions';
-import { PaymentProcessorType } from '../react-extensions/interface';
-import { ThemeCode, ThemeLike, getThemeCode } from './helpers';
+import type { PaymentProcessorType } from '../react-extensions/interface';
+import type { ThemeCode, ThemeLike} from './helpers';
+import { getThemeCode } from './helpers';
 import { useChargebeeEnabledCache, useChargebeeUserStatusTracker } from './useChargebeeContext';
 import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';
 import { wrapMethods } from './useMethods';
@@ -135,8 +140,6 @@ export const usePaymentFacade = ({
     forceInhouseSavedMethodProcessors,
     disableNewPaymentMethods,
 }: PaymentFacadeProps) => {
-    const bitcoinChargebeeEnabled = useFlag('ChargebeeBitcoinFrontend');
-
     const { APP_NAME } = useConfig();
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -190,7 +193,6 @@ export const usePaymentFacade = ({
             selectedPlanName,
             onProcessPaymentToken: reportPaymentAttempt,
             billingAddress,
-            bitcoinChargebeeEnabled,
             onProcessPaymentTokenFailed: (type) => {
                 reportPaymentFailure(type);
             },
