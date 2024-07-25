@@ -81,13 +81,6 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
 
 const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 
-const INSTRUCTIONS_SHORTEN = [
-    "Now, you shorten the part of the email that's in the the input below.",
-    'Only summarize the part below and do not add anything else.',
-    'Figure out the language in the short version and make sure to maintain it in your long version.',
-    'Separate paragraph with two newlines.',
-].join(' ');
-
 const INSTRUCTIONS_REFINE_SPAN = [
     'The user wants you to modify a part of the text identified by the span tags (class "to-modify").',
     'You write a revised version of this part of the text, in the same language, under a span tag with class "modified".',
@@ -187,6 +180,14 @@ function expandActionToCustomRefineAction(action: ExpandAction): CustomRefineAct
     };
 }
 
+function shortenActionToCustomRefineAction(action: ShortenAction): CustomRefineAction {
+    return {
+        ...action,
+        type: 'customRefine',
+        prompt: ['Shorten the text in one short paragraph, go straight to the point.'].join(' '),
+    };
+}
+
 function makePromptFromTurns(turns: Turn[]): string {
     return turns
         .map((turn) => {
@@ -240,33 +241,6 @@ function makeInstructions(recipient?: string, locale?: string) {
     }
 
     return system;
-}
-
-function formatPromptShorten(action: ShortenAction): string {
-    // todo rework this to follow the custom refine prompt format
-    const partToRephrase = action.fullEmail.slice(action.idxStart, action.idxEnd);
-    const prompt = makePromptFromTurns([
-        {
-            role: 'system',
-            contents: makeInstructions(),
-        },
-        {
-            role: 'email',
-            contents: action.fullEmail,
-        },
-        {
-            role: 'system',
-            contents: INSTRUCTIONS_SHORTEN,
-        },
-        {
-            role: 'long_part',
-            contents: partToRephrase,
-        },
-        {
-            role: 'short_part',
-        },
-    ]);
-    return prompt;
 }
 
 function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
@@ -373,6 +347,10 @@ function formatPromptExpand(action: ExpandAction): string {
     return formatPromptCustomRefine(expandActionToCustomRefineAction(action));
 }
 
+function formatPromptShorten(action: ShortenAction): string {
+    return formatPromptCustomRefine(shortenActionToCustomRefineAction(action));
+}
+
 export class GpuWriteFullEmailRunningAction extends BaseRunningAction {
     constructor(action: WriteFullEmailAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptWriteFullEmail(action);
@@ -394,7 +372,7 @@ export class GpuRefineRunningAction extends BaseRunningAction {
             let cleaned = genericCleanup(fulltext);
             return callback(cleaned || '', details);
         };
-        super(prompt, wrappedCallback, chat, action, ['</span>']);
+        super(prompt, wrappedCallback, chat, action, ['</span>', '</div>']);
     }
 }
 
