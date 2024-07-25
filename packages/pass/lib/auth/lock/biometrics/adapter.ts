@@ -171,6 +171,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
                 }
 
                 if (retryCount >= 3) {
+                    authStore.setUnlockRetryCount(0);
                     authStore.setEncryptedOfflineKD(undefined);
                     authStore.setLockMode(LockMode.PASSWORD);
                     await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
