@@ -59,10 +59,9 @@ const WalletsSidebarListItem = ({
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
     const { pathname } = useLocation();
+
     useEffect(() => {
-        if (accountId) {
-            set(pathname.includes(`/wallets/${wallet.Wallet.ID}`));
-        }
+        set(pathname.includes(`/wallets/${wallet.Wallet.ID}`));
     }, [pathname, wallet.Wallet.ID, accountId, set]);
 
     return (
