@@ -15,5 +15,5 @@ export enum PAYMENT_METHOD_TYPES {
     CASH = 'cash',
     TOKEN = 'token',
     CHARGEBEE_CARD = 'chargebee-card',
-    CHARGEBEE_PAYPAL = 'charbebee-paypal',
+    CHARGEBEE_PAYPAL = 'chargebee-paypal',
 }

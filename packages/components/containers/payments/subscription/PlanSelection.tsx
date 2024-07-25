@@ -52,7 +52,7 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import { useCancellationFlow } from './cancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { notHigherThanAvailableOnBackend } from './helpers/notHigherThanAvailableOnBackend';
+import { notHigherThanAvailableOnBackend } from './helpers/payment';
 import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
 
 import './PlanSelection.scss';

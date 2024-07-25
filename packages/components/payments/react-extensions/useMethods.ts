@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 
-import {
+import type {
     AvailablePaymentMethod,
-    PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
@@ -14,7 +13,9 @@ import {
     PlainPaymentMethodType,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
+    SavedPaymentMethodInternal} from '../core';
+import {
+    PAYMENT_METHOD_TYPES,
     canUseChargebee,
     initializePaymentMethods,
     isExistingPaymentMethod,
@@ -35,7 +36,6 @@ export interface Props {
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     enableChargebeeB2B: boolean;
-    bitcoinChargebeeEnabled: boolean;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
     disableNewPaymentMethods?: boolean;
@@ -157,7 +157,6 @@ export const useMethods = (
         paymentsApi,
         selectedPlanName,
         enableChargebeeB2B,
-        bitcoinChargebeeEnabled,
         billingPlatform,
         chargebeeUserExists,
         disableNewPaymentMethods,
@@ -171,7 +170,6 @@ export const useMethods = (
         pendingFlow?: PaymentMethodFlows;
         pendingChargebee?: ChargebeeEnabled;
         pendingSelectedPlanName?: PLANS | ADDON_NAMES;
-        pendingBitcoinChargebeeEnabled?: boolean;
         pendingBillingPlatform?: BillingPlatform;
         pendingChargebeeUserExists?: ChargebeeUserExists;
         pendingDisableNewPaymentMethods?: boolean;
@@ -224,7 +222,6 @@ export const useMethods = (
                 coupon ?? '',
                 flow,
                 isChargebeeEnabled(),
-                bitcoinChargebeeEnabled,
                 paymentsApi,
                 selectedPlanName,
                 enableChargebeeB2B,
@@ -245,7 +242,6 @@ export const useMethods = (
                     pendingFlow,
                     pendingChargebee,
                     pendingSelectedPlanName,
-                    pendingBitcoinChargebeeEnabled,
                     pendingBillingPlatform,
                     pendingChargebeeUserExists,
                     pendingDisableNewPaymentMethods,
@@ -271,10 +267,6 @@ export const useMethods = (
 
                 if (pendingSelectedPlanName) {
                     paymentMethodsRef.current.selectedPlanName = pendingSelectedPlanName;
-                }
-
-                if (pendingBitcoinChargebeeEnabled !== undefined) {
-                    paymentMethodsRef.current.bitcoinChargebeeEnabled = pendingBitcoinChargebeeEnabled;
                 }
 
                 if (pendingBillingPlatform !== undefined) {
@@ -311,7 +303,6 @@ export const useMethods = (
                 pendingCoupon: coupon,
                 pendingFlow: flow,
                 pendingChargebee: isChargebeeEnabled(),
-                pendingBitcoinChargebeeEnabled: bitcoinChargebeeEnabled,
                 pendingSelectedPlanName: selectedPlanName,
                 pendingBillingPlatform: billingPlatform,
                 pendingChargebeeUserExists: chargebeeUserExists,
@@ -324,7 +315,6 @@ export const useMethods = (
         paymentMethodsRef.current.coupon = coupon ?? '';
         paymentMethodsRef.current.flow = flow;
         paymentMethodsRef.current.chargebeeEnabled = isChargebeeEnabled();
-        paymentMethodsRef.current.bitcoinChargebeeEnabled = bitcoinChargebeeEnabled;
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
         paymentMethodsRef.current.billingPlatform = billingPlatform;
         paymentMethodsRef.current.chargebeeUserExists = overrideChargebeeUserExists ?? chargebeeUserExists;
@@ -337,7 +327,6 @@ export const useMethods = (
         flow,
         isChargebeeEnabled(),
         selectedPlanName,
-        bitcoinChargebeeEnabled,
         billingPlatform,
         overrideChargebeeUserExists,
         chargebeeUserExists,

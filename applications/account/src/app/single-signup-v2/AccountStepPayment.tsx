@@ -15,6 +15,7 @@ import type { OnBillingAddressChange } from '@proton/components/containers/payme
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -144,6 +145,8 @@ const AccountStepPayment = ({
 
     const user = model.session?.user;
 
+    const billingAddress = model.subscriptionData.billingAddress;
+
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
@@ -155,7 +158,7 @@ const AccountStepPayment = ({
         api: normalApi,
         chargebeeEnabled: user?.ChargebeeUser,
         theme: publicTheme,
-        billingAddress: model.subscriptionData.billingAddress,
+        billingAddress,
         user,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
@@ -354,6 +357,7 @@ const AccountStepPayment = ({
                             noMaxWidth
                             hideFirstLabel
                             hasSomeVpnPlan={hasSomeVpnPlan}
+                            billingAddressStatus={getBillingAddressStatus(billingAddress)}
                         />
                     ) : (
                         <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
@@ -513,9 +517,7 @@ const AccountStepPayment = ({
                                         // It also means that before user created the account, they might changed the billing address.
                                         // The account creation re-renders the entire component and resets the user choice. So if we know that this billing address
                                         // is rendered after the account creation, then we used the saved user choice from the model.
-                                        model.signupTokenMode
-                                            ? model.subscriptionData.billingAddress
-                                            : model.paymentMethodStatusExtended
+                                        model.signupTokenMode ? billingAddress : model.paymentMethodStatusExtended
                                     }
                                 />
                             )}

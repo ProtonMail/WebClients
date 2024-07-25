@@ -4,22 +4,22 @@ import { addMonths } from 'date-fns';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
-import { CheckSubscriptionData, PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { type CheckSubscriptionData, type PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
-import { Api, ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { useApi, useConfig, usePlans, useSubscription } from '../../hooks';
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
-    CheckWithAutomaticOptions,
-    PaymentMethodStatus,
-    PaymentMethodStatusExtended,
-    PaymentsApi,
+    type CheckWithAutomaticOptions,
+    type PaymentMethodStatus,
+    type PaymentMethodStatusExtended,
+    type PaymentsApi,
     extendStatus,
     isPaymentMethodStatusExtended,
 } from '../core';
