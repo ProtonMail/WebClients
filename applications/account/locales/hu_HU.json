@@ -644,11 +644,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -6027,9 +6027,6 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
-      "Only you can see the labels.": [
-        "Csak ön láthatja a címkéket."
-      ],
       "Open source": [
         "Nyílt forráskódú"
       ],
@@ -7014,14 +7011,6 @@
         "Csak megtekintés"
       ]
     },
-    "Input label": {
-      "Access": [
-        "Elérés"
-      ],
-      "Label (optional)": [
-        "Címke (opcionális)"
-      ]
-    },
     "Input placeholder": {
       "Add label": [
         "Új címke"
@@ -7845,9 +7834,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield blokkoló szűrési szintje"
-      ],
-      "Link label": [
-        "Hivatkozás szövege"
       ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
@@ -8838,6 +8824,20 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -8865,20 +8865,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11656,10 +11642,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
