@@ -110,6 +110,8 @@ export const RecipientsSelection = ({
     const inviterAddressID = apiAccount.Addresses?.[0]?.ID;
     const [canSendInvite, setCanSendInvite] = useState(false);
 
+    const [loading, withLoading] = useLoading();
+
     useEffect(() => {
         setCanSendInvite(!!inviterAddressID);
     }, [inviterAddressID]);
@@ -127,7 +129,7 @@ export const RecipientsSelection = ({
 
     const handleSendEmailIntegrationInvite = async (email: string) => {
         try {
-            await walletApi.invite.sendEmailIntegrationInvite(email, inviterAddressID);
+            await withLoading(walletApi.invite.sendEmailIntegrationInvite(email, inviterAddressID));
 
             walletNotFoundModal.onClose();
             setInviteSentConfirmModal({ email });
@@ -143,7 +145,7 @@ export const RecipientsSelection = ({
 
     const handleSendNewcomerInvite = async (email: string) => {
         try {
-            await walletApi.invite.sendNewcomerInvite(email, inviterAddressID);
+            await withLoading(walletApi.invite.sendNewcomerInvite(email, inviterAddressID));
 
             walletNotFoundModal.onClose();
             setInviteSentConfirmModal({ email });
@@ -308,6 +310,7 @@ export const RecipientsSelection = ({
                                     onSendInvite={handleSendEmailIntegrationInvite}
                                     textContent={c('Bitcoin send')
                                         .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`}
+                                    loading={loading}
                                 />
                             );
                         }
@@ -321,6 +324,7 @@ export const RecipientsSelection = ({
                                     onSendInvite={handleSendNewcomerInvite}
                                     textContent={c('Bitcoin send')
                                         .t`This email is not using a ${WALLET_APP_NAME} yet. Invite them to create their own wallet for easier transactions.`}
+                                    loading={loading}
                                 />
                             );
                         }
@@ -392,6 +396,7 @@ export const RecipientsSelection = ({
                     }
                     email={walletNotFoundModal.data.email}
                     textContent={walletNotFoundModal.data.textContent}
+                    loading={loading}
                     {...walletNotFoundModal}
                 />
             )}

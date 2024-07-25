@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt, Tooltip } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks/index';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.png';
@@ -25,6 +26,7 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
     const [error, setError] = useState<string | null>(null);
     const walletApi = useWalletApiClients();
     const { createNotification } = useNotifications();
+    const [loadingInvite, withLoadingInvite] = useLoading();
 
     const handleSend = async () => {
         if (!validateEmailAddress(email)) {
@@ -70,8 +72,9 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
                         size="large"
                         disabled={isInvitationSendingDisabled}
                         onClick={() => {
-                            void handleSend();
+                            void withLoadingInvite(handleSend());
                         }}
+                        loading={loadingInvite}
                     >{c('Wallet invite').t`Send invite email now`}</Button>
                 </Tooltip>,
                 <Button
