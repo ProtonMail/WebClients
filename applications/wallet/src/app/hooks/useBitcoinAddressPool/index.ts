@@ -85,13 +85,14 @@ export const useBitcoinAddressPool = ({
                 }
             }
 
-            // Update addresses without bitcoin address or with outdated ones
-            const addressesWithOutdatedSignature = await Promise.all(
+            const addressesToUpdate = await Promise.all(
                 unusedBitcoinAddresses.map(async (addr) => {
+                    // DB row can be created from a sender request, in this case we want to add the Address and its signature
                     if (!addr.Data.BitcoinAddressSignature || !addr.Data.BitcoinAddress) {
                         return addr;
                     }
 
+                    // Verify if the signature is outdate
                     const isVerified = await verifySignedData(
                         addr.Data.BitcoinAddress,
                         addr.Data.BitcoinAddressSignature,
@@ -103,10 +104,11 @@ export const useBitcoinAddressPool = ({
                 })
             );
 
-            for (const addressToUpdate of compact(addressesWithOutdatedSignature)) {
+            for (const addressToUpdate of compact(addressesToUpdate)) {
                 try {
                     // eslint-disable-next-line @typescript-eslint/no-loop-func
                     const addressData = await (async () => {
+                        // Index isn't cleared when BvE is disabled so that when it is turned on again, we can use it
                         if (addressToUpdate?.Data.BitcoinAddressIndex) {
                             return computeAddressDataFromIndex(addressToUpdate.Data.BitcoinAddressIndex);
                         } else {
@@ -185,7 +187,9 @@ export const useBitcoinAddressPool = ({
                     ).map(({ WalletBitcoinAddress: b }) => b.WalletAccountID)
                 );
 
-                await fillBitcoinAddressPools({ walletAccountIds });
+                if (walletAccountIds.length) {
+                    await fillBitcoinAddressPools({ walletAccountIds });
+                }
             }
         );
     }, [fillBitcoinAddressPools, subscribe]);
