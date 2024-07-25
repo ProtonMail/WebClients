@@ -182,7 +182,9 @@ export function App({ nonInteractiveMode = false }: Props) {
 
           if (editorInitializationConfig) {
             setInitialConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
-            newDocState.initializeIsConverting(true)
+            if (editorInitializationConfig.mode === 'conversion') {
+              newDocState.setIsInConversionFromOtherFormat()
+            }
           } else {
             setInitialConfig({ documentId, username })
           }
@@ -249,11 +251,7 @@ export function App({ nonInteractiveMode = false }: Props) {
     return newDocState
   }, [application.eventBus, application.logger, bridge])
 
-  useEffect(() => {
-    if (docState) {
-      return
-    }
-
+  useEffectOnce(() => {
     const newDocState = createInitialDocState()
     setDocState(newDocState)
 
@@ -267,9 +265,8 @@ export function App({ nonInteractiveMode = false }: Props) {
   }, [
     createInitialDocState,
     docMap,
-    docState,
-    nonInteractiveMode,
     notifyParentEditorIsReady,
+    nonInteractiveMode,
     setBridgeRequestHandler,
     viewOnlyDocumentId,
   ])
@@ -312,7 +309,7 @@ export function App({ nonInteractiveMode = false }: Props) {
       window.removeEventListener('resize', updateFrameSizeDebounced)
       window.removeEventListener('beforeprint', updateFrameSize)
     }
-  }, [bridge, editorRef?.current])
+  }, [bridge])
 
   if (!initialConfig || !docState) {
     return null

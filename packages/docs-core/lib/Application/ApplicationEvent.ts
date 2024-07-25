@@ -13,6 +13,8 @@ export type DocsClientSquashVerificationObjectionMadePayload = {
 export type GeneralUserDisplayableErrorOccurredPayload = {
   translatedError: string
   translatedErrorTitle?: string
+  /** If true, the UI will be destroyed and only this error will be shown */
+  irrecoverable?: boolean
   onClose?: () => void
 }
 

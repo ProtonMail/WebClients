@@ -36,6 +36,11 @@ type Props = {
   action: DocumentAction['mode'] | undefined
 }
 
+type Error = {
+  message: string
+  userUnderstandableMessage: boolean
+}
+
 export function DocumentViewer({ lookup, editorInitializationConfig, action }: Props) {
   const application = useApplication()
 
@@ -50,7 +55,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
   const [ready, setReady] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<Error | null>(null)
   const [didLoadTitle, setDidLoadTitle] = useState(false)
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
   const debug = useDebug()
@@ -102,15 +107,20 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>(
       (payload: GeneralUserDisplayableErrorOccurredPayload) => {
-        showGenericAlertModal({
-          title: payload.translatedErrorTitle || c('Title').t`An error occurred`,
-          translatedMessage: payload.translatedError,
-          onClose: payload.onClose,
-        })
+        if (payload.irrecoverable) {
+          setError({ message: payload.translatedError, userUnderstandableMessage: true })
+          application.destroy()
+        } else {
+          showGenericAlertModal({
+            title: payload.translatedErrorTitle || c('Title').t`Something went wrong`,
+            translatedMessage: payload.translatedError,
+            onClose: payload.onClose,
+          })
+        }
       },
       ApplicationEvent.GeneralUserDisplayableErrorOccurred,
     )
-  }, [application.eventBus, showGenericAlertModal])
+  }, [application, application.eventBus, showGenericAlertModal])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(
@@ -232,7 +242,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
         }
       },
       onError: (errorMessage) => {
-        setError(errorMessage)
+        setError({ message: errorMessage, userUnderstandableMessage: false })
       },
     })
 
@@ -249,8 +259,10 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
         <div className="mt-1 max-w-lg text-center">
-          {c('Info')
-            .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
+          {error.userUnderstandableMessage
+            ? error.message
+            : c('Info')
+                .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
         </div>
         <div className="mt-4 flex gap-2">
           <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS), '_blank')}>
