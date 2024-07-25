@@ -7,12 +7,18 @@ interface Props extends ModalOwnProps {
     email: string;
     textContent: string;
     onSendInvite: (email: string) => void;
+    loading?: boolean;
 }
 
-export const WalletNotFoundErrorModal = ({ email, onSendInvite, textContent, ...rest }: Props) => {
+export const WalletNotFoundErrorModal = ({ email, onSendInvite, textContent, loading, ...rest }: Props) => {
     return (
         <Modal className="wallet-not-found-dropdown" {...rest}>
-            <WalletNotFoundErrorContent onSendInvite={onSendInvite} email={email} textContent={textContent} />
+            <WalletNotFoundErrorContent
+                onSendInvite={onSendInvite}
+                email={email}
+                textContent={textContent}
+                loading={loading}
+            />
         </Modal>
     );
 };
