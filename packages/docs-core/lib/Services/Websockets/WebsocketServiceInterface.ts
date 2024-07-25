@@ -22,6 +22,7 @@ export interface WebsocketServiceInterface {
   retryAllFailedDocumentUpdates(): void
 
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
-  debugCloseConnection(document: { linkId: string }): void
+  closeConnection(document: { linkId: string }): void
   createStressTestConnections(count: number): void
+  destroy(): void
 }

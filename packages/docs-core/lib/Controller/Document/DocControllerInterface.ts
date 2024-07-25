@@ -17,13 +17,12 @@ export interface DocControllerInterface {
   userAddress?: string
   role: DocumentRole
 
-  createInitialCommit(): Promise<void>
+  createInitialCommit(): Promise<Result<unknown>>
   createNewDocument(): Promise<void>
   debugGetUnrestrictedSharingUrl(): Promise<string>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   duplicateDocument(): Promise<void>
-  seedDocument(content: Uint8Array): Promise<void>
   editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   getDocumentClientId(): Promise<number | undefined>
@@ -38,4 +37,5 @@ export interface DocControllerInterface {
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   printAsPDF(): Promise<void>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
+  destroy(): void
 }
