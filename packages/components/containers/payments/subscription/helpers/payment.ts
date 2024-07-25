@@ -1,3 +1,4 @@
+import type { BillingAddress } from '@proton/components/payments/core';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
@@ -9,6 +10,7 @@ import {
     VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
+import { getPlanFromIds } from '@proton/shared/lib/helpers/subscription';
 import type {
     Plan,
     PlanIDs,
@@ -66,10 +68,6 @@ export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) =>
             coupon as COUPON_CODES
         )
     );
-};
-
-export const getIsVpn2024 = (planName: PLANS) => {
-    return planName === PLANS.VPN2024;
 };
 
 export const getDefaultSelectedProductPlans = ({
@@ -199,3 +197,50 @@ export const getAutoCoupon = ({
 
     return coupon || undefined;
 };
+
+export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: PlansMap, cycle: CYCLE): CYCLE {
+    const planID = getPlanFromIds(planIDs);
+    if (!planID) {
+        return cycle;
+    }
+
+    const plan = plansMap[planID];
+    if (!plan) {
+        return cycle;
+    }
+
+    const availableCycles = Object.keys(plan.Pricing) as unknown as CYCLE[];
+    const maxCycle = Math.max(...availableCycles) as CYCLE;
+    return Math.min(cycle, maxCycle);
+}
+
+export const countriesWithStates = Object.freeze(['US', 'CA']);
+
+export type BillingAddressStatus =
+    | {
+          valid: true;
+          reason: undefined;
+      }
+    | {
+          valid: false;
+          reason: 'missingCountry' | 'missingState';
+      };
+
+export const BILLING_ADDRESS_VALID = Object.freeze({ valid: true, reason: undefined }) as BillingAddressStatus;
+
+export function getBillingAddressStatus(billingAddress: BillingAddress): BillingAddressStatus {
+    if (!billingAddress.CountryCode) {
+        return { valid: false, reason: 'missingCountry' };
+    }
+
+    const isCountryWithState = countriesWithStates.includes(billingAddress.CountryCode);
+    if (!isCountryWithState) {
+        return BILLING_ADDRESS_VALID;
+    }
+
+    if (!billingAddress.State) {
+        return { valid: false, reason: 'missingState' };
+    }
+
+    return BILLING_ADDRESS_VALID;
+}

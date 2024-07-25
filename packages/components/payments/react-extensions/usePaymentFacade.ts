@@ -1,9 +1,10 @@
 import { useMemo, useRef } from 'react';
 
-import { PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import {
+import type { PaymentsVersion} from '@proton/shared/lib/api/payments';
+import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type {
     Api,
     BillingPlatform,
     ChargebeeEnabled,
@@ -13,7 +14,7 @@ import {
     PlanIDs,
 } from '@proton/shared/lib/interfaces';
 
-import {
+import type {
     AmountAndCurrency,
     BillingAddress,
     ChargeablePaymentParameters,
@@ -22,25 +23,27 @@ import {
     ChargebeeKillSwitch,
     ChargebeePaypalModalHandles,
     ForceEnableChargebee,
-    PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentVerificator,
     PaymentVerificatorV5,
     PlainPaymentMethodType,
-    SavedPaymentMethod,
+    SavedPaymentMethod} from '../core';
+import {
+    PAYMENT_METHOD_TYPES,
     canUseChargebee,
     isExistingPaymentMethod,
     isOnSessionMigration,
     isSplittedUser,
 } from '../core';
-import { PaymentProcessorType } from './interface';
+import type { PaymentProcessorType } from './interface';
 import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
 import { useChargebeeCard } from './useChargebeeCard';
 import { useChargebeePaypal } from './useChargebeePaypal';
-import { OnMethodChangedHandler, useMethods } from './useMethods';
+import type { OnMethodChangedHandler} from './useMethods';
+import { useMethods } from './useMethods';
 import { usePaymentsApi } from './usePaymentsApi';
 import { usePaypal } from './usePaypal';
 import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
@@ -181,7 +184,6 @@ export const usePaymentFacade = (
         onProcessPaymentTokenFailed,
         enableChargebeeB2B,
         billingAddress,
-        bitcoinChargebeeEnabled,
         billingPlatform,
         chargebeeUserExists,
         forceInhouseSavedMethodProcessors,
@@ -213,7 +215,6 @@ export const usePaymentFacade = (
         onProcessPaymentTokenFailed: (paymentMethodType: PaymentProcessorType) => void;
         enableChargebeeB2B: boolean;
         billingAddress?: BillingAddress;
-        bitcoinChargebeeEnabled: boolean;
         billingPlatform?: BillingPlatform;
         chargebeeUserExists?: ChargebeeUserExists;
         forceInhouseSavedMethodProcessors?: boolean;
@@ -262,7 +263,6 @@ export const usePaymentFacade = (
             paymentsApi,
             selectedPlanName,
             enableChargebeeB2B,
-            bitcoinChargebeeEnabled,
             billingPlatform,
             chargebeeUserExists,
             disableNewPaymentMethods,

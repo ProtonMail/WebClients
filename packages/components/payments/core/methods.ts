@@ -68,7 +68,6 @@ export class PaymentMethods {
         paymentMethodStatus: PaymentMethodStatus | PaymentMethodStatusExtended,
         public paymentMethods: SavedPaymentMethod[],
         public chargebeeEnabled: ChargebeeEnabled,
-        public bitcoinChargebeeEnabled: boolean,
         private _amount: number,
         private _coupon: string,
         private _flow: PaymentMethodFlows,
@@ -228,6 +227,7 @@ export class PaymentMethods {
             isEnabledFlow &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
+            !this.isB2BPlan() &&
             !this.isChargebeeBitcoinAvailable()
         );
     }
@@ -243,10 +243,10 @@ export class PaymentMethods {
 
         const bitcoinAvailable =
             this.statusExtended.VendorStates.Bitcoin &&
-            this.bitcoinChargebeeEnabled &&
-            this.amount >= MIN_BITCOIN_AMOUNT &&
-            this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             isEnabledFlow &&
+            this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
+            this.amount >= MIN_BITCOIN_AMOUNT &&
+            !this.isB2BPlan() &&
             this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
         return bitcoinAvailable;
@@ -330,8 +330,11 @@ export class PaymentMethods {
     }
 
     private disableForB2B(): boolean {
-        const isB2BPlan = this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
-        return isB2BPlan && !this.enableChargebeeB2B;
+        return this.isB2BPlan() && !this.enableChargebeeB2B;
+    }
+
+    private isB2BPlan(): boolean {
+        return this.selectedPlanName ? getIsB2BAudienceFromPlan(this.selectedPlanName) : false;
     }
 
     private isOnSessionMigration() {
@@ -366,7 +369,6 @@ export async function initializePaymentMethods(
     coupon: string,
     flow: PaymentMethodFlows,
     chargebeeEnabled: ChargebeeEnabled,
-    bitcoinChargebeeEnabled: boolean,
     paymentsApi: PaymentsApi,
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
     enableChargebeeB2B: boolean,
@@ -414,7 +416,6 @@ export async function initializePaymentMethods(
         paymentMethodStatus,
         mappedMethods,
         chargebeeEnabled,
-        bitcoinChargebeeEnabled,
         amount,
         coupon,
         flow,
