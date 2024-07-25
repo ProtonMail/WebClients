@@ -173,7 +173,7 @@ export const LockSettings: FC = () => {
     }, [createLock.loading]);
 
     return (
-        <SettingsPanel title={c('Label').t`Session locking`}>
+        <SettingsPanel title={c('Label').t`Unlock with`}>
             <RadioGroup<LockMode>
                 name="lock-mode"
                 onChange={handleLockModeSwitch}
