@@ -11,13 +11,14 @@ const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
 const path = require('path');
 const pkg = require('./package.json');
+const { getExtraResource } = require('./src/utils/config');
 
 /** @type {import('@electron-forge/shared-types').ForgeConfig} */
 const config = {
     packagerConfig: {
         asar: true,
         icon: 'assets/logo',
-        extraResource: 'assets',
+        extraResource: getExtraResource(),
         appBundleId: 'me.proton.pass.electron',
         executableName: process.platform === 'win32' ? 'ProtonPass' : 'Proton Pass',
         // required for debian, else MakerDeb will incorrectly use name from package.json
