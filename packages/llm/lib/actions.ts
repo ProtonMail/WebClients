@@ -73,18 +73,19 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
         'Be mindful to direct the message to the recipient as indicated by the user.',
         'Match the style and tone of the email (friendly, formal, tu/vous, etc)',
         'with the type of relationship the user is likely to have with the recipient.',
+        '{LANGUAGE_INSTRUCTIONS}',
         'Separate paragraphs with two newlines.',
         '{RECIPIENT_INSTRUCTIONS}',
     ].join(' '),
 ].join('\n');
 
-const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX = '(write the email in the language of the previous sentence)';
-
 const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 
 const INSTRUCTIONS_SHORTEN = [
-    "Now, you shorten the part of the email that's in the the input below, in the same language.",
+    "Now, you shorten the part of the email that's in the the input below.",
     'Only summarize the part below and do not add anything else.',
+    'Figure out the language in the short version and make sure to maintain it in your long version.',
+    'Separate paragraph with two newlines.',
 ].join(' ');
 
 const INSTRUCTIONS_REFINE_SPAN = [
@@ -203,7 +204,7 @@ function makePromptFromTurns(turns: Turn[]): string {
         .join('\n\n');
 }
 
-function makeInstructions(recipient?: string) {
+function makeInstructions(recipient?: string, locale?: string) {
     let system = INSTRUCTIONS_WRITE_FULL_EMAIL;
 
     // {DATE}
@@ -214,6 +215,16 @@ function makeInstructions(recipient?: string) {
         day: 'numeric',
     });
     system = system.replace('{DATE}', date);
+
+    // {LANGUAGE_INSTRUCTIONS}
+    if (locale) {
+        system = system.replace(
+            '{LANGUAGE_INSTRUCTIONS}',
+            `If the user specifies a language to use, you use it, otherwise you write in ${locale}.`
+        );
+    } else {
+        system = system.replace('{LANGUAGE_INSTRUCTIONS}', '');
+    }
 
     // {RECIPIENT_INSTRUCTIONS}
     recipient = recipient?.replaceAll(/["']/, '')?.trim();
@@ -259,17 +270,14 @@ function formatPromptShorten(action: ShortenAction): string {
 }
 
 function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
-    const userPrompt = action.locale
-        ? `locale: ${action.locale}\n${action.prompt}`
-        : `${action.prompt} ${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX}`;
     return makePromptFromTurns([
         {
-            role: 'instructions',
-            contents: makeInstructions(action.recipient),
+            role: 'system',
+            contents: makeInstructions(action.recipient, action.locale),
         },
         {
             role: 'user',
-            contents: userPrompt,
+            contents: action.prompt,
         },
         {
             role: 'assistant',
