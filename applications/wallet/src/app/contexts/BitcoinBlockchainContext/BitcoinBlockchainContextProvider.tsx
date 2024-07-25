@@ -45,7 +45,7 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         () => {
             void fillBitcoinAddressPools();
         },
-        [fillBitcoinAddressPools],
+        [],
         3000
     );
 
