@@ -25,6 +25,9 @@
 			--button-default-text-color: var(--navigation-current-item-text-color);
 			--button-hover-text-color: var(--interaction-norm-major-2);
 			--button-active-text-color: var(--navigation-current-item-text-color);
+		}
+
+		.button[aria-expanded='true']:focus-visible {
 			--button-active-border-color: var(--focus-outline);
 		}
 
