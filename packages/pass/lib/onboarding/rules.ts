@@ -5,7 +5,6 @@ import { api } from '@proton/pass/lib/api/api';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectCreatedItemsCount,
-    selectFeatureFlag,
     selectLockEnabled,
     selectPassPlan,
     selectUserState,
@@ -13,7 +12,6 @@ import {
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { OnboardingMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
@@ -27,9 +25,8 @@ export const createPendingShareAccessRule = (store: Store<State>) =>
         when: (previous) => {
             if (previous) return false;
             const state = store.getState();
-            const newUserSharingEnabled = selectFeatureFlag(PassFeature.PassSharingNewUsers)(state);
             const { waitingNewUserInvites } = selectUserState(state);
-            return newUserSharingEnabled && (waitingNewUserInvites ?? 0) > 0;
+            return (waitingNewUserInvites ?? 0) > 0;
         },
     });
 
@@ -114,13 +111,10 @@ export const createUserRatingRule = (store: Store<State>) =>
         },
     });
 
-export const createMonitorRule = (store: Store<State>) =>
+export const createMonitorRule = () =>
     createOnboardingRule({
         message: OnboardingMessage.PASS_MONITOR,
-        when: (previous) => {
-            const state = store.getState();
-            return !previous && selectFeatureFlag(PassFeature.PassMonitor)(state);
-        },
+        when: (previous) => !previous,
     });
 
 export const createMonitorLearnMoreRule = () =>

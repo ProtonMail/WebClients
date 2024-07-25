@@ -23,12 +23,12 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     const { onTelemetry } = usePassCore();
-    const monitor = useMonitor();
+    const { breaches, deleteAddress, verifyAddress } = useMonitor();
     const { type, email } = row;
 
     const add = useRequest(addCustomAddress, {
         initialRequestId: addCustomAddressRequest(row.email),
-        onSuccess: ({ data }) => monitor.verifyAddress(intoCustomMonitorAddress(data)),
+        onSuccess: ({ data }) => verifyAddress(intoCustomMonitorAddress(data)),
     });
 
     const deleting = useSelector(selectRequestInFlight(deleteCustomAddressRequest(email)));
@@ -49,7 +49,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                         onTelemetry(TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion, {}, {});
                     }}
                     loading={add.loading}
-                    disabled={monitor.breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
+                    disabled={breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES}
                 >
                     {c('Action').t`Add`}
                 </Button>
@@ -67,12 +67,12 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
                     disabled={loading}
                 >
                     <DropdownMenuButton
-                        onClick={() => monitor.verifyAddress(row)}
+                        onClick={() => verifyAddress(row)}
                         label={c('Action').t`Verify`}
                         icon="envelope-open"
                     />
                     <DropdownMenuButton
-                        onClick={() => monitor.deleteAddress(row.addressId)}
+                        onClick={() => deleteAddress(row.addressId)}
                         label={c('Action').t`Remove`}
                         icon="trash"
                         loading={deleting}

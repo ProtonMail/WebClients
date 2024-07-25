@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { PasswordModal, type PasswordModalProps } from '@proton/pass/components/Lock/PasswordModal';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
@@ -14,7 +13,6 @@ import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
 import { extraPasswordToggle } from '@proton/pass/store/actions';
 import { extraPasswordToggleRequest } from '@proton/pass/store/actions/requests';
 import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -30,7 +28,7 @@ const getInitialModalState = (): PasswordModalProps => ({
         .t`Caution: You won’t be able to access your ${PASS_APP_NAME} account if you lose this password.`,
 });
 
-const ExtraPasswordSetting: FC = () => {
+export const ExtraPassword: FC = () => {
     const online = useConnectivity();
     const confirmPassword = usePasswordUnlock();
     const toggle = useRequest(extraPasswordToggle, { initialRequestId: extraPasswordToggleRequest() });
@@ -87,5 +85,3 @@ const ExtraPasswordSetting: FC = () => {
         </SettingsPanel>
     );
 };
-
-export const ExtraPassword = WithFeatureFlag(ExtraPasswordSetting, PassFeature.PassAccessKeyV1);

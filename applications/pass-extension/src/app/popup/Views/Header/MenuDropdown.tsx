@@ -32,7 +32,6 @@ import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -47,7 +46,6 @@ import {
 } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import { OnboardingMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -73,8 +71,6 @@ export const MenuDropdown: FC = () => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectLockEnabled);
 
-    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
-    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
     const [notifyMonitor, setNotifyMonitor] = useState(false);
     const notify = notifyMonitor;
 
@@ -86,10 +82,10 @@ export const MenuDropdown: FC = () => {
     const withClose = withTap(close);
 
     useEffect(() => {
-        (async () => monitorEnabled && (await onboardingCheck?.(OnboardingMessage.PASS_MONITOR)))()
+        (async () => onboardingCheck?.(OnboardingMessage.PASS_MONITOR))()
             .then((show) => setNotifyMonitor(Boolean(show)))
             .catch(noop);
-    }, [monitorEnabled]);
+    }, []);
 
     const menu = useMenuItems({
         onAction: close,
@@ -226,36 +222,32 @@ export const MenuDropdown: FC = () => {
                             )}
                         />
 
-                        {secureLinkEnabled && (
-                            <SecureLinkButton
-                                className="pt-1.5 pb-1.5"
-                                onClick={withClose(() => navigate(getLocalPath('secure-links')))}
-                            />
-                        )}
+                        <SecureLinkButton
+                            className="pt-1.5 pb-1.5"
+                            onClick={withClose(() => navigate(getLocalPath('secure-links')))}
+                        />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                        {monitorEnabled && (
-                            <DropdownMenuButton
-                                onClick={withClose(() => {
-                                    void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR);
-                                    onLink(getPassWebUrl(API_URL, 'monitor'));
-                                })}
-                                label={
-                                    <>
-                                        {c('Label').t`${PASS_SHORT_APP_NAME} monitor`}
-                                        {notifyMonitor && (
-                                            <NotificationDot
-                                                className="ml-2 h-2 w-2 self-center"
-                                                color={ThemeColor.Danger}
-                                            />
-                                        )}
-                                    </>
-                                }
-                                icon={'pass-shield-warning'}
-                                className="pt-1.5 pb-1.5"
-                            />
-                        )}
+                        <DropdownMenuButton
+                            onClick={withClose(() => {
+                                void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR);
+                                onLink(getPassWebUrl(API_URL, 'monitor'));
+                            })}
+                            label={
+                                <>
+                                    {c('Label').t`${PASS_SHORT_APP_NAME} monitor`}
+                                    {notifyMonitor && (
+                                        <NotificationDot
+                                            className="ml-2 h-2 w-2 self-center"
+                                            color={ThemeColor.Danger}
+                                        />
+                                    )}
+                                </>
+                            }
+                            icon={'pass-shield-warning'}
+                            className="pt-1.5 pb-1.5"
+                        />
 
                         <DropdownMenuButton
                             onClick={withClose(() => openSettings())}

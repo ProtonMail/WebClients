@@ -7,12 +7,11 @@ import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/mana
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
-import { selectAllVaults, selectFeatureFlag } from '@proton/pass/store/selectors';
+import { selectAllVaults } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, MaybeNull, Share, ShareType } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -107,9 +106,6 @@ export const createInvitesChannel = (api: Api) =>
     });
 
 export function* invitesChannel(api: Api, options: RootSagaOptions) {
-    const sharingEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassSharingV1));
-    if (!sharingEnabled) return;
-
     logger.info(`[${NAMESPACE}] start polling`);
 
     const eventsChannel = createInvitesChannel(api);

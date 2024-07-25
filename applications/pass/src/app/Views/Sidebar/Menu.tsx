@@ -20,12 +20,10 @@ import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProv
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectLockMode, selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -37,8 +35,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const authService = useAuthService();
     const onboarding = useOnboarding();
     const org = useOrganization();
-    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
-    const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
 
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
@@ -75,14 +71,12 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-4">
-                {secureLinkEnabled && (
-                    <SecureLinkButton
-                        className="rounded"
-                        activeClassName="color-primary bg-weak"
-                        parentClassName="mx-3"
-                        onClick={() => navigate(getLocalPath('secure-links'))}
-                    />
-                )}
+                <SecureLinkButton
+                    className="rounded"
+                    activeClassName="color-primary bg-weak"
+                    parentClassName="mx-3"
+                    onClick={() => navigate(getLocalPath('secure-links'))}
+                />
                 {canLock && (
                     <DropdownMenuButton
                         onClick={() => authService.lock(lockMode, { broadcast: true, soft: false })}
@@ -95,7 +89,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 {onboarding.enabled && <OnboardingButton />}
                 {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-                {monitorEnabled && <MonitorButton />}
+                <MonitorButton />
                 <Submenu
                     icon="bolt"
                     label={c('Action').t`Advanced`}

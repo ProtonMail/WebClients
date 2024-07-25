@@ -25,7 +25,7 @@ type Props = { resolved: boolean; disabled: boolean } & MonitorAddress;
 
 export const BreachActions: FC<Props> = ({ resolved, disabled, ...address }) => {
     const { monitored, type, email } = address;
-    const monitor = useMonitor();
+    const { deleteAddress } = useMonitor();
 
     const groupMonitored = useSelector(selectMonitorSettingByType(type));
     const deleting = useSelector(selectRequestInFlight(deleteCustomAddressRequest(email)));
@@ -36,7 +36,7 @@ export const BreachActions: FC<Props> = ({ resolved, disabled, ...address }) => 
 
     const confirmResolve = useConfirm(() => resolve.dispatch(address));
     const confirmToggle = useConfirm(() => toggle.dispatch({ ...address, monitor: !monitored }));
-    const confirmDelete = useConfirm(() => monitor.deleteAddress(getAddressId(address)));
+    const confirmDelete = useConfirm(() => deleteAddress(getAddressId(address)));
 
     return (
         <div className="flex flex-nowrap gap-2">
