@@ -58,6 +58,7 @@ describe('DocController', () => {
         sendDocumentUpdateMessage: jest.fn(),
         flushPendingUpdates: jest.fn(),
         reconnectToDocumentWithoutDelay: jest.fn(),
+        closeConnection: jest.fn(),
       } as unknown as jest.Mocked<WebsocketServiceInterface>,
       {
         addEventHandler: jest.fn(),
@@ -87,6 +88,7 @@ describe('DocController', () => {
       performOpeningCeremony: jest.fn(),
       changeLockedState: jest.fn().mockResolvedValue(false),
       performClosingCeremony: jest.fn(),
+      getDocumentState: jest.fn(),
     } as unknown as jest.Mocked<ClientRequiresEditorMethods>
   })
 
@@ -504,6 +506,52 @@ describe('DocController', () => {
       expect(controller.handleAttemptingToBroadcastUpdateThatIsTooLarge).toHaveBeenCalled()
       expect(controller.websocketService.sendDocumentUpdateMessage).not.toHaveBeenCalled()
     })
+
+    it('should handle special conversion flow', () => {
+      controller.handleEditorProvidingInitialConversionContent = jest.fn()
+
+      void controller.editorRequestsPropagationOfUpdate(
+        {
+          type: {
+            wrapper: 'conversion',
+          },
+          content: {
+            byteLength: 123,
+          },
+        } as RtsMessagePayload,
+        'mock' as BroadcastSource,
+      )
+
+      expect(controller.handleEditorProvidingInitialConversionContent).toHaveBeenCalled()
+    })
+
+    it('should not seed initial commit if update is not conversion', () => {
+      controller.handleEditorProvidingInitialConversionContent = jest.fn()
+
+      void controller.editorRequestsPropagationOfUpdate(
+        {
+          type: {
+            wrapper: 'du',
+          },
+          content: {
+            byteLength: 123,
+          },
+        } as RtsMessagePayload,
+        'mock' as BroadcastSource,
+      )
+
+      expect(controller.handleEditorProvidingInitialConversionContent).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('createInitialCommit', () => {
+    it('should set lastCommitIdReceivedFromRtsOrApi', async () => {
+      controller._createInitialCommit.execute = jest.fn().mockReturnValue(Result.ok({ commitId: '123' }))
+
+      await controller.createInitialCommit()
+
+      expect(controller.lastCommitIdReceivedFromRtsOrApi).toBe('123')
+    })
   })
 
   describe('handleAttemptingToBroadcastUpdateThatIsTooLarge', () => {
@@ -515,6 +563,39 @@ describe('DocController', () => {
       expect(controller.isLockedDueToSizeContraint).toBe(true)
 
       expect(controller.reloadEditingLockedState).toHaveBeenCalled()
+    })
+  })
+
+  describe('handleEditorProvidingInitialConversionContent', () => {
+    beforeEach(() => {
+      controller.createInitialCommit = jest.fn().mockReturnValue(Result.ok({ commitId: '123' }))
+    })
+
+    it('should abort existing connection attempt', async () => {
+      controller.websocketService.closeConnection = jest.fn()
+
+      const promise = controller.handleEditorProvidingInitialConversionContent(new Uint8Array())
+
+      expect(controller.abortWebsocketConnectionAttempt).toEqual(true)
+
+      await promise
+
+      expect(controller.abortWebsocketConnectionAttempt).toEqual(false)
+      expect(controller.websocketService.closeConnection).toHaveBeenCalled()
+    })
+
+    it('should create initial commit', async () => {
+      await controller.handleEditorProvidingInitialConversionContent(new Uint8Array())
+
+      expect(controller.createInitialCommit).toHaveBeenCalled()
+    })
+
+    it('should reconnect to document without delay', async () => {
+      controller.websocketService.reconnectToDocumentWithoutDelay = jest.fn()
+
+      await controller.handleEditorProvidingInitialConversionContent(new Uint8Array())
+
+      expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalled()
     })
   })
 })

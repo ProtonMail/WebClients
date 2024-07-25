@@ -31,7 +31,8 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
   private resyncInterval: ReturnType<typeof setInterval> | null = null
   private isEditorReady = false
-  private isConverting = false
+  isInConversionFromOtherFormatFlow = false
+  didEnterIntoConversionFlowAtLeastOnce = false
   private messageQueue: RtsMessagePayload[] = []
 
   docWasInitializedWithEmptyNode = false
@@ -66,22 +67,21 @@ export class DocState extends Observable<string> implements DocStateInterface {
     window.addEventListener('unload', this.handleWindowUnloadEvent)
   }
 
-  initializeIsConverting(isConverting: boolean) {
-    if (this.isConverting !== true) {
-      this.isConverting = isConverting
+  setIsInConversionFromOtherFormat() {
+    if (this.didEnterIntoConversionFlowAtLeastOnce) {
+      throw new Error('setIsInConversionFromOtherFormat has been called more than once. This should not happen.')
     }
+
+    this.isInConversionFromOtherFormatFlow = true
+    this.didEnterIntoConversionFlowAtLeastOnce = true
   }
 
-  /**
-   * @returns a boolean that tells us if this update is the first one since a conversion
-   */
-  docUpdated(): boolean {
-    if (!this.isConverting) {
-      return false
-    }
+  consumeIsInConversionFromOtherFormat(): boolean {
+    const isInConversion = this.isInConversionFromOtherFormatFlow
 
-    this.isConverting = false
-    return true
+    this.isInConversionFromOtherFormatFlow = false
+
+    return isInConversion
   }
 
   destroy(): void {
@@ -232,12 +232,17 @@ export class DocState extends Observable<string> implements DocStateInterface {
       return
     }
 
-    const isConversionUpdate = this.docUpdated()
     const updateToPropagate = this.emptyNodeInitializationUpdate
       ? mergeUpdates([this.emptyNodeInitializationUpdate, update])
       : update
 
-    const updateMessage = this.createSyncMessagePayload(updateToPropagate, isConversionUpdate)
+    /**
+     * If we are in the conversion funnel, then the first update we receive from Lexical is in fact the conversion contents
+     * and need to be specified as such. We then flip the flag back to false so that the next update is treated as a normal update.
+     */
+    const isInConversionFunnel = this.consumeIsInConversionFromOtherFormat()
+
+    const updateMessage = this.createSyncMessagePayload(updateToPropagate, isInConversionFunnel ? 'conversion' : 'du')
     this.callbacks.docStateRequestsPropagationOfUpdate(updateMessage, BroadcastSource.HandleDocBeingUpdatedByLexical)
 
     this.emptyNodeInitializationUpdate = undefined
@@ -251,9 +256,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
     syncProtocol.readSyncMessage(decoder, unusedReply, this.doc, origin ?? this)
   }
 
-  private createSyncMessagePayload(update: Uint8Array, isConversion: boolean): RtsMessagePayload {
+  private createSyncMessagePayload(update: Uint8Array, wrapperType: 'du' | 'conversion'): RtsMessagePayload {
     return {
-      type: { wrapper: isConversion ? 'conversion' : 'du' },
+      type: { wrapper: wrapperType },
       content: update,
     }
   }

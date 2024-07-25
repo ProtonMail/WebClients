@@ -1,7 +1,7 @@
 import type { BroadcastSource } from '../Bridge/BroadcastSource'
 
 export interface WebsocketConnectionInterface {
-  connect(): Promise<void>
+  connect(abortSignal?: () => boolean): Promise<void>
   destroy(): void
   disconnect(code: number): void
   markAsReadyToAcceptMessages(): void

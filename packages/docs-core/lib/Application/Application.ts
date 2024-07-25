@@ -20,6 +20,14 @@ export class Application implements ApplicationInterface {
     private driveCompat: DriveCompat,
   ) {}
 
+  destroy(): void {
+    this.logger.info('Destroying application')
+
+    this.websocketService.destroy()
+    this.docLoader.destroy()
+    this.eventBus.deinit()
+  }
+
   public get eventBus(): InternalEventBusInterface {
     return this.deps.get<InternalEventBusInterface>(App_TYPES.EventBus)
   }
