@@ -1,6 +1,6 @@
-import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
+import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
-import { selectAutofillCandidates, selectItem } from '@proton/pass/store/selectors';
+import { selectItem, selectOTPCandidate } from '@proton/pass/store/selectors';
 import type { Maybe, OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
@@ -27,8 +27,14 @@ export const createOTPService = () => {
                 if (payload.type === 'uri') return payload.totpUri;
                 if (payload.type === 'item') {
                     const { shareId, itemId } = payload.item;
-                    const item = selectItem(shareId, itemId)(store.getState());
-                    if (item?.data.type === 'login') return deobfuscate(item.data.content.totpUri);
+                    const item = selectItem<'login'>(shareId, itemId)(store.getState());
+
+                    /** First check if we have a top-level totp URI */
+                    if (item?.data.content.totpUri.v) return deobfuscate(item.data.content.totpUri);
+
+                    /** Check if any extra fields are of type TOTP */
+                    const extraOTPs = item?.data.extraFields.filter(isExtraOTPField);
+                    if (extraOTPs && extraOTPs.length > 0) return deobfuscate(extraOTPs[0].data.totpUri);
                 }
             })();
 
@@ -48,10 +54,7 @@ export const createOTPService = () => {
         (sender: ParsedSender) => WorkerMessageResponse<WorkerMessageType.AUTOFILL_OTP_CHECK>
     >(({ service: { formTracker } }, { tabId, url }) => {
         const submission = formTracker.get(tabId, url.domain ?? '');
-        const candidates = selectAutofillCandidates(url)(store.getState());
-        const otpItems = candidates.filter((item) => Boolean(item.data.content.totpUri.v));
-        const match = submission ? otpItems.find(hasUserIdentifier(submission.data.userIdentifier)) : otpItems[0];
-
+        const match = selectOTPCandidate({ ...url, submission })(store.getState());
         return match ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId } : { shouldPrompt: false };
     });
 
@@ -59,6 +62,7 @@ export const createOTPService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOFILL_OTP_CHECK, (_, sender) =>
         handleOTPCheck(parseSender(sender))
     );
+
     return {};
 };
 
