@@ -41,11 +41,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -638,11 +638,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -4968,11 +4968,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "Dedicated servers": [
-        "Iqeddacen yettwagen"
-      ],
       "dedicated servers": [
         "iqeddacen yettwagen"
+      ],
+      "Dedicated servers": [
+        "Iqeddacen yettwagen"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
@@ -5351,9 +5351,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Ala kečč·kemm i izemren ad iwali tibzimin."
       ],
       "Open source": [
         "Aɣbalu yeldin"
@@ -5990,14 +5987,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Sken kan"
-      ]
-    },
-    "Input label": {
-      "Access": [
-        "Anekcum"
-      ],
-      "Label (optional)": [
-        "Tabzimt (d afrayan)"
       ]
     },
     "Input placeholder": {
@@ -6758,9 +6747,6 @@
       ],
       "Last month only": [
         "Ayyure-nni kan ineggura"
-      ],
-      "Link label": [
-        "Tabzimt n useɣwen"
       ],
       "Logo": [
         "Alugu"
@@ -7695,6 +7681,23 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7719,23 +7722,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -9914,10 +9900,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [

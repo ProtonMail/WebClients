@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=1; plural=0;",
-    "language": "ka_KA"
+    "language": "ka_GE"
   },
   "contexts": {
     "Account Settings - Info": {
@@ -243,9 +243,6 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "როგორ გავიტანო ჩემი მონაცემები ${ PROVIDER_INFO_MAP[form.values.provider].title }-დან?"
-      ],
-      "How to update ${ PASS_APP_NAME } on Linux": [
-        "როგორ განვაახლოთ ${ PASS_APP_NAME } Linux-ზე"
       ],
       "Import": [
         "შემოტანა"
@@ -995,31 +992,6 @@
         "ტერაბაიტი"
       ]
     },
-    "Font face option": {
-      "System default": [
-        "სისტემის ნაგულისხმები"
-      ],
-      "Theme font": [
-        "თემის ფონტი"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "დიდი"
-      ],
-      "Medium (recommended)": [
-        "საშუალო (რეკომენდებული)"
-      ],
-      "Small": [
-        "პატარა"
-      ],
-      "Very large": [
-        "ძალიან დიდი"
-      ],
-      "Very small": [
-        "ძალიან პატარა"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
@@ -1285,9 +1257,6 @@
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
       ],
-      "here": [
-        "აქ"
-      ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
@@ -1439,9 +1408,6 @@
       ],
       "Never": [
         "არასოდეს"
-      ],
-      "New version ${ latestVersion } is available.": [
-        "ხელმისაწვდომია ახალი ვერსია ${ latestVersion }."
       ],
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
@@ -1629,9 +1595,6 @@
       ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
-      ],
-      "The changelog can be found ${ changelogLink }.": [
-        "ცვლილებების ჟურნალის პოვნა შეგიძლიათ მისამართზე ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "გატანა, მხოლოდ, იმ მნიშვნელობას შეიცავს, რომელსაც თქვენ ფლობთ."

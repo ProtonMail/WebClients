@@ -4,11 +4,6 @@
     "language": "ru_RU"
   },
   "contexts": {
-    "Account container": {
-      "Edit": [
-        "Изменить"
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
@@ -39,9 +34,6 @@
       ],
       "Close this banner": [
         "Закрыть этот баннер"
-      ],
-      "Close tip": [
-        "Закрыть подсказку"
       ],
       "Collapse wallets": [
         "Свернуть кошельки"
@@ -163,9 +155,6 @@
       ],
       "Native Segwit": [
         "Native Segwit"
-      ],
-      "Nested Segwit": [
-        "Nested Segwit"
       ]
     },
     "Bitcoin send": {
@@ -270,9 +259,6 @@
       ],
       "VPN problem": [
         "Проблема VPN"
-      ],
-      "Wallet problem": [
-        "Проблема с кошельком"
       ],
       "Website access problem": [
         "Проблема с доступом к сайту"
@@ -1488,20 +1474,9 @@
         "Некоторые изображения не были загружены из-за дублирования имён файлов в текущей выборке."
       ]
     },
-    "Pagination": {
-      "Next": [
-        "Далее"
-      ],
-      "Previous": [
-        "Назад"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Способ связаться с вами"
-      ],
-      "Leave empty if you don't want to add passphrase": [
-        "Не заполняйте, если не хотите добавить кодовую фразу"
       ],
       "Password": [
         "Пароль"
@@ -1524,14 +1499,6 @@
     "QRCode reader": {
       "Loading QRCode reader": [
         "Загружаем сканер QR-кода"
-      ]
-    },
-    "Receive bitcoin": {
-      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Это ваш Bitcoin-адрес. Чтобы повысить конфиденциальность, используйте разные адреса для каждой транзакции."
-      ],
-      "Your bitcoin address": [
-        "Ваш bitcoin-адрес"
       ]
     },
     "Select search results": {
@@ -1678,15 +1645,6 @@
       ]
     },
     "Wallet Account": {
-      "Account label": [
-        "Метка счёта"
-      ],
-      "Add": [
-        "Добавить"
-      ],
-      "Add account": [
-        "Добавить счёт"
-      ],
       "Cancel": [
         "Отменить"
       ],
@@ -1699,20 +1657,8 @@
       "Custom index": [
         "Пользовательский индекс"
       ],
-      "Index": [
-        "Индекс"
-      ],
-      "Index of the account to add": [
-        "Индекс добавляемого счёта"
-      ],
       "Savings for holiday": [
         "Сбережения на отпуск"
-      ],
-      "Script Type": [
-        "Формат сценария"
-      ],
-      "Script type used in account. This will have an impact on account derivation path.": [
-        "Формат сценария, используемого для счёта. Он будет влиять на путь деривации для счёта."
       ],
       "Your account was successfully created": [
         "Счёт успешно создан"
@@ -1721,11 +1667,6 @@
     "Wallet account": {
       "This account is already created": [
         "Этот счёт уже создан"
-      ]
-    },
-    "Wallet container": {
-      "Edit": [
-        "Изменить"
       ]
     },
     "Wallet dashboard": {
@@ -1751,32 +1692,9 @@
         "Текущий отпечаток не совпадает с сохранённым"
       ]
     },
-    "Wallet deletion": {
-      "Confirm to delete '${ wallet.Wallet.Name }'": [
-        "Подтвердите удаление «${ wallet.Wallet.Name }»"
-      ],
-      "Warning:'": [
-        "Предупреждение."
-      ]
-    },
     "Wallet discover": {
-      "Backup your ${ BRAND_NAME } account": [
-        "Обезопасьте аккаунт ${ BRAND_NAME }"
-      ],
-      "Backup your wallet's mnemonic": [
-        "Сохраните мнемоническую фразу для кошелька"
-      ],
-      "Claim your wallet": [
-        "Получите кошелёк"
-      ],
       "Discover": [
         "Знакомство"
-      ],
-      "Finish your account setup": [
-        "Завершите настройку аккаунта"
-      ],
-      "Set up your 2FA": [
-        "Настройте двухфакторную аутентификацию"
       ]
     },
     "Wallet header": {
@@ -1813,29 +1731,14 @@
       ]
     },
     "Wallet preference": {
-      "Account label": [
-        "Метка счёта"
-      ],
       "Accounts": [
         "Счета"
-      ],
-      "Advanced options": [
-        "Расширенные настройки"
-      ],
-      "Back up wallet": [
-        "Обезопасить кошелёк"
-      ],
-      "Back up wallet first": [
-        "Сначала обезопасьте кошелёк"
       ],
       "Clear browser storage": [
         "Очистить хранилище браузера"
       ],
       "Delete account": [
         "Удалить аккаунт"
-      ],
-      "Delete this wallet": [
-        "Удалить этот кошелёк"
       ],
       "Delete wallet": [
         "Удалить кошелёк"
@@ -1845,55 +1748,14 @@
       ],
       "My super wallet": [
         "Мой суперкошелёк"
-      ],
-      "Wallet name": [
-        "Название кошелька"
-      ],
-      "Your wallet preferences": [
-        "Настройки кошелька"
       ]
     },
     "Wallet preferences": {
-      "Add": [
-        "Добавить"
-      ],
-      "Add a new email address": [
-        "Добавить новый адрес эл. почты"
-      ],
-      "Email integration": [
-        "Интеграция электронной почты"
-      ],
-      "Learn more": [
-        "Подробнее"
-      ],
       "Local currency": [
         "Местная валюта"
       ],
       "Select your currency": [
         "Выберите свою валюту"
-      ],
-      "Send and receive Bitcoin by email with email integration.": [
-        "Интегрировав эл. почту, можно отправлять и получать Bitcoin по эл. почте."
-      ]
-    },
-    "Wallet Receive": {
-      "Amount": [
-        "Сумма"
-      ],
-      "Amount to receive": [
-        "Сумма к получению"
-      ],
-      "Discover Bitcoin Via Email": [
-        "Ознакомиться с «Bitcoin по эл. почте»"
-      ],
-      "Enter custom amount": [
-        "Введите свою сумму"
-      ],
-      "Leave empty to let the sender choose the amount": [
-        "Не заполняйте, чтобы сумму мог выбрать отправитель"
-      ],
-      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
-        "Другие пользователи ${ WALLET_APP_NAME } могут отправлять Bitcoin по вашему адресу эл. почты."
       ]
     },
     "Wallet receive": {
@@ -1905,9 +1767,6 @@
       ],
       "Generate new address": [
         "Создать новый адрес"
-      ],
-      "Share address": [
-        "Поделиться адресом"
       ]
     },
     "Wallet send": {
@@ -1917,17 +1776,8 @@
       "A user icon with an exclamation mark, meaning that something unexpected happened": [
         "Значок пользователя с восклицательным знаком. Значит, произошло что-то неожиданное"
       ],
-      "Add Message to recipient": [
-        "Добавить сообщение для получателя"
-      ],
       "Add private note to myself": [
         "Добавить личный комментарий для себя"
-      ],
-      "Added address is invalid": [
-        "Добавленный адрес недействителен"
-      ],
-      "Amount": [
-        "Сумма"
       ],
       "Bitcoin address signature could not be verified": [
         "Не удалось проверить подпись Bitcoin-адреса"
@@ -1937,9 +1787,6 @@
       ],
       "Could not create PSBT": [
         "Не удалось создать PSBT"
-      ],
-      "Could not find address linked to this email": [
-        "Не удалось найти адрес, связанный с этим адресом эл. почты"
       ],
       "Edit": [
         "Изменить"
@@ -1962,17 +1809,8 @@
       "Median priority": [
         "Средний приоритет"
       ],
-      "Money is on the way": [
-        "Деньги уже в пути"
-      ],
       "Network fees": [
         "Комиссия сети"
-      ],
-      "No address set on this BitcoinAddress": [
-        "Для BitcoinAddress отсутствует адрес"
-      ],
-      "No signature set on this BitcoinAddress": [
-        "Для BitcoinAddress отсутствует подпись"
       ],
       "Recent recipients": [
         "Недавние получатели"
@@ -1989,23 +1827,14 @@
       "Review": [
         "Просмотреть"
       ],
-      "Send": [
-        "Отправить"
-      ],
       "Send all": [
         "Отправить всё"
       ],
       "The transaction could not be sent. Please try again later": [
         "Не удалось отправить транзакцию. Попробуйте позже"
       ],
-      "Transaction was succesfully sent": [
-        "Транзакция успешно отправлена"
-      ],
       "Try adding an email address to start sending Bitcoin!": [
         "Попробуйте добавить адрес эл. почты, и начните отправлять Bitcoin!"
-      ],
-      "View details": [
-        "Просмотреть информацию"
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Пока ожидаете, пригласите родных и друзей в ${ WALLET_APP_NAME }, чтобы вы все могли отправлять Bitcoin по эл. почте."
@@ -2026,14 +1855,6 @@
       ],
       "Could not sign transaction": [
         "Не удалось подписать транзакцию"
-      ]
-    },
-    "Wallet settings": {
-      "Bitcoin unit": [
-        "Единица Bitcoin"
-      ],
-      "Unit in which bitcoin will be displayed": [
-        "Единица, в которой будет отображаться bitcoin"
       ]
     },
     "Wallet Settings": {
@@ -2101,21 +1922,20 @@
         "Кошелёк был удалён"
       ]
     },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Единица Bitcoin"
+      ]
+    },
     "Wallet setup": {
       "Add a passphrase (optional)": [
         "Добавьте кодовую фразу (необязательно)"
-      ],
-      "Choose your local fiat currency to see the value of your transactions.": [
-        "Выберите официальную валюту своей страны, в которой будет указана сумма транзакций."
       ],
       "Confirm": [
         "Подтвердить"
       ],
       "Could not create wallet": [
         "Не удалось создать кошелёк"
-      ],
-      "Create a new wallet": [
-        "Создать новый кошелёк"
       ],
       "Done": [
         "Готово"
@@ -2129,9 +1949,6 @@
       "Import wallet": [
         "Импортировать кошелёк"
       ],
-      "Important:": [
-        "Важно."
-      ],
       "Input mnemonic is invalid, please double check.": [
         "Введена неверная мнемоническая фраза. Проверьте ещё раз."
       ],
@@ -2144,65 +1961,26 @@
       "Mnemonic length is not valid.": [
         "Длина мнемонической фразы неверна."
       ],
-      "My imported wallet${ indexStr }": [
-        "Мой импортированный кошелёк${ indexStr }"
-      ],
-      "My wallet account ${ indexStr }": [
-        "Счёт в моём кошельке ${ indexStr }"
-      ],
       "My wallet had a passphrase": [
         "У моего кошелька была кодовая фраза"
-      ],
-      "My wallet${ indexStr }": [
-        "Мой кошелёк${ indexStr }"
-      ],
-      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
-        "Никому их не передавайте. ${ BRAND_NAME } никогда их не запрашивает. Внимательно их запишите и спрячьте в надёжном месте."
       ],
       "Passphrase": [
         "Кодовая фраза"
       ],
-      "Please backup your secret recovery phrase before you delete your wallet.": [
-        "Прежде чем удалить кошелёк, сохраните секретную фразу для его восстановления."
-      ],
       "Seed phrase (12-24 words)": [
         "Мнемоническая фраза (12–24 слова)"
-      ],
-      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
-        "Храните мнемоническую фразу в надёжном месте. Без неё ${ BRAND_NAME } не восстановит ваши средства."
-      ],
-      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
-        "Эти 12 слов следует использовать для восстановления цифровых активов этого кошелька только в крайнем случае, например при потере доступа к аккаунту ${ BRAND_NAME }."
-      ],
-      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
-        "Эта мнемоническая фраза поможет восстановить кошелёк в следующий раз или в другой совместимой программе."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
         "Этот кошелёк уже невозможно расшифровать. Чтобы его снова можно было расшифровать, восстановите ключи, которые использовались во время его создания в аккаунте. Или удалите его, чтобы освободить место для одного кошелька."
       ],
-      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
-        "Если потеряете доступ к аккаунту, используйте эту секретную фразу для восстановления кошелька."
-      ],
       "View wallet seed phrase": [
         "Просмотреть мнемоническую фразу"
-      ],
-      "Wallet name": [
-        "Название кошелька"
       ],
       "Wallet seed phrase": [
         "Мнемоническая фраза для кошелька"
       ],
-      "Wallet seed phrases encode the private key that controls your digital assets.": [
-        "В мнемонических фразах зашифрован секретный ключ, контролирующий ваши цифровые активы."
-      ],
       "Wallet setup": [
         "Настройка кошелька"
-      ],
-      "What's a wallet passphrase": [
-        "Что такое кодовая фраза для кошелька"
-      ],
-      "What's a wallet seed phrase": [
-        "Что такое мнемоническая фраза"
       ],
       "Your keys, your coins.": [
         "Ваши ключи — ваши монеты."
@@ -2217,9 +1995,6 @@
       ],
       "Security": [
         "Безопасность"
-      ],
-      "Settings": [
-        "Настройки"
       ],
       "Upgrade": [
         "Улучшение тарифа"
@@ -2253,17 +2028,8 @@
       "Loading": [
         "Загрузка"
       ],
-      "Message": [
-        "Сообщение"
-      ],
       "Network fee": [
         "Комиссия сети"
-      ],
-      "Network fees": [
-        "Комиссия сети"
-      ],
-      "Note": [
-        "Комментарий"
       ],
       "Receive": [
         "Получить"
@@ -2280,17 +2046,11 @@
       "Total (sent amount + fee)": [
         "Итого (отправленная сумма + комиссия)"
       ],
-      "Total (sent amount + fees)": [
-        "Итого (отправленная сумма + комиссии)"
-      ],
       "Transaction note": [
         "Комментарий по транзакции"
       ],
       "Unknown": [
         "Неизвестный тип"
-      ],
-      "View advanced settings": [
-        "Посмотреть расширенные настройки"
       ],
       "View more": [
         "Показать больше"
@@ -2310,18 +2070,6 @@
       ]
     },
     "Wallet transactions": {
-      "Recipient": [
-        "Получатель",
-        "Получатели",
-        "Получатели",
-        "Получатели"
-      ],
-      "Sender": [
-        "Отправитель",
-        "Отправители",
-        "Отправители",
-        "Отправители"
-      ],
       "Syncing transactions": [
         "Синхронизируем транзакции"
       ],
@@ -2340,20 +2088,56 @@
         "Синхронизировать"
       ]
     },
-    "Wallet upgrade": {
-      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
-        "Чтобы добавить новый счёт, удалите из кошелька существующий счёт или улучшите тариф, чтобы создавать больше счетов в кошельке."
-      ],
-      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
-        "Чтобы добавить новый кошелёк, удалите из аккаунта существующий кошелёк или улучшите тариф, чтобы создавать больше кошельков."
-      ]
-    },
     "Wallet Upgrade": {
-      "Upgrade now": [
-        "Улучшить"
-      ],
       "Upgrade your privacy": [
         "Улучшите свою конфиденциальность"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } счёт на один кошелёк",
+        "${ n } счёта на один кошелёк",
+        "${ n } счетов на один кошелёк",
+        "${ n } счетов на один кошелёк"
+      ],
+      "${ n } email address": [
+        "${ n } адрес эл. почты",
+        "${ n } адреса эл. почты",
+        "${ n } адресов эл. почты",
+        "${ n } адресов эл. почты"
+      ],
+      "${ n } wallet": [
+        "${ n } кошелёк",
+        "${ n } кошелька",
+        "${ n } кошельков",
+        "${ n } кошельков"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Безопасный способ держать свои Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin по эл. почте"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Безопасно храните и переводите Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема с Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Счёт ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Мой импортированный кошелёк${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Мой кошелёк${ indexStr }"
       ]
     },
     "Warning": {

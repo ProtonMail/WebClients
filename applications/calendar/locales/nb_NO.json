@@ -4774,7 +4774,7 @@
         "Økten ble tidsavbrutt"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Ved å sette opp PGP kan du sende ende-til-ende krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
+        "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -4831,7 +4831,7 @@
         "Arrangøren av disse hendelsene i serien vil ikke bli varslet om at du avslår invitasjonen, da du ikke kan sende e-post fra den inviterte adressen. Vil du slette alle hendelsene i denne serien uansett?"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Eieren av denne adressen har deaktivert ende-til-ende kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
+        "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Vennligst deaktiver alle aktive blokkeringer av sprett-opp-vinduer."
@@ -5236,14 +5236,6 @@
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Det er ikke tillatt å opprette invitasjoner i en delt kalender"
-      ]
-    },
-    "Input label": {
-      "Access": [
-        "Tilgang"
-      ],
-      "Label (optional)": [
-        "Etikett (valgfritt)"
       ]
     },
     "Input placeholder": {
@@ -9671,7 +9663,7 @@
         "Den nye abonnementssyklusen starter ${ formattedTime }"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende krypterte e-postmeldinger til denne e-posten."
+        "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter å eksportere"
@@ -9684,10 +9676,10 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "Delt ende-til-ende kryptert"
+        "Delt ende-til-ende-kryptert"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Delt ende-til-ende kryptert med bekreftet kontakt"
+        "Delt ende-til-ende-kryptert med bekreftet kontakt"
       ]
     },
     "Validation": {
@@ -9801,7 +9793,7 @@
         "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Feilrapporter er ikke ende-til-ende kryptert, vennligst ikke send noe sensitiv informasjon."
+        "Feilrapporter er ikke ende-til-ende-kryptert, vennligst ikke send noe sensitiv informasjon."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"

@@ -4,11 +4,6 @@
     "language": "nl_NL"
   },
   "contexts": {
-    "Account container": {
-      "Edit": [
-        "Bewerken"
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -39,9 +34,6 @@
       ],
       "Close this banner": [
         "Sluit deze banner"
-      ],
-      "Close tip": [
-        "Tip sluiten"
       ],
       "Collapse wallets": [
         "Portemonnees inklappen"
@@ -163,9 +155,6 @@
       ],
       "Native Segwit": [
         "Native Segwit"
-      ],
-      "Nested Segwit": [
-        "Nested Segwit"
       ]
     },
     "Bitcoin send": {
@@ -270,9 +259,6 @@
       ],
       "VPN problem": [
         "VPN-probleem"
-      ],
-      "Wallet problem": [
-        "Probleem met portemonnee"
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
@@ -1474,20 +1460,9 @@
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
-    "Pagination": {
-      "Next": [
-        "Volgende"
-      ],
-      "Previous": [
-        "Vorige"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Een manier om u te contacteren"
-      ],
-      "Leave empty if you don't want to add passphrase": [
-        "Laat leeg als u geen wachtwoordzin wilt toevoegen"
       ],
       "Password": [
         "Wachtwoord"
@@ -1510,14 +1485,6 @@
     "QRCode reader": {
       "Loading QRCode reader": [
         "QR-codelezer wordt geladen"
-      ]
-    },
-    "Receive bitcoin": {
-      "Here is your Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Hier is uw Bitcoin-adres. Gebruik voor meer privacy een ander adres voor elke transactie."
-      ],
-      "Your bitcoin address": [
-        "Uw Bitcoin-adres"
       ]
     },
     "Select search results": {
@@ -1658,15 +1625,6 @@
       ]
     },
     "Wallet Account": {
-      "Account label": [
-        "Accountlabel"
-      ],
-      "Add": [
-        "Toevoegen"
-      ],
-      "Add account": [
-        "Account toevoegen"
-      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -1679,20 +1637,8 @@
       "Custom index": [
         "Aangepaste index"
       ],
-      "Index": [
-        "Index"
-      ],
-      "Index of the account to add": [
-        "Index van het toe te voegen account"
-      ],
       "Savings for holiday": [
         "Spaargeld voor vakantie"
-      ],
-      "Script Type": [
-        "Scripttype"
-      ],
-      "Script type used in account. This will have an impact on account derivation path.": [
-        "Scripttype gebruikt in account. Dit heeft invloed op het afgeleide pad van het account."
       ],
       "Your account was successfully created": [
         "Uw account is aangemaakt"
@@ -1701,11 +1647,6 @@
     "Wallet account": {
       "This account is already created": [
         "Dit account is al aangemaakt"
-      ]
-    },
-    "Wallet container": {
-      "Edit": [
-        "Bewerken"
       ]
     },
     "Wallet dashboard": {
@@ -1731,32 +1672,9 @@
         "De huidige vingerafdruk komt niet overeen met die is opgeslagen"
       ]
     },
-    "Wallet deletion": {
-      "Confirm to delete '${ wallet.Wallet.Name }'": [
-        "Bevestig om '${ wallet.Wallet.Name }' te verwijderen"
-      ],
-      "Warning:'": [
-        "Waarschuwing:"
-      ]
-    },
     "Wallet discover": {
-      "Backup your ${ BRAND_NAME } account": [
-        "Maak een back-up van uw ${ BRAND_NAME }-account"
-      ],
-      "Backup your wallet's mnemonic": [
-        "Maak een back-up van de mnemonic van uw portemonnee"
-      ],
-      "Claim your wallet": [
-        "Claim uw portemonnee"
-      ],
       "Discover": [
         "Ontdek"
-      ],
-      "Finish your account setup": [
-        "Voltooi uw accountconfiguratie"
-      ],
-      "Set up your 2FA": [
-        "Stel uw tweevoudige verificatie in"
       ]
     },
     "Wallet header": {
@@ -1793,29 +1711,14 @@
       ]
     },
     "Wallet preference": {
-      "Account label": [
-        "Accountlabel"
-      ],
       "Accounts": [
         "Accounts"
-      ],
-      "Advanced options": [
-        "Geavanceerde instellingen"
-      ],
-      "Back up wallet": [
-        "Back-up maken van portemonnee"
-      ],
-      "Back up wallet first": [
-        "Maak eerst een back-up van de portemonnee"
       ],
       "Clear browser storage": [
         "Browsergegevens wissen"
       ],
       "Delete account": [
         "Account verwijderen"
-      ],
-      "Delete this wallet": [
-        "Deze portemonnee verwijderen"
       ],
       "Delete wallet": [
         "Portemonnee verwijderen"
@@ -1825,55 +1728,14 @@
       ],
       "My super wallet": [
         "Mijn super portemonnee"
-      ],
-      "Wallet name": [
-        "Naam van portemonnee"
-      ],
-      "Your wallet preferences": [
-        "Uw portemonneevoorkeuren"
       ]
     },
     "Wallet preferences": {
-      "Add": [
-        "Toevoegen"
-      ],
-      "Add a new email address": [
-        "Nieuw e-mailadres toevoegen"
-      ],
-      "Email integration": [
-        "Integratie met e-mail"
-      ],
-      "Learn more": [
-        "Meer informatie"
-      ],
       "Local currency": [
         "Lokale valuta"
       ],
       "Select your currency": [
         "Selecteer uw valuta"
-      ],
-      "Send and receive Bitcoin by email with email integration.": [
-        "Verstuur en ontvang Bitcoin per e-mail met integratie met e-mail."
-      ]
-    },
-    "Wallet Receive": {
-      "Amount": [
-        "Bedrag"
-      ],
-      "Amount to receive": [
-        "Te ontvangen bedrag"
-      ],
-      "Discover Bitcoin Via Email": [
-        "Ontdek Bitcoin via Email"
-      ],
-      "Enter custom amount": [
-        "Voer aangepast bedrag in"
-      ],
-      "Leave empty to let the sender choose the amount": [
-        "Laat leeg om de afzender het bedrag te laten kiezen"
-      ],
-      "Other ${ WALLET_APP_NAME } users can send Bitcoin to your email.": [
-        "Andere ${ WALLET_APP_NAME } -gebruikers kunnen Bitcoin naar uw e-mail sturen."
       ]
     },
     "Wallet receive": {
@@ -1885,9 +1747,6 @@
       ],
       "Generate new address": [
         "Nieuw adres genereren"
-      ],
-      "Share address": [
-        "Adres delen"
       ]
     },
     "Wallet send": {
@@ -1897,17 +1756,8 @@
       "A user icon with an exclamation mark, meaning that something unexpected happened": [
         "Een gebruikerspictogram met een uitroepteken. Dit betekent dat er iets onverwachts is gebeurd"
       ],
-      "Add Message to recipient": [
-        "Bericht aan ontvanger toevoegen"
-      ],
       "Add private note to myself": [
         "Privénotitie voor mezelf toevoegen"
-      ],
-      "Added address is invalid": [
-        "Toegevoegd adres is ongeldig"
-      ],
-      "Amount": [
-        "Bedrag"
       ],
       "Bitcoin address signature could not be verified": [
         "De handtekening van dit Bitcoin-adres kon niet geverifieerd worden"
@@ -1917,9 +1767,6 @@
       ],
       "Could not create PSBT": [
         "Kan PSBT niet aanmaken"
-      ],
-      "Could not find address linked to this email": [
-        "Kon het adres niet vinden dat gekoppeld is aan deze e-mail"
       ],
       "Edit": [
         "Bewerken"
@@ -1942,17 +1789,8 @@
       "Median priority": [
         "Middelmatige prioriteit"
       ],
-      "Money is on the way": [
-        "Geld is onderweg"
-      ],
       "Network fees": [
         "Netwerkkosten"
-      ],
-      "No address set on this BitcoinAddress": [
-        "Er is geen adres ingesteld op dit Bitcoin-adres"
-      ],
-      "No signature set on this BitcoinAddress": [
-        "Er is geen handtekening ingesteld op dit Bitcoin-adres"
       ],
       "Recent recipients": [
         "Recente ontvangers"
@@ -1969,23 +1807,14 @@
       "Review": [
         "Bekijken"
       ],
-      "Send": [
-        "Verzenden"
-      ],
       "Send all": [
         "Alles versturen"
       ],
       "The transaction could not be sent. Please try again later": [
         "De transactie kon niet worden verstuurd. Probeer het later opnieuw"
       ],
-      "Transaction was succesfully sent": [
-        "Transactie is verstuurd"
-      ],
       "Try adding an email address to start sending Bitcoin!": [
         "Probeer een e-mailadres toe te voegen om Bitcoin te versturen!"
-      ],
-      "View details": [
-        "Details weergeven"
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
         "Nodig terwijl u wacht uw familie en vrienden uit voor ${ WALLET_APP_NAME } zodat u naar iedereen Bitcoin via Email kunt versturen."
@@ -2006,14 +1835,6 @@
       ],
       "Could not sign transaction": [
         "Kan transactie niet ondertekenen"
-      ]
-    },
-    "Wallet settings": {
-      "Bitcoin unit": [
-        "Bitcoin-eenheid"
-      ],
-      "Unit in which bitcoin will be displayed": [
-        "Eenheid waarin bitcoin wordt weergegeven"
       ]
     },
     "Wallet Settings": {
@@ -2081,21 +1902,20 @@
         "Portemonnee is verwijderd"
       ]
     },
+    "Wallet settings": {
+      "Bitcoin unit": [
+        "Bitcoin-eenheid"
+      ]
+    },
     "Wallet setup": {
       "Add a passphrase (optional)": [
         "Voeg een wachtwoordzin toe (optioneel)"
-      ],
-      "Choose your local fiat currency to see the value of your transactions.": [
-        "Kies uw lokale fiat-valuta om de waarde van uw transacties te zien."
       ],
       "Confirm": [
         "Bevestigen"
       ],
       "Could not create wallet": [
         "Kan portemonnee niet aanmaken"
-      ],
-      "Create a new wallet": [
-        "Nieuwe portemonnee aanmaken"
       ],
       "Done": [
         "Klaar"
@@ -2109,9 +1929,6 @@
       "Import wallet": [
         "Portemonnee importeren"
       ],
-      "Important:": [
-        "Belangrijk:"
-      ],
       "Input mnemonic is invalid, please double check.": [
         "Invoer voor mnemonic is ongeldig, controleer nogmaals."
       ],
@@ -2124,65 +1941,26 @@
       "Mnemonic length is not valid.": [
         "Lengte van mnemonic is ongeldig."
       ],
-      "My imported wallet${ indexStr }": [
-        "Mijn geïmporteerde portemonnee ${ indexStr }"
-      ],
-      "My wallet account ${ indexStr }": [
-        "Mijn portemonneeaccount ${ indexStr }"
-      ],
       "My wallet had a passphrase": [
         "Mijn portemonnee heeft een wachtwoordzin"
-      ],
-      "My wallet${ indexStr }": [
-        "Mijn portemonnee ${ indexStr }"
-      ],
-      "Never give them to anyone else. ${ BRAND_NAME } will never ask for them. Write them down carefully and hide it in a safe place.": [
-        "Geef de woorden nooit aan iemand anders. ${ BRAND_NAME } zal er nooit om vragen. Schrijf ze zorgvuldig op en verberg ze op een veilige plek."
       ],
       "Passphrase": [
         "Wachtzin"
       ],
-      "Please backup your secret recovery phrase before you delete your wallet.": [
-        "Maak een back-up van uw geheime herstelzin voordat u uw portemonnee verwijdert."
-      ],
       "Seed phrase (12-24 words)": [
         "Seed-phrase (12-24 woorden)"
-      ],
-      "Store your seed phrase securely; without it, ${ BRAND_NAME } cannot recover your funds.": [
-        "Bewaar uw seed-phrase veilig; zonder deze phrase kan ${ BRAND_NAME } uw vermogen niet herstellen."
-      ],
-      "These 12 words should only be used to recover the digital assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
-        "Deze 12 woorden dienen alleen als laatste optie gebruikt te worden om de digitale activa van deze portemonnee te herstellen, bijvoorbeeld als u toegang verliest tot uw ${ BRAND_NAME }-account."
-      ],
-      "This mnemonic can help you restoring your wallet next time or on another compatible software.": [
-        "Deze mnemonic kan u helpen bij het herstellen van uw portemonnee voor de volgende keer of bij andere compatibele software."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
         "Deze portemonnee kan niet meer ontsleuteld worden. Om deze opnieuw te ontsleutelen, dient u de sleutels te herstellen die tijdens de aanmaak van uw account zijn gebruikt. Anders kunt u het verwijderen om een portemonneeruimte vrij te maken."
       ],
-      "Use this secret recovery phrase to recover your wallet if you lose access to your account.": [
-        "Gebruik deze geheime herstelzin om uw portemonnee te herstellen als u de toegang tot uw account kwijtraakt."
-      ],
       "View wallet seed phrase": [
         "Seed-phrase van portemonnee bekijken"
-      ],
-      "Wallet name": [
-        "Naam van portemonnee"
       ],
       "Wallet seed phrase": [
         "Seed-phrase van portemonnee"
       ],
-      "Wallet seed phrases encode the private key that controls your digital assets.": [
-        "De seed-phrases voor een portemonnee versleutelen de privésleutel die uw digitale activa beheert."
-      ],
       "Wallet setup": [
         "Configuratie van portemonnee"
-      ],
-      "What's a wallet passphrase": [
-        "Wat is een wachtwoordzin van een portemonnee"
-      ],
-      "What's a wallet seed phrase": [
-        "Wat is een seed-phrase van een portemonnee"
       ],
       "Your keys, your coins.": [
         "Uw sleutels, uw coins."
@@ -2197,9 +1975,6 @@
       ],
       "Security": [
         "Beveiliging"
-      ],
-      "Settings": [
-        "Instellingen"
       ],
       "Upgrade": [
         "Upgrade"
@@ -2233,17 +2008,8 @@
       "Loading": [
         "Laden"
       ],
-      "Message": [
-        "Bericht"
-      ],
       "Network fee": [
         "Netwerkkosten"
-      ],
-      "Network fees": [
-        "Netwerkkosten"
-      ],
-      "Note": [
-        "Notitie"
       ],
       "Receive": [
         "Ontvangen"
@@ -2260,17 +2026,11 @@
       "Total (sent amount + fee)": [
         "Totaal (verstuurd bedrag + kosten)"
       ],
-      "Total (sent amount + fees)": [
-        "Totaal (verstuurd bedrag + kosten)"
-      ],
       "Transaction note": [
         "Transactienotitie"
       ],
       "Unknown": [
         "Onbekend"
-      ],
-      "View advanced settings": [
-        "Geavanceerde instellingen tonen"
       ],
       "View more": [
         "Meer bekijken"
@@ -2290,14 +2050,6 @@
       ]
     },
     "Wallet transactions": {
-      "Recipient": [
-        "Ontvanger",
-        "Ontvangers"
-      ],
-      "Sender": [
-        "Afzender",
-        "Afzenders"
-      ],
       "Syncing transactions": [
         "Transacties worden gesynchroniseerd"
       ],
@@ -2316,20 +2068,50 @@
         "Synchroniseren"
       ]
     },
-    "Wallet upgrade": {
-      "To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.": [
-        "Om een nieuw portemonneeaccount toe te voegen, kunt u een bestaand portemonneeaccount uit deze portemonnee verwijderen of u kunt uw huidige abonnement upgraden om meer portemonneeaccounts per portemonnee te krijgen."
-      ],
-      "To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.": [
-        "Om een nieuwe portemonnee toe te voegen, kunt u een bestaande portemonnee uit uw account verwijderen of u kunt uw huidige abonnement upgraden om meer portemonnees te krijgen."
-      ]
-    },
     "Wallet Upgrade": {
-      "Upgrade now": [
-        "Nu upgraden"
-      ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Een veiligere manier om uw Bitcoin vast te houden"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bewaar uw bitcoins en zet ze veilig over"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Probleem met Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Account ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Mijn geïmporteerde portemonnee${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Mijn portemonnee${ indexStr }"
       ]
     },
     "Warning": {

@@ -1234,6 +1234,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -2309,13 +2313,13 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Ende-til-ende kryptert"
+        "Ende-til-ende-kryptert"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Ende-til-ende kryptert til bekreftet mottaker"
+        "Ende-til-ende-kryptert til bekreftet mottaker"
       ],
       "End-to-end encrypted. ${ warningsText }": [
-        "Ende-til-ende kryptert. ${ warningsText }"
+        "Ende-til-ende-kryptert. ${ warningsText }"
       ],
       "PGP-encrypted": [
         "PGP-kryptert"
@@ -5775,6 +5779,9 @@
       "and": [
         "og"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Et annet tips vises neste gang du åpner Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Alle planlagte eller utsatte meldinger blir kansellert."
       ],
@@ -5919,6 +5926,9 @@
       "Confirm phishing report": [
         "Bekreft rapporten om nettfisking"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Vurder når det er best for mottakeren å motta e-posten din, og planlegg at den skal sendes da."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
@@ -5940,6 +5950,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Opprett ${ calendarsToBeCreatedCount } ny kalender",
         "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Opprett en mappe som \"${ suggestedFolderName }\" for å holde alle dine nettkvitteringer på ett sted."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og mappene du vil importere."
@@ -5992,6 +6005,12 @@
       "Default email application": [
         "Standardprogram for e-post"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Visste du at du har kryptert skylagring inkludert i ${ BRAND_NAME }-kontoen din? Gå over til ${ DRIVE_APP_NAME } og få mest mulig ut av plassen din. Det er gratis."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Visste du at? Vi har reservert en kortere e-postadresse bare for deg. Det er brukernavnet ditt etterfulgt av “@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -6007,6 +6026,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Ikke glem å dele passordet med mottakeren."
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Har du ikke tid til å takle en viktig e-post nå, men vil ikke glemme det? Angi et bedre tidspunkt for når den skal vises i innboksen din."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
@@ -6169,6 +6191,9 @@
       "Generate text": [
         "Generer tekst"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Gi innkommende fakturaer en fargekodet etikett, for eksempel “${ suggestedLabelName }“. Når de er betalt, endre etiketten til “${ suggestedPaidLabelName }“."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })",
         "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })"
@@ -6208,6 +6233,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Hvis aliaset ditt selges, lekkes eller misbrukes, deaktiverer du det ganske enkelt for å slutte å motta søppelpost."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Hvis passordet ditt havner på det mørke nettet, kan ${ BRAND_NAME } fortelle deg hvilken tjeneste dataene dine ble lekket fra og hvordan du kan stoppe skaden."
       ],
       "Image description": [
         "Bildebeskrivelse"
@@ -6278,6 +6306,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Hold påloggings- og kredittkortopplysningene dine trygge, men alltid tilgjengelig ved å legge dem til ${ PASS_APP_NAME }. Det er gratis, og inkludert i din ${ BRAND_NAME }-konto."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Hold postkassen ryddig ved automatisk å tømme papirkurven og søppelpost som har vært der i mer enn 30 dager."
       ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
@@ -6699,7 +6733,7 @@
         "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon for denne nettleseren. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Ved å sette opp PGP kan du sende ende-til-ende krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
+        "Ved å sette opp PGP kan du sende ende-til-ende-krypterte e-poster med en ikke-${ BRAND_NAME }-bruker, som bruker en annen PGP kompatibel tjeneste."
       ],
       "Shorten selection": [
         "Forkort utvalget"
@@ -6738,7 +6772,7 @@
         "Emne"
       ],
       "Subject is end-to-end encrypted": [
-        "Emne er ende-til-ende kryptert"
+        "Emne er ende-til-ende-kryptert"
       ],
       "Subject:": [
         "Emne:"
@@ -6801,7 +6835,7 @@
         "Den opprinnelige avsenderen av denne meldingen er ikke lenger gyldig. Meldingen sendes fra standardadressen ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Eieren av denne adressen har deaktivert ende-til-ende kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
+        "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
       "The sender has requested a read receipt.": [
         "Avsenderen har bedt om lesebekreftelse."
@@ -6938,6 +6972,9 @@
       "to ${ destinationElement } folder.": [
         "til ${ destinationElement }mappen"
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "For å unngå å bli avsporet av de åpne fanene i nettleseren din, bruk skrivebordsappen."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "For å fullføre betalingen din, vennligst send ${ btcAmountBold } til adressen nedenfor."
       ],
@@ -7064,6 +7101,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "Nettadresse: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Bruk forskjellige e-postadresser til forskjellige formål, slik at du enkelt kan skille e-postene dine etter jobb, personlig eller andre områder."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Bruk tastatursnarveier for å behandle e-posten din raskere."
       ],
@@ -7153,6 +7193,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Når du registrerer deg for et nyhetsbrev, bruk et alias i stedet for e-postadressen din. Identiteten din forblir skjult, og du kan deaktivere aliaset når som helst."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Når du er på reise eller bruker offentlig Wi-Fi, kan du koble til ${ VPN_APP_NAME } for å forhindre at noen sporer nettaktiviteten din eller stjeler dataene dine. Det er gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -10249,13 +10295,13 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "Ende-til-ende kryptert og signert melding"
+        "Ende-til-ende-kryptert og signert melding"
       ],
       "End-to-end encrypted message": [
-        "Ende-til-ende kryptert melding"
+        "Ende-til-ende-kryptert melding"
       ],
       "End-to-end encrypted message from verified sender": [
-        "Ende-til-ende kryptert melding fra verifisert avsender"
+        "Ende-til-ende-kryptert melding fra verifisert avsender"
       ],
       "PGP-encrypted and signed message": [
         "PGP-kryptert og signert melding"
@@ -10467,16 +10513,16 @@
         "Kryptert av ${ MAIL_APP_NAME } til verifisert mottaker"
       ],
       "End-to-end encrypted": [
-        "Ende-til-ende kryptert"
+        "Ende-til-ende-kryptert"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "Ende-til-ende kryptert til PGP-mottaker"
+        "Ende-til-ende-kryptert til PGP-mottaker"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "Ende-til-ende kryptert til bekreftet PGP-mottaker"
+        "Ende-til-ende-kryptert til bekreftet PGP-mottaker"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Ende-til-ende kryptert til bekreftet mottaker"
+        "Ende-til-ende-kryptert til bekreftet mottaker"
       ],
       "PGP-signed": [
         "PGP-signert"
@@ -11838,6 +11884,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " er nå aktiv"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } fjernet"
       ]
@@ -11977,6 +12026,41 @@
       "${ minutes } minute": [
         "${ minutes } minutt",
         "${ minutes } minutter"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktiver"
+      ],
+      "Create an alias": [
+        "Opprett et alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Opprett etikett \"${ suggestedLabelName }\""
+      ],
+      "Create new email address": [
+        "Opprett ny e-postadresse"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Opprett “${ suggestedFolderName }“-mappe"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Last ned ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Last ned skrivebordsapp"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Aktiver overvåking av det mørke nettet"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Få min \"@${ PM_DOMAIN }\"-adresse"
+      ],
+      "Open ": [
+        "Åpne "
+      ],
+      "Show me how": [
+        "Vis meg hvordan"
       ]
     },
     "Title": {
@@ -12820,7 +12904,7 @@
         "Denne funksjonen er bare tilgjengelig for betalende brukere."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende krypterte e-postmeldinger til denne e-posten."
+        "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter å eksportere"
@@ -12953,7 +13037,7 @@
         "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Feilrapporter er ikke ende-til-ende kryptert, vennligst ikke send noe sensitiv informasjon."
+        "Feilrapporter er ikke ende-til-ende-kryptert, vennligst ikke send noe sensitiv informasjon."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"
