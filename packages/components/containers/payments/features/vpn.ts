@@ -87,19 +87,24 @@ export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
 export const getVPNAppFeature = ({
     serversCount,
     family,
+    duo,
 }: {
     serversCount: VPNServersCountData;
     family?: boolean;
+    duo?: boolean;
 }): PlanCardFeatureDefinition => {
     const serversAndCountries = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+    let tooltip = c('new_plans: tooltip')
+        .t`${VPN_APP_NAME}: Access blocked content and browse privately. Includes ${serversAndCountries}, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`;
+
+    if (duo || family) {
+        tooltip = c('new_plans: tooltip')
+            .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`;
+    }
+
     return {
         text: VPN_APP_NAME,
-        tooltip: family
-            ? c('new_plans: tooltip')
-                  .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`
-            : // translator: Includes [X+ servers across Y+ countries], ...
-              c('new_plans: tooltip')
-                  .t`${VPN_APP_NAME}: Access blocked content and browse privately. Includes ${serversAndCountries}, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`,
+        tooltip,
         included: true,
         icon: 'brand-proton-vpn',
     };
