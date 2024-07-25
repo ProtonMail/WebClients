@@ -265,7 +265,7 @@ const PlanSelection = ({
         plansMap[PLANS.BUNDLE],
     ]);
 
-    const FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.DUO], plansMap[PLANS.FAMILY]]);
+    let FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.DUO], plansMap[PLANS.FAMILY]]);
 
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],
