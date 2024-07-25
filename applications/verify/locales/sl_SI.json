@@ -1,1123 +1,1129 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
-    "language": "ko_KO"
+    "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
+    "language": "sl_SI"
   },
   "contexts": {
     "Action": {
       "Authenticate": [
-        "인증"
+        "Preverjanje pristnosti"
       ],
       "Back": [
-        "이전"
+        "Nazaj"
       ],
       "Cancel": [
-        "취소"
+        "Prekliči"
       ],
       "Close": [
-        "닫기"
+        "Zapri"
       ],
       "Continue": [
-        "계속"
+        "Nadaljuj"
       ],
       "Edit email address": [
-        "이메일 주소 추가"
+        "Uredi e-poštni naslov"
       ],
       "Edit phone number": [
-        "휴대전화 번호 변경"
+        "Uredi telefonsko številko"
       ],
       "Edit sign-in details": [
-        "로그인 정보 변경"
+        "Uredi podrobnosti prijave"
       ],
       "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
+        "Pozabljeno geslo?"
       ],
       "Get verification code": [
-        "인증코드 전송"
+        "Pridobi kodo za preverjanje"
       ],
       "More info: ${ safeTitle }": [
-        "추가 정보: ${ safeTitle }"
+        "Več informacij: ${ safeTitle }"
       ],
       "Refresh the page": [
-        "페이지 새로 고침"
+        "Osveži stran"
       ],
       "Request new code": [
-        "새 코드를 요청합니다."
+        "Zahtevaj novo kodo"
       ],
       "Resend code": [
-        "코드 다시 보내기"
+        "Znova pošlji kodo"
       ],
       "Search countries": [
-        "국가 검색"
+        "Iskanje držav"
       ],
       "Submit": [
-        "제출"
+        "Pošlji"
       ],
       "Try another method": [
-        "다른 방법 시도"
+        "Poskusi z drugim načinom"
       ],
       "Use authentication code": [
-        "인증 코드를 사용"
+        "Uporabi kodo za preverjanje pristnosti"
       ],
       "Use recovery code": [
-        "복구코드 사용"
+        "Uporabi kodo za obnovitev"
       ],
       "Verify": [
-        "인증"
+        "Preveri"
       ],
       "Verify account": [
-        "계정 인증"
+        "Potrdi račun"
       ],
       "View invoice": [
-        "청구서 보기"
+        "Ogled računa"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "압하지야"
+        "Abhazija"
       ],
       "Afghanistan": [
-        "아프가니스탄"
+        "Afganistan"
       ],
       "Albania": [
-        "알바니아"
+        "Albanija"
       ],
       "Algeria": [
-        "알제리"
+        "Alžirija"
       ],
       "American Samoa": [
-        "미국령 사모아"
+        "Ameriška Samoa"
       ],
       "Andorra": [
-        "안도라"
+        "Andora"
       ],
       "Angola": [
-        "앙골라"
+        "Angola"
       ],
       "Anguilla": [
-        "앵귈라"
+        "Angvila"
       ],
       "Antarctica": [
-        "남극"
+        "Antarktika"
       ],
       "Antigua and Barbuda": [
-        "앤티가 바부다"
+        "Antigva in Barbuda"
       ],
       "Argentina": [
-        "아르헨티나"
+        "Argentina"
       ],
       "Armenia": [
-        "아르메니아"
+        "Armenija"
       ],
       "Aruba": [
-        "아루바"
+        "Aruba"
       ],
       "Ascension Island": [
-        "어센션 섬"
+        "Otok Ascension"
       ],
       "Australia": [
-        "호주"
+        "Avstralija"
       ],
       "Austria": [
-        "오스트리아"
+        "Avstrija"
       ],
       "Azerbaijan": [
-        "아제르바이잔"
+        "Azerbajdžan"
       ],
       "Bahamas": [
-        "바하마"
+        "Bahami"
       ],
       "Bahrain": [
-        "바레인"
+        "Bahrajn"
       ],
       "Bangladesh": [
-        "방글라데시"
+        "Bangladeš"
       ],
       "Barbados": [
-        "바베이도스"
+        "Barbados"
       ],
       "Belarus": [
-        "벨라루스"
+        "Belorusija"
       ],
       "Belgium": [
-        "벨기에"
+        "Belgija"
       ],
       "Belize": [
-        "벨리즈"
+        "Belize"
       ],
       "Benin": [
-        "베냉"
+        "Benin"
       ],
       "Bermuda": [
-        "버뮤다"
+        "Bermudi"
       ],
       "Bhutan": [
-        "부탄"
+        "Butan"
       ],
       "Bolivia": [
-        "볼리비아"
+        "Bolivija"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "보네르, 신트외스타티위스, 사바"
+        "Bonaire, Sveti Evstahij in Saba"
       ],
       "Bosnia and Herzegovina": [
-        "보스니아 헤르체고비나"
+        "Bosna in Hercegovina"
       ],
       "Botswana": [
-        "보츠와나"
+        "Bocvana"
       ],
       "Bouvet Island": [
-        "부베 섬"
+        "Bouvetov otok"
       ],
       "Brazil": [
-        "브라질"
+        "Brazilija"
       ],
       "British Indian Ocean Territory": [
-        "영국령 인도양 지역"
+        "Britansko ozemlje v Indijskem oceanu"
       ],
       "Brunei Darussalam": [
-        "브루나이 다루살람"
+        "Brunej"
       ],
       "Bulgaria": [
-        "불가리아"
+        "Bolgarija"
       ],
       "Burkina Faso": [
-        "부르키나파소"
+        "Burkina Faso"
       ],
       "Burundi": [
-        "부룬디"
+        "Burundi"
       ],
       "Cambodia": [
-        "캄보디아"
+        "Kambodža"
       ],
       "Cameroon": [
-        "카메룬"
+        "Kamerun"
       ],
       "Canada": [
-        "캐나다"
+        "Kanada"
       ],
       "Cape Verde": [
-        "카보베르데"
+        "Zelenortski otoki"
       ],
       "Cayman Islands": [
-        "케이맨 제도"
+        "Kajmanski otoki"
       ],
       "Central African Republic": [
-        "중앙아프리카 공화국"
+        "Srednjeafriška republika"
       ],
       "Chad": [
-        "차드"
+        "Čad"
       ],
       "Chile": [
-        "칠레"
+        "Čile"
       ],
       "China": [
-        "중국"
+        "Kitajska"
       ],
       "Christmas Island": [
-        "크리스마스 섬"
+        "Božični otok"
       ],
       "Cocos (Keeling) Islands": [
-        "코코스 제도"
+        "Kokosovi (Keelingovi) otoki"
       ],
       "Colombia": [
-        "콜롬비아"
+        "Kolumbija"
       ],
       "Comoros": [
-        "코모로"
+        "Komori"
       ],
       "Congo": [
-        "콩고"
+        "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "콩고민주공화국"
+        "Demokratična republika Kongo"
       ],
       "Cook Islands": [
-        "쿡 제도"
+        "Cookovi otoki"
       ],
       "Costa Rica": [
-        "코스타리카"
+        "Kostarika"
       ],
       "Croatia": [
-        "크로아티아"
+        "Hrvaška"
       ],
       "Cuba": [
-        "쿠바"
+        "Kuba"
       ],
       "Curaçao": [
-        "퀴라소"
+        "Curaçao"
       ],
       "Cyprus": [
-        "키프로스"
+        "Ciper"
       ],
       "Czech Republic": [
-        "체코"
+        "Češka"
       ],
       "Côte d'Ivoire": [
-        "코트디부아르"
+        "Slonokoščena obala"
       ],
       "Denmark": [
-        "덴마크"
+        "Danska"
       ],
       "Djibouti": [
-        "지부티"
+        "Džibuti"
       ],
       "Dominica": [
-        "도미니카 연방"
+        "Dominika"
       ],
       "Dominican Republic": [
-        "도미니카 공화국"
+        "Dominikanska republika"
       ],
       "Ecuador": [
-        "에콰도르"
+        "Ekvador"
       ],
       "Egypt": [
-        "이집트"
+        "Egipt"
       ],
       "El Salvador": [
-        "엘살바도르"
+        "Salvador"
       ],
       "Equatorial Guinea": [
-        "적도 기니"
+        "Ekvatorialna Gvineja"
       ],
       "Eritrea": [
-        "에리트레아"
+        "Eritreja"
       ],
       "Estonia": [
-        "에스토니아"
+        "Estonija"
       ],
       "Eswatini": [
-        "에스와티니"
+        "Esvatini"
       ],
       "Ethiopia": [
-        "에티오피아"
+        "Etiopija"
       ],
       "Falkland Islands": [
-        "포클랜드 제도"
+        "Falklandski otoki"
       ],
       "Faroe Islands": [
-        "페로 제도"
+        "Ferski otoki"
       ],
       "Federated States of Micronesia": [
-        "미크로네시아 연방"
+        "Zvezne države Mikronezije"
       ],
       "Fiji": [
-        "피지"
+        "Fidži"
       ],
       "Finland": [
-        "핀란드"
+        "Finska"
       ],
       "France": [
-        "프랑스"
+        "Francija"
       ],
       "French Guiana": [
-        "프랑스령 기아나"
+        "Francoska Gvajana"
       ],
       "French Polynesia": [
-        "영국령 폴리네시아"
+        "Francoska Polinezija"
       ],
       "French Southern Territories": [
-        "프랑스 남부 영토"
+        "Francoska južna ozemlja"
       ],
       "Gabon": [
-        "가봉"
+        "Gabon"
       ],
       "Gambia": [
-        "감비아"
+        "Gambija"
       ],
       "Georgia": [
-        "조지아"
+        "Gruzija"
       ],
       "Germany": [
-        "독일"
+        "Nemčija"
       ],
       "Ghana": [
-        "가나"
+        "Gana"
       ],
       "Gibraltar": [
-        "지브롤터"
+        "Gibraltar"
       ],
       "Greece": [
-        "그리스"
+        "Grčija"
       ],
       "Greenland": [
-        "그린란드"
+        "Grenlandija"
       ],
       "Grenada": [
-        "그레나다"
+        "Grenada"
       ],
       "Guadeloupe": [
-        "과들루프"
+        "Gvadelup"
       ],
       "Guam": [
-        "괌"
+        "Guam"
       ],
       "Guatemala": [
-        "과테말라"
+        "Gvatemala"
       ],
       "Guernsey": [
-        "건지 섬"
+        "Guernsey"
       ],
       "Guinea": [
-        "기니"
+        "Gvineja"
       ],
       "Guinea-Bissau": [
-        "기니비사우"
+        "Gvineja Bissau"
       ],
       "Guyana": [
-        "가이아나"
+        "Gvajana"
       ],
       "Haiti": [
-        "아이티"
+        "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        "허드 맥도널드 제도"
+        "Heardov otok in McDonaldovi otoki"
       ],
       "Holy See (Vatican City State)": [
-        "교황청 (바티칸 시국)"
+        "Sveti sedež (Vatikan)"
       ],
       "Honduras": [
-        "온두라스"
+        "Honduras"
       ],
       "Hong Kong": [
-        "홍콩"
+        "Hongkong"
       ],
       "Hungary": [
-        "헝가리"
+        "Madžarska"
       ],
       "Iceland": [
-        "아이슬란드"
+        "Islandija"
       ],
       "India": [
-        "인도"
+        "Indija"
       ],
       "Indonesia": [
-        "인도네시아"
+        "Indonezija"
       ],
       "International": [
-        "국제"
+        "Mednarodno"
       ],
       "Iran": [
-        "이란"
+        "Iran"
       ],
       "Iraq": [
-        "이라크"
+        "Irak"
       ],
       "Ireland": [
-        "아일랜드"
+        "Irska"
       ],
       "Isle of Man": [
-        "맨섬"
+        "Otok Man"
       ],
       "Israel": [
-        "이스라엘"
+        "Izrael"
       ],
       "Italy": [
-        "이탈리아"
+        "Italija"
       ],
       "Jamaica": [
-        "자메이카"
+        "Jamajka"
       ],
       "Japan": [
-        "일본"
+        "Japonska"
       ],
       "Jersey": [
-        "저지 섬"
+        "Jersey"
       ],
       "Jordan": [
-        "요르단"
+        "Jordanija"
       ],
       "Kazakhstan": [
-        "카자흐스탄"
+        "Kazahstan"
       ],
       "Kenya": [
-        "케냐"
+        "Kenija"
       ],
       "Kiribati": [
-        "키리바시"
+        "Kiribati"
       ],
       "Kosovo": [
-        "코소보"
+        "Kosovo"
       ],
       "Kuwait": [
-        "쿠웨이트"
+        "Kuvajt"
       ],
       "Kyrgyzstan": [
-        "키르기스스탄"
+        "Kirgizistan"
       ],
       "Laos": [
-        "라오스"
+        "Laos"
       ],
       "Latvia": [
-        "라트비아"
+        "Latvija"
       ],
       "Lebanon": [
-        "레바논"
+        "Libanon"
       ],
       "Lesotho": [
-        "레소토"
+        "Lesoto"
       ],
       "Liberia": [
-        "라이베리아"
+        "Liberija"
       ],
       "Libya": [
-        "리비아"
+        "Libija"
       ],
       "Liechtenstein": [
-        "리히텐슈타인"
+        "Lihtenštajn"
       ],
       "Lithuania": [
-        "리투아니아"
+        "Litva"
       ],
       "Luxembourg": [
-        "룩셈부르크"
+        "Luksemburg"
       ],
       "Macao": [
-        "마카오"
+        "Makav"
       ],
       "Madagascar": [
-        "마다가스카르"
+        "Madagaskar"
       ],
       "Malawi": [
-        "말라위"
+        "Malavi"
       ],
       "Malaysia": [
-        "말레이시아"
+        "Malezija"
       ],
       "Maldives": [
-        "몰디브"
+        "Maldivi"
       ],
       "Mali": [
-        "말리"
+        "Mali"
       ],
       "Malta": [
-        "몰타"
+        "Malta"
       ],
       "Marshall Islands": [
-        "마쉘섬"
+        "Marshallovi otoki"
       ],
       "Martinique": [
-        "마르티니크"
+        "Martinik"
       ],
       "Mauritania": [
-        "모리타니"
+        "Mavretanija"
       ],
       "Mauritius": [
-        "모리셔스"
+        "Mavricij"
       ],
       "Mayotte": [
-        "마요테"
+        "Mayotte"
       ],
       "Mexico": [
-        "멕시코"
+        "Mehika"
       ],
       "Moldova": [
-        "몰도바"
+        "Moldavija"
       ],
       "Monaco": [
-        "모나코"
+        "Monako"
       ],
       "Mongolia": [
-        "몽골"
+        "Mongolija"
       ],
       "Montenegro": [
-        "몬테네그로"
+        "Črna gora"
       ],
       "Montserrat": [
-        "몬트세라트(섬)"
+        "Monserat"
       ],
       "Morocco": [
-        "모로코"
+        "Maroko"
       ],
       "Mozambique": [
-        "모잠비크"
+        "Mozambik"
       ],
       "Myanmar": [
-        "미얀마"
+        "Mjanmar"
       ],
       "Namibia": [
-        "나미비아"
+        "Namibija"
       ],
       "Nauru": [
-        "나우루"
+        "Nauru"
       ],
       "Nepal": [
-        "네팔"
+        "Nepal"
       ],
       "Netherlands": [
-        "네덜란드"
+        "Nizozemska"
       ],
       "New Caledonia": [
-        "뉴 칼레도니아"
+        "Nova Kaledonija"
       ],
       "New Zealand": [
-        "뉴질랜드"
+        "Nova Zelandija"
       ],
       "Nicaragua": [
-        "니카라과"
+        "Nikaragva"
       ],
       "Niger": [
-        "니제르"
+        "Niger"
       ],
       "Nigeria": [
-        "나이지리아"
+        "Nigerija"
       ],
       "Niue": [
-        "니우에 섬"
+        "Niue"
       ],
       "Norfolk Island": [
-        "노포크 섬"
+        "Otok Norfolk"
       ],
       "North Korea": [
-        "북한"
+        "Severna Koreja"
       ],
       "North Macedonia": [
-        "북마케도니아"
+        "Severna Makedonija"
       ],
       "Northern Mariana Islands": [
-        "북마리아나섬"
+        "Severni Marijanski otoki"
       ],
       "Norway": [
-        "노르웨이"
+        "Norveška"
       ],
       "Oman": [
-        "오만"
+        "Oman"
       ],
       "Pakistan": [
-        "파키스탄"
+        "Pakistan"
       ],
       "Palau": [
-        "팔라우"
+        "Palav"
       ],
       "Palestine": [
-        "팔레스타인"
+        "Palestina"
       ],
       "Panama": [
-        "파나마"
+        "Panama"
       ],
       "Papua New Guinea": [
-        "파푸아 뉴기니"
+        "Papuanska Nova Gvineja"
       ],
       "Paraguay": [
-        "파라과이"
+        "Paragvaj"
       ],
       "Peru": [
-        "페루"
+        "Peru"
       ],
       "Philippines": [
-        "필란드"
+        "Filipini"
       ],
       "Pitcairn": [
-        "피트케언"
+        "Pitcairn"
       ],
       "Poland": [
-        "폴란드"
+        "Poljska"
       ],
       "Portugal": [
-        "포루투갈"
+        "Portugalska"
       ],
       "Puerto Rico": [
-        "미 자치령 푸에르토리코섬"
+        "Portoriko"
       ],
       "Qatar": [
-        "카타르"
+        "Katar"
       ],
       "Reunion": [
-        "리뉴니언"
+        "Reunion"
       ],
       "Romania": [
-        "루마니아"
+        "Romunija"
       ],
       "Russia": [
-        "러시아"
+        "Rusija"
       ],
       "Rwanda": [
-        "르완다"
+        "Ruanda"
       ],
       "Saint Barthélemy": [
-        "생바르텔레미"
+        "Sveti Bartolomej"
       ],
       "Saint Helena": [
-        "세인트 헬레나"
+        "Sveta Helena"
       ],
       "Saint Kitts and Nevis": [
-        "세인트키츠 네비스"
+        "Sveti Krištof in Nevis"
       ],
       "Saint Lucia": [
-        "세인트루시아"
+        "Sveta Lucija"
       ],
       "Saint Martin (French Part)": [
-        "세인트 마틴 (프랑스령)"
+        "Sveti Martin (francoski del)"
       ],
       "Saint Pierre and Miquelon": [
-        "생 피에르와 미클롱"
+        "Sveta Peter in Mihael"
       ],
       "Saint Vincent and the Grenadines": [
-        "세인트빈센트 그레나딘"
+        "Sveti Vincencij in Grenadine"
       ],
       "Samoa": [
-        "사모아 제도"
+        "Samoa"
       ],
       "San Marino": [
-        "샌 마리노"
+        "San Marino"
       ],
       "Sao Tome and Principe": [
-        "상투메 프린시페"
+        "Sveti Tomaž in Princ"
       ],
       "Saudi Arabia": [
-        "사우디아라비아"
+        "Saudova Arabija"
       ],
       "Senegal": [
-        "세네갈"
+        "Senegal"
       ],
       "Serbia": [
-        "세르비아"
+        "Srbija"
       ],
       "Seychelles": [
-        "세이셸"
+        "Sejšeli"
       ],
       "Sierra Leone": [
-        "시에나 르오네"
+        "Sierra Leone"
       ],
       "Singapore": [
-        "싱가포르"
+        "Singapur"
       ],
       "Sint Maarten": [
-        "신트 마르텐"
+        "Sveti Martin"
       ],
       "Slovakia": [
-        "슬로바키아"
+        "Slovaška"
       ],
       "Slovenia": [
-        "슬로베니아"
+        "Slovenija"
       ],
       "Solomon Islands": [
-        "솔로몬 제도"
+        "Salomonovi otoki"
       ],
       "Somalia": [
-        "소말리아"
+        "Somalija"
       ],
       "South Africa": [
-        "남아프리카"
+        "Južna Afrika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "사우스조지아 사우스샌드위치 제도"
+        "Južna Georgija in Južni Sandwichevi otoki"
       ],
       "South Korea": [
-        "대한민국"
+        "Južna Koreja"
       ],
       "South Ossetia": [
-        "남오세티야"
+        "Južna Osetija"
       ],
       "South Sudan": [
-        "남수단"
+        "Južni Sudan"
       ],
       "Spain": [
-        "스페인"
+        "Španija"
       ],
       "Sri Lanka": [
-        "스리랑카"
+        "Šrilanka"
       ],
       "Sudan": [
-        "수단"
+        "Sudan"
       ],
       "Suriname": [
-        "수리남"
+        "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "스발바르와 얀마옌"
+        "Svalbard in Jan Mayen"
       ],
       "Sweden": [
-        "스웨덴"
+        "Švedska"
       ],
       "Switzerland": [
-        "스위스"
+        "Švica"
       ],
       "Syria": [
-        "시리아"
+        "Sirija"
       ],
       "Taiwan": [
-        "타이완"
+        "Tajvan"
       ],
       "Tajikistan": [
-        "타지키스탄"
+        "Tadžikistan"
       ],
       "Tanzania": [
-        "탄자니아"
+        "Tanzanija"
       ],
       "Thailand": [
-        "태국"
+        "Tajska"
       ],
       "Timor-Leste": [
-        "동티모르"
+        "Vzhodni Timor"
       ],
       "Togo": [
-        "토고"
+        "Togo"
       ],
       "Tokelau": [
-        "토켈라우"
+        "Tokelav"
       ],
       "Tonga": [
-        "통가"
+        "Tonga"
       ],
       "Trinidad and Tobago": [
-        "트리니다드 토바고"
+        "Trinidad in Tobago"
       ],
       "Tristan da Cunha": [
-        "트리스탄 다 쿠나"
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        "튀니지"
+        "Tunizija"
       ],
       "Turkey": [
-        "터키"
+        "Turčija"
       ],
       "Turkmenistan": [
-        "투르크메니스탄"
+        "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
-        "터크스 카이코스 군도"
+        "Otoki Turks in Caicos"
       ],
       "Tuvalu": [
-        "투발루"
+        "Tuvalu"
       ],
       "Uganda": [
-        "우간다"
+        "Uganda"
       ],
       "Ukraine": [
-        "우크라이나"
+        "Ukrajina"
       ],
       "United Arab Emirates": [
-        "아랍에미리트"
+        "Združeni arabski emirati"
       ],
       "United Kingdom": [
-        "영국"
+        "Združeno kraljestvo"
       ],
       "United States": [
-        "미국"
+        "Združene države Amerike"
       ],
       "United States Minor Outlying Islands": [
-        "미국령 군소 제도"
+        "Manjši zunanji otoki Združenih držav"
       ],
       "Uruguay": [
-        "우루과이"
+        "Urugvaj"
       ],
       "Uzbekistan": [
-        "우즈베키스탄"
+        "Uzbekistan"
       ],
       "Vanuatu": [
-        "바누타우"
+        "Vanuatu"
       ],
       "Venezuela": [
-        "베네수엘라"
+        "Venezuela"
       ],
       "Vietnam": [
-        "베트남"
+        "Vietnam"
       ],
       "Virgin Islands, British": [
-        "영국령 버진 아일랜드"
+        "Britanski Deviški otoki"
       ],
       "Virgin Islands, U.S.": [
-        "미국령 버진 아일랜드"
+        "Deviški otoki Združenih držav"
       ],
       "Wallis and Futuna": [
-        "월리스 푸투나"
+        "Wallis in Futuna"
       ],
       "Western Sahara": [
-        "서사하라"
+        "Zahodna Sahara"
       ],
       "Yemen": [
-        "예멘"
+        "Jemen"
       ],
       "Zambia": [
-        "잠비아"
+        "Zambija"
       ],
       "Zimbabwe": [
-        "짐바브웨"
+        "Zimbabve"
       ],
       "Åland Islands": [
-        "올란드 제도"
+        "Alandski otoki"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "기한이 지난 청구서"
+        "Zapadel račun"
       ]
     },
     "Error": {
       "Email is not valid": [
-        "유효하지 않은 이메일"
+        "E-pošta ni veljavna"
       ],
       "Enter 6 digits": [
-        "6자리 숫자를 입력해 주세요"
+        "Vnesite 6 števk"
       ],
       "Incorrect username": [
-        "잘못된 사용자 이름"
+        "Nepravilno uporabniško ime"
       ],
       "Invalid verification code": [
-        "잘못된 검증 코드"
+        "Neveljavna koda za preverjanje"
       ],
       "Not a valid number": [
-        "유효하지 않은 번호"
+        "Ni veljavna številka"
       ],
       "Passwords do not match": [
-        "비밀번호가 일치하지 않습니다"
+        "Gesli se ne ujemata"
       ],
       "Request timed out": [
-        "요청 시간이 초과되었습니다."
+        "Zahteva se je iztekla"
       ],
       "The email addresses do not match": [
-        "이메일 주소가 일치하지 않습니다."
+        "E-poštna naslova se ne ujemata"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
+        "To polje presega število dovoljenih znakov - ${ maximumLength }."
       ],
       "This field is required": [
-        "필수 기재 항목입니다"
+        "To polje je obvezno"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
+        "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
       "Try using only letters, numerals, and _.-": [
-        "문자, 숫자 및 _.- 만 사용하십시오"
+        "Poskusite uporabiti samo črke, števke in _.-"
       ],
       "Unknown error": [
-        "알 수 없는 오류"
+        "Neznana napaka"
       ],
       "Username must begin with a letter or digit": [
-        "사용자명은 문자로 시작해야 합니다"
+        "Uporabniško ime se mora začeti s črko ali številko"
       ],
       "Username must end with a letter or digit": [
-        "사용자 이름은 문자로 시작하여야 합니다."
+        "Uporabniško ime se mora končati s črko ali številko"
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "오류: ${ errorMessage }"
+        "Napaka: ${ errorMessage }"
       ],
       "Please refresh the page or try again later.": [
-        "페이지를 새로고침 하거나 다시 시도하세요."
+        "Osvežite stran ali poskusite znova pozneje."
       ],
       "Something went wrong": [
-        "문제가 발생했습니다"
+        "Nekaj je šlo narobe"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
+        "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
+        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
       ],
       "Security key": [
-        "보안 키"
+        "Varnostni ključ"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "보안 키"
+        "Varnostni ključ"
       ]
     },
     "Font face option": {
       "System default": [
-        "시스템 기본값"
+        "Sistemsko privzeto"
       ],
       "Theme font": [
-        "테마 폰트"
+        "Pisava teme"
       ]
     },
     "Font size option": {
       "Large": [
-        "크게"
+        "Veliko"
       ],
       "Medium (recommended)": [
-        "중간 (권장)"
+        "Srednje (priporočeno)"
       ],
       "Small": [
-        "적게"
+        "Majhno"
       ],
       "Very large": [
-        "매우 크게"
+        "Zelo veliko"
       ],
       "Very small": [
-        "매우 작게"
+        "Zelo majhno"
       ]
     },
     "Human verification method": {
       "Email": [
-        "이메일"
+        "E-pošta"
       ],
       "Manual": [
-        "수동"
+        "Ročno"
       ],
       "No verification method available": [
-        "사용 가능한 인증 방법 없음"
+        "Način preverjanja ni na voljo"
       ]
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
+        "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
+        "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
+        "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
       ],
       "Country code": [
-        "국가 코드"
+        "Koda države"
       ],
       "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
+        "Vsaka koda se lahko uporabi samo enkrat"
       ],
       "Edit email address": [
-        "이메일 주소 변경"
+        "Uredi e-poštni naslov"
       ],
       "Enter the code from your authenticator app": [
-        "인증 앱의 코드를 입력하세요"
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
+        "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit } 자리."
+        "Vnesite potrditveno kodo. Števka ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
+        "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
+        "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
       "Internet connection lost": [
-        "인터넷 연결 없음"
+        "Internetna povezava je prekinjena"
       ],
       "Learn more": [
-        "더 알아보기"
+        "Več o tem"
       ],
       "Loading": [
-        "로딩 중"
+        "Nalaganje"
       ],
       "No results found": [
-        "결과를 찾을 수 없음"
+        "Ni najdenih rezultatov"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
+        "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
       ],
       "Session timed out": [
-        "세션 시간 초과됨"
+        "Seja je potekla"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "스팸 및 남용을 방지하려면 사람임을 확인하세요."
+        "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "${ strong } 에 새 인증 코드를 보내드려요."
+        "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
+        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
       ],
       "Would you like to receive a new verification code?": [
-        "새 인증 코드를 받으실래요?"
+        "Bi želeli prejeti novo kodo za preverjanje?"
       ],
       "You can now return to the application to continue": [
-        "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
+        "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
+        "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. Po 28 dneh e-poštni predal ne bo več prejemal sporočil, vaše povezave za skupno rabo na Disku bodo blokirane in ne boste mogli nalagati novih datotek. Za nadaljnje delovanje storitve plačajte morebitne zapadle račune."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, 드라이브 공유 링크가 더 이상 활성화 되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+        "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. E-poštni predal ne prejema sporočil, vaše povezave za skupno rabo na Disku so deaktivirane in ne morete nalagati novih datotek. Za nadaljnjo uporabo storitve plačajte morebitne zapadle račune."
       ],
       "Your email will only be used for this one-time verification.": [
-        "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
+        "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "귀하의 전화번호는 이번 인증에만 사용돼요."
+        "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
       ]
     },
     "Label": {
       "Authenticator app": [
-        "인증 앱"
+        "Aplikacija za preverjanje pristnosti"
       ],
       "Code is 6 digits without spaces": [
-        "코드는 공백 없이 6자리에요."
+        "Koda vsebuje 6 števk brez presledkov"
       ],
       "Email address": [
-        "이메일 주소"
+        "E-poštni naslov"
       ],
       "Hide password": [
-        "비밀번호 숨기기"
+        "Skrij geslo"
       ],
       "Password": [
-        "암호"
+        "Geslo"
       ],
       "Phone number": [
-        "전화번호"
+        "Telefonska številka"
       ],
       "Reveal password": [
-        "비밀번호 표시"
+        "Razkrij geslo"
       ],
       "Verification code": [
-        "인증 코드"
+        "Koda za preverjanje"
       ],
       "Your password (admin)": [
-        "사용자의 비밀번호 (관리자)"
+        "Vaše geslo (admin)"
       ]
     },
     "Link": {
       "Learn more": [
-        "더 알아보기"
+        "Več o tem"
       ],
       "Request an invite": [
-        "가입 요청하기"
+        "Zahtevaj povabilo"
       ]
     },
     "Placeholder": {
       "Password": [
-        "비밀번호"
+        "Geslo"
       ]
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "${ methodTo }(으)로 코드를 전송했습니다."
+        "Koda je poslana na ${ methodTo }"
       ],
       "Verification successful": [
-        "인증 성공"
+        "Preverjanje uspešno"
       ]
     },
     "Title": {
       "Enter your password": [
-        "비밀번호를 입력하세요"
+        "Vnesite geslo"
       ],
       "Human verification": [
-        "사람임을 인증"
+        "Ali si človek"
       ],
       "Invalid verification code": [
-        "잘못된 검증 코드"
+        "Neveljavna koda za preverjanje"
       ],
       "Request new code": [
-        "새 코드 요청"
+        "Zahtevaj novo kodo"
       ],
       "Sign in with 2FA": [
-        "2단계 인증으로 로그인"
+        "Prijava z overjanjem v dveh korakih"
       ]
     },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
       ],
       "Try a shorter username (${ n } character max)": [
-        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ]
     }
   }
