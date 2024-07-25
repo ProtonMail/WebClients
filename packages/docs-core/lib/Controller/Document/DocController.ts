@@ -53,6 +53,7 @@ import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyF
 import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipantTracker'
 import type { SerializedEditorState } from 'lexical'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
+import { MAX_DOC_SIZE } from '../../Models/Constants'
 
 /**
  * @TODO DRVDOC-802
@@ -85,6 +86,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     []
   websocketStatus: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
   sizeTracker: DocSizeTracker = new DocSizeTracker()
+  abortWebsocketConnectionAttempt = false
+  isDestroyed = false
 
   public userAddress?: string
   readonly participantTracker = new DocParticipantTracker(this.eventBus)
@@ -93,7 +96,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     private readonly nodeMeta: NodeMeta,
     private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
-    private _createInitialCommit: SeedInitialCommit,
+    readonly _createInitialCommit: SeedInitialCommit,
     private _loadDocument: LoadDocument,
     readonly _loadCommit: LoadCommit,
     private _duplicateDocument: DuplicateDocument,
@@ -114,6 +117,17 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
     eventBus.addEventHandler(this, ParticipantTrackerEvent.DocumentLimitBreached)
     eventBus.addEventHandler(this, ParticipantTrackerEvent.DocumentLimitUnbreached)
+  }
+
+  destroy(): void {
+    this.isDestroyed = true
+
+    if (this.initialSyncTimer) {
+      clearTimeout(this.initialSyncTimer)
+    }
+    if (this.initialConnectionTimer) {
+      clearTimeout(this.initialConnectionTimer)
+    }
   }
 
   public get role(): DocumentRole {
@@ -292,7 +306,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       commitId: () => this.commitId ?? lastCommitId,
     })
 
-    connection.connect().catch(this.logger.error)
+    connection
+      .connect(() => {
+        return this.abortWebsocketConnectionAttempt
+      })
+      .catch(this.logger.error)
 
     this.beginInitialConnectionTimer()
 
@@ -344,6 +362,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   handleRealtimeConnectionReady(): void {
+    if (this.isDestroyed) {
+      return
+    }
+
     if (this.initialSyncTimer) {
       clearTimeout(this.initialSyncTimer)
       this.initialSyncTimer = null
@@ -577,12 +599,16 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
+    if (this.isDestroyed) {
+      return
+    }
+
     if (!this.entitlements) {
       throw new Error('Attempting to propagate update before entitlements are initialized')
     }
 
     if (message.type.wrapper === 'conversion') {
-      await this.seedDocument(message.content)
+      await this.handleEditorProvidingInitialConversionContent(message.content)
       return
     }
 
@@ -600,6 +626,39 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
+  async handleEditorProvidingInitialConversionContent(content: Uint8Array): Promise<void> {
+    this.logger.info('Received conversion content from editor, seeding initial commit of size', content.byteLength)
+
+    this.abortWebsocketConnectionAttempt = true
+    this.websocketService.closeConnection(this.nodeMeta)
+
+    if (content.byteLength >= MAX_DOC_SIZE) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error')
+          .t`The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.`,
+        irrecoverable: true,
+      })
+      this.logger.info('Initial conversion content is too large')
+      return
+    }
+
+    const result = await this.createInitialCommit(content)
+
+    this.abortWebsocketConnectionAttempt = false
+
+    if (result.isFailed()) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while attempting to convert the document. Please try again.`,
+        irrecoverable: true,
+      })
+
+      this.logger.error('Failed to seed document', result.getError())
+      return
+    }
+
+    void this.websocketService.reconnectToDocumentWithoutDelay(this.nodeMeta)
+  }
+
   public async debugSendCommitCommandToRTS(): Promise<void> {
     if (!this.entitlements) {
       throw new Error('Attempting to send commit command before entitlements are initialized')
@@ -608,7 +667,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     await this.websocketService.debugSendCommitCommandToRTS(this.nodeMeta, this.entitlements.keys)
   }
 
-  public async createInitialCommit(): Promise<void> {
+  public async createInitialCommit(content?: Uint8Array): Promise<Result<unknown>> {
     if (!this.entitlements) {
       throw new Error('Cannot create initial commit before entitlements are initialized')
     }
@@ -617,13 +676,18 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Editor invoker not initialized')
     }
 
-    const state = await this.editorInvoker.getDocumentState()
+    const state = content ?? (await this.editorInvoker.getDocumentState())
 
     const result = await this._createInitialCommit.execute(this.docMeta, state, this.entitlements.keys)
 
     if (result.isFailed()) {
       this.logger.error('Failed to create initial commit', result.getError())
+    } else {
+      const resultValue = result.getValue()
+      this.lastCommitIdReceivedFromRtsOrApi = resultValue.commitId
     }
+
+    return result
   }
 
   public async squashDocument(): Promise<void> {
@@ -692,30 +756,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const shell = result.getValue()
 
     void this.driveCompat.openDocument(shell)
-  }
-
-  public async seedDocument(content: Uint8Array): Promise<void> {
-    if (!this.docMeta) {
-      throw new Error('Attempting to seed document before it is initialized')
-    }
-
-    if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
-    }
-    const keys = await this.driveCompat.getDocumentKeys(this.nodeMeta)
-    const result = await this._createInitialCommit.execute(this.nodeMeta, content, keys)
-
-    if (result.isFailed()) {
-      PostApplicationError(this.eventBus, {
-        translatedError: c('Error').t`An error occurred while attempting to seed the document. Please try again.`,
-      })
-
-      this.logger.error('Failed to seed document', result.getError())
-      return
-    }
-
-    const resultValue = result.getValue()
-    this.lastCommitIdReceivedFromRtsOrApi = resultValue.commitId
   }
 
   public async createNewDocument(): Promise<void> {

@@ -20,6 +20,7 @@ describe('WebsocketConnection', () => {
     connection = new WebsocketConnection(
       {
         onFailToGetToken: jest.fn(),
+        onConnecting: jest.fn(),
       } as unknown as WebsocketCallbacks,
       {
         error: jest.fn(),
@@ -114,6 +115,18 @@ describe('WebsocketConnection', () => {
     })
   })
 
+  describe('disconnect', () => {
+    it('should cancel reconnection timeout if present', () => {
+      jest.useFakeTimers()
+
+      connection.reconnectTimeout = setTimeout(() => {}, 1000)
+
+      connection.disconnect(1)
+
+      expect(connection.reconnectTimeout).toBeUndefined()
+    })
+  })
+
   describe('handleWindowCameOnlineEvent', () => {
     it('should reconnect without delay', () => {
       const reconnect = (connection.queueReconnection = jest.fn())
@@ -136,6 +149,16 @@ describe('WebsocketConnection', () => {
       connection.connect()
 
       expect(getToken).not.toHaveBeenCalled()
+    })
+
+    it('should abort if abort signal returns true', async () => {
+      const abortSignal = () => true
+
+      connection.getTokenOrFailConnection = jest.fn().mockReturnValue(Result.ok({ token: '123' }))
+
+      await connection.connect(abortSignal)
+
+      expect(connection.callbacks.onConnecting).not.toHaveBeenCalled()
     })
   })
 

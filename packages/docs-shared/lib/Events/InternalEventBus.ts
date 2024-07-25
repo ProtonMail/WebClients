@@ -12,7 +12,7 @@ export class InternalEventBus implements InternalEventBusInterface {
   }
 
   deinit(): void {
-    ;(this.eventHandlers as unknown) = undefined
+    this.eventHandlers = new Map<InternalEventType, InternalEventHandlerInterface[]>()
   }
 
   addEventHandler(handler: InternalEventHandlerInterface, eventType: string): void {

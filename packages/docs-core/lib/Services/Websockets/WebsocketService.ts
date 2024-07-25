@@ -64,6 +64,18 @@ export class WebsocketService implements WebsocketServiceInterface {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
 
+  destroy(): void {
+    window.removeEventListener('beforeunload', this.handleWindowUnload)
+    this.ledger.destroy()
+
+    for (const { debouncer, connection } of Object.values(this.connections)) {
+      debouncer.destroy()
+      connection.destroy()
+    }
+
+    this.connections = {}
+  }
+
   handleLedgerStatusChangeCallback(): void {
     this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]>({
       type: WebsocketConnectionEvent.AckStatusChange,
@@ -96,15 +108,6 @@ export class WebsocketService implements WebsocketServiceInterface {
       if (debouncer.hasPendingUpdates()) {
         debouncer.flush()
       }
-    }
-  }
-
-  destroy(): void {
-    window.removeEventListener('beforeunload', this.handleWindowUnload)
-    this.ledger.destroy()
-
-    for (const { debouncer } of Object.values(this.connections)) {
-      debouncer.destroy()
     }
   }
 
@@ -621,7 +624,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     )
   }
 
-  public debugCloseConnection(document: { linkId: string }): void {
+  public closeConnection(document: { linkId: string }): void {
     this.logger.info('Closing connection')
 
     const record = this.getConnectionRecord(document.linkId)

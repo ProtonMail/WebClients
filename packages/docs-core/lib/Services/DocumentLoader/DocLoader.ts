@@ -55,6 +55,10 @@ export class DocLoader implements DocLoaderInterface {
     private logger: LoggerInterface,
   ) {}
 
+  destroy(): void {
+    this.docController?.destroy()
+  }
+
   public async initialize(lookup: NodeMeta): Promise<void> {
     if (this.docController) {
       throw new Error('[DocLoader] docController already initialized')

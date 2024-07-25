@@ -16,6 +16,9 @@ jest.mock('yjs', () => ({
   decodeUpdate: jest.fn(),
   mergeUpdates: jest.fn(),
 }))
+;(decodeUpdate as jest.Mock).mockImplementation(() => ({
+  structs: [{ id: { clock: 0 } }],
+}))
 
 describe('DocState', () => {
   let state: DocState
@@ -57,6 +60,17 @@ describe('DocState', () => {
       jest.advanceTimersByTime(PRESENCE_UPDATE_REPEAT_INTERVAL + 1)
 
       expect(state.broadcastCurrentAwarenessState).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('consumeIsInConversionFromOtherFormat', () => {
+    it('should consume the conversion', () => {
+      state.isInConversionFromOtherFormatFlow = true
+
+      const value = state.consumeIsInConversionFromOtherFormat()
+
+      expect(value).toBe(true)
+      expect(state.isInConversionFromOtherFormatFlow).toBe(false)
     })
   })
 
@@ -259,6 +273,36 @@ describe('DocState', () => {
       state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalled()
+    })
+
+    it('should propagate update as conversion if is in conversion flow', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+
+      state.isInConversionFromOtherFormatFlow = true
+
+      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+
+      expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: { wrapper: 'conversion' },
+        }),
+        expect.anything(),
+      )
+    })
+
+    it('should not propagate update as conversion if is not in conversion flow', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+
+      state.isInConversionFromOtherFormatFlow = false
+
+      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+
+      expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: { wrapper: 'du' },
+        }),
+        expect.anything(),
+      )
     })
   })
 })
