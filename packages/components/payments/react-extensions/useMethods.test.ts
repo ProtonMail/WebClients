@@ -5,13 +5,14 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock } from '@proton/testing';
 
+import type {
+    PaymentMethodStatusExtended,
+    PaymentsApi,
+    SavedPaymentMethod} from '../core';
 import {
     Autopay,
     MethodStorage,
-    PAYMENT_METHOD_TYPES,
-    PaymentMethodStatusExtended,
-    PaymentsApi,
-    SavedPaymentMethod,
+    PAYMENT_METHOD_TYPES
 } from '../core';
 import { useMethods } from './useMethods';
 
@@ -74,7 +75,6 @@ it('should render', () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -99,7 +99,6 @@ it('should initialize payment methods (no chargebee)', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -194,7 +193,6 @@ it('should initialize payment methods (with chargebee)', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -319,7 +317,6 @@ it('should filter out external payment methods', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -422,7 +419,6 @@ it('should consider methods without External property internal', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -523,7 +519,6 @@ it('should filter out internal payment methods', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -605,7 +600,6 @@ it('should update methods when amount changes', async () => {
                     } as any as PaymentsApi,
                     selectedPlanName: undefined,
                     enableChargebeeB2B: true,
-                    bitcoinChargebeeEnabled: true,
                 },
                 {
                     api: apiMock,
@@ -655,7 +649,6 @@ it('should get saved method by its ID', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -697,7 +690,6 @@ it('should set selected method', async () => {
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
                 enableChargebeeB2B: true,
-                bitcoinChargebeeEnabled: true,
             },
             {
                 api: apiMock,
@@ -761,7 +753,6 @@ it('should update amount correctly even if the initialization is slow', async ()
                     } as any as PaymentsApi,
                     selectedPlanName: undefined,
                     enableChargebeeB2B: true,
-                    bitcoinChargebeeEnabled: true,
                 },
                 {
                     api: apiMock,

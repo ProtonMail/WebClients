@@ -36,6 +36,7 @@ import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import PayPalView from './PayPalView';
+import { BILLING_ADDRESS_VALID, type BillingAddressStatus } from './subscription/helpers';
 
 export interface Props {
     children?: ReactNode;
@@ -84,6 +85,7 @@ export interface NoApiProps extends Props {
     bitcoinInhouse: BitcoinHook;
     bitcoinChargebee: BitcoinHook;
     isChargebeeEnabled: () => ChargebeeEnabled;
+    billingAddressStatus?: BillingAddressStatus;
 }
 
 export const PaymentsNoApi = ({
@@ -124,6 +126,7 @@ export const PaymentsNoApi = ({
     bitcoinChargebee,
     isChargebeeEnabled,
     user,
+    billingAddressStatus = BILLING_ADDRESS_VALID,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -245,25 +248,53 @@ export const PaymentsNoApi = ({
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
-                    {showBitcoinMethod && (
-                        <>
-                            {!isAuthenticated && (
-                                <p>
-                                    {c('Info')
-                                        .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}
-                                </p>
-                            )}
-                            {isAuthenticated && (
+                    {(() => {
+                        if (!showBitcoinMethod) {
+                            return null;
+                        }
+
+                        if (!isAuthenticated) {
+                            return (
+                                <p>{c('Info')
+                                    .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}</p>
+                            );
+                        }
+
+                        if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+                            return (
                                 <>
                                     <BitcoinInfoMessage />
-                                    {method === PAYMENT_METHOD_TYPES.BITCOIN && <Bitcoin {...bitcoinInhouse} />}
-                                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && (
-                                        <Bitcoin {...bitcoinChargebee} />
-                                    )}
+                                    <Bitcoin {...bitcoinInhouse} />
                                 </>
-                            )}
-                        </>
-                    )}
+                            );
+                        }
+
+                        if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+                            if (billingAddressStatus.valid) {
+                                return (
+                                    <>
+                                        <BitcoinInfoMessage />
+                                        <Bitcoin {...bitcoinChargebee} />
+                                    </>
+                                );
+                            }
+
+                            const text =
+                                billingAddressStatus.reason === 'missingCountry'
+                                    ? c('Payments').t`Please select your billing country first.`
+                                    : // translator: "state" as in "United States of America"
+                                      c('Payments').t`Please select your billing state first.`;
+
+                            return (
+                                <>
+                                    <Loader />
+                                    <p className="text-center">{text}</p>
+                                </>
+                            );
+                        }
+
+                        return null;
+                    })()}
                     {showBitcoinPlaceholder && <BilledUserInlineMessage />}
                     {showPaypalView && (
                         <PayPalView
