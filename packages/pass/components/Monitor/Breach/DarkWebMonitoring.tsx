@@ -9,8 +9,7 @@ import { BreachGroup } from './BreachGroup';
 import { Breaches } from './Breaches';
 
 export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match, history }) => {
-    const monitor = useMonitor();
-    const { didLoad, breaches } = monitor;
+    const { didLoad, breaches, sync } = useMonitor();
 
     const scrollRef = useRef<HTMLElement>(null);
     useLayoutEffect(() => scrollRef.current?.scrollTo({ top: 0 }), [history.location.pathname]);
@@ -18,7 +17,7 @@ export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match, history }) =>
     useEffect(() => {
         /** if the monitor data wasn't loaded - try to
          * revalidate when mounting this route */
-        if (!didLoad && !breaches.loading) monitor.sync();
+        if (!didLoad && !breaches.loading) sync();
     }, [didLoad, breaches.loading]);
 
     return match ? (

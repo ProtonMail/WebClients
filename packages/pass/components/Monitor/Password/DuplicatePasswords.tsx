@@ -43,15 +43,15 @@ export const DuplicatePasswords: FC = () => {
     const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
 
-    const monitor = useMonitor();
-    const duplicates = useMemo(() => monitor.duplicates.data.flat(), [monitor.duplicates.data]);
-    const duplicatePasswordItems = useSelector(selectOptimisticItemsFactory(selectSelectedItems(duplicates)));
+    const { duplicates } = useMonitor();
+    const duplicatedData = useMemo(() => duplicates.data.flat(), [duplicates.data]);
+    const duplicatePasswordItems = useSelector(selectOptimisticItemsFactory(selectSelectedItems(duplicatedData)));
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'monitor/duplicates(/trash)?' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
 
     const { interpolation, interpolationIndexes } = useMemo(
-        () => interpolateDuplicates(monitor.duplicates.data, duplicatePasswordItems),
-        [duplicatePasswordItems, duplicates]
+        () => interpolateDuplicates(duplicates.data, duplicatePasswordItems),
+        [duplicatePasswordItems, duplicatedData]
     );
 
     useEffect(() => {

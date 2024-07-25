@@ -5,11 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
 type Props = {
@@ -20,7 +18,6 @@ type Props = {
 };
 
 export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTime, handleHistoryClick }) => {
-    const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
     const passPlan = useSelector(selectPassPlan);
 
     return (
@@ -51,7 +48,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
                 ellipsis
             />
 
-            {historyEnabled && isPaidPlan(passPlan) && (
+            {isPaidPlan(passPlan) && (
                 <Button onClick={handleHistoryClick} className="mt-1" color="weak" shape="solid" fullWidth pill>
                     {c('Action').t`View item history`}
                 </Button>
