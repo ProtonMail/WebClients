@@ -43,7 +43,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
     const { onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
         FeatureCode.ComposerAssistantInitialSetup
     );
-    const { hasCompatibleBrowser, hasCompatibleHardware, closeAssistant, handleSettingChange } = useAssistant();
+    const { closeAssistant, handleSettingChange, handleCheckHardwareCompatibility } = useAssistant();
     const { displayAssistantModalPromise, assistantRefManager: assistantInputRefManager } =
         useComposerAssistantProvider();
     const { sendShowAssistantReport } = useAssistantTelemetry();
@@ -83,6 +83,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
         }
 
         if (inputValue === CLIENT_ONLY) {
+            const { hasCompatibleHardware, hasCompatibleBrowser } = await handleCheckHardwareCompatibility();
             const canRunLocally = hasCompatibleHardware && hasCompatibleBrowser;
             if (canRunLocally) {
                 await waitAndClickInput();
