@@ -220,6 +220,3 @@ export const getInitialSections = (fields: IdentityFormFields): IdentityFormSect
         optionalFields: [fields.personalWebsite, fields.workPhoneNumber, fields.workEmail],
     },
 ];
-
-export const autofocusIdentityField = (name: string) =>
-    setTimeout(() => document.querySelector<HTMLInputElement>(`input[name="${name}"]`)?.focus(), 15);
