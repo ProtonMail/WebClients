@@ -44,7 +44,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
 
     const openUpsell = () =>
         spotlight.setUpselling({
-            type: 'early-access',
+            type: 'pass-plus',
             upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS,
         });
 
