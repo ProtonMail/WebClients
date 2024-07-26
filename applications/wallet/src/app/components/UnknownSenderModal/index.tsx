@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import type { WasmApiWalletTransaction } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components/components';
-import { Checkbox } from '@proton/components/components';
+import { Checkbox, Tooltip } from '@proton/components/components';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { useContactEmails, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -18,6 +18,7 @@ import clsx from '@proton/utils/clsx';
 import { encryptPgp, useWalletApi } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
+import { ModalParagraph } from '../../atoms/ModalParagraph';
 import type { SenderObject, TransactionData } from '../../hooks/useWalletTransactions';
 
 export interface WalletCreationModalOwnProps {
@@ -143,17 +144,18 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
     };
 
     return (
-        <Modal {...modalProps}>
+        <Modal size="small" {...modalProps}>
             <div className="flex flex-column items-center">
                 <img src={walletNotFoundImg} alt="" className="mb-7" style={{ width: '3rem' }} />
-                <h1 className={clsx('text-bold text-break text-2xl')}>{c('Unknown sender').t`Unknown sender`}</h1>
-                <p className="text-center color-weak mb-8">{c('Unknown sender')
-                    .t`Not a Bitcoin via Email transaction. Add a name so you can remember who it was from.`}</p>
-
-                <div className="w-full flex flex-column mt-4">
+                <h1 className={clsx('text-bold text-break text-3xl mb-2')}>{c('Unknown sender').t`Unknown sender`}</h1>
+                <ModalParagraph>
+                    <p>{c('Unknown sender').t`Not a Bitcoin via Email transaction.`}</p>
+                    <p>{c('Unknown sender').t`Add a name so you can remember who it was from.`}</p>
+                </ModalParagraph>
+                <div className="w-full flex flex-column">
                     <div>
                         <Input
-                            label={c('Unknown sender').t`Name (optional)`}
+                            label={c('Unknown sender').t`Name`}
                             placeholder={c('Unknown sender').t`Give a name to this sender`}
                             value={name}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -165,43 +167,51 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
                     <div className="mt-2">
                         <Input
                             label={c('Unknown sender').t`Email address`}
-                            placeholder={c('Unknown sender').t`Add their email address`}
+                            placeholder={c('Unknown sender').t`Add their email address or leave empty`}
                             value={email}
                             error={error}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
                                 setEmail(e.target.value);
+                                if (!e.target.value) {
+                                    setShouldSaveAsContact(false);
+                                }
                             }}
                         />
                     </div>
 
-                    <div className="flex flex-row items-start mt-2">
-                        <Checkbox
-                            id="save-as-contact"
-                            className="bg-weak"
-                            disabled={alreadyExistsAsContact}
-                            checked={alreadyExistsAsContact || shouldSaveAsContact}
-                            onClick={() => {
-                                setShouldSaveAsContact((prev) => !prev);
-                            }}
-                        />
-                        <label className="ml-2" htmlFor="save-as-contact">{c('Unknown sender')
-                            .t`Save as a contact`}</label>
-                    </div>
+                    {!alreadyExistsAsContact && (
+                        <div className="flex flex-row items-start mt-2 gap-2">
+                            <Tooltip
+                                title={!email && c('Unknown sender').t`Add their email address to save as contact`}
+                            >
+                                <div className="block">
+                                    <Checkbox
+                                        id="save-as-contact"
+                                        disabled={!email}
+                                        checked={shouldSaveAsContact}
+                                        onClick={() => {
+                                            setShouldSaveAsContact((prev) => !prev);
+                                        }}
+                                    />
+                                    <label className="ml-2" htmlFor="save-as-contact">{c('Unknown sender')
+                                        .t`Save as a contact`}</label>
+                                </div>
+                            </Tooltip>
+                        </div>
+                    )}
                 </div>
 
-                <div className="w-full px-8">
-                    <Button
-                        fullWidth
-                        className="my-8 mx-auto"
-                        size="large"
-                        shape="solid"
-                        color="norm"
-                        disabled={(!email && !name) || loadingSenderUpdate || loadingUserKeys || !!error}
-                        onClick={() => {
-                            void withLoadingSenderUpdate(handleClickSaveSender());
-                        }}
-                    >{c('Unknown sender').t`Save sender`}</Button>
-                </div>
+                <Button
+                    fullWidth
+                    className="my-8 mx-auto"
+                    size="large"
+                    shape="solid"
+                    color="norm"
+                    disabled={!(email || name) || loadingSenderUpdate || loadingUserKeys || !!error}
+                    onClick={() => {
+                        void withLoadingSenderUpdate(handleClickSaveSender());
+                    }}
+                >{c('Unknown sender').t`Save sender`}</Button>
             </div>
         </Modal>
     );
