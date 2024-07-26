@@ -102,7 +102,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             });
 
             /** Reset form tracker state if fields were added or removed. Some
-             * forms have appearing fields and may trigge mulitple  submissions.
+             * forms have appearing fields and may trigge multiple submissions.
              * As such, reset the loading/submitted state everytime a new field
              * appears/disappears (ie: github.com dynamic sign-up page) */
             if (didChange) formHandle.tracker?.reset();
