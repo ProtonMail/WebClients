@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
-import type { WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmInviteNotificationType, WasmTxBuilder } from '@proton/andromeda';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
@@ -30,7 +28,7 @@ import type { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/
 import { InvalidRecipientErrorCode } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import { RecipientDetailsModal } from '../RecipientDetailsModal';
-import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
+import { WalletNotFoundError } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
 import { WalletNotFoundErrorModal } from './WalletNotFoundError/WalletNotFoundErrorModal';
 
 interface Props {
@@ -45,7 +43,7 @@ interface WalletNotFoundModalData {
     email: string;
     textContent: string;
     error: InvalidRecipientErrorCode;
-    inviterAddressID?: string;
+    type: WasmInviteNotificationType;
 }
 
 const getVerifiedAddressKey = async (
@@ -107,14 +105,7 @@ export const RecipientsSelection = ({
     const walletApi = useWalletApiClients();
     const api = useApi();
 
-    const inviterAddressID = apiAccount.Addresses?.[0]?.ID;
-    const [canSendInvite, setCanSendInvite] = useState(false);
-
     const [loading, withLoading] = useLoading();
-
-    useEffect(() => {
-        setCanSendInvite(!!inviterAddressID);
-    }, [inviterAddressID]);
 
     const safeAddRecipient = (
         recipientOrBitcoinAddress: Recipient,
@@ -127,25 +118,13 @@ export const RecipientsSelection = ({
         }
     };
 
-    const handleSendEmailIntegrationInvite = async (email: string) => {
+    const handleSendEmailInvite = async (type: 'bve' | 'newcomer', email: string, inviterAddressID: string) => {
         try {
-            await withLoading(walletApi.invite.sendEmailIntegrationInvite(email, inviterAddressID));
-
-            walletNotFoundModal.onClose();
-            setInviteSentConfirmModal({ email });
-
-            addRecipientWithSentInvite(email);
-            createNotification({ text: c('Bitcoin send').t`Invitation sent to the recipient` });
-        } catch (error: any) {
-            createNotification({
-                text: error?.error ?? c('Bitcoin send').t`Could not send invitation to the recipient`,
-            });
-        }
-    };
-
-    const handleSendNewcomerInvite = async (email: string) => {
-        try {
-            await withLoading(walletApi.invite.sendNewcomerInvite(email, inviterAddressID));
+            await withLoading(
+                type === 'bve'
+                    ? walletApi.invite.sendEmailIntegrationInvite(email, inviterAddressID)
+                    : walletApi.invite.sendNewcomerInvite(email, inviterAddressID)
+            );
 
             walletNotFoundModal.onClose();
             setInviteSentConfirmModal({ email });
@@ -225,7 +204,7 @@ export const RecipientsSelection = ({
                         );
                     }
 
-                    const [errorCode, type, text] =
+                    const [errorCode, type, textContent] =
                         code === 2001
                             ? ([
                                   InvalidRecipientErrorCode.CouldNotFindProtonWallet,
@@ -240,29 +219,12 @@ export const RecipientsSelection = ({
                                       .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`,
                               ] as const);
 
-                    const checkHasRecipientSentInvite = () => {
-                        if (!inviterAddressID || checkHasSentInvite(recipientOrBitcoinAddress.Address)) {
-                            return false;
-                        }
-
-                        return walletApi.invite
-                            .checkInviteStatus(recipientOrBitcoinAddress.Address, type, inviterAddressID)
-                            .then(() => false)
-                            .catch(() => {
-                                setCanSendInvite(false);
-                            });
-                    };
-
-                    if (await checkHasRecipientSentInvite()) {
-                        addRecipientWithSentInvite(recipientOrBitcoinAddress.Address);
-                    } else {
-                        setWalletNotFoundModal({
-                            email: recipientOrBitcoinAddress.Address,
-                            textContent: text,
-                            error: errorCode,
-                            inviterAddressID: inviterAddressID,
-                        });
-                    }
+                    setWalletNotFoundModal({
+                        email: recipientOrBitcoinAddress.Address,
+                        textContent,
+                        error: errorCode,
+                        type,
+                    });
 
                     addInvalidRecipient(recipientOrBitcoinAddress, errorCode);
                 }
@@ -302,29 +264,41 @@ export const RecipientsSelection = ({
                     loading={loadingBitcoinAddressLookup}
                     fetchedEmailListItemRightNode={({ email, error }) => {
                         if (error === InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail) {
+                            const textContent = c('Bitcoin send')
+                                .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`;
+
                             return (
-                                <WalletNotFoundErrorDropdown
-                                    canSendInvite={canSendInvite}
+                                <WalletNotFoundError
                                     hasSentInvite={checkHasSentInvite(email)}
                                     email={email}
-                                    onSendInvite={handleSendEmailIntegrationInvite}
-                                    textContent={c('Bitcoin send')
-                                        .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`}
-                                    loading={loading}
+                                    onSendInvite={() => {
+                                        setWalletNotFoundModal({
+                                            email,
+                                            textContent,
+                                            error,
+                                            type: 'EmailIntegration',
+                                        });
+                                    }}
                                 />
                             );
                         }
 
                         if (error === InvalidRecipientErrorCode.CouldNotFindProtonWallet) {
+                            const textContent = c('Bitcoin send')
+                                .t`This email is not using a ${WALLET_APP_NAME} yet. Invite them to create their own wallet for easier transactions.`;
+
                             return (
-                                <WalletNotFoundErrorDropdown
-                                    canSendInvite={canSendInvite}
+                                <WalletNotFoundError
                                     hasSentInvite={checkHasSentInvite(email)}
                                     email={email}
-                                    onSendInvite={handleSendNewcomerInvite}
-                                    textContent={c('Bitcoin send')
-                                        .t`This email is not using a ${WALLET_APP_NAME} yet. Invite them to create their own wallet for easier transactions.`}
-                                    loading={loading}
+                                    onSendInvite={() => {
+                                        setWalletNotFoundModal({
+                                            email,
+                                            textContent,
+                                            error,
+                                            type: 'Newcomer',
+                                        });
+                                    }}
                                 />
                             );
                         }
@@ -387,16 +361,22 @@ export const RecipientsSelection = ({
                 <RecipientDetailsModal {...recipientDetailsModal.data} {...recipientDetailsModal} />
             )}
 
-            {walletNotFoundModal.data && canSendInvite && (
+            {walletNotFoundModal.data && (
                 <WalletNotFoundErrorModal
-                    onSendInvite={
-                        walletNotFoundModal.data.error === InvalidRecipientErrorCode.CouldNotFindProtonWallet
-                            ? handleSendNewcomerInvite
-                            : handleSendEmailIntegrationInvite
-                    }
+                    onSendInvite={(email, inviterAddressId) => {
+                        const type =
+                            walletNotFoundModal.data?.error === InvalidRecipientErrorCode.CouldNotFindProtonWallet
+                                ? 'bve'
+                                : 'newcomer';
+
+                        void handleSendEmailInvite(type, email, inviterAddressId);
+                    }}
+                    defaultInviterAddressID={apiAccount.Addresses?.[0]?.ID}
                     email={walletNotFoundModal.data.email}
                     textContent={walletNotFoundModal.data.textContent}
+                    type={walletNotFoundModal.data.type}
                     loading={loading}
+                    checkHasSentInvite={checkHasSentInvite}
                     {...walletNotFoundModal}
                 />
             )}
