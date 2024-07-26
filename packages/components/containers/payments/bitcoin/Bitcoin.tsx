@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Alert, Bordered, Loader, Price } from '@proton/components/components';
+import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 
-import { Alert, Bordered, Loader, Price } from '../../components';
-import type { BitcoinHook } from '../../payments/react-extensions/useBitcoin';
 import BitcoinDetails from './BitcoinDetails';
 import type { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
 import BitcoinQRCode from './BitcoinQRCode';

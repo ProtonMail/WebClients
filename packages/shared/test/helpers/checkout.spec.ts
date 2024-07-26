@@ -120,12 +120,10 @@ describe('should get checkout result', () => {
             })
         ).toEqual({
             couponDiscount: undefined,
-            coupon: undefined,
             planTitle: 'VPN',
             planIDs: { [PLANS.VPN]: 1 },
             planName: PLANS.VPN,
             usersTitle: '1 user',
-            users: 1,
             addons: [],
             withDiscountPerCycle: 999,
             withDiscountPerMonth: 999,
@@ -134,13 +132,6 @@ describe('should get checkout result', () => {
             discountPerCycle: 0,
             discountPercent: 0,
             membersPerMonth: 999,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 0,
-            memberDiscountPerCycle: 0,
         });
     });
 
@@ -179,13 +170,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: undefined,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             planIDs: { [PLANS.VPN]: 1 },
             usersTitle: '1 user',
-            users: 1,
             addons: [],
             // We don't want to show the price increase to the user, so we use the maximum of Pricing and
             // DefaultPricing as basis for the calculation. We go with Pricing in this case.
@@ -196,13 +185,6 @@ describe('should get checkout result', () => {
             discountPerCycle: 0,
             discountPercent: 0,
             membersPerMonth: 1199,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 0,
-            memberDiscountPerCycle: 0,
         });
     });
 
@@ -241,13 +223,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: undefined,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             planIDs: { [PLANS.VPN]: 1 },
             usersTitle: '1 user',
-            users: 1,
             addons: [],
             withDiscountPerCycle: 799,
             withDiscountPerMonth: 799,
@@ -256,13 +236,6 @@ describe('should get checkout result', () => {
             discountPerCycle: 200,
             discountPercent: 20,
             membersPerMonth: 799,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 0,
-            memberDiscountPerCycle: 0,
         });
     });
 
@@ -288,13 +261,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: 'TEST',
             couponDiscount: -4776,
             planIDs: { [PLANS.VISIONARY]: 1 },
             planTitle: 'VIS',
             planName: PLANS.VISIONARY,
             usersTitle: '6 users',
-            users: 6,
             addons: [],
             withDiscountPerCycle: 43200,
             withDiscountPerMonth: 1800,
@@ -302,14 +273,7 @@ describe('should get checkout result', () => {
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 28776,
             discountPercent: 40,
-            membersPerMonth: 11994,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 33,
-            memberDiscountPerCycle: 24000,
+            membersPerMonth: 1999,
         });
     });
 
@@ -335,13 +299,11 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: 'TEST',
             couponDiscount: -17994,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             planIDs: { [PLANS.VPN]: 1 },
             usersTitle: '1 user',
-            users: 1,
             addons: [],
             withDiscountPerCycle: 11976,
             withDiscountPerMonth: 399.2,
@@ -350,13 +312,6 @@ describe('should get checkout result', () => {
             discountPerCycle: 17994,
             discountPercent: 60,
             membersPerMonth: 999,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 0,
-            memberDiscountPerCycle: 0,
         });
     });
 
@@ -382,7 +337,6 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: undefined,
             couponDiscount: 0,
             planTitle: 'BUS',
             planName: PLANS.BUNDLE_PRO,
@@ -392,7 +346,6 @@ describe('should get checkout result', () => {
                 [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 3,
             },
             usersTitle: '3 users',
-            users: 3,
             addons: [
                 {
                     name: ADDON_NAMES.DOMAIN_BUNDLE_PRO,
@@ -412,13 +365,6 @@ describe('should get checkout result', () => {
             discountPerCycle: 23040,
             discountPercent: 22,
             membersPerMonth: 2997,
-            addonsPerMonth: 390,
-            addonsPerMonthBase: 450,
-            addonsPerCycleBase: 10800,
-            addonsDiscountPerCycle: 1440,
-            addonsDiscountPercent: 13,
-            memberDiscountPercent: 23,
-            memberDiscountPerCycle: 7200,
         });
     });
 
@@ -448,7 +394,6 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: undefined,
             couponDiscount: 0,
             planTitle: 'VPN Essentials',
             planName: PLANS.VPN_PRO,
@@ -457,7 +402,6 @@ describe('should get checkout result', () => {
                 [ADDON_NAMES.MEMBER_VPN_PRO]: 2,
             },
             usersTitle: '4 users',
-            users: 4,
             addons: [],
             withDiscountPerCycle: twoYearPrice3Members,
             withDiscountPerMonth: twoYearPrice3Members / 24,
@@ -466,13 +410,6 @@ describe('should get checkout result', () => {
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
             discountPercent: 33,
             membersPerMonth: twoYearPrice3Members / 24,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 33,
-            memberDiscountPerCycle: 7200,
         });
     });
 
@@ -503,7 +440,6 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: undefined,
             couponDiscount: 0,
             planIDs: {
                 [PLANS.VPN_BUSINESS]: 1,
@@ -512,7 +448,6 @@ describe('should get checkout result', () => {
             planTitle: 'VPN Business',
             planName: PLANS.VPN_BUSINESS,
             usersTitle: '3 users',
-            users: 3,
             addons: [
                 {
                     name: ADDON_NAMES.IP_VPN_BUSINESS,
@@ -528,13 +463,6 @@ describe('should get checkout result', () => {
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
             discountPercent: 17,
             membersPerMonth: twoYearPrice3Members / 24,
-            addonsPerMonth: 3599,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 0,
-            memberDiscountPerCycle: 0,
         });
     });
 
@@ -560,7 +488,6 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
-            coupon: 'TEST',
             couponDiscount: -47976,
             planTitle: 'VIS',
             planIDs: {
@@ -568,7 +495,6 @@ describe('should get checkout result', () => {
             },
             planName: PLANS.VISIONARY,
             usersTitle: '6 users',
-            users: 6,
             addons: [],
             withDiscountPerCycle: 0,
             withDiscountPerMonth: 0,
@@ -576,14 +502,7 @@ describe('should get checkout result', () => {
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 71976,
             discountPercent: 100,
-            membersPerMonth: 11994,
-            addonsPerMonth: 0,
-            addonsPerMonthBase: 0,
-            addonsPerCycleBase: 0,
-            addonsDiscountPerCycle: 0,
-            addonsDiscountPercent: 0,
-            memberDiscountPercent: 33,
-            memberDiscountPerCycle: 24000,
+            membersPerMonth: 1999,
         });
     });
 });
@@ -603,6 +522,7 @@ describe('getUsersAndAddons()', () => {
             planName: PLANS.VPN,
             planTitle: 'VPN',
             users: 1,
+            viewUsers: 1,
             usersPricing: {
                 [CYCLE.MONTHLY]: 999,
                 [CYCLE.YEARLY]: 7188,
@@ -627,7 +547,10 @@ describe('getUsersAndAddons()', () => {
         ).toEqual({
             planName: PLANS.FAMILY,
             planTitle: 'Proton Family',
-            users: 6,
+            // we have 1 user for price calculation purpos
+            users: 1,
+            // and we display 6 users in the checkout modal
+            viewUsers: 6,
             // even though there are 6 users, we don't divide the price by 6 for family plan. That's intentional.
             usersPricing: {
                 [CYCLE.MONTHLY]: 2999,
@@ -654,6 +577,7 @@ describe('getUsersAndAddons()', () => {
             planTitle: 'VPN Essentials',
             // VPN Essentials has 2 users by default
             users: 2,
+            viewUsers: 2,
             usersPricing: {
                 [CYCLE.MONTHLY]: 899,
                 [CYCLE.YEARLY]: 8388,
@@ -680,6 +604,7 @@ describe('getUsersAndAddons()', () => {
             planTitle: 'VPN Essentials',
             // VPN Essentials has 2 users by default + 4 addons selected by user
             users: 6,
+            viewUsers: 6,
             usersPricing: {
                 [CYCLE.MONTHLY]: 899,
                 [CYCLE.YEARLY]: 8388,
@@ -706,6 +631,7 @@ describe('getUsersAndAddons()', () => {
             planTitle: 'VPN Professional',
             // VPN Professional has 2 users by default
             users: 2,
+            viewUsers: 2,
             usersPricing: {
                 [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
@@ -742,6 +668,7 @@ describe('getUsersAndAddons()', () => {
             planTitle: 'VPN Professional',
             // VPN Professional has 2 users by default + 4 addons selected by user
             users: 6,
+            viewUsers: 6,
             usersPricing: {
                 [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
@@ -778,6 +705,7 @@ describe('getUsersAndAddons()', () => {
             planTitle: 'VPN Professional',
             // VPN Professional has 2 users by default
             users: 2,
+            viewUsers: 2,
             usersPricing: {
                 [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,
@@ -815,6 +743,7 @@ describe('getUsersAndAddons()', () => {
             planTitle: 'VPN Professional',
             // VPN Professional has 2 users by default + 4 addons selected by user
             users: 6,
+            viewUsers: 6,
             usersPricing: {
                 [CYCLE.MONTHLY]: 1199,
                 [CYCLE.YEARLY]: 11988,

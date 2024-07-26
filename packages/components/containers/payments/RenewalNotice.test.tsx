@@ -5,7 +5,6 @@ import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
-import { PriceType } from '@proton/shared/lib/interfaces';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';
 
@@ -195,7 +194,7 @@ const getProps = ({
     Parameters<typeof getCheckoutRenewNoticeText>[0],
     'planIDs' | 'checkout' | 'plansMap' | 'coupon' | 'currency'
 > => {
-    const checkout = getCheckout({ planIDs, plansMap, priceType: PriceType.default, checkResult });
+    const checkout = getCheckout({ planIDs, plansMap, checkResult });
     return {
         planIDs,
         checkout,

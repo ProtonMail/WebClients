@@ -46,7 +46,8 @@ it('should render price with suffix', () => {
 it('should render price with suffix on next line', () => {
     props.suffix = '/year';
     props.currency = 'CHF';
-    props.suffixNextLine = true;
+    // that's the default behavior now. No need to set it explicitly.
+    // props.suffixNextLine = true;
     const { getByTestId } = render(<CheckoutRow {...props} />);
 
     expect(getByTestId('next-line-suffix')).toHaveTextContent('/year');

@@ -1,7 +1,20 @@
 import { addWeeks } from 'date-fns';
 
+import { SelectedPlan } from '@proton/components/payments/core';
 import { pick } from '@proton/shared/lib/helpers/object';
-import type { PlanIDs, PlansMap, Subscription, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import {
+    getPlanFromIds,
+    getPlanNameFromIDs,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
+} from '@proton/shared/lib/helpers/planIDs';
+import type {
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    SubscriptionCheckResponse,
+    SubscriptionPlan,
+} from '@proton/shared/lib/interfaces';
 import { External, Renew } from '@proton/shared/lib/interfaces';
 // that has to be a very granular import, because in general @proton/testing depends on jest while @proton/shared
 // still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
@@ -13,11 +26,7 @@ import {
     allCycles,
     customCycles,
     getNormalCycleFromCustomCycle,
-    getPlanFromIds,
     getPlanIDs,
-    getPlanNameFromIDs,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
     hasLifetime,
     hasSomeAddonOrPlan,
     isManagedExternally,
@@ -770,28 +779,31 @@ describe('getTotalFromPricing', () => {
         expect(getTotalFromPricing(pricing, 1)).toEqual({
             discount: 0,
             discountPercentage: 0,
-            total: 8596,
+            discountedTotal: 8596,
             totalPerMonth: 8596,
             totalNoDiscountPerMonth: 8596,
             perUserPerMonth: 1199,
+            viewPricePerMonth: 8596,
         });
 
         expect(getTotalFromPricing(pricing, 12)).toEqual({
             discount: 19200,
             discountPercentage: 19,
-            total: 83952,
+            discountedTotal: 83952,
             totalPerMonth: 6996,
             totalNoDiscountPerMonth: 8596,
             perUserPerMonth: 999,
+            viewPricePerMonth: 6996,
         });
 
         expect(getTotalFromPricing(pricing, 24)).toEqual({
             discount: 55200,
             discountPercentage: 27,
-            total: 151104,
+            discountedTotal: 151104,
             totalPerMonth: 6296,
             totalNoDiscountPerMonth: 8596,
             perUserPerMonth: 899,
+            viewPricePerMonth: 6296,
         });
     });
 
@@ -832,28 +844,343 @@ describe('getTotalFromPricing', () => {
         expect(getTotalFromPricing(pricing, 1)).toEqual({
             discount: 0,
             discountPercentage: 0,
-            total: 899,
+            discountedTotal: 899,
             totalPerMonth: 899,
             totalNoDiscountPerMonth: 999,
             perUserPerMonth: 899,
+            viewPricePerMonth: 899,
         });
 
         expect(getTotalFromPricing(pricing, 12)).toEqual({
             discount: 4800,
             discountPercentage: 40,
-            total: 7188,
+            discountedTotal: 7188,
             totalPerMonth: 599,
             totalNoDiscountPerMonth: 999,
             perUserPerMonth: 599,
+            viewPricePerMonth: 599,
         });
 
         expect(getTotalFromPricing(pricing, 24)).toEqual({
             discount: 12000,
             discountPercentage: 50,
-            total: 11976,
+            discountedTotal: 11976,
             totalPerMonth: 499,
             totalNoDiscountPerMonth: 999,
             perUserPerMonth: 499,
+            viewPricePerMonth: 499,
+        });
+    });
+
+    it('should calculate the prices correctly - Mail Essentials', () => {
+        const pricing: AggregatedPricing = {
+            defaultMonthlyPrice: 799,
+            defaultMonthlyPriceWithoutAddons: 799,
+            all: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            members: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            plans: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            membersNumber: 1,
+        };
+
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL_PRO]: 1 }, PLANS_MAP, CYCLE.YEARLY, 'USD');
+        expect(getTotalFromPricing(pricing, 12, 'all', [], selectedPlan)).toEqual({
+            discount: 1200,
+            discountedTotal: 8388,
+            perUserPerMonth: 699,
+            viewPricePerMonth: 699,
+            discountPercentage: 13,
+            totalPerMonth: 699,
+            totalNoDiscountPerMonth: 799,
+        });
+    });
+
+    it('should calculate the prices correctly - Mail Essentials with scribe', () => {
+        const pricing: AggregatedPricing = {
+            defaultMonthlyPrice: 1198,
+            defaultMonthlyPriceWithoutAddons: 799,
+            all: {
+                '1': 1198,
+                '3': 0,
+                '12': 11976,
+                '15': 0,
+                '18': 0,
+                '24': 22752,
+                '30': 0,
+            },
+            members: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            plans: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            membersNumber: 1,
+        };
+
+        const selectedPlan = new SelectedPlan(
+            { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1 },
+            PLANS_MAP,
+            CYCLE.YEARLY,
+            'USD'
+        );
+        expect(getTotalFromPricing(pricing, 12, 'all', [], selectedPlan)).toEqual({
+            discount: 2400,
+            discountedTotal: 11976,
+            perUserPerMonth: 699,
+            viewPricePerMonth: 699,
+            discountPercentage: 17,
+            totalPerMonth: 998,
+            totalNoDiscountPerMonth: 1198,
+        });
+    });
+
+    it('should calculate the prices correctly - Mail Essentials with discount', () => {
+        const pricing: AggregatedPricing = {
+            defaultMonthlyPrice: 799,
+            defaultMonthlyPriceWithoutAddons: 799,
+            all: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            members: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            plans: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            membersNumber: 1,
+        };
+
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL_PRO]: 1 }, PLANS_MAP, CYCLE.YEARLY, 'USD');
+        expect(
+            getTotalFromPricing(
+                pricing,
+                12,
+                'all',
+                [
+                    {
+                        Amount: 799,
+                        Currency: 'USD',
+                        AmountDue: 0,
+                        Proration: 0,
+                        CouponDiscount: -200,
+                        Gift: 0,
+                        Credit: -599,
+                        UnusedCredit: 0,
+                        Coupon: {
+                            Code: 'ONETEST25',
+                            Description: 'One-time 25% discount',
+                            MaximumRedemptionsPerUser: 1,
+                        },
+                        Cycle: 1,
+                        SubscriptionMode: 0,
+                        TaxInclusive: 1,
+                        Taxes: [
+                            {
+                                Name: 'Mehrwertsteuer (MWST)',
+                                Rate: 8.1,
+                                Amount: 45,
+                            },
+                        ],
+                        PeriodEnd: 0,
+                    },
+                    {
+                        Amount: 8388,
+                        Currency: 'USD',
+                        AmountDue: 0,
+                        Proration: 0,
+                        CouponDiscount: -2097,
+                        Gift: 0,
+                        Credit: -6291,
+                        UnusedCredit: 0,
+                        Coupon: {
+                            Code: 'ONETEST25',
+                            Description: 'One-time 25% discount',
+                            MaximumRedemptionsPerUser: 1,
+                        },
+                        Cycle: 12,
+                        SubscriptionMode: 0,
+                        TaxInclusive: 1,
+                        Taxes: [
+                            {
+                                Name: 'Mehrwertsteuer (MWST)',
+                                Rate: 8.1,
+                                Amount: 471,
+                            },
+                        ],
+                        PeriodEnd: 0,
+                    },
+                ],
+                selectedPlan
+            )
+        ).toEqual({
+            discount: 3297,
+            discountedTotal: 6291,
+            perUserPerMonth: 524.25,
+            viewPricePerMonth: 524.25,
+            discountPercentage: 34,
+            totalPerMonth: 524.25,
+            totalNoDiscountPerMonth: 799,
+        });
+    });
+
+    it('should calculate the prices correctly - Mail Essentials with discount and scribe', () => {
+        const pricing: AggregatedPricing = {
+            defaultMonthlyPrice: 1198,
+            defaultMonthlyPriceWithoutAddons: 799,
+            all: {
+                '1': 1198,
+                '3': 0,
+                '12': 11976,
+                '15': 0,
+                '18': 0,
+                '24': 22752,
+                '30': 0,
+            },
+            members: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            plans: {
+                '1': 799,
+                '3': 0,
+                '12': 8388,
+                '15': 0,
+                '18': 0,
+                '24': 15576,
+                '30': 0,
+            },
+            membersNumber: 1,
+        };
+
+        const cycle = CYCLE.YEARLY;
+        const mode = 'all';
+        const checkResults: SubscriptionCheckResponse[] = [
+            {
+                PeriodEnd: 0,
+                Amount: 1198,
+                Currency: 'USD',
+                AmountDue: 0,
+                Proration: 0,
+                CouponDiscount: -300,
+                Gift: 0,
+                Credit: -898,
+                UnusedCredit: 0,
+                Coupon: {
+                    Code: 'ONETEST25',
+                    Description: 'One-time 25% discount',
+                    MaximumRedemptionsPerUser: 1,
+                },
+                Cycle: 1,
+                SubscriptionMode: 0,
+                TaxInclusive: 1,
+                Taxes: [
+                    {
+                        Name: 'Mehrwertsteuer (MWST)',
+                        Rate: 8.1,
+                        Amount: 67,
+                    },
+                ],
+            },
+            {
+                PeriodEnd: 0,
+                Amount: 11976,
+                Currency: 'USD',
+                AmountDue: 0,
+                Proration: 0,
+                CouponDiscount: -2994,
+                Gift: 0,
+                Credit: -8982,
+                UnusedCredit: 0,
+                Coupon: {
+                    Code: 'ONETEST25',
+                    Description: 'One-time 25% discount',
+                    MaximumRedemptionsPerUser: 1,
+                },
+                Cycle: 12,
+                SubscriptionMode: 0,
+                TaxInclusive: 1,
+                Taxes: [
+                    {
+                        Name: 'Mehrwertsteuer (MWST)',
+                        Rate: 8.1,
+                        Amount: 673,
+                    },
+                ],
+            },
+        ];
+        const selectedPlan = new SelectedPlan(
+            { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1 },
+            PLANS_MAP,
+            cycle,
+            'USD'
+        );
+
+        expect(getTotalFromPricing(pricing, 12, mode, checkResults, selectedPlan)).toEqual({
+            discount: 5394,
+            discountPercentage: 38,
+            discountedTotal: 8982,
+            totalPerMonth: 748.5,
+            totalNoDiscountPerMonth: 1198,
+            perUserPerMonth: 524.25,
+            viewPricePerMonth: 524.25,
         });
     });
 });

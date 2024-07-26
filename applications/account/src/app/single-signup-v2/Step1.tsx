@@ -36,14 +36,13 @@ import {
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
-    getHas2023OfferCoupon,
-    getPlanIDs,
-    getPlanOffer,
+    getPlanFromPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
-} from '@proton/shared/lib/helpers/subscription';
+    switchPlan,
+} from '@proton/shared/lib/helpers/planIDs';
+import { getHas2023OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type {
     Api,
     Currency,

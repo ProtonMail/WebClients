@@ -4,8 +4,9 @@ import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@pro
 import type { Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getSubscriptionMock } from '@proton/testing/data';
 
+import { getAllowedCycles } from '../helpers';
 import type { Props } from './SubscriptionCycleSelector';
-import SubscriptionCycleSelector, { getAllowedCycles } from './SubscriptionCycleSelector';
+import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 
 let props: Props;
 
@@ -20,6 +21,7 @@ beforeEach(() => {
             [PLANS.MAIL]: 1,
         },
         plansMap: PLANS_MAP,
+        additionalCheckResults: [],
     };
 });
 

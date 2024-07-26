@@ -1,13 +1,14 @@
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import type { Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
-import { PriceType } from '@proton/shared/lib/interfaces';
+
+// This is currently hardcoded. Once the payments backend supports renewals at different cycles,
+// it will be changed to more generic code. Currently there is no way to tell which plan renews at which cycle,
+// so we have to hardcode it.
+export const isSpecialRenewPlan = (planIDs: PlanIDs) => !!planIDs[PLANS.VPN2024];
 
 const getRenewCycle = (cycle: Cycle, planIDs: PlanIDs): CYCLE => {
-    // This is currently hardcoded. Once the payments backend supports renewals at different cycles, it will be changed to more generic code.
-    // Currently there is no way to tell which plan renews at which cycle, so we have to hardcode it.
-    const isSpecialRenewPlan = !!planIDs[PLANS.VPN2024];
-    if (!isSpecialRenewPlan) {
+    if (!isSpecialRenewPlan(planIDs)) {
         return cycle;
     }
 
@@ -38,9 +39,7 @@ export const getOptimisticRenewCycleAndPrice = ({
             planIDs,
             plansMap,
             cycle: nextCycle,
-            priceType: PriceType.default,
         }),
-        priceType: PriceType.default,
     });
 
     return {

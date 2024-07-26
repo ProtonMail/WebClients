@@ -1,6 +1,6 @@
 import type { CYCLE, PLAN_TYPES } from '../constants';
 import { ADDON_NAMES, PLANS } from '../constants';
-import { isScribeAddon } from '../helpers/planIDs';
+import { isScribeAddon } from '../helpers/addons';
 import type { Nullable } from './utils';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
@@ -218,6 +218,7 @@ export interface SubscriptionCheckResponse {
     Taxes?: Tax[];
     TaxInclusive?: TaxInclusive;
     SubscriptionMode?: SubscriptionMode;
+    optimistic?: boolean;
 }
 
 export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
@@ -228,8 +229,4 @@ export enum Audience {
     B2C = 'b2c',
     B2B = 'b2b',
     FAMILY = 'family',
-}
-
-export enum PriceType {
-    default,
 }

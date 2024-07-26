@@ -10,7 +10,7 @@ import {
     VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
-import { getPlanFromIds } from '@proton/shared/lib/helpers/subscription';
+import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import type {
     Plan,
     PlanIDs,

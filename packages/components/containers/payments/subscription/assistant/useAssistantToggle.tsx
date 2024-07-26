@@ -1,6 +1,6 @@
 import { useOrganization, usePlans, useSubscription, useUser } from '@proton/components/hooks';
 import { ADDON_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { isScribeAddon } from '@proton/shared/lib/helpers/planIDs';
+import { isScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { hasAIAssistant } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';

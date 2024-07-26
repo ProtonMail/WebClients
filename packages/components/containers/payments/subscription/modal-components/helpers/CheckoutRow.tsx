@@ -13,7 +13,6 @@ export interface Props {
     currency?: Currency;
     className?: string;
     suffix?: ReactNode;
-    suffixNextLine?: boolean;
     loading?: boolean;
     'data-testid'?: string;
     star?: boolean;
@@ -25,7 +24,6 @@ const CheckoutRow = ({
     currency,
     className = '',
     suffix,
-    suffixNextLine = false,
     loading = false,
     star,
     'data-testid': dataTestId,
@@ -40,24 +38,22 @@ const CheckoutRow = ({
     }
     return (
         <>
-            <div className={clsx(['flex flex-nowrap justify-space-between', !suffixNextLine && 'mb-4', className])}>
+            <div className={clsx(['flex flex-nowrap justify-space-between', className])}>
                 <div className="pr-2">{title}</div>
                 {loading ? (
                     <EllipsisLoader />
                 ) : (
                     <span>
-                        <Price currency={currency} suffix={suffixNextLine ? null : suffix} data-testid={dataTestId}>
+                        <Price currency={currency} data-testid={dataTestId}>
                             {amount}
                         </Price>
                         {star ? '*' : null}
                     </span>
                 )}
             </div>
-            {suffixNextLine ? (
-                <div className="mb-4 flex justify-end" data-testid="next-line-suffix">
-                    {suffix}
-                </div>
-            ) : null}
+            <div className="mb-4 flex justify-end" data-testid="next-line-suffix">
+                {suffix}
+            </div>
         </>
     );
 };
