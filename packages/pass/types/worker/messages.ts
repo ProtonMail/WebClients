@@ -25,10 +25,10 @@ import type { ExtensionForkResultPayload } from '@proton/shared/lib/authenticati
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { ForkPayload } from '../api/fork';
-import type { AliasCreationDTO, AliasOptions, SelectedItem, UniqueItem } from '../data';
+import type { AliasCreationDTO, AliasOptions, ItemContent, SelectedItem, UniqueItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
-import type { AutofillOptions, AutofillResult } from './autofill';
+import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
 import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
 import type { OnboardingMessage } from './onboarding';
@@ -69,9 +69,11 @@ export enum WorkerMessageType {
     AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
+    AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
+    AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
+    AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
+    AUTOFILL_LOGIN_QUERY = 'AUTOFILL_LOGIN_QUERY',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
-    AUTOFILL_QUERY = 'AUTOFILL_QUERY',
-    AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
@@ -137,10 +139,12 @@ export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immed
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
+export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
+export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
+export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
+export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
-export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY, AutofillOptions>;
-export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
@@ -203,10 +207,12 @@ export type WorkerMessage =
     | AuthConfirmPasswordMessage
     | AuthInitMessage
     | AuthUnlockMessage
+    | AutofillIdentityMessage
+    | AutofillIdentityQueryMessage
+    | AutofillLoginMessage
+    | AutofillLoginQueryMessage
     | AutofillOTPCheckMessage
     | AutofillPasswordOptionsMessage
-    | AutofillQueryMessage
-    | AutofillSelectMessage
     | AutofillSyncMessage
     | AutoSaveRequestMessage
     | B2BEventMessage
@@ -272,9 +278,11 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
     [WorkerMessageType.AUTH_UNLOCK]: Result;
+    [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
+    [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
+    [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
+    [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
-    [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
-    [WorkerMessageType.AUTOFILL_SELECT]: FormCredentials;
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };

@@ -31,7 +31,7 @@ export const createAutofillService = () => {
 
         state.credentialsCount = await sendMessage.on(
             contentScriptMessage({
-                type: WorkerMessageType.AUTOFILL_QUERY,
+                type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
                 payload: {},
             }),
             (res) => (res.type === 'success' ? res.items.length : 0)
