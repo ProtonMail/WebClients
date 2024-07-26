@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
@@ -12,8 +13,12 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { ExtraFieldType, IdentityItemFormValues, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 type Props = { form: FormikContextType<IdentityItemFormValues> };
@@ -30,8 +35,15 @@ const getSectionFieldProps = (
 };
 
 export const IdentityCustomSections: FC<Props> = ({ form }) => {
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const spotlight = useSpotlight();
+
+    const openUpsell = () => spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS });
+
     const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
         const createCustomField = (type: ExtraFieldType) => {
+            if (isFreePlan) return openUpsell();
+
             helpers.push<UnsafeItemExtraField>(createExtraField(type));
             autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
