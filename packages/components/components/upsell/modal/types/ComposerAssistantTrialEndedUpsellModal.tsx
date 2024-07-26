@@ -45,7 +45,7 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
         return <Loader />;
     }
 
-    const addonPlanName = subscription?.Plans.reduce<ADDON_NAMES | undefined>((acc, { Name, Type }) => {
+    const addonPlanName = subscription?.Plans?.reduce<ADDON_NAMES | undefined>((acc, { Name, Type }) => {
         const isPlan = (Type: PLAN_TYPES, name: typeof Name): name is PLANS => Type === PLAN_TYPES.PLAN;
 
         if (isPlan(Type, Name)) {
