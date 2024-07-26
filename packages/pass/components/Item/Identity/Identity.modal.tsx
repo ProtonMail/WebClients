@@ -51,7 +51,7 @@ export const IdentityAddNewSection: FC<Props> = ({ onAdd }) => {
                 onClick={() =>
                     isFreePlan
                         ? spotlight.setUpselling({
-                              type: 'early-access',
+                              type: 'pass-plus',
                               upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS,
                           })
                         : setModal(true)
