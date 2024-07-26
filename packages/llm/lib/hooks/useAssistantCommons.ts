@@ -11,6 +11,7 @@ const { OFF } = AI_ASSISTANT_ACCESS;
 const useAssistantCommons = () => {
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
     const [{ AIAssistantFlags }] = useUserSettings();
+    const [hasCheckedCompatibility, setHasCheckedCompatibility] = useState(false);
 
     const assistantSubscriptionStatus = useAssistantSubscriptionStatus();
 
@@ -38,21 +39,33 @@ const useAssistantCommons = () => {
     const canUseAssistant = assistantSubscriptionStatus.canUseAssistant;
 
     const handleCheckHardwareCompatibility = async () => {
+        if (hasCheckedCompatibility) {
+            return { hasCompatibleBrowser, hasCompatibleHardware };
+        }
         const compatibility = await getAssistantHasCompatibleHardware();
+        setHasCheckedCompatibility(true);
         // If the webGPU is not working on Firefox, propose to the user to use the desktop app instead
         if (compatibility === 'noWebGpuFirefox' || compatibility === 'noWebGpuSafari') {
             setHasCompatibleBrowser(false);
             setHasCompatibleHardware(true);
+            return { hasCompatibleBrowser: false, hasCompatibleHardware: true };
         } else {
             setHasCompatibleHardware(compatibility === 'ok');
+            return {
+                hasCompatibleBrowser: getAssistantHasCompatibleBrowser(),
+                hasCompatibleHardware: compatibility === 'ok',
+            };
         }
     };
 
     useEffect(() => {
-        if (canShowAssistant) {
+        if (canShowAssistant && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             void handleCheckHardwareCompatibility();
+        } else if (AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
+            setHasCompatibleBrowser(true);
+            setHasCompatibleHardware(true);
         }
-    }, [canShowAssistant]);
+    }, [canShowAssistant, AIAssistantFlags]);
 
     return {
         canShowAssistant,
@@ -67,6 +80,7 @@ const useAssistantCommons = () => {
         cleanGlobalErrors,
 
         assistantSubscriptionStatus,
+        handleCheckHardwareCompatibility,
     };
 };
 
