@@ -89,7 +89,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
                     <ReminderSectionFeatures {...config.features} />
                     {config.storage && <ReminderSectionStorage {...config.storage} />}
                     <SettingsSection className="container-section-sticky-section">
-                        <div className="flex gap-2 border-bottom mb-6 pb-6">
+                        <div className="flex gap-2 border-bottom mb-8 pb-6">
                             <ButtonLike
                                 as={SettingsLink}
                                 onClick={() => {
