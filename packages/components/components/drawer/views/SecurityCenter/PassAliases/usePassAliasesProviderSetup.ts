@@ -7,6 +7,7 @@ import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/contain
 import { useAddresses, useAuthentication, useNotifications, useUser } from '@proton/components/hooks';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
@@ -191,10 +192,15 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
 
     useEffect(() => {
         void initPassBridge().catch((error) => {
-            createNotification({
-                text: c('Error').t`Aliases could not be loaded`,
-                type: 'error',
-            });
+            // Do not display a notification if the error is due to missing scope (if user has extra password setup)
+            const skipNotification = error && error?.data && error?.data?.Code === PassErrorCode.MISSING_SCOPE;
+
+            if (!skipNotification) {
+                createNotification({
+                    text: c('Error').t`Aliases could not be loaded`,
+                    type: 'error',
+                });
+            }
 
             throwError(new PassAliasesError(error, PASS_ALIASES_ERROR_STEP.INIT_BRIDGE));
         });
