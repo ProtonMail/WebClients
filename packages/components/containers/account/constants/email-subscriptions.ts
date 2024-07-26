@@ -8,6 +8,7 @@ import {
     NEWSLETTER_SUBSCRIPTIONS_BITS,
     PASS_APP_NAME,
     VPN_APP_NAME,
+    WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
@@ -100,6 +101,12 @@ export const getEmailSubscriptions: () => EmailSubscription[] = () => [
         id: 'news_product_pass',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.PASS_NEWS,
         title: getProductUpdatesString(PASS_APP_NAME),
+        frequency: c('Frequency of news').t`(4-6 emails per year)`,
+    },
+    {
+        id: 'news_product_wallet',
+        flag: NEWSLETTER_SUBSCRIPTIONS_BITS.WALLET_NEWS,
+        title: getProductUpdatesString(WALLET_APP_NAME),
         frequency: c('Frequency of news').t`(4-6 emails per year)`,
     },
     {
