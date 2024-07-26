@@ -42,19 +42,14 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
     const spotlight = useSpotlight();
     const canCreateField = Boolean(optionalFields || customFieldsKey);
 
-    const openUpsell = () =>
-        spotlight.setUpselling({
-            type: 'pass-plus',
-            upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS,
-        });
+    const openUpsell = () => spotlight.setUpselling({ type: 'pass-plus', upsellRef: UpsellRef.IDENTITY_CUSTOM_FIELDS });
 
     const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
         const createCustomField = (type: ExtraFieldType) => {
             if (isFreePlan) return openUpsell();
-            else {
-                helpers.push<UnsafeItemExtraField>(createExtraField(type));
-                autofocusInput(`${helpers.name}[${focusIndex}]`);
-            }
+
+            helpers.push<UnsafeItemExtraField>(createExtraField(type));
+            autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 
         const newFieldOptions = (optionalFields ?? []).map((field) => ({
