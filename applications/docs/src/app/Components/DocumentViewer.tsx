@@ -29,6 +29,7 @@ import { c } from 'ttag'
 import { useGenericAlertModal } from './Modals/GenericAlert'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 
 type Props = {
   lookup: NodeMeta
@@ -110,6 +111,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
         if (payload.irrecoverable) {
           setError({ message: payload.translatedError, userUnderstandableMessage: true })
           application.destroy()
+          Availability.mark(AvailabilityTypes.CRITICAL)
         } else {
           showGenericAlertModal({
             title: payload.translatedErrorTitle || c('Title').t`Something went wrong`,
