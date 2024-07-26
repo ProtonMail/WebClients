@@ -12,9 +12,9 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
-import { autofocusIdentityField } from '@proton/pass/hooks/identity/utils';
 import type { ExtraSectionsError } from '@proton/pass/lib/validation/identity';
 import type { ExtraFieldType, IdentityItemFormValues, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 type Props = { form: FormikContextType<IdentityItemFormValues> };
 
@@ -33,7 +33,7 @@ export const IdentityCustomSections: FC<Props> = ({ form }) => {
     const getDropdownOptions = (helpers: FieldArrayRenderProps, focusIndex: number) => {
         const createCustomField = (type: ExtraFieldType) => {
             helpers.push<UnsafeItemExtraField>(createExtraField(type));
-            autofocusIdentityField(`${helpers.name}[${focusIndex}]`);
+            autofocusInput(`${helpers.name}[${focusIndex}]`);
         };
 
         return [

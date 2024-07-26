@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikErrors, FormikProps } from 'formik';
@@ -6,6 +5,7 @@ import { FieldArray } from 'formik';
 
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { ExtraFieldGroupValues, ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
+import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
@@ -27,7 +27,6 @@ export const createExtraField = <T extends ExtraFieldType>(type: T): UnsafeItemE
 };
 
 export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: ExtraFieldGroupProps<T>) => {
-    const [autofocusIndex, setAutofocusIndex] = useState<number>();
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     return (
@@ -36,7 +35,7 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
             render={(helpers) => {
                 const addCustomField = (type: ExtraFieldType) => {
                     helpers.push(createExtraField(type));
-                    setAutofocusIndex(form.values.extraFields.length);
+                    autofocusInput(`extraFields[${form.values.extraFields.length}]`);
                 };
 
                 return (
@@ -53,7 +52,6 @@ export const ExtraFieldGroup = <T extends ExtraFieldGroupValues>({ form }: Extra
                                         /* Formik TS type are wrong for FormikTouched */
                                         touched={(form.touched.extraFields as unknown as boolean[])?.[index]}
                                         error={form.errors.extraFields?.[index] as FormikErrors<UnsafeItemExtraField>}
-                                        autoFocus={autofocusIndex === index} /* focus on add only */
                                     />
                                 ))}
                             </FieldsetCluster>
