@@ -43,13 +43,13 @@ import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';
 import { getShortPlan } from '../../features/plan';
 import CalendarDowngradeModal from '../CalendarDowngradeModal';
-import CancelSubscriptionLoadingModal from '../CancelSubscriptionLoadingModal';
 import type { FeedbackDowngradeData, FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
 import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
 import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
 import HighlightPlanDowngradeModal from '../HighlightPlanDowngradeModal';
 import InAppPurchaseModal from '../InAppPurchaseModal';
 import { DiscountWarningModal, VisionaryWarningModal } from '../PlanLossWarningModal';
+import CancelSubscriptionLoadingModal from './CancelSubscriptionLoadingModal';
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 import type { CancelSubscriptionResult } from './types';
 

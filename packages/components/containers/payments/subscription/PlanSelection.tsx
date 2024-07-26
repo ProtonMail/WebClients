@@ -6,24 +6,20 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getIpPricePerMonth, getPricePerCycle, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
 import {
-    getIpPricePerMonth,
-    getOverriddenPricePerCycle,
-    hasMaximumCycle,
-} from '@proton/shared/lib/helpers/subscription';
-import type {
-    Currency,
-    Cycle,
-    FreePlanDefault,
-    Organization,
-    Plan,
-    PlanIDs,
-    PlansMap,
-    PriceType,
-    SubscriptionModel,
-    VPNServersCountData,
+    Audience,
+    type Currency,
+    type Cycle,
+    type FreePlanDefault,
+    type Organization,
+    type Plan,
+    type PlanIDs,
+    type PlansMap,
+    Renew,
+    type SubscriptionModel,
+    type VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
-import { Audience, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -116,8 +112,8 @@ interface Props {
     filter?: Audience[];
 }
 
-export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap, priceType?: PriceType): number | null => {
-    const price = getOverriddenPricePerCycle(plan, cycle, priceType);
+export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
+    const price = getPricePerCycle(plan, cycle);
     if (price === undefined) {
         return null;
     }
@@ -139,7 +135,7 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap, priceType
 
         const addonName = plansThatMustUseAddonPricing[planWithAddon];
         const memberAddon = plansMap[addonName];
-        const memberPrice = memberAddon ? getOverriddenPricePerCycle(memberAddon, cycle, priceType) : undefined;
+        const memberPrice = memberAddon ? getPricePerCycle(memberAddon, cycle) : undefined;
         if (memberPrice === undefined) {
             continue;
         }

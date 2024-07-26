@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { addMonths } from 'date-fns';
 
@@ -17,10 +17,14 @@ import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensi
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
     type CheckWithAutomaticOptions,
+    type MultiCheckOptions,
+    type MultiCheckSubscriptionData,
     type PaymentMethodStatus,
     type PaymentMethodStatusExtended,
     type PaymentsApi,
+    type RequestOptions,
     extendStatus,
+    isCheckWithAutomaticOptions,
     isPaymentMethodStatusExtended,
 } from '../core';
 
@@ -77,6 +81,51 @@ export const useReportRoutingError = () => {
     };
 };
 
+export const useMultiCheckCache = () => {
+    const cacheRef = useRef<Record<string, SubscriptionCheckResponse>>({});
+
+    const hash = (data: CheckSubscriptionData, options?: CheckWithAutomaticOptions) => {
+        const plans = Object.entries(data.Plans)
+            .sort((a, b) => a[0].localeCompare(b[0]))
+            .reduce((acc, [key, value]) => {
+                return `${acc}-${key}-${value}`;
+            }, '');
+
+        const id =
+            `p-${plans}` +
+            `.cur-${data.Currency}` +
+            `.cyc-${data.Cycle}` +
+            `.codes-${data.Codes?.join(',') ?? ''}` +
+            `.cc-${data.BillingAddress?.CountryCode}` +
+            `.s-${data.BillingAddress?.State}` +
+            `.v-${options?.forcedVersion ?? ''}`;
+
+        return btoa(id);
+    };
+
+    const get = (
+        data: CheckSubscriptionData,
+        options?: CheckWithAutomaticOptions
+    ): SubscriptionCheckResponse | undefined => {
+        const id = hash(data, options);
+        return cacheRef.current[id];
+    };
+
+    const set = (
+        data: CheckSubscriptionData,
+        options: CheckWithAutomaticOptions | undefined,
+        value: SubscriptionCheckResponse
+    ) => {
+        const id = hash(data, options);
+        cacheRef.current[id] = value;
+    };
+
+    return {
+        get,
+        set,
+    };
+};
+
 export const usePaymentsApi = (
     apiOverride?: Api,
     checkV5Fallback?: (data: CheckSubscriptionData) => SubscriptionCheckResponse | null
@@ -90,6 +139,7 @@ export const usePaymentsApi = (
     const chargebeeEnabledCache = useChargebeeEnabledCache();
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
+    const multiCheckCache = useMultiCheckCache();
 
     const getPaymentsApi = (api: Api, chargebeeEnabledOverride?: ChargebeeEnabled): PaymentsApi => {
         const getChargebeeEnabled = (): ChargebeeEnabled => chargebeeEnabledOverride ?? chargebeeEnabledCache();
@@ -168,13 +218,13 @@ export const usePaymentsApi = (
 
         const checkV4 = async (
             data: CheckSubscriptionData,
-            signal: AbortSignal | undefined,
+            requestOptions: RequestOptions = {},
             additionalContext?: any
         ): Promise<SubscriptionCheckResponse> => {
             try {
                 return await api({
                     ...checkSubscription(data, 'v4'),
-                    signal,
+                    ...requestOptions,
                 });
             } catch (error) {
                 reportRoutingError(error, additionalContext);
@@ -184,7 +234,7 @@ export const usePaymentsApi = (
 
         const checkV5 = async (
             data: CheckSubscriptionData,
-            signal: AbortSignal | undefined,
+            requestOptions: RequestOptions = {},
             additionalContext?: any
         ): Promise<SubscriptionCheckResponse> => {
             // Patch for coupons compatibility v4 vs v5
@@ -194,11 +244,11 @@ export const usePaymentsApi = (
 
             const fallback = checkV5Fallback?.(data);
             try {
-                const silence = !!fallback;
+                const silence = !!fallback || !!requestOptions.silence;
 
                 return await api({
                     ...checkSubscription(data, 'v5'),
-                    signal,
+                    ...requestOptions,
                     silence,
                 });
             } catch (error) {
@@ -213,37 +263,37 @@ export const usePaymentsApi = (
 
         const checkWithAutomaticVersion = async (
             data: CheckSubscriptionData,
-            signal?: AbortSignal,
+            requestOptions: RequestOptions = {},
             options?: CheckWithAutomaticOptions
         ): Promise<SubscriptionCheckResponse> => {
             const chargebeeEnabled = getChargebeeEnabled();
             if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
-                return checkV4(data, signal, { system: 'inhouse', reason: 'forced' });
+                return checkV4(data, requestOptions, { system: 'inhouse', reason: 'forced' });
             }
 
             if (options?.forcedVersion === 'v4') {
-                return checkV4(data, signal, { system: 'inhouse', reason: options.reason });
+                return checkV4(data, requestOptions, { system: 'inhouse', reason: options.reason });
             }
 
             if (chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-                return checkV5(data, signal, { system: 'chargebee', reason: 'forced' });
+                return checkV5(data, requestOptions, { system: 'chargebee', reason: 'forced' });
             }
 
             if (options?.forcedVersion === 'v5') {
-                return checkV5(data, signal, { system: 'chargebee', reason: options.reason });
+                return checkV5(data, requestOptions, { system: 'chargebee', reason: options.reason });
             }
 
             const passB2bPlans = [PLANS.PASS_PRO, PLANS.PASS_BUSINESS];
             const isPassB2b = passB2bPlans.some((plan) => data.Plans[plan] > 0);
             if (isPassB2b) {
-                return checkV4(data, signal, {
+                return checkV4(data, requestOptions, {
                     reason: 'pass b2b',
                     system: 'inhouse',
                 });
             }
 
             try {
-                return await checkV5(data, signal, { system: 'chargebee', reason: 'default' });
+                return await checkV5(data, requestOptions, { system: 'chargebee', reason: 'default' });
             } catch (error) {
                 if (
                     chargebeeKillSwitch({
@@ -252,7 +302,7 @@ export const usePaymentsApi = (
                         error,
                     })
                 ) {
-                    return checkV4(data, signal, {
+                    return checkV4(data, requestOptions, {
                         reason: 'killswitch',
                         system: 'inhouse',
                     });
@@ -262,8 +312,63 @@ export const usePaymentsApi = (
             }
         };
 
+        const multiCheck = (
+            multiCheckData: MultiCheckSubscriptionData[],
+            { cached, ...requestOptions }: MultiCheckOptions = {}
+        ): Promise<SubscriptionCheckResponse[]> => {
+            const requestData: {
+                data: CheckSubscriptionData;
+                options: CheckWithAutomaticOptions | undefined;
+            }[] = multiCheckData.map((data) => {
+                if (isCheckWithAutomaticOptions(data)) {
+                    const { forcedVersion, reason, ...rest } = data;
+
+                    return {
+                        data: rest,
+                        options: {
+                            forcedVersion,
+                            reason,
+                        },
+                    };
+                }
+
+                return {
+                    data: data,
+                    options: undefined,
+                };
+            });
+
+            return Promise.all(
+                requestData.map(async ({ data, options }) => {
+                    if (cached) {
+                        const cachedResult = multiCheckCache.get(data, options);
+                        if (cachedResult) {
+                            return cachedResult;
+                        }
+                    }
+
+                    const result = await checkWithAutomaticVersion(data, requestOptions, options);
+                    if (cached) {
+                        multiCheckCache.set(data, options, result);
+                    }
+
+                    return result;
+                })
+            );
+        };
+
+        const cacheMultiCheck = (
+            data: CheckSubscriptionData,
+            options: CheckWithAutomaticOptions | undefined,
+            result: SubscriptionCheckResponse
+        ) => {
+            multiCheckCache.set(data, options, result);
+        };
+
         return {
             checkWithAutomaticVersion,
+            multiCheck,
+            cacheMultiCheck,
             statusExtendedAutomatic,
         };
     };

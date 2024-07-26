@@ -1,32 +1,11 @@
-import type { FreeSubscription } from '../constants';
-import {
-    ADDON_NAMES,
-    DOMAIN_ADDON_PREFIX,
-    IP_ADDON_PREFIX,
-    MEMBER_ADDON_PREFIX,
-    PLANS,
-    PLAN_TYPES,
-    SCRIBE_ADDON_PREFIX,
-    isFreeSubscription,
-} from '../constants';
-import type { Addon, Organization, Plan, PlanIDs, PlansMap, SubscriptionModel } from '../interfaces';
-import { getMaxValue } from '../interfaces';
+import type { SelectedPlan } from '@proton/components/payments/core';
 
-const {
-    MAIL,
-    DRIVE,
-    MAIL_BUSINESS,
-    ENTERPRISE,
-    BUNDLE,
-    BUNDLE_PRO,
-    BUNDLE_PRO_2024,
-    MAIL_PRO,
-    DRIVE_PRO,
-    VPN_PRO,
-    VPN_BUSINESS,
-    PASS_PRO,
-    PASS_BUSINESS,
-} = PLANS;
+import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
+import type { Organization, Plan, PlanIDs, PlansMap, SubscriptionCheckResponse } from '../interfaces';
+import { getMaxValue } from '../interfaces';
+import { getSupportedAddons, getSupportedB2BAddons, isDomainAddon, isMemberAddon, isScribeAddon } from './addons';
+import type { AggregatedPricing, PricingForCycles } from './subscription';
+import { allCycles, getPlanMembers, getPricePerCycle, getPricePerMember } from './subscription';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
@@ -40,30 +19,6 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
     }, {});
 };
 
-export const removeAddon = (originalPlanIDs: PlanIDs, addonGuard: AddonGuard): PlanIDs => {
-    const planIDs: PlanIDs = { ...originalPlanIDs };
-
-    // if guard returns true, it means that the addon should be removed
-    for (const addonName of Object.keys(planIDs) as (ADDON_NAMES | PLANS)[]) {
-        if (addonGuard(addonName)) {
-            delete planIDs[addonName];
-        }
-    }
-
-    return planIDs;
-};
-
-export const countAddonsByType = (planIDs: PlanIDs, addonGuard: AddonGuard): number => {
-    return Object.keys(planIDs).reduce((acc, key) => {
-        const addonName = key as ADDON_NAMES | PLANS;
-
-        if (addonGuard(addonName)) {
-            return acc + (planIDs[addonName] ?? 0);
-        }
-        return acc;
-    }, 0);
-};
-
 export const getPlanFromCheckout = (planIDs: PlanIDs, plansMap: PlansMap): Plan | null => {
     const planNames = Object.keys(planIDs) as (keyof PlanIDs)[];
     for (const planName of planNames) {
@@ -75,144 +30,6 @@ export const getPlanFromCheckout = (planIDs: PlanIDs, plansMap: PlansMap): Plan 
 
     return null;
 };
-
-export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;
-
-export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
-    const supported: SupportedAddons = {};
-
-    // Re-enable the scribe addons when/if B2C plans trully support them
-
-    if (planIDs[MAIL]) {
-        // supported[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS] = true;
-    }
-
-    if (planIDs[DRIVE]) {
-        // supported[ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS] = true;
-    }
-
-    if (planIDs[BUNDLE]) {
-        // supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE] = true;
-    }
-
-    return supported;
-}
-
-export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
-    const supported: SupportedAddons = {};
-
-    if (planIDs[MAIL_PRO]) {
-        supported[ADDON_NAMES.MEMBER_MAIL_PRO] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO] = true;
-    }
-
-    if (planIDs[MAIL_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_MAIL_BUSINESS] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS] = true;
-    }
-
-    if (planIDs[DRIVE_PRO]) {
-        supported[ADDON_NAMES.MEMBER_DRIVE_PRO] = true;
-    }
-
-    if (planIDs[BUNDLE_PRO]) {
-        supported[ADDON_NAMES.MEMBER_BUNDLE_PRO] = true;
-        supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO] = true;
-    }
-
-    if (planIDs[BUNDLE_PRO_2024]) {
-        supported[ADDON_NAMES.MEMBER_BUNDLE_PRO_2024] = true;
-        supported[ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024] = true;
-        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024] = true;
-    }
-
-    if (planIDs[ENTERPRISE]) {
-        supported[ADDON_NAMES.MEMBER_ENTERPRISE] = true;
-        supported[ADDON_NAMES.DOMAIN_ENTERPRISE] = true;
-    }
-
-    if (planIDs[VPN_PRO]) {
-        supported[ADDON_NAMES.MEMBER_VPN_PRO] = true;
-    }
-
-    if (planIDs[VPN_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_VPN_BUSINESS] = true;
-        supported[ADDON_NAMES.IP_VPN_BUSINESS] = true;
-    }
-
-    if (planIDs[PASS_PRO]) {
-        supported[ADDON_NAMES.MEMBER_PASS_PRO] = true;
-    }
-
-    if (planIDs[PASS_BUSINESS]) {
-        supported[ADDON_NAMES.MEMBER_PASS_BUSINESS] = true;
-    }
-
-    return supported;
-}
-
-export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
-    const supported: SupportedAddons = {
-        ...getSupportedB2CAddons(planIDs),
-        ...getSupportedB2BAddons(planIDs),
-    };
-
-    return supported;
-};
-
-type AddonOrName = Addon | ADDON_NAMES | PLANS;
-
-function isAddonType(addonOrName: AddonOrName, addonPrefix: string): boolean {
-    let addonName: ADDON_NAMES | PLANS;
-    if (typeof addonOrName === 'string') {
-        addonName = addonOrName;
-    } else {
-        addonName = addonOrName.Name;
-    }
-
-    return addonName.startsWith(addonPrefix);
-}
-
-export type AddonGuard = (addonOrName: AddonOrName) => boolean;
-
-const ORG_SIZE_ADDONS = [
-    ADDON_NAMES.MEMBER_VPN_BUSINESS,
-    ADDON_NAMES.MEMBER_VPN_PRO,
-    ADDON_NAMES.MEMBER_PASS_BUSINESS,
-    ADDON_NAMES.MEMBER_PASS_PRO,
-];
-
-export const isOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
-    return ORG_SIZE_ADDONS.some((name) => addonOrName === name);
-};
-
-export const isMemberAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, MEMBER_ADDON_PREFIX);
-};
-
-export const isDomainAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, DOMAIN_ADDON_PREFIX);
-};
-
-export const isIpAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, IP_ADDON_PREFIX);
-};
-
-export const isScribeAddon: AddonGuard = (addonOrName): boolean => {
-    return isAddonType(addonOrName, SCRIBE_ADDON_PREFIX);
-};
-
-export function hasScribeAddon(subscriptionOrPlanIds: SubscriptionModel | FreeSubscription | undefined): boolean {
-    const subscription = subscriptionOrPlanIds;
-
-    if (!subscription || isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    const plans = subscription.Plans;
-    return plans.some((plan) => isScribeAddon(plan.Name));
-}
 
 /**
  * Transfer addons from one plan to another. In different plans, addons have different names
@@ -371,3 +188,198 @@ export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): (
         return plansMap[planID] as Plan & { Name: PLANS };
     }
 };
+export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
+    const availableKeys = Object.keys(planIDs);
+    return Object.values(PLANS).find((value) => availableKeys.includes(value));
+}
+export function getPlanFromIds(planIDs: PlanIDs): PLANS | undefined {
+    return Object.values(PLANS).find((key) => {
+        // If the planIDs object has non-zero value for the plan, then it exists.
+        // There can be at most 1 plan, and others are addons.
+        const planNumber = planIDs[key as PLANS] ?? 0;
+        return planNumber > 0;
+    });
+}
+export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): AggregatedPricing => {
+    const initial = {
+        [CYCLE.MONTHLY]: 0,
+        [CYCLE.YEARLY]: 0,
+        [CYCLE.THREE]: 0,
+        [CYCLE.EIGHTEEN]: 0,
+        [CYCLE.TWO_YEARS]: 0,
+        [CYCLE.FIFTEEN]: 0,
+        [CYCLE.THIRTY]: 0,
+    };
+
+    return Object.entries(planIDs).reduce<AggregatedPricing>(
+        (acc, [planName, quantity]) => {
+            const plan = plansMap[planName as keyof PlansMap];
+            if (!plan) {
+                return acc;
+            }
+
+            const members = getPlanMembers(plan, quantity);
+            acc.membersNumber += members;
+
+            const add = (target: PricingForCycles, cycle: CYCLE) => {
+                const price = getPricePerCycle(plan, cycle);
+                if (price) {
+                    target[cycle] += quantity * price;
+                }
+            };
+
+            const addMembersPricing = (target: PricingForCycles, cycle: CYCLE) => {
+                const price = getPricePerMember(plan, cycle);
+                if (price) {
+                    target[cycle] += members * price;
+                }
+            };
+
+            allCycles.forEach((cycle) => {
+                add(acc.all, cycle);
+            });
+
+            if (members !== 0) {
+                allCycles.forEach((cycle) => {
+                    addMembersPricing(acc.members, cycle);
+                });
+            }
+
+            if (plan.Type === PLAN_TYPES.PLAN) {
+                allCycles.forEach((cycle) => {
+                    add(acc.plans, cycle);
+                });
+
+                acc.defaultMonthlyPriceWithoutAddons += quantity * (getPricePerCycle(plan, CYCLE.MONTHLY) ?? 0);
+            }
+
+            const defaultMonthly = plan.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
+            const monthly = getPricePerCycle(plan, CYCLE.MONTHLY) ?? 0;
+
+            // Offers might affect Pricing both ways, increase and decrease.
+            // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
+            // for discount calculations
+            const price = Math.max(defaultMonthly, monthly);
+
+            acc.defaultMonthlyPrice += quantity * price;
+
+            return acc;
+        },
+        {
+            defaultMonthlyPrice: 0,
+            defaultMonthlyPriceWithoutAddons: 0,
+            all: { ...initial },
+            members: {
+                ...initial,
+            },
+            plans: {
+                ...initial,
+            },
+            membersNumber: 0,
+        }
+    );
+};
+
+export type PricingMode = 'all' | 'plans';
+
+export type TotalPricing = ReturnType<typeof getTotalFromPricing>;
+
+// todo: replace signature with SelectedPlan only
+export const getTotalFromPricing = (
+    pricing: AggregatedPricing,
+    cycle: CYCLE,
+    mode: PricingMode = 'all',
+    additionalCheckResults?: SubscriptionCheckResponse[],
+    selectedPlan?: SelectedPlan
+) => {
+    type CheckedPrices = Record<
+        CYCLE,
+        {
+            Amount: number;
+            CouponDiscount: number;
+        }
+    >;
+
+    const checkedPrices =
+        additionalCheckResults?.reduce((acc, { CouponDiscount = 0, Cycle, Amount }) => {
+            acc[Cycle] = {
+                Amount,
+                CouponDiscount,
+            };
+
+            return acc;
+        }, {} as CheckedPrices) ?? ({} as CheckedPrices);
+
+    const { defaultMonthlyPrice, defaultMonthlyPriceWithoutAddons } = pricing;
+
+    const total = checkedPrices[cycle]?.Amount ?? pricing[mode][cycle];
+
+    let couponDiscount = checkedPrices[cycle]?.CouponDiscount ?? 0;
+    if (couponDiscount < 0) {
+        couponDiscount = -couponDiscount;
+    }
+
+    const discountedTotal = total - couponDiscount;
+    const totalPerMonth = discountedTotal / cycle;
+
+    const price = mode === 'all' ? defaultMonthlyPrice : defaultMonthlyPriceWithoutAddons;
+    const totalNoDiscount = price * cycle;
+    const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - discountedTotal;
+
+    const membersPricePerMonthWithoutDiscount = Math.floor(pricing.members[cycle] / cycle);
+    const memberShare = membersPricePerMonthWithoutDiscount / (total / cycle);
+    const membersDiscount = Math.floor(couponDiscount * memberShare);
+    const discountPerUserPerMonth = membersDiscount / pricing.membersNumber / cycle;
+    const perUserPerMonth = membersPricePerMonthWithoutDiscount / pricing.membersNumber - discountPerUserPerMonth;
+
+    const viewPricePerMonth = selectedPlan?.isB2BPlan() ? perUserPerMonth : totalPerMonth;
+
+    return {
+        discount,
+        discountPercentage: discount > 0 ? Math.round((discount / totalNoDiscount) * 100) : 0,
+        discountedTotal,
+        totalPerMonth,
+        totalNoDiscountPerMonth: totalNoDiscount / cycle,
+        perUserPerMonth,
+        viewPricePerMonth,
+    };
+};
+
+export type TotalPricings = {
+    [key in CYCLE]: TotalPricing;
+};
+
+export function getTotals(
+    planIDs: PlanIDs,
+    plansMap: PlansMap,
+    additionalCheckResults: SubscriptionCheckResponse[],
+    mode?: PricingMode,
+    selectedPlan?: SelectedPlan
+): TotalPricings {
+    const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+
+    return allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
+        acc[cycle] = getTotalFromPricing(pricing, cycle, mode, additionalCheckResults, selectedPlan);
+        return acc;
+    }, {} as any);
+}
+
+export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanIDs): PlanIDs {
+    if (!oldPlanIDs || !newPlanIDs) {
+        return {};
+    }
+
+    const increasedPlanIDs: PlanIDs = {};
+
+    for (const key of Object.keys(newPlanIDs) as (keyof PlanIDs)[]) {
+        const newQuantity = newPlanIDs[key] ?? 0;
+        const oldQuantity = oldPlanIDs[key] ?? 0;
+
+        const increase = newQuantity - oldQuantity;
+        if (increase > 0) {
+            increasedPlanIDs[key] = increase;
+        }
+    }
+
+    return increasedPlanIDs;
+}

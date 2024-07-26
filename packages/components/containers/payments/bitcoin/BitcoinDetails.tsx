@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { useNotifications } from '../..';
-import { Copy } from '../../components';
+import { useNotifications } from '../../..';
+import { Copy } from '../../../components';
 
 export interface Props {
     amount: number;

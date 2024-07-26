@@ -14,13 +14,12 @@ import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getHas2023OfferCoupon,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
-    getPricingFromPlanIDs,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
     Api,

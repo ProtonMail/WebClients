@@ -13,7 +13,6 @@ interface Props {
     loading?: boolean;
     children: ReactNode;
     hasGuarantee?: boolean;
-    hasPayments?: boolean;
     description?: ReactNode;
     renewNotice: ReactNode;
     hiddenRenewNotice?: ReactNode;
@@ -25,7 +24,6 @@ const Checkout = ({
     loading,
     children,
     hasGuarantee,
-    hasPayments = true,
     description,
     renewNotice,
     hiddenRenewNotice,
@@ -47,7 +45,7 @@ const Checkout = ({
 
             <div className={loading ? 'opacity-50 *:pointer-events-none' : ''}>{children}</div>
             <div className="text-sm lh-standard">
-                {hasPayments && !hiddenRenewNotice && renewNotice && (
+                {!hiddenRenewNotice && renewNotice && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
                             <Icon name="info-circle" size={4} />
@@ -57,20 +55,13 @@ const Checkout = ({
                         </span>
                     </div>
                 )}
-                {hasPayments ? (
-                    <div className="flex flex-nowrap color-weak my-2">
-                        <span className="shrink-0 mr-2">
-                            <Icon name="shield" />
-                        </span>
-                        <span className="flex-1">{c('Info')
-                            .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
-                    </div>
-                ) : (
-                    <div className="flex flex-nowrap mb-2">
-                        <b className="flex-1">{c('new_plans: info')
-                            .t`Applicable credits, proration, and coupons are applied in the next step`}</b>
-                    </div>
-                )}
+                <div className="flex flex-nowrap color-weak my-2">
+                    <span className="shrink-0 mr-2">
+                        <Icon name="shield" />
+                    </span>
+                    <span className="flex-1">{c('Info')
+                        .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
+                </div>
                 {hasGuarantee && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
@@ -81,7 +72,7 @@ const Checkout = ({
                 )}
             </div>
             {description}
-            {hiddenRenewNotice && hasPayments && (
+            {hiddenRenewNotice && (
                 <div className="mt-4">
                     <hr />
                     <div className="text-sm lh-standard">{hiddenRenewNotice}</div>

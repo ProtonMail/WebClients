@@ -56,5 +56,6 @@ export const getFreeCheckResult = (
         CouponDiscount: 0,
         Coupon: null,
         PeriodEnd: 0,
+        optimistic: true,
     };
 };
