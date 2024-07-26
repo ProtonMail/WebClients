@@ -5,10 +5,10 @@ import type { PlanConfigFeatures } from './interface';
 
 const ReminderSectionFeatures = ({ title, features, description, extraWarning }: PlanConfigFeatures) => {
     return (
-        <SettingsSection className="container-section-sticky-section mb-6">
+        <SettingsSection className="container-section-sticky-section">
             <SettingsSectionTitle>{title}</SettingsSectionTitle>
             <SettingsParagraph>{description}</SettingsParagraph>
-            <section className="border rounded-lg p-4 lg:w-2/3">
+            <section className="border rounded-lg p-4">
                 <StripedList className="my-0" alternate="odd">
                     {features.map(({ icon, text }) => (
                         <StripedItem key={text} left={<Icon name={icon} className="color-primary" />}>

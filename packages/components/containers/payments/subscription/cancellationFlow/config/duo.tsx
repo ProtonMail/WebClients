@@ -41,9 +41,9 @@ export const getDuoConfig = (
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
     const features: PlanConfigFeatures = {
-        title: c('Subscription reminder').t`Online privacy, for your whole family`,
+        title: c('Subscription reminder').t`Unlimited privacy for two`,
         description: c('Subscription reminder')
-            .t`${planName} helps you ensure that each of your family members — and their data — are protected whenever they’re online.`,
+            .t`${planName} gives you unlimited privacy and more storage for up to 2 people.`,
         features: [
             {
                 icon: 'storage',
@@ -51,7 +51,7 @@ export const getDuoConfig = (
             },
             {
                 icon: 'users',
-                text: c('Subscription reminder').t`6 users`,
+                text: c('Subscription reminder').t`2 users`,
             },
             {
                 icon: 'shield-half-filled',
