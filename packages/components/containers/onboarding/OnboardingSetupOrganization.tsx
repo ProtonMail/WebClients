@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useSettingsLink } from '@proton/components/components';
-import useSubscription from '@proton/components/hooks/useSubscription';
+import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 import clsx from '@proton/utils/clsx';
@@ -17,24 +17,24 @@ interface Props extends Omit<OnboardingContentProps, 'decription' | 'img'> {
 }
 
 const OnboardingSetupOrganization = (props: Props) => {
-    const [subscription] = useSubscription();
-    const hasFamilyOrDuoPlan = hasFamily(subscription) || hasDuo(subscription);
+    const [organization] = useOrganization();
+    const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
     const goToSettings = useSettingsLink();
 
-    const title = hasFamilyOrDuoPlan
+    const title = hasFamilyOrg
         ? c('familyOffer_2023:Onboarding Proton').t`Set up your family account`
         : c('Onboarding Proton').t`Set up your organization`;
 
-    const description = hasFamilyOrDuoPlan
+    const description = hasFamilyOrg
         ? c('familyOffer_2023:Onboarding Proton').t`Configure your family account and invite users `
         : c('Onboarding Proton')
               .t`Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.`;
 
-    const imgAlt = hasFamilyOrDuoPlan
+    const imgAlt = hasFamilyOrg
         ? c('familyOffer_2023:Onboarding Proton').t`Set up your family`
         : c('Onboarding Proton').t`Set up your organization`;
 
-    const img = hasFamilyOrDuoPlan ? onboardingFamilyPlan : onboardingOrganization;
+    const img = hasFamilyOrg ? onboardingFamilyPlan : onboardingOrganization;
 
     return (
         <OnboardingContent title={title} description={description} {...props}>

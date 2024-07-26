@@ -295,7 +295,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleAddUser = () => {
         // Visionary can either create a sub user or invite existing users
-        if (hasVisionary(subscription) || hasFamily(subscription) || hasDuo(subscription)) {
+        if (canInviteProtonUsers) {
             setInviteOrCreateUserModalOpen(true);
             return;
         }
