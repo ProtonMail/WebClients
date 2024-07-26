@@ -12,7 +12,7 @@ import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constan
 import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -131,7 +131,7 @@ const DeleteAccountModal = (props: Props) => {
             const organization = await getOrganization();
             // If a user is part of a family plan or duo plan we first need to leave the organization before deleting the account.
             // Refreshing the event manager is necessary to update the organization state
-            if ((isOrganizationFamily(organization) || isOrganizationDuo(organization)) && !isAdmin) {
+            if (getOrganizationDenomination(organization) === 'familyGroup' && !isAdmin) {
                 eventManager.start();
                 await api(leaveOrganisation());
                 await eventManager.call();

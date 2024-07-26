@@ -23,11 +23,7 @@ import {
 import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
-import {
-    isOrganizationDuo,
-    isOrganizationFamily,
-    isOrganizationVisionary,
-} from '@proton/shared/lib/organization/helper';
+import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
 import { recoveryIds } from './recoveryIds';
@@ -66,8 +62,8 @@ export const getAccountAppRoutes = ({
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
 
     // Used to determine if a user is on a family plan or a duo plan
-    const isFamilyOrDuoPlan = !!organization && (isOrganizationFamily(organization) || isOrganizationDuo(organization));
-    const isFamilyOrDuoPlanMember = isFamilyOrDuoPlan && isMember && isPaid;
+    const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
+    const isFamilyOrDuoPlanMember = isFamilyOrg && isMember && isPaid;
 
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
@@ -211,12 +207,12 @@ export const getAccountAppRoutes = ({
                         id: 'two-fa',
                     },
                     {
-                        text: isFamilyOrDuoPlan
+                        text: isFamilyOrg
                             ? c('familyOffer_2023:Title').t`Family`
                             : c('familyOffer_2023: Title').t`Your account's benefits`,
                         id: 'family-plan',
                         // We don't want admin to leave the organization, they need first to be demoted
-                        available: !isAdmin && (isFamilyOrDuoPlan || (isVisionaryPlan && isMemberProton)),
+                        available: !isAdmin && (isFamilyOrg || (isVisionaryPlan && isMemberProton)),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {

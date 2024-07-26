@@ -8,8 +8,8 @@ import {
 } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities';
 import {
-    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,

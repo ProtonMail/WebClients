@@ -22,6 +22,13 @@ export const isOrganizationDuo = (organization?: Organization) => organization?.
 export const isOrganizationFamily = (organization?: Organization) => organization?.PlanName === PLANS.FAMILY;
 export const isOrganizationVisionary = (organization?: Organization) => organization?.PlanName === PLANS.VISIONARY;
 
+export const getOrganizationDenomination = (organization?: Organization) => {
+    if (isOrganizationDuo(organization) || isOrganizationFamily(organization)) {
+        return 'familyGroup';
+    }
+    return 'organization';
+};
+
 export const isOrganizationB2B = (organization?: Organization) => {
     return [
         PLANS.MAIL_PRO,
