@@ -35,6 +35,7 @@ function capMaximumCycle(
         { plan: ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_FAMILY, cycle: CYCLE.YEARLY },
+        { plan: ADDON_NAMES.MEMBER_SCRIBE_DUO, cycle: CYCLE.YEARLY },
     ];
 
     // filter a capped plan from the list of capped plans if it is present in planIDs
