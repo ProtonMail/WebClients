@@ -375,14 +375,25 @@ export const isAppFromURL = (url: string | undefined, app: APP_NAMES) => {
     return false;
 };
 
-export const formatURLForAjaxRequest = (href: string) => {
-    const url = new URL(href);
-    if (url.search.includes('?')) {
-        url.search = `${url.search}&load=ajax`;
-    } else {
-        url.search = '?load=ajax';
-    }
+const defaultUrlParameters = { load: 'ajax' };
 
+export const formatURLForAjaxRequest = (
+    href: string,
+    urlParameters: Record<string, string> = defaultUrlParameters
+): URL => {
+    // Create a new URL object from the href
+    const url = new URL(href);
+
+    // Merge existing search parameters with additional urlParameters
+    const searchParams = new URLSearchParams(url.search);
+    Object.entries(urlParameters).forEach(([key, value]) => {
+        searchParams.set(key, value);
+    });
+
+    // Set the merged search parameters back to the URL
+    url.search = searchParams.toString();
+
+    // Remove the hash fragment
     url.hash = '';
 
     return url;
