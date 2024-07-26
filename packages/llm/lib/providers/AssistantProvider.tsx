@@ -45,6 +45,7 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
                 // in order to call initAssistant with no side effects i made a duplicate
                 handleSettingChange: assistantLocalState.initAssistant,
                 getIsStickyAssistant: openedAssistantsState.getIsStickyAssistant,
+                handleCheckHardwareCompatibility: commonState.handleCheckHardwareCompatibility,
             }}
         >
             {children}

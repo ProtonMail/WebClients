@@ -153,6 +153,7 @@ export const AssistantContext = createContext<{
     assistantConfig?: AssistantConfig;
     resetAssistantState: () => void;
     getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
+    handleCheckHardwareCompatibility: () => Promise<{ hasCompatibleBrowser: boolean; hasCompatibleHardware: boolean }>;
 } | null>(null);
 
 export const useAssistant = (assistantID?: string) => {
@@ -189,6 +190,7 @@ export const useAssistant = (assistantID?: string) => {
         resetAssistantState,
         handleSettingChange,
         getIsStickyAssistant,
+        handleCheckHardwareCompatibility,
     } = assistantContext;
 
     const isGeneratingResult = useMemo(() => {
@@ -252,5 +254,6 @@ export const useAssistant = (assistantID?: string) => {
         resetAssistantState,
         handleSettingChange,
         getIsStickyAssistant,
+        handleCheckHardwareCompatibility,
     };
 };
