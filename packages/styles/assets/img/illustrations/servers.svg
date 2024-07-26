@@ -1,0 +1,60 @@
+<svg
+    fill="none"
+    height="48"
+    viewBox="0 0 48 48"
+    width="48"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="47.499" x2="45.3826" y1="7.5" y2="21.6244">
+        <stop offset="0" stop-color="#bdefff" />
+        <stop offset="1" stop-color="#1fa7f3" />
+    </linearGradient>
+    <linearGradient id="b">
+        <stop offset="0" stop-color="#dbf6ff" />
+        <stop offset="1" stop-color="#1fa7f3" />
+    </linearGradient>
+    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="43" x2="40.7833" xlink:href="#b" y1="33.5" y2="55.9218" />
+    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="43" x2="40.7833" xlink:href="#b" y1="22.5" y2="44.9218" />
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="43" x2="40.7833" xlink:href="#b" y1="11.5" y2="33.9218" />
+    <g opacity=".5">
+        <path
+            d="m9.55205 29.0514-4.85283 4.4486h38.54978l-4.3284-4.3284c-.7501-.7502-1.7676-1.1716-2.8284-1.1716h-23.8372c-1.0008 0-1.9652.3752-2.70295 1.0514z"
+            fill="#27abf4"
+        />
+        <path
+            d="m9.55205 18.0514-4.85283 4.4486h38.54978l-4.3284-4.3284c-.7501-.7502-1.7676-1.1716-2.8284-1.1716h-23.8372c-1.0008 0-1.9652.3752-2.70295 1.0514z"
+            fill="#27abf4"
+        />
+        <path
+            d="m9.55205 7.05143-4.85283 4.44857h38.54978l-4.3284-4.32843c-.7501-.75014-1.7676-1.17157-2.8284-1.17157h-23.8372c-1.0008 0-1.9652.37516-2.70295 1.05143z"
+            fill="url(#a)"
+        />
+        <path
+            d="m4 35c0-1.1046.89543-2 2-2h36c1.1046 0 2 .8954 2 2v5c0 1.1046-.8954 2-2 2h-36c-1.10457 0-2-.8954-2-2z"
+            fill="url(#c)"
+        />
+        <path
+            d="m4 24c0-1.1046.89543-2 2-2h36c1.1046 0 2 .8954 2 2v5c0 1.1046-.8954 2-2 2h-36c-1.10457 0-2-.8954-2-2z"
+            fill="url(#d)"
+        />
+        <path
+            d="m4 13c0-1.1046.89543-2 2-2h36c1.1046 0 2 .8954 2 2v5c0 1.1046-.8954 2-2 2h-36c-1.10457 0-2-.8954-2-2z"
+            fill="url(#e)"
+        />
+        <rect fill="#27abf4" fill-opacity=".5" height="1" rx=".5" width="15" x="8" y="37" />
+        <rect fill="#fff" height="1" rx=".5" width="1" x="40" y="37" />
+        <rect fill="#fff" height="1" rx=".5" width="1" x="40" y="26" />
+        <rect fill="#fff" height="1" rx=".5" width="1" x="40" y="15" />
+        <g fill="#2c83dc">
+            <rect height="1" rx=".5" width="1" x="38" y="37" />
+            <rect height="1" rx=".5" width="1" x="36" y="37" />
+            <rect height="1" rx=".5" width="1" x="38" y="26" />
+            <rect height="1" rx=".5" width="1" x="38" y="15" />
+            <rect height="1" rx=".5" width="1" x="36" y="26" />
+            <rect height="1" rx=".5" width="1" x="36" y="15" />
+        </g>
+        <rect fill="#27abf4" fill-opacity=".5" height="1" rx=".5" width="15" x="8" y="26" />
+        <rect fill="#27abf4" fill-opacity=".5" height="1" rx=".5" width="15" x="8" y="15" />
+    </g>
+</svg>

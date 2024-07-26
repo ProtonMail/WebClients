@@ -1,10 +1,14 @@
-import { useState } from 'react';
-
 import { useApi } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import useStateRef from '@proton/hooks/useStateRef';
 import type { AssistantContextType, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
-import { PromptRejectedError, getGenerationType, sendAssistantRequest } from '@proton/llm/lib';
+import {
+    ASSISTANT_SERVER_THROTTLE_TIMEOUT,
+    PromptRejectedError,
+    getGenerationType,
+    sendAssistantRequest,
+} from '@proton/llm/lib';
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
@@ -22,10 +26,13 @@ interface Props {
 export const useAssistantServer = ({
     commonState,
     openedAssistantsState,
-}: Props): Omit<AssistantContextType, 'getIsStickyAssistant'> => {
+}: Props): Omit<
+    AssistantContextType,
+    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors'
+> => {
     const api = useApi();
     const { sendRequestAssistantReport, sendAssistantErrorReport } = useAssistantTelemetry();
-    const [runningActions, setRunningActions] = useState<AssistantRunningActions>({});
+    const [runningActions, setRunningActions, runningActionsRef] = useStateRef<AssistantRunningActions>({});
 
     const { openAssistant, setAssistantStatus, closeAssistant, openedAssistants } = openedAssistantsState;
     const {
@@ -109,7 +116,7 @@ export const useAssistantServer = ({
             let generatedTokens = 0;
 
             // Make the change in the UI less often so that we don't blast the component with too many re-renders
-            const throttledCallback = throttle((callback) => callback(), 100);
+            const throttledCallback = throttle((callback) => callback(), ASSISTANT_SERVER_THROTTLE_TIMEOUT);
 
             const ingestionEnd = performance.now();
             const ingestionTime = ingestionEnd - ingestionStart;
@@ -145,7 +152,10 @@ export const useAssistantServer = ({
                     throw new PromptRejectedError();
                 }
 
-                throttledCallback(() => callback(transformed));
+                const isRunningAction = assistantID in runningActionsRef.current;
+                if (isRunningAction) {
+                    throttledCallback(() => callback(transformed));
+                }
 
                 return reader.read().then(process);
             });
@@ -198,6 +208,7 @@ export const useAssistantServer = ({
         downloadModelSize: 0,
         downloadPaused: false,
         downloadReceivedBytes: 0,
+        isCheckingCache: false,
         isModelDownloaded: true,
         isModelDownloading: false,
         isModelLoadedOnGPU: true,
