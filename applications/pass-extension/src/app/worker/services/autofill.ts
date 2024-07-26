@@ -92,11 +92,18 @@ export const createAutoFillService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_QUERY,
-        onContextReady(({ getState }, { payload }, sender) => {
+        onContextReady(async ({ getState }, { payload }, sender) => {
             if (!getState().loggedIn) return { items: [], needsUpgrade: false };
 
             const tabId = sender.tab?.id;
-            const parsedUrl = parseUrl(payload.domain ?? sender.url!);
+
+            const host = await (async () => {
+                if (payload.domain) return payload.domain;
+                if (tabId) return (await browser.tabs.get(tabId))?.url;
+                else throw new Error('');
+            })();
+
+            const parsedUrl = parseUrl(host);
             const state = store.getState();
 
             const writableShareIds = selectWritableVaults(state).map(prop('shareId'));

@@ -78,7 +78,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         const features = ctx?.getFeatures();
 
         switch (action) {
-            case DropdownAction.AUTOFILL:
+            case DropdownAction.AUTOFILL_LOGIN:
                 return features?.Autofill ?? false;
             case DropdownAction.AUTOSUGGEST_ALIAS:
                 return features?.AutosuggestAlias ?? false;
@@ -251,7 +251,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (!match.attachIcon) return field.detachIcon();
 
             const icon = field.attachIcon();
-            icon?.setCount(loggedIn && match.action === DropdownAction.AUTOFILL ? autofillCount : 0);
+            icon?.setCount(loggedIn && match.action === DropdownAction.AUTOFILL_LOGIN ? autofillCount : 0);
         });
 
         /* trigger auto-focus on current active field if value is empty:

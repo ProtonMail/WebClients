@@ -9,7 +9,7 @@ import type {
     FieldHandle,
     InjectedDropdown,
 } from 'proton-pass-extension/app/content/types';
-import { DropdownAction, IFrameMessageType } from 'proton-pass-extension/app/content/types';
+import { DropdownAction, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
@@ -76,24 +76,23 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             if (!ctx) return;
 
             const { loggedIn } = ctx.getState();
-            const { domain, subdomain, displayName } = ctx.getExtensionContext().url;
-            const hostname = subdomain ?? domain ?? '';
+            const { url } = ctx.getExtensionContext();
+            const domain = url.subdomain ?? url.domain ?? '';
 
             switch (action) {
-                case DropdownAction.AUTOFILL: {
-                    if (!loggedIn) return { action, hostname: '', items: [], needsUpgrade: false };
-                    const { items, needsUpgrade } = ctx.service.autofill.getState() ?? {};
-                    return { action, hostname, items: items ?? [], needsUpgrade: Boolean(needsUpgrade) };
+                case DropdownAction.AUTOFILL_LOGIN: {
+                    if (!loggedIn) return { action, domain: '' };
+                    return { action, domain };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
-                    return { action, hostname, prefix: deriveAliasPrefix(displayName!) };
+                    return { action, domain, prefix: deriveAliasPrefix(url.displayName!) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
                     return sendMessage.on(
                         contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }),
                         (res) => {
                             if (res.type === 'error') throw new Error(res.error);
-                            return { action, hostname, config: res.config, copy: res.copy };
+                            return { action, domain, config: res.config, copy: res.copy };
                         }
                     );
                 }
@@ -117,9 +116,11 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
                 if (payload) {
                     /* If the opening action is coming from a focus event for an autofill action and the we
                      * have no login items that match the current domain, avoid auto-opening  the dropdown */
-                    if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
+                    if (autofocused && payload.action === DropdownAction.AUTOFILL_LOGIN && payload.items.length === 0) {
+                        return;
+                    }
 
-                    iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+                    iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_ACTION, payload });
                     iframe.open(action, getScrollParent(field.element));
                     updatePosition();
                 }
@@ -130,7 +131,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         const action = fieldRef.current?.action;
         if (action) {
             const payload = await getPayloadForAction(action);
-            if (payload) iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+            if (payload) iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_ACTION, payload });
         }
     };
 
@@ -138,7 +139,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * worker communication and autofill the parent form of the
      * field the current dropdown is attached to. */
     iframe.registerMessageHandler(
-        IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
+        IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
@@ -152,7 +153,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * been generated in the injected iframe and passed in clear
      * text through the secure extension port channel */
     iframe.registerMessageHandler(
-        IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
+        IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
         withContext((ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             const prompt = ctx?.getSettings().autosave.passwordSuggest;
@@ -172,7 +173,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
     /* When suggesting an alias on a register form, the alias will
      * only be created upon user action - this avoids creating
      * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
+    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL, ({ payload }) => {
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
         void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });

@@ -16,7 +16,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         {
             type: FieldType.USERNAME,
             injection: FieldInjectionRule.FIRST_OF_FORM,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
         {
             type: FieldType.USERNAME_HIDDEN,
@@ -25,12 +25,12 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         {
             type: FieldType.EMAIL,
             injection: FieldInjectionRule.FIRST_OF_FORM,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
         {
             type: FieldType.PASSWORD_CURRENT,
             injection: FieldInjectionRule.FIRST_OF_FORM,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
     ],
     [FormType.REGISTER]: [
@@ -55,21 +55,21 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         {
             type: FieldType.IDENTITY,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
     ],
     [FormType.RECOVERY]: [
         {
             type: FieldType.EMAIL,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
     ],
     [FormType.PASSWORD_CHANGE]: [
         {
             type: FieldType.PASSWORD_CURRENT,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
         {
             type: FieldType.PASSWORD_NEW,
@@ -92,7 +92,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         {
             type: FieldType.PASSWORD_CURRENT,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
         {
             type: FieldType.PASSWORD_NEW,
@@ -102,7 +102,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         {
             type: FieldType.IDENTITY,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL,
+            action: DropdownAction.AUTOFILL_LOGIN,
         },
     ],
 };
