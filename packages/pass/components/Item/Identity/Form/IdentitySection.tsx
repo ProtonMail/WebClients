@@ -16,12 +16,12 @@ import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/Dropdo
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import type { IdentityFieldName, IdentityFormSection } from '@proton/pass/hooks/identity/useIdentityForm';
-import { autofocusIdentityField } from '@proton/pass/hooks/identity/utils';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import type { ExtraFieldErrors } from '@proton/pass/lib/validation/extra-field';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { ExtraFieldType, IdentityItemFormValues, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { autofocusInput } from '@proton/pass/utils/dom/input';
 
 type IdentityCollapsibleSectionProps = IdentityFormSection & {
     form: FormikContextType<IdentityItemFormValues>;
@@ -53,7 +53,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
             if (isFreePlan) return openUpsell();
             else {
                 helpers.push<UnsafeItemExtraField>(createExtraField(type));
-                autofocusIdentityField(`${helpers.name}[${focusIndex}]`);
+                autofocusInput(`${helpers.name}[${focusIndex}]`);
             }
         };
 
@@ -62,7 +62,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
             label: field.label,
             onClick: () => {
                 onAddOptionalField(field.name);
-                autofocusIdentityField(field.name);
+                autofocusInput(field.name);
             },
         }));
 

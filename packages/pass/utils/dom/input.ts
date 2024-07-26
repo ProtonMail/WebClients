@@ -113,3 +113,6 @@ export const findBoundingInputElement = (
 
     return curr;
 };
+
+export const autofocusInput = (name: string) =>
+    setTimeout(() => document.querySelector<HTMLInputElement>(`input[name="${name}"]`)?.focus(), 15);
