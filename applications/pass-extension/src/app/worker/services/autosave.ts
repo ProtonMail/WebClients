@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
-import { intoSafeLoginItem } from '@proton/pass/lib/items/item.utils';
+import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import {
     selectAutosaveCandidate,
@@ -44,7 +44,7 @@ export const createAutoSaveService = () => {
             if (pwMatch.length > 0) {
                 return {
                     shouldPrompt: true,
-                    data: { type: AutosaveMode.UPDATE, candidates: pwMatch.map(intoSafeLoginItem) },
+                    data: { type: AutosaveMode.UPDATE, candidates: pwMatch.map(intoLoginItemPreview) },
                 };
             } else return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
         }
@@ -62,7 +62,7 @@ export const createAutoSaveService = () => {
             ? { shouldPrompt: false }
             : {
                   shouldPrompt: true,
-                  data: { type: AutosaveMode.UPDATE, candidates: candidates.map(intoSafeLoginItem) },
+                  data: { type: AutosaveMode.UPDATE, candidates: candidates.map(intoLoginItemPreview) },
               };
     };
 
