@@ -3,6 +3,7 @@ import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/d
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
+import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
@@ -34,6 +35,12 @@ const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
         return {
             upgradePath: '',
             onUpgrade() {
+                // Generate a mocked request to track upsell activity
+                const urlParameters = { ref: upsellRef, load: 'modalOpen' };
+                const url = formatURLForAjaxRequest(window.location.href, urlParameters);
+                fetch(url).catch(noop);
+
+                // Open the subscription modal
                 openSubscriptionModal({
                     ...subscriptionCallBackProps,
                     onSubscribed,
