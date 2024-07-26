@@ -53,27 +53,13 @@ export const createAutoFillService = () => {
                 Promise.all(
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
-                            const state = store.getState();
                             const items = getCandidates(parseUrl(url));
-                            const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
-                            const { didDowngrade } = selectVaultLimits(state);
-
-                            /* if the user has downgraded : we want to keep the tab badge count
-                             * with the total items matched, but sync the autofillable candidates
-                             * in the content-scripts to be only the ones from the writable vaults */
-                            const safeItems = items
-                                .filter((item) => !didDowngrade || writableShareIds.includes(item.shareId))
-                                .map(intoSafeLoginItem);
+                            setPopupIconBadge(tabId, items.length).catch(noop);
 
                             WorkerMessageBroker.ports.broadcast(
-                                {
-                                    type: WorkerMessageType.AUTOFILL_SYNC,
-                                    payload: { items: safeItems, needsUpgrade: didDowngrade },
-                                },
+                                { type: WorkerMessageType.AUTOFILL_SYNC },
                                 isContentScriptPort(tabId)
                             );
-
-                            return setPopupIconBadge(tabId, items.length);
                         }
                     })
                 )
