@@ -79,6 +79,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
         switch (action) {
             case DropdownAction.AUTOFILL_LOGIN:
+            case DropdownAction.AUTOFILL_IDENTITY:
                 return features?.Autofill ?? false;
             case DropdownAction.AUTOSUGGEST_ALIAS:
                 return features?.AutosuggestAlias ?? false;

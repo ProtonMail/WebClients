@@ -28,6 +28,7 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { AutofillIdentity } from './views/AutofillIdentity';
 import { AutofillLogin } from './views/AutofillLogin';
 import { AutosuggestEmail } from './views/AutosuggestEmail';
 import { AutosuggestPassword } from './views/AutosuggestPassword';
@@ -139,6 +140,8 @@ export const Dropdown: FC = () => {
                     }
 
                     switch (state.action) {
+                        case DropdownAction.AUTOFILL_IDENTITY:
+                            return <AutofillIdentity {...state} />;
                         case DropdownAction.AUTOFILL_LOGIN:
                             return <AutofillLogin {...state} />;
                         case DropdownAction.AUTOSUGGEST_PASSWORD:
