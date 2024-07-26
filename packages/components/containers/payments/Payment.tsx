@@ -28,14 +28,13 @@ import { useConfig } from '../../hooks';
 import type { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
 import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import type { CardModel } from '../../payments/core';
-import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
-import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import Alert3DS from './Alert3ds';
-import Bitcoin from './Bitcoin';
-import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
 import PayPalView from './PayPalView';
+import Bitcoin from './bitcoin/Bitcoin';
+import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
+import { PaymentMethodDetails, PaymentMethodSelector } from './methods';
 import { BILLING_ADDRESS_VALID, type BillingAddressStatus } from './subscription/helpers';
 
 export interface Props {

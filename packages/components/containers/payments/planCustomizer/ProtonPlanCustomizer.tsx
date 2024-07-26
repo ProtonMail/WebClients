@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { SelectedPlan } from '@proton/components/payments/core';
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
-import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
 import {
     getSupportedAddons,
     isDomainAddon,
@@ -14,8 +14,8 @@ import {
     isMemberAddon,
     isOrgSizeAddon,
     isScribeAddon,
-    setQuantity,
-} from '@proton/shared/lib/helpers/planIDs';
+} from '@proton/shared/lib/helpers/addons';
+import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import type { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
 import { Renew, getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/interfaces';

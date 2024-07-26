@@ -1,19 +1,17 @@
 import { c, msgid } from 'ttag';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES, VPN_PASS_PROMOTION_COUPONS } from '../constants';
-import type {
-    MaxKeys,
-    Plan,
-    PlanIDs,
-    PlansMap,
-    PriceType,
-    Pricing,
-    Subscription,
-    SubscriptionCheckResponse,
-} from '../interfaces';
+import type { MaxKeys, Plan, PlanIDs, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
 import { getMaxValue } from '../interfaces';
-import { getPlanFromCheckout, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './planIDs';
-import { INCLUDED_IP_PRICING, customCycles, getOverriddenPricePerCycle, getPricingPerMember } from './subscription';
+import { isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './addons';
+import { getPlanFromCheckout } from './planIDs';
+import {
+    INCLUDED_IP_PRICING,
+    customCycles,
+    getMembersFromPlanIDs,
+    getPricePerCycle,
+    getPricingPerMember,
+} from './subscription';
 
 export const getDiscountText = () => {
     return c('Info')
@@ -78,30 +76,7 @@ export interface AddonDescription {
     pricing: Pricing;
 }
 
-export interface SubscriptionCheckoutData {
-    couponDiscount: number | undefined;
-    planIDs: PlanIDs;
-    planName: PLANS;
-    planTitle: string;
-    usersTitle: string;
-    users: number;
-    addons: AddonDescription[];
-    coupon?: string;
-    withDiscountPerCycle: number;
-    withoutDiscountPerMonth: number;
-    withoutDiscountPerCycle: number;
-    withDiscountPerMonth: number;
-    membersPerMonth: number;
-    discountPerCycle: number;
-    discountPercent: number;
-    addonsPerMonth: number;
-    addonsPerMonthBase: number;
-    addonsDiscountPerCycle: number;
-    addonsPerCycleBase: number;
-    addonsDiscountPercent: number;
-    memberDiscountPerCycle: number;
-    memberDiscountPercent: number;
-}
+export type SubscriptionCheckoutData = ReturnType<typeof getCheckout>;
 
 export type RequiredCheckResponse = Pick<
     SubscriptionCheckResponse,
@@ -115,23 +90,15 @@ export type RequiredCheckResponse = Pick<
     | 'Gift'
     | 'Taxes'
     | 'TaxInclusive'
+    | 'optimistic'
 >;
 
-export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceType?: PriceType) => {
+export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
     const plan = getPlanFromCheckout(planIDs, plansMap);
-    let users = plan?.MaxMembers || 1;
-    const usersPricing = plan ? getPricingPerMember(plan, priceType) : null;
+    const usersPricing = plan ? getPricingPerMember(plan) : null;
 
-    const memberAddonsNumber = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
-        const planOrAddon = plansMap[planName as keyof typeof plansMap];
-        if (planOrAddon?.Type === PLAN_TYPES.ADDON && isMemberAddon(planOrAddon.Name)) {
-            acc += quantity;
-        }
-
-        return acc;
-    }, 0);
-
-    users += memberAddonsNumber;
+    const users = getMembersFromPlanIDs(planIDs, plansMap);
+    const viewUsers = getMembersFromPlanIDs(planIDs, plansMap, false);
 
     const addonsMap = Object.entries(planIDs).reduce<{
         [addonName: string]: AddonDescription;
@@ -183,6 +150,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceTyp
         planName,
         planTitle,
         users,
+        viewUsers,
         usersPricing,
         addons,
     };
@@ -192,14 +160,12 @@ export const getCheckout = ({
     planIDs,
     plansMap,
     checkResult,
-    priceType,
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
     checkResult?: RequiredCheckResponse;
-    priceType?: PriceType;
-}): SubscriptionCheckoutData => {
-    const usersAndAddons = getUsersAndAddons(planIDs, plansMap, priceType);
+}) => {
+    const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
 
     const amount = checkResult?.Amount || 0;
     const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
@@ -208,11 +174,12 @@ export const getCheckout = ({
     const isVpnPassPromotion = !!planIDs[PLANS.VPN_PASS_BUNDLE] && VPN_PASS_PROMOTION_COUPONS.includes(coupon as any);
 
     const withDiscountPerCycle = amount - couponDiscount;
+
     const withoutDiscountPerMonth = Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
         const plan = plansMap[planName as keyof typeof plansMap];
 
-        const defaultMonthly = isVpnPassPromotion ? 999 : plan?.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
-        const monthly = isVpnPassPromotion ? 999 : getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0;
+        const defaultMonthly = isVpnPassPromotion ? 999 : (plan?.DefaultPricing?.[CYCLE.MONTHLY] ?? 0);
+        const monthly = isVpnPassPromotion ? 999 : (getPricePerCycle(plan, CYCLE.MONTHLY) ?? 0);
 
         // Offers might affect Pricing both ways, increase and decrease.
         // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
@@ -238,46 +205,24 @@ export const getCheckout = ({
         return acc + ((pricing[cycle] || 0) * quantity) / cycle;
     }, 0);
 
-    const addonsPerMonthBase = usersAndAddons.addons.reduce((acc, { quantity, pricing }) => {
-        return acc + (pricing[CYCLE.MONTHLY] ?? 0) * quantity;
-    }, 0);
-    const addonsPerCycleBase = addonsPerMonthBase * cycle;
-    const addonsDiscountPerCycle = addonsPerCycleBase - addonsPerMonth * cycle;
-    const addonsDiscountPercent =
-        addonsPerCycleBase === 0 ? 0 : Math.round(100 * (addonsDiscountPerCycle / addonsPerCycleBase));
-
     const membersPerCycle = usersAndAddons.usersPricing?.[cycle] ?? null;
     const membersPerMonth =
         membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
-    const oneMemberPerCycleBase = (usersAndAddons.usersPricing?.[CYCLE.MONTHLY] ?? 0) * cycle;
-    const oneMemberPerCycle = usersAndAddons.usersPricing?.[cycle] ?? 0;
-
-    const memberDiscountPerCycle = oneMemberPerCycleBase - oneMemberPerCycle;
-    const memberDiscountPercent = Math.round(100 * (memberDiscountPerCycle / oneMemberPerCycleBase));
 
     return {
         couponDiscount: checkResult?.CouponDiscount,
-        coupon,
         planIDs,
         planName: usersAndAddons.planName,
         planTitle: usersAndAddons.planTitle,
         addons: usersAndAddons.addons,
-        usersTitle: getUserTitle(usersAndAddons.users || 1), // VPN and free plan has no users
-        users: usersAndAddons.users || 1,
+        usersTitle: getUserTitle(usersAndAddons.viewUsers || 1), // VPN and free plan has no users
         withoutDiscountPerMonth,
         withoutDiscountPerCycle: amount,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
-        addonsPerMonth,
-        addonsPerMonthBase,
-        addonsPerCycleBase,
-        addonsDiscountPerCycle,
         discountPerCycle,
         discountPercent,
-        addonsDiscountPercent,
-        memberDiscountPerCycle,
-        memberDiscountPercent,
     };
 };
 
@@ -300,17 +245,15 @@ export const getOptimisticCheckResult = ({
     planIDs,
     plansMap,
     cycle,
-    priceType,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs | undefined;
     plansMap: PlansMap;
-    priceType?: PriceType;
 }): RequiredCheckResponse => {
     const { amount } = Object.entries(planIDs || {}).reduce(
         (acc, [planName, quantity]) => {
             const plan = plansMap?.[planName as keyof typeof plansMap];
-            const price = getOverriddenPricePerCycle(plan, cycle, priceType);
+            const price = getPricePerCycle(plan, cycle);
             if (!plan || !price) {
                 return acc;
             }
@@ -329,6 +272,7 @@ export const getOptimisticCheckResult = ({
         Credit: 0,
         Coupon: null,
         Gift: 0,
+        optimistic: true,
     };
 };
 

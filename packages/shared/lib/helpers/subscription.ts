@@ -2,7 +2,7 @@ import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getSupportedAddons, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
+import { getSupportedAddons, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 
 import type { FreeSubscription } from '../constants';
 import {
@@ -27,7 +27,7 @@ import type {
     SubscriptionPlan,
     UserModel,
 } from '../interfaces';
-import { Audience, ChargebeeEnabled, External, PriceType } from '../interfaces';
+import { Audience, ChargebeeEnabled, External } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -337,15 +337,6 @@ export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs 
     }, {});
 };
 
-export function getPlanFromIds(planIDs: PlanIDs): PLANS | undefined {
-    return Object.values(PLANS).find((key) => {
-        // If the planIDs object has non-zero value for the plan, then it exists.
-        // There can be at most 1 plan, and others are addons.
-        const planNumber = planIDs[key as PLANS] ?? 0;
-        return planNumber > 0;
-    });
-}
-
 export const isTrial = (subscription: Subscription | FreeSubscription | undefined, plan?: PLANS): boolean => {
     if (isFreeSubscription(subscription)) {
         return false;
@@ -488,7 +479,7 @@ export const hasThirty = (subscription?: Subscription) => {
     return subscription?.Cycle === CYCLE.THIRTY;
 };
 
-interface PricingForCycles {
+export interface PricingForCycles {
     [CYCLE.MONTHLY]: number;
     [CYCLE.THREE]: number;
     [CYCLE.YEARLY]: number;
@@ -529,17 +520,28 @@ function isMultiUserPersonalPlan(plan: Plan) {
     return plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY;
 }
 
-function getPlanMembers(plan: Plan, quantity: number): number {
+export function getPlanMembers(plan: Plan, quantity: number, view = true): number {
     const hasMembers = plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && isMemberAddon(plan.Name));
 
     let membersNumberInPlan = 0;
-    if (isMultiUserPersonalPlan(plan)) {
+    if (isMultiUserPersonalPlan(plan) && view) {
         membersNumberInPlan = 1;
     } else if (hasMembers) {
         membersNumberInPlan = plan.MaxMembers || 1;
     }
 
     return membersNumberInPlan * quantity;
+}
+
+export function getMembersFromPlanIDs(planIDs: PlanIDs, plansMap: PlansMap, view = true): number {
+    return (Object.entries(planIDs) as [PLANS | ADDON_NAMES, number][]).reduce((acc, [name, quantity]) => {
+        const plan = plansMap[name];
+        if (!plan) {
+            return acc;
+        }
+
+        return acc + getPlanMembers(plan, quantity, view);
+    }, 0);
 }
 
 export const INCLUDED_IP_PRICING = {
@@ -572,24 +574,12 @@ export function getIpPricePerMonth(cycle: CYCLE): number {
  * The purpose of this overridden price is to show a coupon discount in the cycle selector. If that would be supported
  * this would not be needed.
  */
-export const getOverriddenPricePerCycle = (plan: Plan | undefined, cycle: CYCLE, type?: PriceType) => {
-    if (type === PriceType.default) {
-        return plan?.Pricing?.[cycle];
-    }
-    if (plan?.Name === PLANS.VPN2024) {
-        if (cycle === CYCLE.YEARLY) {
-            return 5988;
-        }
-        if (cycle === CYCLE.TWO_YEARS) {
-            return 10776;
-        }
-    }
-
+export const getPricePerCycle = (plan: Plan | undefined, cycle: CYCLE) => {
     return plan?.Pricing?.[cycle];
 };
 
-export function getPricePerMember(plan: Plan, cycle: CYCLE, priceType?: PriceType): number {
-    const totalPrice = getOverriddenPricePerCycle(plan, cycle, priceType) || 0;
+export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
+    const totalPrice = getPricePerCycle(plan, cycle) || 0;
 
     if (plan.Name === PLANS.VPN_BUSINESS) {
         // For VPN business, we exclude IP price from calculation. And we also divide by 2,
@@ -607,9 +597,9 @@ export function getPricePerMember(plan: Plan, cycle: CYCLE, priceType?: PriceTyp
     return totalPrice / (plan.MaxMembers || 1);
 }
 
-export function getPricingPerMember(plan: Plan, priceType?: PriceType): Pricing {
+export function getPricingPerMember(plan: Plan): Pricing {
     return allCycles.reduce((acc, cycle) => {
-        acc[cycle] = getPricePerMember(plan, cycle, priceType);
+        acc[cycle] = getPricePerMember(plan, cycle);
 
         // If the plan doesn't have custom cycles, we need to remove it from the resulting Pricing object
         const isNonDefinedCycle = acc[cycle] === undefined || acc[cycle] === null || acc[cycle] === 0;
@@ -621,136 +611,6 @@ export function getPricingPerMember(plan: Plan, priceType?: PriceType): Pricing 
     }, {} as Pricing);
 }
 
-export const getPricingFromPlanIDs = (
-    planIDs: PlanIDs,
-    plansMap: PlansMap,
-    priceType?: PriceType
-): AggregatedPricing => {
-    const initial = {
-        [CYCLE.MONTHLY]: 0,
-        [CYCLE.YEARLY]: 0,
-        [CYCLE.THREE]: 0,
-        [CYCLE.EIGHTEEN]: 0,
-        [CYCLE.TWO_YEARS]: 0,
-        [CYCLE.FIFTEEN]: 0,
-        [CYCLE.THIRTY]: 0,
-    };
-
-    return Object.entries(planIDs).reduce<AggregatedPricing>(
-        (acc, [planName, quantity]) => {
-            const plan = plansMap[planName as keyof PlansMap];
-            if (!plan) {
-                return acc;
-            }
-
-            const members = getPlanMembers(plan, quantity);
-            acc.membersNumber += members;
-
-            const add = (target: PricingForCycles, cycle: CYCLE) => {
-                const price = getOverriddenPricePerCycle(plan, cycle, priceType);
-                if (price) {
-                    target[cycle] += quantity * price;
-                }
-            };
-
-            const addMembersPricing = (target: PricingForCycles, cycle: CYCLE) => {
-                const price = getPricePerMember(plan, cycle, priceType);
-                if (price) {
-                    target[cycle] += members * price;
-                }
-            };
-
-            allCycles.forEach((cycle) => {
-                add(acc.all, cycle);
-            });
-
-            if (members !== 0) {
-                allCycles.forEach((cycle) => {
-                    addMembersPricing(acc.members, cycle);
-                });
-            }
-
-            if (plan.Type === PLAN_TYPES.PLAN) {
-                allCycles.forEach((cycle) => {
-                    add(acc.plans, cycle);
-                });
-
-                acc.defaultMonthlyPriceWithoutAddons +=
-                    quantity * (getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0);
-            }
-
-            const defaultMonthly = plan.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
-            const monthly = getOverriddenPricePerCycle(plan, CYCLE.MONTHLY, priceType) ?? 0;
-
-            // Offers might affect Pricing both ways, increase and decrease.
-            // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
-            // for discount calculations
-            const price = Math.max(defaultMonthly, monthly);
-
-            acc.defaultMonthlyPrice += quantity * price;
-
-            return acc;
-        },
-        {
-            defaultMonthlyPrice: 0,
-            defaultMonthlyPriceWithoutAddons: 0,
-            all: { ...initial },
-            members: {
-                ...initial,
-            },
-            plans: {
-                ...initial,
-            },
-            membersNumber: 0,
-        }
-    );
-};
-
-export interface TotalPricing {
-    discount: number;
-    total: number;
-    totalPerMonth: number;
-    totalNoDiscountPerMonth: number;
-    discountPercentage: number;
-    perUserPerMonth: number;
-}
-
-export type PricingMode = 'all' | 'plans';
-
-export const getTotalFromPricing = (
-    pricing: AggregatedPricing,
-    cycle: CYCLE,
-    mode: PricingMode = 'all'
-): TotalPricing => {
-    const { defaultMonthlyPrice, defaultMonthlyPriceWithoutAddons } = pricing;
-
-    const total = pricing[mode][cycle];
-    const totalPerMonth = pricing[mode][cycle] / cycle;
-
-    const price = mode === 'all' ? defaultMonthlyPrice : defaultMonthlyPriceWithoutAddons;
-    const totalNoDiscount = price * cycle;
-    const discount = cycle === CYCLE.MONTHLY ? 0 : totalNoDiscount - total;
-    const perUserPerMonth = Math.floor(pricing.members[cycle] / cycle / pricing.membersNumber);
-
-    return {
-        discount,
-        discountPercentage: discount > 0 ? Math.round((discount / totalNoDiscount) * 100) : 0,
-        total,
-        totalPerMonth,
-        totalNoDiscountPerMonth: totalNoDiscount / cycle,
-        perUserPerMonth,
-    };
-};
-
-export function getTotals(planIDs: PlanIDs, plansMap: PlansMap, priceType?: PriceType, mode?: PricingMode) {
-    const pricing = getPricingFromPlanIDs(planIDs, plansMap, priceType);
-
-    return allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
-        acc[cycle] = getTotalFromPricing(pricing, cycle, mode);
-        return acc;
-    }, {} as any);
-}
-
 interface OfferResult {
     pricing: Pricing;
     cycles: CYCLE[];
@@ -760,7 +620,7 @@ interface OfferResult {
 export const getPlanOffer = (plan: Plan) => {
     const result = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].reduce<OfferResult>(
         (acc, cycle) => {
-            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (getOverriddenPricePerCycle(plan, cycle) ?? 0);
+            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (getPricePerCycle(plan, cycle) ?? 0);
             return acc;
         },
         {
@@ -855,9 +715,4 @@ export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscript
         subscription?.UpcomingSubscription?.Cycle === CYCLE.TWO_YEARS ||
         subscription?.UpcomingSubscription?.Cycle === CYCLE.THIRTY
     );
-}
-
-export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
-    const availableKeys = Object.keys(planIDs);
-    return Object.values(PLANS).find((value) => availableKeys.includes(value));
 }

@@ -6,8 +6,9 @@ import type { PaymentMethodStatusExtended } from '@proton/components/payments/co
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
+import { hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
+import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
+import { getHas2023OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type {
     Currency,
@@ -38,67 +39,59 @@ type Props = {
     freePlan: FreePlanDefault;
     submit?: ReactNode;
     loading?: boolean;
+    planIDs: PlanIDs;
     plansMap: PlansMap;
-    vpnServers: VPNServersCountData;
-    checkResult: RequiredCheckResponse | undefined;
-    currency: Currency;
     cycle: Cycle;
+    currency: Currency;
+    checkResult: RequiredCheckResponse | undefined;
+    vpnServers: VPNServersCountData;
     gift?: ReactNode;
     onChangeCurrency: (currency: Currency) => void;
-    planIDs: PlanIDs;
-    isOptimistic?: boolean;
-    showDiscount?: boolean;
-    enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
-    subscription: SubscriptionModel;
-    showTaxCountry?: boolean;
     statusExtended?: PaymentMethodStatusExtended;
+    showTaxCountry?: boolean;
     onBillingAddressChange?: OnBillingAddressChange;
+    subscription: SubscriptionModel;
 } & CheckoutModifiers;
 
 const SubscriptionCheckout = ({
-    submit = c('Action').t`Pay`,
-    plansMap,
-    vpnServers,
-    currency,
-    cycle,
-    onChangeCurrency,
-    gift,
-    isOptimistic,
-    planIDs,
     freePlan,
-    checkResult,
+    submit = c('Action').t`Pay`,
     loading,
-    subscription,
-    showDiscount = true,
-    enableDetailedAddons = true,
+    planIDs,
+    plansMap,
+    cycle,
+    currency,
+    checkResult,
+    vpnServers,
+    gift,
+    onChangeCurrency,
     showPlanDescription = true,
+    statusExtended,
+    showTaxCountry,
+    onBillingAddressChange,
+    subscription,
     isScheduledSubscription,
     isAddonDowngrade,
     isProration,
     isCustomBilling,
-    showTaxCountry,
-    statusExtended,
-    onBillingAddressChange,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+
+    const planIDsForDiscount = isCustomBilling ? planIDsPositiveDifference(getPlanIDs(subscription), planIDs) : planIDs;
+    const { discountPercent } = getCheckout({
+        planIDs: planIDsForDiscount,
+        plansMap,
+        checkResult,
+    });
+
     const checkout = getCheckout({
         planIDs,
         plansMap,
         checkResult,
     });
-    const {
-        planTitle,
-        usersTitle,
-        withDiscountPerCycle,
-        addons,
-        membersPerMonth,
-        withDiscountPerMonth,
-        addonsPerMonth,
-        memberDiscountPercent,
-        addonsDiscountPercent,
-    } = checkout;
+    const { planTitle, usersTitle, withDiscountPerCycle, addons, membersPerMonth, couponDiscount } = checkout;
 
     if (!checkResult) {
         return null;
@@ -119,16 +112,6 @@ const SubscriptionCheckout = ({
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
 
-    const membersAmount = (() => {
-        if (enableDetailedAddons) {
-            return membersPerMonth;
-        }
-        if (isCustomBilling) {
-            return membersPerMonth + addonsPerMonth;
-        }
-        return withDiscountPerMonth;
-    })();
-
     const hasBFDiscount = getHas2023OfferCoupon(checkResult.Coupon?.Code);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
@@ -139,7 +122,6 @@ const SubscriptionCheckout = ({
             onChangeCurrency={onChangeCurrency}
             loading={loading}
             hasGuarantee={hasGuarantee}
-            hasPayments={!isOptimistic}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
             hiddenRenewNotice={
                 hasBFDiscount && (
@@ -174,66 +156,46 @@ const SubscriptionCheckout = ({
             }
         >
             <div className="mb-4 flex flex-column">
-                <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
-                {!isFreePlanSelected && <BilledText cycle={cycle} />}
+                <span>
+                    <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
+                    {discountPercent !== 0 && !loading && (
+                        <Badge type="success" tooltip={getDiscountText()} className="ml-2 text-semibold">
+                            -{discountPercent}%
+                        </Badge>
+                    )}
+                </span>
+
+                {!isFreePlanSelected && !isSpecialRenewPlan(planIDs) && <BilledText cycle={cycle} />}
             </div>
             <CheckoutRow
-                title={
-                    <>
-                        {usersTitle}
-                        {showDiscount && memberDiscountPercent > 0 && (
-                            <Badge type="success" tooltip={getDiscountText()} className="ml-2 text-semibold">
-                                -{memberDiscountPercent}%
-                            </Badge>
-                        )}
-                    </>
-                }
-                amount={membersAmount}
+                title={usersTitle}
+                amount={membersPerMonth}
                 currency={currency}
                 suffix={perMonthSuffix}
-                suffixNextLine={enableDetailedAddons}
                 loading={loading}
                 data-testid="price"
             />
-            {enableDetailedAddons
-                ? addons.map((addon) => {
-                      return (
-                          <CheckoutRow
-                              key={addon.name}
-                              title={
-                                  <>
-                                      {addon.title}
-                                      <AddonTooltip
-                                          addon={addon}
-                                          pricePerAddon={(addon.pricing[cycle] || 0) / cycle}
-                                          currency={currency}
-                                      />
-                                      {showDiscount && addonsDiscountPercent > 0 && (
-                                          <Badge
-                                              type="success"
-                                              tooltip={getDiscountText()}
-                                              className="ml-2 text-semibold"
-                                          >
-                                              -{addonsDiscountPercent}%
-                                          </Badge>
-                                      )}
-                                  </>
-                              }
-                              amount={(addon.quantity * (addon.pricing[cycle] || 0)) / cycle}
-                              currency={currency}
-                              loading={loading}
-                              suffix={perMonthSuffix}
-                              suffixNextLine={true}
-                          />
-                      );
-                  })
-                : addons.map((addon) => {
-                      return (
-                          <div className="mb-4" key={addon.name}>
-                              + {addon.title}
-                          </div>
-                      );
-                  })}
+            {addons.map((addon) => {
+                return (
+                    <CheckoutRow
+                        key={addon.name}
+                        title={
+                            <>
+                                {addon.title}
+                                <AddonTooltip
+                                    addon={addon}
+                                    pricePerAddon={(addon.pricing[cycle] || 0) / cycle}
+                                    currency={currency}
+                                />
+                            </>
+                        }
+                        amount={(addon.quantity * (addon.pricing[cycle] || 0)) / cycle}
+                        currency={currency}
+                        loading={loading}
+                        suffix={perMonthSuffix}
+                    />
+                );
+            })}
             {!isFreePlanSelected && (
                 <>
                     <div className="mb-4">
@@ -241,14 +203,33 @@ const SubscriptionCheckout = ({
                     </div>
                     <CheckoutRow
                         className="text-semibold"
-                        title={<span className="mr-2">{getTotalBillingText(cycle)}</span>}
-                        amount={withDiscountPerCycle}
+                        title={
+                            <>
+                                <span className="mr-2">{getTotalBillingText(cycle)}</span>
+                                {/* Commented out until PAY-2179 is resolved */}
+                                {/* {isCustomBilling ? (
+                                    <Info
+                                        title={c('Payments')
+                                            .t`This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.`}
+                                    />
+                                ) : null} */}
+                            </>
+                        }
+                        amount={amount}
                         currency={currency}
                         loading={loading}
                         data-testid="price"
                         star={hasBFDiscount}
                     />
                 </>
+            )}
+            {!!couponDiscount && (
+                <CheckoutRow
+                    title={c('Title').t`Coupon`}
+                    amount={couponDiscount}
+                    currency={currency}
+                    data-testid="coupon-discount"
+                />
             )}
             {isProration && proration !== 0 && (
                 <CheckoutRow
@@ -274,34 +255,32 @@ const SubscriptionCheckout = ({
                     data-testid="proration-value"
                 />
             )}
+            {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
+            {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
             {(isScheduledSubscription || isAddonDowngrade) && (
                 <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
             )}
-            {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
-            {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
-            {!isOptimistic && (
-                <>
-                    <div className="mb-4">
-                        <hr />
-                    </div>
-                    {showTaxCountry && !isFreePlanSelected && (
-                        <WrappedTaxCountrySelector
-                            statusExtended={statusExtended}
-                            onBillingAddressChange={onBillingAddressChange}
-                        />
-                    )}
-                    <CheckoutRow
-                        title={c('Title').t`Amount due`}
-                        amount={amountDue}
-                        currency={currency}
-                        loading={loading}
-                        className="text-bold m-0 text-2xl"
-                        data-testid="subscription-amout-due"
-                    />
-                </>
+
+            <div className="mb-4">
+                <hr />
+            </div>
+            {showTaxCountry && !isFreePlanSelected && (
+                <WrappedTaxCountrySelector
+                    statusExtended={statusExtended}
+                    onBillingAddressChange={onBillingAddressChange}
+                />
             )}
+            <CheckoutRow
+                title={c('Title').t`Amount due`}
+                amount={amountDue}
+                currency={currency}
+                loading={loading}
+                className="text-bold m-0 text-2xl"
+                data-testid="subscription-amout-due"
+            />
+
             <div className="my-4">{submit}</div>
-            {!isOptimistic && amount > 0 && gift ? gift : null}
+            {amount > 0 && gift ? gift : null}
         </Checkout>
     );
 };

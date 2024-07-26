@@ -6,7 +6,7 @@ import { Href } from '@proton/atoms/Href';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useConfig } from '../../hooks';
+import { useConfig } from '../../../hooks';
 
 type Props = HTMLAttributes<HTMLDivElement>;
 
