@@ -5,36 +5,36 @@ import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core'
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing/index';
 
-import { DropdownActions } from '../../components';
-import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
+import { DropdownActions } from '../../../components';
+import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
 import PaymentMethodActions from './PaymentMethodActions';
 
-jest.mock('../../hooks/useNotifications', () =>
+jest.mock('../../../hooks/useNotifications', () =>
     jest.fn().mockReturnValue({
         createNotification: jest.fn(),
     })
 );
 
-jest.mock('../../hooks/useModals', () =>
+jest.mock('../../../hooks/useModals', () =>
     jest.fn().mockReturnValue({
         createModal: jest.fn(),
     })
 );
 
-jest.mock('../../hooks/useEventManager', () =>
+jest.mock('../../../hooks/useEventManager', () =>
     jest.fn().mockReturnValue({
         call: jest.fn(),
     })
 );
 
-jest.mock('../../hooks/useApi', () => jest.fn().mockReturnValue(jest.fn()));
+jest.mock('../../../hooks/useApi', () => jest.fn().mockReturnValue(jest.fn()));
 
-jest.mock('../../components/dropdown/DropdownActions', () =>
+jest.mock('../../../components/dropdown/DropdownActions', () =>
     jest.fn().mockImplementation(({ list }) => list.map(({ text }: any) => <span>{text}</span>))
 );
 
-jest.mock('../payments/EditCardModal', () => jest.fn().mockImplementation(() => <span>Edit Card Modal</span>));
-jest.mock('../../components/modal/Confirm', () =>
+jest.mock('../EditCardModal', () => jest.fn().mockImplementation(() => <span>Edit Card Modal</span>));
+jest.mock('../../../components/modal/Confirm', () =>
     jest.fn().mockImplementation(({ onConfirm }) => (
         <button onClick={onConfirm} data-testid="confirm-deletion">
             ConfirmModal

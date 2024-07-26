@@ -20,7 +20,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
-    getOverriddenPricePerCycle,
+    getPricePerCycle,
     hasBundle,
     hasDrive,
     hasMail,
@@ -182,7 +182,7 @@ const getUpsell = ({
         title: upsellFields.isTrialEnding ? c('new_plans: Title').t`${shortPlan.title} Trial` : shortPlan.title,
         description: shortPlan.description,
         upsellRefLink,
-        price: { value: (getOverriddenPricePerCycle(fullPlan, cycle) || 0) / cycle, currency },
+        price: { value: (getPricePerCycle(fullPlan, cycle) || 0) / cycle, currency },
         features: (upsellFields.features ?? shortPlan.features).filter((item) => isTruthy(item)),
         onUpgrade: () => {},
         otherCtas: [],

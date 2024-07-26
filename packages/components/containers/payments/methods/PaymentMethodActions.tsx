@@ -3,15 +3,15 @@ import { c } from 'ttag';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 
-import { Alert } from '../../components/alert';
-import { ErrorButton } from '../../components/button';
-import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';
-import DropdownActions from '../../components/dropdown/DropdownActions';
-import { ConfirmModal } from '../../components/modal';
-import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
-import type { CardModel, PaymentMethodCardDetails, SavedPaymentMethod } from '../../payments/core';
-import { PAYMENT_METHOD_TYPES, isExpired, paymentMethodPaymentsVersion } from '../../payments/core';
-import EditCardModal from '../payments/EditCardModal';
+import { Alert } from '../../../components/alert';
+import { ErrorButton } from '../../../components/button';
+import type { DropdownActionProps } from '../../../components/dropdown/DropdownActions';
+import DropdownActions from '../../../components/dropdown/DropdownActions';
+import { ConfirmModal } from '../../../components/modal';
+import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
+import type { CardModel, PaymentMethodCardDetails, SavedPaymentMethod } from '../../../payments/core';
+import { PAYMENT_METHOD_TYPES, isExpired, paymentMethodPaymentsVersion } from '../../../payments/core';
+import EditCardModal from '../../payments/EditCardModal';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
     return {

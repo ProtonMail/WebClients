@@ -1,6 +1,6 @@
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { getDiscountPrice } from '../SubscriptionCycleSelector';
+import { getDiscountPrice } from './getDiscountPrice';
 
 interface PlanDiscountProps {
     loading?: boolean;

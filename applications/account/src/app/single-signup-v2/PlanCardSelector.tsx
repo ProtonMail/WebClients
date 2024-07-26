@@ -12,12 +12,8 @@ import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import {
-    getPlanIDs,
-    getPlanOffer,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
-} from '@proton/shared/lib/helpers/subscription';
+import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type {
     Currency,
     FreePlanDefault,

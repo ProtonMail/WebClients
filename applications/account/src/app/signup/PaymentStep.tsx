@@ -38,13 +38,9 @@ import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import {
-    getIsB2BAudienceFromPlan,
-    getIsConsumerVpnPlan,
-    getIsVpnPlan,
-    getPlanFromIds,
-} from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -253,6 +249,7 @@ const PaymentStep = ({
                             plansMap={plansMap}
                             planIDs={subscriptionData.planIDs}
                             defaultCycles={defaultCycles}
+                            additionalCheckResults={undefined}
                         />
                     )}
                     <div className="text-sm color-weak">

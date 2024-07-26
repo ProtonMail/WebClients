@@ -55,10 +55,9 @@ import {
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
