@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
+import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
@@ -49,6 +50,7 @@ const ConfigureSamlContent = ({
     identityProviderEndpointsContentProps: IdentityProviderEndpointsContentProps;
 }) => {
     const [removeSSODomainProps, setRemoveSSODomainOpen, renderRemoveSSODomain] = useModalState();
+    const [testSamlConfigurationProps, setTestSamlConfigurationOpen, renderTestSamlConfiguration] = useModalState();
 
     const ssoConfigForDomain = getSsoConfigForDomain(ssoConfigs, domain);
 
@@ -61,6 +63,7 @@ const ConfigureSamlContent = ({
                     {...identityProviderEndpointsContentProps}
                 />
             )}
+            {renderTestSamlConfiguration && <TestSamlModal domain={domain} {...testSamlConfigurationProps} />}
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="domainName" className="text-semibold flex items-center gap-2">
@@ -83,7 +86,8 @@ const ConfigureSamlContent = ({
                 <SSOInfoForm
                     domain={domain}
                     sso={ssoConfigForDomain}
-                    onImportSamlClick={() => setConfigureSamlModalOpen(true)}
+                    onImportSaml={() => setConfigureSamlModalOpen(true)}
+                    onTestSaml={() => setTestSamlConfigurationOpen(true)}
                     {...identityProviderEndpointsContentProps}
                 />
             ) : (
