@@ -544,6 +544,8 @@ export const handleNextLogin = async ({
     return next({ cache, from: AuthStep.LOGIN });
 };
 
+export class ExternalSSOError extends Error {}
+
 export const handleExternalSSOLogin = ({ token, signal }: { token: string; signal: AbortSignal }) => {
     if (!token) {
         throw new Error('Unexpected response');
@@ -570,7 +572,7 @@ export const handleExternalSSOLogin = ({ token, signal }: { token: string; signa
     const tab = window.open(url);
 
     if (!tab) {
-        throw new Error('Unable to open tab');
+        throw new ExternalSSOError('Unable to open tab');
     }
 
     return new Promise<{ uid: string; token: string }>((resolve, reject) => {
@@ -580,7 +582,7 @@ export const handleExternalSSOLogin = ({ token, signal }: { token: string; signa
         const assertOpen = () => {
             if (!tab || tab.closed) {
                 reset();
-                reject(new Error('Process closed'));
+                reject(new ExternalSSOError('Process closed'));
             }
         };
 
@@ -604,7 +606,7 @@ export const handleExternalSSOLogin = ({ token, signal }: { token: string; signa
         function abort() {
             reset();
             tab?.close?.();
-            reject(new Error('Process aborted'));
+            reject(new ExternalSSOError('Process aborted'));
         }
 
         reset = () => {
@@ -617,6 +619,6 @@ export const handleExternalSSOLogin = ({ token, signal }: { token: string; signa
         window.addEventListener('message', onMessage, false);
         handle = setInterval(() => {
             assertOpen();
-        }, 5000);
+        }, 2500);
     });
 };

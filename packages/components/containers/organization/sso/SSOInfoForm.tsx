@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
@@ -24,14 +25,16 @@ interface SSOInfo {
 interface Props extends IdentityProviderEndpointsContentProps {
     domain: Domain;
     sso: SSO;
-    onImportSamlClick: () => void;
+    onImportSaml: () => void;
+    onTestSaml: () => void;
 }
 
-const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSamlClick }: Props) => {
+const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestSaml }: Props) => {
     const { onFormSubmit, validator } = useFormErrors();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
+    const samlTestEnabled = useFlag('SamlTest');
 
     const ssoInfo: SSOInfo = {
         url: sso.SSOURL,
@@ -195,7 +198,8 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSamlClick }: 
             </SettingsLayout>
 
             <div className="flex gap-4">
-                <Button onClick={onImportSamlClick}>{c('Action').t`Import new SAML metadata`}</Button>
+                <Button onClick={onImportSaml}>{c('Action').t`Import new SAML metadata`}</Button>
+                {samlTestEnabled && <Button onClick={onTestSaml}>{c('Action').t`Test SAML configuration`}</Button>}
                 <Button color="norm" disabled={!isFormDirty} loading={submitting} type="submit">
                     {c('Action').t`Save SAML configuration`}
                 </Button>
