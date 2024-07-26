@@ -6,6 +6,9 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import type { ModalSize, ModalStateProps } from '@proton/components/components';
 import { Icon, Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
+import { useUser } from '@proton/components/hooks';
+import { UPSELL_ONE_DOLLAR_PROMO_PATHS } from '@proton/shared/lib/constants';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';
@@ -49,6 +52,24 @@ const UpsellBox = ({
     submitPosition,
     submitButton,
 }: UpsellBoxProps) => {
+    const [user] = useUser();
+    const currency: Currency = user?.Currency || 'USD';
+
+    const isOneDollarPromo = UPSELL_ONE_DOLLAR_PROMO_PATHS.some((promoPath) => path?.includes(promoPath));
+
+    const messageByCurrency = (() => {
+        switch (currency) {
+            case 'USD':
+                return c('new_plans: Action').t`Get started for $1`;
+            case 'EUR':
+                return c('new_plans: Action').t`Get started for 1€`;
+            case 'CHF':
+                return c('new_plans: Action').t`Get started for 1 CHF`;
+            default:
+                return c('new_plans: Action').t`Upgrade now`;
+        }
+    })();
+
     const UpgradeButton = submitButton || (
         <ButtonLike
             as={path ? SettingsLink : undefined}
@@ -59,7 +80,7 @@ const UpsellBox = ({
             shape="solid"
             fullWidth
         >
-            {submitText || c('new_plans: Action').t`Upgrade now`}
+            {submitText || isOneDollarPromo ? messageByCurrency : c('new_plans: Action').t`Upgrade now`}
         </ButtonLike>
     );
 
