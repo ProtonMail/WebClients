@@ -258,11 +258,9 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                         stackedFieldWrapper={false}
                                         onSelect={(currency) => {
                                             setSelectedCurrency(currency.Symbol as WasmFiatCurrencySymbol);
-                                            setAmount(
-                                                Number.isFinite(currency.MinimumAmount)
-                                                    ? Number(currency.MinimumAmount)
-                                                    : DEFAULT_AMOUNT
-                                            );
+
+                                            const amount = Number(currency.MinimumAmount);
+                                            setAmount(Number.isFinite(amount) ? amount : DEFAULT_AMOUNT);
                                         }}
                                     />
                                 </div>
