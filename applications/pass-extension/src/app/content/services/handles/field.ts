@@ -127,7 +127,10 @@ export const createFieldHandles = ({
             }
         },
 
-        autofill: withActionTrap(element, createAutofill(element)),
+        autofill: (value, options) => {
+            if (!value) return;
+            withActionTrap(element, createAutofill(element))(value, options);
+        },
 
         /* if an icon is already attached recycle it */
         attachIcon: withContext((ctx) => {
