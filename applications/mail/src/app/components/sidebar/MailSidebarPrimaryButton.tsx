@@ -23,12 +23,14 @@ const MailSidebarPrimaryButton = ({ collapsed = false, handleCompose }: Props) =
             <br />
             <Kbd shortcut="N" />
         </>
+    ) : collapsed ? (
+        c('Title').t`New message`
     ) : null;
 
-    const sideBarPrimaryButton = Shortcuts ? (
+    return (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
             <SidebarPrimaryButton
-                className={clsx('hidden md:inline', collapsed && 'px-0')}
+                className={clsx('hidden', collapsed ? 'px-0 md:flex' : 'md:inline')}
                 onClick={handleCompose}
                 data-testid="sidebar:compose"
                 size={collapsed ? 'medium' : undefined}
@@ -41,23 +43,7 @@ const MailSidebarPrimaryButton = ({ collapsed = false, handleCompose }: Props) =
                 )}
             </SidebarPrimaryButton>
         </Tooltip>
-    ) : (
-        <SidebarPrimaryButton
-            className={clsx('hidden', collapsed ? 'px-0 md:flex' : 'md:inline')}
-            onClick={handleCompose}
-            data-testid="sidebar:compose"
-            size={collapsed ? 'medium' : undefined}
-            ref={anchorRef}
-        >
-            {collapsed ? (
-                <Icon name="pencil" className="flex mx-auto my-0.5" alt={c('Action').t`New message`} />
-            ) : (
-                c('Action').t`New message`
-            )}
-        </SidebarPrimaryButton>
     );
-
-    return sideBarPrimaryButton;
 };
 
 export default MailSidebarPrimaryButton;
