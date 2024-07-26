@@ -76,6 +76,12 @@ export const EmailAddressCreationModal = ({ onAddressCreated, ...modalProps }: P
         [customDomains, member, premiumDomains, protonDomains, user]
     );
 
+    useEffect(() => {
+        if (domains.length > 1) {
+            setSelectedDomain(domains[0]);
+        }
+    }, [domains]);
+
     const checkData = useCallback(() => {
         if (!validateEmailAddress(emailAddress)) {
             setError(c('Wallet preference').t`Email address is invalid`);
@@ -132,7 +138,8 @@ export const EmailAddressCreationModal = ({ onAddressCreated, ...modalProps }: P
                 <div className="mt-2">
                     <Input
                         label={c('Wallet preference').t`Email`}
-                        placeholder={c('Wallet preference').t`Choose address`}
+                        labelContainerClassName="sr-only"
+                        placeholder={c('Wallet preference').t`Email address`}
                         value={local}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => {
                             setLocal(e.target.value);
@@ -173,7 +180,8 @@ export const EmailAddressCreationModal = ({ onAddressCreated, ...modalProps }: P
                 <div className="mt-2">
                     <Input
                         label={c('Wallet preference').t`Display name (optional)`}
-                        placeholder={c('Wallet preference').t`Choose display name`}
+                        labelContainerClassName="sr-only"
+                        placeholder={c('Wallet preference').t`Display name (optional)`}
                         value={displayName}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => {
                             setDisplayName(e.target.value);
