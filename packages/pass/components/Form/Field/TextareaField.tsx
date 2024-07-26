@@ -1,5 +1,5 @@
 import type { ForwardRefRenderFunction } from 'react';
-import { type FC, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import { type FC, forwardRef, useMemo, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -70,16 +70,7 @@ export const BaseTextAreaField = forwardRef(BaseTextAreaFieldRender);
 export const BaseMaskedTextAreaField: FC<BaseTextAreaFieldProps> = ({ form, field, ...rest }) => {
     const { value } = field;
     const [masked, setMasked] = useState<boolean>(true);
-    const ref = useRef<HTMLTextAreaElement>(null);
     const isEmpty = isEmptyString(value);
-
-    useEffect(() => {
-        if (!masked) {
-            setTimeout(() => ref?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
-        }
-    }, [masked]);
-
-    const maskedValue = !masked || isEmpty ? value : '••••••••••••••••';
 
     return (
         <BaseTextAreaField
@@ -88,9 +79,8 @@ export const BaseMaskedTextAreaField: FC<BaseTextAreaFieldProps> = ({ form, fiel
             onBlur={pipe(field.onBlur, () => setMasked(true))}
             form={form}
             field={field}
-            ref={ref}
             rows={masked ? DEFAULT_MIN_ROWS : rest.rows}
-            value={maskedValue}
+            value={!masked || isEmpty ? value : '•'.repeat(16)}
             {...rest}
         />
     );
