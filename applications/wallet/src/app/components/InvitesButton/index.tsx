@@ -25,7 +25,6 @@ export const InvitesButton = ({ walletAccount }: Props) => {
     const [inviteSentConfirmationModal, setInviteSentConfirmationModal] = useModalStateWithData<{ email: string }>();
 
     const address = walletAccount?.Addresses?.[0]?.ID ?? primaryAddress.ID;
-
     const availableInvites = remainingInvites?.available ?? 0;
 
     return (
@@ -48,7 +47,7 @@ export const InvitesButton = ({ walletAccount }: Props) => {
             </Button>
 
             <InviteModal
-                inviterAddressID={address}
+                defaultInviterAddressID={address}
                 onInviteSent={(email: string) => {
                     dispatch(decrementAvailableInvites());
                     sendInviteModal.onClose();
