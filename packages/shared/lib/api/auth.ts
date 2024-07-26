@@ -130,10 +130,14 @@ export const getLocalSessions = (params?: { Email: string }) => ({
     params,
 });
 
-export const getInfo = (Username?: string, intent: 'Proton' | 'Auto' | 'SSO' = 'Proton') => ({
+export const getInfo = (Username?: string, intent: 'Proton' | 'Auto' | 'SSO' = 'Proton', isTesting?: boolean) => ({
     method: 'post',
     url: 'core/v4/auth/info',
-    data: { ...(Username ? { Username } : undefined), Intent: intent },
+    data: {
+        ...(Username ? { Username } : undefined),
+        Intent: intent,
+        ...(isTesting ? { IsTesting: isTesting } : undefined),
+    },
 });
 
 export const getModulus = () => ({
