@@ -148,18 +148,20 @@ const CalendarSidebar = ({
     };
 
     const primaryAction = (
-        <SidebarPrimaryButton
-            data-testid="calendar-view:new-event-button"
-            disabled={!onCreateEvent}
-            onClick={onCreateEvent}
-            className={clsx('hidden md:flex items-center justify-center flex-nowrap gap-2', collapsed && 'px-0')}
-        >
-            {collapsed ? (
-                <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
-            ) : (
-                <span className="text-ellipsis">{c('Action').t`New event`}</span>
-            )}
-        </SidebarPrimaryButton>
+        <Tooltip title={collapsed ? c('Action').t`New event` : null}>
+            <SidebarPrimaryButton
+                data-testid="calendar-view:new-event-button"
+                disabled={!onCreateEvent}
+                onClick={onCreateEvent}
+                className={clsx('hidden md:flex items-center justify-center flex-nowrap gap-2', collapsed && 'px-0')}
+            >
+                {collapsed ? (
+                    <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
+                ) : (
+                    <span className="text-ellipsis">{c('Action').t`New event`}</span>
+                )}
+            </SidebarPrimaryButton>
+        </Tooltip>
     );
 
     const [displayMyCalendars, setDisplayMyCalendars] = useState(true);
