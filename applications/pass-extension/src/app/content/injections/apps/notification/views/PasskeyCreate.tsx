@@ -28,7 +28,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/me
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import type { MaybeNull, SafeLoginItem, SelectedItem } from '@proton/pass/types';
+import type { LoginItemPreview, MaybeNull, SelectedItem } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
@@ -46,7 +46,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
     const { close, postMessage, settings } = useIFrameContext();
     const { createNotification } = useNotifications();
 
-    const [items, setItems] = useMountedState<MaybeNull<SafeLoginItem[]>>(null);
+    const [items, setItems] = useMountedState<MaybeNull<LoginItemPreview[]>>(null);
     const [loading, setLoading] = useMountedState(false);
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
     const username = publicKey.user.name;
@@ -127,7 +127,7 @@ const PasskeyCreateView: FC<Props> = ({ domain, request, token }) => {
         const run = async () => {
             const response = await sendMessage(
                 contentScriptMessage({
-                    type: WorkerMessageType.AUTOFILL_QUERY,
+                    type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
                     payload: { domain, writable: true },
                 })
             );

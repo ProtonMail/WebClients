@@ -1,11 +1,11 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { State } from '@proton/pass/store/types';
-import type { FormSubmission} from '@proton/pass/types';
+import type { FormSubmission } from '@proton/pass/types';
 import { ItemState } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
-import { selectAutofillCandidates, selectItemsByDomain, selectOTPCandidate } from './items';
+import { selectAutofillLoginCandidates, selectItemsByDomain, selectOTPCandidate } from './items';
 
 const withOptimistics = (item: {}) => ({ ...item, failed: expect.any(Boolean), optimistic: expect.any(Boolean) });
 
@@ -289,12 +289,14 @@ describe('item selectors', () => {
 
     describe('selectAutofillCandidates', () => {
         test('should return nothing if invalid url', () => {
-            expect(selectAutofillCandidates(parseUrl(''))(stateMock)).toEqual([]);
-            expect(selectAutofillCandidates({ ...parseUrl('https://a.b.c'), protocol: null })(stateMock)).toEqual([]);
+            expect(selectAutofillLoginCandidates(parseUrl(''))(stateMock)).toEqual([]);
+            expect(selectAutofillLoginCandidates({ ...parseUrl('https://a.b.c'), protocol: null })(stateMock)).toEqual(
+                []
+            );
         });
 
         test('should not pass a protocol filter if url is secure', () => {
-            const candidates = selectAutofillCandidates(parseUrl('https://google.com'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('https://google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
             expect(candidates[1]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item4));
@@ -302,25 +304,25 @@ describe('item selectors', () => {
         });
 
         test('should pass a protocol filter if url is not secure `https:`', () => {
-            const candidates = selectAutofillCandidates(parseUrl('http://google.com'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('http://google.com'))(stateMock);
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
         });
 
         test('should pass a protocol filter if url is not secure `https:`', () => {
-            const candidates = selectAutofillCandidates(parseUrl('http://google.com'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('http://google.com'))(stateMock);
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
         });
 
         test('should return only matching protocols', () => {
-            const candidates = selectAutofillCandidates(parseUrl('ftp://proton.me'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('ftp://proton.me'))(stateMock);
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item1));
         });
 
         test('if no direct public subdomain match, should sort top-level domains and other subdomain matches', () => {
-            const candidates = selectAutofillCandidates(parseUrl('https://account.google.com'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('https://account.google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
             expect(candidates[1]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item4));
@@ -328,7 +330,7 @@ describe('item selectors', () => {
         });
 
         test('if public subdomain match, should push subdomain matches on top, then top-level domain, then other subdomains', () => {
-            const candidates = selectAutofillCandidates(parseUrl('https://my.sub.domain.google.com'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('https://my.sub.domain.google.com'))(stateMock);
             expect(candidates.length).toEqual(3);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
             expect(candidates[1]).toEqual(withOptimistics(stateMock.items.byShareId.share3.item6));
@@ -336,13 +338,13 @@ describe('item selectors', () => {
         });
 
         test('if private top level domain, should match only top level domain', () => {
-            const candidates = selectAutofillCandidates(parseUrl('https://github.io'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('https://github.io'))(stateMock);
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item3));
         });
 
         test('if private sub domain, should match only specific subdomain', () => {
-            const candidates = selectAutofillCandidates(parseUrl('https://subdomain.github.io'))(stateMock);
+            const candidates = selectAutofillLoginCandidates(parseUrl('https://subdomain.github.io'))(stateMock);
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(withOptimistics(stateMock.items.byShareId.share1.item4));
         });

@@ -23,7 +23,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import type { AutofillResult } from '@proton/pass/types/worker/autofill';
+import { type AutofillLoginResult } from '@proton/pass/types/worker/autofill';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -34,14 +34,14 @@ export const AutofillLogin: FC<Props> = ({ domain }) => {
     const { settings, visible, close, forwardMessage } = useIFrameContext();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
-    const [state, setState] = useMountedState<MaybeNull<AutofillResult>>(null);
+    const [state, setState] = useMountedState<MaybeNull<AutofillLoginResult>>(null);
     const loading = state === null;
 
     const resolveCandidates = useCallback(() => {
         sendMessage
             .on(
                 contentScriptMessage({
-                    type: WorkerMessageType.AUTOFILL_QUERY,
+                    type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
                     payload: {},
                 }),
                 (res) => {
@@ -85,7 +85,7 @@ export const AutofillLogin: FC<Props> = ({ domain }) => {
                               onClick={() =>
                                   sendMessage.onSuccess(
                                       contentScriptMessage({
-                                          type: WorkerMessageType.AUTOFILL_SELECT,
+                                          type: WorkerMessageType.AUTOFILL_LOGIN,
                                           payload: { shareId, itemId },
                                       }),
                                       ({ userIdentifier, password }) => {

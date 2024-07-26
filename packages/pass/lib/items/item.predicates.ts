@@ -27,6 +27,11 @@ export const belongsToShare =
     <T extends UniqueItem>(item: T): boolean =>
         item.shareId === shareId;
 
+export const belongsToShares =
+    (shareIds?: string[]) =>
+    <T extends UniqueItem>(item: T): boolean =>
+        shareIds ? shareIds.includes(item.shareId) : true;
+
 export const isTrashed = ({ state }: ItemRevision) => state === ItemState.Trashed;
 export const isActive = not(isTrashed);
 
