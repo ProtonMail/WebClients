@@ -62,7 +62,7 @@ export const Drawer = ({
             >
                 <DrawerHeader title={title} onClose={() => onClose?.()} bg={bg} />
                 <Scroll className="drawer-scroll-container">
-                    <div className="pb-3 px-6 h-full">{children}</div>
+                    <div className="pb-6 px-6">{children}</div>
                 </Scroll>
             </div>
         </>
