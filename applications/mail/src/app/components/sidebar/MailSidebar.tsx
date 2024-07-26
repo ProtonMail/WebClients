@@ -95,7 +95,7 @@ const MailSidebar = ({ labelID }: Props) => {
                     <UsersOnboardingChecklist smallVariant />
                 )}
                 {featureFlagCollapsible && !isElectronApp && (
-                    <span className={clsx('mt-auto w-full', !collapsed && 'absolute bottom-0 right-0 mb-11 mr-2')}>
+                    <span className={clsx('mt-auto', !collapsed && 'absolute bottom-0 right-0 mb-11 mr-2')}>
                         {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
                         <Tooltip
                             title={
