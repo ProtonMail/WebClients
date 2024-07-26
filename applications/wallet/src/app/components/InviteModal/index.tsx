@@ -13,29 +13,52 @@ import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user
 import { useWalletApiClients } from '@proton/wallet';
 
 import { Button, Input } from '../../atoms';
+import { EmailSelect } from '../EmailSelect';
 
 interface InviteModalOwnProps {
     onInviteSent: (email: string) => void;
-    inviterAddressID: string;
+    defaultInviterAddressID?: string;
 }
 
 type Props = ModalOwnProps & InviteModalOwnProps;
 
-export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: Props) => {
+export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalProps }: Props) => {
+    const [selectedInviterId, setSelectedInviterId] = useState<string>();
+
+    useEffect(() => {
+        if (!selectedInviterId && defaultInviterAddressID) {
+            setSelectedInviterId(defaultInviterAddressID);
+        }
+    }, [defaultInviterAddressID, selectedInviterId]);
+
     const [email, setEmail] = useState('');
-    const [error, setError] = useState<string | null>(null);
     const walletApi = useWalletApiClients();
     const { createNotification } = useNotifications();
     const [loadingInvite, withLoadingInvite] = useLoading();
 
-    const handleSend = async () => {
+    const errorMessage = (() => {
+        if (!selectedInviterId) {
+            return c('Wallet invite').t`You need to select an email to send from`;
+        }
+
+        if (!email) {
+            return c('Wallet invite').t`Email address is required`;
+        }
+
         if (!validateEmailAddress(email)) {
-            setError(c('Wallet invite').t`Email address is not valid`);
+            return c('Wallet invite').t`Email address is not valid`;
+        }
+
+        return null;
+    })();
+
+    const handleSend = async () => {
+        if (!selectedInviterId || !validateEmailAddress(email)) {
             return;
         }
 
         try {
-            await walletApi.invite.sendNewcomerInvite(email, inviterAddressID);
+            await walletApi.invite.sendNewcomerInvite(email, selectedInviterId);
 
             onInviteSent(email);
             createNotification({ text: c('Bitcoin send').t`Invitation sent` });
@@ -44,33 +67,17 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
         }
     };
 
-    useEffect(() => {
-        if (error) {
-            if (validateEmailAddress(email)) {
-                setError(null);
-            }
-        }
-    }, [email, error]);
-
-    const isInvitationSendingDisabled = Boolean(error || !email);
-
     return (
         <Prompt
             {...modalProps}
             buttons={[
-                <Tooltip
-                    title={
-                        email
-                            ? undefined
-                            : c('Wallet invite').t`You need to have an email set on your account to send invites`
-                    }
-                >
+                <Tooltip title={errorMessage}>
                     <Button
                         fullWidth
                         color="weak"
                         shape="solid"
                         size="large"
-                        disabled={isInvitationSendingDisabled}
+                        disabled={!!errorMessage}
                         onClick={() => {
                             void withLoadingInvite(handleSend());
                         }}
@@ -107,13 +114,21 @@ export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: P
                 <p className="my-4 text-center color-weak">{c('Wallet invite')
                     .t`Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.`}</p>
 
-                <div className="flex flex-row mt-2">
+                <div className="flex flex-row mt-2 w-full">
+                    <EmailSelect
+                        value={selectedInviterId}
+                        onChange={(addressID) => {
+                            setSelectedInviterId(addressID);
+                        }}
+                    />
+                </div>
+
+                <div className="flex flex-row mt-2 w-full">
                     <Input
                         id="invitee-email-input"
                         label={c('Wallet invite').t`Email address`}
                         placeholder={c('Wallet invite').t`Your friend's email`}
                         value={email}
-                        error={error}
                         onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                             setEmail(event.target.value);
                         }}
