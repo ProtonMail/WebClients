@@ -35,7 +35,7 @@ export const assertMessageVersion = (message: WorkerMessageWithSender) => {
  */
 export const sendMessage = async <T extends WorkerMessageWithSender>(
     message: T
-): Promise<WorkerResponse<typeof message> | MessageFailure> => {
+): Promise<WorkerResponse<T> | MessageFailure> => {
     try {
         return (await browser.runtime.sendMessage(browser.runtime.id, message)) as WorkerResponse<typeof message>;
     } catch (error: any) {
@@ -51,7 +51,7 @@ export const sendMessage = async <T extends WorkerMessageWithSender>(
  */
 sendMessage.on = async <R, T extends WorkerMessageWithSender>(
     message: T,
-    onResponse: (res: WorkerResponse<typeof message> | MessageFailure) => R
+    onResponse: (res: WorkerResponse<T> | MessageFailure) => R
 ): Promise<R> => onResponse(await sendMessage(message));
 
 /**
@@ -60,7 +60,7 @@ sendMessage.on = async <R, T extends WorkerMessageWithSender>(
  */
 sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
     message: T,
-    onSuccess: (res: Exclude<WorkerResponse<typeof message>, MessageFailure>) => void
+    onSuccess: (res: Exclude<WorkerResponse<T>, MessageFailure>) => void
 ): Promise<void> =>
     sendMessage.on(message, (response) => {
         if (response.type === 'success') {
