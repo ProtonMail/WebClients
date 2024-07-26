@@ -132,7 +132,10 @@ export const createFieldHandles = ({
         /* if an icon is already attached recycle it */
         attachIcon: withContext((ctx) => {
             if (!ctx) return;
-            return (field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements }));
+            field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements });
+            field.icon.setCount(0);
+
+            return field.icon;
         }),
 
         detachIcon() {

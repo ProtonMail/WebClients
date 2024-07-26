@@ -19,6 +19,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
+import noop from '@proton/utils/noop';
 import throttle from '@proton/utils/throttle';
 
 type FormManagerOptions = { onDetection: (forms: FormHandle[]) => void };
@@ -117,9 +118,10 @@ export const createFormManager = (options: FormManagerOptions) => {
                                 formHandle.attach();
                             });
 
-                            /* Prompt for 2FA autofill before autosave */
-                            const didPromptFor2FA = await ctx?.service.autofill.reconciliate();
-                            await (!didPromptFor2FA && ctx?.service.autosave.reconciliate());
+                            /* Always prompt for OTP autofill before autosave. */
+                            await ctx?.service.autofill.sync().catch(noop);
+                            const prompted = await ctx?.service.autofill.promptOTP();
+                            await (!prompted && ctx?.service.autosave.reconciliate());
 
                             options.onDetection(getTrackedForms());
                         } catch (err) {
@@ -290,7 +292,10 @@ export const createFormManager = (options: FormManagerOptions) => {
         state.trackedForms.clear();
     };
 
-    const sync = () => state.trackedForms.forEach((form) => form.tracker?.reconciliate());
+    const sync = withContext((ctx) => {
+        state.trackedForms.forEach((form) => form.tracker?.reconciliate());
+        ctx?.service.autofill.sync().catch(noop);
+    });
 
     return { getTrackedForms, observe, detect, sync, destroy };
 };

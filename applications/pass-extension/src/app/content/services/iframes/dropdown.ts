@@ -5,7 +5,7 @@ import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injection
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type {
     DropdownActions,
-    DropdownOpenOptions,
+    DropdownRequest,
     FieldHandle,
     InjectedDropdown,
 } from 'proton-pass-extension/app/content/types';
@@ -71,8 +71,10 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             set: () => iframe.updatePosition(),
         });
 
-    const getPayloadForAction = withContext<(action: DropdownAction) => Promise<Maybe<DropdownActions>>>(
-        async (ctx, action) => {
+    /** Converts a dropdown request into a usable payload for the injected
+     * dropdown. If a request is invalid, returns `undefined` to cancel. */
+    const processDropdownRequest = withContext<(request: DropdownRequest) => Promise<Maybe<DropdownActions>>>(
+        async (ctx, { action, autofocused }) => {
             if (!ctx) return;
 
             const { loggedIn } = ctx.getState();
@@ -82,6 +84,15 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             switch (action) {
                 case DropdownAction.AUTOFILL_LOGIN: {
                     if (!loggedIn) return { action, domain: '' };
+
+                    if (autofocused) {
+                        /* If the opening action is coming from a focus event for
+                         * an autofill action and the we have no login items that
+                         * match the current domain, cancel the request */
+                        const count = await ctx.service.autofill.getCredentialsCount();
+                        if (count === 0) return;
+                    }
+
                     return { action, domain };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
@@ -106,34 +117,20 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * Dropdown opening may be automatically triggered on initial
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
-    const open = ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> =>
+    const open = (request: DropdownRequest): Promise<void> =>
         iframe
             .ensureReady()
             .then(async () => {
-                fieldRef.current = field;
-                const payload = await getPayloadForAction(action);
+                fieldRef.current = request.field;
+                const payload = await processDropdownRequest(request);
 
                 if (payload) {
-                    /* If the opening action is coming from a focus event for an autofill action and the we
-                     * have no login items that match the current domain, avoid auto-opening  the dropdown */
-                    if (autofocused && payload.action === DropdownAction.AUTOFILL_LOGIN && payload.items.length === 0) {
-                        return;
-                    }
-
                     iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_ACTION, payload });
-                    iframe.open(action, getScrollParent(field.element));
+                    iframe.open(request.action, getScrollParent(request.field.element));
                     updatePosition();
                 }
             })
             .catch(noop);
-
-    const sync = async () => {
-        const action = fieldRef.current?.action;
-        if (action) {
-            const payload = await getPayloadForAction(action);
-            if (payload) iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_ACTION, payload });
-        }
-    };
 
     /* On a login autofill request - resolve the credentials via
      * worker communication and autofill the parent form of the
@@ -160,7 +157,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
 
             if (!form) return;
 
-            ctx?.service.autofill.autofillGeneratedPassword(form, payload.password);
+            ctx?.service.autofill.autofillPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
 
             form.tracker
@@ -198,7 +195,6 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
-        sync,
     };
 
     return dropdown;

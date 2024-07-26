@@ -15,13 +15,12 @@ export type DropdownActions =
     | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string }
     | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; domain: string } & PasswordAutosuggestOptions);
 
-export type DropdownOpenOptions = {
+export type DropdownRequest = {
     action: DropdownAction;
     field: FieldHandle;
     autofocused?: boolean;
 };
 
-export interface InjectedDropdown extends IFrameAppService<DropdownOpenOptions> {
+export interface InjectedDropdown extends IFrameAppService<DropdownRequest> {
     getCurrentField: () => MaybeNull<FieldHandle>;
-    sync: () => Promise<void>;
 }
