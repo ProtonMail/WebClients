@@ -6,7 +6,7 @@ import {
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import {
     type DropdownActions,
-    IFrameMessageType,
+    IFramePortMessageType,
     type NotificationActions,
 } from 'proton-pass-extension/app/content/types';
 
@@ -34,12 +34,15 @@ const createMockIFrameContext = (appState: Partial<AppState>, payload?: any): IF
     forwardMessage: noop,
     registerHandler: (action, cb) => {
         if (
-            action === IFrameMessageType.DROPDOWN_ACTION ||
-            action === IFrameMessageType.NOTIFICATION_ACTION ||
+            action === IFramePortMessageType.DROPDOWN_ACTION ||
+            action === IFramePortMessageType.NOTIFICATION_ACTION ||
             payload
         ) {
-            setTimeout(() => cb({ payload } as any), 50);
+            const timer = setTimeout(() => cb({ payload } as any), 50);
+            return () => clearTimeout(timer);
         }
+
+        return noop;
     },
     resize: noop,
 });

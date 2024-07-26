@@ -6,11 +6,11 @@ import type {
     IFrameCloseOptions,
     IFrameEndpoint,
     IFrameMessage,
+    IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
-    IFrameSecureMessage,
 } from 'proton-pass-extension/app/content/types';
-import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
 import { INITIAL_WORKER_STATE } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
@@ -22,7 +22,7 @@ import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proto
 import browser from '@proton/pass/lib/globals/browser';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, Maybe, MaybeNull, RecursivePartial, WorkerMessage } from '@proton/pass/types';
+import type { AppState, Maybe, MaybeNull, RecursivePartial } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
@@ -40,7 +40,7 @@ export type IFrameContextValue = {
     close: (options?: IFrameCloseOptions) => void;
     forwardMessage: (message: IFrameMessage) => void;
     postMessage: (message: any) => void;
-    registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
+    registerHandler: <M extends IFrameMessageType>(type: M, handler: IFramePortMessageHandler<M>) => () => void;
     resize: (height: number) => void;
 };
 
@@ -89,7 +89,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
      * malicious websites from trying to spoof our content-script port
      * injection. If we detect a mismatch between the keys : destroy. */
     const handlePortInjection = useCallback(
-        async (message: IFrameSecureMessage<IFrameMessageType.IFRAME_INJECT_PORT>) =>
+        async (message: IFrameMessageWithSender<IFramePortMessageType.IFRAME_INJECT_PORT>) =>
             sendMessage.onSuccess(
                 contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }),
                 ({ key }) => {
@@ -105,10 +105,10 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
     );
 
     const onPostMessageHandler = useCallback(
-        safeCall((event: MessageEvent<Maybe<IFrameSecureMessage>>) => {
+        safeCall((event: MessageEvent<Maybe<IFrameMessageWithSender>>) => {
             if (
                 event.data &&
-                event.data?.type === IFrameMessageType.IFRAME_INJECT_PORT &&
+                event.data?.type === IFramePortMessageType.IFRAME_INJECT_PORT &&
                 event.data.sender === 'contentscript'
             ) {
                 handlePortInjection(event.data).catch(noop);
@@ -136,9 +136,9 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
 
     useEffect(() => {
         if (port && forwardTo) {
-            port.onMessage.addListener((message: Maybe<IFrameMessage | WorkerMessage>) => {
+            port.onMessage.addListener((message: Maybe<IFrameMessage>) => {
                 switch (message?.type) {
-                    case IFrameMessageType.IFRAME_INIT:
+                    case IFramePortMessageType.IFRAME_INIT:
                         setAppState(message.payload.workerState);
                         setSettings(message.payload.settings);
                         setFeatures(message.payload.features);
@@ -147,9 +147,9 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                          * hydrating the initial locale and watching for language changes */
                         i18n.setLocale(message.payload.settings.locale).catch(noop);
                         return;
-                    case IFrameMessageType.IFRAME_HIDDEN:
+                    case IFramePortMessageType.IFRAME_HIDDEN:
                         return setVisible(false);
-                    case IFrameMessageType.IFRAME_OPEN:
+                    case IFramePortMessageType.IFRAME_OPEN:
                         return setVisible(true);
                     case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                         return setFeatures(message.payload);
@@ -170,9 +170,9 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
             });
 
             port.postMessage(
-                portForwardingMessage<IFrameMessageWithSender<IFrameMessageType.IFRAME_CONNECTED>>(forwardTo, {
+                portForwardingMessage<IFrameMessageWithSender<IFramePortMessageType.IFRAME_CONNECTED>>(forwardTo, {
                     sender: endpoint,
-                    type: IFrameMessageType.IFRAME_CONNECTED,
+                    type: IFramePortMessageType.IFRAME_CONNECTED,
                     payload: { framePort: port.name, id: endpoint },
                 })
             );
@@ -204,23 +204,24 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
     );
 
     const close = useCallback(
-        (payload: IFrameCloseOptions = {}) => forwardMessage({ type: IFrameMessageType.IFRAME_CLOSE, payload }),
+        (payload: IFrameCloseOptions = {}) => forwardMessage({ type: IFramePortMessageType.IFRAME_CLOSE, payload }),
         [forwardMessage]
     );
 
     const resize = useCallback(
         (height: number) => {
-            if (height > 0) forwardMessage({ type: IFrameMessageType.IFRAME_DIMENSIONS, payload: { height } });
+            if (height > 0) forwardMessage({ type: IFramePortMessageType.IFRAME_DIMENSIONS, payload: { height } });
         },
         [forwardMessage]
     );
 
     const registerHandler = useCallback(
-        <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => {
-            const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) =>
-                message?.type === type &&
-                message.sender === 'contentscript' &&
-                handler(message as IFrameMessageWithSender<M>);
+        <M extends IFrameMessageType>(type: M, handler: IFramePortMessageHandler<M>) => {
+            const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) => {
+                if (message?.type === type) {
+                    handler(message as IFrameMessageWithSender<M>);
+                }
+            };
 
             port?.onMessage.addListener(onMessageHandler);
             return () => port?.onMessage.removeListener(onMessageHandler);
@@ -261,7 +262,7 @@ export const useIFrameContext = () => {
     return ctx;
 };
 
-export const useRegisterMessageHandler = <M extends IFrameMessage['type']>(
+export const useRegisterMessageHandler = <M extends IFrameMessageType>(
     type: M,
     handler: IFramePortMessageHandler<M>
 ) => {
