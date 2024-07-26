@@ -133,6 +133,18 @@ describe('formatURLForAjaxRequest', () => {
     it('should concatenate the ajax params to the URL when params', () => {
         expect(formatURLForAjaxRequest(`${mailUrl}${randomParam}`).search).toEqual(`${randomParam}&${ajaxParam}`);
     });
+
+    it('should preserve existing search params', () => {
+        const url = `${mailUrl}${randomParam}&${ajaxParam}`;
+        expect(formatURLForAjaxRequest(url).search).toEqual(`${randomParam}&${ajaxParam}`);
+    });
+
+    it('should support additional URL parameters, and override if needed', () => {
+        const url = `${mailUrl}${randomParam}`;
+        expect(formatURLForAjaxRequest(url, { extra: 'param', load: 'modalOpen' }).search).toEqual(
+            `${randomParam}&extra=param&load=modalOpen`
+        );
+    });
 });
 
 describe('stringifySearchParams()', () => {
