@@ -2,13 +2,27 @@ import type { Runtime } from 'webextension-polyfill';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, FormCredentials, MaybeNull } from '@proton/pass/types';
+import type {
+    AppState,
+    AutofillSyncMessage,
+    ClientEndpoint,
+    FeatureFlagsUpdateMessage,
+    FormCredentials,
+    LocaleUpdatedMessage,
+    MaybeNull,
+    PortUnauthorizedMessage,
+    SettingsUpdateMessage,
+    WorkerStatusMessage,
+} from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
 import type { NotificationActions } from './notification';
 
 export type IFramePosition = Partial<Rect>;
+export type IFrameEndpoint = 'notification' | 'dropdown';
+export type IFrameInitPayload = { workerState: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+export type IFrameCloseOptions = { discard?: boolean; event?: Event; refocus?: boolean };
 
 export type IFrameState<A> = {
     action: MaybeNull<A>;
@@ -19,16 +33,6 @@ export type IFrameState<A> = {
     positionReq: number;
     ready: boolean;
     visible: boolean;
-};
-
-export type IFramePortMessageHandler<T extends IFrameMessageType = IFrameMessageType> = (
-    message: IFrameMessageWithSender<T>
-) => void;
-
-export type IFrameCloseOptions = {
-    discard?: boolean;
-    event?: Event;
-    refocus?: boolean;
 };
 
 export interface IFrameApp<A = any> {
@@ -54,7 +58,10 @@ export interface IFrameAppService<T extends { action: any }> {
     open: (options: T) => IFrameAppService<T>;
 }
 
-export enum IFrameMessageType {
+/** These messages are not exported on the main
+ * `WorkerMessages` as they are always forwarded
+ * between the content-script and iframe. */
+export enum IFramePortMessageType {
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_AUTOFILL_EMAIL = 'DROPDOWN_AUTOFILL_EMAIL',
     DROPDOWN_AUTOFILL_GENERATED_PW = 'DROPDOWN_AUTOFILL_GENERATED_PASSWORD',
@@ -73,31 +80,42 @@ export enum IFrameMessageType {
     NOTIFICATION_AUTOSAVE_SUCCESS = 'NOTIFICATION_AUTOSAVE_SUCCESS',
 }
 
-export type IFrameEndpoint = 'contentscript' | 'notification' | 'dropdown';
-export type IFrameInitPayload = { workerState: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+/** Supported Worker messages that are broadcasted
+ * to iframe app ports that may affect iframe state. */
+export type IFrameWorkerMessages =
+    | AutofillSyncMessage
+    | FeatureFlagsUpdateMessage
+    | LocaleUpdatedMessage
+    | PortUnauthorizedMessage
+    | SettingsUpdateMessage
+    | WorkerStatusMessage;
+
+export type IFrameMessageType = IFramePortMessageType | IFrameWorkerMessages['type'];
 
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
-    | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownActions }
-    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
-    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }
-    | { type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: FormCredentials }
-    | { type: IFrameMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
-    | { type: IFrameMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
-    | { type: IFrameMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }
-    | { type: IFrameMessageType.IFRAME_HIDDEN }
-    | { type: IFrameMessageType.IFRAME_INIT; payload: IFrameInitPayload }
-    | { type: IFrameMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
-    | { type: IFrameMessageType.IFRAME_OPEN }
-    | { type: IFrameMessageType.NOTIFICATION_ACTION; payload: NotificationActions }
-    | { type: IFrameMessageType.NOTIFICATION_AUTOFILL_OTP; payload: { code: string } },
+    | IFrameWorkerMessages
+    | { type: IFramePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
+    | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
+    | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }
+    | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: FormCredentials }
+    | { type: IFramePortMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
+    | { type: IFramePortMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
+    | { type: IFramePortMessageType.IFRAME_DIMENSIONS; payload: { height: number; width?: number } }
+    | { type: IFramePortMessageType.IFRAME_HIDDEN }
+    | { type: IFramePortMessageType.IFRAME_INIT; payload: IFrameInitPayload }
+    | { type: IFramePortMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
+    | { type: IFramePortMessageType.IFRAME_OPEN }
+    | { type: IFramePortMessageType.NOTIFICATION_ACTION; payload: NotificationActions }
+    | { type: IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP; payload: { code: string } },
     { type: T }
 >;
 
-export type IFrameMessageWithSender<T extends IFrameMessageType = IFrameMessageType> = {
+export type IFrameMessageWithSender<T extends IFrameMessageType = IFrameMessageType> = IFrameMessage<T> & {
     frameId?: number;
-    sender: IFrameEndpoint;
-} & IFrameMessage<T>;
-
-export type IFrameSecureMessage<T extends IFrameMessageType = IFrameMessageType> = IFrameMessageWithSender<T> & {
-    key: string;
+    key?: string;
+    sender: ClientEndpoint;
 };
+
+export type IFramePortMessageHandler<T extends IFrameMessageType = IFrameMessageType> = (
+    message: IFrameMessageWithSender<T>
+) => void;

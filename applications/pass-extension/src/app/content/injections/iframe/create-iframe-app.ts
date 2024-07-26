@@ -1,17 +1,19 @@
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
+import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import type {
     IFrameApp,
     IFrameCloseOptions,
     IFrameEndpoint,
     IFrameInitPayload,
+    IFrameMessage,
+    IFrameMessageType,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
     IFramePosition,
-    IFrameSecureMessage,
     IFrameState,
-} from 'proton-pass-extension/app/content/types/iframe';
-import { type IFrameMessage, IFrameMessageType } from 'proton-pass-extension/app/content/types/iframe';
+} from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -25,8 +27,6 @@ import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { merge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
-
-import { withContext } from '../../context/context';
 
 type CreateIFrameAppOptions<A> = {
     animation: 'slidein' | 'fadein';
@@ -103,7 +103,7 @@ export const createIFrameApp = <A>({
             .onSuccess(contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }), async ({ key }) =>
                 ensureLoaded()
                     .then(() => {
-                        const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
+                        const secureMessage: IFrameMessageWithSender = { ...message, key, sender: 'contentscript' };
                         iframe.contentWindow?.postMessage(secureMessage, src);
                     })
                     .catch(noop)
@@ -128,8 +128,11 @@ export const createIFrameApp = <A>({
         type: M,
         handler: (message: IFrameMessageWithSender<M>) => void
     ) => {
-        const safeHandler = (message: Maybe<IFrameMessageWithSender>) =>
-            message?.type === type && message.sender === id && handler(message as IFrameMessageWithSender<M>);
+        const safeHandler = (message: Maybe<IFrameMessageWithSender>) => {
+            if (message?.type === type && message.sender === id) {
+                handler(message as IFrameMessageWithSender<M>);
+            }
+        };
 
         portMessageHandlers.set(type, safeHandler);
         return () => portMessageHandlers.delete(type);
@@ -171,7 +174,7 @@ export const createIFrameApp = <A>({
                 state.visible = false;
                 state.action = null;
 
-                void sendPortMessage({ type: IFrameMessageType.IFRAME_HIDDEN });
+                void sendPortMessage({ type: IFramePortMessageType.IFRAME_HIDDEN });
             }
         }
     };
@@ -190,7 +193,7 @@ export const createIFrameApp = <A>({
                 activeListeners.addListener(window, 'mousedown', onMouseDown);
             }
 
-            void sendPortMessage({ type: IFrameMessageType.IFRAME_OPEN });
+            void sendPortMessage({ type: IFramePortMessageType.IFRAME_OPEN });
 
             iframe.classList.add('visible');
             setIframeDimensions(dimensions(state));
@@ -209,11 +212,11 @@ export const createIFrameApp = <A>({
         state.port.onDisconnect.addListener(() => (state.ready = false));
 
         void sendSecurePostMessage({
-            type: IFrameMessageType.IFRAME_INJECT_PORT,
+            type: IFramePortMessageType.IFRAME_INJECT_PORT,
             payload: { port: port.name },
         }).then(() =>
             sendPortMessage({
-                type: IFrameMessageType.IFRAME_INIT,
+                type: IFramePortMessageType.IFRAME_INIT,
                 payload,
             })
         );
@@ -228,14 +231,14 @@ export const createIFrameApp = <A>({
         state.port = null;
     };
 
-    registerMessageHandler(IFrameMessageType.IFRAME_CONNECTED, ({ payload: { framePort } }) => {
+    registerMessageHandler(IFramePortMessageType.IFRAME_CONNECTED, ({ payload: { framePort } }) => {
         state.ready = true;
         state.framePort = framePort;
     });
 
-    registerMessageHandler(IFrameMessageType.IFRAME_CLOSE, (message) => close(message.payload));
+    registerMessageHandler(IFramePortMessageType.IFRAME_CLOSE, (message) => close(message.payload));
 
-    registerMessageHandler(IFrameMessageType.IFRAME_DIMENSIONS, (message) => {
+    registerMessageHandler(IFramePortMessageType.IFRAME_DIMENSIONS, (message) => {
         const { width, height } = merge(dimensions(state), { height: message.payload.height });
         return setIframeDimensions({ width, height });
     });
