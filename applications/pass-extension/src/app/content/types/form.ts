@@ -38,7 +38,7 @@ export interface FieldHandle {
     getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
     setValue: (value: string) => void;
     setAction: (action: MaybeNull<DropdownAction>) => void;
-    autofill: (value: string, options?: AutofillOptions) => void;
+    autofill: (value?: string, options?: AutofillOptions) => void;
     focus: (options?: { preventAction?: boolean }) => void;
     attachIcon: () => Maybe<FieldIconHandle>;
     detachIcon: () => void;

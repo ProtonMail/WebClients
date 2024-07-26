@@ -82,6 +82,11 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             const domain = url.subdomain ?? url.domain ?? '';
 
             switch (action) {
+                case DropdownAction.AUTOFILL_IDENTITY: {
+                    if (!loggedIn) return { action, domain: '' };
+                    return { action, domain };
+                }
+
                 case DropdownAction.AUTOFILL_LOGIN: {
                     if (!loggedIn) return { action, domain: '' };
 
@@ -175,6 +180,17 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         fieldRef.current?.focus({ preventAction: true });
         void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
     });
+
+    iframe.registerMessageHandler(
+        IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY,
+        withContext((ctx, { payload }) => {
+            const form = fieldRef.current?.getFormHandle();
+            if (!form) return;
+
+            ctx?.service.autofill.autofillIdentity(form, payload);
+            fieldRef.current?.focus({ preventAction: true });
+        })
+    );
 
     const destroy = () => {
         fieldRef.current = null;
