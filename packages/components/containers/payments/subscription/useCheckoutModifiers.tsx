@@ -61,7 +61,17 @@ export const useCheckoutModifiers = (
         };
     }
 
-    const isCustomBilling = checkResult ? checkResult.UnusedCredit !== 0 : false;
+    if (checkResult?.optimistic) {
+        return {
+            isProration: false,
+            isScheduledSubscription: false,
+            isCustomBilling: false,
+            isAddonDowngrade: false,
+        };
+    }
+
+    const isCustomBilling =
+        checkResult && checkResult.UnusedCredit !== undefined ? checkResult.UnusedCredit !== 0 : false;
 
     const isScheduledSubscription = !isProration && !isCustomBilling;
 

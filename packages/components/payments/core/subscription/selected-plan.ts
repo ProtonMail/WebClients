@@ -1,7 +1,8 @@
 import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, FreeSubscription, PLANS } from '@proton/shared/lib/constants';
+import { AddonGuard, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { AddonGuard, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/planIDs';
-import { getPlanFromIds, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
+import { getIsB2BAudienceFromPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Currency, MaxKeys, Plan, PlanIDs, PlansMap, Subscription, getMaxValue } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
@@ -146,6 +147,10 @@ export class SelectedPlan {
         }
 
         return plan;
+    }
+
+    isB2BPlan(): boolean {
+        return getIsB2BAudienceFromPlan(this.getPlanName());
     }
 
     private capScribes(): SelectedPlan {

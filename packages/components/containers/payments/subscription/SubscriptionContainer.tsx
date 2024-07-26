@@ -8,12 +8,12 @@ import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAss
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
+import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
     APPS,
-    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
@@ -22,10 +22,11 @@ import {
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
+import { hasScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { AddonGuard } from '@proton/shared/lib/helpers/planIDs';
-import { getPlanFromPlanIDs, hasPlanIDs, hasScribeAddon, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
@@ -35,7 +36,6 @@ import {
     getIsVpnPlan,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
-    getPlanNameFromIDs,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
@@ -48,7 +48,7 @@ import type {
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
-import { Audience, ChargebeeEnabled, PriceType } from '@proton/shared/lib/interfaces';
+import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
@@ -58,8 +58,13 @@ import noop from '@proton/utils/noop';
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
-import type { BillingAddress, CheckWithAutomaticOptions } from '../../../../components/payments/core';
-import { PAYMENT_METHOD_TYPES, isOnSessionMigration } from '../../../../components/payments/core';
+import type { MultiCheckSubscriptionData } from '../../../../components/payments/core';
+import {
+    type BillingAddress,
+    type CheckWithAutomaticOptions,
+    PAYMENT_METHOD_TYPES,
+    isOnSessionMigration,
+} from '../../../../components/payments/core';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
 import type {
     PaymentProcessorHook,
@@ -87,19 +92,21 @@ import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
-import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
 import type { VisionaryWarningModalOwnProps } from './PlanLossWarningModal';
 import { VisionaryWarningModal } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
-import SubscriptionCycleSelector, { SubscriptionCheckoutCycleItem } from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS } from './constants';
+import { SubscriptionCheckoutCycleItem } from './cycle-selector';
+import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import type { SelectedProductPlans } from './helpers';
 import { exclude24Months, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
+import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { getBillingAddressStatus, notHigherThanAvailableOnBackend } from './helpers/payment';
+import { NoPaymentRequiredNote } from './modal-components/NoPaymentRequiredNote';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
@@ -256,6 +263,7 @@ const SubscriptionContainer = ({
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
+    const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>();
     const chargebeeContext = useChargebeeContext();
     const scribeEnabled = useAssistantFeatureEnabled();
 
@@ -566,6 +574,56 @@ const SubscriptionContainer = ({
         user,
     });
 
+    const isFreePlanSelected = !hasPlanIDs(model.planIDs);
+    const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
+
+    const runAdditionalChecks = async (
+        newModel: Model,
+        checkPayload: CheckSubscriptionData,
+        options: CheckWithAutomaticOptions | undefined,
+        checkResult: SubscriptionCheckResponse,
+        signal: AbortSignal
+    ) => {
+        const codes = checkPayload.Codes;
+
+        const noCodes = !codes || codes.length === 0;
+        if (noCodes || disableCycleSelector) {
+            return;
+        }
+
+        paymentsApi.cacheMultiCheck(checkPayload, options, checkResult);
+
+        const additionalCycles = getAllowedCycles({
+            subscription,
+            minimumCycle: minimumCycle ?? CYCLE.MONTHLY,
+            maximumCycle: maximumCycle ?? CYCLE.TWO_YEARS,
+            defaultCycles,
+            planIDs: newModel.planIDs,
+            plansMap,
+        })
+            // skip the cycle that was just checked
+            .filter((cycle) => cycle !== checkResult.Cycle)
+
+            // skip cycles of the currently active subscription, because the backend doesn't allows to check them
+            .filter((cycle) => !isSubscriptionUnchanged(subscription, newModel.planIDs, cycle));
+
+        const additionalPayloads = additionalCycles.map(
+            (Cycle) =>
+                ({
+                    ...checkPayload,
+                    ...options,
+                    Cycle,
+                }) as MultiCheckSubscriptionData
+        );
+        const additionalChecks = await paymentsApi.multiCheck(additionalPayloads, {
+            signal,
+            cached: true,
+            silence: true,
+        });
+
+        setAdditionalCheckResults([...additionalChecks, checkResult]);
+    };
+
     const check = async (
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
@@ -656,20 +714,35 @@ const SubscriptionContainer = ({
 
             const Codes = getCodes(codesArgument);
 
-            const checkResult = await paymentsApi.checkWithAutomaticVersion(
-                {
-                    Codes,
-                    Plans: newModel.planIDs,
-                    Currency: newModel.currency,
-                    Cycle: newModel.cycle,
-                    BillingAddress: {
-                        CountryCode: newModel.taxBillingAddress.CountryCode,
-                        State: newModel.taxBillingAddress.State,
-                    },
+            const checkPayload: CheckSubscriptionData = {
+                Codes,
+                Plans: newModel.planIDs,
+                Currency: newModel.currency,
+                Cycle: newModel.cycle,
+                BillingAddress: {
+                    CountryCode: newModel.taxBillingAddress.CountryCode,
+                    State: newModel.taxBillingAddress.State,
                 },
-                abortControllerRef.current.signal,
+            };
+
+            const checkResult = await paymentsApi.checkWithAutomaticVersion(
+                checkPayload,
+                { signal: abortControllerRef.current.signal },
                 options
             );
+
+            try {
+                await runAdditionalChecks(
+                    newModel,
+                    checkPayload,
+                    options,
+                    checkResult,
+                    abortControllerRef.current.signal
+                );
+            } catch (error) {
+                console.warn(error);
+                console.warn('Additional Check calls failed');
+            }
 
             const { Gift = 0 } = checkResult;
             const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
@@ -808,10 +881,7 @@ const SubscriptionContainer = ({
     };
 
     const backStep = BACK[model.step];
-    const isFreePlanSelected = !hasPlanIDs(model.planIDs);
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
-
-    const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
@@ -873,7 +943,7 @@ const SubscriptionContainer = ({
         </>
     );
 
-    const gift = (
+    const gift = !model.noPaymentNeeded && (
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
@@ -1019,21 +1089,14 @@ const SubscriptionContainer = ({
                                                     planIDs={model.planIDs}
                                                     cycle={model.cycle}
                                                     currency={model.currency}
-                                                    priceType={
-                                                        model.planIDs[PLANS.VPN2024] &&
-                                                        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) &&
-                                                        couponCode !== COUPON_CODES.VPN_INTRO_2024 &&
-                                                        model.initialCheckComplete
-                                                            ? PriceType.default
-                                                            : undefined
-                                                    }
                                                     onChangeCycle={handleChangeCycle}
-                                                    disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
                                                     maximumCycle={maximumCycle}
                                                     subscription={subscription}
                                                     defaultCycles={defaultCycles}
                                                     faded={blockCycleSelector}
+                                                    additionalCheckResults={additionalCheckResults}
+                                                    loading={loadingCheck}
                                                 />
                                             )}
                                         </div>
@@ -1092,8 +1155,6 @@ const SubscriptionContainer = ({
                                 showTaxCountry={paymentFacade.showTaxCountry}
                                 statusExtended={paymentFacade.statusExtended}
                                 onBillingAddressChange={handleBillingAddressChange}
-                                showDiscount={!hasPlanCustomizer}
-                                enableDetailedAddons={!!hasPlanCustomizer}
                                 showPlanDescription={!hasPlanCustomizer}
                                 {...checkoutModifiers}
                             />

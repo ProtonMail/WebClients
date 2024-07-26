@@ -51,7 +51,6 @@ export * from './organization';
 export * from './otherMailPreferences';
 export * from './overview';
 export * from './password';
-export * from './paymentMethods';
 export * from './payments';
 export * from './privacy';
 export * from './recovery';
