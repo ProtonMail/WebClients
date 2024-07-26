@@ -69,7 +69,6 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
         account ?? defaultWalletAccount,
     ]);
     const [, walletAccount] = selectedWalletAccount;
-    const inviterAddressID = walletAccount?.Addresses?.[0]?.ID;
 
     const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
@@ -195,7 +194,6 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
             <TransactionSendConfirmationModal
                 {...sendConfirmModal}
                 theme={theme}
-                inviterAddressID={inviterAddressID}
                 onClickDone={() => {
                     sendConfirmModal.onClose?.();
                     onDone?.();
@@ -206,20 +204,18 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                 }}
             />
 
-            {inviterAddressID && (
-                <InviteModal
-                    inviterAddressID={inviterAddressID}
-                    {...inviteModal}
-                    onInviteSent={(email) => {
-                        inviteModal.onClose();
-                        setSentInviteConfirmModal({ email });
-                    }}
-                    onClose={() => {
-                        inviteModal.onClose();
-                        setSendConfirmModal(true);
-                    }}
-                />
-            )}
+            <InviteModal
+                defaultInviterAddressID={walletAccount?.Addresses?.[0]?.ID}
+                {...inviteModal}
+                onInviteSent={(email) => {
+                    inviteModal.onClose();
+                    setSentInviteConfirmModal({ email });
+                }}
+                onClose={() => {
+                    inviteModal.onClose();
+                    setSendConfirmModal(true);
+                }}
+            />
 
             {sentInviteConfirmModal.data && (
                 <InviteSentConfirmModal
