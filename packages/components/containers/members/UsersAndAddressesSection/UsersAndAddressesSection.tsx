@@ -14,13 +14,7 @@ import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@p
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import {
-    getHasPassB2BPlan,
-    getHasVpnOrPassB2BPlan,
-    hasDuo,
-    hasFamily,
-    hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
+import { getHasPassB2BPlan, getHasVpnOrPassB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
@@ -129,9 +123,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
 
+    const isOrgAFamilyPlan = getOrganizationDenomination(organization) === 'familyGroup';
     const isOrgFamily = isOrganizationFamily(organization);
 
-    const canInviteProtonUsers = hasVisionary(subscription) || hasFamily(subscription) || hasDuo(subscription);
+    const canInviteProtonUsers = hasVisionary(subscription) || isOrgAFamilyPlan;
     const { createNotification } = useNotifications();
 
     const cleanOption = {
@@ -476,7 +471,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         </>
                     ) : (
                         <>
-                            {getOrganizationDenomination(organization) === 'familyGroup' ? (
+                            {isOrgAFamilyPlan ? (
                                 <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                                     {c('Action').t`Invite user`}
                                 </Button>
@@ -593,8 +588,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                 </UserTableBadge>
                                                             )}
                                                             {allowPrivateMemberConfiguration &&
-                                                                !hasFamily(subscription) &&
-                                                                !hasDuo(subscription) &&
+                                                                !isOrgAFamilyPlan &&
                                                                 Boolean(member.Private) && (
                                                                     <UserTableBadge
                                                                         type="info"
