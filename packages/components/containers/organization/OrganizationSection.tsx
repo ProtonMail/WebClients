@@ -15,13 +15,14 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getHasMemberCapablePlan, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasMemberCapablePlan } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import type { Credentials } from '@proton/shared/lib/srp';
 
 import {
@@ -92,7 +93,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
 
     const { createNotification } = useNotifications();
-    const isPartOfFamily = hasFamily(subscription) || hasDuo(subscription);
+    const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
 
     const [organizationLogoModal, setOrganizationLogoModal, renderOrganizationLogoModal] = useModalState();
     const [organizationLogoTipsModal, setOrganizationLogoTipsModal, renderOrganizationLogoTipsModal] = useModalState();

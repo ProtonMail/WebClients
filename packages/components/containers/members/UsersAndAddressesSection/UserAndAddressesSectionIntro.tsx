@@ -3,13 +3,8 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useMembers, useOrganization, useSubscription, useUser } from '@proton/components/hooks';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
-import {
-    getHasMailB2BPlan,
-    getHasVpnOrPassB2BPlan,
-    hasAnyBundlePro,
-    hasDuo,
-    hasFamily,
-} from '@proton/shared/lib/helpers/subscription';
+import { getHasMailB2BPlan, getHasVpnOrPassB2BPlan, hasAnyBundlePro } from '@proton/shared/lib/helpers/subscription';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 
@@ -24,8 +19,9 @@ const UserAndAddressesSectionIntro = () => {
     const selfMember = members?.find((member) => member.Self);
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
     const hasInboxB2BPlan = hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
+    const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
 
-    if (hasFamily(subscription) || hasDuo(subscription)) {
+    if (hasFamilyOrg) {
         return c('familyOffer_2023:Info for members section')
             .t`Add, remove, and make changes to user accounts in your family group.`;
     }

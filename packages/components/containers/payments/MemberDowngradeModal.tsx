@@ -6,10 +6,9 @@ import { c } from 'ttag';
 import { Button, Card } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
-import { useSubscription } from '../..';
 import type { ModalProps } from '../../components';
 import {
     Form,
@@ -27,11 +26,10 @@ interface Props extends ModalProps {
 }
 
 const MemberDowngradeModal = ({ organization, onConfirm, onClose, ...rest }: Props) => {
-    const [subscription] = useSubscription();
     const { validator, onFormSubmit } = useFormErrors();
     const [confirmText, setConfirmText] = useState('');
     const organizationName = organization.Name;
-    const hasFamilyOrDuo = hasFamily(subscription) || hasDuo(subscription);
+    const hasFamilyOrDuo = getOrganizationDenomination(organization) === 'familyGroup';
 
     const modalTitle = hasFamilyOrDuo
         ? c('familyOffer_2023:Title').t`Delete family group?`
