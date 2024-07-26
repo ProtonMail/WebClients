@@ -5,12 +5,14 @@ import type { FieldHandle } from './form';
 import type { IFrameAppService } from './iframe';
 
 export enum DropdownAction {
+    AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
-    AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     AUTOSUGGEST_ALIAS = 'AUTOSUGGEST_ALIAS',
+    AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
 }
 
 export type DropdownActions =
+    | { action: DropdownAction.AUTOFILL_IDENTITY; domain: string }
     | { action: DropdownAction.AUTOFILL_LOGIN; domain: string }
     | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string }
     | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; domain: string } & PasswordAutosuggestOptions);
