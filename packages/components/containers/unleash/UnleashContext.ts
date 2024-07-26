@@ -52,6 +52,7 @@ enum AccountFlag {
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     WalletSignup = 'WalletSignup',
     WalletEASignup = 'WalletEASignup',
+    SAMLTest = 'SamlTest',
 }
 
 enum CalendarFeatureFlag {
