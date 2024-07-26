@@ -8,6 +8,7 @@ import type {
     ClientEndpoint,
     FeatureFlagsUpdateMessage,
     FormCredentials,
+    ItemContent,
     LocaleUpdatedMessage,
     MaybeNull,
     PortUnauthorizedMessage,
@@ -65,6 +66,7 @@ export enum IFramePortMessageType {
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_AUTOFILL_EMAIL = 'DROPDOWN_AUTOFILL_EMAIL',
     DROPDOWN_AUTOFILL_GENERATED_PW = 'DROPDOWN_AUTOFILL_GENERATED_PASSWORD',
+    DROPDOWN_AUTOFILL_IDENTITY = 'DROPDOWN_AUTOFILL_IDENTITY',
     DROPDOWN_AUTOFILL_LOGIN = 'DROPDOWN_AUTOFILL_LOGIN',
     IFRAME_CLOSE = 'IFRAME_CLOSE',
     IFRAME_CONNECTED = 'IFRAME_CONNECTED',
@@ -97,6 +99,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFramePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }
+    | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY; payload: ItemContent<'identity'> }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_LOGIN; payload: FormCredentials }
     | { type: IFramePortMessageType.IFRAME_CLOSE; payload: IFrameCloseOptions }
     | { type: IFramePortMessageType.IFRAME_CONNECTED; payload: { framePort: string; id: IFrameEndpoint } }
