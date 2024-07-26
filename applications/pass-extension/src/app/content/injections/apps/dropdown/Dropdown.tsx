@@ -7,7 +7,7 @@ import {
 import { LIST_ITEM_HEIGHT, ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/components/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
-import { DropdownAction, type DropdownActions, IFrameMessageType } from 'proton-pass-extension/app/content/types';
+import { DropdownAction, type DropdownActions, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
@@ -44,7 +44,7 @@ export const Dropdown: FC = () => {
     const accountFork = useRequestFork();
     const loading = state === null || clientBusy(status);
 
-    useRegisterMessageHandler(IFrameMessageType.DROPDOWN_ACTION, ({ payload }) => setState(payload));
+    useRegisterMessageHandler(IFramePortMessageType.DROPDOWN_ACTION, ({ payload }) => setState(payload));
 
     useEffect(() => {
         if (ref.current) {
@@ -139,7 +139,7 @@ export const Dropdown: FC = () => {
                     }
 
                     switch (state.action) {
-                        case DropdownAction.AUTOFILL:
+                        case DropdownAction.AUTOFILL_LOGIN:
                             return <AutofillLogin {...state} />;
                         case DropdownAction.AUTOSUGGEST_PASSWORD:
                             return <AutosuggestPassword {...state} />;
