@@ -1,9 +1,6 @@
 export { default as Alert3ds } from './Alert3ds';
 export { default as AmountButton } from './AmountButton';
 export { default as AmountRow } from './AmountRow';
-export { default as Bitcoin } from './Bitcoin';
-export { default as BitcoinDetails } from './BitcoinDetails';
-export { default as BitcoinQRCode } from './BitcoinQRCode';
 export { default as Cash } from './Cash';
 export { default as CreditsSection } from './CreditsSection';
 export { default as CurrencySelector } from './CurrencySelector';
@@ -19,4 +16,6 @@ export { default as PlansSection } from './PlansSection';
 export * from './RenewalNotice';
 export { default as StyledPayPalButton } from './StyledPayPalButton';
 export { default as SubscriptionsSection } from './SubscriptionsSection';
+export * from './bitcoin';
+export * from './methods';
 export * from './subscription';

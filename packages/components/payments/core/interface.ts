@@ -1,4 +1,4 @@
-import {
+import type {
     BinData,
     CardFormRenderMode,
     ChargebeeSavedCardAuthorizationSuccess,
@@ -14,11 +14,12 @@ import {
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
-import { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
+import type { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
-import { PaymentProcessorType } from '../react-extensions/interface';
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
+import type { PaymentProcessorType } from '../react-extensions/interface';
+import type { PAYMENT_TOKEN_STATUS } from './constants';
+import { PAYMENT_METHOD_TYPES } from './constants';
 
 export interface CreateCardDetailsBackend {
     Number: string;
@@ -390,14 +391,42 @@ export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonCharge
 export type CheckWithAutomaticOptions = {
     forcedVersion: PaymentsVersion;
     reason: string;
+    silence?: boolean;
 };
+
+export function isCheckWithAutomaticOptions(data: any): data is CheckWithAutomaticOptions {
+    return !!data && !!data.forcedVersion && !!data.reason;
+}
+
+export type MultiCheckSubscriptionData = CheckSubscriptionData & (CheckWithAutomaticOptions | {});
+
+export type RequestOptions = {
+    signal?: AbortSignal;
+    silence?: boolean;
+};
+
+export type MultiCheckOptions = {
+    cached?: boolean;
+} & RequestOptions;
 
 export interface PaymentsApi {
     checkWithAutomaticVersion: (
         data: CheckSubscriptionData,
-        signal?: AbortSignal,
+        requestOptions?: RequestOptions,
         options?: CheckWithAutomaticOptions
     ) => Promise<SubscriptionCheckResponse>;
+
+    multiCheck: (
+        data: MultiCheckSubscriptionData[],
+        options?: MultiCheckOptions
+    ) => Promise<SubscriptionCheckResponse[]>;
+
+    cacheMultiCheck: (
+        data: CheckSubscriptionData,
+        options: CheckWithAutomaticOptions | undefined,
+        result: SubscriptionCheckResponse
+    ) => void;
+
     statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
 }
 

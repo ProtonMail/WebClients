@@ -262,5 +262,21 @@ describe('useCheckoutModifiers', () => {
             const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
             expect(result.current.isCustomBilling).toEqual(false);
         });
+
+        it('should return isCustomBilling === false if UnusedCredit is undefined', () => {
+            checkResult.Proration = 0;
+            checkResult.UnusedCredit = undefined;
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+            expect(result.current.isCustomBilling).toEqual(false);
+        });
+    });
+
+    it('should set all checkout modifiers to false if check result is optimistic', () => {
+        checkResult.optimistic = true;
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        expect(result.current.isProration).toEqual(false);
+        expect(result.current.isScheduledSubscription).toEqual(false);
+        expect(result.current.isCustomBilling).toEqual(false);
+        expect(result.current.isAddonDowngrade).toEqual(false);
     });
 });

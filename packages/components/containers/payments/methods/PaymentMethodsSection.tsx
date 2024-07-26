@@ -15,13 +15,13 @@ import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { Icon, Loader, useModalState } from '../../components';
-import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../hooks';
-import { SettingsParagraph, SettingsSection } from '../account';
-import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
-import EditCardModal from '../payments/EditCardModal';
-import { default as PayPalV4Modal, PayPalV5Modal } from '../payments/PayPalModal';
+import { Icon, Loader, useModalState } from '../../../components';
+import { useConfig, useMozillaCheck, usePaymentMethods, useSubscription, useUser } from '../../../hooks';
+import { SettingsParagraph, SettingsSection } from '../../account';
+import MozillaInfoPanel from '../../account/MozillaInfoPanel';
+import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
+import EditCardModal from '../EditCardModal';
+import { default as PayPalV4Modal, PayPalV5Modal } from '../PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 const AddPaypalButton = ({ onClick, ...rest }: ButtonProps) => {

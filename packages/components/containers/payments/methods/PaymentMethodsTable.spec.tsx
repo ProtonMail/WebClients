@@ -3,12 +3,12 @@ import { render } from '@testing-library/react';
 import type { PayPalDetails, SavedCardDetails, SavedPaymentMethod } from '@proton/components/payments/core';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
-import TableBody from '../../components/table/TableBody';
-import TableRow from '../../components/table/TableRow';
+import TableBody from '../../../components/table/TableBody';
+import TableRow from '../../../components/table/TableRow';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
-jest.mock('../../components/table/TableRow', () => jest.fn());
-jest.mock('../../components/table/TableBody');
+jest.mock('../../../components/table/TableRow', () => jest.fn());
+jest.mock('../../../components/table/TableBody');
 jest.mock('./PaymentMethodActions', () => jest.fn().mockReturnValue(null));
 
 describe('PaymentMethodsTable', () => {

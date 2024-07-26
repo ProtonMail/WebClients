@@ -3,7 +3,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/index';
 import type { SelectedPlan } from '@proton/components/payments/core';
 import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { isScribeAddon, removeAddon } from '@proton/shared/lib/helpers/planIDs';
+import { isScribeAddon, removeAddon } from '@proton/shared/lib/helpers/addons';
 import type { PlanIDs, UserModel } from '@proton/shared/lib/interfaces';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({

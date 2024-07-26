@@ -13,8 +13,8 @@ import {
     PLAN_TYPES,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
+import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, Plan } from '@proton/shared/lib/interfaces';
 import { getPlanMaxIPs } from '@proton/shared/lib/interfaces';

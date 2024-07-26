@@ -4,7 +4,7 @@ import type { SavedPaymentMethod } from '@proton/components/payments/core';
 import { isPaypalDetails } from '@proton/components/payments/core';
 import orderBy from '@proton/utils/orderBy';
 
-import { Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Table, TableBody, TableHeader, TableRow } from '../../../components';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 

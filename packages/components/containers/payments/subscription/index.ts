@@ -1,7 +1,6 @@
 export { default as AutomaticSubscriptionModal } from './AutomaticSubscriptionModal';
 export { default as DowngradeSubscriptionSection } from './DowngradeSubscriptionSection';
 export { default as PlanSelection } from './PlanSelection';
-export { SubscriptionCheckoutCycleItem, default as SubscriptionCycleSelector } from './SubscriptionCycleSelector';
 export * from './SubscriptionModalProvider';
 export { default as SubscriptionModalProvider } from './SubscriptionModalProvider';
 export { default as UpgradeVpnSection } from './UpgradeVpnSection';
@@ -14,3 +13,4 @@ export * from './cancellationFlow';
 export { default as CancellationReminderModal } from './cancellationReminder/CancellationReminderModal';
 export { shouldOpenReminderModal } from './cancellationReminder/cancellationReminderHelper';
 export * from './constants';
+export { SubscriptionCheckoutCycleItem, SubscriptionCycleSelector } from './cycle-selector';
