@@ -41,7 +41,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     }
 
     const remoteText = couldLoadDirect
-        ? c('Action').t`Some images could not be loaded with tracker protection.`
+        ? c('Action').t`Tracker protection prevented some images from loading. Load them if you trust the sender.`
         : c('Action').t`This message contains remote content.`;
 
     const embeddedText = c('Action').t`This message contains embedded images.`;
