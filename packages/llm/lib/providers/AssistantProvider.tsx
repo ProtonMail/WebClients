@@ -46,6 +46,7 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
                 handleSettingChange: assistantLocalState.initAssistant,
                 getIsStickyAssistant: openedAssistantsState.getIsStickyAssistant,
                 handleCheckHardwareCompatibility: commonState.handleCheckHardwareCompatibility,
+                cleanSpecificErrors: commonState.cleanSpecificErrors,
             }}
         >
             {children}

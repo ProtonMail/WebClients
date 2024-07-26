@@ -6,8 +6,6 @@ import { AssistantIncompatibleBrowserModal, AssistantIncompatibleHardwareModal }
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 
-import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
-
 interface Manager<TElement> {
     get: (composerID: string) => RefObject<TElement>;
     set: (composerID: string, ref: RefObject<TElement>) => void;
@@ -25,9 +23,7 @@ interface ComposerAssistantContextType {
     displayAssistantModalPromise: (modalType: 'incompatibleHardware' | 'incompatibleBrowser') => Promise<void>;
     /** Manage different kind of Assistant needed refs */
     assistantRefManager: {
-        input: Manager<HTMLTextAreaElement>;
         container: Manager<HTMLDivElement>;
-        composerSpotlight: Manager<ComposerAssistantInitialSetupSpotlightRef>;
     };
 }
 
@@ -73,9 +69,7 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
     };
 
     const assistantRefManager = useMemo(() => {
-        const assistantInputs: Record<string, RefObject<HTMLTextAreaElement>> = {};
         const assistantContainers: Record<string, RefObject<HTMLDivElement>> = {};
-        const assistantComposerSpotlightRefs: Record<string, RefObject<ComposerAssistantInitialSetupSpotlightRef>> = {};
         const managerFactory = <TElement extends unknown>(
             store: Record<string, RefObject<TElement>>
         ): Manager<TElement> => ({
@@ -89,9 +83,7 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
         });
 
         return {
-            input: managerFactory(assistantInputs),
             container: managerFactory(assistantContainers),
-            composerSpotlight: managerFactory(assistantComposerSpotlightRefs),
         };
     }, []);
 

@@ -85,6 +85,10 @@ export interface AssistantContextType {
      */
     downloadPaused: boolean;
     /**
+     * We are checking if user has all files in cache
+     */
+    isCheckingCache: boolean;
+    /**
      * Is the model being loaded on the GPU at the moment
      */
     isModelLoadedOnGPU: boolean;
@@ -139,6 +143,7 @@ export interface AssistantContextType {
     resetAssistantState: () => void;
     getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
     handleCheckHardwareCompatibility: () => Promise<{ hasCompatibleBrowser: boolean; hasCompatibleHardware: boolean }>;
+    cleanSpecificErrors: (assistantID: string) => void;
 }
 
 export const AssistantContext = createContext<AssistantContextType | null>(null);
@@ -165,6 +170,7 @@ export const useAssistant = (assistantID?: string) => {
         hasCompatibleBrowser,
         hasCompatibleHardware,
         initAssistant,
+        isCheckingCache,
         isModelDownloaded,
         isModelDownloading,
         isModelLoadedOnGPU,
@@ -177,6 +183,7 @@ export const useAssistant = (assistantID?: string) => {
         setAssistantStatus,
         getIsStickyAssistant,
         handleCheckHardwareCompatibility,
+        cleanSpecificErrors,
     } = assistantContext;
 
     const isGeneratingResult = !assistantID ? false : !!runningActions[assistantID];
@@ -207,6 +214,12 @@ export const useAssistant = (assistantID?: string) => {
         }
     };
 
+    const handleCleanSpecifcErrors = () => {
+        if (assistantID) {
+            cleanSpecificErrors(assistantID);
+        }
+    };
+
     return {
         assistantConfig: assistantContext.assistantConfig,
         cancelDownloadModel,
@@ -223,6 +236,7 @@ export const useAssistant = (assistantID?: string) => {
         hasCompatibleBrowser,
         hasCompatibleHardware,
         initAssistant,
+        isCheckingCache,
         isGeneratingResult,
         isModelDownloaded,
         isModelDownloading,
@@ -235,5 +249,6 @@ export const useAssistant = (assistantID?: string) => {
         setAssistantStatus,
         getIsStickyAssistant,
         handleCheckHardwareCompatibility,
+        cleanSpecificErrors: handleCleanSpecifcErrors,
     };
 };
