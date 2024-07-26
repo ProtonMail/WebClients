@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import { RadioGroup } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import {
     useApi,
@@ -19,9 +19,11 @@ import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import desktopImg from '@proton/styles/assets/img/illustrations/desktop-screen.svg';
+import serverImg from '@proton/styles/assets/img/illustrations/servers.svg';
+import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerInnerModal from 'proton-mail/components/composer/modals/ComposerInnerModal';
@@ -31,9 +33,10 @@ const { SERVER_ONLY, CLIENT_ONLY, UNSET } = AI_ASSISTANT_ACCESS;
 interface Props {
     composerID: string;
     onClose: () => void;
+    onToggleAssistant: (aiFlag: AI_ASSISTANT_ACCESS) => void;
 }
 
-const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal }: Props) => {
+const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal, onToggleAssistant }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -43,10 +46,9 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
     const { onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
         FeatureCode.ComposerAssistantInitialSetup
     );
-    const { closeAssistant, handleSettingChange, handleCheckHardwareCompatibility } = useAssistant();
-    const { displayAssistantModalPromise, assistantRefManager: assistantInputRefManager } =
-        useComposerAssistantProvider();
+    const { handleSettingChange, handleCheckHardwareCompatibility } = useAssistant();
     const { sendShowAssistantReport } = useAssistantTelemetry();
+    const { displayAssistantModal } = useComposerAssistantProvider();
 
     // Default to server only if unset
     const [inputValue, setInputValue] = useState<AI_ASSISTANT_ACCESS>(
@@ -60,25 +62,16 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
                 await call();
             }
         };
-        const waitAndClickInput = async () => {
-            // TODO: This is a workaround to avoid failure with sending the assistant input click event
-            // Wait for proper state update before closing the modal
-            await wait(100);
+        const closeModal = async () => {
             closeSettingModal();
-            // trigger click on input to continue the assistant flow
-            assistantInputRefManager.input.get(composerID)?.current?.click();
             sendShowAssistantReport();
         };
 
         await updateSetting();
 
         if (inputValue === SERVER_ONLY) {
-            await waitAndClickInput();
-            // TODO: Workaround to keep old behavior
-            // When server is selected by user we set the assistant local spotlight as viewed
-            // This is a late change to avoid side effects
-            // Can be reconsidered in near future
-            assistantInputRefManager.composerSpotlight.get(composerID).current?.setSpotlightViewed();
+            await closeModal();
+            onToggleAssistant(inputValue);
             return;
         }
 
@@ -86,43 +79,36 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
             const { hasCompatibleHardware, hasCompatibleBrowser } = await handleCheckHardwareCompatibility();
             const canRunLocally = hasCompatibleHardware && hasCompatibleBrowser;
             if (canRunLocally) {
-                await waitAndClickInput();
+                await closeModal();
+                onToggleAssistant(inputValue);
                 void handleSettingChange?.();
-                assistantInputRefManager.composerSpotlight.get(composerID).current?.showSpotlight();
                 return;
             }
 
             onDisplayedComposerSpotlight();
             closeSettingModal();
 
-            try {
-                const modalType = (() => {
-                    if (!hasCompatibleBrowser) {
-                        return 'incompatibleBrowser';
-                    }
-                    if (!hasCompatibleHardware) {
-                        return 'incompatibleHardware';
-                    }
-                    throw new Error('No modal type found');
-                })();
-                await displayAssistantModalPromise(modalType);
-            } catch (e) {
-                // No setting update needed, let's close the assistant
-                closeAssistant(composerID);
+            if (!canRunLocally) {
+                if (!hasCompatibleBrowser) {
+                    displayAssistantModal('incompatibleBrowser');
+                } else {
+                    displayAssistantModal('incompatibleHardware');
+                }
             }
         }
     };
 
     const handleCancel = () => {
-        closeAssistant(composerID, true);
         closeSettingModal();
     };
 
     const PrivacyLink = (
-        <Href key="privacy-link" href={getStaticURL('/blog/proton-scribe-writing-assistant')}>{
-            // translator: full sentence => <Learn more> about Proton's writing assistant`
-            c('Link').t`Learn more`
-        }</Href>
+        <Href key="privacy-link" href={getStaticURL('/blog/proton-scribe-writing-assistant')}>
+            {
+                // translator: full sentence => Learn more about Proton's writing assistant`
+                c('Info').t`Learn more about ${BRAND_NAME}'s writing assistant`
+            }
+        </Href>
     );
 
     return (
@@ -145,45 +131,69 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
                 </>
             }
         >
-            <div className="flex flex-column flex-nowrap gap-2 mt-4">
-                <RadioGroup<AI_ASSISTANT_ACCESS>
-                    name={`assistant-setting-${composerID}`}
-                    value={inputValue}
-                    className="flex-nowrap border-bottom border-weak pb-2 radio--ontop"
-                    disableChange={loading}
-                    onChange={(value) => {
-                        setInputValue(value);
-                    }}
-                    options={[
-                        {
-                            value: CLIENT_ONLY,
-                            label: (
-                                <div>
-                                    <h2 className="text-rg">{c('Assistant option').t`Run locally`}</h2>
-                                    <p className="m-0 mt-1 color-weak">{c('Assistant option')
-                                        .t`Requires a one-time download and compatible hardware.`}</p>
-                                </div>
-                            ),
-                        },
-                        {
-                            value: SERVER_ONLY,
-                            label: (
-                                <div>
-                                    <h2 className="text-rg">{c('Assistant option').t`Run on servers`}</h2>
-                                    <p className="m-0 mt-1 color-weak">{c('Assistant option')
-                                        .t`Fast and secure. No logs are kept.`}</p>
-                                </div>
-                            ),
-                        },
-                    ]}
-                />
+            <div className="flex flex-column flex-nowrap gap-3 my-4">
+                <Button
+                    className={clsx(
+                        'flex flex-row flex-nowrap rounded-xl',
+                        inputValue === CLIENT_ONLY && 'display-focus-visible'
+                    )}
+                    disabled={loading}
+                    aria-pressed={inputValue === CLIENT_ONLY}
+                    shape="outline"
+                    color={inputValue === CLIENT_ONLY ? 'norm' : 'weak'}
+                    onClick={() => setInputValue(CLIENT_ONLY)}
+                    id={`assistant-setting-${composerID}`}
+                >
+                    <span className="shrink-0 flex">
+                        <img src={desktopImg} alt="" className="m-auto" />
+                    </span>
+                    <span className="flex-1 text-left my-1 pl-3 pr-2">
+                        <span>{c('Assistant option').t`Run on device`}</span>
+                        <span className="block m-0 mt-1 color-weak text-sm">
+                            {c('Assistant option')
+                                .t`Data stay on your device but requires a one-time download and compatible hardware`}
+                        </span>
+                    </span>
+                    <span
+                        className={clsx(
+                            'shrink-0 my-auto',
+                            inputValue === CLIENT_ONLY ? 'color-primary' : 'visibility-hidden'
+                        )}
+                    >
+                        <Icon name="checkmark" />
+                    </span>
+                </Button>
+                <Button
+                    className={clsx(
+                        'flex flex-row flex-nowrap rounded-xl',
+                        inputValue === SERVER_ONLY && 'display-focus-visible'
+                    )}
+                    disabled={loading}
+                    aria-pressed={inputValue === SERVER_ONLY}
+                    shape="outline"
+                    color={inputValue === SERVER_ONLY ? 'norm' : 'weak'}
+                    onClick={() => setInputValue(SERVER_ONLY)}
+                    id={`assistant-setting-${composerID}`}
+                >
+                    <span className="shrink-0 flex">
+                        <img src={serverImg} alt="" className="m-auto" />
+                    </span>
+                    <span className="flex-1 text-left my-1 pl-3 pr-2">
+                        <span>{c('Assistant option').t`Run on servers`}</span>
+                        <span className="block m-0 mt-1 color-weak text-sm">{c('Assistant option')
+                            .t`Fast and secure. No logs are kept.`}</span>
+                    </span>
+                    <span
+                        className={clsx(
+                            'shrink-0 my-auto',
+                            inputValue === SERVER_ONLY ? 'color-primary' : 'visibility-hidden'
+                        )}
+                    >
+                        <Icon name="checkmark" />
+                    </span>
+                </Button>
             </div>
-            <p className="m-0 color-weak">
-                {
-                    // translator: full sentence => <Learn more> about Proton's writing assistant`
-                    c('Info').jt`${PrivacyLink} about ${BRAND_NAME}'s writing assistant`
-                }{' '}
-            </p>
+            <p className="my-2 color-weak text-center">{PrivacyLink}</p>
         </ComposerInnerModal>
     );
 };

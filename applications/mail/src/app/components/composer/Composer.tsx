@@ -1,11 +1,12 @@
 import type { DragEvent, Ref, RefObject } from 'react';
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
-import { getIsAssistantOpened } from '@proton/llm/lib';
+import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
+import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -226,10 +227,15 @@ const Composer = (
     const isAssistantOpenedInComposer = getIsAssistantOpened(openedAssistants, composerID);
 
     // Set manual to false when you want to open/close the assistant without setting the localstorage value
-    const handleToggleAssistant = (manual = true) => {
+    const handleToggleAssistant = (manual = true, aiFlag = userSettings.AIAssistantFlags) => {
         if (isAssistantOpenedInComposer) {
             closeAssistant(composerID, manual);
         } else {
+            if (aiFlag === AI_ASSISTANT_ACCESS.UNSET) {
+                setInnerModal(ComposerInnerModalStates.AssistantSettings);
+                return;
+            }
+
             // When in local mode, we can only run one prompt at a time. It's better
             // to restrict the UI to one composer at a time. When you try opening
             // one, we will force close the other one you got
@@ -247,6 +253,11 @@ const Composer = (
     // open assistant by default if it was opened last time
     useEffect(() => {
         if (getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)) {
+            if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
+                setInnerModal(ComposerInnerModalStates.AssistantSettings);
+                return;
+            }
+
             openAssistant(composerID);
 
             // Start initializing the Assistant when opening it if able to
@@ -303,7 +314,8 @@ const Composer = (
 
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
         const cleanedText = sanitizeContentToInsert(textToInsert, metadata.isPlainText);
-        const newBody = insertTextBeforeContent(modelMessage, cleanedText, mailSettings);
+        const needsSeparator = !!removeLineBreaks(getContentBeforeBlockquote());
+        const newBody = insertTextBeforeContent(modelMessage, cleanedText, mailSettings, needsSeparator);
 
         // Update the content in the composer
         handleChangeContent(newBody, true);
@@ -335,6 +347,10 @@ const Composer = (
         setSelectedText('');
     };
 
+    const isAssistantExpanded = useMemo(() => {
+        return getHasAssistantStatus(openedAssistants, composerID, OpenedAssistantStatus.EXPANDED);
+    }, [composerID, openedAssistants]);
+
     return (
         <div
             className="composer-container flex flex-column flex-1 relative w-full"
@@ -355,25 +371,10 @@ const Composer = (
                 handleDelete={handleDelete}
                 handleSendAnyway={handleSendAnyway}
                 handleCancelSend={handleCancelSend}
+                handleToggleAssistant={(aiFlag) => handleToggleAssistant(true, aiFlag)}
                 composerID={composerID}
             />
             <div className="composer-blur-container flex flex-column flex-1 max-w-full">
-                {isAssistantOpenedInComposer && (
-                    <ComposerAssistant
-                        onUseGeneratedText={handleInsertGeneratedTextInEditor}
-                        onUseRefinedText={handleSetEditorSelection}
-                        assistantID={composerID}
-                        composerContentRef={composerContentRef}
-                        composerContainerRef={composerContainerRef}
-                        composerMetaRef={composerMetaRef}
-                        selectedText={selectedText}
-                        getContentBeforeBlockquote={getContentBeforeBlockquote}
-                        setContentBeforeBlockquote={setContentBeforeBlockquote}
-                        setInnerModal={setInnerModal}
-                        recipients={getPublicRecipients(modelMessage?.data)}
-                        sender={getSender(modelMessage?.data)}
-                    />
-                )}
                 <div
                     ref={bodyRef}
                     className="composer-body-container flex flex-column flex-nowrap flex-1 max-w-full mt-2"
@@ -389,7 +390,24 @@ const Composer = (
                         onChangeContent={handleChangeContent}
                         onEditExpiration={handleExpiration}
                         ref={composerMetaRef}
+                        isInert={isAssistantExpanded}
                     />
+                    {isAssistantOpenedInComposer && (
+                        <ComposerAssistant
+                            assistantID={composerID}
+                            getContentBeforeBlockquote={getContentBeforeBlockquote}
+                            setContentBeforeBlockquote={setContentBeforeBlockquote}
+                            composerSelectedText={selectedText}
+                            composerContentRef={composerContentRef}
+                            composerContainerRef={composerContainerRef}
+                            composerMetaRef={composerMetaRef}
+                            setInnerModal={setInnerModal}
+                            recipients={getPublicRecipients(modelMessage?.data)}
+                            sender={getSender(modelMessage?.data)}
+                            onUseGeneratedText={handleInsertGeneratedTextInEditor}
+                            onUseRefinedText={handleSetEditorSelection}
+                        />
+                    )}
                     <ComposerContent
                         message={modelMessage}
                         disabled={opening}
@@ -407,6 +425,7 @@ const Composer = (
                         ref={composerContentRef}
                         onKeyUp={handleEditorSelection}
                         onMouseUp={handleEditorSelection}
+                        isInert={isAssistantExpanded}
                     />
                 </div>
                 <ComposerActions
@@ -433,6 +452,7 @@ const Composer = (
                     canScheduleSend={canScheduleSend}
                     showAssistantButton={canShowAssistant}
                     onToggleAssistant={handleToggleAssistant}
+                    isInert={isAssistantExpanded}
                 />
             </div>
             {waitBeforeScheduleModal}

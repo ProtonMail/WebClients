@@ -40,7 +40,10 @@ export const useAssistantLocal = ({
     commonState,
     openedAssistantsState,
     active,
-}: Props): Omit<AssistantContextType, 'getIsStickyAssistant'> => {
+}: Props): Omit<
+    AssistantContextType,
+    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors'
+> => {
     const api = useApi();
     const { createNotification } = useNotifications();
 
@@ -56,6 +59,7 @@ export const useAssistantLocal = ({
             downloadModelSize,
             downloadPaused,
             downloadReceivedBytes,
+            isCheckingCache,
             isModelDownloaded,
             isModelDownloading,
             isModelLoadedOnGPU,
@@ -73,6 +77,8 @@ export const useAssistantLocal = ({
         isModelLoadingOnGPU: false,
         // ref to know if the user downloaded the model in this session
         userDownloadedModel: false,
+        // Value used to know when we are checking for model files in cache
+        isCheckingCache: false,
     });
 
     const generatedTokensNumber = useRef(0);
@@ -105,6 +111,7 @@ export const useAssistantLocal = ({
         getRunningActionFromAssistantID,
         cleanRunningActions,
         resetResolvers,
+        runningActionsRef,
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
     } = useRunningActions({ addSpecificError });
 
@@ -115,11 +122,29 @@ export const useAssistantLocal = ({
             const handleGetAssistantModels = () => {
                 assistantConfigPromiseRef.current = new Promise((resolve, reject) => {
                     void queryAssistantModels(api)
-                        .then((models) => {
+                        .then(async (models) => {
                             const config = buildMLCConfig(models);
                             if (config) {
                                 assistantConfigRef.current = config;
+
+                                if (llmManager.current) {
+                                    // Check if user has all needed files in cache, so that we can set the state and avoid
+                                    // going through the download phase when it's not needed during init
+                                    setLocalState((localState) => ({
+                                        ...localState,
+                                        isCheckingCache: true,
+                                    }));
+                                    await llmManager.current.isDownloaded(config).then((isDownloaded) => {
+                                        setLocalState((localState) => ({
+                                            ...localState,
+                                            isModelDownloading: false,
+                                            isModelDownloaded: isDownloaded,
+                                            isCheckingCache: false,
+                                        }));
+                                    });
+                                }
                             }
+                            // Resolve the config promise ref so that we can proceed with init if needed
                             resolve();
                         })
                         .catch(reject);
@@ -262,13 +287,6 @@ export const useAssistantLocal = ({
              * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
              * 2 - Then we can load the model on the GPU if not loaded yet and not loading at the moment
              */
-            const {
-                isModelDownloaded,
-                isModelDownloading,
-                isModelLoadedOnGPU,
-                isModelLoadingOnGPU,
-                userDownloadedModel,
-            } = localStateRef.current;
 
             // Use try catch in case one of the steps fails, so that we don't run the next step
             try {
@@ -279,9 +297,20 @@ export const useAssistantLocal = ({
                     await assistantConfigPromiseRef.current;
                 }
 
+                const {
+                    isModelDownloaded,
+                    isModelDownloading,
+                    isModelLoadedOnGPU,
+                    isModelLoadingOnGPU,
+                    userDownloadedModel,
+                } = localStateRef.current;
+
                 if (!isModelDownloaded && !isModelDownloading) {
                     completedDownload = await downloadModel();
+                } else if (isModelDownloaded) {
+                    completedDownload = true;
                 }
+
                 if (completedDownload && !isModelLoadedOnGPU && !isModelLoadingOnGPU) {
                     await loadModelOnGPU();
                 }
@@ -379,8 +408,13 @@ export const useAssistantLocal = ({
                         generatedTokensNumber.current++;
                         const isHarmful = details?.harmful;
 
+                        // Used to prevent adding additional tokens that we receive after cancelling a running action
+                        const isRunningAction = assistantID in runningActionsRef.current;
+
                         if (!isHarmful) {
-                            callback(fulltext);
+                            if (isRunningAction) {
+                                callback(fulltext);
+                            }
                         } else {
                             promptRejectedOnce = true;
                             cleanRunningActions(assistantID);
@@ -513,6 +547,7 @@ export const useAssistantLocal = ({
         hasCompatibleBrowser,
         hasCompatibleHardware,
         initAssistant,
+        isCheckingCache,
         isModelDownloaded,
         isModelDownloading,
         isModelLoadedOnGPU,
@@ -567,5 +602,6 @@ function useRunningActions({ addSpecificError }: UseRunningActionsProps) {
         getRunningActionFromAssistantID: (assistantID: string) => assistantID in runningActions,
         resetResolvers: () => setRunningAction({}),
         runningActions,
+        runningActionsRef,
     };
 }

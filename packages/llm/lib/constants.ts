@@ -2,6 +2,8 @@ import { APPS, APPS_CONFIGURATION, MINUTE, SECOND } from '@proton/shared/lib/con
 
 const { PROTONMAIL } = APPS;
 
+export const ASSISTANT_SERVER_THROTTLE_TIMEOUT = 100;
+
 export const UNLOAD_ASSISTANT_TIMEOUT = 15 * MINUTE;
 
 export const IFRAME_COMMUNICATION_TIMEOUT = 30 * SECOND;

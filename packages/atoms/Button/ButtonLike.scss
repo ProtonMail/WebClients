@@ -56,7 +56,8 @@
 		}
 
 		&:focus-visible,
-		&:has(*:focus-visible) {
+		&:has(*:focus-visible),
+		&.display-focus-visible {
 			border-color: var(--focus-outline);
 			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 			color: var(--button-default-text-color, inherit);

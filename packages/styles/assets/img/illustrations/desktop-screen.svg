@@ -1,0 +1,76 @@
+<svg
+    fill="none"
+    height="48"
+    viewBox="0 0 48 48"
+    width="48"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <filter id="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="5" width="14" x="17" y="38">
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+        <feGaussianBlur result="effect1_foregroundBlur_4991_30018" stdDeviation="1" />
+    </filter>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="30.5" x2="23.0593" y1="39" y2="48.0638">
+        <stop offset="0" stop-color="#d5dade" />
+        <stop offset=".474553" stop-color="#a5b3c3" />
+        <stop offset="1" stop-color="#8591a8" />
+    </linearGradient>
+    <linearGradient id="c">
+        <stop offset="0" stop-color="#fcebdc" />
+        <stop offset=".425082" stop-color="#ffb39b" />
+        <stop offset="1" stop-color="#ed7a5c" />
+    </linearGradient>
+    <linearGradient
+        id="d"
+        gradientUnits="userSpaceOnUse"
+        x1="38.1136"
+        x2="33.0094"
+        xlink:href="#c"
+        y1="39.9643"
+        y2="51.8208"
+    />
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="58.5" x2="19.1527" xlink:href="#c" y1="16" y2="55.8961" />
+    <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="40.8421" x2="6.12449" y1="7" y2="31.0649">
+        <stop offset="0" stop-color="#fff" stop-opacity=".4" />
+        <stop offset=".255564" stop-color="#fff" stop-opacity=".2" />
+        <stop offset=".55974" stop-color="#fff" stop-opacity=".6" />
+        <stop offset=".789397" stop-color="#fff" stop-opacity=".2" />
+        <stop offset="1" stop-color="#fff" stop-opacity=".4" />
+    </linearGradient>
+    <path
+        clip-rule="evenodd"
+        d="m15.25 42.5h.9101v.5h15.5801v-.5h.8798v1c0 .2761-.2239.5-.5.5h-.1201-.2597-15.5801-.1602-.2499c-.2761 0-.5-.2239-.5-.5z"
+        fill="#ec7a5c"
+        fill-rule="evenodd"
+    />
+    <path
+        d="m16.8743 38.3143c.0759-.1898.2598-.3143.4642-.3143h12.3784c.1756 0 .3384.0921.4288.2428l2.4 4c.1999.3332-.0401.7572-.4288.7572h-16.3784c-.3537 0-.5956-.3573-.4642-.6857z"
+        fill="url(#b)"
+    />
+    <path
+        d="m16.8743 38.3143c.0759-.1898.2598-.3143.4642-.3143h12.3784c.1756 0 .3384.0921.4288.2428l2.4 4c.1999.3332-.0401.7572-.4288.7572h-16.3784c-.3537 0-.5956-.3573-.4642-.6857z"
+        fill="url(#d)"
+    />
+    <path d="m25 33.75-3-.75v8h.31l.29-.5.572-5.7204c.0458-.4578.3981-.8253.8537-.8904z" fill="#8a1c1c" />
+    <path d="m23 33.75 3-.75v8h-.31l-.29-.5-.572-5.7204c-.0458-.4578-.3981-.8253-.8537-.8904z" fill="#8a1c1c" />
+    <path
+        clip-rule="evenodd"
+        d="m26.5 32h-5l-1 9h1.8l.6005-6.005c.0565-.5648.5318-.995 1.0995-.995s1.043.4302 1.0995.995l.6005 6.005h1.8z"
+        fill="#ed7a5c"
+        fill-rule="evenodd"
+    />
+    <rect fill="url(#e)" height="28" rx="2" width="44" x="2" y="5" />
+    <rect fill="#fff" height="1" rx=".5" width="1" x="43" y="30" />
+    <rect fill="#ed7a5c" height="1" rx=".5" width="1" x="41" y="30" />
+    <path
+        d="m4 8c0-.55228.44772-1 1-1h38c.5523 0 1 .44772 1 1v19c0 .5523-.4477 1-1 1h-38c-.55229 0-1-.4477-1-1z"
+        fill="url(#f)"
+    />
+    <path
+        d="m4.5 8c0-.27614.22386-.5.5-.5h38c.2761 0 .5.22386.5.5v19c0 .2761-.2239.5-.5.5h-38c-.27614 0-.5-.2239-.5-.5z"
+        stroke="#fff"
+        stroke-opacity=".2"
+    />
+    <g filter="url(#a)"><ellipse cx="24" cy="40.5" fill="#8a1c1c" fill-opacity=".5" rx="5" ry=".5" /></g>
+</svg>

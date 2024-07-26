@@ -65,6 +65,7 @@ interface Props {
     syncInProgress: boolean;
     showAssistantButton: boolean;
     onToggleAssistant: () => void;
+    isInert: boolean;
 }
 
 const ComposerActions = ({
@@ -91,6 +92,7 @@ const ComposerActions = ({
     canScheduleSend,
     showAssistantButton,
     onToggleAssistant,
+    isInert,
 }: Props) => {
     const dispatch = useMailDispatch();
 
@@ -178,6 +180,8 @@ const ComposerActions = ({
             data-testid="composer:footer"
             className={clsx(['composer-actions shrink-0 flex max-w-full', className])}
             onClick={addressesBlurRef.current}
+            // @ts-ignore
+            inert={isInert ? '' : undefined}
         >
             <div className="flex flex-row-reverse self-center w-full ml-2 mr-6 pl-5 pr-1 mb-4">
                 <ComposerScheduleSendSpotlight
