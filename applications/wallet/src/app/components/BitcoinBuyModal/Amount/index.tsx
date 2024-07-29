@@ -271,7 +271,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                             isGroupElement
                             label={c('bitcoin buy').t`You receive`}
                             readOnly
-                            value={selectedQuote?.BitcoinAmount}
+                            value={selectedQuote?.BitcoinAmount && `${selectedQuote?.BitcoinAmount} BTC`}
                             disabled={loadingQuotes}
                             suffix={
                                 (availableProviders.length || !loadingQuotes) && (
