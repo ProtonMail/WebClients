@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
-import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -63,7 +63,7 @@ export const AutofillOTP: FC<Props> = ({ hostname, item }) => {
                     onClick={() => {
                         if (otp?.token) {
                             forwardMessage({
-                                type: IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
+                                type: IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
                                 payload: { code: otp.token },
                             });
                             close();

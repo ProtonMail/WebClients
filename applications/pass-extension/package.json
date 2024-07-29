@@ -23,8 +23,8 @@
         "start": "yarn clean && yarn config:dev && RESUME_FALLBACK=true node ./tools/dev-server.js",
         "start:prod": "yarn clean && yarn run config && node ./tools/dev-server.js",
         "start:reload": "cross-env RUNTIME_RELOAD=true sh -c 'yarn start'",
-        "test": "jest",
-        "test:ci": "jest --ci --coverage --passWithNoTests",
+        "test": "jest --coverage",
+        "test:ci": "jest --coverage --runInBand --ci",
         "test:watch": "jest --watch"
     },
     "dependencies": {

@@ -1,7 +1,6 @@
-export type SafeLoginItem = {
-    name: string;
-    userIdentifier: string;
-    shareId: string;
-    itemId: string;
-    url?: string;
-};
+import type { UniqueItem } from '@proton/pass/types/data';
+
+export type ItemPreview = UniqueItem & { name: string };
+
+export type LoginItemPreview = ItemPreview & { userIdentifier: string; url?: string };
+export type IdentityItemPreview = ItemPreview & { fullName?: string };

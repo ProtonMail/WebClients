@@ -5,7 +5,7 @@ import {
     useRegisterMessageHandler,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import type { NotificationActions } from 'proton-pass-extension/app/content/types';
-import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsChildren } from '@proton/components/containers';
@@ -25,7 +25,7 @@ export const Notification: FC = () => {
     const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
     const loading = state === null || clientBusy(appState.status);
 
-    useRegisterMessageHandler(IFrameMessageType.NOTIFICATION_ACTION, ({ payload }) => setState(payload));
+    useRegisterMessageHandler(IFramePortMessageType.NOTIFICATION_ACTION, ({ payload }) => setState(payload));
 
     useEffect(() => {
         if (!visible) setState(null);
