@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useFormik } from 'formik';
 
@@ -10,26 +10,34 @@ import {
     useGetUser,
     useGroups,
     useKTVerifier,
+    useMembers,
     useNotifications,
 } from '@proton/components';
-import { createGroup } from '@proton/shared/lib/api/groups';
+import { useLoading } from '@proton/hooks';
+import { createGroup, deleteGroup, editGroup } from '@proton/shared/lib/api/groups';
+import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import type { Group, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { addSubdomain } from './helpers';
 import type { GroupsManagementReturn } from './types';
+import useAddGroupMember from './useAddGroupMember';
+import useGroupMembers from './useGroupMembers';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
+    const [members] = useMembers();
     const [groups, loadingGroups] = useGroups();
+    const [loadingGroupMembers, withLoadingGroupMembers] = useLoading();
     const api = useApi();
     const { createNotification } = useNotifications();
     const [selectedGroup, setSelectedGroup] = useState<Group | undefined>(undefined);
     const [uiState, setUiState] = useState<GROUPS_STATE>('empty');
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const { call } = useEventManager();
+    const addGroupMember = useAddGroupMember();
 
     const getSuggestedAddressDomainName = () => {
         if (!organization) {
@@ -58,6 +66,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const getOrganizationKey = useGetOrganizationKey();
 
+    const { fetchGroupMembers, groupMembers, handleReloadGroupMembers, handleDeleteGroupMember } = useGroupMembers();
+
     const form = useFormik({
         initialValues: {
             name: '',
@@ -71,11 +81,29 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         validateOnMount: false,
     });
 
-    if (!organization || loadingGroups || !groups) {
+    useEffect(() => {
+        if (selectedGroup === undefined || selectedGroup.ID === 'new') {
+            return;
+        }
+
+        void withLoadingGroupMembers(fetchGroupMembers(selectedGroup.ID));
+    }, [selectedGroup]);
+
+    if (!organization || loadingGroups || !groups || !members) {
         return undefined;
     }
 
     const { resetForm, values: formValues } = form;
+
+    const onDeleteGroup = async () => {
+        if (selectedGroup !== undefined) {
+            await api(deleteGroup(selectedGroup.ID));
+            await call();
+            resetForm();
+            setSelectedGroup(undefined);
+            setUiState('empty');
+        }
+    };
 
     const handleSaveGroup = async () => {
         if (selectedGroup === undefined) {
@@ -87,6 +115,16 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             await addSubdomain(api, selectedDomain);
         }
 
+        // Check address availablity if address changed
+        if (selectedGroup?.Address.Email !== `${formValues.address}@${selectedDomain}`) {
+            await api(
+                checkMemberAddressAvailability({
+                    Local: formValues.address,
+                    Domain: selectedDomain,
+                })
+            );
+        }
+
         const groupData = {
             Name: formValues.name,
             Email: `${formValues.address}@${selectedDomain}`,
@@ -95,7 +133,9 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             Flags: GroupFlags.None,
         };
 
-        const { Group } = await api(createGroup(groupData));
+        const { Group } = await api(
+            uiState === 'new' ? createGroup(groupData) : editGroup(selectedGroup.ID, { ...groupData })
+        );
         await call();
 
         const cachedOrganizationKey = await getOrganizationKey();
@@ -105,12 +145,17 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             throw new Error('Missing organization private key');
         }
 
-        Group.Address.Keys = await createGroupAddressKey({
-            api,
-            organizationKey: cachedOrganizationKey,
-            address: Group.Address,
-            keyTransparencyVerify,
-        });
+        if (uiState === 'new') {
+            Group.Address.Keys = await createGroupAddressKey({
+                api,
+                organizationKey: cachedOrganizationKey,
+                address: Group.Address,
+                keyTransparencyVerify,
+            });
+        }
+
+        const memberEmail = formValues.members;
+        await addGroupMember(Group, memberEmail);
 
         resetForm();
         setUiState('view');
@@ -121,12 +166,18 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     return {
         groups,
+        members,
         selectedGroup,
         uiState,
         form,
+        onDeleteGroup,
         handleSaveGroup,
         setSelectedGroup,
         setUiState,
+        groupMembers,
+        loadingGroupMembers,
+        handleReloadGroupMembers,
+        handleDeleteGroupMember,
         domainData,
         getSuggestedAddressDomainName,
         getSuggestedAddressDomainPart,

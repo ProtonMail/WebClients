@@ -11,6 +11,18 @@ export enum GroupFlags {
     None = 0,
 }
 
+export enum GroupMemberType {
+    Internal = 0,
+    External = 1,
+}
+
+export interface ProxyInstances {
+    PgpVersion: number;
+    GroupAddressKeyFingerprint: string;
+    GroupMemberAddressKeyFingerprint: string;
+    ProxyParam: string;
+}
+
 export interface Group {
     ID: string;
     Name: string;
