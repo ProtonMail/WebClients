@@ -1,10 +1,12 @@
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Panel, PanelHeader } from '@proton/atoms/Panel';
-import { Copy } from '@proton/components/components';
+import { Copy, Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { Group } from '@proton/shared/lib/interfaces';
 
+import GroupMemberList from './GroupMemberList';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
@@ -12,7 +14,7 @@ interface Props {
     groupData: Group;
 }
 
-const ViewGroup = ({ groupsManagement: { selectedGroup }, groupData }: Props) => {
+const ViewGroup = ({ groupsManagement: { setUiState, selectedGroup, groupMembers }, groupData }: Props) => {
     const { createNotification } = useNotifications();
 
     const handleCopy = () => {
@@ -32,7 +34,12 @@ const ViewGroup = ({ groupsManagement: { selectedGroup }, groupData }: Props) =>
                     title=""
                     subtitle=""
                     actions={(() => {
-                        return [];
+                        return [
+                            <Button className="flex items-center" key="button-edit" onClick={() => setUiState('edit')}>
+                                <Icon className="shrink-0 mr-2" name="pencil" />
+                                <span>{c('Action').t`Edit group`}</span>
+                            </Button>,
+                        ];
                     })()}
                 />
             }
@@ -67,6 +74,7 @@ const ViewGroup = ({ groupsManagement: { selectedGroup }, groupData }: Props) =>
                             memberCount
                         )}
                     </p>
+                    <GroupMemberList groupMembers={groupMembers}></GroupMemberList>
                 </div>
             </div>
         </Panel>
