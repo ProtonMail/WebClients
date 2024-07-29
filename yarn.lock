@@ -6537,6 +6537,7 @@ __metadata:
     "@proton/sieve": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6551,7 +6552,6 @@ __metadata:
     "@types/react-router": "npm:^5.1.20"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/react-virtualized": "npm:^9.21.30"
-    "@unleash/proxy-client-react": "npm:^4.2.4"
     "@webgpu/types": "npm:^0.1.44"
     babel-jest: "npm:^29.7.0"
     babel-plugin-transform-require-context: "npm:^0.1.1"
@@ -6587,7 +6587,6 @@ __metadata:
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.7"
     typescript: "npm:^5.5.3"
-    unleash-proxy-client: "npm:^3.4.0"
   peerDependencies:
     "@proton/cross-storage": "*"
     "@proton/crypto": "*"
@@ -7130,11 +7129,11 @@ __metadata:
   resolution: "@proton/redux-shared-store-types@workspace:packages/redux-shared-store-types"
   dependencies:
     "@proton/shared": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.6"
     "@types/history": "npm:^4.7.11"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.1.2"
-    unleash-proxy-client: "npm:^3.4.0"
   languageName: unknown
   linkType: soft
 
@@ -7324,6 +7323,15 @@ __metadata:
     prettier: "npm:^3.3.3"
     proxy-agent: "npm:^6.4.0"
     typescript: "npm:^5.5.3"
+  languageName: unknown
+  linkType: soft
+
+"@proton/unleash@workspace:^, @proton/unleash@workspace:packages/unleash":
+  version: 0.0.0-use.local
+  resolution: "@proton/unleash@workspace:packages/unleash"
+  dependencies:
+    "@unleash/proxy-client-react": "npm:^4.2.4"
+    unleash-proxy-client: "npm:^3.4.0"
   languageName: unknown
   linkType: soft
 
@@ -33050,6 +33058,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^15.0.7"
@@ -33146,6 +33155,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@testing-library/jest-dom": "npm:^6.4.6"
@@ -33268,6 +33278,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.6"
     "@types/jest": "npm:^29.5.12"
@@ -33333,6 +33344,7 @@ __metadata:
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.6"
     "@testing-library/react": "npm:^15.0.7"
@@ -33432,6 +33444,7 @@ __metadata:
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"

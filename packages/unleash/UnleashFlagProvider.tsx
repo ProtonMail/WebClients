@@ -1,15 +1,11 @@
 import type { ReactNode } from 'react';
-import { useRef } from 'react';
-import { useEffect } from 'react';
 
 import FlagProvider from '@unleash/proxy-client-react';
-import { useUnleashClient } from '@unleash/proxy-client-react';
 import type { IConfig, UnleashClient } from 'unleash-proxy-client';
 
 import { createPromise } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import useApi from '../../hooks/useApi';
 import ProtonUnleashStorageProvider from './ProtonUnleashStorageProvider';
 
 // Just something dummy to have a valid domain because the library does new URL
@@ -29,10 +25,6 @@ export const createCustomFetch =
         }
         throw new Error('not supported');
     };
-
-interface Props {
-    children: ReactNode;
-}
 
 const storageProvider = new ProtonUnleashStorageProvider();
 
@@ -92,39 +84,12 @@ export const createUnleashReadyPromise = (client: UnleashClient) => {
     };
 };
 
-/**
- * useFlagsReady
- *
- * @description
- * This hooks is a custom override of `useFlagsStatus` function from unleash React SDK.
- * Unleash React client `useFlagsStatus` hook:   https://github.com/Unleash/proxy-client-react/blob/main/src/useFlagsStatus.ts
- * Unleash React client context Provider:        https://github.com/Unleash/proxy-client-react/blob/main/src/FlagProvider.tsx
- *
- * It returns `flagsReady` and `flagsError` based on the `ready` and `error` Unleash JS client event emitter.
- * JS client: https://github.com/Unleash/unleash-proxy-client-js/blob/main/src/index.ts#L61
- *
- * Error event has an issue in the react client so in the meantime this stands as our own hotfix
- * https://github.com/Unleash/proxy-client-react/pull/127
- *
- * @returns {boolean}
- */
-export const useFlagsReady = () => {
-    const client = useUnleashClient();
-    const ref = useRef<ReturnType<typeof createUnleashReadyPromise> | null>(null);
-    if (ref.current === null) {
-        ref.current = createUnleashReadyPromise(client);
-    }
-    useEffect(() => {
-        return () => {
-            ref.current?.unsubscribe();
-        };
-    }, []);
+interface Props {
+    children: ReactNode;
+    api: Api;
+}
 
-    return ref.current?.promise!;
-};
-
-const UnleashFlagProvider = ({ children }: Props) => {
-    const api = useApi();
+const UnleashFlagProvider = ({ children, api }: Props) => {
     const unleashConfig: IConfig = getUnleashConfig({ fetch: createCustomFetch(api) });
     return <FlagProvider config={unleashConfig}>{children}</FlagProvider>;
 };

@@ -16,7 +16,6 @@ import {
     StandardErrorPage,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
-    UnleashFlagProvider,
 } from '@proton/components';
 import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
@@ -71,6 +70,7 @@ import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { UnleashFlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
@@ -669,7 +669,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                         loader={loader}
                     >
                         <UnAuthenticatedApiProvider loader={loader}>
-                            <UnleashFlagProvider>
+                            <UnleashFlagProvider api={api}>
                                 <PublicAppSetup loader={loader}>
                                     <PaymentSwitcher loader={loader}>
                                         <ForceRefreshContext.Provider value={refresh}>
