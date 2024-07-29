@@ -1,8 +1,11 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { Avatar, CircleLoader } from '@proton/atoms';
-import { useContactEmails, useUser } from '@proton/components/hooks';
+import { useContactEmails, useSortedList, useUser } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -113,6 +116,19 @@ export const DirectSharingListing = ({
 
     const displayName = user.DisplayName || user.Name;
 
+    const membersWithName = useMemo(
+        () =>
+            members.map((member) => {
+                const { contactName, contactEmail } = getContactNameAndEmail(member.email, contactEmails);
+                return { member, contactName, contactEmail };
+            }),
+        [members, contactEmails]
+    );
+    const { sortedList: sortedMembersWithName } = useSortedList(membersWithName, {
+        key: 'contactName',
+        direction: SORT_DIRECTION.ASC,
+    });
+
     if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
@@ -135,7 +151,10 @@ export const DirectSharingListing = ({
 
             {volumeId &&
                 externalInvitations.map((externalInvitation) => {
-                    const { contactName, contactEmail } = getContactNameAndEmail(externalInvitation.inviteeEmail);
+                    const { contactName, contactEmail } = getContactNameAndEmail(
+                        externalInvitation.inviteeEmail,
+                        contactEmails
+                    );
                     return (
                         <DirectSharingListInvitation
                             key={externalInvitation.externalInvitationId}
@@ -174,8 +193,7 @@ export const DirectSharingListing = ({
                     );
                 })}
 
-            {members.map((member) => {
-                const { contactName, contactEmail } = getContactNameAndEmail(member.email, contactEmails);
+            {sortedMembersWithName.map(({ member, contactName, contactEmail }) => {
                 return (
                     <MemberItem
                         key={member.memberId}
