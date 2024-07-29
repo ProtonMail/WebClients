@@ -1,6 +1,6 @@
 export { EVENTS } from 'unleash-proxy-client';
-export { UnleashClient, IStorageProvider } from '@unleash/proxy-client-react';
-export { FeatureFlag } from './UnleashFeatureFlags';
+export { FlagProvider, UnleashClient, type IStorageProvider, FlagContext } from '@unleash/proxy-client-react';
+export type { FeatureFlag } from './UnleashFeatureFlags';
 export {
     default as UnleashFlagProvider,
     createUnleashReadyPromise,

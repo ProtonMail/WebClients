@@ -2,9 +2,9 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
-import { useFlag } from '@proton/components/containers';
 import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
+import { useFlag } from '@proton/unleash';
 
 import SelectAllLabelModal from 'proton-mail/components/list/select-all/modals/SelectAllLabelModal';
 import { getSortedChanges } from 'proton-mail/helpers/labels';

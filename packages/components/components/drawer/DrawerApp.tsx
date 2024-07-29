@@ -3,13 +3,13 @@ import { useEffect, useLayoutEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useFlag } from '@proton/components';
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
 import DrawerSettingsView from '@proton/components/components/drawer/views/DrawerSettingsView';
 import { ErrorBoundary, StandardErrorPage } from '@proton/components/containers';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

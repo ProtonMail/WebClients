@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 import type { ReadableStream } from 'web-streams-polyfill';
 
-import { useFlag } from '@proton/components/containers';
 import { useApi } from '@proton/components/hooks';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import type {
@@ -9,6 +8,7 @@ import type {
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
+import { useFlag } from '@proton/unleash';
 
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';

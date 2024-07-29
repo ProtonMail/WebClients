@@ -1,4 +1,4 @@
-import { useFlag } from '@proton/components/containers';
+import { useFlag } from '@proton/unleash';
 
 export const useDriveSharingFlags = () => {
     const driveSharingDisabled = useFlag('DriveSharingDisabled');

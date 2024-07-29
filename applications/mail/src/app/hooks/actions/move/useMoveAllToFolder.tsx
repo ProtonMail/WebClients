@@ -2,11 +2,11 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
-import { useFlag } from '@proton/components/containers';
 import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { useGetLabels } from '@proton/components/hooks/useCategories';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash';
 
 import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
 import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';

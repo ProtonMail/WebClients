@@ -7,6 +7,7 @@ import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/sh
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { useFlag } from '@proton/unleash';
 
 import { Info } from '../../components';
 import { useApi, useEventManager, useFeature, useMailSettings, useNotifications } from '../../hooks';
@@ -16,7 +17,6 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
-import { useFlag } from '../unleash';
 import AlmostAllMailToggle from './AlmostAllMailToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';

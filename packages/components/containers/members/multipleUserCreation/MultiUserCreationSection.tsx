@@ -8,10 +8,10 @@ import { Tooltip } from '@proton/components/components/tooltip';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
+import { useFlag } from '@proton/unleash';
 
 import { useCustomDomains, useMembers } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
-import useFlag from '../../unleash/useFlag';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
 import type { CsvConfig } from './csv';

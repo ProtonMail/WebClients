@@ -8,7 +8,6 @@ import {
     SettingsLink,
     SettingsSection,
     useAppTitle,
-    useFlag,
     useModalState,
     useSubscription,
     useUser,
@@ -18,6 +17,7 @@ import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/c
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import { useCancelSubscriptionFlow } from '../cancelSubscription';
 import CancelConfirmationModal from './CancelConfirmationModal';

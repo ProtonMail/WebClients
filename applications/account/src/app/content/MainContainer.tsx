@@ -21,7 +21,6 @@ import {
     useAddresses,
     useDeviceRecovery,
     useFeatures,
-    useFlag,
     useIsDataRecoveryAvailable,
     useOrganization,
     useOrganizationTheme,
@@ -52,6 +51,7 @@ import {
     getRequiresAddressSetup,
 } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
+import { useFlag } from '@proton/unleash';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';

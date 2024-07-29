@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import type { IconSize } from '../../../components';
 import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, PassLogo, VpnLogo, WalletLogo } from '../../../components';
-import { useFlag } from '../../unleash';
 import type { AllFeatures } from '../features';
 import { getFeatureDefinitions } from '../features';
 import type { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';

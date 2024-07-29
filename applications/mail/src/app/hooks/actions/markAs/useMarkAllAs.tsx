@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
-import { useFlag } from '@proton/components/containers';
 import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { useFlag } from '@proton/unleash';
 
 import SelectAllMarkModal from 'proton-mail/components/list/select-all/modals/SelectAllMarkModal';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';

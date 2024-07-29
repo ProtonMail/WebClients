@@ -2,8 +2,6 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import FlagProvider from '@unleash/proxy-client-react';
-
 import {
     AccountSpotlightsProvider,
     AuthenticationProvider,
@@ -19,6 +17,7 @@ import EventManagerProvider from '@proton/components/containers/eventManager/Eve
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { FlagProvider } from '@proton/unleash';
 
 import * as config from '../config';
 import type { AccountStore } from '../store/store';
