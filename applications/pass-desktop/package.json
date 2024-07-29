@@ -23,7 +23,7 @@
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "yarn config:dev && electron-forge start",
         "test": "jest",
-        "test:ci": "jest --runInBand --ci --coverage=false --passWithNoTests",
+        "test:ci": "jest --coverage --runInBand --ci --passWithNoTests",
         "test:watch": "jest --watch"
     },
     "dependencies": {
