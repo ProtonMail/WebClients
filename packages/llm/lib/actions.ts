@@ -315,19 +315,19 @@ function formatPromptCustomRefine(action: CustomRefineAction): string {
 
     const turns = [
         {
-            role: 'email',
+            role: 'assistant',
             contents: oldEmail,
-        },
-        {
-            role: 'system',
-            contents: system,
         },
         {
             role: 'user',
             contents: user,
         },
         {
-            role: 'email',
+            role: 'system',
+            contents: system,
+        },
+        {
+            role: 'assistant',
             contents: newEmailStart,
         },
     ];
