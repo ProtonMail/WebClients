@@ -30,7 +30,7 @@ const IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE = [
     UploadErrorCategory.NetworkError,
 ];
 
-const REPORT_ERROR_USERS_EVERY = 10 * 60 * 1000; // 10 minutes,
+const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
 
 export default function useUploadMetrics(isPaid: boolean, metricsModule = metrics) {
     const lastErroringUserReport = useRef(0);
