@@ -9,7 +9,8 @@ import type { ElementFormatType, LexicalEditor, LexicalNode, TextFormatType } fr
 import { $createParagraphNode, $createTextNode, $insertNodes } from 'lexical'
 
 import { $createImageNode } from '../Plugins/Image/ImageNode'
-import { sendErrorMessage } from '../Utils/errorMessage'
+import { TranslatedResult } from '@proton/docs-shared'
+import { c } from 'ttag'
 
 type ParsedNode = (
   | {
@@ -379,20 +380,23 @@ function createLexicalNode(node: ParsedNode): LexicalNode {
   throw new Error(`Unknown node type`)
 }
 
-export async function $importNodesFromDocx(editor: LexicalEditor, docx: Blob | ArrayBuffer | Uint8Array) {
-  const parsedDocx: {
-    documentPart: {
-      body: {
-        children: any[]
+export async function $importNodesFromDocx(
+  editor: LexicalEditor,
+  docx: Blob | ArrayBuffer | Uint8Array,
+): Promise<TranslatedResult<void>> {
+  try {
+    const parsedDocx: {
+      documentPart: {
+        body: {
+          children: any[]
+        }
       }
-    }
-  } = await praseAsync(docx, {
-    useBase64URL: true,
-  })
+    } = await praseAsync(docx, {
+      useBase64URL: true,
+    })
 
-  await new Promise((resolve) => {
-    Promise.all(parsedDocx.documentPart.body.children.map((child) => parseChild(child, parsedDocx)))
-      .then((nodes) => {
+    await Promise.all(parsedDocx.documentPart.body.children.map((child) => parseChild(child, parsedDocx))).then(
+      (nodes) => {
         const filteredNodes = nodes.filter((node) => node !== null) as ParsedNode[]
         editor.update(
           () => {
@@ -403,8 +407,16 @@ export async function $importNodesFromDocx(editor: LexicalEditor, docx: Blob | A
             discrete: true,
           },
         )
-      })
-      .then(resolve)
-      .catch(sendErrorMessage)
-  })
+      },
+    )
+
+    return TranslatedResult.ok()
+  } catch (error) {
+    console.error('Failed to import nodes from docx', error)
+
+    return TranslatedResult.failWithTranslatedError(
+      c('Error')
+        .t`Unable to convert Word document. Is it password protected? If so, please remove the password and try again.`,
+    )
+  }
 }

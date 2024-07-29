@@ -85,15 +85,19 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     link.remove()
   }
 
-  async reportError(error: Error, errorInfo?: ErrorInfo): Promise<void> {
+  async reportError(error: Error, extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo }): Promise<void> {
     traceError(error, {
       tags: {
         'editor-to-client': true,
       },
       extra: {
-        errorInfo,
+        errorInfo: extraInfo?.errorInfo ?? {},
       },
     })
+
+    if (extraInfo?.irrecoverable) {
+      this.docOrchestrator.editorReportingFatalError(error.message)
+    }
   }
 
   updateFrameSize(size: number): void {

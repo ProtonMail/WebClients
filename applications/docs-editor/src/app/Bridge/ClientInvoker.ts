@@ -13,6 +13,7 @@ import type {
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-core'
+import type { ErrorInfo } from 'react'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -83,8 +84,8 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('openLink', [url])
   }
 
-  async reportError(error: Error): Promise<void> {
-    return this.invokeClientMethod('reportError', [error])
+  async reportError(error: Error, extraInfo: { irrecoverable?: boolean; errorInfo?: ErrorInfo }): Promise<void> {
+    return this.invokeClientMethod('reportError', [error, extraInfo])
   }
 
   async updateFrameSize(size: number): Promise<void> {
