@@ -8,9 +8,9 @@
 /**
  * Measures specific error counts during download
  */
-export interface HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson {
+export interface HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson {
   Labels: {
-    type: "server_error" | "network_error" | "decryption_error" | "rate_limited" | "unknown";
+    type: "server_error" | "network_error" | "decryption_error" | "rate_limited" | "4xx" | "5xx" | "unknown";
     shareType: "own" | "device" | "photo" | "shared" | "shared_public";
     initiator: "download" | "preview";
   };
