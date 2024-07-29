@@ -79,11 +79,11 @@ export const getDesciptionText = (event: string): string => {
         case 'VaultUpdated':
             return c('Info').t`Vault updated`;
         case 'BreachCustomEmailCreated':
-            return c('Info').t`Custom email added`;
+            return c('Info').t`Pass Monitor - custom email created`;
         case 'BreachCustomEmailValidated':
-            return c('Info').t`Custom email validated`;
+            return c('Info').t`Pass Monitor - custom email confirmed`;
         case 'BreachCustomEmailDeleted':
-            return c('Info').t`Custom email deleted`;
+            return c('Info').t`Pass Monitor - custom email deleted`;
         default:
             return c('Info').t`Unknown event type`;
     }
@@ -132,11 +132,11 @@ export const getDescriptionTextWithLink = (event: string, vaultLink: React.JSX.E
         case 'VaultUpdated':
             return c('Info').jt`${vaultLink} updated`;
         case 'BreachCustomEmailCreated':
-            return c('Info').jt`Custom email added`;
+            return c('Info').jt`Pass Monitor - custom email created`;
         case 'BreachCustomEmailValidated':
-            return c('Info').jt`Custom email validated`;
+            return c('Info').jt`Pass Monitor - custom email confirmed`;
         case 'BreachCustomEmailDeleted':
-            return c('Info').jt`Custom email deleted`;
+            return c('Info').jt`Pass Monitor - custom email deleted`;
         default:
             return c('Info').jt`Unknown event type`;
     }
@@ -185,7 +185,7 @@ export const getEventNameText = (event: string): string => {
         case 'VaultUpdated':
             return c('Info').t`Vault Updated`;
         case 'BreachCustomEmailCreated':
-            return c('Info').t`Breach Custom Email Added`;
+            return c('Info').t`Breach Custom Email Created`;
         case 'BreachCustomEmailValidated':
             return c('Info').t`Breach Custom Email Validated`;
         case 'BreachCustomEmailDeleted':
