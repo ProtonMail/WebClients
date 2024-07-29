@@ -20,41 +20,59 @@ type AutofillState = {
     /** Number of autofillable login credentials for the current
      * tab's URL. Null if not yet calculated or invalidated */
     credentialsCount: MaybeNull<number>;
+    /** Number of identity items available for autofill */
+    identitiesCount: MaybeNull<number>;
 };
 
 export const createAutofillService = () => {
-    const state: AutofillState = { credentialsCount: null };
+    const state: AutofillState = { credentialsCount: null, identitiesCount: null };
 
     /** Retrieves and caches the count of login credentials for the
      * current tab's URL. Uses a cached value if available, otherwise
      * queries the worker for an updated count */
-    const getCredentialsCount = asyncLock(async () => {
-        if (state.credentialsCount !== null) return state.credentialsCount;
+    const getCredentialsCount = asyncLock(
+        async () =>
+            (state.credentialsCount =
+                state.credentialsCount ??
+                (await sendMessage.on(
+                    contentScriptMessage({
+                        type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
+                        payload: {},
+                    }),
+                    (res) => (res.type === 'success' ? res.items.length : 0)
+                )))
+    );
 
-        state.credentialsCount = await sendMessage.on(
-            contentScriptMessage({
-                type: WorkerMessageType.AUTOFILL_LOGIN_QUERY,
-                payload: {},
-            }),
-            (res) => (res.type === 'success' ? res.items.length : 0)
-        );
+    const getIdentitiesCount = asyncLock(
+        async () =>
+            (state.identitiesCount =
+                state.identitiesCount ??
+                (await sendMessage.on(
+                    contentScriptMessage({ type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY }),
+                    (res) => (res.type === 'success' ? res.items.length : 0)
+                )))
+    );
 
-        return state.credentialsCount;
-    });
-
-    /** Updates login form fields with current credential count. Resets
-     * `credentialsCount` if `forceSync` is true or user is not logged in. */
+    /** Synchronizes login form fields with current credential count.
+     * Resets credential and identity counts if forced or user logged out */
     const sync = withContext<(options?: { forceSync: boolean }) => Promise<void>>(async (ctx, options) => {
         const loggedIn = ctx?.getState().loggedIn ?? false;
-        if (options?.forceSync || !loggedIn) state.credentialsCount = null;
+
+        if (options?.forceSync || !loggedIn) {
+            state.credentialsCount = null;
+            state.identitiesCount = null;
+        }
 
         const trackedForms = ctx?.service.formManager.getTrackedForms();
         const loginForms = trackedForms?.filter((form) => form.formType === FormType.LOGIN) ?? [];
+        const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
 
-        if (loginForms.length > 0) {
+        if (loginForms.length) {
             const count = loggedIn ? await getCredentialsCount() : 0;
             loginForms?.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
         }
+
+        if (identityFields && loggedIn) await getIdentitiesCount();
     });
 
     const telemetry = (type: '2fa' | 'login') => {
@@ -160,8 +178,9 @@ export const createAutofillService = () => {
         autofillLogin,
         autofillOTP,
         autofillPassword,
-        promptOTP,
         getCredentialsCount,
+        getIdentitiesCount,
+        promptOTP,
         sync,
     };
 };
