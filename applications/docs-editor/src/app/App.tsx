@@ -10,6 +10,7 @@ import type {
   DocumentRoleType,
   DocsAwarenessStateChangeData,
   EditorInitializationConfig,
+  TranslatedResult,
 } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
@@ -80,7 +81,7 @@ export function App({ nonInteractiveMode = false }: Props) {
     window.parent.postMessage(EDITOR_READY_POST_MESSAGE_EVENT, BridgeOriginProvider.GetClientOrigin())
   }, [])
 
-  const setBridgeRequestHandler = useCallback(
+  const configureBridgeRequestHandler = useCallback(
     (newDocState: DocState) => {
       const requestHandler: ClientRequiresEditorMethods = {
         async receiveMessage(message: RtsMessagePayload) {
@@ -259,7 +260,7 @@ export function App({ nonInteractiveMode = false }: Props) {
       docMap.set(viewOnlyDocumentId, newDocState.getDoc())
     }
 
-    setBridgeRequestHandler(newDocState)
+    configureBridgeRequestHandler(newDocState)
 
     notifyParentEditorIsReady()
   }, [
@@ -267,7 +268,7 @@ export function App({ nonInteractiveMode = false }: Props) {
     docMap,
     notifyParentEditorIsReady,
     nonInteractiveMode,
-    setBridgeRequestHandler,
+    configureBridgeRequestHandler,
     viewOnlyDocumentId,
   ])
 
@@ -311,6 +312,22 @@ export function App({ nonInteractiveMode = false }: Props) {
     }
   }, [bridge])
 
+  const onEditorLoadResult = useCallback(
+    (result: TranslatedResult<void>) => {
+      if (result.isFailed()) {
+        void bridge.getClientInvoker().reportError(new Error(result.getTranslatedError()), { irrecoverable: true })
+        return
+      }
+
+      if (!docState) {
+        throw new Error('docState is not set')
+      }
+
+      docState.onEditorReadyToReceiveUpdates()
+    },
+    [docState, bridge],
+  )
+
   if (!initialConfig || !docState) {
     return null
   }
@@ -336,9 +353,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           hidden={editorHidden}
           editorInitializationConfig={initialConfig.editorInitializationConfig}
           nonInteractiveMode={nonInteractiveMode}
-          onEditorReadyToReceiveUpdates={() => {
-            docState.onEditorReadyToReceiveUpdates()
-          }}
+          onEditorLoadResult={onEditorLoadResult}
           onInteractionModeChange={onInteractionModeChange}
           setEditorRef={setEditorRef}
           username={initialConfig.username}
