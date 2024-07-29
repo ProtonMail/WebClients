@@ -5,7 +5,14 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { Panel, PanelHeader } from '@proton/atoms/Panel';
-import { InputFieldTwo, Option, SelectTwo, TextAreaTwo, useFormErrors } from '@proton/components/components';
+import {
+    InputFieldTwo,
+    Option,
+    SelectTwo,
+    TextAreaTwo,
+    useFormErrors,
+    useModalState,
+} from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useLoading } from '@proton/hooks';
@@ -13,7 +20,9 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { Group } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 
+import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
+import GroupMemberList from './GroupMemberList';
 import { getAddressSuggestedLocalPart } from './helpers';
 import type { GroupsManagementReturn } from './types';
 
@@ -28,6 +37,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         setUiState,
         handleSaveGroup,
         form,
+        groupMembers,
         groups,
         domainData,
         getSuggestedAddressDomainName,
@@ -36,10 +46,18 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const { resetForm, dirty, values: formValues, setFieldValue } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
     const { validator, onFormSubmit } = useFormErrors();
+    const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
     const [loading, withLoading] = useLoading();
 
     useEffect(() => {
-        setSelectedDomain(getSuggestedAddressDomainPart());
+        if (uiState === 'edit') {
+            const addressWithoutDomain = formValues.address.substring(0, formValues.address.indexOf('@'));
+            const addressDomain = formValues.address.substring(formValues.address.indexOf('@') + 1);
+            setFieldValue('address', addressWithoutDomain);
+            setSelectedDomain(addressDomain);
+        } else if (uiState === 'new') {
+            setSelectedDomain(getSuggestedAddressDomainPart());
+        }
     }, [uiState]);
 
     const onDiscardChanges = () => {
@@ -57,6 +75,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
     return (
         <>
+            {renderDiscardChangesModal && (
+                <DiscardGroupChangesPrompt onConfirm={onDiscardChanges} {...discardChangesModalProps} />
+            )}
             <Panel
                 header={
                     <PanelHeader
@@ -66,7 +87,11 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 <Button
                                     color="weak"
                                     onClick={() => {
-                                        onDiscardChanges();
+                                        if (dirty) {
+                                            setDiscardChangesModal(true);
+                                        } else {
+                                            onDiscardChanges();
+                                        }
                                     }}
                                 >
                                     {c('Action').t`Cancel`}
@@ -212,6 +237,8 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         </InputFieldStackedGroup>
                     </Form>
                 </FormikProvider>
+
+                <GroupMemberList groupMembers={groupMembers}></GroupMemberList>
             </Panel>
         </>
     );
