@@ -143,12 +143,33 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
     const [loadingWalletSubmit, withLoadingWalletSubmit] = useLoading();
 
+    const doesWalletAlreadyExist = useCallback(
+        (mnemonicStr: string, network: WasmNetwork) => {
+            const wasmWallet = new WasmWallet(network, mnemonicStr, passphrase);
+            const fingerprint = wasmWallet.getFingerprint();
+
+            return Boolean(decryptedApiWalletsData?.some((w) => w.Wallet.Fingerprint === fingerprint));
+        },
+        [decryptedApiWalletsData, passphrase]
+    );
+
     useEffect(() => {
-        if (mnemonicError) {
+        if (mnemonicError && network) {
             const result = parseMnemonic(mnemonic);
-            setMnemonicError('error' in result ? result.error : undefined);
+
+            if ('error' in result) {
+                return setMnemonicError(result.error);
+            }
+
+            const mnemonicStr = result.mnemonic.asString();
+
+            if (doesWalletAlreadyExist(mnemonicStr, network)) {
+                return setMnemonicError(c('Wallet import').t`A wallet with same fingerprint already exists`);
+            }
+
+            return setMnemonicError(undefined);
         }
-    }, [mnemonicError, mnemonic]);
+    }, [mnemonicError, mnemonic, network, doesWalletAlreadyExist]);
 
     const onWalletSubmit = async ({
         shouldAutoAddEmailAddress,
@@ -169,11 +190,18 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             return;
         }
 
+        const mnemonicStr = result.mnemonic.asString();
+        const wasmWallet = new WasmWallet(network, mnemonicStr, passphrase);
+        const fingerprint = wasmWallet.getFingerprint();
+
+        if (doesWalletAlreadyExist(mnemonicStr, network)) {
+            setMnemonicError(c('Wallet import').t`A wallet with same fingerprint already exists`);
+            return;
+        }
+
         const [primaryUserKey] = userKeys;
 
         const hasPassphrase = !!passphrase;
-
-        const mnemonicStr = result.mnemonic.asString();
         const compelledWalletName = walletName || getDefaultWalletName(isImported, decryptedApiWalletsData ?? []);
 
         // TODO: add public key support here
@@ -181,9 +209,6 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             [encryptedName, encryptedMnemonic],
             [encryptedWalletKey, walletKeySignature, decryptedWalletKey, userKeyId],
         ] = await encryptWalletData([compelledWalletName, mnemonicStr], primaryUserKey);
-
-        const wasmWallet = new WasmWallet(network, mnemonicStr, passphrase);
-        const fingerprint = wasmWallet.getFingerprint();
 
         try {
             const accounts = await getWalletAccountsToCreate({
