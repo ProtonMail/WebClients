@@ -7,12 +7,14 @@ export const sendErrorMessage = (error: unknown, errorInfo?: ErrorInfo) => {
   console.error(error, errorInfo)
   if (window.parent) {
     let errorArg: Error = error instanceof Error ? error : new Error(String(error))
+
     const message: EditorToClientInvokationMessage<keyof EditorRequiresClientMethods> = {
       messageId: GenerateUUID(),
       functionName: 'reportError',
-      args: [errorArg, errorInfo],
+      args: [errorArg, { errorInfo }],
       type: EditorBridgeMessageType.EditorToClientInvokation,
     }
+
     window.parent.postMessage(message, '*')
   }
 }

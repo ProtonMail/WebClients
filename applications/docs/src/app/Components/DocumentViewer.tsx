@@ -260,7 +260,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
     return (
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
-        <div className="mt-1 max-w-lg text-center">
+        <div className="mt-1 max-w-lg text-center whitespace-pre-line">
           {error.userUnderstandableMessage
             ? error.message
             : c('Info')

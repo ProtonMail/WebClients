@@ -13,14 +13,15 @@ import { createPortal } from 'react-dom'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
-import type { EditorInitializationConfig } from '@proton/docs-shared'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { TranslatedResult, type EditorInitializationConfig } from '@proton/docs-shared'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
+import type { EditorLoadResult } from '../../EditorLoadResult'
 
 export type CursorsContainerRef = React.MutableRefObject<HTMLElement | null>
 
-// Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
-
+/**
+ * Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
+ */
 export function useYjsCollaboration(
   editor: LexicalEditor,
   id: string,
@@ -29,7 +30,7 @@ export function useYjsCollaboration(
   name: string,
   color: string,
   shouldBootstrap: boolean,
-  onCollabReady: () => void,
+  onLoadResult: EditorLoadResult,
   cursorsContainerRef?: CursorsContainerRef,
   editorInitializationConfig?: EditorInitializationConfig,
   excludedProperties?: ExcludedProperties,
@@ -96,13 +97,15 @@ export function useYjsCollaboration(
     window.addEventListener('resize', onWindowResize)
 
     if (!didPostReadyEvent.current) {
-      onCollabReady()
       if (editorInitializationConfig && !didInitializeEditor.current) {
-        initializeEditorAccordingToConfigIfRootIsEmpty(editor, binding, editorInitializationConfig)
-          .then(() => {
+        void initializeEditorAccordingToConfigIfRootIsEmpty(editor, binding, editorInitializationConfig).then(
+          (result) => {
             didInitializeEditor.current = true
-          })
-          .catch(sendErrorMessage)
+            onLoadResult(result)
+          },
+        )
+      } else {
+        onLoadResult(TranslatedResult.ok())
       }
       didPostReadyEvent.current = true
     }
@@ -125,7 +128,7 @@ export function useYjsCollaboration(
     provider,
     shouldBootstrap,
     awarenessData,
-    onCollabReady,
+    onLoadResult,
   ])
 
   const cursorsContainer = useMemo(() => {
