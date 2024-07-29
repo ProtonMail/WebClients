@@ -75,7 +75,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * Returns undefined to cancel if the request is invalid. For login/identity autofill
      * triggered by a focus event, ensures a valid item count exists before proceeding. */
     const processDropdownRequest = withContext<(request: DropdownRequest) => Promise<Maybe<DropdownActions>>>(
-        async (ctx, { action, autofocused }) => {
+        async (ctx, { action, autofocused, field }) => {
             if (!ctx) return;
 
             const { loggedIn } = ctx.getState();
@@ -85,6 +85,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             switch (action) {
                 case DropdownAction.AUTOFILL_IDENTITY: {
                     if (!loggedIn) return { action, domain: '' };
+                    if (autofocused && field.autofilled && !field.icon) return;
                     if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
                     return { action, domain };
                 }
