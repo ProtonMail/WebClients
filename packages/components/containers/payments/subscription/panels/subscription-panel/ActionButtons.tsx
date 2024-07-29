@@ -1,3 +1,4 @@
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -15,6 +16,7 @@ import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 
 export const ActionButtons = ({ user, subscription }: { user: UserModel; subscription?: SubscriptionModel }) => {
+    const allowDowncycling = useFlag('AllowDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
 
     /**
@@ -49,7 +51,7 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
     const showEditBillingDetails =
         user.isPaid &&
         user.canPay &&
-        !hasMaximumCycle(subscription) &&
+        (!hasMaximumCycle(subscription) || allowDowncycling) &&
         !hasPassB2B &&
         !getIsCustomCycle(subscription) &&
         !hasVPNPassBundle(subscription);
