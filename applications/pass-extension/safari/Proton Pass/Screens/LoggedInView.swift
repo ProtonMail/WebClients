@@ -19,6 +19,7 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
+import ProtonCoreUIFoundations
 import Shared
 import SwiftUI
 
@@ -48,9 +49,10 @@ struct LoggedInView: View {
 }
 
 private extension LoggedInView {
+    // swiftlint:disable:next function_body_length
     func view(for plan: PassPlan, and user: User) -> some View {
         Form {
-            Section(content: {
+            Section {
                 HStack {
                     Text(user.displayName)
                     Spacer()
@@ -70,8 +72,21 @@ private extension LoggedInView {
                     Button("Manage subscription", action: { viewModel.manageSubscription() })
                         .hidden()
                 }
+            }
+
+            Section(content: {
+                if let url = URL(string: "https://account.proton.me/u/0/mail/account-password") {
+                    Link(destination: url, label: {
+                        Text("Delete account")
+                            .foregroundStyle(Color(uiColor: ColorProvider.NotificationError))
+                    })
+                }
             }, footer: {
                 VStack(alignment: .center) {
+                    // swiftlint:disable:next line_length
+                    Text("This will permanently delete your Proton account and all of its data, including email, calendars and data stored in Drive. You will not be able to reactivate this account.")
+                        .foregroundStyle(.secondary)
+                        .padding(.bottom)
                     Text(verbatim: "Proton Pass for Safari")
                         .font(.body)
                     Text(verbatim: "\(Bundle.main.versionNumber)")
