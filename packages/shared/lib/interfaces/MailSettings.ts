@@ -15,6 +15,7 @@ import type {
     KEY_TRANSPARENCY_SETTING,
     MAIL_PAGE_SIZE,
     MESSAGE_BUTTONS,
+    NEXT_MESSAGE_ON_MOVE,
     PACKAGE_TYPE,
     PM_SIGNATURE,
     PM_SIGNATURE_REFERRAL,
@@ -87,6 +88,6 @@ export interface MailSettings {
     AlmostAllMail: ALMOST_ALL_MAIL;
     ReceiveMIMEType: string;
     ShowMIMEType: string;
-    NextMessageOnMove: number;
+    NextMessageOnMove: NEXT_MESSAGE_ON_MOVE;
     KT: KEY_TRANSPARENCY_SETTING;
 }

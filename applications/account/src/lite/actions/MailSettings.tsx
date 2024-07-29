@@ -32,7 +32,11 @@ import {
     updateSwipeRight,
     updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
-import type { AUTO_DELETE_SPAM_AND_TRASH_DAYS, SWIPE_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import type {
+    AUTO_DELETE_SPAM_AND_TRASH_DAYS,
+    NEXT_MESSAGE_ON_MOVE,
+    SWIPE_ACTION,
+} from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import EditProfileModal from '../components/EditProfileModal';
@@ -102,7 +106,7 @@ const MailSettings = ({ layout }: { layout: (children: ReactNode, props?: any) =
     const handleChangeHideEmbedded = (newValue: number) => setHideEmbeddedImages(newValue);
     const handleChangeShowImage = (newValue: number) => setHideRemoteImages(newValue);
 
-    const handleChangeNextMessageOnMove = async (nextMessageOnMove: number) => {
+    const handleChangeNextMessageOnMove = async (nextMessageOnMove: NEXT_MESSAGE_ON_MOVE) => {
         await api(updateNextMessageOnMove(nextMessageOnMove));
         await call();
         notifyPreferenceSaved();
