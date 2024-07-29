@@ -1,7 +1,7 @@
 import { SUBSCRIPTION_STEPS, useFlag, useSubscriptionModal } from '@proton/components/containers';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
-import { APPS, UPSELL_ONE_DOLLAR_PROMO_PATHS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -27,13 +27,8 @@ const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
     const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
 
     if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
-        const isOneDollarPromo = UPSELL_ONE_DOLLAR_PROMO_PATHS.some((promoPath) => upsellRef?.includes(promoPath));
-        const selectedStep = isOneDollarPromo ? SUBSCRIPTION_STEPS.CHECKOUT : step;
-
         const modalStep =
-            selectedStep || ABTestInboxUpsellStepEnabled
-                ? SUBSCRIPTION_STEPS.PLAN_SELECTION
-                : SUBSCRIPTION_STEPS.CHECKOUT;
+            step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig(upsellRef, modalStep);
 
         // The subscription modal will open in inbox app
