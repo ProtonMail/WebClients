@@ -163,6 +163,12 @@ export enum KEY_TRANSPARENCY_SETTING {
     ENABLED = 1,
 }
 
+export enum NEXT_MESSAGE_ON_MOVE {
+    DISABLED = 0, // disabled by the user
+    DEFAULT = 1, // enabled (default value)
+    ENABLED = 2, // enabled by the user
+}
+
 export const DEFAULT_MAILSETTINGS: MailSettings = {
     DisplayName: '',
     Signature: '',
@@ -215,6 +221,6 @@ export const DEFAULT_MAILSETTINGS: MailSettings = {
     ReceiveMIMEType: MIME_TYPES.DEFAULT,
     ShowMIMEType: MIME_TYPES.DEFAULT,
     PageSize: MAIL_PAGE_SIZE.FIFTY,
-    NextMessageOnMove: 0,
+    NextMessageOnMove: NEXT_MESSAGE_ON_MOVE.DEFAULT,
     KT: KEY_TRANSPARENCY_SETTING.DISABLED,
 };
