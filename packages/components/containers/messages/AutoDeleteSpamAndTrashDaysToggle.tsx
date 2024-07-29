@@ -6,7 +6,7 @@ interface Props {
     id?: string;
     loading?: boolean;
     autoDeleteSpamAndTrashDays?: number | null;
-    onToggle: (nextMessageOnMove: number) => void;
+    onToggle: (autoDeleteSpamAndTrashDays: number) => void;
     dataTestID?: string;
 }
 
