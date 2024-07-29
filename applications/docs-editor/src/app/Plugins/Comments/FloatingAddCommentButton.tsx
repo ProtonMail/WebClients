@@ -47,6 +47,7 @@ export function FloatingAddCommentButton({
         aria-label="Add comment"
         className="flex cursor-pointer items-center justify-center rounded-lg border-0 bg-none p-2.5 hover:bg-[--background-weak]"
         onClick={onAddComment}
+        data-testid="floating-add-comment-button"
       >
         <AddCommentIcon className="h-4 w-4 fill-current" />
       </button>
