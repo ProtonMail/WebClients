@@ -18,8 +18,10 @@ import {
   DRAGOVER_COMMAND,
   DRAGSTART_COMMAND,
   DROP_COMMAND,
+  PASTE_COMMAND,
   createCommand,
 } from 'lexical'
+import { eventFiles } from '@lexical/rich-text'
 
 import type { SerializedImageNode } from './ImageNode'
 import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
@@ -27,6 +29,7 @@ import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { isImage } from '@proton/shared/lib/helpers/mimetype'
 
 type InsertImagePayload = File | Blob
 
@@ -58,6 +61,10 @@ export default function ImagesPlugin(): JSX.Element | null {
       editor.registerCommand<InsertImagePayload>(
         INSERT_IMAGE_COMMAND,
         (payload) => {
+          if (!isImage(payload.type)) {
+            return false
+          }
+
           function createAndInsertImageNode(src: string) {
             editor.update(() => {
               const imageNode = $createImageNode({
@@ -175,6 +182,23 @@ export default function ImagesPlugin(): JSX.Element | null {
           return false
         },
         COMMAND_PRIORITY_HIGH,
+      ),
+      editor.registerCommand(
+        PASTE_COMMAND,
+        (event) => {
+          const [, files, hasTextContent] = eventFiles(event)
+          if (files.length > 0 && !hasTextContent) {
+            for (const file of files) {
+              if (!isImage(file.type)) {
+                continue
+              }
+              editor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
+            }
+            return true
+          }
+          return false
+        },
+        COMMAND_PRIORITY_LOW,
       ),
     )
   }, [editor])
