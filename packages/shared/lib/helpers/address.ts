@@ -1,10 +1,11 @@
 import unary from '@proton/utils/unary';
 
-import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
+import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
 import type { Address, Domain, Member, Recipient, UserModel } from '../interfaces';
 import { AddressConfirmationState } from '../interfaces';
 import type { ContactEmail } from '../interfaces/contacts';
 import { getIsDomainActive } from '../organization/helper';
+import { hasBit } from './bitset';
 import { canonicalizeInternalEmail } from './email';
 
 export const getIsAddressEnabled = (address: Address) => {
@@ -99,3 +100,7 @@ export const getAvailableAddressDomains = ({
         ...(hasProtonDomains && user.hasPaidMail && Array.isArray(premiumDomains) ? premiumDomains : []),
     ];
 };
+
+const { FLAG_DISABLE_E2EE, FLAG_DISABLE_EXPECTED_SIGNED } = ADDRESS_FLAGS;
+export const encryptionDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_E2EE);
+export const expectSignatureDisabled = (address: Address) => hasBit(address.Flags, FLAG_DISABLE_EXPECTED_SIGNED);

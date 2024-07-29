@@ -2,8 +2,12 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
+import { useApi } from '@proton/components/hooks';
+import { deleteAllGroupMembers, deleteGroup } from '@proton/shared/lib/api/groups';
 import type { Group } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
 
 import './GroupItem.scss';
 
@@ -11,10 +15,23 @@ interface Props {
     active: boolean;
     groupData: Group;
     onClick?: () => void;
+    isNew?: boolean;
+    onDeleteGroup?: () => void;
 }
 
-const GroupItem = ({ active, groupData: { MemberCount, Address, Name }, onClick }: Props) => {
+const GroupItem = ({ active, groupData: { ID, MemberCount, Address, Name }, onClick, isNew, onDeleteGroup }: Props) => {
+    const api = useApi();
+
     const memberCount = MemberCount ?? 0;
+
+    const handleDeleteGroup = async () => {
+        await api(deleteGroup(ID));
+        onDeleteGroup?.();
+    };
+
+    const handleDeleteAllGroupMembers = async () => {
+        await api(deleteAllGroupMembers(ID));
+    };
 
     return (
         <div className="relative">
@@ -47,6 +64,14 @@ const GroupItem = ({ active, groupData: { MemberCount, Address, Name }, onClick 
                             )}
                         </p>
                     </div>
+                    {!isNew && (
+                        <div className="absolute top-0 right-0 mt-2 mr-2">
+                            <GroupItemMoreOptionsDropdown
+                                handleDeleteGroup={handleDeleteGroup}
+                                handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
+                            />
+                        </div>
+                    )}
                 </div>
             </Button>
         </div>
