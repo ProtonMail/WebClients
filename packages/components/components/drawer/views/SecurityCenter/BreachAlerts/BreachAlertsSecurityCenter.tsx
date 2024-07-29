@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { GenericError } from '@proton/components';
-import { useFlag } from '@proton/components';
 import { Icon, Loader, Toggle, useModalStateObject, useUpsellConfig } from '@proton/components/components';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
 import {
@@ -33,6 +32,7 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { DrawerAppSection } from '../../shared';

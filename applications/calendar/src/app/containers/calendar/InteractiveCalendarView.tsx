@@ -12,7 +12,6 @@ import {
     useConfig,
     useContactEmails,
     useEventManager,
-    useFlag,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
@@ -88,6 +87,7 @@ import type {
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';

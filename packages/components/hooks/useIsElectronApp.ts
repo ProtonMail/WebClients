@@ -1,14 +1,13 @@
-import { useFlag } from '@unleash/proxy-client-react';
-
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
+import { type FeatureFlag, useFlag } from '@proton/unleash';
 
 import useConfig from './useConfig';
 
 export const SUPPORTED_ELECTRON_APP: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL];
 
-const useIsElectronApp = (flag: string) => {
+const useIsElectronApp = (flag: FeatureFlag) => {
     const { APP_NAME } = useConfig();
 
     const electronFlag = useFlag(flag);

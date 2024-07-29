@@ -12,7 +12,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFlag,
     useModalState,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -64,6 +63,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

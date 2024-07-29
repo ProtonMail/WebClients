@@ -11,12 +11,12 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import type { AppLinkProps } from '../../components';
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
-import { useFlag } from '../unleash';
 import ProductLink from './ProductLink';
 
 interface AppsDropdownProps {

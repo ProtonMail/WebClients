@@ -2,9 +2,9 @@ import { render } from '@testing-library/react';
 
 import { ThemeColor } from '@proton/colors/types';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { useFlag } from '@proton/components/containers';
 import { useDrawer } from '@proton/components/hooks';
 import { baseUseSelector } from '@proton/react-redux-store';
+import { useFlag } from '@proton/unleash';
 
 import { SecurityCenterDrawerAppButton } from '..';
 import {
@@ -19,7 +19,7 @@ jest.mock('../views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice',
     selectUnreadBreachesCount: jest.fn(),
 }));
 
-jest.mock('@proton/components/containers', () => ({
+jest.mock('@proton/unleash', () => ({
     useFlag: jest.fn(),
 }));
 

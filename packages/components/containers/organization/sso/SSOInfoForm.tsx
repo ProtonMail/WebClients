@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import { Info, InputFieldTwo, TextAreaTwo, useFormErrors } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';

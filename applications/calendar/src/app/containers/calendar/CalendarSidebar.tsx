@@ -23,7 +23,6 @@ import {
     useActiveBreakpoint,
     useApi,
     useEventManager,
-    useFlag,
     useLocalState,
     useModalState,
     useUser,
@@ -49,6 +48,7 @@ import {
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';

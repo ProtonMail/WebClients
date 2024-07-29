@@ -9,11 +9,11 @@ import {
     useActiveBreakpoint,
     useConfig,
     useFeatures,
-    useFlag,
 } from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';

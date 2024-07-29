@@ -12,9 +12,10 @@ import {
     CheckListProtectInbox,
     useModalState,
 } from '@proton/components/components';
-import { GmailSyncModal, useFlag } from '@proton/components/containers';
+import { GmailSyncModal } from '@proton/components/containers';
 import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';

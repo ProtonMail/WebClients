@@ -9,7 +9,6 @@ import { HumanVerificationSteps } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import type { BillingAddress } from '@proton/components/payments/core';
@@ -46,6 +45,7 @@ import type { Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } fro
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

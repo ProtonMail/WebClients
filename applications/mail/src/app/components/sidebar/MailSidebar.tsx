@@ -13,7 +13,6 @@ import {
     Tooltip,
     useActiveBreakpoint,
     useApi,
-    useFlag,
     useLocalState,
     useUser,
 } from '@proton/components';
@@ -27,6 +26,7 @@ import {
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';

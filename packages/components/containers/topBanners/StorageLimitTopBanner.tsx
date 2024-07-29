@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useFlag } from '@proton/components';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -20,6 +19,7 @@ import {
     getPlanToUpsell,
     getSpace,
 } from '@proton/shared/lib/user/storage';
+import { useFlag } from '@proton/unleash';
 
 import { LockedStateTopBanner } from '.';
 import { SettingsLink } from '../../components';
