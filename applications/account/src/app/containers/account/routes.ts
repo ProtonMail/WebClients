@@ -41,6 +41,7 @@ export const getAccountAppRoutes = ({
     showThemeSelection,
     isNewCancellationFlowExtended,
     assistantKillSwitch,
+    isUserGroupsFeatureEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -55,6 +56,7 @@ export const getAccountAppRoutes = ({
     showThemeSelection: boolean;
     isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
+    isUserGroupsFeatureEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -330,6 +332,17 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`History`,
                         id: 'import-list',
+                    },
+                ],
+            },
+            groupMembership: <SectionConfig>{
+                text: c('Title').t`Group membership`,
+                to: '/group-membership',
+                icon: 'pass-group',
+                available: isUserGroupsFeatureEnabled,
+                subsections: [
+                    {
+                        id: 'group-membership',
                     },
                 ],
             },

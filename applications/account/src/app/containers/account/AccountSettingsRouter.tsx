@@ -19,6 +19,7 @@ import {
     EmailSubscriptionSection,
     FamilyPlanSection,
     GiftCodeSection,
+    GroupMembershipSection,
     InviteSection,
     InvoicesSection,
     LanguageAndTimeSection,
@@ -64,7 +65,18 @@ const AccountSettingsRouter = ({
     app: APP_NAMES;
 }) => {
     const {
-        routes: { dashboard, upgrade, easySwitch, referral, recovery, security, password, language, appearance },
+        routes: {
+            dashboard,
+            upgrade,
+            easySwitch,
+            referral,
+            recovery,
+            security,
+            password,
+            language,
+            appearance,
+            groupMembership,
+        },
     } = accountAppRoutes;
 
     return (
@@ -172,6 +184,13 @@ const AccountSettingsRouter = ({
                     <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag="MaintenanceImporter">
                         <EasySwitchSettingsArea config={easySwitch} app={app} />
                     </SettingsMaintenanceLayoutWrapper>
+                </Route>
+            )}
+            {getIsSectionAvailable(groupMembership) && (
+                <Route path={getSectionPath(path, groupMembership)}>
+                    <PrivateMainSettingsArea config={groupMembership}>
+                        <GroupMembershipSection />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {redirect}

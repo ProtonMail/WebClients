@@ -84,3 +84,8 @@ export const resendGroupInvitation = (groupMemberID: string) => ({
     method: 'put',
     url: `core/v4/groups/members/${groupMemberID}/reinvite`,
 });
+
+export const getGroupMembership = () => ({
+    method: 'get',
+    url: `core/v4/groups/members/internal`,
+});

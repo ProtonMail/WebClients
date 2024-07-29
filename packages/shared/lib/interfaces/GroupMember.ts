@@ -29,3 +29,13 @@ export interface GroupMember {
     State: GROUP_MEMBER_STATE;
     GroupMemberAddressPendingKey?: GroupMemberAddressPendingKey;
 }
+
+// really just a special group member
+export interface GroupMembership {
+    Name: string;
+    Address: string;
+    Status: string;
+    Keys: GroupMemberAddressPendingKey;
+    AddressID: string;
+    ID: string;
+}
