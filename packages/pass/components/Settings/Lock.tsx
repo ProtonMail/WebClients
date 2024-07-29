@@ -25,6 +25,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { SettingsPanel } from './SettingsPanel';
 
@@ -42,7 +43,8 @@ export const LockSettings: FC = () => {
     const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
     const canToggleTTL = lockMode !== LockMode.NONE;
-    const biometricsAvailable = useFeatureFlag(PassFeature.PassDesktopBiometrics) && DESKTOP_BUILD;
+    const biometricsRolledOut = useFeatureFlag(PassFeature.PassDesktopBiometrics);
+    const [biometricsOptionEnabled, setBiometricsOptionEnabled] = useState(lockMode === LockMode.BIOMETRICS);
     const plan = useSelector(selectPassPlan);
     const onFreePlan = !isPaidPlan(plan);
     const spotlight = useSpotlight();
@@ -172,6 +174,14 @@ export const LockSettings: FC = () => {
         return () => window.removeEventListener('beforeunload', onBeforeUnload);
     }, [createLock.loading]);
 
+    useEffect(() => {
+        (async () => {
+            if (!DESKTOP_BUILD || lockMode === LockMode.BIOMETRICS) return;
+            const canCheckPresence = await (window as any).ctxBridge.canCheckPresence();
+            setBiometricsOptionEnabled(canCheckPresence && biometricsRolledOut);
+        })().catch(noop);
+    }, [lockMode, biometricsRolledOut]);
+
     return (
         <SettingsPanel title={c('Label').t`Unlock with`}>
             <RadioGroup<LockMode>
@@ -213,25 +223,31 @@ export const LockSettings: FC = () => {
                                   ),
                                   value: LockMode.PASSWORD,
                               },
-                          ].concat(
-                              biometricsAvailable
-                                  ? [
-                                        {
-                                            label: (
-                                                <span className="flex w-full justify-space-between items-center">
-                                                    <span className="block">
-                                                        {c('Label').t`Biometrics`}
-                                                        <span className="block color-weak text-sm">{c('Info')
-                                                            .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`}</span>
-                                                    </span>
-                                                    {onFreePlan && <PassPlusPromotionButton className="button-xs" />}
-                                                </span>
-                                            ),
-                                            value: LockMode.BIOMETRICS,
-                                        },
-                                    ]
-                                  : []
-                          )
+                          ]
+                        : []),
+
+                    ...(canPasswordLock && biometricsRolledOut
+                        ? [
+                              {
+                                  label: (
+                                      <span className="flex w-full justify-space-between items-center">
+                                          <span className="block">
+                                              {c('Label').t`Biometrics`}
+                                              <span className="block color-weak text-sm">
+                                                  {biometricsOptionEnabled
+                                                      ? c('Info')
+                                                            .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`
+                                                      : c('Info')
+                                                            .t`This option is currently not available on your device.`}
+                                              </span>
+                                          </span>
+                                          {onFreePlan && <PassPlusPromotionButton className="button-xs" />}
+                                      </span>
+                                  ),
+                                  disabled: !biometricsOptionEnabled,
+                                  value: LockMode.BIOMETRICS,
+                              },
+                          ]
                         : []),
                 ]}
             />
