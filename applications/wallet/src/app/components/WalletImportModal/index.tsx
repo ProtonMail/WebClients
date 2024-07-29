@@ -127,7 +127,6 @@ export const WalletImportModal = ({
                         onValue={(v: string) => handleMnemonicChange(v)}
                         className="bg-weak"
                         error={mnemonicError}
-                        // placeholder={c('Wallet Account').t`Enter your seed phrase in exact order`}
                     />
 
                     <CoreButtonLike
