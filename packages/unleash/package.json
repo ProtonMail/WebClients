@@ -1,0 +1,8 @@
+{
+    "name": "@proton/unleash",
+    "description": "Unleash feature flags",
+    "dependencies": {
+        "@unleash/proxy-client-react": "^4.2.4",
+        "unleash-proxy-client": "^3.4.0"
+    }
+}
