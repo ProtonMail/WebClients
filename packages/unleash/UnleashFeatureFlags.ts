@@ -14,6 +14,7 @@ enum CommonFeatureFlag {
     LockedState = 'LockedState',
     InboxUpsellFlow = 'InboxUpsellFlow',
     ABTestInboxUpsellStep = 'ABTestInboxUpsellStep',
+    ABTestInboxUpsellOneDollar = 'ABTestInboxUpsellOneDollar',
     ABTestSubscriptionReminder = 'ABTestSubscriptionReminder',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
