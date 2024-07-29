@@ -15,6 +15,7 @@ interface Props {
 
 export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
     const isInvitationPending = groupMember.State === GROUP_MEMBER_STATE.PENDING;
+    const isRejected = groupMember.State === GROUP_MEMBER_STATE.REJECTED;
 
     // no class for email if no memberName present
     const emailClassName = memberName ? 'color-weak text-sm' : '';
@@ -37,6 +38,15 @@ export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
                                 className="rounded-sm color-weak"
                                 tooltip={c('tooltip').t`Waiting user to accept the invitation`}
                             >{c('invitation status').t`Pending`}</Badge>
+                        </span>
+                    )}
+                    {isRejected && (
+                        <span>
+                            <Badge
+                                type="warning"
+                                className="rounded-sm color-danger"
+                                tooltip={c('tooltip').t`User rejected invitation`}
+                            >{c('invitation status').t`Rejected`}</Badge>
                         </span>
                     )}
                 </div>
