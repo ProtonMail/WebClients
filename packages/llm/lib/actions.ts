@@ -84,17 +84,20 @@ const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 const INSTRUCTIONS_REFINE_SPAN = [
     'The user wants you to modify a part of the text identified by the span tags (class "to-modify").',
     'You write a revised version of this part of the text, in the same language, under a span tag with class "modified".',
+    'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 const INSTRUCTIONS_REFINE_DIV = [
     'The user wants you to modify a part of the text identified by the div tags (class "to-modify").',
     'You write a revised version of this part of the text, in the same language, under a div tag with class "modified".',
     'Write the rest of the email outside of the div tag.',
+    'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 const INSTRUCTIONS_REFINE_WHOLE = [
     'The user wants you to modify the email.',
     'You write a revised version of this email, in the same language.',
+    'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 
@@ -152,7 +155,7 @@ function proofreadActionToCustomRefineAction(action: ProofreadAction): CustomRef
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged.',
+        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged, in the same language as the original text.',
     };
 }
 
@@ -160,7 +163,7 @@ function formalActionToCustomRefineAction(action: FormalAction): CustomRefineAct
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting.',
+        prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting, in the same language as the original text.',
     };
 }
 
@@ -168,7 +171,7 @@ function friendlyActionToCustomRefineAction(action: FriendlyAction): CustomRefin
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a friendly tone, like writing to a friend.',
+        prompt: 'Rewrite the same text with a friendly tone, like writing to a friend, in the same language as the original text.',
     };
 }
 
@@ -176,7 +179,7 @@ function expandActionToCustomRefineAction(action: ExpandAction): CustomRefineAct
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Expand the text, i.e. paraphrase it, and use more words to say the same thing.',
+        prompt: 'Expand the text, i.e. paraphrase it, and use more words to say the same thing, in the same language as the original text.',
     };
 }
 
@@ -184,7 +187,9 @@ function shortenActionToCustomRefineAction(action: ShortenAction): CustomRefineA
     return {
         ...action,
         type: 'customRefine',
-        prompt: ['Shorten the text in one short paragraph, go straight to the point.'].join(' '),
+        prompt: [
+            'Shorten the text in one short paragraph by keeping only one or two important details, in the same language as the original text.',
+        ].join(' '),
     };
 }
 
