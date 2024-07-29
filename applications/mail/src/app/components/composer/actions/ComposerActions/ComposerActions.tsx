@@ -25,8 +25,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { updateExpires } from 'proton-mail/store/messages/draft/messagesDraftActions';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import type { MessageState } from '../../../../store/messages/messagesTypes';
@@ -92,8 +90,6 @@ const ComposerActions = ({
     showAssistantButton,
     onToggleAssistant,
 }: Props) => {
-    const dispatch = useMailDispatch();
-
     const { viewportWidth } = useActiveBreakpoint();
     const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);
     const disabled = opening;
@@ -165,7 +161,6 @@ const ComposerActions = ({
             }),
             true
         );
-        dispatch(updateExpires({ ID: message?.localID || '', expiresIn: undefined }));
     };
 
     const assistantTooltipText = (() => {
