@@ -121,14 +121,18 @@ export function CommentsPanelListComment({
           comment.isPlaceholder || isDeleting ? 'opacity-50' : '',
           isOptionsMenuOpen && 'options-open',
         )}
+        data-testid="thread-comments-list"
       >
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
           <UserAvatar name={comment.author} color={color ? { hsl: color } : undefined} className="mr-1 flex-shrink-0" />
           <div className="mr-auto flex flex-col overflow-hidden">
-            <span className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold capitalize">
+            <span
+              className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold capitalize"
+              data-testid="comment-author"
+            >
               {name}
             </span>
-            <span className="select-none text-xs opacity-50">
+            <span className="select-none text-xs opacity-50" data-testid="comment-creation-time">
               <CommentTime createTime={comment.createTime} />
               {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
             </span>
@@ -157,6 +161,7 @@ export function CommentsPanelListComment({
                     onClick={() => {
                       setIsEditing(true)
                     }}
+                    data-testid="edit-button"
                   >
                     <Icon name="pencil" size={4.5} />
                     {c('Action').t`Edit`}
@@ -168,6 +173,7 @@ export function CommentsPanelListComment({
                     onClick={() => {
                       controller.resolveThread(thread.id).catch(sendErrorMessage)
                     }}
+                    data-testid="resolve-button"
                   >
                     <Icon name="checkmark-circle" size={4.5} />
                     {c('Action').t`Resolve`}
@@ -179,6 +185,7 @@ export function CommentsPanelListComment({
                     onClick={() => {
                       controller.unresolveThread(thread.id).catch(sendErrorMessage)
                     }}
+                    data-testid="reopen-button"
                   >
                     {c('Action').t`Re-open`}
                   </DropdownMenuButton>
@@ -187,6 +194,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={isFirstComment ? deleteThread : deleteComment}
+                    data-testid="delete-button"
                   >
                     <Icon name="trash" size={4.5} />
                     {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
@@ -225,6 +233,7 @@ export function CommentsPanelListComment({
                   title={c('Action').t`Cancel`}
                   icon={<Icon name="cross-circle-filled" size={6} />}
                   onClick={cancelEditing}
+                  data-testid="edit-comment-cancel-button"
                 />
                 <ToolbarButton
                   className="rounded-full border-none"
@@ -232,12 +241,18 @@ export function CommentsPanelListComment({
                   icon={<Icon name="checkmark-circle-filled" size={6} className="fill-[--primary]" />}
                   disabled={!canSubmit}
                   onClick={submitComment}
+                  data-testid="edit-comment-save-button"
                 />
               </>
             )}
           />
         ) : (
-          <CommentViewer key={comment.content} content={comment.content} className="leading-relaxed" />
+          <CommentViewer
+            key={comment.content}
+            content={comment.content}
+            className="leading-relaxed"
+            data-testid="comment-text-content"
+          />
         )}
       </li>
     </>
