@@ -8,7 +8,7 @@ export function CommentTime({ createTime }: { createTime: ServerTime }) {
 
   if (createTimeUtil.isNewerThan(10, 'seconds')) {
     return (
-      <span>{
+      <span data-testid="comment-time-just-now">{
         // translator: indicates the comment has been added less than 10 seconds ago
         c('Info').t`Just now`
       }</span>
@@ -16,7 +16,11 @@ export function CommentTime({ createTime }: { createTime: ServerTime }) {
   }
 
   if (createTimeUtil.isNewerThan(60, 'minutes')) {
-    return <span>{createTimeUtil.relativeFormat(createTimeUtil.relativeMinutes, 'minute')}</span>
+    return (
+      <span data-testid="comment-time-ago">
+        {createTimeUtil.relativeFormat(createTimeUtil.relativeMinutes, 'minute')}
+      </span>
+    )
   }
 
   return (

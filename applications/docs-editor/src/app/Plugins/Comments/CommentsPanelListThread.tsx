@@ -81,9 +81,13 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
           : 'focus-within:[box-shadow:_var(--shadow-raised-offset)_rgb(var(--shadow-color,_var(--shadow-default-color))/var(--shadow-raised-opacity))]',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
       )}
+      data-testid={isActive ? 'floating-thread-list-non-section' : 'floating-thread-list-section'}
     >
       {quote && (
-        <blockquote className="color-weak mx-3 mb-1 mt-2 line-clamp-1 border-l border-[--signal-warning] px-2.5 py-px text-xs font-medium leading-none before:content-none after:content-none">
+        <blockquote
+          className="color-weak mx-3 mb-1 mt-2 line-clamp-1 border-l border-[--signal-warning] px-2.5 py-px text-xs font-medium leading-none before:content-none after:content-none"
+          data-testid="comment-thread-name"
+        >
           {quote}
         </blockquote>
       )}
@@ -95,6 +99,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
             thread={thread}
             isFirstComment={index === 0}
             setIsDeletingThread={setIsDeleting}
+            data-testid={index === 0 ? 'first-comment' : 'thread-comments'}
           />
         ))}
       </ul>
@@ -103,6 +108,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
           <CommentsComposer
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Reply...`}
+            data-testid="reply-in-thread-input"
             onSubmit={(content) => {
               controller.createComment(content, thread.id).catch(sendErrorMessage)
             }}
@@ -127,6 +133,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
                   icon={<Icon name="arrow-up" size={3.5} />}
                   disabled={!canSubmit}
                   onClick={submitComment}
+                  data-testid="reply-in-send-button"
                 />
               )
             }}
@@ -140,13 +147,14 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
             onClick={() => {
               controller.unresolveThread(thread.id).catch(sendErrorMessage)
             }}
+            data-testid="reopen-thread-button"
           >
             {c('Action').t`Re-open thread`}
           </button>
         </div>
       )}
       {typers.length > 0 && (
-        <div className="px-3.5 py-1.5 text-xs text-[--text-weak]">
+        <div className="px-3.5 py-1.5 text-xs text-[--text-weak]" data-testid="info-active-typing">
           {c('Info').ngettext(
             msgid`${usersTranslation} is typing...`,
             `${usersTranslation} are typing...`,

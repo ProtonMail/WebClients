@@ -19,7 +19,7 @@ export function CommentsPanelList({ threads }: { threads: CommentThreadInterface
   return (
     <ul>
       {threads.map((thread) => {
-        return <CommentsPanelListThread key={thread.id} thread={thread} />
+        return <CommentsPanelListThread key={thread.id} thread={thread} data-testid="comments-thread-panel" />
       })}
     </ul>
   )
