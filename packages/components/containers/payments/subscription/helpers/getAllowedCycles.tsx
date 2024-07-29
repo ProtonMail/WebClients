@@ -54,20 +54,22 @@ function capMaximumCycle(
 
 export const getAllowedCycles = ({
     subscription,
-    minimumCycle,
-    maximumCycle,
+    minimumCycle = CYCLE.MONTHLY,
+    maximumCycle = CYCLE.TWO_YEARS,
     planIDs,
     defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
-    disableUpcomingCycleCheck,
     plansMap,
+    disableUpcomingCycleCheck,
+    allowDowncycling,
 }: {
     subscription: Subscription | FreeSubscription | undefined;
-    minimumCycle: CYCLE;
-    maximumCycle: CYCLE;
+    minimumCycle?: CYCLE;
+    maximumCycle?: CYCLE;
     planIDs: PlanIDs;
     defaultCycles?: CYCLE[];
-    disableUpcomingCycleCheck?: boolean;
     plansMap: PlansMap;
+    disableUpcomingCycleCheck?: boolean;
+    allowDowncycling?: boolean;
 }): CYCLE[] => {
     const isTrialSubscription = isTrial(subscription);
     const sortedCycles = defaultCycles.sort((a, b) => b - a);
@@ -79,9 +81,8 @@ export const getAllowedCycles = ({
 
     const result = sortedCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
-
-        // disableUpcomingCycleCheck is an escape hatch to allow the selection of the cycle which is **lower** than upcoming one
-        // but higher than current one
+        // disableUpcomingCycleCheck is an escape hatch to allow the selection of the cycle which is **lower** than
+        // upcoming one but higher than current one
         // Example: user has current subscription 1 month and upcoming 12 months. Now they want to buy Scribe addon.
         // Normally, we would not show them the current one, because we consider that downgrading of the cycle.
         // But in this case, we want them to buy same 1 month subscription but with Scribe addon.
@@ -89,7 +90,10 @@ export const getAllowedCycles = ({
             cycle >= (subscription?.UpcomingSubscription?.Cycle ?? 0) || !!disableUpcomingCycleCheck;
 
         const isEligibleForSelection: boolean =
-            (isHigherThanCurrentSubscription && isHigherThanUpcoming) || isTrialSubscription || !isSamePlan;
+            (isHigherThanCurrentSubscription && isHigherThanUpcoming) ||
+            isTrialSubscription ||
+            !isSamePlan ||
+            !!allowDowncycling;
 
         return cycle >= minimumCycle && cycle <= adjustedMaximumCycle && isEligibleForSelection;
     });

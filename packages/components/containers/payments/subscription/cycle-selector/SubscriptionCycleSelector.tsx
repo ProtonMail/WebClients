@@ -4,22 +4,16 @@ import { c } from 'ttag';
 
 import { SelectedPlan } from '@proton/components/payments/core';
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
-import { CYCLE } from '@proton/shared/lib/constants';
+import type { CYCLE } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
-import type {
-    Currency,
-    PlanIDs,
-    PlansMap,
-    Subscription,
-    SubscriptionCheckResponse,
-} from '@proton/shared/lib/interfaces';
+import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Option, Price, Radio, SelectTwo } from '../../../../components';
 import InputField from '../../../../components/v2/field/InputField';
 import { getShortBillingText } from '../../helper';
-import { getAllowedCycles, getDiscountPrice } from '../helpers';
+import { getDiscountPrice } from '../helpers';
 import CycleItemView from './CycleItemView';
 
 const CycleItem = ({
@@ -63,8 +57,6 @@ const getMonthlySuffix = (planIDs: PlanIDs) => {
 
 export interface Props {
     cycle: CYCLE;
-    minimumCycle?: CYCLE;
-    maximumCycle?: CYCLE;
     mode: 'select' | 'buttons';
     currency: Currency;
     onChangeCycle: (cycle: CYCLE) => void;
@@ -73,17 +65,13 @@ export interface Props {
     disabled?: boolean;
     loading?: boolean;
     faded?: boolean;
-    subscription?: Subscription;
-    defaultCycles?: CYCLE[];
     pricingMode?: PricingMode;
-    disableUpcomingCycleCheck?: boolean;
     additionalCheckResults: SubscriptionCheckResponse[] | undefined;
+    allowedCycles: CYCLE[];
 }
 
 const SubscriptionCycleSelector = ({
     cycle: selectedCycle,
-    minimumCycle = CYCLE.MONTHLY,
-    maximumCycle = CYCLE.TWO_YEARS,
     mode,
     onChangeCycle,
     currency,
@@ -92,22 +80,10 @@ const SubscriptionCycleSelector = ({
     planIDs,
     plansMap,
     faded,
-    subscription,
-    defaultCycles,
     pricingMode,
-    disableUpcomingCycleCheck,
     additionalCheckResults = [],
+    allowedCycles,
 }: Props) => {
-    const cycles = getAllowedCycles({
-        subscription,
-        minimumCycle,
-        maximumCycle,
-        defaultCycles,
-        planIDs,
-        plansMap,
-        disableUpcomingCycleCheck: !!disableUpcomingCycleCheck,
-    });
-
     const monthlySuffix = getMonthlySuffix(planIDs);
 
     const selectedPlan = useMemo(() => {
@@ -133,7 +109,7 @@ const SubscriptionCycleSelector = ({
                         </Price>
                     }
                 >
-                    {cycles.map((cycle) => {
+                    {allowedCycles.map((cycle) => {
                         return (
                             <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
                                 <div className="flex justify-space-between">
@@ -152,7 +128,7 @@ const SubscriptionCycleSelector = ({
 
     return (
         <ul className={clsx('unstyled m-0 plan-cycle-selector', fadedClasses)}>
-            {cycles.map((cycle) => {
+            {allowedCycles.map((cycle) => {
                 const isSelected = cycle === selectedCycle;
                 const billingText = getShortBillingText(cycle);
                 // translator: "Select billing cycle 1 month" or "Select billing cycle 2 months"

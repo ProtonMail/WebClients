@@ -85,6 +85,7 @@ import {
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import { isSubscriptionUnchanged } from '../../payments/helper';
+import { useFlag } from '../../unleash';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
@@ -226,6 +227,8 @@ const SubscriptionContainer = ({
     withB2CAddons,
     allowedAddonTypes,
 }: SubscriptionContainerProps) => {
+    const allowDowncycling = useFlag('AllowDowncycling');
+
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
@@ -577,6 +580,17 @@ const SubscriptionContainer = ({
     const isFreePlanSelected = !hasPlanIDs(model.planIDs);
     const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
 
+    const computeAllowedCycles = (planIDs: PlanIDs) =>
+        getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            defaultCycles,
+            planIDs,
+            plansMap,
+            allowDowncycling,
+        });
+
     const runAdditionalChecks = async (
         newModel: Model,
         checkPayload: CheckSubscriptionData,
@@ -593,14 +607,7 @@ const SubscriptionContainer = ({
 
         paymentsApi.cacheMultiCheck(checkPayload, options, checkResult);
 
-        const additionalCycles = getAllowedCycles({
-            subscription,
-            minimumCycle: minimumCycle ?? CYCLE.MONTHLY,
-            maximumCycle: maximumCycle ?? CYCLE.TWO_YEARS,
-            defaultCycles,
-            planIDs: newModel.planIDs,
-            plansMap,
-        })
+        const additionalCycles = computeAllowedCycles(newModel.planIDs)
             // skip the cycle that was just checked
             .filter((cycle) => cycle !== checkResult.Cycle)
 
@@ -1090,13 +1097,10 @@ const SubscriptionContainer = ({
                                                     cycle={model.cycle}
                                                     currency={model.currency}
                                                     onChangeCycle={handleChangeCycle}
-                                                    minimumCycle={minimumCycle}
-                                                    maximumCycle={maximumCycle}
-                                                    subscription={subscription}
-                                                    defaultCycles={defaultCycles}
                                                     faded={blockCycleSelector}
                                                     additionalCheckResults={additionalCheckResults}
                                                     loading={loadingCheck}
+                                                    allowedCycles={computeAllowedCycles(model.planIDs)}
                                                 />
                                             )}
                                         </div>
