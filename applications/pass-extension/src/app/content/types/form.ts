@@ -31,8 +31,9 @@ export interface FieldHandle {
     boxElement: HTMLElement;
     icon: FieldIconHandle | null;
     action: MaybeNull<DropdownAction>;
-    value: string;
+    autofilled: boolean;
     tracked: boolean;
+    value: string;
     zIndex: number;
     getFormHandle: () => FormHandle;
     getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
