@@ -5,6 +5,7 @@ export * from './keyFlags';
 export * from './activateMemberAddressKeys';
 export * from './addressKeyActions';
 export * from './addressKeys';
+export * from './getActiveKeys';
 export * from './getDecryptedAddressKeys';
 export * from './getDecryptedUserKeys';
 export * from './getDecryptedOrganizationKey';

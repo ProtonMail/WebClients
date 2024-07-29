@@ -34,6 +34,7 @@ export * from './config';
 export * from './utils';
 export * from './Locale';
 export * from './BreachesCount';
+export * from './GroupMember';
 
 export interface KeyGenConfig {
     type?: 'ecc' | 'rsa';

@@ -12,7 +12,7 @@ interface Props {
 }
 
 const GroupList = ({
-    groupsManagement: { uiState, form, setUiState, setSelectedGroup, groups, selectedGroup, domainData },
+    groupsManagement: { uiState, form, setUiState, setSelectedGroup, groups, selectedGroup, domainData, onDeleteGroup },
 }: Props) => {
     const { selectedDomain } = domainData;
     const { resetForm, values: formValues } = form;
@@ -62,7 +62,7 @@ const GroupList = ({
             </div>
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
             <Scroll className="mr-6">
-                {uiState === 'new' && <GroupItem key="new" active groupData={newGroupData} />}
+                {uiState === 'new' && <GroupItem key="new" active groupData={newGroupData} isNew={true} />}
                 {groups.map((groupData) => (
                     <GroupItem
                         key={groupData.Address.ID}
@@ -83,6 +83,7 @@ const GroupList = ({
                                 },
                             });
                         }}
+                        onDeleteGroup={onDeleteGroup}
                     />
                 ))}
             </Scroll>

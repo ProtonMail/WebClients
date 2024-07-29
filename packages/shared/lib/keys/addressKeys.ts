@@ -137,6 +137,33 @@ export const decryptAddressKeyToken = async ({
     return decryptedToken;
 };
 
+interface DectyptAddressKeyUsingOrgKeyTokenArguments {
+    Token: string;
+    organizationKey: PrivateKeyReference;
+    Signature: string;
+}
+
+export const decryptAddressKeyUsingOrgKeyToken = async ({
+    Token,
+    organizationKey,
+    Signature,
+}: DectyptAddressKeyUsingOrgKeyTokenArguments) => {
+    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+        armoredMessage: Token,
+        armoredSignature: Signature,
+        decryptionKeys: [organizationKey],
+        verificationKeys: [organizationKey],
+    });
+
+    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        const error = new Error(c('Error').t`Signature verification failed`);
+        error.name = 'SignatureError';
+        throw error;
+    }
+
+    return Promise.resolve(decryptedToken);
+};
+
 interface AddressKeyTokenResult {
     token: string;
     encryptedToken: string;
