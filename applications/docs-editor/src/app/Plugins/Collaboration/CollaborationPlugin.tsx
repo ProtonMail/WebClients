@@ -10,6 +10,7 @@ import { useYjsCollaboration } from './useYjsCollaboration'
 import { useYjsHistory } from './useYjsHistory'
 import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
+import type { EditorLoadResult } from '../../EditorLoadResult'
 
 type Props = {
   id: string
@@ -19,7 +20,7 @@ type Props = {
     yjsDocMap: Map<string, Doc>,
   ) => Provider
   shouldBootstrap: boolean
-  onCollabReady: () => void
+  onLoadResult: EditorLoadResult
   username?: string
   cursorColor?: string
   cursorsContainerRef?: CursorsContainerRef
@@ -33,7 +34,7 @@ export function CollaborationPlugin({
   id,
   providerFactory,
   shouldBootstrap,
-  onCollabReady,
+  onLoadResult,
   username,
   cursorColor,
   cursorsContainerRef,
@@ -69,7 +70,7 @@ export function CollaborationPlugin({
     name,
     color,
     shouldBootstrap,
-    onCollabReady,
+    onLoadResult,
     cursorsContainerRef,
     editorInitializationConfig,
     excludedProperties,

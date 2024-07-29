@@ -6,8 +6,10 @@ import { $importNodesFromDocx } from './ImportNodesFromDocx'
 import { $convertFromMarkdownString } from '../Utils/MarkdownImport'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import type { ConvertibleDataType } from '@proton/docs-shared'
+import { TranslatedResult } from '@proton/docs-shared'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { sendErrorMessage } from '../Utils/errorMessage'
+import { c } from 'ttag'
 
 export function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
   try {
@@ -27,9 +29,9 @@ export async function $importDataIntoEditor(
       addLineBreaks?: boolean
     }
   },
-): Promise<void> {
+): Promise<TranslatedResult<void>> {
   if (data.length === 0) {
-    return
+    return TranslatedResult.ok()
   }
 
   editor.update(
@@ -42,34 +44,39 @@ export async function $importDataIntoEditor(
   )
 
   if (dataFormat === 'docx') {
-    await new Promise((resolve) => {
+    const result = await new Promise<TranslatedResult<void>>((resolve) => {
       editor.update(
         () => {
-          $importNodesFromDocx(editor, data).then(resolve).catch(sendErrorMessage)
+          void $importNodesFromDocx(editor, data).then(resolve)
         },
         {
           discrete: true,
         },
       )
-    }).catch(sendErrorMessage)
-    return
+    }).catch((error) => {
+      sendErrorMessage(error)
+      return TranslatedResult.failWithTranslatedError<void>(
+        c('Error').t`Failed to import Word document due to unknown error.`,
+      )
+    })
+
+    return result
   }
 
   const otherFormatString = utf8ArrayToString(data)
 
   if (dataFormat === 'json' && isValidSuperString(editor, otherFormatString)) {
-    return
+    return TranslatedResult.ok()
   }
 
-  let didThrow = false
   if (dataFormat === 'html') {
     const htmlOptions = options?.html || {
       addLineBreaks: false,
     }
 
-    editor.update(
-      () => {
-        try {
+    try {
+      editor.update(
+        () => {
           const parser = new DOMParser()
           const dom = parser.parseFromString(otherFormatString, 'text/html')
           const generatedNodes = $generateNodesFromDOM(editor, dom)
@@ -92,32 +99,35 @@ export async function $importDataIntoEditor(
               nodesToInsert.push($createParagraphNode())
             }
           })
+
           $getRoot().selectEnd()
           $insertNodes(nodesToInsert.concat($createParagraphNode()))
-        } catch (error: unknown) {
-          sendErrorMessage(error)
-          didThrow = true
-        }
-      },
-      { discrete: true },
-    )
-  } else {
-    editor.update(
-      () => {
-        try {
-          $convertFromMarkdownString(otherFormatString, MarkdownTransformers, undefined, false)
-        } catch (error: unknown) {
-          sendErrorMessage(error)
-          didThrow = true
-        }
-      },
-      {
-        discrete: true,
-      },
-    )
-  }
+        },
+        { discrete: true },
+      )
+    } catch (error) {
+      sendErrorMessage(error)
+      return TranslatedResult.failWithTranslatedError<void>(c('Error').t`Failed to import HTML due to unknown error.`)
+    }
 
-  if (didThrow) {
-    throw new Error('Could not import note. Check error console for details.')
+    return TranslatedResult.ok()
+  } else {
+    try {
+      editor.update(
+        () => {
+          $convertFromMarkdownString(otherFormatString, MarkdownTransformers, undefined, false)
+        },
+        {
+          discrete: true,
+        },
+      )
+    } catch (error) {
+      sendErrorMessage(error)
+      return TranslatedResult.failWithTranslatedError<void>(
+        c('Error').t`Failed to import Markdown due to unknown error.`,
+      )
+    }
+
+    return TranslatedResult.ok()
   }
 }

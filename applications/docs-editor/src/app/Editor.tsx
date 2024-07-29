@@ -38,6 +38,7 @@ import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
 import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
+import type { EditorLoadResult } from './EditorLoadResult'
 
 const TypingBotEnabled = false
 
@@ -52,7 +53,7 @@ type Props = {
   editorInitializationConfig?: EditorInitializationConfig
   /** Non-interactive mode is used when displaying the editor to show a previous history revision */
   nonInteractiveMode: boolean
-  onEditorReadyToReceiveUpdates: () => void
+  onEditorLoadResult: EditorLoadResult
   onInteractionModeChange: (mode: DocumentInteractionMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
   username: string
@@ -68,7 +69,7 @@ export function Editor({
   hidden,
   editorInitializationConfig,
   nonInteractiveMode: nonInteractiveMode,
-  onEditorReadyToReceiveUpdates,
+  onEditorLoadResult,
   onInteractionModeChange,
   setEditorRef,
   username,
@@ -156,7 +157,7 @@ export function Editor({
           id={documentId}
           providerFactory={yjsWebsockProvider!}
           shouldBootstrap={ShouldBootstrap}
-          onCollabReady={onEditorReadyToReceiveUpdates}
+          onLoadResult={onEditorLoadResult}
           editorInitializationConfig={editorInitializationConfig}
         />
         <MergeSiblingListsPlugin />
