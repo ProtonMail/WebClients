@@ -4,6 +4,7 @@ import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     DIRECTION,
     MAIL_PAGE_SIZE,
+    NEXT_MESSAGE_ON_MOVE,
     PM_SIGNATURE_REFERRAL,
     SPAM_ACTION,
     SWIPE_ACTION,
@@ -20,7 +21,7 @@ export const updatePageSize = (PageSize: MAIL_PAGE_SIZE) => ({
     data: { PageSize },
 });
 
-export const updateNextMessageOnMove = (NextMessageOnMove: number) => ({
+export const updateNextMessageOnMove = (NextMessageOnMove: NEXT_MESSAGE_ON_MOVE) => ({
     url: 'mail/v4/settings/next-message-on-move',
     method: 'put',
     data: { NextMessageOnMove },
