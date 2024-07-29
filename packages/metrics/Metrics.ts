@@ -10,9 +10,11 @@ import Histogram from './lib/Histogram';
 import MetricsBase from './lib/MetricsBase';
 import type IMetricsRequestService from './lib/types/IMetricsRequestService';
 import type { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
+import type { HttpsProtonMeDocsAlertModalTotalV1SchemaJson } from './types/docs_alert_modal_total_v1.schema';
 import type { HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson } from './types/docs_comments_download_error_total_v1.schema';
 import type { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/docs_comments_error_total_v1.schema';
 import type { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
+import type { HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson } from './types/docs_commit_signature_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson } from './types/docs_document_updates_ack_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson } from './types/docs_document_updates_decryption_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
@@ -21,12 +23,14 @@ import type { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/
 import type { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from './types/docs_realtime_disconnect_error_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
+import type { HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson } from './types/docs_realtime_edit_time_to_ack_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/docs_squashes_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
 import type { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
 import type { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from './types/drive_download_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson } from './types/drive_download_errors_total_v1.schema';
+import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from './types/drive_download_errors_total_v2.schema';
 import type { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_block_verification_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_integrity_decryption_errors_total_v1.schema';
@@ -40,7 +44,9 @@ import type { HttpsProtonMeDriveSyncItemsTotalV1SchemaJson } from './types/drive
 import type { HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson } from './types/drive_sync_resync_items_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncTotalV1SchemaJson } from './types/drive_sync_resync_total_v1.schema';
 import type { HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson } from './types/drive_upload_erroring_users_total_v1.schema';
+import type { HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_upload_errors_file_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson } from './types/drive_upload_errors_total_v1.schema';
+import type { HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson } from './types/drive_upload_errors_total_v2.schema';
 import type { HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson } from './types/drive_upload_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
 import type { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
@@ -104,11 +110,15 @@ import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscrip
 class Metrics extends MetricsBase {
     public docs_aborted_squashes_total: Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>;
 
+    public docs_alert_modal_total: Counter<HttpsProtonMeDocsAlertModalTotalV1SchemaJson>;
+
     public docs_comments_download_error_total: Counter<HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson>;
 
     public docs_comments_error_total: Counter<HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson>;
 
     public docs_comments_total: Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>;
+
+    public docs_commit_signature_error_total: Counter<HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson>;
 
     public docs_document_updates_ack_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson>;
 
@@ -126,6 +136,8 @@ class Metrics extends MetricsBase {
 
     public docs_realtime_edit_latency_histogram: Histogram<HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson>;
 
+    public docs_realtime_edit_time_to_ack_histogram: Histogram<HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson>;
+
     public docs_squashes_latency_histogram: Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>;
 
     public docs_squashes_total: Counter<HttpsProtonMeDocsSquashesTotalV1SchemaJson>;
@@ -136,7 +148,7 @@ class Metrics extends MetricsBase {
 
     public drive_download_erroring_users_total: Counter<HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson>;
 
-    public drive_download_errors_total: Counter<HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson>;
+    public drive_download_errors_total: Counter<HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson>;
 
     public drive_download_success_rate_total: Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>;
 
@@ -164,7 +176,9 @@ class Metrics extends MetricsBase {
 
     public drive_upload_erroring_users_total: Counter<HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson>;
 
-    public drive_upload_errors_total: Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>;
+    public drive_upload_errors_file_size_histogram: Histogram<HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson>;
+
+    public drive_upload_errors_total: Counter<HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson>;
 
     public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>;
 
@@ -292,6 +306,11 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.docs_alert_modal_total = new Counter<HttpsProtonMeDocsAlertModalTotalV1SchemaJson>(
+            { name: 'docs_alert_modal_total', version: 1 },
+            this.requestService
+        );
+
         this.docs_comments_download_error_total = new Counter<HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson>(
             { name: 'docs_comments_download_error_total', version: 1 },
             this.requestService
@@ -304,6 +323,11 @@ class Metrics extends MetricsBase {
 
         this.docs_comments_total = new Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>(
             { name: 'docs_comments_total', version: 1 },
+            this.requestService
+        );
+
+        this.docs_commit_signature_error_total = new Counter<HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson>(
+            { name: 'docs_commit_signature_error_total', version: 1 },
             this.requestService
         );
 
@@ -354,6 +378,12 @@ class Metrics extends MetricsBase {
                 this.requestService
             );
 
+        this.docs_realtime_edit_time_to_ack_histogram =
+            new Histogram<HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson>(
+                { name: 'docs_realtime_edit_time_to_ack_histogram', version: 1 },
+                this.requestService
+            );
+
         this.docs_squashes_latency_histogram = new Histogram<HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson>(
             { name: 'docs_squashes_latency_histogram', version: 1 },
             this.requestService
@@ -382,6 +412,11 @@ class Metrics extends MetricsBase {
 
         this.drive_download_errors_total = new Counter<HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson>(
             { name: 'drive_download_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_download_errors_total = new Counter<HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson>(
+            { name: 'drive_download_errors_total', version: 2 },
             this.requestService
         );
 
@@ -455,8 +490,19 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.drive_upload_errors_file_size_histogram =
+            new Histogram<HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson>(
+                { name: 'drive_upload_errors_file_size_histogram', version: 1 },
+                this.requestService
+            );
+
         this.drive_upload_errors_total = new Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>(
             { name: 'drive_upload_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_upload_errors_total = new Counter<HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson>(
+            { name: 'drive_upload_errors_total', version: 2 },
             this.requestService
         );
 
