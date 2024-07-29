@@ -71,8 +71,9 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             set: () => iframe.updatePosition(),
         });
 
-    /** Converts a dropdown request into a usable payload for the injected
-     * dropdown. If a request is invalid, returns `undefined` to cancel. */
+    /** Processes a dropdown request to create a usable payload for the injected dropdown.
+     * Returns undefined to cancel if the request is invalid. For login/identity autofill
+     * triggered by a focus event, ensures a valid item count exists before proceeding. */
     const processDropdownRequest = withContext<(request: DropdownRequest) => Promise<Maybe<DropdownActions>>>(
         async (ctx, { action, autofocused }) => {
             if (!ctx) return;
@@ -84,20 +85,13 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
             switch (action) {
                 case DropdownAction.AUTOFILL_IDENTITY: {
                     if (!loggedIn) return { action, domain: '' };
+                    if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
                     return { action, domain };
                 }
 
                 case DropdownAction.AUTOFILL_LOGIN: {
                     if (!loggedIn) return { action, domain: '' };
-
-                    if (autofocused) {
-                        /* If the opening action is coming from a focus event for
-                         * an autofill action and the we have no login items that
-                         * match the current domain, cancel the request */
-                        const count = await ctx.service.autofill.getCredentialsCount();
-                        if (count === 0) return;
-                    }
-
+                    if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
                     return { action, domain };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
