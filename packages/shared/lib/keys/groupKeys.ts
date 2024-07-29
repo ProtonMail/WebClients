@@ -1,12 +1,30 @@
+import type { PrivateKeyReference } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
+import noop from '@proton/utils/noop';
 
 import { createGroupAddressKeyRoute } from '../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
-import type { Address, Api, CachedOrganizationKey, KeyGenConfig, KeyTransparencyVerify } from '../interfaces';
+import type {
+    Address,
+    Api,
+    CachedOrganizationKey,
+    DecryptedAddressKey,
+    Key,
+    KeyGenConfig,
+    KeyTransparencyVerify,
+    RequireSome,
+} from '../interfaces';
 import { removePrimary } from './add/addAddressKeyHelper';
-import { generateAddressKey, getNewAddressKeyTokenFromOrgKey } from './addressKeys';
+import {
+    decryptAddressKeyUsingOrgKeyToken,
+    generateAddressKey,
+    getDecryptedAddressKey,
+    getNewAddressKeyTokenFromOrgKey,
+} from './addressKeys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
+
+type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'>;
 
 interface CreateGroupAddressKeyArguments {
     api: Api;
@@ -57,4 +75,22 @@ export const createGroupAddressKey = async ({
     newActiveKey.ID = Key.ID;
 
     return [Key];
+};
+
+export const getDecryptedGroupAddressKey = async (
+    addressKeys: AddressKey[],
+    organizationKey: PrivateKeyReference
+): Promise<DecryptedAddressKey | undefined> => {
+    const [primaryKey] = addressKeys;
+    const { Token, Signature } = primaryKey;
+
+    if (Token) {
+        const primaryKeyResult = await decryptAddressKeyUsingOrgKeyToken({ Token, organizationKey, Signature })
+            .then((password) => getDecryptedAddressKey(primaryKey, password))
+            .catch(noop);
+
+        return Promise.resolve(primaryKeyResult);
+    }
+
+    return undefined;
 };
