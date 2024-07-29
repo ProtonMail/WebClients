@@ -1,9 +1,12 @@
+import { c } from 'ttag';
+
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, UPSELL_ONE_DOLLAR_PROMO_PATHS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -22,19 +25,41 @@ const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const hasSubscriptionModal = openSubscriptionModal !== noop;
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
-    const ABTestInboxUpsellStepEnabled = useFlag('ABTestInboxUpsellStep'); // If enabled, we show the plan selection step
+    const ABTestInboxUpsellOneDollarEnabled = useFlag('ABTestInboxUpsellOneDollar');
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
 
     if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
-        const modalStep =
-            step || ABTestInboxUpsellStepEnabled ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
-        const subscriptionCallBackProps = getUpsellSubscriptionModalConfig(upsellRef, modalStep);
+        const currency: Currency = user?.Currency || 'USD';
+        const isOneDollarPromo =
+            ABTestInboxUpsellOneDollarEnabled &&
+            UPSELL_ONE_DOLLAR_PROMO_PATHS.some((promoPath) => upsellRef?.includes(promoPath));
+
+        const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
+            coupon: isOneDollarPromo ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
+            cycle: isOneDollarPromo ? CYCLE.MONTHLY : undefined,
+            step: isOneDollarPromo ? SUBSCRIPTION_STEPS.CHECKOUT : step,
+            upsellRef,
+        });
+
+        const messageByCurrency = (() => {
+            switch (currency) {
+                case 'USD':
+                    return c('new_plans: Action').t`Get started for $1`;
+                case 'EUR':
+                    return c('new_plans: Action').t`Get started for 1 €`;
+                case 'CHF':
+                    return c('new_plans: Action').t`Get started for CHF 1`;
+                default:
+                    return c('new_plans: Action').t`Upgrade now`;
+            }
+        })();
 
         // The subscription modal will open in inbox app
         return {
             upgradePath: '',
+            submitText: isOneDollarPromo ? messageByCurrency : undefined,
             onUpgrade() {
                 // Generate a mocked request to track upsell activity
                 const urlParameters = { ref: upsellRef, load: 'modalOpen' };
