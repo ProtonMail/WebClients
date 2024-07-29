@@ -14,7 +14,7 @@ const checkPresence = async (reason = 'unlock') => {
 };
 
 const biometrics: BiometricsPlatformHandler = {
-    canCheckPresence: async () => systemPreferences.canPromptTouchID(),
+    canCheckPresence: async () => true,
     checkPresence: async (_e: Electron.IpcMainInvokeEvent, reason?: string) => checkPresence(reason),
     getDecryptionKey: async () => Promise.resolve(null),
     getSecret: async (_e, key) => {
