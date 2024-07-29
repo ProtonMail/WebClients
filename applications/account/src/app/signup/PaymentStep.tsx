@@ -20,7 +20,7 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
+import { getAllowedCycles, getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { useConfig, useHandler } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -215,6 +215,14 @@ const PaymentStep = ({
         handleChangePlanIDs(planIDs, id);
     };
 
+    const allowedCycles = getAllowedCycles({
+        plansMap,
+        defaultCycles,
+        subscription: undefined,
+        planIDs: subscriptionData.planIDs,
+        minimumCycle: subscriptionData.minimumCycle,
+    });
+
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
             <Main center={false}>
@@ -243,13 +251,14 @@ const PaymentStep = ({
                         <SubscriptionCycleSelector
                             mode="buttons"
                             cycle={subscriptionData.cycle}
-                            minimumCycle={subscriptionData.minimumCycle}
                             currency={subscriptionData.currency}
                             onChangeCycle={onChangeCycle}
                             plansMap={plansMap}
                             planIDs={subscriptionData.planIDs}
-                            defaultCycles={defaultCycles}
+                            // the classic signup will be deprecated soon, so no need to add the support for
+                            // coupon syncing here
                             additionalCheckResults={undefined}
+                            allowedCycles={allowedCycles}
                         />
                     )}
                     <div className="text-sm color-weak">
