@@ -78,7 +78,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         const features = ctx?.getFeatures();
 
         switch (action) {
-            case DropdownAction.AUTOFILL:
+            case DropdownAction.AUTOFILL_LOGIN:
+            case DropdownAction.AUTOFILL_IDENTITY:
                 return features?.Autofill ?? false;
             case DropdownAction.AUTOSUGGEST_ALIAS:
                 return features?.AutosuggestAlias ?? false;
@@ -232,13 +233,13 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         return results;
     };
 
-    /** Reconciliating the form trackers involves syncing the form's trackable fields.*/
-    const reconciliate = withContext<() => Promise<void>>(async (ctx) => {
+    /** Reconciles form trackers by syncing trackable fields, attaching
+     * listeners, and managing icons. Triggers autofill syncing and
+     * handles auto-focus for empty active fields. */
+    const reconciliate = withContext<() => void>((ctx) => {
         if (!ctx) return;
 
-        const { loggedIn } = ctx.getState();
         const fieldsToTrack = getTrackableFields();
-        const autofillCount = ctx.service.autofill.getState()?.items.length ?? 0;
 
         form.getFields().forEach((field) => {
             const match = fieldsToTrack.get(field);
@@ -248,15 +249,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
             /* if the field is not currently tracked, attach listeners */
             if (!field.tracked) field.attach({ onChange, onSubmit });
-            if (!match.attachIcon) return field.detachIcon();
-
-            const icon = field.attachIcon();
-            icon?.setCount(loggedIn && match.action === DropdownAction.AUTOFILL ? autofillCount : 0);
+            return match.attachIcon ? field.attachIcon() : field.detachIcon();
         });
 
-        /* trigger auto-focus on current active field if value is empty:
-         * This handles autofocused simple forms, and dynamic forms where
-         * fields may be added incrementally  */
+        /* Trigger focus on empty active field to open dropdown :
+         * Handles autofocused simple forms and dynamically added fields.
+         * Note: This doesn't trigger a real DOM focus event. */
         form
             .getFields()
             .find((field) => field.element === document.activeElement && !field.value)

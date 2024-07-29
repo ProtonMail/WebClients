@@ -4,7 +4,11 @@ import { useIFrameContext } from 'proton-pass-extension/app/content/injections/a
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
+import {
+    type DropdownAction,
+    type DropdownActions,
+    IFramePortMessageType,
+} from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -19,13 +23,12 @@ import {
     isUsingRandomPassword,
     usePasswordGenerator,
 } from '@proton/pass/hooks/usePasswordGenerator';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { type Maybe } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-type Props = { hostname: string; config: GeneratePasswordConfig; copy: boolean };
+type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
-export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial, copy }) => {
+export const AutosuggestPassword: FC<Props> = ({ domain, config: initial, copy }) => {
     const { visible, forwardMessage, close } = useIFrameContext();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -51,7 +54,7 @@ export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial, copy
 
     const autofillPassword = (feedback: boolean) => {
         forwardMessage({
-            type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
+            type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
             payload: { password: generator.password },
         });
 
@@ -83,7 +86,7 @@ export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial, copy
                         <PauseListDropdown
                             criteria="Autosuggest"
                             dense
-                            hostname={hostname}
+                            hostname={domain}
                             label={c('Action').t`Do not suggest on this website`}
                         />
                     </div>

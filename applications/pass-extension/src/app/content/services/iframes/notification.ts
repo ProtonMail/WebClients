@@ -8,7 +8,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
-import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
+import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -76,7 +76,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
                     const state = ctx?.service.iframe.notification?.getState();
                     if (state?.action === NotificationAction.OTP && state.visible) return;
 
-                    iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
+                    iframe.sendPortMessage({ type: IFramePortMessageType.NOTIFICATION_ACTION, payload });
                     iframe.open(payload.action);
                 })
                 .catch(noop)
@@ -84,7 +84,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
     );
 
     iframe.registerMessageHandler(
-        IFrameMessageType.NOTIFICATION_AUTOFILL_OTP,
+        IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
         withContext((ctx, { payload: { code } }) => {
             const form = ctx?.service.formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
             if (!form) return;

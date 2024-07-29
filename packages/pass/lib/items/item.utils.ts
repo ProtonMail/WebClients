@@ -3,13 +3,14 @@ import { c } from 'ttag';
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
+    IdentityItemPreview,
     ItemRevision,
     ItemRevisionID,
     ItemSortFilter,
     ItemType,
     LoginItem,
+    LoginItemPreview,
     MaybeNull,
-    SafeLoginItem,
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
@@ -154,10 +155,17 @@ export const intoUserIdentifier = (item: ItemRevision<'login'>): string =>
     /** For autofill we use the username if not empty, otherwise the email */
     deobfuscate(item.data.content.itemUsername) || deobfuscate(item.data.content.itemEmail);
 
-export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem => ({
-    name: item.data.metadata.name,
-    userIdentifier: intoUserIdentifier(item),
+export const intoLoginItemPreview = (item: ItemRevision<'login'>): LoginItemPreview => ({
     itemId: item.itemId,
     shareId: item.shareId,
+    name: item.data.metadata.name,
+    userIdentifier: intoUserIdentifier(item),
     url: item.data.content.urls?.[0],
+});
+
+export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): IdentityItemPreview => ({
+    itemId: item.itemId,
+    shareId: item.shareId,
+    name: item.data.metadata.name,
+    fullName: item.data.content.fullName,
 });

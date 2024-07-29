@@ -6,20 +6,21 @@ import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
-import { intoSafeLoginItem, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
+import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import {
-    selectAutofillCandidates,
+    selectAutofillIdentityCandidates,
+    selectAutofillLoginCandidates,
     selectAutosuggestCopyToClipboard,
     selectItem,
     selectPasswordOptions,
     selectVaultLimits,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
-import type { FormCredentials, ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
+import type { FormCredentials, ItemContent, ItemRevision, Maybe, SelectedItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -27,14 +28,14 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export const createAutoFillService = () => {
-    const getCandidates = (options: SelectAutofillCandidatesOptions): ItemRevision<'login'>[] =>
-        selectAutofillCandidates(options)(store.getState());
+    const getLoginCandidates = (options: SelectAutofillCandidatesOptions): ItemRevision<'login'>[] =>
+        selectAutofillLoginCandidates(options)(store.getState());
 
-    const getAutofillData = ({ shareId, itemId }: SelectedItem): Maybe<FormCredentials> => {
+    const getCredentials = ({ shareId, itemId }: SelectedItem): Maybe<FormCredentials> => {
         const state = store.getState();
         const item = selectItem<'login'>(shareId, itemId)(state);
 
-        if (item !== undefined && item.data.type === 'login') {
+        if (item?.data.type === 'login') {
             store.dispatch(itemAutofilled({ shareId, itemId }));
             return {
                 /** For autofill we use the username if not empty, otherwise the email */
@@ -42,6 +43,29 @@ export const createAutoFillService = () => {
                 password: deobfuscate(item.data.content.password),
             };
         }
+    };
+
+    const getIdentity = ({ shareId, itemId }: SelectedItem): Maybe<ItemContent<'identity'>> => {
+        const state = store.getState();
+        const item = selectItem<'identity'>(shareId, itemId)(state);
+
+        if (item?.data.type === 'identity') {
+            store.dispatch(itemAutofilled({ shareId, itemId }));
+            return item.data.content;
+        }
+    };
+
+    /* if user has exceeded his vault count limit - this likely means has downgraded
+     * to a free plan : only allow him to autofill from his writable vaults */
+    const getAutofillOptions = (writable?: boolean): { needsUpgrade: boolean; shareIds: Maybe<string[]> } => {
+        const state = store.getState();
+
+        /* if user has exceeded his vault count limit - this likely means has downgraded
+         * to a free plan : only allow him to autofill from his writable vaults */
+        const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
+        const { didDowngrade: needsUpgrade } = selectVaultLimits(state);
+
+        return { needsUpgrade, shareIds: needsUpgrade || writable ? writableShareIds : undefined };
     };
 
     const sync = withContext(({ status }) => {
@@ -53,27 +77,13 @@ export const createAutoFillService = () => {
                 Promise.all(
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
-                            const state = store.getState();
-                            const items = getCandidates(parseUrl(url));
-                            const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
-                            const { didDowngrade } = selectVaultLimits(state);
-
-                            /* if the user has downgraded : we want to keep the tab badge count
-                             * with the total items matched, but sync the autofillable candidates
-                             * in the content-scripts to be only the ones from the writable vaults */
-                            const safeItems = items
-                                .filter((item) => !didDowngrade || writableShareIds.includes(item.shareId))
-                                .map(intoSafeLoginItem);
+                            const items = getLoginCandidates(parseUrl(url));
+                            setPopupIconBadge(tabId, items.length).catch(noop);
 
                             WorkerMessageBroker.ports.broadcast(
-                                {
-                                    type: WorkerMessageType.AUTOFILL_SYNC,
-                                    payload: { items: safeItems, needsUpgrade: didDowngrade },
-                                },
+                                { type: WorkerMessageType.AUTOFILL_SYNC },
                                 isContentScriptPort(tabId)
                             );
-
-                            return setPopupIconBadge(tabId, items.length);
                         }
                     })
                 )
@@ -91,27 +101,37 @@ export const createAutoFillService = () => {
     };
 
     WorkerMessageBroker.registerMessage(
-        WorkerMessageType.AUTOFILL_QUERY,
-        onContextReady(({ getState }, { payload }, sender) => {
-            if (!getState().loggedIn) return { items: [], needsUpgrade: false };
-
+        WorkerMessageType.AUTOFILL_LOGIN_QUERY,
+        onContextReady(async ({ getState }, { payload }, sender) => {
             const tabId = sender.tab?.id;
-            const parsedUrl = parseUrl(payload.domain ?? sender.url!);
-            const state = store.getState();
+            if (!getState().loggedIn || tabId === undefined) throw new Error('Invalid autofill query');
 
-            const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
-            const { didDowngrade } = selectVaultLimits(state);
-            const shareIds = didDowngrade || payload.writable ? writableShareIds : undefined;
+            const host = await (async () => {
+                if (payload.domain) return payload.domain;
+                if (tabId) return (await browser.tabs.get(tabId))?.url;
+                else throw new Error('');
+            })();
 
-            /* if user has exceeded his vault count limit - this likely means has downgraded
-             * to a free plan : only allow him to autofill from his writable vaults */
-            const items = getCandidates({ ...parsedUrl, shareIds });
+            const parsedUrl = parseUrl(host);
+            const { shareIds, needsUpgrade } = getAutofillOptions(payload.writable);
+
+            const items = getLoginCandidates({ ...parsedUrl, shareIds }).map(intoLoginItemPreview);
             if (tabId) void setPopupIconBadge(tabId, items.length);
+            return { items, needsUpgrade };
+        })
+    );
 
-            return {
-                items: (tabId !== undefined && items.length > 0 ? items : []).map(intoSafeLoginItem),
-                needsUpgrade: didDowngrade,
-            };
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_IDENTITY_QUERY,
+        onContextReady(async ({ getState }, _, sender) => {
+            const tabId = sender.tab?.id;
+            if (!getState().loggedIn || tabId === undefined) throw new Error('Invalid autofill query');
+
+            const state = store.getState();
+            const { shareIds, needsUpgrade } = getAutofillOptions();
+            const items = selectAutofillIdentityCandidates(shareIds)(state).map(intoIdentityItemPreview);
+
+            return { items, needsUpgrade };
         })
     );
 
@@ -124,12 +144,20 @@ export const createAutoFillService = () => {
     });
 
     WorkerMessageBroker.registerMessage(
-        WorkerMessageType.AUTOFILL_SELECT,
+        WorkerMessageType.AUTOFILL_LOGIN,
         onContextReady(async (_, message) => {
-            const credentials = getAutofillData(message.payload);
-            if (credentials === undefined) throw new Error('Could not get credentials for autofill request');
-
+            const credentials = getCredentials(message.payload);
+            if (!credentials) throw new Error('Could not get credentials for autofill request');
             return credentials;
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_IDENTITY,
+        onContextReady(async (_, message) => {
+            const identity = getIdentity(message.payload);
+            if (!identity) throw new Error('Could not get identity for autofill request');
+            return identity;
         })
     );
 
@@ -141,14 +169,14 @@ export const createAutoFillService = () => {
             try {
                 await ctx.ensureReady();
                 if (tabId) {
-                    const items = getCandidates(parseUrl(tab.url));
+                    const items = getLoginCandidates(parseUrl(tab.url));
                     await setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
         })
     );
 
-    return { getCandidates, sync, clear };
+    return { getLoginCandidates, sync, clear };
 };
 
 export type AutoFillService = ReturnType<typeof createAutoFillService>;
