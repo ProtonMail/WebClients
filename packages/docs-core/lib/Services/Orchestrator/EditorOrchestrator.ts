@@ -8,11 +8,13 @@ import type {
   BroadcastSource,
   DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
+  InternalEventBusInterface,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
 import type { UserState } from '@lexical/yjs'
 import type { DocsApi } from '../../Api/DocsApi'
+import { PostApplicationError } from '../../Application/ApplicationEvent'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -23,6 +25,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     private readonly comments: CommentServiceInterface,
     private readonly docs: DocControllerInterface,
     private readonly docsApi: DocsApi,
+    private readonly eventBus: InternalEventBusInterface,
   ) {}
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
@@ -43,6 +46,13 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
 
   get role(): DocumentRole {
     return this.docs.role
+  }
+
+  editorReportingFatalError(error: string): void {
+    PostApplicationError(this.eventBus, {
+      translatedError: error,
+      irrecoverable: true,
+    })
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, updateSource: BroadcastSource): Promise<void> {
