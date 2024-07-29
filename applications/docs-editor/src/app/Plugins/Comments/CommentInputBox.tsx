@@ -148,6 +148,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
           transform: `translate3d(-50%, var(--y), 0)`,
         }}
         ref={boxRef}
+        data-testid="comments-floating-input"
       >
         <CommentsComposer
           autoFocus
@@ -163,8 +164,10 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
               icon={<Icon name="arrow-up" size={3.5} />}
               disabled={!canSubmit}
               onClick={submitComment}
+              data-testid="comments-floating-send-button"
             />
           )}
+          data-testid="comments-floating-input-section"
         />
       </div>
     </div>
