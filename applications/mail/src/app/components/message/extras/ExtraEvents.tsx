@@ -13,7 +13,6 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
@@ -42,6 +41,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 

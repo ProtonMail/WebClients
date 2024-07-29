@@ -2,7 +2,6 @@ import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import FlagProvider from '@unleash/proxy-client-react';
 import {
     ArcElement,
     CategoryScale,
@@ -39,6 +38,7 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+import { FlagProvider } from '@proton/unleash';
 import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/ExtendedApiProvider';
 
 import { bootstrapApp } from './bootstrap';

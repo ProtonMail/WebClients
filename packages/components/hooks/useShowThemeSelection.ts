@@ -1,6 +1,6 @@
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
+import { useFlag } from '@proton/unleash';
 
-import useFlag from '../containers/unleash/useFlag';
 import useIsInboxElectronApp from './useIsInboxElectronApp';
 
 const useShowThemeSelection = () => {

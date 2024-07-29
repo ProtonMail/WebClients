@@ -68,7 +68,6 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     SsoPage,
-    useFlag,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
@@ -84,6 +83,7 @@ import LiveChatZendesk, {
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import { useFlag } from '@proton/unleash';
 
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import { getRoutes } from './routes';

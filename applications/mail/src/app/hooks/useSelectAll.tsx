@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
 
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/components/hooks';
+import { useFlag } from '@proton/unleash';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';

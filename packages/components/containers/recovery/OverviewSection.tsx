@@ -1,8 +1,8 @@
 import { useInactiveKeys } from '@proton/account';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useFlag } from '..';
 import { useModalState } from '../../components';
 import {
     useAddresses,

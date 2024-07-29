@@ -15,8 +15,8 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
-import { useFlag } from '../../containers/unleash';
 import { useAuthentication, useConfig, useGetUser } from '../../hooks';
 
 const forceEnableChargebeeInDev = (): boolean => {

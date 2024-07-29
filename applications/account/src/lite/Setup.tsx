@@ -2,8 +2,6 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import FlagProvider from '@unleash/proxy-client-react';
-
 import { serverEvent, userThunk } from '@proton/account';
 import {
     ApiProvider,
@@ -30,7 +28,13 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { UnleashClient, createCustomFetch, createUnleashReadyPromise, getUnleashConfig } from '@proton/unleash';
+import {
+    FlagProvider,
+    UnleashClient,
+    createCustomFetch,
+    createUnleashReadyPromise,
+    getUnleashConfig,
+} from '@proton/unleash';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { useAccountDispatch } from '../app/store/hooks';

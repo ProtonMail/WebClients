@@ -1,9 +1,9 @@
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash';
 
 import { SettingsParagraph, SettingsSection } from '../../../account';
 import { useCancellationFlow } from '../cancellationFlow';

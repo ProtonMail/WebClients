@@ -4,12 +4,12 @@ import {
     SecurityCenterDrawerAppButton,
     WalletDrawerAppButton,
 } from '@proton/components/components';
-import { useFlag } from '@proton/components/containers';
 import { useDrawer } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 const useMailDrawer = () => {

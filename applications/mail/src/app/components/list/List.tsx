@@ -4,11 +4,12 @@ import { Fragment, forwardRef, memo, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import type { Breakpoints } from '@proton/components';
-import { useConversationCounts, useFlag, useItemsDraggable, useLabels, useMessageCounts } from '@proton/components';
+import { useConversationCounts, useItemsDraggable, useLabels, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';

@@ -7,7 +7,6 @@ import {
     useAddresses,
     useAddressesKeys,
     useApi,
-    useFlag,
     useKTVerifier,
     useNotifications,
     useOrganizationKey,
@@ -17,6 +16,7 @@ import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseFeature } from '@proton/testing/lib/mockUseFeature';
+import useFlag from '@proton/unleash/useFlag';
 
 import AddressesWithUser from './AddressesWithUser';
 
@@ -44,7 +44,7 @@ const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof us
 jest.mock('@proton/components/containers/keyTransparency/useKTVerifier');
 const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVerifier>;
 
-jest.mock('@proton/components/containers/unleash/useFlag');
+jest.mock('@proton/unleash/useFlag');
 const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 
 jest.mock('@proton/components/hooks/useOrganizationKey');

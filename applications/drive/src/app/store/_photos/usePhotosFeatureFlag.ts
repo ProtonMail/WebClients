@@ -1,3 +1,3 @@
-import { useFlag } from '@proton/components';
+import { useFlag } from '@proton/unleash';
 
 export const usePhotosFeatureFlag = () => useFlag('DrivePhotos');

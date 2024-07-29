@@ -1,9 +1,8 @@
-import { useFlag } from '@unleash/proxy-client-react';
-
 import { useConfig, useFeature, useOrganization, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+import { useFlag } from '@proton/unleash';
 
 import { FeatureCode } from '../../features';
 import { useOrganizationTheme } from './useOrganizationTheme';
