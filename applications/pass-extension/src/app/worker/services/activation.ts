@@ -233,7 +233,7 @@ export const createActivationService = () => {
         const tab = await browser.tabs.get(tabId);
         const parsedUrl = parseUrl(tab.url ?? '');
         const { subdomain, domain } = parsedUrl;
-        const items = ctx.service.autofill.getCandidates(parsedUrl);
+        const items = ctx.service.autofill.getLoginCandidates(parsedUrl);
         const hasAutofillCandidates = items.length > 0;
 
         const state = store.getState();

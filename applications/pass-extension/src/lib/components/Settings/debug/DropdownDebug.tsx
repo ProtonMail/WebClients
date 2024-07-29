@@ -6,27 +6,9 @@ import { DropdownAction } from 'proton-pass-extension/app/content/types';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
-import type { SafeLoginItem } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { MockIFrameContainer } from './MockIFrameContainer';
-
-const LOGIN_ITEMS: SafeLoginItem[] = [
-    {
-        name: 'Netflix account',
-        userIdentifier: 'netflix+nobody@proton.me',
-        shareId: uniqueId(),
-        itemId: uniqueId(),
-        url: 'https://netflix.com',
-    },
-    {
-        name: 'Proton credentials',
-        userIdentifier: 'nobody@proton.me',
-        shareId: uniqueId(),
-        itemId: uniqueId(),
-    },
-];
 
 export const DropdownDebug: FC = () => {
     return (
@@ -38,10 +20,8 @@ export const DropdownDebug: FC = () => {
 
                 <MockIFrameContainer
                     payload={{
-                        action: DropdownAction.AUTOFILL,
-                        hostname: 'proton.me',
-                        needsUpgrade: false,
-                        items: [],
+                        action: DropdownAction.AUTOFILL_LOGIN,
+                        domain: 'proton.me',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -51,10 +31,8 @@ export const DropdownDebug: FC = () => {
                 <MockIFrameContainer
                     appState={{ status: AppStatus.SESSION_LOCKED }}
                     payload={{
-                        action: DropdownAction.AUTOFILL,
-                        hostname: 'proton.me',
-                        needsUpgrade: false,
-                        items: [],
+                        action: DropdownAction.AUTOFILL_LOGIN,
+                        domain: 'proton.me',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -63,10 +41,8 @@ export const DropdownDebug: FC = () => {
 
                 <MockIFrameContainer
                     payload={{
-                        action: DropdownAction.AUTOFILL,
-                        hostname: 'proton.me',
-                        needsUpgrade: false,
-                        items: [LOGIN_ITEMS[1]],
+                        action: DropdownAction.AUTOFILL_LOGIN,
+                        domain: 'proton.me',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -75,10 +51,8 @@ export const DropdownDebug: FC = () => {
 
                 <MockIFrameContainer
                     payload={{
-                        action: DropdownAction.AUTOFILL,
-                        hostname: 'proton.me',
-                        needsUpgrade: true,
-                        items: [LOGIN_ITEMS[0]],
+                        action: DropdownAction.AUTOFILL_LOGIN,
+                        domain: 'proton.me',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -87,10 +61,8 @@ export const DropdownDebug: FC = () => {
 
                 <MockIFrameContainer
                     payload={{
-                        action: DropdownAction.AUTOFILL,
-                        hostname: 'proton.me',
-                        needsUpgrade: false,
-                        items: LOGIN_ITEMS,
+                        action: DropdownAction.AUTOFILL_LOGIN,
+                        domain: 'proton.me',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -101,7 +73,7 @@ export const DropdownDebug: FC = () => {
                     payload={{
                         action: DropdownAction.AUTOSUGGEST_PASSWORD,
                         config: DEFAULT_RANDOM_PW_OPTIONS,
-                        hostname: 'proton.me',
+                        domain: 'proton.me',
                         copy: false,
                     }}
                     width={DROPDOWN_WIDTH}
@@ -112,7 +84,7 @@ export const DropdownDebug: FC = () => {
                 <MockIFrameContainer
                     payload={{
                         action: DropdownAction.AUTOSUGGEST_ALIAS,
-                        hostname: 'proton.me',
+                        domain: 'proton.me',
                         prefix: 'secret',
                     }}
                     width={DROPDOWN_WIDTH}

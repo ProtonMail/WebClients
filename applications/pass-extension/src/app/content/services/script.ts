@@ -16,7 +16,7 @@ import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { clientNeedsSession, clientReady, clientSessionLocked } from '@proton/pass/lib/client';
+import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -55,15 +55,10 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         const { status } = context.getState();
         context.service.formManager.sync();
 
-        const ready = clientReady(status);
         const locked = clientSessionLocked(status);
         const loggedOut = clientNeedsSession(status);
 
-        if (ready) await context.service.autofill.reconciliate();
-        else if (loggedOut || locked) {
-            /** If the user is unexpectedly logged out, clear autofill cached
-             * data and detach any autosave notification that may be present */
-            context.service.autofill.reset();
+        if (loggedOut || locked) {
             const action = context.service.iframe.notification?.getState().action;
             const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
             const shouldDestroy = !locked || (action && !unlockable.includes(action));
@@ -87,7 +82,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         if (message.sender === 'background') {
             switch (message.type) {
                 case WorkerMessageType.AUTOFILL_SYNC:
-                    return context.service.autofill.sync(message.payload);
+                    return context.service.autofill.sync({ forceSync: true });
                 case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                     return onFeatureFlagsChange(message.payload);
                 case WorkerMessageType.SETTINGS_UPDATE:

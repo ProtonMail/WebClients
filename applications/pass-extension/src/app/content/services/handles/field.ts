@@ -95,6 +95,7 @@ export const createFieldHandles = ({
         icon: null,
         action: null,
         value: element.value,
+        autofilled: false,
         tracked: false,
         zIndex,
         getFormHandle,
@@ -102,7 +103,10 @@ export const createFieldHandles = ({
             if (options?.reflow) field.boxElement = findBoundingInputElement(element);
             return field.boxElement;
         },
-        setValue: (value) => (field.value = value),
+        setValue: (value) => {
+            field.autofilled = false;
+            return (field.value = value);
+        },
         setAction: (action) => (field.action = action),
 
         /* if the field is already focused we need to re-dispatch the event on the input
@@ -127,12 +131,20 @@ export const createFieldHandles = ({
             }
         },
 
-        autofill: withActionTrap(element, createAutofill(element)),
+        autofill: (value, options) => {
+            if (value) {
+                withActionTrap(element, createAutofill(element))(value, options);
+                field.autofilled = true;
+            }
+        },
 
         /* if an icon is already attached recycle it */
         attachIcon: withContext((ctx) => {
             if (!ctx) return;
-            return (field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements }));
+            field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements });
+            field.icon.setCount(0);
+
+            return field.icon;
         }),
 
         detachIcon() {
