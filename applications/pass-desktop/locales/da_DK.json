@@ -37,6 +37,9 @@
       "Add new item": [
         "Tilføj nyt element"
       ],
+      "Add section": [
+        "Tilføj sektion"
+      ],
       "Add username field": [
         "Tilføj brugernavn-felt"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Opret kort"
       ],
+      "Create identity": [
+        "Opret identitet"
+      ],
       "Create login": [
         "Opret login"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Opretter boks"
+      ],
+      "Custom section": [
+        "Tilpas sektion"
       ],
       "Customize": [
         "Tilpas"
@@ -426,6 +435,9 @@
       ],
       "Saving": [
         "Gemmer"
+      ],
+      "Section name": [
+        "Sektionsnavn"
       ],
       "Secure links": [
         "Sikre links"
@@ -1591,6 +1603,9 @@
       "Restoring trashed items...": [
         "Gendanner elementer i papirkurven..."
       ],
+      "Secure links": [
+        "Sikre links"
+      ],
       "Select destination vault": [
         "Vælg destinationsboks"
       ],
@@ -1889,6 +1904,15 @@
       "Account": [
         "Konto"
       ],
+      "Add section": [
+        "Tilføj sektion"
+      ],
+      "Additional details": [
+        "Yderligere detaljer"
+      ],
+      "Address details": [
+        "Adresseoplysninger"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1916,6 +1940,9 @@
       "Beta Access": [
         "Beta-adgang"
       ],
+      "Birthdate": [
+        "Fødselsdato"
+      ],
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
       ],
@@ -1931,14 +1958,29 @@
       "Cards": [
         "Kort"
       ],
+      "City": [
+        "By"
+      ],
       "Code": [
         "Kode"
+      ],
+      "Company": [
+        "Selskab"
       ],
       "Confirm vault name": [
         "Bekræft boks-navn"
       ],
+      "Contact details": [
+        "Kontaktoplysninger"
+      ],
       "Copy": [
         "Kopiér"
+      ],
+      "Country or Region": [
+        "Land eller region"
+      ],
+      "County": [
+        "Land"
       ],
       "Create a credit card": [
         "Opret et betalingskort"
@@ -1952,6 +1994,9 @@
       "Create an encrypted note": [
         "Opret en krypteret note"
       ],
+      "Create an Identity": [
+        "Opret en identitet"
+      ],
       "Create lock": [
         "Opret lås"
       ],
@@ -1963,6 +2008,12 @@
       ],
       "Created at": [
         "Oprettet kl."
+      ],
+      "Custom hidden field": [
+        "Tilpasset skjult felt"
+      ],
+      "Custom text field": [
+        "Tilpasset tekstfelt"
       ],
       "Date": [
         "Dato"
@@ -2012,17 +2063,32 @@
       "Extra password": [
         "Ekstra adgangskode"
       ],
+      "Facebook account": [
+        "Facebook-konto"
+      ],
       "Field name": [
         "Feltnavn"
       ],
       "File format": [
         "Filformat"
       ],
+      "First name": [
+        "Fornavn"
+      ],
+      "Floor, apartment, building": [
+        "Etage, lejlighed, bygning"
+      ],
       "Forwards to": [
         "Videresender til"
       ],
       "Free forever": [
         "Gratis for evigt"
+      ],
+      "Full Name": [
+        "Fulde navn"
+      ],
+      "Gender": [
+        "Køn"
       ],
       "General": [
         "Generelt"
@@ -2042,6 +2108,15 @@
       "Hide password": [
         "Skjul adgangskode"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Identiteter"
+      ],
+      "Identity": [
+        "Identitet"
+      ],
       "Import": [
         "Importér"
       ],
@@ -2060,11 +2135,17 @@
       "Include numbers (0-9)": [
         "Inkluder tal (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram - brugernavn"
+      ],
       "Invitations": [
         "Invitationer"
       ],
       "Item ID": [
         "Element-ID"
+      ],
+      "Job title": [
+        "Jobtitel"
       ],
       "Key": [
         "Nøgle"
@@ -2081,6 +2162,9 @@
       "Last month": [
         "Sidste måned"
       ],
+      "Last name": [
+        "Efternavn"
+      ],
       "Last updated": [
         "Sidst opdateret"
       ],
@@ -2092,6 +2176,12 @@
       ],
       "Learn more": [
         "Lær mere"
+      ],
+      "License number": [
+        "Licensnummer"
+      ],
+      "LinkedIn account": [
+        "LinkedIn-konto"
       ],
       "Login": [
         "Login"
@@ -2113,6 +2203,9 @@
       ],
       "Members": [
         "Medlemmer"
+      ],
+      "Middle name": [
+        "Mellemnavn"
       ],
       "Modified": [
         "Ændret"
@@ -2174,14 +2267,26 @@
       "Passphrase": [
         "Adgangssætning"
       ],
+      "Passport number": [
+        "Pasnummer"
+      ],
       "Password": [
         "Adgangskode"
       ],
       "Password history": [
         "Adgangskodehistorik"
       ],
+      "Personal details": [
+        "Personlige oplysninger"
+      ],
+      "Personal website": [
+        "Personligt websted"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-krypteret JSON (anbefales)"
+      ],
+      "Phone number": [
+        "Telefonnummer"
       ],
       "PIN": [
         "Pinkode"
@@ -2200,6 +2305,9 @@
       ],
       "Recent": [
         "Seneste"
+      ],
+      "Reddit handle": [
+        "Reddit-brugernavn"
       ],
       "Remove link": [
         "Fjern link"
@@ -2249,11 +2357,23 @@
       "Show website favicons": [
         "Vis websteders favicon"
       ],
+      "Social security number": [
+        "CPR-nummer (personnummer)"
+      ],
       "Special characters (!&*)": [
         "Specielle tegn (!&*)"
       ],
+      "State or province": [
+        "Landsdel eller provins"
+      ],
       "Status": [
         "Status"
+      ],
+      "Street address": [
+        "Adresse"
+      ],
+      "Street address, P.O. box": [
+        "Gadeadresse, postboks"
       ],
       "Strong": [
         "Stærk"
@@ -2337,11 +2457,32 @@
       "Weak": [
         "Svag"
       ],
+      "Website": [
+        "Websted"
+      ],
       "Websites": [
         "Websider"
       ],
+      "Work details": [
+        "Arbejdsdetaljer"
+      ],
+      "Work email": [
+        "Arbejdsmail"
+      ],
+      "Work phone number": [
+        "Arbejdstelefonnummer"
+      ],
+      "X handle": [
+        "X-@navn"
+      ],
+      "Yahoo account": [
+        "Yahoo-konto"
+      ],
       "You are about to create": [
         "Du er ved at oprette"
+      ],
+      "ZIP or Postal code": [
+        "Postnummer"
       ]
     },
     "Link": {
@@ -2835,6 +2976,9 @@
       ],
       "OTP secret or URI required": [
         "OTP-hemmelighed eller URI påkrævet"
+      ],
+      "Section name cannot be empty": [
+        "Sektionsnavn kan ikke være tomt"
       ],
       "Url already exists": [
         "URL eksisterer allerede"

@@ -37,6 +37,9 @@
       "Add new item": [
         "Dodaj nowy element"
       ],
+      "Add section": [
+        "Dodaj sekcję"
+      ],
       "Add username field": [
         "Dodaj pole nazwy użytkownika"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Utwórz kartę"
       ],
+      "Create identity": [
+        "Utwórz tożsamość"
+      ],
       "Create login": [
         "Utwórz dane logowania"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Tworzenie sejfu"
+      ],
+      "Custom section": [
+        "Niestandardowa sekcja"
       ],
       "Customize": [
         "Dostosuj"
@@ -426,6 +435,9 @@
       ],
       "Saving": [
         "Zapisywanie"
+      ],
+      "Section name": [
+        "Nazwa sekcji"
       ],
       "Secure links": [
         "Linki"
@@ -1624,6 +1636,9 @@
       "Restoring trashed items...": [
         "Przywracanie usuniętych elementów..."
       ],
+      "Secure links": [
+        "Linki"
+      ],
       "Select destination vault": [
         "Wybierz docelowy sejf"
       ],
@@ -1938,6 +1953,15 @@
       "Account": [
         "Konto"
       ],
+      "Add section": [
+        "Dodaj sekcję"
+      ],
+      "Additional details": [
+        "Dodatkowe szczegóły"
+      ],
+      "Address details": [
+        "Szczegóły adresu"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1965,6 +1989,9 @@
       "Beta Access": [
         "Dostęp beta"
       ],
+      "Birthdate": [
+        "Urodziny"
+      ],
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
       ],
@@ -1980,14 +2007,29 @@
       "Cards": [
         "Karty"
       ],
+      "City": [
+        "Miasto"
+      ],
       "Code": [
         "Kod"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Confirm vault name": [
         "Potwierdź nazwę sejfu"
       ],
+      "Contact details": [
+        "Szczegóły kontaktu"
+      ],
       "Copy": [
         "Kopiuj"
+      ],
+      "Country or Region": [
+        "Kraj lub region"
+      ],
+      "County": [
+        "Powiat"
       ],
       "Create a credit card": [
         "Utwórz kartę płatniczą"
@@ -2001,6 +2043,9 @@
       "Create an encrypted note": [
         "Utwórz zaszyfrowaną notatkę"
       ],
+      "Create an Identity": [
+        "Utwórz tożsamość"
+      ],
       "Create lock": [
         "Włącz blokadę"
       ],
@@ -2012,6 +2057,12 @@
       ],
       "Created at": [
         "Utworzono na stronie"
+      ],
+      "Custom hidden field": [
+        "Ukryte tekstowe pole niestandardowe"
+      ],
+      "Custom text field": [
+        "Tekstowe pole niestandardowe"
       ],
       "Date": [
         "Data"
@@ -2061,17 +2112,32 @@
       "Extra password": [
         "Dodatkowe hasło"
       ],
+      "Facebook account": [
+        "Profil Facebook"
+      ],
       "Field name": [
         "Nazwa pola"
       ],
       "File format": [
         "Format pliku"
       ],
+      "First name": [
+        "Imię"
+      ],
+      "Floor, apartment, building": [
+        "Piętro, mieszkanie, budynek"
+      ],
       "Forwards to": [
         "Przekaż do"
       ],
       "Free forever": [
         "Darmowy na zawsze"
+      ],
+      "Full Name": [
+        "Imię i nazwisko"
+      ],
+      "Gender": [
+        "Płeć"
       ],
       "General": [
         "Ogólne"
@@ -2091,6 +2157,15 @@
       "Hide password": [
         "Ukryj hasło"
       ],
+      "https://example.com": [
+        "https://przyklad.pl"
+      ],
+      "Identities": [
+        "Tożsamości"
+      ],
+      "Identity": [
+        "Tożsamość"
+      ],
       "Import": [
         "Importowanie"
       ],
@@ -2109,11 +2184,17 @@
       "Include numbers (0-9)": [
         "Cyfry (0-9)"
       ],
+      "Instagram handle": [
+        "Profil Instagram"
+      ],
       "Invitations": [
         "Zaproszenia"
       ],
       "Item ID": [
         "Identyfikator elementu"
+      ],
+      "Job title": [
+        "Stanowisko"
       ],
       "Key": [
         "Klucz"
@@ -2130,6 +2211,9 @@
       "Last month": [
         "Ostatni miesiąc"
       ],
+      "Last name": [
+        "Nazwisko"
+      ],
       "Last updated": [
         "Ostatnia aktualizacja"
       ],
@@ -2141,6 +2225,12 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "License number": [
+        "Numer prawa jazdy"
+      ],
+      "LinkedIn account": [
+        "Profil LinkedIn"
       ],
       "Login": [
         "Dane logowania"
@@ -2162,6 +2252,9 @@
       ],
       "Members": [
         "Użytkownicy"
+      ],
+      "Middle name": [
+        "Drugie imię"
       ],
       "Modified": [
         "Zmodyfikowano"
@@ -2223,14 +2316,26 @@
       "Passphrase": [
         "Hasło"
       ],
+      "Passport number": [
+        "Numer paszportu"
+      ],
       "Password": [
         "Hasło"
       ],
       "Password history": [
         "Historia hasła"
       ],
+      "Personal details": [
+        "Szczegóły osobiste"
+      ],
+      "Personal website": [
+        "Osobista strona internetowa"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON zaszyfrowany PGP (zalecany)"
+      ],
+      "Phone number": [
+        "Numer telefonu"
       ],
       "PIN": [
         "Kod PIN"
@@ -2249,6 +2354,9 @@
       ],
       "Recent": [
         "Ostatnie"
+      ],
+      "Reddit handle": [
+        "Nazwa użytkownika Reddit"
       ],
       "Remove link": [
         "Usuń link"
@@ -2295,11 +2403,23 @@
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
       ],
+      "Social security number": [
+        "Numer ubezpieczenia społecznego"
+      ],
       "Special characters (!&*)": [
         "Znaki specjalne (!&*)"
       ],
+      "State or province": [
+        "Stan lub województwo"
+      ],
       "Status": [
         "Status"
+      ],
+      "Street address": [
+        "Ulica"
+      ],
+      "Street address, P.O. box": [
+        "Ulica"
       ],
       "Strong": [
         "Silne"
@@ -2385,11 +2505,32 @@
       "Weak": [
         "Słabe"
       ],
+      "Website": [
+        "Strona internetowa"
+      ],
       "Websites": [
         "Strony internetowe"
       ],
+      "Work details": [
+        "Szczegóły służbowe"
+      ],
+      "Work email": [
+        "Służbowy adres e-mail"
+      ],
+      "Work phone number": [
+        "Służbowy numer telefonu"
+      ],
+      "X handle": [
+        "Profil X"
+      ],
+      "Yahoo account": [
+        "Profil Yahoo"
+      ],
       "You are about to create": [
         "Utworzysz"
+      ],
+      "ZIP or Postal code": [
+        "Kod pocztowy"
       ]
     },
     "Link": {
@@ -2889,6 +3030,9 @@
       ],
       "OTP secret or URI required": [
         "Sekret TOTP lub adres URL jest wymagany"
+      ],
+      "Section name cannot be empty": [
+        "Nazwa sekcji nie może być pusta"
       ],
       "Url already exists": [
         "Adres URL już istnieje"
