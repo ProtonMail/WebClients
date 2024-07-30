@@ -232,7 +232,7 @@ export function useLinksListingHelpers() {
      * The callback function must return a AnchorID and More as boolean value representing a presence of the next page in listing.
      */
     const loadFullListingWithAnchor = async (
-        callback: (AnchorID?: string) => Promise<{ AnchorID: string; More: boolean }>,
+        callback: (AnchorID?: string) => Promise<{ AnchorID?: string; More: boolean }>,
         AnchorIdIn?: string
     ): Promise<void> => {
         const result = await callback(AnchorIdIn);

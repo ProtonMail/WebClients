@@ -124,3 +124,9 @@ export const queryListPendingInvitations = (params?: { AnchorID?: string }) => (
     url: `drive/v2/shares/invitations`,
     params,
 });
+
+export const queryListPendingExternalInvitations = (params?: { AnchorID?: string }) => ({
+    method: 'get',
+    url: `drive/v2/shares/external-invitations`,
+    params,
+});
