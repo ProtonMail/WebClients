@@ -735,6 +735,9 @@
       "Select all": [
         "Tout sélectionner"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Sélectionner le cycle de facturation ${ billingText }"
+      ],
       "Select country": [
         "Sélectionnez un pays"
       ],
@@ -2382,6 +2385,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Aidez-nous à nous améliorer"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
       ]
     },
     "Email body for description (description part)": {
@@ -4243,7 +4254,7 @@
         "Téléchargement en cours"
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Le téléchargement de fichiers ${ DOCS_APP_NAME } depuis ${ DRIVE_APP_NAME } n'est actuellement pas pris en charge. Ces derniers ne serot pas inclus dans votre téléchargement."
+        "Le téléchargement de fichiers ${ DOCS_APP_NAME } depuis ${ DRIVE_APP_NAME } n'est actuellement pas pris en charge. Ces derniers ne seront pas inclus dans votre téléchargement."
       ],
       "Downloading all encrypted files": [
         "Téléchargement de tous les fichiers chiffrés"
@@ -6999,9 +7010,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
@@ -7795,11 +7803,26 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
+      "Please select billing country": [
+        "Veuillez sélectionner le pays pour la facturation."
+      ],
+      "Please select billing state": [
+        "Veuillez sélectionner l'état pour la facturation."
+      ],
+      "Please select your billing country first.": [
+        "Veuillez d'abord sélectionner votre pays de facturation."
+      ],
+      "Please select your billing state first.": [
+        "Veuillez d'abord sélectionner votre état de facturation."
+      ],
+      "Select billing country to pay": [
+        "Veuillez sélectionner l'état pour la facturation à payer."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Il sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
@@ -7808,7 +7831,7 @@
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons votre paiement pour la facture facturée. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -9453,6 +9476,9 @@
       ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create a new file": [
         "Créer un nouveau fichier"

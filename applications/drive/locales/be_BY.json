@@ -741,6 +741,9 @@
       "Select all": [
         "Выбраць усе"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Выбраць перыяд аплаты ${ billingText }"
+      ],
       "Select country": [
         "Выберыце краіну"
       ],
@@ -2408,6 +2411,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Дапамажыце нам палепшыць наш сэрвіс"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Пашыраная гісторыя версій"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ]
     },
     "Email body for description (description part)": {
@@ -7272,9 +7283,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
       ],
@@ -8107,6 +8115,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
+      ],
+      "Please select billing country": [
+        "Выберыце краіну выстаўлення рахунку"
+      ],
+      "Please select billing state": [
+        "Выберыце стан выстаўлення рахунку"
+      ],
+      "Please select your billing country first.": [
+        "Першапачаткова выберыце вашу краіну выстаўлення рахунку."
+      ],
+      "Please select your billing state first.": [
+        "Першапачаткова выберыце ваш стан выстаўлення рахунку."
+      ],
+      "Select billing country to pay": [
+        "Выберыце краіну выстаўлення рахунку для алпаты"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
@@ -9861,6 +9884,9 @@
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
       ],
+      "Coupon": [
+        "Купон"
+      ],
       "Create a new file": [
         "Стварэнне новага файла"
       ],
@@ -10557,6 +10583,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } уліковы запіс на кашалёк",
+        "${ n } уліковыя запісы на кашалёк",
+        "${ n } уліковых запісаў на кашалёк",
+        "${ n } уліковых запісаў на кашалёк"
+      ],
+      "${ n } email address": [
+        "${ n } адрас электроннай пошты",
+        "${ n } адрасы электроннай пошты",
+        "${ n } адрасоў электроннай пошты",
+        "${ n } адрасоў электроннай пошты"
+      ],
+      "${ n } wallet": [
+        "${ n } кашалёк",
+        "${ n } кашалькі",
+        "${ n } кашалькоў",
+        "${ n } кашалькоў"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Больш бяспечны спосаб захоўвання Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin праз электронную пошту"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Праблема з Wallet"
       ]
     },
     "Warning": {

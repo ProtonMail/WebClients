@@ -2381,6 +2381,14 @@
         "Ayúdanos a mejorar"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓN:\n${ eventDescription }"
@@ -3107,6 +3115,9 @@
     "Error message": {
       "Access denied": [
         "Acceso denegado"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
@@ -4246,7 +4257,7 @@
         "Suelta tus archivos aquí para cargarlos"
       ],
       "Drop files here": [
-        "Suelta los archivos aquí"
+        "Suelta los archivos aquí."
       ],
       "Drop to import": [
         "Suelta aquí para importar"
@@ -4489,6 +4500,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
+      ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Mantén tu archivo seguro con cifrado de extremo a extremo en ${ DRIVE_APP_NAME }."
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
@@ -6990,9 +7004,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo tu negocio."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
       ],
@@ -7442,7 +7453,7 @@
         "Acceso para el miembro borrado"
       ],
       "Access updated": [
-        "El acceso ha sido actualizado."
+        "Se ha actualizado el acceso."
       ],
       "Access updated and shared": [
         "El acceso ha sido actualizado y compartido."
@@ -7501,6 +7512,9 @@
       "Failed to open document": [
         "Error al abrir el documento"
       ],
+      "Failed to reject share invitation": [
+        "Se ha producido un error al rechazar la invitación compartida."
+      ],
       "Failed to remove the file": [
         "Error al borrar el archivo"
       ],
@@ -7546,6 +7560,9 @@
       ],
       "Share invitation accepted successfully": [
         "La invitación compartida ha sido aceptada."
+      ],
+      "Share invitation declined": [
+        "Se ha rechazado la invitación compartida."
       ],
       "Stopping to share this item has failed": [
         "Error al dejar de compartir este elemento"
@@ -7621,6 +7638,9 @@
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Crea y colabora en documentos. Todo protegido con cifrado de extremo a extremo."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "¡Comienza usar ${ DRIVE_APP_NAME } y mejoraremos tu almacenamiento a 5 GB!"
       ],
@@ -7776,6 +7796,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
+      ],
+      "Please select your billing state first.": [
+        "Selecciona primero tu estado de facturación"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -8652,7 +8675,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturado cada año"
+        "Facturación anual"
       ]
     },
     "Subscription attribute": {
@@ -9435,6 +9458,9 @@
       ],
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
+      ],
+      "Coupon": [
+        "Cupón"
       ],
       "Create a new file": [
         "Crear un archivo"
