@@ -323,6 +323,16 @@ export const SSO_PATHS = {
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
+export const SECURITY_CHECKUP_PATHS = {
+    ROOT: '/security-checkup',
+    SET_PHRASE: '/security-checkup/phrase',
+    SET_EMAIL: '/security-checkup/email',
+    ENABLE_EMAIL: '/security-checkup/email/enable',
+    SET_PHONE: '/security-checkup/phone',
+    ENABLE_PHONE: '/security-checkup/phone/enable',
+    ENABLE_DEVICE_RECOVERY: '/security-checkup/device',
+};
+
 export const VPN_HOSTNAME = 'account.protonvpn.com';
 
 export enum HTTP_STATUS_CODE {
@@ -1340,3 +1350,6 @@ export enum REASON_TYPES {
     TICKET_ID = 'ticket_id',
     OTHER = 'other',
 }
+
+export const RECOVERY_KIT_FILE_NAME = 'proton-recovery-kit.pdf';
+export const RECOVERY_FILE_FILE_NAME = `proton_recovery${KEY_FILE_EXTENSION}`;

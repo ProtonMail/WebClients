@@ -1,0 +1,78 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_33148_23355)">
+        <path
+            d="M24.0011 43.1998C34.6052 43.1998 43.2014 34.6037 43.2014 23.9998C43.2014 13.3959 34.6052 4.7998 24.0011 4.7998C13.3971 4.7998 4.80078 13.3959 4.80078 23.9998C4.80078 34.6037 13.3971 43.1998 24.0011 43.1998Z"
+            fill="white"
+        />
+        <path
+            d="M42.7014 23.9998C42.7014 34.3275 34.329 42.6998 24.0011 42.6998C13.6732 42.6998 5.30078 34.3275 5.30078 23.9998C5.30078 13.6721 13.6732 5.2998 24.0011 5.2998C34.329 5.2998 42.7014 13.6721 42.7014 23.9998Z"
+            stroke="#6D4AFF"
+            stroke-opacity="0.1"
+        />
+        <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M31.2013 20.3191C31.2013 24.2956 27.9777 27.5191 24.0013 27.5191C20.0248 27.5191 16.8013 24.2956 16.8013 20.3191C16.8013 16.3427 20.0248 13.1191 24.0013 13.1191C27.9777 13.1191 31.2013 16.3427 31.2013 20.3191ZM24.0016 43.2C29.4926 43.2 34.4452 40.8951 37.9447 37.2C34.4452 33.5049 29.4926 31.2 24.0016 31.2C18.5107 31.2 13.5581 33.5049 10.0586 37.2C13.5581 40.8951 18.5107 43.2 24.0016 43.2Z"
+            fill="url(#paint0_linear_33148_23355)"
+        />
+        <g opacity="0.3" filter="url(#filter0_f_33148_23355)">
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M41.9647 17.2081C40.0201 12.0675 35.9322 7.97997 30.7914 6.03564C30.2837 7.11762 30 8.32558 30 9.59981C30 14.239 33.7608 17.9998 38.4 17.9998C39.6744 17.9998 40.8826 17.716 41.9647 17.2081Z"
+                fill="#1C008A"
+                fill-opacity="0.5"
+            />
+        </g>
+        <path
+            d="M48 8C48 3.58172 44.4183 3.13124e-07 40 6.99382e-07C35.5817 1.08564e-06 32 3.58172 32 8C32 12.4183 35.5817 16 40 16C44.4183 16 48 12.4183 48 8Z"
+            fill="url(#paint1_linear_33148_23355)"
+        />
+        <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M43.7655 5.21625C44.0779 5.52867 44.0779 6.0352 43.7655 6.34762L39.5473 10.5658C39.2349 10.8782 38.7284 10.8782 38.416 10.5658L36.416 8.56579C36.1035 8.25337 36.1035 7.74684 36.416 7.43441C36.7284 7.12199 37.2349 7.12199 37.5473 7.43441L38.9817 8.86873L42.6341 5.21625C42.9465 4.90383 43.4531 4.90383 43.7655 5.21625Z"
+            fill="white"
+        />
+    </g>
+    <defs>
+        <filter
+            id="filter0_f_33148_23355"
+            x="26"
+            y="2.03564"
+            width="19.9648"
+            height="19.9644"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_33148_23355" />
+        </filter>
+        <linearGradient
+            id="paint0_linear_33148_23355"
+            x1="25.3423"
+            y1="2.99577"
+            x2="34.3237"
+            y2="41.181"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#ECAAFF" />
+            <stop offset="1" stop-color="#6A48F6" />
+        </linearGradient>
+        <linearGradient
+            id="paint1_linear_33148_23355"
+            x1="32"
+            y1="0.400001"
+            x2="47.6"
+            y2="16"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#2AF091" />
+            <stop offset="1" stop-color="#00C5A1" />
+        </linearGradient>
+        <clipPath id="clip0_33148_23355">
+            <rect width="48" height="48" fill="white" />
+        </clipPath>
+    </defs>
+</svg>

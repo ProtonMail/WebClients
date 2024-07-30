@@ -6,7 +6,7 @@ jest.mock('../../hooks/useIsSentinelUser', () => jest.fn());
 jest.mock('../../hooks/useUser', () => jest.fn());
 jest.mock('../../hooks/useUserSettings', () => jest.fn());
 jest.mock('../../hooks/useRecoveryStatus', () => jest.fn());
-jest.mock('../../hooks/useIsRecoveryFileAvailable', () => jest.fn());
+jest.mock('../../hooks/recoveryFile/useIsRecoveryFileAvailable', () => jest.fn());
 jest.mock('../../hooks/useIsMnemonicAvailable', () => jest.fn());
 jest.mock('../../hooks/useIsDataRecoveryAvailable', () => jest.fn());
 jest.mock('../../hooks/useHasOutdatedRecoveryFile', () => jest.fn());
@@ -20,7 +20,7 @@ const canDisplayNewSentinelSettings = true; //for feature flag
 
 const setupMocks = (isSentinelUser: boolean) => {
     require('../../hooks/useIsSentinelUser').mockReturnValue([{ isSentinelUser }, false]);
-    require('../../hooks/useUser').mockReturnValue([{ MnemonicStatus: 3 }, false]);
+    require('../../hooks/useUser').mockReturnValue([{ MnemonicStatus: 3, Flags: { sso: false } }, false]);
     require('../../hooks/useUserSettings').mockReturnValue([
         { Email: { Value: '', Status: 0, Notify: 0, Reset: 0 }, Phone: { Value: '', Status: 0, Notify: 0, Reset: 0 } },
         false,
@@ -29,7 +29,10 @@ const setupMocks = (isSentinelUser: boolean) => {
         { accountRecoveryStatus: 'complete', dataRecoveryStatus: 'complete' },
         false,
     ]);
-    require('../../hooks/useIsRecoveryFileAvailable').mockReturnValue([{ isRecoveryFileAvailable: true }, false]);
+    require('../../hooks/recoveryFile/useIsRecoveryFileAvailable').mockReturnValue([
+        { isRecoveryFileAvailable: true },
+        false,
+    ]);
     require('../../hooks/useIsMnemonicAvailable').mockReturnValue([{ isMnemonicAvailable: true }, false]);
     require('../../hooks/useIsDataRecoveryAvailable').mockReturnValue([{ isDataRecoveryAvailable: true }, false]);
     require('../../hooks/useHasOutdatedRecoveryFile').mockReturnValue(false);
