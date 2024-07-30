@@ -38,6 +38,8 @@ import type {
 } from './types';
 import { AssistantEvent } from './types';
 
+const SUPPORTED_LLM_LANGS = 'en,fr,de,es,it,pt,ru,zh,ja,cs,sk,pl'.split(',');
+
 const INSTRUCTIONS_WRITE_FULL_EMAIL = [
     "You're a harmless email generator. The user asks you to write emails, and you write emails that they can send.",
     'Today is {DATE}.',
@@ -141,6 +143,10 @@ export type ServerAssistantInteraction = {
     stopStrings?: string[];
 };
 
+function isSupportedLocale(locale: string): boolean {
+    return SUPPORTED_LLM_LANGS.some((prefix) => locale.startsWith(prefix));
+}
+
 const genericCleanup: TransformCallback = (fulltext: string) => {
     let fulltext2 = fulltext;
     fulltext2 = removeStopStrings(fulltext2);
@@ -223,7 +229,7 @@ function makeInstructions(recipient?: string, locale?: string) {
     system = system.replace('{DATE}', date);
 
     // {LANGUAGE_INSTRUCTIONS}
-    if (locale) {
+    if (locale && isSupportedLocale(locale)) {
         system = system.replace(
             '{LANGUAGE_INSTRUCTIONS}',
             `If the user specifies a language to use, you use it, otherwise you write in ${locale}.`
