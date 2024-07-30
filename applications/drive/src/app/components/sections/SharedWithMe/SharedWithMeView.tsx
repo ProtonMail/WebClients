@@ -29,7 +29,7 @@ const SharedWithMeView = () => {
         <FileBrowserStateProvider
             itemIds={[
                 ...sharedWithMeView.items.map(({ rootShareId }) => rootShareId),
-                ...sharedWithMeView.pendingInvitations.map(({ share }) => share.shareId),
+                ...sharedWithMeView.pendingInvitations.map(({ invitation }) => invitation.invitationId),
             ]}
         >
             <ToolbarRow
