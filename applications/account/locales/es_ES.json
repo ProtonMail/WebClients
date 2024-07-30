@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Más información: atajos de teclado"
       ],
+      "More options": [
+        "Más opciones"
+      ],
       "move emails to": [
         "mover los correos electrónicos a"
       ],
@@ -766,11 +769,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar la página"
-      ],
       "refresh the page": [
         "actualizar la página"
+      ],
+      "Refresh the page": [
+        "Actualizar la página"
       ],
       "Reload": [
         "Recargar"
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Resend invitation": [
+        "Reenviar la invitación"
       ],
       "Reset credentials": [
         "Restablecer credenciales"
@@ -1047,6 +1053,12 @@
       ],
       "Switch or add account": [
         "Cambiar o añadir cuenta"
+      ],
+      "Test": [
+        "Prueba"
+      ],
+      "Test SAML configuration": [
+        "Probar la configuración SAML"
       ],
       "Top up": [
         "Recargar"
@@ -1553,14 +1565,6 @@
         "Selecciona tu oferta de fin de año"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1582,6 +1586,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1825,7 +1837,7 @@
         "Se ha añadido la etiqueta."
       ],
       "Label deleted": [
-        "La etiqueta ha sido eliminada."
+        "Se ha eliminado la etiqueta."
       ],
       "Label edited": [
         "Se ha editado la etiqueta."
@@ -3551,6 +3563,14 @@
         "Estás invitado a acceder a un archivo en ${ DRIVE_APP_NAME }."
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minutos"
@@ -3937,7 +3957,7 @@
         "Se ha generado una clave de cifrado nueva para ${ forwarderEmail }."
       ],
       "Changes saved": [
-        "Los cambios han sido guardados."
+        "Se han guardado los cambios."
       ],
       "Email sent to ${ forward.ForwardeeEmail }": [
         "El correo ha sido enviado a ${ forward.ForwardeeEmail }."
@@ -6671,9 +6691,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulsa la identidad de marca de tu organización y crea una experiencia en línea más consistente para tus usuarios."
       ],
-      "Breach Custom Email Added": [
-        "Se ha añadido el correo electrónico personalizado en caso de vulneración."
-      ],
       "Breach Custom Email Deleted": [
         "Se ha eliminado el correo electrónico personalizado en caso de vulneración."
       ],
@@ -6799,17 +6816,8 @@
       "Custom daily": [
         "Personalización del día"
       ],
-      "Custom email added": [
-        "Correo electrónico personalizado añadido"
-      ],
-      "Custom email deleted": [
-        "Correo electrónico personalizado eliminado"
-      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
-      ],
-      "Custom email validated": [
-        "Correo electrónico personalizado validado"
       ],
       "Custom monthly": [
         "Personalización del mes"
@@ -6829,11 +6837,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -7601,6 +7609,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Cambia esta configuración solo si utilizas PGP con destinatarios que no sean de ${ BRAND_NAME }."
       ],
+      "Only you can see the label": [
+        "Solo tú puedes ver la etiqueta."
+      ],
       "Open source": [
         "Código abierto"
       ],
@@ -7963,9 +7974,6 @@
       ],
       "Single sign-on removed": [
         "El inicio de sesión único ha sido eliminado."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para las direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo tus casos de uso, cuáles dominios personalizados te gustaría utilizar y los volúmenes de correo electrónico esperados por hora y por día."
@@ -8365,7 +8373,7 @@
         "Archivo no admitido"
       ],
       "Unverified": [
-        "No verificado"
+        "Sin verificar"
       ],
       "Unverified email address.": [
         "Dirección de correo no verificada."
@@ -8977,6 +8985,11 @@
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "Etiqueta del enlace (opcional)"
       ]
     },
     "Input placeholder": {
@@ -9881,6 +9894,9 @@
       "Level for NetShield blocker filtering": [
         "Nivel de filtrado del bloqueador NetShield"
       ],
+      "Link label (optional)": [
+        "Etiqueta del enlace (opcional)"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10505,7 +10521,7 @@
         "Contáctanos"
       ],
       "create a ticket": [
-        "cree un tiquete"
+        "crea un tiquete"
       ],
       "Create account": [
         "Crear cuenta"
@@ -10560,9 +10576,6 @@
       ],
       "Learn more about data recovery": [
         "Aprende más sobre recuperación de datos"
-      ],
-      "Need help?": [
-        "¿Necesitas ayuda?"
       ],
       "Not activated": [
         "No activado"
@@ -10623,6 +10636,11 @@
       ],
       "Why set recovery methods?": [
         "¿Por qué establecer métodos de recuperación?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Acceso"
       ]
     },
     "Loading info": {
@@ -11168,23 +11186,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11212,6 +11213,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Cambiar a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -11698,9 +11716,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo tu negocio."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
@@ -12504,6 +12519,9 @@
       ]
     },
     "option": {
+      "Everyone, incl. outside": [
+        "Todo el mundo, incluidos los usuarios externos"
+      ],
       "Members": [
         "Miembros"
       ],
@@ -12789,6 +12807,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Al continuar, aceptas nuestros ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Creando tu cuenta"
@@ -13137,6 +13158,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Please select your billing state first.": [
+        "Selecciona primero tu estado de facturación"
+      ],
       "Processing payment": [
         "Procesando el pago"
       ],
@@ -13422,7 +13446,7 @@
         "No has aún verificado la dirección de correo electrónico."
       ],
       "Email removed": [
-        "Correo electrónico eliminado"
+        "Correo electrónico borrado"
       ],
       "sign in": [
         "iniciar sesión"
@@ -13507,7 +13531,7 @@
         "¿Abandonar el calendario?"
       ],
       "Remove calendar": [
-        "Eliminar calendario"
+        "Borrar el calendario"
       ],
       "Unsubscribe?": [
         "¿Cancelar la suscripción?"
@@ -13545,6 +13569,43 @@
       ],
       "User": [
         "Usuario"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Se ha producido un error."
+      ],
+      "Something went wrong. Please try again.": [
+        "Se ha producido un error. Inténtalo de nuevo."
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detalles"
+      ],
+      "Test in progress...": [
+        "Prueba en progreso..."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Correo electrónico"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "¡Funciona!"
+      ],
+      "Test SAML configuration": [
+        "Probar la configuración SAML"
+      ],
+      "Testing SAML configuration": [
+        "Probando la configuración SAML"
       ]
     },
     "scim: Action": {
@@ -14526,7 +14587,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturado cada año"
+        "Facturación anual"
       ]
     },
     "Subscription attribute": {
@@ -15048,7 +15109,7 @@
         "Dirección añadida"
       ],
       "Address updated": [
-        "La dirección ha sido actualizada."
+        "Se ha actualizado la dirección."
       ],
       "Administrator privileges restored": [
         "Los privilegios de administrador han sido restaurados."
@@ -15255,7 +15316,7 @@
     },
     "Success message after sorting labels": {
       "Labels sorted": [
-        "Las etiquetas han sido ordenadas."
+        "Se han ordenado las etiquetas."
       ]
     },
     "Success notification": {
@@ -15636,10 +15697,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -15704,6 +15765,9 @@
       ],
       "Couldn’t create accounts": [
         "No se han podido crear las cuentas."
+      ],
+      "Coupon": [
+        "Cupón"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crear ${ selectedUserIds.length } usuario",
@@ -15838,6 +15902,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
+      ],
+      "Discard changes?": [
+        "¿Descartar los cambios?"
       ],
       "Display name and signature": [
         "Nombre a mostrar y firma"
@@ -16256,7 +16323,7 @@
         "Recomendar a un amigo"
       ],
       "Remove calendar": [
-        "Eliminar calendario"
+        "Borrar el calendario"
       ],
       "Remove domain": [
         "Borrar el dominio"
@@ -17252,7 +17319,7 @@
         "Comenzar"
       ],
       "Invite Friends": [
-        "Invitar amigos"
+        "Invitar a amigos"
       ],
       "Join ${ appName } early access!": [
         "¡Únete al acceso anticipado de ${ appName }!"

@@ -67,10 +67,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -547,6 +547,9 @@
       "Go to label": [
         "लेबल पे जाएं"
       ],
+      "Go to settings": [
+        "सेटिंग में जाएं"
+      ],
       "Got it": [
         "समझ गए"
       ],
@@ -619,6 +622,9 @@
       "label emails as": [
         "ईमेल को लेबल करें"
       ],
+      "Later": [
+        "बाद में"
+      ],
       "Leave": [
         "छोड़ें"
       ],
@@ -664,11 +670,17 @@
       "More info: Keyboard shortcuts": [
         "और जानकारी: कीबोर्ड शोर्टकट"
       ],
+      "More options": [
+        "अधिक विकल्प"
+      ],
       "move emails to": [
         "ईमेल ले जाएं"
       ],
       "Need help?": [
         "मदद चाहिए?"
+      ],
+      "New group": [
+        "नया ग्रुप"
       ],
       "Next": [
         "अगला"
@@ -687,6 +699,9 @@
       ],
       "Ok": [
         "ठीक है"
+      ],
+      "Open": [
+        "अनिर्णित"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
@@ -745,11 +760,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reload": [
         "रिलोड"
@@ -885,6 +900,9 @@
       ],
       "Select calendar view": [
         "कैलेंडर दृश्य चुनें"
+      ],
+      "Select country": [
+        "देश चुनें"
       ],
       "select file": [
         "फ़ाइल चुनें"
@@ -1190,6 +1208,11 @@
         "30 दिन के लिए मुफ्त में आज़माएं"
       ]
     },
+    "Action subscription": {
+      "Reactivate": [
+        "पुनः सक्रिय करें"
+      ]
+    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "स्वीकार करें"
@@ -1449,14 +1472,6 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1478,6 +1493,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
     "bf2023: Offers": {
@@ -2596,6 +2619,9 @@
       "Macao": [
         "मकाओ"
       ],
+      "Macedonia": [
+        "मैसिडोनिया"
+      ],
       "Madagascar": [
         "मेडागास्कर"
       ],
@@ -2999,6 +3025,11 @@
         "हमने आयात के वक्त कई रो में गड़बड़ पाई। अपनी CSV फाइल देख लें।"
       ]
     },
+    "cta": {
+      "Learn more": [
+        "ज़्यादा जानें"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/माह"
@@ -3279,6 +3310,11 @@
         "स्विस निजता कानूनो से सुरक्षित रखा गया"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "प्राथमिक सहायता"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 मिनट"
@@ -3320,6 +3356,11 @@
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
         "समय:\n${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "हटाया गया"
       ]
     },
     "Email spam notification": {
@@ -3591,6 +3632,9 @@
       ]
     },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 टीबी"
+      ],
       "6 users": [
         "6 यूज़र"
       ]
@@ -4062,6 +4106,9 @@
       ],
       "You already added this holidays calendar": [
         "आपने ये घुट्टियों का कैलेंडर पहले ही जोड़ लिया है"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
@@ -5112,6 +5159,9 @@
       ],
       "Best deal": [
         "सबसे अच्छा सौदा"
+      ],
+      "Checkout": [
+        "चेकआउट"
       ],
       "Country": [
         "देश"
@@ -6193,11 +6243,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -8115,6 +8165,9 @@
       "Paid": [
         "भुगतान हुआ"
       ],
+      "Processing": [
+        "प्रसंस्करण हो रहा है"
+      ],
       "Unpaid": [
         "अवैतनिक"
       ],
@@ -9616,9 +9669,6 @@
       "Learn more about data recovery": [
         "डाटा रिक्वरी के बारे में और जानें"
       ],
-      "Need help?": [
-        "सहायता चाहिए?"
-      ],
       "Not activated": [
         "सक्रिय नहीं"
       ],
@@ -9655,6 +9705,9 @@
       "Upgrade your plan": [
         "अपना प्लान अपग्रेड करें"
       ],
+      "Vault": [
+        "तिजोरी"
+      ],
       "View guide": [
         "गाइड देखें"
       ],
@@ -9669,6 +9722,11 @@
       ],
       "Why set recovery methods?": [
         "पुनर्प्राप्ति विधियों को क्यों सेट करें?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "एक्सेस करें"
       ]
     },
     "Loading info": {
@@ -9731,6 +9789,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "${ price } के लिए"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "आपको ${ MAIL_APP_NAME } इस्तेमाल करने का न्योता मिला है"
       ]
@@ -9743,9 +9804,17 @@
         "व्यक्तिगत"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Auto-delete Spam and Trash": [
+        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
       "Support for 1 custom email domain": [
         "1 कस्टम ईमेल डोमेन के लिए सहायता"
@@ -10090,23 +10159,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free जारी रखें"
@@ -10134,6 +10186,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -10449,6 +10518,9 @@
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
       ],
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
+      ],
       "Unlimited labels": [
         "असीमित लेबल"
       ],
@@ -10543,9 +10615,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "सभी ${ BRAND_NAME } ऐप्स और उनकी प्रीमियम सुविधाएँ"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "क्रेडिट, प्रोरेशन, और कूपन जो लागू हो सकते है अगले कदम में लगाए जाएगे"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "सारे ${ BRAND_NAME } सेवाओं के साथ पूरी निजता और सुरक्षा।"
@@ -11102,6 +11171,9 @@
       "Add to existing group": [
         "मौजूदा समूह में जोड़ें"
       ],
+      "Archive": [
+        "संग्रह"
+      ],
       "Ask each time": [
         "हर बार पूछें"
       ],
@@ -11140,6 +11212,9 @@
       ],
       "Left to Right": [
         "बाएं से दाएं"
+      ],
+      "Mark as read": [
+        "पढ़ा गया के रूप मे मार्क करें"
       ],
       "My reason isn't listed": [
         "मेरा कारण सूचीबद्ध नहीं है"
@@ -11204,11 +11279,19 @@
       "Standard server configs": [
         "स्टैंडर्ड सर्वर कॉन्फ़िगरेशन"
       ],
+      "Star": [
+        "तारा"
+      ],
       "The whole organization": [
         "संपूर्ण संगठन"
       ],
       "Trash": [
         "कचरा"
+      ]
+    },
+    "option": {
+      "Members": [
+        "सदस्य"
       ]
     },
     "Option delay send seconds": {
@@ -11557,6 +11640,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "ठीक है"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -11716,6 +11802,11 @@
       ],
       "yourdomain.com": [
         "aapkadomain.in"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "सदस्य"
       ]
     },
     "plan customizer, ips": {
@@ -12071,6 +12162,16 @@
         "पासवर्ड रीसेट करें"
       ]
     },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "पासवर्ड रीसेट रद्द करें"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "पासवर्ड रीसेट प्रक्रिया रद्द करने हेतु वर्तमान पासवर्ड दर्ज करें। कोई अन्य परिवर्तन प्रभावी नहीं होगा।"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "पासवर्ड रीसेट रद्द कर दिया गया"
@@ -12112,6 +12213,9 @@
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "पासवर्ड रीसेट रद्द करें"
+      ],
+      "Cancel request": [
+        "अनुरोध रद्द करें"
       ],
       "Got it": [
         "समझ गया"
@@ -12206,6 +12310,9 @@
     "session_recovery:status:info": {
       "Available": [
         "उपलब्ध"
+      ],
+      "Pending": [
+        "अपूर्ण"
       ]
     },
     "session_recovery:status:title": {
@@ -12809,6 +12916,14 @@
         "अपना कस्टम ईमेल डोमेन"
       ]
     },
+    "subscription reminder": {
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "पक्का?"
@@ -13405,10 +13520,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -13425,6 +13540,9 @@
       ],
       "Change role": [
         "रोल परिवर्तित करें"
+      ],
+      "Change second password": [
+        "दूसरा पासवर्ड बदलें"
       ],
       "Choose an account": [
         "खाता चुनें"
@@ -13596,6 +13714,9 @@
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
       ],
+      "Discard changes?": [
+        "बदलाव रद्द करें?"
+      ],
       "Display name and signature": [
         "प्रदर्शन नाम और हस्ताक्षर"
       ],
@@ -13738,6 +13859,15 @@
       "Folders and labels": [
         "फ़ोल्डर्स और लेबल"
       ],
+      "For Linux": [
+        "Linux के लिए"
+      ],
+      "For macOS": [
+        "macOS के लिए"
+      ],
+      "For Windows": [
+        "Windows के लिए"
+      ],
       "Forgot recovery method": [
         "रिकवरी विधि भूल गए"
       ],
@@ -13746,6 +13876,9 @@
       ],
       "Forward emails": [
         "ईमेल भेजे"
+      ],
+      "Gateway": [
+        "गेटवे"
       ],
       "Gateways": [
         "गेटवे"
@@ -13835,6 +13968,9 @@
       "Invoices": [
         "रसीद"
       ],
+      "IP": [
+        "आईपी"
+      ],
       "Keep your inbox organized": [
         "अपना इनबॉक्स व्यवस्थित रखें"
       ],
@@ -13855,6 +13991,9 @@
       ],
       "Link confirmation": [
         "लिंक की पुष्टि"
+      ],
+      "Main password": [
+        "मुख्य पासवर्ड"
       ],
       "Messages": [
         "संदेश"
@@ -14165,6 +14304,9 @@
       ],
       "Theme": [
         "थीम"
+      ],
+      "Time": [
+        "समय"
       ],
       "Time zone": [
         "समय क्षेत्र"
@@ -14687,6 +14829,9 @@
       "Name": [
         "नाम"
       ],
+      "Optional": [
+        "वैकल्पिक"
+      ],
       "Private": [
         "निजी"
       ],
@@ -14704,6 +14849,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2-एफए"
+      ],
       "Invite sent": [
         "न्योता भेजा गया"
       ],
@@ -14774,6 +14922,11 @@
         "मासिक बिल"
       ]
     },
+    "vpn_2step: discount": {
+      "monthly": [
+        "हर महीने"
+      ]
+    },
     "vpn_2step: feature": {
       "No ads": [
         "विज्ञापन नहीं"
@@ -14787,6 +14940,24 @@
       "${ n } year": [
         "${ n } साल",
         "${ n } साल"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "Get started": [
+        "शुरू करें"
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "अपग्रेड करके ${ appName } प्रीमियम सुविधाओं को अनलॉक करें"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "जल्द ही आ रहा है"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Downloads": [
+        "डाउनलोड"
       ]
     },
     "Warning": {

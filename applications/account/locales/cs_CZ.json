@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Více informací: Klávesové zkratky"
       ],
+      "More options": [
+        "Více možností"
+      ],
       "move emails to": [
         "přesunout e-maily do"
       ],
@@ -766,11 +769,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
+      ],
+      "Resend invitation": [
+        "Znovu poslat pozvánku"
       ],
       "Reset credentials": [
         "Resetovat pověření"
@@ -903,6 +909,9 @@
       ],
       "Select a calendar to export": [
         "Vybrat kalendář k exportu"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Vyberte fakturační cyklus ${ billingText }"
       ],
       "Select calendar view": [
         "Vybrat zobrazení kalendáře"
@@ -1200,6 +1209,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "Přidat doménu pm.me"
+      ],
       "Resuming forward": [
         "Obnovení přeposílání"
       ]
@@ -1406,6 +1418,9 @@
       "Faster, broader device compatibility": [
         "Rychlejší a s širší kompatibilitou se zařízeními"
       ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Požadavky zůstávají na vašem zařízení, ale vyžadují jednorázové stažení a kompatibilní hardware"
+      ],
       "Run locally": [
         "Lokální fungování"
       ],
@@ -1558,14 +1573,6 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1587,6 +1594,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3579,6 +3594,14 @@
         "Jste pozváni k souboru v ${ DRIVE_APP_NAME }"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minut"
@@ -3693,7 +3716,7 @@
         "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
       ],
       "${ name } moved to spam list": [
-        "Emailová adresa ${ name } byla přesunuta na Seznam spamů"
+        "E-mailová adresa ${ name } byla přesunuta na seznam nevyžádaných e-mailů"
       ],
       "${ name } successfully deleted": [
         "E-mailová adresa ${ name } úspěšně smazána"
@@ -4012,6 +4035,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Varování"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Bez názvu"
       ]
     },
     "eof2023: Deal details": {
@@ -6288,6 +6316,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } pozastavil import, protože na vašem účtu je málo volného místa. Můžete:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } se pokusí pokračovat v importu, jakmile váš poskytovatel e-mailu obnoví ${ bandwidthLimitLink }. Nemusíte nic dělat. Pokud zrušíte import, nebudete jej moci obnovit a budete muset začít znovu."
       ],
@@ -6489,6 +6520,9 @@
       "30-day money-back guarantee.": [
         "30denní záruka vrácení peněz."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } hostuje ${ BRAND_NAME }, což umožňuje rychlé zprovoznění subdomény. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
       ],
@@ -6530,6 +6564,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
+      ],
+      "Add a recovery ${ type }": [
+        "Přidat obnovení ${ type }"
       ],
       "Add a recovery email address": [
         "Přidat e-mail pro obnovení"
@@ -6786,6 +6823,12 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
       ],
+      "Breach Custom Email Deleted": [
+        "Vlastní e-mail pro úniky smazán"
+      ],
+      "Breach Custom Email Validated": [
+        "Vlastní e-mail pro úniky ověřen"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Ve výchozím stavu mohou členové organizace exportovat pouze ty trezory, jejichž jsou vlastníky. Pokud je tato možnost zapnutá, nebudou moci exportovat žádná data"
       ],
@@ -6909,17 +6952,8 @@
       "Custom daily": [
         "Denní nastavení"
       ],
-      "Custom email added": [
-        "Přidán vlastní e-mail"
-      ],
-      "Custom email deleted": [
-        "Vlastní e-mail smazán"
-      ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
-      ],
-      "Custom email validated": [
-        "Vlastní e-mail ověřen"
       ],
       "Custom monthly": [
         "Měsíční nastavení"
@@ -6939,11 +6973,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -6959,6 +6993,9 @@
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány"
+      ],
+      "Disable recovery by ${ type }": [
+        "Deaktivovat obnovení ${ type }"
       ],
       "Discount": [
         "Sleva"
@@ -7533,6 +7570,9 @@
       "Let your contacts know you care about their privacy.": [
         "Dejte svým kontaktům vědět, že vám záleží na jejich soukromí."
       ],
+      "Let's get started by pressing the New group button above": [
+        "Začněme stisknutím tlačítka Nová skupina, které je výše"
+      ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
@@ -7715,6 +7755,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
+      ],
+      "Only you can see the label": [
+        "Pouze vy můžete vidět štítek"
       ],
       "Open source": [
         "Otevřený zdrojový kód"
@@ -8027,6 +8070,9 @@
       ],
       "Session Ended": [
         "Relace ukončena"
+      ],
+      "Session Roaming": [
+        "Roaming relace"
       ],
       "Session Started": [
         "Relace vytvořena"
@@ -8396,6 +8442,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Chcete-li zajistit nepřetržitý přístup ke svému účtu, nastavte metodu obnovení účtu"
+      ],
+      "To ensure highest possible security of your account": [
+        "Pro zajištění maximální možné bezpečnosti vašeho účtu"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Abyste nepřišli o důležitá data, ${ DRIVE_APP_NAME } ukládá starší verze vašich souborů v době, kdy je vy a vaši spolupracovníci měníte.Vyberte, jak dlouho má ${ BRAND_NAME } uchovávat předchozí verze."
@@ -9124,6 +9173,11 @@
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Štítek odkazu (volitelné)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Přidat štítek"
@@ -9501,10 +9555,10 @@
         "${ nbYear } let"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } emailové adresy",
-        "${ UsedAddresses } z ${ MaxAddresses } emailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } emailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } emailových adres"
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
+        "${ UsedAddresses } ze ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
@@ -10034,6 +10088,9 @@
       "Level for NetShield blocker filtering": [
         "Úroveň filtrování NetShield"
       ],
+      "Link label (optional)": [
+        "Štítek odkazu (volitelné)"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10427,6 +10484,9 @@
       "What is your main reason for canceling or downgrading?": [
         "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
       ],
+      "Who can send to this group address?": [
+        "Kdo může odesílat na tuto adresu skupiny?"
+      ],
       "Why would you like to cancel?": [
         "Proč chcete zušit?"
       ],
@@ -10717,9 +10777,6 @@
       "Learn more about data recovery": [
         "Další informace o obnově dat"
       ],
-      "Need help?": [
-        "Potřebujete pomoc?"
-      ],
       "Not activated": [
         "Neaktivováno"
       ],
@@ -10779,6 +10836,11 @@
       ],
       "Why set recovery methods?": [
         "Proč nastavit metody obnovení?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Přístup"
       ]
     },
     "Loading info": {
@@ -10880,6 +10942,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Získejte ${ plan }** na omezenou dobu!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Pořiďte si tarif Visionary a buďte součástí příběhu ${ BRAND_NAME }"
       ]
@@ -11343,23 +11408,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11387,6 +11435,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -11670,7 +11735,7 @@
         "Více rolí správce"
       ],
       "No-logs policy": [
-        "Politika žádných logů"
+        "Politika neukládání logů"
       ],
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
@@ -11769,7 +11834,7 @@
         "Začněte se chránit online ve 2 jednoduchých krocích"
       ],
       "Strict no-logs policy": [
-        "Přísné zásady neukládání záznamů"
+        "Přísné zásady neukládání logů"
       ],
       "Tailored to your needs": [
         "Na míru vaším potřebám"
@@ -11914,9 +11979,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
@@ -12755,8 +12817,14 @@
       ]
     },
     "option": {
+      "Everyone, incl. outside": [
+        "Všichni, včetně externích"
+      ],
       "Members": [
         "Členové"
+      ],
+      "Nobody by default": [
+        "Ve výchozím stavu nikdo"
       ],
       "Organization members": [
         "Členové organizace"
@@ -13398,8 +13466,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
+      "Please select billing country": [
+        "Vyberte prosím zemi platby"
+      ],
+      "Please select billing state": [
+        "Vyberte prosím stát platby"
+      ],
+      "Please select your billing country first.": [
+        "Vyberte prosím nejprve vaší zemi platby."
+      ],
+      "Please select your billing state first.": [
+        "Vyberte prosím nejprve váš stát platby."
+      ],
       "Processing payment": [
         "Zpracovávání platby"
+      ],
+      "Select billing country to pay": [
+        "Vyberte zemi platby"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
@@ -13409,6 +13492,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté bude každý měsíc automaticky obnovena za cenu ${ price }. Službu můžete kdykoli zrušit."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transakce byla úspěšně rozpoznána. Kredity budou připsány na váš účet po úplném potvrzení transakce."
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
@@ -13590,8 +13676,17 @@
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "Přidat název skupiny"
+      ],
       "Add member": [
         "Přidat člena"
+      ],
+      "e.g. distribution list for marketing team": [
+        "např. distribuční seznam pro marketingový tým"
+      ],
+      "e.g. marketing": [
+        "např. marketing"
       ],
       "Members": [
         "Členové"
@@ -13678,7 +13773,7 @@
         "Zrušit"
       ],
       "Email address has been verified.": [
-        "Emailová adresa byla ověřena."
+        "E-mailová adresa byla ověřena."
       ],
       "Email address not yet verified.": [
         "E-mailová adresa není ještě ověřena."
@@ -15082,6 +15177,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Po vypršení platnosti vašeho předplatného ${ planName } budete převedeni na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
@@ -15897,6 +15995,9 @@
       "Add PayPal payment method": [
         "Přidat PayPal jako platební metodu"
       ],
+      "Add pm.me subdomain": [
+        "Přidat subdoménu pm.me"
+      ],
       "Add servers": [
         "Přidat servery"
       ],
@@ -15984,10 +16085,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -16053,6 +16154,9 @@
       "Couldn’t create accounts": [
         "Nepodařilo se vytvořit účty"
       ],
+      "Coupon": [
+        "Kupón"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Vytvořit ${ selectedUserIds.length } uživatele",
         "Vytvořit ${ selectedUserIds.length } uživatele",
@@ -16081,7 +16185,7 @@
         "Vytvořit uživatelské účty"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Vytvořit účet ${ BRAND_NAME }"
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Vytvořit ${ BRAND_NAME } adresu"
@@ -16190,6 +16294,9 @@
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
+      ],
+      "Discard changes?": [
+        "Zahodit změny?"
       ],
       "Display name and signature": [
         "Zobrazované jméno a podpis"
@@ -16802,6 +16909,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "There are no groups": [
+        "Nejsou zde žádné skupiny"
       ],
       "This field cannot be empty": [
         "Toto pole nemůže být prázdné"
@@ -17604,6 +17714,85 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } účet na peněženku",
+        "${ n } účty na peněženku",
+        "${ n } účtů na peněženku",
+        "${ n } účtů na peněženku"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "${ n } e-mailové adresy",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
+      ],
+      "${ n } wallet": [
+        "${ n } peněženka",
+        "${ n } peněženky",
+        "${ n } peněženek",
+        "${ n } peněženek"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpečnější způsob jak vlastnit Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Jako pozvaný uživatel si zaregistrujte bezplatný účet ${ BRAND_NAME } a získejte exkluzivní přístup k ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin přes e-mail"
+      ],
+      "Early access waitlist": [
+        "Čekací seznam předběžného přístupu"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Exkluzivní předběžný přístup k ${ appName }."
+      ],
+      "Get started": [
+        "Začněme"
+      ],
+      "Invite Friends": [
+        "Pozvat přátele"
+      ],
+      "Join ${ appName } early access!": [
+        "Připojte se pro předběžný přístup k ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Zaregistrujte si bezplatný účet ${ BRAND_NAME } a zarezervujte si vaše místo. Čím dříve se zaregistrujete, tím dříve získáte přístup k ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Odemkněte prémiové funkce ${ appName } navýšením tarifu"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Uživatelé Visionary a jimi pozvaní přátelé mohou sdílet předběžný přístup s ostatními, pozvěte své přátele, aby si bezplatně vyzkoušeli ${ appName }!"
+      ],
+      "You're Invited.": [
+        "Jste pozváni."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bezpečně uchovávejte a převádějte své bitcoiny"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problém s Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Již brzy"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorizace"
+      ],
+      "Downloads": [
+        "Stažení"
       ]
     },
     "Warning": {
