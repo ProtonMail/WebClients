@@ -1,7 +1,8 @@
 /**
  * Number of metrics to batch into a single request
+ * We can technically go up to 1000 on the BE side
  */
-export const METRICS_BATCH_SIZE = 10;
+export const METRICS_BATCH_SIZE = 100;
 
 /**
  * Time in seconds between metrics requests
