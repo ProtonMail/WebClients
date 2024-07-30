@@ -804,6 +804,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "開く"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } を開く"
       ],
@@ -1461,6 +1464,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } アプリケーション"
+      ]
+    },
+    "Assistant option": {
+      "Run on servers": [
+        "サーバー上で実行"
       ]
     },
     "Attached ics file error": {
@@ -2736,6 +2744,9 @@
       "Macao": [
         "マカオ"
       ],
+      "Macedonia": [
+        "マケドニア"
+      ],
       "Madagascar": [
         "マダカスカル"
       ],
@@ -3342,6 +3353,14 @@
         "すべてダウンロード"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "説明:\n${ eventDescription }"
@@ -3812,6 +3831,9 @@
       ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "執筆アシスタントはリクエストを続行できません。別のプロンプトをお試しください。"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
@@ -4752,6 +4774,9 @@
       ],
       "Security Center": [
         "セキュリティセンター"
+      ],
+      "Set up the writing assistant": [
+        "執筆アシスタントを設定"
       ]
     },
     "Hint": {
@@ -5058,6 +5083,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
@@ -5514,6 +5542,9 @@
       ],
       "Downloading paused": [
         "ダウンロード一時停止"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "執筆アシスタントをダウンロード中: ${ progressDisplay } GB"
       ],
       "Draft": [
         "下書き"
@@ -6538,6 +6569,12 @@
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
       ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
+      "writing assistant iframe": [
+        "執筆アシスタント iframe"
+      ],
       "Yearly": [
         "毎年"
       ],
@@ -6685,6 +6722,9 @@
       "Your account will be updated once the payment is cleared.": [
         "支払いが完了すると、アカウントは更新されます。"
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "あなたのブラウザは執筆アシスタントをサポートしていません。サーバーでの実行をお試しください。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
@@ -6699,6 +6739,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "あなたのハードウェアはローカルでの執筆アシスタントの実行をサポートしていません。サーバーでの実行をお試しください。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -7546,6 +7589,11 @@
         "開始日"
       ]
     },
+    "Label (end date/advanced search)": {
+      "To": [
+        "終了日"
+      ]
+    },
     "Label attach to date input to select a date": {
       "Date": [
         "日付"
@@ -7742,11 +7790,17 @@
       "Sign up for free": [
         "無料でサインアップ"
       ],
+      "Snooze": [
+        "スヌーズを設定"
+      ],
       "Spam": [
         "迷惑メール"
       ],
       "Starred": [
         "星印付き"
+      ],
+      "stay safer online": [
+        "オンラインでの安全性を高める"
       ],
       "Terms": [
         "利用規約"
@@ -7842,6 +7896,14 @@
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
+      ],
+      "for ${ price }": [
+        "${ price } の場合"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "アーカイブ"
@@ -7873,6 +7935,9 @@
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
+      ],
+      "Custom schedule send and snooze times": [
+        "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
@@ -8525,9 +8590,6 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
       ],
@@ -8890,6 +8952,9 @@
       ],
       "Senders blocked": [
         "送信者をブロックしました"
+      ],
+      "The writing assistant is ready to use": [
+        "執筆アシスタントを使用する準備ができました"
       ]
     },
     "Oauth instructions": {
@@ -9050,6 +9115,9 @@
       ],
       "CVC": [
         "CVC (セキュリティコード)"
+      ],
+      "Got it": [
+        "わかった"
       ],
       "MM/YY": [
         "MM/YY (月/年)"
@@ -9213,6 +9281,9 @@
       ],
       "Text": [
         "テキスト"
+      ],
+      "To": [
+        "終了日"
       ],
       "Try “Announce upcoming events in a newsletter”": [
         "「ニュースレターで今後のイベントをお知らせ」を試す"
@@ -10159,6 +10230,9 @@
       "25 calendars per user": [
         "ユーザーあたり 25 個のカレンダー"
       ],
+      "6 users": [
+        "6 ユーザー"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
       ],
@@ -10173,6 +10247,9 @@
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
+      ],
+      "Learn more": [
+        "もっと詳しく知る"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
@@ -10502,6 +10579,15 @@
       "Verification successful": [
         "検証に成功しました"
       ],
+      "Writing assistant disabled": [
+        "執筆アシスタントは無効になりました"
+      ],
+      "Writing assistant enabled": [
+        "執筆アシスタントは有効になりました"
+      ],
+      "Writing assistant setting updated": [
+        "執筆アシスタント設定が更新されました"
+      ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
       ]
@@ -10637,6 +10723,26 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "有効化"
+      ],
+      "Create an alias": [
+        "エイリアスを作成"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } をダウンロード"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web Monitoring を有効にする"
+      ],
+      "Open ": [
+        "開く "
+      ],
+      "Show me how": [
+        "どうするか教えて"
       ]
     },
     "Title": {
@@ -11258,6 +11364,9 @@
       "Sign out": [
         "サインアウト"
       ],
+      "Snooze": [
+        "スヌーズを設定"
+      ],
       "Snooze message": [
         "メッセージのスヌーズ"
       ],
@@ -11344,6 +11453,9 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
+      ],
+      "Your exposed information": [
+        "あなたの暴露された情報"
       ]
     },
     "Title subscription": {
@@ -11518,6 +11630,11 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } メールアドレス"
       ]
     },
     "Warning": {

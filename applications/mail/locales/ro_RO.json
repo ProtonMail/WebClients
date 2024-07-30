@@ -1067,6 +1067,9 @@
       "Select all messages": [
         "Selectare toate mesajele"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selectare ciclu de facturare la ${ billingText }"
+      ],
       "Select country": [
         "Selectare țară"
       ],
@@ -1237,11 +1240,6 @@
       ],
       "Trust": [
         "Aprobare"
-      ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -3602,6 +3600,14 @@
         "Descărcare toate"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Istoric extins versiuni"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIERE:\n${ eventDescription }"
@@ -5874,6 +5880,9 @@
       "and": [
         "și"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Data viitoare când deschideți Mail va fi afișat un alt sfat"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Orice mesaj programat sau amânat va fi anulat."
       ],
@@ -6021,6 +6030,9 @@
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Luați în considerare când este cel mai bun moment pentru ca destinatarul să vă primească e-mailul și programați-l să fie trimis atunci."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contactul a fost adăugat la grupul ${ contactGroupName }."
       ],
@@ -6043,6 +6055,9 @@
         "Creare un calendar",
         "Creare ${ calendarsToBeCreatedCount } calendare",
         "Creare ${ calendarsToBeCreatedCount } de calendare"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Creați un folder precum „${ suggestedFolderName }“ pentru a vă păstra toate chitanțele online într-un singur loc."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
@@ -6095,6 +6110,12 @@
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Știați că aveți spațiu de stocare criptat în cloud inclus în contul ${ BRAND_NAME }? Mergeți la ${ DRIVE_APP_NAME } și profitați la maximum de spațiul oferit. Este gratis."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Știați? Am rezervat o adresă de e-mail mai scurtă doar pentru dvs. Este numele dvs. de utilizator urmat de „@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6111,6 +6132,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Nu aveți timp să abordați un e-mail important acum, dar nu doriți să uitați de el? Setați un moment mai bun pentru ca acesta să apară în mesajele primite."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nu vedeți nimic? Verificați dacă aveți oprite modulele de blocare a ferestrelor flotante."
@@ -6278,6 +6302,9 @@
       "Generate text": [
         "Generare text"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Asociați facturilor primite o etichetă cu coduri de culoare, cum ar fi „${ suggestedLabelName }“. După ce sunt plătite, schimbați eticheta în „${ suggestedPaidLabelName }“."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Are un atașament (${ numAttachmentsSize })",
         "Are ${ numAttachments } atașamente (${ numAttachmentsSize })",
@@ -6318,6 +6345,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Dacă aliasul este vândut, divulgat sau abuzat, îl dezactivați pur și simplu pentru a înceta să mai primiți mesaje nedorite."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Dacă parola dvs. ajunge pe internetul ascuns, ${ BRAND_NAME } vă poate spune din ce serviciu v-au fost divulgate datele și cum să opriți amenințarea."
       ],
       "Image description": [
         "Descriere imagine"
@@ -6389,6 +6419,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Păstrați-vă datele de conectare și cardul de credit în siguranță, dar întotdeauna la îndemână, adăugându-le la ${ PASS_APP_NAME }. Este gratuit și este inclus în contul ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Păstrați-vă cutia poștală ordonată, ștergând automat mesajele din folderele «Gunoi» și «Nedorite» care se află acolo de mai mult de 30 de zile."
       ],
       "Key fingerprint": [
         "Amprentă cheie"
@@ -7054,6 +7090,9 @@
       "to ${ destinationElement } folder.": [
         "în folderul ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Pentru a evita distragerea de la filele deschise din navigatorul web, utilizați aplicația desktop."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
       ],
@@ -7180,6 +7219,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Utilizați adrese de e-mail diferite în scopuri diferite, astfel încât să vă puteți separa cu ușurință mesajele după domenii de lucru, personale sau alte domenii."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
       ],
@@ -7269,6 +7311,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Când vă înscrieți pentru un buletin informativ, utilizați un alias în loc de adresa de e-mail reală. Identitatea vă va rămâne ascunsă și puteți dezactiva oricând aliasul."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Când călătoriți sau folosiți WiFi public, conectați-vă la ${ VPN_APP_NAME } pentru a împiedica pe cineva să vă urmărească activitatea online sau să vă fure datele. Este gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -9495,9 +9543,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toate aplicațiile comerciale ${ BRAND_NAME } și funcțiile premium pentru a vă proteja întreaga afacere."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -10107,6 +10152,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
+      ],
+      "Please select billing country": [
+        "Selectați țara de facturare"
+      ],
+      "Please select billing state": [
+        "Selectați statul de facturare"
+      ],
+      "Please select your billing country first.": [
+        "Selectați țara de facturare mai întâi."
+      ],
+      "Please select your billing state first.": [
+        "Selectați statul de facturare mai întâi."
+      ],
+      "Select billing country to pay": [
+        "Selectați țara de facturare pentru a plăti"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
@@ -11481,6 +11541,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "După ce vă expiră abonamentul ${ planName }, contul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "După ce vă expiră abonamentul ${ planName }, contul va fi retrogradat la planul ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Echipa dvs, va experimenta întreruperi în activitatea sa, deoarece utilizatorii suplimentari nu sunt acceptați în planul gratuit."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "După ce vă expiră abonamentul ${ planName }, contul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
       ],
@@ -12067,6 +12130,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " este acum activ."
+      ],
       "${ label.Name } removed": [
         "${ label.Name } a fost eliminată"
       ]
@@ -12212,6 +12278,41 @@
         "${ minutes } minut",
         "${ minutes } minute",
         "${ minutes } de minute"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Activare"
+      ],
+      "Create an alias": [
+        "Creați un alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Creați eticheta „${ suggestedLabelName }”"
+      ],
+      "Create new email address": [
+        "Creați o adresă de e-mail"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Creați folderul „${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descărcare ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Descărcați aplicația pentru desktop"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Activare monitorizare pe internetul ascuns"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Obțineți adresa „@${ PM_DOMAIN }”"
+      ],
+      "Open ": [
+        "Deschidere "
+      ],
+      "Show me how": [
+        "Arată-mi cum"
       ]
     },
     "Title": {
@@ -12364,6 +12465,9 @@
       ],
       "Conversation list": [
         "Lista conversații"
+      ],
+      "Coupon": [
+        "Cupon"
       ],
       "Create contact": [
         "Creare contact"
@@ -13159,6 +13263,60 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cont per portofel",
+        "${ n } conturi per portofel",
+        "${ n } de conturi per portofel"
+      ],
+      "${ n } email address": [
+        "${ n } adresă de e-mail",
+        "${ n } adrese de e-mail",
+        "${ n } de adrese de e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portofel",
+        "${ n } portofele",
+        "${ n } de portofele"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "O metodă mai sigură de a vă păstra monedele Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin prin e-mail"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Accesare aplicație portofel"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Păstrați și transferați în siguranță monedele Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemă portofel"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Portofel"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Cont ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Portofelul meu importat${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Portofelul meu${ indexStr }"
       ]
     },
     "Warning": {

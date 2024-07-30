@@ -347,11 +347,26 @@
       ]
     },
     "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Impossibile importare HTML a causa di un errore sconosciuto."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Impossibile importare Markdown a causa di un errore sconosciuto."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Impossibile importare il documento Word a causa di un errore sconosciuto."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Impossibile inizializzare l'editor a causa di un errore sconosciuto."
+      ],
       "Request timed out": [
         "Timeout della richiesta"
       ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Impossibile convertire il documento Word. È protetto da password? In tal caso, rimuovi la password e riprova."
       ]
     },
     "Error message": {

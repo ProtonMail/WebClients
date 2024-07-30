@@ -577,6 +577,12 @@
       "Switch or add account": [
         "Cambiar o añadir cuenta"
       ],
+      "Test": [
+        "Prueba"
+      ],
+      "Test SAML configuration": [
+        "Probar la configuración SAML"
+      ],
       "Top up": [
         "Recargar"
       ],
@@ -2140,6 +2146,14 @@
         "Ayúdanos a mejorar"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "El correo electrónico de verificación fue enviado a ${ address }"
@@ -3325,9 +3339,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Se ha añadido el correo electrónico personalizado en caso de vulneración."
-      ],
       "Breach Custom Email Deleted": [
         "Se ha eliminado el correo electrónico personalizado en caso de vulneración."
       ],
@@ -3401,17 +3412,8 @@
       "Custom branding": [
         "Marca personalizada"
       ],
-      "Custom email added": [
-        "Correo electrónico personalizado añadido"
-      ],
-      "Custom email deleted": [
-        "Correo electrónico personalizado eliminado"
-      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
-      ],
-      "Custom email validated": [
-        "Correo electrónico personalizado validado"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
@@ -4388,7 +4390,7 @@
         "Archivo no admitido"
       ],
       "Unverified": [
-        "No verificado"
+        "Sin verificar"
       ],
       "Unverified email address.": [
         "Dirección de correo no verificada."
@@ -5412,9 +5414,6 @@
       "Learn more": [
         "Más información"
       ],
-      "Need help?": [
-        "¿Necesitas ayuda?"
-      ],
       "Not activated": [
         "No activado"
       ],
@@ -6162,9 +6161,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo tu negocio."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
@@ -6979,6 +6975,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Please select your billing state first.": [
+        "Selecciona primero tu estado de facturación"
+      ],
       "Processing payment": [
         "Procesando el pago"
       ],
@@ -7242,6 +7241,43 @@
       ],
       "User": [
         "Usuario"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Se ha producido un error."
+      ],
+      "Something went wrong. Please try again.": [
+        "Se ha producido un error. Inténtalo de nuevo."
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detalles"
+      ],
+      "Test in progress...": [
+        "Prueba en progreso..."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Correo electrónico"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "¡Funciona!"
+      ],
+      "Test SAML configuration": [
+        "Probar la configuración SAML"
+      ],
+      "Testing SAML configuration": [
+        "Probando la configuración SAML"
       ]
     },
     "scim: Action": {
@@ -8008,7 +8044,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturado cada año"
+        "Facturación anual"
       ]
     },
     "Subscription attribute": {
@@ -8926,6 +8962,9 @@
       ],
       "Couldn’t create accounts": [
         "No se han podido crear las cuentas."
+      ],
+      "Coupon": [
+        "Cupón"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crear ${ selectedUserIds.length } usuario",

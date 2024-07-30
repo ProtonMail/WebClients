@@ -238,6 +238,9 @@
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
+      "Collapse navigation bar": [
+        "ნავიგაციის პანელის აკეცვა"
+      ],
       "Collapse URL": [
         "URL-ის ჩაკეცვა"
       ],
@@ -372,6 +375,9 @@
       "Dismiss": [
         "მოცილება"
       ],
+      "Display navigation bar": [
+        "ნავიგაციის პანელის ჩვენება"
+      ],
       "Done": [
         "მზადაა"
       ],
@@ -443,6 +449,12 @@
       ],
       "Expand composer": [
         "რედაქტორის გადიდება"
+      ],
+      "Expand navigation bar to see folders": [
+        "ნავიგაციის პანელის გაშლა საქაღალდეების დასანახად"
+      ],
+      "Expand navigation bar to see labels": [
+        "ნავიგაციის პანელის გაშლა ჭდეების დასანახად"
       ],
       "Expand URL": [
         "URL-ის გაშლა"
@@ -1048,6 +1060,9 @@
       "Select all messages": [
         "ყველა შეტყობინების მონიშვნა"
       ],
+      "Select billing cycle ${ billingText }": [
+        "აირჩიეთ გადახდის ციკლი ${ billingText }"
+      ],
       "Select country": [
         "აირჩიეთ ქვეყანა"
       ],
@@ -1135,6 +1150,9 @@
       "Show more search options": [
         "მეტი ძებნის პარამეტრის ჩვენება"
       ],
+      "Show navigation bar": [
+        "ნავიგაციის პანელის ჩვენება"
+      ],
       "Show preview": [
         "გადახედვის ჩვენება"
       ],
@@ -1215,10 +1233,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -3561,6 +3575,14 @@
         "ყველას გადმოწერა"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "აღწერა:\n${ eventDescription }"
@@ -5752,6 +5774,9 @@
       "and": [
         "და"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "ელფოსტის შემდეგი გახსნისას სხვა მინიშნებას გაჩვენებთ"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "ყველა დაგეგმილი ან დადუმებული შეტყობინება გაუქმდება."
       ],
@@ -6968,6 +6993,9 @@
       ],
       "Unlock message": [
         "შეტყობინების განბლოკვა"
+      ],
+      "Unread conversations": [
+        "წაუკითხავი საუბრები"
       ],
       "Unread messages": [
         "წაუკითხავი შეტყობინებები"
@@ -9294,9 +9322,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება ${ BRAND_NAME }-ის ყველა სერვისთან ერთად."
       ],
@@ -9896,6 +9921,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
+      ],
+      "Please select your billing country first.": [
+        "ჯერ აირჩიეთ თქვენი გადახდის ქვეყანა."
+      ],
+      "Please select your billing state first.": [
+        "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Select billing country to pay": [
+        "აირჩიეთ გადასახდელი ქვეყანა"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
@@ -11734,6 +11774,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " ახლა აქტიურია"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } წაიშალა"
       ]
@@ -11873,6 +11916,41 @@
       "${ minutes } minute": [
         "${ minutes } წუთი",
         "${ minutes } წუთი"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "აქტივაცია"
+      ],
+      "Create an alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "შევქმნა ჭდე \"${ suggestedLabelName }\"?"
+      ],
+      "Create new email address": [
+        "ახალი ელფოსტის მისამართის შექმნა"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "\"${ suggestedFolderName }\" საქაღალდის შექმნა"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }-ის გადმოწერა"
+      ],
+      "Download Desktop app": [
+        "გადმოწერეთ კომპიუტერის აპი"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Dark Web-ის მონიტორინგის ჩართვა"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "ჩემი \"@${ PM_DOMAIN }\" მისამართის მიღება"
+      ],
+      "Open ": [
+        "გახსნა "
+      ],
+      "Show me how": [
+        "მაჩვენე, როგორ"
       ]
     },
     "Title": {
@@ -12022,6 +12100,9 @@
       ],
       "Conversation list": [
         "საუბრების სია"
+      ],
+      "Coupon": [
+        "კუპონი"
       ],
       "Create contact": [
         "კონტაქტის შექმნა"
@@ -12802,6 +12883,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } ანგარიში თითოეული საფულისთვის",
+        "${ n } ანგარიში თითოეული საფულისთვის"
+      ],
+      "${ n } email address": [
+        "ელფოსტის ${ n } მისამართი",
+        "${ n } ელფოსტის მისამართი"
+      ],
+      "${ n } wallet": [
+        "${ n } საფულე",
+        "${ n } საფულე"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin ელფოსტით"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "წვდომა საფულის აპთან"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "საფულის პრობლემა"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "საფულე"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "ანგარიში ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "ჩემი შემოტანილი საფულე${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "ჩემი საფულე${ indexStr }"
       ]
     },
     "Warning": {

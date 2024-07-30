@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Valitse laskutusjakso: ${ billingText }"
+      ],
       "Select country": [
         "Valitse maa"
       ],
@@ -2143,6 +2146,14 @@
         "Auta meitä parantamaan"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Laajennettu versiohistoria"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
@@ -3328,9 +3339,6 @@
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Tietomurtojen oma sähköposti lisättiin"
-      ],
       "Breach Custom Email Deleted": [
         "Tietomurtojen oma sähköposti poistettiin"
       ],
@@ -3404,17 +3412,8 @@
       "Custom branding": [
         "Oma brändäys"
       ],
-      "Custom email added": [
-        "Oma sähköpostiosoite lisättiin"
-      ],
-      "Custom email deleted": [
-        "Oma sähköpostiosoite poistettiin"
-      ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
-      ],
-      "Custom email validated": [
-        "Oma sähköpostiosoite vahvistettiin"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
@@ -5179,7 +5178,7 @@
         "Postinumero"
       ],
       "Proration": [
-        "Suhteutus"
+        "Hyvitys"
       ],
       "Public certificate (X.509)": [
         "Julkinen sertifikaatti (X.509)"
@@ -5411,9 +5410,6 @@
       ],
       "Learn more": [
         "Lue lisää"
-      ],
-      "Need help?": [
-        "Tarvitsetko apua?"
       ],
       "Not activated": [
         "Aktivoimaton"
@@ -6166,14 +6162,11 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
       ],
       "Early access to new apps and features": [
-        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+        "Varhainen käyttöoikeus uusiin sovelluksiin ja ominaisuuksiin"
       ],
       "Encrypted email and calendar to get you started.": [
         "Salattu sähköposti ja kalenteri, joilla pääset alkuun."
@@ -6931,7 +6924,7 @@
         "Emme voineet vahvistaa tämän identiteetin aitoutta."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
+        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakaspalveluun."
       ],
       "We have verified the authenticity of this identity.": [
         "Olemme vahvistaneet tämän identiteetin aitouden."
@@ -6982,8 +6975,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
+      "Please select billing country": [
+        "Valitse laskutusmaa"
+      ],
+      "Please select billing state": [
+        "Valitse laskutusosavaltio"
+      ],
+      "Please select your billing country first.": [
+        "Valitse laskutusmaasi ensin."
+      ],
+      "Please select your billing state first.": [
+        "Valitse laskutusosavaltiosi ensin."
+      ],
       "Processing payment": [
         "Käsitellään maksua"
+      ],
+      "Select billing country to pay": [
+        "Valitse laskutusmaa maksaaksesi"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
@@ -6993,6 +7001,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Siirto on havaittu. Krediitit lisätään tilillesi, kun siirto on täysin vahvistettu."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -8172,7 +8183,7 @@
         "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } -tilauksella tiimisi voi työskennellä tuottavammin ja järjestelmällisemmin kaikkien ${ BRAND_NAME }-sovellusten ja niiden lisäominaisuuksien avulla."
@@ -8292,7 +8303,7 @@
         "Aktivistien auttaminen Hongkongissa"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Miten asiakaspalvelutiimimme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+        "Miten asiakaspalvelumme sai VPN-sovelluksemme suoraan ihmisten käsiin."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Miten taistelimme vastaan, kun ${ BRAND_NAME } joutui aggressiivisen sensuurikampanjan kohteeksi."
@@ -8929,6 +8940,9 @@
       ],
       "Couldn’t create accounts": [
         "Tilejä ei voitu luoda"
+      ],
+      "Coupon": [
+        "Etukoodi"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Luo ${ selectedUserIds.length } käyttäjä",
@@ -9767,6 +9781,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja muuta."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } lompakko tiliä kohden",
+        "${ n } lompakkoa tiliä kohden"
+      ],
+      "${ n } email address": [
+        "${ n } sähköpostiosoite",
+        "${ n } sähköpostiosoitetta"
+      ],
+      "${ n } wallet": [
+        "${ n } lompakko",
+        "${ n } lompakkoa"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet-ongelma"
       ]
     },
     "Warning": {

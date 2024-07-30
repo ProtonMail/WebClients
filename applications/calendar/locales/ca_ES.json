@@ -153,6 +153,9 @@
       "Close this banner": [
         "Tanca aquest bàner"
       ],
+      "Collapse navigation bar": [
+        "Redueix la barra de navegació"
+      ],
       "Compose": [
         "Redactar"
       ],
@@ -253,6 +256,9 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Display navigation bar": [
+        "Mostra la barra de navegació"
       ],
       "Done": [
         "Fet"
@@ -476,10 +482,10 @@
       "Not now": [
         "Ara no"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -634,6 +640,9 @@
       ],
       "Show more": [
         "Mostrar més"
+      ],
+      "Show navigation bar": [
+        "Mostra la barra de navegació"
       ],
       "Show side panel": [
         "Mostra el panell lateral"
@@ -2571,6 +2580,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajudeu-nos a millorar"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5208,6 +5225,11 @@
         "No es permet crear invitacions en un calendari compartit."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Etiqueta de l'enllaç (opcional)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Afegeix etiqueta"
@@ -5774,6 +5796,11 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Accés"
       ]
     },
     "Link to calendar app": {
@@ -6626,9 +6653,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per protegir tot el seu negoci."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
@@ -9713,6 +9737,15 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via correu electrònic"
       ]
     },
     "Warning": {

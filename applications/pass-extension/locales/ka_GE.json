@@ -26,6 +26,9 @@
       "Add new item": [
         "ახალი ელემენტის დამატება"
       ],
+      "Add section": [
+        "განყოფილების დამატება"
+      ],
       "Add username field": [
         "მომხმარებლის სახელის ველის დამატება"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "ბარათის შექმნა"
       ],
+      "Create identity": [
+        "იდენტიფიკატორის შექმნა"
+      ],
       "Create login": [
         "შესვლის ჩანაწერის შექმნა"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "საცავის შექმნა"
+      ],
+      "Custom section": [
+        "მორგებული განყოფილება"
       ],
       "Customize": [
         "მორგება"
@@ -424,6 +433,9 @@
       ],
       "Saving passkey...": [
         "წვდომის გასაღების შენახვა..."
+      ],
+      "Section name": [
+        "განყოფილების სახელი"
       ],
       "Secure links": [
         "დაცული ბმულები"
@@ -1517,6 +1529,9 @@
       "Save passkey": [
         "წვდომის გასაღების შენახვა"
       ],
+      "Secure links": [
+        "დაცული ბმულები"
+      ],
       "Select an existing login item to update.": [
         "აირჩიეთ არსებული შესვლის ელემენტი, გასაახლებლად"
       ],
@@ -1811,6 +1826,15 @@
       "Account": [
         "ანგარიში"
       ],
+      "Add section": [
+        "განყოფილების დამატება"
+      ],
+      "Additional details": [
+        "დამატებითი დეტალები"
+      ],
+      "Address details": [
+        "მისამართის დეტალები"
+      ],
       "Alias": [
         "ფსევდონიმი"
       ],
@@ -1856,6 +1880,9 @@
       "Autosuggest": [
         "ავტომატური რჩევა"
       ],
+      "Birthdate": [
+        "დაბადების თარიღი"
+      ],
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
       ],
@@ -1871,14 +1898,29 @@
       "Cards": [
         "ბარათები"
       ],
+      "City": [
+        "ქალაქი"
+      ],
+      "Company": [
+        "კომპანია"
+      ],
       "Confirm vault name": [
         "დაადასტურეთ საცავის სახელი"
+      ],
+      "Contact details": [
+        "კონტაქტის დეტალები"
       ],
       "Copy": [
         "კოპირება"
       ],
       "Copy password": [
         "პაროლის კოპირება"
+      ],
+      "Country or Region": [
+        "ქვეყანა ან რეგიონი"
+      ],
+      "County": [
+        "საგრაფო"
       ],
       "Create a credit card": [
         "საკრედიტო ბარათის შექმნა"
@@ -1892,6 +1934,9 @@
       "Create an encrypted note": [
         "დაშიფრული შენიშვნის შექმნა"
       ],
+      "Create an Identity": [
+        "იდენტიფიკატორის შექმნა"
+      ],
       "Create lock": [
         "ბლოკის შექმნა"
       ],
@@ -1903,6 +1948,12 @@
       ],
       "Created at": [
         "შექმნის დრო"
+      ],
+      "Custom hidden field": [
+        "მორგებული დამალული ველი"
+      ],
+      "Custom text field": [
+        "მორგებული ტექსტური ველი"
       ],
       "Device": [
         "მოწყობილობა"
@@ -1952,14 +2003,29 @@
       "Extra password": [
         "დამატებითი პაროლი"
       ],
+      "Facebook account": [
+        "Facebook-ის ანგარიში"
+      ],
       "Field name": [
         "ველის სახელწოდება"
       ],
       "File format": [
         "ფაილის ფორმატი"
       ],
+      "First name": [
+        "სახელი"
+      ],
+      "Floor, apartment, building": [
+        "სართული, ბინა, შენობა"
+      ],
       "Forwards to": [
         "გადაგზავნა"
+      ],
+      "Full Name": [
+        "სახელი და გვარი"
+      ],
+      "Gender": [
+        "სქესი"
       ],
       "General": [
         "ზოგადი"
@@ -1979,6 +2045,15 @@
       "Hide password": [
         "პაროლის დამალვა"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "იდენტიფიკატორები"
+      ],
+      "Identity": [
+        "იდენტიფიკატორი"
+      ],
       "Import": [
         "შემოტანა"
       ],
@@ -1997,11 +2072,17 @@
       "Include numbers (0-9)": [
         "რიცხვების ჩათვლით (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram-ის წარწერა"
+      ],
       "Invitations": [
         "მოწვევები"
       ],
       "Item ID": [
         "ელემენტის ID"
+      ],
+      "Job title": [
+        "ვაკანსიის დასახელება"
       ],
       "Key": [
         "გასაღები"
@@ -2018,6 +2099,9 @@
       "Last month": [
         "ბოლო თვის"
       ],
+      "Last name": [
+        "გვარი"
+      ],
       "Last week": [
         "გასულ კვირას"
       ],
@@ -2026,6 +2110,12 @@
       ],
       "Learn more": [
         "გაიგეთ მეტი"
+      ],
+      "License number": [
+        "ლიცენზიის ნომერი"
+      ],
+      "LinkedIn account": [
+        "LinkedIn-ის ანგარიში"
       ],
       "Login": [
         "შესვლა"
@@ -2047,6 +2137,9 @@
       ],
       "Members": [
         "წევრები"
+      ],
+      "Middle name": [
+        "მამის / მეორე სახელი"
       ],
       "Modified": [
         "შეცვლილია"
@@ -2105,6 +2198,9 @@
       "Passphrase": [
         "საკვანძო ფრაზა"
       ],
+      "Passport number": [
+        "პასპორტის ნომერი"
+      ],
       "Password": [
         "პაროლი"
       ],
@@ -2117,8 +2213,17 @@
       "Pause list": [
         "შეჩერებულების სია"
       ],
+      "Personal details": [
+        "პირადი ინფორმაცია"
+      ],
+      "Personal website": [
+        "პირადი ვებგვერდი"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-ით დაშიფრული JSON (რეკომენდებულია)"
+      ],
+      "Phone number": [
+        "ტელეფონის ნომერი"
       ],
       "PIN": [
         "PIN-კოდი"
@@ -2143,6 +2248,9 @@
       ],
       "Recent": [
         "უახლესი"
+      ],
+      "Reddit handle": [
+        "Reddit-ის პროფილი"
       ],
       "Remove link": [
         "ბმულის წაშლა"
@@ -2195,8 +2303,20 @@
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
       ],
+      "Social security number": [
+        "სოციალური უსაფრთხოების ნომერი"
+      ],
       "Special characters (!&*)": [
         "სპეცსიმბოლოები (!&*)"
+      ],
+      "State or province": [
+        "შტატი ან პროვინცია"
+      ],
+      "Street address": [
+        "ქუჩის მისამართი"
+      ],
+      "Street address, P.O. box": [
+        "მისამართი, საფოსტო ყუთი"
       ],
       "Strong": [
         "ძლიერი"
@@ -2283,8 +2403,26 @@
       "Websites": [
         "ვებსაიტები"
       ],
+      "Work details": [
+        "სამსახურის დეტალები"
+      ],
+      "Work email": [
+        "სამსახურის ელფოსტა"
+      ],
+      "Work phone number": [
+        "სამსახურის ტელეფონის ნომერი"
+      ],
+      "X handle": [
+        "X-ის პროფილი"
+      ],
+      "Yahoo account": [
+        "Yahoo-ის ანგარიში"
+      ],
       "You are about to create": [
         "აპირებთ, შექმნათ"
+      ],
+      "ZIP or Postal code": [
+        "Zip ან საფოსტო კოდი"
       ]
     },
     "Message": {
@@ -2655,6 +2793,9 @@
       ],
       "OTP secret or URI required": [
         "აუცილებელია OTP საიდუმლო ან URI"
+      ],
+      "Section name cannot be empty": [
+        "განყოფლების სახელი ცარიელი ვერ იქნება"
       ],
       "Url already exists": [
         "Url უკვე არსებობს"

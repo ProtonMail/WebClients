@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -171,6 +171,12 @@
       ],
       "Bold": [
         "Fed"
+      ],
+      "Can send to this group": [
+        "Kan sende til denne gruppe"
+      ],
+      "Can't send to this group": [
+        "Kan ikke sende til denne gruppe"
       ],
       "Cancel": [
         "Annullér"
@@ -340,6 +346,9 @@
       "Delete Gateway": [
         "Slet gateway"
       ],
+      "Delete group": [
+        "Slet gruppe"
+      ],
       "Delete link": [
         "Slet link"
       ],
@@ -378,6 +387,9 @@
       ],
       "Discard": [
         "Kassér"
+      ],
+      "Discard changes": [
+        "Kassér ændringer"
       ],
       "Don't show again": [
         "Vis ikke igen"
@@ -420,6 +432,9 @@
       ],
       "Edit Gateway": [
         "Redigér gateway"
+      ],
+      "Edit group": [
+        "Rediger gruppe"
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
@@ -679,6 +694,9 @@
       "More info: Keyboard shortcuts": [
         "Mere info: Tastaturgenveje"
       ],
+      "More options": [
+        "Flere muligheder"
+      ],
       "move emails to": [
         "flyt e-mails til"
       ],
@@ -766,17 +784,23 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reload": [
         "Genindlæs"
       ],
       "Remove": [
         "Fjern"
+      ],
+      "Remove all members": [
+        "Fjern alle medlemmer"
+      ],
+      "Remove all members from group": [
+        "Fjern alle medlemmer fra gruppe"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -823,6 +847,9 @@
       "Resend code": [
         "Send kode igen"
       ],
+      "Resend invitation": [
+        "Gensend invitation"
+      ],
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
       ],
@@ -861,6 +888,9 @@
       ],
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
+      ],
+      "Revoke invitation": [
+        "Tilbagetræk invitation"
       ],
       "Revoke this invitation": [
         "Tilbagetræk denne invitation"
@@ -903,6 +933,9 @@
       ],
       "Select a calendar to export": [
         "Vælg en kalender at eksportere"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Vælg faktureringscyklus ${ billingText }"
       ],
       "Select calendar view": [
         "Vælg kalendervisning"
@@ -1047,6 +1080,12 @@
       ],
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Test af SAML-konfiguration"
       ],
       "Top up": [
         "Genopfyld"
@@ -1556,14 +1595,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1585,6 +1616,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3275,7 +3314,7 @@
         "Så snart adressen ${ address } er slettet, kan den ikke bruges igen af andre."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
-        "NB: Hvis du sletter denne adresse ${ address }, er det ikke længere muligt at sende eller modtage e-mails med denne adresse."
+        "NB: Hvis du sletter denne adresse ${ address }, vil du ikke længere kunne sende eller modtage mails med denne adresse."
       ],
       "You can only delete 1 address per year.": [
         "Du kan kun slette 1 adresse om året."
@@ -3555,6 +3594,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du er inviteret til at tilgå en fil i ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Udvidet versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriteret support"
       ]
     },
     "Duration": {
@@ -6563,6 +6610,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Alle med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, skal du oprette et nyt link."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Er du sikker på, at du vil annullere ændringen af gruppen?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Er du sikker på, at du vil slette denne kalender?"
       ],
@@ -6580,6 +6630,9 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Er du sikker på du vil slette denne mappe?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Er du sikker på, at du vil slette denne gruppe? Gruppens adresse vil ikke længere fungere."
       ],
       "Are you sure you want to delete this label?": [
         "Er du sikker på du vil slette etiketten?"
@@ -6601,6 +6654,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Er du sikker på, at du vil fjerne alle medlemmer fra denne gruppe?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
@@ -6680,8 +6736,8 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
-      "Breach Custom Email Added": [
-        "Tilpasset e-mail om databrud tilføjet"
+      "Breach Custom Email Created": [
+        "Tilpasset e-mail om databrud oprettet"
       ],
       "Breach Custom Email Deleted": [
         "Tilpasset e-mail om databrud slettet"
@@ -6808,17 +6864,8 @@
       "Custom daily": [
         "Brugerdefineret daglig"
       ],
-      "Custom email added": [
-        "Tilpasset e-mail tilføjet"
-      ],
-      "Custom email deleted": [
-        "Tilpasset e-mail slettet"
-      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
-      ],
-      "Custom email validated": [
-        "Tilpasset e-mail bekræftet"
       ],
       "Custom monthly": [
         "Brugerdefineret månedlig"
@@ -6838,11 +6885,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -7656,6 +7703,15 @@
       "Paid for a monthly plan": [
         "Betalte for et månedligt abonnement"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - tilpasset e-mail bekræftet"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - tilpasset e-mail oprettet"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - tilpasset e-mail slettet"
+      ],
       "password": [
         "adgangskode"
       ],
@@ -7980,7 +8036,7 @@
         "Single sign-on fjernet"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-indsendelse lader tredjepartstjenester eller -enheder sende e-mails via ${ MAIL_APP_NAME } til dine tilpassede domæneadresser. Funktionen er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med tilpassede domæner."
+        "SMTP-indsendelse tillader tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } til dine tilpassede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med tilpassede domæner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
@@ -9002,6 +9058,11 @@
     "Input placeholder": {
       "Add label": [
         "Tilføj etiket"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "Afventer"
       ]
     },
     "Invoice state display as badge": {
@@ -10587,9 +10648,6 @@
       "Learn more about data recovery": [
         "Få mere at vide om datagendannelse"
       ],
-      "Need help?": [
-        "Brug for hjælp?"
-      ],
       "Not activated": [
         "Ikke aktiveret"
       ],
@@ -11199,23 +11257,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11243,6 +11284,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -11732,9 +11790,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle erhvervs-apps til ${ BRAND_NAME } og premium-funktioner, der beskytter hele din virksomhed."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Gældende kreditter, proratering og kuponer anvendes i næste trin"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
@@ -12923,6 +12978,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "Starter ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Tidsbegrænset tilbud: ${ title } til ${ price } for den 1. måned"
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Tidsbegrænset tilbud: Få ${ title } til ${ price } pr. bruger pr. måned!"
       ],
@@ -13180,8 +13238,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
+      ],
+      "Please select your billing country first.": [
+        "Vælg venligst dit faktureringsland først."
+      ],
+      "Please select your billing state first.": [
+        "Vælg venligst dit faktureringsstat først."
+      ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Select billing country to pay": [
+        "Vælg faktureringsland for at betale"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
@@ -13597,6 +13670,55 @@
       ],
       "User": [
         "Bruger"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Annuller"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Et eller andet gik galt"
+      ],
+      "Something went wrong. Please try again.": [
+        "Et eller andet gik galt. Prøv igen."
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Der opstod en fejl under test af din SSO-konfiguration."
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Test in progress...": [
+        "Test i gang..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "For at teste denne SAML-konfiguration skal du indtaste loginoplysningerne for en bruger tilknyttet **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Vi har modtaget et gyldigt SAML-svar fra din identitetsudbyder. SSO er aktiveret for din organisation."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Vi tester din konfiguration for at sikre, at SSO fungerer."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-mail"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Det virker!"
+      ],
+      "Test SAML configuration": [
+        "Test af SAML-konfiguration"
+      ],
+      "Testing SAML configuration": [
+        "Tester SAML-konfiguration"
       ]
     },
     "scim: Action": {
@@ -15688,11 +15810,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -15756,6 +15878,9 @@
       ],
       "Couldn’t create accounts": [
         "Kunne ikke oprette konti"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Opret ${ selectedUserIds.length } bruger",
@@ -15857,6 +15982,9 @@
       "Delete folder?": [
         "Slet mappe?"
       ],
+      "Delete group?": [
+        "Slet gruppe?"
+      ],
       "Delete key permanently?": [
         "Slet nøgle permanent?"
       ],
@@ -15890,6 +16018,9 @@
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
+      ],
+      "Discard changes?": [
+        "Kassér ændringer?"
       ],
       "Display name and signature": [
         "Visningsnavn og signatur"
@@ -16306,6 +16437,9 @@
       ],
       "Refer a friend": [
         "Henvis en ven"
+      ],
+      "Remove all members?": [
+        "Fjern alle medlemmer?"
       ],
       "Remove calendar": [
         "Fjern kalender"
@@ -16933,6 +17067,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "Waiting user to accept the invitation": [
+        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17261,6 +17398,99 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto pr. wallet",
+        "${ n } konti pr. wallet"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadresse",
+        "${ n } e-mailadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } wallet",
+        "${ n } wallets"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Få ${ plan }** for tidlig adgang til ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "En sikrere måde at gemme dine Bitcoin på"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Som inviteret bruger, tilmeld dig en gratis ${ BRAND_NAME }-konto for at få eksklusiv adgang til ${ appName }."
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ],
+      "Create ${ BRAND_NAME } Account now": [
+        "Opret ${ BRAND_NAME }-konto nu"
+      ],
+      "Early access to new features": [
+        "Tidlig adgang til nye funktioner"
+      ],
+      "Early access waitlist": [
+        "Venteliste til tidlig adgang"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Eksklusiv tidlig adgang til ${ appName }."
+      ],
+      "Get started": [
+        "Kom i gang"
+      ],
+      "Invite Friends": [
+        "Inviter venner"
+      ],
+      "Join ${ appName } early access!": [
+        "Deltag i tidlig adgang til ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Tilmeld dig en gratis ${ BRAND_NAME }-konto for at sikre en plads. Så hurtigt som du tilmelder dig, så hurtigt får du adgang til ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Lås op for ${ appName }-premiumfunktioner ved at opgradere"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary-brugere og deres inviterede venner kan dele tidlig adgang med andre, inviter dine venner til at prøve ${ appName } gratis!"
+      ],
+      "You're Invited.": [
+        "Du er inviteret."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Opbevar og overfør dine bitcoins sikkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
+        "${ WALLET_APP_NAME } er i Tidlig Adgang. Du kan hente iOS-appen via Apple TestFlight og Android-appen via Google open testing."
+      ],
+      "Coming soon": [
+        "Kommer snart"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Tilbage til wallet"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Bemyndigelse"
+      ],
+      "Downloads": [
+        "Overførsler"
       ]
     },
     "Warning": {

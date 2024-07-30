@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Επιλέξτε κύκλο χρέωσης ${ billingText }"
+      ],
       "Select country": [
         "Επιλογή χώρας"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Αξιόπιστο"
-      ],
-      "Trust key": [
-        "Εμπιστοσύνη στο κλειδί",
-        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -3582,6 +3581,14 @@
         "Λήψη όλων"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Εκτεταμένο ιστορικό εκδόσεων"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "ΠΕΡΙΓΡΑΦΗ:\n${ eventDescription }"
@@ -5779,6 +5786,9 @@
       "and": [
         "και"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Μια άλλη συμβουλή θα εμφανιστεί την επόμενη φορά που θα ανοίξετε το Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Τυχόν προγραμματισμένα μηνύματα ή μηνύματα που έχουν αναβληθεί θα ακυρωθούν."
       ],
@@ -5923,6 +5933,9 @@
       "Confirm phishing report": [
         "Επιβεβαίωση αναφοράς ηλεκτρονικού \"ψαρέματος\" (Phishing)"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Σκεφτείτε πότε είναι η καλύτερη στιγμή για τον παραλήπτη σας να λάβει το μήνυμά σας και προγραμματίστε να σταλεί τότε."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
       ],
@@ -5944,6 +5957,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Δημιουργήστε έναν φάκελο όπως \"${ suggestedFolderName }\" για να διατηρήσετε όλες τις ηλεκτρονικές αποδείξεις σας σε ένα μέρος."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
@@ -5996,6 +6012,12 @@
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Γνωρίζατε ότι έχετε κρυπτογραφήσει τον χώρο αποθήκευσης στο cloud που περιλαμβάνεται στον ${ BRAND_NAME } λογαριασμό σας; Μεταβείτε στο ${ DRIVE_APP_NAME } και αξιοποιήστε στο έπακρο τον χώρο σας. Είναι δωρεάν."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Το γνωρίζατε; Έχουμε κρατήσει μια μικρότερη διεύθυνση ηλεκτρονικού ταχυδρομείου μόνο για εσάς. Είναι το όνομα χρήστη σας ακολουθούμενο από \"@${ PM_DOMAIN }\"."
+      ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
@@ -6011,6 +6033,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Μην ξεχάσετε να κοινοποιήσετε τον κωδικό πρόσβασης στον παραλήπτη"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Δεν έχετε χρόνο να αντιμετωπίσετε ένα σημαντικό μήνυμα τώρα, αλλά δε θέλετε να το ξεχάσετε; Ορίστε μια καλύτερη ώρα για να εμφανίζεται στα εισερχόμενά σας."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Δε βλέπετε τίποτα; Θυμηθείτε να απενεργοποιήσετε τα προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
@@ -6173,6 +6198,9 @@
       "Generate text": [
         "Δημιουργία κειμένου"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Δώστε στους εισερχόμενους λογαριασμούς μια ετικέτα με χρωματική κωδικοποίηση, όπως \"${ suggestedLabelName }\". Μόλις πληρωθούν, αλλάξτε την ετικέτα σε \"${ suggestedPaidLabelName }\"."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Έχει ${ numAttachments } συνημμένο (${ numAttachmentsSize })",
         "Έχει ${ numAttachments } συνημμένα (${ numAttachmentsSize })"
@@ -6212,6 +6240,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Εάν η εναλλακτική διεύθυνση του email σας πωληθεί, διαρρεύσει ή καταχραστεί, απλώς απενεργοποιήστε το για να σταματήσετε να λαμβάνετε ανεπιθύμητα μηνύματα."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Εάν ο κωδικός πρόσβασής σας καταλήξει στον σκοτεινό ιστό, το ${ BRAND_NAME } μπορεί να σας πει από ποια υπηρεσία διέρρευσαν τα δεδομένα σας και πώς να σταματήσετε τη ζημιά."
       ],
       "Image description": [
         "Περιγραφή εικόνας"
@@ -6282,6 +6313,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Διατηρήστε τα στοιχεία σύνδεσης και την πιστωτική σας κάρτα ασφαλή, αλλά πάντα διαθέσιμα προσθέτοντάς τα στο ${ PASS_APP_NAME }. Είναι δωρεάν και περιλαμβάνεται στον λογαριασμό σας ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Διατηρήστε το γραμματοκιβώτιό σας τακτοποιημένο καθαρίζοντας αυτόματα τα διαγραμμένα και τα ανεπιθύμητα μηνύματα που βρίσκονται εκεί για περισσότερες από 30 ημέρες."
       ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
@@ -6942,6 +6979,9 @@
       "to ${ destinationElement } folder.": [
         "στον φάκελο ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Για να αποφύγετε την εκτροπή από τις ανοιχτές καρτέλες στο πρόγραμμα περιήγησής σας, χρησιμοποιήστε την εφαρμογή επιφάνειας εργασίας."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
       ],
@@ -7068,6 +7108,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Χρησιμοποιήστε διαφορετικές διευθύνσεις ηλεκτρονικού ταχυδρομείου για διαφορετικούς σκοπούς, ώστε να μπορείτε εύκολα να διαχωρίσετε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας ανά εργασία, προσωπικές ή άλλες περιοχές."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
       ],
@@ -7157,6 +7200,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Όταν εγγράφεστε σε ένα ενημερωτικό δελτίο, χρησιμοποιήστε ένα ψευδώνυμο αντί για τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Η ταυτότητά σας παραμένει κρυφή και μπορείτε να απενεργοποιήσετε το ψευδώνυμο ανά πάσα στιγμή."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Όταν ταξιδεύετε ή χρησιμοποιείτε δημόσιο WiFi, συνδεθείτε στο ${ VPN_APP_NAME } για να αποτρέψετε οποιονδήποτε από το να παρακολουθεί τη δραστηριότητά σας στο διαδίκτυο ή να κλέβει τα δεδομένα σας. Είναι δωρεάν."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -9336,9 +9385,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Όλες οι επιχειρηματικές εφαρμογές ${ BRAND_NAME } και premium λειτουργίες για την προστασία ολόκληρης της επιχείρησής σας."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Οι ισχύουσες πιστώσεις, η αναλογία και τα κουπόνια εφαρμόζονται στο επόμενο βήμα"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
       ],
@@ -9944,6 +9990,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
+      ],
+      "Please select billing country": [
+        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
+      ],
+      "Please select billing state": [
+        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
+      ],
+      "Please select your billing country first.": [
+        "Παρακαλούμε επιλέξτε πρώτα τη χώρα χρέωσής σας."
+      ],
+      "Please select your billing state first.": [
+        "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
+      ],
+      "Select billing country to pay": [
+        "Επιλέξτε χώρα χρέωσης για πληρωμή"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
@@ -11279,6 +11340,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πρόγραμμα."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 5 GB χώρου αποθήκευσης στο Drive και έως 1 GB αποθηκευτικού χώρου στο Mail. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
       ],
@@ -11839,6 +11903,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " ενεργοποιήθηκε τώρα"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } αφαιρέθηκε"
       ]
@@ -11978,6 +12045,41 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Ενεργοποίηση"
+      ],
+      "Create an alias": [
+        "Δημιουργία ψευδωνύμου"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Δημιουργία ετικέτας “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Δημιουργία νέας διεύθυνσης ηλ. ταχυδρομείου"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Δημιουργία “${ suggestedFolderName }“ φακέλου"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Κατεβάστε ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Λήψη εφαρμογής Υπολογιστή"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Ενεργοποιήστε Παρακολούθηση Dark Web"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Λήψη της “@${ PM_DOMAIN }“ διεύθυνσής μου"
+      ],
+      "Open ": [
+        "Άνοιγμα "
+      ],
+      "Show me how": [
+        "Δείξε μου πώς"
       ]
     },
     "Title": {
@@ -12127,6 +12229,9 @@
       ],
       "Conversation list": [
         "Λίστα συνομιλιών"
+      ],
+      "Coupon": [
+        "Κουπόνι"
       ],
       "Create contact": [
         "Δημιουργία επαφής"
@@ -12907,6 +13012,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, και πολλά άλλα."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } λογαριασμό ανά πορτοφόλι",
+        "${ n } λογαριασμούς ανά πορτοφόλι"
+      ],
+      "${ n } email address": [
+        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } wallet": [
+        "${ n } πορτοφόλι",
+        "${ n } πορτοφόλια"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Ένας ασφαλέστερος τρόπος για να κρατήσετε το Bitcoin σας"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin μέσω email"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Πρόσβαση στην εφαρμογή Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Κρατήστε και μεταφέρετε με ασφάλεια τα bitcoins σας"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Πρόβλημα Wallet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Πορτοφόλι"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Λογαριασμος ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Το εισαγόμενο πορτοφόλι${ indexStr } μου"
+      ],
+      "My wallet${ indexStr }": [
+        "Το πορτοφόλι${ indexStr } μου"
       ]
     },
     "Warning": {

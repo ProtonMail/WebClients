@@ -67,10 +67,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -255,9 +255,6 @@
       ],
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
-      ],
-      "Continue to ${ name }": [
-        "${ name } 로 계속하기"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets }으로 계속하기"
@@ -679,11 +676,17 @@
       "More info: Keyboard shortcuts": [
         "더 많은 정보: 키보드 단축키"
       ],
+      "More options": [
+        "더 많은 옵션"
+      ],
       "move emails to": [
         "다음으로 메일 옮기기"
       ],
       "Need help?": [
         "도움이 필요하신가요?"
+      ],
+      "New group": [
+        "새 그룹"
       ],
       "Next": [
         "다음"
@@ -763,11 +766,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Reload": [
         "새로고침"
@@ -819,6 +822,9 @@
       ],
       "Resend code": [
         "코드 다시 보내기"
+      ],
+      "Resend invitation": [
+        "초대장 재전송"
       ],
       "Reset credentials": [
         "자격 증명 초기화"
@@ -900,6 +906,9 @@
       ],
       "Select a calendar to export": [
         "내보낼 캘린더를 선택하세요."
+      ],
+      "Select billing cycle ${ billingText }": [
+        "${ billingText } 결제 주기 선택"
       ],
       "Select calendar view": [
         "캘린더 보기 선택"
@@ -1197,6 +1206,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "pm.me 도메인 추가"
+      ],
       "Resuming forward": [
         "전달 재개 중"
       ]
@@ -1546,14 +1558,6 @@
         "연말 할인 선택"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1575,6 +1579,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -3537,6 +3549,14 @@
         "${ DRIVE_APP_NAME }의 파일을 이용할 수 있는 초대를 받으셨습니다."
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120분"
@@ -3970,6 +3990,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "경고"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "빈 그룹 이름"
       ]
     },
     "eof2023: Deal details": {
@@ -4927,7 +4952,7 @@
         "확인하였습니다."
       ],
       "Invite an existing ${ BRAND_NAME } user": [
-        "존재 중인 ${ BRAND_NAME } 사용자를 초대하세요"
+        "이미 존재하는 ${ BRAND_NAME } 사용자 초대"
       ],
       "Invite member to your family": [
         "회원을 사용자의 가족으로 초대"
@@ -5091,7 +5116,7 @@
         "구성원에서 삭제할 사용자의 계정이 30일 무료 체험판 버전의 ${ BRAND_NAME } Unlimited 플랜으로 자동 전환됩니다."
       ],
       "To create a new user, a configured custom domain is required.": [
-        "새 계정을 생성하려면, 지정 도메인 구성이 권장됩니다."
+        "새 계정을 생성하려면, 커스텀 도메인 구성이 필요합니다."
       ],
       "You can increase or reduce the storage for this user.": [
         "이 사용자의 저장 공간을 늘리거나 줄일 수 있습니다."
@@ -5145,7 +5170,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "${ PLAN_NAMES.visionary2022 } 계정으로 사용자를 추가하세요"
+        "${ PLAN_NAMES.visionary2022 } 계정으로 사용자 추가하기"
       ],
       "Change family name": [
         "가족 이름 변경"
@@ -6324,6 +6349,9 @@
       "30-day money-back guarantee.": [
         "30일 환불 보장"
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
       ],
@@ -6603,8 +6631,11 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
-      "Breach Custom Email Added": [
-        "침해된 커스텀 이메일 추가됨"
+      "Breach Custom Email Deleted": [
+        "침해된 사용자 지정 이메일 삭제됨"
+      ],
+      "Breach Custom Email Validated": [
+        "침해된 사용자 지정 이메일 인증됨"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "기본적으로 조직의 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
@@ -6723,17 +6754,8 @@
       "Custom daily": [
         "일간 사용자 지정"
       ],
-      "Custom email added": [
-        "사용자 지정 이메일 추가됨"
-      ],
-      "Custom email deleted": [
-        "사용자 지정 이메일 삭제됨"
-      ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
-      ],
-      "Custom email validated": [
-        "사용자 지정 이메일 검증됨"
       ],
       "Custom monthly": [
         "월간 사용자 지정"
@@ -6753,10 +6775,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7338,6 +7360,9 @@
       "Let your contacts know you care about their privacy.": [
         "연락처에 당신이 프라이버시에 관심이 있다는 것을 보여주세요."
       ],
+      "Let's get started by pressing the New group button above": [
+        "위의 새 그룹 버튼을 눌러 시작해 보세요"
+      ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
       ],
@@ -7520,6 +7545,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "비 ${ BRAND_NAME } 수신자와 PGP를 사용하는 경우에만 이 설정을 변경하십시오."
+      ],
+      "Only you can see the label": [
+        "오직 사용자만 이 라벨을 확인할 수 있어요"
       ],
       "Open source": [
         "오픈 소스"
@@ -8173,7 +8201,7 @@
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
       "to continue to ${ product }": [
-        "${ product }로 계속하기"
+        "${ product }으(로) 계속하기"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "서비스를 지속적으로 개선하기 위해, 애플리케이션의 적절한 기능을 모니터링하기 위해 데이터를 수집할 수 있습니다. 이 정보는 제3자 서비스와 공유되지 않습니다."
@@ -8873,6 +8901,11 @@
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "링크 라벨 (선택 사항)"
       ]
     },
     "Input placeholder": {
@@ -9689,6 +9722,15 @@
       "Gift code": [
         "기프트 코드"
       ],
+      "Group address": [
+        "그룹 주소"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "Group name": [
+        "그룹 이름"
+      ],
       "Hide password": [
         "비밀번호 숨기기"
       ],
@@ -9763,6 +9805,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
+      ],
+      "Link label (optional)": [
+        "링크 라벨 (선택 사항)"
       ],
       "Logo": [
         "로고"
@@ -9953,6 +9998,9 @@
       "Public certificate (X.509)": [
         "공개 인증서 (X.509)"
       ],
+      "Purpose": [
+        "목적"
+      ],
       "Read": [
         "읽음"
       ],
@@ -9984,7 +10032,7 @@
         "비밀번호 표시"
       ],
       "Second password": [
-        "2차 비밀번호"
+        "2단계 비밀번호"
       ],
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
@@ -10153,6 +10201,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
+      ],
+      "Who can send to this group address?": [
+        "누가 이 그룹의 주소에 전송 가능한가요?"
       ],
       "Why would you like to cancel?": [
         "취소하려는 이유가 무엇인가요?"
@@ -10444,9 +10495,6 @@
       "Learn more about data recovery": [
         "파일 복구에 대해 더 알아보기"
       ],
-      "Need help?": [
-        "도움이 필요하신가요?"
-      ],
       "Not activated": [
         "활성화되지 않음"
       ],
@@ -10506,6 +10554,11 @@
       ],
       "Why set recovery methods?": [
         "왜 복구 방법을 설정해야 하나요?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "접근"
       ]
     },
     "Loading info": {
@@ -11040,23 +11093,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -11084,6 +11120,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -11554,9 +11607,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "적용 가능한 크레딧, 비례 배분 및 쿠폰은 다음 단계에서 적용됩니다."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
@@ -12373,6 +12423,17 @@
         "Windows"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "모든 사람, 외부인 포함"
+      ],
+      "Members": [
+        "구성원"
+      ],
+      "Organization members": [
+        "조직 구성원"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0초"
@@ -12474,7 +12535,7 @@
         "최소 128 픽셀의 정사각형 이미지"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+        "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ]
     },
     "OS compatibility": {
@@ -12645,6 +12706,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "계속하면, ${ termsAndConditionsLink }에 동의하는 것으로 간주합니다."
       ],
       "Creating your account": [
         "계정을 생성하는 중"
@@ -12994,8 +13058,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
+      "Please select billing country": [
+        "결제 청구 국가를 선택하세요"
+      ],
+      "Please select billing state": [
+        "결제 청구 주를 선택하세요"
+      ],
+      "Please select your billing country first.": [
+        "결제 청구 국가를 먼저 선택하세요"
+      ],
+      "Please select your billing state first.": [
+        "결제 청구 주를 먼저 선택하세요"
+      ],
       "Processing payment": [
         "결제 처리 중"
+      ],
+      "Select billing country to pay": [
+        "결제를 청구할 국가 선택"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
@@ -13005,6 +13084,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ price }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "이 거래가 성공적으로 삭제되었습니다. 거래가 완전히 확인되면 크래딧이 계좌에 추가됩니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -13183,6 +13265,23 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "그룹 이름 추가"
+      ],
+      "Add member": [
+        "구성원 추가"
+      ],
+      "e.g. distribution list for marketing team": [
+        "예: 마케팅 팀을 위한 배포 목록"
+      ],
+      "e.g. marketing": [
+        "예: 마케팅"
+      ],
+      "Members": [
+        "구성원"
       ]
     },
     "plan customizer, ips": {
@@ -13388,6 +13487,11 @@
       ],
       "User": [
         "사용자"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "취소"
       ]
     },
     "scim: Action": {
@@ -14544,6 +14648,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 끝나게 되면, Drive 저장공간 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } FREE로 다운그레이드 됩니다. 또한 이전에 받았던 저장공간 보너스를 전부 잃게 됩니다."
       ],
@@ -15338,6 +15445,9 @@
       "Add PayPal payment method": [
         "PayPal을 결제 수단으로 추가"
       ],
+      "Add pm.me subdomain": [
+        "pm.me 하위 도매인 생성"
+      ],
       "Add servers": [
         "서버 추가"
       ],
@@ -15425,11 +15535,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -15493,6 +15603,9 @@
       ],
       "Couldn’t create accounts": [
         "계정을 만들 수 없음"
+      ],
+      "Coupon": [
+        "쿠폰"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } 사용자 생성"
@@ -15625,6 +15738,9 @@
       ],
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
+      ],
+      "Discard changes?": [
+        "변경 사항을 취소할까요?"
       ],
       "Display name and signature": [
         "표시되는 이름과 서명"
@@ -16229,6 +16345,9 @@
       "Theme": [
         "테마"
       ],
+      "There are no groups": [
+        "그룹이 존재하지 않습니다."
+      ],
       "This field cannot be empty": [
         "이 칸은 비워둘 수 없습니다"
       ],
@@ -16269,7 +16388,7 @@
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
       ],
       "Upload your organization’s logo": [
-        "조직의 로고를 업로드하세요"
+        "조직의 로고 업로드"
       ],
       "User": [
         "사용자"
@@ -16617,7 +16736,7 @@
         "브라우저 기본 스크롤바를 사용하세요. 더 크며 사용하기 쉽습니다."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+        "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "일반적으로 인증 제공자의 이름이 포함된 URL"
@@ -17000,6 +17119,76 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "계정 당 ${ n }개 지갑"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } wallet": [
+        "${ n }개 지갑"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin을 보관하는 가장 안전한 방법"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "초대된 사용자로서 무료 ${ BRAND_NAME } 계정에 가입하여 ${ appName }에 독점적으로 액세스하세요."
+      ],
+      "Bitcoin via email": [
+        "이메일을 통한 Bitcoin"
+      ],
+      "Early access waitlist": [
+        "얼리 액세스 대기명단"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "${ appName }에 대한 얼리 액세스"
+      ],
+      "Get started": [
+        "시작하기"
+      ],
+      "Invite Friends": [
+        "친구 초대"
+      ],
+      "Join ${ appName } early access!": [
+        "${ appName } 얼리 액세스에 가입하세요."
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "무료 ${ BRAND_NAME } 계정에 가입하여 자리를 확보하세요. 일찍 가입할수록 ${ appName }에 더 빨리 액세스할 수 있습니다."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "업그레이드하여 ${ appName } 프리미엄 기능을 잠금 해제하세요"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary 사용자와 초대받은 친구는 다른 사람들과 얼리 액세스를 공유하고 친구를 초대하여 ${ appName }을 무료로 사용해 볼 수 있습니다."
+      ],
+      "You're Invited.": [
+        "귀하는 초대되었습니다."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin을 안전하게 보관하고 입출금하세요."
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "지갑 오류"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "출시 예정"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "인증"
+      ],
+      "Downloads": [
+        "다운로드"
       ]
     },
     "Warning": {

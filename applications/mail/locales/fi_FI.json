@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Valitse kaikki viestit"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Valitse laskutusjakso: ${ billingText }"
+      ],
       "Select country": [
         "Valitse maa"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -3582,6 +3581,14 @@
         "Lataa kaikki"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Laajennettu versiohistoria"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "KUVAUS:\n${ eventDescription }"
@@ -5779,6 +5786,9 @@
       "and": [
         "ja"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Toinen vinkki näytetään seuraavalla kerralla, kun avaat Mailin"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Kaikki ajoitetut tai torkutetut viestit perutaan."
       ],
@@ -5923,6 +5933,9 @@
       "Confirm phishing report": [
         "Vahvista tietojenkalasteluilmoitus"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Mieti, mihin aikaan vastaanottajasi on parasta vastaanottaa sähköpostisi, ja ajoita se lähetettäväksi silloin."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
       ],
@@ -5944,6 +5957,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
         "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Luo kansio, kuten ”${ suggestedFolderName }”, säilyttääksesi kaikki verkko-ostosten kuitit yhdessä paikassa."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja kansiot, jotka haluat tuoda."
@@ -5996,6 +6012,12 @@
       "Default email application": [
         "Sähköpostin oletussovellus"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Tiesitkö, että ${ BRAND_NAME } -tiliisi sisältyy salattu pilvitallennustila? Avaa ${ DRIVE_APP_NAME } ja ota kaikki irti ilmaisesta tallennustilastasi."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Tiesitkö, että olemme varanneet sinulle myös lyhyemmän sähköpostiosoitteen? Se muodostuu käyttäjätunnuksestasi, jota seuraa ”@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
       ],
@@ -6011,6 +6033,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Älä unohda ilmoittaa salasanaa vastaanottajalle"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Eikö sinulla ole aikaa hoitaa tärkeää sähköpostia juuri nyt, mutta et kuitenkaan halua unohtaa sitä? Aseta parempi aika, jolloin se ilmestyy postilaatikkoosi."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Etkö näe mitään? Muista sammuttaa pop-up estot."
@@ -6173,6 +6198,9 @@
       "Generate text": [
         "Luo tekstiä"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Anna saapuville laskuille värikoodattu tunniste, esimerkiksi ”${ suggestedLabelName }”. Kun ne on maksettu, vaihda tunnisteeksi ”${ suggestedPaidLabelName }”."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Sisältää ${ numAttachments } liitteen (${ numAttachmentsSize })",
         "Sisältää ${ numAttachments } liitettä (${ numAttachmentsSize })"
@@ -6212,6 +6240,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Jos aliaksesi myydään, vuotaa tai sitä väärinkäytetään, voit estää roskapostin yksinkertaisesti poistamalla aliaksen käytöstä."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Jos salasanasi päätyy pimeään verkkoon, ${ BRAND_NAME } voi kertoa, mistä palvelusta tietosi ovat vuotaneet ja miten vahingot voidaan estää."
       ],
       "Image description": [
         "Kuvateksti"
@@ -6282,6 +6313,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Pidä kirjautumis- ja luottokorttitietosi turvassa ja aina käsillä lisäämällä ne ${ PASS_APP_NAME } -palveluun. Saat sen ilmaisesti ${ BRAND_NAME } -tilisi mukana."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Pidä postilaatikkosi siistinä poistamalla roskakorissa ja -postissa yli 30 päivää olleet sähköpostit automaattisesti."
       ],
       "Key fingerprint": [
         "Avaimen sormenjälki"
@@ -6942,6 +6979,9 @@
       "to ${ destinationElement } folder.": [
         "kohdekansioon ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Selaimen avoimet välilehdet eivät häiritse sinua, kun käytät työpöytäsovellusta."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
       ],
@@ -7068,6 +7108,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Käytä eri sähköpostiosoitteita eri tarkoituksiin, jotta voit helposti lajitella työ-, henkilökohtaiset ja muut sähköpostit."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Hallitse sähköpostiasi nopeammin pikanäppäimillä."
       ],
@@ -7157,6 +7200,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Kun tilaat uutiskirjeen, käytä sähköpostiosoitteesi sijaan aliasta. Identiteettisi pysyy piilossa, ja voit poistaa aliaksen käytöstä milloin tahansa."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Kun matkustat tai käytät julkista WiFiä, voit käyttää ilmaista ${ VPN_APP_NAME } -palvelua, jotta kukaan ei voi seurata verkkotoimintaasi tai varastaa tietojasi."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
@@ -8106,7 +8155,7 @@
         "Postinumero"
       ],
       "Proration": [
-        "Suhteutus"
+        "Hyvitys"
       ],
       "Public keys": [
         "Julkiset avaimet"
@@ -9336,14 +9385,11 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
       ],
       "Early access to new apps and features": [
-        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+        "Varhainen käyttöoikeus uusiin sovelluksiin ja ominaisuuksiin"
       ],
       "Encrypted email and calendar to get you started.": [
         "Salattu sähköposti ja kalenteri, joilla pääset alkuun."
@@ -9944,6 +9990,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
+      ],
+      "Please select billing country": [
+        "Valitse laskutusmaa"
+      ],
+      "Please select billing state": [
+        "Valitse laskutusosavaltio"
+      ],
+      "Please select your billing country first.": [
+        "Valitse laskutusmaasi ensin."
+      ],
+      "Please select your billing state first.": [
+        "Valitse laskutusosavaltiosi ensin."
+      ],
+      "Select billing country to pay": [
+        "Valitse laskutusmaa maksaaksesi"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
@@ -11226,7 +11287,7 @@
         "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } -tilauksella tiimisi voi työskennellä tuottavammin ja järjestelmällisemmin kaikkien ${ BRAND_NAME }-sovellusten ja niiden lisäominaisuuksien avulla."
@@ -11334,7 +11395,7 @@
         "Aktivistien auttaminen Hongkongissa"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Miten asiakaspalvelutiimimme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+        "Miten asiakaspalvelumme sai VPN-sovelluksemme suoraan ihmisten käsiin."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Miten taistelimme vastaan, kun ${ BRAND_NAME } joutui aggressiivisen sensuurikampanjan kohteeksi."
@@ -11842,6 +11903,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " on nyt käytössä"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } poistettiin"
       ]
@@ -11981,6 +12045,41 @@
       "${ minutes } minute": [
         "${ minutes } minuutti",
         "${ minutes } minuuttia"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Ota käyttöön"
+      ],
+      "Create an alias": [
+        "Luo alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Luo tunniste “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Luo uusi sähköpostiosoite"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Luo kansio “${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Lataa ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Lataa työpöytäsovellus"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Käytä Pimeän verkon valvontaa"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Hanki oma “@${ PM_DOMAIN }“ -osoite"
+      ],
+      "Open ": [
+        "Avaa "
+      ],
+      "Show me how": [
+        "Näytä miten"
       ]
     },
     "Title": {
@@ -12130,6 +12229,9 @@
       ],
       "Conversation list": [
         "Keskustelulista"
+      ],
+      "Coupon": [
+        "Etukoodi"
       ],
       "Create contact": [
         "Luo yhteystieto"
@@ -12910,6 +13012,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja muuta."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } lompakko tiliä kohden",
+        "${ n } lompakkoa tiliä kohden"
+      ],
+      "${ n } email address": [
+        "${ n } sähköpostiosoite",
+        "${ n } sähköpostiosoitetta"
+      ],
+      "${ n } wallet": [
+        "${ n } lompakko",
+        "${ n } lompakkoa"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Käytä Wallet-sovellusta"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet-ongelma"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Tili ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Omat tuodut lompakot${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Oma lompakko${ indexStr }"
       ]
     },
     "Warning": {

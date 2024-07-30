@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -242,7 +242,7 @@
         "Potwierdź otwieranie linku ${ linkToShow }"
       ],
       "Contact support": [
-        "Pomoc techniczna"
+        "Skontaktuj się ze wsparciem technicznym"
       ],
       "Contact us": [
         "Skontaktuj się z nami"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Więcej informacji: Skróty klawiszowe"
       ],
+      "More options": [
+        "Więcej opcji"
+      ],
       "move emails to": [
         "przenieś wiadomości do"
       ],
@@ -766,10 +769,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Wyślij ponownie kod"
+      ],
+      "Resend invitation": [
+        "Wyślij ponownie zaproszenie"
       ],
       "Reset credentials": [
         "Zresetuj dane logowania"
@@ -903,6 +909,9 @@
       ],
       "Select a calendar to export": [
         "Wybierz kalendarz do wyeksportowania"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Wybierz cykl rozliczeniowy ${ billingText }"
       ],
       "Select calendar view": [
         "Wybierz widok kalendarza"
@@ -1409,6 +1418,9 @@
       "Faster, broader device compatibility": [
         "Szybsza i większa kompatybilność urządzeń"
       ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Zadanie pozostanie na urządzeniu, ale wymaga jednorazowego pobrania i obsługiwanego sprzętu"
+      ],
       "Run locally": [
         "Uruchom lokalnie"
       ],
@@ -1561,14 +1573,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1590,6 +1594,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -2580,7 +2592,7 @@
         "Falklandy"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandy (Malwiny)"
+        "Falklandy"
       ],
       "Faroe Islands": [
         "Wyspy Owcze"
@@ -3574,6 +3586,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Zaproszono Cię do pliku w ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
       ]
     },
     "Duration": {
@@ -6797,9 +6817,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
       ],
-      "Breach Custom Email Added": [
-        "Dodanie niestandardowego adresu e-mail do monitoringu"
-      ],
       "Breach Custom Email Deleted": [
         "Usunięcie niestandardowego adresu e-mail z monitoringu"
       ],
@@ -6929,17 +6946,8 @@
       "Custom daily": [
         "Codziennie (niestandardowo)"
       ],
-      "Custom email added": [
-        "Dodanie niestandardowego adresu e-mail"
-      ],
-      "Custom email deleted": [
-        "Usunięcie niestandardowego adresu e-mail"
-      ],
       "Custom email domains": [
         "Niestandardowe domeny"
-      ],
-      "Custom email validated": [
-        "Zweryfikowanie niestandardowego adresu e-mail"
       ],
       "Custom monthly": [
         "Co miesiąc (niestandardowo)"
@@ -6959,11 +6967,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -7741,6 +7749,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
+      ],
+      "Only you can see the label": [
+        "Tylko Ty możesz zobaczyć etykietę"
       ],
       "Open source": [
         "Otwarty kod źródłowy"
@@ -9153,6 +9164,11 @@
         "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Etykieta linku (opcjonalnie)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Dodaj etykietę"
@@ -10063,6 +10079,9 @@
       "Level for NetShield blocker filtering": [
         "Poziom filtrów NetShield"
       ],
+      "Link label (optional)": [
+        "Etykieta linku (opcjonalnie)"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10454,7 +10473,7 @@
         "Jaki jest główny powód anulowania lub obniżenia planu?"
       ],
       "Who can send to this group address?": [
-        "Kto może wysyłać wiadomości do tej grupy?"
+        "Kto może wysyłać wiadomości do grupy?"
       ],
       "Why would you like to cancel?": [
         "Dlaczego chcesz anulować plan?"
@@ -10746,9 +10765,6 @@
       "Learn more about data recovery": [
         "Dowiedz się więcej o odzyskiwaniu danych"
       ],
-      "Need help?": [
-        "Potrzebujesz pomocy?"
-      ],
       "Not activated": [
         "Nieaktywowany"
       ],
@@ -10808,6 +10824,11 @@
       ],
       "Why set recovery methods?": [
         "Dlaczego ustawić metodę odzyskiwania?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Dostęp"
       ]
     },
     "Loading info": {
@@ -11375,23 +11396,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11419,6 +11423,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -11946,9 +11967,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
@@ -13418,14 +13436,32 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
+      ],
+      "Please select your billing country first.": [
+        "Najpierw wybierz kraj rozliczeniowy"
+      ],
+      "Please select your billing state first.": [
+        "Najpierw wybierz stan rozliczeniowy"
+      ],
       "Processing payment": [
         "Przetwarzanie płatności"
+      ],
+      "Select billing country to pay": [
+        "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -16016,10 +16052,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -16084,6 +16120,9 @@
       ],
       "Couldn’t create accounts": [
         "Nie można utworzyć kont"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Utwórz ${ selectedUserIds.length } użytkownika",
@@ -16222,6 +16261,9 @@
       ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
+      ],
+      "Discard changes?": [
+        "Czy chcesz odrzucić zmiany?"
       ],
       "Display name and signature": [
         "Nazwa wyświetlana i podpis"
@@ -17644,7 +17686,7 @@
         "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Jako zaproszony użytkownik, zarejestruj się do darmowego konta ${ BRAND_NAME }, aby uzyskać ekskluzywny dostęp do ${ appName }"
+        "Jako zaproszony użytkownik, załóż darmowe konto ${ BRAND_NAME }, aby uzyskać ekskluzywny dostęp do ${ appName }"
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
@@ -17656,7 +17698,7 @@
         "Wczesny dostęp do nowych funkcji"
       ],
       "Early access waitlist": [
-        "Lista oczekujących wcześniejszego dostępu"
+        "Lista oczekujących do wcześniejszego dostępu"
       ],
       "Exclusive early access to ${ appName }.": [
         "Ekskluzywny wcześniejszy dostęp do ${ appName }."
@@ -17668,19 +17710,19 @@
         "Zaproś znajomych"
       ],
       "Join ${ appName } early access!": [
-        "Dołącz do wcześniejszego dostępu ${ appName }!"
+        "Uzyskaj wcześniejszy dostęp do ${ appName }!"
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "Zarejestruj się do darmowego konta ${ BRAND_NAME }, aby zabezpieczyć swoje miejsce. Im szybciej się zarejestrujesz, tym szybciej uzyskasz dostęp do ${ appName }."
+        "Załóż darmowe konto ${ BRAND_NAME }, aby zabezpieczyć swoje Bitcoiny. Im szybciej się zarejestrujesz, tym szybciej uzyskasz dostęp do ${ appName }."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Ulepsz konto, aby odblokować funkcje premium ${ appName }"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Użytkownicy Visionary oraz ich zaproszeni znajomi mogą udostępniać wcześniejszy dostęp innym, zaproś swoich znajomych do wypróbowania ${ appName } za darmo!"
+        "Użytkownicy planu Visionary oraz ich zaproszeni znajomi mogą udostępniać wcześniejszy dostęp innym. Zaproś swoich znajomych do ${ appName } za darmo!"
       ],
       "You're Invited.": [
-        "Jesteś zaproszony."
+        "Otrzymano zaproszenie."
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -17711,7 +17753,7 @@
         "Autoryzacja"
       ],
       "Downloads": [
-        "Do pobrania"
+        "Pliki do pobrania"
       ]
     },
     "Warning": {

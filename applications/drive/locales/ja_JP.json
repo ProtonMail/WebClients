@@ -33,6 +33,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
+      "Accept": [
+        "承認する"
+      ],
       "Activate recovery": [
         "回復を有効にする"
       ],
@@ -233,6 +236,9 @@
       ],
       "Customize import": [
         "インポートをカスタマイズ"
+      ],
+      "Decline": [
+        "拒否する"
       ],
       "Decrease": [
         "減少"
@@ -531,6 +537,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "開く"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
@@ -623,6 +632,9 @@
       ],
       "Resend code": [
         "コードを再送信"
+      ],
+      "Resend invite": [
+        "招待を再送信する"
       ],
       "Reset to default": [
         "初期値に戻す"
@@ -826,6 +838,9 @@
         "とにかくアップロード"
       ],
       "Upload file": [
+        "ファイルをアップロード"
+      ],
+      "Upload files": [
         "ファイルをアップロード"
       ],
       "Upload folder": [
@@ -1720,6 +1735,9 @@
       "Macao": [
         "マカオ"
       ],
+      "Macedonia": [
+        "マケドニア"
+      ],
       "Madagascar": [
         "マダカスカル"
       ],
@@ -2201,6 +2219,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "改善にご協力ください"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
       ]
     },
     "Email body for description (description part)": {
@@ -3474,6 +3500,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
@@ -3683,6 +3712,9 @@
       ],
       "Attention required": [
         "注意が必要です"
+      ],
+      "Available": [
+        "利用可能"
       ],
       "Awaiting transaction": [
         "トランザクション待ち"
@@ -4782,11 +4814,17 @@
       "Would you like to restore your files?": [
         "ファイルを復元しますか？"
       ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
       "Yes": [
         "はい"
       ],
       "Yesterday": [
         "昨日"
+      ],
+      "you": [
+        "あなた"
       ],
       "You already have a free account": [
         "すでに無料アカウントをお持ちですか？"
@@ -5307,6 +5345,12 @@
       "Main": [
         "メイン"
       ],
+      "Make editor": [
+        "編集者として設定"
+      ],
+      "Make viewer": [
+        "閲覧者として設定"
+      ],
       "Malware": [
         "マルウェア"
       ],
@@ -5619,6 +5663,9 @@
       "Shared with me": [
         "私と共有しました"
       ],
+      "stay safer online": [
+        "オンラインでの安全性を高める"
+      ],
       "Trash": [
         "ごみ箱"
       ],
@@ -5673,6 +5720,14 @@
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
+      ],
+      "for ${ price }": [
+        "${ price } の場合"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "割引を入手"
@@ -5690,6 +5745,9 @@
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
+      ],
+      "Custom schedule send and snooze times": [
+        "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
@@ -6365,9 +6423,6 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
       ],
@@ -7002,6 +7057,9 @@
       "CVC": [
         "CVC (セキュリティコード)"
       ],
+      "Got it": [
+        "わかった"
+      ],
       "MM/YY": [
         "MM/YY (月/年)"
       ],
@@ -7101,6 +7159,9 @@
       ],
       "Last name": [
         "姓"
+      ],
+      "Message": [
+        "メッセージ"
       ],
       "Name": [
         "名前"
@@ -7666,6 +7727,11 @@
         "データの安全性を保ったまま、Drive内のファイルを検索できるようになりました。"
       ]
     },
+    "Status": {
+      "Pending": [
+        "保留中"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "ストレージを増やす"
@@ -7833,6 +7899,9 @@
       "25 calendars per user": [
         "ユーザーあたり 25 個のカレンダー"
       ],
+      "6 users": [
+        "6 ユーザー"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
       ],
@@ -7847,6 +7916,9 @@
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
+      ],
+      "Learn more": [
+        "もっと詳しく知る"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
@@ -8601,6 +8673,9 @@
       "Shared": [
         "共有中"
       ],
+      "Shared with me": [
+        "私と共有しました"
+      ],
       "Show actions": [
         "アクションの表示"
       ],
@@ -8633,6 +8708,9 @@
       ],
       "Stop sharing with everyone?": [
         "共有を停止してよろしいですか?"
+      ],
+      "Stop sharing?": [
+        "共有を停止?"
       ],
       "Stop transfers?": [
         "転送を中止してよろしいですか？"
@@ -8717,6 +8795,9 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
+      ],
+      "Your exposed information": [
+        "あなたの暴露された情報"
       ],
       "Your welcome actions": [
         "ウェルカムアクション"
@@ -8880,6 +8961,11 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } メールアドレス"
       ]
     },
     "Warning": {

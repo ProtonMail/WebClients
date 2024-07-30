@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -679,11 +679,17 @@
       "More info: Keyboard shortcuts": [
         "Ayrıntılı bilgi: Klavye kısayolları"
       ],
+      "More options": [
+        "Diğer seçenekler"
+      ],
       "move emails to": [
         "e-postalar şuraya taşınsın"
       ],
       "Need help?": [
         "Yardım gerekiyor mu?"
+      ],
+      "New group": [
+        "Yeni grup"
       ],
       "Next": [
         "İleri"
@@ -763,11 +769,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -819,6 +825,9 @@
       ],
       "Resend code": [
         "Kodu yeniden gönder"
+      ],
+      "Resend invitation": [
+        "Daveti yeniden gönder"
       ],
       "Reset credentials": [
         "Kimlik doğrulama bilgilerini sıfırla"
@@ -1547,14 +1556,6 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1576,6 +1577,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -3169,6 +3178,11 @@
         "İçe aktarma sırasında birkaç satırda sorunlar bulundu. Lütfen CSV dosyanızı gözden geçirin."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ay"
@@ -3541,6 +3555,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } üzerindeki bir dosyaya erişmeye davet edildiniz"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
       ]
     },
     "Duration": {
@@ -6658,9 +6680,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
-      "Breach Custom Email Added": [
-        "Verilerin ele geçirilmesi özel e-posta adresi eklendi"
-      ],
       "Breach Custom Email Deleted": [
         "Verilerin ele geçirilmesi özel e-posta adresi silindi"
       ],
@@ -6786,17 +6805,8 @@
       "Custom daily": [
         "Günde bir, özel"
       ],
-      "Custom email added": [
-        "Özel e-posta adresi eklendi"
-      ],
-      "Custom email deleted": [
-        "Özel e-posta adresi silindi"
-      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
-      ],
-      "Custom email validated": [
-        "Özel e-posta adresi doğrulandı"
       ],
       "Custom monthly": [
         "Ayda bir, özel"
@@ -6816,11 +6826,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7587,6 +7597,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
+      ],
+      "Only you can see the label": [
+        "Etiketi yalnızca siz görebilirsiniz"
       ],
       "Open source": [
         "Açık kaynaklı"
@@ -9781,6 +9794,12 @@
       "Gift code": [
         "Hediye kodu"
       ],
+      "Group address": [
+        "Grup adresi"
+      ],
+      "Group name": [
+        "Grup adı"
+      ],
       "Hide password": [
         "Parolayı gizle"
       ],
@@ -10533,9 +10552,6 @@
       "Learn more about data recovery": [
         "Veri kurtarma hakkında ayrıntılı bilgi alın"
       ],
-      "Need help?": [
-        "Yardım gerekiyor mu?"
-      ],
       "Not activated": [
         "Kullanıma alınmamış"
       ],
@@ -10595,6 +10611,11 @@
       ],
       "Why set recovery methods?": [
         "Neden kurtarma yöntemleri ayarlanmalı?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Erişim"
       ]
     },
     "Loading info": {
@@ -11140,23 +11161,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11184,6 +11188,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -11673,9 +11694,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Kredi, hesap bakiyesi ve kuponlar sonraki adımda düşülecek"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
@@ -12478,6 +12496,11 @@
         "Çöpe at"
       ]
     },
+    "option": {
+      "Members": [
+        "Üyeler"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 saniye"
@@ -12753,6 +12776,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "İlerleyerek ${ termsAndConditionsLink } metnini kabul etmiş olursunuz"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -13290,6 +13316,11 @@
       ],
       "yourdomain.com": [
         "etkialaniniz.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Üyeler"
       ]
     },
     "plan customizer, ips": {
@@ -15583,10 +15614,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -15785,6 +15816,9 @@
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
+      ],
+      "Discard changes?": [
+        "Değişiklikler silinsin mi?"
       ],
       "Display name and signature": [
         "Görüntülenecek ad ve imza"
@@ -16985,6 +17019,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "İki adımlı doğrulama"
+      ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
       ],

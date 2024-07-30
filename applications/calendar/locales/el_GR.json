@@ -482,11 +482,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -601,6 +601,9 @@
       ],
       "Select all": [
         "Επιλογή όλων"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Επιλέξτε κύκλο χρέωσης ${ billingText }"
       ],
       "Select calendar view": [
         "Επιλέξτε προβολή ημερολογίου"
@@ -2598,6 +2601,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Βοηθήστε μας να βελτιωθούμε"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Εκτεταμένο ιστορικό εκδόσεων"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5238,6 +5249,11 @@
         "Δεν επιτρέπεται η δημιουργία προσκλήσεων σε κοινόχρηστο ημερολόγιο"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Ετικέτα συνδέσμου (προαιρετικό)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Προσθήκη ετικέτας"
@@ -5804,6 +5820,11 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Πρόσβαση"
       ]
     },
     "Link to calendar app": {
@@ -6660,9 +6681,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Όλες οι επιχειρηματικές εφαρμογές ${ BRAND_NAME } και premium λειτουργίες για την προστασία ολόκληρης της επιχείρησής σας."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Οι ισχύουσες πιστώσεις, η αναλογία και τα κουπόνια εφαρμόζονται στο επόμενο βήμα"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
       ],
@@ -7378,6 +7396,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
+      ],
+      "Please select billing country": [
+        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
+      ],
+      "Please select billing state": [
+        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
+      ],
+      "Please select your billing country first.": [
+        "Παρακαλούμε επιλέξτε πρώτα τη χώρα χρέωσής σας."
+      ],
+      "Please select your billing state first.": [
+        "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
+      ],
+      "Select billing country to pay": [
+        "Επιλέξτε χώρα χρέωσης για πληρωμή"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
@@ -8482,6 +8515,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου στο Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πρόγραμμα."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 5 GB χώρου αποθήκευσης στο Drive και έως 1 GB αποθηκευτικού χώρου στο Mail. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
       ],
@@ -9170,6 +9206,9 @@
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
       ],
+      "Coupon": [
+        "Κουπόνι"
+      ],
       "Create contact": [
         "Δημιουργία επαφής"
       ],
@@ -9743,6 +9782,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, και πολλά άλλα."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } λογαριασμό ανά πορτοφόλι",
+        "${ n } λογαριασμούς ανά πορτοφόλι"
+      ],
+      "${ n } email address": [
+        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } wallet": [
+        "${ n } πορτοφόλι",
+        "${ n } πορτοφόλια"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Ένας ασφαλέστερος τρόπος για να κρατήσετε το Bitcoin σας"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin μέσω email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Κρατήστε και μεταφέρετε με ασφάλεια τα bitcoins σας"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Πρόβλημα Wallet"
       ]
     },
     "Warning": {

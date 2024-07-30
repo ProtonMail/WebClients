@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Vælg alle beskeder"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Vælg faktureringscyklus ${ billingText }"
+      ],
       "Select country": [
         "Vælg land"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -3580,6 +3579,14 @@
     "Download attachments": {
       "Download all": [
         "Download alle"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Udvidet versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriteret support"
       ]
     },
     "Email body for description (description part)": {
@@ -9378,9 +9385,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle erhvervs-apps til ${ BRAND_NAME } og premium-funktioner, der beskytter hele din virksomhed."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Gældende kreditter, proratering og kuponer anvendes i næste trin"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
@@ -9986,6 +9990,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
+      ],
+      "Please select your billing country first.": [
+        "Vælg venligst dit faktureringsland først."
+      ],
+      "Please select your billing state first.": [
+        "Vælg venligst dit faktureringsstat først."
+      ],
+      "Select billing country to pay": [
+        "Vælg faktureringsland for at betale"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
@@ -12211,6 +12230,9 @@
       "Conversation list": [
         "Samtaleliste"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create contact": [
         "Opret kontakt"
       ],
@@ -12990,6 +13012,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto pr. wallet",
+        "${ n } konti pr. wallet"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadresse",
+        "${ n } e-mailadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } wallet",
+        "${ n } wallets"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "En sikrere måde at gemme dine Bitcoin på"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Tilgå Wallet-appen"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Opbevar og overfør dine bitcoins sikkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med wallet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Konto ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Min importerede wallet${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Min wallet${ indexStr }"
       ]
     },
     "Warning": {

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -679,11 +679,17 @@
       "More info: Keyboard shortcuts": [
         "Подробнее: комбинации клавиш"
       ],
+      "More options": [
+        "Дополнительные параметры"
+      ],
       "move emails to": [
         "переместить письма в"
       ],
       "Need help?": [
         "Нужна помощь?"
+      ],
+      "New group": [
+        "Новая группа"
       ],
       "Next": [
         "Далее"
@@ -763,11 +769,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -819,6 +825,9 @@
       ],
       "Resend code": [
         "Повторно отправить код"
+      ],
+      "Resend invitation": [
+        "Отправить повторное приглашение"
       ],
       "Reset credentials": [
         "Сбросить учётные данные"
@@ -1405,6 +1414,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Купить"
+      ],
       "New": [
         "Новый"
       ],
@@ -1546,14 +1558,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1575,6 +1579,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3180,6 +3192,11 @@
         "Мы обнаружили ошибки в нескольких строках во время импорта, просмотрите ваш файл CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Подробнее"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/месяц"
@@ -3560,6 +3577,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Вы приглашены для доступа к файлу в ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Подробная история версий"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
       ]
     },
     "Duration": {
@@ -3995,6 +4020,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Предупреждение"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Без имени"
       ]
     },
     "eof2023: Deal details": {
@@ -6902,11 +6932,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -7642,6 +7672,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
+      ],
+      "Only you can see the label": [
+        "Только вы можете видеть ярлык"
       ],
       "Open source": [
         "Открытый исходный код"
@@ -9853,6 +9886,9 @@
       "Gift code": [
         "Подарочный код"
       ],
+      "Group name": [
+        "Название группы"
+      ],
       "Hide password": [
         "Скрыть пароль"
       ],
@@ -10605,9 +10641,6 @@
       "Learn more about data recovery": [
         "Подробнее о восстановлении данных"
       ],
-      "Need help?": [
-        "Нужна помощь?"
-      ],
       "Not activated": [
         "Не активировано"
       ],
@@ -10650,6 +10683,9 @@
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
+      "Vault": [
+        "Хранилище"
+      ],
       "View guide": [
         "Посмотреть руководство"
       ],
@@ -10664,6 +10700,11 @@
       ],
       "Why set recovery methods?": [
         "Зачем устанавливать методы восстановления?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Доступ"
       ]
     },
     "Loading info": {
@@ -11228,23 +11269,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11272,6 +11296,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -11799,9 +11840,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
@@ -12618,6 +12656,11 @@
         "Корзина"
       ]
     },
+    "option": {
+      "Members": [
+        "Участники"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 секунд"
@@ -12899,6 +12942,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Но вы можете разблокировать **${ unlockPlanTitle }** и все платные сервисы ${ BRAND_NAME } если улучшите до **${ upsellPlanTitle }**."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Продолжая, вы соглашаетесь с нашими ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Создание вашего аккаунта"
@@ -13442,6 +13488,11 @@
         "vashdomain.com"
       ]
     },
+    "placeholder": {
+      "Members": [
+        "Участники"
+      ]
+    },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
         "${ contactHref } нашим Отделом продаж."
@@ -13654,6 +13705,16 @@
       ],
       "User": [
         "Пользователь"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Отменить"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Информация"
       ]
     },
     "scim: Action": {
@@ -15823,10 +15884,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -16027,6 +16088,9 @@
       "Disable two-factor authentication": [
         "Отключение двухфакторной аутентификации"
       ],
+      "Discard changes?": [
+        "Сбросить изменения?"
+      ],
       "Display name and signature": [
         "Отображаемое имя и подпись"
       ],
@@ -16191,6 +16255,9 @@
       ],
       "Forward emails": [
         "Пересылать электронные письма"
+      ],
+      "Gateway": [
+        "Шлюз"
       ],
       "Gateways": [
         "Шлюзы"
@@ -17225,6 +17292,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Двухфакторная аутентификация"
+      ],
       "Administrators can't access the data of private users": [
         "Администраторы не могут получить доступ к данным частных пользователей"
       ],

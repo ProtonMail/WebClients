@@ -741,6 +741,9 @@
       "Select all": [
         "Zaznacz wszystkie"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Wybierz cykl rozliczeniowy ${ billingText }"
+      ],
       "Select country": [
         "Wybierz kraj"
       ],
@@ -1679,7 +1682,7 @@
         "Falklandy"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandy (Malwiny)"
+        "Falklandy"
       ],
       "Faroe Islands": [
         "Wyspy Owcze"
@@ -2402,6 +2405,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomóż nam ulepszyć usługę"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
       ]
     },
     "Email body for description (description part)": {
@@ -7269,9 +7280,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
       ],
@@ -7934,9 +7942,15 @@
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Zacznij korzystać z ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Spróbuj ponownie później"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Twórz i współpracuj nad dokumentami. Wszystko jest chronione za pomocą szyfrowania end-to-end."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Skorzystaj z dysku ${ DRIVE_APP_NAME }, a zwiększymy Twoją przestrzeń dyskową do 5 GB!"
       ],
@@ -8098,6 +8112,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
+      ],
+      "Please select your billing country first.": [
+        "Najpierw wybierz kraj rozliczeniowy"
+      ],
+      "Please select your billing state first.": [
+        "Najpierw wybierz stan rozliczeniowy"
+      ],
+      "Select billing country to pay": [
+        "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
@@ -9848,6 +9877,9 @@
       ],
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create a new file": [
         "Utwórz nowy plik"

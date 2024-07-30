@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Больш інфармацыі: спалучэнні клавіш"
       ],
+      "More options": [
+        "Дадатковыя параметры"
+      ],
       "move emails to": [
         "перамясціць лісты ў"
       ],
@@ -766,11 +769,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Адправіць код яшчэ раз"
+      ],
+      "Resend invitation": [
+        "Паўторна адправіць запрашэнне"
       ],
       "Reset credentials": [
         "Скінуць уліковыя даныя"
@@ -903,6 +909,9 @@
       ],
       "Select a calendar to export": [
         "Выбраць каляндар для экспартавання"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Выбраць перыяд аплаты ${ billingText }"
       ],
       "Select calendar view": [
         "Выбраць выгляд календара"
@@ -1564,14 +1573,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1593,6 +1594,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3583,6 +3592,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Вас запрасілі атрымаць доступ да файла ў ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Пашыраная гісторыя версій"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ]
     },
     "Duration": {
@@ -6806,9 +6823,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
-      "Breach Custom Email Added": [
-        "Уцечка карыстальніцкай электроннай пошты дададзена"
-      ],
       "Breach Custom Email Deleted": [
         "Уцечка карыстальніцкай электроннай пошты выдалена"
       ],
@@ -6938,17 +6952,8 @@
       "Custom daily": [
         "Штодзень (карыстальніцкае)"
       ],
-      "Custom email added": [
-        "Карыстальніцкая электронная пошта дададзена"
-      ],
-      "Custom email deleted": [
-        "Карыстальніцкія электронная пошта выдалена"
-      ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
-      ],
-      "Custom email validated": [
-        "Карыстальніцкая электронная пошта праверана"
       ],
       "Custom monthly": [
         "Штомесяц (карыстальніцкае)"
@@ -6968,11 +6973,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7751,6 +7756,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Змяняйце гэтыя налады толькі ў тым выпадку, калі ўжываеце PGP для перапіскі з атрымальнікамі, якія не карыстаюцца ${ BRAND_NAME }."
       ],
+      "Only you can see the label": [
+        "Толькі вы будзеце бачыць гэту метку"
+      ],
       "Open source": [
         "Адкрыты зыходны код"
       ],
@@ -8119,9 +8127,6 @@
       ],
       "Single sign-on removed": [
         "Адзіны ўваход выдалены"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых адрасоў карыстальніцкага дамена. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } for Business з карыстальніцкім даменам."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
@@ -9165,6 +9170,11 @@
         "Асістэнт ШІ дапаможа вам стварыць лепшыя лісты, хутка і без намаганняў."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Метка спасылкі (неабавязкова)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Дадаць метку"
@@ -10075,6 +10085,9 @@
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
       ],
+      "Link label (optional)": [
+        "Метка спасылкі (неабавязкова)"
+      ],
       "Logo": [
         "Лагатып"
       ],
@@ -10758,9 +10771,6 @@
       "Learn more about data recovery": [
         "Даведацца больш аб аднаўленні даных"
       ],
-      "Need help?": [
-        "Неабходна дапамога?"
-      ],
       "Not activated": [
         "Не актывавана"
       ],
@@ -10820,6 +10830,11 @@
       ],
       "Why set recovery methods?": [
         "Навошта задаваць спосаб аднаўлення?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Доступ"
       ]
     },
     "Loading info": {
@@ -11387,23 +11402,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11431,6 +11429,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11958,9 +11973,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
@@ -13430,8 +13442,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
+      "Please select billing country": [
+        "Выберыце краіну выстаўлення рахунку"
+      ],
+      "Please select billing state": [
+        "Выберыце стан выстаўлення рахунку"
+      ],
+      "Please select your billing country first.": [
+        "Першапачаткова выберыце вашу краіну выстаўлення рахунку."
+      ],
+      "Please select your billing state first.": [
+        "Першапачаткова выберыце ваш стан выстаўлення рахунку."
+      ],
       "Processing payment": [
         "Апрацоўка плацяжу"
+      ],
+      "Select billing country to pay": [
+        "Выберыце краіну выстаўлення рахунку для алпаты"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
@@ -16034,10 +16061,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -16102,6 +16129,9 @@
       ],
       "Couldn’t create accounts": [
         "Немагчыма стварыць уліковыя запісы"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Стварыць ${ selectedUserIds.length } карыстальніка",
@@ -16240,6 +16270,9 @@
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
+      ],
+      "Discard changes?": [
+        "Адхіліць змены?"
       ],
       "Display name and signature": [
         "Бачнае імя і подпіс"
@@ -16615,9 +16648,6 @@
       ],
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Персаналізуйце ніжні калонтытул свайго ліста"
       ],
       "Phone": [
         "Тэлефон"
@@ -17637,6 +17667,85 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } уліковы запіс на кашалёк",
+        "${ n } уліковыя запісы на кашалёк",
+        "${ n } уліковых запісаў на кашалёк",
+        "${ n } уліковых запісаў на кашалёк"
+      ],
+      "${ n } email address": [
+        "${ n } адрас электроннай пошты",
+        "${ n } адрасы электроннай пошты",
+        "${ n } адрасоў электроннай пошты",
+        "${ n } адрасоў электроннай пошты"
+      ],
+      "${ n } wallet": [
+        "${ n } кашалёк",
+        "${ n } кашалькі",
+        "${ n } кашалькоў",
+        "${ n } кашалькоў"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Больш бяспечны спосаб захоўвання Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Вы з'яўляецеся запрошаным карыстальнікам. Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME } для эксклюзіўнага доступу да ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin праз электронную пошту"
+      ],
+      "Early access waitlist": [
+        "Спіс чакання для ранняга доступу"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Эксклюзіўны ранні доступ да ${ appName }."
+      ],
+      "Get started": [
+        "Пачаць працу"
+      ],
+      "Invite Friends": [
+        "Запрасіць сяброў"
+      ],
+      "Join ${ appName } early access!": [
+        "Далучайцеся да ранняга доступу ${ appName }"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME }, каб забяспечыць сабе месца. Чым раней вы зарэгіструецеся, тым раней атрымаеце доступ да ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Палепшыце сваю падпіску, каб разблакіраваць прэміяльныя функцыі ${ appName }"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Карыстальнікі Visionary і іх запрошаныя сябры змогуць абагульваць ранні доступ з іншымі. Яны таксама змогуць запрасіць сваіх сяброў, каб паспрабаваць ${ appName } бясплатна!"
+      ],
+      "You're Invited.": [
+        "Вы запрошаны"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Праблема з Wallet"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Неўзабаве з'явіцца"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Аўтарызацыя"
+      ],
+      "Downloads": [
+        "Спампоўкі"
       ]
     },
     "Warning": {

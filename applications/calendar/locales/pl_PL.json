@@ -488,11 +488,11 @@
       "Not now": [
         "Nie teraz"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -607,6 +607,9 @@
       ],
       "Select all": [
         "Zaznacz wszystkie"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Wybierz cykl rozliczeniowy ${ billingText }"
       ],
       "Select calendar view": [
         "Wybierz widok kalendarza"
@@ -1787,7 +1790,7 @@
         "Falklandy"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandy (Malwiny)"
+        "Falklandy"
       ],
       "Faroe Islands": [
         "Wyspy Owcze"
@@ -2634,6 +2637,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomóż nam ulepszyć usługę"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5387,6 +5398,11 @@
         "Tworzenie zaproszeń w udostępnionym kalendarzu nie jest dozwolone"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Etykieta linku (opcjonalnie)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Dodaj etykietę"
@@ -5957,6 +5973,11 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Dostęp"
       ]
     },
     "Link to calendar app": {
@@ -6865,9 +6886,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
       ],
@@ -7641,6 +7659,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
+      ],
+      "Please select your billing country first.": [
+        "Najpierw wybierz kraj rozliczeniowy"
+      ],
+      "Please select your billing state first.": [
+        "Najpierw wybierz stan rozliczeniowy"
+      ],
+      "Select billing country to pay": [
+        "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
@@ -9520,6 +9553,9 @@
       ],
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create contact": [
         "Utwórz kontakt"

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Lisätietoja: Pikanäppäimet"
       ],
+      "More options": [
+        "Lisää asetuksia"
+      ],
       "move emails to": [
         "siirrä viestit kohteeseen"
       ],
@@ -766,10 +769,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Lähetä koodi uudelleen"
+      ],
+      "Resend invitation": [
+        "Lähetä kutsu uudelleen"
       ],
       "Reset credentials": [
         "Nollaa kirjautumistiedot"
@@ -903,6 +909,9 @@
       ],
       "Select a calendar to export": [
         "Valitse vietävä kalenteri"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Valitse laskutusjakso: ${ billingText }"
       ],
       "Select calendar view": [
         "Valitse kalenterinäkymä"
@@ -1556,14 +1565,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1575,7 +1576,7 @@
         "Ryhdy supertukijaksi. Saat pääsyn kaikkiin nykyisiin ja tuleviin ${ BRAND_NAME }-palveluihin."
       ],
       "Exclusive features and early access": [
-        "Erikoisominaisuuksia ja varhainen pääsy"
+        "Erikoisominaisuuksia ja varhainen käyttöoikeus"
       ],
       "Help us fight for online privacy": [
         "Auta meitä taistelemaan verkkoyksityisyyden puolesta"
@@ -1585,6 +1586,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3555,6 +3564,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Sinut on kutsuttu käyttämään tiedostoa palvelussa: ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Laajennettu versiohistoria"
+      ],
+      "Priority support": [
+        "Ensisijainen tuki"
       ]
     },
     "Duration": {
@@ -6680,9 +6697,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
-      "Breach Custom Email Added": [
-        "Tietomurtojen oma sähköposti lisättiin"
-      ],
       "Breach Custom Email Deleted": [
         "Tietomurtojen oma sähköposti poistettiin"
       ],
@@ -6808,17 +6822,8 @@
       "Custom daily": [
         "Oma päivittäinen"
       ],
-      "Custom email added": [
-        "Oma sähköpostiosoite lisättiin"
-      ],
-      "Custom email deleted": [
-        "Oma sähköpostiosoite poistettiin"
-      ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
-      ],
-      "Custom email validated": [
-        "Oma sähköpostiosoite vahvistettiin"
       ],
       "Custom monthly": [
         "Oma kuukausittainen"
@@ -6838,11 +6843,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7613,6 +7618,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Muuta näitä asetuksia vain, jos käytät PGP:tä ${ BRAND_NAME }in ulkopuolisille vastaanottajille."
       ],
+      "Only you can see the label": [
+        "Vain sinä näet tunnisteen"
+      ],
       "Open source": [
         "Avoin lähdekoodi"
       ],
@@ -7972,9 +7980,6 @@
       ],
       "Single sign-on removed": [
         "Kertakirjautuminen poistettiin"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-lähetyksen avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-lähetys mahdollistaa sähköpostin lähettämisen ulkoisten palvelujen tai laitteiden ${ MAIL_APP_NAME }n avulla omasta verkkotunnuksestasi. Saadaksesi toiminnon käyttöön, ${ createTicket } jossa kuvailet käyttötarpeen, mitä verkkotunnuksia haluat käyttää, sekä arviosi lähetettävistä sähköpostimääristä tunneittain ja päivittäin."
@@ -8988,6 +8993,11 @@
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Linkin tunniste (valinnainen)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Lisää tunniste"
@@ -9890,6 +9900,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield-suodatuksen taso"
       ],
+      "Link label (optional)": [
+        "Linkin tunniste (valinnainen)"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10071,7 +10084,7 @@
         "Kysy luotetaanko avaimiin"
       ],
       "Proration": [
-        "Suhteutus"
+        "Hyvitys"
       ],
       "Protection mode": [
         "Suojaustila"
@@ -10573,9 +10586,6 @@
       "Learn more about data recovery": [
         "Lue lisää tietojen palautuksesta"
       ],
-      "Need help?": [
-        "Tarvitsetko apua?"
-      ],
       "Not activated": [
         "Aktivoimaton"
       ],
@@ -10635,6 +10645,11 @@
       ],
       "Why set recovery methods?": [
         "Miksi palautustapoja kannattaa määrittää?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Käyttöoikeus"
       ]
     },
     "Loading info": {
@@ -11180,23 +11195,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11224,6 +11222,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -11714,14 +11729,11 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
       ],
       "Early access to new apps and features": [
-        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+        "Varhainen käyttöoikeus uusiin sovelluksiin ja ominaisuuksiin"
       ],
       "Encrypted email and calendar to get you started.": [
         "Salattu sähköposti ja kalenteri, joilla pääset alkuun."
@@ -12808,6 +12820,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen."
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Jatkaessasi hyväksyt ${ termsAndConditionsLink }"
+      ],
       "Creating your account": [
         "Tiliäsi luodaan"
       ],
@@ -13104,7 +13119,7 @@
         "Emme voineet vahvistaa tämän identiteetin aitoutta."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
+        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakaspalveluun."
       ],
       "We have verified the authenticity of this identity.": [
         "Olemme vahvistaneet tämän identiteetin aitouden."
@@ -13155,8 +13170,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
+      "Please select billing country": [
+        "Valitse laskutusmaa"
+      ],
+      "Please select billing state": [
+        "Valitse laskutusosavaltio"
+      ],
+      "Please select your billing country first.": [
+        "Valitse laskutusmaasi ensin."
+      ],
+      "Please select your billing state first.": [
+        "Valitse laskutusosavaltiosi ensin."
+      ],
       "Processing payment": [
         "Käsitellään maksua"
+      ],
+      "Select billing country to pay": [
+        "Valitse laskutusmaa maksaaksesi"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
@@ -13166,6 +13196,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ price } kuukausihintaan. Voit peruuttaa milloin tahansa."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Siirto on havaittu. Krediitit lisätään tilillesi, kun siirto on täysin vahvistettu."
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
@@ -14711,7 +14744,7 @@
         "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
+        "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } -tilauksella tiimisi voi työskennellä tuottavammin ja järjestelmällisemmin kaikkien ${ BRAND_NAME }-sovellusten ja niiden lisäominaisuuksien avulla."
@@ -14831,7 +14864,7 @@
         "Aktivistien auttaminen Hongkongissa"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Miten asiakaspalvelutiimimme sai VPN-sovelluksemme suoraan ihmisten käsiin."
+        "Miten asiakaspalvelumme sai VPN-sovelluksemme suoraan ihmisten käsiin."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Miten taistelimme vastaan, kun ${ BRAND_NAME } joutui aggressiivisen sensuurikampanjan kohteeksi."
@@ -15660,10 +15693,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -15728,6 +15761,9 @@
       ],
       "Couldn’t create accounts": [
         "Tilejä ei voitu luoda"
+      ],
+      "Coupon": [
+        "Etukoodi"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Luo ${ selectedUserIds.length } käyttäjä",
@@ -15862,6 +15898,9 @@
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
+      ],
+      "Discard changes?": [
+        "Hylätäänkö muutokset?"
       ],
       "Display name and signature": [
         "Näyttönimi ja allekirjoitus"
@@ -16233,9 +16272,6 @@
       ],
       "PayPal verification failed": [
         "PayPal-vahvistus epäonnistui"
-      ],
-      "Personalise your e-mail footer": [
-        "Mukauta viestiesi alatunnistetta"
       ],
       "Phone": [
         "Puhelin"
@@ -17233,6 +17269,79 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja muuta."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } lompakko tiliä kohden",
+        "${ n } lompakkoa tiliä kohden"
+      ],
+      "${ n } email address": [
+        "${ n } sähköpostiosoite",
+        "${ n } sähköpostiosoitetta"
+      ],
+      "${ n } wallet": [
+        "${ n } lompakko",
+        "${ n } lompakkoa"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Turvallisempi tapa säilyttää Bitcoineja"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Kutsuttuna käyttäjänä voit luoda ilmaisen ${ BRAND_NAME } -tilin ja saada pääsyn palveluun ${ appName }."
+      ],
+      "Bitcoin via email": [
+        "Bitcoin sähköpostitse"
+      ],
+      "Early access waitlist": [
+        "Varhaisen käyttöoikeuden odotuslista"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Varhainen ${ appName }- käyttöoikeus."
+      ],
+      "Get started": [
+        "Aloita"
+      ],
+      "Invite Friends": [
+        "Kutsu kavereita"
+      ],
+      "Join ${ appName } early access!": [
+        "Hanki varhainen ${ appName } -käyttöoikeus!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Luo ilmainen ${ BRAND_NAME } -tili varmistaaksesi paikkasi. Mitä aiemmin rekisteröidyt, sitä nopeammin saat pääsyn palveluun ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Avaa ${ appName } -premium-ominaisuudet päivittämällä"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary-käyttäjät ja heidän kutsumansa kaverit voivat jakaa varhaisen käyttöoikeuden muiden kanssa. Kutsu heidät kokeilemaan sovelusta ${ appName } ilmaiseksi!"
+      ],
+      "You're Invited.": [
+        "Sinut on kutsuttu."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet-ongelma"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Tulossa pian"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Valtuutus"
+      ],
+      "Downloads": [
+        "Lataukset"
       ]
     },
     "Warning": {

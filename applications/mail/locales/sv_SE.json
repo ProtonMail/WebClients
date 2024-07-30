@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Markera alla meddelanden"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Välj faktureringsperiod ${ billingText }"
+      ],
       "Select country": [
         "Välj land"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Lita på"
-      ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2648,6 +2647,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Demokratiska republiken)"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratiska republiken Kongo"
       ],
@@ -3577,6 +3579,14 @@
     "Download attachments": {
       "Download all": [
         "Ladda ner alla"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
       ]
     },
     "Email body for description (description part)": {
@@ -9034,9 +9044,6 @@
       "1 user": [
         "1 användare"
       ],
-      "24/7 account management support": [
-        "24/7 support för kontohantering"
-      ],
       "99.95% SLA": [
         "99.95 % SLA"
       ],
@@ -9385,9 +9392,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Tillämpbara krediter, innestående medel och kuponger är tillämpade i nästa steg"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -10005,6 +10009,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
+      ],
+      "Please select billing country": [
+        "Välj land för fakturering"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
+      ],
+      "Please select your billing country first.": [
+        "Välj ditt land för fakturering först."
+      ],
+      "Please select your billing state first.": [
+        "Välj din delstat för fakturering först."
+      ],
+      "Select billing country to pay": [
+        "Välj faktureringsland att betala"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
@@ -11358,6 +11377,9 @@
       "Calendar sharing": [
         "Kalenderdelning"
       ],
+      "Catch-all email address": [
+        "Catch-all e-postadress"
+      ],
       "Comprehensive privacy and security": [
         "Omfattande integritet och säkerhet"
       ],
@@ -12209,6 +12231,9 @@
       "Conversation list": [
         "Konversationslista"
       ],
+      "Coupon": [
+        "Kupong"
+      ],
       "Create contact": [
         "Skapa kontakt"
       ],
@@ -12988,6 +13013,57 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto per plånbok",
+        "${ n } konton per plånbok"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadress",
+        "${ n } e-postadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } plånbok",
+        "${ n } plånböcker"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Ett säkrare sätt att hålla din Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Kom åt Wallet-app"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Håll och överför dina Bitcoins säkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med plånbok"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Konto ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Min importerade plånbok${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Min plånbok${ indexStr }"
       ]
     },
     "Warning": {

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Més informació: Dreceres de teclat"
       ],
+      "More options": [
+        "Més opcions"
+      ],
       "move emails to": [
         "moure correus electrònics a"
       ],
@@ -766,11 +769,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Reenvia el codi"
+      ],
+      "Resend invitation": [
+        "Reenvia la invitació"
       ],
       "Reset credentials": [
         "Restaurar credencials"
@@ -1073,7 +1079,7 @@
         "Desbloqueja les dades"
       ],
       "Unordered list": [
-        "Llista amb pics"
+        "Llista no ordenada"
       ],
       "Unsubscribe": [
         "Anul·la la subscripció"
@@ -1550,14 +1556,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1579,6 +1577,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3534,6 +3540,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Esteu convidat a accedir a un fitxer a ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
       ]
     },
     "Duration": {
@@ -6653,9 +6667,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
-      "Breach Custom Email Added": [
-        "S'ha afegit el correu electrònic personalitzat en cas de violació de les dades."
-      ],
       "Breach Custom Email Deleted": [
         "S'ha eliminat el correu electrònic personalitzat en cas de violació de les dades."
       ],
@@ -6781,17 +6792,8 @@
       "Custom daily": [
         "Personalitzat diàriament"
       ],
-      "Custom email added": [
-        "S'ha afegit l'adreça de correu electrònic personalitzada"
-      ],
-      "Custom email deleted": [
-        "S'ha eliminat l'adreça de correu electrònic personalitzada"
-      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
-      ],
-      "Custom email validated": [
-        "S'ha validat l'adreça de correu electrònic personalitzada"
       ],
       "Custom monthly": [
         "Mensual (personalitzat)"
@@ -6811,11 +6813,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -7577,6 +7579,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
       ],
+      "Only you can see the label": [
+        "Sou l'única persona que pot veure l'etiqueta"
+      ],
       "Open source": [
         "Codi obert"
       ],
@@ -7939,9 +7944,6 @@
       ],
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "La tramesa SMTP permet que serveis o dispositius de tercers enviïn correu electrònic a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzat. Aquesta funció només està disponible per a ${ BRAND_NAME } per als usuaris empresarials amb dominis personalitzats."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
@@ -8950,6 +8952,11 @@
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "Etiqueta de l'enllaç (opcional)"
       ]
     },
     "Input placeholder": {
@@ -10043,6 +10050,9 @@
       "Public certificate (X.509)": [
         "Certificat públic (X.509)"
       ],
+      "Purpose": [
+        "Propòsit"
+      ],
       "Read": [
         "Llegit"
       ],
@@ -10531,9 +10541,6 @@
       "Learn more about data recovery": [
         "Més informació sobre la recuperació de dades"
       ],
-      "Need help?": [
-        "Necessiteu ajuda?"
-      ],
       "Not activated": [
         "No s'ha activat"
       ],
@@ -10593,6 +10600,11 @@
       ],
       "Why set recovery methods?": [
         "Per què establir mètodes de recuperació?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Accés"
       ]
     },
     "Loading info": {
@@ -11135,23 +11147,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11179,6 +11174,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11665,9 +11677,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per protegir tot el seu negoci."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
@@ -12753,6 +12762,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Però podeu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } millorant el pla a **${ upsellPlanTitle }**."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "En continuar, accepteu els nostres ${ termsAndConditionsLink }."
       ],
       "Creating your account": [
         "S'està creant el compte"
@@ -15594,10 +15606,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -15796,6 +15808,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
+      ],
+      "Discard changes?": [
+        "Voleu descartar els canvis?"
       ],
       "Display name and signature": [
         "Nom a mostrar i signatura"
@@ -16167,9 +16182,6 @@
       ],
       "PayPal verification failed": [
         "La verificació de PayPal no s'ha pogut completar."
-      ],
-      "Personalise your e-mail footer": [
-        "Personalitzeu el peu de pàgina del vostre correu electrònic"
       ],
       "Phone": [
         "Telèfon"
@@ -17161,6 +17173,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via correu electrònic"
+      ],
+      "Get started": [
+        "Comenceu"
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Desbloquegeu característiques prèmium de ${ appName } millorant la subscripció"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Disponible pròximament"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Wallet": [
+        "Cartera"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Downloads": [
+        "Descàrregues"
       ]
     },
     "Warning": {

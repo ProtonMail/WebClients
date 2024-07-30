@@ -64,10 +64,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -676,11 +676,17 @@
       "More info: Keyboard shortcuts": [
         "მეტი ინფორმაცია: კლავიატურის მალსახმობები"
       ],
+      "More options": [
+        "მეტი პარამეტრი"
+      ],
       "move emails to": [
         "ელფოსტის გადატანა"
       ],
       "Need help?": [
         "დახმარება გჭირდებათ?"
+      ],
+      "New group": [
+        "ახალი ჯგუფი"
       ],
       "Next": [
         "შემდეგი"
@@ -760,10 +766,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -816,6 +822,9 @@
       ],
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
+      ],
+      "Resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნა"
       ],
       "Reset credentials": [
         "მომხმარებლისა და პაროლის თავიდან დაყენება"
@@ -897,6 +906,9 @@
       ],
       "Select a calendar to export": [
         "აირჩიეთ გასატანი კალენდარი"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "აირჩიეთ გადახდის ციკლი ${ billingText }"
       ],
       "Select calendar view": [
         "აირჩიეთ კალენდრის ხედი"
@@ -1194,6 +1206,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "დაამატეთ დომენი pm.me"
+      ],
       "Resuming forward": [
         "წინ გაგრძელება"
       ]
@@ -1544,14 +1559,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1573,6 +1580,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -3166,6 +3181,11 @@
         "შემოტანისას ფაილის მწკრივებში აღმოჩენილია ერთზე მეტი შეცდომა. გთხოვთ, გადაამოწმოთ CSV ფაილი."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/თვე"
@@ -3535,6 +3555,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "მოგიწვიეს წვდომისთვი ფაილზე ${ DRIVE_APP_NAME }-ში"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
       ]
     },
     "Duration": {
@@ -3970,6 +3998,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "გაფრთხილება"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "უსახელო"
       ]
     },
     "eof2023: Deal details": {
@@ -6649,9 +6682,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
-      "Breach Custom Email Added": [
-        "მორგებული ელფოსტის გაჯონვა დაემატა"
-      ],
       "Breach Custom Email Deleted": [
         "მორგებული ელფოსტის გაჯონვა წაიშალა"
       ],
@@ -6777,17 +6807,8 @@
       "Custom daily": [
         "ხელით, ყოველდღე"
       ],
-      "Custom email added": [
-        "მორგებული ელფოსტა დაემატა"
-      ],
-      "Custom email deleted": [
-        "მორგებული ელფოსტა წაიშალა"
-      ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
-      ],
-      "Custom email validated": [
-        "მორგებული ელფოსტა დადასტურებულია"
       ],
       "Custom monthly": [
         "ხელით, თვეში ერთხელ"
@@ -6807,11 +6828,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -7393,6 +7414,9 @@
       "Let your contacts know you care about their privacy.": [
         "გააგებინეთ თქვენს კონტაქტებს, რომ თქვენთვის თქვენს კონფიდენციალობა მნიშვნელოვანია."
       ],
+      "Let's get started by pressing the New group button above": [
+        "დავიწყოთ ახალი ჯგუფის ღილაკზე დაჭერით"
+      ],
       "Link copied to clipboard": [
         "ბმული დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -7575,6 +7599,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "პარამეტრებები, მხოლოდ, მაშინ შეცვალეთ, თუ თქვენ იყენებთ PGP-ს არა${ BRAND_NAME }-ის მიმღებებით."
+      ],
+      "Only you can see the label": [
+        "ჭდეების დანახვა, მხოლოდ, თქვენ შეგიძლიათ"
       ],
       "Open source": [
         "ღია კოდი"
@@ -8924,6 +8951,11 @@
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "ბმულის ჭდე (არასავალდებულო)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "ჭდის დამატება"
@@ -9730,6 +9762,15 @@
       "Gift code": [
         "სასაჩუქრე კოდი"
       ],
+      "Group address": [
+        "ჯგუფის მისამართი"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "Group name": [
+        "ჯგუფის სახელი"
+      ],
       "Hide password": [
         "პაროლის დამალვა"
       ],
@@ -9804,6 +9845,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
+      ],
+      "Link label (optional)": [
+        "ბმულის ჭდე (არასავალდებულო)"
       ],
       "Logo": [
         "ლოგო"
@@ -9993,6 +10037,9 @@
       ],
       "Public certificate (X.509)": [
         "საჯარო სერტიფიკატი (X.509)"
+      ],
+      "Purpose": [
+        "მიზანი"
       ],
       "Read": [
         "წაკითხული"
@@ -10191,6 +10238,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "რა არის მიზეზი სატარიფო გეგმის გაუქმების ან მისი დონის ჩამოწევის?"
+      ],
+      "Who can send to this group address?": [
+        "ვი შეუძლია გაგზავნა ამ ჯგუფის მისამართზე?"
       ],
       "Why would you like to cancel?": [
         "რატომ აუქმებთ?"
@@ -10482,9 +10532,6 @@
       "Learn more about data recovery": [
         "შეიტყვეთ მეტი მონაცემების აღდგენის შესახებ"
       ],
-      "Need help?": [
-        "დახმარება გჭირდებათ?"
-      ],
       "Not activated": [
         "გაუაქტიურებელი"
       ],
@@ -10544,6 +10591,11 @@
       ],
       "Why set recovery methods?": [
         "რატომ უნდა დაამატოთ აღდგენის მეთოდები?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "წვდომა"
       ]
     },
     "Loading info": {
@@ -11089,23 +11141,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -11133,6 +11168,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -11619,9 +11671,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება ${ BRAND_NAME }-ის ყველა სერვისთან ერთად."
@@ -12421,6 +12470,20 @@
         "ნაგვის ყუთი"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "ყველა, გარეს ჩათვლით"
+      ],
+      "Members": [
+        "წევრები"
+      ],
+      "Nobody by default": [
+        "არავინ ნაგულისხმევად"
+      ],
+      "Organization members": [
+        "ორგანიზაციის წევრები"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 წამი"
@@ -12696,6 +12759,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "მაგრამ, შეგიძლიათ, განბლოკოთ **${ unlockPlanTitle }** და ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი **${ upsellPlanTitle }** ტარიფზე გადასვლით."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "გაგრძელების შემთხვევაში თქვენ ეთანხმებით ჩვენს ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
@@ -13041,8 +13107,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
+      ],
+      "Please select your billing country first.": [
+        "ჯერ აირჩიეთ თქვენი გადახდის ქვეყანა."
+      ],
+      "Please select your billing state first.": [
+        "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
       "Processing payment": [
         "გადახდის დამუშავება"
+      ],
+      "Select billing country to pay": [
+        "აირჩიეთ გადასახდელი ქვეყანა"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
@@ -13224,6 +13305,23 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "ჯგუფის სახელის დამატება"
+      ],
+      "Add member": [
+        "წევრის დამატება"
+      ],
+      "e.g. distribution list for marketing team": [
+        "მაგ: დაგზავნის სია მარკეტინგის გუნდისთვის"
+      ],
+      "e.g. marketing": [
+        "მაგ: მარკეტინგი"
+      ],
+      "Members": [
+        "წევრები"
       ]
     },
     "plan customizer, ips": {
@@ -15364,6 +15462,9 @@
       "Add PayPal payment method": [
         "გადახდის მეთოდად PayPal-ის დამატება"
       ],
+      "Add pm.me subdomain": [
+        "დაამატეთ pm.me-ის ქვედომენი"
+      ],
       "Add servers": [
         "სერვერების დამატება"
       ],
@@ -15451,10 +15552,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -15519,6 +15620,9 @@
       ],
       "Couldn’t create accounts": [
         "ანგარიშების შექმნის შეცდომა"
+      ],
+      "Coupon": [
+        "კუპონი"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } მომხმარებლის შექმნა",
@@ -15653,6 +15757,9 @@
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
+      ],
+      "Discard changes?": [
+        "ცვლილებების გაუქმება?"
       ],
       "Display name and signature": [
         "სახელისა და ხელმოწერის ჩვენება"
@@ -16260,6 +16367,9 @@
       "Theme": [
         "თემა"
       ],
+      "There are no groups": [
+        "ჯგუფები არ არსებობს"
+      ],
       "This field cannot be empty": [
         "ეს ველი ცარიელი ვერ იქნება"
       ],
@@ -16853,6 +16963,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
       ],
@@ -17015,6 +17128,70 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } ანგარიში თითოეული საფულისთვის",
+        "${ n } ანგარიში თითოეული საფულისთვის"
+      ],
+      "${ n } email address": [
+        "ელფოსტის ${ n } მისამართი",
+        "${ n } ელფოსტის მისამართი"
+      ],
+      "${ n } wallet": [
+        "${ n } საფულე",
+        "${ n } საფულე"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin ელფოსტით"
+      ],
+      "Early access waitlist": [
+        "ადრეული წვდომის მოლოდინის სია"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "ექსკლუზიური ადრეული წვდომა პროგრამასთან ${ appName }."
+      ],
+      "Get started": [
+        "დაიწყეთ"
+      ],
+      "Invite Friends": [
+        "მეგობრების მოწვევა"
+      ],
+      "Join ${ appName } early access!": [
+        "მიუერთდით ${ appName }-ის ადრეულ წვდომას!"
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "${ appName }-ის ფასიანი ფუნქციების დასანახად ფასიან ვერსიაზე გადადით"
+      ],
+      "You're Invited.": [
+        "თქვენ მოწვეული ბრძანდებით."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "საფულის პრობლემა"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "სულ მალე"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "ავტორიზაცია"
+      ],
+      "Downloads": [
+        "გადმოწერები"
       ]
     },
     "Warning": {
