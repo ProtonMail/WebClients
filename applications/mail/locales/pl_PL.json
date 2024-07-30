@@ -1071,6 +1071,9 @@
       "Select all messages": [
         "Zaznacz wszystkie wiadomości"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Wybierz cykl rozliczeniowy ${ billingText }"
+      ],
       "Select country": [
         "Wybierz kraj"
       ],
@@ -1241,12 +1244,6 @@
       ],
       "Trust": [
         "Zaufaj"
-      ],
-      "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1564,6 +1561,9 @@
       ],
       "Faster, broader device compatibility": [
         "Szybsza i większa kompatybilność urządzeń"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Zadanie pozostanie na urządzeniu, ale wymaga jednorazowego pobrania i obsługiwanego sprzętu"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Wymaga jednorazowego pobrania i kompatybilnego sprzętu."
@@ -2738,7 +2738,7 @@
         "Falklandy"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandy (Malwiny)"
+        "Falklandy"
       ],
       "Faroe Islands": [
         "Wyspy Owcze"
@@ -3611,6 +3611,14 @@
     "Download attachments": {
       "Download all": [
         "Pobierz wszystkie"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
       ]
     },
     "Email body for description (description part)": {
@@ -5960,6 +5968,9 @@
       "and": [
         "i"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Kolejna wskazówka zostanie wyświetlona przy następnym otwarciu aplikacji Proton Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Zaplanowane lub odłożone wiadomości zostaną anulowane."
       ],
@@ -6110,6 +6121,9 @@
       "Confirm phishing report": [
         "Potwierdź próbę wyłudzenia informacji"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Zastanów się, kiedy jest najlepszy czas na otrzymanie wiadomości przez odbiorcę i zaplanuj jej wysłanie."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt został przypisany do grupy ${ contactGroupName }"
       ],
@@ -6133,6 +6147,9 @@
         "Utwórz ${ calendarsToBeCreatedCount } nowe kalendarze",
         "Utwórz ${ calendarsToBeCreatedCount } nowych kalendarzy",
         "Utwórz ${ calendarsToBeCreatedCount } nowych kalendarzy"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Utwórz folder “${ suggestedFolderName }“, aby przechowywać wszystkie paragony w jednym miejscu."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz foldery, które chcesz zaimportować."
@@ -6185,6 +6202,12 @@
       "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Czy wiesz, że na koncie ${ BRAND_NAME } masz szyfrowaną przestrzeń dyskową w chmurze? Przejdź do ${ DRIVE_APP_NAME } i wykorzystaj w pełni swoją przestrzeń dyskową. Jest darmowa."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Czy wiesz, że zarezerwowaliśmy dla Ciebie krótszy adres e-mail? To jest nazwa użytkownika, po której następuje “@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6202,6 +6225,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Nie masz czasu zająć ważną wiadomością, ale nie chcesz o niej zapomnieć? Ustaw lepszy czas na pojawienie się wiadomości w skrzynce odbiorczej."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nie widzisz nic? Wyłącz blokadę wyskakujących okien."
@@ -6374,6 +6400,9 @@
       "Generate text": [
         "Generuj tekst"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Zastosuj kolorowe etykiety do rachunków, np. “${ suggestedLabelName }“. Po ich opłaceniu zmień etykietę na “${ suggestedPaidLabelName }“."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Posiada załącznik (${ numAttachmentsSize })",
         "Posiada ${ numAttachments } załączniki (${ numAttachmentsSize })",
@@ -6487,6 +6516,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Przechowuj bezpieczne dane logowania i karty płatnicze w ${ PASS_APP_NAME }. Usługa jest bezpłatna i dostępna na koncie ${ BRAND_NAME }."
       ],
       "Key fingerprint": [
         "Odcisk klucza"
@@ -7154,6 +7186,9 @@
       "to ${ destinationElement } folder.": [
         "do folderu ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Użyj aplikacji desktopowej, aby uniknąć rozpraszania się otwartymi kartami w przeglądarce."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
       ],
@@ -7280,6 +7315,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "Adres URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Użyj różnych adresów e-mail do osobnych celów, aby oddzielić wiadomości służbowe od osobistych."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Użyj skrótów klawiszowych, aby szybciej zarządzać swoimi wiadomościami."
       ],
@@ -7369,6 +7407,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Połącz się z ${ VPN_APP_NAME } podczas podróży lub korzystania z publicznej sieci Wi-Fi, aby uniemożliwić śledzenie Twojej aktywności online lub kradzież danych. Usługa jest darmowa."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -9642,9 +9683,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
       ],
@@ -10258,6 +10296,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
+      ],
+      "Please select your billing country first.": [
+        "Najpierw wybierz kraj rozliczeniowy"
+      ],
+      "Please select your billing state first.": [
+        "Najpierw wybierz stan rozliczeniowy"
+      ],
+      "Select billing country to pay": [
+        "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
@@ -12283,6 +12336,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " jest aktywny"
+      ],
       "${ label.Name } removed": [
         "Utworzono \"${ label.Name }\""
       ]
@@ -12434,6 +12490,41 @@
         "${ minutes } minuty",
         "${ minutes } minut",
         "${ minutes } minuty"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktywuj"
+      ],
+      "Create an alias": [
+        "Utwórz alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Utwórz etykietę “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Utwórz nowy adres e-mail"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Utwórz folder “${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Pobierz ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Pobierz aplikację desktopową"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Włącz Monitoring dark web"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Uzyskaj adres “@${ PM_DOMAIN }“"
+      ],
+      "Open ": [
+        "Otwórz "
+      ],
+      "Show me how": [
+        "Pokaż jak"
       ]
     },
     "Title": {
@@ -12589,6 +12680,9 @@
       ],
       "Conversation list": [
         "Lista wątków"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create contact": [
         "Utwórz kontakt"
@@ -13412,7 +13506,7 @@
         "${ n } adres e-mail",
         "${ n } adresy e-mail",
         "${ n } adresów e-mail",
-        "${ n } adresu e-mail"
+        "${ n } adresów e-mail"
       ],
       "${ n } wallet": [
         "${ n } portfel",
@@ -13421,10 +13515,10 @@
         "${ n } portfela"
       ],
       "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Twojego Bitcoin"
+        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via email": [
-        "Bitcoiny przez e-mail"
+        "Bitcoin na adres e-mail"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -13439,7 +13533,7 @@
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problem z portfelem"
+        "Problem z aplikacją Wallet"
       ]
     },
     "wallet_signup_2024:Title": {
@@ -13452,7 +13546,7 @@
         "Konto ${ indexStr }"
       ],
       "My imported wallet${ indexStr }": [
-        "Mój importowany portfel ${ indexStr }"
+        "Mój zaimportowany portfel ${ indexStr }"
       ],
       "My wallet${ indexStr }": [
         "Mój portfel ${ indexStr }"

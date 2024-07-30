@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Seleziona tutti i messaggi"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Seleziona il ciclo di fatturazione ${ billingText }"
+      ],
       "Select country": [
         "Seleziona il paese"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -3582,6 +3581,14 @@
         "Scarica tutti"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIZIONE:\n${ eventDescription }"
@@ -5779,6 +5786,9 @@
       "and": [
         "e"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Un altro suggerimento sarà mostrato la prossima volta che apri Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Qualsiasi messaggio programmato o posticipato verrà annullato."
       ],
@@ -5923,6 +5933,9 @@
       "Confirm phishing report": [
         "Conferma la segnalazione di phishing"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Valuta quando è il miglior momento per i tuoi destinatari per ricevere la tua email, e programmala per essere poi inviata."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Il contatto è assegnato al gruppo ${ contactGroupName }."
       ],
@@ -5944,6 +5957,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crea ${ calendarsToBeCreatedCount } nuovo calendario",
         "Crea ${ calendarsToBeCreatedCount } nuovi calendari"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Crea una cartella come \"${ suggestedFolderName }\" per tenere tutte le tue ricevute online in un unico posto."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
@@ -5996,6 +6012,12 @@
       "Default email application": [
         "Applicazione email predefinita"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Lo sapevi che hai uno spazio di archiviazione cloud crittografato incluso nel tuo account ${ BRAND_NAME }? Vai su ${ DRIVE_APP_NAME } e sfrutta al meglio il tuo spazio. È gratis."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Lo sapevi? Abbiamo riservato un indirizzo email più corto solo per te. È il tuo nome utente seguito da \"@${ PM_DOMAIN }\"."
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6011,6 +6033,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Non dimenticare di condividere la tua password con il destinatario"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Non hai tempo per gestire una email importante ora, ma non vuoi dimenticartene? Imposta un orario migliore per farla apparire nella tua posta in arrivo."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
@@ -6173,6 +6198,9 @@
       "Generate text": [
         "Genera testo"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Assegna alle fatture in arrivo un'etichetta colorata, come \"${ suggestedLabelName }\". Una volta pagate, cambia l'etichetta in \"${ suggestedPaidLabelName }\"."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Ha ${ numAttachments } allegato (${ numAttachmentsSize })",
         "Ha ${ numAttachments } allegati (${ numAttachmentsSize })"
@@ -6212,6 +6240,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Se il tuo alias viene venduto, perso o abusato, basta disabilitarlo per interrompere la ricezione di spam."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Se la tua password finisce nel dark web, ${ BRAND_NAME } può dirti da quale servizio i tuoi dati sono trapelati e come fermare il danno."
       ],
       "Image description": [
         "Descrizione immagine"
@@ -6282,6 +6313,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Tieni al sicuro, ma sempre a portata di mano, i tuoi dettagli di login e della carta di credito aggiungendoli su ${ PASS_APP_NAME }. È gratis e incluso nel tuo account ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Mantieni la tua casella email ordinata pulendo automaticamente il cestino e lo spam che sono stati lì per più di 30 giorni."
       ],
       "Key fingerprint": [
         "Impronta digitale della chiave"
@@ -6942,6 +6979,9 @@
       "to ${ destinationElement } folder.": [
         "nella cartella ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Per evitare di essere disturbati dalle schede aperte nel tuo browser, usa l'app desktop."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
       ],
@@ -7068,6 +7108,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Usa un indirizzo email diverso per scopi differenti così puoi separare facilmente le tue email di lavoro, personali, o altre aree."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Usa le scorciatoie da tastiera per gestire più velocemente la tua email."
       ],
@@ -7157,6 +7200,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Quando ti registri a una newsletter, usa un alias invece del tuo indirizzo email. La tua identità rimane nascosta, e puoi disattivare l'alias in qualsiasi momento."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Quando viaggi o usi un WiFi pubblico, connettiti a ${ VPN_APP_NAME } per evitare che qualcuno tracci la tua attività online o rubi i tuoi dati. È gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -9339,9 +9388,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Eventuali crediti, calcolo proporzionale e coupon vengono applicati nel prossimo passaggio"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
@@ -9952,6 +9998,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
+      ],
+      "Please select your billing country first.": [
+        "Seleziona prima il paese di fatturazione."
+      ],
+      "Please select your billing state first.": [
+        "Seleziona prima lo stato di fatturazione."
+      ],
+      "Select billing country to pay": [
+        "Seleziona il paese di fatturazione per il pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -11850,6 +11911,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " è ora attivo"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } rimosso"
       ]
@@ -11989,6 +12053,41 @@
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minuti"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Attiva"
+      ],
+      "Create an alias": [
+        "Crea un alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Crea l'etichetta \"${ suggestedLabelName }\""
+      ],
+      "Create new email address": [
+        "Crea un nuovo indirizzo email"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Crea la cartella \"${ suggestedFolderName }\""
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Scarica ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Scarica l'app per desktop"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Abilita Dark Web Monitoring"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Ottieni l'indirizzo \"@${ PM_DOMAIN }\""
+      ],
+      "Open ": [
+        "Apri "
+      ],
+      "Show me how": [
+        "Mostrami come"
       ]
     },
     "Title": {
@@ -12138,6 +12237,9 @@
       ],
       "Conversation list": [
         "Elenco conversazioni"
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create contact": [
         "Crea contatto"
