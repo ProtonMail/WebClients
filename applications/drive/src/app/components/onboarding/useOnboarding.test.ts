@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { queryOnboarding } from '@proton/shared/lib/api/drive/onboarding';
+import { queryListPendingExternalInvitations } from '@proton/shared/lib/api/drive/invitation';
+import type { ListDrivePendingExternalInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import useChecklist from './useChecklist';
 import { useOnboarding } from './useOnboarding';
@@ -14,18 +15,28 @@ jest.mock('../../store/_api/useDebouncedRequest', () => {
     };
     return useDebouncedRequest;
 });
-jest.mock('@proton/shared/lib/api/drive/onboarding');
+jest.mock('@proton/shared/lib/api/drive/invitation');
 
 describe('useOnboarding', () => {
     let checklistMock: { isLoading: boolean };
-    let queryOnboardingMock: { HasPendingInvitations: boolean };
+    let queryListPendingExternalInvitationsMock: ListDrivePendingExternalInvitationsPayload;
 
     beforeEach(() => {
         checklistMock = { isLoading: false };
-        queryOnboardingMock = { HasPendingInvitations: true };
+        queryListPendingExternalInvitationsMock = {
+            ExternalInvitations: [
+                {
+                    VolumeID: 'volumeId',
+                    ShareID: 'shareId',
+                    ExternalInvitationID: 'externalInvitationId',
+                },
+            ],
+            More: false,
+            AnchorID: null,
+        };
 
         mockedUseCheckList.mockReturnValue(checklistMock as ReturnType<typeof mockedUseCheckList>);
-        mockedDebouncedRequest.mockResolvedValue(queryOnboardingMock);
+        mockedDebouncedRequest.mockResolvedValue(queryListPendingExternalInvitationsMock);
     });
 
     afterEach(() => {
@@ -37,10 +48,12 @@ describe('useOnboarding', () => {
 
         expect(result.current.isLoading).toBe(true);
         expect(result.current.checklist).toBe(checklistMock);
-        expect(result.current.hasPendingInvitations).toBe(false);
+        expect(result.current.hasPendingExternalInvitations).toBe(false);
         await act(async () => {
-            await waitFor(() => expect(mockedDebouncedRequest).toHaveBeenCalledWith(queryOnboarding()));
-            expect(result.current.hasPendingInvitations).toBe(true);
+            await waitFor(() =>
+                expect(mockedDebouncedRequest).toHaveBeenCalledWith(queryListPendingExternalInvitations())
+            );
+            expect(result.current.hasPendingExternalInvitations).toBe(true);
             expect(result.current.isLoading).toBe(false);
         });
     });

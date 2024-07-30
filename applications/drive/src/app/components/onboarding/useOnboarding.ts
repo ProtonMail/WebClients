@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import { queryOnboarding } from '@proton/shared/lib/api/drive/onboarding';
+import { queryListPendingExternalInvitations } from '@proton/shared/lib/api/drive/invitation';
+import type { ListDrivePendingExternalInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { useDebouncedRequest } from '../../store/_api';
 import useChecklist from './useChecklist';
@@ -10,19 +11,19 @@ export const useOnboarding = () => {
     const checklist = useChecklist();
     const debouncedRequest = useDebouncedRequest();
     const [isLoading, withIsLoading] = useLoading(false);
-    const [hasPendingInvitations, setHasPendingInvitations] = useState(false);
+    const [hasPendingExternalInvitations, setHasPendingExternalInvitations] = useState(false);
 
-    const getHasPendingInvitations = () =>
+    const getHasPendingExternalInvitations = () =>
         withIsLoading(async () => {
-            const { HasPendingInvitations: hasPendingInvitations } = await debouncedRequest<{
-                HasPendingInvitations: boolean;
-            }>(queryOnboarding());
-            setHasPendingInvitations(hasPendingInvitations);
+            const { ExternalInvitations } = await debouncedRequest<ListDrivePendingExternalInvitationsPayload>(
+                queryListPendingExternalInvitations()
+            );
+            setHasPendingExternalInvitations(!!ExternalInvitations.length);
         });
 
     useEffect(() => {
-        void getHasPendingInvitations();
+        void getHasPendingExternalInvitations();
     }, []);
 
-    return { isLoading: checklist.isLoading || isLoading, checklist, hasPendingInvitations };
+    return { isLoading: checklist.isLoading || isLoading, checklist, hasPendingExternalInvitations };
 };

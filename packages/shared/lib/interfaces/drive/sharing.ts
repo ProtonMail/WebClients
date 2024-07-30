@@ -190,12 +190,22 @@ export interface ListDrivePendingInvitationsPayload {
     More: boolean;
 }
 
+export interface ListDrivePendingExternalInvitationsPayload {
+    ExternalInvitations: {
+        VolumeID: string;
+        ShareID: string;
+        ExternalInvitationID: string;
+    }[];
+    AnchorID: string | null;
+    More: boolean;
+}
+
 export interface ListDriveSharedByMeLinksPayload {
     Links: {
         ContextShareID: string;
         ShareID: string;
         LinkID: string;
     }[];
-    AnchorID: string;
+    AnchorID: string | null;
     More: boolean;
 }
