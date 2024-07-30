@@ -732,6 +732,9 @@
       "Select all": [
         "ყველაფრის მონიშვნა"
       ],
+      "Select billing cycle ${ billingText }": [
+        "აირჩიეთ გადახდის ციკლი ${ billingText }"
+      ],
       "Select country": [
         "აირჩიეთ ქვეყანა"
       ],
@@ -2379,6 +2382,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "დაგვეხმარეთ, გავუმჯობესდეთ"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
       ]
     },
     "Email body for description (description part)": {
@@ -6975,9 +6986,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება ${ BRAND_NAME }-ის ყველა სერვისთან ერთად."
       ],
@@ -7483,6 +7491,9 @@
       "Failed to open document": [
         "დოკუმენტის გახსნის შეცდომა"
       ],
+      "Failed to reject share invitation": [
+        "ზიარის მოსაწვეის უარყოფა ჩავარდა"
+      ],
       "Failed to remove the file": [
         "ფაილის წაშლა ჩავარდა"
       ],
@@ -7528,6 +7539,9 @@
       ],
       "Share invitation accepted successfully": [
         "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
+      ],
+      "Share invitation declined": [
+        "გაზიარების მოსაწვევი უარყოფილია"
       ],
       "Stopping to share this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
@@ -7589,6 +7603,9 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "ახალი დოკუმენტის შექმნა"
+      ],
       "Next": [
         "შემდეგი"
       ],
@@ -7746,6 +7763,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
+      ],
+      "Please select your billing country first.": [
+        "ჯერ აირჩიეთ თქვენი გადახდის ქვეყანა."
+      ],
+      "Please select your billing state first.": [
+        "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Select billing country to pay": [
+        "აირჩიეთ გადასახდელი ქვეყანა"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ months } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ price }-ზე ${ months } თვით. გაუქმება ყოველთვის შეგიძლიათ"
@@ -9346,6 +9378,9 @@
       "Continue with partial import?": [
         "გავაგრძელო ნაწილობრივი შემოტანით?"
       ],
+      "Coupon": [
+        "კუპონი"
+      ],
       "Create a new file": [
         "ახალი ფაილის შექმნა"
       ],
@@ -10018,6 +10053,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } ანგარიში თითოეული საფულისთვის",
+        "${ n } ანგარიში თითოეული საფულისთვის"
+      ],
+      "${ n } email address": [
+        "ელფოსტის ${ n } მისამართი",
+        "${ n } ელფოსტის მისამართი"
+      ],
+      "${ n } wallet": [
+        "${ n } საფულე",
+        "${ n } საფულე"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin ელფოსტით"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "საფულის პრობლემა"
       ]
     },
     "Warning": {

@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "Accept": [
+        "Prijať"
+      ],
       "Activate recovery": [
         "Aktivovať obnovu"
       ],
@@ -239,6 +242,9 @@
       ],
       "Customize import": [
         "Prispôsobiť import"
+      ],
+      "Decline": [
+        "Odmietnuť"
       ],
       "Decrease": [
         "Znížiť"
@@ -2402,6 +2408,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomôžte nám zlepšiť sa"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
       ]
     },
     "Email body for description (description part)": {
@@ -4637,6 +4651,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Už len potvrďte váš výber a my urobíme zbytok."
+      ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Uchovávajte svoje súbory v bezpečí vďaka end-to-end šifrovaniu v ${ DRIVE_APP_NAME }."
       ],
       "Key fingerprint": [
         "Identifikátor kľúča"
@@ -7212,9 +7229,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všetky firemné aplikácie a prémiové funkcie ${ BRAND_NAME } na ochranu vašej firmy."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Použiteľné kredity, pomerná časť a kupóny sa použijú v ďalšom kroku"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexné súkromie a bezpečnosť so všetkými službami ${ BRAND_NAME } dohromady."
       ],
@@ -7749,6 +7763,9 @@
       "Failed to open document": [
         "Otovorenie dokumentu zlyhalo"
       ],
+      "Failed to reject share invitation": [
+        "Odmietnutie pozvania na zdieľanie zlyhalo"
+      ],
       "Failed to remove the file": [
         "Odstránenie súboru zlyhalo"
       ],
@@ -7802,6 +7819,9 @@
       ],
       "Share invitation accepted successfully": [
         "Pozvanie na zdieľanie bolo úspešne prijaté"
+      ],
+      "Share invitation declined": [
+        "Pozvánka na zdieľanie odmietnutá"
       ],
       "Stopping to share this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
@@ -7863,14 +7883,23 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "Vytvoriť nový dokument"
+      ],
       "Next": [
         "Ďalej"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Začnite používať ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Skúste to neskôr"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Vytvárajte dokumenty a spolupracujte na nich. Všetko je chránené end-to-end šifrovaním."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Začnite používať ${ DRIVE_APP_NAME } a my vám navýšime vaše úložisko na 5 GB!"
       ],
@@ -10479,6 +10508,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } emailových adries",
+        "${ n } emailových adries",
+        "${ n } emailové adresy"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin cez email"
       ]
     },
     "Warning": {

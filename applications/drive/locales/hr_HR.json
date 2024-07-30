@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Accept": [
+        "Prihvati"
+      ],
       "Activate recovery": [
         "Aktivirajte oporavak"
       ],
@@ -170,6 +173,9 @@
       "Customize import": [
         "Prilagodi uvoz"
       ],
+      "Decline": [
+        "Odbij"
+      ],
       "Decrease": [
         "Smanji"
       ],
@@ -285,6 +291,9 @@
       "Get started": [
         "Započnite"
       ],
+      "Get Started": [
+        "Započni"
+      ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
@@ -296,6 +305,9 @@
       ],
       "Go to parent": [
         "Idi na glavnu mapu"
+      ],
+      "Go to settings": [
+        "Idi na postavke"
       ],
       "Got it": [
         "Shvaćam"
@@ -410,6 +422,9 @@
       ],
       "Ok": [
         "U redu"
+      ],
+      "Open": [
+        "Otvori"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
@@ -542,6 +557,9 @@
       ],
       "Select all": [
         "Odaberi sve"
+      ],
+      "Select country": [
+        "Odaberi državu"
       ],
       "Send feedback": [
         "Pošalji povratne informacije"
@@ -1438,6 +1456,9 @@
       "Macao": [
         "Makao"
       ],
+      "Macedonia": [
+        "Makedonija"
+      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -1856,6 +1877,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Pronađena su sljedeća polja u CSV datoteci koju ste prenijeli. Označite one koje želite uvesti."
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Prioritetna podrška"
       ]
     },
     "Email subject": {
@@ -2712,6 +2738,9 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
       ],
+      "Available": [
+        "Dostupno"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
       ],
@@ -2760,14 +2789,23 @@
       "Creating link to file": [
         "Stvaranje poveznice za datoteku"
       ],
+      "Current plan": [
+        "Trenutni plan"
+      ],
       "Current version": [
         "Trenutna verzija"
       ],
       "Custom email domains": [
         "Prilagođene domene"
       ],
+      "Downgrade": [
+        "Snizi status"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
+      ],
+      "Download": [
+        "Preuzmi"
       ],
       "Download anyway": [
         "Preuzmi svejedno"
@@ -2790,8 +2828,14 @@
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
+      "email": [
+        "e-pošta"
+      ],
       "End-to-end encrypted": [
         "End-to-End šifriranje"
+      ],
+      "Enter password": [
+        "Unesi lozinku"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Unesite podatke za prijavu računa e-pošte s kojeg želite uvesti."
@@ -3113,6 +3157,9 @@
       "Yesterday": [
         "Jučer"
       ],
+      "you": [
+        "vi"
+      ],
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
@@ -3210,6 +3257,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "# preuzimanja"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } korisničko ime"
       ],
@@ -3266,6 +3316,9 @@
       ],
       "Beta Access": [
         "Beta pristup"
+      ],
+      "Billing cycle": [
+        "Ciklus naplate"
       ],
       "Browser": [
         "Preglednik"
@@ -3543,6 +3596,9 @@
       "Start date": [
         "Početni datum"
       ],
+      "Stop sharing": [
+        "Zaustavi dijeljenje"
+      ],
       "Street address": [
         "Adresa"
       ],
@@ -3676,6 +3732,9 @@
       ]
     },
     "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
       "Special Offer": [
         "Posebna ponuda"
       ]
@@ -3728,6 +3787,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Unknown file": [
+        "Nepoznata datoteka"
       ],
       "Video file": [
         "Video datoteke"
@@ -3848,6 +3910,12 @@
       ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "Custom fields": [
+        "Prilagođena polja"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
       ],
       "Easy Switch import assistant": [
         "Pomoćnik za uvoz Easy Switch"
@@ -4059,6 +4127,12 @@
       ]
     },
     "Payments": {
+      "Card number": [
+        "Broj kartice"
+      ],
+      "Got it": [
+        "Razumijem"
+      ],
       "MM/YY": [
         "MM/GG"
       ]
@@ -4412,6 +4486,11 @@
         "Standardna cijena ${ amount } za 30 mjeseci"
       ]
     },
+    "Status": {
+      "Pending": [
+        "Na čekanju"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Nadogradi prostor za pohranu"
@@ -4492,6 +4571,9 @@
       ],
       "6 users": [
         "6 korisnika"
+      ],
+      "Learn more": [
+        "Više informacija"
       ],
       "Priority support": [
         "Prioritetna podrška"
@@ -4860,6 +4942,9 @@
       "Edit image": [
         "Uredi sliku"
       ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
       "Email addresses": [
         "Adrese e-pošte"
       ],
@@ -4995,6 +5080,9 @@
       "Recover data": [
         "Oporavi podatke"
       ],
+      "Remove device?": [
+        "Ukloni uređaj?"
+      ],
       "Rename a file": [
         "Preimenuj datoteku"
       ],
@@ -5072,6 +5160,9 @@
       ],
       "Stop sharing with everyone?": [
         "Zaustavi dijeljenje s svima?"
+      ],
+      "Stop sharing?": [
+        "Zaustavi dijeljenje?"
       ],
       "Summary": [
         "Sažetak"
@@ -5206,6 +5297,13 @@
     "vpn_2step: feature": {
       "No ads": [
         "Bez oglasa"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adrese e-pošte",
+        "${ n } adrese e-pošte"
       ]
     },
     "Warning": {
