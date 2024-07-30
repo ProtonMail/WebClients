@@ -85,7 +85,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
                         <p className="my-2">{c('familyOffer_2023:Family plan')
                             .jt`You're invited to link your ${BRAND_NAME} Account to this group plan and together enjoy all ${BRAND_NAME_TWO} premium features.`}</p>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
-                            .t`The subscription is billed to the Visionary or family plan's primary admin.`}</p>
+                            .t`The subscription will be billed to the primary admin of this plan.`}</p>
                         <p className="my-2">{c('familyOffer_2023:Family plan')
                             .t`If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.`}</p>
                     </>
