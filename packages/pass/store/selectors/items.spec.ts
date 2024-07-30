@@ -148,6 +148,47 @@ const stateMock = {
             share4: {
                 /* empty share */
             },
+            share5: {
+                item1: {
+                    /* subdomain `A` OTP */
+                    itemId: 'share5-item2',
+                    state: ItemState.Active,
+                    shareId: 'share5',
+                    lastUseTime: getEpoch() + 1_200,
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('itemUsername', 'username@subdomain.com')
+                            .set('urls', ['https://a.subdomain.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
+                },
+                item2: {
+                    /* subdomain `B` OTP */
+                    itemId: 'share5-item3',
+                    state: ItemState.Active,
+                    shareId: 'share5',
+                    lastUseTime: getEpoch() + 1_000,
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('itemUsername', 'username@subdomain.com')
+                            .set('urls', ['https://b.subdomain.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
+                },
+                item3: {
+                    /* top-level domain OTP */
+                    itemId: 'share5-item1',
+                    state: ItemState.Active,
+                    shareId: 'share5',
+                    lastUseTime: getEpoch(),
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('itemUsername', 'username@subdomain.com')
+                            .set('urls', ['https://subdomain.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
+                },
+            },
             optimistic: { history: [], checkpoint: undefined },
         },
     },
@@ -374,6 +415,33 @@ describe('item selectors', () => {
             })(stateMock);
 
             expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
+        });
+
+        test('should match item for top-level domain', () => {
+            const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
+            const candidate = selectOTPCandidate({
+                ...parseUrl('https://subdomain.com'),
+                submission,
+            })(stateMock);
+
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item3));
+        });
+
+        test('should prioritise subdomain match', () => {
+            const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
+
+            const candidateA = selectOTPCandidate({
+                ...parseUrl('https://a.subdomain.com'),
+                submission,
+            })(stateMock);
+
+            const candidateB = selectOTPCandidate({
+                ...parseUrl('https://b.subdomain.com'),
+                submission,
+            })(stateMock);
+
+            expect(candidateA).toEqual(withOptimistics(stateMock.items.byShareId.share5.item1));
+            expect(candidateB).toEqual(withOptimistics(stateMock.items.byShareId.share5.item2));
         });
     });
 });

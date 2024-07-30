@@ -132,10 +132,8 @@ export const createFieldHandles = ({
         },
 
         autofill: (value, options) => {
-            if (value) {
-                withActionTrap(element, createAutofill(element))(value, options);
-                field.autofilled = true;
-            }
+            withActionTrap(element, createAutofill(element))(value, options);
+            field.autofilled = Boolean(value);
         },
 
         /* if an icon is already attached recycle it */
