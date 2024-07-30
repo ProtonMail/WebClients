@@ -2,7 +2,7 @@ import type { LinkNode } from '@lexical/link'
 import { $isAutoLinkNode, TOGGLE_LINK_COMMAND } from '@lexical/link'
 import { mergeRegister } from '@lexical/utils'
 import type { LexicalEditor } from 'lexical'
-import { COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
+import { COMMAND_PRIORITY_EDITOR, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import clsx from '@proton/utils/clsx'
@@ -13,6 +13,7 @@ import { c } from 'ttag'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
+import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 
 type Props = {
   linkNode: LinkNode
@@ -81,6 +82,18 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
           return false
         },
         COMMAND_PRIORITY_LOW,
+      ),
+      editor.registerCommand(
+        KEYBOARD_SHORTCUT_COMMAND,
+        ({ shortcut }) => {
+          if (shortcut !== 'OPEN_LINK_SHORTCUT') {
+            return false
+          }
+
+          openLink(linkUrl)
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
       ),
     )
   }, [editor, updatePosition])
