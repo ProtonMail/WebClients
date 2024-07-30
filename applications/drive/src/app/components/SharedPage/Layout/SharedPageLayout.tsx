@@ -36,8 +36,8 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                 <Header className="header--wrap shadow-norm *:min-size-auto items-center h-auto">
                     <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
                     <div className="logo-container p-0 md:p-4 flex justify-space-between items-center flex-nowrap w-full md:w-auto">
-                        <MainLogo to="/" />
-                        <UnAuthenticatedAppsDropdown />
+                        <MainLogo to="/" reloadDocument />
+                        <UnAuthenticatedAppsDropdown reloadDocument />
                     </div>
 
                     <div className="flex justify-end flex-1 self-center my-auto w-full md:w-auto">

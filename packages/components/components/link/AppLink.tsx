@@ -13,16 +13,16 @@ import Tooltip from '../tooltip/Tooltip';
 export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
     to: string;
     toApp?: APP_NAMES;
-    selfOpening?: boolean;
+    reloadDocument?: boolean; // The reloadDocument property can be used to skip client side routing and let the browser handle the transition normally (as if it were an <a href>).
 }
 
-const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
+const AppLink = ({ to, toApp, reloadDocument, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
 
-    const targetApp = selfOpening ? APP_NAME : toApp;
+    const targetApp = toApp ?? (reloadDocument ? APP_NAME : undefined);
 
-    if (targetApp && (targetApp !== APP_NAME || selfOpening)) {
+    if (targetApp && (targetApp !== APP_NAME || reloadDocument)) {
         if (authentication.mode === 'sso') {
             // If in vpn-level account settings and want to visit the proton vpn app
             if (targetApp === APPS.PROTONVPN_SETTINGS) {
