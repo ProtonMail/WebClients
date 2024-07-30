@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -679,6 +679,9 @@
       "More info: Keyboard shortcuts": [
         "Mer info: tastatursnarveier"
       ],
+      "More options": [
+        "Flere valg"
+      ],
       "move emails to": [
         "flytte e-poster til"
       ],
@@ -766,11 +769,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "Refresh the page": [
-        "Oppdater siden"
-      ],
       "refresh the page": [
         "oppdater siden"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
       ],
       "Reload": [
         "Last inn på nytt"
@@ -822,6 +825,9 @@
       ],
       "Resend code": [
         "Send kode på nytt"
+      ],
+      "Resend invitation": [
+        "Send invitasjon på nytt"
       ],
       "Reset credentials": [
         "Tilbakestill legitimasjon"
@@ -903,6 +909,9 @@
       ],
       "Select a calendar to export": [
         "Velg en kalender du vil eksportere"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Velg faktureringssyklus på ${ billingText }"
       ],
       "Select calendar view": [
         "Velg kalendervisning"
@@ -1047,6 +1056,12 @@
       ],
       "Switch or add account": [
         "Bytt eller legg til konto"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Test SAML-konfigurasjon"
       ],
       "Top up": [
         "Rund opp"
@@ -1556,14 +1571,6 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1585,6 +1592,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3555,6 +3570,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du er invitert til å få tilgang til en fil i ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utvidet versjonshistorikk"
+      ],
+      "Priority support": [
+        "Prioritert brukerstøtte"
       ]
     },
     "Duration": {
@@ -6680,9 +6703,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
-      "Breach Custom Email Added": [
-        "Brudd tilpasset e-post lagt til"
-      ],
       "Breach Custom Email Deleted": [
         "Brudd tilpasset e-post slettet"
       ],
@@ -6808,17 +6828,8 @@
       "Custom daily": [
         "Tilpasset daglig"
       ],
-      "Custom email added": [
-        "Tilpasset e-postadresse lagt til"
-      ],
-      "Custom email deleted": [
-        "Tilpasset e-post slettet"
-      ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
-      ],
-      "Custom email validated": [
-        "Tilpasset e-post validert"
       ],
       "Custom monthly": [
         "Tilpasset månedlig"
@@ -6838,11 +6849,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -7612,6 +7623,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kun endre disse innstillingene hvis du bruker PGP med ikke-${ BRAND_NAME } mottakere."
+      ],
+      "Only you can see the label": [
+        "Bare du kan se etiketten"
       ],
       "Open source": [
         "Åpen kildekode"
@@ -8994,6 +9008,11 @@
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Etikett for kobling (valgfritt)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Legg til etikett"
@@ -9896,6 +9915,9 @@
       "Level for NetShield blocker filtering": [
         "Nivå på blokkeringsfiltrering for NetShield"
       ],
+      "Link label (optional)": [
+        "Etikett for kobling (valgfritt)"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10582,9 +10604,6 @@
       "Learn more about data recovery": [
         "Lær mer om datagjenoppretting"
       ],
-      "Need help?": [
-        "Trenger du hjelp?"
-      ],
       "Not activated": [
         "Ikke aktivert"
       ],
@@ -10644,6 +10663,11 @@
       ],
       "Why set recovery methods?": [
         "Hvorfor angi gjenopprettingsmetoder?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Tilgang"
       ]
     },
     "Loading info": {
@@ -11189,23 +11213,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11233,6 +11240,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -11722,9 +11746,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle ${ BRAND_NAME } forretningsapper og premiumfunksjoner for å beskytte hele virksomheten din."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Gjeldende kreditter, prorasjon og kuponger brukes i neste trinn"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende personvern og sikkerhet med alle ${ BRAND_NAME }-tjenester kombinert."
@@ -13191,8 +13212,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
+      "Please select billing country": [
+        "Vennligst velg faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vennligst velg faktureringsstat"
+      ],
+      "Please select your billing country first.": [
+        "Vennligst velg faktureringslandet ditt først."
+      ],
+      "Please select your billing state first.": [
+        "Vennligst velg faktureringsstaten din først."
+      ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Select billing country to pay": [
+        "Velg faktureringsland for å betale"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
@@ -13608,6 +13644,42 @@
       ],
       "User": [
         "Bruker"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
+      "Something went wrong. Please try again.": [
+        "Noe gikk galt. Vennligst forsøk igjen."
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Det oppstod en feil under testing av SSO-konfigurasjonen."
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Test in progress...": [
+        "Test pågår..."
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Vi mottok et gyldig SAML-svar fra identitetsleverandøren din. SSO er aktivert for organisasjonen din."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Vi tester konfigurasjonen din for å sikre at SSO fungerer."
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Det fungerer!"
+      ],
+      "Test SAML configuration": [
+        "Test SAML-konfigurasjon"
+      ],
+      "Testing SAML configuration": [
+        "Tester SAML-konfigurasjonen"
       ]
     },
     "scim: Action": {
@@ -15696,10 +15768,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -15764,6 +15836,9 @@
       ],
       "Couldn’t create accounts": [
         "Kunne ikke opprette kontoer"
+      ],
+      "Coupon": [
+        "Kupong"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Opprett ${ selectedUserIds.length } bruker",
@@ -15898,6 +15973,9 @@
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
+      ],
+      "Discard changes?": [
+        "Forkaste endringer?"
       ],
       "Display name and signature": [
         "Visningsnavn og signatur"
@@ -17292,6 +17370,79 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto per lommebok",
+        "${ n } kontoer per lommebok"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadresse",
+        "${ n } e-postadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } lommebok",
+        "${ n } lommebøker"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "En tryggere måte å holde Bitcoin på"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Som en invitert bruker kan du melde deg på for en gratis ${ BRAND_NAME }-konto med eksklusiv tilgang til ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-post"
+      ],
+      "Early access waitlist": [
+        "Venteliste for tidlig tilgang"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Eksklusiv tidlig tilgang til ${ appName }."
+      ],
+      "Get started": [
+        "Kom i gang"
+      ],
+      "Invite Friends": [
+        "Inviter venner"
+      ],
+      "Join ${ appName } early access!": [
+        "Få tidlig tilgang til ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Meld deg på for en gratis ${ BRAND_NAME }-konto for å sikre plassen din. Jo tidligere du melder deg på, desto tidligere får du tilgang til ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Lås opp ${ appName }-premiumfunksjoner ved å oppgradere"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary-brukere og de inviterte vennene deres kan dele tidlig tilgang med andre. Inviter vennene dine for å prøve ${ appName } helt gratis!"
+      ],
+      "You're Invited.": [
+        "Du er invitert."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Hold og overfør bitcoin sikkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med lommebok"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Kommer snart"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorisasjon"
+      ],
+      "Downloads": [
+        "Nedlastinger"
       ]
     },
     "Warning": {

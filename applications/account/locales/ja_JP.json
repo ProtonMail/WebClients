@@ -64,11 +64,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -661,11 +661,17 @@
       "More info: Keyboard shortcuts": [
         "詳細: キーボード ショートカット"
       ],
+      "More options": [
+        "詳細設定を表示"
+      ],
       "move emails to": [
         "メールを移動"
       ],
       "Need help?": [
         "お困りですか?"
+      ],
+      "New group": [
+        "新しいグループ"
       ],
       "Next": [
         "次へ"
@@ -684,6 +690,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "開く"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -742,10 +751,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -795,6 +804,9 @@
       ],
       "Resend code": [
         "コードを再送信"
+      ],
+      "Resend invitation": [
+        "招待の再送"
       ],
       "Reset credentials": [
         "認証情報をリセット"
@@ -1120,6 +1132,9 @@
       "Verify code again": [
         "コードを再検証"
       ],
+      "Verify domain": [
+        "ドメインを検証"
+      ],
       "View": [
         "表示"
       ],
@@ -1351,6 +1366,16 @@
         "${ BRAND_NAME } アプリケーション"
       ]
     },
+    "Assistant option": {
+      "Run on servers": [
+        "サーバー上で実行"
+      ]
+    },
+    "Assistant toggle": {
+      "New": [
+        "新規"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "空の ICS ファイルです"
@@ -1468,14 +1493,6 @@
         "年末オファーを選択してください"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1497,6 +1514,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -2618,6 +2643,9 @@
       "Macao": [
         "マカオ"
       ],
+      "Macedonia": [
+        "マケドニア"
+      ],
       "Madagascar": [
         "マダカスカル"
       ],
@@ -3021,6 +3049,11 @@
         "インポート中に複数の行でエラーが検出されました。CSV ファイルを確認してください。"
       ]
     },
+    "cta": {
+      "Learn more": [
+        "もっと詳しく知る"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -3096,6 +3129,9 @@
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
       ],
+      "Delete address": [
+        "アドレスの削除"
+      ],
       "Delete address permanently?": [
         "アドレスを完全に削除しますか?"
       ],
@@ -3125,6 +3161,9 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "このドメインを削除しますか?"
+      ],
+      "Delete": [
+        "削除"
       ]
     },
     "Delinquent modal title": {
@@ -3318,6 +3357,14 @@
     "drive_signup_2023: Title": {
       "Secure cloud storage and file sharing that protects your data": [
         "データを保護する安全なクラウド ストレージとファイル共有"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
       ]
     },
     "Duration": {
@@ -3579,6 +3626,9 @@
       ],
       "Forward from": [
         "転送元"
+      ],
+      "Forward to": [
+        "転送先"
       ],
       "or": [
         "または"
@@ -5844,6 +5894,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "アカウントの空き容量が少なくなっているため、 ${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } は、メール プロバイダーがアカウントの ${ bandwidthLimitLink } をリセットするとすぐにインポートを再開しようとします。 何もする必要はありません。 インポートをキャンセルすると再開できなくなり、最初からやり直す必要があります。"
       ],
@@ -6381,10 +6434,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7020,6 +7073,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "${ BRAND_NAME } 以外の受信者に PGP を使用している場合にのみ、これらの設定を変更してください。"
       ],
+      "Only you can see the label": [
+        "ラベルが見えるのはあなただけです。"
+      ],
       "Open source": [
         "オープンソース"
       ],
@@ -7322,9 +7378,6 @@
       ],
       "Single sign-on removed": [
         "シングルサインオンが削除されました"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタムドメインアドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 この機能は、カスタムドメインを持つ ${ BRAND_NAME } for business ユーザーのみが利用できます。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとの電子メールの量を説明する ${ createTicket } を送信してください。"
@@ -7743,6 +7796,15 @@
       "Users": [
         "ユーザー"
       ],
+      "Vault created": [
+        "保管庫が作成されました"
+      ],
+      "Vault deleted": [
+        "保管庫が削除されました"
+      ],
+      "Vault updated": [
+        "保管庫が更新されました"
+      ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
       ],
@@ -7904,6 +7966,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
       ],
       "Yearly": [
         "毎年"
@@ -8215,6 +8280,9 @@
       ],
       "Paid": [
         "支払い済み"
+      ],
+      "Processing": [
+        "処理中"
       ],
       "Unpaid": [
         "未払い"
@@ -8691,6 +8759,9 @@
       "Awarded": [
         "進呈"
       ],
+      "Beta": [
+        "ベータ"
+      ],
       "Billing address": [
         "ご請求先住所"
       ],
@@ -8999,6 +9070,9 @@
       ],
       "Gift code": [
         "ギフトコード"
+      ],
+      "Group name": [
+        "グループ名"
       ],
       "Hide password": [
         "パスワードを隠す"
@@ -9692,6 +9766,9 @@
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } を取得"
       ],
+      "Help": [
+        "ヘルプ"
+      ],
       "Help translate": [
         "翻訳を手伝う"
       ],
@@ -9715,9 +9792,6 @@
       ],
       "Learn more about data recovery": [
         "データの回復の詳細"
-      ],
-      "Need help?": [
-        "問題がある場合"
       ],
       "Not activated": [
         "有効化されていません"
@@ -9743,6 +9817,9 @@
       "Sign in": [
         "サインイン"
       ],
+      "stay safer online": [
+        "オンラインでの安全性を高める"
+      ],
       "switch account": [
         "アカウントを切り替える"
       ],
@@ -9754,6 +9831,9 @@
       ],
       "Upgrade your plan": [
         "プランをアップグレード"
+      ],
+      "Vault": [
+        "保管庫"
       ],
       "View guide": [
         "ガイドを表示"
@@ -9769,6 +9849,11 @@
       ],
       "Why set recovery methods?": [
         "回復手段を設定しませんか？"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "アクセス"
       ]
     },
     "Loading info": {
@@ -9833,11 +9918,20 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
+      ],
+      "for ${ price }": [
+        "${ price } の場合"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } の試用に招待されました"
       ]
     },
     "mail_signup_2024: title": {
+      "For businesses": [
+        "企業向け"
+      ],
       "For individuals": [
         "個人向け"
       ]
@@ -9859,6 +9953,9 @@
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
+      ],
+      "Custom schedule send and snooze times": [
+        "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
@@ -10234,23 +10331,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10278,6 +10358,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -10694,9 +10791,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
@@ -11345,6 +11439,9 @@
       "Add to existing group": [
         "既存のグループに追加"
       ],
+      "Archive": [
+        "アーカイブ"
+      ],
       "Ask each time": [
         "毎回尋ねる"
       ],
@@ -11383,6 +11480,9 @@
       ],
       "Left to Right": [
         "左から右へ"
+      ],
+      "Mark as read": [
+        "既読にする"
       ],
       "My reason isn't listed": [
         "それ以外の理由"
@@ -11441,11 +11541,25 @@
       "Setup incomplete": [
         "セットアップが完了していません"
       ],
+      "Spam": [
+        "迷惑メール"
+      ],
       "Standard server configs": [
         "標準サーバーの設定ファイル"
       ],
+      "Star": [
+        "星印を付ける"
+      ],
       "The whole organization": [
         "組織全体"
+      ],
+      "Trash": [
+        "ごみ箱"
+      ]
+    },
+    "option": {
+      "Members": [
+        "メンバー"
       ]
     },
     "Option delay send seconds": {
@@ -11711,6 +11825,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。"
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "続行すると、${ termsAndConditionsLink } に同意したことになります。"
       ],
       "Creating your account": [
         "アカウントの作成"
@@ -12012,6 +12129,9 @@
       "CVC": [
         "CVC (セキュリティコード)"
       ],
+      "Got it": [
+        "わかった"
+      ],
       "MM/YY": [
         "MM/YY (月/年)"
       ],
@@ -12186,6 +12306,11 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "メンバー"
       ]
     },
     "plan customizer, ips": {
@@ -13382,6 +13507,9 @@
       "25 calendars per user": [
         "ユーザーあたり 25 個のカレンダー"
       ],
+      "6 users": [
+        "6 ユーザー"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
       ],
@@ -13415,6 +13543,9 @@
       "Keep ${ config.planName }": [
         "${ config.planName } を使い続ける"
       ],
+      "Learn more": [
+        "もっと詳しく知る"
+      ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
       ],
@@ -13426,6 +13557,9 @@
       ],
       "Priority support": [
         "優先サポート"
+      ],
+      "Reactivate": [
+        "再アクティブ化"
       ],
       "Read the story": [
         "ストーリーを読む"
@@ -13686,6 +13820,15 @@
       "Verification successful": [
         "検証に成功しました"
       ],
+      "Writing assistant disabled": [
+        "執筆アシスタントは無効になりました"
+      ],
+      "Writing assistant enabled": [
+        "執筆アシスタントは有効になりました"
+      ],
+      "Writing assistant setting updated": [
+        "執筆アシスタント設定が更新されました"
+      ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
       ]
@@ -13894,6 +14037,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } エクスポート ツール"
       ],
@@ -14068,10 +14214,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -14251,6 +14397,9 @@
       "Delete version history?": [
         "バージョン履歴を削除しますか？"
       ],
+      "Description": [
+        "説明"
+      ],
       "Details": [
         "詳細"
       ],
@@ -14259,6 +14408,9 @@
       ],
       "Disable two-factor authentication": [
         "2 段階認証を無効化"
+      ],
+      "Discard changes?": [
+        "変更を破棄しますか?"
       ],
       "Display name and signature": [
         "表示名と署名"
@@ -14359,6 +14511,9 @@
       "Error": [
         "エラー"
       ],
+      "Event": [
+        "イベント"
+      ],
       "Every member of the organization can access": [
         "組織の全メンバーがアクセスできる"
       ],
@@ -14395,11 +14550,23 @@
       "Folders and labels": [
         "フォルダーとラベル"
       ],
+      "For Linux": [
+        "Linuxの場合"
+      ],
+      "For macOS": [
+        "macOSの場合"
+      ],
+      "For Windows": [
+        "Windowsの場合"
+      ],
       "Forward and auto-reply": [
         "転送と自動返信"
       ],
       "Forward emails": [
         "メールを転送する"
+      ],
+      "Gateway": [
+        "ゲートウェイ"
       ],
       "Gateways": [
         "ゲートウェイ"
@@ -14487,6 +14654,9 @@
       ],
       "Invoices": [
         "請求書"
+      ],
+      "IP": [
+        "IP"
       ],
       "Keep your inbox organized": [
         "受信トレイを整理整頓"
@@ -14610,6 +14780,9 @@
       ],
       "Processing...": [
         "処理中..."
+      ],
+      "Profile": [
+        "プロフィール"
       ],
       "Recommended": [
         "おすすめ"
@@ -14821,6 +14994,9 @@
       "This field cannot be empty": [
         "このフィールドを空にすることはできません"
       ],
+      "Time": [
+        "時刻"
+      ],
       "Time zone": [
         "タイムゾーン"
       ],
@@ -14850,6 +15026,9 @@
       ],
       "Upload your organization’s logo": [
         "組織のロゴをアップロードする"
+      ],
+      "User": [
+        "ユーザー"
       ],
       "Users": [
         "ユーザー"
@@ -14910,6 +15089,9 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
+      ],
+      "Your exposed information": [
+        "あなたの暴露された情報"
       ],
       "Your plan": [
         "現在のプラン"
@@ -15327,22 +15509,67 @@
       "Add multiple users": [
         "複数のユーザーを追加する"
       ],
+      "Add new user": [
+        "新規ユーザーの追加"
+      ],
+      "Admin": [
+        "管理者"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
       "Confirm password": [
         "パスワードの確認"
       ],
       "Create password": [
         "パスワードを作成"
       ],
+      "Create user": [
+        "ユーザー作成"
+      ],
+      "Email": [
+        "メール"
+      ],
+      "Name": [
+        "名前"
+      ],
+      "Optional": [
+        "オプション"
+      ],
+      "Private": [
+        "プライベート"
+      ],
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
       ],
+      "User created": [
+        "ユーザーが作成されました。"
+      ],
       "VPN connections": [
         "VPN 接続"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2要素認証"
+      ],
+      "Invite sent": [
+        "招待状を送信しました"
+      ],
+      "Private": [
+        "プライベート"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "ID プロバイダーによって提供された SSO ユーザー"
+      ],
+      "Writing assistant": [
+        "執筆アシスタント"
       ]
     },
     "Validation": {
@@ -15458,6 +15685,30 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } メールアドレス"
+      ],
+      "Early access waitlist": [
+        "早期アクセス待機リスト"
+      ],
+      "Get started": [
+        "始めましょう"
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "アップグレードして ${ appName } のプレミアム機能をロック解除しましょう"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "近日公開"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Downloads": [
+        "ダウンロード"
       ]
     },
     "Warning": {

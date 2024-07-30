@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -171,6 +171,12 @@
       ],
       "Bold": [
         "Fet"
+      ],
+      "Can send to this group": [
+        "Kan skicka till denna grupp"
+      ],
+      "Can't send to this group": [
+        "Kan inte skicka till denna grupp"
       ],
       "Cancel": [
         "Avbryt"
@@ -340,6 +346,9 @@
       "Delete Gateway": [
         "Ta bort gateway"
       ],
+      "Delete group": [
+        "Ta bort grupp"
+      ],
       "Delete link": [
         "Ta bort länk"
       ],
@@ -378,6 +387,9 @@
       ],
       "Discard": [
         "Avfärda"
+      ],
+      "Discard changes": [
+        "Kasta ändringar"
       ],
       "Don't show again": [
         "Visa inte igen"
@@ -420,6 +432,9 @@
       ],
       "Edit Gateway": [
         "Redigera gateway"
+      ],
+      "Edit group": [
+        "Redigera grupp"
       ],
       "Edit invoice details": [
         "Redigera fakturadetaljer"
@@ -679,6 +694,9 @@
       "More info: Keyboard shortcuts": [
         "Mer information: tangentbordsgenvägar"
       ],
+      "More options": [
+        "Fler alternativ"
+      ],
       "move emails to": [
         "flytta e-post till"
       ],
@@ -766,17 +784,23 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
       ],
       "Remove": [
         "Ta bort"
+      ],
+      "Remove all members": [
+        "Ta bort alla medlemmar"
+      ],
+      "Remove all members from group": [
+        "Ta bort alla medlemmar från grupp"
       ],
       "Remove bonuses": [
         "Ta bort bonusar"
@@ -823,6 +847,9 @@
       "Resend code": [
         "Skicka koden igen"
       ],
+      "Resend invitation": [
+        "Skicka inbjudan igen"
+      ],
       "Reset credentials": [
         "Återställ användaruppgifter"
       ],
@@ -861,6 +888,9 @@
       ],
       "Revoke all other sessions": [
         "Återkalla alla andra sessioner"
+      ],
+      "Revoke invitation": [
+        "Återkalla inbjudan"
       ],
       "Revoke this invitation": [
         "Återkalla denna inbjudan"
@@ -903,6 +933,9 @@
       ],
       "Select a calendar to export": [
         "Välj en kalender att exportera"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Välj faktureringsperiod ${ billingText }"
       ],
       "Select calendar view": [
         "Välj kalendervy"
@@ -1047,6 +1080,12 @@
       ],
       "Switch or add account": [
         "Byt eller lägg till konto"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Testa SAML-konfiguration"
       ],
       "Top up": [
         "Fyll på"
@@ -1552,14 +1591,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1581,6 +1612,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -2494,6 +2533,9 @@
       ],
       "Congo": [
         "Kongo"
+      ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Demokratiska republiken)"
       ],
       "Congo, Democratic Republic of the": [
         "Demokratiska republiken Kongo"
@@ -3547,6 +3589,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du är inbjuden att komma åt en fil i ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
       ]
     },
     "Duration": {
@@ -6796,17 +6846,8 @@
       "Custom daily": [
         "Anpassad daglig"
       ],
-      "Custom email added": [
-        "Anpassad e-post tillagd"
-      ],
-      "Custom email deleted": [
-        "Anpassad e-post borttagen"
-      ],
       "Custom email domains": [
         "Anpassade e-domäner"
-      ],
-      "Custom email validated": [
-        "Anpassad e-post validerad"
       ],
       "Custom monthly": [
         "Anpassad månatlig"
@@ -6826,11 +6867,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7571,6 +7612,9 @@
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändra bara dessa inställningar om du använder PGP med mottagare som inte använder ${ BRAND_NAME }."
       ],
+      "Only you can see the label": [
+        "Endast du kan se etiketten"
+      ],
       "Open source": [
         "Öppen källkod"
       ],
@@ -7934,9 +7978,6 @@
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för företagsanvändare med anpassade domäner."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
@@ -8179,7 +8220,7 @@
         "Detta kommer att ladda ner en fil som innehåller din privata nyckel. Skydda denna fil genom att kryptera den med ett lösenord."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Detta kommer att göra det möjligt att använda PayPal för att betala för din ${ BRAND_NAME }-prenumeration. Du kommer att omdirigeras till PayPal i en ny webbläsarflik. Om du använder några popup-blockerare, inaktivera den för att fortsätta."
+        "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Detta kommer ta bort data och alla e-postadresser permanent som är associerad med denna användare."
@@ -8932,9 +8973,19 @@
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Länketikett (valfritt)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Lägg till etikett"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "Väntande"
       ]
     },
     "Invoice state display as badge": {
@@ -9834,6 +9885,9 @@
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
       ],
+      "Link label (optional)": [
+        "Länketikett (valfritt)"
+      ],
       "Logo": [
         "Logga"
       ],
@@ -10517,9 +10571,6 @@
       "Learn more about data recovery": [
         "Lär dig mer om dataåterställning"
       ],
-      "Need help?": [
-        "Behöver du hjälp?"
-      ],
       "Not activated": [
         "Inte aktiverad"
       ],
@@ -10579,6 +10630,11 @@
       ],
       "Why set recovery methods?": [
         "Varför ställa in återställningsmetoder?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Åtkomst"
       ]
     },
     "Loading info": {
@@ -11124,23 +11180,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11168,6 +11207,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -11247,9 +11303,6 @@
       ],
       "1 user": [
         "1 användare"
-      ],
-      "24/7 account management support": [
-        "24/7 support för kontohantering"
       ],
       "24/7 support": [
         "Support dygnet runt"
@@ -11655,9 +11708,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Tillämpbara krediter, innestående medel och kuponger är tillämpade i nästa steg"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
@@ -12025,9 +12075,6 @@
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inkluderat med ${ plus }, ${ bundle } och ${ BRAND_NAME } för företag."
-      ],
-      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Inkluderat med alla ${ BRAND_NAME } för Business-paket."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -13132,8 +13179,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
+      "Please select billing country": [
+        "Välj land för fakturering"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
+      ],
+      "Please select your billing country first.": [
+        "Välj ditt land för fakturering först."
+      ],
+      "Please select your billing state first.": [
+        "Välj din delstat för fakturering först."
+      ],
       "Processing payment": [
         "Bearbetar betalning"
+      ],
+      "Select billing country to pay": [
+        "Välj faktureringsland att betala"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
@@ -13548,6 +13610,43 @@
         "Användare"
       ]
     },
+    "saml: Action": {
+      "Cancel": [
+        "Avbryt"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "Something went wrong. Please try again.": [
+        "Något gick fel. Försök igen."
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detaljer"
+      ],
+      "Test in progress...": [
+        "Test pågår …"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-post"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Det fungerar!"
+      ],
+      "Test SAML configuration": [
+        "Testa SAML-konfiguration"
+      ],
+      "Testing SAML configuration": [
+        "Testar SAML-konfiguration"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Konfigurera SCIM"
@@ -13598,9 +13697,6 @@
       ]
     },
     "scim: Label": {
-      "SCIM base URL": [
-        "SCIM bas URL"
-      ],
       "SCIM token": [
         "SCIM-token"
       ]
@@ -14738,6 +14834,9 @@
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
+      "Catch-all email address": [
+        "Catch-all e-postadress"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -15592,10 +15691,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -15660,6 +15759,9 @@
       ],
       "Couldn’t create accounts": [
         "Kunde inte skapa konton"
+      ],
+      "Coupon": [
+        "Kupong"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Skapa ${ selectedUserIds.length } användare",
@@ -15761,6 +15863,9 @@
       "Delete folder?": [
         "Ta bort mapp?"
       ],
+      "Delete group?": [
+        "Ta bort grupp?"
+      ],
       "Delete key permanently?": [
         "Ta bort nyckel permanent?"
       ],
@@ -15794,6 +15899,9 @@
       ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
+      ],
+      "Discard changes?": [
+        "Ignorera ändringar?"
       ],
       "Display name and signature": [
         "Visa namn och signatur"
@@ -16217,6 +16325,9 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
+      "Remove all members?": [
+        "Ta bort alla medlemmar?"
+      ],
       "Remove calendar": [
         "Ta bort kalender"
       ],
@@ -16338,7 +16449,7 @@
         "Logga in och bevilja åtkomst"
       ],
       "Sign in to join the Beta program": [
-        "Logga in för att ansluta till Beta-programmet"
+        "Logga in för att gå med i Beta-programmet"
       ],
       "Sign in to your organization": [
         "Logga in på din organisation"
@@ -17197,6 +17308,96 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto per plånbok",
+        "${ n } konton per plånbok"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadress",
+        "${ n } e-postadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } plånbok",
+        "${ n } plånböcker"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Skaffa ${ plan }** för förhandstillgång till ${ appName }!"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Ett säkrare sätt att hålla din Bitcoin"
+      ],
+      "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
+        "Som en inbjuden användare, registrera dig för ett gratis ${ BRAND_NAME }-konto för att exklusivt få åtkomst till ${ appName }"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-post"
+      ],
+      "Create ${ BRAND_NAME } Account now": [
+        "Skapa ${ BRAND_NAME }-konto nu"
+      ],
+      "Early access to new features": [
+        "Förhandstillgång till nya funktioner"
+      ],
+      "Early access waitlist": [
+        "Väntelista för förhandstillgång"
+      ],
+      "Exclusive early access to ${ appName }.": [
+        "Exklusiv förhandstillgång till ${ appName }."
+      ],
+      "Get started": [
+        "Kom igång"
+      ],
+      "Invite Friends": [
+        "Bjud in vänner"
+      ],
+      "Join ${ appName } early access!": [
+        "Gå med i förhandstillgång för ${ appName }!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
+        "Registrera dig för ett gratis ${ BRAND_NAME }-konto för att säkra din plats. Ju tidigare du registrerar dig, desto snabbare får du åtkomst till ${ appName }."
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Lås upp premiumfunktioner för ${ appName } genom att uppgradera"
+      ],
+      "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
+        "Visionary-användare och deras inbjudna vänner kan dela förhandstillgång med andra. Bjud in dina vänner att prova ${ appName } gratis!"
+      ],
+      "You're Invited.": [
+        "Du är inbjuden."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Håll och överför dina Bitcoins säkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med plånbok"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Kommer snart"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Tillbaka till plånbok"
+      ],
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Auktorisering"
+      ],
+      "Downloads": [
+        "Nedladdningar"
       ]
     },
     "Warning": {
