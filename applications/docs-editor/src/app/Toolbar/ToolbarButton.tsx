@@ -1,10 +1,10 @@
 import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
 import clsx from '@proton/utils/clsx'
-import { Tooltip } from '@proton/components'
+import ToolbarTooltip from './ToolbarTooltip'
 
 interface ToolbarButtonProps extends ComponentPropsWithoutRef<'button'> {
-  label: string
+  label: React.ReactNode
   active?: boolean
 }
 
@@ -13,7 +13,7 @@ export const ToolbarButton = forwardRef(function ToolbarButton(
   ref: ForwardedRef<HTMLButtonElement>,
 ) {
   return (
-    <Tooltip title={label}>
+    <ToolbarTooltip title={label}>
       <button
         type="button"
         className={clsx([
@@ -26,6 +26,6 @@ export const ToolbarButton = forwardRef(function ToolbarButton(
       >
         {children}
       </button>
-    </Tooltip>
+    </ToolbarTooltip>
   )
 })
