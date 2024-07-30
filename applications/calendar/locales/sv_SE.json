@@ -482,11 +482,11 @@
       "Not now": [
         "Inte nu"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -601,6 +601,9 @@
       ],
       "Select all": [
         "Markera alla"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Välj faktureringsperiod ${ billingText }"
       ],
       "Select calendar view": [
         "Välj kalendervy"
@@ -1687,6 +1690,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Demokratiska republiken)"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratiska republiken Kongo"
       ],
@@ -2590,6 +2596,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjälp oss att förbättra"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5239,6 +5253,11 @@
         "Det är inte tillåtet att skapa inbjudningar i en delad kalender"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Länketikett (valfritt)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Lägg till etikett"
@@ -5813,6 +5832,11 @@
         "Vad är detta?"
       ]
     },
+    "Link label (optional)": {
+      "Access": [
+        "Åtkomst"
+      ]
+    },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -6309,9 +6333,6 @@
       "1 user": [
         "1 användare"
       ],
-      "24/7 account management support": [
-        "24/7 support för kontohantering"
-      ],
       "99.95% SLA": [
         "99.95 % SLA"
       ],
@@ -6660,9 +6681,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Tillämpbara krediter, innestående medel och kuponger är tillämpade i nästa steg"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -7390,6 +7408,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
+      ],
+      "Please select billing country": [
+        "Välj land för fakturering"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
+      ],
+      "Please select your billing country first.": [
+        "Välj ditt land för fakturering först."
+      ],
+      "Please select your billing state first.": [
+        "Välj din delstat för fakturering först."
+      ],
+      "Select billing country to pay": [
+        "Välj faktureringsland att betala"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
@@ -8512,6 +8545,9 @@
       "Calendar sharing": [
         "Kalenderdelning"
       ],
+      "Catch-all email address": [
+        "Catch-all e-postadress"
+      ],
       "Comprehensive privacy and security": [
         "Omfattande integritet och säkerhet"
       ],
@@ -9164,6 +9200,9 @@
       "Continue with partial import?": [
         "Fortsätta med delimport?"
       ],
+      "Coupon": [
+        "Kupong"
+      ],
       "Create contact": [
         "Skapa kontakt"
       ],
@@ -9591,7 +9630,7 @@
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
       "Change start date to unselect": [
-        "Ändra startdatum för att ångra tidigare val"
+        "Ändra startdatum för att avmarkera"
       ],
       "Customize import to reduce the number of folders": [
         "Anpassa import för att minska antalet mappar"
@@ -9737,6 +9776,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto per plånbok",
+        "${ n } konton per plånbok"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadress",
+        "${ n } e-postadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } plånbok",
+        "${ n } plånböcker"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Ett säkrare sätt att hålla din Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Håll och överför dina Bitcoins säkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med plånbok"
       ]
     },
     "Warning": {

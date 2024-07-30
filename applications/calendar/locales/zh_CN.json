@@ -20,6 +20,26 @@
         "邮件转发已停止"
       ]
     },
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到 ${ name } 和 1 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到潜在的 ${ name } 泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "您的信息至少涉及一次数据泄露。请开启 ${ DARK_WEB_MONITORING_NAME } 查看详情并采取措施。${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
@@ -231,6 +251,9 @@
       "Dismiss": [
         "忽略"
       ],
+      "Display navigation bar": [
+        "显示导航栏"
+      ],
       "Done": [
         "完成"
       ],
@@ -396,6 +419,9 @@
       "Manage labels": [
         "管理标签"
       ],
+      "Mark as resolved": [
+        "标记为已解决"
+      ],
       "Mark for deletion": [
         "标记以删除"
       ],
@@ -450,10 +476,10 @@
       "Not now": [
         "以后再说"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -879,6 +905,11 @@
         "非必填"
       ]
     },
+    "Badge": {
+      "New!": [
+        "新！"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
@@ -1083,6 +1114,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Continue using ${ planTitle }": [
+        "继续使用 ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "继续您的订阅"
       ]
     },
     "Calendar access select label": {
@@ -1850,6 +1887,9 @@
       "Macao": [
         "澳门"
       ],
+      "Macedonia": [
+        "北马其顿共和国"
+      ],
       "Madagascar": [
         "马达加斯加"
       ],
@@ -2223,6 +2263,9 @@
       ]
     },
     "Custom frequency option": {
+      "After…": [
+        "之后…"
+      ],
       "Never": [
         "从不"
       ],
@@ -2378,7 +2421,7 @@
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "您可以导入 iCal 格式的日程（.ics 文件）。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
@@ -2441,6 +2484,14 @@
       ],
       "Temporary need, may come back in the future": [
         "临时需要退订，以后可能会重新开通"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "更长的版本历史"
+      ],
+      "Priority support": [
+        "优先支持"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3042,6 +3093,11 @@
         "邀请地址不存在"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "更改答案时出错"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
@@ -3595,6 +3651,9 @@
     "Header": {
       "Contacts": [
         "通讯录"
+      ],
+      "Custom recurrence": [
+        "自定义重复"
       ],
       "Name": [
         "名称"
@@ -4354,6 +4413,9 @@
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加载日历，请稍候。您将在新选项卡中重定向到我们的日程安排平台 Calendly。"
+      ],
       "Loading event": [
         "日程加载中"
       ],
@@ -4428,6 +4490,9 @@
       ],
       "Organization size": [
         "组织的规模"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "您组织内的其他用户将看到您的繁忙时段。不会共享任何活动详情。"
       ],
       "password": [
         "密码"
@@ -4548,6 +4613,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "通讯录需在本机解密后方可导出，解密完成时将生成一份 VCF 文件供您下载。"
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "所暴露的信息是从第三方服务泄露的。您的 ${ BRAND_NAME } 账户信息仍然安全且被加密。${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "以下参与者不能收到您的更改通知："
@@ -4774,6 +4842,12 @@
       "You cannot undo this action.": [
         "您无法撤销此操作。"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一个试用版 ${ planTitle } 订阅。目前无需付款。您的订阅将在试用期结束时自动续订。"
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新激活密钥，可以解密下列分类中的日程了。"
       ],
@@ -4852,6 +4926,12 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
+      "Your email address and password were leaked:": [
+        "您的电子邮件地址和密码已泄露："
+      ],
+      "Your email address was exposed:": [
+        "您的电子邮件地址已被泄露："
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
@@ -4869,6 +4949,9 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一个结算日期是${ renewalTime }。"
+      ],
+      "Your password was leaked:": [
+        "您的密码已泄露："
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
@@ -4954,6 +5037,11 @@
       ],
       "Creating invites in a shared calendar is not allowed": [
         "无法在已共享的日历中创建邀请"
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "链接标签（可选）"
       ]
     },
     "Input placeholder": {
@@ -5516,6 +5604,11 @@
         "这是什么？"
       ]
     },
+    "Link label (optional)": {
+      "Access": [
+        "访问"
+      ]
+    },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "在 ${ CALENDAR_APP_NAME } 中打开"
@@ -5595,6 +5688,11 @@
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "时长 ${ price }"
       ]
     },
     "mailtrial2024: Action": {
@@ -6195,6 +6293,9 @@
       "Unlimited devices": [
         "无设备数量限制"
       ],
+      "Unlimited devices and aliases": [
+        "无限设备和别名"
+      ],
       "Unlimited filters": [
         "筛选规则数量不限"
       ],
@@ -6281,9 +6382,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "所有 ${ BRAND_NAME } 应用及其高级功能"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "可用余额、当前等级结余与优惠券将在下一步显示"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "各项 ${ BRAND_NAME } 服务深度融合，为您提供全方位的隐私保护。"
@@ -6839,6 +6937,11 @@
         "展开参与者列表"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "安全保险库共享"
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "组织密钥不存在."
@@ -6861,6 +6964,12 @@
     "Payments": {
       "Billing Country": [
         "计费国家"
+      ],
+      "Card number": [
+        "卡号"
+      ],
+      "Got it": [
+        "好"
       ],
       "MM/YY": [
         "月/年"
@@ -7130,12 +7239,20 @@
         "当网站要求您输入电子邮件地址时，请用这个别名代替。别名由 ${ passLink }提供。"
       ]
     },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(将会打开 ${ PASS_APP_NAME })"
+      ]
+    },
     "Security Center - Action": {
       "View logs": [
         "查看日志"
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "如果您的密码或其他数据被第三方服务泄露，您将收到通知。${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
@@ -7238,9 +7355,19 @@
         "输入您当前的密码以取消密码重置进程。 其他更改将不会生效。"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "密码重置已取消"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "取消密码重置？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密码重置请求已取消 (${ user.Email })。如果您未发出此请求，则为 ${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7456,6 +7583,11 @@
         "支持网络隐私保护"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "此订阅将以相同费率每 2 年自动续订一次，直至取消。"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "查看账户等级"
@@ -7567,11 +7699,23 @@
       ]
     },
     "Spotlight": {
+      "Color-code your calendar to better organize your day, track your time, and more.": [
+        "对日历进行颜色编码，以便更好地安排您的日程、跟踪您的时间等等。"
+      ],
+      "Custom event colors": [
+        "自定义事件颜色"
+      ],
       "Get up to ${ credits } in credits.": [
         "最高可获 ${ credits } 余额奖励。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
+      ],
+      "No more scheduling conflicts": [
+        "不再有日程安排冲突"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "现在您可以看到参与者何时有空参加您的会议。"
       ]
     },
     "Storage": {
@@ -7722,6 +7866,9 @@
       "10 email addresses": [
         "10 个邮箱地址"
       ],
+      "6 users": [
+        "6 位用户"
+      ],
       "Automatic email forwarding": [
         "自动转发邮件"
       ],
@@ -7733,6 +7880,9 @@
       ],
       "Early access to new apps and features": [
         "抢先访问新应用和功能"
+      ],
+      "Learn more": [
+        "了解更多信息"
       ],
       "Online privacy, for your whole family": [
         "与全家人共同守护网络隐私"
@@ -8447,6 +8597,9 @@
       "Reshare your calendars": [
         "重新共享您的日历"
       ],
+      "Save": [
+        "保存"
+      ],
       "Save changes": [
         "保存更改"
       ],
@@ -8630,6 +8783,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"
       ],
+      "Change start date to unselect": [
+        "将开始日期更改为取消选择"
+      ],
       "Customize import to reduce the number of folders": [
         "自定义导入，减少文件夹数量。"
       ],
@@ -8746,6 +8902,11 @@
     "vpn_2024: renew": {
       "Your subscription will automatically renew in ${ cycle } month.": [
         "您的订阅将在 ${ cycle } 个月后自动续期。"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } 个邮箱地址"
       ]
     },
     "Warning": {

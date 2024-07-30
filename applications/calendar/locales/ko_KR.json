@@ -479,10 +479,10 @@
       "Not now": [
         "다음에"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -598,6 +598,9 @@
       ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "${ billingText } 결제 주기 선택"
       ],
       "Select calendar view": [
         "캘린더 보기 선택"
@@ -2577,6 +2580,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "개선을 도와주세요"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5159,6 +5170,11 @@
         "공유 캘린더에서는 초대를 생성할 수 없습니다"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "링크 라벨 (선택 사항)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "라벨 추가"
@@ -5723,6 +5739,11 @@
       ],
       "What’s this?": [
         "복구 관련 정보란?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "접근"
       ]
     },
     "Link to calendar app": {
@@ -6553,9 +6574,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "적용 가능한 크레딧, 비례 배분 및 쿠폰은 다음 단계에서 적용됩니다."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
@@ -7242,6 +7260,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
+      ],
+      "Please select billing country": [
+        "결제 청구 국가를 선택하세요"
+      ],
+      "Please select billing state": [
+        "결제 청구 주를 선택하세요"
+      ],
+      "Please select your billing country first.": [
+        "결제 청구 국가를 먼저 선택하세요"
+      ],
+      "Please select your billing state first.": [
+        "결제 청구 주를 먼저 선택하세요"
+      ],
+      "Select billing country to pay": [
+        "결제를 청구할 국가 선택"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
@@ -8313,6 +8346,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 끝나게 되면, Drive 저장공간 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } FREE로 다운그레이드 됩니다. 또한 이전에 받았던 저장공간 보너스를 전부 잃게 됩니다."
       ],
@@ -8990,6 +9026,9 @@
       "Continue with partial import?": [
         "일부 불러오기 계속?"
       ],
+      "Coupon": [
+        "쿠폰"
+      ],
       "Create contact": [
         "연락처 추가"
       ],
@@ -9553,6 +9592,33 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "계정 당 ${ n }개 지갑"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } wallet": [
+        "${ n }개 지갑"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin을 보관하는 가장 안전한 방법"
+      ],
+      "Bitcoin via email": [
+        "이메일을 통한 Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin을 안전하게 보관하고 입출금하세요."
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "지갑 오류"
       ]
     },
     "Warning": {
