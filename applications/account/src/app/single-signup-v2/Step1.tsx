@@ -1061,6 +1061,7 @@ const Step1 = ({
                                 loadingSignup={loadingSignup}
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
                                 isDarkBg={isDarkBg}
+                                signupParameters={signupParameters}
                                 onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');

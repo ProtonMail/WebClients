@@ -30,6 +30,7 @@ import type { PaymentProcessorHook } from '@proton/components/payments/react-ext
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { APPS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
@@ -47,7 +48,7 @@ import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
-import type { Measure, OptimisticOptions, SignupModelV2 } from './interface';
+import type { Measure, OptimisticOptions, SignupModelV2, SignupParameters2 } from './interface';
 import type { TelemetryPayType } from './measure';
 import { getPaymentMethod } from './measure';
 
@@ -77,6 +78,7 @@ interface Props {
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
     onBillingAddressChange: OnBillingAddressChange;
     terms?: ReactNode;
+    signupParameters: SignupParameters2;
 }
 
 const AccountStepPayment = ({
@@ -97,6 +99,7 @@ const AccountStepPayment = ({
     withLoadingSignup,
     onBillingAddressChange,
     terms,
+    signupParameters,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -141,7 +144,13 @@ const AccountStepPayment = ({
 
     const isAuthenticated = !!model.session?.UID;
 
-    const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
+    const flow: PaymentMethodFlows = (() => {
+        if (signupParameters.product === APPS.PROTONPASS) {
+            return isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
+        }
+
+        return isAuthenticated ? 'signup-v2-upgrade' : 'signup-v2';
+    })();
 
     const user = model.session?.user;
 

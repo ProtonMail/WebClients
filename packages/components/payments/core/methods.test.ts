@@ -1,6 +1,6 @@
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { BLACK_FRIDAY } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE, PLANS } from '@proton/shared/lib/constants';
+import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from './constants';
 import {
@@ -10,6 +10,7 @@ import {
     type PaymentMethodStatus,
     type PaymentsApi,
     type SavedPaymentMethod,
+    signupFlows,
 } from './interface';
 import { PaymentMethods, initializePaymentMethods } from './methods';
 
@@ -757,4 +758,848 @@ describe('initializePaymentMethods()', () => {
         expect(methods.coupon).toEqual('coupon');
         expect(methods.getAvailablePaymentMethods().methods.length).toBeGreaterThan(0);
     });
+});
+
+describe('Cash', () => {
+    it('should display cash', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
+    });
+
+    it('should not display cash if status is false', () => {
+        const st = { ...status, Cash: false };
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            st,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
+    });
+
+    it('should not display cash if BF coupon is present', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = BLACK_FRIDAY.COUPON_CODE;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
+    });
+
+    it.each(signupFlows)('should not display cash in signup flows', (flow) => {
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
+    });
+});
+
+describe('Chargebee Bitcoin', () => {
+    it('should display bitcoin', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+    });
+
+    it('should not display bitcoin if status is false', () => {
+        const st = { ...status, Bitcoin: false };
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            st,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it.each([
+        'invoice',
+        'signup',
+        'signup-v2',
+        'signup-v2-upgrade',
+        'signup-vpn',
+        'add-card',
+        'add-paypal',
+    ] as PaymentMethodFlows[])('should not display bitcoin in %s flow', (flow) => {
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it('should not display bitcoin if coupon is present', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = BLACK_FRIDAY.COUPON_CODE;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it('should not display bitcoin if amount is less than minimum', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            MIN_BITCOIN_AMOUNT - 1,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it.each([PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024])(
+        'should not display bitcoin for b2b plans',
+        (plan) => {
+            const flow: PaymentMethodFlows = 'subscription';
+            const coupon = '';
+
+            const methods = new PaymentMethods(
+                status,
+                [],
+                ChargebeeEnabled.CHARGEBEE_FORCED,
+                500,
+                coupon,
+                flow,
+                plan,
+                true,
+                undefined,
+                undefined,
+                false
+            );
+
+            expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+        }
+    );
+
+    it('should return false if INHOUSE_FORCED', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it('should return false in the migration condition', () => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
+        const flow: PaymentMethodFlows = 'credit';
+        const coupon = '';
+
+        const chargebeeUserExists = 0;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it('should return true for splitted users', () => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
+        const flow: PaymentMethodFlows = 'credit';
+        const coupon = '';
+
+        const chargebeeUserExists = 1;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+    });
+});
+
+describe('Bitcoin', () => {
+    it('should NOT be present when chargebee-bitcoin is available', () => {
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it('should be available when INHOUSE_FORCED', () => {
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+    });
+
+    it('should return true in the migration condition', () => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
+
+        const flow: PaymentMethodFlows = 'credit';
+        const coupon = '';
+
+        const chargebeeUserExists = 0;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+    });
+
+    it('should not display bitcoin if status is false', () => {
+        const st = { ...status, Bitcoin: false };
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            st,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it.each([
+        'invoice',
+        'signup',
+        'signup-v2',
+        'signup-v2-upgrade',
+        'signup-vpn',
+        'add-card',
+        'add-paypal',
+    ] as PaymentMethodFlows[])('should not display bitcoin in %s flow', (flow) => {
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it('should not display bitcoin if coupon is present', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = BLACK_FRIDAY.COUPON_CODE;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it('should not display bitcoin if amount is less than minimum', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            MIN_BITCOIN_AMOUNT - 1,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it.each([PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024])(
+        'should not display bitcoin for b2b plans',
+        (plan) => {
+            const flow: PaymentMethodFlows = 'subscription';
+            const coupon = '';
+
+            const methods = new PaymentMethods(
+                status,
+                [],
+                ChargebeeEnabled.CHARGEBEE_FORCED,
+                500,
+                coupon,
+                flow,
+                plan,
+                true,
+                undefined,
+                undefined,
+                false
+            );
+
+            expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+        }
+    );
+});
+
+describe('Chargebee card', () => {
+    it('should display chargebee card', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
+    });
+
+    it('should disable CB card if INHOUSE_FORCED', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
+    });
+
+    it.each(['credit', 'add-card'])('should disable CB card for on-session migration users', (flow) => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
+        const coupon = '';
+
+        const chargebeeUserExists = 0;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow as PaymentMethodFlows,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
+    });
+
+    it.each(['credit', 'add-card'])('should enable CB card for splitted users', (flow) => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
+        const coupon = '';
+
+        const chargebeeUserExists = 1;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow as PaymentMethodFlows,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
+    });
+
+    it('should not display chargebee card if status is false', () => {
+        const st = { ...status, Card: false };
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+        const methods = new PaymentMethods(
+            st,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(false);
+    });
+
+    it('should display the chargebee card if CHARGEBEE_FORCED even if flow is not supported', () => {
+        const flow: PaymentMethodFlows = 'invoice';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
+    });
+
+    it('should display the chargebee card if CHARGEBEE_FORCED even if disabled for B2B', () => {
+        const enableChargebeeB2B = false;
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            enableChargebeeB2B,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-card')).toBe(true);
+    });
+});
+
+describe('Chargebee PayPal', () => {
+    it('should display chargebee paypal', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
+    });
+
+    it('should disable CB paypal if INHOUSE_FORCED', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
+    });
+
+    it('should disable CB paypal for on-session migration users', () => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
+        const coupon = '';
+        const flow = 'credit';
+
+        const chargebeeUserExists = 0;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
+    });
+
+    it.each(['credit', 'add-paypal'])('should enable CB paypal for splitted users', (flow) => {
+        // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
+        const coupon = '';
+
+        const chargebeeUserExists = 1;
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow as PaymentMethodFlows,
+            undefined,
+            false,
+            BillingPlatform.Proton,
+            chargebeeUserExists,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
+        expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
+    });
+
+    it('should not render paypal if there is already one saved', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [
+                {
+                    ID: '123',
+                    Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    Order: 500,
+                    Details: {
+                        BillingAgreementID: 'BA-123',
+                        PayerID: '123',
+                        Payer: '123',
+                    },
+                },
+            ],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            BillingPlatform.Chargebee,
+            1,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+    });
+
+    it('should disable paypal if the amount is too low', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+    });
+
+    it('should enable paypal for unpaid invoice even if the amount is too low', () => {
+        const flow: PaymentMethodFlows = 'invoice';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(true);
+    });
+
+    it('should disable paypal if status is false', () => {
+        const st = { ...status, Paypal: false };
+        const flow: PaymentMethodFlows = 'subscription';
+        const coupon = '';
+
+        const methods = new PaymentMethods(
+            st,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            coupon,
+            flow,
+            undefined,
+            true,
+            undefined,
+            undefined,
+            false
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-paypal')).toBe(false);
+    });
+});
+
+it('should not have new payment methods if they are disabled', () => {
+    const flow: PaymentMethodFlows = 'invoice';
+    const coupon = '';
+
+    const disableNewPaymentMethods = true;
+
+    const methods = new PaymentMethods(
+        status,
+        [],
+        ChargebeeEnabled.CHARGEBEE_FORCED,
+        MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
+        coupon,
+        flow,
+        undefined,
+        true,
+        undefined,
+        undefined,
+        disableNewPaymentMethods
+    );
+
+    expect(methods.getNewMethods().length).toBe(0);
 });
