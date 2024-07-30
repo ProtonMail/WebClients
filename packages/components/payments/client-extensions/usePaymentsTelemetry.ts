@@ -1,14 +1,14 @@
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { Api, Cycle } from '@proton/shared/lib/interfaces';
+import type { Api, Cycle } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi } from '../../hooks';
-import { PaymentMethodFlows } from '../core';
-import { PaymentProcessorType, getSystemByHookType } from '../react-extensions/interface';
-import { ChargebeeEnabledString, chargebeeEnabledToString } from './helpers';
-import { CalledKillSwitchString, useChargebeeContext } from './useChargebeeContext';
+import type { PaymentMethodFlows } from '../core';
+import { type PaymentProcessorType, getSystemByHookType } from '../react-extensions/interface';
+import { type ChargebeeEnabledString, chargebeeEnabledToString } from './helpers';
+import { type CalledKillSwitchString, useChargebeeContext } from './useChargebeeContext';
 
 interface Overrides {
     plan?: PLANS | undefined;
@@ -22,6 +22,30 @@ export interface PaymentsTelemetry {
     reportPaymentAttempt: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
     reportPaymentSuccess: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
     reportPaymentFailure: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
+}
+
+// since it's telemetry, the types from the main app should not be reused
+type DimensionFlows =
+    | 'invoice'
+    | 'signup'
+    | 'signup-pass'
+    | 'signup-pass-upgrade'
+    | 'signup-vpn'
+    | 'credit'
+    | 'subscription'
+    | 'add-card'
+    | 'add-paypal';
+
+function mapFlows(flow: PaymentMethodFlows): DimensionFlows {
+    if (flow === 'signup-v2') {
+        return 'signup-pass';
+    }
+
+    if (flow === 'signup-v2-upgrade') {
+        return 'signup-pass-upgrade';
+    }
+
+    return flow;
 }
 
 type Dimensions = {
@@ -67,7 +91,7 @@ export const usePaymentsTelemetry = ({
         const formattedCycle = reportedCycle ? reportedCycle.toString() : 'n/a';
 
         return {
-            flow: flowOverride ?? flow,
+            flow: mapFlows(flowOverride ?? flow),
             plan: planOverride ?? plan ?? 'n/a',
             calledKillSwitch: chargebeeContext.calledKillSwitch,
             chargebeeEnabled: chargebeeEnabledToString(chargebeeContext.enableChargebeeRef.current),
