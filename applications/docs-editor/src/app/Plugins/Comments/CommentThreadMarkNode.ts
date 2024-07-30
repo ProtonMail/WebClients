@@ -60,12 +60,19 @@ export class CommentThreadMarkNode extends ElementNode {
     this.__resolved = resolved ?? false
   }
 
-  createDOM(config: EditorConfig): HTMLElement {
+  createDOM(_config: EditorConfig): HTMLElement {
     const element = document.createElement('mark')
     addClassNamesToElement(element, 'Lexical__commentThreadMark')
     if (this.getIDs()?.length > 1) {
       addClassNamesToElement(element, 'Lexical__commentThreadMarkOverlap')
     }
+
+    if (this.__resolved) {
+      addClassNamesToElement(element, 'resolved')
+    } else {
+      removeClassNamesFromElement(element, 'resolved')
+    }
+
     return element
   }
 
