@@ -56,6 +56,9 @@
       "Clear": [
         "Dọn sạch"
       ],
+      "Clear search": [
+        "Xóa tìm kiếm"
+      ],
       "Close": [
         "Đóng"
       ],
@@ -79,6 +82,9 @@
       ],
       "Copy and close": [
         "Sao chép và đóng"
+      ],
+      "Copy link": [
+        "Sao chép liên kết"
       ],
       "Copy to clipboard": [
         "Sao chép vào bộ nhớ tạm"
@@ -112,6 +118,12 @@
       ],
       "Creating vault": [
         "Đang tạo kho lưu trữ"
+      ],
+      "Custom section": [
+        "Mục tùy chỉnh"
+      ],
+      "Customize": [
+        "Tuỳ chỉnh"
       ],
       "Delete": [
         "Xóa"
@@ -175,6 +187,15 @@
       ],
       "Get mobile apps": [
         "Tải ứng dụng di động"
+      ],
+      "Get Pass Business": [
+        "Nâng cấp Pass Business"
+      ],
+      "Get Pass Plus": [
+        "Nâng cấp Pass Plus"
+      ],
+      "Get Started": [
+        "Bắt Đầu"
       ],
       "Help us improve": [
         "Giúp chúng tôi cải thiện"
@@ -275,6 +296,12 @@
       "Pass for iOS": [
         "Pass cho iOS"
       ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Pause monitoring": [
+        "Dừng theo dõi"
+      ],
       "Refresh the page": [
         "Làm mới trang"
       ],
@@ -296,17 +323,26 @@
       "Remove access": [
         "Xóa quyền truy cập"
       ],
+      "Remove link": [
+        "Xóa liên kết"
+      ],
       "Request a feature": [
         "Yêu cầu một tính năng"
       ],
       "Resend invitation": [
         "Gửi lại lời mời"
       ],
+      "Restore": [
+        "Khôi phục"
+      ],
       "Restore item": [
         "Khôi phục nội dung"
       ],
       "Restrict number of views": [
         "Giới hạn số lượt xem"
+      ],
+      "Resume monitoring": [
+        "Theo dõi trở lại"
       ],
       "Retry": [
         "Thử lại"
@@ -316,6 +352,12 @@
       ],
       "Saving": [
         "Lưu"
+      ],
+      "Secure links": [
+        "Các liên kết bảo mật"
+      ],
+      "See all": [
+        "Xem tất cả"
       ],
       "See members": [
         "Xem thành viên"
@@ -368,6 +410,9 @@
       "Trash": [
         "Thùng rác"
       ],
+      "Try again.": [
+        "Thử lại."
+      ],
       "Unlock offline with password": [
         "Mở khóa ngoại tuyến bằng mật khẩu"
       ],
@@ -388,6 +433,9 @@
       ],
       "Via secure link": [
         "Thông qua liên kết an toàn"
+      ],
+      "View details": [
+        "Xem chi tiết"
       ],
       "View history": [
         "Xem lịch sử"
@@ -434,6 +482,35 @@
       ],
       "Expand": [
         "Mở rộng"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } lần đăng nhập khác sử dụng cùng mật khẩu"
+      ],
+      "Change your passwords": [
+        "Thay đổi các mật khẩu của bạn"
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Theo dõi Dark Web chỉ dành cho các gói có thu phí. Nâng cấp để truy cập không giới hạn."
+      ],
+      "Get notified if your email, password or other personal data was leaked.": [
+        "Nhận thông báo khi email, mật khẩu hay các thông tin cá nhân của bạn bị rò rỉ."
+      ],
+      "Set up 2FA for more security": [
+        "Thiết lập 2FA để an toàn hơn"
+      ],
+      "These items remain at risk": [
+        "Các nội dung này có nguy cơ không an toàn"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Tài khoản này không an toàn, hãy tới dịch vụ và thay đổi mật khẩu."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Dịch vụ này hỗ trợ mã bí mật 2FA. Hãy khởi tạo nó để tăng cường bảo mật cho tài khoản của bạn."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Mở khóa các tính năng an toàn nâng cao và nhật kí để bảo vệ sự hiện diện trực tuyến của bạn."
       ]
     },
     "Error": {
@@ -678,8 +755,17 @@
       ]
     },
     "Feature": {
+      "Dark Web Monitoring": [
+        "Theo dõi Dark Web"
+      ],
       "Integrated 2FA authenticator": [
         "Trình xác thực 2 bước được tích hợp"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Không giới hạn bí danh Hide-my-email"
+      ],
+      "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
+        "Chia sẻ Kho lưu trữ (tối đa ${ MAX_VAULT_MEMBERS } người)"
       ]
     },
     "file size format": {
@@ -711,6 +797,11 @@
       ],
       "Megabyte": [
         "Megabytes"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Mặc định hệ thống"
       ]
     },
     "Font size option": {
@@ -779,6 +870,12 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Bí danh \"${ item.aliasEmail }\" đã được chuyển vào thùng rác - nó sẽ dừng chuyển tiếp email đến hộp thư đến của bạn"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "Các bí danh cho tên miền tùy chọn không được theo dõi, hãy thêm vào danh sách email tùy chọn để có thể theo dõi chúng."
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "Đã xử lí tất cả các vụ rò rỉ hiện tại. Bạn sẽ được thông báo khi có các vụ rò rỉ khác trong tương lai."
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tất cả nội dung từ \"${ payload.content.name }\" đã được chuyển"
       ],
@@ -799,6 +896,9 @@
       ],
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
+      ],
+      "Can be viewed": [
+        "Có thể được xem"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Cho phép tạo, chỉnh sửa, xóa và xuất nội dung trong kho lưu trữ này."
@@ -848,6 +948,9 @@
       "Editor": [
         "Biên tập viên"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Emptying trash...": [
         "Đang dọn sạch thùng rác..."
       ],
@@ -871,6 +974,9 @@
       ],
       "Enter your PIN code": [
         "Nhập mã PIN của bạn"
+      ],
+      "Expires in": [
+        "Hết hạn trong"
       ],
       "Expires in ${ remainingTime }": [
         "Hết hạn trong ${ remainingTime }"
@@ -947,6 +1053,12 @@
       "Item restored": [
         "Đã khôi phục nội dung"
       ],
+      "Item successfully excluded from monitoring": [
+        "Nội dung được loại bỏ khỏi giám sát thành công"
+      ],
+      "Item successfully included in monitoring": [
+        "Nội dung được thêm vào giám sát thành công"
+      ],
       "Item successfully moved": [
         "Đã di chuyển nội dung thành công"
       ],
@@ -955,6 +1067,9 @@
       ],
       "Item successfully unpinned": [
         "Đã bỏ ghim nội dung thành công"
+      ],
+      "Latest breach on ${ formattedDate }": [
+        "Rò rỉ gần nhất ${ formattedDate }"
       ],
       "Leaving vault...": [
         "Đang rời kho lưu trữ..."
@@ -998,6 +1113,9 @@
       "New version ${ latestVersion } is available.": [
         "Đã có phiên bản mới ${ latestVersion }."
       ],
+      "No breaches detected": [
+        "Không có vụ rò rỉ dữ liệu nào"
+      ],
       "No network connection": [
         "Không có kết nối mạng"
       ],
@@ -1027,6 +1145,9 @@
       ],
       "Pass Plus trial": [
         "Dùng thử Pass Plus"
+      ],
+      "password": [
+        "mật khẩu"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
@@ -1070,6 +1191,9 @@
       "Reconnect": [
         "Kết nối lại"
       ],
+      "Reconnecting": [
+        "Đang kết nối lại"
+      ],
       "Registering PIN lock failed": [
         "Đăng ký khóa bằng mã PIN thất bại"
       ],
@@ -1078,6 +1202,9 @@
       ],
       "Restoring trashed items...": [
         "Đang khôi phục nội dung trong thùng rác..."
+      ],
+      "Secure links": [
+        "Các liên kết bảo mật"
       ],
       "Select destination vault": [
         "Chọn kho lưu trữ đến"
@@ -1160,6 +1287,9 @@
       "Unable to copy to clipboard": [
         "Không thể sao chép vào bộ nhớ tạm"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Không giới hạn bí danh Hide-my-email"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
       ],
@@ -1177,6 +1307,9 @@
       ],
       "User's access sucessfuly updated": [
         "Đã cập nhật quyền truy cập của người dùng"
+      ],
+      "username": [
+        "tên tài khoản"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kho lưu trữ \"${ payload.content.name }\" đã được xóa"
@@ -1258,14 +1391,23 @@
       "10 minutes": [
         "10 phút"
       ],
+      "14 days": [
+        "14 ngày"
+      ],
       "15 minutes": [
         "15 phút"
+      ],
+      "24 hours": [
+        "24 giờ"
       ],
       "2FA secret key (TOTP)": [
         "Mã bảo mật 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Mã bảo mật 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 ngày"
       ],
       "30 minutes": [
         "30 phút"
@@ -1276,8 +1418,17 @@
       "5 minutes": [
         "5 phút"
       ],
+      "7 days": [
+        "7 ngày"
+      ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Tài khoản"
+      ],
+      "Address details": [
+        "Thông tin địa chỉ"
       ],
       "Alias": [
         "Bí danh"
@@ -1303,6 +1454,9 @@
       "Auto-lock after": [
         "Tự động khóa sau"
       ],
+      "Birthdate": [
+        "Ngày sinh"
+      ],
       "Capital letters (A-Z)": [
         "Chữ cái in hoa (A–Z)"
       ],
@@ -1318,14 +1472,29 @@
       "Cards": [
         "Thẻ"
       ],
+      "City": [
+        "Thành phố"
+      ],
       "Code": [
         "Mã"
+      ],
+      "Company": [
+        "Công ty"
       ],
       "Confirm vault name": [
         "Xác nhận tên kho lưu trữ"
       ],
+      "Contact details": [
+        "Thông tin liên lạc"
+      ],
       "Copy": [
         "Sao chép"
+      ],
+      "Country or Region": [
+        "Quốc gia hoặc khu vực"
+      ],
+      "County": [
+        "Quận hạt"
       ],
       "Create a credit card": [
         "Tạo thẻ"
@@ -1393,14 +1562,26 @@
       "Export": [
         "Xuất"
       ],
+      "Extra password": [
+        "Mật khẩu phụ"
+      ],
       "Field name": [
         "Tên trường"
       ],
       "File format": [
         "Định dạng tệp tin"
       ],
+      "First name": [
+        "Tên"
+      ],
       "Forwards to": [
         "Chuyển tiếp đến"
+      ],
+      "Full Name": [
+        "Tên đầy đủ"
+      ],
+      "Gender": [
+        "Giới tính"
       ],
       "General": [
         "Chung"
@@ -1416,6 +1597,12 @@
       ],
       "Hide password": [
         "Ẩn mật khẩu"
+      ],
+      "Identities": [
+        "Các danh tính"
+      ],
+      "Identity": [
+        "Danh tính"
       ],
       "Import": [
         "Nhập"
@@ -1435,11 +1622,17 @@
       "Include numbers (0-9)": [
         "Thêm số (0–9)"
       ],
+      "Instagram handle": [
+        "Tài khoản Instagram"
+      ],
       "Invitations": [
         "Lời mời"
       ],
       "Item ID": [
         "ID nội dung"
+      ],
+      "Job title": [
+        "Chức vụ"
       ],
       "Key": [
         "Chìa khóa"
@@ -1453,6 +1646,9 @@
       "Last month": [
         "Tháng trước"
       ],
+      "Last name": [
+        "Họ"
+      ],
       "Last week": [
         "Tuần trước"
       ],
@@ -1462,6 +1658,9 @@
       "Learn more": [
         "Tìm hiểu thêm"
       ],
+      "License number": [
+        "Số bằng lái"
+      ],
       "Login": [
         "Đăng nhập"
       ],
@@ -1470,6 +1669,9 @@
       ],
       "Members": [
         "Thành viên"
+      ],
+      "Middle name": [
+        "Tên đệm"
       ],
       "Modified": [
         "Đã chỉnh sửa"
@@ -1528,11 +1730,23 @@
       "Passphrase": [
         "Cụm từ mật khẩu"
       ],
+      "Passport number": [
+        "Số hộ chiếu"
+      ],
       "Password": [
         "Mật khẩu"
       ],
       "Password history": [
         "Lịch sử mật khẩu"
+      ],
+      "Personal details": [
+        "Thông tin cá nhân"
+      ],
+      "Personal website": [
+        "Trang web cá nhân"
+      ],
+      "Phone number": [
+        "Số điện thoại"
       ],
       "PIN": [
         "Mã PIN"
@@ -1548,6 +1762,9 @@
       ],
       "Recent": [
         "Gần đây"
+      ],
+      "Remove link": [
+        "Xóa liên kết"
       ],
       "Report a problem": [
         "Báo cáo vấn đề"
@@ -1579,11 +1796,32 @@
       "Session locking": [
         "Khóa phiên sử dụng"
       ],
+      "Share": [
+        "Chia sẽ"
+      ],
       "Show website favicons": [
         "Hiển thị biểu tượng trang web"
       ],
+      "Social security number": [
+        "Số bảo hiểm xã hội"
+      ],
       "Special characters (!&*)": [
         "Ký tự đặc biệt (!&*)"
+      ],
+      "State or province": [
+        "Tỉnh thành"
+      ],
+      "Status": [
+        "Trạng thái"
+      ],
+      "Street address": [
+        "Địa chỉ phố"
+      ],
+      "Street address, P.O. box": [
+        "Tên đường, hộp thư thuê bao"
+      ],
+      "Strong": [
+        "Mạnh"
       ],
       "Suffix": [
         "Hậu tố"
@@ -1630,6 +1868,9 @@
       "Update": [
         "Cập nhật"
       ],
+      "Used in": [
+        "Sử dụng trong"
+      ],
       "Username": [
         "Tên người dùng"
       ],
@@ -1645,19 +1886,43 @@
       "View logs": [
         "Xem nhật kí"
       ],
+      "Vulnerable": [
+        "Nguy hiểm"
+      ],
       "Weak": [
         "Yếu"
+      ],
+      "Website": [
+        "Trang web"
       ],
       "Websites": [
         "Trang web"
       ],
+      "Work details": [
+        "Thông tin công việc"
+      ],
+      "Work email": [
+        "Email công việc"
+      ],
+      "Work phone number": [
+        "Số điện thoại công việc"
+      ],
+      "X handle": [
+        "Tài khoản X/Twitter"
+      ],
       "You are about to create": [
         "Bạn đang chuẩn bị tạo"
+      ],
+      "ZIP or Postal code": [
+        "Mã bưu chính"
       ]
     },
     "Link": {
       "Learn more": [
         "Tìm hiểu thêm"
+      ],
+      "stay safer online": [
+        "luôn an toàn trực tuyến"
       ]
     },
     "Message": {
@@ -1666,6 +1931,14 @@
       ],
       "You selected ${ semiboldText } in this vault": [
         "Bạn đã chọn ${ semiboldText } trong kho lưu trữ này"
+      ]
+    },
+    "new_plans: feature": {
+      "Require 2FA for organization": [
+        "Bắt buộc 2FA cho tổ chức"
+      ],
+      "SSO integration (coming soon)": [
+        "Tích hợp SSO (Sắp ra mắt)"
       ]
     },
     "Option": {
@@ -1795,14 +2068,23 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } địa chỉ"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Quản lý ${ PASS_SHORT_APP_NAME }"
+      ],
       "Auto-lock update": [
         "Cập nhật tự động khóa"
+      ],
+      "Breaches": [
+        "Các vụ rò rỉ"
       ],
       "Confirm extra password": [
         "Xác nhận mật khẩu phụ"
       ],
       "Confirm PIN code": [
         "Xác nhận mã PIN"
+      ],
+      "Confirm your email": [
+        "Xác nhận email của bạn"
       ],
       "Create PIN code": [
         "Tạo mã PIN"
@@ -1812,6 +2094,12 @@
       ],
       "Current version": [
         "Phiên bản hiện tại"
+      ],
+      "Custom email monitoring": [
+        "Theo dõi địa chỉ email khác"
+      ],
+      "Dark Web Monitoring": [
+        "Theo dõi Dark Web"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Xóa kho lưu trữ \"${ vaultName }\" ?"
@@ -1834,17 +2122,29 @@
       "Enter your PIN": [
         "Nhập mã PIN của bạn"
       ],
+      "Excluded items": [
+        "Các nội dung bị bỏ qua"
+      ],
+      "Get Started": [
+        "Bắt Đầu"
+      ],
       "Grant permissions": [
         "Cấp quyền"
       ],
       "Hide-my-email aliases": [
         "Bí danh Hide-my-email"
       ],
+      "History": [
+        "Lịch sử"
+      ],
       "Import - ${ date }": [
         "Nhập - ${ date }"
       ],
       "Import to vault(s)": [
         "Nhập vào (các) kho lưu trữ"
+      ],
+      "Inactive 2FA": [
+        "Không có bảo mật 2 yếu tố"
       ],
       "Last autofill": [
         "Tự động điền mới nhất"
@@ -1857,6 +2157,9 @@
       ],
       "Low disk space": [
         "Dung lượng ổ đĩa thấp"
+      ],
+      "Mark as resolved?": [
+        "Đánh dấu đã xử lý?"
       ],
       "Member limit": [
         "Giới hạn thành viên"
@@ -1879,17 +2182,35 @@
       "Password": [
         "Mật khẩu"
       ],
+      "Pause monitoring?": [
+        "Dừng theo dõi?"
+      ],
       "Pending access to the shared data": [
         "Đang chờ truy cập vào dữ liệu được chia sẻ"
       ],
       "Permanently remove all items ?": [
         "Xóa vĩnh viễn tất cả nội dung?"
       ],
+      "Recommended actions": [
+        "Hành động được đề xuất"
+      ],
       "Remove extra password": [
         "Gỡ bỏ mật khẩu phụ"
       ],
+      "Resolved breaches": [
+        "Các rò rỉ đã được xử lí"
+      ],
       "Restore this version?": [
         "Khôi phục phiên bản này?"
+      ],
+      "Resume monitoring?": [
+        "Theo dõi trở lại?"
+      ],
+      "Reused ${ count } time": [
+        "Tái sử dụng ${ count } lần"
+      ],
+      "Reused passwords": [
+        "Các mật khẩu tái sử dụng"
       ],
       "Review and share": [
         "Xem lại và chia sẻ"
@@ -1903,11 +2224,20 @@
       "Set extra password": [
         "Thiết lập mật khẩu phụ"
       ],
+      "Set up 2FA for more security": [
+        "Thiết lập 2FA để an toàn hơn"
+      ],
       "Settings": [
         "Các cài đặt"
       ],
       "Share with": [
         "Chia sẻ với"
+      ],
+      "Stay safer online": [
+        "Luôn an toàn trực tuyến"
+      ],
+      "Suggestions": [
+        "Các gợi ý"
       ],
       "Transfer ownership": [
         "Chuyển quyền sở hữu"
@@ -1933,11 +2263,17 @@
       "Want to learn more?": [
         "Muốn tìm hiểu thêm?"
       ],
+      "Weak passwords": [
+        "Mật khẩu yếu"
+      ],
       "Welcome to ${ brandNameJSX }": [
         "Chào mừng tới ${ brandNameJSX }"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Lý do chọn ${ PASS_APP_NAME }?"
+      ],
+      "Your exposed information": [
+        "Các thông tin đã bị lộ"
       ],
       "Your vault is empty": [
         "Kho lưu trữ của bạn trống"
@@ -2005,6 +2341,12 @@
       ],
       "Invalid alias prefix": [
         "Tiền tố bí danh không hợp lệ"
+      ],
+      "Invalid code": [
+        "Mã không hợp lệ"
+      ],
+      "Invalid email": [
+        "Email không hợp lệ"
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Không được mời các địa chỉ bên ngoài tổ chức."

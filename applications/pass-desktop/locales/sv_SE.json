@@ -37,6 +37,9 @@
       "Add new item": [
         "Lägg till nytt objekt"
       ],
+      "Add section": [
+        "Lägg till sektion"
+      ],
       "Add username field": [
         "Lägg till fält för användarnamn"
       ],
@@ -54,6 +57,9 @@
       ],
       "Back": [
         "Tillbaka"
+      ],
+      "Bulk delete items from trash": [
+        "Ta bort flera objekt från papperskorg"
       ],
       "Bulk move items to another vault": [
         "Massflytta objekt till annat valv"
@@ -130,6 +136,9 @@
       "Create card": [
         "Skapa kort"
       ],
+      "Create identity": [
+        "Skapa identitet"
+      ],
       "Create login": [
         "Skapa inloggning"
       ],
@@ -144,6 +153,9 @@
       ],
       "Creating vault": [
         "Skapar valv"
+      ],
+      "Custom section": [
+        "Anpassad sektion"
       ],
       "Customize": [
         "Anpassa"
@@ -423,6 +435,9 @@
       ],
       "Saving": [
         "Sparar"
+      ],
+      "Section name": [
+        "Namn på sektion"
       ],
       "Secure links": [
         "Säkra länkar"
@@ -1576,6 +1591,9 @@
       "Restoring trashed items...": [
         "Återställer kastade objekt..."
       ],
+      "Secure links": [
+        "Säkra länkar"
+      ],
       "Select destination vault": [
         "Välj målvalv"
       ],
@@ -1874,6 +1892,15 @@
       "Account": [
         "Konto"
       ],
+      "Add section": [
+        "Lägg till sektion"
+      ],
+      "Additional details": [
+        "Ytterligare detaljer"
+      ],
+      "Address details": [
+        "Adressuppgifter"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1901,6 +1928,9 @@
       "Beta Access": [
         "Beta-åtkomst"
       ],
+      "Birthdate": [
+        "Födelsedatum"
+      ],
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
       ],
@@ -1916,14 +1946,29 @@
       "Cards": [
         "Kort"
       ],
+      "City": [
+        "Ort"
+      ],
       "Code": [
         "Kod"
+      ],
+      "Company": [
+        "Företag"
       ],
       "Confirm vault name": [
         "Bekräfta valvnamn"
       ],
+      "Contact details": [
+        "Kontaktdetaljer"
+      ],
       "Copy": [
         "Kopiera"
+      ],
+      "Country or Region": [
+        "Land eller region"
+      ],
+      "County": [
+        "Län"
       ],
       "Create a credit card": [
         "Skapa ett kreditkort"
@@ -1937,6 +1982,9 @@
       "Create an encrypted note": [
         "Skapa en krypterad anteckning"
       ],
+      "Create an Identity": [
+        "Skapa en identitet"
+      ],
       "Create lock": [
         "Skapa lås"
       ],
@@ -1945,6 +1993,15 @@
       ],
       "Created": [
         "Skapad"
+      ],
+      "Created at": [
+        "Skapad"
+      ],
+      "Custom hidden field": [
+        "Anpassat dolt fält"
+      ],
+      "Custom text field": [
+        "Anpassat textfält"
       ],
       "Date": [
         "Datum"
@@ -1994,17 +2051,32 @@
       "Extra password": [
         "Extra lösenord"
       ],
+      "Facebook account": [
+        "Facebook-konto"
+      ],
       "Field name": [
         "Fältnamn"
       ],
       "File format": [
         "Filformat"
       ],
+      "First name": [
+        "Förnamn"
+      ],
+      "Floor, apartment, building": [
+        "Våning, lägenhet, byggnad"
+      ],
       "Forwards to": [
         "Vidarebefordras till"
       ],
       "Free forever": [
         "Gratis för alltid"
+      ],
+      "Full Name": [
+        "Fullständigt namn"
+      ],
+      "Gender": [
+        "Kön"
       ],
       "General": [
         "Allmänt"
@@ -2024,6 +2096,15 @@
       "Hide password": [
         "Dölj lösenord"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Identiteter"
+      ],
+      "Identity": [
+        "Identitet"
+      ],
       "Import": [
         "Importera"
       ],
@@ -2042,11 +2123,17 @@
       "Include numbers (0-9)": [
         "Inkludera nummer (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram-användarnamn"
+      ],
       "Invitations": [
         "Inbjudningar"
       ],
       "Item ID": [
         "Objekt-ID"
+      ],
+      "Job title": [
+        "Jobbtitel"
       ],
       "JSON": [
         "JSON"
@@ -2066,6 +2153,9 @@
       "Last month": [
         "Förra månaden"
       ],
+      "Last name": [
+        "Efternamn"
+      ],
       "Last updated": [
         "Senast uppdaterad"
       ],
@@ -2077,6 +2167,12 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "License number": [
+        "Körkortsnummer"
+      ],
+      "LinkedIn account": [
+        "LinkedIn-konto"
       ],
       "Login": [
         "Logga in"
@@ -2098,6 +2194,9 @@
       ],
       "Members": [
         "Medlemmar"
+      ],
+      "Middle name": [
+        "Mellannamn"
       ],
       "Modified": [
         "Ändrad"
@@ -2147,6 +2246,9 @@
       "Oldest to newest": [
         "Äldsta till nyaste"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Lösenordshanterare med öppen källkod för enkelt skydd."
+      ],
       "Organization": [
         "Organisation"
       ],
@@ -2156,14 +2258,26 @@
       "Passphrase": [
         "Lösenfras"
       ],
+      "Passport number": [
+        "Passnummer"
+      ],
       "Password": [
         "Lösenord"
       ],
       "Password history": [
         "Lösenordshistorik"
       ],
+      "Personal details": [
+        "Personuppgifter"
+      ],
+      "Personal website": [
+        "Personlig webbplats"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-krypterad JSON (rekommenderas)"
+      ],
+      "Phone number": [
+        "Telefonnummer"
       ],
       "PIN": [
         "PIN"
@@ -2183,6 +2297,9 @@
       "Recent": [
         "Senaste"
       ],
+      "Reddit handle": [
+        "Reddit-användarnamn"
+      ],
       "Remove link": [
         "Ta bort länk"
       ],
@@ -2194,6 +2311,9 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Lagra, dela och logga in automatiskt på dina konton med ${ PASS_APP_NAME } på ett säkert sätt med hjälp av end-to-end-kryptering som är betrodd av miljontals."
       ],
       "Security": [
         "Säkerhet"
@@ -2228,11 +2348,23 @@
       "Show website favicons": [
         "Visa webbplatsens favicon"
       ],
+      "Social security number": [
+        "Personnummer"
+      ],
       "Special characters (!&*)": [
         "Specialtecken (!&*)"
       ],
+      "State or province": [
+        "Delstat eller provins"
+      ],
       "Status": [
         "Status"
+      ],
+      "Street address": [
+        "Gatuadress"
+      ],
+      "Street address, P.O. box": [
+        "Gatuadress, postbox"
       ],
       "Strong": [
         "Starkt"
@@ -2316,11 +2448,32 @@
       "Weak": [
         "Svagt"
       ],
+      "Website": [
+        "Webbplats"
+      ],
       "Websites": [
         "Webbplatser"
       ],
+      "Work details": [
+        "Arbetsdetaljer"
+      ],
+      "Work email": [
+        "E-post arbete"
+      ],
+      "Work phone number": [
+        "Telefonnummer arbete"
+      ],
+      "X handle": [
+        "X-användarnamn"
+      ],
+      "Yahoo account": [
+        "Yahoo-konto"
+      ],
       "You are about to create": [
         "Du är på väg att skapa"
+      ],
+      "ZIP or Postal code": [
+        "Postnummer"
       ]
     },
     "Link": {
@@ -2814,6 +2967,9 @@
       ],
       "OTP secret or URI required": [
         "OTP-hemlighet eller URI krävs"
+      ],
+      "Section name cannot be empty": [
+        "Namn på sektion kan inte vara tom"
       ],
       "Url already exists": [
         "URL finns redan"
