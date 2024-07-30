@@ -87,6 +87,18 @@ const EmailAction = () => {
         );
     }
 
+    if (!email.verified) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.VERIFY_EMAIL)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="warning" />}
+                    title={c('l10n_nightly: Security checkup').t`Verify your recovery email address`}
+                    subTitle={email.value}
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
     return null;
 };
 
@@ -121,6 +133,18 @@ const PhoneAction = () => {
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
                     title={c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
+                    subTitle={formattedPhoneNumber}
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    if (!phone.verified) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.VERIFY_PHONE)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="warning" />}
+                    title={c('l10n_nightly: Security checkup').t`Verify your recovery phone number`}
                     subTitle={formattedPhoneNumber}
                 />
             </SecurityCheckupCardButton>

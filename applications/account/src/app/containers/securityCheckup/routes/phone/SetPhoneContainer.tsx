@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useMyCountry, useUserSettings } from '@proton/components';
+import { useMyCountry, useSecurityCheckup, useUserSettings } from '@proton/components';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
@@ -15,6 +15,9 @@ import { phoneIcon } from '../../methodIcons';
 
 const SetPhoneContainer = () => {
     const history = useHistory();
+
+    const { securityState } = useSecurityCheckup();
+    const { phone } = securityState;
 
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [defaultCountry, loadingCountry] = useMyCountry();
@@ -53,7 +56,12 @@ const SetPhoneContainer = () => {
                     );
                 }}
                 onSuccess={() => {
-                    history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                    if (phone.verified) {
+                        history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                        return;
+                    }
+
+                    history.push(`${SECURITY_CHECKUP_PATHS.VERIFY_PHONE}?setup=1`);
                 }}
             />
         </SecurityCheckupMain>
