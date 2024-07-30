@@ -63,7 +63,7 @@ export const addFormSectionOptionalField =
         });
 
 export const useIdentityForm = (values: IdentityValues, editing: boolean = false) => {
-    const [sections, setSections] = useState<IdentityFormSection[]>(buildFormSections(values, editing));
+    const [sections, setSections] = useState<IdentityFormSection[]>(() => buildFormSections(values, editing));
 
     return useMemo(
         () => ({
