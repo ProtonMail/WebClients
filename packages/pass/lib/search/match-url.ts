@@ -13,13 +13,16 @@ export enum ItemUrlMatch {
  * - priority = 1 : direct top-level domain match */
 export const getItemPriorityForUrl =
     (item: Item<'login'>) =>
-    (match: string, options: { protocolFilter?: string[]; isPrivate: boolean }): ItemUrlMatch =>
+    (match: string, options: { protocolFilter?: string[]; isPrivate: boolean; strict?: boolean }): ItemUrlMatch =>
         item.content.urls.reduce<number>((priority, url) => {
             const parsedUrl = parseUrl(url);
 
             /* if an item's domain is parsed as null then
              * we're dealing with a corrupted url */
             if (parsedUrl.domain === null) return priority;
+
+            /** In `strict` mode we only consider exact matches */
+            if (options.strict && !match.includes(parsedUrl.subdomain ?? parsedUrl.domain)) return priority;
 
             /* Check for strict domain match - this leverages
              * the public suffix list from `tldts`. If dealing
