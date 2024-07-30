@@ -17,10 +17,10 @@ export type IPCInboxDesktopFeature =
     | "EarlyAccess"
     | "MultiAccount"
     | "LatestVersionCheck";
-export type IPCGetInfoMessage =
+export type IPCInboxGetInfoMessage =
     | { type: "theme"; result: ThemeSetting }
     | { type: "latestVersion"; result: DesktopVersion | null };
-export type IPCClientUpdateMessage =
+export type IPCInboxClientUpdateMessage =
     | { type: "updateNotification"; payload: number }
     | { type: "userLogin"; payload?: undefined }
     | { type: "userLogout"; payload?: undefined }
@@ -34,4 +34,4 @@ export type IPCClientUpdateMessage =
     | { type: "updateLocale"; payload: string }
     | { type: "setTheme"; payload: ThemeSetting }
     | { type: "earlyAccess"; payload: Environment | undefined };
-export type IPCClientUpdateMessageType = IPCClientUpdateMessage["type"];
+export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage["type"];

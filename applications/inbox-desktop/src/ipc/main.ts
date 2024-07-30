@@ -1,16 +1,19 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
-import { clearStorage } from "../utils/helpers";
-import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
-import { handleIPCBadge, resetBadge, showNotification } from "./notification";
-import { DESKTOP_FEATURES } from "./ipcConstants";
-import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
-import { getConfig } from "../utils/config";
-import { ipcLogger } from "../utils/log";
-import { IPCClientUpdateMessage, IPCGetInfoMessage } from "../utils/external/packages/shared/lib/desktop/desktopTypes";
 import { cachedLatestVersion } from "../update";
+import { getConfig } from "../utils/config";
+import {
+    IPCInboxClientUpdateMessage,
+    IPCInboxGetInfoMessage,
+} from "../utils/external/packages/shared/lib/desktop/desktopTypes";
+import { clearStorage } from "../utils/helpers";
+import { ipcLogger } from "../utils/log";
+import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
+import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
+import { DESKTOP_FEATURES } from "./ipcConstants";
+import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 
-function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
+function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
 }
 
@@ -19,7 +22,7 @@ export const handleIPCCalls = () => {
         event.returnValue = !!DESKTOP_FEATURES[message];
     });
 
-    ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCGetInfoMessage["type"]) => {
+    ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCInboxGetInfoMessage["type"]) => {
         switch (message) {
             case "theme":
                 event.returnValue = getTheme();

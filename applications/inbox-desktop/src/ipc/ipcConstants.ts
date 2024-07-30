@@ -1,6 +1,6 @@
 import {
-    IPCClientUpdateMessage,
-    IPCClientUpdateMessageType,
+    IPCInboxClientUpdateMessage,
+    IPCInboxClientUpdateMessageType,
     IPCInboxDesktopFeature,
 } from "../utils/external/packages/shared/lib/desktop/desktopTypes";
 
@@ -17,7 +17,7 @@ export type IPCHasFeatureMessage = {
     status: boolean;
 };
 
-export type IPCClientUpdateMessagePayload<T extends IPCClientUpdateMessageType> = Extract<
-    IPCClientUpdateMessage,
+export type IPCClientUpdateMessagePayload<T extends IPCInboxClientUpdateMessageType> = Extract<
+    IPCInboxClientUpdateMessage,
     { type: T }
 >["payload"];

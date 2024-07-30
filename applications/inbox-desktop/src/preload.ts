@@ -2,8 +2,8 @@ import { contextBridge, ipcRenderer } from "electron";
 import { DESKTOP_FEATURES, IPCClientUpdateMessagePayload } from "./ipc/ipcConstants";
 import { ipcLogger } from "./utils/log";
 import {
-    IPCClientUpdateMessageType,
-    IPCGetInfoMessage,
+    IPCInboxClientUpdateMessageType,
+    IPCInboxGetInfoMessage,
 } from "./utils/external/packages/shared/lib/desktop/desktopTypes";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
@@ -11,12 +11,14 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         return ipcRenderer.sendSync("hasFeature", feature);
     },
 
-    getInfo: <T extends IPCGetInfoMessage["type"]>(type: T): Extract<IPCGetInfoMessage, { type: T }>["result"] => {
+    getInfo: <T extends IPCInboxGetInfoMessage["type"]>(
+        type: T,
+    ): Extract<IPCInboxGetInfoMessage, { type: T }>["result"] => {
         return ipcRenderer.sendSync("getInfo", type);
     },
 
-    send: <T extends IPCClientUpdateMessageType>(
-        type: IPCClientUpdateMessageType,
+    send: <T extends IPCInboxClientUpdateMessageType>(
+        type: IPCInboxClientUpdateMessageType,
         payload: IPCClientUpdateMessagePayload<T>,
     ) => {
         ipcLogger.info(`Sending message: ${type}`);
