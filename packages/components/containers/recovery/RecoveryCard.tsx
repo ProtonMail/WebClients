@@ -290,7 +290,7 @@ const GenericSecurityCheckupCard = ({
             <ButtonLike
                 className="self-start"
                 as={AppLink}
-                to={`${SECURITY_CHECKUP_PATHS.ROOT}?continue=${encodeURIComponent(window.location.href)}`}
+                to={`${SECURITY_CHECKUP_PATHS.ROOT}?back=${encodeURIComponent(window.location.href)}`}
                 color="norm"
             >
                 {cta}
