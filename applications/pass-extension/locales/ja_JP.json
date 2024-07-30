@@ -555,6 +555,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "このサービスは 2FA を提供します。アカウントのセキュリティを強化するには、これを有効にします。"
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "高度なセキュリティ機能と詳細なログのロックを解除して、オンライン プレゼンスを保護します。"
       ]
     },
     "Error": {
@@ -1570,14 +1573,23 @@
       "10 minutes": [
         "10 分"
       ],
+      "14 days": [
+        "14日間"
+      ],
       "15 minutes": [
         "15 分"
+      ],
+      "24 hours": [
+        "24 時間"
       ],
       "2FA secret key (TOTP)": [
         "2FA 秘密鍵 (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA トークン (TOTP)"
+      ],
+      "30 days": [
+        "30日間"
       ],
       "30 minutes": [
         "30 分"
@@ -1587,6 +1599,9 @@
       ],
       "5 minutes": [
         "5分"
+      ],
+      "7 days": [
+        "7日間"
       ],
       "A-Z": [
         "A-Z"
@@ -1654,14 +1669,26 @@
       "Cards": [
         "カード"
       ],
+      "City": [
+        "市区町村"
+      ],
+      "Company": [
+        "会社"
+      ],
       "Confirm vault name": [
         "保管庫名を確認する"
+      ],
+      "Contact details": [
+        "連絡先の詳細"
       ],
       "Copy": [
         "コピー"
       ],
       "Copy password": [
         "パスワードをコピー"
+      ],
+      "Country or Region": [
+        "国または地域"
       ],
       "Create a credit card": [
         "クレジットカード情報を作成"
@@ -1723,14 +1750,26 @@
       "Export": [
         "エクスポート"
       ],
+      "Extra password": [
+        "追加パスワード"
+      ],
       "Field name": [
         "フィールド名"
       ],
       "File format": [
         "ファイル形式"
       ],
+      "First name": [
+        "名"
+      ],
       "Forwards to": [
         "転送先"
+      ],
+      "Full Name": [
+        "氏名"
+      ],
+      "Gender": [
+        "性別"
       ],
       "General": [
         "一般"
@@ -1746,6 +1785,12 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "Identities": [
+        "ユーザー情報"
+      ],
+      "Identity": [
+        "ユーザー情報"
       ],
       "Import": [
         "インポート"
@@ -1785,6 +1830,9 @@
       ],
       "Last month": [
         "先月"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Last week": [
         "先週"
@@ -1870,6 +1918,9 @@
       "Passphrase": [
         "パスフレーズ"
       ],
+      "Passport number": [
+        "パスポート番号"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -1884,6 +1935,9 @@
       ],
       "PGP-encrypted JSON (recommended)": [
         "PGP 暗号化 JSON (推奨)"
+      ],
+      "Phone number": [
+        "電話番号"
       ],
       "PIN": [
         "PIN"
@@ -1905,6 +1959,9 @@
       ],
       "Recent": [
         "最近"
+      ],
+      "Remove link": [
+        "リンクを削除"
       ],
       "Report a problem": [
         "問題を報告"
@@ -1942,11 +1999,23 @@
       "Settings": [
         "設定"
       ],
+      "Share": [
+        "共有"
+      ],
       "Show website favicons": [
         "ウェブサイトのファビコンを表示する"
       ],
+      "Social security number": [
+        "社会保障番号"
+      ],
       "Special characters (!&*)": [
         "特殊文字 (!&*)"
+      ],
+      "State or province": [
+        "都道府県"
+      ],
+      "Street address": [
+        "番地"
       ],
       "Strong": [
         "強い"
