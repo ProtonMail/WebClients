@@ -199,6 +199,7 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
+    const canAccessDuoPlan = useFlag('DuoPlan');
 
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
@@ -265,7 +266,11 @@ const PlanSelection = ({
         plansMap[PLANS.BUNDLE],
     ]);
 
-    let FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.DUO], plansMap[PLANS.FAMILY]]);
+    let FamilyPlans = filterPlans([
+        hasFreePlan ? FREE_PLAN : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        plansMap[PLANS.FAMILY],
+    ]);
 
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],
