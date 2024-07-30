@@ -1,0 +1,52 @@
+%shared-background {
+	position: absolute;
+	inset: 0;
+	content: '';
+	opacity: 0.08;
+}
+
+.security-checkup-color {
+	&--info {
+		color: var(--signal-info-major-2);
+		position: relative;
+
+		&::before {
+			@extend %shared-background;
+
+			background-color: var(--signal-info);
+		}
+	}
+
+	&--success {
+		color: var(--signal-success-major-2);
+		position: relative;
+
+		&::before {
+			@extend %shared-background;
+
+			background-color: var(--signal-success);
+		}
+	}
+
+	&--warning {
+		color: var(--signal-warning-major-2);
+		position: relative;
+
+		&::before {
+			@extend %shared-background;
+
+			background-color: var(--signal-warning);
+		}
+	}
+
+	&--danger {
+		color: var(--signal-danger-major-2);
+		position: relative;
+
+		&::before {
+			@extend %shared-background;
+
+			background-color: var(--signal-danger);
+		}
+	}
+}

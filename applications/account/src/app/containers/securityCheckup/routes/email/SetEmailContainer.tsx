@@ -1,0 +1,62 @@
+import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
+import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
+import { useUserSettings } from '@proton/components/index';
+import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+
+import AccountLoaderPage from '../../../../content/AccountLoaderPage';
+import SecurityCheckupMain from '../../components/SecurityCheckupMain';
+import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
+import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle';
+import { emailIcon } from '../../methodIcons';
+
+const SetEmailContainer = () => {
+    const history = useHistory();
+
+    const [userSettings, loadingUserSettings] = useUserSettings();
+
+    if (loadingUserSettings) {
+        return <AccountLoaderPage />;
+    }
+
+    return (
+        <SecurityCheckupMain>
+            <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="danger" />}>
+                {c('l10n_nightly: Security checkup').t`Add a recovery email`}
+            </SecurityCheckupMainTitle>
+
+            <div className="mb-4">
+                {c('l10n_nightly: Security checkup')
+                    .t`You can use your recovery email to regain access to your account if you forget your password.`}
+            </div>
+
+            <RecoveryEmail
+                autoFocus
+                email={userSettings.Email}
+                hasReset={!!userSettings.Email.Reset}
+                hasNotify={!!userSettings.Email.Notify}
+                disableVerifyCta
+                inputProps={{ label: c('l10n_nightly: Security checkup').t`Recovery email address` }}
+                renderForm={({ onSubmit, input, submitButtonProps }) => {
+                    return (
+                        <form onSubmit={onSubmit}>
+                            <div>{input}</div>
+
+                            <Button className="mt-4" fullWidth color="norm" {...submitButtonProps}>
+                                {c('Action').t`Add email address`}
+                            </Button>
+                        </form>
+                    );
+                }}
+                onSuccess={() => {
+                    history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                }}
+            />
+        </SecurityCheckupMain>
+    );
+};
+
+export default SetEmailContainer;

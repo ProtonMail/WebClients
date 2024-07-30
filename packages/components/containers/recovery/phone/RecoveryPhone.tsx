@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -9,19 +10,61 @@ import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
+import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
 import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
+
+interface RenderFormProps {
+    className?: string;
+    onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    input: ReactNode;
+    submitButtonProps: {
+        type: 'submit';
+        disabled: boolean;
+        loading: boolean;
+    };
+}
+
+const defaultRenderForm = ({ className, onSubmit, input, submitButtonProps }: RenderFormProps) => {
+    return (
+        <form className={clsx(['flex flex-wrap flex-column md:flex-row', className])} onSubmit={onSubmit}>
+            <div className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom" style={{ '--min-w-custom': '14em' }}>
+                {input}
+            </div>
+            <div className="mb-2">
+                <Button shape="outline" data-testid="account:recovery:phoneSubmit" {...submitButtonProps}>
+                    {c('Action').t`Save`}
+                </Button>
+            </div>
+        </form>
+    );
+};
 
 interface Props {
     phone: UserSettings['Phone'];
     hasReset: boolean;
     defaultCountry?: string;
     className?: string;
+    onSuccess?: () => void;
+    autoFocus?: boolean;
+    renderForm?: (props: RenderFormProps) => ReactNode;
+    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label'>>;
+    disableVerifyCta?: boolean;
 }
 
-const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) => {
+const RecoveryPhone = ({
+    renderForm = defaultRenderForm,
+    phone,
+    hasReset,
+    defaultCountry,
+    className,
+    onSuccess,
+    autoFocus,
+    inputProps,
+    disableVerifyCta,
+}: Props) => {
     const [input, setInput] = useState(phone.Value || '');
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -50,14 +93,16 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     onSuccess={async () => {
                         await call();
                         createNotification({ text: c('Success').t`Phone number updated` });
+
+                        onSuccess?.();
                     }}
                     config={updatePhone({ Phone: input })}
                 />
             )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
-            <form
-                className={clsx(['flex flex-wrap flex-column md:flex-row', className])}
-                onSubmit={(e) => {
+            {renderForm({
+                className,
+                onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
                         return;
@@ -67,18 +112,19 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     } else {
                         setAuthModal(true);
                     }
-                }}
-            >
-                <div className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom" style={{ '--min-w-custom': '14em' }}>
+                },
+                input: (
                     <InputFieldTwo
                         as={PhoneInput}
                         id="phoneInput"
                         disableChange={loading}
+                        autoFocus={autoFocus}
                         defaultCountry={defaultCountry}
                         value={input}
                         onChange={setInput}
                         aria-label={c('label').t`Recovery phone number`}
                         assistiveText={
+                            !disableVerifyCta &&
                             phone.Value &&
                             (phone.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
@@ -109,20 +155,15 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                                 </>
                             ))
                         }
+                        {...inputProps}
                     />
-                </div>
-                <div className="mb-2">
-                    <Button
-                        shape="outline"
-                        type="submit"
-                        disabled={(phone.Value || '') === input}
-                        loading={loading}
-                        data-testid="account:recovery:phoneSubmit"
-                    >
-                        {c('Action').t`Save`}
-                    </Button>
-                </div>
-            </form>
+                ),
+                submitButtonProps: {
+                    type: 'submit',
+                    disabled: (phone.Value || '') === input,
+                    loading,
+                },
+            })}
         </>
     );
 };

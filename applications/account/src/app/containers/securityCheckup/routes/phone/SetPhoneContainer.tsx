@@ -1,0 +1,63 @@
+import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms';
+import { useMyCountry, useUserSettings } from '@proton/components';
+import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
+import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+
+import AccountLoaderPage from '../../../../content/AccountLoaderPage';
+import SecurityCheckupMain from '../../components/SecurityCheckupMain';
+import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
+import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle';
+import { phoneIcon } from '../../methodIcons';
+
+const SetPhoneContainer = () => {
+    const history = useHistory();
+
+    const [userSettings, loadingUserSettings] = useUserSettings();
+    const [defaultCountry, loadingCountry] = useMyCountry();
+
+    if (loadingUserSettings || loadingCountry) {
+        return <AccountLoaderPage />;
+    }
+
+    return (
+        <SecurityCheckupMain>
+            <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="danger" />}>
+                {c('l10n_nightly: Security checkup').t`Add a recovery phone number`}
+            </SecurityCheckupMainTitle>
+
+            <div className="mb-4">
+                {c('l10n_nightly: Security checkup')
+                    .t`You can use your recovery phone to regain access to your account if you forget your password.`}
+            </div>
+
+            <RecoveryPhone
+                autoFocus
+                defaultCountry={defaultCountry}
+                phone={userSettings.Phone}
+                hasReset={!!userSettings.Phone.Reset}
+                disableVerifyCta
+                inputProps={{ label: c('l10n_nightly: Security checkup').t`Recovery phone number` }}
+                renderForm={({ onSubmit, input, submitButtonProps }) => {
+                    return (
+                        <form onSubmit={onSubmit}>
+                            <div>{input}</div>
+
+                            <Button className="mt-4" fullWidth color="norm" {...submitButtonProps}>
+                                {c('Action').t`Add phone number`}
+                            </Button>
+                        </form>
+                    );
+                }}
+                onSuccess={() => {
+                    history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                }}
+            />
+        </SecurityCheckupMain>
+    );
+};
+
+export default SetPhoneContainer;
