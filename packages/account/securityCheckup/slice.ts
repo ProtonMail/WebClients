@@ -39,10 +39,12 @@ const initialState: SecurityCheckupState = {
         email: {
             value: '',
             isEnabled: false,
+            verified: false,
         },
         phone: {
             value: '',
             isEnabled: false,
+            verified: false,
         },
         deviceRecovery: {
             isAvailable: false,

@@ -11,8 +11,10 @@ import SecurityCheckupRoot from './routes/SecurityCheckupRoot';
 import EnableDeviceRecoveryContainer from './routes/device/EnableDeviceRecoveryContainer';
 import EnableEmailContainer from './routes/email/EnableEmailContainer';
 import SetEmailContainer from './routes/email/SetEmailContainer';
+import VerifyEmailContainer from './routes/email/VerifyEmailContainer';
 import EnablePhoneContainer from './routes/phone/EnablePhoneContainer';
 import SetPhoneContainer from './routes/phone/SetPhoneContainer';
+import VerifyPhoneContainer from './routes/phone/VerifyPhoneContainer';
 import DownloadPhraseContainer from './routes/phrase/DownloadPhraseContainer';
 
 const SecurityCheckupRouter = () => {
@@ -42,6 +44,11 @@ const SecurityCheckupRouter = () => {
                     <SetEmailContainer />
                 </SecurityCheckupLayout>
             </Route>
+            <Route exact path={SECURITY_CHECKUP_PATHS.VERIFY_EMAIL}>
+                <SecurityCheckupLayout>
+                    <VerifyEmailContainer />
+                </SecurityCheckupLayout>
+            </Route>
             <Route exact path={SECURITY_CHECKUP_PATHS.ENABLE_EMAIL}>
                 <SecurityCheckupLayout>
                     <EnableEmailContainer />
@@ -51,6 +58,11 @@ const SecurityCheckupRouter = () => {
             <Route exact path={SECURITY_CHECKUP_PATHS.SET_PHONE}>
                 <SecurityCheckupLayout>
                     <SetPhoneContainer />
+                </SecurityCheckupLayout>
+            </Route>
+            <Route exact path={SECURITY_CHECKUP_PATHS.VERIFY_PHONE}>
+                <SecurityCheckupLayout>
+                    <VerifyPhoneContainer />
                 </SecurityCheckupLayout>
             </Route>
             <Route exact path={SECURITY_CHECKUP_PATHS.ENABLE_PHONE}>

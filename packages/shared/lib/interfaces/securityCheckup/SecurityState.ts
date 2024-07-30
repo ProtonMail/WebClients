@@ -7,10 +7,12 @@ export default interface SecurityState {
     email: {
         value?: string;
         isEnabled: boolean;
+        verified: boolean;
     };
     phone: {
         value?: string;
         isEnabled: boolean;
+        verified: boolean;
     };
     deviceRecovery: {
         isAvailable: boolean;

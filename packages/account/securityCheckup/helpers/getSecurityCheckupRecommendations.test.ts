@@ -12,10 +12,12 @@ const defaultSecurityState: SecurityState = {
     email: {
         value: '',
         isEnabled: false,
+        verified: false,
     },
     phone: {
         value: '',
         isEnabled: false,
+        verified: false,
     },
     deviceRecovery: {
         isAvailable: true,
@@ -35,6 +37,7 @@ const perfectEmail: Pick<SecurityState, 'email'> = {
     email: {
         value: 'email@domain.com',
         isEnabled: true,
+        verified: true,
     },
 };
 
@@ -42,6 +45,7 @@ const perfectPhone: Pick<SecurityState, 'phone'> = {
     phone: {
         value: '123456789',
         isEnabled: true,
+        verified: true,
     },
 };
 
@@ -288,6 +292,90 @@ describe('No recovery method', () => {
             cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
             actions: ['phrase'],
             furtherActions: ['email', 'phone'],
+        });
+    });
+
+    describe('Almost perfect email state', () => {
+        test('Enabled but not verified email', () => {
+            const securityState = {
+                ...defaultSecurityState,
+
+                email: {
+                    value: 'email@domain.com',
+                    isEnabled: true,
+                    verified: false,
+                },
+            };
+
+            const result = getSecurityCheckupRecommendations(securityState);
+
+            expect(result).toEqual({
+                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+                actions: ['email'],
+                furtherActions: ['phrase'],
+            });
+        });
+
+        test('Verified but not enabled email', () => {
+            const securityState = {
+                ...defaultSecurityState,
+
+                email: {
+                    value: 'email@domain.com',
+                    isEnabled: false,
+                    verified: true,
+                },
+            };
+
+            const result = getSecurityCheckupRecommendations(securityState);
+
+            expect(result).toEqual({
+                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+                actions: ['email'],
+                furtherActions: ['phrase'],
+            });
+        });
+    });
+
+    describe('Almost perfect phone state', () => {
+        test('Enabled but not verified phone', () => {
+            const securityState = {
+                ...defaultSecurityState,
+
+                phone: {
+                    value: '123456789',
+                    isEnabled: true,
+                    verified: false,
+                },
+            };
+
+            const result = getSecurityCheckupRecommendations(securityState);
+
+            expect(result).toEqual({
+                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+                actions: ['phone'],
+                furtherActions: ['phrase'],
+            });
+        });
+
+        test('Verified but not enabled phone', () => {
+            const securityState = {
+                ...defaultSecurityState,
+
+                phone: {
+                    value: '123456789',
+                    isEnabled: false,
+                    verified: true,
+                },
+            };
+
+            const result = getSecurityCheckupRecommendations(securityState);
+
+            expect(result).toEqual({
+                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+                actions: ['phone'],
+                furtherActions: ['phrase'],
+            });
         });
     });
 });
