@@ -11,4 +11,4 @@ const getExtraResource = () => {
     }
 };
 
-module.exports = { getExtraResource };
+module.exports = getExtraResource;
