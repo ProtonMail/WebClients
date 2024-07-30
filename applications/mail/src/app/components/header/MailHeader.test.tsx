@@ -29,6 +29,7 @@ const user = {
     isFree: true,
     UsedSpace: 10,
     MaxSpace: 100,
+    Flags: { sso: false },
 } as UserModel;
 
 describe('MailHeader', () => {
