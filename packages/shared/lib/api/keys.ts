@@ -64,6 +64,7 @@ interface CreateAddressKeyPayload {
     PrivateKey: string;
     SignedKeyList: SignedKeyList;
     AddressForwardingID?: string;
+    GroupMemberID?: string;
 }
 
 export const createAddressKeyRoute = (data: CreateAddressKeyPayload) => ({

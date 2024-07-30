@@ -204,7 +204,7 @@ const mapProxyInstance = (proxyInstance: ProxyInstance) => ({
     ProxyParam: arrayToHexString(proxyInstance.proxyParameter),
 });
 
-export const getInternalParameters = async (
+export const getInternalParametersPrivate = async (
     forwarderPrivateKey: PrivateKeyReference,
     userIDsForForwardeeKey: MaybeArray<UserID>,
     forwardeePublicKey: PublicKeyReference
@@ -219,6 +219,53 @@ export const getInternalParameters = async (
 
     return {
         activationToken,
+        forwardeeKey: forwardingMaterial.forwardeeKey,
+        proxyInstances,
+    };
+};
+
+export const getInternalParameters = async (
+    forwarderPrivateKey: PrivateKeyReference,
+    userIDsForForwardeeKey: MaybeArray<UserID>,
+    forwardeePublicKey: PublicKeyReference,
+    Token: string | undefined,
+    Signature: string | undefined,
+    privateKeys: PrivateKeyReference[],
+    publicKeys: PublicKeyReference[]
+) => {
+    let decryptedToken: string;
+    try {
+        decryptedToken = await getAddressKeyToken({
+            Token: Token ?? '', // Aron: please check
+            Signature: Signature ?? '',
+            privateKeys: privateKeys,
+            publicKeys: publicKeys,
+        });
+    } catch (err) {
+        const name = (err as { name?: string })?.name;
+        const message = (err as { message?: string })?.message;
+
+        const treatAsPrivate = name === 'SignatureError' || message === 'Missing organization key';
+
+        if (treatAsPrivate) {
+            // we can't decrypt the token with the provided information,
+            // treat as if private member
+            return getInternalParametersPrivate(forwarderPrivateKey, userIDsForForwardeeKey, forwardeePublicKey);
+        }
+
+        throw err; // throw error again if unfixable
+    }
+
+    const forwardingMaterial = await generateForwardingMaterial(
+        decryptedToken,
+        forwarderPrivateKey,
+        userIDsForForwardeeKey
+    );
+
+    const proxyInstances = forwardingMaterial.proxyInstances.map(mapProxyInstance);
+
+    return {
+        activationToken: undefined,
         forwardeeKey: forwardingMaterial.forwardeeKey,
         proxyInstances,
     };
@@ -340,7 +387,7 @@ export const enableForwarding = async ({
     const [forwarderKey] = splitForwarderAddressKeys.privateKeys;
     const [forwardeePublicKeyArmored] = forwardeePublicKeys.publicKeys || [];
     const forwardeePublicKey = await CryptoProxy.importPublicKey({ armoredKey: forwardeePublicKeyArmored.armoredKey });
-    const { activationToken, forwardeeKey, proxyInstances } = await getInternalParameters(
+    const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
         forwarderKey,
         [{ email, name: email }],
         forwardeePublicKey

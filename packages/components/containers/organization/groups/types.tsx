@@ -24,6 +24,6 @@ export interface GroupsManagementReturn {
     handleReloadGroupMembers: (groupID: string) => void;
     handleDeleteGroupMember: (memberId: string) => void;
     domainData: DomainData;
-    getSuggestedAddressDomainName: () => string;
-    getSuggestedAddressDomainPart: () => string;
+    suggestedAddressDomainName: string;
+    suggestedAddressDomainPart: string;
 }

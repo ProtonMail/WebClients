@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useFormik } from 'formik';
 
@@ -24,6 +24,7 @@ import { addSubdomain } from './helpers';
 import type { GroupsManagementReturn } from './types';
 import useAddGroupMember from './useAddGroupMember';
 import useGroupMembers from './useGroupMembers';
+import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 
@@ -38,6 +39,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const { call } = useEventManager();
     const addGroupMember = useAddGroupMember();
+    const pmMeDomain = usePmMeDomain();
 
     const getSuggestedAddressDomainName = () => {
         if (!organization) {
@@ -48,18 +50,37 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         return organization?.DisplayName.toLowerCase().replace(/\s+/g, '');
     };
 
+    const suggestedAddressDomainName = useMemo(getSuggestedAddressDomainName, [organization]);
+
     const getSuggestedAddressDomainPart = () => {
+        if (pmMeDomain === null) {
+            return ''; // return empty string to avoid error, this will never be returned in practice
+        }
+
         if (!organization) {
             createNotification({ type: 'error', text: 'Organization data is missing' });
-            return 'pm.me';
+            return pmMeDomain.substring(1);
         }
 
         const organizationName = organization?.DisplayName.toLowerCase().replace(/\s+/g, '');
 
-        return customDomains && customDomains.length > 0 ? customDomains[0].DomainName : `${organizationName}.pm.me`;
+        return customDomains && customDomains.length > 0
+            ? customDomains[0].DomainName
+            : `${organizationName}${pmMeDomain}`;
     };
 
-    const [selectedDomain, setSelectedDomain] = useState(getSuggestedAddressDomainPart());
+    const suggestedAddressDomainPart = useMemo(getSuggestedAddressDomainPart, [
+        organization,
+        customDomains,
+        pmMeDomain,
+    ]);
+
+    const [selectedDomain, setSelectedDomain] = useState<string | undefined>(undefined);
+
+    useEffect(() => {
+        setSelectedDomain(suggestedAddressDomainPart);
+    }, [suggestedAddressDomainPart]);
+
     const getUser = useGetUser();
     const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
     const { keyTransparencyVerify } = useKTVerifier(silentApi, getUser);
@@ -82,14 +103,10 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     });
 
     useEffect(() => {
-        if (selectedGroup === undefined || selectedGroup.ID === 'new') {
-            return;
-        }
-
-        void withLoadingGroupMembers(fetchGroupMembers(selectedGroup.ID));
+        void withLoadingGroupMembers(fetchGroupMembers(selectedGroup?.ID));
     }, [selectedGroup]);
 
-    if (!organization || loadingGroups || !groups || !members) {
+    if (!organization || loadingGroups || !groups || !members || !pmMeDomain || !selectedDomain) {
         return undefined;
     }
 
@@ -133,17 +150,21 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             Flags: GroupFlags.None,
         };
 
-        const { Group } = await api(
-            uiState === 'new' ? createGroup(groupData) : editGroup(selectedGroup.ID, { ...groupData })
-        );
-        await call();
-
         const cachedOrganizationKey = await getOrganizationKey();
         const organizationKey = cachedOrganizationKey?.privateKey;
 
         if (!organizationKey) {
             throw new Error('Missing organization private key');
         }
+
+        const { Group } = await api(
+            uiState === 'new' ? createGroup(groupData) : editGroup(selectedGroup.ID, { ...groupData })
+        );
+        await call();
+
+        resetForm();
+        setUiState('view');
+        setSelectedGroup(Group);
 
         if (uiState === 'new') {
             Group.Address.Keys = await createGroupAddressKey({
@@ -155,11 +176,10 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         }
 
         const memberEmail = formValues.members;
-        await addGroupMember(Group, memberEmail);
-
-        resetForm();
-        setUiState('view');
-        setSelectedGroup(Group);
+        if (memberEmail) {
+            await addGroupMember(Group, memberEmail);
+            await fetchGroupMembers(Group.ID);
+        }
     };
 
     const domainData = { loadingCustomDomains, selectedDomain, customDomains, setSelectedDomain };
@@ -179,8 +199,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         handleReloadGroupMembers,
         handleDeleteGroupMember,
         domainData,
-        getSuggestedAddressDomainName,
-        getSuggestedAddressDomainPart,
+        suggestedAddressDomainName,
+        suggestedAddressDomainPart,
     };
 };
 
