@@ -9,8 +9,9 @@ import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SECURITY_CHECKUP_PATHS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getAppUrlRelativeToOrigin } from '@proton/shared/lib/helpers/url';
 
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
@@ -37,6 +38,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
     const [jwt, setJwt] = useState('');
     const params = new URLSearchParams(location.search);
     const type = params.get('type');
+    const email = params.get('email');
 
     useEffect(() => {
         const jwt = stripQueryParams(location.hash.substring(1));
@@ -55,8 +57,13 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                 }
             });
 
-        withLoading(promise);
+        void withLoading(promise);
     }, []);
+
+    const continueParams = new URLSearchParams({
+        continue: encodeURIComponent(getAppUrlRelativeToOrigin(window.location.origin, APPS.PROTONACCOUNT).toString()),
+        email: email || '',
+    });
 
     return (
         <main className="main-area h-full">
@@ -109,8 +116,14 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                                     {c('Action').t`Manage communication preferences`}
                                 </Button>
                             ) : (
-                                <ButtonLike fullWidth as="a" href={SSO_PATHS.SWITCH} target="_self">
-                                    {c('Action').t`Sign in`}
+                                <ButtonLike
+                                    fullWidth
+                                    as="a"
+                                    href={`${SECURITY_CHECKUP_PATHS.ROOT}?${continueParams.toString()}`}
+                                    target="_self"
+                                    color="norm"
+                                >
+                                    {c('Action').t`Review account security`}
                                 </ButtonLike>
                             )
                         }

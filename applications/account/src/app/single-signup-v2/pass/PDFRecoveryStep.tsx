@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { Icon } from '@proton/components/index';
 import { useLoading } from '@proton/hooks';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import noop from '@proton/utils/noop';
@@ -39,7 +39,7 @@ const PDFRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: PDFRecoveryPr
             onceRef.current = true;
         }
 
-        downloadFile(mnemonic.blob, 'recovery-kit.pdf');
+        downloadFile(mnemonic.blob, RECOVERY_KIT_FILE_NAME);
     };
 
     return (

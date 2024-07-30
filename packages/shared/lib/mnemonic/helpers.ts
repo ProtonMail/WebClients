@@ -1,7 +1,12 @@
 import { CryptoProxy } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
-import type { Api, DecryptedKey } from '../interfaces';
+import { getHasMigratedAddressKeys } from '../../lib/keys';
+import { isPrivate } from '../../lib/user/helpers';
+import type { APP_NAMES } from '../constants';
+import { APPS } from '../constants';
+import { MNEMONIC_STATUS } from '../interfaces';
+import type { Address, Api, DecryptedKey, User } from '../interfaces';
 import { srpGetVerify } from '../srp';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
 
@@ -65,4 +70,26 @@ export const generateMnemonicPayload = async ({
         MnemonicSalt: salt,
         MnemonicAuth: Auth,
     };
+};
+
+export const getIsMnemonicAvailable = ({
+    addresses,
+    user,
+    app,
+}: {
+    addresses: Address[];
+    user: User;
+    app: APP_NAMES;
+}) => {
+    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
+    const isNonPrivateUser = !isPrivate(user);
+    return hasMigratedKeys && !isNonPrivateUser && app !== APPS.PROTONVPN_SETTINGS;
+};
+
+export const getCanReactiveMnemonic = (user: User) => {
+    return (
+        user.MnemonicStatus === MNEMONIC_STATUS.PROMPT ||
+        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
+        user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED
+    );
 };

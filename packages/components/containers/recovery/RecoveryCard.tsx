@@ -1,40 +1,51 @@
 import { c } from 'ttag';
 
-import { Card, Href } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Loader } from '../../components';
+import type { IconName } from '../../components';
+import { AppLink, Icon, Loader, SubTitle } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
     useIsMnemonicAvailable,
+    useIsSecurityCheckupAvailable,
     useIsSentinelUser,
     useRecoverySecrets,
     useRecoveryStatus,
+    useSecurityCheckup,
     useUser,
     useUserSettings,
 } from '../../hooks';
-import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
+import { useIsRecoveryFileAvailable } from '../../hooks/recoveryFile';
 import { SettingsSectionTitle } from '../account';
 import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';
 
-interface Props {
+interface SentinelUserRecoveryCardProps {
     ids: {
         account: string;
         data: string;
     };
     canDisplayNewSentinelSettings?: boolean;
+    isSentinelUser: boolean;
 }
 
-const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: Props) => {
+const SentinelUserRecoveryCard = ({
+    ids,
+    canDisplayNewSentinelSettings,
+    isSentinelUser,
+}: SentinelUserRecoveryCardProps) => {
     const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ accountRecoveryStatus, dataRecoveryStatus }, loadingRecoveryStatus] = useRecoveryStatus();
-    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
@@ -48,8 +59,7 @@ const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: Props) => {
         loadingIsDataRecoveryAvailable ||
         loadingIsRecoveryFileAvailable ||
         loadingIsMnemonicAvailable ||
-        loadingUserSettings ||
-        loadingIsSentinelUser
+        loadingUserSettings
     ) {
         return <Loader />;
     }
@@ -204,9 +214,10 @@ const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: Props) => {
     })();
 
     return (
-        <Card rounded background={false} className="max-w-custom" style={{ '--max-w-custom': '46em' }}>
-            <SettingsSectionTitle className="h3">{c('Title')
-                .t`Take precautions to avoid data loss!`}</SettingsSectionTitle>
+        <div className="rounded border p-8 max-w-custom" style={{ '--max-w-custom': '46em' }}>
+            <SettingsSectionTitle className="h3">
+                {c('Title').t`Take precautions to avoid data loss!`}
+            </SettingsSectionTitle>
             <p>
                 {isDataRecoveryAvailable
                     ? // translator: Full sentence is 'If you lose your login details and need to reset your account, it’s imperative that you have both an account recovery and data recovery method in place, otherwise you might not be able to access any of your emails, contacts, or files.'
@@ -243,8 +254,167 @@ const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: Props) => {
                     </>
                 )}
             </ul>
-        </Card>
+        </div>
     );
+};
+
+const GenericSecurityCheckupCard = ({
+    title,
+    subtitle,
+    icon,
+    color,
+    description,
+    cta,
+}: {
+    title: string;
+    subtitle: string;
+    icon: IconName;
+    color: 'success' | 'danger' | 'info' | 'warning';
+    description?: string | ReturnType<typeof getBoldFormattedText>;
+    cta: string;
+}) => {
+    return (
+        <div className="rounded border max-w-custom p-8 flex flex-column gap-8" style={{ '--max-w-custom': '46em' }}>
+            <div className="flex flex-nowrap items-center gap-4">
+                <div className={clsx('rounded p-2 overflow-hidden', `security-checkup-color--${color}`)}>
+                    <Icon name={icon} size={10} />
+                </div>
+                <div>
+                    <SubTitle className="h3 text-bold mb-0">{title}</SubTitle>
+                    <div className="color-weak max-w-custom">{subtitle}</div>
+                </div>
+            </div>
+
+            <div>{description}</div>
+
+            <ButtonLike
+                className="self-start"
+                as={AppLink}
+                to={`${SECURITY_CHECKUP_PATHS.ROOT}?continue=${encodeURIComponent(window.location.href)}`}
+                color="norm"
+            >
+                {cta}
+            </ButtonLike>
+        </div>
+    );
+};
+
+const SecurityCheckupCard = () => {
+    const securityCheckup = useSecurityCheckup();
+
+    const { actions, furtherActions, cohort } = securityCheckup;
+
+    if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('l10n_nightly: Security checkup').t`Your account and data can be recovered`}
+                subtitle={c('l10n_nightly: Security checkup').t`Your account is fully secure.`}
+                icon="pass-shield-ok"
+                color="success"
+                description={c('l10n_nightly: Security checkup')
+                    .t`Your account and data can be recovered. Check if you can still access your recovery methods.`}
+                cta={c('l10n_nightly: Security checkup').t`Check account security`}
+            />
+        );
+    }
+
+    if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
+                subtitle={c('l10n_nightly: Security checkup').t`You have recommended actions.`}
+                icon="pass-shield-warning"
+                color="info"
+                description={c('l10n_nightly: Security checkup')
+                    .t`Your account and data can be recovered. You have recommended actions to Safeguard your account further.`}
+                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+            />
+        );
+    }
+
+    if (cohort === SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
+                subtitle={c('l10n_nightly: Security checkup').t`You are at risk of losing access to your data.`}
+                icon="pass-shield-warning"
+                color="warning"
+                description={getBoldFormattedText(
+                    c('l10n_nightly: Security checkup')
+                        .t`If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.`
+                )}
+                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+            />
+        );
+    }
+
+    if (cohort === SecurityCheckupCohort.NO_RECOVERY_METHOD) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
+                subtitle={c('l10n_nightly: Security checkup')
+                    .t`You are at risk of losing access to your account and data.`}
+                icon="pass-shield-warning"
+                color="danger"
+                description={getBoldFormattedText(
+                    c('l10n_nightly: Security checkup')
+                        .t`If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.`
+                )}
+                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+            />
+        );
+    }
+
+    if (actions.length || furtherActions.length) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
+                subtitle={c('l10n_nightly: Security checkup').t`You have recommended actions.`}
+                icon="pass-shield-warning"
+                color="info"
+                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+            />
+        );
+    }
+
+    return (
+        <GenericSecurityCheckupCard
+            title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
+            subtitle={c('l10n_nightly: Security checkup').t`Your account is fully secure.`}
+            icon="pass-shield-ok"
+            color="success"
+            cta={c('l10n_nightly: Security checkup').t`Check account security`}
+        />
+    );
+};
+
+interface RecoveryCardProps {
+    ids: {
+        account: string;
+        data: string;
+    };
+    canDisplayNewSentinelSettings?: boolean;
+}
+
+const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: RecoveryCardProps) => {
+    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
+    const isSecurityCheckupAvailable = useIsSecurityCheckupAvailable();
+
+    if (loadingIsSentinelUser) {
+        return <Loader />;
+    }
+
+    if (isSentinelUser || !isSecurityCheckupAvailable) {
+        return (
+            <SentinelUserRecoveryCard
+                ids={ids}
+                canDisplayNewSentinelSettings={canDisplayNewSentinelSettings}
+                isSentinelUser={isSentinelUser}
+            />
+        );
+    }
+
+    return <SecurityCheckupCard />;
 };
 
 export default RecoveryCard;

@@ -4,6 +4,7 @@ export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',
     accountSignupBasic = 'account.any.signup_basic',
     accountOrgLogoUpload = 'account.web.org_logo_upload',
+    accountSecurityCheckup = 'account.web.security_checkup',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
@@ -103,6 +104,14 @@ export enum TelemetryAccountOrganizationLogoUploadEvents {
     processFailure = 'process_failure',
 }
 
+export enum TelemetryAccountSecurityCheckupEvents {
+    pageLoad = 'page_load',
+
+    completeRecoveryMultiple = 'cohort_change.complete_recovery_multiple',
+    completeRecoverySingle = 'cohort_change.complete_recovery_single',
+    accountRecoveryEnabled = 'cohort_change.account_recovery_enabled',
+}
+
 export enum TelemetryKeyTransparencyErrorEvents {
     self_audit_error = 'self_audit_error',
     key_verification_failure = 'key_verification_failure',
@@ -178,7 +187,8 @@ export type TelemetryEvents =
     | TelemetrySecurityCenterEvents
     | TelemetryPaymentsEvents
     | TelemetryAccountOrganizationLogoUploadEvents
-    | TelemetryDriveWebFeature;
+    | TelemetryDriveWebFeature
+    | TelemetryAccountSecurityCheckupEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

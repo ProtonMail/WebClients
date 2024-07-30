@@ -21,6 +21,7 @@ export interface CollapsibleHeaderOwnProps {
      * Restricts the toggle click to only the expand icon.
      */
     disableContainerToggle?: boolean;
+    gap?: number;
 }
 
 export type CollapsibleHeaderProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleHeaderOwnProps, E>;
@@ -31,6 +32,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
     suffix,
     disableFullWidth,
     disableContainerToggle,
+    gap = 2,
     className,
     children,
     onClick,
@@ -59,6 +61,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
             className={clsx(
                 className,
                 'flex flex-nowrap items-center',
+                `gap-${gap}`,
                 disabled && 'pointer-events-none',
                 !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
@@ -67,7 +70,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
                 {children}
             </div>
 
-            {suffix && <div className="flex shrink-0 ml-2">{suffix}</div>}
+            {suffix && <div className="flex shrink-0">{suffix}</div>}
         </Element>
     );
 };

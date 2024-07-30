@@ -54,6 +54,7 @@ enum AccountFlag {
     WalletEASignup = 'WalletEASignup',
     SAMLTest = 'SamlTest',
     AllowDowncycling = 'AllowDowncycling',
+    SecurityCheckup = 'SecurityCheckup',
 }
 
 enum CalendarFeatureFlag {

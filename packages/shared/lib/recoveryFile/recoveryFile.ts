@@ -5,7 +5,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { APP_NAMES } from '../constants';
-import { APPS, KEY_FILE_EXTENSION } from '../constants';
+import { APPS, RECOVERY_FILE_FILE_NAME } from '../constants';
 import downloadFile from '../helpers/downloadFile';
 import type { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
 import type { ArmoredKeyWithInfo } from '../keys';
@@ -102,7 +102,7 @@ export const exportRecoveryFile = async ({
         privateKeys: userKeys.map(({ privateKey }) => privateKey),
     });
     const blob = new Blob([message], { type: 'text/plain' });
-    downloadFile(blob, `proton_recovery${KEY_FILE_EXTENSION}`);
+    downloadFile(blob, RECOVERY_FILE_FILE_NAME);
 };
 
 export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecret, publicKey: PublicKeyReference) => {
@@ -131,6 +131,13 @@ export const getRecoverySecrets = (Keys: Key[] = []): KeyWithRecoverySecret[] =>
 
 export const getPrimaryRecoverySecret = (Keys: Key[] = []): KeyWithRecoverySecret | undefined => {
     return getKeyWithRecoverySecret(Keys?.[0]);
+};
+
+export const getHasOutdatedRecoveryFile = (keys: Key[] = []) => {
+    const primaryRecoverySecret = getPrimaryRecoverySecret(keys);
+    const recoverySecrets = getRecoverySecrets(keys);
+
+    return recoverySecrets?.length > 0 && !primaryRecoverySecret;
 };
 
 export const getIsRecoveryFileAvailable = ({
