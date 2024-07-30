@@ -22,6 +22,7 @@ import {
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -47,7 +48,7 @@ interface Props {
     labelID: string;
     postItems: ReactNode;
     collapsed?: boolean;
-    onClickExpandNav?: () => void;
+    onClickExpandNav?: (sourceEvent: SOURCE_EVENT) => void;
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
@@ -306,7 +307,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                 title={c('Action').t`Expand navigation bar to see folders`}
                             >
                                 <button
-                                    onClick={onClickExpandNav}
+                                    onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_FOLDERS)}
                                     className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
                                 >
                                     <Icon
@@ -358,7 +359,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                 title={c('Action').t`Expand navigation bar to see labels`}
                             >
                                 <button
-                                    onClick={onClickExpandNav}
+                                    onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_LABELS)}
                                     className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
                                 >
                                     <Icon
