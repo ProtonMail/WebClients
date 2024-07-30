@@ -37,6 +37,9 @@
       "Add new item": [
         "Adicionar novo item"
       ],
+      "Add section": [
+        "Adicionar seção"
+      ],
       "Add username field": [
         "Adicionar um campo de nome de usuário"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Criar cartão"
       ],
+      "Create identity": [
+        "Criar identidade"
+      ],
       "Create login": [
         "Criar login"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Criando cofre"
+      ],
+      "Custom section": [
+        "Seção personalizada"
       ],
       "Customize": [
         "Personalizar"
@@ -423,6 +432,9 @@
       ],
       "Saving": [
         "Salvando"
+      ],
+      "Section name": [
+        "Nome da seção"
       ],
       "Secure links": [
         "Links seguros"
@@ -831,7 +843,7 @@
         "Modo sem rede não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
       ],
       "Passphrase is incorrect": [
-        "A frase de acesso está incorreta"
+        "A frase secreta está incorreta"
       ],
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
@@ -874,6 +886,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sua sessão expirou. Inicie a sessão novamente."
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Ocorreu um erro ao remover o link seguro. Tente novamente em alguns minutos."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Muitas tentativas erradas. Inicie sessão novamente."
@@ -1114,6 +1129,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Bloqueio automático desativado."
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Antes de exportar seus dados com esse formato, abra as configurações do Safari -> guia “Geral” -> desative a opção “Abrir arquivos seguros após o download”. Isso evitará que o Safari extraia incorretamente o arquivo exportado."
       ],
       "Breaches detected": [
         "Violações detectadas"
@@ -1409,6 +1427,9 @@
       "Moving items": [
         "Movendo itens"
       ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Mover itens para outro cofre apagará seu histórico e todos os links seguros."
+      ],
       "Moving items to another vault will erase their history.": [
         "Movendo item para outro cofre apagará seus históricos."
       ],
@@ -1548,6 +1569,9 @@
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
       ],
+      "Secure links": [
+        "Links seguros"
+      ],
       "Select destination vault": [
         "Selecione o cofre de destino"
       ],
@@ -1609,7 +1633,7 @@
         "A exportação conterá apenas cofres que você possui."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "O arquivo exportado será criptografado usando PGP e exigirá uma senha forte."
+        "O arquivo exportado será criptografado usando PGP e exigirá uma frase secreta forte."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
@@ -1843,6 +1867,15 @@
       "Account": [
         "Conta"
       ],
+      "Add section": [
+        "Adicionar seção"
+      ],
+      "Additional details": [
+        "Detalhes adicionais"
+      ],
+      "Address details": [
+        "Detalhes do endereço"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1870,6 +1903,9 @@
       "Beta Access": [
         "Acesso beta"
       ],
+      "Birthdate": [
+        "Data de nascimento"
+      ],
       "Capital letters (A-Z)": [
         "Letras maiúsculas (A-Z)"
       ],
@@ -1885,14 +1921,29 @@
       "Cards": [
         "Cartões"
       ],
+      "City": [
+        "Cidade"
+      ],
       "Code": [
         "Código"
+      ],
+      "Company": [
+        "Empresa"
       ],
       "Confirm vault name": [
         "Confirmar nome do cofre"
       ],
+      "Contact details": [
+        "Detalhes do contato"
+      ],
       "Copy": [
         "Copiar"
+      ],
+      "Country or Region": [
+        "País ou região"
+      ],
+      "County": [
+        "Província"
       ],
       "Create a credit card": [
         "Criar um cartão de crédito"
@@ -1906,6 +1957,9 @@
       "Create an encrypted note": [
         "Criar uma nota criptografada"
       ],
+      "Create an Identity": [
+        "Criar uma identidade"
+      ],
       "Create lock": [
         "Criar bloqueio"
       ],
@@ -1917,6 +1971,12 @@
       ],
       "Created at": [
         "Criado em"
+      ],
+      "Custom hidden field": [
+        "Campo oculto personalizado"
+      ],
+      "Custom text field": [
+        "Campo de texto.personalizado"
       ],
       "Date": [
         "Data"
@@ -1966,17 +2026,32 @@
       "Extra password": [
         "Senha adicional"
       ],
+      "Facebook account": [
+        "Conta do Facebook"
+      ],
       "Field name": [
         "Nome do campo"
       ],
       "File format": [
         "Formato do arquivo"
       ],
+      "First name": [
+        "Primeiro nome"
+      ],
+      "Floor, apartment, building": [
+        "Piso, apartamento, prédio"
+      ],
       "Forwards to": [
         "Encaminhar para"
       ],
       "Free forever": [
         "Gratuito para sempre"
+      ],
+      "Full Name": [
+        "Nome completo"
+      ],
+      "Gender": [
+        "Gênero"
       ],
       "General": [
         "Geral"
@@ -1996,6 +2071,15 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "https://example.com": [
+        "https://exemplo.com"
+      ],
+      "Identities": [
+        "Identidades"
+      ],
+      "Identity": [
+        "Identidade"
+      ],
       "Import": [
         "Importar"
       ],
@@ -2014,11 +2098,17 @@
       "Include numbers (0-9)": [
         "Incluir números (0–9)"
       ],
+      "Instagram handle": [
+        "Nome de usuário no Instagram"
+      ],
       "Invitations": [
         "Convites"
       ],
       "Item ID": [
         "ID do item"
+      ],
+      "Job title": [
+        "Cargo"
       ],
       "JSON": [
         "JSON"
@@ -2038,6 +2128,9 @@
       "Last month": [
         "Último mês"
       ],
+      "Last name": [
+        "Sobrenome"
+      ],
       "Last updated": [
         "Última atualização:"
       ],
@@ -2049,6 +2142,12 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "License number": [
+        "Número da licença"
+      ],
+      "LinkedIn account": [
+        "Conta no LinkedIn"
       ],
       "Login": [
         "Início de sessão"
@@ -2070,6 +2169,9 @@
       ],
       "Members": [
         "Membros"
+      ],
+      "Middle name": [
+        "Segundo nome"
       ],
       "Modified": [
         "Modificado"
@@ -2131,14 +2233,26 @@
       "Passphrase": [
         "Frase secreta"
       ],
+      "Passport number": [
+        "Número do passaporte"
+      ],
       "Password": [
         "Senha"
       ],
       "Password history": [
         "Histórico de senhas"
       ],
+      "Personal details": [
+        "Detalhes pessoais"
+      ],
+      "Personal website": [
+        "Site pessoal"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON criptografado com PGP (recomendado)"
+      ],
+      "Phone number": [
+        "Número do telefone"
       ],
       "PIN": [
         "Código PIN"
@@ -2157,6 +2271,9 @@
       ],
       "Recent": [
         "Recente"
+      ],
+      "Reddit handle": [
+        "Nome de usuário no Reddit"
       ],
       "Remove link": [
         "Remover link"
@@ -2206,11 +2323,23 @@
       "Show website favicons": [
         "Mostrar favicons do site"
       ],
+      "Social security number": [
+        "Número do seguro social"
+      ],
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"
       ],
+      "State or province": [
+        "Estado ou província"
+      ],
       "Status": [
         "Status"
+      ],
+      "Street address": [
+        "Endereço"
+      ],
+      "Street address, P.O. box": [
+        "Endereço da rua, Caixa Postal"
       ],
       "Strong": [
         "Forte"
@@ -2294,11 +2423,32 @@
       "Weak": [
         "Fraco"
       ],
+      "Website": [
+        "Site"
+      ],
       "Websites": [
         "Sites"
       ],
+      "Work details": [
+        "Detalhes do trabalho"
+      ],
+      "Work email": [
+        "E-mail corporativo"
+      ],
+      "Work phone number": [
+        "Número de telefone no trabalho"
+      ],
+      "X handle": [
+        "Usuário no X"
+      ],
+      "Yahoo account": [
+        "Conta no Yahoo"
+      ],
       "You are about to create": [
         "Você está prestes a criar"
+      ],
+      "ZIP or Postal code": [
+        "CEP ou código postal"
       ]
     },
     "Link": {
@@ -2792,6 +2942,9 @@
       ],
       "OTP secret or URI required": [
         "É necessário introduzir uma chave secreta OTP ou um URL."
+      ],
+      "Section name cannot be empty": [
+        "Seção de nome não pode ser vazio"
       ],
       "Url already exists": [
         "URL já existe"
