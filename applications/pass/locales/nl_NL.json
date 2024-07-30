@@ -397,6 +397,9 @@
       "Set access level": [
         "Stel toegangsniveau in"
       ],
+      "Setup 2FA": [
+        "2FA Instellen"
+      ],
       "Share": [
         "Delen"
       ],
@@ -751,6 +754,9 @@
       ],
       "Moving item failed": [
         "Item verplaatsen mislukt"
+      ],
+      "Network error": [
+        "Netwerkfout"
       ],
       "Offline mode is currently not available for two password mode.": [
         "Offline-modus is momenteel niet beschikbaar voor twee wachtwoordmodus."
@@ -1334,6 +1340,9 @@
       "Reconnect": [
         "Opnieuw verbinden"
       ],
+      "Reconnecting": [
+        "Opnieuw verbinden"
+      ],
       "Restoring items from trash": [
         "Items herstellen uit prullenbak"
       ],
@@ -1584,14 +1593,23 @@
       "10 minutes": [
         "10 minuten"
       ],
+      "14 days": [
+        "14 dagen"
+      ],
       "15 minutes": [
         "15 minuten"
+      ],
+      "24 hours": [
+        "24 uur"
       ],
       "2FA secret key (TOTP)": [
         "2FA geheime sleutel (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
+      ],
+      "30 days": [
+        "30 dagen"
       ],
       "30 minutes": [
         "30 minuten"
@@ -1602,11 +1620,17 @@
       "5 minutes": [
         "5 minuten"
       ],
+      "7 days": [
+        "7 dagen"
+      ],
       "A-Z": [
         "A-Z"
       ],
       "Account": [
         "Account"
+      ],
+      "Address details": [
+        "Adresgegevens"
       ],
       "Alias": [
         "Alias"
@@ -1650,14 +1674,26 @@
       "Cards": [
         "Kaarten"
       ],
+      "City": [
+        "Stad"
+      ],
       "Code": [
         "Code"
+      ],
+      "Company": [
+        "Bedrijf"
       ],
       "Confirm vault name": [
         "Bevestig naam van kluis"
       ],
+      "Contact details": [
+        "Contactgegevens"
+      ],
       "Copy": [
         "Kopiëren"
+      ],
+      "Country or Region": [
+        "Land of regio"
       ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
@@ -1713,6 +1749,9 @@
       "Expired": [
         "Verlopen"
       ],
+      "Expired link": [
+        "Verlopen link"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -1722,8 +1761,20 @@
       "File format": [
         "Bestandsformaat"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Forwards to": [
         "Stuurt door na"
+      ],
+      "Free forever": [
+        "Voor altijd gratis"
+      ],
+      "Full Name": [
+        "Volledige naam"
+      ],
+      "Gender": [
+        "Geslacht"
       ],
       "General": [
         "Algemeen"
@@ -1739,6 +1790,12 @@
       ],
       "Hide password": [
         "Wachtwoord verbergen"
+      ],
+      "Identities": [
+        "Identiteiten"
+      ],
+      "Identity": [
+        "Identiteit"
       ],
       "Import": [
         "Importeren"
@@ -1764,6 +1821,9 @@
       "Item ID": [
         "Item ID"
       ],
+      "Job title": [
+        "Functie"
+      ],
       "Key": [
         "Sleutel"
       ],
@@ -1779,6 +1839,9 @@
       "Last month": [
         "Afgelopen maand"
       ],
+      "Last name": [
+        "Achternaam"
+      ],
       "Last updated": [
         "Voor het laatst bijgewerkt"
       ],
@@ -1790,6 +1853,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "License number": [
+        "Licentienummer"
       ],
       "Login": [
         "Inloggen"
@@ -1866,16 +1932,28 @@
       "Passphrase": [
         "Wachtzin"
       ],
+      "Passport number": [
+        "Paspoortnummer"
+      ],
       "Password": [
         "Wachtwoord"
       ],
       "Password history": [
         "Wachtwoordgeschiedenis"
       ],
+      "Personal details": [
+        "Persoonlijke gegevens"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON PGP-versleuteld (aanbevolen)"
       ],
+      "Phone number": [
+        "Telefoonnummer"
+      ],
       "PIN": [
+        "Pincode"
+      ],
+      "PIN code": [
         "Pincode"
       ],
       "Prefix": [
@@ -1886,6 +1964,9 @@
       ],
       "Recent": [
         "Recent"
+      ],
+      "Remove link": [
+        "Link verwijderen"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -1917,14 +1998,29 @@
       "Session locking": [
         "Sessievergendeling"
       ],
+      "Share": [
+        "Delen"
+      ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"
+      ],
+      "Social security number": [
+        "Burgerservicenummer (Rijksregisternummer)"
       ],
       "Special characters (!&*)": [
         "Speciale tekens (!&*)"
       ],
+      "State or province": [
+        "Provincie"
+      ],
       "Status": [
         "Status"
+      ],
+      "Street address": [
+        "Adres"
+      ],
+      "Street address, P.O. box": [
+        "Straatadres, postbus"
       ],
       "Strong": [
         "Sterk"
@@ -1998,8 +2094,17 @@
       "Weak": [
         "Zwak"
       ],
+      "Website": [
+        "Website"
+      ],
       "Websites": [
         "Websites"
+      ],
+      "Work details": [
+        "Werk gegevens"
+      ],
+      "Work email": [
+        "Zakelijke e-mail"
       ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"

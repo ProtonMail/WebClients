@@ -37,6 +37,9 @@
       "Add new item": [
         "Дадаць новы элемент"
       ],
+      "Add section": [
+        "Дадаць раздзел"
+      ],
       "Add username field": [
         "Дадаць поле імя карыстальніка"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Стварыць картку"
       ],
+      "Create identity": [
+        "Стварыць ідэнтычнасць"
+      ],
       "Create login": [
         "Стварыць запіс уваходу"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Стварэнне сховішча"
+      ],
+      "Custom section": [
+        "Карыстальніцкі раздзел"
       ],
       "Customize": [
         "Наладзіць"
@@ -423,6 +432,9 @@
       ],
       "Saving": [
         "Захаванне"
+      ],
+      "Section name": [
+        "Назва раздзела"
       ],
       "Secure links": [
         "Бяспечныя спасылкі"
@@ -1593,6 +1605,9 @@
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
       ],
+      "Secure links": [
+        "Бяспечныя спасылкі"
+      ],
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
       ],
@@ -1904,6 +1919,15 @@
       "Account": [
         "Уліковы запіс"
       ],
+      "Add section": [
+        "Дадаць раздзел"
+      ],
+      "Additional details": [
+        "Дадатковыя падрабязнасці"
+      ],
+      "Address details": [
+        "Звесткі аб адрасе"
+      ],
       "Alias": [
         "Псеўданім"
       ],
@@ -1931,6 +1955,9 @@
       "Beta Access": [
         "Бэта-доступ"
       ],
+      "Birthdate": [
+        "Дата нараджэння"
+      ],
       "Capital letters (A-Z)": [
         "Вялікія літары (А-Я)"
       ],
@@ -1946,14 +1973,29 @@
       "Cards": [
         "Карткі"
       ],
+      "City": [
+        "Горад"
+      ],
       "Code": [
         "Код"
+      ],
+      "Company": [
+        "Кампанія"
       ],
       "Confirm vault name": [
         "Пацвярджэнне назвы сховішча"
       ],
+      "Contact details": [
+        "Кантактныя звесткі"
+      ],
       "Copy": [
         "Капіяваць"
+      ],
+      "Country or Region": [
+        "Краіна або рэгіён"
+      ],
+      "County": [
+        "Акруга"
       ],
       "Create a credit card": [
         "Стварыць крэдытную картку"
@@ -1967,6 +2009,9 @@
       "Create an encrypted note": [
         "Стварыць зашыфраваную нататку"
       ],
+      "Create an Identity": [
+        "Стварыць ідэнтычнасць"
+      ],
       "Create lock": [
         "Стварыць блакіроўку"
       ],
@@ -1978,6 +2023,12 @@
       ],
       "Created at": [
         "Створана"
+      ],
+      "Custom hidden field": [
+        "Карыстальніцкія схаваныя палі"
+      ],
+      "Custom text field": [
+        "Карыстальніцкія тэкставыя палі"
       ],
       "Date": [
         "Дата"
@@ -2027,17 +2078,32 @@
       "Extra password": [
         "Дадатковы пароль"
       ],
+      "Facebook account": [
+        "Уліковы запіс Facebook"
+      ],
       "Field name": [
         "Назва поля"
       ],
       "File format": [
         "Фармат файла"
       ],
+      "First name": [
+        "Імя"
+      ],
+      "Floor, apartment, building": [
+        "Паверх, кватэра, будынак"
+      ],
       "Forwards to": [
         "Пераслаць на"
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
+      ],
+      "Full Name": [
+        "Поўнае імя"
+      ],
+      "Gender": [
+        "Пол"
       ],
       "General": [
         "Агульныя"
@@ -2057,6 +2123,15 @@
       "Hide password": [
         "Схаваць пароль"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Ідэнтычнасці"
+      ],
+      "Identity": [
+        "Ідэнтычнасць"
+      ],
       "Import": [
         "Імпартаванне"
       ],
@@ -2075,11 +2150,17 @@
       "Include numbers (0-9)": [
         "Уключаць лічбы (0-9)"
       ],
+      "Instagram handle": [
+        "Профіль Instagram"
+      ],
       "Invitations": [
         "Запрашэнні"
       ],
       "Item ID": [
         "Ідэнтыфікатар элемента"
+      ],
+      "Job title": [
+        "Пасада"
       ],
       "Key": [
         "Ключ"
@@ -2096,6 +2177,9 @@
       "Last month": [
         "Мінулы месяц"
       ],
+      "Last name": [
+        "Прозвішча"
+      ],
       "Last updated": [
         "Апошняе абнаўленне"
       ],
@@ -2107,6 +2191,12 @@
       ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "License number": [
+        "Пасведчанне кіроўцы"
+      ],
+      "LinkedIn account": [
+        "Уліковы запіс LinkedIn"
       ],
       "Login": [
         "Запіс уваходу"
@@ -2128,6 +2218,9 @@
       ],
       "Members": [
         "Удзельнікі"
+      ],
+      "Middle name": [
+        "Імя па бацьку"
       ],
       "Modified": [
         "Зменена"
@@ -2189,14 +2282,26 @@
       "Passphrase": [
         "Парольная фраза"
       ],
+      "Passport number": [
+        "Нумар пашпарта"
+      ],
       "Password": [
         "Пароль"
       ],
       "Password history": [
         "Гісторыя пароляў"
       ],
+      "Personal details": [
+        "Асабістыя даныя"
+      ],
+      "Personal website": [
+        "Асабісты вэб-сайт"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON зашыфраваны PGP (рэкамендавана)"
+      ],
+      "Phone number": [
+        "Нумар тэлефона"
       ],
       "PIN": [
         "PIN"
@@ -2215,6 +2320,9 @@
       ],
       "Recent": [
         "Нядаўнія"
+      ],
+      "Reddit handle": [
+        "Профіль Reddit"
       ],
       "Remove link": [
         "Выдаліць спасылку"
@@ -2264,11 +2372,23 @@
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
       ],
+      "Social security number": [
+        "Нумар сацыяльнага забеспячэння"
+      ],
       "Special characters (!&*)": [
         "Спецыяльныя сімвалы (!&*)"
       ],
+      "State or province": [
+        "Вобласць або раён"
+      ],
       "Status": [
         "Статус"
+      ],
+      "Street address": [
+        "Вуліца"
+      ],
+      "Street address, P.O. box": [
+        "Адрас і паштовая скрыня"
       ],
       "Strong": [
         "Надзейны"
@@ -2354,11 +2474,32 @@
       "Weak": [
         "Ненадзейны"
       ],
+      "Website": [
+        "Вэб-сайт"
+      ],
       "Websites": [
         "Вэб-сайты"
       ],
+      "Work details": [
+        "Падрабязнасці аб працы"
+      ],
+      "Work email": [
+        "Працоўны адрас электроннай пошты"
+      ],
+      "Work phone number": [
+        "Працоўны нумар тэлефона"
+      ],
+      "X handle": [
+        "Профіль X"
+      ],
+      "Yahoo account": [
+        "Уліковы запіс Yahoo"
+      ],
       "You are about to create": [
         "Вы збіраецеся стварыць"
+      ],
+      "ZIP or Postal code": [
+        "Паштовы індэкс"
       ]
     },
     "Link": {
@@ -2858,6 +2999,9 @@
       ],
       "OTP secret or URI required": [
         "Патрабуецца сакрэтны ключ OTP або URL-адрас"
+      ],
+      "Section name cannot be empty": [
+        "Назва раздзела не можа быць пустой"
       ],
       "Url already exists": [
         "URL-адрас ужо існуе"

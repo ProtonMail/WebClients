@@ -37,6 +37,9 @@
       "Add new item": [
         "Legg til nytt element"
       ],
+      "Add section": [
+        "Legg til seksjon"
+      ],
       "Add username field": [
         "Legg til brukernavnfelt"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Opprett kort"
       ],
+      "Create identity": [
+        "Opprett identitet"
+      ],
       "Create login": [
         "Opprett pålogging"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Oppretter hvelv"
+      ],
+      "Custom section": [
+        "Tilpasset seksjon"
       ],
       "Customize": [
         "Tilpass"
@@ -423,6 +432,9 @@
       ],
       "Saving": [
         "Lagrer"
+      ],
+      "Section name": [
+        "Seksjonsnavn"
       ],
       "Secure links": [
         "Sikre koblinger"
@@ -1557,6 +1569,9 @@
       "Restoring trashed items...": [
         "Gjenoppretter elementer fra papirkurven..."
       ],
+      "Secure links": [
+        "Sikre koblinger"
+      ],
       "Select destination vault": [
         "Velg destinasjonshvelv"
       ],
@@ -1852,6 +1867,15 @@
       "Account": [
         "Konto"
       ],
+      "Add section": [
+        "Legg til seksjon"
+      ],
+      "Additional details": [
+        "Ytterligere detaljer"
+      ],
+      "Address details": [
+        "Adressedetaljer"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1879,6 +1903,9 @@
       "Beta Access": [
         "Testversjon-tilgang"
       ],
+      "Birthdate": [
+        "Fødselsdato"
+      ],
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
       ],
@@ -1894,14 +1921,29 @@
       "Cards": [
         "Kort"
       ],
+      "City": [
+        "Poststed"
+      ],
       "Code": [
         "Kode"
+      ],
+      "Company": [
+        "Firma"
       ],
       "Confirm vault name": [
         "Bekreft hvelvnavn"
       ],
+      "Contact details": [
+        "Kontaktdetaljer"
+      ],
       "Copy": [
         "Kopier"
+      ],
+      "Country or Region": [
+        "Land eller region"
+      ],
+      "County": [
+        "Fylke"
       ],
       "Create a credit card": [
         "Opprett et kredittkort"
@@ -1915,6 +1957,9 @@
       "Create an encrypted note": [
         "Opprett et kryptert notat"
       ],
+      "Create an Identity": [
+        "Opprett en identitet"
+      ],
       "Create lock": [
         "Opprett lås"
       ],
@@ -1926,6 +1971,12 @@
       ],
       "Created at": [
         "Opprettet den"
+      ],
+      "Custom hidden field": [
+        "Tilpasset skjult felt"
+      ],
+      "Custom text field": [
+        "Tilpasset tekstfelt"
       ],
       "Date": [
         "Dato"
@@ -1975,17 +2026,32 @@
       "Extra password": [
         "Ekstra passord"
       ],
+      "Facebook account": [
+        "Facebook-konto"
+      ],
       "Field name": [
         "Feltnavn"
       ],
       "File format": [
         "Filformat"
       ],
+      "First name": [
+        "Fornavn"
+      ],
+      "Floor, apartment, building": [
+        "Etasje, leilighet, bygning"
+      ],
       "Forwards to": [
         "Videresendes til"
       ],
       "Free forever": [
         "Gratis for alltid"
+      ],
+      "Full Name": [
+        "Fullt navn"
+      ],
+      "Gender": [
+        "Kjønn"
       ],
       "General": [
         "Generelt"
@@ -2005,6 +2071,15 @@
       "Hide password": [
         "Skjul passord"
       ],
+      "https://example.com": [
+        "https://eksempel.com"
+      ],
+      "Identities": [
+        "Identiteter"
+      ],
+      "Identity": [
+        "Identitet"
+      ],
       "Import": [
         "Importer"
       ],
@@ -2023,11 +2098,17 @@
       "Include numbers (0-9)": [
         "Inkluder tall (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram-brukernavn"
+      ],
       "Invitations": [
         "Invitasjoner"
       ],
       "Item ID": [
         "Element ID"
+      ],
+      "Job title": [
+        "Jobbtittel"
       ],
       "Key": [
         "Nøkkel"
@@ -2044,6 +2125,9 @@
       "Last month": [
         "Siste måned"
       ],
+      "Last name": [
+        "Etternavn"
+      ],
       "Last updated": [
         "Sist oppdatert"
       ],
@@ -2055,6 +2139,12 @@
       ],
       "Learn more": [
         "Lær mer"
+      ],
+      "License number": [
+        "Førerkortnummer"
+      ],
+      "LinkedIn account": [
+        "LinkedIn-konto"
       ],
       "Login": [
         "Pålogging"
@@ -2076,6 +2166,9 @@
       ],
       "Members": [
         "Medlemmer"
+      ],
+      "Middle name": [
+        "Mellomnavn"
       ],
       "Modified": [
         "Endret"
@@ -2137,14 +2230,26 @@
       "Passphrase": [
         "Passfrase"
       ],
+      "Passport number": [
+        "Passnummer"
+      ],
       "Password": [
         "Passord"
       ],
       "Password history": [
         "Passordhistorikk"
       ],
+      "Personal details": [
+        "Personopplysninger"
+      ],
+      "Personal website": [
+        "Personlig nettside"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-kryptert JSON (anbefalt)"
+      ],
+      "Phone number": [
+        "Telefonnummer"
       ],
       "PIN": [
         "PIN"
@@ -2163,6 +2268,9 @@
       ],
       "Recent": [
         "Nylig"
+      ],
+      "Reddit handle": [
+        "Reddit-brukernavn"
       ],
       "Remove link": [
         "Fjern kobling"
@@ -2212,11 +2320,23 @@
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
       ],
+      "Social security number": [
+        "Personnummer"
+      ],
       "Special characters (!&*)": [
         "Spesialtegn (!&*)"
       ],
+      "State or province": [
+        "Delstat eller provins"
+      ],
       "Status": [
         "Status"
+      ],
+      "Street address": [
+        "Gateadresse"
+      ],
+      "Street address, P.O. box": [
+        "Gateadresse, postboksadresse"
       ],
       "Strong": [
         "Sterk"
@@ -2300,11 +2420,32 @@
       "Weak": [
         "Svak"
       ],
+      "Website": [
+        "Nettsted"
+      ],
       "Websites": [
         "Nettsteder"
       ],
+      "Work details": [
+        "Arbeidsdetaljer"
+      ],
+      "Work email": [
+        "E-postadresse for arbeid"
+      ],
+      "Work phone number": [
+        "Telefonnummer for arbeid"
+      ],
+      "X handle": [
+        "X-brukernavn"
+      ],
+      "Yahoo account": [
+        "Yahoo-konto"
+      ],
       "You are about to create": [
         "Du er i ferd med å opprette"
+      ],
+      "ZIP or Postal code": [
+        "Postnummer"
       ]
     },
     "Link": {
@@ -2798,6 +2939,9 @@
       ],
       "OTP secret or URI required": [
         "OTP-hemmelighet eller URI kreves"
+      ],
+      "Section name cannot be empty": [
+        "Seksjonsnavn kan ikke være tomt"
       ],
       "Url already exists": [
         "Nettadresse finnes allerede"
