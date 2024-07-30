@@ -20,6 +20,7 @@ export { default as TwoFactorSection } from './TwoFactorSection';
 export { default as UpgradeBanner } from './UpgradeBanner';
 export { default as FamilyPlanSection } from './FamilyPlanSection';
 export { default as AccessibilitySection } from './AccessibilitySection';
+export { default as GroupMembershipSection } from './groups/GroupMembershipSection';
 
 export { default as AuthSecurityKeyContent } from './fido/AuthSecurityKeyContent';
 export { default as TotpInputs } from './totp/TotpInputs';

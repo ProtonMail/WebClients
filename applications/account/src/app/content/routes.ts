@@ -64,6 +64,7 @@ export const getRoutes = ({
             showThemeSelection,
             isNewCancellationFlowExtended,
             assistantKillSwitch,
+            isUserGroupsFeatureEnabled,
         }),
         mail: getMailAppRoutes({
             app,

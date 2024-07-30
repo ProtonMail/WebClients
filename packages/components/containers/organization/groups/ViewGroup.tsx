@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Panel, PanelHeader } from '@proton/atoms/Panel';
@@ -14,14 +14,21 @@ interface Props {
     groupData: Group;
 }
 
-const ViewGroup = ({ groupsManagement: { setUiState, selectedGroup, groupMembers }, groupData }: Props) => {
+const ViewGroup = ({
+    groupsManagement: {
+        setUiState,
+        selectedGroup,
+        groupMembers,
+        loadingGroupMembers,
+        form: { resetForm },
+    },
+    groupData,
+}: Props) => {
     const { createNotification } = useNotifications();
 
     const handleCopy = () => {
         createNotification({ text: c('Info').t`Copied to clipboard` });
     };
-
-    const memberCount = groupData.MemberCount ?? 0;
 
     if (!selectedGroup) {
         return null;
@@ -35,7 +42,22 @@ const ViewGroup = ({ groupsManagement: { setUiState, selectedGroup, groupMembers
                     subtitle=""
                     actions={(() => {
                         return [
-                            <Button className="flex items-center" key="button-edit" onClick={() => setUiState('edit')}>
+                            <Button
+                                className="flex items-center"
+                                key="button-edit"
+                                onClick={() => {
+                                    setUiState('edit');
+                                    resetForm({
+                                        values: {
+                                            name: groupData.Name,
+                                            description: groupData.Description,
+                                            address: groupData.Address.Email,
+                                            permissions: groupData.Permissions,
+                                            members: '',
+                                        },
+                                    });
+                                }}
+                            >
                                 <Icon className="shrink-0 mr-2" name="pencil" />
                                 <span>{c('Action').t`Edit group`}</span>
                             </Button>,
@@ -67,14 +89,7 @@ const ViewGroup = ({ groupsManagement: { setUiState, selectedGroup, groupMembers
                     </div>
                 )}
                 <div className="gap-2">
-                    <p className="color-weak text-sm p-0">
-                        {c('Group member count').ngettext(
-                            msgid`${memberCount} member`,
-                            `${memberCount} members`,
-                            memberCount
-                        )}
-                    </p>
-                    <GroupMemberList groupMembers={groupMembers}></GroupMemberList>
+                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} />
                 </div>
             </div>
         </Panel>

@@ -65,11 +65,11 @@ const GroupList = ({
                 {uiState === 'new' && <GroupItem key="new" active groupData={newGroupData} isNew={true} />}
                 {groups.map((groupData) => (
                     <GroupItem
-                        key={groupData.Address.ID}
+                        key={groupData.ID}
                         groupData={groupData}
-                        active={groupData.Address.ID === selectedGroup?.ID}
+                        active={groupData.ID === selectedGroup?.ID}
                         onClick={() => {
-                            if (groupData.Address.ID) {
+                            if (groupData) {
                                 setSelectedGroup(groupData);
                             }
                             setUiState('view');
