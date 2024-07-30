@@ -37,6 +37,9 @@
       "Add new item": [
         "Adăugare articol"
       ],
+      "Add section": [
+        "Adăugare secțiune"
+      ],
       "Add username field": [
         "Câmp adăugare e-mail"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Creare card"
       ],
+      "Create identity": [
+        "Creare identitate"
+      ],
       "Create login": [
         "Creare autentificare"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Se creează seiful"
+      ],
+      "Custom section": [
+        "Secțiune personală"
       ],
       "Customize": [
         "Personalizare"
@@ -423,6 +432,9 @@
       ],
       "Saving": [
         "Se salvează"
+      ],
+      "Section name": [
+        "Nume secțiune"
       ],
       "Secure links": [
         "Legături web securizate"
@@ -1575,6 +1587,9 @@
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
       ],
+      "Secure links": [
+        "Legături web securizate"
+      ],
       "Select destination vault": [
         "Selectare seif destinație"
       ],
@@ -1878,6 +1893,15 @@
       "Account": [
         "Cont"
       ],
+      "Add section": [
+        "Adăugare secțiune"
+      ],
+      "Additional details": [
+        "Detalii suplimentare"
+      ],
+      "Address details": [
+        "Detalii adresă"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1905,6 +1929,9 @@
       "Beta Access": [
         "Acces la Beta"
       ],
+      "Birthdate": [
+        "Data nașterii"
+      ],
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
       ],
@@ -1920,14 +1947,29 @@
       "Cards": [
         "Carduri"
       ],
+      "City": [
+        "Oraş"
+      ],
       "Code": [
         "Cod"
+      ],
+      "Company": [
+        "Compania"
       ],
       "Confirm vault name": [
         "Confirmare nume seif"
       ],
+      "Contact details": [
+        "Detalii contact"
+      ],
       "Copy": [
         "Copiere"
+      ],
+      "Country or Region": [
+        "Țara"
+      ],
+      "County": [
+        "Județ"
       ],
       "Create a credit card": [
         "Creare card de credit"
@@ -1941,6 +1983,9 @@
       "Create an encrypted note": [
         "Creare notă criptată"
       ],
+      "Create an Identity": [
+        "Creare identitate"
+      ],
       "Create lock": [
         "Creare blocare"
       ],
@@ -1952,6 +1997,12 @@
       ],
       "Created at": [
         "Creat la"
+      ],
+      "Custom hidden field": [
+        "Câmp ascuns personal"
+      ],
+      "Custom text field": [
+        "Câmp text personal"
       ],
       "Date": [
         "Data"
@@ -2001,17 +2052,32 @@
       "Extra password": [
         "Parola suplimentară"
       ],
+      "Facebook account": [
+        "Cont Facebook"
+      ],
       "Field name": [
         "Nume câmp"
       ],
       "File format": [
         "Format fișier"
       ],
+      "First name": [
+        "Prenume"
+      ],
+      "Floor, apartment, building": [
+        "Etaj, apartament, clădire"
+      ],
       "Forwards to": [
         "Redirecționare către"
       ],
       "Free forever": [
         "Gratuit întotdeauna"
+      ],
+      "Full Name": [
+        "Nume complet"
+      ],
+      "Gender": [
+        "Gen"
       ],
       "General": [
         "Generale"
@@ -2031,6 +2097,15 @@
       "Hide password": [
         "Ascundere parolă"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Identități"
+      ],
+      "Identity": [
+        "Identitate"
+      ],
       "Import": [
         "Importare"
       ],
@@ -2049,11 +2124,17 @@
       "Include numbers (0-9)": [
         "Includere cifre (0-9)"
       ],
+      "Instagram handle": [
+        "Nume utilizator Instagram"
+      ],
       "Invitations": [
         "Invitații"
       ],
       "Item ID": [
         "ID articol"
+      ],
+      "Job title": [
+        "Funcția"
       ],
       "Key": [
         "Cheia"
@@ -2070,6 +2151,9 @@
       "Last month": [
         "Luna trecută"
       ],
+      "Last name": [
+        "Nume de familie"
+      ],
       "Last updated": [
         "Ultima actualizare"
       ],
@@ -2081,6 +2165,12 @@
       ],
       "Learn more": [
         "Detalii"
+      ],
+      "License number": [
+        "Permis de conducere"
+      ],
+      "LinkedIn account": [
+        "Cont LinkdIn"
       ],
       "Login": [
         "Conectare"
@@ -2102,6 +2192,9 @@
       ],
       "Members": [
         "Membri"
+      ],
+      "Middle name": [
+        "Nume mijlociu"
       ],
       "Modified": [
         "Modificat"
@@ -2163,14 +2256,26 @@
       "Passphrase": [
         "Frază de acces"
       ],
+      "Passport number": [
+        "Număr pașaport"
+      ],
       "Password": [
         "Parola"
       ],
       "Password history": [
         "Istoric parole"
       ],
+      "Personal details": [
+        "Detalii personale"
+      ],
+      "Personal website": [
+        "Site web personal"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON cu criptare PGP (recomandat)"
+      ],
+      "Phone number": [
+        "Număr de telefon"
       ],
       "PIN": [
         "PIN"
@@ -2189,6 +2294,9 @@
       ],
       "Recent": [
         "Recente"
+      ],
+      "Reddit handle": [
+        "Cont Reddit"
       ],
       "Remove link": [
         "Eliminare legătură web"
@@ -2238,11 +2346,23 @@
       "Show website favicons": [
         "Afișare pictogramă site web"
       ],
+      "Social security number": [
+        "Cod numeric personal"
+      ],
       "Special characters (!&*)": [
         "Caractere speciale (!&*)"
       ],
+      "State or province": [
+        "Județul"
+      ],
       "Status": [
         "Stare"
+      ],
+      "Street address": [
+        "Strada"
+      ],
+      "Street address, P.O. box": [
+        "Strada sau căsuța poștală"
       ],
       "Strong": [
         "Puternică"
@@ -2327,11 +2447,32 @@
       "Weak": [
         "Slabă"
       ],
+      "Website": [
+        "Site web"
+      ],
       "Websites": [
         "Pagini web"
       ],
+      "Work details": [
+        "Detalii loc de muncă"
+      ],
+      "Work email": [
+        "E-mail serviciu"
+      ],
+      "Work phone number": [
+        "Telefon serviciu"
+      ],
+      "X handle": [
+        "Cont X"
+      ],
+      "Yahoo account": [
+        "Cont Yahoo"
+      ],
       "You are about to create": [
         "Sunteți pe cale să creați"
+      ],
+      "ZIP or Postal code": [
+        "Cod poștal"
       ]
     },
     "Link": {
@@ -2828,6 +2969,9 @@
       ],
       "OTP secret or URI required": [
         "Este necesar secretul OTP sau URI."
+      ],
+      "Section name cannot be empty": [
+        "Numele secțiunii nu poate fi gol"
       ],
       "Url already exists": [
         "Acest URL există deja."

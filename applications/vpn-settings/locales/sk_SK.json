@@ -2161,6 +2161,14 @@
         "Pomôžte nám zlepšiť sa"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Overovací email bol odoslaný na ${ address }"
@@ -3451,17 +3459,8 @@
       "Custom branding": [
         "Vlastná značka"
       ],
-      "Custom email added": [
-        "Vlastný email pridaný"
-      ],
-      "Custom email deleted": [
-        "Vlastný email vymazaný"
-      ],
       "Custom email domains": [
         "Vlastné emailové domény"
-      ],
-      "Custom email validated": [
-        "Vlastný email overený"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
@@ -5471,9 +5470,6 @@
       "Learn more": [
         "Zistiť viac"
       ],
-      "Need help?": [
-        "Potrebujete pomoc?"
-      ],
       "Not activated": [
         "Neaktivované"
       ],
@@ -6264,9 +6260,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všetky firemné aplikácie a prémiové funkcie ${ BRAND_NAME } na ochranu vašej firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Použiteľné kredity, pomerná časť a kupóny sa použijú v ďalšom kroku"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexné súkromie a bezpečnosť so všetkými službami ${ BRAND_NAME } dohromady."
@@ -9807,6 +9800,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
       ],
@@ -9979,6 +9975,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } emailových adries",
+        "${ n } emailových adries",
+        "${ n } emailové adresy"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin cez email"
       ]
     },
     "Warning": {

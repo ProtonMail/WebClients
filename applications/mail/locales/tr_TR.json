@@ -1219,10 +1219,6 @@
       "Trust": [
         "Güven"
       ],
-      "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
-      ],
       "Trust public key": [
         "Herkese açık anahtara güven"
       ],
@@ -3564,6 +3560,14 @@
         "Tümünü indir"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "AÇIKLAMA:\n${ eventDescription }"
@@ -5761,6 +5765,9 @@
       "and": [
         "ve"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Mail uygulamasını bir sonraki açışınızda başka bir ipucu görüntülenecektir"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Zamanlanmış veya ertelenmiş tüm iletiler iptal edilecek."
       ],
@@ -5926,6 +5933,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim ekle",
         "${ calendarsToBeCreatedCount } yeni takvim ekle"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "“${ suggestedFolderName }” gibi bir klasör oluşturarak tüm çevrim içi alındılarınızı tek bir yerde tutabilirsiniz."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
@@ -9312,9 +9322,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Kredi, hesap bakiyesi ve kuponlar sonraki adımda düşülecek"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
@@ -11954,6 +11961,29 @@
       "${ minutes } minute": [
         "${ minutes } dakika",
         "${ minutes } dakika"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Kullanıma al"
+      ],
+      "Create an alias": [
+        "Takma ad oluştur"
+      ],
+      "Create new email address": [
+        "Yeni bir e-posta adresi oluştur"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } indir"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Karanlık ağ izlemeyi aç"
+      ],
+      "Open ": [
+        "Açık "
+      ],
+      "Show me how": [
+        "Nasıl yapılacağını göster"
       ]
     },
     "Title": {

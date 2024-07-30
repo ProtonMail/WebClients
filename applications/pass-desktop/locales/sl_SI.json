@@ -145,6 +145,9 @@
       "Creating vault": [
         "Ustvari trezor"
       ],
+      "Custom section": [
+        "Odsek po meri"
+      ],
       "Customize": [
         "Prilagodi"
       ],
@@ -207,6 +210,9 @@
       ],
       "Generate password": [
         "Ustvari geslo"
+      ],
+      "Generate secure link": [
+        "Ustvari varno povezavo"
       ],
       "Generated passwords": [
         "Ustvarjena gesla"
@@ -285,6 +291,9 @@
       ],
       "Manage access": [
         "Upravljanje dostopa"
+      ],
+      "Manage vault access": [
+        "Upravljajte dostop do trezorja"
       ],
       "Manually sync your data": [
         "Ročno sinhroniziraj vaše podatke"
@@ -1099,6 +1108,9 @@
       "Built in 2FA authenticator": [
         "Vgrajen overitelj 2FA"
       ],
+      "Can be viewed": [
+        "Lahko se ogleda"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Lahko ustvarja, ureja, briše in izvaža predmete v tem trezorju."
       ],
@@ -1179,6 +1191,9 @@
       ],
       "Enter your PIN code": [
         "Vnesi svojo PIN kodo."
+      ],
+      "Expires in": [
+        "Poteče v"
       ],
       "Expires in ${ remainingTime }": [
         "Poteče ${ remainingTime }"
@@ -1749,6 +1764,9 @@
       "15 minutes": [
         "15 minut"
       ],
+      "24 hours": [
+        "24 ur"
+      ],
       "2FA secret key (TOTP)": [
         "Skrivni ključ 2FA (TOTP)"
       ],
@@ -1767,11 +1785,17 @@
       "5 minutes": [
         "5 minut"
       ],
+      "7 days": [
+        "7 dni"
+      ],
       "A-Z": [
         "A-Z"
       ],
       "Account": [
         "Račun"
+      ],
+      "Address details": [
+        "Podrobnosti naslova"
       ],
       "Alias": [
         "Vzdevek"
@@ -1800,6 +1824,9 @@
       "Beta Access": [
         "Dostop beta"
       ],
+      "Birthdate": [
+        "Rojstni datum"
+      ],
       "Capital letters (A-Z)": [
         "Velike črke (A-Z)"
       ],
@@ -1815,14 +1842,29 @@
       "Cards": [
         "Kartice"
       ],
+      "City": [
+        "Mesto"
+      ],
       "Code": [
         "Koda"
+      ],
+      "Company": [
+        "Podjetje"
       ],
       "Confirm vault name": [
         "Potrdite ime trezorja"
       ],
+      "Contact details": [
+        "Podrobnosti stika"
+      ],
       "Copy": [
         "Kopiraj"
+      ],
+      "Country or Region": [
+        "Dežela ali regija"
+      ],
+      "County": [
+        "Okrožje"
       ],
       "Create a credit card": [
         "Ustvarite plačilno kartico"
@@ -1893,11 +1935,20 @@
       "File format": [
         "Format datoteke"
       ],
+      "First name": [
+        "Ime"
+      ],
       "Forwards to": [
         "Posreduje na"
       ],
       "Free forever": [
         "Brezplačno za vedno."
+      ],
+      "Full Name": [
+        "Polno ime"
+      ],
+      "Gender": [
+        "Spol"
       ],
       "General": [
         "Splošno"
@@ -1913,6 +1964,12 @@
       ],
       "Hide password": [
         "Skrij geslo"
+      ],
+      "Identities": [
+        "Identitete"
+      ],
+      "Identity": [
+        "Identiteta"
       ],
       "Import": [
         "Uvoz"
@@ -1932,11 +1989,17 @@
       "Include numbers (0-9)": [
         "Vključi številke (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram vzdevek"
+      ],
       "Invitations": [
         "Vabila"
       ],
       "Item ID": [
         "ID predmeta"
+      ],
+      "Job title": [
+        "Naziv delovnega mesta"
       ],
       "Key": [
         "Ključ"
@@ -1953,6 +2016,9 @@
       "Last month": [
         "Prejšnji mesec"
       ],
+      "Last name": [
+        "Priimek"
+      ],
       "Last updated": [
         "Nazadnje posodobljeno"
       ],
@@ -1964,6 +2030,9 @@
       ],
       "Learn more": [
         "Več informacij"
+      ],
+      "License number": [
+        "Registrska številka"
       ],
       "Login": [
         "Prijava"
@@ -1982,6 +2051,9 @@
       ],
       "Members": [
         "Člani"
+      ],
+      "Middle name": [
+        "Srednje ime"
       ],
       "Modified": [
         "Spremenjeno"
@@ -2040,16 +2112,31 @@
       "Passphrase": [
         "Geslo"
       ],
+      "Passport number": [
+        "Številka potnega lista"
+      ],
       "Password": [
         "Geslo"
       ],
       "Password history": [
         "Zgodovina gesel"
       ],
+      "Personal details": [
+        "Osebni podatki"
+      ],
+      "Personal website": [
+        "Osebno spletno mesto"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP šifriran JSON (priporočeno)"
       ],
+      "Phone number": [
+        "Telefonska številka"
+      ],
       "PIN": [
+        "PIN koda"
+      ],
+      "PIN code": [
         "PIN koda"
       ],
       "Prefix": [
@@ -2063,6 +2150,9 @@
       ],
       "Recent": [
         "Nedavno"
+      ],
+      "Remove link": [
+        "Odstrani povezavo"
       ],
       "Report a problem": [
         "Prijavite težavo"
@@ -2100,11 +2190,23 @@
       "Show website favicons": [
         "Pokaži ikone spletnega mesta"
       ],
+      "Social security number": [
+        "Številka socialnega zavarovanja"
+      ],
       "Special characters (!&*)": [
         "Posebni znaki (!&*)"
       ],
+      "State or province": [
+        "Država ali pokrajina"
+      ],
       "Status": [
         "Stanje"
+      ],
+      "Street address": [
+        "Ulica"
+      ],
+      "Street address, P.O. box": [
+        "Naslov, poštni predal"
       ],
       "Strong": [
         "Močno"
@@ -2178,11 +2280,29 @@
       "Weak": [
         "Šibko"
       ],
+      "Website": [
+        "Spletna stran"
+      ],
       "Websites": [
         "Spletne strani"
       ],
+      "Work details": [
+        "Podatki o delovnem mestu"
+      ],
+      "Work email": [
+        "Službeni e-poštni naslov"
+      ],
+      "Work phone number": [
+        "Službena telefonska številka"
+      ],
+      "X handle": [
+        "X vzdevek"
+      ],
       "You are about to create": [
         "Ustvarili boste"
+      ],
+      "ZIP or Postal code": [
+        "Poštna številka"
       ]
     },
     "Link": {

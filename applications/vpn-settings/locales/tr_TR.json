@@ -2143,6 +2143,14 @@
         "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Doğrulama e-postası ${ address } alıcısına gönderildi"
@@ -3328,9 +3336,6 @@
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Verilerin ele geçirilmesi özel e-posta adresi eklendi"
-      ],
       "Breach Custom Email Deleted": [
         "Verilerin ele geçirilmesi özel e-posta adresi silindi"
       ],
@@ -3404,17 +3409,8 @@
       "Custom branding": [
         "Özel marka"
       ],
-      "Custom email added": [
-        "Özel e-posta adresi eklendi"
-      ],
-      "Custom email deleted": [
-        "Özel e-posta adresi silindi"
-      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
-      ],
-      "Custom email validated": [
-        "Özel e-posta adresi doğrulandı"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
@@ -5415,9 +5411,6 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Need help?": [
-        "Yardım gerekiyor mu?"
-      ],
       "Not activated": [
         "Kullanıma alınmamış"
       ],
@@ -6168,9 +6161,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Kredi, hesap bakiyesi ve kuponlar sonraki adımda düşülecek"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
@@ -9610,6 +9600,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "İki adımlı doğrulama"
+      ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
       ],

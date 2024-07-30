@@ -383,6 +383,9 @@
       "Set access level": [
         "設定存取層級"
       ],
+      "Setup 2FA": [
+        "設定兩步驟驗證"
+      ],
       "Share": [
         "分享"
       ],
@@ -1317,14 +1320,23 @@
       "10 minutes": [
         "10 分鐘"
       ],
+      "14 days": [
+        "14 天"
+      ],
       "15 minutes": [
         "15 分鐘"
+      ],
+      "24 hours": [
+        "24 小時"
       ],
       "2FA secret key (TOTP)": [
         "雙重驗證一次性驗證碼金鑰(TOTP)"
       ],
       "2FA token (TOTP)": [
         "雙重驗證憑證  (TOTP)"
+      ],
+      "30 days": [
+        "30 天"
       ],
       "30 minutes": [
         "30 分鐘"
@@ -1334,6 +1346,9 @@
       ],
       "5 minutes": [
         "5 分鐘"
+      ],
+      "7 days": [
+        "7 天"
       ],
       "A-Z": [
         "A-Z"
@@ -1386,6 +1401,9 @@
       "Autosuggest": [
         "自動建議"
       ],
+      "Birthdate": [
+        "日期"
+      ],
       "Capital letters (A-Z)": [
         "大寫字母(A~Z)"
       ],
@@ -1401,11 +1419,29 @@
       "Cards": [
         "卡片"
       ],
+      "City": [
+        "縣市"
+      ],
+      "Company": [
+        "公司"
+      ],
       "Confirm vault name": [
         "確認保管庫名稱"
       ],
+      "Contact details": [
+        "聯絡人詳細資料"
+      ],
       "Copy": [
         "複製"
+      ],
+      "Copy password": [
+        "複製密碼"
+      ],
+      "Country or Region": [
+        "國家或地區"
+      ],
+      "County": [
+        "縣/市"
       ],
       "Create a credit card": [
         "創建一張信用卡"
@@ -1470,8 +1506,17 @@
       "File format": [
         "檔案格式"
       ],
+      "First name": [
+        "名"
+      ],
       "Forwards to": [
         "轉寄至"
+      ],
+      "Full Name": [
+        "全名"
+      ],
+      "Gender": [
+        "性別"
       ],
       "General": [
         "一般"
@@ -1487,6 +1532,12 @@
       ],
       "Hide password": [
         "隱藏密碼"
+      ],
+      "Identities": [
+        "身分"
+      ],
+      "Identity": [
+        "身分"
       ],
       "Import": [
         "匯入"
@@ -1512,6 +1563,9 @@
       "Item ID": [
         "項目 ID"
       ],
+      "Job title": [
+        "職稱"
+      ],
       "Key": [
         "金鑰"
       ],
@@ -1527,6 +1581,9 @@
       "Last month": [
         "上個月"
       ],
+      "Last name": [
+        "姓"
+      ],
       "Last week": [
         "上週"
       ],
@@ -1536,6 +1593,9 @@
       "Learn more": [
         "取得更多資訊"
       ],
+      "License number": [
+        "許可證號碼"
+      ],
       "Login": [
         "登入"
       ],
@@ -1544,6 +1604,9 @@
       ],
       "Members": [
         "成員"
+      ],
+      "Middle name": [
+        "中間名"
       ],
       "Modified": [
         "已修改"
@@ -1602,6 +1665,9 @@
       "Passphrase": [
         "驗證驗密語"
       ],
+      "Passport number": [
+        "護照號碼"
+      ],
       "Password": [
         "密碼"
       ],
@@ -1614,8 +1680,17 @@
       "Pause list": [
         "暫停清單"
       ],
+      "Personal details": [
+        "個人資訊"
+      ],
+      "Phone number": [
+        "手機號碼"
+      ],
       "PIN": [
         "PIN碼"
+      ],
+      "PIN code": [
+        "PIN 碼"
       ],
       "Prefix": [
         "前綴"
@@ -1665,11 +1740,23 @@
       "Settings": [
         "設定"
       ],
+      "Share": [
+        "共享"
+      ],
       "Show website favicons": [
         "顯示網站圖示"
       ],
+      "Social security number": [
+        "社會安全碼（SSN）"
+      ],
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
+      ],
+      "State or province": [
+        "州或省"
+      ],
+      "Street address": [
+        "街道位址"
       ],
       "Strong": [
         "強"
@@ -1745,6 +1832,9 @@
       ],
       "Websites": [
         "網頁"
+      ],
+      "Work phone number": [
+        "工作電話號碼"
       ],
       "You are about to create": [
         "您將要創建"
@@ -1922,6 +2012,9 @@
       ],
       "Fill & copy password": [
         "填寫並複製密碼"
+      ],
+      "Fill password": [
+        "填寫密碼"
       ],
       "Get Started": [
         "入門指南"

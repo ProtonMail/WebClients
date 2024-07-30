@@ -178,6 +178,9 @@
       "Create and copy alias": [
         "Crear y copiar alias"
       ],
+      "Create new document": [
+        "Crear un documento"
+      ],
       "Current plan": [
         "Plan actual"
       ],
@@ -2031,6 +2034,14 @@
         "Ayúdanos a mejorar"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓN:\n${ eventDescription }"
@@ -2186,6 +2197,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Cantidad inferior al mínimo (${ minimumAmount })."
+      ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Se ha producido un error al intentar convertir el documento. Inténtalo de nuevo."
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Se ha producido un error al intentar duplicar el documento. Inténtalo de nuevo."
@@ -2458,6 +2472,9 @@
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
       ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "El documento que intentas convertir es demasiado grande. Esto puede ocurrir si el documento tiene muchas imágenes u otra multimedia. Intenta de nuevo con un documento más pequeño."
+      ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
       ],
@@ -2556,6 +2573,9 @@
       ],
       "Validation error": [
         "Error de validación"
+      ],
+      "We are having trouble saving recent edits. Please refresh the page.": [
+        "Estamos teniendo problemas para guardar las ediciones recientes. Actualiza la página."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
@@ -2740,6 +2760,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -4099,6 +4122,9 @@
       "Some edits are taking longer to sync than expected.": [
         "Algunas ediciones están tardando en sincronizarse más de lo esperado."
       ],
+      "Something went wrong": [
+        "Ha ocurrido un error."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
@@ -4146,6 +4172,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tiene mucha actividad. Algunas funciones pueden no estar disponibles temporalmente."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Este documento no existe o no tienes los permisos para verlo. Intenta recargar la página para ver si persiste el problema."
       ],
       "This item already exists in your library": [
         "Este elemento ya existe en tu librería."
@@ -5837,9 +5866,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo tu negocio."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
       ],
@@ -6279,7 +6305,7 @@
         "Acceso para el miembro borrado"
       ],
       "Access updated": [
-        "El acceso ha sido actualizado."
+        "Se ha actualizado el acceso."
       ],
       "Access updated and shared": [
         "El acceso ha sido actualizado y compartido."
@@ -6482,6 +6508,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
+      ],
+      "Please select your billing state first.": [
+        "Selecciona primero tu estado de facturación"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -7258,7 +7287,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturado cada año"
+        "Facturación anual"
       ]
     },
     "Subscription attribute": {
@@ -7601,9 +7630,6 @@
       "Amount due": [
         "Importe a pagar"
       ],
-      "An error occurred": [
-        "Se ha producido un error."
-      ],
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
@@ -7651,6 +7677,9 @@
       ],
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
+      ],
+      "Coupon": [
+        "Cupón"
       ],
       "Create contact": [
         "Crear contacto"

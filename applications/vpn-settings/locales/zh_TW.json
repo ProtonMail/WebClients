@@ -68,11 +68,20 @@
       "Change password": [
         "變更密碼"
       ],
+      "Change second password": [
+        "變更第二密碼"
+      ],
       "Chat with us": [
         "與我們往來對話"
       ],
       "Choose my own password": [
         "選擇我自己的密碼"
+      ],
+      "Clear filter": [
+        "清除篩選器"
+      ],
+      "Clear filters": [
+        "清除篩選條件"
       ],
       "Close": [
         "關閉"
@@ -463,6 +472,9 @@
       ],
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "選取繳款週期${ billingText }"
       ],
       "Select country": [
         "選擇國家"
@@ -1518,6 +1530,9 @@
       "Macao": [
         "澳門"
       ],
+      "Macedonia": [
+        "馬其頓"
+      ],
       "Madagascar": [
         "馬達加斯加"
       ],
@@ -2041,6 +2056,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "幫助我們改善"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
       ]
     },
     "Email verification": {
@@ -2976,6 +2999,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
@@ -3023,6 +3049,9 @@
       ],
       "${ vaultLink } created": [
         "${ vaultLink } 已創建"
+      ],
+      "${ vaultLink } shared with email": [
+        "用電子郵件分享${ vaultLink }"
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } 已更新"
@@ -3528,6 +3557,15 @@
       "Invite Deleted": [
         "邀請已刪除"
       ],
+      "Invite for new user deleted": [
+        "新使用者的邀請已刪除"
+      ],
+      "Invite for organization accepted": [
+        "組織邀請已同意"
+      ],
+      "Invite for organization created": [
+        "組織邀請已創建"
+      ],
       "Invite rejected": [
         "邀請已婉拒"
       ],
@@ -3536,6 +3574,9 @@
       ],
       "Item Autofilled": [
         "項目自動填滿"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "項目已於${ vaultLink }自動填入"
       ],
       "Item autofilled in vault": [
         "項目自動填滿保管庫項目"
@@ -3546,20 +3587,44 @@
       "Item Created": [
         "項目已新增"
       ],
+      "Item created in ${ vaultLink }": [
+        "已於保管庫創建${ vaultLink }"
+      ],
       "Item created in vault": [
         "於保管庫項目以創建"
       ],
       "Item Deleted": [
         "項目已刪除"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "項目已從保管庫刪除${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "項目已從保管庫刪除"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "已於${ vaultLink }變更項目標籤"
+      ],
       "Item flags changed in vault": [
         "於保管庫項目標籤已刪除"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "項目於${ vaultLink }已移至垃圾桶"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "項目於${ vaultLink }已取消移至垃圾桶"
+      ],
+      "Item in vault trashed": [
+        "項目於保管庫已移至垃圾"
       ],
       "Item in vault untrashed": [
         "於保管庫的項目取消刪除"
       ],
       "Item Read": [
         "項目已讀"
+      ],
+      "Item read in ${ vaultLink }": [
+        "已於${ vaultLink }閱讀"
       ],
       "Item read in vault": [
         "於保管庫項目閱讀"
@@ -3572,6 +3637,9 @@
       ],
       "Item Updated": [
         "物品已更新"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "已於保管庫更新${ vaultLink }"
       ],
       "Item updated in vault": [
         "於保管庫項目已更新"
@@ -3665,6 +3733,9 @@
       ],
       "New User Invite Deleted": [
         "新使用者已刪除"
+      ],
+      "New user invited to organization": [
+        "新使用者已邀請至組織"
       ],
       "No addresses exist": [
         "無任何電郵位址"
@@ -4890,6 +4961,9 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Second password": [
+        "第二密碼"
+      ],
       "Security code (${ codeName })": [
         "安全驗證代碼(${ codeName })"
       ],
@@ -5090,9 +5164,6 @@
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Need help?": [
-        "需要幫助嗎？"
       ],
       "Not activated": [
         "未啟用"
@@ -5807,9 +5878,6 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "所有 ${ BRAND_NAME } 應用程式與其進階功能"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "適用的餘額、價差與優惠券將在下一步時套用"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
       ],
@@ -6497,8 +6565,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "請先重新啟用訂閱以減少添加數量。"
       ],
+      "Please select billing country": [
+        "請選擇您的付款國家"
+      ],
+      "Please select billing state": [
+        "請選擇您的付款狀態"
+      ],
+      "Please select your billing country first.": [
+        "請先選擇您的計費國家。"
+      ],
+      "Please select your billing state first.": [
+        "請先選擇您的計費狀態。"
+      ],
       "Processing payment": [
         "正在處理付款"
+      ],
+      "Select billing country to pay": [
+        "選取繳款國家以付款"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
@@ -8132,6 +8215,9 @@
       "Couldn’t create accounts": [
         "無法創建帳號"
       ],
+      "Coupon": [
+        "優惠券"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "創建 ${ selectedUserIds.length } 個使用者"
       ],
@@ -8285,6 +8371,9 @@
       "Forgot recovery method": [
         "忘記復原方法"
       ],
+      "Gateway": [
+        "網關"
+      ],
       "Gateways": [
         "閘道器"
       ],
@@ -8317,6 +8406,9 @@
       ],
       "Invoices": [
         "繳款單"
+      ],
+      "Main password": [
+        "主要密碼"
       ],
       "Minicalendar": [
         "小型行事曆"
@@ -8725,6 +8817,9 @@
       "Add multiple users": [
         "添加多位使用者"
       ],
+      "Add new user": [
+        "新增使用者"
+      ],
       "Admin": [
         "系統管理員"
       ],
@@ -8740,11 +8835,20 @@
       "Create user": [
         "創建使用者"
       ],
+      "Email": [
+        "電子信箱"
+      ],
       "Invitation email": [
         "邀請電子郵件"
       ],
+      "Name": [
+        "名稱"
+      ],
       "New ${ BRAND_NAME } email address": [
         "新的${ BRAND_NAME }電子郵件地址"
+      ],
+      "Optional": [
+        "選項"
       ],
       "Private": [
         "不公開"
@@ -8763,6 +8867,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "雙重驗證"
+      ],
       "Invite sent": [
         "已傳送邀請"
       ],
@@ -8876,6 +8983,30 @@
       ],
       "Your ${ selected } plan": [
         "您專屬的 ${ selected } 方案"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n }錢包每個帳號"
+      ],
+      "${ n } email address": [
+        "${ n }電子郵件位址"
+      ],
+      "${ n } wallet": [
+        "${ n } 錢包"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "更安全的方法持有Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "安全持有及交易您的 Bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "錢包問題"
       ]
     },
     "Warning": {

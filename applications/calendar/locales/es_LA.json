@@ -482,10 +482,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -601,6 +601,9 @@
       ],
       "Select all": [
         "Seleccionar todo"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Seleccione el ciclo de facturación de ${ billingText }"
       ],
       "Select calendar view": [
         "Seleccionar vista de calendario"
@@ -2598,6 +2601,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ayúdenos a mejorar"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5238,6 +5249,11 @@
         "No se permite crear invitaciones en un calendario compartido"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Etiqueta del enlace (opcional)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Añadir etiqueta"
@@ -5807,6 +5823,11 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Acceso"
       ]
     },
     "Link to calendar app": {
@@ -6663,9 +6684,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo su negocio."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Los créditos, prorrateo y cupones correspondientes se aplican en el siguiente paso"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad integral con todos los servicios combinados de ${ BRAND_NAME }."
       ],
@@ -7381,6 +7399,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
+      ],
+      "Please select billing country": [
+        "Seleccione el país de facturación"
+      ],
+      "Please select billing state": [
+        "Seleccione el estado de facturación"
+      ],
+      "Please select your billing country first.": [
+        "Seleccione primero su país de facturación"
+      ],
+      "Please select your billing state first.": [
+        "Seleccione primero su estado de facturación"
+      ],
+      "Select billing country to pay": [
+        "Seleccione el país de facturación para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
@@ -9175,6 +9208,9 @@
       ],
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
+      ],
+      "Coupon": [
+        "Cupón"
       ],
       "Create contact": [
         "Crear contacto"

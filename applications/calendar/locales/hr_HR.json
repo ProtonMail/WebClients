@@ -243,6 +243,9 @@
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
+      "Go to settings": [
+        "Idi na postavke"
+      ],
       "Got it": [
         "Shvaćam"
       ],
@@ -366,10 +369,10 @@
       "Not now": [
         "Ne sada"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -467,6 +470,9 @@
       ],
       "Select calendar view": [
         "Odaberite prikaz kalendara"
+      ],
+      "Select country": [
+        "Odaberi državu"
       ],
       "Select time zone": [
         "Odaberite vremensku zonu"
@@ -846,6 +852,11 @@
       ],
       "You tentatively accepted the invitation": [
         "Uvjetno ste prihvatili pozivnicu"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Dozvole"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1460,6 +1471,9 @@
       "Macao": [
         "Makao"
       ],
+      "Macedonia": [
+        "Makedonija"
+      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -1974,6 +1988,11 @@
         "Ne pitaj ponovno"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Prioritetna podrška"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Dodaj kalendar"
@@ -2445,6 +2464,11 @@
     "esCalendar": {
       "Results": [
         "Rezultati"
+      ]
+    },
+    "Event canceled status badge": {
+      "canceled": [
+        "poništeno"
       ]
     },
     "Event form": {
@@ -2986,6 +3010,9 @@
       "Create a new contact group": [
         "Stvori novu grupu kontakata"
       ],
+      "Current plan": [
+        "Trenutni plan"
+      ],
       "Custom": [
         "Prilagođeno"
       ],
@@ -3010,6 +3037,9 @@
       "Discard changes?": [
         "Odbaci promjene?"
       ],
+      "Downgrade": [
+        "Snizi status"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
       ],
@@ -3021,6 +3051,9 @@
       ],
       "Edit email address": [
         "Uredi adresu e-pošte"
+      ],
+      "email": [
+        "e-pošta"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Unesite podatke za prijavu računa e-pošte s kojeg želite uvesti."
@@ -3494,6 +3527,9 @@
       "Beta Access": [
         "Beta pristup"
       ],
+      "Billing cycle": [
+        "Ciklus naplate"
+      ],
       "Browser": [
         "Preglednik"
       ],
@@ -3871,6 +3907,11 @@
         "Što je ovo?"
       ]
     },
+    "Link label (optional)": {
+      "Access": [
+        "Pristup"
+      ]
+    },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Otvori u ${ CALENDAR_APP_NAME }"
@@ -3892,6 +3933,9 @@
       ]
     },
     "mailtrial2024: Action": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
       "Special Offer": [
         "Posebna ponuda"
       ]
@@ -4197,6 +4241,12 @@
       ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "Custom fields": [
+        "Prilagođena polja"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
       ],
       "Easy Switch import assistant": [
         "Pomoćnik za uvoz Easy Switch"
@@ -4570,6 +4620,12 @@
       ]
     },
     "Payments": {
+      "Card number": [
+        "Broj kartice"
+      ],
+      "Got it": [
+        "Razumijem"
+      ],
       "MM/YY": [
         "MM/GG"
       ]
@@ -5034,6 +5090,9 @@
       "6 users": [
         "6 korisnika"
       ],
+      "Learn more": [
+        "Više informacija"
+      ],
       "Priority support": [
         "Prioritetna podrška"
       ],
@@ -5475,6 +5534,9 @@
       "Edit image": [
         "Uredi sliku"
       ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
       "Email addresses": [
         "Adrese e-pošte"
       ],
@@ -5803,6 +5865,13 @@
     "vpn_2step: feature": {
       "No ads": [
         "Bez oglasa"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adrese e-pošte",
+        "${ n } adrese e-pošte"
       ]
     },
     "Warning": {

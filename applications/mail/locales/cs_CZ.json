@@ -243,6 +243,9 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Collapse navigation bar": [
+        "Sbalit navigační panel"
+      ],
       "Collapse URL": [
         "Sbalit URL"
       ],
@@ -381,6 +384,9 @@
       "Dismiss": [
         "Skrýt"
       ],
+      "Display navigation bar": [
+        "Zobrazit navigační panel"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -452,6 +458,12 @@
       ],
       "Expand composer": [
         "Celá obrazovka"
+      ],
+      "Expand navigation bar to see folders": [
+        "Rozbalit navigační panel pro zobrazení složek"
+      ],
+      "Expand navigation bar to see labels": [
+        "Rozbalit navigační panel pro zobrazení štítků"
       ],
       "Expand URL": [
         "Rozbalit adresu URL"
@@ -1059,6 +1071,9 @@
       "Select all messages": [
         "Označit všechny zprávy"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Vyberte fakturační cyklus ${ billingText }"
+      ],
       "Select country": [
         "Vyberte zemi"
       ],
@@ -1229,12 +1244,6 @@
       ],
       "Trust": [
         "Důvěřovat"
-      ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1552,6 +1561,9 @@
       ],
       "Faster, broader device compatibility": [
         "Rychlejší a s širší kompatibilitou se zařízeními"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Požadavky zůstávají na vašem zařízení, ale vyžadují jednorázové stažení a kompatibilní hardware"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Vyžaduje jednorázové stažení a kompatibilní hardware."
@@ -3607,6 +3619,14 @@
         "Stáhnout vše"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -5576,6 +5596,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
@@ -5951,6 +5974,9 @@
       "and": [
         "a"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Jiný tip bude zobrazen až příště otevřete Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Všechny naplánované nebo odložené zprávy budou zrušeny."
       ],
@@ -6101,6 +6127,9 @@
       "Confirm phishing report": [
         "Potvrzení nahlášení phishingu"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Rozmyslete si, kdy je nejvhodnější čas, aby příjemce obdržel váš e-mail a naplánujte odeslání na tento čas."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt byl přiřazen do skupiny ${ contactGroupName }"
       ],
@@ -6124,6 +6153,9 @@
         "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
         "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
         "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Vytvořte složku jako je “${ suggestedFolderName }“ abyste uchovali všechna vaše potvrzení na jednom místě."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
@@ -6176,6 +6208,12 @@
       "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Věděli jste, že součástí vašeho účtu ${ BRAND_NAME } je šifrované cloudové úložiště? účtu? Přejděte na ${ DRIVE_APP_NAME } a využijte svůj prostor naplno. Je to zdarma."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Věděli jste, že jsme vám rezervovali kratší e-mailovou adresu? Je to vaše uživatelské jméno, po kterém následuje “@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6193,6 +6231,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Nezapomeňte příjemci sdělit heslo"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Nemáte čas řešit důležitý e-mail hned, ale nechcete na něj zapomenout? Nastavte si lepší čas, kdy se má ve schránce objevit."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nic nevidíte? Nezapomeňte vypnout blokování vyskakovacích oken."
@@ -6365,6 +6406,9 @@
       "Generate text": [
         "Vygenerovat text"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Přiřaďte příchozím fakturám barevný štítek, jako je například “${ suggestedLabelName }“. Jakmile je zaplatíte, změňte štítek na “${ suggestedPaidLabelName }“."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Obsahuje ${ numAttachments } přílohu (${ numAttachmentsSize })",
         "Obsahuje ${ numAttachments } přílohy (${ numAttachmentsSize })",
@@ -6406,6 +6450,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Pokud je váš alias prodán, prozrazen nebo zneužit, jednoduše jej zakažte, abyste přestali dostávat spam."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Pokud vaše heslo skončí na dark webu, ${ BRAND_NAME } vám může sdělit, ze které služby vaše data unikla a jak škody zastavit."
       ],
       "Image description": [
         "Popis obrázku"
@@ -6478,6 +6525,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Přihlašovací údaje a údaje o kreditní kartě můžete mít v bezpečí a zároveň vždy po ruce, když je přidáte do ${ PASS_APP_NAME }. Je zdarma a je součástí vašeho účtu ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Udržujte pořádek ve své poštovní schránce tím, že necháte ze složek Koš a Spam automaticky smazat zprávy, které jsou v nich déle než 30 dní."
       ],
       "Key fingerprint": [
         "Otisk klíče"
@@ -6900,7 +6953,7 @@
         "Relace vypršela"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Nastavit ${ MAIL_APP_NAME } jako výchozí emailovou aplikaci pro tento prohlížeč. ${ MAIL_APP_NAME } bude automaticky spuštěn po kliknutí na emailový odkaz."
+        "Nastavit ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci pro tento prohlížeč. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
@@ -7148,6 +7201,9 @@
       "to ${ destinationElement } folder.": [
         "do složky ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Chcete-li se vyhnout odvádění pozornosti jinými kartami internetového prohlížeče, použijte aplikaci pro stolní počítače."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pro dokončení platby zašlete ${ btcAmountBold } na níže uvedenou adresu."
       ],
@@ -7274,6 +7330,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Používejte různé e-mailové adresy pro různé účely, abyste mohli snadno oddělit e-maily podle pracovních, osobních nebo jiných oblastí."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Použijte klávesové zkratky pro rychlejší správu e-mailů."
       ],
@@ -7363,6 +7422,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Když se přihlašujete k odběru e-mailového zpravodaje, použijte alias místo vaší hlavní e-mailové adresy. Tím zůstane vaše identita skrytá a můžete alias kdykoli deaktivovat."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Když cestujete nebo používáte veřejnou Wi-Fi, připojte se k ${ VPN_APP_NAME }, abyste zabránili komukoli sledovat vaše online aktivity nebo krást vaše data. Je to zdarma."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -9511,7 +9576,7 @@
         "SSO integrace (již brzy)"
       ],
       "Strict no-logs policy": [
-        "Přísné zásady neukládání záznamů"
+        "Přísné zásady neukládání logů"
       ],
       "Tor over VPN": [
         "TOR skrze VPN"
@@ -9635,9 +9700,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
@@ -10252,6 +10314,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
+      ],
+      "Please select billing country": [
+        "Vyberte prosím zemi platby"
+      ],
+      "Please select billing state": [
+        "Vyberte prosím stát platby"
+      ],
+      "Please select your billing country first.": [
+        "Vyberte prosím nejprve vaší zemi platby."
+      ],
+      "Please select your billing state first.": [
+        "Vyberte prosím nejprve váš stát platby."
+      ],
+      "Select billing country to pay": [
+        "Vyberte zemi platby"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
@@ -11665,6 +11742,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Po vypršení platnosti vašeho předplatného ${ planName } budete převedeni na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
@@ -12277,6 +12357,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " je nyní aktivní"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } byl odstraněn"
       ]
@@ -12428,6 +12511,41 @@
         "${ minutes } minuty",
         "${ minutes } minut",
         "${ minutes } minut"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktivovat"
+      ],
+      "Create an alias": [
+        "Vytvořit alias"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "Vytvořit štítek “${ suggestedLabelName }“"
+      ],
+      "Create new email address": [
+        "Vytvořit novou e-mailovou adresu"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Vytvořit složku “${ suggestedFolderName }“"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Stáhnout ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Stáhnout desktopovou aplikaci"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Povolit sledování Dark webu"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "Získat adresu “@${ PM_DOMAIN }“"
+      ],
+      "Open ": [
+        "Otevřít "
+      ],
+      "Show me how": [
+        "Ukažte mi jak"
       ]
     },
     "Title": {
@@ -12583,6 +12701,9 @@
       ],
       "Conversation list": [
         "Seznam konverzací"
+      ],
+      "Coupon": [
+        "Kupón"
       ],
       "Create contact": [
         "Vytvořit kontakt"
@@ -13393,6 +13514,63 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } účet na peněženku",
+        "${ n } účty na peněženku",
+        "${ n } účtů na peněženku",
+        "${ n } účtů na peněženku"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "${ n } e-mailové adresy",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
+      ],
+      "${ n } wallet": [
+        "${ n } peněženka",
+        "${ n } peněženky",
+        "${ n } peněženek",
+        "${ n } peněženek"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpečnější způsob jak vlastnit Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin přes e-mail"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Přístup k aplikaci Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bezpečně uchovávejte a převádějte své bitcoiny"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problém s Wallet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Účet ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Moje importovaná peněženka ${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Moje peněženka ${ indexStr }"
       ]
     },
     "Warning": {

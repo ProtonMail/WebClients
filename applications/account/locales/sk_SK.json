@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -679,11 +679,17 @@
       "More info: Keyboard shortcuts": [
         "Zistiť viac: Klávesové skratky"
       ],
+      "More options": [
+        "Ďalšie možnosti"
+      ],
       "move emails to": [
         "presunúť emaily do"
       ],
       "Need help?": [
         "Potrebujete pomoc?"
+      ],
+      "New group": [
+        "Nová skupina"
       ],
       "Next": [
         "Ďalej"
@@ -763,11 +769,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Reload": [
         "Obnoviť"
@@ -819,6 +825,9 @@
       ],
       "Resend code": [
         "Znovu odoslať kód"
+      ],
+      "Resend invitation": [
+        "Znovu poslať pozvánku"
       ],
       "Reset credentials": [
         "Resetovať poverenia"
@@ -1555,14 +1564,6 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1584,6 +1585,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3189,6 +3198,11 @@
         "Počas importu sme zistili chyby vo viacerých riadkoch. Skontrolujte svoj CSV súbor."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Zistiť viac"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mesiac"
@@ -3569,6 +3583,14 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Dostali ste pozvanie na prístup k súboru v ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
       ]
     },
     "Duration": {
@@ -6898,17 +6920,8 @@
       "Custom daily": [
         "Denné nastavenie"
       ],
-      "Custom email added": [
-        "Vlastný email pridaný"
-      ],
-      "Custom email deleted": [
-        "Vlastný email vymazaný"
-      ],
       "Custom email domains": [
         "Vlastné emailové domény"
-      ],
-      "Custom email validated": [
-        "Vlastný email overený"
       ],
       "Custom monthly": [
         "Mesačné nastavenia"
@@ -6928,11 +6941,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -7686,6 +7699,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tieto nastavenia zmeňte len vtedy, ak používate PGP s príjemcami, ktorí nepoužívajú ${ BRAND_NAME }."
+      ],
+      "Only you can see the label": [
+        "Štítky môžete vidieť len vy"
       ],
       "Open source": [
         "Open source"
@@ -9089,6 +9105,11 @@
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Štítok odkazu (voliteľné)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Pridať štítok"
@@ -9915,6 +9936,12 @@
       "Gift code": [
         "Darčekový kód"
       ],
+      "Group address": [
+        "Skupinové adresy"
+      ],
+      "Group name": [
+        "Názov skupiny"
+      ],
       "Hide password": [
         "Skryť heslo"
       ],
@@ -9989,6 +10016,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
+      ],
+      "Link label (optional)": [
+        "Štítok odkazu (voliteľné)"
       ],
       "Logo": [
         "Logo"
@@ -10667,9 +10697,6 @@
       "Learn more about data recovery": [
         "Zistiť viac o obnove údajov"
       ],
-      "Need help?": [
-        "Potrebujete pomoc?"
-      ],
       "Not activated": [
         "Neaktivované"
       ],
@@ -10729,6 +10756,11 @@
       ],
       "Why set recovery methods?": [
         "Prečo nastaviť spôsob obnovy?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Prístup"
       ]
     },
     "Loading info": {
@@ -11296,23 +11328,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11340,6 +11355,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -11867,9 +11899,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všetky firemné aplikácie a prémiové funkcie ${ BRAND_NAME } na ochranu vašej firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Použiteľné kredity, pomerná časť a kupóny sa použijú v ďalšom kroku"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexné súkromie a bezpečnosť so všetkými službami ${ BRAND_NAME } dohromady."
@@ -12686,6 +12715,11 @@
         "Kôš"
       ]
     },
+    "option": {
+      "Members": [
+        "Členovia"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekúnd"
@@ -12967,6 +13001,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ale môžete si odomknúť **${ unlockPlanTitle }** a všetky prémiové služby ${ BRAND_NAME } upgradovaním na **${ upsellPlanTitle }**."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Pokračovaním súhlasíte s našimi ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Vytvárame váš účet"
@@ -13508,6 +13545,11 @@
       ],
       "yourdomain.com": [
         "vasadomena.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Členovia"
       ]
     },
     "plan customizer, ips": {
@@ -15897,10 +15939,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -16100,6 +16142,9 @@
       ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
+      ],
+      "Discard changes?": [
+        "Zrušiť zmeny?"
       ],
       "Display name and signature": [
         "Zobrazované meno a podpis"
@@ -17308,6 +17353,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
       ],
@@ -17488,6 +17536,33 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } emailových adries",
+        "${ n } emailových adries",
+        "${ n } emailové adresy"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin cez email"
+      ],
+      "Get started": [
+        "Začnite"
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Odomknite prémiové funkcie ${ appName } upgradom"
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Už čoskoro"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Downloads": [
+        "Stiahnuté"
       ]
     },
     "Warning": {

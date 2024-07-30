@@ -275,6 +275,9 @@
       "Go to panel ${ index }": [
         "Ddu ɣer ufeggag ${ index }"
       ],
+      "Go to settings": [
+        "Ddu s iɣewwaren"
+      ],
       "Got it": [
         "Gziɣ"
       ],
@@ -325,6 +328,9 @@
       ],
       "Join calendar": [
         "Rnu ɣer uwitay"
+      ],
+      "Later": [
+        "Ticki"
       ],
       "Let's talk": [
         "Aha ad nemmeslay"
@@ -407,11 +413,11 @@
       "Not now": [
         "Mačči tura"
       ],
-      "Ok": [
-        "Ik"
-      ],
       "OK": [
         "Ih"
+      ],
+      "Ok": [
+        "Ik"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -518,6 +524,9 @@
       "Select calendar view": [
         "Fren askan n uwitay"
       ],
+      "Select country": [
+        "Fren tamurt"
+      ],
       "Select time zone": [
         "Fren izḍi usrid"
       ],
@@ -616,6 +625,9 @@
       ],
       "Upgrade": [
         "Lqem"
+      ],
+      "Upgrade Now": [
+        "Sgerrzet amiḍan tura"
       ],
       "Upgrade now": [
         "Sali aswir tura"
@@ -799,12 +811,20 @@
         "Afrayan"
       ]
     },
+    "Badge": {
+      "New!": [
+        "Amynut!"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } n uḥraz"
       ],
       "1 user": [
         "1 useqdac"
+      ],
+      "3 TB": [
+        "3 TAṬ"
       ],
       "6 users": [
         "6 yiseqdacen"
@@ -1634,6 +1654,9 @@
       "Macao": [
         "Makawu"
       ],
+      "Macedonia": [
+        "Masidunya"
+      ],
       "Madagascar": [
         "Madagaskaṛ"
       ],
@@ -2175,6 +2198,11 @@
         "Ɛawen-aɣ ad nennarni"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "Tallalt yezwaren"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Rnu awitay"
@@ -2222,6 +2250,14 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Aleqqem n tedyant ara yebdun deg ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TAṬ"
+      ],
+      "6 users": [
+        "6 yiseqdacen"
       ]
     },
     "Error": {
@@ -3522,6 +3558,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Ifuyla CSV seg Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yinasen-nniḍen akked yimasalen vCard 3.1 akked 4.0 (UTF-8 encoding) ttwadehlen."
       ],
+      "Current plan": [
+        "Aɣawas amiran"
+      ],
       "Custom": [
         "Udmawan"
       ],
@@ -3569,6 +3608,9 @@
       ],
       "Edit email address": [
         "Ẓreg tansa n yimayl"
+      ],
+      "email": [
+        "imayl"
       ],
       "Emails are automatically signed": [
         "Imaylen ttwazemlen s wudem awurman"
@@ -3746,6 +3788,9 @@
       "Organization size": [
         "Teɣzi n tkebbanit"
       ],
+      "password": [
+        "awal uffir"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Lexlaṣ yemmesten s TLS akked leqwanen n tbaḍnit n Swis."
       ],
@@ -3900,6 +3945,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Salu tura aɣawas-ik i wakken ad tesɛuḍ timahilin, ifarisen d uḥraz premium s ssuma igerrzen"
       ],
+      "username": [
+        "isem n useqdac"
+      ],
       "Users": [
         "Iseqdacen"
       ],
@@ -3911,6 +3959,9 @@
       ],
       "Visa Secure logo": [
         "Alugu n Visa Secure"
+      ],
+      "Warning": [
+        "Alɣu"
       ],
       "We use 3-D Secure to protect your payments": [
         "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen"
@@ -4623,6 +4674,11 @@
         "D acu-t wa?"
       ]
     },
+    "Link label (optional)": {
+      "Access": [
+        "Anekcum"
+      ]
+    },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Ldi deg ${ CALENDAR_APP_NAME }"
@@ -4650,6 +4706,11 @@
         "Aktar-ik yebda"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "Issin ugar"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Rmed ${ reason }"
@@ -4671,6 +4732,16 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "i ${ price }"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "Faṛes tagnit"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -5459,6 +5530,9 @@
       "Create new group": [
         "Snulfu-d agraw amaynut"
       ],
+      "Custom": [
+        "Yugen"
+      ],
       "Day": [
         "Ass",
         "Ussan"
@@ -5540,6 +5614,17 @@
       ],
       "New credit/debit card": [
         "Takarḍa n usmad tamaynut/n uxelleṣ"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Uṭṭun n tkarḍa"
+      ],
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "MM/YY": [
+        "MM/YY"
       ]
     },
     "Payments.Error": {
@@ -5734,6 +5819,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "Rnu alias"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliases"
       ],
@@ -5742,6 +5830,11 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Ɛreḍ ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Wali iɣmisen"
       ]
     },
     "Select files": {
@@ -5785,6 +5878,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Sefsex tuttra"
+      ],
       "Got it": [
         "Gziɣ-t"
       ],
@@ -5795,6 +5891,11 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Isra awennez n wawal uffir"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Asenser"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -5946,8 +6047,14 @@
       "1 year": [
         "1 n useggas"
       ],
+      "15 months": [
+        "15 wayyuren"
+      ],
       "2 years": [
         "2 n yiseggasen"
+      ],
+      "30 months": [
+        "30 wayyuren"
       ],
       "Get the deal": [
         "Faṛes tagnit"
@@ -6059,8 +6166,14 @@
       "10 email addresses": [
         "10 n tansiwin imayl"
       ],
+      "6 users": [
+        "6 yiseqdacen"
+      ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
+      ],
+      "Learn more": [
+        "Issin ugar"
       ],
       "Priority support": [
         "Tallalt yezwaren"
@@ -6070,6 +6183,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
@@ -6532,6 +6653,9 @@
       "Deleting contacts": [
         "Tukksa n yinermisen"
       ],
+      "Details": [
+        "Ifatusen"
+      ],
       "Downgrade account": [
         "Sider aswir n umiḍan"
       ],
@@ -6555,6 +6679,9 @@
       ],
       "Edit image": [
         "Ẓreg tugna"
+      ],
+      "Email address": [
+        "Tansa n yimayl"
       ],
       "Email addresses": [
         "Tansiwin imayl"
@@ -6694,6 +6821,9 @@
       ],
       "Reshare your calendars": [
         "Ales beṭṭu iwitayen-ik"
+      ],
+      "Save": [
+        "Sekles"
       ],
       "Save changes": [
         "Sekles ibeddilen"
@@ -6887,6 +7017,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ma yella tuɣeḍ-d tangalt n warraz neɣ tremseḍ-d yiwet seg terbaɛt-nneɣ n tallalt, tzemreḍ ad tt-taruḍ dagi."
       ],
+      "Load image": [
+        "Sali-d tugniwin"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Fren aneggaf PGP ara yettusqedcen deg uzmel neɣ deg uwgelhen ɣer useqdac-nniḍen. Ẓer belli PGP/Inline ittḥettim ɣef yiznan amasal aḍris"
       ],
@@ -6966,6 +7099,12 @@
       ],
       "No ads": [
         "Ulac adellel"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } tansa n yimayl",
+        "${ n } n tansiwin imayl"
       ]
     },
     "Warning": {

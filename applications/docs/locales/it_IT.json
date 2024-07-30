@@ -178,6 +178,9 @@
       "Create and copy alias": [
         "Crea e copia l'alias"
       ],
+      "Create new document": [
+        "Crea un nuovo documento"
+      ],
       "Current plan": [
         "Piano attuale"
       ],
@@ -491,6 +494,9 @@
       ],
       "Select all": [
         "Seleziona tutti"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Seleziona il ciclo di fatturazione ${ billingText }"
       ],
       "Select country": [
         "Seleziona il paese"
@@ -2034,6 +2040,14 @@
         "Aiutaci a migliorare"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIZIONE:\n${ eventDescription }"
@@ -2190,11 +2204,11 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Importo inferiore al minimo (${ minimumAmount })."
       ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Si è verificato un errore durante la conversione del documento. Riprova."
+      ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Si è verificato un errore durante la duplicazione del documento. Riprova."
-      ],
-      "An error occurred while attempting to seed the document. Please try again.": [
-        "Si è verificato un errore durante l'inizializzazione del documento. Riprova."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Si è verificato un errore durante la creazione del documento. Riprova."
@@ -2463,6 +2477,9 @@
       ],
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
+      ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "Il documento che stai provando a convertire è troppo grande. Questo può verificarsi quando il documento contiene un numero elevato di immagini o di altri elementi multimediali. Riprova con un documento più piccolo."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -3696,6 +3713,9 @@
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
       ],
+      "End-to-end encrypted.": [
+        "Con crittografia end-to-end."
+      ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione"
       ],
@@ -4108,6 +4128,9 @@
       "Some edits are taking longer to sync than expected.": [
         "La sincronizzazione di alcune modifiche sta richiedendo più tempo del solito."
       ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
@@ -4155,6 +4178,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Questo documento contiene molte attività. Alcune funzionalità potrebbero essere temporaneamente non disponibili."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Questo documento potrebbe non esistere o potresti non avere l'autorizzazione per visualizzarlo. Puoi provare a ricaricare la pagina per vedere se il problema persiste."
       ],
       "This item already exists in your library": [
         "Questo elemento è già presente nella tua libreria"
@@ -5897,9 +5923,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Eventuali crediti, calcolo proporzionale e coupon vengono applicati nel prossimo passaggio"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
@@ -6547,6 +6570,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
+      ],
+      "Please select your billing country first.": [
+        "Seleziona prima il paese di fatturazione."
+      ],
+      "Please select your billing state first.": [
+        "Seleziona prima lo stato di fatturazione."
+      ],
+      "Select billing country to pay": [
+        "Seleziona il paese di fatturazione per il pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -7666,9 +7704,6 @@
       "Amount due": [
         "Importo da pagare"
       ],
-      "An error occurred": [
-        "Si è verificato un errore"
-      ],
       "Apply gift code": [
         "Applica codice regalo"
       ],
@@ -7716,6 +7751,9 @@
       ],
       "Continue with partial import?": [
         "Continuare con l'importazione parziale?"
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create contact": [
         "Crea contatto"

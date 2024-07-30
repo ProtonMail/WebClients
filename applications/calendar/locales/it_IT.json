@@ -482,11 +482,11 @@
       "Not now": [
         "Non ora"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -601,6 +601,9 @@
       ],
       "Select all": [
         "Seleziona tutti"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Seleziona il ciclo di fatturazione ${ billingText }"
       ],
       "Select calendar view": [
         "Seleziona la vista calendario"
@@ -2598,6 +2601,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Aiutaci a migliorare"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5238,6 +5249,11 @@
         "Non è consentito invitare partecipanti in un calendario condiviso"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Link etichetta (facoltativo)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Aggiungi etichetta"
@@ -5807,6 +5823,11 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Accesso"
       ]
     },
     "Link to calendar app": {
@@ -6663,9 +6684,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Eventuali crediti, calcolo proporzionale e coupon vengono applicati nel prossimo passaggio"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
@@ -7386,6 +7404,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
+      ],
+      "Please select your billing country first.": [
+        "Seleziona prima il paese di fatturazione."
+      ],
+      "Please select your billing state first.": [
+        "Seleziona prima lo stato di fatturazione."
+      ],
+      "Select billing country to pay": [
+        "Seleziona il paese di fatturazione per il pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -9180,6 +9213,9 @@
       ],
       "Continue with partial import?": [
         "Continuare con l'importazione parziale?"
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create contact": [
         "Crea contatto"

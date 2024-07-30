@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Seleccionar todos los mensajes"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Seleccione el ciclo de facturación de ${ billingText }"
+      ],
       "Select country": [
         "Seleccionar país"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -3580,6 +3579,14 @@
     "Download attachments": {
       "Download all": [
         "Descargar todo"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
       ]
     },
     "Email body for description (description part)": {
@@ -6973,7 +6980,7 @@
         "a la carpeta ${ destinationElement }."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "Para evitar el rastreo de sitios por las pestañas abiertas en su navegador, use la aplicación de escritorio."
+        "Para evitar distraerse con las pestañas abiertas en su navegador, use la aplicación de escritorio."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar el pago, envíe ${ btcAmountBold } a la dirección de abajo."
@@ -9381,9 +9388,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo su negocio."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Los créditos, prorrateo y cupones correspondientes se aplican en el siguiente paso"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad integral con todos los servicios combinados de ${ BRAND_NAME }."
       ],
@@ -9989,6 +9993,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
+      ],
+      "Please select billing country": [
+        "Seleccione el país de facturación"
+      ],
+      "Please select billing state": [
+        "Seleccione el estado de facturación"
+      ],
+      "Please select your billing country first.": [
+        "Seleccione primero su país de facturación"
+      ],
+      "Please select your billing state first.": [
+        "Seleccione primero su estado de facturación"
+      ],
+      "Select billing country to pay": [
+        "Seleccione el país de facturación para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
@@ -12214,6 +12233,9 @@
       "Conversation list": [
         "Lista de conversación"
       ],
+      "Coupon": [
+        "Cupón"
+      ],
       "Create contact": [
         "Crear contacto"
       ],
@@ -13012,7 +13034,7 @@
         "Una forma más segura de mantener su Bitcoin"
       ],
       "Bitcoin via email": [
-        "Bitcoin vía correo electrónico"
+        "Bitcoin por correo electrónico"
       ]
     },
     "wallet_signup_2024:Action": {
