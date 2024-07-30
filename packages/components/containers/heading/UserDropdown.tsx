@@ -257,7 +257,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     };
 
     const securityCheckupParams = (() => {
-        return new URLSearchParams({ continue: encodeURIComponent(window.location.href) });
+        return new URLSearchParams({ back: encodeURIComponent(window.location.href) });
     })();
 
     return (
