@@ -20,6 +20,11 @@ export const postVerifyUnvalidate = (data: { JWT: string }) => ({
     data,
 });
 
+export const postVerifyEmail = () => ({
+    url: 'core/v4/verify/email',
+    method: 'post',
+});
+
 export const postVerifyPhone = () => ({
     url: 'core/v4/verify/phone',
     method: 'post',
