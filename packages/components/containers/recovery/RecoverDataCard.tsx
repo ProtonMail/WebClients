@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, Card, Href } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
@@ -15,12 +15,7 @@ interface Props {
 
 const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
     return (
-        <Card
-            rounded
-            background={false}
-            className={clsx('max-w-custom', className)}
-            style={{ '--max-w-custom': '46em' }}
-        >
+        <div className={clsx('rounded border p-8 max-w-custom', className)} style={{ '--max-w-custom': '46em' }}>
             <SettingsSectionTitle className="h3 flex items-center flex-nowrap">
                 <Icon className="shrink-0 color-danger" name="exclamation-circle-filled" size={4.5} />
                 <span className="ml-2">{c('Title').t`Data locked`}</span>
@@ -44,7 +39,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
 
             <Button color="norm" onClick={onReactivate} className="mr-4 mt-4">{c('Action').t`Unlock data`}</Button>
             <Button className="mt-4" onClick={onDismiss}>{c('Action').t`Don't show again`}</Button>
-        </Card>
+        </div>
     );
 };
 

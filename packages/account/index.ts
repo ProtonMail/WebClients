@@ -32,6 +32,7 @@ export * from './eventLoop';
 export * from './interface';
 export * from './welcomeFlags';
 export * from './samlSSO';
+export * from './securityCheckup';
 export * from './scheduleCall';
 export * from './vpn/serversCount';
 export * from './vpn/hooks';

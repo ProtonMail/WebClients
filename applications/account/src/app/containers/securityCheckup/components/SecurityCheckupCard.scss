@@ -1,0 +1,32 @@
+.security-checkup-card-container {
+	border: 1px solid var(--border-norm);
+	border-radius: var(--border-radius-lg);
+	background-color: var(--background-norm);
+	box-shadow: var(--shadow-norm);
+}
+
+%icon-background {
+	position: absolute;
+	inset: 0;
+	content: '';
+	opacity: 0.08;
+	border-radius: var(--border-radius-md);
+}
+
+.security-checkup-card {
+	text-align: start;
+	inline-size: 100%;
+	border-radius: 0;
+	border-block-end: 1px solid var(--border-norm);
+
+	&:first-child {
+		border-start-start-radius: var(--border-radius-lg);
+		border-start-end-radius: var(--border-radius-lg);
+	}
+
+	&:last-child {
+		border-end-start-radius: var(--border-radius-lg);
+		border-end-end-radius: var(--border-radius-lg);
+		border-block-end: 0;
+	}
+}

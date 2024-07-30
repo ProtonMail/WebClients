@@ -9,6 +9,7 @@ import {
     organizationThemeSlice,
     plansReducer,
     scheduleCallReducer,
+    securityCheckupSlice,
     subscriptionReducer,
     userInvitationsReducer,
     userKeysReducer,
@@ -50,6 +51,7 @@ export const sharedReducers = {
     ...membersReducer,
     ...scheduleCallReducer,
     ...groupsReducer,
+    securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
 };
 

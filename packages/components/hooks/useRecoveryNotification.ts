@@ -7,12 +7,12 @@ import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiv
 import useSecurityCenter from '../components/drawer/views/SecurityCenter/useSecurityCenter';
 import { FeatureCode } from '../containers/features';
 import getOverallStatus from '../containers/recovery/getOverallStatus';
+import { useIsRecoveryFileAvailable } from './recoveryFile';
 import useAddresses from './useAddresses';
 import useFeature from './useFeature';
 import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
 import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
-import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
 import useIsSentinelUser from './useIsSentinelUser';
 import useRecoveryStatus from './useRecoveryStatus';
 import useUser from './useUser';

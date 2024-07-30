@@ -1,10 +1,10 @@
-import usePrimaryRecoverySecret from './usePrimaryRecoverySecret';
-import useRecoverySecrets from './useRecoverySecrets';
+import { getHasOutdatedRecoveryFile } from '@proton/shared/lib/recoveryFile/recoveryFile';
+
+import useUser from './useUser';
 
 const useHasOutdatedRecoveryFile = () => {
-    const primaryRecoverySecret = usePrimaryRecoverySecret();
-    const recoverySecrets = useRecoverySecrets();
-    return recoverySecrets?.length > 0 && !primaryRecoverySecret;
+    const [{ Keys }] = useUser();
+    return getHasOutdatedRecoveryFile(Keys);
 };
 
 export default useHasOutdatedRecoveryFile;

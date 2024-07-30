@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { Input } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -11,19 +13,61 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Icon, InputFieldTwo, useFormErrors, useModalState } from '../../../components';
+import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
 import VerifyRecoveryEmailModal from './VerifyRecoveryEmailModal';
+
+interface RenderFormProps {
+    className?: string;
+    onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    input: ReactNode;
+    submitButtonProps: {
+        type: 'submit';
+        disabled: boolean;
+        loading: boolean;
+    };
+}
+
+const defaultRenderForm = ({ className, onSubmit, input, submitButtonProps }: RenderFormProps) => {
+    return (
+        <form className={clsx('flex flex-wrap flex-column md:flex-row', className)} onSubmit={onSubmit}>
+            <div className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom" style={{ '--min-w-custom': '14em' }}>
+                {input}
+            </div>
+            <div className="mb-2">
+                <Button shape="outline" data-testid="account:recovery:emailSubmit" {...submitButtonProps}>
+                    {c('Action').t`Save`}
+                </Button>
+            </div>
+        </form>
+    );
+};
 
 interface Props {
     email: UserSettings['Email'];
     hasReset: boolean;
     hasNotify: boolean;
     className?: string;
+    onSuccess?: () => void;
+    autoFocus?: boolean;
+    renderForm?: (props: RenderFormProps) => ReactNode;
+    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label'>>;
+    disableVerifyCta?: boolean;
 }
 
-const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
+const RecoveryEmail = ({
+    renderForm = defaultRenderForm,
+    email,
+    hasReset,
+    hasNotify,
+    className,
+    onSuccess,
+    autoFocus,
+    inputProps,
+    disableVerifyCta,
+}: Props) => {
     const [input, setInput] = useState(email.Value || '');
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -43,7 +87,9 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                     onCancel={undefined}
                     onSuccess={async () => {
                         await call();
+
                         createNotification({ text: c('Success').t`Email updated` });
+                        onSuccess?.();
                     }}
                     config={updateEmail({ Email: input })}
                 />
@@ -59,9 +105,10 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                 />
             )}
             {renderVerifyRecoveryEmailModal && <VerifyRecoveryEmailModal email={email} {...verifyRecoveryEmailModal} />}
-            <form
-                className={clsx(['flex flex-wrap flex-column md:flex-row', className])}
-                onSubmit={(e) => {
+
+            {renderForm({
+                className,
+                onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
                         return;
@@ -71,22 +118,20 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                     } else {
                         setAuthModal(true);
                     }
-                }}
-            >
-                <div
-                    className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom"
-                    style={{ '--min-w-custom': '14em' }}
-                    title={email.Value || ''}
-                >
+                },
+                input: (
                     <InputFieldTwo
                         type="email"
                         autoComplete="email"
+                        title={email.Value || ''}
+                        autoFocus={autoFocus}
                         id="recovery-email-input"
                         disableChange={loading}
                         value={input || ''}
                         error={validator([input && emailValidator(input)].filter(isTruthy))}
                         onValue={setInput}
                         assistiveText={
+                            !disableVerifyCta &&
                             email.Value &&
                             (email.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
@@ -117,20 +162,16 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                                 </>
                             ))
                         }
+                        {...inputProps}
                     />
-                </div>
-                <div className="mb-2">
-                    <Button
-                        type="submit"
-                        shape="outline"
-                        disabled={(email.Value || '') === input}
-                        loading={loading}
-                        data-testid="account:recovery:emailSubmit"
-                    >
-                        {c('Action').t`Save`}
-                    </Button>
-                </div>
-            </form>
+                ),
+                submitButtonProps: {
+                    type: 'submit',
+
+                    disabled: (email.Value || '') === input,
+                    loading,
+                },
+            })}
         </>
     );
 };

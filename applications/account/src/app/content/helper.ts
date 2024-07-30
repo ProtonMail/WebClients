@@ -16,7 +16,13 @@ import {
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    SECURITY_CHECKUP_PATHS,
+    SETUP_ADDRESS_PATH,
+    SSO_PATHS,
+    VPN_TV_PATHS,
+} from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation, getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -197,7 +203,7 @@ export const getLocalRedirect = (location: H.Location) => {
         return undefined;
     }
     // Special case to not add the slug...
-    if (path.includes(SETUP_ADDRESS_PATH)) {
+    if ([SETUP_ADDRESS_PATH, SECURITY_CHECKUP_PATHS.ROOT].some((p) => path.includes(p))) {
         return {
             path,
             toApp: DEFAULT_APP,
