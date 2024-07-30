@@ -6,7 +6,7 @@
  */
 
 /**
- * At what point the upload failed - how many bytes were uploaded before failure
+ * File size of the errored upload
  */
 export interface HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson {
   Value: number;

@@ -45,8 +45,8 @@ import type { HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson } from './types
 import type { HttpsProtonMeDriveSyncResyncTotalV1SchemaJson } from './types/drive_sync_resync_total_v1.schema';
 import type { HttpsProtonMeDriveUploadErroringUsersTotalV1SchemaJson } from './types/drive_upload_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_upload_errors_file_size_histogram_v1.schema';
-import type { HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson } from './types/drive_upload_errors_total_v1.schema';
 import type { HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson } from './types/drive_upload_errors_total_v2.schema';
+import type { HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_upload_errors_transfer_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson } from './types/drive_upload_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
 import type { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
@@ -179,6 +179,8 @@ class Metrics extends MetricsBase {
     public drive_upload_errors_file_size_histogram: Histogram<HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson>;
 
     public drive_upload_errors_total: Counter<HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson>;
+
+    public drive_upload_errors_transfer_size_histogram: Histogram<HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson>;
 
     public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>;
 
@@ -496,15 +498,16 @@ class Metrics extends MetricsBase {
                 this.requestService
             );
 
-        this.drive_upload_errors_total = new Counter<HttpsProtonMeDriveUploadErrorsTotalV1SchemaJson>(
-            { name: 'drive_upload_errors_total', version: 1 },
-            this.requestService
-        );
-
         this.drive_upload_errors_total = new Counter<HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson>(
             { name: 'drive_upload_errors_total', version: 2 },
             this.requestService
         );
+
+        this.drive_upload_errors_transfer_size_histogram =
+            new Histogram<HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson>(
+                { name: 'drive_upload_errors_transfer_size_histogram', version: 1 },
+                this.requestService
+            );
 
         this.drive_upload_success_rate_total = new Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>(
             { name: 'drive_upload_success_rate_total', version: 1 },
