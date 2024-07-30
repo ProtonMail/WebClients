@@ -26,6 +26,9 @@
       "Add new item": [
         "Añadir elemento nuevo"
       ],
+      "Add section": [
+        "Añadir sección"
+      ],
       "Add username field": [
         "Añadir un campo de nombre de usuario"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "Crear una tarjeta"
       ],
+      "Create identity": [
+        "Crear una identidad"
+      ],
       "Create login": [
         "Crear inicio de sesión"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "Creando bóveda"
+      ],
+      "Custom section": [
+        "Sección personalizada"
       ],
       "Customize": [
         "Personalizar"
@@ -306,7 +315,7 @@
         "Sincronizar los datos manualmente"
       ],
       "Maximum views": [
-        "Vistas máximas"
+        "Número máximo de vistas"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -424,6 +433,9 @@
       ],
       "Saving passkey...": [
         "Guardando clave de acceso..."
+      ],
+      "Section name": [
+        "Nombre de la sección"
       ],
       "Secure links": [
         "Enlaces seguros"
@@ -1396,6 +1408,9 @@
       "Never": [
         "Nunca"
       ],
+      "No identity item found": [
+        "No se encontró ningún elemento de identidad"
+      ],
       "No login found": [
         "Ningún inicio de sesión fue encontrado."
       ],
@@ -1525,6 +1540,9 @@
       ],
       "Save passkey": [
         "Guardar clave de acceso"
+      ],
+      "Secure links": [
+        "Enlaces seguros"
       ],
       "Select an existing login item to update.": [
         "Seleccione un elemento de inicio de sesión existente para actualizar."
@@ -1820,6 +1838,15 @@
       "Account": [
         "Cuenta"
       ],
+      "Add section": [
+        "Añadir sección"
+      ],
+      "Additional details": [
+        "Detalles adicionales"
+      ],
+      "Address details": [
+        "Detalles de la dirección"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1865,6 +1892,9 @@
       "Autosuggest": [
         "Sugerencias automáticas"
       ],
+      "Birthdate": [
+        "Fecha de nacimiento"
+      ],
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
@@ -1880,14 +1910,29 @@
       "Cards": [
         "Tarjetas"
       ],
+      "City": [
+        "Ciudad"
+      ],
+      "Company": [
+        "Compañía"
+      ],
       "Confirm vault name": [
         "Confirmar nombre de la bóveda"
+      ],
+      "Contact details": [
+        "Detalles de contacto"
       ],
       "Copy": [
         "Copiar"
       ],
       "Copy password": [
         "Copiar la contraseña"
+      ],
+      "Country or Region": [
+        "País o región"
+      ],
+      "County": [
+        "Condado"
       ],
       "Create a credit card": [
         "Crear una tarjeta de crédito"
@@ -1901,6 +1946,9 @@
       "Create an encrypted note": [
         "Crear una nota cifrada"
       ],
+      "Create an Identity": [
+        "Crear una identidad"
+      ],
       "Create lock": [
         "Crear un bloqueo"
       ],
@@ -1912,6 +1960,12 @@
       ],
       "Created at": [
         "Creada a las"
+      ],
+      "Custom hidden field": [
+        "Campo oculto personalizado"
+      ],
+      "Custom text field": [
+        "Campo de texto personalizado"
       ],
       "Device": [
         "Dispositivo"
@@ -1961,14 +2015,29 @@
       "Extra password": [
         "Contraseña adicional"
       ],
+      "Facebook account": [
+        "Cuenta de Facebook"
+      ],
       "Field name": [
         "Nombre del campo"
       ],
       "File format": [
         "Formato de archivo"
       ],
+      "First name": [
+        "Nombre"
+      ],
+      "Floor, apartment, building": [
+        "Piso, apartamento, edificio"
+      ],
       "Forwards to": [
         "Reenvía a"
+      ],
+      "Full Name": [
+        "Nombre completo"
+      ],
+      "Gender": [
+        "Género"
       ],
       "General": [
         "General"
@@ -1988,6 +2057,15 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "https://example.com": [
+        "https://ejemplo.com"
+      ],
+      "Identities": [
+        "Identidades"
+      ],
+      "Identity": [
+        "Identidad"
+      ],
       "Import": [
         "Importar"
       ],
@@ -2006,11 +2084,17 @@
       "Include numbers (0-9)": [
         "Incluir números (0-9)"
       ],
+      "Instagram handle": [
+        "Nombre de usuario de Instagram"
+      ],
       "Invitations": [
         "Invitaciones"
       ],
       "Item ID": [
         "ID del elemento"
+      ],
+      "Job title": [
+        "Puesto laboral"
       ],
       "Key": [
         "Clave"
@@ -2027,6 +2111,9 @@
       "Last month": [
         "Último mes"
       ],
+      "Last name": [
+        "Apellido"
+      ],
       "Last week": [
         "La semana pasada"
       ],
@@ -2035,6 +2122,12 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "License number": [
+        "Número de licencia"
+      ],
+      "LinkedIn account": [
+        "Cuenta de LinkedIn"
       ],
       "Login": [
         "Inicio de sesión"
@@ -2056,6 +2149,9 @@
       ],
       "Members": [
         "Miembros"
+      ],
+      "Middle name": [
+        "Segundo nombre"
       ],
       "Modified": [
         "Modificado"
@@ -2114,6 +2210,9 @@
       "Passphrase": [
         "Frase de contraseña"
       ],
+      "Passport number": [
+        "Número de pasaporte"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -2126,8 +2225,17 @@
       "Pause list": [
         "Lista de pausa"
       ],
+      "Personal details": [
+        "Detalles personales"
+      ],
+      "Personal website": [
+        "Sitio web personal"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON cifrado con PGP (recomendado)"
+      ],
+      "Phone number": [
+        "Número telefónico"
       ],
       "PIN": [
         "Código PIN"
@@ -2152,6 +2260,9 @@
       ],
       "Recent": [
         "Reciente"
+      ],
+      "Reddit handle": [
+        "Nombre de usuario de Reddit"
       ],
       "Remove link": [
         "Eliminar enlace"
@@ -2204,8 +2315,20 @@
       "Show website favicons": [
         "Mostrar faviconos de sitios web"
       ],
+      "Social security number": [
+        "Número de seguro social"
+      ],
       "Special characters (!&*)": [
         "Caracteres especiales (!&*)"
+      ],
+      "State or province": [
+        "Estado o provincia"
+      ],
+      "Street address": [
+        "Dirección de calle"
+      ],
+      "Street address, P.O. box": [
+        "Dirección de calle, apartado postal"
       ],
       "Strong": [
         "Fuerte"
@@ -2292,8 +2415,26 @@
       "Websites": [
         "Sitios web"
       ],
+      "Work details": [
+        "Detalles del trabajo"
+      ],
+      "Work email": [
+        "Correo electrónico del trabajo"
+      ],
+      "Work phone number": [
+        "Número telefónico laboral"
+      ],
+      "X handle": [
+        "Nombre de usuario de X"
+      ],
+      "Yahoo account": [
+        "Cuenta de Yahoo"
+      ],
       "You are about to create": [
         "Está por crear"
+      ],
+      "ZIP or Postal code": [
+        "Código postal"
       ]
     },
     "Message": {
@@ -2441,6 +2582,9 @@
       "Auto-lock update": [
         "Actualización de bloqueo automático"
       ],
+      "Autofill": [
+        "Completado automático"
+      ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"
       ],
@@ -2497,6 +2641,9 @@
       ],
       "History": [
         "Historial"
+      ],
+      "Identity": [
+        "Identidad"
       ],
       "Import - ${ date }": [
         "Importación - ${ date }"
@@ -2664,6 +2811,9 @@
       ],
       "OTP secret or URI required": [
         "Se requiere una clave secreta OTP o una URL."
+      ],
+      "Section name cannot be empty": [
+        "El nombre de la sección no puede estar vacío"
       ],
       "Url already exists": [
         "La URL ya existe"

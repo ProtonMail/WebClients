@@ -26,6 +26,9 @@
       "Add new item": [
         "Tambahkan item baru"
       ],
+      "Add section": [
+        "Tambahkan bagian"
+      ],
       "Add username field": [
         "Tambahkan kolom nama pengguna"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "Buat kartu"
       ],
+      "Create identity": [
+        "Buat identitas"
+      ],
       "Create login": [
         "Buat entri masuk"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "Membuat brankas"
+      ],
+      "Custom section": [
+        "Sesi tambahan"
       ],
       "Customize": [
         "Atur"
@@ -424,6 +433,9 @@
       ],
       "Saving passkey...": [
         "Menyimpan passkey..."
+      ],
+      "Section name": [
+        "Nama bagian"
       ],
       "Secure links": [
         "Tautan aman"
@@ -1508,6 +1520,9 @@
       "Save passkey": [
         "Simpan passkey"
       ],
+      "Secure links": [
+        "Tautan aman"
+      ],
       "Select an existing login item to update.": [
         "Pilih entri masuk yang ada untuk diperbarui."
       ],
@@ -1795,6 +1810,15 @@
       "Account": [
         "Akun"
       ],
+      "Add section": [
+        "Tambahkan bagian"
+      ],
+      "Additional details": [
+        "Detail tambahan"
+      ],
+      "Address details": [
+        "Detail alamat"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1840,6 +1864,9 @@
       "Autosuggest": [
         "Saran otomatis"
       ],
+      "Birthdate": [
+        "Tanggal lahir"
+      ],
       "Capital letters (A-Z)": [
         "Huruf kapital (A-Z)"
       ],
@@ -1855,14 +1882,29 @@
       "Cards": [
         "Kartu"
       ],
+      "City": [
+        "Kota"
+      ],
+      "Company": [
+        "Perusahaan"
+      ],
       "Confirm vault name": [
         "Konfirmasi nama brankas"
+      ],
+      "Contact details": [
+        "Rincian kontak"
       ],
       "Copy": [
         "Salin"
       ],
       "Copy password": [
         "Salin kata sandi"
+      ],
+      "Country or Region": [
+        "Negara atau Wilayah"
+      ],
+      "County": [
+        "Daerah"
       ],
       "Create a credit card": [
         "Buat kartu kredit"
@@ -1887,6 +1929,12 @@
       ],
       "Created at": [
         "Dibuat pada"
+      ],
+      "Custom hidden field": [
+        "Kolom khusus tersembunyi"
+      ],
+      "Custom text field": [
+        "Kolom teks khusus"
       ],
       "Device": [
         "Perangkat"
@@ -1936,14 +1984,29 @@
       "Extra password": [
         "Kata sandi tambahan"
       ],
+      "Facebook account": [
+        "Akun Facebook"
+      ],
       "Field name": [
         "Nama kolom"
       ],
       "File format": [
         "Format berkas"
       ],
+      "First name": [
+        "Nama depan"
+      ],
+      "Floor, apartment, building": [
+        "Lantai, apartemen, gedung"
+      ],
       "Forwards to": [
         "Teruskan ke"
+      ],
+      "Full Name": [
+        "Nama Lengkap"
+      ],
+      "Gender": [
+        "Jenis kelamin"
       ],
       "General": [
         "Umum"
@@ -1963,6 +2026,15 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Identitas"
+      ],
+      "Identity": [
+        "Identitas"
+      ],
       "Import": [
         "Impor"
       ],
@@ -1981,11 +2053,17 @@
       "Include numbers (0-9)": [
         "Sertakan angka (0-9)"
       ],
+      "Instagram handle": [
+        "Akun Instagram"
+      ],
       "Invitations": [
         "Undangan"
       ],
       "Item ID": [
         "ID Item"
+      ],
+      "Job title": [
+        "Jabatan"
       ],
       "Key": [
         "Kunci"
@@ -2002,6 +2080,9 @@
       "Last month": [
         "Bulan lalu"
       ],
+      "Last name": [
+        "Nama belakang"
+      ],
       "Last week": [
         "Minggu lalu"
       ],
@@ -2010,6 +2091,12 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "License number": [
+        "Nomor lisensi"
+      ],
+      "LinkedIn account": [
+        "Akun LinkedIn"
       ],
       "Login": [
         "Entri masuk"
@@ -2031,6 +2118,9 @@
       ],
       "Members": [
         "Anggota"
+      ],
+      "Middle name": [
+        "Nama tengah"
       ],
       "Modified": [
         "Dimodifikasi"
@@ -2089,6 +2179,9 @@
       "Passphrase": [
         "Frasa sandi"
       ],
+      "Passport number": [
+        "Nomor paspor"
+      ],
       "Password": [
         "Kata sandi"
       ],
@@ -2101,8 +2194,17 @@
       "Pause list": [
         "Domain yang dikecualikan"
       ],
+      "Personal details": [
+        "Rincian pribadi"
+      ],
+      "Personal website": [
+        "Situs web pribadi"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON yang terenkripsi PGP (direkomendasikan)"
+      ],
+      "Phone number": [
+        "Nomor telepon"
       ],
       "PIN": [
         "PIN"
@@ -2127,6 +2229,9 @@
       ],
       "Recent": [
         "Baru digunakan"
+      ],
+      "Reddit handle": [
+        "Akun Reddit"
       ],
       "Remove link": [
         "Hapus tautan"
@@ -2179,8 +2284,20 @@
       "Show website favicons": [
         "Tampilkan favicon situs web"
       ],
+      "Social security number": [
+        "Nomor jaminan sosial"
+      ],
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
+      ],
+      "State or province": [
+        "Negara bagian atau provinsi"
+      ],
+      "Street address": [
+        "Alamat jalan"
+      ],
+      "Street address, P.O. box": [
+        "Alamat jalan, P.O. Box"
       ],
       "Strong": [
         "Kuat"
@@ -2266,8 +2383,26 @@
       "Websites": [
         "Situs web"
       ],
+      "Work details": [
+        "Rincian pekerjaan"
+      ],
+      "Work email": [
+        "Email kantor"
+      ],
+      "Work phone number": [
+        "Nomor telepon kantor"
+      ],
+      "X handle": [
+        "Akun X"
+      ],
+      "Yahoo account": [
+        "Akun Yahoo"
+      ],
       "You are about to create": [
         "Anda akan membuat"
+      ],
+      "ZIP or Postal code": [
+        "Kode pos"
       ]
     },
     "Message": {
@@ -2636,6 +2771,9 @@
       ],
       "OTP secret or URI required": [
         "Secret OTP atau URI wajib diisi"
+      ],
+      "Section name cannot be empty": [
+        "Nama bagian tidak dapat dikosongkan"
       ],
       "Url already exists": [
         "URL sudah ada"
