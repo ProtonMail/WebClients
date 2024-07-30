@@ -48,7 +48,7 @@ import {
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
-import { getInternalParameters, getSieveParameters, getSieveTree } from './helpers';
+import { getInternalParametersPrivate, getSieveParameters, getSieveTree } from './helpers';
 
 interface Props extends ModalProps {
     forward?: OutgoingAddressForwarding;
@@ -282,7 +282,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                 forwarderKey = newProperties.forwarderKey;
             }
 
-            const { activationToken, forwardeeKey, proxyInstances } = await getInternalParameters(
+            const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
                 forwarderKey,
                 [{ email: model.forwardeeEmail, name: model.forwardeeEmail }],
                 model.forwardeePublicKey

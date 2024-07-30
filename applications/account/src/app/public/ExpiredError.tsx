@@ -21,7 +21,7 @@ const ReportLink = () => {
 };
 
 interface Props {
-    type: 'report' | 'email' | 'unsubscribe' | 'forwarding' | 'magic-link' | 'magic-link-used';
+    type: 'report' | 'email' | 'unsubscribe' | 'forwarding' | 'group' | 'magic-link' | 'magic-link-used';
 }
 
 const getTexts = (type: Props['type']) => {
@@ -49,6 +49,12 @@ const getTexts = (type: Props['type']) => {
         return {
             title: c('Info').t`Link expired`,
             description: c('Info').t`We just sent you a new link.`,
+        };
+    }
+    if (type === 'group') {
+        return {
+            title: c('Info').t`Link expired`,
+            description: c('Info').t`This invitation link has expired. We just sent you a new link.`,
         };
     }
     if (type === 'magic-link') {

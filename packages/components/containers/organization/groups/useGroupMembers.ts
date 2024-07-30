@@ -8,8 +8,9 @@ const useGroupMembers = () => {
     const [groupMembers, setGroupMembers] = useState<GroupMember[]>([]);
     const api = useApi();
 
-    const fetchGroupMembers = async (groupID: string) => {
-        if (groupID === 'new') {
+    const fetchGroupMembers = async (groupID?: string) => {
+        setGroupMembers([]);
+        if (groupID === 'new' || groupID === undefined) {
             return;
         }
         const { Members: groupMembers } = await api(getGroupMembers(groupID));
