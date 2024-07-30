@@ -37,6 +37,9 @@
       "Add new item": [
         "Pridať novú položku"
       ],
+      "Add section": [
+        "Pridať sekciu"
+      ],
       "Add username field": [
         "Pridať pole mena používateľa"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Vytvoriť kartu"
       ],
+      "Create identity": [
+        "Vytvoriť identitu"
+      ],
       "Create login": [
         "Vytvoriť prihlásenie"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Vytváranie trezoru"
+      ],
+      "Custom section": [
+        "Vlastná sekcia"
       ],
       "Customize": [
         "Prispôsobiť"
@@ -426,6 +435,9 @@
       ],
       "Saving": [
         "Ukladanie"
+      ],
+      "Section name": [
+        "Názov sekcie"
       ],
       "Secure links": [
         "Bezpečné odkazy"
@@ -1627,6 +1639,9 @@
       "Restoring trashed items...": [
         "Obnovovanie položiek z koša..."
       ],
+      "Secure links": [
+        "Bezpečné odkazy"
+      ],
       "Select destination vault": [
         "Vyberte cieľový trezor"
       ],
@@ -1941,6 +1956,15 @@
       "Account": [
         "Účet"
       ],
+      "Add section": [
+        "Pridať sekciu"
+      ],
+      "Additional details": [
+        "Ďalšie podrobnosti"
+      ],
+      "Address details": [
+        "Detaily adresy"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1968,6 +1992,9 @@
       "Beta Access": [
         "Beta prístup"
       ],
+      "Birthdate": [
+        "Dátum narodenia"
+      ],
       "Capital letters (A-Z)": [
         "Veľké písmená (A-Z)"
       ],
@@ -1983,14 +2010,29 @@
       "Cards": [
         "Karty"
       ],
+      "City": [
+        "Mesto"
+      ],
       "Code": [
         "Kód"
+      ],
+      "Company": [
+        "Spoločnosť"
       ],
       "Confirm vault name": [
         "Potvrdiť názov trezoru"
       ],
+      "Contact details": [
+        "Kontaktné údaje"
+      ],
       "Copy": [
         "Kopírovať"
+      ],
+      "Country or Region": [
+        "Krajina alebo región"
+      ],
+      "County": [
+        "Okres"
       ],
       "Create a credit card": [
         "Vytvoriť platobnú kartu"
@@ -2015,6 +2057,12 @@
       ],
       "Created at": [
         "Vytvorené"
+      ],
+      "Custom hidden field": [
+        "Vlastné ukryté pole"
+      ],
+      "Custom text field": [
+        "Vlastné textové pole"
       ],
       "Date": [
         "Dátum"
@@ -2064,17 +2112,32 @@
       "Extra password": [
         "Dodatočné heslo"
       ],
+      "Facebook account": [
+        "Facebookový účet"
+      ],
       "Field name": [
         "Názov poľa"
       ],
       "File format": [
         "Formát súboru"
       ],
+      "First name": [
+        "Krstné meno"
+      ],
+      "Floor, apartment, building": [
+        "Poschodie, byt, budova"
+      ],
       "Forwards to": [
         "Preposielať na"
       ],
       "Free forever": [
         "Navždy zadarmo"
+      ],
+      "Full Name": [
+        "Celé meno"
+      ],
+      "Gender": [
+        "Pohlavie"
       ],
       "General": [
         "Všeobecné"
@@ -2094,6 +2157,15 @@
       "Hide password": [
         "Skryť heslo"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Identity"
+      ],
+      "Identity": [
+        "Identita"
+      ],
       "Import": [
         "Import"
       ],
@@ -2112,11 +2184,17 @@
       "Include numbers (0-9)": [
         "Vrátane čísiel (0-9)"
       ],
+      "Instagram handle": [
+        "Používateľské meno v Instagrame"
+      ],
       "Invitations": [
         "Pozvánky"
       ],
       "Item ID": [
         "ID položky"
+      ],
+      "Job title": [
+        "Názov pracovnej pozície"
       ],
       "Key": [
         "Kľúč"
@@ -2133,6 +2211,9 @@
       "Last month": [
         "Posledný mesiac"
       ],
+      "Last name": [
+        "Priezvisko"
+      ],
       "Last updated": [
         "Posledná aktualizácia"
       ],
@@ -2144,6 +2225,12 @@
       ],
       "Learn more": [
         "Zistiť viac"
+      ],
+      "License number": [
+        "Licenčné číslo"
+      ],
+      "LinkedIn account": [
+        "Účet LinkedIn"
       ],
       "Login": [
         "Prihlásenie"
@@ -2165,6 +2252,9 @@
       ],
       "Members": [
         "Členovia"
+      ],
+      "Middle name": [
+        "Stredné meno"
       ],
       "Modified": [
         "Upravené"
@@ -2226,14 +2316,26 @@
       "Passphrase": [
         "Prístupová fráza"
       ],
+      "Passport number": [
+        "Číslo pasu"
+      ],
       "Password": [
         "Heslo"
       ],
       "Password history": [
         "História hesla"
       ],
+      "Personal details": [
+        "Osobné údaje"
+      ],
+      "Personal website": [
+        "Osobná webstránka"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-šifrovaný JSON (odporúča sa)"
+      ],
+      "Phone number": [
+        "Telefónne číslo"
       ],
       "PIN": [
         "PIN"
@@ -2252,6 +2354,9 @@
       ],
       "Recent": [
         "Nedávne"
+      ],
+      "Reddit handle": [
+        "Používateľské meno Reddit"
       ],
       "Remove link": [
         "Odstrániť odkaz"
@@ -2301,11 +2406,23 @@
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
       ],
+      "Social security number": [
+        "Číslo poistenca sociálnej poisťovne"
+      ],
       "Special characters (!&*)": [
         "Špeciálne znaky (!&*)"
       ],
+      "State or province": [
+        "Kraj alebo región"
+      ],
       "Status": [
         "Stav"
+      ],
+      "Street address": [
+        "Ulica a č."
+      ],
+      "Street address, P.O. box": [
+        "Ulica, P.O. Box"
       ],
       "Strong": [
         "Silné"
@@ -2391,11 +2508,32 @@
       "Weak": [
         "Slabé"
       ],
+      "Website": [
+        "Webová stránka"
+      ],
       "Websites": [
         "Webové stránky"
       ],
+      "Work details": [
+        "Podrobnosti o pracovnej činnosti"
+      ],
+      "Work email": [
+        "Pracovný email"
+      ],
+      "Work phone number": [
+        "Pracovné telefónne číslo"
+      ],
+      "X handle": [
+        "Meno v sieti X"
+      ],
+      "Yahoo account": [
+        "Yahoo účet"
+      ],
       "You are about to create": [
         "Chystáte sa vytvoriť"
+      ],
+      "ZIP or Postal code": [
+        "PSČ"
       ]
     },
     "Link": {
@@ -2895,6 +3033,9 @@
       ],
       "OTP secret or URI required": [
         "Vyžaduje sa OTP tajný kľúč alebo URI"
+      ],
+      "Section name cannot be empty": [
+        "Názov sekcie nemôže byť prázdny"
       ],
       "Url already exists": [
         "URL už existuje"
