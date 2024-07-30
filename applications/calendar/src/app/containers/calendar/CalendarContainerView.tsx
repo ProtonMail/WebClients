@@ -561,7 +561,7 @@ const CalendarContainerView = ({
             as={AppLink}
             key="footer-button-2"
             to={toLink}
-            selfOpening
+            reloadDocument
             data-testid="calendar-drawer:open-in-app-button"
         >
             {c('Link to calendar app').t`Open in ${CALENDAR_APP_NAME}`}
