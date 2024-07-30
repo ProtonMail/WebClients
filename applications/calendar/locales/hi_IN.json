@@ -304,6 +304,9 @@
       "Go to panel ${ index }": [
         "${ index } पैनल पे जाएं"
       ],
+      "Go to settings": [
+        "सेटिंग में जाएं"
+      ],
       "Got it": [
         "समझ गए"
       ],
@@ -360,6 +363,9 @@
       ],
       "Keep my Plus subscription": [
         "मेरी प्लस सदस्यता को बनाए रखें"
+      ],
+      "Later": [
+        "बाद में"
       ],
       "Let's talk": [
         "चलिए बात करते हैं"
@@ -445,10 +451,10 @@
       "Not now": [
         "अभी नहीं"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -568,6 +574,9 @@
       "Select calendar view": [
         "कैलेंडर दृश्य चुनें"
       ],
+      "Select country": [
+        "देश चुनें"
+      ],
       "Select time zone": [
         "समय क्षेत्र चुनें"
       ],
@@ -667,6 +676,9 @@
       "Upgrade": [
         "अपग्रेड करें"
       ],
+      "Upgrade Now": [
+        "अभी अपग्रेड करें"
+      ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
       ],
@@ -722,6 +734,11 @@
       ],
       "They can view or edit your calendar": [
         "वो कैलेंडर देख या बदल सकते है"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "पुनः सक्रिय करें"
       ]
     },
     "Action title": {
@@ -1790,6 +1807,9 @@
       "Macao": [
         "मकाओ"
       ],
+      "Macedonia": [
+        "मैसिडोनिया"
+      ],
       "Madagascar": [
         "मेडागास्कर"
       ],
@@ -2358,6 +2378,11 @@
         "हमें सुधरने में मदद करें"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "प्राथमिक सहायता"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "कैलेंडर जोड़ें"
@@ -2408,6 +2433,11 @@
         "समय:\n${ formattedStart }"
       ]
     },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "हटाया गया"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "${ formattedStart } पर किसी ईवेंट को रद्द करना"
@@ -2429,6 +2459,9 @@
       ]
     },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 टीबी"
+      ],
       "6 users": [
         "6 यूज़र"
       ]
@@ -2841,6 +2874,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
         "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
@@ -4436,6 +4472,9 @@
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
+      "Warning": [
+        "चेतावनी"
+      ],
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
@@ -5280,6 +5319,11 @@
         "यह क्या है?"
       ]
     },
+    "Link label (optional)": {
+      "Access": [
+        "एक्सेस करें"
+      ]
+    },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } में खोलें"
@@ -5337,9 +5381,22 @@
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "${ price } के लिए"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Auto-delete Spam and Trash": [
+        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
       "Support for 1 custom email domain": [
         "1 कस्टम ईमेल डोमेन के लिए सहायता"
@@ -5911,6 +5968,9 @@
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
       ],
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
+      ],
       "Unlimited labels": [
         "असीमित लेबल"
       ],
@@ -5987,9 +6047,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "सभी ${ BRAND_NAME } ऐप्स और उनकी प्रीमियम सुविधाएँ"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "क्रेडिट, प्रोरेशन, और कूपन जो लागू हो सकते है अगले कदम में लगाए जाएगे"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "सारे ${ BRAND_NAME } सेवाओं के साथ पूरी निजता और सुरक्षा।"
@@ -6562,6 +6619,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "ठीक है"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -6798,6 +6858,11 @@
         "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
+    "Security Center - Action": {
+      "View logs": [
+        "लॉग देखें"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "यदि आपका पासवर्ड या अन्य डेटा किसी तिसारे-पक्ष से लीक हुआ है, तो इसकी सूचना प्राप्त करें। ${ learnMoreLink }"
@@ -6851,6 +6916,16 @@
         "पासवर्ड रीसेट करें"
       ]
     },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "पासवर्ड रीसेट रद्द करें"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "पासवर्ड रीसेट प्रक्रिया रद्द करने हेतु वर्तमान पासवर्ड दर्ज करें। कोई अन्य परिवर्तन प्रभावी नहीं होगा।"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "पासवर्ड रीसेट रद्द कर दिया गया"
@@ -6872,6 +6947,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "अनुरोध रद्द करें"
+      ],
       "Got it": [
         "समझ गया"
       ],
@@ -7342,6 +7420,14 @@
       ],
       "Your own custom email domain": [
         "अपना कस्टम ईमेल डोमेन"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
       ]
     },
     "Subscription renewal state": {
