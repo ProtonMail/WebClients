@@ -11,7 +11,7 @@
 export interface HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson {
   Labels: {
     verificationKey: "ShareAddress" | "NameSignatureEmail" | "SignatureEmail" | "NodeKey" | "other";
-    shareType: "own" | "device" | "photo" | "shared";
+    shareType: "main" | "device" | "photo" | "shared";
     addressMatchingDefaultShare: "yes" | "no" | "unknown";
     fromBefore2024: "yes" | "no" | "unknown";
   };

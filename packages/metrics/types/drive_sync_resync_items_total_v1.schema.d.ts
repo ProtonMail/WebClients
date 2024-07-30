@@ -12,7 +12,7 @@ export interface HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson {
   Labels: {
     type: "remote_new_or_modified" | "remote_deleted" | "local_new_or_modified" | "local_deleted" | "conflict";
     fullSync: "true" | "false";
-    shareType: "own" | "device" | "photo" | "shared";
+    shareType: "main" | "device" | "photo" | "shared";
   };
   Value: number;
 }
