@@ -241,6 +241,9 @@
       "Close this banner": [
         "Tanca aquest bàner"
       ],
+      "Collapse navigation bar": [
+        "Redueix la barra de navegació"
+      ],
       "Collapse URL": [
         "Acurta l'URL"
       ],
@@ -374,6 +377,9 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Display navigation bar": [
+        "Mostra la barra de navegació"
       ],
       "Done": [
         "Fet"
@@ -1135,6 +1141,9 @@
       "Show more search options": [
         "Mostra més opcions de cerca"
       ],
+      "Show navigation bar": [
+        "Mostra la barra de navegació"
+      ],
       "Show preview": [
         "Mostra visualització prèvia"
       ],
@@ -1216,10 +1225,6 @@
       "Trust": [
         "De confiança"
       ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
-      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1248,7 +1253,7 @@
         "Desmarca per a l'eliminació"
       ],
       "Unordered list": [
-        "Llista amb pics"
+        "Llista no ordenada"
       ],
       "Unsnooze": [
         "Deixa de posposar"
@@ -3541,6 +3546,14 @@
     "Download attachments": {
       "Download all": [
         "Desa tot"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
       ]
     },
     "Email body for description (description part)": {
@@ -9282,9 +9295,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per protegir tot el seu negoci."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
@@ -11929,6 +11939,26 @@
         "${ minutes } minuts"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Activa"
+      ],
+      "Create an alias": [
+        "Crea un àlies"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Baixa ${ VPN_APP_NAME }"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Activa la supervisió de la web fosca"
+      ],
+      "Open ": [
+        "Obre"
+      ],
+      "Show me how": [
+        "Mostra'm com"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } adreça de correu electrònic",
@@ -12856,6 +12886,20 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via correu electrònic"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
       ]
     },
     "Warning": {

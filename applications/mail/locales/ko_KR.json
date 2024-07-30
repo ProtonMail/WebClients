@@ -1059,6 +1059,9 @@
       "Select all messages": [
         "모든 메시지 선택"
       ],
+      "Select billing cycle ${ billingText }": [
+        "${ billingText } 결제 주기 선택"
+      ],
       "Select country": [
         "국가 선택"
       ],
@@ -3559,6 +3562,14 @@
         "모두 다운로드"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "설명:\n${ eventDescription }"
@@ -5681,6 +5692,9 @@
       "and": [
         "그리고"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "다음에 Mail을 실행할 때 다른 팁이 여기에 표시됩니다."
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "예약하거나 방해 금지된 메시지가 취소됩니다."
       ],
@@ -5822,6 +5836,9 @@
       "Confirm phishing report": [
         "피싱 신고 확인"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "수신자가 이메일을 받기에 가장 좋은 시간이 언제인지 고려해보고, 그때 전송되도록 예약 전송을 설정하세요."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당되었습니다"
       ],
@@ -5842,6 +5859,9 @@
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개의 새 달력 만들기"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "모든 온라인 영수증을 한 곳에 보관하려면 \"${ suggestedFolderName }\"와(과) 같은 폴더를 만들어 보세요."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 폴더를 만드세요."
@@ -5894,6 +5914,12 @@
       "Default email application": [
         "기본 이메일 애플리케이션"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "${ BRAND_NAME } 계정에 포함된 암호화된 클라우드 스토리지가 있다는 것을 알고 계셨나요? 무료로 ${ DRIVE_APP_NAME }에서 공간을 최대로 활용해 보세요."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "알고 계셨나요? 당신만을 위한 더 짧은 이메일 주소를 예약해 드렸습니다. \"@${ PM_DOMAIN }\"에 따른 사용자 이름입니다."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
@@ -5908,6 +5934,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "받는 사람에게 비밀번호를 공유하는 것을 잊지 마세요"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "지금 중요한 이메일을 집중해서 읽을 시간이 없더라도 잊어버리지 않고 싶다면? 나중에 받은 편지함에 나타날 수 있도록 더 나은 시간을 설정하세요."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
@@ -6065,6 +6094,9 @@
       "Generate text": [
         "텍스트 생성"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "들어오는 청구서에 \"${ suggestedLabelName }\"와(과) 같은 색으로 구분된 라벨을 사용해 보세요. 수금이 완료되었다면, 라벨을 \"${ suggestedPaidLabelName }\"으(로) 바꿔보세요."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 개 첨부 파일이 있음 (${ numAttachmentsSize })"
       ],
@@ -6103,6 +6135,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "별칭이 판매되었거나, 유출되었거나, 약동되었다면 스팸을 받지 않기 위해 간단히 비활성화 하세요."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "비밀번호가 다크 웹상에서 나타나면, ${ BRAND_NAME }가 어느 서비스에서 데이터가 침해되었는지와 어떻게 해결하는지 알려드려요."
       ],
       "Image description": [
         "이미지 설명"
@@ -6172,6 +6207,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "로그인과 신용 카드 세부 정보를 안전하게 보관하되 ${ PASS_APP_NAME }에 추가하여 항상 보관하세요. ${ BRAND_NAME } 계정에 무료로 포함되어 있어요."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "30일 이상 있었던 쓰레기와 스팸을 자동으로 제거하여 우편함을 깔끔하게 유지해 보세요."
       ],
       "Key fingerprint": [
         "지문 키"
@@ -6953,6 +6994,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "업무, 개인 또는 기타 영역별로 이메일을 쉽게 분리할 수 있도록 다른 목적으로 다른 이메일 주소를 사용하세요."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "이메일을 빠르게 관리하려면 키보드 단축키를 사용하세요."
       ],
@@ -7042,6 +7086,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "뉴스래터를 신청할 때, 내 실제 이메일 주소 대신 별칭을 사용해 보세요. 별칭을 언제든 비활성화하고 신원은 비공개로 유지할 수 있답니다."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "여행 중이거나 공용 WiFi를 사용하는 상황일 때, ${ VPN_APP_NAME }을 통해 무료로 데이터 유출이나 온라인 추적을 방지하세요."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -9174,9 +9224,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "적용 가능한 크레딧, 비례 배분 및 쿠폰은 다음 단계에서 적용됩니다."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
@@ -9778,6 +9825,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
+      ],
+      "Please select billing country": [
+        "결제 청구 국가를 선택하세요"
+      ],
+      "Please select billing state": [
+        "결제 청구 주를 선택하세요"
+      ],
+      "Please select your billing country first.": [
+        "결제 청구 국가를 먼저 선택하세요"
+      ],
+      "Please select your billing state first.": [
+        "결제 청구 주를 먼저 선택하세요"
+      ],
+      "Select billing country to pay": [
+        "결제를 청구할 국가 선택"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
@@ -11074,6 +11136,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 끝나게 되면, Drive 저장공간 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } FREE로 다운그레이드 됩니다. 또한 이전에 받았던 저장공간 보너스를 전부 잃게 됩니다."
       ],
@@ -11608,6 +11673,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " (이)가 이제 활성 상태입니다."
+      ],
       "${ label.Name } removed": [
         "${ label.Name } 삭제됨"
       ]
@@ -11741,6 +11809,41 @@
       ],
       "${ minutes } minute": [
         "${ minutes }분"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "활성화"
+      ],
+      "Create an alias": [
+        "별칭 만들기"
+      ],
+      "Create label “${ suggestedLabelName }“": [
+        "\"${ suggestedLabelName }\" 라벨 생성하기"
+      ],
+      "Create new email address": [
+        "새로운 이메일 주소 만들기"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "\"${ suggestedFolderName }\" 폴더 생성하기"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } 다운로드"
+      ],
+      "Download Desktop app": [
+        "데스크톱 앱 다운로드"
+      ],
+      "Enable Dark Web Monitoring": [
+        "다크 웹 모니터링 활성화"
+      ],
+      "Get my “@${ PM_DOMAIN }“ address": [
+        "\"@${ PM_DOMAIN }\" 주소 받기"
+      ],
+      "Open ": [
+        " 열기"
+      ],
+      "Show me how": [
+        "방법 살펴보기"
       ]
     },
     "Title": {
@@ -11887,6 +11990,9 @@
       ],
       "Conversation list": [
         "대화 목록"
+      ],
+      "Coupon": [
+        "쿠폰"
       ],
       "Create contact": [
         "연락처 추가"
@@ -12652,6 +12758,54 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "계정 당 ${ n }개 지갑"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } wallet": [
+        "${ n }개 지갑"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin을 보관하는 가장 안전한 방법"
+      ],
+      "Bitcoin via email": [
+        "이메일을 통한 Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Wallet 앱 접근"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin을 안전하게 보관하고 입출금하세요."
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "지갑 오류"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "지갑"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "계정 ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "나의 imported wallet${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "나의 wallet${ indexStr }"
       ]
     },
     "Warning": {

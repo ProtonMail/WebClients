@@ -1218,12 +1218,6 @@
       "Trust": [
         "Zaupaj"
       ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
-      ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
       ],
@@ -3528,6 +3522,14 @@
     "Download attachments": {
       "Download all": [
         "Prenesi vse"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
       ]
     },
     "Email body for description (description part)": {
@@ -8683,6 +8685,11 @@
         "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arhiv"
@@ -9468,9 +9475,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Vse ${ BRAND_NAME } poslovne aplikacije in premijske funkcije za zaščito celotnega podjetja."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Uporabno dobroimetje, sorazmerna delitev in kuponi se upoštevajo v naslednjem koraku."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Celovita zasebnost in varnost s kombinacijo vseh storitev ${ BRAND_NAME }."
       ],
@@ -10055,6 +10059,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Razumem"
+      ],
       "MM/YY": [
         "MM/LL"
       ],
@@ -10229,6 +10236,9 @@
       ],
       "Text": [
         "Besedilo"
+      ],
+      "To": [
+        "Do"
       ],
       "Try “Announce upcoming events in a newsletter”": [
         "Poskusite »Najavi prihajajoče dogodke v glasilu«"
@@ -12104,6 +12114,26 @@
         "${ minutes } minuti",
         "${ minutes } minute",
         "${ minutes } minut"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "Aktiviraj"
+      ],
+      "Create an alias": [
+        "Ustvari vzdevek"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Prenesi ${ VPN_APP_NAME }"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Omogoči nadzor temnega spleta"
+      ],
+      "Open ": [
+        "Odpri "
+      ],
+      "Show me how": [
+        "Pokaži mi kako"
       ]
     },
     "Title": {
