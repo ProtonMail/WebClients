@@ -9,6 +9,7 @@ import { ShareType } from '../../_shares/interface';
 import useShareState from '../../_shares/useSharesState';
 import { isVerificationError } from '../worker/verifier';
 
+// TODO: DRVWEB-4123 Unify Share Types
 export enum UploadShareType {
     Own = 'own',
     Device = 'device',
@@ -73,7 +74,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         }
         metricsModule.drive_upload_errors_total.increment({
             type: errorCategory,
-            shareType,
+            shareType: shareType === UploadShareType.Own ? 'main' : shareType,
             initiator: 'explicit',
         });
 

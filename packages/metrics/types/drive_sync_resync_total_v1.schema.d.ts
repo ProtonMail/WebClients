@@ -11,7 +11,7 @@
 export interface HttpsProtonMeDriveSyncResyncTotalV1SchemaJson {
   Labels: {
     cause: "core_refresh" | "drive_refresh" | "server_error" | "client_error";
-    shareType: "own" | "device" | "photo" | "shared";
+    shareType: "main" | "device" | "photo" | "shared";
   };
   Value: number;
 }
