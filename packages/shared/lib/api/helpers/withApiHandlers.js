@@ -164,10 +164,10 @@ export default ({ call, onMissingScopes, onVerification }) => {
                     Array.isArray(ignoreHandler) &&
                     ignoreHandler.includes(API_CUSTOM_ERROR_CODES.DEVICE_VERIFICATION_REQUIRED);
                 if (code === API_CUSTOM_ERROR_CODES.DEVICE_VERIFICATION_REQUIRED && !ignoreDeviceVerification) {
-                    const { Details: { ChallengeType: challengType, ChallengePayload: challengePayload } = {} } =
+                    const { Details: { ChallengeType: challengeType, ChallengePayload: challengePayload } = {} } =
                         e.data || {};
                     const requestUID = getUIDHeaderValue(headers) ?? UID;
-                    return deviceVerificationHandler(requestUID, challengType, challengePayload)
+                    return deviceVerificationHandler(requestUID, challengeType, challengePayload)
                         .then((result) => {
                             return call({
                                 ...options,

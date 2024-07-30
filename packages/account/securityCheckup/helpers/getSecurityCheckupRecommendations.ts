@@ -1,4 +1,6 @@
 import {
+    getIsAlmostPerfectEmailState,
+    getIsAlmostPerfectPhoneState,
     getIsPerfectDeviceRecoveryState,
     getIsPerfectEmailState,
     getIsPerfectPhoneState,
@@ -89,8 +91,10 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
     const isPerfectPhraseState = getIsPerfectPhraseState(securityState);
 
     const isPerfectEmailState = getIsPerfectEmailState(securityState);
+    const isAlmostPerfectEmailState = getIsAlmostPerfectEmailState(securityState);
 
     const isPerfectPhoneState = getIsPerfectPhoneState(securityState);
+    const isAlmostPerfectPhoneState = getIsAlmostPerfectPhoneState(securityState);
 
     const isPerfectEmailOrPhoneState = isPerfectEmailState || isPerfectPhoneState;
 
@@ -185,8 +189,22 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
     /**
      * NO_RECOVERY_METHOD
      **/
-    actions.phrase();
-    furtherActions.emailOrPhone();
+    if (isAlmostPerfectEmailState || isAlmostPerfectPhoneState) {
+        if (isAlmostPerfectEmailState) {
+            actions.email();
+        }
+        if (isAlmostPerfectPhoneState) {
+            actions.phone();
+        }
+    } else {
+        actions.phrase();
+    }
+
+    if (!isAlmostPerfectEmailState && !isAlmostPerfectPhoneState) {
+        furtherActions.emailOrPhone();
+    } else {
+        furtherActions.phrase();
+    }
 
     return serialize({
         cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
