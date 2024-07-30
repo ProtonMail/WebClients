@@ -52,11 +52,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -658,11 +658,17 @@
       "More info: Keyboard shortcuts": [
         "Mais informações: Atalhos de teclado"
       ],
+      "More options": [
+        "Mais opções"
+      ],
       "move emails to": [
         "mover os e-mails para"
       ],
       "Need help?": [
         "Precisa de ajuda?"
+      ],
+      "New group": [
+        "Novo grupo"
       ],
       "Next": [
         "Seguinte"
@@ -681,6 +687,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Abrir"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -736,11 +745,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -792,6 +801,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Resend invitation": [
+        "Reenviar o convite"
       ],
       "Reset credentials": [
         "Repor credenciais"
@@ -2578,6 +2590,9 @@
       "Macao": [
         "Macau"
       ],
+      "Macedonia": [
+        "Macedónia"
+      ],
       "Madagascar": [
         "Madagáscar"
       ],
@@ -2981,6 +2996,11 @@
         "Detetámos erros em várias linhas durante a importação. Verifique o seu arquivo CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Mais informação"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mês"
@@ -3071,6 +3091,11 @@
       ],
       "You can only delete 1 address per year.": [
         "Só é possível eliminar 1 endereço por ano."
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Só é possível eliminar 1 endereço por ano"
       ]
     },
     "Delete calendar section description": {
@@ -3307,6 +3332,14 @@
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
       ]
     },
     "Duration": {
@@ -6354,11 +6387,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -6948,6 +6981,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere estas definições só se estiver a usar PGP com destinatários que não utilizam o ${ BRAND_NAME }."
+      ],
+      "Only you can see the label": [
+        "Apenas você consegue ver a etiqueta"
       ],
       "Open source": [
         "Código aberto"
@@ -8913,6 +8949,9 @@
       "Gift code": [
         "Código de oferta"
       ],
+      "Group name": [
+        "Nome do grupo"
+      ],
       "Hide password": [
         "Ocultar a palavra-passe"
       ],
@@ -9621,9 +9660,6 @@
       "Learn more about data recovery": [
         "Saiba mais sobre a recuperação dos dados"
       ],
-      "Need help?": [
-        "Precisa de ajuda?"
-      ],
       "Not activated": [
         "Não ativado"
       ],
@@ -9680,6 +9716,11 @@
       ],
       "Why set recovery methods?": [
         "Por que definir métodos de recuperação?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Acesso"
       ]
     },
     "Loading info": {
@@ -10161,23 +10202,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10205,6 +10229,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10630,9 +10671,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todas as aplicações ${ BRAND_NAME } e os seus recursos premium"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Os créditos, repartições e cupões aplicáveis são aplicados na etapa seguinte."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
@@ -11367,6 +11405,11 @@
         "UDP"
       ]
     },
+    "option": {
+      "Members": [
+        "Membros"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 segundos"
@@ -11574,6 +11617,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mas pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } com uma atualização para o **${ upsellPlanTitle }** — por apenas ${ relativePrice } extras por mês."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Ao continuar, concorda com os nossos ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "A criar a sua conta"
@@ -11948,6 +11994,11 @@
       ],
       "yourdomain.com": [
         "oseudomínio.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Membros"
       ]
     },
     "plan customizer, ips": {
@@ -13830,11 +13881,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14027,6 +14078,9 @@
       "Disable two-factor authentication": [
         "Desativar a autenticação de dois fatores"
       ],
+      "Discard changes?": [
+        "Descartar alterações?"
+      ],
       "Display name and signature": [
         "Nome a mostrar e assinatura"
       ],
@@ -14184,6 +14238,9 @@
       "Forward emails": [
         "Reencaminhar e-mails"
       ],
+      "Gateway": [
+        "Gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
@@ -14296,6 +14353,9 @@
       "Link confirmation": [
         "Confirmação de hiperligação"
       ],
+      "Main password": [
+        "Palavra-passe principal"
+      ],
       "Messages": [
         "Mensagens"
       ],
@@ -14376,9 +14436,6 @@
       ],
       "PayPal verification failed": [
         "Erro na verificação PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"
@@ -15148,6 +15205,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Invite sent": [
         "O convite foi enviado."
       ],
@@ -15282,6 +15342,31 @@
     "VPNClient": {
       "iOS": [
         "iOS"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } endereço de e-mail ",
+        "${ n } endereços de e-mail "
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ],
+      "Get started": [
+        "Começar"
+      ],
+      "Unlock ${ appName } premium features by upgrading": [
+        "Desbloqueie as funcionalidades premium do ${ appName } com a atualização do seu plano."
+      ]
+    },
+    "wallet_signup_2024:Info": {
+      "Coming soon": [
+        "Em breve"
+      ]
+    },
+    "wallet_signup_2024:Wallet Settings": {
+      "Downloads": [
+        "Transferências"
       ]
     },
     "Warning": {
