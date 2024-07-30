@@ -1,40 +1,15 @@
 import type { ReactNode } from 'react';
 
 import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
-import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import {
-    getIsPublicUserWithoutProtonAddress,
-    getIsSSOVPNOnlyAccount,
-    getRequiresAddressSetup,
-} from '@proton/shared/lib/keys';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
+import type { AppLinkProps } from '../../components';
 import { AppLink, SettingsLink } from '../../components';
-
-export const apps = (user?: UserModel) => {
-    if (getIsSSOVPNOnlyAccount(user)) {
-        return getSSOVPNOnlyAccountApps();
-    }
-    if (getIsPublicUserWithoutProtonAddress(user)) {
-        return getPublicUserProtonAddressApps();
-    }
-    if (isElectronMail) {
-        return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
-    }
-    return [
-        APPS.PROTONMAIL,
-        APPS.PROTONCALENDAR,
-        APPS.PROTONDRIVE,
-        APPS.PROTONVPN_SETTINGS,
-        APPS.PROTONPASS,
-        APPS.PROTONWALLET,
-    ];
-};
 
 interface ProductLinkProps {
     ownerApp: APP_NAMES;
@@ -44,9 +19,21 @@ interface ProductLinkProps {
     current?: boolean;
     className?: string;
     children: ReactNode;
+    reloadDocument?: AppLinkProps['reloadDocument'];
+    target?: AppLinkProps['target'];
 }
 
-const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, children }: ProductLinkProps) => {
+const ProductLink = ({
+    ownerApp,
+    app,
+    appToLinkTo,
+    user,
+    current,
+    className,
+    children,
+    reloadDocument,
+    target,
+}: ProductLinkProps) => {
     const appToLinkToName = getAppName(appToLinkTo);
 
     if (user && app && getRequiresAddressSetup(appToLinkTo, user)) {
@@ -64,6 +51,8 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
                 title={appToLinkToName}
                 className={className}
                 aria-current={current}
+                reloadDocument={reloadDocument}
+                target={target}
             >
                 {children}
             </AppLink>
@@ -97,6 +86,8 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
                 title={appToLinkToName}
                 className={className}
                 aria-current={current}
+                reloadDocument={reloadDocument}
+                target={target}
             >
                 {children}
             </SettingsLink>
@@ -111,6 +102,8 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
             title={appToLinkToName}
             className={className}
             aria-current={current}
+            reloadDocument={reloadDocument}
+            target={target}
         >
             {children}
         </AppLink>
