@@ -176,7 +176,7 @@ const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency
 const PlanSelection = ({
     app,
     mode,
-    hasFreePlan = true,
+    hasFreePlan,
     planIDs,
     plans,
     plansMap,
