@@ -11,7 +11,7 @@
 export interface HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson {
   Labels: {
     type: "4xx" | "5xx" | "network_error" | "integrity_error" | "unknown";
-    shareType: "own" | "device" | "photo" | "shared";
+    shareType: "main" | "device" | "photo" | "shared";
   };
   Value: number;
 }

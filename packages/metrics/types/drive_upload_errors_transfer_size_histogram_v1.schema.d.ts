@@ -6,12 +6,9 @@
  */
 
 /**
- * Measures number of synced items
+ * At what point the upload failed - how many bytes were uploaded before failure
  */
-export interface HttpsProtonMeDriveSyncItemsTotalV1SchemaJson {
-  Labels: {
-    type: "local_sync" | "remote_sync";
-    shareType: "main" | "device" | "photo" | "shared";
-  };
+export interface HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson {
   Value: number;
+  Labels: {};
 }

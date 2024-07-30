@@ -11,7 +11,7 @@
 export interface HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson {
   Labels: {
     entity: "share" | "node";
-    shareType: "own" | "device" | "photo" | "shared" | "shared_public";
+    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
     fromBefore2024: "yes" | "no" | "unknown";
   };
   Value: number;
