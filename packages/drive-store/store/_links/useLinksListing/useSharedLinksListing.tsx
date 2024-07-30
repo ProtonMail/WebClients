@@ -2,14 +2,15 @@ import { useCallback, useRef } from 'react';
 
 import { querySharedByMeLinks } from '@proton/shared/lib/api/drive/sharing';
 import { queryVolumeSharedLinks } from '@proton/shared/lib/api/drive/volume';
-import { ListDriveSharedByMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
-import { ListDriveVolumeSharedLinksPayload } from '@proton/shared/lib/interfaces/drive/volume';
+import type { ListDriveSharedByMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ListDriveVolumeSharedLinksPayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { useDebouncedRequest } from '../../_api';
-import { DecryptedLink } from '../interface';
+import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
-import { FetchLoadLinksMeta } from './interface';
-import { DEFAULT_SORTING, FetchMeta, PAGE_SIZE, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
+import type { FetchLoadLinksMeta } from './interface';
+import type { FetchMeta, SortParams} from './useLinksListingHelpers';
+import { DEFAULT_SORTING, PAGE_SIZE, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchSharedLinksMeta extends FetchMeta {
     lastPage: number;
@@ -113,7 +114,7 @@ export function useSharedLinksListing() {
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
-    ): Promise<{ AnchorID: string; More: boolean }> => {
+    ): Promise<{ AnchorID?: string; More: boolean }> => {
         let sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
 
         if (sharedLinksFetchMeta.isEverythingFetched) {
@@ -137,7 +138,7 @@ export function useSharedLinksListing() {
         sharedLinksFetchMeta.isEverythingFetched = !response.More;
 
         return {
-            AnchorID: response.AnchorID,
+            AnchorID: response.AnchorID ? response.AnchorID : undefined,
             More: response.More,
         };
     };

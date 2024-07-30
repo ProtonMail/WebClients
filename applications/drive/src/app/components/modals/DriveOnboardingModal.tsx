@@ -32,7 +32,7 @@ const DriveOnboardingModal = (props: Props) => {
     const {
         isLoading,
         checklist: { expiresInDays },
-        hasPendingInvitations,
+        hasPendingExternalInvitations,
     } = useOnboarding();
     const { activeFolder } = useActiveShare();
     const {
@@ -114,7 +114,7 @@ const DriveOnboardingModal = (props: Props) => {
             </OnboardingStep>
         ));
     }
-    if (hasPendingInvitations) {
+    if (hasPendingExternalInvitations) {
         extraProductStep.push(({ onNext }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
                 <OnboardingContent

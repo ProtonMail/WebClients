@@ -114,7 +114,7 @@ export function useSharedLinksListing() {
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
-    ): Promise<{ AnchorID: string; More: boolean }> => {
+    ): Promise<{ AnchorID?: string; More: boolean }> => {
         let sharedLinksFetchMeta = getSharedLinksFetchState(volumeId);
 
         if (sharedLinksFetchMeta.isEverythingFetched) {
@@ -138,7 +138,7 @@ export function useSharedLinksListing() {
         sharedLinksFetchMeta.isEverythingFetched = !response.More;
 
         return {
-            AnchorID: response.AnchorID,
+            AnchorID: response.AnchorID ? response.AnchorID : undefined,
             More: response.More,
         };
     };
