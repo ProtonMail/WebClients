@@ -35,3 +35,14 @@ export type IPCInboxClientUpdateMessage =
     | { type: "setTheme"; payload: ThemeSetting }
     | { type: "earlyAccess"; payload: Environment | undefined };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage["type"];
+
+export type IPCInboxMessageBroker = {
+    hasFeature?: (feature: IPCInboxDesktopFeature) => boolean;
+    getInfo?: <T extends IPCInboxGetInfoMessage["type"]>(
+        type: T,
+    ) => Extract<IPCInboxGetInfoMessage, { type: T }>["result"];
+    send?: <T extends IPCInboxClientUpdateMessageType>(
+        type: T,
+        payload: Extract<IPCInboxClientUpdateMessage, { type: T }>["payload"],
+    ) => void;
+};
