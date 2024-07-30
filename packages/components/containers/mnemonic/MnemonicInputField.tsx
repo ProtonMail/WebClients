@@ -7,20 +7,24 @@ import { validateMnemonic } from '@proton/shared/lib/mnemonic';
 import { InputFieldTwo, TextAreaTwo } from '../../components';
 import type { InputFieldProps } from '../../components/v2/field/InputField';
 
-export const useMnemonicInputValidation = (mnemonic: string) => {
-    const InvalidPassphraseError = c('Error').t`Wrong recovery phrase. Try again or use another recovery method.`;
+export const useMnemonicInputValidation = (
+    mnemonic: string,
+    {
+        invalidFormatError = c('Error').t`Wrong recovery phrase. Try again or use another recovery method.`,
+    }: { invalidFormatError?: string } = {}
+) => {
     const [mnemonicError, setMnemonicError] = useState('');
 
     useEffect(() => {
         validateMnemonic(mnemonic)
-            .then((isValid) => setMnemonicError(!isValid ? InvalidPassphraseError : ''))
+            .then((isValid) => setMnemonicError(!isValid ? invalidFormatError : ''))
             .catch(() => setMnemonicError(''));
     }, [mnemonic]);
 
     return [
         (() => {
             const splitWords = mnemonic.split(/\s+/);
-            return splitWords.length !== 12 ? InvalidPassphraseError : '';
+            return splitWords.length !== 12 ? invalidFormatError : '';
         })(),
         (() => {
             return mnemonicError;

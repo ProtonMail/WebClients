@@ -1,0 +1,16 @@
+.recommended-actions {
+	color: var(--signal-danger-major-2);
+	background-color: var(--signal-danger-minor-2);
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: var(--signal-danger-major-2);
+	}
+
+	&:hover,
+	&:active {
+		background-color: var(--signal-danger-minor-1);
+	}
+}

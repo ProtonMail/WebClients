@@ -1,0 +1,7 @@
+@import '~@proton/styles/scss/lib';
+
+.security-checkup-main {
+	@include media('>xsmall') {
+		border: 1px solid var(--border-weak);
+	}
+}
