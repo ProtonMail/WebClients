@@ -30,7 +30,8 @@ export const MnemonicPhraseStepContent = ({
             ) : (
                 <>
                     <p className="mt-0">
-                        {c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}
+                        {c('Info')
+                            .t`Your recovery phrase is a series of 12 randomly generated words in a specific order.`}
                     </p>
 
                     <p className="color-warning">

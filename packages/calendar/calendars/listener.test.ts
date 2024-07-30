@@ -1,7 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { addressesReducer, serverEvent, userReducer } from '@proton/account';
+import { addressesReducer } from '@proton/account/addresses';
+import { serverEvent } from '@proton/account/eventLoop';
 import { getModelState } from '@proton/account/test';
+import { userReducer } from '@proton/account/user';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';

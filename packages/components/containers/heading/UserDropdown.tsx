@@ -10,11 +10,13 @@ import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import {
+    AppLink,
     ConfirmSignOutModal,
     Dropdown,
     DropdownMenu,
     DropdownSizeUnit,
     FeatureCode,
+    Icon,
     Logo,
     ReferralSpotlight,
     SettingsLink,
@@ -25,10 +27,13 @@ import {
     useConfig,
     useFeature,
     useFlag,
+    useIsSecurityCheckupAvailable,
+    useIsSentinelUser,
     useModalState,
     useNotifications,
     useOrganization,
     usePopperAnchor,
+    useSecurityCheckup,
     useSessionRecoveryState,
     useSettingsLink,
     useSpotlightOnFeature,
@@ -48,6 +53,7 @@ import {
     APPS_CONFIGURATION,
     BRAND_NAME,
     PLAN_NAMES,
+    SECURITY_CHECKUP_PATHS,
     SHARED_UPSELL_PATHS,
     SSO_PATHS,
     UPSELL_COMPONENT,
@@ -72,6 +78,8 @@ import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/Sess
 import { AuthenticatedBugModal } from '../support';
 import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownButton from './UserDropdownButton';
+
+import './UserDropdown.scss';
 
 const getPlanTitle = (subscription: Subscription | undefined) => {
     if (hasLifetime(subscription)) {
@@ -104,6 +112,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
+
+    const [{ isSentinelUser }] = useIsSentinelUser();
     const [
         sessionRecoverySignOutConfirmPrompt,
         setSessionRecoverySignOutConfirmPrompt,
@@ -111,6 +121,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     ] = useModalState();
 
     const getScheduleCall = useGetScheduleCall();
+
+    const isSecurityCheckupAvailable = useIsSecurityCheckupAvailable();
+    const securityCheckup = useSecurityCheckup();
 
     const sessionRecoveryState = useSessionRecoveryState();
     const sessionRecoveryInitiated =
@@ -243,6 +256,10 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         }
     };
 
+    const securityCheckupParams = (() => {
+        return new URLSearchParams({ continue: encodeURIComponent(window.location.href) });
+    })();
+
     return (
         <>
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={app} />}
@@ -361,6 +378,25 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                             </div>
                         </div>
                     )}
+
+                    {!isSentinelUser && isSecurityCheckupAvailable && securityCheckup.actions.length ? (
+                        <AppLink
+                            toApp={APPS.PROTONACCOUNT}
+                            to={`${SECURITY_CHECKUP_PATHS.ROOT}${securityCheckupParams ? `?${securityCheckupParams.toString()}` : ''}`}
+                            className={clsx(
+                                'recommended-actions',
+                                'button button-no-hover',
+                                'mx-4 mb-4 rounded p-3 flex flex-nowrap items-center gap-3 text-sm text-left'
+                            )}
+                            target="_self"
+                        >
+                            <Icon className="shrink-0" name="pass-shield-warning" size={6} />
+
+                            <div>
+                                {c('l10n_nightly: Security checkup').t`You have recommended account safety actions`}
+                            </div>
+                        </AppLink>
+                    ) : null}
 
                     {showSwitchAccountButton ? (
                         <div className="px-4 pb-2">

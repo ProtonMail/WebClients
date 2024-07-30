@@ -1,5 +1,5 @@
+import { useIsRecoveryFileAvailable } from './recoveryFile';
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
-import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
 
 const useIsDataRecoveryAvailable = () => {
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();

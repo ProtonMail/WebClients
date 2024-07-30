@@ -1,6 +1,7 @@
 import { createNextState } from '@reduxjs/toolkit';
 
-import { selectAddresses, serverEvent } from '@proton/account';
+import { selectAddresses } from '@proton/account/addresses';
+import { serverEvent } from '@proton/account/eventLoop';
 import {
     findMemberIndices,
     getIsCalendarEventManagerCreate,
