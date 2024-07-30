@@ -41,6 +41,11 @@ import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/cal
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
+import {
+    COLLAPSE_EVENTS,
+    SOURCE_EVENT,
+    sendRequestCollapsibleSidebarReport,
+} from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -78,7 +83,15 @@ const CalendarSidebar = ({
     const { viewportWidth } = useActiveBreakpoint();
     const collapsed = !showSideBar && !viewportWidth['<=small'] && featureFlagCollapsible;
 
-    const onClickExpandNav = () => setshowSideBar(!showSideBar);
+    const onClickExpandNav = () => {
+        sendRequestCollapsibleSidebarReport({
+            api,
+            action: showSideBar ? COLLAPSE_EVENTS.COLLAPSE : COLLAPSE_EVENTS.EXPAND,
+            application: APPS.PROTONCALENDAR,
+            sourceEvent: SOURCE_EVENT.BUTTON_SIDEBAR,
+        });
+        setshowSideBar(!showSideBar);
+    };
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
 
