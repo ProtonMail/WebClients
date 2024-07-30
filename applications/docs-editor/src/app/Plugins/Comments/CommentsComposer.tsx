@@ -81,6 +81,13 @@ export function CommentsComposer({
           if (event.key === 'Escape' && onCancel) {
             onCancel?.()
           }
+          const { code, ctrlKey, metaKey, altKey } = event
+          const hasModifier = isMac() ? metaKey : ctrlKey
+
+          if (code === 'KeyM' && hasModifier && altKey) {
+            event.preventDefault()
+            onCancel?.()
+          }
         }}
         onTextContentChange={(textContent) => {
           setCanSubmit(textContent.length > 0)

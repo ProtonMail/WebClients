@@ -1,6 +1,9 @@
 import type { LexicalEditor, NodeKey } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
+import { c } from 'ttag'
 import AddCommentIcon from '../../Icons/AddCommentIcon'
+import ToolbarTooltip from '../../Toolbar/ToolbarTooltip'
+import { ShortcutLabel } from '../KeyboardShortcuts/ShortcutLabel'
 
 export function FloatingAddCommentButton({
   anchorKey,
@@ -43,14 +46,19 @@ export function FloatingAddCommentButton({
 
   return (
     <div className="shadow-raised border-weak bg-norm absolute z-10 rounded-lg border p-0.5" ref={boxRef}>
-      <button
-        aria-label="Add comment"
-        className="flex cursor-pointer items-center justify-center rounded-lg border-0 bg-none p-2.5 hover:bg-[--background-weak]"
-        onClick={onAddComment}
-        data-testid="floating-add-comment-button"
+      <ToolbarTooltip
+        originalPlacement="right"
+        title={<ShortcutLabel label={c('Action').t`Add comment`} shortcut="INSERT_COMMENT_SHORTCUT" />}
       >
-        <AddCommentIcon className="h-4 w-4 fill-current" />
-      </button>
+        <button
+          aria-label="Add comment"
+          className="flex cursor-pointer items-center justify-center rounded-lg border-0 bg-none p-2.5 hover:bg-[--background-weak]"
+          onClick={onAddComment}
+          data-testid="floating-add-comment-button"
+        >
+          <AddCommentIcon className="h-4 w-4 fill-current" />
+        </button>
+      </ToolbarTooltip>
     </div>
   )
 }
