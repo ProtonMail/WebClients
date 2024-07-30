@@ -218,18 +218,7 @@ export class PaymentMethods {
     }
 
     private isBitcoinAvailable(): boolean {
-        // for signup-pass, bitcoin IS available
-        const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice'];
-        const isEnabledFlow = !disabledFlows.includes(this.flow);
-
-        return (
-            this.statusExtended.VendorStates.Bitcoin &&
-            isEnabledFlow &&
-            this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
-            this.amount >= MIN_BITCOIN_AMOUNT &&
-            !this.isB2BPlan() &&
-            !this.isChargebeeBitcoinAvailable()
-        );
+        return this.commonBtcConditions() && !this.isChargebeeBitcoinAvailable();
     }
 
     private isChargebeeBitcoinAvailable(): boolean {
@@ -237,19 +226,21 @@ export class PaymentMethods {
             return false;
         }
 
-        // for signup-pass, bitcoin IS available
-        const disabledFlows: PaymentMethodFlows[] = ['signup', 'signup-vpn', 'invoice'];
-        const isEnabledFlow = !disabledFlows.includes(this.flow);
+        return this.commonBtcConditions() && this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
+    }
 
-        const bitcoinAvailable =
+    private commonBtcConditions() {
+        const btcEnabledFlows: PaymentMethodFlows[] = ['signup-pass', 'signup-pass-upgrade', 'credit', 'subscription'];
+
+        const flowSupportsBtc = btcEnabledFlows.includes(this.flow);
+
+        return (
             this.statusExtended.VendorStates.Bitcoin &&
-            isEnabledFlow &&
+            flowSupportsBtc &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            !this.isB2BPlan() &&
-            this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
-
-        return bitcoinAvailable;
+            !this.isB2BPlan()
+        );
     }
 
     private isCardAvailable(): boolean {
@@ -270,16 +261,10 @@ export class PaymentMethods {
             return cardAvailable;
         }
 
-        const isSignup =
-            this.flow === 'signup' ||
-            this.flow === 'signup-pass' ||
-            this.flow === 'signup-pass-upgrade' ||
-            this.flow === 'signup-vpn';
-
         const isAddCard = this.flow === 'add-card';
         const isSubscription = this.flow === 'subscription';
         const isCredit = this.flow === 'credit';
-        const isAllowedFlow = isSignup || isAddCard || isSubscription || isCredit;
+        const isAllowedFlow = isSignupFlow(this.flow) || isAddCard || isSubscription || isCredit;
 
         return cardAvailable && isAllowedFlow && !this.disableForB2B();
     }
@@ -317,14 +302,9 @@ export class PaymentMethods {
             return paypalAvailable;
         }
 
-        const isSignup =
-            this.flow === 'signup' ||
-            this.flow === 'signup-pass' ||
-            this.flow === 'signup-vpn' ||
-            this.flow === 'signup-pass-upgrade';
         const isSubscription = this.flow === 'subscription';
         const isCredit = this.flow === 'credit';
-        const isAllowedFlow = isSubscription || isSignup || isCredit;
+        const isAllowedFlow = isSubscription || isSignupFlow(this.flow) || isCredit;
 
         return paypalAvailable && isAllowedFlow && !this.disableForB2B();
     }

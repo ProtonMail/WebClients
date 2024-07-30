@@ -334,14 +334,24 @@ export type PaymentMethodFlows =
     | 'signup'
     | 'signup-pass'
     | 'signup-pass-upgrade'
+    | 'signup-v2'
+    | 'signup-v2-upgrade'
     | 'signup-vpn'
     | 'credit'
     | 'subscription'
     | 'add-card'
     | 'add-paypal';
 
+export const signupFlows: readonly PaymentMethodFlows[] = Object.freeze([
+    'signup',
+    'signup-pass',
+    'signup-pass-upgrade',
+    'signup-vpn',
+    'signup-v2',
+    'signup-v2-upgrade',
+]);
+
 export function isSignupFlow(flow: PaymentMethodFlows): boolean {
-    const signupFlows: PaymentMethodFlows[] = ['signup', 'signup-pass', 'signup-pass-upgrade', 'signup-vpn'];
     return signupFlows.includes(flow);
 }
 
