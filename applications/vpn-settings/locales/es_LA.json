@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Seleccione el ciclo de facturación de ${ billingText }"
+      ],
       "Select country": [
         "Seleccionar país"
       ],
@@ -576,6 +579,12 @@
       ],
       "Switch or add account": [
         "Cambiar o añadir cuenta"
+      ],
+      "Test": [
+        "Prueba"
+      ],
+      "Test SAML configuration": [
+        "Probar la configuración SAML"
       ],
       "Top up": [
         "Recargar"
@@ -2143,6 +2152,14 @@
         "Ayúdenos a mejorar"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Correo de verificación enviado a ${ address }"
@@ -3328,8 +3345,8 @@
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Se ha añadido el correo electrónico personalizado en caso de vulneración."
+      "Breach Custom Email Created": [
+        "Correo personalizado en caso de vulneración creado"
       ],
       "Breach Custom Email Deleted": [
         "Se ha eliminado el correo electrónico personalizado en caso de vulneración."
@@ -3404,17 +3421,8 @@
       "Custom branding": [
         "Marca personalizada"
       ],
-      "Custom email added": [
-        "Correo electrónico personalizado añadido"
-      ],
-      "Custom email deleted": [
-        "Correo electrónico personalizado eliminado"
-      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
-      ],
-      "Custom email validated": [
-        "Correo electrónico personalizado validado"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
@@ -3939,6 +3947,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existen otros administradores en la organización, es responsable de comunicarles la contraseña nueva."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - correo personalizado confirmado"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - correo personalizado creado"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - correo personalizado eliminado"
       ],
       "password": [
         "contraseña"
@@ -5415,9 +5432,6 @@
       "Learn more": [
         "Más información"
       ],
-      "Need help?": [
-        "¿Necesita ayuda?"
-      ],
       "Not activated": [
         "No activado"
       ],
@@ -6168,9 +6182,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas las aplicaciones de ${ BRAND_NAME } business y funciones premium para proteger todo su negocio."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Los créditos, prorrateo y cupones correspondientes se aplican en el siguiente paso"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad integral con todos los servicios combinados de ${ BRAND_NAME }."
@@ -6988,8 +6999,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Please select billing country": [
+        "Seleccione el país de facturación"
+      ],
+      "Please select billing state": [
+        "Seleccione el estado de facturación"
+      ],
+      "Please select your billing country first.": [
+        "Seleccione primero su país de facturación"
+      ],
+      "Please select your billing state first.": [
+        "Seleccione primero su estado de facturación"
+      ],
       "Processing payment": [
         "Procesando el pago"
+      ],
+      "Select billing country to pay": [
+        "Seleccione el país de facturación para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
@@ -7254,6 +7280,55 @@
       ],
       "User": [
         "Usuario"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Hubo un problema."
+      ],
+      "Something went wrong. Please try again.": [
+        "Hubo un problema. Intente de nuevo."
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Ocurrió un error al probar la configuración SSO."
+      ],
+      "Details": [
+        "Detalles"
+      ],
+      "Test in progress...": [
+        "Prueba en progreso..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Para probar esta configuración SAML, ingrese las credenciales de inicio de sesión de algún usuario asociado con **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Recibimos una respuesta SAML válida de su proveedor de identidad. SSO está activado para su organización."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Estamos probando la configuración para asegurarnos que el SSO funciona."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Correo electrónico"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "¡Funciona!"
+      ],
+      "Test SAML configuration": [
+        "Probar la configuración SAML"
+      ],
+      "Testing SAML configuration": [
+        "Probando la configuración SAML"
       ]
     },
     "scim: Action": {
@@ -8938,6 +9013,9 @@
       ],
       "Couldn’t create accounts": [
         "No se pudieron crear las cuentas"
+      ],
+      "Coupon": [
+        "Cupón"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crear ${ selectedUserIds.length } usuario",

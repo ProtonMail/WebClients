@@ -352,6 +352,9 @@
       "Ok": [
         "ठीक है"
       ],
+      "Open": [
+        "अनिर्णित"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
       ],
@@ -483,6 +486,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
+      ],
+      "Select country": [
+        "देश चुनें"
       ],
       "select file": [
         "फ़ाइल चुनें"
@@ -654,6 +660,11 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "पुनः सक्रिय करें"
       ]
     },
     "Addon": {
@@ -1481,6 +1492,9 @@
       "Macao": [
         "मकाओ"
       ],
+      "Macedonia": [
+        "मैसिडोनिया"
+      ],
       "Madagascar": [
         "मेडागास्कर"
       ],
@@ -1967,12 +1981,20 @@
         "हमें सुधरने में मदद करें"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "प्राथमिक सहायता"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "सत्यापन ईमेल ${ address } पर भेजा गया"
       ]
     },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 टीबी"
+      ],
       "6 users": [
         "6 यूज़र"
       ]
@@ -2681,6 +2703,9 @@
     "Header": {
       "Best deal": [
         "सबसे अच्छा सौदा"
+      ],
+      "Checkout": [
+        "चेकआउट"
       ],
       "Country": [
         "देश"
@@ -4273,6 +4298,9 @@
       "Paid": [
         "भुगतान हुआ"
       ],
+      "Processing": [
+        "प्रसंस्करण हो रहा है"
+      ],
       "Unpaid": [
         "अवैतनिक"
       ],
@@ -4880,9 +4908,6 @@
       "Learn more": [
         "और जानें"
       ],
-      "Need help?": [
-        "सहायता चाहिए?"
-      ],
       "Not activated": [
         "सक्रिय नहीं"
       ],
@@ -4948,9 +4973,22 @@
         "और जानें"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "${ price } के लिए"
+      ]
+    },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Auto-delete Spam and Trash": [
+        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
       "Support for 1 custom email domain": [
         "1 कस्टम ईमेल डोमेन के लिए सहायता"
@@ -5393,6 +5431,9 @@
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
       ],
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
+      ],
       "Unlimited labels": [
         "असीमित लेबल"
       ],
@@ -5472,9 +5513,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "सभी ${ BRAND_NAME } ऐप्स और उनकी प्रीमियम सुविधाएँ"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "क्रेडिट, प्रोरेशन, और कूपन जो लागू हो सकते है अगले कदम में लगाए जाएगे"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "सारे ${ BRAND_NAME } सेवाओं के साथ पूरी निजता और सुरक्षा।"
@@ -6056,6 +6094,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "ठीक है"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -6425,6 +6466,16 @@
         "पासवर्ड रीसेट करें"
       ]
     },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "पासवर्ड रीसेट रद्द करें"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "पासवर्ड रीसेट प्रक्रिया रद्द करने हेतु वर्तमान पासवर्ड दर्ज करें। कोई अन्य परिवर्तन प्रभावी नहीं होगा।"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "पासवर्ड रीसेट रद्द कर दिया गया"
@@ -6448,6 +6499,9 @@
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "पासवर्ड रीसेट रद्द करें"
+      ],
+      "Cancel request": [
+        "अनुरोध रद्द करें"
       ],
       "Got it": [
         "समझ गया"
@@ -6526,6 +6580,9 @@
     "session_recovery:status:info": {
       "Available": [
         "उपलब्ध"
+      ],
+      "Pending": [
+        "अपूर्ण"
       ]
     },
     "session_recovery:status:title": {
@@ -6970,6 +7027,14 @@
         "अपना कस्टम ईमेल डोमेन"
       ]
     },
+    "subscription reminder": {
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "पक्का?"
@@ -7369,6 +7434,9 @@
       "Change role": [
         "रोल परिवर्तित करें"
       ],
+      "Change second password": [
+        "दूसरा पासवर्ड बदलें"
+      ],
       "Close": [
         "बंद करें"
       ],
@@ -7549,6 +7617,9 @@
       "Forgot recovery method": [
         "रिकवरी विधि भूल गए"
       ],
+      "Gateway": [
+        "गेटवे"
+      ],
       "Gateways": [
         "गेटवे"
       ],
@@ -7581,6 +7652,9 @@
       ],
       "Invoices": [
         "रसीद"
+      ],
+      "Main password": [
+        "मुख्य पासवर्ड"
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
@@ -7765,6 +7839,9 @@
       ],
       "Switch to two-password mode": [
         "दो-पासवर्ड मोड पर स्विच करें"
+      ],
+      "Time": [
+        "समय"
       ],
       "TV sign in": [
         "टीवी पे साइनइन करें"
@@ -8001,6 +8078,9 @@
       "Name": [
         "नाम"
       ],
+      "Optional": [
+        "वैकल्पिक"
+      ],
       "Private": [
         "निजी"
       ],
@@ -8018,6 +8098,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2-एफए"
+      ],
       "Invite sent": [
         "न्योता भेजा गया"
       ],
@@ -8078,6 +8161,11 @@
     "vpn_2step: billing": {
       "Billed monthly": [
         "मासिक बिल"
+      ]
+    },
+    "vpn_2step: discount": {
+      "monthly": [
+        "हर महीने"
       ]
     },
     "vpn_2step: feature": {

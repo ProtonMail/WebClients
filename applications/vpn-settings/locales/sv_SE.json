@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Välj faktureringsperiod ${ billingText }"
+      ],
       "Select country": [
         "Välj land"
       ],
@@ -576,6 +579,12 @@
       ],
       "Switch or add account": [
         "Byt eller lägg till konto"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Testa SAML-konfiguration"
       ],
       "Top up": [
         "Fyll på"
@@ -1325,6 +1334,9 @@
       ],
       "Congo": [
         "Kongo"
+      ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Demokratiska republiken)"
       ],
       "Congo, Democratic Republic of the": [
         "Demokratiska republiken Kongo"
@@ -2134,6 +2146,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjälp oss att förbättra"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriterad support"
       ]
     },
     "Email verification": {
@@ -3396,17 +3416,8 @@
       "Custom branding": [
         "Anpassat varumärke"
       ],
-      "Custom email added": [
-        "Anpassad e-post tillagd"
-      ],
-      "Custom email deleted": [
-        "Anpassad e-post borttagen"
-      ],
       "Custom email domains": [
         "Anpassade e-domäner"
-      ],
-      "Custom email validated": [
-        "Anpassad e-post validerad"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
@@ -4248,7 +4259,7 @@
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Detta kommer att göra det möjligt att använda PayPal för att betala för din ${ BRAND_NAME }-prenumeration. Du kommer att omdirigeras till PayPal i en ny webbläsarflik. Om du använder några popup-blockerare, inaktivera den för att fortsätta."
+        "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Detta kommer ta bort data och alla e-postadresser permanent som är associerad med denna användare."
@@ -5363,9 +5374,6 @@
       "Learn more": [
         "Lär dig mer"
       ],
-      "Need help?": [
-        "Behöver du hjälp?"
-      ],
       "Not activated": [
         "Inte aktiverad"
       ],
@@ -5727,9 +5735,6 @@
       ],
       "1 user": [
         "1 användare"
-      ],
-      "24/7 account management support": [
-        "24/7 support för kontohantering"
       ],
       "24/7 support": [
         "Support dygnet runt"
@@ -6111,9 +6116,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Tillämpbara krediter, innestående medel och kuponger är tillämpade i nästa steg"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
@@ -6442,9 +6444,6 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inkluderat med ${ plus }, ${ bundle } och ${ BRAND_NAME } för företag."
-      ],
-      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Inkluderat med alla ${ BRAND_NAME } för Business-paket."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6960,8 +6959,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
+      "Please select billing country": [
+        "Välj land för fakturering"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
+      ],
+      "Please select your billing country first.": [
+        "Välj ditt land för fakturering först."
+      ],
+      "Please select your billing state first.": [
+        "Välj din delstat för fakturering först."
+      ],
       "Processing payment": [
         "Bearbetar betalning"
+      ],
+      "Select billing country to pay": [
+        "Välj faktureringsland att betala"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
@@ -7225,6 +7239,43 @@
         "Användare"
       ]
     },
+    "saml: Action": {
+      "Cancel": [
+        "Avbryt"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "Something went wrong. Please try again.": [
+        "Något gick fel. Försök igen."
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detaljer"
+      ],
+      "Test in progress...": [
+        "Test pågår …"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-post"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Det fungerar!"
+      ],
+      "Test SAML configuration": [
+        "Testa SAML-konfiguration"
+      ],
+      "Testing SAML configuration": [
+        "Testar SAML-konfiguration"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Konfigurera SCIM"
@@ -7275,9 +7326,6 @@
       ]
     },
     "scim: Label": {
-      "SCIM base URL": [
-        "SCIM bas URL"
-      ],
       "SCIM token": [
         "SCIM-token"
       ]
@@ -8200,6 +8248,9 @@
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
+      "Catch-all email address": [
+        "Catch-all e-postadress"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -8860,6 +8911,9 @@
       "Couldn’t create accounts": [
         "Kunde inte skapa konton"
       ],
+      "Coupon": [
+        "Kupong"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Skapa ${ selectedUserIds.length } användare",
         "Skapa ${ selectedUserIds.length } användare"
@@ -9206,7 +9260,7 @@
         "Logga in"
       ],
       "Sign in to join the Beta program": [
-        "Logga in för att ansluta till Beta-programmet"
+        "Logga in för att gå med i Beta-programmet"
       ],
       "Sign in to your organization": [
         "Logga in på din organisation"
@@ -9720,6 +9774,36 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto per plånbok",
+        "${ n } konton per plånbok"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadress",
+        "${ n } e-postadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } plånbok",
+        "${ n } plånböcker"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Ett säkrare sätt att hålla din Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Håll och överför dina Bitcoins säkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med plånbok"
       ]
     },
     "Warning": {

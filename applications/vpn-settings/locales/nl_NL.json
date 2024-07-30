@@ -331,6 +331,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Open"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
@@ -609,6 +612,9 @@
       ],
       "Verify code again": [
         "Verifieer code opnieuw"
+      ],
+      "Verify domain": [
+        "Domein verifiëren"
       ],
       "View": [
         "Bekijken"
@@ -1521,6 +1527,9 @@
       "Macao": [
         "Macau"
       ],
+      "Macedonia": [
+        "Noord-Macedonië"
+      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2027,6 +2036,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Help ons verbeteren"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ]
     },
     "Email verification": {
@@ -4084,6 +4101,15 @@
       "Users": [
         "Gebruikers"
       ],
+      "Vault created": [
+        "Kluis aangemaakt"
+      ],
+      "Vault deleted": [
+        "Kluis verwijderd"
+      ],
+      "Vault updated": [
+        "Kluis bijgewerkt"
+      ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
       ],
@@ -4407,6 +4433,9 @@
       ],
       "Paid": [
         "Betaald"
+      ],
+      "Processing": [
+        "Verwerken"
       ],
       "Unpaid": [
         "Onbetaald"
@@ -5006,9 +5035,6 @@
       "Learn more": [
         "Meer informatie"
       ],
-      "Need help?": [
-        "Hulp nodig?"
-      ],
       "Not activated": [
         "Niet geactiveerd"
       ],
@@ -5104,6 +5130,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "voor ${ price }"
       ]
     },
     "mailtrial2024: Action": {
@@ -5724,9 +5755,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps en hun premium functies"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
@@ -6487,6 +6515,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "Got it": [
+        "Begrepen"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -8353,6 +8384,9 @@
       "Error": [
         "Fout"
       ],
+      "Event": [
+        "Gebeurtenis"
+      ],
       "Every member of the organization can access": [
         "Elke gebruiker binnen uw organisatie kan"
       ],
@@ -8362,6 +8396,9 @@
       ],
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
+      ],
+      "Gateway": [
+        "Gateway"
       ],
       "Gateways": [
         "Gateways"
@@ -8580,6 +8617,9 @@
       "Switch to two-password mode": [
         "Overschakelen naar twee-wachtwoorden modus"
       ],
+      "Time": [
+        "Tijd"
+      ],
       "TV sign in": [
         "TV inloggen"
       ],
@@ -8603,6 +8643,9 @@
       ],
       "Upload your organization’s logo": [
         "Upload het logo van uw organisatie"
+      ],
+      "User": [
+        "Gebruiker"
       ],
       "Users": [
         "Gebruikers"
@@ -8801,14 +8844,38 @@
       "Add multiple users": [
         "Meerdere gebruikers toevoegen"
       ],
+      "Add new user": [
+        "Voeg nieuwe gebruiker toe"
+      ],
+      "Admin": [
+        "Beheerder"
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
       "Confirm password": [
         "Wachtwoord bevestigen"
       ],
       "Create password": [
         "Wachtwoord aanmaken"
       ],
+      "Create user": [
+        "Gebruiker aanmaken"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Optional": [
+        "Optioneel"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
+      ],
+      "User created": [
+        "Gebruiker aangemaakt"
       ],
       "VPN connections": [
         "VPN-verbindingen"
@@ -8818,6 +8885,15 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Tweestapsverificatie"
+      ],
+      "Invite sent": [
+        "Uitnodiging verzonden"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "SSO-gebruiker verstrekt door uw identiteitsprovider"
       ],

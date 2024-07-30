@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Sélectionner le cycle de facturation ${ billingText }"
+      ],
       "Select country": [
         "Sélectionnez un pays"
       ],
@@ -576,6 +579,12 @@
       ],
       "Switch or add account": [
         "Basculer vers ou ajouter un compte"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Tester la configuration SAML"
       ],
       "Top up": [
         "Recharger"
@@ -2143,6 +2152,14 @@
         "Aidez-nous à nous améliorer"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Le message de vérification a été envoyé à ${ address }."
@@ -3328,9 +3345,6 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "L'e-mail personnalisé en cas de fuite de données a été ajouté."
-      ],
       "Breach Custom Email Deleted": [
         "L'e-mail personnalisé en cas de fuite de données a été supprimé."
       ],
@@ -3404,17 +3418,8 @@
       "Custom branding": [
         "Personnalisation avec votre marque"
       ],
-      "Custom email added": [
-        "L'e-mail personnalisé a été ajouté."
-      ],
-      "Custom email deleted": [
-        "L'e-mail personnalisé a été supprimé."
-      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
-      ],
-      "Custom email validated": [
-        "L'e-mail personnalisé a été validé."
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
@@ -4373,7 +4378,7 @@
         "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer vos données (avancé)."
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "Le mode à deux mots de passe utilise des mots de passe distincts pour la connexion à votre compte et pour le déchiffrement de vvos données. Ce mode fournit un léger avantage en terme de sécurité dans certains cas, cependant, nous recommandons le mode mot de passe unique pour la plupart des utilisateurs. Pour activer le mode à deux mots de passe, choisissez dans un premier temps un mot de passe de connexion à votre compte, puis choisissez un second mot de passe."
+        "Le mode à deux mots de passe utilise des mots de passe distincts pour la connexion à votre compte et pour le déchiffrement de vos données. Ce mode fournit un léger avantage en termes de sécurité dans certains cas, cependant, nous recommandons le mode mot de passe unique pour la plupart des utilisateurs. Pour activer le mode à deux mots de passe, choisissez dans un premier temps un mot de passe de connexion à votre compte, puis choisissez un second mot de passe."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -4544,7 +4549,7 @@
         "Quand vous annulez votre abonnement payant en cours, le solde de votre abonnement vous est restitué sous forme de crédits de compte et vous passez à l'abonnement ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Si vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
+        "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -5415,9 +5420,6 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Need help?": [
-        "Besoin d'aide ?"
-      ],
       "Not activated": [
         "Non activé"
       ],
@@ -6168,9 +6170,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
@@ -6982,26 +6981,47 @@
       "Payment Processing": [
         "Traitement des paiements"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Pour continuer, ajoutez un moyen de paiement dans le tableau de bord."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
+      ],
+      "Please select billing country": [
+        "Veuillez sélectionner le pays pour la facturation."
+      ],
+      "Please select billing state": [
+        "Veuillez sélectionner l'état pour la facturation."
+      ],
+      "Please select your billing country first.": [
+        "Veuillez d'abord sélectionner votre pays de facturation."
+      ],
+      "Please select your billing state first.": [
+        "Veuillez d'abord sélectionner votre état de facturation."
       ],
       "Processing payment": [
         "Traitement du paiement"
       ],
+      "Select billing country to pay": [
+        "Veuillez sélectionner l'état pour la facturation à payer."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Il sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "La transaction a été détectée avec succès. Les crédits seront ajoutés à votre compte une fois la transaction confirmée."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons votre paiement pour la facture facturée. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -7248,6 +7268,55 @@
       ],
       "User": [
         "Utilisateur"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Annuler"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Une erreur s'est produite."
+      ],
+      "Something went wrong. Please try again.": [
+        "Une erreur s'est produite. Nous vous invitons à réessayer."
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Une erreur s'est produite pendant le test de la configuration votre authentification unique (SSO)."
+      ],
+      "Details": [
+        "Informations"
+      ],
+      "Test in progress...": [
+        "Test en cours..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Pour tester cette configuration SAML, veuillez saisir les identifiants de connexion de l'utilisateur associé à **${ domainName }**."
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Nous avons reçu une réponse SAML valide de la part de votre fournisseur d'identité. L'authentification unique (SSO) est activée pour votre organisation."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Nous testons votre configuration pour nous assurer que l'authentification unique (SSO) fonctionne."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-mail"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Ça fonctionne !"
+      ],
+      "Test SAML configuration": [
+        "Tester la configuration SAML"
+      ],
+      "Testing SAML configuration": [
+        "Test de la configuration SAML en cours"
       ]
     },
     "scim: Action": {
@@ -8932,6 +9001,9 @@
       ],
       "Couldn’t create accounts": [
         "Les comptes n'ont pas pu être créés."
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Créer ${ selectedUserIds.length } utilisateur",

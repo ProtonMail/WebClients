@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Pilih siklus pembayaran ${ billingText }"
+      ],
       "Select country": [
         "Pilih negara"
       ],
@@ -576,6 +579,12 @@
       ],
       "Switch or add account": [
         "Ubah atau tambah akun"
+      ],
+      "Test": [
+        "Uji"
+      ],
+      "Test SAML configuration": [
+        "Uji konfigurasi SAML"
       ],
       "Top up": [
         "Isi ulang"
@@ -2134,6 +2143,14 @@
         "Bantu kami menjadi lebih baik"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Riwayat versi yang terperinci"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Email verifikasi dikirim ke ${ address }"
@@ -3298,9 +3315,6 @@
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Email Khusus Kebocoran Ditambahkan"
-      ],
       "Breach Custom Email Deleted": [
         "Email Khusus Kebocoran Dihapus"
       ],
@@ -3373,17 +3387,8 @@
       "Custom branding": [
         "Branding khusus"
       ],
-      "Custom email added": [
-        "Email khusus ditambahkan"
-      ],
-      "Custom email deleted": [
-        "Email khusus dihapus"
-      ],
       "Custom email domains": [
         "Domain email khusus"
-      ],
-      "Custom email validated": [
-        "Email khusus divalidasi"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
@@ -5363,9 +5368,6 @@
       "Learn more": [
         "Lebih lanjut"
       ],
-      "Need help?": [
-        "Butuh bantuan?"
-      ],
       "Not activated": [
         "Belum diaktifkan"
       ],
@@ -6096,9 +6098,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Semua aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi seluruh bisnis. "
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -6909,8 +6908,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
+      "Please select billing country": [
+        "Silakan pilih negara bagian penagihan"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
+      ],
+      "Please select your billing country first.": [
+        "Silakan pilih negara penagihan Anda terlebih dahulu"
+      ],
+      "Please select your billing state first.": [
+        "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
+      ],
       "Processing payment": [
         "Memproses pembayaran"
+      ],
+      "Select billing country to pay": [
+        "Pilih negara bagian penagihan untuk membayar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Voucer berlaku untuk pembaruan ${ couponRedemptions }. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
@@ -7172,6 +7186,55 @@
       ],
       "User": [
         "Pengguna"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Batal"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Terdapat suatu kesalahan"
+      ],
+      "Something went wrong. Please try again.": [
+        "Terdapat suatu kesalahan. Silakan coba lagi"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Terdapat kesalahan pada saat menguji konfigurasi SSO Anda."
+      ],
+      "Details": [
+        "Rincian"
+      ],
+      "Test in progress...": [
+        "Pengujian sedang berlangsung..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Untuk menguji konfigurasi SAML ini, silakan masukkan kredensial entri masuk untuk pengguna yang terhubung dengan **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Kami menerima respon SAML yang valid dari penyedia identitas Anda. SSO untuk organisasi Anda sedang aktif."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Kami sedang menguji konfigurasi Anda untuk memastikan bahwa SSO bekerja"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Email"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Berhasil!"
+      ],
+      "Test SAML configuration": [
+        "Uji konfigurasi SAML"
+      ],
+      "Testing SAML configuration": [
+        "Menguji konfigurasi SAML"
       ]
     },
     "scim: Action": {
@@ -8395,10 +8458,10 @@
         "Tetap aktifkan autodebet"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebet dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
+        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebit dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebet, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
       ]
     },
     "Subscription saving": {
@@ -8818,6 +8881,9 @@
       ],
       "Couldn’t create accounts": [
         "Akun tidak dapat dibuat"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Buat ${ selectedUserIds.length } pengguna"
@@ -9383,7 +9449,7 @@
         "Alamat email terverifikasi"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Kami mendeteksi adanya masalah pada konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan menonaktifkan penandatanganan DKIM."
+        "Kami mendeteksi suatu masalah dengan konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan harus menonaktifkan penandatanganan DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Kami menghentikan penandatanganan DKIM karena masalah pada konfigurasi DNS Anda. Silakan ikuti petunjuk di bawah untuk melanjutkan proses tanda tangan."
@@ -9645,6 +9711,33 @@
         "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } akun per dompet"
+      ],
+      "${ n } email address": [
+        "${ n } alamat email"
+      ],
+      "${ n } wallet": [
+        "${ n } dompet"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin melalui email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Simpan dan transfer Bitcoin Anda secara aman"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Masalah dompet"
+      ]
+    },
     "Warning": {
       "Are you sure you want to delete the phone number?": [
         "Apakah Anda yakin untuk menghapus nomor telepon ini?"
@@ -9677,7 +9770,7 @@
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Kami mendeteksi adanya masalah pada konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan menonaktifkan penandatanganan DKIM."
+        "Kami mendeteksi suatu masalah dengan konfigurasi DNS Anda. Pastikan data rekaman DNS Anda telah sesuai dengan petunjuk di bawah ini. Apabila masalah ini terus berlanjut, kami terpaksa akan harus menonaktifkan penandatanganan DKIM."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
         "Anda harus ${ activateLink } kunci organisasi sebelum menambahkan alamat email kepada pengguna non-privat."

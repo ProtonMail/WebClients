@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Seleziona il ciclo di fatturazione ${ billingText }"
+      ],
       "Select country": [
         "Seleziona il paese"
       ],
@@ -576,6 +579,12 @@
       ],
       "Switch or add account": [
         "Cambia o aggiungi account"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Test della configurazione SAML"
       ],
       "Top up": [
         "Ricarica"
@@ -2143,6 +2152,14 @@
         "Aiutaci a migliorare"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Email di verifica inviata a ${ address }"
@@ -3328,8 +3345,8 @@
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Email personalizzata per le violazioni di dati aggiunta"
+      "Breach Custom Email Created": [
+        "Email personalizzata per le violazioni di dati creata"
       ],
       "Breach Custom Email Deleted": [
         "Email personalizzata per le violazioni di dati eliminata"
@@ -3404,17 +3421,8 @@
       "Custom branding": [
         "Marchio personalizzato"
       ],
-      "Custom email added": [
-        "Email personalizzata aggiunta"
-      ],
-      "Custom email deleted": [
-        "Email personalizzata eliminata"
-      ],
       "Custom email domains": [
         "Domini email personalizzati"
-      ],
-      "Custom email validated": [
-        "Email personalizzata convalidata"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
@@ -3942,6 +3950,15 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - email personalizzata confermata"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - email personalizzata creata"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - email personalizzata eliminata"
       ],
       "password": [
         "password"
@@ -5421,9 +5438,6 @@
       "Learn more": [
         "Scopri di più"
       ],
-      "Need help?": [
-        "Hai bisogno di aiuto?"
-      ],
       "Not activated": [
         "Non attivato"
       ],
@@ -6174,9 +6188,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Eventuali crediti, calcolo proporzionale e coupon vengono applicati nel prossimo passaggio"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
@@ -7018,8 +7029,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
+      ],
+      "Please select your billing country first.": [
+        "Seleziona prima il paese di fatturazione."
+      ],
+      "Please select your billing state first.": [
+        "Seleziona prima lo stato di fatturazione."
+      ],
       "Processing payment": [
         "Elaborazione pagamento"
+      ],
+      "Select billing country to pay": [
+        "Seleziona il paese di fatturazione per il pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -7029,6 +7055,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ price } al mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "La transazione è stata correttamente rilevata. I crediti saranno aggiunti al tuo account quando la transazione sarà totalmente confermata."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -7281,6 +7310,55 @@
       ],
       "User": [
         "Utente"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Annulla"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Qualcosa è andato storto."
+      ],
+      "Something went wrong. Please try again.": [
+        "Qualcosa è andato storto. Riprova."
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Si è verificato un errore durante il test della configurazione SSO."
+      ],
+      "Details": [
+        "Dettagli"
+      ],
+      "Test in progress...": [
+        "Test in corso..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Per testare questa configurazione SAML, inserisci le credenziali di accesso per un utente associato a **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Abbiamo ricevuto una risposta SAML valida dal tuo provider di identità. SSO è abilitato per la tua organizzazione."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Stiamo testando la tua configurazione per garantire che il servizio SSO funzioni."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Email"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Funziona!"
+      ],
+      "Test SAML configuration": [
+        "Test della configurazione SAML"
+      ],
+      "Testing SAML configuration": [
+        "Test della configurazione SAML"
       ]
     },
     "scim: Action": {
@@ -8965,6 +9043,9 @@
       ],
       "Couldn’t create accounts": [
         "Creazione account impossibile"
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crea l'utente ${ selectedUserIds.length }",
