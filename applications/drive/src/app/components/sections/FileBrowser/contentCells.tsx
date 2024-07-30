@@ -2,8 +2,7 @@ import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
-import { FileIcon, Icon, TableCell, Tooltip, useActiveBreakpoint, useContactEmails } from '@proton/components';
-import useLoading from '@proton/hooks/useLoading';
+import { FileIcon, Icon, TableCell, useActiveBreakpoint, useContactEmails } from '@proton/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
@@ -20,8 +19,6 @@ import type { TrashItem } from '../Trash/Trash';
 import CopyLinkIcon from './CopyLinkIcon';
 import ShareIcon from './ShareIcon';
 import { getDeviceIconText, getLinkIconText } from './utils';
-
-import './contentCells.scss';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
 
@@ -41,7 +38,11 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
                     className="file-browser-list-item--thumbnail shrink-0 mr-2"
                 />
             ) : (
-                <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr-2" />
+                <FileIcon
+                    mimeType={item.isFile ? item.mimeType : 'Folder'}
+                    alt={iconText}
+                    className="file-browser-list-item--icon mr-2"
+                />
             )}
             <SignatureIcon signatureIssues={item.signatureIssues} isFile={item.isFile} className="mr-2 shrink-0" />
             <NameCellBase name={item.name} />
@@ -226,37 +227,33 @@ export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
     );
 };
 
-export const AcceptOrRejectInvite = ({ item }: { item: SharedWithMeItem }) => {
-    const [isLoading, withLoading] = useLoading();
+export const AcceptOrRejectInviteCell = ({ item }: { item: SharedWithMeItem }) => {
     return (
         <TableCell
-            className="flex flex-nowrap items-center m-0 w-1/6 accept-decline-cell"
+            className="flex flex-nowrap items-center m-0 file-browser-list-item--accept-decline-cell"
             data-testid="column-share-accept-reject"
         >
             {item.invitationDetails && item.acceptInvitation && (
-                <div className={clsx('flex', 'gap-1')}>
+                <div className="flex flex-nowrap">
                     <Button
-                        loading={isLoading}
-                        disabled={isLoading}
+                        loading={item.invitationDetails.isLocked}
+                        disabled={item.invitationDetails.isLocked}
+                        className="text-ellipsis"
                         color="norm"
                         shape="ghost"
                         size="small"
                         data-testid="share-accept-button"
                         onClick={async (e) => {
                             e.stopPropagation();
-                            await withLoading(
-                                item.acceptInvitation?.(item.invitationDetails?.invitation.invitationId!)
-                            );
+                            await item.acceptInvitation?.(item.invitationDetails?.invitation.invitationId!);
                         }}
                     >
-                        <Tooltip className="accept-decline-button-icon" title={c('Action').t`Accept`}>
-                            <Icon name="checkmark-circle" alt={c('Action').t`Accept`} />
-                        </Tooltip>
-                        <span className="accept-decline-button-text">{c('Action').t`Accept`}</span>
+                        <span className="file-browser-list-item--accept-decline-text">{c('Action').t`Accept`}</span>
                     </Button>
-                    {!isLoading && (
+                    {!item.invitationDetails.isLocked && (
                         <>
                             <Button
+                                className="text-ellipsis file-browser-list-item--decline"
                                 color="norm"
                                 shape="ghost"
                                 size="small"
@@ -266,10 +263,8 @@ export const AcceptOrRejectInvite = ({ item }: { item: SharedWithMeItem }) => {
                                     void item.rejectInvitation?.(item.invitationDetails?.invitation.invitationId!);
                                 }}
                             >
-                                <Tooltip className="accept-decline-button-icon" title={c('Action').t`Decline`}>
-                                    <Icon name="cross-circle" alt={c('Action').t`Decline`} />
-                                </Tooltip>
-                                <span className="accept-decline-button-text">{c('Action').t`Decline`}</span>
+                                <span className="file-browser-list-item--accept-decline-text">{c('Action')
+                                    .t`Decline`}</span>
                             </Button>
                         </>
                     )}
