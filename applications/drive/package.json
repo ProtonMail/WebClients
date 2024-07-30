@@ -6,7 +6,7 @@
     "author": "",
     "main": "index.ts",
     "scripts": {
-        "analyze": "yarn build --analyze",
+        "analyze": "yarn build:web --analyze",
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
         "check-types": "tsc",
         "i18n:extract:local": "yarn workspace @proton/i18n build && yarn build:web && proton-i18n extract",
