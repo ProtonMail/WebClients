@@ -485,6 +485,9 @@
       "Go to previous page": [
         "पिछले पन्ने पे जाएं"
       ],
+      "Go to settings": [
+        "सेटिंग में जाएं"
+      ],
       "Go to SimpleLogin": [
         "सरल संप्रवेश पर जाएं"
       ],
@@ -581,6 +584,9 @@
       ],
       "label emails as": [
         "ईमेल को लेबल करें"
+      ],
+      "Later": [
+        "बाद में"
       ],
       "Later this week": [
         "इस सप्ताह बाद में"
@@ -761,6 +767,9 @@
       ],
       "Ok": [
         "ठीक है"
+      ],
+      "Open": [
+        "अनिर्णित"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } खोलें"
@@ -966,6 +975,9 @@
       "Select all messages": [
         "सभी संदेशों का चयन करें"
       ],
+      "Select country": [
+        "देश चुनें"
+      ],
       "Select date and time": [
         "दिनांक और समय चुनें"
       ],
@@ -1113,10 +1125,6 @@
       "Trust": [
         "भरोसा करें"
       ],
-      "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
-      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -1170,6 +1178,9 @@
       ],
       "Upgrade": [
         "अपग्रेड करें"
+      ],
+      "Upgrade Now": [
+        "अभी अपग्रेड करें"
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
@@ -1253,6 +1264,11 @@
     "action": {
       "Search messages": [
         "संदेश खोजें"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "पुनः सक्रिय करें"
       ]
     },
     "Actions message": {
@@ -2628,6 +2644,9 @@
       "Macao": [
         "मकाओ"
       ],
+      "Macedonia": [
+        "मैसिडोनिया"
+      ],
       "Madagascar": [
         "मेडागास्कर"
       ],
@@ -3201,6 +3220,11 @@
         "सब डाउनलोड करें"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Priority support": [
+        "प्राथमिक सहायता"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "विवरण:\n${ eventDescription }"
@@ -3220,6 +3244,11 @@
     "Email body for invitation (date part)": {
       "TIME:\n${ formattedStart }": [
         "समय:\n${ formattedStart }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "हटाया गया"
       ]
     },
     "Email reminder banner": {
@@ -3284,6 +3313,9 @@
       ]
     },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 टीबी"
+      ],
       "6 users": [
         "6 यूज़र"
       ]
@@ -3712,6 +3744,9 @@
       ],
       "You did not provide a file.": [
         "आपने कोई फ़ाइल प्रदान नहीं की है।"
+      ],
+      "You have reached the maximum number of calendars.": [
+        "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
@@ -4344,6 +4379,9 @@
     "Free trial desktop": {
       "No credit card required.": [
         "कोई क्रेडिट कार्ड नहीं चाहिए."
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "Get started checklist instructions": {
@@ -5071,6 +5109,9 @@
       ],
       "Clear data": [
         "डाटा मिटाएं"
+      ],
+      "Clear selection": [
+        "चयन साफ़ करें"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "ब्राउज़र डेटा साफ़ करने से इस उपकरण पर संदेश सामग्री खोज भी निष्क्रिय हो जाती है। उनमें खोजने के लिए सभी संदेशों को फिर से डाउनलोड करना होगा।"
@@ -6060,6 +6101,9 @@
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
+      "Warning": [
+        "चेतावनी"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "हम माफी चाहते हैं। यह हमारी तरफ से हुई गलती हो सकती है। क्या आप इस बात की पुष्टि कर सकते हैं कि आप इस ईमेल को एक वैध के रूप में चिह्नित करना चाहते हैं?"
       ],
@@ -6810,6 +6854,9 @@
       "Frequency": [
         "आवृत्ति"
       ],
+      "From": [
+        "से"
+      ],
       "From:": [
         "से:"
       ],
@@ -7091,6 +7138,16 @@
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "से"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "को"
       ]
     },
     "Label attach to date input to select a date": {
@@ -7389,6 +7446,11 @@
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "${ price } के लिए"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "संग्रह"
@@ -7403,9 +7465,17 @@
         "कचरा"
       ]
     },
+    "mailtrial2024: Action": {
+      "Get the deal": [
+        "सौदा पाएं"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Auto-delete Spam and Trash": [
+        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
       "Support for 1 custom email domain": [
         "1 कस्टम ईमेल डोमेन के लिए सहायता"
@@ -7955,6 +8025,9 @@
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
       ],
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
+      ],
       "Unlimited labels": [
         "असीमित लेबल"
       ],
@@ -8031,9 +8104,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "सभी ${ BRAND_NAME } ऐप्स और उनकी प्रीमियम सुविधाएँ"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "क्रेडिट, प्रोरेशन, और कूपन जो लागू हो सकते है अगले कदम में लगाए जाएगे"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "सारे ${ BRAND_NAME } सेवाओं के साथ पूरी निजता और सुरक्षा।"
@@ -8443,6 +8513,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "ठीक है"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -8572,6 +8645,9 @@
       ],
       "Text": [
         "लिखा हुआ"
+      ],
+      "To": [
+        "को"
       ],
       "Type a command…": [
         "एक कमांड टाइप करें…"
@@ -8768,6 +8844,11 @@
         "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
+    "Security Center - Action": {
+      "View logs": [
+        "लॉग देखें"
+      ]
+    },
     "Security Center - Info": {
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "यदि आपका पासवर्ड या अन्य डेटा किसी तिसारे-पक्ष से लीक हुआ है, तो इसकी सूचना प्राप्त करें। ${ learnMoreLink }"
@@ -8903,6 +8984,16 @@
         "पासवर्ड रीसेट करें"
       ]
     },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "पासवर्ड रीसेट रद्द करें"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "पासवर्ड रीसेट प्रक्रिया रद्द करने हेतु वर्तमान पासवर्ड दर्ज करें। कोई अन्य परिवर्तन प्रभावी नहीं होगा।"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "पासवर्ड रीसेट रद्द कर दिया गया"
@@ -8924,6 +9015,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "अनुरोध रद्द करें"
+      ],
       "Got it": [
         "समझ गया"
       ],
@@ -9398,6 +9492,14 @@
         "अपना कस्टम ईमेल डोमेन"
       ]
     },
+    "subscription reminder": {
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "पक्का?"
@@ -9825,6 +9927,20 @@
       "${ minutes } minute": [
         "${ minutes } मिनट",
         "${ minutes } मिनट"
+      ]
+    },
+    "Tip Action": {
+      "Activate": [
+        "सक्रिय"
+      ],
+      "Create an alias": [
+        "नकली-नाम बनाएं"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } डाउनलोड करें"
+      ],
+      "Open ": [
+        "अनिर्णित "
       ]
     },
     "Title": {

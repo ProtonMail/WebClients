@@ -1227,12 +1227,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -3602,6 +3596,14 @@
     "Download attachments": {
       "Download all": [
         "Stiahnuť všetko"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšírená história verzií"
+      ],
+      "Priority support": [
+        "Prioritná podpora"
       ]
     },
     "Email body for description (description part)": {
@@ -9630,9 +9632,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všetky firemné aplikácie a prémiové funkcie ${ BRAND_NAME } na ochranu vašej firmy."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Použiteľné kredity, pomerná časť a kupóny sa použijú v ďalšom kroku"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexné súkromie a bezpečnosť so všetkými službami ${ BRAND_NAME } dohromady."
       ],
@@ -12424,6 +12423,26 @@
         "${ minutes } minút"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Aktivovať"
+      ],
+      "Create an alias": [
+        "Vytvoriť alias"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Stiahnuť ${ VPN_APP_NAME }"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Zapnúť monitorovanie Dark Webu"
+      ],
+      "Open ": [
+        "Otvoriť "
+      ],
+      "Show me how": [
+        "Ukážte mi ako"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } emailová adresa",
@@ -13387,6 +13406,22 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } emailových adries",
+        "${ n } emailových adries",
+        "${ n } emailové adresy"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Peňaženka"
       ]
     },
     "Warning": {
