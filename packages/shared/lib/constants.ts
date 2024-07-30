@@ -327,8 +327,10 @@ export const SECURITY_CHECKUP_PATHS = {
     ROOT: '/security-checkup',
     SET_PHRASE: '/security-checkup/phrase',
     SET_EMAIL: '/security-checkup/email',
+    VERIFY_EMAIL: '/security-checkup/email/verify',
     ENABLE_EMAIL: '/security-checkup/email/enable',
     SET_PHONE: '/security-checkup/phone',
+    VERIFY_PHONE: '/security-checkup/phone/verify',
     ENABLE_PHONE: '/security-checkup/phone/enable',
     ENABLE_DEVICE_RECOVERY: '/security-checkup/device',
 };

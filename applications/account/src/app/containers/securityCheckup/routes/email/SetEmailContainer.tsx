@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
-import { useUserSettings } from '@proton/components/index';
+import { useSecurityCheckup, useUserSettings } from '@proton/components/index';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import AccountLoaderPage from '../../../../content/AccountLoaderPage';
@@ -15,6 +15,9 @@ import { emailIcon } from '../../methodIcons';
 
 const SetEmailContainer = () => {
     const history = useHistory();
+
+    const { securityState } = useSecurityCheckup();
+    const { email } = securityState;
 
     const [userSettings, loadingUserSettings] = useUserSettings();
 
@@ -52,7 +55,12 @@ const SetEmailContainer = () => {
                     );
                 }}
                 onSuccess={() => {
-                    history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                    if (email.verified) {
+                        history.push(SECURITY_CHECKUP_PATHS.ROOT);
+                        return;
+                    }
+
+                    history.push(`${SECURITY_CHECKUP_PATHS.VERIFY_EMAIL}?setup=1`);
                 }}
             />
         </SecurityCheckupMain>

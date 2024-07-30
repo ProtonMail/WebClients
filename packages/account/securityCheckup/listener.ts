@@ -8,7 +8,7 @@ import {
     getIsPerfectPhoneState,
     getIsPerfectPhraseState,
 } from '@proton/shared/lib/helpers/securityCheckup';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { MNEMONIC_STATUS, SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 import { getIsMnemonicAvailable } from '@proton/shared/lib/mnemonic';
@@ -105,10 +105,12 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                 email: {
                     value: userSettings.value.Email.Value,
                     isEnabled: !!userSettings.value.Email.Reset,
+                    verified: userSettings.value.Email.Status === SETTINGS_STATUS.VERIFIED,
                 },
                 phone: {
                     value: userSettings.value.Phone.Value,
                     isEnabled: !!userSettings.value.Phone.Reset,
+                    verified: userSettings.value.Phone.Status === SETTINGS_STATUS.VERIFIED,
                 },
                 deviceRecovery: {
                     isAvailable: isRecoveryFileAvailable,
