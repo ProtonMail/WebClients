@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Vælg faktureringscyklus ${ billingText }"
+      ],
       "Select country": [
         "Vælg land"
       ],
@@ -576,6 +579,12 @@
       ],
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Test af SAML-konfiguration"
       ],
       "Top up": [
         "Genopfyld"
@@ -2032,7 +2041,7 @@
         "Så snart adressen ${ address } er slettet, kan den ikke bruges igen af andre."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
-        "NB: Hvis du sletter denne adresse ${ address }, er det ikke længere muligt at sende eller modtage e-mails med denne adresse."
+        "NB: Hvis du sletter denne adresse ${ address }, vil du ikke længere kunne sende eller modtage mails med denne adresse."
       ],
       "You can only delete 1 address per year.": [
         "Du kan kun slette 1 adresse om året."
@@ -2141,6 +2150,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjælp os med at blive bedre"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Udvidet versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriteret support"
       ]
     },
     "Email verification": {
@@ -3328,8 +3345,8 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Tilpasset e-mail om databrud tilføjet"
+      "Breach Custom Email Created": [
+        "Tilpasset e-mail om databrud oprettet"
       ],
       "Breach Custom Email Deleted": [
         "Tilpasset e-mail om databrud slettet"
@@ -3404,17 +3421,8 @@
       "Custom branding": [
         "Tilpasset varemærke"
       ],
-      "Custom email added": [
-        "Tilpasset e-mail tilføjet"
-      ],
-      "Custom email deleted": [
-        "Tilpasset e-mail slettet"
-      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
-      ],
-      "Custom email validated": [
-        "Tilpasset e-mail bekræftet"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
@@ -3939,6 +3947,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - tilpasset e-mail bekræftet"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - tilpasset e-mail oprettet"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - tilpasset e-mail slettet"
       ],
       "password": [
         "adgangskode"
@@ -5415,9 +5432,6 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "Need help?": [
-        "Brug for hjælp?"
-      ],
       "Not activated": [
         "Ikke aktiveret"
       ],
@@ -6168,9 +6182,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle erhvervs-apps til ${ BRAND_NAME } og premium-funktioner, der beskytter hele din virksomhed."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Gældende kreditter, proratering og kuponer anvendes i næste trin"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
@@ -6988,8 +6999,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
+      ],
+      "Please select your billing country first.": [
+        "Vælg venligst dit faktureringsland først."
+      ],
+      "Please select your billing state first.": [
+        "Vælg venligst dit faktureringsstat først."
+      ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Select billing country to pay": [
+        "Vælg faktureringsland for at betale"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
@@ -7254,6 +7280,55 @@
       ],
       "User": [
         "Bruger"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Annuller"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Et eller andet gik galt"
+      ],
+      "Something went wrong. Please try again.": [
+        "Et eller andet gik galt. Prøv igen."
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Der opstod en fejl under test af din SSO-konfiguration."
+      ],
+      "Details": [
+        "Detaljer"
+      ],
+      "Test in progress...": [
+        "Test i gang..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "For at teste denne SAML-konfiguration skal du indtaste loginoplysningerne for en bruger tilknyttet **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Vi har modtaget et gyldigt SAML-svar fra din identitetsudbyder. SSO er aktiveret for din organisation."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Vi tester din konfiguration for at sikre, at SSO fungerer."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-mail"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Det virker!"
+      ],
+      "Test SAML configuration": [
+        "Test af SAML-konfiguration"
+      ],
+      "Testing SAML configuration": [
+        "Tester SAML-konfiguration"
       ]
     },
     "scim: Action": {
@@ -8939,6 +9014,9 @@
       "Couldn’t create accounts": [
         "Kunne ikke oprette konti"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Opret ${ selectedUserIds.length } bruger",
         "Opret ${ selectedUserIds.length } brugere"
@@ -9776,6 +9854,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto pr. wallet",
+        "${ n } konti pr. wallet"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadresse",
+        "${ n } e-mailadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } wallet",
+        "${ n } wallets"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "En sikrere måde at gemme dine Bitcoin på"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Opbevar og overfør dine bitcoins sikkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med wallet"
       ]
     },
     "Warning": {

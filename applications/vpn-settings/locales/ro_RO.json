@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selectare ciclu de facturare la ${ billingText }"
+      ],
       "Select country": [
         "Selectare țară"
       ],
@@ -2152,6 +2155,14 @@
         "Ajutați-ne să îmbunătățim"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Istoric extins versiuni"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Mesajul de verificare a fost trimis la ${ address }"
@@ -3358,9 +3369,6 @@
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "S-a adăugat e-mail personal pentru verificare divulgare."
-      ],
       "Breach Custom Email Deleted": [
         "E-mail personal pentru verificare divulgare șters."
       ],
@@ -3435,17 +3443,8 @@
       "Custom branding": [
         "Branding personalizat"
       ],
-      "Custom email added": [
-        "Adresă de e-mail personală adăugată."
-      ],
-      "Custom email deleted": [
-        "Adresa de e-mail personală ștearsă."
-      ],
       "Custom email domains": [
         "Domenii personale e-mail"
-      ],
-      "Custom email validated": [
-        "Adresă de e-mail personală validată."
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
@@ -5470,9 +5469,6 @@
       "Learn more": [
         "Detalii"
       ],
-      "Need help?": [
-        "Doriți ajutor?"
-      ],
       "Not activated": [
         "Neactivat"
       ],
@@ -6243,9 +6239,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toate aplicațiile comerciale ${ BRAND_NAME } și funcțiile premium pentru a vă proteja întreaga afacere."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
@@ -7088,8 +7081,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
       ],
+      "Please select billing country": [
+        "Selectați țara de facturare"
+      ],
+      "Please select billing state": [
+        "Selectați statul de facturare"
+      ],
+      "Please select your billing country first.": [
+        "Selectați țara de facturare mai întâi."
+      ],
+      "Please select your billing state first.": [
+        "Selectați statul de facturare mai întâi."
+      ],
       "Processing payment": [
         "Se procesează plata"
+      ],
+      "Select billing country to pay": [
+        "Selectați țara de facturare pentru a plăti"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
@@ -7099,6 +7107,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ price } în fiecare lună. Puteți anula oricând."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Tranzacția a fost detectată cu succes. Creditele vor fi adăugate în contul personal după ce tranzacția este pe deplin confirmată."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -8372,6 +8383,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "După ce vă expiră abonamentul ${ planName }, contul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "După ce vă expiră abonamentul ${ planName }, contul va fi retrogradat la planul ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Echipa dvs, va experimenta întreruperi în activitatea sa, deoarece utilizatorii suplimentari nu sunt acceptați în planul gratuit."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "După ce vă expiră abonamentul ${ planName }, contul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
       ],
@@ -9074,6 +9088,9 @@
       "Couldn’t create accounts": [
         "Nu s-au putut crea conturi"
       ],
+      "Coupon": [
+        "Cupon"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Creare un utilizator",
         "Creare ${ selectedUserIds.length } utilizatori",
@@ -9758,6 +9775,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Administrators can't access the data of private users": [
         "Administratorii nu pot accesa datele utilizatorilor privați."
       ],
@@ -9944,6 +9964,39 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cont per portofel",
+        "${ n } conturi per portofel",
+        "${ n } de conturi per portofel"
+      ],
+      "${ n } email address": [
+        "${ n } adresă de e-mail",
+        "${ n } adrese de e-mail",
+        "${ n } de adrese de e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portofel",
+        "${ n } portofele",
+        "${ n } de portofele"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "O metodă mai sigură de a vă păstra monedele Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin prin e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Păstrați și transferați în siguranță monedele Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemă portofel"
       ]
     },
     "Warning": {

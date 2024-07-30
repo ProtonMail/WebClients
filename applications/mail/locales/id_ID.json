@@ -1059,6 +1059,9 @@
       "Select all messages": [
         "Pilih semua pesan"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Pilih siklus pembayaran ${ billingText }"
+      ],
       "Select country": [
         "Pilih negara"
       ],
@@ -3559,6 +3562,14 @@
         "Unduh semua"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Riwayat versi yang terperinci"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESKRIPSI:\n${ eventDescription }"
@@ -5825,6 +5836,9 @@
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Tentukan kapan waktu yang paling tepat bagi para penerima untuk menerima email Anda, dan jadwalkan pengiriman Anda sesuai dengan waktu ini."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontak ditetapkan ke grup ${ contactGroupName }"
       ],
@@ -5899,6 +5913,9 @@
       ],
       "Default email application": [
         "Aplikasi email bawaan"
+      ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Tahukah Anda bahwa Anda memiliki penyimpanan cloud terenkripsi yang terliput dalam Akun ${ BRAND_NAME } Anda? Kunjungi ${ DRIVE_APP_NAME } dan manfaatkan ruang penyimpanan Anda semaksimal mungkin. Gratis."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Tahukah Anda bahwa kami menyimpan alamat email yang lebih pendek khusus untuk Anda? Alamat email ini merupakan kombinasi dari nama pengguna Anda yang disertai dengan \"@${ PM_DOMAIN }\"."
@@ -6063,7 +6080,7 @@
         "Folder"
       ],
       "For messages newer than ${ oldestDate }": [
-        "Untuk pesan yang lebih baru daripada ${ oldestDate }"
+        "Untuk pesan yang lebih baru dari ${ oldestDate }"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Untuk hasil pencarian yang lebih banyak, cobalah untuk mencari kata kunci ini pada konten email Anda."
@@ -6190,6 +6207,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Jaga detail entri masuk dan kartu kredit Anda dengan aman tetapi selalu tersedia dengan menambahkannya ke ${ PASS_APP_NAME }. Gratis dan termasuk dengan Akun ${ BRAND_NAME } Anda."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Pertahankan kerapian kotak surat Anda dengan membersihkan pesan sampah dan spam yang telah berusia lebih dari 30 hari secara otomatis."
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
@@ -6845,6 +6868,9 @@
       "to ${ destinationElement } folder.": [
         "ke folder ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Untuk mencegah agar Anda tidak sampai terganggu oleh tab yang terbuka pada browser Anda, gunakan aplikasi desktop kami."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
       ],
@@ -7063,6 +7089,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Pada saat Anda mendaftarkan diri ke suatu buletin, gunakan alias Anda alih-alih alamat email asli Anda. Identitas Anda akan tetap tersembunyi, dan Anda akan dapat menonaktifkan alias ini kapan saja."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Pada saat Anda sedang bepergian atau menggunakan WiFi publik, hubungkan diri Anda ke ${ VPN_APP_NAME } untuk mencegah siapa pun melacak aktivitas online atau mencuri data Anda. Gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda ingin menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -9195,9 +9227,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Semua aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi seluruh bisnis. "
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
@@ -9799,6 +9828,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
+      ],
+      "Please select billing country": [
+        "Silakan pilih negara bagian penagihan"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
+      ],
+      "Please select your billing country first.": [
+        "Silakan pilih negara penagihan Anda terlebih dahulu"
+      ],
+      "Please select your billing state first.": [
+        "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
+      ],
+      "Select billing country to pay": [
+        "Pilih negara bagian penagihan untuk membayar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Voucer berlaku untuk pembaruan ${ couponRedemptions }. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
@@ -11346,10 +11390,10 @@
         "Tetap aktifkan autodebet"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebet dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
+        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebit dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebet, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
+        "Sistem kami tidak akan lagi mendebit Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebit, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
       ]
     },
     "Subscription saving": {
@@ -11632,6 +11676,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " sekarang aktif"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } dihapus"
       ]
@@ -11768,11 +11815,35 @@
       ]
     },
     "Tip Action": {
+      "Activate": [
+        "Aktifkan"
+      ],
+      "Create an alias": [
+        "Buat alias"
+      ],
       "Create label “${ suggestedLabelName }“": [
         "Buat label \"${ suggestedLabelName }“"
       ],
+      "Create new email address": [
+        "Buat alamat email baru"
+      ],
+      "Create “${ suggestedFolderName }“ folder": [
+        "Buat folder \"${ suggestedFolderName }\""
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Unduh ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Unduh aplikasi Desktop"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Aktifkan Pengawasan Web Gelap"
+      ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Dapatkan alamat \"@${ PM_DOMAIN }\" saya"
+      ],
+      "Open ": [
+        "Buka "
       ],
       "Show me how": [
         "Tunjukkan caranya kepada saya"
@@ -11922,6 +11993,9 @@
       ],
       "Conversation list": [
         "Daftar percakapan"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create contact": [
         "Buat kontak"
@@ -12687,6 +12761,54 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } akun per dompet"
+      ],
+      "${ n } email address": [
+        "${ n } alamat email"
+      ],
+      "${ n } wallet": [
+        "${ n } dompet"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Cara yang lebih aman untuk menyimpan Bitcoin Anda"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin melalui email"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Akses aplikasi Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Simpan dan transfer Bitcoin Anda secara aman"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Masalah dompet"
+      ]
+    },
+    "wallet_signup_2024:Title": {
+      "Wallet": [
+        "Wallet"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "Akun ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "Dompet terimpor saya ${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "Dompet saya ${ indexStr }"
       ]
     },
     "Warning": {

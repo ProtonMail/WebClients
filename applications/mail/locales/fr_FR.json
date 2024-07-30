@@ -1063,6 +1063,9 @@
       "Select all messages": [
         "Sélectionner tous les messages"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Sélectionner le cycle de facturation ${ billingText }"
+      ],
       "Select country": [
         "Sélectionnez un pays"
       ],
@@ -1233,10 +1236,6 @@
       ],
       "Trust": [
         "Faire confiance"
-      ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1544,6 +1543,9 @@
       ],
       "Faster, broader device compatibility": [
         "Compatibilité avec plus d'appareils et plus rapide"
+      ],
+      "Prompts stay on your device but requires a one-time download and compatible hardware": [
+        "Les prompts restent sur votre appareil mais ceci nécessite un téléchargement unique et un matériel compatible."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Nécessite un seul téléchargement et le matériel compatible."
@@ -3577,6 +3579,14 @@
     "Download attachments": {
       "Download all": [
         "Tout télécharger"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
       ]
     },
     "Email body for description (description part)": {
@@ -5776,6 +5786,9 @@
       "and": [
         "et"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Une autre astuce sera affichée la prochaine fois que vous ouvrirez Mail."
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Tous les messages programmés ou en attente seront annulés."
       ],
@@ -5920,6 +5933,9 @@
       "Confirm phishing report": [
         "Confirmer le signalement de phishing/hameçonnage"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Déterminez quel est le meilleur moment pour que votre destinataire reçoive votre e-mail et planifiez son envoi à ce moment-là."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
       ],
@@ -5941,6 +5957,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
         "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Créez un dossier, par exemple « ${ suggestedFolderName } », pour conserver tous vos accusés de réception à un seul endroit."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
@@ -5993,6 +6012,12 @@
       "Default email application": [
         "Application de messagerie par défaut"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Saviez-vous que votre compte ${ BRAND_NAME } vous permet de disposer d'un espace de stockage chiffré ? Rendez-vous sur ${ DRIVE_APP_NAME } et profitez au maximum de votre espace. C'est gratuit."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Le saviez-vous ? Nous avons réservé une adresse e-mail plus courte juste pour vous. Celle-ci est votre nom d'utilisateur suivi de « @${ PM_DOMAIN } »."
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6008,6 +6033,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire."
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "Vous n'avez pas le temps de vous occuper d'un e-mail important maintenant, mais vous ne voulez pas l'oublier ? Définissez un meilleur moment pour qu'il apparaisse dans votre boîte de réception."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
@@ -6170,6 +6198,9 @@
       "Generate text": [
         "Générer du texte"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Donnez un label coloré à vos factures entrantes comme \"${ suggestedLabelName }\". Quand elles sont payées, remplacez le label par \"${ suggestedPaidLabelName }\"."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize }).",
         "Contient ${ numAttachments } pièces jointes (${ numAttachmentsSize })."
@@ -6209,6 +6240,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si votre alias est vendu, divulgué ou utilisé de manière abusive, il suffit de le désactiver pour ne plus recevoir d'indésirables/spam."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Si votre mot de passe se retrouve sur le Dark Web, ${ BRAND_NAME } peut vous indiquer depuis quel service vos données ont été divulguées et comment mettre un terme à la situation."
       ],
       "Image description": [
         "Description de l'image"
@@ -6279,6 +6313,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Gardez vos informations de connexion et carte de paiement en sécurité et toujours à portée de main en les ajoutant à ${ PASS_APP_NAME }. C'est gratuit et inclus dans votre compte ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Gardez votre messagerie ordonnée en vidant automatiquement la corbeille et les courriers indésirables qui s'y trouvent depuis plus de 30 jours."
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
@@ -6939,6 +6979,9 @@
       "to ${ destinationElement } folder.": [
         "vers le dossier ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Pour éviter de vous laisser distraire par les onglets ouverts de votre navigateur, utilisez l'application de bureau."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pour finaliser votre paiement, vous devez envoyer ${ btcAmountBold } à l'adresse ci-dessous."
       ],
@@ -7065,6 +7108,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL : ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Utilisez différentes adresses e-mail à des fins différentes afin de pouvoir facilement séparer vos e-mails par domaine professionnel, personnel ou autre."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilisez les raccourcis clavier pour gérer vos messages plus rapidement."
       ],
@@ -7154,6 +7200,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Quand vous vous inscrivez à une newsletter, utilisez un alias plutôt que votre adresse e-mail. Votre identité est ainsi cachée et vous pouvez désactiver cet alias n'importe quand."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Lorsque vous voyagez ou que vous utilisez un réseau WiFi public, connectez-vous à ${ VPN_APP_NAME } pour empêcher quiconque de suivre votre activité en ligne ou de voler vos données. C'est gratuit."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -9333,9 +9385,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
@@ -9942,11 +9991,26 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
+      "Please select billing country": [
+        "Veuillez sélectionner le pays pour la facturation."
+      ],
+      "Please select billing state": [
+        "Veuillez sélectionner l'état pour la facturation."
+      ],
+      "Please select your billing country first.": [
+        "Veuillez d'abord sélectionner votre pays de facturation."
+      ],
+      "Please select your billing state first.": [
+        "Veuillez d'abord sélectionner votre état de facturation."
+      ],
+      "Select billing country to pay": [
+        "Veuillez sélectionner l'état pour la facturation à payer."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Il sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
@@ -9955,7 +10019,7 @@
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons votre paiement pour la facture facturée. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -12166,6 +12230,9 @@
       "Conversation list": [
         "Liste des conversations"
       ],
+      "Coupon": [
+        "Coupon"
+      ],
       "Create contact": [
         "Créer un contact"
       ],
@@ -12961,10 +13028,10 @@
         "${ n } portefeuilles"
       ],
       "A safer way to hold your Bitcoin": [
-        "Une manière plus sûre de détenir votre Bitcoin"
+        "Un moyen plus sûr de conserver vos bitcoins"
       ],
       "Bitcoin via email": [
-        "Bitcoin par e-mail"
+        "Bitcoin via e-mail"
       ]
     },
     "wallet_signup_2024:Action": {

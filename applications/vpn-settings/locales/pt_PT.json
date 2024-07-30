@@ -337,6 +337,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
       ],
@@ -1446,6 +1449,9 @@
       "Macao": [
         "Macau"
       ],
+      "Macedonia": [
+        "Macedónia"
+      ],
       "Madagascar": [
         "Madagáscar"
       ],
@@ -1869,6 +1875,11 @@
         "Só é possível eliminar 1 endereço por ano."
       ]
     },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "Só é possível eliminar 1 endereço por ano"
+      ]
+    },
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "Tem certeza de que deseja eliminar este domínio?"
@@ -1949,6 +1960,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajude-nos a melhorar"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
       ]
     },
     "Email verification": {
@@ -4751,9 +4770,6 @@
       "Learn more": [
         "Saiba mais"
       ],
-      "Need help?": [
-        "Precisa de ajuda?"
-      ],
       "Not activated": [
         "Não ativado"
       ],
@@ -5402,9 +5418,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todas as aplicações ${ BRAND_NAME } e os seus recursos premium"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Os créditos, repartições e cupões aplicáveis são aplicados na etapa seguinte."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
@@ -7703,6 +7716,9 @@
       "Find email or username": [
         "Encontrar e-mail ou utilizador"
       ],
+      "Gateway": [
+        "Gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
@@ -7735,6 +7751,9 @@
       ],
       "Invoices": [
         "Faturas"
+      ],
+      "Main password": [
+        "Palavra-passe principal"
       ],
       "Minicalendar": [
         "Minicalendário"
@@ -8161,6 +8180,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Invite sent": [
         "O convite foi enviado."
       ],
@@ -8287,6 +8309,15 @@
     "VPNClient": {
       "iOS": [
         "iOS"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } endereço de e-mail ",
+        "${ n } endereços de e-mail "
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
       ]
     },
     "Warning": {

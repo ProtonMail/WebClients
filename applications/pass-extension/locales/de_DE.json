@@ -26,6 +26,9 @@
       "Add new item": [
         "Neuen Eintrag hinzufügen"
       ],
+      "Add section": [
+        "Abschnitt hinzufügen"
+      ],
       "Add username field": [
         "Benutzername-Feld hinzufügen"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "Karte anlegen"
       ],
+      "Create identity": [
+        "Identität erstellen"
+      ],
       "Create login": [
         "Login erstellen"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "Tresor wird erstellt"
+      ],
+      "Custom section": [
+        "Benutzerdefinierter Abschnitt"
       ],
       "Customize": [
         "Anpassen"
@@ -421,6 +430,9 @@
       ],
       "Saving passkey...": [
         "Passkey wird gespeichert..."
+      ],
+      "Section name": [
+        "Name des Abschnitts"
       ],
       "Secure links": [
         "Sichere Links"
@@ -906,6 +918,9 @@
       "Vault name does not match": [
         "Tresorname stimmt nicht überein"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Beim Start von ${ PASS_SHORT_APP_NAME } ist ein Problem aufgetreten. Wenn dieses Problem weiterhin besteht, wende dich bitte an unseren Kundensupport."
+      ],
       "Wrong password": [
         "Falsches Passwort"
       ],
@@ -1015,7 +1030,7 @@
         "${ PASS_APP_NAME } wird dich auffordern, deine Anmeldedaten zu speichern oder zu aktualisieren."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } wird die Authentifizierung mit gespeicherten Passkeys vorschlagen"
+        "${ PASS_APP_NAME } wird die Authentifizierung mit gespeicherten Passkeys vorschlagen."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } wird dir vorschlagen, einen E-Mail-Alias in Anmeldeformularen zu erstellen."
@@ -1484,6 +1499,9 @@
       "Save passkey": [
         "Passkey speichern"
       ],
+      "Secure links": [
+        "Sichere Links"
+      ],
       "Select an existing login item to update.": [
         "Wähle einen vorhandenen Login aus, um ihn zu aktualisieren."
       ],
@@ -1775,6 +1793,15 @@
       "Account": [
         "Konto"
       ],
+      "Add section": [
+        "Abschnitt hinzufügen"
+      ],
+      "Additional details": [
+        "Zusätzliche Details"
+      ],
+      "Address details": [
+        "Adressdetails"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1820,6 +1847,9 @@
       "Autosuggest": [
         "Auto-Vorschlagen"
       ],
+      "Birthdate": [
+        "Geburtsdatum"
+      ],
       "Capital letters (A-Z)": [
         "Großbuchstaben (A-Z)"
       ],
@@ -1835,14 +1865,29 @@
       "Cards": [
         "Karten"
       ],
+      "City": [
+        "Stadt"
+      ],
+      "Company": [
+        "Unternehmen"
+      ],
       "Confirm vault name": [
         "Tresorname bestätigen"
+      ],
+      "Contact details": [
+        "Kontaktdetails"
       ],
       "Copy": [
         "Kopieren"
       ],
       "Copy password": [
         "Passwort kopieren"
+      ],
+      "Country or Region": [
+        "Land oder Region"
+      ],
+      "County": [
+        "Landkreis"
       ],
       "Create a credit card": [
         "Kreditkarte erfassen"
@@ -1856,6 +1901,9 @@
       "Create an encrypted note": [
         "Eine verschlüsselte Notiz erstellen"
       ],
+      "Create an Identity": [
+        "Eine Identität erstellen"
+      ],
       "Create lock": [
         "Sperre einrichten"
       ],
@@ -1867,6 +1915,12 @@
       ],
       "Created at": [
         "Erstellt am"
+      ],
+      "Custom hidden field": [
+        "Benutzerdefiniertes verstecktes Feld"
+      ],
+      "Custom text field": [
+        "Benutzerdefiniertes Textfeld"
       ],
       "Device": [
         "Gerät"
@@ -1916,14 +1970,29 @@
       "Extra password": [
         "Zusätzliches Passwort"
       ],
+      "Facebook account": [
+        "Facebook-Konto"
+      ],
       "Field name": [
         "Feldname"
       ],
       "File format": [
         "Dateiformat"
       ],
+      "First name": [
+        "Vorname"
+      ],
+      "Floor, apartment, building": [
+        "Etage, Wohnung, Gebäude"
+      ],
       "Forwards to": [
         "Leitet weiter an"
+      ],
+      "Full Name": [
+        "Vollständiger Name"
+      ],
+      "Gender": [
+        "Geschlecht"
       ],
       "General": [
         "Allgemein"
@@ -1943,6 +2012,15 @@
       "Hide password": [
         "Passwort ausblenden"
       ],
+      "https://example.com": [
+        "https://beispiel.de"
+      ],
+      "Identities": [
+        "Identitäten"
+      ],
+      "Identity": [
+        "Identität"
+      ],
       "Import": [
         "Importieren"
       ],
@@ -1961,11 +2039,17 @@
       "Include numbers (0-9)": [
         "Zahlen (0-9) einschließen"
       ],
+      "Instagram handle": [
+        "Instagram-Benutzername"
+      ],
       "Invitations": [
         "Einladungen"
       ],
       "Item ID": [
         "Eintrag-ID"
+      ],
+      "Job title": [
+        "Berufsbezeichnung"
       ],
       "Key": [
         "Schlüssel"
@@ -1982,6 +2066,9 @@
       "Last month": [
         "Letzter Monat"
       ],
+      "Last name": [
+        "Nachname"
+      ],
       "Last week": [
         "Letzte Woche"
       ],
@@ -1990,6 +2077,12 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "License number": [
+        "Autokennzeichen"
+      ],
+      "LinkedIn account": [
+        "LinkedIn-Konto"
       ],
       "Login": [
         "Zugangsdaten"
@@ -2011,6 +2104,9 @@
       ],
       "Members": [
         "Mitglieder"
+      ],
+      "Middle name": [
+        "Zweiter Vorname"
       ],
       "Modified": [
         "Geändert"
@@ -2069,6 +2165,9 @@
       "Passphrase": [
         "Passphrase"
       ],
+      "Passport number": [
+        "Passnummer"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -2081,8 +2180,17 @@
       "Pause list": [
         "Ausschlussliste"
       ],
+      "Personal details": [
+        "Angaben zur Person"
+      ],
+      "Personal website": [
+        "Persönliche Website"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-verschlüsselte JSON (empfohlen)"
+      ],
+      "Phone number": [
+        "Telefonnummer"
       ],
       "PIN": [
         "PIN"
@@ -2107,6 +2215,9 @@
       ],
       "Recent": [
         "Kürzlich"
+      ],
+      "Reddit handle": [
+        "Reddit-Benutzername"
       ],
       "Remove link": [
         "Link entfernen"
@@ -2159,8 +2270,20 @@
       "Show website favicons": [
         "Website-Symbole anzeigen"
       ],
+      "Social security number": [
+        "Sozialversicherungsnummer"
+      ],
       "Special characters (!&*)": [
         "Sonderzeichen (!&*)"
+      ],
+      "State or province": [
+        "Bundesland"
+      ],
+      "Street address": [
+        "Straße und Hausnummer"
+      ],
+      "Street address, P.O. box": [
+        "Straße, Postfach"
       ],
       "Strong": [
         "Stark"
@@ -2247,8 +2370,26 @@
       "Websites": [
         "Websites"
       ],
+      "Work details": [
+        "Geschäftliche Details"
+      ],
+      "Work email": [
+        "Geschäftliche E-Mail-Adresse"
+      ],
+      "Work phone number": [
+        "Geschäftliche Rufnummer"
+      ],
+      "X handle": [
+        "X-Benutzername"
+      ],
+      "Yahoo account": [
+        "Yahoo-Konto"
+      ],
       "You are about to create": [
         "Folgender Alias wird erstellt:"
+      ],
+      "ZIP or Postal code": [
+        "Postleitzahl oder ZIP-Code"
       ]
     },
     "Message": {
@@ -2619,6 +2760,9 @@
       ],
       "OTP secret or URI required": [
         "OTP-Geheimnis oder URI erforderlich."
+      ],
+      "Section name cannot be empty": [
+        "Abschnittsname darf nicht leer sein."
       ],
       "Url already exists": [
         "URL existiert bereits"

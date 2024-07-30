@@ -155,6 +155,9 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Collapse navigation bar": [
+        "Sbalit navigační panel"
+      ],
       "Compose": [
         "Nová zpráva"
       ],
@@ -259,6 +262,9 @@
       ],
       "Dismiss": [
         "Skrýt"
+      ],
+      "Display navigation bar": [
+        "Zobrazit navigační panel"
       ],
       "Done": [
         "Hotovo"
@@ -482,11 +488,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -601,6 +607,9 @@
       ],
       "Select all": [
         "Vybrat vše"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Vyberte fakturační cyklus ${ billingText }"
       ],
       "Select calendar view": [
         "Vybrat zobrazení kalendáře"
@@ -2366,6 +2375,9 @@
       ]
     },
     "Custom frequency option": {
+      "After…": [
+        "Po…"
+      ],
       "Never": [
         "Nikdy"
       ],
@@ -2631,6 +2643,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomozte nám se zlepšit"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozšířená historie verzí"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4201,6 +4221,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
@@ -5384,6 +5407,11 @@
         "Vytváření pozvánek ve sdíleném kalendáři není povoleno"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Štítek odkazu (volitelné)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Přidat štítek"
@@ -5954,6 +5982,11 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Přístup"
       ]
     },
     "Link to calendar app": {
@@ -6737,7 +6770,7 @@
         "SSO integrace (již brzy)"
       ],
       "Strict no-logs policy": [
-        "Přísné zásady neukládání záznamů"
+        "Přísné zásady neukládání logů"
       ],
       "Tor over VPN": [
         "TOR skrze VPN"
@@ -6861,9 +6894,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
@@ -7641,6 +7671,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
+      ],
+      "Please select billing country": [
+        "Vyberte prosím zemi platby"
+      ],
+      "Please select billing state": [
+        "Vyberte prosím stát platby"
+      ],
+      "Please select your billing country first.": [
+        "Vyberte prosím nejprve vaší zemi platby."
+      ],
+      "Please select your billing state first.": [
+        "Vyberte prosím nejprve váš stát platby."
+      ],
+      "Select billing country to pay": [
+        "Vyberte zemi platby"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
@@ -8811,6 +8856,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Po vypršení platnosti vašeho předplatného ${ planName } budete převedeni na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
       ],
@@ -9521,6 +9569,9 @@
       "Continue with partial import?": [
         "Pokračovat s částečným importem?"
       ],
+      "Coupon": [
+        "Kupón"
+      ],
       "Create contact": [
         "Vytvořit kontakt"
       ],
@@ -10114,6 +10165,42 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } účet na peněženku",
+        "${ n } účty na peněženku",
+        "${ n } účtů na peněženku",
+        "${ n } účtů na peněženku"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "${ n } e-mailové adresy",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
+      ],
+      "${ n } wallet": [
+        "${ n } peněženka",
+        "${ n } peněženky",
+        "${ n } peněženek",
+        "${ n } peněženek"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpečnější způsob jak vlastnit Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin přes e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bezpečně uchovávejte a převádějte své bitcoiny"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problém s Wallet"
       ]
     },
     "Warning": {

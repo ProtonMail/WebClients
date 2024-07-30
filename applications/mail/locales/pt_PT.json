@@ -796,6 +796,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
@@ -1170,10 +1173,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2744,6 +2743,9 @@
       "Macao": [
         "Macau"
       ],
+      "Macedonia": [
+        "Macedónia"
+      ],
       "Madagascar": [
         "Madagáscar"
       ],
@@ -3362,6 +3364,14 @@
     "Download attachments": {
       "Download all": [
         "Transferir tudo"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Apoio ao cliente prioritário"
       ]
     },
     "Email body for description (description part)": {
@@ -8816,9 +8826,6 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Todas as aplicações ${ BRAND_NAME } e os seus recursos premium"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Os créditos, repartições e cupões aplicáveis são aplicados na etapa seguinte."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
@@ -10964,6 +10971,26 @@
         "${ minutes } minutos"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "Ativar"
+      ],
+      "Create an alias": [
+        "Criar um alias"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Transferir ${ VPN_APP_NAME }"
+      ],
+      "Enable Dark Web Monitoring": [
+        "Ativar a monitorização da Dark Web"
+      ],
+      "Open ": [
+        "Abrir "
+      ],
+      "Show me how": [
+        "Mostre-me como"
+      ]
+    },
     "Title": {
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
@@ -11868,6 +11895,15 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas, Tor sobre VPN e mais."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } endereço de e-mail ",
+        "${ n } endereços de e-mail "
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
       ]
     },
     "Warning": {

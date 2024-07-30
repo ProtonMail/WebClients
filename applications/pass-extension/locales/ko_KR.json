@@ -26,6 +26,9 @@
       "Add new item": [
         "새 항목 추가"
       ],
+      "Add section": [
+        "섹션 추가"
+      ],
       "Add username field": [
         "사용자 이름 입력란 추가"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "카드 생성"
       ],
+      "Create identity": [
+        "신원 추가"
+      ],
       "Create login": [
         "로그인 생성"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "금고 생성 중"
+      ],
+      "Custom section": [
+        "사용자 지정 섹션"
       ],
       "Customize": [
         "맞춤화"
@@ -424,6 +433,9 @@
       ],
       "Saving passkey...": [
         "패스키 저장 중..."
+      ],
+      "Section name": [
+        "섹션 이름"
       ],
       "Secure links": [
         "안전한 링크"
@@ -1508,6 +1520,9 @@
       "Save passkey": [
         "패스키 저장"
       ],
+      "Secure links": [
+        "안전한 링크"
+      ],
       "Select an existing login item to update.": [
         "업데이트할 기존의 로그인 항목을 선택하십시오."
       ],
@@ -1795,6 +1810,15 @@
       "Account": [
         "계정"
       ],
+      "Add section": [
+        "섹션 추가"
+      ],
+      "Additional details": [
+        "추가 정보"
+      ],
+      "Address details": [
+        "주소 상세정보"
+      ],
       "Alias": [
         "별칭"
       ],
@@ -1840,6 +1864,9 @@
       "Autosuggest": [
         "자동 제안"
       ],
+      "Birthdate": [
+        "생년월일"
+      ],
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
       ],
@@ -1855,14 +1882,29 @@
       "Cards": [
         "카드"
       ],
+      "City": [
+        "시/군/구"
+      ],
+      "Company": [
+        "회사"
+      ],
       "Confirm vault name": [
         "금고 이름 확인"
+      ],
+      "Contact details": [
+        "연락처 정보"
       ],
       "Copy": [
         "복사"
       ],
       "Copy password": [
         "비밀번호 복사"
+      ],
+      "Country or Region": [
+        "국가/지역"
+      ],
+      "County": [
+        "구/군"
       ],
       "Create a credit card": [
         "신용 카드 생성"
@@ -1876,6 +1918,9 @@
       "Create an encrypted note": [
         "암호화된 메모 생성"
       ],
+      "Create an Identity": [
+        "신원 정보 추가"
+      ],
       "Create lock": [
         "잠금 생성"
       ],
@@ -1887,6 +1932,12 @@
       ],
       "Created at": [
         "생성일:"
+      ],
+      "Custom hidden field": [
+        "사용자 지정 숨겨진 필드"
+      ],
+      "Custom text field": [
+        "사용자 정의 필드"
       ],
       "Device": [
         "기기"
@@ -1936,14 +1987,29 @@
       "Extra password": [
         "추가 비밀번호"
       ],
+      "Facebook account": [
+        "Facebook 계정"
+      ],
       "Field name": [
         "필드 이름"
       ],
       "File format": [
         "파일 형식"
       ],
+      "First name": [
+        "이름"
+      ],
+      "Floor, apartment, building": [
+        "층, 아파트, 빌딩"
+      ],
       "Forwards to": [
         "다음으로 전달:"
+      ],
+      "Full Name": [
+        "성명"
+      ],
+      "Gender": [
+        "성별"
       ],
       "General": [
         "일반"
@@ -1963,6 +2029,15 @@
       "Hide password": [
         "비밀번호 숨기기"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "신원"
+      ],
+      "Identity": [
+        "신원"
+      ],
       "Import": [
         "불러오기"
       ],
@@ -1981,11 +2056,17 @@
       "Include numbers (0-9)": [
         "숫자 포함 (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram 핸들"
+      ],
       "Invitations": [
         "초대"
       ],
       "Item ID": [
         "항목 ID"
+      ],
+      "Job title": [
+        "직함"
       ],
       "Key": [
         "키"
@@ -2002,6 +2083,9 @@
       "Last month": [
         "지난 한 달"
       ],
+      "Last name": [
+        "성"
+      ],
       "Last week": [
         "지난 주"
       ],
@@ -2010,6 +2094,12 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "License number": [
+        "라이선스 번호"
+      ],
+      "LinkedIn account": [
+        "LinkedIn 계정"
       ],
       "Login": [
         "로그인"
@@ -2031,6 +2121,9 @@
       ],
       "Members": [
         "구성원"
+      ],
+      "Middle name": [
+        "중간 이름"
       ],
       "Modified": [
         "수정됨"
@@ -2089,6 +2182,9 @@
       "Passphrase": [
         "암호"
       ],
+      "Passport number": [
+        "여권 번호"
+      ],
       "Password": [
         "암호"
       ],
@@ -2101,8 +2197,17 @@
       "Pause list": [
         "항목 정지"
       ],
+      "Personal details": [
+        "개인 정보"
+      ],
+      "Personal website": [
+        "개인 웹사이트"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP 암호화된 JSON (권장)"
+      ],
+      "Phone number": [
+        "전화번호"
       ],
       "PIN": [
         "PIN"
@@ -2127,6 +2232,9 @@
       ],
       "Recent": [
         "최근"
+      ],
+      "Reddit handle": [
+        "Reddit 핸들"
       ],
       "Remove link": [
         "링크 삭제"
@@ -2179,8 +2287,20 @@
       "Show website favicons": [
         "웹사이트 아이콘 표시"
       ],
+      "Social security number": [
+        "사회 보장 번호"
+      ],
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
+      ],
+      "State or province": [
+        "시/도"
+      ],
+      "Street address": [
+        "도로명 주소"
+      ],
+      "Street address, P.O. box": [
+        "거리 주소 또는 사서함"
       ],
       "Strong": [
         "강함"
@@ -2266,8 +2386,26 @@
       "Websites": [
         "웹 사이트"
       ],
+      "Work details": [
+        "작업 세부 정보"
+      ],
+      "Work email": [
+        "업무용 이메일"
+      ],
+      "Work phone number": [
+        "업무용 휴대폰 번호"
+      ],
+      "X handle": [
+        "X 핸들"
+      ],
+      "Yahoo account": [
+        "Yahoo 계정"
+      ],
       "You are about to create": [
         "생성하려고 하는 주소:"
+      ],
+      "ZIP or Postal code": [
+        "우편번호"
       ]
     },
     "Message": {
@@ -2636,6 +2774,9 @@
       ],
       "OTP secret or URI required": [
         "OTP 시크릿 및 URI가 필요합니다."
+      ],
+      "Section name cannot be empty": [
+        "섹션 이름은 비워둘 수 없습니다"
       ],
       "Url already exists": [
         "URL이 이미 존재합니다."

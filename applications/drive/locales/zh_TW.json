@@ -16,6 +16,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "Accept": [
+        "接受"
+      ],
       "Activate recovery": [
         "啟動還原"
       ],
@@ -216,6 +219,9 @@
       ],
       "Customize import": [
         "自訂匯入"
+      ],
+      "Decline": [
+        "婉拒"
       ],
       "Decrease": [
         "減"
@@ -700,6 +706,9 @@
       "Select all": [
         "全選"
       ],
+      "Select billing cycle ${ billingText }": [
+        "選取繳款週期${ billingText }"
+      ],
       "Select country": [
         "選擇國家"
       ],
@@ -830,6 +839,9 @@
         "仍要上載"
       ],
       "Upload file": [
+        "上載檔案"
+      ],
+      "Upload files": [
         "上載檔案"
       ],
       "Upload folder": [
@@ -1779,6 +1791,9 @@
       "Macao": [
         "澳門"
       ],
+      "Macedonia": [
+        "馬其頓"
+      ],
       "Madagascar": [
         "馬達加斯加"
       ],
@@ -2296,6 +2311,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "幫助我們改善"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
       ]
     },
     "Email body for description (description part)": {
@@ -3667,6 +3690,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
@@ -6762,9 +6788,6 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "所有 ${ BRAND_NAME } 應用程式與其進階功能"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "適用的餘額、價差與優惠券將在下一步時套用"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
       ],
@@ -7320,11 +7343,17 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "建立新文件"
+      ],
       "Next": [
         "下一步"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "開始使用 ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "稍後嘗試"
       ]
     },
     "Onboarding Info": {
@@ -7371,6 +7400,12 @@
       ]
     },
     "Onboarding Title": {
+      "Hang tight!": [
+        "準備好!"
+      ],
+      "Upload and protect your important files": [
+        "上傳和保護您的匯入檔案"
+      ],
       "Your welcome bonus": [
         "您的歡迎獎勵"
       ]
@@ -7459,6 +7494,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "請先重新啟用訂閱以減少添加數量。"
+      ],
+      "Please select billing country": [
+        "請選擇您的付款國家"
+      ],
+      "Please select billing state": [
+        "請選擇您的付款狀態"
+      ],
+      "Please select your billing country first.": [
+        "請先選擇您的計費國家。"
+      ],
+      "Please select your billing state first.": [
+        "請先選擇您的計費狀態。"
+      ],
+      "Select billing country to pay": [
+        "選取繳款國家以付款"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
@@ -8885,6 +8935,9 @@
       "Continue with partial import?": [
         "要繼續部分匯入嗎？"
       ],
+      "Coupon": [
+        "優惠券"
+      ],
       "Create a new file": [
         "創建新檔案"
       ],
@@ -9528,6 +9581,30 @@
       ],
       "No ads": [
         "零廣告"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n }錢包每個帳號"
+      ],
+      "${ n } email address": [
+        "${ n }電子郵件位址"
+      ],
+      "${ n } wallet": [
+        "${ n } 錢包"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "更安全的方法持有Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "安全持有及交易您的 Bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "錢包問題"
       ]
     },
     "Warning": {

@@ -180,6 +180,9 @@
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
+      "Create new document": [
+        "Utwórz nowy dokument"
+      ],
       "Current plan": [
         "Obecny plan"
       ],
@@ -497,6 +500,9 @@
       ],
       "Select all": [
         "Zaznacz wszystkie"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Wybierz cykl rozliczeniowy ${ billingText }"
       ],
       "Select country": [
         "Wybierz kraj"
@@ -1329,7 +1335,7 @@
         "Falklandy"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandy (Malwiny)"
+        "Falklandy"
       ],
       "Faroe Islands": [
         "Wyspy Owcze"
@@ -2054,6 +2060,14 @@
         "Pomóż nam ulepszyć usługę"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "OPIS:\n${ eventDescription }"
@@ -2209,6 +2223,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Kwota poniżej minimum (${ minimumAmount })."
+      ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Wystąpił błąd podczas konwertowania dokumentu. Spróbuj ponownie."
       ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Wystąpił błąd podczas próby zduplikowania dokumentu. Spróbuj ponownie."
@@ -2494,6 +2511,9 @@
       ],
       "The address might be misspelled": [
         "Adres mógł zostać błędnie wpisany"
+      ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "Dokument, który próbujesz przekonwertować, jest zbyt duży. Może się tak zdarzyć, jeśli dokument zawiera dużą liczbę obrazów lub innych multimediów. Spróbuj ponownie z mniejszym dokumentem."
       ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
@@ -3801,6 +3821,9 @@
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
       ],
+      "End-to-end encrypted.": [
+        "Szyfrowany end-to-end."
+      ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
       ],
@@ -4221,6 +4244,9 @@
       "Some edits are taking longer to sync than expected.": [
         "Synchronizacja niektórych zmian trwa dłużej."
       ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
@@ -4265,6 +4291,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dokument był edytowany wiele razy. Niektóre funkcje mogą być tymczasowo niedostępne."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Dokument nie istnieje lub możesz nie mieć do niego uprawnień. Odśwież stronę, aby sprawdzić, czy problem nadal występuje."
       ],
       "This item already exists in your library": [
         "Ten element już istnieje"
@@ -6071,9 +6100,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
       ],
@@ -6748,6 +6774,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
+      ],
+      "Please select your billing country first.": [
+        "Najpierw wybierz kraj rozliczeniowy"
+      ],
+      "Please select your billing state first.": [
+        "Najpierw wybierz stan rozliczeniowy"
+      ],
+      "Select billing country to pay": [
+        "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
@@ -7934,9 +7975,6 @@
       "Amount due": [
         "Do zapłaty"
       ],
-      "An error occurred": [
-        "Wystąpił błąd"
-      ],
       "Apply gift code": [
         "Zastosuj kod podarunkowy"
       ],
@@ -7984,6 +8022,9 @@
       ],
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create contact": [
         "Utwórz kontakt"

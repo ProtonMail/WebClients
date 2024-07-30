@@ -58,11 +58,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -652,11 +652,17 @@
       "More info: Keyboard shortcuts": [
         "Meer informatie: toetsenbordsneltoetsen"
       ],
+      "More options": [
+        "Meer opties"
+      ],
       "move emails to": [
         "e-mails verplaatsen naar"
       ],
       "Need help?": [
         "Hulp nodig?"
+      ],
+      "New group": [
+        "Nieuwe groep"
       ],
       "Next": [
         "Volgende"
@@ -675,6 +681,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Open"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -733,11 +742,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -789,6 +798,9 @@
       ],
       "Resend code": [
         "Verstuur code opnieuw"
+      ],
+      "Resend invitation": [
+        "Uitnodiging opnieuw verzenden"
       ],
       "Reset credentials": [
         "Inloggegevens resetten"
@@ -1114,6 +1126,9 @@
       "Verify code again": [
         "Verifieer code opnieuw"
       ],
+      "Verify domain": [
+        "Domein verifiëren"
+      ],
       "View": [
         "Bekijken"
       ],
@@ -1350,6 +1365,9 @@
     "Assistant option": {
       "Run locally": [
         "Lokaal uitvoeren"
+      ],
+      "Run on servers": [
+        "Uitvoeren op servers"
       ]
     },
     "Assistant toggle": {
@@ -1482,14 +1500,6 @@
         "Selecteer uw eindejaarsaanbieding"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
@@ -1511,6 +1521,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Het ${ plan }-abonnement is tijdelijk terug"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -2665,6 +2683,9 @@
       "Macao": [
         "Macau"
       ],
+      "Macedonia": [
+        "Noord-Macedonië"
+      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -3068,6 +3089,11 @@
         "We hebben fouten ontdekt in meerdere rijen tijdens het importeren, controleer uw CSV-bestand."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Lees meer"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/maand"
@@ -3402,6 +3428,14 @@
     "drive_signup_2023: Title": {
       "Secure cloud storage and file sharing that protects your data": [
         "Beveiligde cloudopslag en bestandsdeling die uw gegevens beschermt."
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ]
     },
     "Duration": {
@@ -6612,11 +6646,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -7260,6 +7294,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
+      ],
+      "Only you can see the label": [
+        "Alleen u kunt het label zien"
       ],
       "Open source": [
         "Open source"
@@ -8006,6 +8043,15 @@
       "Users": [
         "Gebruikers"
       ],
+      "Vault created": [
+        "Kluis aangemaakt"
+      ],
+      "Vault deleted": [
+        "Kluis verwijderd"
+      ],
+      "Vault updated": [
+        "Kluis bijgewerkt"
+      ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
       ],
@@ -8512,6 +8558,9 @@
       "Paid": [
         "Betaald"
       ],
+      "Processing": [
+        "Verwerken"
+      ],
       "Unpaid": [
         "Onbetaald"
       ],
@@ -8994,6 +9043,9 @@
       "Awarded": [
         "Toegekend"
       ],
+      "Beta": [
+        "Bèta"
+      ],
       "Billing address": [
         "Facturatie adres"
       ],
@@ -9299,6 +9351,9 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Group name": [
+        "Groepsnaam"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -10016,9 +10071,6 @@
       "Learn more about data recovery": [
         "Meer informatie over dataherstel"
       ],
-      "Need help?": [
-        "Hulp nodig?"
-      ],
       "Not activated": [
         "Niet geactiveerd"
       ],
@@ -10058,6 +10110,9 @@
       "Upgrade your plan": [
         "Upgrade uw abonnement"
       ],
+      "Vault": [
+        "Kluis"
+      ],
       "View guide": [
         "Bekijk gids"
       ],
@@ -10072,6 +10127,11 @@
       ],
       "Why set recovery methods?": [
         "Waarom herstelmethode instellen?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Toegang"
       ]
     },
     "Loading info": {
@@ -10166,11 +10226,17 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "voor ${ price }"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
       ]
     },
     "mail_signup_2024: title": {
+      "For businesses": [
+        "Voor bedrijven"
+      ],
       "For individuals": [
         "Voor particulieren"
       ]
@@ -10575,23 +10641,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -10619,6 +10668,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -11081,9 +11147,6 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps en hun premium functies"
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
@@ -11747,6 +11810,9 @@
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
       ],
+      "Archive": [
+        "Archief"
+      ],
       "Ask each time": [
         "Telkens opnieuw vragen"
       ],
@@ -11785,6 +11851,9 @@
       ],
       "Left to Right": [
         "Links naar rechts"
+      ],
+      "Mark as read": [
+        "Markeer als gelezen"
       ],
       "My reason isn't listed": [
         "Mijn reden wordt niet vermeld"
@@ -11843,11 +11912,25 @@
       "Setup incomplete": [
         "Set-up niet voltooid"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Standaard server configuraties"
       ],
+      "Star": [
+        "Ster"
+      ],
       "The whole organization": [
         "De hele organisatie"
+      ],
+      "Trash": [
+        "Prullenbak"
+      ]
+    },
+    "option": {
+      "Members": [
+        "Leden"
       ]
     },
     "Option delay send seconds": {
@@ -12116,6 +12199,9 @@
       ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Maar u kunt **${ unlockPlanTitle }** en alle premium ${ BRAND_NAME }-diensten ontgrendelen door te upgraden naar **${ upsellPlanTitle }**."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
       ],
       "Creating your account": [
         "Account aan het aanmaken"
@@ -12423,6 +12509,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Begrepen"
+      ],
       "MM/YY": [
         "MM/JJ"
       ],
@@ -12606,6 +12695,11 @@
       ],
       "yourdomain.com": [
         "uwdomein.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Leden"
       ]
     },
     "plan customizer, ips": {
@@ -14669,11 +14763,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -14851,6 +14945,9 @@
       "Delete version history?": [
         "Versiegeschiedenis verwijderen?"
       ],
+      "Description": [
+        "Beschrijving"
+      ],
       "Details": [
         "Details"
       ],
@@ -14859,6 +14956,9 @@
       ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
+      ],
+      "Discard changes?": [
+        "Wijzigingen annuleren?"
       ],
       "Display name and signature": [
         "Weergavenaam en handtekening"
@@ -14959,6 +15059,9 @@
       "Error": [
         "Fout"
       ],
+      "Event": [
+        "Gebeurtenis"
+      ],
       "Every member of the organization can access": [
         "Elke gebruiker binnen uw organisatie kan"
       ],
@@ -14996,11 +15099,23 @@
       "Folders and labels": [
         "Mappen en labels"
       ],
+      "For Linux": [
+        "Voor Linux"
+      ],
+      "For macOS": [
+        "Voor macOS"
+      ],
+      "For Windows": [
+        "Voor Windows"
+      ],
       "Forward and auto-reply": [
         "Doorsturen en automatisch beantwoorden"
       ],
       "Forward emails": [
         "Stuur e-mails door"
+      ],
+      "Gateway": [
+        "Gateway"
       ],
       "Gateways": [
         "Gateways"
@@ -15089,6 +15204,9 @@
       ],
       "Invoices": [
         "Facturen"
+      ],
+      "IP": [
+        "IP"
       ],
       "Keep your inbox organized": [
         "Houd uw postvak georganiseerd"
@@ -15427,6 +15545,9 @@
       "This field cannot contain only spaces": [
         "Dit veld mag niet alleen spaties bevatten"
       ],
+      "Time": [
+        "Tijd"
+      ],
       "Time zone": [
         "Tijdzone"
       ],
@@ -15456,6 +15577,9 @@
       ],
       "Upload your organization’s logo": [
         "Upload het logo van uw organisatie"
+      ],
+      "User": [
+        "Gebruiker"
       ],
       "Users": [
         "Gebruikers"
@@ -15940,14 +16064,38 @@
       "Add multiple users": [
         "Meerdere gebruikers toevoegen"
       ],
+      "Add new user": [
+        "Voeg nieuwe gebruiker toe"
+      ],
+      "Admin": [
+        "Beheerder"
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
       "Confirm password": [
         "Wachtwoord bevestigen"
       ],
       "Create password": [
         "Wachtwoord aanmaken"
       ],
+      "Create user": [
+        "Gebruiker aanmaken"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Optional": [
+        "Optioneel"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
+      ],
+      "User created": [
+        "Gebruiker aangemaakt"
       ],
       "VPN connections": [
         "VPN-verbindingen"
@@ -15957,6 +16105,15 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Tweestapsverificatie"
+      ],
+      "Invite sent": [
+        "Uitnodiging verzonden"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "SSO-gebruiker verstrekt door uw identiteitsprovider"
       ],

@@ -178,6 +178,9 @@
       "Create and copy alias": [
         "Créer et copier l'alias"
       ],
+      "Create new document": [
+        "Créer un document"
+      ],
       "Current plan": [
         "Abonnement actuel"
       ],
@@ -491,6 +494,9 @@
       ],
       "Select all": [
         "Tout sélectionner"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Sélectionner le cycle de facturation ${ billingText }"
       ],
       "Select country": [
         "Sélectionnez un pays"
@@ -2034,6 +2040,14 @@
         "Aidez-nous à nous améliorer"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPTION :\n${ eventDescription }"
@@ -2190,11 +2204,11 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Le montant est inférieur au minimum (${ minimumAmount })."
       ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Une erreur s'est produite lors de la tentative de conversion du document. Veuillez réessayer."
+      ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Une erreur s'est produite lors de la tentative de duplication du document. Veuillez réessayer."
-      ],
-      "An error occurred while attempting to seed the document. Please try again.": [
-        "Une erreur s'est produite lors de la tentative d'initialisation du document. Veuillez réessayer."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Une erreur est survenue lors de la création d'un nouveau document. Veuillez réessayer."
@@ -2463,6 +2477,9 @@
       ],
       "The address might be misspelled": [
         "L'adresse est peut-être mal orthographiée."
+      ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "Le document que vous tentez de convertir est trop grand. Cela peut se produire si le document contient un grand nombre d'images ou d'autres médias. Veuillez réessayer avec un document plus petit."
       ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
@@ -3667,7 +3684,7 @@
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "Le téléchargement de fichiers ${ DOCS_APP_NAME } depuis ${ DRIVE_APP_NAME } n'est actuellement pas pris en charge. Ces derniers ne serot pas inclus dans votre téléchargement."
+        "Le téléchargement de fichiers ${ DOCS_APP_NAME } depuis ${ DRIVE_APP_NAME } n'est actuellement pas pris en charge. Ces derniers ne seront pas inclus dans votre téléchargement."
       ],
       "Drop file here to upload": [
         "Déposez les fichiers ici pour les importer."
@@ -3997,7 +4014,7 @@
         "Authentifiez votre paiement dans l'onglet de vérification."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
-        "Exportez une copie de vos modifications en cours depuis le menu principal et rechargez la page."
+        "Veuillez exporter une copie de vos modifications en cours depuis le menu principal et rechargez la page."
       ],
       "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
         "Exportez-les plutôt depuis l'application ${ DOCS_APP_NAME } si vous souhaitez les télécharger."
@@ -4111,6 +4128,9 @@
       "Some edits are taking longer to sync than expected.": [
         "La synchronisation de certaines modifications prend plus de temps que prévu."
       ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
@@ -4158,6 +4178,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Ce document comporte un nombre important d'activités. Certaines fonctionnalités peuvent être temporairement indisponibles."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Il se peut que ce document n'existe pas ou que vous ne soyez pas autorisé à le consulter. Vous pouvez essayer de recharger la page pour voir si le problème persiste."
       ],
       "This item already exists in your library": [
         "Cet élément existe déjà dans votre bibliothèque."
@@ -4415,10 +4438,10 @@
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
-        "Vos changements ont été synchronisés dans Drive. Veuillez ne pas fermer cette page web."
+        "Vos changements sont en cours de synchronisation avec Drive. Veuillez ne pas fermer cette page web."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "La synchronisation n'a pas abouti. Drive tentera d'enregistrer automatiquement les modifications. Veuillez ne pas fermer cette page web."
+        "La synchronisation n'a pas abouti. Drive va tenter d'enregistrer automatiquement les modifications. Veuillez ne pas fermer cette page web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
@@ -5849,9 +5872,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
@@ -6495,11 +6515,26 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
+      "Please select billing country": [
+        "Veuillez sélectionner le pays pour la facturation."
+      ],
+      "Please select billing state": [
+        "Veuillez sélectionner l'état pour la facturation."
+      ],
+      "Please select your billing country first.": [
+        "Veuillez d'abord sélectionner votre pays de facturation."
+      ],
+      "Please select your billing state first.": [
+        "Veuillez d'abord sélectionner votre état de facturation."
+      ],
+      "Select billing country to pay": [
+        "Veuillez sélectionner l'état pour la facturation à payer."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Il sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
@@ -6508,7 +6543,7 @@
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons votre paiement pour la facture facturée. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -7613,9 +7648,6 @@
       "Amount due": [
         "Montant à payer"
       ],
-      "An error occurred": [
-        "Une erreur s’est produite."
-      ],
       "Apply gift code": [
         "Appliquer un code-cadeau"
       ],
@@ -7663,6 +7695,9 @@
       ],
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
+      ],
+      "Coupon": [
+        "Coupon"
       ],
       "Create contact": [
         "Créer un contact"

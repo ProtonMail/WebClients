@@ -37,6 +37,9 @@
       "Add new item": [
         "Lisää uusi kohde"
       ],
+      "Add section": [
+        "Lisää osio"
+      ],
       "Add username field": [
         "Lisää käyttäjätunnus-kenttä"
       ],
@@ -133,6 +136,9 @@
       "Create card": [
         "Luo kortti"
       ],
+      "Create identity": [
+        "Luo identiteetti"
+      ],
       "Create login": [
         "Luo kirjautumistieto"
       ],
@@ -147,6 +153,9 @@
       ],
       "Creating vault": [
         "Luodaan holvia"
+      ],
+      "Custom section": [
+        "Mukautettu osio"
       ],
       "Customize": [
         "Mukauta"
@@ -426,6 +435,9 @@
       ],
       "Saving": [
         "Tallennetaan"
+      ],
+      "Section name": [
+        "Osion nimi"
       ],
       "Secure links": [
         "Suojatut linkit"
@@ -1591,6 +1603,9 @@
       "Restoring trashed items...": [
         "Palautetaan kohteita roskakorista..."
       ],
+      "Secure links": [
+        "Suojatut linkit"
+      ],
       "Select destination vault": [
         "Valitse kohdeholvi"
       ],
@@ -1889,6 +1904,15 @@
       "Account": [
         "Tili"
       ],
+      "Add section": [
+        "Lisää osio"
+      ],
+      "Additional details": [
+        "Lisätiedot"
+      ],
+      "Address details": [
+        "Osoitetiedot"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1916,6 +1940,9 @@
       "Beta Access": [
         "Käytä beetaversiota"
       ],
+      "Birthdate": [
+        "Syntymäpäivä"
+      ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
       ],
@@ -1931,14 +1958,29 @@
       "Cards": [
         "Kortit"
       ],
+      "City": [
+        "Kaupunki"
+      ],
       "Code": [
         "Koodi"
+      ],
+      "Company": [
+        "Yritys"
       ],
       "Confirm vault name": [
         "Vahvista holvin nimi"
       ],
+      "Contact details": [
+        "Yhteystiedot"
+      ],
       "Copy": [
         "Kopioi"
+      ],
+      "Country or Region": [
+        "Maa tai alue"
+      ],
+      "County": [
+        "Piirikunta"
       ],
       "Create a credit card": [
         "Luo maksukortti"
@@ -1952,6 +1994,9 @@
       "Create an encrypted note": [
         "Luo salattu muistiinpano"
       ],
+      "Create an Identity": [
+        "Luo identiteetti"
+      ],
       "Create lock": [
         "Luo lukitus"
       ],
@@ -1963,6 +2008,12 @@
       ],
       "Created at": [
         "Luotu"
+      ],
+      "Custom hidden field": [
+        "Mukautettu piilotettu kenttä"
+      ],
+      "Custom text field": [
+        "Mukautettu tekstikenttä"
       ],
       "Date": [
         "Päiväys"
@@ -2012,17 +2063,32 @@
       "Extra password": [
         "Lisäsalasana"
       ],
+      "Facebook account": [
+        "Facebook-tili"
+      ],
       "Field name": [
         "Kentän nimi"
       ],
       "File format": [
         "Tiedostomuoto"
       ],
+      "First name": [
+        "Etunimi"
+      ],
+      "Floor, apartment, building": [
+        "Kerros, asunto, rakennus"
+      ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
+      ],
+      "Full Name": [
+        "Koko nimi"
+      ],
+      "Gender": [
+        "Sukupuoli"
       ],
       "General": [
         "Yleiset"
@@ -2042,6 +2108,15 @@
       "Hide password": [
         "Piilota salasana"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
+      "Identities": [
+        "Identiteetit"
+      ],
+      "Identity": [
+        "Identiteetti"
+      ],
       "Import": [
         "Tuonti"
       ],
@@ -2060,11 +2135,17 @@
       "Include numbers (0-9)": [
         "Sisällytä numerot (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram-tunnus"
+      ],
       "Invitations": [
         "Kutsut"
       ],
       "Item ID": [
         "Kohteen ID"
+      ],
+      "Job title": [
+        "Tehtävänimike"
       ],
       "Key": [
         "Avain"
@@ -2081,6 +2162,9 @@
       "Last month": [
         "Neljän viikon sisällä"
       ],
+      "Last name": [
+        "Sukunimi"
+      ],
       "Last updated": [
         "Päivitetty viimeksi"
       ],
@@ -2092,6 +2176,12 @@
       ],
       "Learn more": [
         "Lue lisää"
+      ],
+      "License number": [
+        "Ajokortin numero"
+      ],
+      "LinkedIn account": [
+        "LinkedIn-tili"
       ],
       "Login": [
         "Kirjautumistieto"
@@ -2113,6 +2203,9 @@
       ],
       "Members": [
         "Jäsenet"
+      ],
+      "Middle name": [
+        "Toinen nimi"
       ],
       "Modified": [
         "Muokattu"
@@ -2174,14 +2267,26 @@
       "Passphrase": [
         "Tunnuslauseke"
       ],
+      "Passport number": [
+        "Passin numero"
+      ],
       "Password": [
         "Salasana"
       ],
       "Password history": [
         "Salasanahistoria"
       ],
+      "Personal details": [
+        "Henkilötiedot"
+      ],
+      "Personal website": [
+        "Henkilökohtainen verkkosivusto"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-salattu JSON-tiedosto (suositus)"
+      ],
+      "Phone number": [
+        "Puhelinnumero"
       ],
       "PIN": [
         "PIN-koodi"
@@ -2200,6 +2305,9 @@
       ],
       "Recent": [
         "Käytön mukaan"
+      ],
+      "Reddit handle": [
+        "Reddit-käyttäjätunnus"
       ],
       "Remove link": [
         "Poista linkki"
@@ -2249,11 +2357,23 @@
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
       ],
+      "Social security number": [
+        "Henkilötunnus"
+      ],
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
       ],
+      "State or province": [
+        "Osavaltio tai maakunta"
+      ],
       "Status": [
         "Tila"
+      ],
+      "Street address": [
+        "Katuosoite"
+      ],
+      "Street address, P.O. box": [
+        "Katuosoite, postilokero"
       ],
       "Strong": [
         "Vahva"
@@ -2337,11 +2457,32 @@
       "Weak": [
         "Heikko"
       ],
+      "Website": [
+        "Verkkosivusto"
+      ],
       "Websites": [
         "Verkkosivustot"
       ],
+      "Work details": [
+        "Työtiedot"
+      ],
+      "Work email": [
+        "Työsähköposti"
+      ],
+      "Work phone number": [
+        "Työpuhelin"
+      ],
+      "X handle": [
+        "X-tunnus"
+      ],
+      "Yahoo account": [
+        "Yahoo-tili"
+      ],
       "You are about to create": [
         "Luot aliasta"
+      ],
+      "ZIP or Postal code": [
+        "Postinumero"
       ]
     },
     "Link": {
@@ -2835,6 +2976,9 @@
       ],
       "OTP secret or URI required": [
         "OTP-salaisuus tai URI vaaditaan"
+      ],
+      "Section name cannot be empty": [
+        "Osion nimi ei voi olla tyhjä"
       ],
       "Url already exists": [
         "URL-osoite on jo olemassa"

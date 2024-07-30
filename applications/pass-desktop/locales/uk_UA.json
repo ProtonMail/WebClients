@@ -292,6 +292,9 @@
       "Mark as resolved": [
         "Позначити як вирішене"
       ],
+      "Maximum views": [
+        "Максимум переглядів"
+      ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
@@ -400,6 +403,9 @@
       "Saving": [
         "Збереження"
       ],
+      "Secure links": [
+        "Безпечні посилання"
+      ],
       "See all": [
         "Переглянути все"
       ],
@@ -414,6 +420,9 @@
       ],
       "Set access level": [
         "Задати рівень доступу"
+      ],
+      "Setup 2FA": [
+        "Налаштування 2FA"
       ],
       "Share": [
         "Поділитися"
@@ -531,6 +540,12 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } запис входу використовує той самий пароль",
+        "${ total } записи входу використовують той самий пароль",
+        "${ total } записів входу використовують той самий пароль",
+        "${ total } записів входу використовують той самий пароль"
+      ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2ЕП додає ще один рівень безпеки до ваших входів. ${ PASS_APP_NAME } спрощує 2ЕП, зберігаючи та автоматично заповнюючи ваші 2ЕП-коди."
       ],
@@ -769,6 +784,9 @@
       ],
       "Moving item failed": [
         "Не вдалося перемістити елемент"
+      ],
+      "Network error": [
+        "Помилка мережі"
       ],
       "Offline mode is currently not available for two password mode.": [
         "Автономний режим не доступний для вашого тарифного плану і не сумісний з режимом двох паролів."
@@ -1069,6 +1087,9 @@
       "Built in 2FA authenticator": [
         "Створений у 2FA автентифікатор"
       ],
+      "Can be viewed": [
+        "Можна переглянути"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."
       ],
@@ -1143,6 +1164,9 @@
       ],
       "Enter your PIN code": [
         "Введіть PIN-код"
+      ],
+      "Expires in": [
+        "Термін дії збігає через"
       ],
       "Expires in ${ remainingTime }": [
         "Термін дії завершується ${ remainingTime }"
@@ -1408,11 +1432,17 @@
       "Reconnect": [
         "Перез'єднати"
       ],
+      "Reconnecting": [
+        "Повторне з'єднання"
+      ],
       "Restoring items from trash": [
         "Відновлення елементів зі смітника"
       ],
       "Restoring trashed items...": [
         "Відновлення елементів..."
+      ],
+      "Secure links": [
+        "Безпечні посилання"
       ],
       "Select destination vault": [
         "Виберіть місце призначення"
@@ -1665,14 +1695,23 @@
       "10 minutes": [
         "10 хвилин"
       ],
+      "14 days": [
+        "14 дні"
+      ],
       "15 minutes": [
         "15 хвилин"
+      ],
+      "24 hours": [
+        "24 годин"
       ],
       "2FA secret key (TOTP)": [
         "Двофакторний секретний ключ (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Токен 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 дні"
       ],
       "30 minutes": [
         "30 хвилин"
@@ -1683,11 +1722,17 @@
       "5 minutes": [
         "5 хвилин"
       ],
+      "7 days": [
+        "7 дні"
+      ],
       "A-Z": [
         "А-Я"
       ],
       "Account": [
         "Обліковий запис"
+      ],
+      "Address details": [
+        "Деталі адреси"
       ],
       "Alias": [
         "Псевдонім"
@@ -1716,6 +1761,9 @@
       "Beta Access": [
         "Бета-доступ"
       ],
+      "Birthdate": [
+        "Дата народження"
+      ],
       "Capital letters (A-Z)": [
         "Великі літери (А-Я)"
       ],
@@ -1731,14 +1779,29 @@
       "Cards": [
         "Картки"
       ],
+      "City": [
+        "Місто"
+      ],
       "Code": [
         "Код"
+      ],
+      "Company": [
+        "Компанія"
       ],
       "Confirm vault name": [
         "Підтвердити назву сховища"
       ],
+      "Contact details": [
+        "Подробиці контакту"
+      ],
       "Copy": [
         "Копіювати"
+      ],
+      "Country or Region": [
+        "Країна або регіон"
+      ],
+      "County": [
+        "Округ"
       ],
       "Create a credit card": [
         "Створити кредитну картку"
@@ -1794,8 +1857,14 @@
       "Expired": [
         "Термін дії завершився"
       ],
+      "Expired link": [
+        "Протерміноване посилання"
+      ],
       "Export": [
         "Експорт"
+      ],
+      "Extra password": [
+        "Додатковий пароль"
       ],
       "Field name": [
         "Назва поля"
@@ -1803,8 +1872,20 @@
       "File format": [
         "Формат файлу"
       ],
+      "First name": [
+        "Ім'я"
+      ],
       "Forwards to": [
         "Пересилається на"
+      ],
+      "Free forever": [
+        "Безплатно назавжди"
+      ],
+      "Full Name": [
+        "Повне ім'я"
+      ],
+      "Gender": [
+        "Стать"
       ],
       "General": [
         "Загальні"
@@ -1820,6 +1901,12 @@
       ],
       "Hide password": [
         "Приховати пароль"
+      ],
+      "Identities": [
+        "Особисті дані"
+      ],
+      "Identity": [
+        "Ідентичність"
       ],
       "Import": [
         "Імпорт"
@@ -1839,11 +1926,17 @@
       "Include numbers (0-9)": [
         "Додати цифри (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram обробник"
+      ],
       "Invitations": [
         "Запрошення"
       ],
       "Item ID": [
         "ID елемента"
+      ],
+      "Job title": [
+        "Назва посади"
       ],
       "Key": [
         "Ключ"
@@ -1860,6 +1953,9 @@
       "Last month": [
         "Минулого місяця"
       ],
+      "Last name": [
+        "Прізвище"
+      ],
       "Last updated": [
         "Востаннє оновлено"
       ],
@@ -1871,6 +1967,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "License number": [
+        "Номер ліцензії"
       ],
       "Login": [
         "Увійти"
@@ -1889,6 +1988,9 @@
       ],
       "Members": [
         "Учасники"
+      ],
+      "Middle name": [
+        "Середнє ім'я"
       ],
       "Modified": [
         "Змінено"
@@ -1947,16 +2049,28 @@
       "Passphrase": [
         "Парольна фраза"
       ],
+      "Passport number": [
+        "Номер паспорта"
+      ],
       "Password": [
         "Пароль"
       ],
       "Password history": [
         "Історія паролів"
       ],
+      "Personal details": [
+        "Персональні подробиці"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "Зашифрований PGP JSON (рекомендується)"
       ],
+      "Phone number": [
+        "Номер телефону"
+      ],
       "PIN": [
+        "PIN-код"
+      ],
+      "PIN code": [
         "PIN-код"
       ],
       "Prefix": [
@@ -1967,6 +2081,9 @@
       ],
       "Recent": [
         "Найновіші"
+      ],
+      "Remove link": [
+        "Вилучити посилання"
       ],
       "Report a problem": [
         "Повідомити про проблему"
@@ -1998,14 +2115,29 @@
       "Session locking": [
         "Блокування сеансу"
       ],
+      "Share": [
+        "Поділитися"
+      ],
       "Show website favicons": [
         "Показувати піктограми вебсайтів"
+      ],
+      "Social security number": [
+        "Номер соціального страхування"
       ],
       "Special characters (!&*)": [
         "Спеціальні символи (!&*)"
       ],
+      "State or province": [
+        "Область або район"
+      ],
       "Status": [
         "Статус"
+      ],
+      "Street address": [
+        "Вулиця"
+      ],
+      "Street address, P.O. box": [
+        "Вулична адреса, поштова скринька"
       ],
       "Strong": [
         "Надійний"
@@ -2079,8 +2211,20 @@
       "Weak": [
         "Слабкий"
       ],
+      "Website": [
+        "Вебсайт"
+      ],
       "Websites": [
         "Вебсайти"
+      ],
+      "Work details": [
+        "Робочі деталі"
+      ],
+      "Work phone number": [
+        "Номер робочого телефону"
+      ],
+      "X handle": [
+        "Ідентифікатор Х"
       ],
       "You are about to create": [
         "Ви збираєтеся створити"
@@ -2673,8 +2817,14 @@
       "PGP encrypted export file requires passphrase": [
         "Зашифрований файл експорту PGP вимагає парольної фрази"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Перевірте, чи правильно встановлено та увімкнено розширення"
+      ],
       "Please contact us for investigating the issue": [
         "Будь ласка, зв'яжіться з нами для розслідування проблеми"
+      ],
+      "Please update the extension to its latest version": [
+        "Оновіть розширення до останньої версії"
       ],
       "Please verify your email address in order to use email aliases": [
         "Будь ласка, перевірте свою електронну адресу, щоб використовувати псевдоніми"

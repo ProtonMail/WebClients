@@ -26,6 +26,9 @@
       "Add new item": [
         "Ajouter un nouvel élément"
       ],
+      "Add section": [
+        "Ajouter une section"
+      ],
       "Add username field": [
         "Ajouter un champ Nom d’utilisateur"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "Créer une carte"
       ],
+      "Create identity": [
+        "Créer une identité"
+      ],
       "Create login": [
         "Créer un identifiant"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "Créer un coffre-fort"
+      ],
+      "Custom section": [
+        "Section personnalisée"
       ],
       "Customize": [
         "Personnaliser"
@@ -424,6 +433,9 @@
       ],
       "Saving passkey...": [
         "Enregistrement de la clé d'accès..."
+      ],
+      "Section name": [
+        "Nom de la section"
       ],
       "Secure links": [
         "Liens sécurisés"
@@ -910,7 +922,7 @@
         "Le nom du coffre-fort ne correspond pas."
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
-        "Nous avons rencontré un problème lors du démarrage de ${ PASS_SHORT_APP_NAME }. Si ce problème persiste, contactez le service client pour obtenir de l'aide."
+        "Nous avons rencontré un problème lors du démarrage de ${ PASS_SHORT_APP_NAME }. Si ce problème persiste, contactez notre service client pour obtenir de l'aide."
       ],
       "Wrong password": [
         "Le mot de passe n'est pas correct."
@@ -1526,6 +1538,9 @@
       "Save passkey": [
         "Enregistrer la clé d'accès"
       ],
+      "Secure links": [
+        "Liens sécurisés"
+      ],
       "Select an existing login item to update.": [
         "Sélectionnez un élément de connexion existant à mettre à jour."
       ],
@@ -1820,6 +1835,15 @@
       "Account": [
         "Compte"
       ],
+      "Add section": [
+        "Ajouter une section"
+      ],
+      "Additional details": [
+        "Informations supplémentaires"
+      ],
+      "Address details": [
+        "Informations sur l'adresse"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1865,6 +1889,9 @@
       "Autosuggest": [
         "Suggestion automatique"
       ],
+      "Birthdate": [
+        "Date de naissance"
+      ],
       "Capital letters (A-Z)": [
         "Majuscules (A-Z)"
       ],
@@ -1880,14 +1907,29 @@
       "Cards": [
         "Cartes"
       ],
+      "City": [
+        "Ville"
+      ],
+      "Company": [
+        "Entreprise"
+      ],
       "Confirm vault name": [
         "Confirmer le nom du coffre-fort"
+      ],
+      "Contact details": [
+        "Informations du contact"
       ],
       "Copy": [
         "Copier"
       ],
       "Copy password": [
         "Copier le mot de passe"
+      ],
+      "Country or Region": [
+        "Pays ou région"
+      ],
+      "County": [
+        "Région"
       ],
       "Create a credit card": [
         "Créer une carte de paiement"
@@ -1901,6 +1943,9 @@
       "Create an encrypted note": [
         "Créer une note chiffrée"
       ],
+      "Create an Identity": [
+        "Créer une identité"
+      ],
       "Create lock": [
         "Créer un verrouillage"
       ],
@@ -1912,6 +1957,12 @@
       ],
       "Created at": [
         "Créée le"
+      ],
+      "Custom hidden field": [
+        "Champ masqué personnalisé"
+      ],
+      "Custom text field": [
+        "Champ personnalisé"
       ],
       "Device": [
         "Appareil"
@@ -1961,14 +2012,29 @@
       "Extra password": [
         "Mot de passe supplémentaire"
       ],
+      "Facebook account": [
+        "Compte Facebook"
+      ],
       "Field name": [
         "Nom du champ"
       ],
       "File format": [
         "Format de fichier"
       ],
+      "First name": [
+        "Prénom"
+      ],
+      "Floor, apartment, building": [
+        "Étage, appartement, immeuble"
+      ],
       "Forwards to": [
         "Transfert vers"
+      ],
+      "Full Name": [
+        "Nom complet"
+      ],
+      "Gender": [
+        "Genre"
       ],
       "General": [
         "Général"
@@ -1988,6 +2054,15 @@
       "Hide password": [
         "Masquer le mot de passe"
       ],
+      "https://example.com": [
+        "https://exemple.fr"
+      ],
+      "Identities": [
+        "Identités"
+      ],
+      "Identity": [
+        "Identité"
+      ],
       "Import": [
         "Importation"
       ],
@@ -2006,11 +2081,17 @@
       "Include numbers (0-9)": [
         "Ajouter des chiffres (0-9)"
       ],
+      "Instagram handle": [
+        "Nom d'utilisateur Instagram"
+      ],
       "Invitations": [
         "Invitations"
       ],
       "Item ID": [
         "ID de l'élément"
+      ],
+      "Job title": [
+        "Intitulé de poste"
       ],
       "Key": [
         "Clé"
@@ -2027,6 +2108,9 @@
       "Last month": [
         "Le mois dernier"
       ],
+      "Last name": [
+        "Nom"
+      ],
       "Last week": [
         "La semaine dernière"
       ],
@@ -2035,6 +2119,12 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "License number": [
+        "Numéro de permis"
+      ],
+      "LinkedIn account": [
+        "Compte LinkedIn"
       ],
       "Login": [
         "Identifiant"
@@ -2056,6 +2146,9 @@
       ],
       "Members": [
         "Membres"
+      ],
+      "Middle name": [
+        "Deuxième prénom"
       ],
       "Modified": [
         "Modifié"
@@ -2114,6 +2207,9 @@
       "Passphrase": [
         "Phrase secrète"
       ],
+      "Passport number": [
+        "Numéro de passeport"
+      ],
       "Password": [
         "Mot de passe"
       ],
@@ -2126,8 +2222,17 @@
       "Pause list": [
         "Domaines et fonctionnalités exclus"
       ],
+      "Personal details": [
+        "Informations personnelles"
+      ],
+      "Personal website": [
+        "Site internet personnel"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON chiffré en PGP (recommandé)"
+      ],
+      "Phone number": [
+        "Numéro de téléphone"
       ],
       "PIN": [
         "Code PIN"
@@ -2152,6 +2257,9 @@
       ],
       "Recent": [
         "Le plus récent"
+      ],
+      "Reddit handle": [
+        "Compte Reddit"
       ],
       "Remove link": [
         "Retirer le lien"
@@ -2204,8 +2312,20 @@
       "Show website favicons": [
         "Afficher les favicônes des sites internet"
       ],
+      "Social security number": [
+        "Numéro de sécurité sociale"
+      ],
       "Special characters (!&*)": [
         "Caractères spéciaux (!&*)"
+      ],
+      "State or province": [
+        "État ou province"
+      ],
+      "Street address": [
+        "Adresse postale"
+      ],
+      "Street address, P.O. box": [
+        "Adresse postale, boîte postale"
       ],
       "Strong": [
         "Fort"
@@ -2220,7 +2340,7 @@
         "Texte"
       ],
       "The item's vault is currently shared with ${ targetMembers } person": [
-        "Le coffre-fort de l'élément est actuellement partagé avec ${ targetMembers } personne",
+        "Le coffre-fort de l'élément est actuellement partagé avec ${ targetMembers } personne.",
         "Le coffre-fort de l'élément est actuellement partagé avec ${ targetMembers } personnes"
       ],
       "The URL has been copied to the clipboard": [
@@ -2292,8 +2412,26 @@
       "Websites": [
         "Sites internet"
       ],
+      "Work details": [
+        "Informations sur le poste"
+      ],
+      "Work email": [
+        "E-mail professionnel"
+      ],
+      "Work phone number": [
+        "Numéro de téléphone professionnel"
+      ],
+      "X handle": [
+        "Compte X"
+      ],
+      "Yahoo account": [
+        "Compte Yahoo"
+      ],
       "You are about to create": [
         "Vous êtes sur le point de créer"
+      ],
+      "ZIP or Postal code": [
+        "Code postal"
       ]
     },
     "Message": {
@@ -2664,6 +2802,9 @@
       ],
       "OTP secret or URI required": [
         "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) est nécessaire."
+      ],
+      "Section name cannot be empty": [
+        "Le nom de la section ne peut pas être vide."
       ],
       "Url already exists": [
         "L'URL existe déjà."

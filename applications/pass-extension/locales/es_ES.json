@@ -26,6 +26,9 @@
       "Add new item": [
         "Añadir un elemento"
       ],
+      "Add section": [
+        "Añadir una sección"
+      ],
       "Add username field": [
         "Añadir un campo de nombre de usuario"
       ],
@@ -131,6 +134,9 @@
       "Create card": [
         "Crear una tarjeta"
       ],
+      "Create identity": [
+        "Crear una identidad"
+      ],
       "Create login": [
         "Crear inicio de sesión"
       ],
@@ -145,6 +151,9 @@
       ],
       "Creating vault": [
         "Creando la caja fuerte"
+      ],
+      "Custom section": [
+        "Sección personalizada"
       ],
       "Customize": [
         "Personalizar"
@@ -237,7 +246,7 @@
         "Obtén Pass Business"
       ],
       "Get Pass Plus": [
-        "Obtener Pass Plus"
+        "Consigues Pass Plus"
       ],
       "Help us improve": [
         "Ayúdanos a mejorar"
@@ -306,7 +315,7 @@
         "Sincronizar tus datos manualmente"
       ],
       "Maximum views": [
-        "Vistas máximas"
+        "Número máximo de vistas"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -390,7 +399,7 @@
         "Borrar el enlace"
       ],
       "Remove member": [
-        "Quitar este miembro"
+        "Borrar el miembro"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -424,6 +433,9 @@
       ],
       "Saving passkey...": [
         "Guardando la clave de acceso..."
+      ],
+      "Section name": [
+        "Nombre de la sección"
       ],
       "Secure links": [
         "Enlaces seguros"
@@ -553,7 +565,7 @@
     },
     "bf2023: Label": {
       "Get the deal": [
-        "Aprovechar la oferta"
+        "Aprovéchate de la oferta"
       ]
     },
     "bf2023: Title": {
@@ -994,6 +1006,9 @@
         "${ count } vista",
         "${ count } vistas"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } vistas"
+      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
@@ -1379,7 +1394,7 @@
         "Nunca"
       ],
       "No login found": [
-        "Ningún inicio de sesión ha sido encontrado"
+        "No se ha encontrado ningún inicio de sesión."
       ],
       "None": [
         "Ninguno"
@@ -1507,6 +1522,9 @@
       ],
       "Save passkey": [
         "Guardar la clave de acceso"
+      ],
+      "Secure links": [
+        "Enlaces seguros"
       ],
       "Select an existing login item to update.": [
         "Selecciona un elemento de inicio de sesión existente para actualizar."
@@ -1802,6 +1820,15 @@
       "Account": [
         "Cuenta"
       ],
+      "Add section": [
+        "Añadir una sección"
+      ],
+      "Additional details": [
+        "Detalles adicionales"
+      ],
+      "Address details": [
+        "Detalles de la dirección"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1847,6 +1874,9 @@
       "Autosuggest": [
         "Sugerencias automáticas"
       ],
+      "Birthdate": [
+        "Fecha de nacimiento"
+      ],
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
@@ -1862,14 +1892,29 @@
       "Cards": [
         "Tarjetas"
       ],
+      "City": [
+        "Ciudad"
+      ],
+      "Company": [
+        "Empresa"
+      ],
       "Confirm vault name": [
         "Confirmar el nombre de la caja fuerte"
+      ],
+      "Contact details": [
+        "Detalles del contacto"
       ],
       "Copy": [
         "Copiar"
       ],
       "Copy password": [
         "Copiar la contraseña"
+      ],
+      "Country or Region": [
+        "País o región"
+      ],
+      "County": [
+        "Provincia"
       ],
       "Create a credit card": [
         "Crear una tarjeta de crédito"
@@ -1883,6 +1928,9 @@
       "Create an encrypted note": [
         "Crear una nota cifrada"
       ],
+      "Create an Identity": [
+        "Crear una identidad"
+      ],
       "Create lock": [
         "Crear un bloqueo"
       ],
@@ -1894,6 +1942,12 @@
       ],
       "Created at": [
         "Creada a la"
+      ],
+      "Custom hidden field": [
+        "Campo oculto personalizado"
+      ],
+      "Custom text field": [
+        "Campo de texto personalizado"
       ],
       "Device": [
         "Dispositivo"
@@ -1943,14 +1997,29 @@
       "Extra password": [
         "Contraseña adicional"
       ],
+      "Facebook account": [
+        "Cuenta de Facebook"
+      ],
       "Field name": [
         "Nombre del campo"
       ],
       "File format": [
         "Formato del archivo"
       ],
+      "First name": [
+        "Nombre"
+      ],
+      "Floor, apartment, building": [
+        "Piso, apartamento, edificio"
+      ],
       "Forwards to": [
         "Reenvía a"
+      ],
+      "Full Name": [
+        "Nombre completo"
+      ],
+      "Gender": [
+        "Género"
       ],
       "General": [
         "General"
@@ -1970,6 +2039,15 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "https://example.com": [
+        "https://ejemplo.es"
+      ],
+      "Identities": [
+        "Identidades"
+      ],
+      "Identity": [
+        "Identidad"
+      ],
       "Import": [
         "Importar"
       ],
@@ -1988,11 +2066,17 @@
       "Include numbers (0-9)": [
         "Incluir números (0-9)"
       ],
+      "Instagram handle": [
+        "Nombre de usuario de Instagram"
+      ],
       "Invitations": [
         "Invitaciones"
       ],
       "Item ID": [
         "ID del elemento"
+      ],
+      "Job title": [
+        "Título del trabajo"
       ],
       "Key": [
         "Clave"
@@ -2009,6 +2093,9 @@
       "Last month": [
         "Último mes"
       ],
+      "Last name": [
+        "Apellido"
+      ],
       "Last week": [
         "La semana pasada"
       ],
@@ -2017,6 +2104,12 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "License number": [
+        "Número de licencia"
+      ],
+      "LinkedIn account": [
+        "Cuenta de LinkedIn"
       ],
       "Login": [
         "Inicio de sesión"
@@ -2038,6 +2131,9 @@
       ],
       "Members": [
         "Miembros"
+      ],
+      "Middle name": [
+        "Segundo nombre"
       ],
       "Modified": [
         "Modificado"
@@ -2096,6 +2192,9 @@
       "Passphrase": [
         "Frase de contraseña"
       ],
+      "Passport number": [
+        "Número de pasaporte"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -2108,8 +2207,17 @@
       "Pause list": [
         "Lista de pausa"
       ],
+      "Personal details": [
+        "Detalles personales"
+      ],
+      "Personal website": [
+        "Sitio web personal"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON cifrado con PGP (recomendado)"
+      ],
+      "Phone number": [
+        "Número de teléfono"
       ],
       "PIN": [
         "Código PIN"
@@ -2134,6 +2242,9 @@
       ],
       "Recent": [
         "Reciente"
+      ],
+      "Reddit handle": [
+        "Nombre de usuario de Reddit"
       ],
       "Remove link": [
         "Borrar el enlace"
@@ -2186,8 +2297,20 @@
       "Show website favicons": [
         "Mostrar los faviconos de sitios web"
       ],
+      "Social security number": [
+        "Número de seguridad social"
+      ],
       "Special characters (!&*)": [
         "Caracteres especiales (!&*)"
+      ],
+      "State or province": [
+        "Estado o provincia"
+      ],
+      "Street address": [
+        "Nombre de la calle"
+      ],
+      "Street address, P.O. box": [
+        "Dirección de calle, apartado postal"
       ],
       "Strong": [
         "Segura"
@@ -2274,8 +2397,26 @@
       "Websites": [
         "Sitios web"
       ],
+      "Work details": [
+        "Detalles de trabajo"
+      ],
+      "Work email": [
+        "Dirección de correo del trabajo"
+      ],
+      "Work phone number": [
+        "Número de teléfono del trabajo"
+      ],
+      "X handle": [
+        "Nombre de usuario de X"
+      ],
+      "Yahoo account": [
+        "Cuenta de Yahoo"
+      ],
       "You are about to create": [
         "Estás a punto de crear"
+      ],
+      "ZIP or Postal code": [
+        "Código postal"
       ]
     },
     "Message": {
@@ -2457,7 +2598,7 @@
         "Introduce tu contraseña."
       ],
       "Enter your PIN": [
-        "Introduce tu código PIN"
+        "Ingresa el código PIN"
       ],
       "Fill & copy password": [
         "Rellenar y copiar la contraseña"

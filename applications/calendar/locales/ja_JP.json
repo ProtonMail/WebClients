@@ -464,11 +464,11 @@
       "Not now": [
         "後で"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -885,6 +885,11 @@
     "Attendee role": {
       "Optional": [
         "任意"
+      ]
+    },
+    "Badge": {
+      "New!": [
+        "新規!"
       ]
     },
     "bf2023: Deal details": {
@@ -1829,6 +1834,9 @@
       "Macao": [
         "マカオ"
       ],
+      "Macedonia": [
+        "マケドニア"
+      ],
       "Madagascar": [
         "マダカスカル"
       ],
@@ -2407,6 +2415,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "改善にご協力ください"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ],
+      "Priority support": [
+        "優先サポート"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3794,6 +3810,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
@@ -4616,6 +4635,9 @@
       "Would you like to update this event?": [
         "この予定を更新してよろしいですか？"
       ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
       "Yearly": [
         "毎年"
       ],
@@ -5393,8 +5415,16 @@
       "Request an invite": [
         "登録を申請"
       ],
+      "stay safer online": [
+        "オンラインでの安全性を高める"
+      ],
       "What’s this?": [
         "これは何ですか?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "アクセス"
       ]
     },
     "Link to calendar app": {
@@ -5454,6 +5484,14 @@
         "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
+      ],
+      "for ${ price }": [
+        "${ price } の場合"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "割引を入手"
@@ -5471,6 +5509,9 @@
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
+      ],
+      "Custom schedule send and snooze times": [
+        "カスタムスケジュールの送信時間とスヌーズ時間"
       ],
       "Support for 1 custom email domain": [
         "1つのカスタムドメインメールアドレスをサポート"
@@ -6145,9 +6186,6 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
       ],
@@ -6679,6 +6717,9 @@
       "Create new group": [
         "新しいグループを作成"
       ],
+      "Custom": [
+        "手動"
+      ],
       "Day": [
         "日"
       ],
@@ -6770,6 +6811,9 @@
       ],
       "CVC": [
         "CVC (セキュリティコード)"
+      ],
+      "Got it": [
+        "わかった"
       ],
       "MM/YY": [
         "MM/YY (月/年)"
@@ -7674,6 +7718,9 @@
       "25 calendars per user": [
         "ユーザーあたり 25 個のカレンダー"
       ],
+      "6 users": [
+        "6 ユーザー"
+      ],
       "Automatic email forwarding": [
         "自動メール転送"
       ],
@@ -7688,6 +7735,9 @@
       ],
       "Helping activists in Hong Kong": [
         "香港の活動家を支援"
+      ],
+      "Learn more": [
+        "もっと詳しく知る"
       ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
@@ -8551,6 +8601,9 @@
       ],
       "Your calendar link": [
         "カレンダーのリンク"
+      ],
+      "Your exposed information": [
+        "あなたの暴露された情報"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -8728,6 +8781,11 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } メールアドレス"
       ]
     },
     "Warning": {

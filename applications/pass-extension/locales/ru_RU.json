@@ -146,6 +146,9 @@
       "Creating vault": [
         "Сохранение хранилища"
       ],
+      "Custom section": [
+        "Пользовательский раздел"
+      ],
       "Customize": [
         "Настроить"
       ],
@@ -1550,6 +1553,9 @@
       "Save passkey": [
         "Сохранить passkey"
       ],
+      "Secure links": [
+        "Защищенные ссылки"
+      ],
       "Select an existing login item to update.": [
         "Выберите существующий элемент имени пользователя для обновления."
       ],
@@ -1858,6 +1864,9 @@
       "Account": [
         "Аккаунт"
       ],
+      "Address details": [
+        "Информация о адресе"
+      ],
       "Alias": [
         "Псевдоним"
       ],
@@ -1903,6 +1912,9 @@
       "Autosuggest": [
         "Автоподсказка"
       ],
+      "Birthdate": [
+        "Дата рождения"
+      ],
       "Capital letters (A-Z)": [
         "Заглавные буквы (A-Z)"
       ],
@@ -1918,11 +1930,29 @@
       "Cards": [
         "Карты"
       ],
+      "City": [
+        "Город"
+      ],
+      "Company": [
+        "Компания"
+      ],
       "Confirm vault name": [
         "Подтвердите название хранилища"
       ],
+      "Contact details": [
+        "Информация контакта"
+      ],
       "Copy": [
         "Копировать"
+      ],
+      "Copy password": [
+        "Скопировать пароль"
+      ],
+      "Country or Region": [
+        "Страна или область"
+      ],
+      "County": [
+        "Страна"
       ],
       "Create a credit card": [
         "Создать кредитную карту"
@@ -2002,8 +2032,17 @@
       "File format": [
         "Формат файла"
       ],
+      "First name": [
+        "Имя"
+      ],
       "Forwards to": [
         "Переслать"
+      ],
+      "Full Name": [
+        "Полное имя"
+      ],
+      "Gender": [
+        "Пол"
       ],
       "General": [
         "Общие"
@@ -2023,6 +2062,12 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "Identities": [
+        "Личные данные"
+      ],
+      "Identity": [
+        "Личные данные"
+      ],
       "Import": [
         "Импорт"
       ],
@@ -2041,11 +2086,17 @@
       "Include numbers (0-9)": [
         "Включить числа (0-9)"
       ],
+      "Instagram handle": [
+        "Ссылка на Instagram"
+      ],
       "Invitations": [
         "Приглашения"
       ],
       "Item ID": [
         "ID элемента"
+      ],
+      "Job title": [
+        "Должность"
       ],
       "Key": [
         "Ключ"
@@ -2062,6 +2113,9 @@
       "Last month": [
         "Последний месяц"
       ],
+      "Last name": [
+        "Фамилия"
+      ],
       "Last week": [
         "Последняя неделя"
       ],
@@ -2070,6 +2124,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "License number": [
+        "Номер лицензии"
       ],
       "Login": [
         "Имя пользователя"
@@ -2091,6 +2148,9 @@
       ],
       "Members": [
         "Участники"
+      ],
+      "Middle name": [
+        "Отчество"
       ],
       "Modified": [
         "Изменено"
@@ -2149,6 +2209,9 @@
       "Passphrase": [
         "Кодовая фраза"
       ],
+      "Passport number": [
+        "Номер паспорта"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -2161,8 +2224,17 @@
       "Pause list": [
         "Список приостановки"
       ],
+      "Personal details": [
+        "Личная информация"
+      ],
+      "Personal website": [
+        "Личный сайт"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON с PGP-шифрованием (рекомендуется)"
+      ],
+      "Phone number": [
+        "Номер телефона"
       ],
       "PIN": [
         "PIN"
@@ -2239,8 +2311,20 @@
       "Show website favicons": [
         "Показать значки сайтов"
       ],
+      "Social security number": [
+        "Номер социального страхования"
+      ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
+      ],
+      "State or province": [
+        "Штат или провинция"
+      ],
+      "Street address": [
+        "Адрес"
+      ],
+      "Street address, P.O. box": [
+        "Адрес улицы, абонентский ящик"
       ],
       "Strong": [
         "Надежный"
@@ -2329,8 +2413,23 @@
       "Websites": [
         "Веб-сайты"
       ],
+      "Work details": [
+        "Информация о работе"
+      ],
+      "Work email": [
+        "Рабочая электронная почта"
+      ],
+      "Work phone number": [
+        "Рабочий номер телефона"
+      ],
+      "X handle": [
+        "Дескриптор Х"
+      ],
       "You are about to create": [
         "Вы собираетесь создать"
+      ],
+      "ZIP or Postal code": [
+        "ZIP-код или почтовый индекс"
       ]
     },
     "Message": {
@@ -2520,6 +2619,9 @@
       ],
       "Fill & copy password": [
         "Заполнить и скопировать пароль"
+      ],
+      "Fill password": [
+        "Заполнить пароль"
       ],
       "Get Started": [
         "Начать"

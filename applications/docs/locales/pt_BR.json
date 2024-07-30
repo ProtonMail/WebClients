@@ -178,6 +178,9 @@
       "Create and copy alias": [
         "Criar e copiar alias"
       ],
+      "Create new document": [
+        "Criar novo documento"
+      ],
       "Current plan": [
         "Plano atual"
       ],
@@ -495,6 +498,9 @@
       "Select all": [
         "Selecionar tudo"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selecionar ciclo de faturamento ${ billingText }"
+      ],
       "Select country": [
         "Selecionar país"
       ],
@@ -670,7 +676,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Leve a produtividade dos emails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus emails."
+        "Leve a produtividade dos e-mails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus e-mails."
       ]
     },
     "Attached ics file error": {
@@ -1462,10 +1468,10 @@
         "Quiribati"
       ],
       "Korea (Democratic People's Republic of)": [
-        "Coreia (República popular Democrática da)"
+        "Coreia do Norte (República Popular Democrática da Coreia)"
       ],
       "Korea (Republic of)": [
-        "Coreia (República da)"
+        "Coreia do Sul (República da Coreia)"
       ],
       "Kosovo": [
         "Kosovo"
@@ -1768,7 +1774,7 @@
         "Svalbard e Jan Mayen"
       ],
       "Swaziland": [
-        "Suazilândia"
+        "Reino de Essuatíni"
       ],
       "Sweden": [
         "Suécia"
@@ -1792,7 +1798,7 @@
         "Tanzânia"
       ],
       "Tanzania, United Republic of": [
-        "Tanzânia"
+        "República Unida da Tanzânia"
       ],
       "Thailand": [
         "Tailândia"
@@ -2040,6 +2046,14 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -2196,11 +2210,11 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Valor abaixo do mínimo (${ minimumAmount })."
       ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Ocorreu um erro ao tentar converter o documento. Tente novamente."
+      ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Ocorreu um erro ao tentar duplicar o documento. Tente novamente."
-      ],
-      "An error occurred while attempting to seed the document. Please try again.": [
-        "Ocorreu um erro ao tentar publicar o documento. Tente novamente."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Ocorreu um erro ao criar um novo documento. Tente novamente."
@@ -2469,6 +2483,9 @@
       ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
+      ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "O documento que você está tentando converter é muito grande. Isso pode ocorrer se o documento tiver um grande número de imagens ou outras mídias. Tente novamente com um documento menor."
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
@@ -4126,6 +4143,9 @@
       "Some edits are taking longer to sync than expected.": [
         "Algumas edições estão demorando mais do que o esperado para serem sincronizadas."
       ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
@@ -4173,6 +4193,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Este documento tem muita atividade. Alguns recursos podem estar temporariamente indisponíveis."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "É possível que esse documento não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste."
       ],
       "This item already exists in your library": [
         "Esse item já existe na sua biblioteca"
@@ -5089,7 +5112,7 @@
         "Atualizar para restaurar o acesso total"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
-        "Seu ${ driveStorage } está cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ cta }."
+        "Seu ${ driveStorage } está cheio. Para enviar ou sincronizar arquivos, libere espaço ou ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
         "Seu ${ mailStorage } está cheio. Para enviar ou receber e-mails, libere espaço ou ${ cta }."
@@ -5132,7 +5155,7 @@
     },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Adicionar assistente de escrita da ${ BRAND_NAME } Scribe"
+        "Adicionar assistente de escrita ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -5927,9 +5950,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todos os aplicativos da ${ BRAND_NAME } for Business e recursos premium para proteger a sua empresa."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Créditos aplicáveis, cálculo proporcional e cupons são aplicados na próxima etapa"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
@@ -6582,7 +6602,22 @@
         "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Por favor, reative sua assinatura para decrescer o número de complementos."
+        "Por favor, reative sua assinatura primeiro para diminuir o número de complementos."
+      ],
+      "Please select billing country": [
+        "Selecione o país de cobrança"
+      ],
+      "Please select billing state": [
+        "Selecione o estado de cobrança"
+      ],
+      "Please select your billing country first.": [
+        "Selecione primeiro seu país de cobrança."
+      ],
+      "Please select your billing state first.": [
+        "Selecione primeiro seu estado de cobrança."
+      ],
+      "Select billing country to pay": [
+        "Selecione o país de cobrança para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
@@ -6715,7 +6750,7 @@
         "Definir data"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartilhe o que você acha que poderia melhorar ${ BRAND_NAME }"
+        "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
@@ -7702,9 +7737,6 @@
       "Amount due": [
         "Valor a pagar"
       ],
-      "An error occurred": [
-        "Ocorreu um erro"
-      ],
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
@@ -7752,6 +7784,9 @@
       ],
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
+      ],
+      "Coupon": [
+        "Cupom"
       ],
       "Create contact": [
         "Criar contato"
