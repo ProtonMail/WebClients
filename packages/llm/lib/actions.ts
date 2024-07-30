@@ -38,8 +38,11 @@ import type {
 } from './types';
 import { AssistantEvent } from './types';
 
+const SUPPORTED_LLM_LANGS = 'en,fr,de,es,it,pt,ru,zh,ja,cs,sk,pl'.split(',');
+
 const INSTRUCTIONS_WRITE_FULL_EMAIL = [
     "You're a harmless email generator. The user asks you to write emails, and you write emails that they can send.",
+    'Today is {DATE}.',
     "You're given a list of toxic content categories as below:",
     '- illegal',
     '- child abuse: child sexual abuse material or any content that exploits or harms children.',
@@ -72,33 +75,31 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
         'Be mindful to direct the message to the recipient as indicated by the user.',
         'Match the style and tone of the email (friendly, formal, tu/vous, etc)',
         'with the type of relationship the user is likely to have with the recipient.',
+        '{LANGUAGE_INSTRUCTIONS}',
+        'Separate paragraphs with two newlines.',
         '{RECIPIENT_INSTRUCTIONS}',
     ].join(' '),
 ].join('\n');
 
-const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX = '(write the email in the language of the previous sentence)';
-
 const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
-
-const INSTRUCTIONS_SHORTEN = [
-    "Now, you shorten the part of the email that's in the the input below, in the same language.",
-    'Only summarize the part below and do not add anything else.',
-].join(' ');
 
 const INSTRUCTIONS_REFINE_SPAN = [
     'The user wants you to modify a part of the text identified by the span tags (class "to-modify").',
     'You write a revised version of this part of the text, in the same language, under a span tag with class "modified".',
+    'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 const INSTRUCTIONS_REFINE_DIV = [
     'The user wants you to modify a part of the text identified by the div tags (class "to-modify").',
     'You write a revised version of this part of the text, in the same language, under a div tag with class "modified".',
     'Write the rest of the email outside of the div tag.',
+    'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 const INSTRUCTIONS_REFINE_WHOLE = [
     'The user wants you to modify the email.',
     'You write a revised version of this email, in the same language.',
+    'Identify the user language and maintain it in your response.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 
@@ -142,6 +143,10 @@ export type ServerAssistantInteraction = {
     stopStrings?: string[];
 };
 
+function isSupportedLocale(locale: string): boolean {
+    return SUPPORTED_LLM_LANGS.some((prefix) => locale.startsWith(prefix));
+}
+
 const genericCleanup: TransformCallback = (fulltext: string) => {
     let fulltext2 = fulltext;
     fulltext2 = removeStopStrings(fulltext2);
@@ -156,7 +161,7 @@ function proofreadActionToCustomRefineAction(action: ProofreadAction): CustomRef
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged.',
+        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged, in the same language as the original text.',
     };
 }
 
@@ -164,7 +169,7 @@ function formalActionToCustomRefineAction(action: FormalAction): CustomRefineAct
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting.',
+        prompt: 'Rewrite the same text with a very formal tone, adapted to a corporate or business setting, in the same language as the original text.',
     };
 }
 
@@ -172,7 +177,7 @@ function friendlyActionToCustomRefineAction(action: FriendlyAction): CustomRefin
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a friendly tone, like writing to a friend.',
+        prompt: 'Rewrite the same text with a friendly tone, like writing to a friend, in the same language as the original text.',
     };
 }
 
@@ -180,7 +185,17 @@ function expandActionToCustomRefineAction(action: ExpandAction): CustomRefineAct
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Expand the text, i.e. paraphrase it, and use more words to say the same thing.',
+        prompt: 'Expand the text, i.e. paraphrase it, and use more words to say the same thing, in the same language as the original text.',
+    };
+}
+
+function shortenActionToCustomRefineAction(action: ShortenAction): CustomRefineAction {
+    return {
+        ...action,
+        type: 'customRefine',
+        prompt: [
+            'Shorten the text in one short paragraph by keeping only one or two important details, in the same language as the original text.',
+        ].join(' '),
     };
 }
 
@@ -201,9 +216,30 @@ function makePromptFromTurns(turns: Turn[]): string {
         .join('\n\n');
 }
 
-function makeInstructions(recipient?: string) {
+function makeInstructions(recipient?: string, locale?: string) {
     let system = INSTRUCTIONS_WRITE_FULL_EMAIL;
-    recipient = recipient?.replaceAll('["\']', '')?.trim();
+
+    // {DATE}
+    const date = new Date().toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+    system = system.replace('{DATE}', date);
+
+    // {LANGUAGE_INSTRUCTIONS}
+    if (locale && isSupportedLocale(locale)) {
+        system = system.replace(
+            '{LANGUAGE_INSTRUCTIONS}',
+            `If the user specifies a language to use, you use it, otherwise you write in ${locale}.`
+        );
+    } else {
+        system = system.replace('{LANGUAGE_INSTRUCTIONS}', '');
+    }
+
+    // {RECIPIENT_INSTRUCTIONS}
+    recipient = recipient?.replaceAll(/["']/, '')?.trim();
     if (recipient) {
         system = system.replace(
             '{RECIPIENT_INSTRUCTIONS}',
@@ -212,47 +248,21 @@ function makeInstructions(recipient?: string) {
                 'only the first or last name, or none.'
         );
     } else {
-        system = system.replace('{RECIPIENT_INSTRUCTIONS}', 'Who is the recipient? Write their name in the opening.');
+        system = system.replace('{RECIPIENT_INSTRUCTIONS}', '');
     }
-    return system;
-}
 
-function formatPromptShorten(action: ShortenAction): string {
-    // todo rework this to follow the custom refine prompt format
-    const partToRephrase = action.fullEmail.slice(action.idxStart, action.idxEnd);
-    const prompt = makePromptFromTurns([
-        {
-            role: 'system',
-            contents: makeInstructions(),
-        },
-        {
-            role: 'email',
-            contents: action.fullEmail,
-        },
-        {
-            role: 'system',
-            contents: INSTRUCTIONS_SHORTEN,
-        },
-        {
-            role: 'long_part',
-            contents: partToRephrase,
-        },
-        {
-            role: 'short_part',
-        },
-    ]);
-    return prompt;
+    return system;
 }
 
 function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
     return makePromptFromTurns([
         {
-            role: 'instructions',
-            contents: makeInstructions(action.recipient),
+            role: 'system',
+            contents: makeInstructions(action.recipient, action.locale),
         },
         {
             role: 'user',
-            contents: `${action.prompt} ${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX}`,
+            contents: action.prompt,
         },
         {
             role: 'assistant',
@@ -311,19 +321,19 @@ function formatPromptCustomRefine(action: CustomRefineAction): string {
 
     const turns = [
         {
-            role: 'email',
+            role: 'assistant',
             contents: oldEmail,
-        },
-        {
-            role: 'system',
-            contents: system,
         },
         {
             role: 'user',
             contents: user,
         },
         {
-            role: 'email',
+            role: 'system',
+            contents: system,
+        },
+        {
+            role: 'assistant',
             contents: newEmailStart,
         },
     ];
@@ -348,6 +358,10 @@ function formatPromptExpand(action: ExpandAction): string {
     return formatPromptCustomRefine(expandActionToCustomRefineAction(action));
 }
 
+function formatPromptShorten(action: ShortenAction): string {
+    return formatPromptCustomRefine(shortenActionToCustomRefineAction(action));
+}
+
 export class GpuWriteFullEmailRunningAction extends BaseRunningAction {
     constructor(action: WriteFullEmailAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptWriteFullEmail(action);
@@ -369,7 +383,7 @@ export class GpuRefineRunningAction extends BaseRunningAction {
             let cleaned = genericCleanup(fulltext);
             return callback(cleaned || '', details);
         };
-        super(prompt, wrappedCallback, chat, action, ['</span>']);
+        super(prompt, wrappedCallback, chat, action, ['</span>', '</div>']);
     }
 }
 
