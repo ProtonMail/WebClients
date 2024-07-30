@@ -39,6 +39,7 @@ import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
 import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
 import type { EditorLoadResult } from './EditorLoadResult'
+import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 
 const TypingBotEnabled = false
 
@@ -114,6 +115,7 @@ export function Editor({
         <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"></div>
       )}
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
+        <KeyboardShortcutsPlugin />
         {!nonInteractiveMode && (
           <Toolbar hasEditAccess={hasEditAccess} onInteractionModeChange={onInteractionModeChange} />
         )}

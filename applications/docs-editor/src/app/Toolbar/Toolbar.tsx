@@ -32,9 +32,9 @@ import {
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_NORMAL,
+  FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
-  KEY_MODIFIER_COMMAND,
   OUTDENT_CONTENT_COMMAND,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
@@ -70,11 +70,23 @@ import type { DocumentInteractionMode } from '../DocumentInteractionMode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
 import { FontColorMenu } from '../Components/ColorMenu'
 import { BackgroundColors, TextColors } from '../Shared/Color'
-import { isMac } from '@proton/shared/lib/helpers/browser'
 
 import './Toolbar.scss'
+import { KEYBOARD_SHORTCUT_COMMAND } from '../Plugins/KeyboardShortcuts/Command'
+import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
+import { ShortcutLabelText } from '../Plugins/KeyboardShortcuts/ShortcutLabelText'
+import { ShortcutLabelContainer } from '../Plugins/KeyboardShortcuts/ShortcutLabelContainer'
+import ToolbarTooltip from './ToolbarTooltip'
+import { ModifierKbd, ShortcutKbd } from '../Plugins/KeyboardShortcuts/ShortcutKbd'
 
 type BlockType = keyof typeof blockTypeToBlockName
+
+const stepFontSize = (currentFontSize: string, step: number): string => {
+  const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))
+  const nextFontSize = FontSizes[currentFontIndex + step]
+
+  return nextFontSize ? `${nextFontSize}px` : currentFontSize
+}
 
 export default function DocumentEditorToolbar({
   onInteractionModeChange,
@@ -103,7 +115,6 @@ export default function DocumentEditorToolbar({
   const [isUnderline, setIsUnderline] = useState(false)
   const [isStrikethrough, setIsStrikethrough] = useState(false)
   const [isLink, setIsLink] = useState(false)
-
   const defaultFontSize = `${rootFontSize()}px`
   const [fontSize, setFontSize] = useState(defaultFontSize)
 
@@ -147,7 +158,7 @@ export default function DocumentEditorToolbar({
     focusEditor()
   }
 
-  const formatParagraph = () => {
+  const formatParagraph = useCallback(() => {
     editor.update(
       () => {
         const selection = $getSelection()
@@ -157,51 +168,54 @@ export default function DocumentEditorToolbar({
         onUpdate: focusEditor,
       },
     )
-  }
+  }, [editor, focusEditor])
 
-  const formatHeading = (headingSize: HeadingTagType) => {
-    if (blockType !== headingSize) {
-      editor.update(
-        () => {
-          const selection = $getSelection()
-          $setBlocksType(selection, () => $createHeadingNode(headingSize))
-          editor.focus()
-        },
-        {
-          onUpdate: focusEditor,
-        },
-      )
-    }
-  }
+  const formatHeading = useCallback(
+    (headingSize: HeadingTagType) => {
+      if (blockType !== headingSize) {
+        editor.update(
+          () => {
+            const selection = $getSelection()
+            $setBlocksType(selection, () => $createHeadingNode(headingSize))
+            editor.focus()
+          },
+          {
+            onUpdate: focusEditor,
+          },
+        )
+      }
+    },
+    [editor, blockType, focusEditor],
+  )
 
-  const formatBulletList = () => {
+  const formatBulletList = useCallback(() => {
     if (listType !== 'bullet') {
       editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
       focusEditor()
     } else {
       formatParagraph()
     }
-  }
+  }, [editor, focusEditor, formatParagraph, listType])
 
-  const formatCheckList = () => {
+  const formatCheckList = useCallback(() => {
     if (listType !== 'check') {
       editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)
       focusEditor()
     } else {
       formatParagraph()
     }
-  }
+  }, [editor, focusEditor, formatParagraph, listType])
 
-  const formatNumberedList = () => {
+  const formatNumberedList = useCallback(() => {
     if (listType !== 'number') {
       editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
       focusEditor()
     } else {
       formatParagraph()
     }
-  }
+  }, [editor, focusEditor, formatParagraph, listType])
 
-  const formatQuote = () => {
+  const formatQuote = useCallback(() => {
     if (!isQuote) {
       editor.update(
         () => {
@@ -215,9 +229,9 @@ export default function DocumentEditorToolbar({
     } else {
       formatParagraph()
     }
-  }
+  }, [editor, focusEditor, formatParagraph, isQuote])
 
-  const formatCode = () => {
+  const formatCode = useCallback(() => {
     if (!isCodeBlock) {
       editor.update(
         () => {
@@ -231,7 +245,7 @@ export default function DocumentEditorToolbar({
     } else {
       formatParagraph()
     }
-  }
+  }, [editor, focusEditor, isCodeBlock, formatParagraph])
 
   const editLink = () => {
     activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
@@ -241,7 +255,7 @@ export default function DocumentEditorToolbar({
     imageInputRef.current?.click()
   }
 
-  const insertTable = () => {
+  const insertTable = useCallback(() => {
     activeEditor.dispatchCommand(INSERT_TABLE_COMMAND, {
       rows: '3',
       columns: '3',
@@ -251,7 +265,7 @@ export default function DocumentEditorToolbar({
       },
       fullWidth: true,
     })
-  }
+  }, [activeEditor])
 
   const $updateToolbar = useCallback(() => {
     const selection = $getSelection()
@@ -343,6 +357,22 @@ export default function DocumentEditorToolbar({
     )
   }, [$updateToolbar, editor])
 
+  const setFontSizeForSelection = useCallback(
+    (newFontSize: string) => {
+      activeEditor.update(() => {
+        if (activeEditor.isEditable()) {
+          const selection = $getSelection()
+          if (selection !== null) {
+            $patchStyleText(selection, {
+              'font-size': newFontSize,
+            })
+          }
+        }
+      })
+    },
+    [activeEditor],
+  )
+
   useEffect(() => {
     return mergeRegister(
       activeEditor.registerUpdateListener(({ editorState }) => {
@@ -367,36 +397,122 @@ export default function DocumentEditorToolbar({
         COMMAND_PRIORITY_CRITICAL,
       ),
       activeEditor.registerCommand(
-        KEY_MODIFIER_COMMAND,
-        (event) => {
-          const { key, ctrlKey, metaKey } = event
-          const hasModifier = isMac() ? metaKey : ctrlKey
-          if (key === 'k' && hasModifier) {
-            event.preventDefault()
-            return activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
+        KEYBOARD_SHORTCUT_COMMAND,
+        ({ shortcut }) => {
+          switch (shortcut) {
+            case 'EDIT_LINK_SHORTCUT': {
+              return activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
+            }
+            case 'STRIKETHROUGH_TOGGLE_SHORTCUT': {
+              return activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough')
+            }
+            case 'SAVE_SHORTCUT': {
+              return true
+            }
+            case 'INCREASE_FONT_SIZE_SHORTCUT':
+            case 'DECREASE_FONT_SIZE_SHORTCUT': {
+              const fontStep = shortcut === 'INCREASE_FONT_SIZE_SHORTCUT' ? 1 : -1
+              const selection = $getSelection()
+              if (!$isRangeSelection(selection)) {
+                return false
+              }
+              const currentFontSize = $getSelectionStyleValueForProperty(selection, 'font-size', fontSize)
+              const nextFontSize = stepFontSize(currentFontSize, fontStep)
+              setFontSizeForSelection(nextFontSize)
+              return true
+            }
+            case 'QUOTE_TOGGLE_SHORTCUT': {
+              formatQuote()
+              return true
+            }
+            case 'CODE_BLOCK_TOGGLE_SHORTCUT': {
+              formatCode()
+              return true
+            }
+            case 'INCREASE_INDENTATION_SHORTCUT': {
+              return activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
+            }
+            case 'DECREASE_INDENTATION_SHORTCUT': {
+              return activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+            }
+            case 'NORMAL_TEXT_SHORTCUT': {
+              formatParagraph()
+              return true
+            }
+            case 'HEADING_1_SHORTCUT': {
+              formatHeading('h1')
+              return true
+            }
+            case 'HEADING_2_SHORTCUT': {
+              formatHeading('h2')
+              return true
+            }
+            case 'HEADING_3_SHORTCUT': {
+              formatHeading('h3')
+              return true
+            }
+            case 'HEADING_4_SHORTCUT': {
+              formatHeading('h4')
+              return true
+            }
+            case 'HEADING_5_SHORTCUT': {
+              formatHeading('h5')
+              return true
+            }
+            case 'HEADING_6_SHORTCUT': {
+              formatHeading('h6')
+              return true
+            }
+            case 'LEFT_ALIGN_SHORTCUT': {
+              return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
+            }
+            case 'CENTER_ALIGN_SHORTCUT': {
+              return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
+            }
+            case 'RIGHT_ALIGN_SHORTCUT': {
+              return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
+            }
+            case 'JUSTIFY_SHORTCUT': {
+              return activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
+            }
+            case 'NUMBERED_LIST_SHORTCUT': {
+              formatNumberedList()
+              return true
+            }
+            case 'BULLET_LIST_SHORTCUT': {
+              formatBulletList()
+              return true
+            }
+            case 'CHECK_LIST_SHORTCUT': {
+              formatCheckList()
+              return true
+            }
+            case 'INSERT_TABLE_SHORTCUT': {
+              insertTable()
+              return true
+            }
+            default: {
+              return false
+            }
           }
-          return false
         },
         COMMAND_PRIORITY_NORMAL,
       ),
     )
-  }, [$updateToolbar, activeEditor])
-
-  const setFontSizeForSelection = useCallback(
-    (newFontSize: string) => {
-      activeEditor.update(() => {
-        if (activeEditor.isEditable()) {
-          const selection = $getSelection()
-          if (selection !== null) {
-            $patchStyleText(selection, {
-              'font-size': newFontSize,
-            })
-          }
-        }
-      })
-    },
-    [activeEditor],
-  )
+  }, [
+    $updateToolbar,
+    activeEditor,
+    formatCode,
+    formatQuote,
+    fontSize,
+    formatBulletList,
+    formatCheckList,
+    formatHeading,
+    formatNumberedList,
+    formatParagraph,
+    setFontSizeForSelection,
+    insertTable,
+  ])
 
   const clearFormatting = useCallback(() => {
     activeEditor.update(() => {
@@ -477,19 +593,22 @@ export default function DocumentEditorToolbar({
     {
       type: 'check',
       icon: <CheckListIcon className="h-4 w-4 fill-current" />,
-      name: 'Check List',
+      tooltip: <ShortcutLabel shortcut="CHECK_LIST_SHORTCUT" />,
+      name: c('Action').t`Check List`,
       onClick: formatCheckList,
     },
     {
       type: 'bullet',
       icon: <Icon name="list-bullets" />,
-      name: 'Bulleted List',
+      tooltip: <ShortcutLabel shortcut="BULLET_LIST_SHORTCUT" />,
+      name: c('Action').t`Bulleted List`,
       onClick: formatBulletList,
     },
     {
       type: 'number',
       icon: <Icon name="list-numbers" />,
-      name: 'Numbered List',
+      tooltip: <ShortcutLabel shortcut="NUMBERED_LIST_SHORTCUT" />,
+      name: c('Action').t`Numbered List`,
       onClick: formatNumberedList,
     },
   ]
@@ -564,7 +683,7 @@ export default function DocumentEditorToolbar({
         {showUndoRedoInToolbar && (
           <>
             <ToolbarButton
-              label={c('Action').t`Undo`}
+              label={<ShortcutLabel shortcut="UNDO_SHORTCUT" label={c('Action').t`Undo`} />}
               onClick={undo}
               disabled={!isEditable || !canUndo}
               data-testid="undo-button"
@@ -572,7 +691,7 @@ export default function DocumentEditorToolbar({
               <UndoIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Redo`}
+              label={<ShortcutLabel shortcut="REDO_SHORTCUT" label={c('Action').t`Redo`} />}
               onClick={redo}
               disabled={!isEditable || !canRedo}
               data-testid="redo-button"
@@ -650,39 +769,51 @@ export default function DocumentEditorToolbar({
           </DropdownMenu>
         </SimpleDropdown>
         <ToolbarSeparator />
-        <SimpleDropdown
-          as={Button}
-          shape="ghost"
-          type="button"
-          color="norm"
-          className="px-2 text-left text-sm"
-          content={fontSize}
-          disabled={!isEditable}
-          contentProps={DropdownContentProps}
-          data-testid="font-size"
+        <ToolbarTooltip
+          originalPlacement="right"
+          title={
+            <ShortcutLabelContainer>
+              <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
+              <ModifierKbd /> <ShortcutKbd shortcut="Shift" />
+              <ShortcutKbd shortcut="." /> <ShortcutLabelText>{c('Action').t`and`}</ShortcutLabelText>
+              <ShortcutKbd shortcut="," />
+            </ShortcutLabelContainer>
+          }
         >
-          <DropdownMenu>
-            {FontSizes.map((size) => (
-              <DropdownMenuButton
-                key={size}
-                className="text-left text-sm"
-                onClick={() => {
-                  const clampedValue = Math.min(100, Math.max(4, size))
-                  setFontSizeForSelection(`${clampedValue}px`)
-                }}
-                disabled={!isEditable}
-                data-testid="font-size-options"
-              >
-                {size}px
-              </DropdownMenuButton>
-            ))}
-          </DropdownMenu>
-        </SimpleDropdown>
+          <SimpleDropdown
+            as={Button}
+            shape="ghost"
+            type="button"
+            color="norm"
+            className="px-2 text-left text-sm"
+            content={fontSize}
+            disabled={!isEditable}
+            contentProps={DropdownContentProps}
+            data-testid="font-size"
+          >
+            <DropdownMenu>
+              {FontSizes.map((size) => (
+                <DropdownMenuButton
+                  key={size}
+                  className="text-left text-sm"
+                  onClick={() => {
+                    const clampedValue = Math.min(100, Math.max(4, size))
+                    setFontSizeForSelection(`${clampedValue}px`)
+                  }}
+                  disabled={!isEditable}
+                  data-testid="font-size-options"
+                >
+                  {size}px
+                </DropdownMenuButton>
+              ))}
+            </DropdownMenu>
+          </SimpleDropdown>
+        </ToolbarTooltip>
         <ToolbarSeparator />
         {showTextFormattingOptionsInToolbar && (
           <>
             <ToolbarButton
-              label={c('Action').t`Bold`}
+              label={<ShortcutLabel shortcut="BOLD_SHORTCUT" label={c('Action').t`Bold`} />}
               disabled={!isEditable}
               active={isBold}
               onClick={formatBold}
@@ -691,7 +822,7 @@ export default function DocumentEditorToolbar({
               <Icon name="text-bold" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Italic`}
+              label={<ShortcutLabel shortcut="ITALIC_SHORTCUT" label={c('Action').t`Italic`} />}
               disabled={!isEditable}
               active={isItalic}
               onClick={formatItalic}
@@ -700,7 +831,7 @@ export default function DocumentEditorToolbar({
               <Icon name="text-italic" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Underline`}
+              label={<ShortcutLabel shortcut="UNDERLINE_SHORTCUT" label={c('Action').t`Underline`} />}
               disabled={!isEditable}
               active={isUnderline}
               onClick={formatUnderline}
@@ -709,7 +840,7 @@ export default function DocumentEditorToolbar({
               <Icon name="text-underline" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Strikethrough`}
+              label={<ShortcutLabel label={c('Action').t`Strike-through`} shortcut="STRIKETHROUGH_TOGGLE_SHORTCUT" />}
               disabled={!isEditable}
               active={isStrikethrough}
               onClick={formatStrikethrough}
@@ -781,19 +912,20 @@ export default function DocumentEditorToolbar({
               data-testid="list-types-dropdown"
             >
               <DropdownMenu>
-                {listTypes.map(({ type, icon, name, onClick }) => (
-                  <DropdownMenuButton
-                    key={type}
-                    className={clsx(
-                      'flex items-center gap-2 text-left text-sm',
-                      type === listType && 'active font-bold',
-                    )}
-                    onClick={onClick}
-                    disabled={!isEditable}
-                  >
-                    {icon}
-                    {name}
-                  </DropdownMenuButton>
+                {listTypes.map(({ type, icon, name, onClick, tooltip }) => (
+                  <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center gap-2 text-left text-sm',
+                        type === listType && 'active font-bold',
+                      )}
+                      onClick={onClick}
+                      disabled={!isEditable}
+                    >
+                      {icon}
+                      {name}
+                    </DropdownMenuButton>
+                  </ToolbarTooltip>
                 ))}
               </DropdownMenu>
             </SimpleDropdown>
@@ -828,7 +960,7 @@ export default function DocumentEditorToolbar({
         {showCodeAndQuoteOptionsInToolbar && (
           <>
             <ToolbarButton
-              label={c('Action').t`Code block`}
+              label={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" label={c('Action').t`Code block`} />}
               active={isCodeBlock}
               disabled={!isEditable}
               onClick={formatCode}
@@ -837,7 +969,7 @@ export default function DocumentEditorToolbar({
               <Icon name="code" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Quote`}
+              label={<ShortcutLabel shortcut="QUOTE_TOGGLE_SHORTCUT" label={c('Action').t`Quote`} />}
               active={isQuote}
               disabled={!isEditable}
               onClick={formatQuote}
@@ -851,7 +983,7 @@ export default function DocumentEditorToolbar({
         {showInsertOptionsInToolbar && (
           <>
             <ToolbarButton
-              label={c('Action').t`Link`}
+              label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
               disabled={!isEditable}
               active={isLink}
               onClick={editLink}
@@ -860,7 +992,11 @@ export default function DocumentEditorToolbar({
               <Icon name="link" className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Insert image`}
+              label={
+                <ShortcutLabelContainer>
+                  <ShortcutLabelText>{c('Action').t`Insert image`}</ShortcutLabelText>
+                </ShortcutLabelContainer>
+              }
               disabled={!isEditable}
               onClick={insertImage}
               data-testid="image-insert-button"
@@ -868,7 +1004,7 @@ export default function DocumentEditorToolbar({
               <Icon name="image" className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarButton
-              label={c('Action').t`Insert table`}
+              label={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" label={c('Action').t`Insert table`} />}
               disabled={!isEditable}
               onClick={insertTable}
               data-testid="table-button"
@@ -892,47 +1028,61 @@ export default function DocumentEditorToolbar({
           <DropdownMenu className="[&>li>hr]:min-h-px">
             {!showUndoRedoInToolbar && (
               <>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={undo}
-                  disabled={!isEditable || !canUndo}
-                >
-                  <UndoIcon className="h-4 w-4 fill-current" />
-                  {c('Action').t`Undo`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={redo}
-                  disabled={!isEditable || !canRedo}
-                >
-                  <RedoIcon className="h-4 w-4 fill-current" />
-                  {c('Action').t`Redo`}
-                </DropdownMenuButton>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="UNDO_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={undo}
+                    disabled={!isEditable || !canUndo}
+                  >
+                    <UndoIcon className="h-4 w-4 fill-current" />
+                    {c('Action').t`Undo`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="REDO_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={redo}
+                    disabled={!isEditable || !canRedo}
+                  >
+                    <RedoIcon className="h-4 w-4 fill-current" />
+                    {c('Action').t`Redo`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
                 <hr className="my-1" />
               </>
             )}
-            <DropdownMenuButton
-              className="flex items-center gap-2 text-left text-sm"
-              disabled={!isEditable}
-              onClick={() => {
-                activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
-              }}
-              data-testid="indent-dropdown"
+            <ToolbarTooltip
+              originalPlacement="right"
+              title={<ShortcutLabel shortcut="INCREASE_INDENTATION_SHORTCUT" />}
             >
-              <IndentIcon className="h-4 w-4 fill-current" />
-              {c('Action').t`Indent`}
-            </DropdownMenuButton>
-            <DropdownMenuButton
-              className="flex items-center gap-2 text-left text-sm"
-              disabled={!isEditable}
-              onClick={() => {
-                activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
-              }}
-              data-testid="outdent-dropdown"
+              <DropdownMenuButton
+                className="flex items-center gap-2 text-left text-sm"
+                disabled={!isEditable}
+                onClick={() => {
+                  activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
+                }}
+                data-testid="indent-dropdown"
+              >
+                <IndentIcon className="h-4 w-4 fill-current" />
+                {c('Action').t`Indent`}
+              </DropdownMenuButton>
+            </ToolbarTooltip>
+            <ToolbarTooltip
+              originalPlacement="right"
+              title={<ShortcutLabel shortcut="DECREASE_INDENTATION_SHORTCUT" />}
             >
-              <OutdentIcon className="h-4 w-4 fill-current" />
-              {c('Action').t`Outdent`}
-            </DropdownMenuButton>
+              <DropdownMenuButton
+                className="flex items-center gap-2 text-left text-sm"
+                disabled={!isEditable}
+                onClick={() => {
+                  activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+                }}
+                data-testid="outdent-dropdown"
+              >
+                <OutdentIcon className="h-4 w-4 fill-current" />
+                {c('Action').t`Outdent`}
+              </DropdownMenuButton>
+            </ToolbarTooltip>
             {!showAlignmentOptionsInToolbar && (
               <>
                 <hr className="my-1" />
@@ -946,107 +1096,139 @@ export default function DocumentEditorToolbar({
             {!showInsertOptionsInToolbar && (
               <>
                 <hr className="my-1" />
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={insertImage}
-                  disabled={!isEditable}
+                <ToolbarTooltip
+                  originalPlacement="right"
+                  title={
+                    <ShortcutLabelContainer>
+                      <ShortcutLabelText>Insert image</ShortcutLabelText>
+                    </ShortcutLabelContainer>
+                  }
                 >
-                  <Icon name="image" />
-                  {c('Action').t`Insert image`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={editLink}
-                  disabled={!isEditable}
-                >
-                  <Icon name="link" />
-                  {c('Action').t`Link`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={insertTable}
-                  disabled={!isEditable}
-                >
-                  <TableIcon className="h-4 w-4 fill-current" />
-                  {c('Action').t`Insert table`}
-                </DropdownMenuButton>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={insertImage}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="image" />
+                    {c('Action').t`Insert image`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={editLink}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="link" />
+                    {c('Action').t`Link`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={insertTable}
+                    disabled={!isEditable}
+                  >
+                    <TableIcon className="h-4 w-4 fill-current" />
+                    {c('Action').t`Insert table`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
               </>
             )}
             {!showListTypeOptionsInToolbar && (
               <>
                 <hr className="my-1" />
-                {listTypes.map(({ type, icon, name, onClick }) => (
-                  <DropdownMenuButton
-                    key={type}
-                    className={clsx(
-                      'flex items-center gap-2 text-left text-sm',
-                      type === listType && 'active font-bold',
-                    )}
-                    onClick={onClick}
-                    disabled={!isEditable}
-                  >
-                    {icon}
-                    {name}
-                  </DropdownMenuButton>
+                {listTypes.map(({ type, icon, tooltip, name, onClick }) => (
+                  <ToolbarTooltip originalPlacement="right" key={type} title={tooltip}>
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center gap-2 text-left text-sm',
+                        type === listType && 'active font-bold',
+                      )}
+                      onClick={onClick}
+                      disabled={!isEditable}
+                    >
+                      {icon}
+                      {name}
+                    </DropdownMenuButton>
+                  </ToolbarTooltip>
                 ))}
               </>
             )}
             {!showTextFormattingOptionsInToolbar && (
               <>
                 <hr className="my-1" />
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={formatBold}
-                  disabled={!isEditable}
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="BOLD_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={formatBold}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="text-bold" />
+                    {c('Action').t`Bold`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="ITALIC_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={formatItalic}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="text-italic" />
+                    {c('Action').t`Italic`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="UNDERLINE_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={formatUnderline}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="text-underline" />
+                    {c('Action').t`Underline`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip
+                  originalPlacement="right"
+                  title={<ShortcutLabel shortcut="STRIKETHROUGH_TOGGLE_SHORTCUT" />}
                 >
-                  <Icon name="text-bold" />
-                  {c('Action').t`Bold`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={formatItalic}
-                  disabled={!isEditable}
-                >
-                  <Icon name="text-italic" />
-                  {c('Action').t`Italic`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={formatUnderline}
-                  disabled={!isEditable}
-                >
-                  <Icon name="text-underline" />
-                  {c('Action').t`Underline`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={formatStrikethrough}
-                  disabled={!isEditable}
-                >
-                  <Icon name="text-strikethrough" />
-                  {c('Action').t`Strikethrough`}
-                </DropdownMenuButton>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={formatStrikethrough}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="text-strikethrough" />
+                    {c('Action').t`Strikethrough`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
               </>
             )}
             {!showCodeAndQuoteOptionsInToolbar && (
               <>
                 <hr className="my-1" />
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={formatCode}
-                  disabled={!isEditable}
+                <ToolbarTooltip
+                  originalPlacement="right"
+                  title={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" />}
                 >
-                  <Icon name="code" />
-                  {c('Action').t`Code block`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                  className="flex items-center gap-2 text-left text-sm"
-                  onClick={formatQuote}
-                  disabled={!isEditable}
-                >
-                  <Icon name="text-quote" />
-                  {c('Action').t`Quote`}
-                </DropdownMenuButton>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={formatCode}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="code" />
+                    {c('Action').t`Code block`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="QUOTE_TOGGLE_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={formatQuote}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="text-quote" />
+                    {c('Action').t`Quote`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
               </>
             )}
             <hr className="my-1" />

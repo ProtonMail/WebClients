@@ -26,6 +26,7 @@ import { sendErrorMessage } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
 import { ContextualComments } from './ContextualComments'
 import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
+import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 
 export default function CommentPlugin({
   controller,
@@ -203,6 +204,23 @@ export default function CommentPlugin({
           setShowCommentsPanel((show) => !show)
           setShowCommentInput(false)
           return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        KEYBOARD_SHORTCUT_COMMAND,
+        ({ shortcut }) => {
+          switch (shortcut) {
+            case 'OPEN_COMMENT_PANEL_SHORTCUT': {
+              return editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
+            }
+            case 'INSERT_COMMENT_SHORTCUT': {
+              return editor.dispatchCommand(INSERT_INLINE_COMMENT_COMMAND, undefined)
+            }
+            default: {
+              return false
+            }
+          }
         },
         COMMAND_PRIORITY_EDITOR,
       ),
