@@ -11,7 +11,7 @@ const mainConfig = require('./webpack.main.config');
 const rendererConfig = require('./webpack.renderer.config');
 const path = require('path');
 const pkg = require('./package.json');
-const { getExtraResource } = require('./src/utils/config');
+const getExtraResource = require('./src/utils/extra-resource');
 
 /** @type {import('@electron-forge/shared-types').ForgeConfig} */
 const config = {
@@ -50,17 +50,15 @@ const config = {
             name: 'Proton Pass',
             background: path.join(__dirname, 'assets', 'dmg-background.png'),
             icon: path.join(__dirname, 'assets', 'volume-icon.icns'),
-            contents: () => {
-                return [
-                    {
-                        x: 150,
-                        y: 180,
-                        type: 'file',
-                        path: `${process.cwd()}/out/Proton Pass-darwin-${arch}/Proton Pass.app`,
-                    },
-                    { x: 350, y: 180, type: 'link', path: '/Applications' },
-                ];
-            },
+            contents: () => [
+                {
+                    x: 150,
+                    y: 180,
+                    type: 'file',
+                    path: `${process.cwd()}/out/Proton Pass-darwin-${arch}/Proton Pass.app`,
+                },
+                { x: 350, y: 180, type: 'link', path: '/Applications' },
+            ],
             additionalDMGOptions: {
                 window: {
                     size: {

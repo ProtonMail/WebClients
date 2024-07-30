@@ -1,18 +1,33 @@
 import { app } from 'electron';
 import { spawn } from 'node:child_process';
-import { copyFileSync, openSync } from 'node:fs';
+import { appendFileSync, copyFileSync, existsSync, openSync } from 'node:fs';
 import { resolve } from 'node:path';
 import path from 'path';
 
-import { getLogger, squirrelLogger } from '../../utils/logger';
+import { squirrelLogger } from '../../utils/logger';
+import { isWindows } from '../../utils/platform';
 
-async function spawnUninstallProcess() {
-    const { logPath, scriptPath, logger } = getLogger({
-        logFile: 'proton-pass-uninstall.log',
-        scriptFile: 'proton-pass-uninstall.bat',
-    });
+const getLogger =
+    (logPath: string, scriptPath: string) =>
+    (...data: unknown[]) => {
+        const prefix = existsSync(scriptPath) ? '\n' : '';
+        const date = new Date().toISOString();
+        const message = data
+            .join(' ')
+            .split('\n')
+            .filter((line) => line.trim().length)
+            .map((chunk) => `[${date}] ${chunk}`)
+            .join('\n');
+
+        appendFileSync(logPath, `${prefix}${message}`, 'utf8');
+    };
+
+const spawnUninstallProcess = async () => {
+    const logPath = resolve(app.getPath('temp'), 'proton-pass-uninstall.log');
+    const scriptPath = resolve(app.getPath('temp'), 'proton-pass-uninstall.bat');
     const uninstallLogFileDescriptor = openSync(logPath, 'a');
     const uninstallScriptPath = resolve(process.resourcesPath, 'uninstall.bat');
+    const logger = getLogger(logPath, scriptPath);
 
     logger(`Copying uninstall script "${uninstallScriptPath}" to "${scriptPath}"`);
     copyFileSync(uninstallScriptPath, scriptPath);
@@ -47,15 +62,15 @@ async function spawnUninstallProcess() {
     // exiting with `app.quit()` or `app.exit()` to avoid any side effect.
     logger('Uninstall process started');
     await new Promise(() => {});
-}
+};
 
-export async function handleSquirrelEvents() {
+export const handleSquirrelEvents = async () => {
     const run = (args: string[], done: (args: any) => void) => {
         const updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
         spawn(updateExe, args, { detached: true }).on('close', done);
     };
 
-    if (process.platform === 'win32') {
+    if (isWindows) {
         squirrelLogger.info('startup');
         const cmd = process.argv[1] ?? null;
         const target = path.basename(process.execPath);
@@ -73,4 +88,4 @@ export async function handleSquirrelEvents() {
 
         if ('--squirrel-obsolete' === cmd) app.quit();
     }
-}
+};
