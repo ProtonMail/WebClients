@@ -11,7 +11,7 @@
 export interface HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson {
   Labels: {
     type: "server_error" | "network_error" | "decryption_error" | "rate_limited" | "unknown";
-    shareType: "own" | "device" | "photo" | "shared" | "shared_public";
+    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
     initiator: "download" | "preview";
   };
   Value: number;
