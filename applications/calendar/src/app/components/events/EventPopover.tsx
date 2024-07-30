@@ -297,7 +297,7 @@ const EventPopover = ({
                 <AppLink
                     data-testid="event-popover:open-in-new-tab"
                     to={linkTo || '/'}
-                    selfOpening
+                    reloadDocument
                     className="mr-2 button button-small button-ghost-weak button-for-icon"
                 >
                     <Icon name="arrow-out-square" size={3.5} />

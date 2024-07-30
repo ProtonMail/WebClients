@@ -13,6 +13,7 @@ import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import type { AppLinkProps } from '../../components';
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
 import { useFlag } from '../unleash';
@@ -23,10 +24,14 @@ interface AppsDropdownProps {
     app?: APP_NAMES;
     user?: UserModel;
     title?: string;
+    reloadDocument?: AppLinkProps['reloadDocument'];
 }
 
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
-    ({ onDropdownClick, app, user, title, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
+    (
+        { onDropdownClick, app, user, title, reloadDocument, ...rest }: AppsDropdownProps,
+        ref: ForwardedRef<HTMLButtonElement>
+    ) => {
         const { APP_NAME } = useConfig();
 
         const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
@@ -68,6 +73,9 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         appToLinkTo={appToLinkTo}
                                         className="text-center text-no-decoration outline-none--at-all apps-dropdown-link flex flex-column items-center"
                                         current={current}
+                                        reloadDocument={reloadDocument}
+                                        // The same app opens in the same window, other apps in new windows
+                                        target={APP_NAME === appToLinkTo ? '_self' : '_blank'}
                                     >
                                         <div
                                             className="apps-dropdown-logo-wrapper flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
