@@ -6,9 +6,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { useErrorHandler, waitFor } from '../../_utils';
-import { DecryptedLink, EncryptedLink } from '../interface';
+import type { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
-import useLinksState, { Link, isLinkDecrypted } from '../useLinksState';
+import type { Link } from '../useLinksState';
+import useLinksState, { isLinkDecrypted } from '../useLinksState';
 
 export type FetchMeta = {
     isEverythingFetched?: boolean;
@@ -231,7 +232,7 @@ export function useLinksListingHelpers() {
      * The callback function must return a AnchorID and More as boolean value representing a presence of the next page in listing.
      */
     const loadFullListingWithAnchor = async (
-        callback: (AnchorID?: string) => Promise<{ AnchorID: string; More: boolean }>,
+        callback: (AnchorID?: string) => Promise<{ AnchorID?: string; More: boolean }>,
         AnchorIdIn?: string
     ): Promise<void> => {
         const result = await callback(AnchorIdIn);
