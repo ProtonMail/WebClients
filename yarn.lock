@@ -7330,7 +7330,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/unleash@workspace:packages/unleash"
   dependencies:
+    "@types/react": "npm:^18.3.3"
+    "@types/react-dom": "npm:^18.3.0"
     "@unleash/proxy-client-react": "npm:^4.2.4"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
     unleash-proxy-client: "npm:^3.4.0"
   languageName: unknown
   linkType: soft
