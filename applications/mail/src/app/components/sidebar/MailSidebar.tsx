@@ -12,6 +12,7 @@ import {
     SidebarNav,
     Tooltip,
     useActiveBreakpoint,
+    useApi,
     useFlag,
     useLocalState,
     useUser,
@@ -19,6 +20,11 @@ import {
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
+import {
+    COLLAPSE_EVENTS,
+    SOURCE_EVENT,
+    sendRequestCollapsibleSidebarReport,
+} from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -40,6 +46,7 @@ interface Props {
 }
 
 const MailSidebar = ({ labelID }: Props) => {
+    const api = useApi();
     const featureFlagCollapsible = useFlag('LeftSidebarCollapsible');
     const [user] = useUser();
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONMAIL}-left-nav-opened`);
@@ -58,7 +65,15 @@ const MailSidebar = ({ labelID }: Props) => {
 
     const displayContactsInHeader = useDisplayContactsWidget();
 
-    const onClickExpandNav = () => setshowSideBar(!showSideBar);
+    const onClickExpandNav = (sourceEvent = SOURCE_EVENT.BUTTON_SIDEBAR) => {
+        sendRequestCollapsibleSidebarReport({
+            api,
+            action: showSideBar ? COLLAPSE_EVENTS.COLLAPSE : COLLAPSE_EVENTS.EXPAND,
+            application: APPS.PROTONMAIL,
+            sourceEvent,
+        });
+        setshowSideBar(!showSideBar);
+    };
 
     return (
         <Sidebar
@@ -111,7 +126,7 @@ const MailSidebar = ({ labelID }: Props) => {
                                     !showSideBar && 'sidebar-collapse-button--collapsed',
                                     collapsed ? 'mx-auto' : 'mr-2 ml-auto'
                                 )}
-                                onClick={onClickExpandNav}
+                                onClick={() => onClickExpandNav()}
                                 aria-pressed={showSideBar}
                             >
                                 <Icon
