@@ -117,11 +117,8 @@ const stateMock = {
                     itemId: 'share3-item4',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    lastUseTime: getEpoch(),
                     data: itemBuilder('login').set('content', (content) =>
-                        content
-                            .set('urls', ['https://sub.domain.google.com'])
-                            .set('totpUri', '4242424242424242424242424242')
+                        content.set('urls', ['https://sub.domain.google.com'])
                     ).data,
                 },
                 item5: {
@@ -129,11 +126,8 @@ const stateMock = {
                     itemId: 'share3-item5',
                     state: ItemState.Active,
                     shareId: 'share3',
-                    lastUseTime: getEpoch() + 1_000,
                     data: itemBuilder('login').set('content', (content) =>
-                        content
-                            .set('urls', ['https://my.sub.domain.google.com'])
-                            .set('totpUri', '1212121212121212121212121212')
+                        content.set('urls', ['https://my.sub.domain.google.com'])
                     ).data,
                 },
                 item6: {
@@ -176,8 +170,21 @@ const stateMock = {
                     ).data,
                 },
                 item3: {
+                    /* subdomain `B` OTP - more recently used */
+                    itemId: 'share5-item3',
+                    state: ItemState.Active,
+                    shareId: 'share5',
+                    lastUseTime: getEpoch() + 2_000,
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('itemUsername', 'username@subdomain.com')
+                            .set('urls', ['https://b.subdomain.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
+                },
+                item4: {
                     /* top-level domain OTP */
-                    itemId: 'share5-item1',
+                    itemId: 'share5-item4',
                     state: ItemState.Active,
                     shareId: 'share5',
                     lastUseTime: getEpoch(),
@@ -185,6 +192,32 @@ const stateMock = {
                         content
                             .set('itemUsername', 'username@subdomain.com')
                             .set('urls', ['https://subdomain.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
+                },
+                item5: {
+                    /* top-level domain OTP more recently used */
+                    itemId: 'share5-item5',
+                    state: ItemState.Active,
+                    shareId: 'share5',
+                    lastUseTime: getEpoch() + 2_000,
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('itemUsername', 'username@subdomain.com')
+                            .set('urls', ['https://subdomain.com'])
+                            .set('totpUri', '1212121212121212121212121212')
+                    ).data,
+                },
+                item6: {
+                    /* top-level domain OTP */
+                    itemId: 'share5-item6',
+                    state: ItemState.Active,
+                    shareId: 'share5',
+                    lastUseTime: getEpoch(),
+                    data: itemBuilder('login').set('content', (content) =>
+                        content
+                            .set('itemUsername', 'username@subdomain.com')
+                            .set('urls', ['https://a.domain.com'])
                             .set('totpUri', '1212121212121212121212121212')
                     ).data,
                 },
@@ -392,9 +425,15 @@ describe('item selectors', () => {
     });
 
     describe('selectOTPCandidate', () => {
-        test('should match item for domain and username when matching top-level `totpUri`', () => {
+        test('should match item for domain and username', () => {
             const submission = { data: { userIdentifier: 'test@proton.me' } } as FormSubmission;
             const candidate = selectOTPCandidate({ ...parseUrl('https://proton.me'), submission })(stateMock);
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
+        });
+
+        test('should match item for subdomain and username', () => {
+            const submission = { data: { userIdentifier: 'test@proton.me' } } as FormSubmission;
+            const candidate = selectOTPCandidate({ ...parseUrl('https://subdomain.proton.me'), submission })(stateMock);
             expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item1));
         });
 
@@ -408,40 +447,51 @@ describe('item selectors', () => {
             expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share1.item4));
         });
 
-        test('should match last used item for domain if username not provided', () => {
-            const candidate = selectOTPCandidate({
-                ...parseUrl('https://google.com'),
-                submission: undefined,
-            })(stateMock);
-
-            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share3.item5));
+        test('should match last used item for top-level domain if username not provided', () => {
+            const candidate = selectOTPCandidate(parseUrl('https://subdomain.com'))(stateMock);
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item5));
         });
 
-        test('should match item for top-level domain', () => {
-            const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
-            const candidate = selectOTPCandidate({
-                ...parseUrl('https://subdomain.com'),
-                submission,
-            })(stateMock);
-
+        test('should match last used item for subdomain if username not provided', () => {
+            const candidate = selectOTPCandidate(parseUrl('https://b.subdomain.com'))(stateMock);
             expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item3));
         });
 
-        test('should prioritise subdomain match', () => {
+        test('should match item for username & top-level domain', () => {
+            const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
+            const candidate = selectOTPCandidate({ ...parseUrl('https://subdomain.com'), submission })(stateMock);
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item5));
+        });
+
+        test('should allow item for username & top-level domain on subdomain', () => {
+            const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
+            const candidate = selectOTPCandidate({ ...parseUrl('https://unknown.subdomain.com'), submission })(
+                stateMock
+            );
+            expect(candidate).toEqual(withOptimistics(stateMock.items.byShareId.share5.item5));
+        });
+
+        test('should prioritise subdomain/username match', () => {
+            const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
+            const candidateA = selectOTPCandidate({ ...parseUrl('https://a.subdomain.com'), submission })(stateMock);
+            const candidateB = selectOTPCandidate({ ...parseUrl('https://b.subdomain.com'), submission })(stateMock);
+            expect(candidateA).toEqual(withOptimistics(stateMock.items.byShareId.share5.item1));
+            expect(candidateB).toEqual(withOptimistics(stateMock.items.byShareId.share5.item3));
+        });
+
+        test('should not match subdomain item for top-level url', () => {
             const submission = { data: { userIdentifier: 'username@subdomain.com' } } as FormSubmission;
 
-            const candidateA = selectOTPCandidate({
-                ...parseUrl('https://a.subdomain.com'),
-                submission,
-            })(stateMock);
+            const candidateA = selectOTPCandidate({ ...parseUrl('https://domain.com'), submission })(stateMock);
+            expect(candidateA).toEqual(undefined);
 
-            const candidateB = selectOTPCandidate({
-                ...parseUrl('https://b.subdomain.com'),
-                submission,
-            })(stateMock);
+            const candidateB = selectOTPCandidate(parseUrl('https://domain.com'))(stateMock);
+            expect(candidateB).toEqual(undefined);
+        });
 
-            expect(candidateA).toEqual(withOptimistics(stateMock.items.byShareId.share5.item1));
-            expect(candidateB).toEqual(withOptimistics(stateMock.items.byShareId.share5.item2));
+        test('should not match subdomain item for sub-subdomain url', () => {
+            const candidate = selectOTPCandidate(parseUrl('https://a.b.domain.com'))(stateMock);
+            expect(candidate).toEqual(undefined);
         });
     });
 });

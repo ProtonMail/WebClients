@@ -272,7 +272,7 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
     );
 
 export const selectOTPCandidate = ({ submission, ...options }: SelectOTPAutofillCandidateOptions) =>
-    createSelector(selectAutofillLoginCandidates(options), (candidates) => {
+    createSelector(selectAutofillLoginCandidates({ ...options, strict: true }), (candidates) => {
         const otpItems = candidates.filter(hasOTP);
         const userIdentifier = submission?.data.userIdentifier;
 
