@@ -2128,6 +2128,14 @@
         "Ajudeu-nos a millorar"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Historial de versions ampliat"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "S'ha enviat un correu electrònic de verificació a ${ address }."
@@ -3313,9 +3321,6 @@
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "S'ha afegit el correu electrònic personalitzat en cas de violació de les dades."
-      ],
       "Breach Custom Email Deleted": [
         "S'ha eliminat el correu electrònic personalitzat en cas de violació de les dades."
       ],
@@ -3389,17 +3394,8 @@
       "Custom branding": [
         "Marca personalitzada"
       ],
-      "Custom email added": [
-        "S'ha afegit l'adreça de correu electrònic personalitzada"
-      ],
-      "Custom email deleted": [
-        "S'ha eliminat l'adreça de correu electrònic personalitzada"
-      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
-      ],
-      "Custom email validated": [
-        "S'ha validat l'adreça de correu electrònic personalitzada"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
@@ -5394,9 +5390,6 @@
       "Learn more": [
         "Més informació"
       ],
-      "Need help?": [
-        "Necessiteu ajuda?"
-      ],
       "Not activated": [
         "No s'ha activat"
       ],
@@ -6144,9 +6137,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per protegir tot el seu negoci."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
@@ -9743,6 +9733,15 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via correu electrònic"
       ]
     },
     "Warning": {

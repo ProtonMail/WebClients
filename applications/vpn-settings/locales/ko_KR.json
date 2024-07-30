@@ -493,6 +493,9 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
+      "Select billing cycle ${ billingText }": [
+        "${ billingText } 결제 주기 선택"
+      ],
       "Select country": [
         "국가 선택"
       ],
@@ -2134,6 +2137,14 @@
         "개선을 도와주세요"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "연장된 버전 기록"
+      ],
+      "Priority support": [
+        "우선 지원"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "인증 이메일이 ${ address }으로 전송되었습니다."
@@ -2497,7 +2508,7 @@
         "확인하였습니다."
       ],
       "Invite an existing ${ BRAND_NAME } user": [
-        "존재 중인 ${ BRAND_NAME } 사용자를 초대하세요"
+        "이미 존재하는 ${ BRAND_NAME } 사용자 초대"
       ],
       "Invite member to your family": [
         "회원을 사용자의 가족으로 초대"
@@ -2643,7 +2654,7 @@
         "구성원에서 삭제할 사용자의 계정이 30일 무료 체험판 버전의 ${ BRAND_NAME } Unlimited 플랜으로 자동 전환됩니다."
       ],
       "To create a new user, a configured custom domain is required.": [
-        "새 계정을 생성하려면, 지정 도메인 구성이 권장됩니다."
+        "새 계정을 생성하려면, 커스텀 도메인 구성이 필요합니다."
       ],
       "You can increase or reduce the storage for this user.": [
         "이 사용자의 저장 공간을 늘리거나 줄일 수 있습니다."
@@ -2694,7 +2705,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "${ PLAN_NAMES.visionary2022 } 계정으로 사용자를 추가하세요"
+        "${ PLAN_NAMES.visionary2022 } 계정으로 사용자 추가하기"
       ],
       "Change family name": [
         "가족 이름 변경"
@@ -3298,8 +3309,11 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "침해된 커스텀 이메일 추가됨"
+      "Breach Custom Email Deleted": [
+        "침해된 사용자 지정 이메일 삭제됨"
+      ],
+      "Breach Custom Email Validated": [
+        "침해된 사용자 지정 이메일 인증됨"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
@@ -3367,17 +3381,8 @@
       "Custom branding": [
         "커스텀 브랜딩"
       ],
-      "Custom email added": [
-        "사용자 지정 이메일 추가됨"
-      ],
-      "Custom email deleted": [
-        "사용자 지정 이메일 삭제됨"
-      ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
-      ],
-      "Custom email validated": [
-        "사용자 지정 이메일 검증됨"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
@@ -4286,7 +4291,7 @@
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
       "to continue to ${ product }": [
-        "${ product }로 계속하기"
+        "${ product }으(로) 계속하기"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸 및 남용을 방지하려면 사람임을 확인하세요."
@@ -5151,7 +5156,7 @@
         "비밀번호 표시"
       ],
       "Second password": [
-        "2차 비밀번호"
+        "2단계 비밀번호"
       ],
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
@@ -5359,9 +5364,6 @@
       ],
       "Learn more": [
         "더 알아보기"
-      ],
-      "Need help?": [
-        "도움이 필요하신가요?"
       ],
       "Not activated": [
         "활성화되지 않음"
@@ -6094,9 +6096,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "적용 가능한 크레딧, 비례 배분 및 쿠폰은 다음 단계에서 적용됩니다."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
@@ -6667,7 +6666,7 @@
         "최소 128 픽셀의 정사각형 이미지"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+        "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6927,8 +6926,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
+      "Please select billing country": [
+        "결제 청구 국가를 선택하세요"
+      ],
+      "Please select billing state": [
+        "결제 청구 주를 선택하세요"
+      ],
+      "Please select your billing country first.": [
+        "결제 청구 국가를 먼저 선택하세요"
+      ],
+      "Please select your billing state first.": [
+        "결제 청구 주를 먼저 선택하세요"
+      ],
       "Processing payment": [
         "결제 처리 중"
+      ],
+      "Select billing country to pay": [
+        "결제를 청구할 국가 선택"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
@@ -6938,6 +6952,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ price }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "이 거래가 성공적으로 삭제되었습니다. 거래가 완전히 확인되면 크래딧이 계좌에 추가됩니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -7187,6 +7204,11 @@
       ],
       "User": [
         "사용자"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "취소"
       ]
     },
     "scim: Action": {
@@ -8129,6 +8151,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } 구독이 끝나게 되면, Drive 저장공간 5GB, Mail 저장공간은 1GB까지만 제공하는 ${ BRAND_NAME } FREE로 다운그레이드 됩니다. 또한 이전에 받았던 저장공간 보너스를 전부 잃게 됩니다."
       ],
@@ -8828,6 +8853,9 @@
       "Couldn’t create accounts": [
         "계정을 만들 수 없음"
       ],
+      "Coupon": [
+        "쿠폰"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } 사용자 생성"
       ],
@@ -9237,7 +9265,7 @@
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
       ],
       "Upload your organization’s logo": [
-        "조직의 로고를 업로드하세요"
+        "조직의 로고 업로드"
       ],
       "User": [
         "사용자"
@@ -9383,7 +9411,7 @@
         "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "다른 사용자가 웹 앱에 로그인했을 때 당신의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
+        "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "일반적으로 인증 제공자의 이름이 포함된 URL"
@@ -9675,6 +9703,33 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "계정 당 ${ n }개 지갑"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } wallet": [
+        "${ n }개 지갑"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin을 보관하는 가장 안전한 방법"
+      ],
+      "Bitcoin via email": [
+        "이메일을 통한 Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bitcoin을 안전하게 보관하고 입출금하세요."
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "지갑 오류"
       ]
     },
     "Warning": {

@@ -359,7 +359,7 @@
         "Ok"
       ],
       "Open": [
-        "Geöffnet"
+        "Öffnen"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -492,6 +492,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Abrechnungszyklus auswählen: ${ billingText }"
       ],
       "Select country": [
         "Land wählen"
@@ -2143,6 +2146,14 @@
         "Hilf uns, besser zu werden"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Priority support": [
+        "Priorisierter Support"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Verifizierungs-E-Mail wurde an ${ address } gesendet."
@@ -2246,7 +2257,7 @@
         "Ungültiges Passwort"
       ],
       "Incorrect second password. Please try again.": [
-        "Falsches weiteres Passwort. Bitte versuche es erneut."
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ],
       "Incorrect username": [
         "Falscher Benutzername"
@@ -2324,7 +2335,7 @@
         "Bitte lege zuerst eine Wiederherstellungs-Telefonnummer fest."
       ],
       "Please try again in a few moments.": [
-        "Bitte versuche es in wenigen Augenblicken nochmals"
+        "Bitte versuche es in wenigen Augenblicken erneut."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um Support für mehrere Benutzer zu erhalten."
@@ -3701,7 +3712,7 @@
         "Einladung abgelehnt"
       ],
       "Invite Rejected": [
-        "Einladung zurückgewiesen"
+        "Einladung abgelehnt"
       ],
       "Item Autofilled": [
         "Eintrag automatisch ausgefüllt"
@@ -4373,10 +4384,10 @@
         "Benutzer"
       ],
       "Vault created": [
-        "Tresor angelegt"
+        "Tresor erstellt"
       ],
       "Vault Created": [
-        "Tresor angelegt"
+        "Tresor erstellt"
       ],
       "Vault deleted": [
         "Tresor gelöscht"
@@ -4611,7 +4622,7 @@
         "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
-        "Du kannst den Nutzer zum Administrator machen, nach dem dieser die Einladung angenommen hat."
+        "Du kannst den Benutzer zum Administrator machen, nach dem dieser die Einladung angenommen hat."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
@@ -5364,9 +5375,6 @@
       "Learn more": [
         "Mehr erfahren"
       ],
-      "Need help?": [
-        "Benötigst du Hilfe?"
-      ],
       "Not activated": [
         "Nicht aktiviert"
       ],
@@ -5811,7 +5819,7 @@
         "Eigene stumm Zeit"
       ],
       "Custom workspace branding": [
-        "Gestaltung für den Arbeitsbereich"
+        "Eigenes Workspace-Branding"
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
@@ -6027,7 +6035,7 @@
         "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Unbegrenzte Anmeldungen, Notizen und Kreditkarten"
+        "Unbegrenzte Logins, Notizen und Kreditkarten"
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
@@ -6117,9 +6125,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle ${ BRAND_NAME } Premiumfunktionen und Gewerbeapps, um dein gesamtes Unternehmen zu schützen."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Anwendbares Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Umfassender Schutz der Privatsphäre und Sicherheit bei allen ${ BRAND_NAME }-Diensten."
@@ -6392,7 +6397,7 @@
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Sieh die Verfügbarkeit von Teilnehmern und spare dir Zeit beim Organisieren von Meetings"
+        "Sieh die Verfügbarkeit von Teilnehmern und spare dir Zeit beim Organisieren von Meetings."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Sende E-Mails schnell und einfach an große Gruppen, indem du so viele Kontaktgruppen wie nötig erstellst (mit bis zu 100 Kontakten pro Gruppe)."
@@ -6422,7 +6427,7 @@
         "Unterstützung für File-Sharing-Protokolle wie BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Lade dein Unternehmenslogo hoch, um die Erfahrung deines Teams auf der ${ BRAND_NAME } Web-App zu personalisieren"
+        "Lade dein Unternehmenslogo hoch, um die Erfahrung deines Teams in der ${ BRAND_NAME } Web-App zu personalisieren"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
@@ -6937,8 +6942,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
+      "Please select billing country": [
+        "Bitte wähle das Rechnungsland aus"
+      ],
+      "Please select billing state": [
+        "Bitte wähle den Rechnungsstaat aus"
+      ],
+      "Please select your billing country first.": [
+        "Bitte wähle zuerst dein Rechnungsland aus."
+      ],
+      "Please select your billing state first.": [
+        "Bitte wähle zuerst deinen Rechnungsstaat aus."
+      ],
       "Processing payment": [
         "Zahlungsabwicklung"
+      ],
+      "Select billing country to pay": [
+        "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
@@ -8094,7 +8114,7 @@
         "${ MAIL_APP_NAME }-Desktop App"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
-        "${ MAIL_APP_NAME } schützt Ihre Geschäftsdaten und ermöglicht Ihnen das Senden verschlüsselter E-Mails an beliebige Personen."
+        "${ MAIL_APP_NAME } schützt deine Geschäftsdaten und ermöglicht dir das Senden verschlüsselter E-Mails an beliebige Personen."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME } mit automatischer E-Mail-Weiterleitung"
@@ -8187,7 +8207,7 @@
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
       ],
       "All you need for your business": [
-        "Alles was du für dein Unternehmen brauchst"
+        "Alles, was du für dein Unternehmen brauchst."
       ],
       "Any custom email domains will be disabled": [
         "Jegliche eigene E-Mail-Domains werden deaktiviert."
@@ -8385,7 +8405,7 @@
         "Dein ${ planName } wurde gekündigt."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Dein ${ planName } Plan schützt nicht nur deine Unternehmensdaten und -kommunikation. Er unterstützt deine Compliance-Ziele, hebt dein Unternehmen hervor und sorgt dafür, dass dein Team in Verbindung bleibt."
+        "Dein ${ planName }-Abonnement schützt nicht nur deine Unternehmensdaten und -kommunikation. Es unterstützt deine Compliance-Ziele, hebt dein Unternehmen hervor und sorgt dafür, dass dein Team in Verbindung bleibt."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Dein ${ planName }-Abonnement endet am ${ expiryDate }. Danach gilt für dich das ${ BRAND_NAME } Free-Abonnement. Wenn deine Nutzung die Grenzen des kostenlosen Abonnements überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein. ${ learnMoreLink }"
@@ -8885,6 +8905,9 @@
       "Couldn’t create accounts": [
         "Konten konnten nicht erstellt werden"
       ],
+      "Coupon": [
+        "Rabattcode"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } Benutzer erstellt",
         "${ selectedUserIds.length } Benutzer erstellt"
@@ -9026,7 +9049,7 @@
         "Fehler"
       ],
       "Event": [
-        "Ereignis"
+        "Termin"
       ],
       "Every member of the organization can access": [
         "Jedes Mitglied der Organisation kann darauf zugreifen"

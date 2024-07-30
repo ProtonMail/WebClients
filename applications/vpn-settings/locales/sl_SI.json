@@ -2125,6 +2125,14 @@
         "Pomagajte nam izboljšati"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Potrditveno sporočilo je bilo poslano na ${ address }."
@@ -4625,6 +4633,9 @@
       "Paid": [
         "Plačano"
       ],
+      "Processing": [
+        "V obdelavi "
+      ],
       "Unpaid": [
         "Neplačano"
       ],
@@ -5247,9 +5258,6 @@
       "Learn more": [
         "Več o tem"
       ],
-      "Need help?": [
-        "Potrebujete pomoč?"
-      ],
       "Not activated": [
         "Ni aktivirano"
       ],
@@ -5350,6 +5358,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Omogoči ${ reason }"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "za ${ price }"
       ]
     },
     "mailtrial2024: Action": {
@@ -6017,9 +6030,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Vse ${ BRAND_NAME } poslovne aplikacije in premijske funkcije za zaščito celotnega podjetja."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Uporabno dobroimetje, sorazmerna delitev in kuponi se upoštevajo v naslednjem koraku."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Celovita zasebnost in varnost s kombinacijo vseh storitev ${ BRAND_NAME }."
@@ -6814,6 +6824,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "Got it": [
+        "Razumem"
       ],
       "MM/YY": [
         "MM/LL"
@@ -8890,6 +8903,9 @@
       "Forgot recovery method": [
         "Pozabljen način obnovitve"
       ],
+      "Gateway": [
+        "Prehod"
+      ],
       "Gateways": [
         "Prehod"
       ],
@@ -9348,14 +9364,23 @@
       "Add multiple users": [
         "Dodaj več uporabnikov"
       ],
+      "Add new user": [
+        "Dodaj novega uporabnika"
+      ],
       "Admin": [
         "Skrbnik"
+      ],
+      "Cancel": [
+        "Prekliči"
       ],
       "Confirm password": [
         "Potrdi geslo."
       ],
       "Create password": [
         "Ustvarite geslo"
+      ],
+      "Create user": [
+        "Ustvari uporabnika"
       ],
       "Email": [
         "E-pošta"
@@ -9366,8 +9391,14 @@
       "Optional": [
         "Neobvezno"
       ],
+      "Private": [
+        "Zasebno"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Ne pozabite deliti podrobnosti za prijavo z uporabnikom."
+      ],
+      "User created": [
+        "Uporabnik ustvarjen"
       ],
       "VPN connections": [
         "VPN povezave"
@@ -9379,6 +9410,12 @@
     "Users table: badge": {
       "2FA": [
         "2FA"
+      ],
+      "Invite sent": [
+        "Vabilo uspešno poslano"
+      ],
+      "Private": [
+        "Zasebno"
       ],
       "SSO": [
         "SSO"

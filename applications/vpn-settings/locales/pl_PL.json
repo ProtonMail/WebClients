@@ -119,7 +119,7 @@
         "Potwierdź"
       ],
       "Contact support": [
-        "Pomoc techniczna"
+        "Skontaktuj się ze wsparciem technicznym"
       ],
       "Contact us": [
         "Skontaktuj się z nami"
@@ -492,6 +492,9 @@
       ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Wybierz cykl rozliczeniowy ${ billingText }"
       ],
       "Select country": [
         "Wybierz kraj"
@@ -1415,7 +1418,7 @@
         "Falklandy"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandy (Malwiny)"
+        "Falklandy"
       ],
       "Faroe Islands": [
         "Wyspy Owcze"
@@ -2153,6 +2156,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Pomóż nam ulepszyć usługę"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
       ]
     },
     "Email verification": {
@@ -3382,9 +3393,6 @@
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
       ],
-      "Breach Custom Email Added": [
-        "Dodanie niestandardowego adresu e-mail do monitoringu"
-      ],
       "Breach Custom Email Deleted": [
         "Usunięcie niestandardowego adresu e-mail z monitoringu"
       ],
@@ -3460,17 +3468,8 @@
       "Custom branding": [
         "Niestandardowy branding"
       ],
-      "Custom email added": [
-        "Dodanie niestandardowego adresu e-mail"
-      ],
-      "Custom email deleted": [
-        "Usunięcie niestandardowego adresu e-mail"
-      ],
       "Custom email domains": [
         "Niestandardowe domeny"
-      ],
-      "Custom email validated": [
-        "Zweryfikowanie niestandardowego adresu e-mail"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
@@ -5504,9 +5503,6 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
-      "Need help?": [
-        "Potrzebujesz pomocy?"
-      ],
       "Not activated": [
         "Nieaktywowany"
       ],
@@ -6297,9 +6293,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
@@ -7131,14 +7124,32 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
+      ],
+      "Please select your billing country first.": [
+        "Najpierw wybierz kraj rozliczeniowy"
+      ],
+      "Please select your billing state first.": [
+        "Najpierw wybierz stan rozliczeniowy"
+      ],
       "Processing payment": [
         "Przetwarzanie płatności"
+      ],
+      "Select billing country to pay": [
+        "Wybierz kraj"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ price } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -9157,6 +9168,9 @@
       ],
       "Couldn’t create accounts": [
         "Nie można utworzyć kont"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Utwórz ${ selectedUserIds.length } użytkownika",
