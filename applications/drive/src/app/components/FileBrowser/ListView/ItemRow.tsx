@@ -70,6 +70,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
                     'file-browser-list-item flex user-select-none group-hover-opacity-container',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) && 'bg-strong',
                     (dragging || item.isLocked) && 'opacity-50',
+                    item.isInvitation && 'file-browser-list-item--invitation',
                 ])}
                 aria-disabled={item.isLocked}
                 {...itemHandlers}

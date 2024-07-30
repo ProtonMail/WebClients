@@ -37,7 +37,8 @@ function useDragAndDrop({ item, dragMoveControls }: Options) {
         texts
     );
 
-    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.isLocked ? undefined : fn);
+    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) =>
+        item.isLocked || item.isInvitation ? undefined : fn;
 
     const handleDragStart = unlessDisabled(
         useCallback(
@@ -59,7 +60,7 @@ function useDragAndDrop({ item, dragMoveControls }: Options) {
         [dragMove.handleDragEnd]
     );
 
-    const draggable = dragMoveControls && !item.isLocked;
+    const draggable = dragMoveControls && !item.isLocked && !item.isInvitation;
 
     return {
         dragMoveItems,

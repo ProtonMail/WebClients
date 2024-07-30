@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, FileNameDisplay, Icon } from '@proton/components';
+import { Badge, Checkbox, FileNameDisplay, Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
@@ -31,14 +31,41 @@ const GridViewItemBase = ({
     const isContextMenuButtonActive = contextMenuControls.isOpen && selectionControls.selectedItemIds.includes(item.id);
     return (
         <>
-            <div className="flex flex-1 justify-center items-center file-browser-grid-item--container">
-                {IconComponent}
-            </div>
+            <button
+                className={clsx(
+                    'flex flex-1 justify-center items-center file-browser-grid-item--container',
+                    item.isInvitation && 'file-browser-grid-item--invitation'
+                )}
+                onClick={(e) => {
+                    // Show Accept/Decline context menu if you click on the box
+                    if (item.isInvitation) {
+                        selectionControls?.selectItem(item.id);
+                        contextMenuControls.handleContextMenu(e);
+                    }
+                }}
+                onTouchEnd={(e) => {
+                    if (item.isInvitation) {
+                        selectionControls?.selectItem(item.id);
+                        contextMenuControls.handleContextMenuTouch?.(e);
+                    }
+                }}
+            >
+                <>
+                    {item.isInvitation && (
+                        <Badge className="absolute top-0 right-0 mt-1 mr-1" type="primary">{c('Badge')
+                            .t`Invited`}</Badge>
+                    )}
+                    {IconComponent}
+                </>
+            </button>
             <div
                 className={clsx([
                     'flex file-browser-grid-item--select',
                     selectionControls?.selectionState !== SelectionState.NONE ? null : 'mouse:group-hover:opacity-100',
                 ])}
+                style={{
+                    background: item.isInvitation && 'var(--interaction-norm-minor-2)',
+                }}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}
                 onClick={handleCheckboxWrapperClick}
@@ -53,7 +80,12 @@ const GridViewItemBase = ({
                     />
                 ) : null}
             </div>
-            <div className="file-browser-grid-item--file-name flex border-top">
+            <div
+                className={clsx(
+                    'file-browser-grid-item--file-name flex border-top',
+                    item.isInvitation && 'file-browser-grid-item--invitation'
+                )}
+            >
                 {SignatureIconComponent ? SignatureIconComponent : null}
                 <FileNameDisplay text={item.name} className="mx-auto" data-testid="grid-item-name" />
                 <Button
