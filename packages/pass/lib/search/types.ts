@@ -6,21 +6,22 @@ export type ItemMatchFuncMap = { [T in ItemType]: ItemMatchFunc<T> };
 export type ItemMatchFunc<T extends ItemType = ItemType> = (item: ItemRevision<T>) => (needles: string[]) => boolean;
 
 export type SelectItemsOptions = {
-    type?: MaybeNull<ItemType>;
-    shareId?: MaybeNull<string>;
     search?: string;
+    shareId?: MaybeNull<string>;
     sort?: MaybeNull<ItemSortFilter>;
     trashed?: boolean;
+    type?: MaybeNull<ItemType>;
 };
 
 export type SelectItemsByDomainOptions = {
-    protocol: MaybeNull<string>;
     isPrivate: boolean;
+    protocol: MaybeNull<string>;
     shareIds?: string[];
     sortOn?: 'priority' | 'lastUseTime';
+    strict?: boolean;
 };
 
-export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[] };
+export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[]; strict?: boolean };
 export type SelectOTPAutofillCandidateOptions = ParsedUrl & { submission: Maybe<FormSubmission> };
 
 export type SelectAutosaveCandidatesOptions = {

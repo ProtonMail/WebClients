@@ -170,5 +170,117 @@ describe('match url', () => {
                 ItemUrlMatch.NO_MATCH
             );
         });
+
+        test('should handle IP addresses', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['http://192.168.1.1']))('192.168.1.1', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['http://192.168.1.1/path']))('192.168.1.1', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+        });
+
+        test('should handle URLs with ports', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://example.com:8080']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://sub.example.com:8080']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.SUB_MATCH);
+        });
+
+        test('should handle URLs with paths and query parameters', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://example.com/path?query=param']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://sub.example.com/path?query=param']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.SUB_MATCH);
+        });
+
+        test('should handle strict mode', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://example.com']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                    strict: true,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://example.com', 'https://a.example.com']))(
+                    'a.example.com',
+                    {
+                        protocolFilter: [],
+                        isPrivate: false,
+                        strict: true,
+                    }
+                )
+            ).toBe(ItemUrlMatch.SUB_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://example.com']))('b.example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                    strict: true,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://a.example.com']))('b.example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                    strict: true,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://sub.example.com']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                    strict: true,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
+        });
+
+        test('should handle multiple URLs in an item', () => {
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://example.com', 'https://another.com']))('example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                })
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+
+            expect(
+                getItemPriorityForUrl(createMockItem(['https://sub.example.com', 'https://example.com']))(
+                    'example.com',
+                    {
+                        protocolFilter: [],
+                        isPrivate: false,
+                    }
+                )
+            ).toBe(ItemUrlMatch.TOP_MATCH);
+        });
     });
 });
