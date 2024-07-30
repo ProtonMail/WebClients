@@ -25,6 +25,8 @@ export enum TelemetryMeasurementGroups {
     paymentsFlow = 'payments.flow',
     /** Drive Web */
     driveWebFeaturePerformance = 'drive.web.feature_performance',
+    /** Shared */
+    collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -170,6 +172,10 @@ export enum TelemetryDriveWebFeature {
     performance = 'drive_web_feature_performance',
 }
 
+export enum TelemetryCollapsibleLeftSidebarEvents {
+    toggleLeftSidebar = 'toggle_left_sidebar',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetrySubscriptionModalEvents
@@ -188,7 +194,8 @@ export type TelemetryEvents =
     | TelemetryPaymentsEvents
     | TelemetryAccountOrganizationLogoUploadEvents
     | TelemetryDriveWebFeature
-    | TelemetryAccountSecurityCheckupEvents;
+    | TelemetryAccountSecurityCheckupEvents
+    | TelemetryCollapsibleLeftSidebarEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
