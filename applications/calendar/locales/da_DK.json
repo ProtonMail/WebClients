@@ -482,10 +482,10 @@
       "Not now": [
         "Ikke nu"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -601,6 +601,9 @@
       ],
       "Select all": [
         "Vælg alle"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Vælg faktureringscyklus ${ billingText }"
       ],
       "Select calendar view": [
         "Vælg kalendervisning"
@@ -2598,6 +2601,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjælp os med at blive bedre"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Udvidet versionshistorik"
+      ],
+      "Priority support": [
+        "Prioriteret support"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -6670,9 +6681,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle erhvervs-apps til ${ BRAND_NAME } og premium-funktioner, der beskytter hele din virksomhed."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Gældende kreditter, proratering og kuponer anvendes i næste trin"
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
@@ -7388,6 +7396,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
+      ],
+      "Please select your billing country first.": [
+        "Vælg venligst dit faktureringsland først."
+      ],
+      "Please select your billing state first.": [
+        "Vælg venligst dit faktureringsstat først."
+      ],
+      "Select billing country to pay": [
+        "Vælg faktureringsland for at betale"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
@@ -9183,6 +9206,9 @@
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create contact": [
         "Opret kontakt"
       ],
@@ -9756,6 +9782,36 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } konto pr. wallet",
+        "${ n } konti pr. wallet"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadresse",
+        "${ n } e-mailadresser"
+      ],
+      "${ n } wallet": [
+        "${ n } wallet",
+        "${ n } wallets"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "En sikrere måde at gemme dine Bitcoin på"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Opbevar og overfør dine bitcoins sikkert"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problem med wallet"
       ]
     },
     "Warning": {

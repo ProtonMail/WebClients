@@ -485,10 +485,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -604,6 +604,9 @@
       ],
       "Select all": [
         "Selectare toate"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selectare ciclu de facturare la ${ billingText }"
       ],
       "Select calendar view": [
         "Selectare tip afișare calendar"
@@ -2619,6 +2622,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajutați-ne să îmbunătățim"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Istoric extins versiuni"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -5317,6 +5328,11 @@
         "Crearea de invitații la un calendar partajat nu este permisă."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Etichetă legătură web (opțional)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Adăugare etichetă"
@@ -5885,6 +5901,11 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ]
+    },
+    "Link label (optional)": {
+      "Access": [
+        "Accesare"
       ]
     },
     "Link to calendar app": {
@@ -6767,9 +6788,6 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toate aplicațiile comerciale ${ BRAND_NAME } și funcțiile premium pentru a vă proteja întreaga afacere."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
-      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -7514,6 +7532,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
+      ],
+      "Please select billing country": [
+        "Selectați țara de facturare"
+      ],
+      "Please select billing state": [
+        "Selectați statul de facturare"
+      ],
+      "Please select your billing country first.": [
+        "Selectați țara de facturare mai întâi."
+      ],
+      "Please select your billing state first.": [
+        "Selectați statul de facturare mai întâi."
+      ],
+      "Select billing country to pay": [
+        "Selectați țara de facturare pentru a plăti"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
@@ -8651,6 +8684,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "După ce vă expiră abonamentul ${ planName }, contul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "După ce vă expiră abonamentul ${ planName }, contul va fi retrogradat la planul ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Echipa dvs, va experimenta întreruperi în activitatea sa, deoarece utilizatorii suplimentari nu sunt acceptați în planul gratuit."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "După ce vă expiră abonamentul ${ planName }, contul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
       ],
@@ -9350,6 +9386,9 @@
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
+      "Coupon": [
+        "Cupon"
+      ],
       "Create contact": [
         "Creare contact"
       ],
@@ -9933,6 +9972,39 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } cont per portofel",
+        "${ n } conturi per portofel",
+        "${ n } de conturi per portofel"
+      ],
+      "${ n } email address": [
+        "${ n } adresă de e-mail",
+        "${ n } adrese de e-mail",
+        "${ n } de adrese de e-mail"
+      ],
+      "${ n } wallet": [
+        "${ n } portofel",
+        "${ n } portofele",
+        "${ n } de portofele"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "O metodă mai sigură de a vă păstra monedele Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin prin e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Păstrați și transferați în siguranță monedele Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problemă portofel"
       ]
     },
     "Warning": {
