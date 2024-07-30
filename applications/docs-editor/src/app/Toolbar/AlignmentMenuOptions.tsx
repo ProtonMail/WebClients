@@ -4,12 +4,15 @@ import { c } from 'ttag'
 import { memo } from 'react'
 import { DropdownMenuButton, Icon } from '@proton/components'
 import clsx from '@proton/utils/clsx'
+import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
+import ToolbarTooltip from './ToolbarTooltip'
 
 export const AlignmentOptions = [
   {
     align: 'left',
     name: c('Action').t`Left align`,
     icon: <Icon name="text-align-left" />,
+    label: <ShortcutLabel shortcut="LEFT_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
     },
@@ -18,6 +21,7 @@ export const AlignmentOptions = [
     align: 'center',
     name: c('Action').t`Center align`,
     icon: <Icon name="text-align-center" />,
+    label: <ShortcutLabel shortcut="CENTER_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
     },
@@ -26,6 +30,7 @@ export const AlignmentOptions = [
     align: 'right',
     name: c('Action').t`Right align`,
     icon: <Icon name="text-align-right" />,
+    label: <ShortcutLabel shortcut="RIGHT_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
     },
@@ -33,6 +38,7 @@ export const AlignmentOptions = [
   {
     align: 'justify',
     name: c('Action').t`Justify align`,
+    label: <ShortcutLabel shortcut="JUSTIFY_SHORTCUT" />,
     icon: <Icon name="text-align-justify" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
@@ -49,16 +55,17 @@ function AlignmentMenuOptions({
   elementFormat: ElementFormatType
   isEditable: boolean
 }) {
-  return AlignmentOptions.map(({ align, icon, name, onClick }) => (
-    <DropdownMenuButton
-      key={align}
-      className={clsx('flex items-center gap-2 text-left text-sm', align === elementFormat && 'active font-bold')}
-      onClick={() => onClick(activeEditor)}
-      disabled={!isEditable}
-    >
-      {icon}
-      {name}
-    </DropdownMenuButton>
+  return AlignmentOptions.map(({ align, label, icon, name, onClick }) => (
+    <ToolbarTooltip key={align} title={label} originalPlacement="right">
+      <DropdownMenuButton
+        className={clsx('flex items-center gap-2 text-left text-sm', align === elementFormat && 'active font-bold')}
+        onClick={() => onClick(activeEditor)}
+        disabled={!isEditable}
+      >
+        {icon}
+        {name}
+      </DropdownMenuButton>
+    </ToolbarTooltip>
   ))
 }
 
