@@ -310,7 +310,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       .connect(() => {
         return this.abortWebsocketConnectionAttempt
       })
-      .catch(this.logger.error)
+      .catch((e) => {
+        this.logger.error(e)
+      })
 
     this.beginInitialConnectionTimer()
 
