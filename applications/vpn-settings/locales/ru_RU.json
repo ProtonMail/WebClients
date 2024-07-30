@@ -2155,6 +2155,14 @@
         "Помогите нам совершенствоваться"
       ]
     },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Подробная история версий"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Электронное письмо с подтверждением отправлено на ${ address }"
@@ -5429,9 +5437,6 @@
       "Learn more": [
         "Подробнее"
       ],
-      "Need help?": [
-        "Нужна помощь?"
-      ],
       "Not activated": [
         "Не активировано"
       ],
@@ -6219,9 +6224,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса."
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
@@ -7319,6 +7321,16 @@
       ],
       "User": [
         "Пользователь"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Отменить"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Информация"
       ]
     },
     "scim: Action": {
@@ -9233,6 +9245,9 @@
       "Forgot recovery method": [
         "Забыли метод восстановления"
       ],
+      "Gateway": [
+        "Шлюз"
+      ],
       "Gateways": [
         "Шлюзы"
       ],
@@ -9753,6 +9768,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "Двухфакторная аутентификация"
+      ],
       "Administrators can't access the data of private users": [
         "Администраторы не могут получить доступ к данным частных пользователей"
       ],
