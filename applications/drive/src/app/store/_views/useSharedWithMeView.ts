@@ -65,6 +65,7 @@ export default function useSharedWithMeView(shareId: string) {
     const acceptPendingInvitation = async (invitationId: string) => {
         const abortSignal = new AbortController().signal;
         const pendingInvitation = getPendingInvitation(invitationId);
+        updatePendingInvitation({ ...pendingInvitation, isLocked: true });
         await acceptInvitation(abortSignal, pendingInvitation)
             .then((response) => {
                 if (response?.Code !== 1000) {
@@ -84,6 +85,7 @@ export default function useSharedWithMeView(shareId: string) {
                     type: 'error',
                     text: error.message,
                 });
+                updatePendingInvitation({ ...pendingInvitation, isLocked: false });
                 throw error;
             });
 

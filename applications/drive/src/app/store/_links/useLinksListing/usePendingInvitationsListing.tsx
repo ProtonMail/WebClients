@@ -19,13 +19,16 @@ interface FetchSharedLinksMeta extends FetchMeta {
     lastSorting: SortParams;
 }
 
+export interface ExtendedInvitationDetails extends ShareInvitationDetails {
+    isLocked?: boolean;
+}
 /**
  * Custom hook for managing and fetching shared with me links.
  */
 export function usePendingInvitationsListing() {
     const debouncedRequest = useDebouncedRequest();
     const { getDefaultShare } = useDefaultShare();
-    const [pendingInvitations, setPendingInvitations] = useState<Map<string, ShareInvitationDetails>>(new Map([]));
+    const [pendingInvitations, setPendingInvitations] = useState<Map<string, ExtendedInvitationDetails>>(new Map([]));
     const { getPrivateAddressKeys } = useDriveCrypto();
     const { loadFullListingWithAnchor } = useLinksListingHelpers();
     const fetchMeta = useRef<FetchSharedLinksMeta>({
@@ -125,7 +128,7 @@ export function usePendingInvitationsListing() {
         });
     };
 
-    const updatePendingInvitation = (invitationDetails: ShareInvitationDetails) => {
+    const updatePendingInvitation = (invitationDetails: ExtendedInvitationDetails) => {
         setPendingInvitations((prevPendingInvitations) => {
             const newMap = new Map(prevPendingInvitations);
             newMap.set(invitationDetails.invitation.invitationId, invitationDetails);
