@@ -13,15 +13,18 @@ import {
     CollapsibleHeaderIconButton,
     DropdownSizeUnit,
     Icon,
+    ModalTwoFooter,
     PasswordInputTwo,
     TextAreaTwo,
     useModalStateWithData,
 } from '@proton/components/components';
+import { useWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import type { SubTheme } from '../../utils';
+import { getTermAndConditionsSentence } from '../../utils/legal';
 import type { WalletInformationalModalOwnProps } from '../WalletInformationalModal';
 import { WalletInformationalModal } from '../WalletInformationalModal';
 
@@ -42,6 +45,7 @@ export const WalletImportModal = ({
     ...modalProps
 }: Props) => {
     const [modal, setModal] = useModalStateWithData<WalletInformationalModalOwnProps>();
+    const [walletSettings] = useWalletSettings();
 
     const {
         walletName,
@@ -170,22 +174,27 @@ export const WalletImportModal = ({
                     </CollapsibleContent>
                 </Collapsible>
 
-                <div className="w-full flex">
-                    <Button
-                        fullWidth
-                        className="block mt-2"
-                        size="large"
-                        shape="solid"
-                        color="norm"
-                        disabled={loadingWalletSubmit}
-                        onClick={() => {
-                            void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation, isImported: true });
-                        }}
-                    >
-                        {c('Wallet setup').t`Import`}
-                        {loadingWalletSubmit && <CircleLoader className="ml-2" />}
-                    </Button>
-                </div>
+                <ModalTwoFooter className="prompt-footer">
+                    <div className="w-full flex flex-row gap-2">
+                        <Button
+                            fullWidth
+                            className="block mt-2"
+                            size="large"
+                            shape="solid"
+                            color="norm"
+                            disabled={loadingWalletSubmit}
+                            onClick={() => {
+                                void onWalletSubmit({ isFirstCreation, isImported: true });
+                            }}
+                        >
+                            {c('Wallet setup').t`Import`}
+                            {loadingWalletSubmit && <CircleLoader className="ml-2" />}
+                        </Button>
+                    </div>
+                    {walletSettings?.AcceptTermsAndConditions ? undefined : (
+                        <p className="color-weak text-break text-center text-sm">{getTermAndConditionsSentence()}</p>
+                    )}
+                </ModalTwoFooter>
             </Modal>
 
             {modal.data && <WalletInformationalModal kind={modal.data.kind} {...modal} />}
