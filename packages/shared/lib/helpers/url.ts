@@ -1,6 +1,7 @@
 import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
 
-import type { APP_NAMES } from '../constants';
+import type { APP_NAMES} from '../constants';
+import { VPN_HOSTNAME } from '../constants';
 import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES } from '../constants';
 import window from '../window';
 
@@ -407,4 +408,12 @@ export const joinPaths = (...paths: string[]) => {
     return paths.reduce((acc, path) => {
         return `${stripTrailingSlash(acc)}/${stripLeadingSlash(path)}`;
     }, '');
+};
+
+export const getVpnAccountUrl = (location = window.location) => {
+    if (location.hostname === VPN_HOSTNAME) {
+        return `https://${VPN_HOSTNAME}`;
+    }
+    const secondLevelDomain = getSecondLevelDomain(location.hostname);
+    return `https://vpn.${secondLevelDomain}`;
 };
