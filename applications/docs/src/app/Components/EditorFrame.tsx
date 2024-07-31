@@ -4,7 +4,7 @@ import {
   EDITOR_IFRAME_FOCUS_EVENT,
   EDITOR_READY_POST_MESSAGE_EVENT,
   EDITOR_TAG_INFO_EVENT,
-  EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH,
+  EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
 } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
@@ -36,19 +36,17 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
   const url = useMemo(() => GetEditorUrl(isViewOnly), [isViewOnly])
   const didAlreadyLoad = useRef(false)
-  const willReloadDueToTagMismatch = useRef(false)
 
   const onReady = useCallback(() => {
     if (!iframe) {
       throw new Error('Frame not found')
     }
 
-    if (didAlreadyLoad.current && !willReloadDueToTagMismatch.current) {
+    if (didAlreadyLoad.current) {
       return
     }
 
     didAlreadyLoad.current = true
-    willReloadDueToTagMismatch.current = false
 
     onFrameReady(iframe)
 
@@ -65,8 +63,9 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
         return
       }
 
-      if (event.data === EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH) {
-        willReloadDueToTagMismatch.current = true
+      if (event.data === EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD) {
+        window.location.reload()
+        return
       }
 
       if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {

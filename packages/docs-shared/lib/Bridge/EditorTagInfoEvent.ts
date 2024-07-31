@@ -4,4 +4,4 @@
  * which then updates the cookie and reloads the page if the tag is different.
  */
 export const EDITOR_TAG_INFO_EVENT = 'docs-editor-tag-info'
-export const EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH = 'docs-editor-will-reload-due-to-tag-mismatch'
+export const EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD = 'docs-editor-requires-reload'

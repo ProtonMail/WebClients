@@ -146,7 +146,7 @@ describe('WebsocketConnection', () => {
 
       const getToken = (connection.getTokenOrFailConnection = jest.fn())
 
-      connection.connect()
+      void connection.connect()
 
       expect(getToken).not.toHaveBeenCalled()
     })
