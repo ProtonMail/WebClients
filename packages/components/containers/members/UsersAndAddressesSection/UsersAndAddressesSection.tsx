@@ -7,25 +7,26 @@ import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
+import {
+    getInvitationAcceptLimit,
+    getInvitationLimit,
+} from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
-import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
+import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import {
-    getHasPassB2BPlan,
-    getHasVpnOrPassB2BPlan,
-    hasFamily,
-    hasVisionary,
-} from '@proton/shared/lib/helpers/subscription';
+import { getHasPassB2BPlan, getHasVpnOrPassB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import {
     getIsDomainActive,
+    getOrganizationDenomination,
     getOrganizationKeyInfo,
+    isOrganizationFamily,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
@@ -100,8 +101,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const accessToAssistant = useAssistantFeatureEnabled();
 
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
-    const hasSetupActiveOrganization =
-        organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetup(organization);
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
     const organizationModals = useOrganizationModals(onceRef);
@@ -128,7 +127,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
 
-    const canInviteProtonUsers = hasVisionary(subscription) || hasFamily(subscription);
+    const isOrgAFamilyPlan = getOrganizationDenomination(organization) === 'familyGroup';
+    const isOrgFamily = isOrganizationFamily(organization);
+
+    const canInviteProtonUsers = hasVisionary(subscription) || isOrgAFamilyPlan;
     const { createNotification } = useNotifications();
 
     const cleanOption = {
@@ -292,7 +294,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleAddUser = () => {
         // Visionary can either create a sub user or invite existing users
-        if (hasVisionary(subscription) || hasFamily(subscription)) {
+        if (canInviteProtonUsers) {
             setInviteOrCreateUserModalOpen(true);
             return;
         }
@@ -473,13 +475,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         </>
                     ) : (
                         <>
-                            {hasSetupActiveOrganization && (
+                            {isOrgAFamilyPlan ? (
                                 <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                                     {c('Action').t`Invite user`}
                                 </Button>
-                            )}
-
-                            {hasSetupActiveOrganizationWithKeys && (
+                            ) : (
                                 <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
                                     {c('Action').t`Add user`}
                                 </Button>
@@ -490,13 +490,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 (hasReachedLimit ? (
                                     <Info
                                         className="color-danger"
-                                        title={c('familyOffer_2023:Family plan')
-                                            .t`You have reached the limit of 10 accepted invitations in 6 months.`}
+                                        title={isOrgFamily ? getInvitationLimit(10) : getInvitationLimit(2)}
                                     />
                                 ) : (
                                     <Info
-                                        title={c('familyOffer_2023:Family plan')
-                                            .t`Only 10 accepted invitations are allowed in a 6-month period.`}
+                                        title={isOrgFamily ? getInvitationAcceptLimit(10) : getInvitationAcceptLimit(2)}
                                     />
                                 ))}
 
@@ -582,7 +580,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                 </UserTableBadge>
                                                             )}
                                                             {allowPrivateMemberConfiguration &&
-                                                                !hasFamily(subscription) &&
+                                                                !isOrgAFamilyPlan &&
                                                                 Boolean(member.Private) && (
                                                                     <UserTableBadge
                                                                         type="info"

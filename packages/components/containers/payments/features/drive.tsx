@@ -51,6 +51,7 @@ export const getStorageFeature = (
         highlight?: boolean;
         boldStorageSize?: boolean;
         family?: boolean;
+        duo?: boolean;
         visionary?: boolean;
         subtext?: boolean;
     }
@@ -73,11 +74,14 @@ export const getStorageFeature = (
     }
 
     // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
-    const humanReadableSize = options.visionary
-        ? getTb(6)
-        : options.family
-          ? getTb(3)
-          : humanSize({ bytes, fraction: 0 });
+    let humanReadableSize = humanSize({ bytes, fraction: 0 });
+    if (options.duo) {
+        humanReadableSize = getTb(1);
+    } else if (options.visionary) {
+        humanReadableSize = getTb(6);
+    } else if (options.family) {
+        humanReadableSize = getTb(3);
+    }
 
     const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
     const tooltip = options.family
@@ -138,14 +142,18 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getDriveAppFeature = (options?: { family?: boolean }): PlanCardFeatureDefinition => {
+export const getDriveAppFeature = (options?: { family?: boolean; duo?: boolean }): PlanCardFeatureDefinition => {
+    let tooltip = c('new_plans: tooltip')
+        .t`${DRIVE_APP_NAME}: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`;
+
+    if (options?.duo || options?.family) {
+        tooltip = c('new_plans: tooltip')
+            .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`;
+    }
+
     return {
         text: DRIVE_APP_NAME,
-        tooltip: options?.family
-            ? c('new_plans: tooltip')
-                  .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`
-            : c('new_plans: tooltip')
-                  .t`${DRIVE_APP_NAME}: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.`,
+        tooltip,
         included: true,
         icon: 'brand-proton-drive',
     };
@@ -204,6 +212,11 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
                 freePlan,
             }),
+            [PLANS.DUO]: getStorageFeature(plansMap[PLANS.DUO]?.MaxSpace ?? 1099511627776, {
+                family: true,
+                subtext: true,
+                freePlan,
+            }),
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360, {
                 subtext: true,
             }),
@@ -238,6 +251,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.WALLET]: getEndToEndEncryption(),
                 [PLANS.PASS]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
+                [PLANS.DUO]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
                 [PLANS.MAIL_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
@@ -259,6 +273,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS]: getShareFeature(),
                 [PLANS.WALLET]: getShareFeature(),
                 [PLANS.FAMILY]: getShareFeature(),
+                [PLANS.DUO]: getShareFeature(),
                 [PLANS.MAIL_PRO]: getShareFeature(),
                 [PLANS.MAIL_BUSINESS]: getShareFeature(),
                 [PLANS.BUNDLE_PRO]: getShareFeature(),
@@ -280,6 +295,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS]: getAdvancedShareFeature(),
                 [PLANS.WALLET]: getAdvancedShareFeature(),
                 [PLANS.FAMILY]: getAdvancedShareFeature(),
+                [PLANS.DUO]: getAdvancedShareFeature(),
                 [PLANS.MAIL_PRO]: getAdvancedShareFeature(),
                 [PLANS.MAIL_BUSINESS]: getAdvancedShareFeature(),
                 [PLANS.BUNDLE_PRO]: getAdvancedShareFeature(),
@@ -302,6 +318,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS]: getDocumentEditor(),
                 [PLANS.WALLET]: getDocumentEditor(),
                 [PLANS.FAMILY]: getDocumentEditor(),
+                [PLANS.DUO]: getDocumentEditor(),
                 [PLANS.MAIL_PRO]: getDocumentEditor(),
                 [PLANS.MAIL_BUSINESS]: getDocumentEditor(),
                 [PLANS.BUNDLE_PRO]: getDocumentEditor(),

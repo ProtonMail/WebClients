@@ -87,19 +87,24 @@ export const getB2BHighSpeedVPNConnections = (): PlanCardFeatureDefinition => {
 export const getVPNAppFeature = ({
     serversCount,
     family,
+    duo,
 }: {
     serversCount: VPNServersCountData;
     family?: boolean;
+    duo?: boolean;
 }): PlanCardFeatureDefinition => {
     const serversAndCountries = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+    let tooltip = c('new_plans: tooltip')
+        .t`${VPN_APP_NAME}: Access blocked content and browse privately. Includes ${serversAndCountries}, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`;
+
+    if (duo || family) {
+        tooltip = c('new_plans: tooltip')
+            .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`;
+    }
+
     return {
         text: VPN_APP_NAME,
-        tooltip: family
-            ? c('new_plans: tooltip')
-                  .t`Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content`
-            : // translator: Includes [X+ servers across Y+ countries], ...
-              c('new_plans: tooltip')
-                  .t`${VPN_APP_NAME}: Access blocked content and browse privately. Includes ${serversAndCountries}, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`,
+        tooltip,
         included: true,
         icon: 'brand-proton-vpn',
     };
@@ -436,6 +441,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.WALLET]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.FAMILY]: getVPNConnections(VPN_CONNECTIONS),
+                [PLANS.DUO]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.MAIL_BUSINESS]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS),
@@ -458,6 +464,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getVPNConnections(1),
                 [PLANS.WALLET]: getVPNConnections(1),
                 [PLANS.FAMILY]: getVPNConnectionsB2B(1),
+                [PLANS.DUO]: getVPNConnectionsB2B(1),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
                 [PLANS.MAIL_BUSINESS]: getVPNConnectionsB2B(1),
                 [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
@@ -480,6 +487,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getVPNConnections(1),
                 [PLANS.WALLET]: getVPNConnections(1),
                 [PLANS.FAMILY]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.DUO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
                 [PLANS.MAIL_BUSINESS]: getVPNConnectionsB2B(1),
                 [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
@@ -501,6 +509,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getCountries(freeServers),
                 [PLANS.WALLET]: getCountries(freeServers),
                 [PLANS.FAMILY]: getCountries(plusServers),
+                [PLANS.DUO]: getCountries(plusServers),
                 [PLANS.MAIL_PRO]: getCountries(freeServers),
                 [PLANS.MAIL_BUSINESS]: getCountries(freeServers),
                 [PLANS.BUNDLE_PRO]: getCountries(plusServers),
@@ -522,6 +531,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getVPNSpeed('medium'),
                 [PLANS.WALLET]: getVPNSpeed('medium'),
                 [PLANS.FAMILY]: getVPNSpeed('highest'),
+                [PLANS.DUO]: getVPNSpeed('highest'),
                 [PLANS.MAIL_PRO]: getVPNSpeed('medium'),
                 [PLANS.MAIL_BUSINESS]: getVPNSpeed('medium'),
                 [PLANS.BUNDLE_PRO]: getVPNSpeed('highest'),
@@ -543,6 +553,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getNetShield(false),
                 [PLANS.WALLET]: getNetShield(false),
                 [PLANS.FAMILY]: getNetShield(true),
+                [PLANS.DUO]: getNetShield(true),
                 [PLANS.MAIL_PRO]: getNetShield(false),
                 [PLANS.MAIL_BUSINESS]: getNetShield(false),
                 [PLANS.PASS_PRO]: getNetShield(false),
@@ -564,6 +575,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getStreaming(false),
                 [PLANS.WALLET]: getStreaming(false),
                 [PLANS.FAMILY]: getStreaming(true),
+                [PLANS.DUO]: getStreaming(true),
                 [PLANS.MAIL_PRO]: getStreaming(false),
                 [PLANS.MAIL_BUSINESS]: getStreaming(false),
                 [PLANS.BUNDLE_PRO]: getStreaming(true),
@@ -585,6 +597,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getP2P(false),
                 [PLANS.WALLET]: getP2P(false),
                 [PLANS.FAMILY]: getP2P(true),
+                [PLANS.DUO]: getP2P(true),
                 [PLANS.MAIL_PRO]: getP2P(false),
                 [PLANS.MAIL_BUSINESS]: getP2P(false),
                 [PLANS.BUNDLE_PRO]: getP2P(true),
@@ -606,6 +619,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getDoubleHop(false),
                 [PLANS.WALLET]: getDoubleHop(false),
                 [PLANS.FAMILY]: getDoubleHop(true, true),
+                [PLANS.DUO]: getDoubleHop(true, true),
                 [PLANS.MAIL_PRO]: getDoubleHop(false),
                 [PLANS.MAIL_BUSINESS]: getDoubleHop(false),
                 [PLANS.BUNDLE_PRO]: getDoubleHop(true, true),
@@ -627,6 +641,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getSecureCore(false),
                 [PLANS.WALLET]: getSecureCore(false),
                 [PLANS.FAMILY]: getSecureCore(true),
+                [PLANS.DUO]: getSecureCore(true),
                 [PLANS.MAIL_PRO]: getSecureCore(false),
                 [PLANS.MAIL_BUSINESS]: getSecureCore(false),
                 [PLANS.BUNDLE_PRO]: getSecureCore(true),
@@ -648,6 +663,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getTor(false),
                 [PLANS.WALLET]: getTor(false),
                 [PLANS.FAMILY]: getTor(true),
+                [PLANS.DUO]: getTor(true),
                 [PLANS.MAIL_PRO]: getTor(false),
                 [PLANS.MAIL_BUSINESS]: getTor(false),
                 [PLANS.BUNDLE_PRO]: getTor(true),
@@ -669,6 +685,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getNoLogs(),
                 [PLANS.WALLET]: getNoLogs(),
                 [PLANS.FAMILY]: getNoLogs(),
+                [PLANS.DUO]: getNoLogs(),
                 [PLANS.MAIL_PRO]: getNoLogs(),
                 [PLANS.MAIL_BUSINESS]: getNoLogs(),
                 [PLANS.BUNDLE_PRO]: getNoLogs(),
@@ -690,6 +707,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getBandwidth(),
                 [PLANS.WALLET]: getBandwidth(),
                 [PLANS.FAMILY]: getBandwidth(),
+                [PLANS.DUO]: getBandwidth(),
                 [PLANS.MAIL_PRO]: getBandwidth(),
                 [PLANS.MAIL_BUSINESS]: getBandwidth(),
                 [PLANS.BUNDLE_PRO]: getBandwidth(),
@@ -711,6 +729,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getDNSLeak(),
                 [PLANS.WALLET]: getDNSLeak(),
                 [PLANS.FAMILY]: getDNSLeak(),
+                [PLANS.DUO]: getDNSLeak(),
                 [PLANS.MAIL_PRO]: getDNSLeak(),
                 [PLANS.MAIL_BUSINESS]: getDNSLeak(),
                 [PLANS.BUNDLE_PRO]: getDNSLeak(),
@@ -732,6 +751,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getKillSwitch(),
                 [PLANS.WALLET]: getKillSwitch(),
                 [PLANS.FAMILY]: getKillSwitch(),
+                [PLANS.DUO]: getKillSwitch(),
                 [PLANS.MAIL_PRO]: getKillSwitch(),
                 [PLANS.MAIL_BUSINESS]: getKillSwitch(),
                 [PLANS.BUNDLE_PRO]: getKillSwitch(),
@@ -753,6 +773,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getEncryption(),
                 [PLANS.WALLET]: getEncryption(),
                 [PLANS.FAMILY]: getEncryption(),
+                [PLANS.DUO]: getEncryption(),
                 [PLANS.MAIL_PRO]: getEncryption(),
                 [PLANS.MAIL_BUSINESS]: getEncryption(),
                 [PLANS.BUNDLE_PRO]: getEncryption(),
@@ -774,6 +795,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getRouterSupport(),
                 [PLANS.WALLET]: getRouterSupport(),
                 [PLANS.FAMILY]: getRouterSupport(),
+                [PLANS.DUO]: getRouterSupport(),
                 [PLANS.MAIL_PRO]: getRouterSupport(),
                 [PLANS.MAIL_BUSINESS]: getRouterSupport(),
                 [PLANS.BUNDLE_PRO]: getRouterSupport(),
@@ -795,6 +817,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS]: getSplitTunnel(false),
                 [PLANS.WALLET]: getSplitTunnel(false),
                 [PLANS.FAMILY]: getSplitTunnel(true),
+                [PLANS.DUO]: getSplitTunnel(true),
                 [PLANS.MAIL_PRO]: getSplitTunnel(false),
                 [PLANS.MAIL_BUSINESS]: getSplitTunnel(false),
                 [PLANS.BUNDLE_PRO]: getSplitTunnel(true),

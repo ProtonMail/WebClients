@@ -8,11 +8,11 @@ import {
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     getHasVpnOrPassB2BPlan,
-    hasFamily,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 interface Props {
     app: APP_NAMES;
@@ -53,7 +53,7 @@ export const getOrganizationAppRoutes = ({
         canHaveOrganization &&
         (hasOrganizationKey || hasOrganization);
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
-    const isPartOfFamily = hasFamily(subscription);
+    const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
