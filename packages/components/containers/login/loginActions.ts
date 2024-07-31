@@ -12,7 +12,8 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES} from '@proton/shared/lib/constants';
+import { MINUTE } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -573,11 +574,6 @@ export const handleExternalSSOLogin = ({
                 action: 'resolve' as const,
                 payload: { uid, token },
             };
-        } else {
-            return {
-                action: 'reject' as const,
-                payload: new Error('Unknown message'),
-            };
         }
     };
 
@@ -588,7 +584,8 @@ export const handleExternalSSOLogin = ({
     }
 
     return new Promise<{ uid: string; token: string }>((resolve, reject) => {
-        let handle: ReturnType<typeof setInterval> | undefined = undefined;
+        let openHandle: ReturnType<typeof setInterval> | undefined = undefined;
+        let timeoutHandle: ReturnType<typeof setTimeout> | undefined = undefined;
         let reset: () => void;
 
         const assertOpen = () => {
@@ -598,39 +595,46 @@ export const handleExternalSSOLogin = ({
             }
         };
 
-        function onMessage(event: MessageEvent) {
+        const onMessage = (event: MessageEvent) => {
             if (event.source !== tab && getHostname(event.origin) !== window.location.origin) {
                 return;
             }
 
             const result = handleMessage(event);
-            if (result) {
-                if (result.action === 'resolve') {
-                    resolve(result.payload);
-                } else if (result.action === 'reject') {
-                    reject(result.payload);
-                }
-                reset();
-                tab?.close?.();
+            if (!result) {
+                return;
             }
-        }
 
-        function abort() {
+            if (result.action === 'resolve') {
+                resolve(result.payload);
+            } else if (result.action === 'reject') {
+                reject(result.payload);
+            }
+
+            reset();
+            tab?.close?.();
+        };
+
+        const abort = () => {
             reset();
             tab?.close?.();
             reject(new ExternalSSOError('Process aborted'));
-        }
+        };
 
         reset = () => {
-            clearInterval(handle);
-            signal.removeEventListener('abort', abort);
+            clearTimeout(timeoutHandle);
+            clearInterval(openHandle);
             window.removeEventListener('message', onMessage, false);
+            signal.removeEventListener('abort', abort);
         };
 
         signal.addEventListener('abort', abort);
         window.addEventListener('message', onMessage, false);
-        handle = setInterval(() => {
+        openHandle = setInterval(() => {
             assertOpen();
         }, 2500);
+        timeoutHandle = setTimeout(() => {
+            abort();
+        }, 10 * MINUTE);
     });
 };
