@@ -8,6 +8,7 @@ import {
   MimeIcon,
   SimpleDropdown,
   useAppTitle,
+  useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
 import { useCallback, useEffect, useState } from 'react'
@@ -31,6 +32,7 @@ const DocumentTitleDropdown = ({
   action?: DocumentAction['mode']
 }) => {
   const application = useApplication()
+  const { getLocalID } = useAuthentication()
 
   const [title, setTitle] = useState<string | undefined>()
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
@@ -315,7 +317,7 @@ const DocumentTitleDropdown = ({
           <DropdownMenuButton
             className="flex items-center text-left"
             onClick={() => {
-              window.open(getAppHref('/', APPS.PROTONDRIVE), '_blank')
+              window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_blank')
             }}
             data-testid="dropdown-open-drive"
           >
