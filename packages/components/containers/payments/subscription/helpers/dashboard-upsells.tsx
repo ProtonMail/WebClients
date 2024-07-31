@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES} from '@proton/shared/lib/constants';
+import { DUO_MAX_USERS } from '@proton/shared/lib/constants';
 import {
     APPS,
     BRAND_NAME,
@@ -348,6 +349,55 @@ const getBundleUpsell = ({
     });
 };
 
+const getDuoUpsell = ({
+    plansMap,
+    freePlan,
+    hasVPN,
+    hasPaidMail,
+    openSubscriptionModal,
+    currency,
+    app,
+    serversCount,
+    ...rest
+}: GetPlanUpsellArgs): MaybeUpsell => {
+    const duoPlan = plansMap[PLANS.DUO];
+    if (!duoPlan) {
+        return null;
+    }
+
+    const features: MaybeUpsellFeature[] = [
+        getStorageFeature(duoPlan.MaxSpace, { duo: true, freePlan }),
+        getUsersFeature(DUO_MAX_USERS),
+        getNAddressesFeature({ n: duoPlan.MaxAddresses, duo: true }),
+        getFoldersAndLabelsFeature('unlimited'),
+        hasPaidMail ? undefined : getNCalendarsFeature(MAX_CALENDARS_PAID),
+        hasVPN ? undefined : getHighSpeedVPNConnectionsFeature(),
+        getProtonPassFeature(),
+    ];
+
+    return getUpsell({
+        plan: PLANS.DUO,
+        plansMap,
+        freePlan,
+        currency,
+        serversCount,
+        app,
+        upsellPath: DASHBOARD_UPSELL_PATHS.DUO,
+        features: features.filter((item): item is UpsellFeature => isTruthy(item)),
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle: defaultUpsellCycleB2C,
+                plan: PLANS.DUO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
 const getFamilyUpsell = ({
     plansMap,
     freePlan,
@@ -527,6 +577,7 @@ export const resolveUpsellsToDisplay = ({
     freePlan,
     canPay,
     isFree,
+    canAccessDuoPlan,
     ...rest
 }: {
     app: APP_NAMES;
@@ -539,6 +590,7 @@ export const resolveUpsellsToDisplay = ({
     isFree?: boolean;
     hasPaidMail?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
+    canAccessDuoPlan?: boolean;
 }): Upsell[] => {
     const resolve = () => {
         if (!canPay || !subscription) {
@@ -579,9 +631,22 @@ export const resolveUpsellsToDisplay = ({
             case Boolean(hasVPNFree):
                 return [getVPNUpsell(upsellsPayload)];
             case Boolean(isFree || hasOnePlusSubscription(subscription)):
-                return [getBundleUpsell({ ...upsellsPayload, isRecommended: true }), getFamilyUpsell(upsellsPayload)];
+                return [
+                    getBundleUpsell({
+                        ...upsellsPayload,
+                        isRecommended: true,
+                    }),
+                    canAccessDuoPlan ? getDuoUpsell(upsellsPayload) : getFamilyUpsell(upsellsPayload),
+                ];
             case hasBundle(subscription):
-                return [getFamilyUpsell(upsellsPayload)];
+                return [
+                    canAccessDuoPlan &&
+                        getDuoUpsell({
+                            ...upsellsPayload,
+                            isRecommended: true,
+                        }),
+                    getFamilyUpsell(upsellsPayload),
+                ].filter(isTruthy);
             case hasMailPro(subscription):
                 return [getMailBusinessUpsell(upsellsPayload)];
             case hasMailBusiness(subscription):
