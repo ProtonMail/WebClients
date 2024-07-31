@@ -71,7 +71,11 @@ export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlan
         return [];
     }
     return [
-        getStorageFeature(plan.MaxSpace, { freePlan, family: plan.Name === PLANS.FAMILY ? true : false }),
+        getStorageFeature(plan.MaxSpace, {
+            freePlan,
+            family: plan.Name === PLANS.FAMILY,
+            duo: plan.Name === PLANS.DUO,
+        }),
         getNAddressesFeature({ n: plan.MaxAddresses }),
         getFoldersAndLabelsFeature('unlimited'),
         getNMessagesFeature('unlimited'),
