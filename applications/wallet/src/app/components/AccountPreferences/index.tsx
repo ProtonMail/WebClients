@@ -22,9 +22,10 @@ interface Props {
     wallet: IWasmApiWalletData;
     walletAccount: WasmApiWalletAccount;
     otherWallets: IWasmApiWalletData[];
+    shouldShowBvEWarning: boolean;
 }
 
-export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Props) => {
+export const AccountPreferences = ({ wallet, walletAccount, otherWallets, shouldShowBvEWarning }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const {
@@ -125,10 +126,11 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
             />
 
             <EmailIntegrationInput
-                walletAccountId={walletAccount.ID}
+                walletAccount={walletAccount}
                 value={walletAccount.Addresses}
                 options={addressesWithAvailability}
                 loading={isLoadingEmailUpdate}
+                shouldShowBvEWarning={shouldShowBvEWarning}
                 onAddAddress={(address) => {
                     void onAddEmailAddress(address);
                 }}
