@@ -4,13 +4,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
-import {
-    MemoizedIconRow as IconRow,
-    Notifications,
-    TextAreaTwo,
-    useFlag,
-    useModalStateObject,
-} from '@proton/components';
+import { MemoizedIconRow as IconRow, Notifications, TextAreaTwo, useModalStateObject } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -36,6 +30,7 @@ import type {
     FrequencyModel,
     NotificationModel,
 } from '@proton/shared/lib/interfaces/calendar';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { getCanChangeCalendarOfEvent } from '../../helpers/event';

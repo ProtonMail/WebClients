@@ -13,7 +13,7 @@ import {
     SettingsLink,
     WalletLogo,
 } from '@proton/components/components';
-import { SettingsSection, useFlag } from '@proton/components/containers';
+import { SettingsSection } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -36,6 +36,7 @@ import {
     getSpace,
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 

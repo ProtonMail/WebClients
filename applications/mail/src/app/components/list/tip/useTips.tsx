@@ -4,7 +4,7 @@ import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { FeatureCode, useAddresses, useFeature, useFlag, useMailSettings, useUser } from '@proton/components';
+import { FeatureCode, useAddresses, useFeature, useMailSettings, useUser } from '@proton/components';
 import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
@@ -12,6 +12,7 @@ import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import { ADDRESS_TYPE, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
+import { useFlag } from '@proton/unleash';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from 'proton-mail/constants';
 import type { TipData } from 'proton-mail/models/tip';

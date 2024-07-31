@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import {
     useConversationCounts,
-    useFlag,
     useGetConversationCounts,
     useGetMessageCounts,
     useMessageCounts,
@@ -11,6 +10,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

@@ -1,9 +1,9 @@
 import type { ReadableStream } from 'web-streams-polyfill';
 
-import { useFlag } from '@proton/components/containers';
 import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import type { SharedFileScan, SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import { useFlag } from '@proton/unleash';
 
 import { usePublicSession } from '../_api';
 import type { DecryptedLink } from '../_links';

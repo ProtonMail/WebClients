@@ -10,13 +10,14 @@ import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.se
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import type { OnboardingStepRenderCallback } from '@proton/components';
-import { OnboardingContent, OnboardingModal, OnboardingStep, useActiveBreakpoint, useFlag } from '@proton/components';
+import { OnboardingContent, OnboardingModal, OnboardingStep, useActiveBreakpoint } from '@proton/components';
 import GmailSyncModalAnimation from '@proton/components/containers/gmailSyncModal/GmailSyncModalAnimation';
 import SignInWithGoogle from '@proton/components/containers/gmailSyncModal/SignInWithGoogle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockSender from '@proton/styles/assets/img/onboarding/mail_onboarding_block_sender.svg';
 import blockTrackers from '@proton/styles/assets/img/onboarding/mail_onboarding_block_trackers.svg';
 import encryption from '@proton/styles/assets/img/onboarding/mail_onboarding_encryption.svg';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';

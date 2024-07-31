@@ -13,12 +13,7 @@ import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/S
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
 import type { OnLoginCallbackResult, ProtonLoginCallback } from '@proton/components';
-import {
-    NotificationsChildren,
-    UnAuthenticated,
-    UnAuthenticatedApiProvider,
-    UnleashFlagProvider,
-} from '@proton/components';
+import { NotificationsChildren, UnAuthenticated, UnAuthenticatedApiProvider, useApi } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
 import ModalsChildren from '@proton/components/containers/modals/Children';
@@ -27,6 +22,7 @@ import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicA
 import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { UnleashFlagProvider } from '@proton/unleash';
 
 import forgotUsernamePage from '../pages/forgot-username';
 import loginPage from '../pages/login';
@@ -64,6 +60,11 @@ interface InnerPublicAppProps {
     location: ReturnType<typeof useLocationWithoutLocale>;
 }
 
+const UnleashFlagProviderWrapper = ({ children }: { children: ReactNode }) => {
+    const api = useApi();
+    return <UnleashFlagProvider api={api}>{children}</UnleashFlagProvider>;
+};
+
 const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
     const history = useHistory();
     const [, setState] = useState(1);
@@ -77,7 +78,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
             <NotificationsChildren />
             <ModalsChildren />
             <UnAuthenticatedApiProvider loader={loader}>
-                <UnleashFlagProvider>
+                <UnleashFlagProviderWrapper>
                     <PublicAppSetup loader={loader}>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
@@ -174,7 +175,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                             </UnAuthenticated>
                         </ForceRefreshContext.Provider>
                     </PublicAppSetup>
-                </UnleashFlagProvider>
+                </UnleashFlagProviderWrapper>
             </UnAuthenticatedApiProvider>
         </>
     );

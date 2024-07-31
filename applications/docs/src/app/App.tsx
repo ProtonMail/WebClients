@@ -2,7 +2,7 @@ import type { FunctionComponent } from 'react'
 import { useState } from 'react'
 import { Router } from 'react-router-dom'
 
-import FlagProvider from '@unleash/proxy-client-react'
+import { FlagProvider } from '@proton/unleash'
 
 import {
   ApiProvider,

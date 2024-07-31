@@ -1,9 +1,10 @@
-import { SUBSCRIPTION_STEPS, useFlag, useSubscriptionModal } from '@proton/components/containers';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';

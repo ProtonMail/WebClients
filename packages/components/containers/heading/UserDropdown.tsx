@@ -26,7 +26,6 @@ import {
     useAuthentication,
     useConfig,
     useFeature,
-    useFlag,
     useIsSecurityCheckupAvailable,
     useIsSentinelUser,
     useModalState,
@@ -70,6 +69,7 @@ import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import ProductLink from '../../containers/app/ProductLink';

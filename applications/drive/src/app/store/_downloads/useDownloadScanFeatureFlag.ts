@@ -1,4 +1,4 @@
-import { useFlag } from '@proton/components';
+import { useFlag } from '@proton/unleash';
 
 export const useDownloadScanFlag = () => {
     // We need to get values from hooks because otherwise we get TS error

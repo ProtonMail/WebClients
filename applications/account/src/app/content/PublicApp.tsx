@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { type ReactNode, useCallback, useRef, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
@@ -16,7 +16,6 @@ import {
     StandardErrorPage,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
-    UnleashFlagProvider,
 } from '@proton/components';
 import type { ProduceForkData } from '@proton/components/containers/app/SSOForkProducer';
 import { SSOType } from '@proton/components/containers/app/SSOForkProducer';
@@ -71,6 +70,7 @@ import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { UnleashFlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
@@ -170,6 +170,11 @@ const DISABLE_AUTO_SIGN_IN_ROUTES: string[] = Object.values(SSO_PATHS).filter(
 interface Props {
     onLogin: ProtonLoginCallback;
 }
+
+const UnleashFlagProviderWrapper = ({ children }: { children: ReactNode }) => {
+    const api = useApi();
+    return <UnleashFlagProvider api={api}>{children}</UnleashFlagProvider>;
+};
 
 const BasePublicApp = ({ onLogin }: Props) => {
     const api = useApi();
@@ -669,7 +674,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                         loader={loader}
                     >
                         <UnAuthenticatedApiProvider loader={loader}>
-                            <UnleashFlagProvider>
+                            <UnleashFlagProviderWrapper>
                                 <PublicAppSetup loader={loader}>
                                     <PaymentSwitcher loader={loader}>
                                         <ForceRefreshContext.Provider value={refresh}>
@@ -916,7 +921,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                         </ForceRefreshContext.Provider>
                                     </PaymentSwitcher>
                                 </PublicAppSetup>
-                            </UnleashFlagProvider>
+                            </UnleashFlagProviderWrapper>
                         </UnAuthenticatedApiProvider>
                     </AccountPublicApp>
                 </Route>

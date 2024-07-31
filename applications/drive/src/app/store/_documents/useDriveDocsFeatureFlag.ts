@@ -1,4 +1,4 @@
-import { useFlag } from '@proton/components/containers';
+import { useFlag } from '@proton/unleash';
 
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useAbortSignal } from '../_views/utils';

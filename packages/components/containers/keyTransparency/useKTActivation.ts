@@ -5,8 +5,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
+import { useFlag } from '@proton/unleash';
 
-import useFlag from '../../containers/unleash/useFlag';
 import { useAuthentication, useConfig, useGetMailSettings } from '../../hooks';
 import { KtFeatureEnum, isKTActive } from './ktStatus';
 
