@@ -7,6 +7,10 @@ import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
+import {
+    getInvitationAcceptLimit,
+    getInvitationLimit,
+} from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -486,23 +490,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 (hasReachedLimit ? (
                                     <Info
                                         className="color-danger"
-                                        title={
-                                            isOrgFamily
-                                                ? c('familyOffer_2023:Family plan')
-                                                      .t`You have reached the limit of 10 accepted invitations in 6 months.`
-                                                : c('familyOffer_2023:Family plan')
-                                                      .t`You have reached the limit of 2 accepted invitations in 6 months.`
-                                        }
+                                        title={isOrgFamily ? getInvitationLimit(10) : getInvitationLimit(2)}
                                     />
                                 ) : (
                                     <Info
-                                        title={
-                                            isOrgFamily
-                                                ? c('familyOffer_2023:Family plan')
-                                                      .t`Only 10 accepted invitations are allowed in a 6-month period.`
-                                                : c('familyOffer_2023:Family plan')
-                                                      .t`Only 2 accepted invitations are allowed in a 6-month period.`
-                                        }
+                                        title={isOrgFamily ? getInvitationAcceptLimit(10) : getInvitationAcceptLimit(2)}
                                     />
                                 ))}
 
