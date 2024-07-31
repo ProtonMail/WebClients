@@ -10,6 +10,7 @@ import {
     getBundlePlan,
     getBundleProPlan,
     getDrivePlan,
+    getDuoPlan,
     getEarlyAccessFeature,
     getFamilyPlan,
     getMailBusinessPlan,
@@ -28,7 +29,7 @@ import {
     getRefundable,
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
-import { FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
+import { DUO_MAX_USERS, FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
@@ -145,6 +146,31 @@ export const getSummaryPlan = ({
                 getDriveAppFeature({ family: true }),
                 getVPNAppFeature({
                     family: true,
+                    serversCount: vpnServersCountData,
+                }),
+                getPassAppFeature(),
+            ],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.DUO) {
+        const shortPlan = getDuoPlan({ plan, serversCount: vpnServersCountData, freePlan });
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={shortPlan.title} />
+                </div>
+            ),
+            ...shortPlan,
+            plan,
+            features: [
+                getUsersFeature(DUO_MAX_USERS),
+                getStorageFeature(plan.MaxSpace, { duo: true, freePlan }),
+                getMailAppFeature(),
+                getCalendarAppFeature({ duo: true }),
+                getDriveAppFeature({ duo: true }),
+                getVPNAppFeature({
+                    duo: true,
                     serversCount: vpnServersCountData,
                 }),
                 getPassAppFeature(),
