@@ -41,31 +41,24 @@ export const DiscoverContainer = () => {
                         </div>
                     </div>
 
-                    <div className="grow px-8 mt-8" style={{ height: 0 }}>
-                        <div className="h-full overflow-y-auto">
-                            <div className="discover-articles-container">
-                                {discoverArticles.map((article) => (
-                                    <Href
-                                        key={article.id}
-                                        href={article.link}
-                                        target="_blank"
-                                        className="discover-articles-link unstyled flex flex-column items-center color-norm"
-                                    >
-                                        <img
-                                            className="w-full"
-                                            src={article.coverSrc}
-                                            alt=""
-                                            style={{ borderRadius: '24px' }}
-                                        />
-                                        <h2 className="w-full text-2xl text-bold mt-3 text-ellipsis-two-lines">
-                                            {article.title}
-                                        </h2>
-                                        <p className="w-full text-lg overflow-y-hidden color-weak text-ellipsis-four-lines">
-                                            {article.text}
-                                        </p>
-                                    </Href>
-                                ))}
-                            </div>
+                    <div className="grow px-4 mt-8">
+                        <div className="discover-articles-container">
+                            {discoverArticles.map((article) => (
+                                <Href
+                                    key={article.id}
+                                    href={article.link}
+                                    target="_blank"
+                                    className="discover-articles-link unstyled flex flex-column items-center color-norm"
+                                >
+                                    <img className="w-full rounded-2xl shadow-raised" src={article.coverSrc} alt="" />
+                                    <h2 className="w-full text-2xl text-bold mt-3 text-ellipsis-two-lines">
+                                        {article.title}
+                                    </h2>
+                                    <p className="w-full text-lg overflow-y-hidden color-weak text-ellipsis-four-lines">
+                                        {article.text}
+                                    </p>
+                                </Href>
+                            ))}
                         </div>
                     </div>
                 </div>
