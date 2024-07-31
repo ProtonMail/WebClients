@@ -18,11 +18,21 @@
 	.discover-articles-link {
 		text-decoration: none;
 
+		img {
+			--shadow-color: transparent;
+
+			transition: box-shadow 0.25s easing(ease);
+		}
+
 		&:hover,
 		&:active,
 		&:focus {
 			color: initial;
 			text-decoration: underline;
+
+			img {
+				--shadow-color: var(--shadow-default-color);
+			}
 		}
 	}
 }

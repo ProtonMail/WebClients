@@ -7,7 +7,7 @@ import { SUBSCRIPTION_STEPS, useAddresses, useSubscriptionModal, useUser } from 
 import { CacheType } from '@proton/redux-utilities';
 import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
-import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.png';
+import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
 import { useUserWalletSettings } from '@proton/wallet';
 

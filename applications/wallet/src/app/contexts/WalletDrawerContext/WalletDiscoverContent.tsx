@@ -54,30 +54,20 @@ const ChecklistItem = ({ text, done, onClick, path }: ChecklistItemProps) => {
 };
 
 const DiscoverPreview = ({ title, text, previewSrc, coverSrc, link }: DiscoverArticle) => {
-    const imageStyles = { borderRadius: '24px', width: '6rem' };
-
     return (
         <Href
-            className="discover-preview h-custom flex flex-row flex-nowrap items-center w-full"
+            className="discover-preview h-custom flex flex-row flex-nowrap items-start w-full gap-4"
             target="_blank"
             href={link}
-            style={{ '--h-custom': '6rem' }}
         >
-            {previewSrc ? (
-                <img src={previewSrc} alt="" className="shrink-0 mr-4 h-full" style={imageStyles} />
-            ) : (
-                <div
-                    className="shrink-0 mr-4 h-full"
-                    style={{
-                        background: `url(${coverSrc})`,
-                        // eslint-disable-next-line custom-rules/deprecate-classes
-                        backgroundPosition: 'center center',
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        ...imageStyles,
-                    }}
-                ></div>
-            )}
+            <div className="shrink-0 h-full rounded-2xl overflow-hidden ratio-square">
+                <img
+                    src={previewSrc || coverSrc}
+                    alt=""
+                    className="object-cover h-full w-full w-custom"
+                    style={{ '--w-custom': '6rem' }}
+                />
+            </div>
 
             <div className="h-full flex flex-column flex-nowrap">
                 <h3 className="text-lg my-0 w-full mb-2 text-ellipsis-two-lines">{title}</h3>
@@ -160,15 +150,13 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
                     </div>
                 </div>
 
-                <div className="block grow overflow-y-auto" style={{ height: 0 }}>
-                    <div className="flex flex-column mb-10">
-                        <div className="w-full text-3xl text-semibold mb-6">{c('Wallet discover').t`Discover`}</div>
+                <div className="flex flex-column mb-10">
+                    <div className="w-full text-3xl text-semibold mb-6">{c('Wallet discover').t`Discover`}</div>
 
-                        <div className="w-full flex flex-column gap-8">
-                            {discoverArticles.map((article) => {
-                                return <DiscoverPreview {...article} key={article.id} />;
-                            })}
-                        </div>
+                    <div className="w-full flex flex-column gap-8">
+                        {discoverArticles.map((article) => {
+                            return <DiscoverPreview {...article} key={article.id} />;
+                        })}
                     </div>
                 </div>
             </div>

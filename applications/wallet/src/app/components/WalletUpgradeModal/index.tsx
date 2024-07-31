@@ -5,7 +5,7 @@ import { Prompt, Tooltip } from '@proton/components/components';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { useUser } from '@proton/components/hooks';
 import { PLANS } from '@proton/shared/lib/constants';
-import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.png';
+import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 
 import { Button } from '../../atoms';
 import type { SubTheme } from '../../utils';
