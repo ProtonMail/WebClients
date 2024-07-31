@@ -31,6 +31,9 @@ import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Domain } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import successSvg from './cloud-lock-check.svg';
+import errorSvg from './cloud-lock-cross.svg';
+
 type State =
     | {
           type: 'success';
@@ -82,10 +85,7 @@ const handleTestSaml = async ({
         return { type: 'success' };
     } catch (error) {
         if (error instanceof ExternalSSOError) {
-            const error = new Error(c('saml: Error').t`Something went wrong. Please try again.`);
-            // @ts-ignore
-            error.trace = false;
-            throw error;
+            return { type: 'error', error, extra: c('saml: Error').t`Sign-in wasn't successfully completed.` };
         }
         const apiError = getApiError(error);
         if (apiError.message) {
@@ -140,9 +140,14 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 {(() => {
                     if (state.type === 'success') {
                         return (
-                            <div>
-                                {c('saml: Info')
-                                    .t`We received a valid SAML response from your identity provider. SSO is enabled for your organization.`}
+                            <div className="flex flex-column gap-4">
+                                <div className="text-center">
+                                    <img src={successSvg} alt="" />
+                                </div>
+                                <div>
+                                    {c('saml: Info')
+                                        .t`We received a valid SAML response from your identity provider. SSO is enabled for your organization.`}
+                                </div>
                             </div>
                         );
                     }
@@ -150,6 +155,9 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     if (state.type === 'error') {
                         return (
                             <div className="flex flex-column gap-4">
+                                <div className="text-center">
+                                    <img src={errorSvg} alt="" />
+                                </div>
                                 <div>{c('saml: Info').t`An error occurred while testing your SSO configuration.`}</div>
                                 {state.extra && (
                                     <div>
