@@ -137,11 +137,10 @@ export const createAutofillService = () => {
         telemetry('2fa');
     };
 
-    /** Clears previously autofilled fields when called with
-     * a new identity item */
+    /** Clears previously autofilled identity fields when called with a new identity item */
     const autofillIdentity = (form: FormHandle, data: ItemContent<'identity'>) => {
         const fields = form.getFields();
-        fields.forEach((field) => field.autofilled && field.autofill(''));
+        fields.forEach((field) => field.autofilled && field.fieldType === FieldType.IDENTITY && field.autofill(''));
         autofillIdentityFields(fields, data);
     };
 
