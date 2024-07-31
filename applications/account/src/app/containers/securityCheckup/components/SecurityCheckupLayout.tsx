@@ -5,8 +5,16 @@ import { c } from 'ttag';
 
 import { securityCheckupSlice } from '@proton/account';
 import { ButtonLike } from '@proton/atoms/Button';
-import { Icon, Logo, ProtonLogo, PublicTopBanners, useSecurityCheckup, useTheme, useUser } from '@proton/components';
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import {
+    AppLink,
+    Icon,
+    Logo,
+    ProtonLogo,
+    PublicTopBanners,
+    useSecurityCheckup,
+    useTheme,
+    useUser,
+} from '@proton/components';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -32,14 +40,6 @@ const SecurityCheckupLayout = ({ children }: Props) => {
     const nameToDisplay = user.DisplayName || user.Name || user.Email || '';
     const initials = getInitials(nameToDisplay);
 
-    const getLogo = () => {
-        if (!backLink?.app) {
-            return <ProtonLogo variant="full" color={theme.information.dark ? 'invert' : undefined} />;
-        }
-
-        return <Logo appName={backLink.app} />;
-    };
-
     const isRoot = location.pathname === SECURITY_CHECKUP_PATHS.ROOT;
 
     const BackButton = () => {
@@ -59,11 +59,11 @@ const SecurityCheckupLayout = ({ children }: Props) => {
             );
         }
 
-        if (!backLink || !backLink.app) {
+        if (!backLink || !backLink.appName) {
             return (
                 <ButtonLike
                     as={Link}
-                    to={backLink?.to || '/'}
+                    to={backLink?.to || ''}
                     shape="outline"
                     color="norm"
                     className="inline-flex items-center"
@@ -74,33 +74,39 @@ const SecurityCheckupLayout = ({ children }: Props) => {
             );
         }
 
-        const { link, label }: { link: string; label: string } = (() => {
-            const link = stripLocalBasenameFromPathname(backLink.href);
-
-            if (backLink.app === APPS.PROTONMAIL) {
-                return { label: c('Navigation').t`Inbox`, link };
+        const label = (() => {
+            if (backLink.appName === APPS.PROTONMAIL) {
+                return c('Navigation').t`Inbox`;
             }
-            if (backLink.app === APPS.PROTONCALENDAR) {
-                return { label: c('Navigation').t`Calendar`, link };
+            if (backLink.appName === APPS.PROTONCALENDAR) {
+                return c('Navigation').t`Calendar`;
             }
-            if (backLink.app === APPS.PROTONDRIVE) {
-                return { label: c('Navigation').t`Drive`, link };
+            if (backLink.appName === APPS.PROTONDRIVE) {
+                return c('Navigation').t`Drive`;
             }
-            if (backLink.app === APPS.PROTONPASS) {
-                return { label: c('Navigation').t`Pass vaults`, link };
+            if (backLink.appName === APPS.PROTONPASS) {
+                return c('Navigation').t`Pass vaults`;
             }
-            if (backLink.app === APPS.PROTONDOCS) {
-                return { label: c('Navigation').t`Documents`, link };
+            if (backLink.appName === APPS.PROTONDOCS) {
+                return c('Navigation').t`Documents`;
             }
-            if (backLink.app === APPS.PROTONWALLET) {
-                return { label: c('wallet_signup_2024:Navigation').t`Wallet`, link };
+            if (backLink.appName === APPS.PROTONWALLET) {
+                return c('wallet_signup_2024:Navigation').t`Wallet`;
             }
 
-            return { label: c('Action').t`Back`, link };
+            return c('Action').t`Back`;
         })();
 
         return (
-            <ButtonLike as="a" href={link} shape="outline" color="norm" className="inline-flex items-center">
+            <ButtonLike
+                as={AppLink}
+                toApp={backLink.appName}
+                to={backLink.to}
+                target="_self"
+                shape="outline"
+                color="norm"
+                className="inline-flex items-center"
+            >
                 <Icon name="arrow-left" className="shrink-0 mr-1 mb-0.5" />
                 {label}
             </ButtonLike>
@@ -109,11 +115,11 @@ const SecurityCheckupLayout = ({ children }: Props) => {
 
     useEffect(() => {
         const params = new URLSearchParams(location.search);
-        const continueParam = params.get('continue');
+        const continueParam = params.get('back');
 
         if (!continueParam) {
             if (backLink) {
-                params.append('continue', backLink.href);
+                params.append('back', backLink.href);
                 history.replace({ ...location, search: params.toString() });
             }
             return;
@@ -127,11 +133,19 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                 })
             );
         } catch (error) {
-            params.delete('continue');
+            params.delete('back');
             history.replace({ ...location, search: params.toString() });
             return;
         }
     }, [location.search]);
+
+    const logo = (() => {
+        if (!backLink || !backLink.logoAppName) {
+            return <ProtonLogo variant="full" color={theme.information.dark ? 'invert' : undefined} />;
+        }
+
+        return <Logo appName={backLink.logoAppName} />;
+    })();
 
     return (
         <>
@@ -146,7 +160,9 @@ const SecurityCheckupLayout = ({ children }: Props) => {
             >
                 <header className="flex flex-nowrap justify-space-between items-center gap-4 mb-6">
                     <div className="inline-flex flex-nowrap shrink-0 gap-4 items-center">
-                        <div className={clsx('shrink-0', isElectronOnMac && 'md:pl-14 lg:pl-8')}>{getLogo()}</div>
+                        <div className={clsx('shrink-0 flex items-center', isElectronOnMac && 'md:pl-14 lg:pl-8')}>
+                            {logo}
+                        </div>
 
                         <BackButton />
                     </div>

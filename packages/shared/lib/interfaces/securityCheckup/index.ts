@@ -9,7 +9,8 @@ export interface SecurityCheckupSession {
 }
 
 export interface BackLink {
-    app: APP_NAMES | undefined;
+    appName: APP_NAMES | undefined;
+    logoAppName: APP_NAMES | undefined;
     to: string;
     href: string;
 }
