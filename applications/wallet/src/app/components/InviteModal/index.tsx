@@ -13,6 +13,7 @@ import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user
 import { useWalletApiClients } from '@proton/wallet';
 
 import { Button, Input } from '../../atoms';
+import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { EmailSelect } from '../EmailSelect';
 
 interface InviteModalOwnProps {
@@ -74,7 +75,7 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
                 <Tooltip title={errorMessage}>
                     <Button
                         fullWidth
-                        color="weak"
+                        color="norm"
                         shape="solid"
                         size="large"
                         disabled={!!errorMessage}
@@ -92,7 +93,7 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
                     onClick={() => {
                         modalProps.onClose?.();
                     }}
-                >{c('Wallet invite').t`Close`}</Button>,
+                >{c('Wallet invite').t`Not now`}</Button>,
             ]}
         >
             <div className="flex flex-column">
@@ -104,15 +105,16 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
                         style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                     />
 
-                    <h1 className="block text-semibold text-4xl text-center">{c('Wallet invite')
+                    <h1 className="block text-semibold text-4xl text-center mb-2">{c('Wallet invite')
                         .t`Exclusive Invites`}</h1>
                 </div>
 
-                <p className="my-4 text-center color-weak">{c('Wallet invite')
-                    .t`${WALLET_APP_NAME} Early Access is limited to Visionary supporters and invited users.`}</p>
-
-                <p className="my-4 text-center color-weak">{c('Wallet invite')
-                    .t`Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.`}</p>
+                <ModalParagraph>
+                    <p>{c('Wallet invite')
+                        .t`${WALLET_APP_NAME} Early Access is limited to Visionary supporters and invited users.`}</p>
+                    <p>{c('Wallet invite')
+                        .t`Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.`}</p>
+                </ModalParagraph>
 
                 <div className="flex flex-row mt-2 w-full">
                     <EmailSelect
