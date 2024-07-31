@@ -46,10 +46,40 @@ export enum ThemeTypes {
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
 
-export const PROTON_THEMES_MAP = {
+type ThemeDefinition = {
+    /**
+     * Theme name
+     */
+    label: string;
+    /**
+     * Theme identifier
+     */
+    identifier: ThemeTypes;
+    /**
+     * Defines the default theme color for the application. This sometimes affects
+     * how the OS displays the site
+     */
+    themeColorMeta: string;
+    /**
+     * Colour definition for the SVG thumbnail only
+     */
+    thumbColors: {
+        prominent: string;
+        standard: string;
+        primary: string;
+        weak: string;
+    };
+    /**
+     * The theme's stylesheet
+     */
+    theme: string;
+};
+
+export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
     [ThemeTypes.Duotone]: {
         label: 'Proton',
         identifier: ThemeTypes.Duotone,
+        themeColorMeta: '#1b1340',
         thumbColors: {
             prominent: '#44348C',
             standard: '#ffffff',
@@ -61,6 +91,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Carbon]: {
         label: 'Carbon',
         identifier: ThemeTypes.Carbon,
+        themeColorMeta: '#16141c',
         thumbColors: {
             prominent: '#372E45',
             standard: '#453C56',
@@ -72,6 +103,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Monokai]: {
         label: 'Monokai',
         identifier: ThemeTypes.Monokai,
+        themeColorMeta: '#16141c',
         thumbColors: {
             prominent: '#16141C',
             standard: '#2B293D',
@@ -83,6 +115,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Snow]: {
         label: 'Snow',
         identifier: ThemeTypes.Snow,
+        themeColorMeta: 'white',
         thumbColors: {
             prominent: '#FFFFFF',
             standard: '#FAF8F6',
@@ -94,6 +127,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.ContrastLight]: {
         label: 'Ivory',
         identifier: ThemeTypes.ContrastLight,
+        themeColorMeta: 'white',
         thumbColors: {
             prominent: '#FFFFFF',
             standard: '#FAF8F6',
@@ -105,6 +139,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.ContrastDark]: {
         label: 'Ebony',
         identifier: ThemeTypes.ContrastDark,
+        themeColorMeta: 'black',
         thumbColors: {
             prominent: '#131313',
             standard: '#000000',
@@ -116,6 +151,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Legacy]: {
         label: 'Legacy',
         identifier: ThemeTypes.Legacy,
+        themeColorMeta: '#505061',
         thumbColors: {
             prominent: '#535364',
             standard: '#F5F5F5',
@@ -127,6 +163,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Classic]: {
         label: 'Classic',
         identifier: ThemeTypes.Classic,
+        themeColorMeta: '#1c223d',
         thumbColors: {
             prominent: '#282F54',
             standard: '#F5F4F2',
@@ -138,6 +175,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Pass]: {
         label: 'Pass',
         identifier: ThemeTypes.Pass,
+        themeColorMeta: '#191927',
         thumbColors: {
             prominent: '#16141C',
             standard: '#2A2833',
@@ -149,6 +187,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.Storefront]: {
         label: 'Storefront',
         identifier: ThemeTypes.Storefront,
+        themeColorMeta: '#1d1738',
         thumbColors: {
             prominent: '#16141C',
             standard: '#2A2833',
@@ -160,6 +199,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.WalletLight]: {
         label: 'WalletLight',
         identifier: ThemeTypes.WalletLight,
+        themeColorMeta: '#f3f5f6',
         thumbColors: {
             prominent: '#16141C',
             standard: '#2A2833',
@@ -171,6 +211,7 @@ export const PROTON_THEMES_MAP = {
     [ThemeTypes.StorefrontWallet]: {
         label: 'StorefrontWallet',
         identifier: ThemeTypes.StorefrontWallet,
+        themeColorMeta: 'white',
         thumbColors: {
             prominent: '#FFFFFF',
             standard: '#FAF8F6',
