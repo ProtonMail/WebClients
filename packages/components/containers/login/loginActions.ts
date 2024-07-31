@@ -546,12 +546,24 @@ export const handleNextLogin = async ({
 
 export class ExternalSSOError extends Error {}
 
-export const handleExternalSSOLogin = ({ token, signal }: { token: string; signal: AbortSignal }) => {
+export const handleExternalSSOLogin = ({
+    token,
+    signal,
+    finalRedirectBaseUrl,
+}: {
+    token: string;
+    signal: AbortSignal;
+    finalRedirectBaseUrl?: string;
+}) => {
     if (!token) {
         throw new Error('Unexpected response');
     }
 
-    const url = `${window.location.origin}/api/auth/sso/${token}`;
+    const url = new URL(`${window.location.origin}/api/auth/sso/${token}`);
+
+    if (finalRedirectBaseUrl) {
+        url.searchParams.set('FinalRedirectBaseUrl', finalRedirectBaseUrl);
+    }
 
     const handleMessage = (event: MessageEvent) => {
         if (event.data.action === 'sso' && event.data.payload) {
