@@ -18,7 +18,7 @@ import {
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
-import { getThemeForWallet } from '../../utils';
+import { getAccountWithChainDataFromManyWallets, getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAccount?: () => void) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
@@ -35,7 +35,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
     const dispatch = useWalletDispatch();
     const [userKeys] = useUserKeys();
 
-    const { decryptedApiWalletsData = [] } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData = [], walletsChainData } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
     const openBackupModal = () => {
@@ -127,6 +127,30 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
         createNotification({ text: c('Wallet Settings').t`Local storage cleared` });
     };
 
+    const [shouldShowBvEWarningByAccountId, setShouldShowBvEWarningByAccountId] = useState<
+        Partial<Record<string, boolean>>
+    >({});
+
+    useEffect(() => {
+        const run = async () => {
+            for (const account of wallet.WalletAccounts) {
+                const accountChainData = getAccountWithChainDataFromManyWallets(
+                    walletsChainData,
+                    account.WalletID,
+                    account.ID
+                );
+
+                const transactions = await accountChainData?.account.getTransactions();
+                setShouldShowBvEWarningByAccountId((prev) => ({
+                    ...prev,
+                    [account.ID]: account.Priority === 1 || !!transactions?.[0].length,
+                }));
+            }
+        };
+
+        void run();
+    }, [wallet.WalletAccounts, walletsChainData]);
+
     useEffect(() => {
         if (!wallet.WalletAccounts?.length) {
             onEmptyWalletAccount?.();
@@ -143,6 +167,8 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
         loadingWalletNameUpdate,
         setWalletName,
         updateWalletName,
+
+        shouldShowBvEWarningByAccountId,
 
         openBackupModal,
 
