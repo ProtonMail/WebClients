@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useTxBuilder } from './useTxBuilder';
 
 describe('useTxBuilder', () => {
-    it('should stack update then unwrap them', async () => {
+    it('should update tx builder', async () => {
         const { result } = renderHook(() => useTxBuilder());
 
         result.current.updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(2)));
@@ -15,8 +15,6 @@ describe('useTxBuilder', () => {
         result.current.updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(5)));
         result.current.updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(6)));
 
-        expect(result.current.txBuilder.getFeeRate()).toBe(BigInt(2));
-
-        await waitFor(() => expect(result.current.txBuilder.getFeeRate()).toBe(BigInt(6)));
+        expect(result.current.txBuilder.getFeeRate()).toBe(BigInt(6));
     });
 });

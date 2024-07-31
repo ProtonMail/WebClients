@@ -23,8 +23,6 @@ interface Props {
 
     value: number;
     onAmountChange?: (v: number) => void;
-
-    min?: number;
 }
 
 export const secondaryAmount = ({
@@ -65,8 +63,6 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     value,
     onAmountChange,
     onSendAll,
-
-    min = 0,
 }: Props) => {
     const [currencies] = useFiatCurrencies();
     const [settings] = useUserWalletSettings();
@@ -109,9 +105,13 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
             <div className="flex flex-row flex-nowrap items-center justify-space-between">
                 <div>
                     <BitcoinAmountInput
-                        onValueChange={(v) => {
-                            onAmountChange?.(v);
-                        }}
+                        onValueChange={
+                            onAmountChange
+                                ? (v) => {
+                                      return onAmountChange?.(v);
+                                  }
+                                : undefined
+                        }
                         unit={exchangeRateOrBitcoinUnit}
                         unstyled
                         className="h1 invisible-number-input-arrow"
@@ -120,7 +120,6 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                         value={value}
                         readOnly={!onAmountChange}
                         prefix={exchangeRateSymbolOrBitcoinUnit}
-                        min={min}
                     />
                 </div>
 
