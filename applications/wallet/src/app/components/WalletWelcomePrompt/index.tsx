@@ -1,39 +1,40 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
 import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
 import { useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.png';
-import { acceptTermsAndConditions, useWalletApiClients } from '@proton/wallet';
+import { acceptTermsAndConditions, useUserWalletSettings, useWalletApiClients } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
-import { APP_NAME } from '../../config';
 import { useWalletDispatch } from '../../store/hooks';
+import { getTermAndConditionsSentence } from '../../utils/legal';
 
-const termsLink = `${getAppStaticUrl(APP_NAME)}/legal/terms`;
-
-interface TermsAndConditionsProps {
+interface WalletWelcomePromptProps {
     email?: string;
 }
 
-type Props = ModalOwnProps & TermsAndConditionsProps;
+type Props = ModalOwnProps & WalletWelcomePromptProps;
 
-export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) => {
+export const WalletWelcomePrompt = ({ email, ...modalProps }: Props) => {
     const walletApi = useWalletApiClients();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const dispatch = useWalletDispatch();
+    const [walletSettings] = useUserWalletSettings();
 
-    const handleAcceptConditions = async () => {
+    const handleContinue = async () => {
         try {
-            await walletApi.settings.acceptTermsAndConditions();
-            createNotification({ text: c('Wallet terms and conditions').t`Terms and conditions were accepted` });
-            dispatch(acceptTermsAndConditions());
+            if (!walletSettings.AcceptTermsAndConditions) {
+                await walletApi.settings.acceptTermsAndConditions();
+                createNotification({ text: c('Wallet terms and conditions').t`Terms and conditions were accepted` });
+                dispatch(acceptTermsAndConditions());
+            }
+
+            modalProps.onClose?.();
         } catch (error: any) {
             createNotification({
                 text: error?.error ?? c('Wallet terms and conditions').t`Could not accept terms and conditions`,
@@ -41,12 +42,16 @@ export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) 
         }
     };
 
-    const termsAndConditionsLink = <Href className="" href={termsLink}>{`terms and conditions`}</Href>;
+    const emailEl = (
+        <span key="bve-email" className="text-semibold">
+            {email}
+        </span>
+    );
 
     return (
         <Prompt
             size="large"
-            footnote={c('Wallet Upgrade').jt`By continuing, you agree to our ${termsAndConditionsLink}`}
+            footnote={walletSettings.AcceptTermsAndConditions ? undefined : getTermAndConditionsSentence()}
             buttons={
                 <Button
                     fullWidth
@@ -56,7 +61,7 @@ export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) 
                     className="block pb-0"
                     disabled={loading}
                     onClick={() => {
-                        void withLoading(handleAcceptConditions());
+                        void withLoading(handleContinue());
                     }}
                 >{c('Wallet').t`Continue`}</Button>
             }
@@ -78,7 +83,7 @@ export const WalletTermsAndConditionsPrompt = ({ email, ...modalProps }: Props) 
                         .t`To avoid losing assets due to forgetting your password or other access issues, back up your ${BRAND_NAME} recovery phrase and wallet seed phrase.`}</p>
                     {email && (
                         <p>{c('Wallet Terms and Conditions')
-                            .t`Bitcoin via Email lets other ${WALLET_APP_NAME} users send BTC to you using your email ${email} (you can change this in wallet settings).`}</p>
+                            .jt`We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${emailEl}) from other ${WALLET_APP_NAME} users.`}</p>
                     )}
                 </ModalParagraph>
             </div>
