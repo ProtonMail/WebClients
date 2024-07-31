@@ -490,11 +490,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 (hasReachedLimit ? (
                                     <Info
                                         className="color-danger"
-                                        title={isOrgFamily ? getInvitationLimit(10) : getInvitationLimit(2)}
+                                        title={isOrgFamily ? getInvitationLimit(10) : getInvitationLimit(3)}
                                     />
                                 ) : (
                                     <Info
-                                        title={isOrgFamily ? getInvitationAcceptLimit(10) : getInvitationAcceptLimit(2)}
+                                        title={isOrgFamily ? getInvitationAcceptLimit(10) : getInvitationAcceptLimit(3)}
                                     />
                                 ))}
 
