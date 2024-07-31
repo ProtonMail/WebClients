@@ -310,10 +310,7 @@ const ThemeProvider = ({ children, appName }: Props) => {
     useEffect(() => {
         const syncToMeta = () => {
             const themeMeta = document.querySelector("meta[name='theme-color']");
-            const uiProminentElement = document.querySelector('.ui-prominent');
-            const themeColor = uiProminentElement
-                ? window.getComputedStyle(uiProminentElement).getPropertyValue('--background-norm').trim()
-                : '';
+            const themeColor = PROTON_THEMES_MAP[theme].themeColorMeta;
 
             if (themeMeta && themeColor) {
                 themeMeta.setAttribute('content', themeColor);
