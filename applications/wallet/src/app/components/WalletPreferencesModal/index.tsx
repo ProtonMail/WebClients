@@ -37,6 +37,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
         setWalletName,
         loadingWalletNameUpdate,
         updateWalletName,
+        shouldShowBvEWarningByAccountId,
         walletDeletionConfirmationModal,
         openWalletDeletionConfirmationModal,
         openBackupModal,
@@ -100,9 +101,12 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                     <div className="flex flex-column mb-3">
                         <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
 
-                        <BitcoinViaEmailNote
-                            isActive={wallet.WalletAccounts.some((acc) => Boolean(acc.Addresses.length))}
-                        />
+                        {/* If no account if recommended to turn on BvE, we don't want to display the note */}
+                        {Object.values(shouldShowBvEWarningByAccountId).some((s) => !s) && (
+                            <BitcoinViaEmailNote
+                                isActive={wallet.WalletAccounts.some((acc) => Boolean(acc.Addresses.length))}
+                            />
+                        )}
 
                         <div className="flex flex-column gap-4">
                             {wallet.WalletAccounts.map((walletAccount, index) => {
@@ -113,6 +117,9 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                                             wallet={wallet}
                                             walletAccount={walletAccount}
                                             otherWallets={otherWallets}
+                                            shouldShowBvEWarning={Boolean(
+                                                shouldShowBvEWarningByAccountId[walletAccount.ID]
+                                            )}
                                         />
                                     </div>
                                 );

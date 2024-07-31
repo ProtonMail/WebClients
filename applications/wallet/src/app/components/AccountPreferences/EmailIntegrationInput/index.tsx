@@ -2,23 +2,27 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmApiEmailAddress } from '@proton/andromeda';
-import { Toggle, useModalState } from '@proton/components/components';
+import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
+import { Href } from '@proton/atoms/Href';
+import { Prompt, Toggle, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import { useAddresses, useOrganization, useUser } from '@proton/components/hooks';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { Button, CoreButton, CoreButtonLike } from '../../../atoms';
 import { EmailAddressCreationModal } from '../../EmailAddressCreationModal';
 import { WalletUpgradeModal } from '../../WalletUpgradeModal';
 import { EmailIntegrationModal } from '../EmailIntegrationModal';
 
 interface Props {
-    walletAccountId: string;
+    walletAccount: WasmApiWalletAccount;
     /**
      * Expected to have only one element
      */
     value: WasmApiEmailAddress[];
     options: (readonly [WasmApiEmailAddress, boolean])[];
     loading: boolean;
+    shouldShowBvEWarning: boolean;
 
     onRemoveAddress: (addressId: string) => void;
     onAddAddress: (addressId: string) => void;
@@ -26,10 +30,11 @@ interface Props {
 }
 
 export const EmailIntegrationInput = ({
-    walletAccountId,
+    walletAccount,
     value,
     options,
     loading,
+    shouldShowBvEWarning,
     onRemoveAddress,
     onAddAddress,
     onReplaceAddress,
@@ -38,6 +43,7 @@ export const EmailIntegrationInput = ({
     const [emailIntegrationModal, setEmailIntegrationModal] = useModalState();
     const [emailCreationModal, setEmailCreationModal] = useModalState();
     const [walletUpgradeModal, setWalletUpgradeModal] = useModalState();
+    const [bveWarningPrompt, setBveWarningPrompt] = useModalState();
 
     const [user] = useUser();
     const [addresses] = useAddresses();
@@ -59,17 +65,35 @@ export const EmailIntegrationInput = ({
 
     const canCreateAddress = user.isAdmin;
 
+    const promptButton = (
+        <CoreButton
+            shape="underline"
+            key="prompt-button"
+            className="p-0"
+            onClick={() => {
+                setBveWarningPrompt(true);
+            }}
+        >{c('Wallet preferences').t`creating a new BTC account`}</CoreButton>
+    );
+
+    const warning = (
+        <div>{c('Wallet preferences')
+            .jt`For better privacy, we recommend ${promptButton} for receving Bitcoin via Email.`}</div>
+    );
+
+    const isPrimaryAccount = walletAccount.Priority === 1;
+
     return (
         <>
             <InputFieldStacked isBigger isGroupElement>
-                <div className="flex flex-row items-center justify-space-between">
+                <div className="flex flex-row items-center justify-space-between mb-3">
                     <div className="flex flex-column items-start">
                         <span className="color-weak mb-1">{c('Wallet preferences').t`Bitcoin via Email`}</span>
                         <span className="color-norm text-lg">{linkedEmail?.Email ?? ''}</span>
                     </div>
 
                     <Toggle
-                        id={walletAccountId}
+                        id={walletAccount.ID}
                         checked={value.length > 0}
                         loading={loading}
                         onChange={() => {
@@ -80,6 +104,17 @@ export const EmailIntegrationInput = ({
                             }
                         }}
                     />
+                </div>
+
+                {shouldShowBvEWarning && <div className="mb-2">{warning}</div>}
+
+                <div>
+                    <CoreButtonLike
+                        shape="underline"
+                        color="weak"
+                        as={Href}
+                        href={getKnowledgeBaseUrl('/wallet-bitcoin-via-email')}
+                    >{c('Action').t`Learn more`}</CoreButtonLike>
                 </div>
             </InputFieldStacked>
 
@@ -116,6 +151,34 @@ export const EmailIntegrationInput = ({
                     .t`An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.`}
                 {...walletUpgradeModal}
             />
+
+            <Prompt
+                {...bveWarningPrompt}
+                buttons={[
+                    <Button
+                        shape="solid"
+                        color="weak"
+                        onClick={() => {
+                            setBveWarningPrompt(false);
+                        }}
+                    >{c('Action').t`Got it`}</Button>,
+                ]}
+            >
+                <div className="text-center">
+                    <p>{c('Wallet preference')
+                        .t`The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.`}</p>
+                    <p>{c('Wallet preference')
+                        .t`When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.`}</p>
+
+                    {isPrimaryAccount ? (
+                        <p>{c('Wallet preference')
+                            .t`For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.`}</p>
+                    ) : (
+                        <p>{c('Wallet preference')
+                            .t`For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.`}</p>
+                    )}
+                </div>
+            </Prompt>
         </>
     );
 };
