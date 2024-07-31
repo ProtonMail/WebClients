@@ -1,4 +1,4 @@
-import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 
 // borrowed from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
@@ -3324,6 +3324,53 @@ const plans: Plan[] = deepFreeze([
             Google: {
                 Plans: {},
                 CustomerID: 'cus_google_kQeyGK5mcKrbFNowsuPw',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
+    {
+        ID: 'flz6WyEo9y0dPsnUy2wRabn7cOA3jjx2xQQt_3hYPH2j3mAKy9kgzozLulWJyKD3VpOQy8fSiZDGXgSvFyXsHg==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'duo2024',
+        Title: 'Proton Duo',
+        MaxDomains: 3,
+        MaxAddresses: 30,
+        MaxCalendars: 50,
+        MaxSpace: 1099511627776,
+        MaxMembers: 2,
+        MaxVPN: 20,
+        MaxTier: 2,
+        Services: 31,
+        Features: 1,
+        State: 1,
+        Pricing: {
+            '1': 1999,
+            '12': 17988,
+            '24': 28776,
+        },
+        DefaultPricing: {
+            '1': 1999,
+            '12': 17988,
+            '24': 28776,
+        },
+        PeriodEnd: {
+            '1': 1725120408,
+            '12': 1753978008,
+            '24': 1785514008,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 1999,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_q_ompKSTreIghCYU2t-4',
             },
             Apple: {
                 Plans: {},

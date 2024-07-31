@@ -681,6 +681,7 @@ export enum DASHBOARD_UPSELL_PATHS {
     DOCS = 'docs-dashboard',
     WALLET = 'wallet-dashboard',
     FAMILY = 'family-dashboard',
+    DUO = 'duo-dashboard',
     BUSINESS = 'business-dashboard',
 }
 
