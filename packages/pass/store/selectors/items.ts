@@ -255,7 +255,9 @@ export const selectAutofillLoginCandidates = (options: SelectAutofillCandidatesO
 };
 
 export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
-    createSelector(selectIdentityItems, (items) => items.filter(and(isActive, belongsToShares(shareIds))));
+    createSelector(selectIdentityItems, (items) =>
+        items.filter(and(isActive, belongsToShares(shareIds))).sort(sortOn('lastUseTime'))
+    );
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) =>
     createSelector(
