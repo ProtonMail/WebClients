@@ -18,13 +18,13 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 
 function ApplicationContainer() {
-  import('../tailwind.scss')
+  void import('../tailwind.scss')
 
   const api = useApi()
   const driveCompat = useDriveCompat()
 
   const { API_URL } = useConfig()
-  const { UID } = useAuthentication()
+  const { UID, getLocalID } = useAuthentication()
 
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
@@ -58,7 +58,7 @@ function ApplicationContainer() {
     const hasRequiredParametersToLoadOrCreateADocument = volumeId && mode && (linkId || parentLinkId)
 
     if (!hasRequiredParametersToLoadOrCreateADocument && !driveCompat.isDocsEnabled) {
-      window.location.assign(getAppHref('/', APPS.PROTONDRIVE))
+      window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
       return
     }
 
