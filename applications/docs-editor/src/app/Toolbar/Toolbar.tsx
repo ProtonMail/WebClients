@@ -560,32 +560,38 @@ export default function DocumentEditorToolbar({
   const blockTypes: {
     type: BlockType
     name: string
+    tooltip: React.ReactNode
     onClick: () => void
   }[] = [
     {
       type: 'paragraph',
       name: blockTypeToBlockName.paragraph,
       onClick: formatParagraph,
+      tooltip: <ShortcutLabel shortcut="NORMAL_TEXT_SHORTCUT" />,
     },
     {
       type: 'h1',
       name: blockTypeToBlockName.h1,
       onClick: () => formatHeading('h1'),
+      tooltip: <ShortcutLabel shortcut="HEADING_1_SHORTCUT" />,
     },
     {
       type: 'h2',
       name: blockTypeToBlockName.h2,
       onClick: () => formatHeading('h2'),
+      tooltip: <ShortcutLabel shortcut="HEADING_2_SHORTCUT" />,
     },
     {
       type: 'h3',
       name: blockTypeToBlockName.h3,
       onClick: () => formatHeading('h3'),
+      tooltip: <ShortcutLabel shortcut="HEADING_3_SHORTCUT" />,
     },
     {
       type: 'h4',
       name: blockTypeToBlockName.h4,
       onClick: () => formatHeading('h4'),
+      tooltip: <ShortcutLabel shortcut="HEADING_4_SHORTCUT" />,
     },
   ]
 
@@ -722,10 +728,12 @@ export default function DocumentEditorToolbar({
           data-testid="headings-options"
         >
           <DropdownMenu>
-            {blockTypes.map(({ type, name, onClick }) => (
-              <DropdownMenuButton key={type} className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
-                {name}
-              </DropdownMenuButton>
+            {blockTypes.map(({ type, name, onClick, tooltip }) => (
+              <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
+                <DropdownMenuButton className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
+                  {name}
+                </DropdownMenuButton>
+              </ToolbarTooltip>
             ))}
           </DropdownMenu>
         </SimpleDropdown>
