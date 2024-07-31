@@ -94,7 +94,11 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             {children}
 
             {(() => {
-                if (!isEligible && !loadingIsEligible) {
+                if (loadingIsEligible) {
+                    return null;
+                }
+
+                if (!isEligible) {
                     return <WalletEarlyAccessUpgradePrompt open />;
                 }
 
