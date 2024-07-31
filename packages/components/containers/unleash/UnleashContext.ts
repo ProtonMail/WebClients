@@ -22,6 +22,7 @@ enum CommonFeatureFlag {
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     Wallet = 'Wallet',
     WalletPlan = 'WalletPlan',
+    DuoPlan = 'DuoPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     LeftSidebarCollapsible = 'LeftSidebarCollapsible',

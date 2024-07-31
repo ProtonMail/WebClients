@@ -214,7 +214,12 @@ const getUpsell = ({
                 // If the user is on a plus plan, and selects bundle, visionary, or family -> let it pass through
                 if (
                     (options.cycle === CYCLE.YEARLY &&
-                        (hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ||
+                        (hasSelectedPlan(planParameters.plan, [
+                            PLANS.BUNDLE,
+                            PLANS.VISIONARY,
+                            PLANS.DUO,
+                            PLANS.FAMILY,
+                        ]) ||
                             (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))) ||
                     isValidPassBundleFromPass ||
                     isValidPassBundleFromVPN1 ||

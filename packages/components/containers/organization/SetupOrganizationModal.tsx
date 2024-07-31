@@ -14,6 +14,7 @@ import { GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getHasVpnOrPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
@@ -52,6 +53,8 @@ enum STEPS {
     STORAGE,
 }
 
+const storageSizeUnit = GIGA;
+
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
@@ -65,7 +68,6 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
     const [step, setStep] = useState<STEPS>(STEPS.NAME);
-    const storageSizeUnit = GIGA;
     const [{ hasPaidVpn }] = useUser();
     const [subscription] = useSubscription();
     const [orgKeyCreated, setOrgKeyCreated] = useState(false);
@@ -79,6 +81,8 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         storage: -1,
     });
     const { validator, onFormSubmit, reset } = useFormErrors();
+
+    const isOrgFamilyOrDuo = getOrganizationDenomination(organization) === 'familyGroup';
 
     const handleChange = (key: keyof typeof model) => {
         return (value: any) => setModel({ ...model, [key]: value });
@@ -128,12 +132,13 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
 
     const { title, onSubmit, section } = (() => {
         if (step === STEPS.NAME) {
-            const title = organization?.RequiresKey
-                ? c('Title').t`Set organization name`
-                : c('familyOffer_2023:Title').t`Set family name`;
-            const label = organization?.RequiresKey
-                ? c('Label').t`Organization name`
-                : c('familyOffer_2023:Label').t`Family name`;
+            const title = isOrgFamilyOrDuo
+                ? c('familyOffer_2023:Title').t`Set family name`
+                : c('Title').t`Set organization name`;
+
+            const label = isOrgFamilyOrDuo
+                ? c('familyOffer_2023:Label').t`Family name`
+                : c('Label').t`Organization name`;
 
             return {
                 title,

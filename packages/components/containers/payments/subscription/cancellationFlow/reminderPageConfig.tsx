@@ -5,6 +5,7 @@ import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { getBundleConfig } from './config/bundle';
 import { getBundleProConfig } from './config/bundlePro';
 import { getDrivePlusConfig } from './config/drivePlus';
+import { getDuoConfig } from './config/duo';
 import { getFamilyConfig } from './config/family';
 import { getMailBusinessConfig } from './config/mailBusiness';
 import { getMailEssentialConfig } from './config/mailEssential';
@@ -39,6 +40,10 @@ export const getReminderPageConfig = ({
 
     if (plan.Name === PLANS.FAMILY) {
         return getFamilyConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
+    }
+
+    if (plan.Name === PLANS.DUO) {
+        return getDuoConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
     }
 
     if (plan.Name === PLANS.VISIONARY) {

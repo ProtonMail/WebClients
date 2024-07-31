@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
@@ -32,6 +33,8 @@ const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [name, setName] = useState(organization.Name);
 
+    const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
+
     const handleSubmit = async () => {
         await api(updateOrganizationName(name));
         await call();
@@ -40,12 +43,10 @@ const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
 
     const handleClose = loading ? noop : onClose;
 
-    const header = organization.RequiresKey
-        ? c('Title').t`Change organization name`
-        : c('familyOffer_2023:Title').t`Change family name`;
-    const label = organization.RequiresKey
-        ? c('Title').t`Organization name`
-        : c('familyOffer_2023:Title').t`Family name`;
+    const header = isFamilyOrg
+        ? c('familyOffer_2023:Title').t`Change family name`
+        : c('Title').t`Change organization name`;
+    const label = isFamilyOrg ? c('familyOffer_2023:Title').t`Family name` : c('Title').t`Organization name`;
 
     return (
         <Modal

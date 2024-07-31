@@ -6,6 +6,7 @@ import {
     hasBundle,
     hasBundlePro2024,
     hasDrive,
+    hasDuo,
     hasFamily,
     hasMail,
     hasMailBusiness,
@@ -48,6 +49,7 @@ const useCancellationFlow = () => {
             startedCancellation ||
             hasMail(subscription) ||
             hasBundle(subscription) ||
+            hasDuo(subscription) ||
             hasFamily(subscription) ||
             hasVisionary(subscription) ||
             hasDrive(subscription)

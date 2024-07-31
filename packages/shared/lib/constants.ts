@@ -828,6 +828,7 @@ export enum ADDON_NAMES {
     MEMBER_SCRIBE_PASS_BIZ = `${SCRIBE_ADDON_PREFIX}-passbiz2024`,
     MEMBER_SCRIBE_VPN_PRO = `${SCRIBE_ADDON_PREFIX}-vpnpro2023`,
     MEMBER_SCRIBE_FAMILY = `${SCRIBE_ADDON_PREFIX}-family2022`,
+    MEMBER_SCRIBE_DUO = `${SCRIBE_ADDON_PREFIX}-duo2024`,
 }
 
 export const AddonKey: Readonly<{
@@ -862,6 +863,7 @@ export const AddonKey: Readonly<{
     [ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ]: 'MaxAI',
     [ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO]: 'MaxAI',
     [ADDON_NAMES.MEMBER_SCRIBE_FAMILY]: 'MaxAI',
+    [ADDON_NAMES.MEMBER_SCRIBE_DUO]: 'MaxAI',
     [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 'MaxAI',
 } as const;
 
@@ -895,6 +897,7 @@ export const AddonLimit = {
     [ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ]: MAX_IPS_ADDON,
     [ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO]: MAX_IPS_ADDON,
     [ADDON_NAMES.MEMBER_SCRIBE_FAMILY]: MAX_IPS_ADDON,
+    [ADDON_NAMES.MEMBER_SCRIBE_DUO]: MAX_IPS_ADDON,
     [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: MAX_IPS_ADDON,
 } as const;
 
@@ -941,6 +944,7 @@ export enum PLANS {
     BUNDLE_PRO_2024 = 'bundlepro2024',
     ENTERPRISE = 'enterprise2022',
     FAMILY = 'family2022',
+    DUO = 'duo2024',
     VISIONARY = 'visionary2022',
     VPN_PRO = 'vpnpro2023',
     VPN_BUSINESS = 'vpnbiz2023',
@@ -967,6 +971,7 @@ export const PLAN_NAMES = {
     [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
     [PLANS.ENTERPRISE]: 'Enterprise',
     [PLANS.FAMILY]: 'Proton Family',
+    [PLANS.DUO]: 'Proton Duo',
     [PLANS.VISIONARY]: 'Proton Visionary',
     [PLANS.VPN_PRO]: 'VPN Essentials',
     [PLANS.VPN_BUSINESS]: 'VPN Professional',
@@ -1019,6 +1024,7 @@ export const VPN_PASS_PROMOTION_COUPONS = [
 ];
 
 export const FAMILY_MAX_USERS = 6;
+export const DUO_MAX_USERS = 2;
 
 export const KEY_EXTENSION = 'asc';
 export const KEY_FILE_EXTENSION = `.${KEY_EXTENSION}`;
