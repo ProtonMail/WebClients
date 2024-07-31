@@ -1,6 +1,6 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
-import type { DetectedField, DetectedForm, FormHandle } from 'proton-pass-extension/app/content/types';
+import type { DetectedField, DetectedForm, FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
 import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
@@ -84,22 +84,30 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 }
             });
 
-            /* Attach new incoming fields, if not already tracked */
+            /* Attach new incoming fields, if not already tracked
+             * while maintaining the detected fields order */
+            const currentFields = formHandle.fields;
+            const nextFields = new Map<HTMLInputElement, FieldHandle>();
+
             fields.forEach(({ field, fieldType }) => {
-                if (formHandle.fields.get(field) === undefined) {
-                    didChange = true;
-                    formHandle.fields.set(
-                        field,
-                        createFieldHandles({
-                            element: field,
-                            formType,
-                            fieldType,
-                            zIndex,
-                            getFormHandle: () => formHandle,
-                        })
-                    );
-                }
+                const currField = formHandle.fields.get(field);
+                didChange = currField === undefined;
+
+                const handle =
+                    currField ??
+                    createFieldHandles({
+                        element: field,
+                        formType,
+                        fieldType,
+                        zIndex,
+                        getFormHandle: () => formHandle,
+                    });
+
+                nextFields.set(handle.element, handle);
             });
+
+            formHandle.fields = nextFields;
+            currentFields.clear();
 
             /** Reset form tracker state if fields were added or removed. Some
              * forms have appearing fields and may trigge multiple submissions.
