@@ -11,7 +11,6 @@ import {
     getPrivateAdminError,
 } from '@proton/account';
 import { Button, InlineLinkButton } from '@proton/atoms';
-import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -28,6 +27,7 @@ import { getHasVpnB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subsc
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
+import { useFlag } from '@proton/unleash';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -142,7 +142,7 @@ const SubUserCreateModal = ({
         address: '',
         invitationEmail: '',
         numAI: aiSeatsRemaining || isVisionary, // Visionary users should have the toggle set to true by default
-        domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
+        domain: useEmail ? null : (verifiedDomains[0]?.DomainName ?? null),
         vpn:
             organization &&
             hasVPN &&

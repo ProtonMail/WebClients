@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useFlag } from '@proton/unleash';
 
 import { BetaBadge, Info } from '../../components';
-import useFlag from '../../containers/unleash/useFlag';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

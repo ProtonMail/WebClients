@@ -1,4 +1,3 @@
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
@@ -23,6 +22,7 @@ import {
 import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
+import { useFlag } from '@proton/unleash';
 
 import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import {

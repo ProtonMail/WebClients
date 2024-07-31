@@ -2,8 +2,6 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import FlagProvider from '@unleash/proxy-client-react';
-
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -23,6 +21,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
+import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';

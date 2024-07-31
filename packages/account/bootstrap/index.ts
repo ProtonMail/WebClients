@@ -1,21 +1,20 @@
 import { createBrowserHistory } from 'history';
-import { History } from 'history';
-import { EVENTS, UnleashClient } from 'unleash-proxy-client';
+import type { History } from 'history';
 
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
-import { createCustomFetch, getUnleashConfig } from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
 import type { Feature } from '@proton/features';
 import metrics from '@proton/metrics';
-import { ApiWithListener } from '@proton/shared/lib/api/createApi';
+import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { appLink } from '@proton/shared/lib/apps/appLink';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
+import type {
+    AuthenticationStore} from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createAuthenticationStore, {
-    AuthenticationStore,
     getSafePath,
 } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -27,14 +26,17 @@ import {
     getReturnUrlParameter,
     removeHashParameters,
 } from '@proton/shared/lib/authentication/fork';
-import { ForkState, getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
-import { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
+import type { ForkState} from '@proton/shared/lib/authentication/fork/forkState';
+import { getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
+import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { ResumedSessionResult, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ResumedSessionResult} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import { APPS, APP_NAMES, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
+import type { APP_NAMES} from '@proton/shared/lib/constants';
+import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
@@ -44,7 +46,7 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     getIsPublicUserWithoutProtonAddress,
@@ -52,6 +54,8 @@ import {
     getRequiresAddressSetup,
 } from '@proton/shared/lib/keys';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
+import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
+import { EVENTS, UnleashClient } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';

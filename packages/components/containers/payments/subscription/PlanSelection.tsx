@@ -21,6 +21,7 @@ import {
     type VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -36,7 +37,6 @@ import {
     VpnLogo,
     WalletLogo,
 } from '../../../components';
-import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';

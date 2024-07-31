@@ -1,4 +1,3 @@
-import { useFlag } from '@unleash/proxy-client-react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
@@ -19,6 +18,7 @@ import { useFeature, useSubscription, useUser } from '@proton/components/hooks';
 import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
+import { useFlag } from '@proton/unleash';
 
 import { REACTIVATE_SOURCE } from '../cancellationFlow';
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';

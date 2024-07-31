@@ -2,9 +2,6 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import FlagProvider from '@unleash/proxy-client-react';
-import { UnleashClient } from 'unleash-proxy-client';
-
 import { serverEvent, userThunk } from '@proton/account';
 import {
     ApiProvider,
@@ -15,11 +12,6 @@ import {
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
-import {
-    createCustomFetch,
-    createUnleashReadyPromise,
-    getUnleashConfig,
-} from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getLatestID } from '@proton/shared/lib/api/events';
@@ -36,6 +28,13 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import {
+    FlagProvider,
+    UnleashClient,
+    createCustomFetch,
+    createUnleashReadyPromise,
+    getUnleashConfig,
+} from '@proton/unleash';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { useAccountDispatch } from '../app/store/hooks';

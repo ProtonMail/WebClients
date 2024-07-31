@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
-
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,10 +10,10 @@ import type {
     ChargebeeEnabled,
     ChargebeeUserExists,
     Currency,
-    User} from '@proton/shared/lib/interfaces';
-import {
-    isTaxInclusive,
+    User,
 } from '@proton/shared/lib/interfaces';
+import { isTaxInclusive } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
@@ -29,20 +27,13 @@ import type {
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PlainPaymentMethodType,
-    SavedPaymentMethod} from '../core';
-import {
-    PAYMENT_METHOD_TYPES,
-    canUseChargebee,
+    SavedPaymentMethod,
 } from '../core';
-import type {
-    OnMethodChangedHandler,
-    Operations,
-    OperationsData} from '../react-extensions';
-import {
-    usePaymentFacade as useInnerPaymentFacade,
-} from '../react-extensions';
+import { PAYMENT_METHOD_TYPES, canUseChargebee } from '../core';
+import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
+import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { PaymentProcessorType } from '../react-extensions/interface';
-import type { ThemeCode, ThemeLike} from './helpers';
+import type { ThemeCode, ThemeLike } from './helpers';
 import { getThemeCode } from './helpers';
 import { useChargebeeEnabledCache, useChargebeeUserStatusTracker } from './useChargebeeContext';
 import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';

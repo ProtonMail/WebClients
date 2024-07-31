@@ -1,7 +1,6 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { useFlag } from '@proton/components';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -35,8 +34,6 @@ import { addAttachment } from 'proton-mail/store/attachments/attachmentsActions'
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
 const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;
-
-const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 
 const fileContent = `test-content`;
 
@@ -114,7 +111,6 @@ describe('ItemAttachmentThumbnails', () => {
 
     beforeEach(async () => {
         clearAll();
-        mockUseFlag.mockReturnValue(true);
         fromKeys = await generateKeys('me', fromAddress);
     });
 
@@ -255,7 +251,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         await setupCryptoProxyForTesting();
         // Mock feature flag
         // TODO update when we'll have a better solution
-        mockUseFlag.mockReturnValue(true);
 
         addApiKeys(false, fromAddress, []);
     });

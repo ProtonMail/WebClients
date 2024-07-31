@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
 
+import { useFlag } from '@proton/unleash';
+
 import type { SettingsAreaConfig } from '../..';
-import { useFlag } from '../..';
 import SettingsMaintenanceLayoutWrapper from './SettingsMaintenanceLayoutWrapper';
 
 const config: SettingsAreaConfig = {

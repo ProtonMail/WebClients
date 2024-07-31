@@ -6,7 +6,7 @@ import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
 
 import useSnooze from './useSnooze';
 
-jest.mock('@proton/components/containers/unleash');
+jest.mock('@proton/unleash');
 
 describe('useSnooze', () => {
     beforeEach(async () => {
