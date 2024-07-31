@@ -134,7 +134,9 @@ export const MetricsAndCtas = ({
                                     {
                                         borderColor: window
                                             .getComputedStyle(document.body)
-                                            .getPropertyValue('--signal-success'),
+                                            .getPropertyValue(
+                                                percentChange < 0 ? '--signal-danger' : '--signal-success'
+                                            ),
                                         borderWidth: 2,
                                         tension: 0,
                                         pointRadius: 0,
