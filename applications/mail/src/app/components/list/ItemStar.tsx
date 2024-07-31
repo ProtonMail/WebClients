@@ -3,8 +3,8 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import type { IconSize } from '@proton/components';
-import { Icon, Tooltip } from '@proton/components';
+import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
