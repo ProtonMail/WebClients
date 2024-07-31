@@ -18,7 +18,7 @@
         "@proton/crypto": "workspace:^",
         "@proton/shared": "workspace:^",
         "@types/pkijs": "0.0.14",
-        "pkijs": "^3.2.3"
+        "pkijs": "^3.2.4"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -28,13 +28,13 @@
         "eslint-plugin-jasmine": "^4.2.0",
         "jasmine": "^5.2.0",
         "jasmine-core": "^5.2.0",
-        "karma": "^6.4.3",
+        "karma": "^6.4.4",
         "karma-chrome-launcher": "^3.2.0",
         "karma-jasmine": "^5.1.0",
         "karma-webpack": "^5.0.1",
         "playwright": "^1.45.1",
         "ts-loader": "^9.5.1",
-        "typescript": "^5.5.3",
+        "typescript": "^5.5.4",
         "webpack": "^5.93.0"
     }
 }
