@@ -16,7 +16,7 @@ export const DefaultKeyboardShortcuts = Object.freeze([
   {
     id: 'BOLD_SHORTCUT',
     hasModifier: true,
-    key: 'i',
+    key: 'b',
   },
   {
     id: 'ITALIC_SHORTCUT',
