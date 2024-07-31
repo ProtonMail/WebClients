@@ -1,4 +1,5 @@
-import { Tooltip, useFolders } from '@proton/components';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import { useFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
