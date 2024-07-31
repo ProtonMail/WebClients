@@ -12,9 +12,11 @@ import {
     CollapsibleHeaderIconButton,
     DropdownSizeUnit,
     Icon,
+    ModalTwoFooter,
     PasswordInputTwo,
     useModalState,
 } from '@proton/components/components';
+import { useUserWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
@@ -22,21 +24,26 @@ import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import type { SubTheme } from '../../utils';
+import { getTermAndConditionsSentence } from '../../utils/legal';
 import { WalletImportModal } from '../WalletImportModal';
 import { WalletInformationalModal } from '../WalletInformationalModal';
 
 export interface WalletCreationModalOwnProps {
     theme?: SubTheme;
     isFirstCreation?: boolean;
+    onWalletCreate?: (data: { isFirstCreation?: boolean }) => void;
 }
 
 type Props = ModalOwnProps & WalletCreationModalOwnProps;
 
-export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: Props) => {
+export const WalletCreationModal = ({ theme, isFirstCreation, onWalletCreate, ...modalProps }: Props) => {
     const [walletInfoModal, setWalletInfoModal] = useModalState();
     const [walletImportModal, setWalletImportModal] = useModalState();
 
+    const [walletSettings] = useUserWalletSettings();
+
     const onSetupFinish = () => {
+        onWalletCreate?.({ isFirstCreation });
         modalProps.onClose?.();
     };
 
@@ -172,29 +179,34 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                     </Collapsible>
                 )}
 
-                <div className="w-full flex flex-row gap-2">
-                    <Button
-                        fullWidth
-                        size="large"
-                        shape="solid"
-                        color="norm"
-                        disabled={loadingWalletSubmit}
-                        onClick={() => {
-                            void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation });
-                        }}
-                    >{c('Wallet setup').t`Create new wallet`}</Button>
-                    <Button
-                        fullWidth
-                        className="text-semibold"
-                        size="large"
-                        shape="ghost"
-                        color="norm"
-                        disabled={loadingWalletSubmit}
-                        onClick={() => {
-                            setWalletImportModal(true);
-                        }}
-                    >{c('Wallet setup').t`Import wallet`}</Button>
-                </div>
+                <ModalTwoFooter className="prompt-footer">
+                    <div className="w-full flex flex-row gap-2">
+                        <Button
+                            fullWidth
+                            size="large"
+                            shape="solid"
+                            color="norm"
+                            disabled={loadingWalletSubmit}
+                            onClick={() => {
+                                void onWalletSubmit({ isFirstCreation });
+                            }}
+                        >{c('Wallet setup').t`Create new wallet`}</Button>
+                        <Button
+                            fullWidth
+                            className="text-semibold"
+                            size="large"
+                            shape="ghost"
+                            color="norm"
+                            disabled={loadingWalletSubmit}
+                            onClick={() => {
+                                setWalletImportModal(true);
+                            }}
+                        >{c('Wallet setup').t`Import wallet`}</Button>
+                    </div>
+                    {walletSettings.AcceptTermsAndConditions ? undefined : (
+                        <p className="color-weak text-break text-center text-sm">{getTermAndConditionsSentence()}</p>
+                    )}
+                </ModalTwoFooter>
             </Modal>
 
             <WalletImportModal

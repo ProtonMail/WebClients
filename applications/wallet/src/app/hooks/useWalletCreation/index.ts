@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { noop } from 'lodash';
+import { first } from 'lodash';
 import { c } from 'ttag';
 
 import type {
     WasmApiEmailAddress,
+    WasmApiWalletAccount,
     WasmFiatCurrencySymbol,
     WasmNetwork,
     WasmProtonWalletApiClient,
@@ -15,10 +16,13 @@ import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda'
 import { useAddresses, useNotifications, useOrganization, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
-    DEFAULT_ACCOUNT_LABEL,
+    DEFAULT_FIRST_ACCOUNT_INDEX,
+    DEFAULT_FIRST_ACCOUNT_LABEL,
+    DEFAULT_FIRST_BVE_ACCOUNT_INDEX,
+    DEFAULT_FIRST_BVE_ACCOUNT_LABEL,
     DEFAULT_SCRIPT_TYPE,
-    FIRST_INDEX,
     WalletType,
+    acceptTermsAndConditions,
     encryptWalletData,
     encryptWalletDataWithWalletKey,
     getDefaultWalletName,
@@ -55,14 +59,17 @@ const getWalletAccountsToCreate = async ({
     wasmWallet,
     decryptedWalletKey,
     network,
+    shouldAddBveAccount,
 }: {
     isImported: boolean;
     wasmWallet: WasmWallet;
     walletApi: WasmProtonWalletApiClient;
     decryptedWalletKey: CryptoKey;
     network: WasmNetwork;
-}): Promise<[WasmDerivationPath, string, WasmScriptType][]> => {
+    shouldAddBveAccount?: boolean;
+}): Promise<[boolean, WasmDerivationPath, string, WasmScriptType][]> => {
     if (isImported) {
+        const shouldDoBve = false;
         const discoveredAccounts = await wasmWallet.discoverAccounts(walletApi);
 
         const encryptedLabels = await encryptWalletDataWithWalletKey(
@@ -71,7 +78,12 @@ const getWalletAccountsToCreate = async ({
         );
 
         const accountsToCreate = discoveredAccounts.data.map((account, index) => {
-            const args: [WasmDerivationPath, string, WasmScriptType] = [account[2], encryptedLabels[index], account[0]];
+            const args: [boolean, WasmDerivationPath, string, WasmScriptType] = [
+                shouldDoBve,
+                account[2],
+                encryptedLabels[index],
+                account[0],
+            ];
 
             return args;
         });
@@ -81,13 +93,37 @@ const getWalletAccountsToCreate = async ({
         }
     }
 
-    const derivationPath = WasmDerivationPath.fromParts(DEFAULT_SCRIPT_TYPE, network, FIRST_INDEX);
-    const [encryptedFirstAccountLabel] = await encryptWalletDataWithWalletKey(
-        [DEFAULT_ACCOUNT_LABEL],
+    const firstAccountDerivationPath = WasmDerivationPath.fromParts(
+        DEFAULT_SCRIPT_TYPE,
+        network,
+        DEFAULT_FIRST_ACCOUNT_INDEX
+    );
+    const bveAccountDerivationPath = WasmDerivationPath.fromParts(
+        DEFAULT_SCRIPT_TYPE,
+        network,
+        DEFAULT_FIRST_BVE_ACCOUNT_INDEX
+    );
+
+    const [encryptedFirstAccountLabel, encryptedBvEAccountLabel] = await encryptWalletDataWithWalletKey(
+        [DEFAULT_FIRST_ACCOUNT_LABEL, DEFAULT_FIRST_BVE_ACCOUNT_LABEL],
         decryptedWalletKey
     );
 
-    return [[derivationPath, encryptedFirstAccountLabel, DEFAULT_SCRIPT_TYPE]];
+    const firstAccountData: [boolean, WasmDerivationPath, string, WasmScriptType] = [
+        false,
+        firstAccountDerivationPath,
+        encryptedFirstAccountLabel,
+        DEFAULT_SCRIPT_TYPE,
+    ];
+
+    const bveAccountData: [boolean, WasmDerivationPath, string, WasmScriptType] = [
+        true,
+        bveAccountDerivationPath,
+        encryptedBvEAccountLabel,
+        DEFAULT_SCRIPT_TYPE,
+    ];
+
+    return [firstAccountData, ...(shouldAddBveAccount ? [bveAccountData] : [])];
 };
 
 interface Props {
@@ -172,14 +208,19 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     }, [mnemonicError, mnemonic, network, doesWalletAlreadyExist]);
 
     const onWalletSubmit = async ({
-        shouldAutoAddEmailAddress,
+        isFirstCreation,
         isImported = false,
     }: {
-        shouldAutoAddEmailAddress?: boolean;
+        isFirstCreation?: boolean;
         isImported?: boolean;
     }) => {
         // Typeguard
         if (!userKeys || isUndefined(network) || !selectedCurrency) {
+            return;
+        }
+
+        if (passphrase !== confirmedPassphrase) {
+            setError(c('Error').t`The passphrases do not match`);
             return;
         }
 
@@ -217,6 +258,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 decryptedWalletKey,
                 network,
                 wasmWallet,
+                shouldAddBveAccount: isFirstCreation,
             });
 
             const wallet = await api.wallet.createWallet(
@@ -239,8 +281,10 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             const accountsWithinUserLimit = accounts.slice(0, walletAccountPerWalletLimit);
             const accountsAboveLimits = accounts.slice(walletAccountPerWalletLimit);
 
-            const createdAccounts = [];
-            for (const account of accountsWithinUserLimit) {
+            const createdAccounts: WasmApiWalletAccount[] = [];
+            const firstAddress = first(addresses);
+
+            for (const [shouldDoBve, ...account] of accountsWithinUserLimit) {
                 const created = await api.wallet.createWalletAccount(Wallet.ID, ...account).catch((error: any) => {
                     createNotification({
                         text: error?.error ?? c('Wallet setup').t`Could not create wallet account`,
@@ -251,27 +295,36 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 });
 
                 if (created) {
-                    await api.wallet
-                        .updateWalletAccountFiatCurrency(Wallet.ID, created.Data.ID, selectedCurrency)
-                        .catch(noop);
+                    try {
+                        await api.wallet.updateWalletAccountFiatCurrency(Wallet.ID, created.Data.ID, selectedCurrency);
+                    } catch {
+                        // Silent handling
+                    }
 
-                    createdAccounts.push({ ...created.Data, FiatCurrency: selectedCurrency });
-                }
-            }
+                    let addedEmailAddresses: WasmApiEmailAddress[] = [];
 
-            const [firstWalletAccount, ...others] = createdAccounts;
-            const [firstAddress] = addresses ?? [];
+                    // We cannot link an email address to several wallet accounts
+                    const hasAlreadyLinkedFirstEmail = createdAccounts.some((a) => a.Addresses.length);
 
-            const addedEmailAddresses: WasmApiEmailAddress[] = [];
-            if (firstWalletAccount && shouldAutoAddEmailAddress) {
-                try {
-                    await api.wallet.addEmailAddress(Wallet.ID, firstWalletAccount.ID, firstAddress.ID);
-                    addedEmailAddresses.push({ ID: firstAddress.ID, Email: firstAddress.Email });
-                } catch (error: any) {
-                    createNotification({
-                        text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
-                        type: 'error',
-                    });
+                    if (shouldDoBve && firstAddress && !hasAlreadyLinkedFirstEmail) {
+                        try {
+                            await api.wallet.addEmailAddress(Wallet.ID, created.Data.ID, firstAddress.ID);
+                            addedEmailAddresses = [{ ID: firstAddress.ID, Email: firstAddress.Email }];
+                        } catch (error: any) {
+                            createNotification({
+                                text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
+                                type: 'error',
+                            });
+                        }
+                    }
+
+                    const walletAccount = {
+                        ...created.Data,
+                        FiatCurrency: selectedCurrency,
+                        Addresses: addedEmailAddresses,
+                    };
+
+                    createdAccounts.push(walletAccount);
                 }
             }
 
@@ -280,9 +333,14 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                     Wallet,
                     WalletKey,
                     WalletSettings,
-                    WalletAccounts: [{ ...firstWalletAccount, Addresses: addedEmailAddresses }, ...others],
+                    WalletAccounts: createdAccounts,
                 })
             );
+
+            if (isFirstCreation) {
+                createNotification({ text: c('Wallet terms and conditions').t`Terms and conditions were accepted` });
+                dispatch(acceptTermsAndConditions());
+            }
 
             history.push(`/wallets/${Wallet.ID}`);
             onSetupFinish({ notCreatedAccounts: accountsAboveLimits.length });
@@ -324,11 +382,6 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
         loadingWalletSubmit,
         onWalletSubmit: (...args: Parameters<typeof onWalletSubmit>) => {
-            if (passphrase !== confirmedPassphrase) {
-                setError(c('Error').t`The passphrases do not match`);
-                return;
-            }
-
             void withLoadingWalletSubmit(onWalletSubmit(...args));
         },
     };
