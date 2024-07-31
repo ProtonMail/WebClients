@@ -6,7 +6,12 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { getIpPricePerMonth, getPricePerCycle, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
+import {
+    getIpPricePerMonth,
+    getPricePerCycle,
+    hasMaximumCycle,
+    hasSomeAddonOrPlan,
+} from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     type Currency,
@@ -264,6 +269,7 @@ const PlanSelection = ({
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
+        canAccessDuoPlan && hasSomeAddonOrPlan(subscription, [PLANS.MAIL, PLANS.BUNDLE]) ? plansMap[PLANS.DUO] : null,
     ]);
 
     let FamilyPlans = filterPlans([

@@ -193,6 +193,53 @@ export const familyUpsell = {
     price: { value: 1999, currency: 'EUR' },
 };
 
+export const duoUpsell = {
+    plan: PLANS.DUO,
+    planKey: PLANS.DUO,
+    title: 'Proton Duo',
+    description: 'Secure your digital life with Proton for two people.',
+    upsellRefLink: 'upsell_mail-button-duo-dashboard_settings',
+    features: [
+        {
+            text: ['', '1 TB', ' storage'],
+            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
+            included: true,
+            highlight: false,
+            icon: 'storage',
+        },
+        {
+            text: 'Up to 2 users',
+            icon: 'users',
+            included: true,
+        },
+        {
+            text: '30 email addresses/aliases',
+            tooltip:
+                'Create up to 30 email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@proton.me for shopping accounts.',
+            included: true,
+            icon: 'envelope',
+        },
+        {
+            text: 'Unlimited folders, labels, and filters',
+            included: true,
+            icon: 'tag',
+        },
+        {
+            icon: 'brand-proton-vpn',
+            text: '10 high-speed VPN connections',
+            included: true,
+        },
+        {
+            text: 'Proton Pass with unlimited hide-my-email aliases',
+            icon: 'brand-proton-pass',
+            included: true,
+            hideInDowngrade: true,
+        },
+    ],
+    otherCtas: [],
+    price: { value: 1199, currency: 'EUR' },
+};
+
 export const businessUpsell = {
     plan: PLANS.BUNDLE_PRO,
     planKey: PLANS.BUNDLE_PRO,

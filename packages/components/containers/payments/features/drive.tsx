@@ -213,7 +213,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 freePlan,
             }),
             [PLANS.DUO]: getStorageFeature(plansMap[PLANS.DUO]?.MaxSpace ?? 1099511627776, {
-                family: true,
+                duo: true,
                 subtext: true,
                 freePlan,
             }),
