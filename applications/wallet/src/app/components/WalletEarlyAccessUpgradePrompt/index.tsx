@@ -9,13 +9,12 @@ import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/con
 import { getAppStaticUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.png';
 import clsx from '@proton/utils/clsx';
+import { useUserWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButtonLike, Modal } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
-import { APP_NAME } from '../../config';
 import { useGetUserEligibility } from '../../store/hooks/useUserEligibility';
-
-const termsLink = `${getAppStaticUrl(APP_NAME)}/legal/terms`;
+import { getTermAndConditionsSentence } from '../../utils/legal';
 
 export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps) => {
     const [exploreProtonModal, setExploreProtonModal] = useModalState();
@@ -23,6 +22,7 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
     const [primaryAddress] = addresses ?? [];
     const getUserEligibility = useGetUserEligibility();
     const [user] = useUser();
+    const [walletSettings] = useUserWalletSettings();
 
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -51,13 +51,11 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
         </span>
     );
 
-    const termsAndConditionsLink = <Href className="" href={termsLink}>{`terms and conditions`}</Href>;
-
     return (
         <>
             <Prompt
                 size="large"
-                footnote={c('Wallet Upgrade').jt`By continuing, you agree to our ${termsAndConditionsLink}`}
+                footnote={walletSettings.AcceptTermsAndConditions ? undefined : getTermAndConditionsSentence()}
                 buttons={[
                     <Tooltip title={!user.canPay && c('Wallet upgrade').t`Contact your administrator to upgrade`}>
                         <Button
