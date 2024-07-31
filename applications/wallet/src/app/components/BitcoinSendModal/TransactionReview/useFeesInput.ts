@@ -29,7 +29,7 @@ const findNearestBlockTargetFeeRate = (
 
 export const useFeesInput = (
     txBuilder: WasmTxBuilder,
-    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void
+    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void
 ) => {
     const { feesEstimation: contextFeesEstimation } = useBitcoinBlockchainContext();
 
