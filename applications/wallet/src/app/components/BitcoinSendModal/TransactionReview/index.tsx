@@ -16,12 +16,13 @@ import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { EmailSelect } from '../../EmailSelect';
 import type { RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { TextAreaModal } from '../../TextAreaModal';
 import { secondaryAmount } from '../AmountInput/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { FeesModal } from './FeesModal';
-import { useTransactionReview } from './useTransactionReview';
+import { getAnonymousSenderAddress, useTransactionReview } from './useTransactionReview';
 
 import './TransactionReview.scss';
 
@@ -66,6 +67,7 @@ export const TransactionReview = ({
         setMessage,
         setNoteToSelf,
         senderAddress,
+        onSelectAddress,
         totalSentAmount,
         totalFees,
         totalAmount,
@@ -86,7 +88,7 @@ export const TransactionReview = ({
             {loadingSend && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex flex-column items-center justify-center"
-                    style={{ background: 'var(--bg-overlay)' }}
+                    style={{ background: 'var(--bg-overlay)', zIndex: 100 }}
                 >
                     <CircleLoader size="medium" className="color-primary" />
                 </div>
@@ -224,6 +226,44 @@ export const TransactionReview = ({
                     })}
                 </div>
 
+                {isUsingBitcoinViaEmail && (
+                    <div className="flex flex-column w-full">
+                        <div className="flex flex-row w-full items-center justify-space-between">
+                            <div className="color-weak mb-4 mt-3 text-semibold">{c('Wallet transaction')
+                                .t`Bitcoin via Email`}</div>
+                        </div>
+
+                        <EmailSelect
+                            value={senderAddress?.ID}
+                            onChange={onSelectAddress}
+                            extraOptions={[getAnonymousSenderAddress()]}
+                        />
+
+                        <div className="mt-2">
+                            <Tooltip
+                                title={(() => {
+                                    if (!senderAddress) {
+                                        return c('Wallet send')
+                                            .t`You cannot send a message to the recipient because you don't have any address setup on your account`;
+                                    }
+
+                                    return null;
+                                })()}
+                            >
+                                <div className="rounded-lg w-full">
+                                    <NoteOrMessage
+                                        handleClick={() => setTextAreaModal({ kind: 'message' })}
+                                        value={message}
+                                        type="message"
+                                    />
+                                </div>
+                            </Tooltip>
+                        </div>
+
+                        <hr className="my-3" />
+                    </div>
+                )}
+
                 <div className="flex flex-column w-full">
                     <div className="flex flex-row w-full items-center justify-space-between">
                         <div className="flex flex-column items-start">
@@ -296,30 +336,7 @@ export const TransactionReview = ({
 
                 <hr className="my-3" />
 
-                {/* Message/Note */}
-                {isUsingBitcoinViaEmail && (
-                    <div className="mt-2">
-                        <Tooltip
-                            title={(() => {
-                                if (!senderAddress) {
-                                    return c('Wallet send')
-                                        .t`You cannot send a message to the recipient because you don't have any address setup on your account`;
-                                }
-
-                                return null;
-                            })()}
-                        >
-                            <div className="rounded-lg w-full">
-                                <NoteOrMessage
-                                    handleClick={() => setTextAreaModal({ kind: 'message' })}
-                                    value={message}
-                                    type="message"
-                                />
-                            </div>
-                        </Tooltip>
-                    </div>
-                )}
-
+                {/* Note to self */}
                 <div className="mt-2">
                     <NoteOrMessage
                         handleClick={() => setTextAreaModal({ kind: 'note' })}
