@@ -5,7 +5,7 @@ import { Prompt } from '@proton/components/components';
 import { useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.png';
+import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 import { acceptTermsAndConditions, useUserWalletSettings, useWalletApiClients } from '@proton/wallet';
 
 import { Button } from '../../atoms';

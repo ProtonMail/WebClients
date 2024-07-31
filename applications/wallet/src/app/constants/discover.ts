@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
-import bitcoinGuideForNewcomers from '@proton/styles/assets/img/wallet/bitcoin-guide-for-newcomers-cover.png';
-import protonWalletLaunchCover from '@proton/styles/assets/img/wallet/proton-wallet-launch-cover.png';
-import protonWalletLaunchPreview from '@proton/styles/assets/img/wallet/proton-wallet-launch-preview.png';
-import protonWalletSecurityModel from '@proton/styles/assets/img/wallet/proton-wallet-security-model-cover.png';
-import securingYourWallet from '@proton/styles/assets/img/wallet/securing-your-wallet-blog-cover.png';
-import sendingBitcoinViaEmail from '@proton/styles/assets/img/wallet/sending-bitcoin-via-email-blog-cover.png';
-import whatIsBitcoin from '@proton/styles/assets/img/wallet/what-is-bitcoin-cover.png';
+import bitcoinGuideForNewcomers from '@proton/styles/assets/img/wallet/bitcoin-guide-for-newcomers-cover.jpg';
+import protonWalletLaunchCover from '@proton/styles/assets/img/wallet/proton-wallet-launch-cover.jpg';
+import protonWalletLaunchPreview from '@proton/styles/assets/img/wallet/proton-wallet-launch-preview.jpg';
+import protonWalletSecurityModel from '@proton/styles/assets/img/wallet/proton-wallet-security-model-cover.jpg';
+import securingYourWallet from '@proton/styles/assets/img/wallet/securing-your-wallet-blog-cover.jpg';
+import sendingBitcoinViaEmail from '@proton/styles/assets/img/wallet/sending-bitcoin-via-email-blog-cover.jpg';
+import whatIsBitcoin from '@proton/styles/assets/img/wallet/what-is-bitcoin-cover.jpg';
 
 export const articles = () => {
     return [

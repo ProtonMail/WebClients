@@ -7,8 +7,8 @@ import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt } from '@proton/components/components';
 import { UnlockModal } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import accessKey from '@proton/styles/assets/img/wallet/wallet-key.png';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import accessKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
