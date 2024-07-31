@@ -48,8 +48,7 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import { useCancellationFlow } from './cancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import { notHigherThanAvailableOnBackend } from './helpers/payment';
-import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
+import { getBundleProPlanToUse, getVPNPlanToUse, notHigherThanAvailableOnBackend } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -177,7 +176,7 @@ const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency
 const PlanSelection = ({
     app,
     mode,
-    hasFreePlan = true,
+    hasFreePlan,
     planIDs,
     plans,
     plansMap,
@@ -200,6 +199,7 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
+    const canAccessDuoPlan = useFlag('DuoPlan');
 
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
@@ -266,7 +266,11 @@ const PlanSelection = ({
         plansMap[PLANS.BUNDLE],
     ]);
 
-    let FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]);
+    let FamilyPlans = filterPlans([
+        hasFreePlan ? FREE_PLAN : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        plansMap[PLANS.FAMILY],
+    ]);
 
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],

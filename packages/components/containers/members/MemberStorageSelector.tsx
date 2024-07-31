@@ -10,6 +10,7 @@ import { GIGA } from '@proton/shared/lib/constants';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
 
 import { Tooltip } from '../../components';
@@ -28,7 +29,8 @@ export const getTotalStorage = (
 };
 
 export const getInitialStorage = (organization?: Organization) => {
-    return (organization?.RequiresKey ? 5 : 500) * GIGA;
+    const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
+    return (isFamilyOrg ? 500 : 5) * GIGA;
 };
 
 export const getStorageRange = (

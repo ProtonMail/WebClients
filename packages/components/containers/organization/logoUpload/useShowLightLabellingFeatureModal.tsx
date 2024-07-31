@@ -1,26 +1,18 @@
 import { useFlag } from '@unleash/proxy-client-react';
 
-import {
-    useConfig,
-    useFeature,
-    useOrganization,
-    useSubscription,
-    useUser,
-    useWelcomeFlags,
-} from '@proton/components/hooks';
+import { useConfig, useFeature, useOrganization, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import { FeatureCode } from '../../features';
 import { useOrganizationTheme } from './useOrganizationTheme';
 
 export const useShowLightLabellingFeatureModal = () => {
     const { APP_NAME } = useConfig();
-    const [subscription] = useSubscription();
     const [{ isAdmin }] = useUser();
-    const isPartOfFamily = hasFamily(subscription);
     const [organization] = useOrganization();
+    const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const organizationTheme = useOrganizationTheme();
     const [welcomeFlags] = useWelcomeFlags();

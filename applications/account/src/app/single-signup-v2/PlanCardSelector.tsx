@@ -101,7 +101,7 @@ export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle:
     }
 };
 
-const bundlePlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY, PLANS.FAMILY];
+const bundlePlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];
 
 const PlanCardViewSlot = ({
     highlightPrice,
