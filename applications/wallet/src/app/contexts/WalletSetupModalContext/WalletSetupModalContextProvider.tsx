@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalStateWithData } from '@proton/components/components';
+import { useModalState, useModalStateWithData } from '@proton/components/components';
 import { useOrganization } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet';
@@ -14,9 +14,9 @@ import { WalletCreationModal } from '../../components';
 import { WalletAccountCreationModal } from '../../components/WalletAccountCreationModal';
 import { WalletBackupModal } from '../../components/WalletBackupModal';
 import { WalletEarlyAccessUpgradePrompt } from '../../components/WalletEarlyAccessUpgradePrompt';
-import { WalletTermsAndConditionsPrompt } from '../../components/WalletTermsAndConditionsPrompt';
 import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
+import { WalletWelcomePrompt } from '../../components/WalletWelcomePrompt';
 import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '../../constants/wallet';
 import { useUserEligibility } from '../../store/hooks';
 import { SubTheme } from '../../utils';
@@ -26,8 +26,9 @@ interface Props {
     children: ReactNode;
 }
 
-const getPrimaryEmail = (wallet: IWasmApiWalletData[]) => {
-    return wallet[0]?.WalletAccounts[0]?.Addresses[0]?.Email;
+const getPrimaryEmail = (wallet?: IWasmApiWalletData[]) => {
+    const emails = wallet?.flatMap((w) => w.WalletAccounts.flatMap((a) => a.Addresses));
+    return emails?.at(0)?.Email;
 };
 
 export const WalletSetupModalContextProvider = ({ children }: Props) => {
@@ -45,6 +46,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             onCloseRef.current?.();
         },
     });
+    const [walletWelcomeModal, setWalletWelcomeModal] = useModalState();
     const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
     const close = async () => {
@@ -98,12 +100,28 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
 
                 if (decryptedApiWalletsData && !decryptedApiWalletsData.length) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user
-                    return <WalletCreationModal theme={SubTheme.ORANGE} open isFirstCreation />;
+                    return (
+                        <WalletCreationModal
+                            theme={SubTheme.ORANGE}
+                            open
+                            isFirstCreation={!settings.WalletCreated}
+                            onWalletCreate={({ isFirstCreation }) => {
+                                if (isFirstCreation) {
+                                    setWalletWelcomeModal(true);
+                                }
+                            }}
+                        />
+                    );
                 }
 
-                if (!settings.AcceptTermsAndConditions && !loadingSettings) {
-                    const primaryEmail = decryptedApiWalletsData && getPrimaryEmail(decryptedApiWalletsData);
-                    return <WalletTermsAndConditionsPrompt open email={primaryEmail} />;
+                if ((!settings.AcceptTermsAndConditions && !loadingSettings) || walletWelcomeModal.open) {
+                    return (
+                        <WalletWelcomePrompt
+                            open
+                            onClose={walletWelcomeModal.onClose}
+                            email={getPrimaryEmail(decryptedApiWalletsData)}
+                        />
+                    );
                 }
 
                 const walletWithoutWalletAccount = decryptedApiWalletsData?.find((w) => !w.WalletAccounts.length);
