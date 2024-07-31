@@ -283,7 +283,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     latestSubscription?: Subscription;
     allowedAddonTypes?: AddonGuard[];
     audience?: Audience;
-    scribeEnabled: boolean;
+    scribeEnabled?: boolean;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -301,7 +301,7 @@ export const ProtonPlanCustomizer = ({
     latestSubscription,
     allowedAddonTypes,
     audience,
-    scribeEnabled,
+    scribeEnabled = true,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
