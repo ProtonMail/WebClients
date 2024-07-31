@@ -1,14 +1,16 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmRecipient, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip } from '@proton/components/components';
-import { useNotifications } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
 import { useUserWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { Price } from '../../../atoms/Price';
 import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
@@ -31,6 +33,21 @@ interface Props {
     onReview: (exchangeRate: WasmApiExchangeRate) => void;
 }
 
+const distributeAmount = (amount: number, recipients: number) => {
+    const initDistribution = new Array(recipients).fill(0);
+
+    const baseAmount = Math.floor(amount / recipients);
+    let remainder = amount % recipients;
+
+    const baseDistribution = initDistribution.map(() => baseAmount);
+
+    for (let i = 0; i < remainder; i++) {
+        baseDistribution[i]++;
+    }
+
+    return baseDistribution;
+};
+
 export const AmountInput = ({
     txBuilder,
     updateTxBuilder,
@@ -40,13 +57,13 @@ export const AmountInput = ({
     apiAccount,
     onReview,
 }: Props) => {
+    const [dirty, setDirty] = useState(false);
     const [defaultExchangeRate] = useExchangeRate(apiAccount.FiatCurrency);
     const [settings] = useUserWalletSettings();
 
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
-    const [err, setErr] = useState<string | null>(null);
-    const { createNotification } = useNotifications();
     const { createDraftPsbt } = usePsbt({ txBuilder });
+    const [loadingCreatePsbt, withLoadingCreatePsbt] = useLoading();
 
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
 
@@ -58,98 +75,112 @@ export const AmountInput = ({
     // Supposedly, 1000 SATS = 1,001€, in reality, it is going to be rounded to 1€, so constraint min now becomes 999 SATS
     const constrainedMin = convertAmount(DEFAULT_MINIMUM_SATS_AMOUNT, 'SATS', exchangeRateOrBitcoinUnit);
     const constrainedSatMin = convertAmount(constrainedMin, exchangeRateOrBitcoinUnit, 'SATS');
+    const constrainedMinElement = useMemo(
+        () => <Price key="min-amount" satsAmount={constrainedSatMin} unit={exchangeRateOrBitcoinUnit} />,
+        [constrainedSatMin, exchangeRateOrBitcoinUnit]
+    );
 
-    const totalSentAmount = txBuilder.getRecipients().reduce((acc, r) => {
+    const recipients = useMemo(() => txBuilder.getRecipients(), [txBuilder]);
+
+    const totalSentAmount = recipients.reduce((acc, r) => {
         return acc + Number(r[2]);
     }, 0);
 
-    const checkCreatePsbt = useCallback(() => {
-        return createDraftPsbt()
-            .then(() => {
-                setErr(null);
-                return true;
-            })
-            .catch((err) => {
-                const message = ((): string => {
-                    if (err instanceof Error) {
-                        if (err.message.includes('OutputBelowDustLimit')) {
-                            return c('Wallet send').t`Amount is below minimum value`;
-                        }
-                    }
-                    return c('Wallet send').t`Could not create PSBT`;
-                })();
+    const [errorMessage, setErrorMessage] = useState<string | any[] | null>(null);
+    const checkCreatePsbt = useCallback(async () => {
+        const hasRecipientBelowMinAmount = recipients.some((r) => {
+            const amount = r[2];
+            return amount < constrainedSatMin;
+        });
 
-                createNotification({ text: message, type: 'error' });
-                setErr(message);
-                return false;
+        if (hasRecipientBelowMinAmount) {
+            // translators: example: You must send at least $0.50 to each recipient
+            return c('Wallet Send').jt`You must send at least ${constrainedMinElement} to each recipient`;
+        }
+
+        return createDraftPsbt()
+            .then(() => null)
+            .catch((err) => {
+                switch (err?.kind) {
+                    case 'InsufficientFunds':
+                        const feesToReserveElement = (
+                            <Price key="fees-to-reserve" satsAmount={err.needed - totalSentAmount} unit={'BTC'} />
+                        );
+                        return c('Wallet send')
+                            .jt`You do not have enough BTC in this account to fund the transaction and the required network fee of ${feesToReserveElement}.`;
+                    case 'OutputBelowDustLimit':
+                        return c('Wallet send').jt`One of recipient's amount is below minimum value`;
+                    default:
+                        return c('Wallet send').t`Could not create PSBT`;
+                }
             });
-    }, [createDraftPsbt, createNotification]);
+    }, [constrainedMinElement, constrainedSatMin, createDraftPsbt, recipients, totalSentAmount]);
 
     useEffect(() => {
-        if (err) {
-            void checkCreatePsbt();
+        if (dirty) {
+            void checkCreatePsbt().then((error) => {
+                setErrorMessage(error);
+            });
         }
-    }, [checkCreatePsbt, err]);
+    }, [dirty, checkCreatePsbt]);
 
     const remainingAmount = accountBalance - totalSentAmount;
 
-    const tryUpdateRecipientAmount = (recipient: WasmRecipient, recipientIndex: number, newAmount: number) => {
-        updateTxBuilder(async (txBuilder) => {
-            const initialAmount = recipient[2];
-            const updated = await txBuilder.updateRecipient(recipientIndex, undefined, BigInt(newAmount));
-            if (updated.getRecipients()[recipientIndex][2] === initialAmount && constrainedSatMin > newAmount) {
-                createNotification({
-                    type: 'warning',
-                    text: c('Wallet send')
-                        .t`Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.`,
-                });
-            }
-
-            return updated;
-        });
-    };
-
-    /**
-     * User can update a single amount input, the update amount will be attributed to every recipient
-     */
-    const handleUpdateSingleAmount = (newAmount: number) => {
-        txBuilder.getRecipients().forEach((r, i) => {
-            const amount = r[2];
-            if (Number(amount) !== newAmount) {
-                tryUpdateRecipientAmount(r, i, newAmount);
-            }
-        });
+    const tryUpdateRecipientAmount = (recipientIndex: number, newAmount: number) => {
+        updateTxBuilder((txBuilder) => txBuilder.updateRecipient(recipientIndex, undefined, BigInt(newAmount)));
     };
 
     /**
      * User can update a single amount input, the update amount will be evenly split to every recipient
      */
-    const handleUpdateSingleAmountForMultiRecipients = (newAmount: number) => {
-        const splitAmount = Math.floor(newAmount / txBuilder.getRecipients().length);
-        txBuilder.getRecipients().forEach((r, i) => {
-            const amount = r[2];
-            if (Number(amount) !== splitAmount) {
-                tryUpdateRecipientAmount(r, i, splitAmount);
+    const handleUpdateSingleAmount = (newAmount: number) => {
+        const distributedAmount = distributeAmount(newAmount, recipients.length);
+
+        recipients.forEach((r, i) => {
+            const amount = distributedAmount.at(i) ?? 0;
+
+            const recipientAmount = r[2];
+            if (Number(recipientAmount) !== amount) {
+                tryUpdateRecipientAmount(i, amount);
             }
         });
     };
 
-    const handleSendAllFromSingleAmount = () => {
-        const amountPerRecipient = Math.floor(accountBalance / txBuilder.getRecipients().length);
-        txBuilder.getRecipients().forEach((r, i) => {
-            tryUpdateRecipientAmount(r, i, amountPerRecipient);
+    const handleSendAllFromSingleAmount = async () => {
+        const distributedAmount = distributeAmount(accountBalance, recipients.length);
+
+        recipients.forEach((r, i) => {
+            const amount = distributedAmount.at(i) ?? 0;
+
+            const recipientAmount = r[2];
+            if (Number(recipientAmount) !== amount) {
+                tryUpdateRecipientAmount(i, amount);
+            }
         });
     };
 
-    useEffect(() => {
-        handleUpdateSingleAmountForMultiRecipients(constrainedSatMin * txBuilder.getRecipients().length);
-    }, [constrainedSatMin]);
+    const handleReviewTransaction = async () => {
+        const errorMessage = await withLoadingCreatePsbt(checkCreatePsbt());
+        if (errorMessage) {
+            setDirty(true);
+            return setErrorMessage(errorMessage);
+        }
+
+        // Clean recipient with empty amounts
+        recipients.forEach((r, i) => {
+            if (!r[2]) {
+                updateTxBuilder((txBuilder) => txBuilder.removeRecipient(i));
+            }
+        });
+
+        onReview(exchangeRate ?? getExchangeRateFromBitcoinUnit(settings.BitcoinUnit));
+    };
 
     return (
         <div className="flex flex-column max-w-full">
             <h2 className="text-center mb-8 text-semibold">{c('Wallet send').t`How much are you sending?`}</h2>
 
-            {txBuilder.getRecipients().length > 1 ? (
+            {recipients.length > 1 ? (
                 <>
                     <div className="mb-6">
                         <BitcoinAmountInputWithBalanceAndCurrencySelect
@@ -158,16 +189,15 @@ export const AmountInput = ({
                             secondaryExchangeRate={defaultExchangeRate}
                             onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                             remainingBalance={remainingAmount}
-                            onAmountChange={(v) => handleUpdateSingleAmountForMultiRecipients(v)}
+                            onAmountChange={(v) => handleUpdateSingleAmount(v)}
                             onSendAll={handleSendAllFromSingleAmount}
-                            min={constrainedMin * txBuilder.getRecipients().length}
                         />
                     </div>
                 </>
             ) : (
                 <>
                     {(() => {
-                        const txBuilderRecipients = txBuilder.getRecipients();
+                        const txBuilderRecipients = recipients;
                         const firstTxBuilderRecipient = txBuilderRecipients[0];
                         const firstRecipientAmount = firstTxBuilderRecipient[2];
 
@@ -180,7 +210,6 @@ export const AmountInput = ({
                                 onAmountChange={(v) => handleUpdateSingleAmount(v)}
                                 onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                                 remainingBalance={remainingAmount}
-                                min={constrainedMin}
                             />
                         );
                     })()}
@@ -198,7 +227,7 @@ export const AmountInput = ({
             </div>
 
             <div className="flex flex-column w-full mt-2 mb-4">
-                {txBuilder.getRecipients().map((txBuilderRecipient, index) => {
+                {recipients.map((txBuilderRecipient, index) => {
                     const recipientUid = txBuilderRecipient[0];
                     const btcAddress = txBuilderRecipient[1];
                     const amount = txBuilderRecipient[2];
@@ -217,7 +246,7 @@ export const AmountInput = ({
                             name={recipient.recipient.Name ?? recipient.recipient.Address}
                             address={recipient.recipient.Address}
                             leftNode={
-                                txBuilder.getRecipients().length > 1 ? (
+                                recipients.length > 1 ? (
                                     <CoreButton
                                         shape="ghost"
                                         color="weak"
@@ -237,16 +266,15 @@ export const AmountInput = ({
                                 ) : null
                             }
                             rightNode={
-                                txBuilder.getRecipients().length > 1 ? (
+                                recipients.length > 1 ? (
                                     <div className="w-custom mr-1 shrink-0" style={{ '--w-custom': '7.5rem' }}>
                                         <BitcoinAmountInput
-                                            unit={exchangeRate ?? settings.BitcoinUnit}
+                                            unit={exchangeRateOrBitcoinUnit}
                                             value={Number(amount)}
                                             onValueChange={(v) => {
-                                                tryUpdateRecipientAmount(txBuilderRecipient, index, v);
+                                                tryUpdateRecipientAmount(index, v);
                                             }}
                                             inputClassName="text-right bg-norm"
-                                            min={constrainedMin}
                                         />
                                     </div>
                                 ) : null
@@ -258,28 +286,25 @@ export const AmountInput = ({
             </div>
 
             <div className="px-10 mt-6">
-                <Button
-                    color="norm"
-                    shape="solid"
-                    size="large"
-                    shadow
-                    fullWidth
-                    onClick={async () => {
-                        if (!(await checkCreatePsbt())) {
-                            return;
-                        }
-
-                        // Clean recipient with empty amounts
-                        txBuilder.getRecipients().forEach((r, i) => {
-                            if (!r[2]) {
-                                updateTxBuilder((txBuilder) => txBuilder.removeRecipient(i));
-                            }
-                        });
-
-                        onReview(exchangeRate ?? getExchangeRateFromBitcoinUnit(settings.BitcoinUnit));
-                    }}
-                    disabled={Boolean(err) || txBuilder.getRecipients().every((r) => !r[2])}
-                >{c('Wallet send').t`Review`}</Button>
+                <Tooltip title={errorMessage}>
+                    <div>
+                        <Button
+                            color="norm"
+                            shape="solid"
+                            size="large"
+                            shadow
+                            fullWidth
+                            onClick={handleReviewTransaction}
+                            disabled={!!errorMessage || loadingCreatePsbt}
+                        >
+                            <div className="flex flex-row items-center justify-center">
+                                {c('Wallet send').t`Review`}
+                                {loadingCreatePsbt && <CircleLoader className="color-norm ml-1" />}
+                            </div>
+                        </Button>
+                    </div>
+                </Tooltip>
+                {errorMessage && <div className="mt-4 text-center color-danger">{errorMessage}</div>}
             </div>
         </div>
     );
