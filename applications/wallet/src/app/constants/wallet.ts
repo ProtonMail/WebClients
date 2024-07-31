@@ -7,3 +7,5 @@ export const SYNCING_MINIMUM_COOLDOWN_MINUTES = 1;
 
 export const DEFAULT_MAX_WALLETS = 2;
 export const DEFAULT_MAX_SUB_WALLETS = 2;
+
+export const ANONYMOUS_SENDER_ADDRESS_ID = '-1';
