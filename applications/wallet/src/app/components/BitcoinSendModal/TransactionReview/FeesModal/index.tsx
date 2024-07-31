@@ -9,13 +9,16 @@ import { Icon, Tooltip } from '@proton/components/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { useUserWalletSettings } from '@proton/wallet';
 
-import { BitcoinAmount, Modal } from '../../../../atoms';
+import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
+import { Price } from '../../../../atoms/Price';
 import type { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
+import { secondaryAmount } from '../../AmountInput/BitcoinAmountInputWithBalanceAndCurrencySelect';
 
 import './FeesModal.scss';
 
 interface Props extends ModalOwnProps {
+    accountExchangeRate?: WasmApiExchangeRate;
     exchangeRate: WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
     psbtExpectedSize: number | undefined;
@@ -24,6 +27,7 @@ interface Props extends ModalOwnProps {
 }
 
 export const FeesModal = ({
+    accountExchangeRate,
     exchangeRate,
     txBuilder,
     updateTxBuilder,
@@ -97,13 +101,19 @@ export const FeesModal = ({
                         </div>
                         <div className="mx-4">{text}</div>
                         <div className="flex flex-column items-end ml-auto">
-                            <BitcoinAmount
-                                bitcoin={feesAtFeeRate}
-                                unit={{ value: settings.BitcoinUnit }}
-                                exchangeRate={'isBitcoinRate' in exchangeRate ? undefined : { value: exchangeRate }}
-                                firstClassName="text-right"
-                                secondClassName="text-right"
-                            />
+                            <div className="mb-1">
+                                {exchangeRate && <Price satsAmount={feesAtFeeRate} unit={exchangeRate} />}
+                            </div>
+
+                            <span className="block color-hint">
+                                {secondaryAmount({
+                                    key: 'hint-total-amount',
+                                    settingsBitcoinUnit: settings.BitcoinUnit,
+                                    secondaryExchangeRate: accountExchangeRate,
+                                    primaryExchangeRate: exchangeRate,
+                                    value: feesAtFeeRate,
+                                })}
+                            </span>
                         </div>
                     </button>
                 ))}

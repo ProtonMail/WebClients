@@ -1,12 +1,11 @@
-import type { ChangeEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { type ChangeEvent, useRef } from 'react';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
-import { convertAmount, getDecimalStepByUnit } from '../utils';
+import { convertAmount, getDecimalStepByUnit, getPrecision } from '../utils';
 import { CoreInput } from './Input';
 
 interface Props extends InputFieldOwnProps, InputProps {
@@ -14,6 +13,9 @@ interface Props extends InputFieldOwnProps, InputProps {
      * Bitcoin amount in satoshis (1 BTC = 100_000_000 SAT)
      */
     value: number;
+    /**
+     * Change bitcoin value and returns new value
+     */
     onValueChange?: (value: number) => void;
 
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
@@ -21,38 +23,42 @@ interface Props extends InputFieldOwnProps, InputProps {
     min?: number;
 }
 
+const formatNumberForDisplay = (num: number, decimalPlaces: number) => {
+    // Use a multiplier to shift the decimal point
+    let multiplier = Math.pow(10, decimalPlaces);
+    // Format the number without scientific notation
+    return Math.round(num * multiplier) / multiplier;
+};
+
 export const BitcoinAmountInput = ({
     value,
     onValueChange,
 
     unit,
-    min = 0,
     dense = true,
+
+    min,
 
     inputClassName,
     ...inputProps
 }: Props) => {
-    const [innerAmount, setInnerAmount] = useState(0);
-
-    useEffect(() => {
-        const convertedAmount = convertAmount(value, COMPUTE_BITCOIN_UNIT, unit);
-        const amount = Math.max(min, convertedAmount);
-        setInnerAmount(amount);
-    }, [value, unit, min]);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const safeMin = min ?? 0;
+    const amount = Math.max(safeMin, convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const parsedAmount = parseFloat(event.target.value);
-        const amount = Number.isFinite(parsedAmount) && parsedAmount > min ? parsedAmount : min;
-        setInnerAmount(amount);
+        const parsedAmount = parseFloat(event.target.value.replace(/^0+(\d+)/, '$1'));
+        const updatedAmount = Number.isFinite(parsedAmount) && parsedAmount > safeMin ? parsedAmount : safeMin;
 
-        onValueChange?.(convertAmount(amount, unit, COMPUTE_BITCOIN_UNIT));
+        onValueChange?.(convertAmount(updatedAmount, unit, COMPUTE_BITCOIN_UNIT));
     };
 
     return (
         <CoreInput
+            ref={inputRef}
             dense={dense}
             type="number"
-            value={innerAmount}
+            value={formatNumberForDisplay(amount, getPrecision(unit))}
             min={min}
             step={getDecimalStepByUnit(unit)}
             onChange={onChange}
