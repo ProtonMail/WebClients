@@ -3,6 +3,7 @@
 /* eslint-disable max-classes-per-file */
 
 /* eslint-disable no-underscore-dangle */
+import type { AlgorithmInfo as AlgorithmInfoV5, Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import {
     SHA256,
     SHA512,
@@ -41,7 +42,6 @@ import {
     verifyCleartextMessage,
     verifyMessage,
 } from 'pmcrypto';
-import type { AlgorithmInfo as AlgorithmInfoV5, Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import type { SubkeyOptions, UserID } from 'pmcrypto/lib/openpgp';
 import { enums } from 'pmcrypto/lib/openpgp';
 

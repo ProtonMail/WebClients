@@ -1054,9 +1054,7 @@ const SubscriptionContainer = ({
                                         {hasPlanCustomizer && currentPlan && (
                                             <>
                                                 <ProtonPlanCustomizer
-                                                    scribeEnabled={
-                                                        scribeEnabled.paymentsEnabled && !scribeEnabled.killSwitch
-                                                    }
+                                                    scribeEnabled={scribeEnabled.paymentsEnabled}
                                                     loading={blockAccountSizeSelector}
                                                     currency={model.currency}
                                                     cycle={model.cycle}
