@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
@@ -50,11 +51,7 @@ interface InviteButtonProps {
 
 const InviteProtonUserButton = ({ onClick, organization }: ButtonProps & InviteButtonProps) => {
     if (organization && organization.InvitationsRemaining === 0) {
-        const tooltip = isOrganizationFamily(organization)
-            ? c('familyOffer_2023:Family plan')
-                  .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`
-            : c('familyOffer_2023:Family plan')
-                  .t`You have reached the limit of 3 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`;
+        const tooltip = isOrganizationFamily(organization) ? getInviteLimit(10) : getInviteLimit(3);
 
         return (
             <Tooltip title={tooltip}>
