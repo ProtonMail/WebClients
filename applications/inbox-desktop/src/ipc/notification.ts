@@ -12,7 +12,12 @@ export const handleIPCBadge = (count: number) => {
     }
 
     if (count) {
-        app.setBadgeCount(count);
+        if (count < 0) {
+            ipcLogger.error("Received invalid badge count", count);
+            resetBadge();
+        } else {
+            app.setBadgeCount(count);
+        }
     } else {
         resetBadge();
     }
