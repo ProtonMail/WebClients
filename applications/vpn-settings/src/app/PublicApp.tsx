@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
+import ExternalSSOConsumer from 'proton-account/src/app/content/ExternalSSOConsumer';
 import type { Paths } from 'proton-account/src/app/content/helper';
 import { getLocaleMapping } from 'proton-account/src/app/locales';
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
@@ -19,10 +20,11 @@ import {
     UnleashFlagProvider,
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+import { AuthType } from '@proton/components/containers/login/interface';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
-import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
@@ -130,7 +132,24 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 }}
                                             />
                                         </Route>
-                                        <Route path="/login">
+                                        <Route path={SSO_PATHS.EXTERNAL_SSO_LOGIN}>
+                                            <UnAuthenticated>
+                                                <ExternalSSOConsumer
+                                                    loader={loader}
+                                                    onLogin={({ username, token, flow }) =>
+                                                        history.replace(SSO_PATHS.LOGIN, {
+                                                            authType: AuthType.ExternalSSO,
+                                                            externalSSO: {
+                                                                token,
+                                                                flow,
+                                                            },
+                                                            username,
+                                                        })
+                                                    }
+                                                />
+                                            </UnAuthenticated>
+                                        </Route>
+                                        <Route path={SSO_PATHS.LOGIN}>
                                             <LoginContainer
                                                 initialLocation={initialLocation}
                                                 metaTags={loginPage()}
