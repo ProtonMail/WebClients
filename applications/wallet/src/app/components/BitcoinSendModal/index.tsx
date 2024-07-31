@@ -88,7 +88,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
 
     useEffect(() => {
         if (wasmAccount?.account) {
-            updateTxBuilder(async (txBuilder) => txBuilder.setAccount(wasmAccount.account));
+            updateTxBuilder((txBuilder) => txBuilder.setAccount(wasmAccount.account));
         }
     }, [updateTxBuilder, wasmAccount]);
 

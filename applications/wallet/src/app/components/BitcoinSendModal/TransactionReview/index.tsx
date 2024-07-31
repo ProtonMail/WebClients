@@ -7,7 +7,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet';
 
-import { BitcoinAmount, Button, CoreButton } from '../../../atoms';
+import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
@@ -161,17 +161,21 @@ export const TransactionReview = ({
                                                     className="w-custom flex flex-column items-end mr-1 shrink-0"
                                                     style={{ '--w-custom': '7.5rem' }}
                                                 >
-                                                    <BitcoinAmount
-                                                        bitcoin={Number(amount)}
-                                                        unit={{ value: settings.BitcoinUnit }}
-                                                        exchangeRate={
-                                                            'isBitcoinRate' in exchangeRate
-                                                                ? undefined
-                                                                : { value: exchangeRate }
-                                                        }
-                                                        firstClassName="text-right"
-                                                        secondClassName="text-right"
-                                                    />
+                                                    <div className="mb-1">
+                                                        {exchangeRate && (
+                                                            <Price satsAmount={Number(amount)} unit={exchangeRate} />
+                                                        )}
+                                                    </div>
+
+                                                    <span className="block color-hint">
+                                                        {secondaryAmount({
+                                                            key: 'hint-total-amount',
+                                                            settingsBitcoinUnit: settings.BitcoinUnit,
+                                                            secondaryExchangeRate: accountExchangeRate,
+                                                            primaryExchangeRate: exchangeRate,
+                                                            value: Number(amount),
+                                                        })}
+                                                    </span>
                                                 </div>
                                                 <CoreButton
                                                     className="ml-4 rounded-full bg-weak"
@@ -256,6 +260,7 @@ export const TransactionReview = ({
                         </CoreButton>
 
                         <FeesModal
+                            accountExchangeRate={accountExchangeRate}
                             exchangeRate={exchangeRate}
                             txBuilder={txBuilder}
                             updateTxBuilder={updateTxBuilder}
