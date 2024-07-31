@@ -206,7 +206,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     this.socket.onerror = (event) => {
-      this.logger.error('Websocket error:', event)
+      /** socket errors are completely opaque and convey no info. So we do not log an error here as to not pollute Sentry */
+      this.logger.info('Websocket error:', event)
 
       this.handleSocketClose(ConnectionCloseReason.CODES.INTERNAL_ERROR, 'Websocket error')
     }
@@ -254,7 +255,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
     clearTimeout(this.reconnectTimeout)
 
-    this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
+    this.reconnectTimeout = setTimeout(() => {
+      if (document.visibilityState === 'visible') {
+        void this.connect()
+      }
+    }, reconnectDelay)
   }
 
   markAsReadyToAcceptMessages() {

@@ -12,7 +12,7 @@ import {
   BridgeOriginProvider,
   DOCS_EDITOR_DEBUG_KEY,
   EDITOR_TAG_INFO_EVENT,
-  EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH,
+  EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
 } from '@proton/docs-shared'
 
 import { ClientInvoker } from './ClientInvoker'
@@ -34,8 +34,7 @@ export class EditorToClientBridge {
         const tag = event.data.versionCookieAtLoad
         if (tag && tag !== versionCookieAtLoad) {
           updateVersionCookie(tag, undefined)
-          this.clientFrame.postMessage(EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH, BridgeOriginProvider.GetClientOrigin())
-          window.location.reload()
+          this.clientFrame.postMessage(EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD, BridgeOriginProvider.GetClientOrigin())
         }
         return
       }

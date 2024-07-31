@@ -204,6 +204,11 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
 
   const createBridge = useCallback(
     (orchestrator: EditorOrchestratorInterface, editorFrame: HTMLIFrameElement) => {
+      if (bridge) {
+        application.logger.warn('Attempting to create bridge when one already exists')
+        return
+      }
+
       application.logger.info('Creating bridge from client to editor')
 
       const clientToEditorBridge = new ClientToEditorBridge(editorFrame, orchestrator, application.eventBus)
@@ -217,18 +222,18 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
         editorInitializationConfig,
       )
     },
-    [application.logger, application.eventBus, editorInitializationConfig],
+    [application.logger, application.eventBus, editorInitializationConfig, bridge],
   )
 
   const onFrameReady = useCallback(
     (frame: HTMLIFrameElement) => {
       setEditorFrame(frame)
 
-      if (docOrchestrator) {
+      if (docOrchestrator && !bridge) {
         createBridge(docOrchestrator, frame)
       }
     },
-    [docOrchestrator, createBridge],
+    [docOrchestrator, createBridge, bridge],
   )
 
   useEffect(() => {
@@ -236,12 +241,12 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
       return
     }
 
-    const observer = application.docLoader.addStatusObserver({
+    const disposer = application.docLoader.addStatusObserver({
       onSuccess: (orchestrator) => {
         setDocOrchestrator(orchestrator)
         setReady(true)
 
-        if (editorFrame) {
+        if (editorFrame && !bridge) {
           createBridge(orchestrator, editorFrame)
         }
       },
@@ -252,11 +257,12 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
 
     if (!initializing) {
       setInitializing(true)
+
       void application.docLoader.initialize(lookup)
     }
 
-    return observer
-  }, [application, lookup, docOrchestrator, editorFrame, createBridge, initializing])
+    return disposer
+  }, [application, lookup, docOrchestrator, editorFrame, createBridge, initializing, bridge])
 
   if (error) {
     return (
