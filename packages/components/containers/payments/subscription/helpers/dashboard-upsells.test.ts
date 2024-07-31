@@ -5,6 +5,7 @@ import { getTestPlans } from '@proton/testing/data';
 
 import {
     drivePlusUpsell,
+    duoUpsell,
     familyUpsell,
     mailPlusUpsell,
     mailProfessionalUpsell,
@@ -159,6 +160,14 @@ describe('resolveUpsellsToDisplay', () => {
         it('should return Unlimited (recommended) + Family upsells', () => {
             const upsells = resolveUpsellsToDisplay({
                 ...base,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.MAIL,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
                 isFree: false,
                 hasPaidMail: true,
             });
@@ -196,6 +205,56 @@ describe('resolveUpsellsToDisplay', () => {
                 },
             });
         });
+
+        it('should return Unlimited (recommended) + Duo + Family upsells', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.MAIL,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
+                isFree: false,
+                hasPaidMail: true,
+                canAccessDuoPlan: true,
+            });
+
+            expect(upsells).toMatchObject([
+                {
+                    ...unlimitedUpsell,
+                    isRecommended: true,
+                    features: unlimitedUpsell.features.filter(({ text }) => text !== '25 calendars'),
+                },
+                duoUpsell,
+            ]);
+
+            upsells[0].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.BUNDLE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+
+            upsells[1].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
+            expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.DUO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+        });
     });
 
     describe('Unlimited', () => {
@@ -218,6 +277,49 @@ describe('resolveUpsellsToDisplay', () => {
 
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.FAMILY,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+        });
+
+        it('should return Duo and Family upsell', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                isFree: false,
+                hasPaidMail: true,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.BUNDLE,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
+                canAccessDuoPlan: true,
+            });
+
+            expect(upsells).toMatchObject([{ ...duoUpsell, isRecommended: true }, familyUpsell]);
+
+            upsells[0].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.DUO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+
+            upsells[1].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
