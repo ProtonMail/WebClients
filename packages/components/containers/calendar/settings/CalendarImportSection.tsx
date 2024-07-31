@@ -9,10 +9,10 @@ import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { useFlag } from '@proton/unleash';
 
 import { Alert, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
-import { useFlag } from '../../unleash';
 import { ImportModal } from '../importModal';
 
 interface Props {

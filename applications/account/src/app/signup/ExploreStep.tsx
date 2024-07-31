@@ -2,11 +2,12 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useConfig, useFlag } from '@proton/components';
+import { useConfig } from '@proton/components';
 import metrics from '@proton/metrics';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import Content from '../public/Content';
 import Header from '../public/Header';

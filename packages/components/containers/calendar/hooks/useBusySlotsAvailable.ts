@@ -1,6 +1,7 @@
-import { useActiveBreakpoint, useFlag, useOrganization } from '@proton/components';
+import { useActiveBreakpoint, useOrganization } from '@proton/components';
 import { isUserEligibleForBusySlots } from '@proton/components/helpers/busySlots';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { useFlag } from '@proton/unleash';
 
 /**
  * Is busyTimeSlot feature enabled

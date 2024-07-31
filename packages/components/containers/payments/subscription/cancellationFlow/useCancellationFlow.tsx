@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useFlag } from '@proton/components/containers/unleash';
 import { useSubscription } from '@proton/components/hooks';
 import {
     hasBundle,
@@ -13,6 +12,7 @@ import {
     hasMailPro,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
+import { useFlag } from '@proton/unleash';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { CANCEL_ROUTE } from './helper';

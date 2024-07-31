@@ -15,6 +15,7 @@ import {
     migrateUser,
     updateActiveKeys,
 } from '@proton/shared/lib/keys';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import {
@@ -28,7 +29,6 @@ import {
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import { useKTActivation, useKTVerifier } from '../keyTransparency';
-import useFlag from '../unleash/useFlag';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/dom';
 
-import { useFlag } from '@proton/components/containers/unleash';
 import { useUser } from '@proton/components/hooks/useUser';
+import { useFlag } from '@proton/unleash';
 
 import { easySwitchRender } from '../../tests/render';
 import GmailForwarding from './GmailForwarding';
@@ -9,7 +9,7 @@ import GmailForwarding from './GmailForwarding';
 jest.mock('@proton/components/hooks/useUser');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/containers/unleash');
+jest.mock('@proton/unleash');
 const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 
 describe('GmailForwarding', () => {

@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { disableAllowAddressDeletion } from '@proton/account';
-import { useApi, useFlag } from '@proton/components';
+import { useApi } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';

@@ -11,7 +11,7 @@ import { Vr } from '@proton/atoms/Vr';
 import type { IconName } from '@proton/components/components';
 import { Icon, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText, useFlag } from '@proton/components/containers';
+import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText } from '@proton/components/containers';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getBlackFridayRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
@@ -54,6 +54,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

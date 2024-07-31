@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import { useFlagsReady } from '@proton/components/containers';
+import { useFlagsReady } from '@proton/unleash';
 
 interface Props {
     loader: ReactNode;

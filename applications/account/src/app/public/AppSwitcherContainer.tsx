@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { DropdownMenu, Icon, SimpleDropdown } from '@proton/components/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { type OnLoginCallback, type OnLoginCallbackArguments, useFlag } from '@proton/components/containers';
+import { type OnLoginCallback, type OnLoginCallbackArguments } from '@proton/components/containers';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import ExploreAppsList, { getExploreApps } from '../signup/ExploreAppsList';
 import Content from './Content';
