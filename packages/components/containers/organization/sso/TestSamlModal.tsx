@@ -15,6 +15,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/loginActions';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { auth, createSession, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -24,9 +25,14 @@ import type {
     RefreshSessionResponse,
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
+import { APPS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Domain } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import successSvg from './cloud-lock-check.svg';
+import errorSvg from './cloud-lock-cross.svg';
 
 type State =
     | {
@@ -52,10 +58,12 @@ const handleTestSaml = async ({
     email,
     api,
     abortController,
+    finalRedirectBaseUrl,
 }: {
     email: string;
     api: Api;
     abortController: AbortController;
+    finalRedirectBaseUrl?: string;
 }): Promise<State> => {
     const { UID, AccessToken } = await api<RefreshSessionResponse>(createSession());
 
@@ -71,15 +79,13 @@ const handleTestSaml = async ({
         const { token } = await handleExternalSSOLogin({
             signal: abortController.signal,
             token: ssoInfoResponse.SSOChallengeToken,
+            finalRedirectBaseUrl,
         });
         await authApi<AuthResponse>(auth({ SSOResponseToken: token }, false));
         return { type: 'success' };
     } catch (error) {
         if (error instanceof ExternalSSOError) {
-            const error = new Error(c('saml: Error').t`Something went wrong. Please try again.`);
-            // @ts-ignore
-            error.trace = false;
-            throw error;
+            return { type: 'error', error, extra: c('saml: Error').t`Sign-in wasn't successfully completed.` };
         }
         const apiError = getApiError(error);
         if (apiError.message) {
@@ -102,6 +108,7 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
     const abortRef = useRef<AbortController | null>(null);
     const handleError = useErrorHandler();
     const [state, setState] = useState<State>(initialState);
+    const { APP_NAME } = useConfig();
 
     const formId = 'auth-form-test';
     const domainName = domain.DomainName;
@@ -133,9 +140,14 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 {(() => {
                     if (state.type === 'success') {
                         return (
-                            <div>
-                                {c('saml: Info')
-                                    .t`We received a valid SAML response from your identity provider. SSO is enabled for your organization.`}
+                            <div className="flex flex-column gap-4">
+                                <div className="text-center">
+                                    <img src={successSvg} alt="" />
+                                </div>
+                                <div>
+                                    {c('saml: Info')
+                                        .t`We received a valid SAML response from your identity provider. SSO is enabled for your organization.`}
+                                </div>
                             </div>
                         );
                     }
@@ -143,6 +155,9 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     if (state.type === 'error') {
                         return (
                             <div className="flex flex-column gap-4">
+                                <div className="text-center">
+                                    <img src={errorSvg} alt="" />
+                                </div>
                                 <div>{c('saml: Info').t`An error occurred while testing your SSO configuration.`}</div>
                                 {state.extra && (
                                     <div>
@@ -191,6 +206,8 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                             email,
                                             api: silentApi,
                                             abortController,
+                                            finalRedirectBaseUrl:
+                                                APP_NAME === APPS.PROTONVPN_SETTINGS ? getVpnAccountUrl() : undefined,
                                         });
                                         setState(result);
                                     } catch (error) {
