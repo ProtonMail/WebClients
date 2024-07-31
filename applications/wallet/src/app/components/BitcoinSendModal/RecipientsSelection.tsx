@@ -366,8 +366,8 @@ export const RecipientsSelection = ({
                     onSendInvite={(email, inviterAddressId) => {
                         const type =
                             walletNotFoundModal.data?.error === InvalidRecipientErrorCode.CouldNotFindProtonWallet
-                                ? 'bve'
-                                : 'newcomer';
+                                ? 'newcomer'
+                                : 'bve';
 
                         void handleSendEmailInvite(type, email, inviterAddressId);
                     }}
