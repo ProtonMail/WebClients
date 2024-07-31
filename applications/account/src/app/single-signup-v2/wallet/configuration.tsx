@@ -251,7 +251,7 @@ export const getWalletConfiguration = ({
                 </div>
                 <div className="my-6">
                     {c('wallet_signup_2024: Info')
-                        .t`Sign up for a free ${BRAND_NAME} account to secure your spot. The earlier you sign up, the sooner you will get access to ${appName}.`}
+                        .t`Sign up for a free ${BRAND_NAME} account to secure your spot. The earlier you sign up, the sooner you will get access to ${appName}. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${appName} right away.`}
                 </div>
                 <div>{getJoinString(audience)}</div>
             </div>
