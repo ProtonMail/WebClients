@@ -37,20 +37,20 @@
         "is-ci": "^3.0.1",
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-use-logical-spec": "^5.0.1",
-        "typescript": "^5.5.3"
+        "typescript": "^5.5.4"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
         "@types/jest-when": "^3.5.5",
-        "husky": "^9.1.1",
+        "husky": "^9.1.4",
         "lint-staged": "^15.2.7",
         "nyc": "^17.0.0",
         "prettier": "^3.3.3",
         "sort-package-json": "^2.10.0",
-        "turbo": "^2.0.9"
+        "turbo": "^2.0.10"
     },
     "packageManager": "yarn@4.3.1",
     "engines": {
-        "node": ">= 20.15.1"
+        "node": ">= 20.16.0"
     }
 }

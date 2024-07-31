@@ -35,7 +35,7 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
-        "@testing-library/jest-dom": "^6.4.6",
+        "@testing-library/jest-dom": "^6.4.8",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/jest": "^29.5.12",
@@ -48,6 +48,6 @@
         "jest-when": "3.6.0",
         "prettier": "^3.3.3",
         "ts-jest": "^29.2.3",
-        "typescript": "^5.5.3"
+        "typescript": "^5.5.4"
     }
 }
