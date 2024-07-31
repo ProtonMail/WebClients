@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@proton/eslint-config-proton": "workspace:^",
-    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/jest-dom": "^6.4.8",
     "@types/google-protobuf": "^3.15.12",
     "@types/jest": "^29.5.12",
     "eslint": "^8.57.0",
@@ -28,6 +28,6 @@
     "jest-junit": "^16.0.0",
     "jest-when": "3.6.0",
     "ts-jest": "^29.2.3",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }
