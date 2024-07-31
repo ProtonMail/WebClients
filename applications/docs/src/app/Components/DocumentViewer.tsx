@@ -30,6 +30,7 @@ import { useGenericAlertModal } from './Modals/GenericAlert'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
+import { useAuthentication } from '@proton/components/hooks'
 
 type Props = {
   lookup: NodeMeta
@@ -44,6 +45,7 @@ type Error = {
 
 export function DocumentViewer({ lookup, editorInitializationConfig, action }: Props) {
   const application = useApplication()
+  const { getLocalID } = useAuthentication()
 
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
   const isSignatureFailedModalOpen = useRef(false)
@@ -260,17 +262,17 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
     return (
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
-        <div className="mt-1 max-w-lg text-center whitespace-pre-line">
+        <div className="mt-1 max-w-lg whitespace-pre-line text-center">
           {error.userUnderstandableMessage
             ? error.message
             : c('Info')
                 .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
         </div>
         <div className="mt-4 flex gap-2">
-          <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS), '_blank')}>
+          <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS, getLocalID()), '_blank')}>
             {c('Action').t`Create new document`}
           </Button>
-          <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE), '_blank')}>
+          <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_blank')}>
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </Button>
         </div>
