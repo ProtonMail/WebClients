@@ -136,7 +136,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                     </div>
                 </div>
 
-                <div>
+                <div className='h-full overflow-auto'>
                     <div className="wallet-fullscreen-modal-main">
                         {stepKey === StepKey.RecipientsSelection && walletAccount && (
                             <RecipientsSelection

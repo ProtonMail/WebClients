@@ -4,7 +4,7 @@ import { omit } from 'lodash';
 
 import type { PublicKeyReference } from '@proton/crypto/lib';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum InvalidRecipientErrorCode {
     NoAddressSetOnBitcoinAddress,
@@ -20,7 +20,7 @@ export type BtcAddressOrError = { value?: string; error?: InvalidRecipientErrorC
 
 export type MapItem = { btcAddress: BtcAddressOrError; recipient: Recipient; addressKey?: PublicKeyReference };
 
-export type BtcAddressMap = Partial<Record<string, MapItem>>;
+export type BtcAddressMap = SimpleMap<MapItem>;
 export type RecipientEmailMap = Partial<Record<Recipient['Address'], MapItem>>;
 
 interface Props {
