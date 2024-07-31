@@ -10,6 +10,7 @@ import { useAddressesKeys } from '@proton/components/hooks/useAddressesKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
+import { SECOND } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -130,7 +131,7 @@ const filterTxWithoutApiData = (transactionDataByHashedTxId: TransactionDataByHa
             // typeguard: since record is partial, we first need to filter out keys with no value
             .filter((entry): entry is [string, TransactionDataTuple] => isTruthy(entry[1]))
             // we only keep transactions that have no api data
-            .filter(([, [networkData, apiData]]) => networkData.time.confirmed && !apiData)
+            .filter(([, [, apiData]]) => !apiData)
     );
 };
 
@@ -283,7 +284,7 @@ const createMissingTxData = async ({
                 hashed_txid: hashedTxId,
                 transaction_time: networkData.time?.confirmation_time
                     ? networkData.time?.confirmation_time.toString()
-                    : null,
+                    : Math.floor(Date.now() / SECOND).toString(),
                 label: null,
                 exchange_rate_id: null,
             });
@@ -544,9 +545,21 @@ export const useWalletTransactions = ({
 
     const transactionDetails: TransactionData[] | null = useMemo(() => {
         if (transactionDataByHashedTxId) {
-            return Object.entries(transactionDataByHashedTxId) // typeguard: since record is partial, we first need to filter out keys with no value
+            const transactions = Object.entries(transactionDataByHashedTxId) // typeguard: since record is partial, we first need to filter out keys with no value
                 .filter((entry): entry is [string, TransactionDataTuple] => isTruthy(entry[1]))
                 .map(([, [networkData, apiData]]) => ({ networkData, apiData }));
+
+            transactions.sort((a, b) => {
+                if (a.networkData.time.confirmed || b.networkData.time.confirmed) {
+                    return 0;
+                }
+
+                const aTime = a.apiData?.TransactionTime ? Number(a.apiData.TransactionTime) : 0;
+                const bTime = b.apiData?.TransactionTime ? Number(b.apiData.TransactionTime) : 0;
+                return aTime - bTime;
+            });
+
+            return transactions;
         } else {
             return null;
         }

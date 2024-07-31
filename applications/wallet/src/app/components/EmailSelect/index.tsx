@@ -8,16 +8,19 @@ import { useAddresses } from '@proton/components/hooks';
 import { useDecryptedApiWalletsData } from '@proton/wallet';
 
 import { Select } from '../../atoms';
+import { ANONYMOUS_SENDER_ADDRESS_ID } from '../../constants/wallet';
 
 interface Props {
     value?: string;
     onChange: (a: string | undefined) => void;
+    extraOptions?: { Email: string; ID: string }[];
 }
 
-export const EmailSelect = ({ value, onChange }: Props) => {
+export const EmailSelect = ({ value, onChange, extraOptions }: Props) => {
     const [addresses = [], loadingAddresses] = useAddresses();
 
-    const addressesById = useMemo(() => keyBy(addresses, (a) => a.ID), [addresses]);
+    const allAddressesOptions = useMemo(() => [...(extraOptions ?? []), ...addresses], [addresses, extraOptions]);
+    const addressesById = useMemo(() => keyBy(allAddressesOptions, (a) => a.ID), [allAddressesOptions]);
 
     useEffect(() => {
         const address = value && addressesById[value];
@@ -33,6 +36,25 @@ export const EmailSelect = ({ value, onChange }: Props) => {
         [decryptedApiWalletsData]
     );
 
+    const icon = (option: { Email: string; ID: string }) => {
+        if (option.ID === ANONYMOUS_SENDER_ADDRESS_ID) {
+            return null;
+        }
+
+        return walletAccountEmails?.includes(option.Email) ? (
+            <Tooltip title={c('Wallet invite').t`This email can receive Bitcoin via Email`}>
+                <Icon name="brand-bitcoin" className="ml-auto color-hint" />
+            </Tooltip>
+        ) : (
+            <Tooltip
+                title={c('Wallet invite')
+                    .t`Warning: the recipient will not be able to send Bitcoin via Email to this email.`}
+            >
+                <Icon name="exclamation-circle" className="ml-auto color-hint" />
+            </Tooltip>
+        );
+    };
+
     return (
         <Select
             label={c('Wallet invite').t`Your email (visible to recipient)`}
@@ -42,25 +64,14 @@ export const EmailSelect = ({ value, onChange }: Props) => {
             onChange={(event) => {
                 onChange(event.value);
             }}
-            options={addresses.map((option) => ({
+            options={allAddressesOptions.map((option) => ({
                 label: option.Email,
                 value: option.ID,
                 id: option.ID,
                 children: (
-                    <div className="flex flex-row items-center">
-                        {option.Email}{' '}
-                        {walletAccountEmails?.includes(option.Email) ? (
-                            <Tooltip title={c('Wallet invite').t`This email can receive Bitcoin via Email`}>
-                                <Icon name="brand-bitcoin" className="ml-2" />
-                            </Tooltip>
-                        ) : (
-                            <Tooltip
-                                title={c('Wallet invite')
-                                    .t`Warning: the recipient will not be able to send Bitcoin via Email to this email.`}
-                            >
-                                <Icon name="exclamation-circle" className="ml-2" />
-                            </Tooltip>
-                        )}
+                    <div className="flex flex-row items-center py-2">
+                        {option.Email}
+                        {icon(option)}
                     </div>
                 ),
             }))}

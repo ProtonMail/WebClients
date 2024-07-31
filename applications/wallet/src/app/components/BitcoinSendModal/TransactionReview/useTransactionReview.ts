@@ -1,15 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
-import { useAddresses, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import { useAddressesKeys, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
+import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
+import { ANONYMOUS_SENDER_ADDRESS_ID } from '../../../constants/wallet';
 import { usePsbt } from '../../../hooks/usePsbt';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+
+export const getAnonymousSenderAddress = () => ({
+    Email: c('Wallet send').t`Anonymous sender`,
+    ID: ANONYMOUS_SENDER_ADDRESS_ID,
+});
 
 export const useTransactionReview = ({
     isUsingBitcoinViaEmail,
@@ -28,14 +34,25 @@ export const useTransactionReview = ({
     btcAddressMap: BtcAddressMap;
     onSent: () => void;
 }) => {
-    const [addresses] = useAddresses();
-    // We use primaryAddress when user wants to use BvE but doesn't have any email set on the wallet account he is using
-    const primaryAddress = addresses?.[0];
+    const [addresses] = useAddressesKeys();
+
+    // Address that will be used as a fallback when anonymous sender is selected
+    const primaryAddress = useMemo(() => {
+        const primaryAddressId = addresses?.at(0)?.address.ID;
+        const primaryAddressKey = addresses?.at(0)?.keys.at(0);
+
+        if (primaryAddressId && primaryAddressKey) {
+            return {
+                ID: primaryAddressId,
+                key: primaryAddressKey,
+            };
+        }
+    }, [addresses]);
 
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
 
-    const [senderAddress, setSenderAddress] = useState<{ ID: string; key: DecryptedAddressKey }>();
+    const [senderAddress, setSenderAddress] = useState<{ ID: string; key?: DecryptedAddressKey }>();
 
     const getAddressKeys = useGetAddressKeys();
 
@@ -53,21 +70,63 @@ export const useTransactionReview = ({
 
     const totalAmount = totalFees + totalSentAmount;
 
-    // Typeguard, no recipient should be undefined here
-    const recipients = compact(txBuilder.getRecipients().map((r) => btcAddressMap[r[1]]));
+    const [recipientsAddresses, emailAddressByBtcAddress] = useMemo(() => {
+        const recipients = txBuilder.getRecipients();
+
+        const recipientsAddresses = compact(recipients.map((r) => btcAddressMap[r[1]]));
+        const emailAddressByBtcAddress: SimpleMap<string> = recipients.reduce((acc, recipient) => {
+            const btcAddress = recipient[1];
+            const emailAddress = btcAddressMap[btcAddress]?.recipient.Address;
+
+            return emailAddress ? { ...acc, [btcAddress]: emailAddress } : acc;
+        }, {});
+
+        return [recipientsAddresses, emailAddressByBtcAddress];
+    }, [btcAddressMap, txBuilder]);
+
+    const onSelectAddress = useCallback(
+        async (senderAddressId?: string) => {
+            const isAnonymousSend = senderAddress?.ID === ANONYMOUS_SENDER_ADDRESS_ID;
+
+            if (senderAddressId) {
+                const addressKeys = isAnonymousSend ? [] : await getAddressKeys(senderAddressId);
+                setSenderAddress({ ID: senderAddressId, key: addressKeys.at(0) });
+            } else {
+                setSenderAddress(undefined);
+            }
+        },
+        [getAddressKeys, senderAddress?.ID]
+    );
 
     useEffect(() => {
         const run = async () => {
-            const senderAddressId: string | undefined = account.Addresses[0]?.ID ?? primaryAddress?.ID;
+            // We use primaryAddress when user wants to use BvE but doesn't have any email set on the wallet account he is using
+            const defaultAddress = account.Addresses.at(0) ?? addresses?.at(0)?.address;
 
-            if (senderAddressId) {
-                const [senderAddressKey] = await getAddressKeys(senderAddressId);
-                setSenderAddress({ ID: senderAddressId, key: senderAddressKey });
+            const defaultSenderAddressId: string | undefined = defaultAddress?.ID;
+
+            if (defaultSenderAddressId && !senderAddress) {
+                await onSelectAddress(defaultSenderAddressId);
             }
         };
 
         void run();
-    }, [account.Addresses, getAddressKeys, primaryAddress?.ID]);
+    }, [account.Addresses, addresses, onSelectAddress, senderAddress]);
+
+    const isAnonymousSend = senderAddress?.ID === ANONYMOUS_SENDER_ADDRESS_ID;
+
+    // When user picked anonymous sender, we want to use the fallback address instead of selected one
+    const finalSenderAddress = useMemo(() => {
+        const { ID, key } = senderAddress ?? {};
+        if (ID && key) {
+            return {
+                ID,
+                key,
+            };
+        }
+
+        return primaryAddress;
+    }, [primaryAddress, senderAddress]);
 
     const handleSendTransaction = async () => {
         try {
@@ -81,12 +140,14 @@ export const useTransactionReview = ({
                  * - User has no address key at all
                  * - User is not using bitcoin via email
                  */
-                ...(senderAddress && isUsingBitcoinViaEmail
+                ...(finalSenderAddress && isUsingBitcoinViaEmail
                     ? {
-                          senderAddress,
+                          isAnonymousSend,
+                          senderAddress: finalSenderAddress,
+                          recipients: emailAddressByBtcAddress,
                           message: {
                               content: message,
-                              encryptionKeys: compact(recipients.map((r) => r.addressKey)),
+                              encryptionKeys: compact(recipientsAddresses.map((r) => r.addressKey)),
                           },
                       }
                     : {}),
@@ -116,6 +177,7 @@ export const useTransactionReview = ({
         setNoteToSelf,
 
         senderAddress,
+        onSelectAddress,
 
         totalSentAmount,
         totalFees,
