@@ -9,7 +9,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks/index';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.png';
+import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.jpg';
 import { useWalletApiClients } from '@proton/wallet';
 
 import { Button, Input } from '../../atoms';
