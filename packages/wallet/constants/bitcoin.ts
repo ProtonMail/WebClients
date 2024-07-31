@@ -1,4 +1,4 @@
-import type { WasmBitcoinUnit} from '@proton/andromeda';
+import type { WasmBitcoinUnit } from '@proton/andromeda';
 import { WasmScriptType, WasmWordCount } from '@proton/andromeda';
 
 export const SATOSHI = 1;
@@ -24,7 +24,10 @@ export const DEFAULT_DISPLAY_BITCOIN_UNIT: WasmBitcoinUnit = 'BTC';
 
 export const DEFAULT_FIAT_CURRENCY = 'USD';
 
-export const DEFAULT_ACCOUNT_LABEL = 'Primary Account';
+export const DEFAULT_FIRST_ACCOUNT_LABEL = 'Primary Account';
+export const DEFAULT_FIRST_ACCOUNT_INDEX = 0;
+export const DEFAULT_FIRST_BVE_ACCOUNT_LABEL = 'Bitcoin Via Email';
+export const DEFAULT_FIRST_BVE_ACCOUNT_INDEX = 1;
 export const DEFAULT_SCRIPT_TYPE = WasmScriptType.NativeSegwit;
 
 export const BASE_INDEX_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'custom'];
