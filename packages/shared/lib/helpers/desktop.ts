@@ -1,13 +1,13 @@
 import UAParser from 'ua-parser-js';
 
-import { SUPPORTED_ELECTRON_APP } from '@proton/components/hooks/useIsElectronApp';
-
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
 import { isLinux, isMac, isWindows } from './browser';
 
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
+
+export const SUPPORTED_ELECTRON_APP: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL];
 
 export const isElectronApp = /electron/i.test(ua.ua);
 export const isElectronOnMac = isElectronApp && isMac();
