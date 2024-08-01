@@ -7,6 +7,7 @@ import {
     clearDetectionCache,
     fieldTypes,
     formTypes,
+    getTypeScore,
     prepass,
     rulesetMaker,
     shouldRunClassifier,
@@ -64,8 +65,7 @@ const getPredictionsFor = <T extends string>(
     const predictions = options.subTypes.reduce<Map<Fnode, PredictionResult<T>>>((results, subType) => {
         const fnodes: Fnode[] = boundRuleset.get(subType);
         fnodes.forEach((fnode) => {
-            const score = fnode.hasType('cache') ? 1 : fnode.scoreFor(subType);
-
+            const score = getTypeScore(fnode, subType);
             const candidate = { type: subType, fnode, score };
             const bestSoFar = results.get(fnode);
 
