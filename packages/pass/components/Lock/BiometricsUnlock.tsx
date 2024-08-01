@@ -55,6 +55,11 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
         }
     }, [online, offlineEnabled]);
 
+    // Trigger unlock automatically on first render
+    useEffect(() => {
+        onUnlock().catch(noop);
+    }, []);
+
     return (
         <Button
             key={key}
