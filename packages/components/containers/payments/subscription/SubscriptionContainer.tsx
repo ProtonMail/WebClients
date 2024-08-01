@@ -498,6 +498,7 @@ const SubscriptionContainer = ({
                         cycle: model.cycle,
                         currency: model.currency,
                         plan: getPlanNameFromIDs(model.planIDs) || 'n/a',
+                        coupon: model.coupon,
                     });
                 }
             } catch (error) {
@@ -801,6 +802,7 @@ const SubscriptionContainer = ({
                 cycle: model.cycle,
                 currency: model.currency,
                 upsellRef,
+                coupon: model.coupon,
             });
         }
     }, []);

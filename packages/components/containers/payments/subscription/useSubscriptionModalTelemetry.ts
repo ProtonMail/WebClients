@@ -23,12 +23,14 @@ const useSubscriptionModalTelemetry = () => {
         cycle,
         currency,
         upsellRef,
+        coupon,
     }: {
         step?: SUBSCRIPTION_STEPS;
         plan?: string;
         cycle: number;
         currency: string;
         upsellRef?: string;
+        coupon: string | null | undefined;
     }) => {
         return sendTelemetryReport({
             api,
@@ -40,6 +42,7 @@ const useSubscriptionModalTelemetry = () => {
                 billing_cycle: cycle.toString(),
                 currency: currency,
                 upsell_reference: upsellRef,
+                coupon_code: coupon || undefined,
             },
         });
     };
@@ -48,10 +51,12 @@ const useSubscriptionModalTelemetry = () => {
         cycle,
         currency,
         plan,
+        coupon,
     }: {
         cycle: number;
         currency: string;
         plan: string;
+        coupon: string | null | undefined;
     }) => {
         return sendTelemetryReport({
             api,
@@ -61,6 +66,7 @@ const useSubscriptionModalTelemetry = () => {
                 billing_cycle: cycle.toString(),
                 currency: currency,
                 plan_selected: plan,
+                coupon_code: coupon || undefined,
             },
         });
     };
