@@ -1,6 +1,6 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
-import { IdentityFieldType, getIdentityFieldType } from '@proton/pass/fathom';
+import { IdentityFieldType } from '@proton/pass/fathom';
 import type { ItemContent, Maybe } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -56,22 +56,33 @@ export const IDENTITY_FIELDS_CONFIG: Record<IdentityFieldType, (data: ItemConten
     [IdentityFieldType.COUNTRY]: prop('countryOrRegion'),
 };
 
-/** Autofills identity fields with data while preventing duplicates.
- * Iterates through form fields and autofills them with corresponding
- * identity data. It keeps track of the previously autofilled field type
- * to avoid filling multiple fields with the same data. This is useful for
- * forms with multiple sections that may require different sets of information
- * IE: separate billing and shipping addresses */
-export const autofillIdentityFields = (fields: FieldHandle[], data: ItemContent<'identity'>) => {
-    let previous: IdentityFieldType;
+/** Autofills identity fields with data while preventing duplicates within a section.
+ * Iterates through form fields in a specific order, starting from the selected field
+ * and wrapping around. It autofills fields with corresponding identity data, keeping
+ * track of previously filled field types to avoid duplicates within the same section.
+ * This approach is particularly useful for forms with multiple sections that may require
+ * different sets of information (e.g., separate billing and shipping addresses). */
+export const autofillIdentityFields = (
+    fields: FieldHandle[],
+    selectedField: FieldHandle,
+    data: ItemContent<'identity'>
+) => {
+    const autofilled = new Set<IdentityFieldType>();
+    const sectionFields = fields.filter((field) => field.sectionIndex === selectedField.sectionIndex);
+    const selectedFieldIndex = sectionFields.findIndex((field) => field === selectedField);
 
-    fields.forEach((field) => {
-        const type = getIdentityFieldType(field.element);
-        if (type === undefined || previous === type) return;
+    const orderedFields =
+        selectedFieldIndex !== -1
+            ? [...sectionFields.slice(selectedFieldIndex), ...sectionFields.slice(0, selectedFieldIndex)]
+            : sectionFields;
 
-        const getValue = IDENTITY_FIELDS_CONFIG[type];
+    orderedFields.forEach((field) => {
+        const { identityType } = field;
+        if (identityType === undefined || autofilled.has(identityType)) return;
+
+        const getValue = IDENTITY_FIELDS_CONFIG[identityType];
         const value = getValue(data);
         if (value) field.autofill(value);
-        previous = type;
+        autofilled.add(identityType);
     });
 };

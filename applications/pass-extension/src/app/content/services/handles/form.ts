@@ -1,9 +1,11 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/form/autofill.identity.sections';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
 import type { DetectedField, DetectedForm, FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
 import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
+    FieldType,
     type FormType,
     buttonSelector,
     isVisibleForm,
@@ -73,6 +75,8 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             let didChange = formType !== formHandle.formType;
+            let hasIdentityFields: boolean = false;
+
             formHandle.formType = formType;
 
             /* Detach fields that are no longer present */
@@ -92,6 +96,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             fields.forEach(({ field, fieldType }) => {
                 const currField = formHandle.fields.get(field);
                 didChange = currField === undefined;
+                hasIdentityFields = hasIdentityFields || fieldType === FieldType.IDENTITY;
 
                 const handle =
                     currField ??
@@ -108,6 +113,17 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
             formHandle.fields = nextFields;
             currentFields.clear();
+
+            if (hasIdentityFields) {
+                /** resolve potential identity sections only if we have identity
+                 * fields to process. Avoids unnecessary runs of section detection. */
+                resolveIdentitySections(formHandle.getFields()).forEach((section, idx) => {
+                    section.fields.forEach(({ field, type }) => {
+                        field.sectionIndex = idx;
+                        field.identityType = type;
+                    });
+                });
+            }
 
             /** Reset form tracker state if fields were added or removed. Some
              * forms have appearing fields and may trigge multiple submissions.
