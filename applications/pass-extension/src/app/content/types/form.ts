@@ -1,6 +1,6 @@
 import { type AutofillOptions } from 'proton-pass-extension/app/content/utils/autofill';
 
-import type { FieldType, FormType } from '@proton/pass/fathom';
+import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom';
 import type { AutosaveFormEntry, FormCredentials, Maybe, MaybeNull } from '@proton/pass/types';
 
 import type { DropdownAction } from './dropdown';
@@ -25,32 +25,45 @@ export interface FormHandle {
 }
 
 export interface FieldHandle {
-    formType: FormType;
-    fieldType: FieldType;
-    element: HTMLInputElement;
-    boxElement: HTMLElement;
-    icon: FieldIconHandle | null;
+    /** action attached for this field */
     action: MaybeNull<DropdownAction>;
+    /** wether the field was autofilled */
     autofilled: boolean;
+    /** bounding element of input field */
+    boxElement: HTMLElement;
+    /** underlying input element */
+    element: HTMLInputElement;
+    /** predicted field type */
+    fieldType: FieldType;
+    /** optional `IconHandle` if attached */
+    icon: MaybeNull<FieldIconHandle>;
+    /** optional form section index */
+    sectionIndex?: number;
+    /** optional identity field sub-type */
+    identityType?: IdentityFieldType;
+    /** flag indicating event listeners have been registered */
     tracked: boolean;
+    /** input value - updated on change */
     value: string;
+    /** optimal z-index for icon injection */
     zIndex: number;
-    getFormHandle: () => FormHandle;
-    getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
-    setValue: (value: string) => void;
-    setAction: (action: MaybeNull<DropdownAction>) => void;
-    autofill: (value: string, options?: AutofillOptions) => void;
-    focus: (options?: { preventAction?: boolean }) => void;
-    attachIcon: () => Maybe<FieldIconHandle>;
-    detachIcon: () => void;
     attach: (options: { onChange: () => void; onSubmit: () => void }) => void;
+    attachIcon: () => Maybe<FieldIconHandle>;
+    autofill: (value: string, options?: AutofillOptions) => void;
     detach: () => void;
+    detachIcon: () => void;
+    focus: (options?: { preventAction?: boolean }) => void;
+    getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
+    getFormHandle: () => FormHandle;
+    setAction: (action: MaybeNull<DropdownAction>) => void;
+    setValue: (value: string) => void;
 }
 
 export enum FieldInjectionRule {
     ALWAYS /* always inject */,
     FIRST_OF_TYPE /* first field for field type */,
     FIRST_OF_FORM /* first field in form */,
+    FIRST_OF_SECTION /* first field in form section */,
     NEVER /* never inject */,
 }
 
