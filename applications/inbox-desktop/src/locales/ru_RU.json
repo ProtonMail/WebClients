@@ -1,0 +1,58 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "ru_RU"
+  },
+  "contexts": {
+    "App menu": {
+      "Clear application data": [
+        "Удаление данных приложения"
+      ],
+      "Edit": [
+        "Изменить"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "Reload": [
+        "Перезагрузить"
+      ],
+      "Show logs": [
+        "Показать журналы"
+      ],
+      "Speech": [
+        "Речь"
+      ],
+      "Uninstall Proton Mail": [
+        "Удалить Proton Mail"
+      ],
+      "Window": [
+        "Окно"
+      ]
+    },
+    "Conext menu": {
+      "Speech": [
+        "Речь"
+      ]
+    },
+    "Context menu": {
+      "Copy link": [
+        "Копировать ссылку"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Внесенные изменения могут не сохраниться."
+      ],
+      "Leave": [
+        "Оставить"
+      ],
+      "Leave page?": [
+        "Покинуть страницу?"
+      ],
+      "Stay": [
+        "Остаться"
+      ]
+    }
+  }
+}

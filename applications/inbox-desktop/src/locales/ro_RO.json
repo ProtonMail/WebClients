@@ -1,0 +1,57 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);",
+    "language": "ro_RO"
+  },
+  "contexts": {
+    "App menu": {
+      "Clear application data": [
+        "Ștergere date aplicație"
+      ],
+      "Edit": [
+        "Editare"
+      ],
+      "File": [
+        "Fișier"
+      ],
+      "Force Reload": [
+        "Reîncărcare forțată"
+      ],
+      "Reload": [
+        "Reîncărcare"
+      ],
+      "Show logs": [
+        "Afișare jurnale"
+      ],
+      "Speech": [
+        "Vorbire"
+      ],
+      "Toggle developers tools": [
+        "Comutare instrumente de dezvoltare"
+      ],
+      "Uninstall Proton Mail": [
+        "Dezinstalare Proton Mail"
+      ],
+      "View": [
+        "Afișare"
+      ],
+      "Window": [
+        "Fereastră"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Modificările efectuate nu pot fi salvate."
+      ],
+      "Leave": [
+        "Părăsire"
+      ],
+      "Leave page?": [
+        "Părăsiți pagina?"
+      ],
+      "Stay": [
+        "Rămânere"
+      ]
+    }
+  }
+}
