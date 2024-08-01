@@ -13,6 +13,7 @@ import {
     clearDetectionCache,
     getIgnoredParent,
     getParentFormPrediction,
+    isPrediction,
     removeClassifierFlags,
 } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
@@ -169,16 +170,16 @@ export const createFormManager = (options: FormManagerOptions) => {
     /* if a new field was added to a currently ignored form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
-    const onNewField = (field?: HTMLElement) => {
-        const ignored = getIgnoredParent(field);
+    const onNewField = (target?: HTMLElement) => {
+        const ignored = getIgnoredParent(target);
         if (ignored) removeClassifierFlags(ignored, { preserveIgnored: false });
     };
 
     /* if a field was deleted from a currently detected form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
-    const onDeletedField = (field?: HTMLElement) => {
-        const detected = getParentFormPrediction(field);
+    const onDeletedField = (target?: HTMLElement) => {
+        const detected = target && isPrediction(target) ? target : getParentFormPrediction(target);
         if (detected) removeClassifierFlags(detected, { preserveIgnored: false });
     };
 
@@ -212,6 +213,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                 if (addedFields) onNewField(mutation.target as HTMLElement);
                 if (deletedFields) onDeletedField(mutation.target as HTMLElement);
+
                 return addedFields || deletedFields;
             }
 
