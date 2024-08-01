@@ -1,5 +1,5 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
+import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
 import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 
 import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
@@ -138,10 +138,23 @@ export const createAutofillService = () => {
     };
 
     /** Clears previously autofilled identity fields when called with a new identity item */
-    const autofillIdentity = (form: FormHandle, data: ItemContent<'identity'>) => {
-        const fields = form.getFields();
-        fields.forEach((field) => field.autofilled && field.fieldType === FieldType.IDENTITY && field.autofill(''));
-        autofillIdentityFields(fields, data);
+    const autofillIdentity = (selectedField: FieldHandle, data: ItemContent<'identity'>) => {
+        const fields = selectedField.getFormHandle().getFields();
+
+        fields.forEach((field) => {
+            if (
+                field.autofilled &&
+                field.fieldType === FieldType.IDENTITY &&
+                field.sectionIndex === selectedField.sectionIndex
+            ) {
+                /** If an identity field in the same section was
+                 * previously autofilled, clear the previous value. */
+                field.autofill('');
+                field.autofilled = false;
+            }
+        });
+
+        autofillIdentityFields(fields, selectedField, data);
     };
 
     /** Checks for OTP fields in tracked forms and prompts for autofill

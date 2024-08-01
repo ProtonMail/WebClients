@@ -1,5 +1,6 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
+import { IdentityFieldType } from '@proton/pass/fathom';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
 import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMiddleName } from './autofill.identity';
@@ -7,15 +8,11 @@ import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMidd
 let MOCK_ITEM = itemBuilder('identity');
 let MOCK_FIELDS: FieldHandle[] = [];
 
-const getField = (autocomplete: string) => MOCK_FIELDS.find((field) => field.element.autocomplete === autocomplete);
-
-const createField = (autocomplete: string, value: string = '') =>
+const createField = (identityType: IdentityFieldType, sectionIndex: number = 1, value: string = '') =>
     ({
-        element: {
-            autocomplete,
-            value,
-            getAttribute: (attr: string) => (attr === 'autocomplete' ? autocomplete : null),
-        },
+        sectionIndex,
+        identityType,
+        element: { value },
         autofill: jest.fn(),
     }) as any as FieldHandle;
 
@@ -123,10 +120,10 @@ describe('Identity', () => {
     describe('`autofillIdentityFields`', () => {
         test('it autofills fields with different types', () => {
             MOCK_FIELDS.push(
-                createField('given-name'),
-                createField('family-name'),
-                createField('street-address'),
-                createField('postal-code')
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.LASTNAME),
+                createField(IdentityFieldType.ADDRESS),
+                createField(IdentityFieldType.ZIPCODE)
             );
             MOCK_ITEM.set('content', (content) => {
                 content.set('firstName', 'John');
@@ -136,19 +133,19 @@ describe('Identity', () => {
                 return content;
             });
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-            expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Doe');
-            expect(getField('street-address')?.autofill).toHaveBeenCalledWith('123 Main St');
-            expect(getField('postal-code')?.autofill).toHaveBeenCalledWith('12345');
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Doe');
+            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[3]?.autofill).toHaveBeenCalledWith('12345');
         });
 
-        test('it skips fields with the same type as the previous field', () => {
+        test('it skips fields that have already been autofilled', () => {
             MOCK_FIELDS.push(
-                createField('given-name'),
-                createField('given-name'),
-                createField('family-name'),
-                createField('family-name')
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.LASTNAME),
+                createField(IdentityFieldType.LASTNAME)
             );
             MOCK_ITEM.set('content', (content) => {
                 content.set('firstName', 'John');
@@ -156,88 +153,56 @@ describe('Identity', () => {
                 return content;
             });
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John');
             expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2].autofill).toHaveBeenCalledWith('Doe');
             expect(MOCK_FIELDS[3].autofill).not.toHaveBeenCalled();
         });
 
-        test('it autofills fields with the same type if they are not consecutive', () => {
-            MOCK_FIELDS.push(
-                createField('given-name'),
-                createField('family-name'),
-                createField('given-name'),
-                createField('family-name')
-            );
-            MOCK_ITEM.set('content', (content) => {
-                content.set('firstName', 'John');
-                content.set('lastName', 'Doe');
-                return content;
-            });
-
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John');
-            expect(MOCK_FIELDS[1].autofill).toHaveBeenCalledWith('Doe');
-            expect(MOCK_FIELDS[2].autofill).toHaveBeenCalledWith('John');
-            expect(MOCK_FIELDS[3].autofill).toHaveBeenCalledWith('Doe');
-        });
-
-        test('it skips fields with unrecognized types', () => {
-            MOCK_FIELDS.push(
-                createField('given-name'),
-                createField('unknown-field' as any),
-                createField('family-name')
-            );
-            MOCK_ITEM.set('content', (content) => {
-                content.set('firstName', 'John');
-                content.set('lastName', 'Doe');
-                return content;
-            });
-
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-            expect(getField('unknown-field' as any)?.autofill).not.toHaveBeenCalled();
-            expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Doe');
-        });
-
         test('it does not autofill fields when no matching data is available', () => {
-            MOCK_FIELDS.push(createField('given-name'), createField('family-name'), createField('street-address'));
-            // MOCK_ITEM is left empty
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.LASTNAME),
+                createField(IdentityFieldType.ADDRESS)
+            );
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('given-name')?.autofill).not.toHaveBeenCalled();
-            expect(getField('family-name')?.autofill).not.toHaveBeenCalled();
-            expect(getField('street-address')?.autofill).not.toHaveBeenCalled();
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
         });
 
         test('it autofills name fields from fullName when individual fields are not available', () => {
-            MOCK_FIELDS.push(createField('given-name'), createField('additional-name'), createField('family-name'));
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.MIDDLENAME),
+                createField(IdentityFieldType.LASTNAME)
+            );
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Middle Doe'));
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-            expect(getField('additional-name')?.autofill).toHaveBeenCalledWith('Middle');
-            expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Doe');
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Middle');
+            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('Doe');
         });
 
         test('it handles single-word fullName', () => {
-            MOCK_FIELDS.push(createField('given-name'), createField('additional-name'), createField('family-name'));
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.MIDDLENAME),
+                createField(IdentityFieldType.LASTNAME)
+            );
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John'));
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-            expect(getField('additional-name')?.autofill).not.toHaveBeenCalled();
-            expect(getField('family-name')?.autofill).not.toHaveBeenCalled();
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
         });
 
         test('it autofills address fields of different types', () => {
-            MOCK_FIELDS.push(
-                createField('street-address'),
-                createField('address-level2'),
-                createField('address-level1'),
-                createField('postal-code')
-            );
+            MOCK_FIELDS.push(createField(IdentityFieldType.ADDRESS), createField(IdentityFieldType.ZIPCODE));
             MOCK_ITEM.set('content', (content) => {
                 content.set('streetAddress', '123 Main St');
                 content.set('city', 'Anytown');
@@ -246,62 +211,52 @@ describe('Identity', () => {
                 return content;
             });
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('street-address')?.autofill).toHaveBeenCalledWith('123 Main St');
-            expect(getField('address-level2')?.autofill).toHaveBeenCalledWith('Anytown');
-            expect(getField('address-level1')?.autofill).toHaveBeenCalledWith('State');
-            expect(getField('postal-code')?.autofill).toHaveBeenCalledWith('12345');
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('12345');
         });
 
         test('it autofills only the first occurrence of address fields with the same type', () => {
             MOCK_FIELDS.push(
-                createField('street-address'),
-                createField('address-line1'),
-                createField('address-line2'),
-                createField('address-line3'),
-                createField('street-address')
+                createField(IdentityFieldType.ADDRESS),
+                createField(IdentityFieldType.CITY),
+                createField(IdentityFieldType.ADDRESS)
             );
+
             MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('street-address')?.autofill).toHaveBeenCalledWith('123 Main St');
-            expect(getField('address-line1')?.autofill).not.toHaveBeenCalled();
-            expect(getField('address-line2')?.autofill).not.toHaveBeenCalled();
-            expect(getField('address-line3')?.autofill).not.toHaveBeenCalled();
-            expect(MOCK_FIELDS[4].autofill).not.toHaveBeenCalled(); // second 'street-address' field
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
         });
 
         test('it autofills only the first occurrence of telephone fields with the same type', () => {
             MOCK_FIELDS.push(
-                createField('tel'),
-                createField('tel-national'),
-                createField('tel-local'),
-                createField('tel')
+                createField(IdentityFieldType.TELEPHONE),
+                createField(IdentityFieldType.TELEPHONE),
+                createField(IdentityFieldType.TELEPHONE),
+                createField(IdentityFieldType.TELEPHONE)
             );
             MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('tel')?.autofill).toHaveBeenCalledWith('1234567890');
-            expect(getField('tel-national')?.autofill).not.toHaveBeenCalled();
-            expect(getField('tel-local')?.autofill).not.toHaveBeenCalled();
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('1234567890');
+            expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2].autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[3].autofill).not.toHaveBeenCalled();
         });
 
         test('it autofills organization', () => {
-            MOCK_FIELDS.push(createField('organization'));
+            MOCK_FIELDS.push(createField(IdentityFieldType.ORGANIZATION));
             MOCK_ITEM.set('content', (content) => content.set('organization', 'Proton'));
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('organization')?.autofill).toHaveBeenCalledWith('Proton');
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('Proton');
         });
 
         test('it handles partial address data', () => {
-            MOCK_FIELDS.push(
-                createField('street-address'),
-                createField('address-level2'),
-                createField('address-level1'),
-                createField('postal-code')
-            );
+            MOCK_FIELDS.push(createField(IdentityFieldType.ADDRESS), createField(IdentityFieldType.ZIPCODE));
 
             MOCK_ITEM.set('content', (content) => {
                 content.set('city', 'Meudon');
@@ -309,11 +264,9 @@ describe('Identity', () => {
                 return content;
             });
 
-            autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-            expect(getField('street-address')?.autofill).not.toHaveBeenCalled();
-            expect(getField('address-level2')?.autofill).toHaveBeenCalledWith('Meudon');
-            expect(getField('address-level1')?.autofill).not.toHaveBeenCalled();
-            expect(getField('postal-code')?.autofill).toHaveBeenCalledWith('92190');
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('92190');
         });
     });
 });

@@ -54,7 +54,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
         {
             type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            injection: FieldInjectionRule.FIRST_OF_SECTION,
             action: DropdownAction.AUTOFILL_IDENTITY,
         },
     ],
@@ -101,7 +101,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
         {
             type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            injection: FieldInjectionRule.FIRST_OF_SECTION,
             action: DropdownAction.AUTOFILL_IDENTITY,
         },
     ],
