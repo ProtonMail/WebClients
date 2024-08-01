@@ -11,6 +11,7 @@ jest.mock('../../hooks/useIsMnemonicAvailable', () => jest.fn());
 jest.mock('../../hooks/useIsDataRecoveryAvailable', () => jest.fn());
 jest.mock('../../hooks/useHasOutdatedRecoveryFile', () => jest.fn());
 jest.mock('../../hooks/useRecoverySecrets', () => jest.fn());
+jest.mock('../../hooks/useConfig', () => jest.fn());
 
 jest.mock('./RecoveryCardStatus', () => {
     return jest.fn(() => <div data-testid="mocked-recovery-card-status"></div>);
@@ -37,6 +38,7 @@ const setupMocks = (isSentinelUser: boolean) => {
     require('../../hooks/useIsDataRecoveryAvailable').mockReturnValue([{ isDataRecoveryAvailable: true }, false]);
     require('../../hooks/useHasOutdatedRecoveryFile').mockReturnValue(false);
     require('../../hooks/useRecoverySecrets').mockReturnValue(['key']);
+    require('../../hooks/useConfig').mockReturnValue({ APP_NAME: 'proton-account' });
 };
 
 beforeEach(() => {
