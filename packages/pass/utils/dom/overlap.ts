@@ -9,8 +9,8 @@ const rectOffset = (rect: Rect, offset: RectOffset): Rect => ({
 });
 
 const rectOverlap = (a: Rect, b: Rect): boolean => {
-    const xOverlap = Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left));
-    const yOverlap = Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
+    const xOverlap = Math.max(0, Math.floor(Math.min(a.right, b.right) - Math.max(a.left, b.left)));
+    const yOverlap = Math.max(0, Math.floor(Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top)));
 
     return xOverlap > 0 && yOverlap > 0;
 };
@@ -40,10 +40,10 @@ export const allChildrenOverlap = (children: Element[], offset: RectOffset): boo
             return [
                 allOverlap && rectOverlap(rect, combinedRect),
                 {
-                    top: Math.min(combinedRect.top, rect.top),
-                    right: Math.max(combinedRect.right, rect.right),
-                    bottom: Math.max(combinedRect.bottom, rect.bottom),
-                    left: Math.min(combinedRect.left, rect.left),
+                    top: Math.floor(Math.min(combinedRect.top, rect.top)),
+                    right: Math.floor(Math.max(combinedRect.right, rect.right)),
+                    bottom: Math.floor(Math.max(combinedRect.bottom, rect.bottom)),
+                    left: Math.floor(Math.min(combinedRect.left, rect.left)),
                 },
             ];
         },
