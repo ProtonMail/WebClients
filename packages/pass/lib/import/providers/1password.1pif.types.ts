@@ -2,6 +2,7 @@ import type { OnePassFieldType, OnePassLoginDesignation } from './1password.1pux
 
 export enum OnePassLegacyItemType {
     CREDIT_CARD = 'wallet.financial.CreditCard',
+    IDENTITY = 'identities.Identity',
     LOGIN = 'webforms.WebForm',
     NOTE = 'securenotes.SecureNote',
     PASSWORD = 'passwords.Password',
