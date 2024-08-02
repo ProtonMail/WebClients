@@ -1,8 +1,8 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import { AllNodes } from '../../AllNodes'
+import { AllNodes } from '../../../AllNodes'
 import { getImageRun } from './getImageRun'
 import { $getRoot, ParagraphNode } from 'lexical'
-import { ImageNode } from '../../Plugins/Image/ImageNode'
+import { ImageNode } from '../../../Plugins/Image/ImageNode'
 import { toImage } from '@proton/shared/lib/helpers/image'
 import { ImageRun } from 'docx'
 

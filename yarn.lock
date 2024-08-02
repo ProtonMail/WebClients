@@ -18822,12 +18822,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docx-preview-cjs@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "docx-preview-cjs@npm:0.3.0"
+"docx-preview-cjs@npm:0.3.7":
+  version: 0.3.7
+  resolution: "docx-preview-cjs@npm:0.3.7"
   dependencies:
     jszip: "npm:>=3.0.0"
-  checksum: 10c0/e15c06e7c45b21b63fe0c29569fdf169b345e1f6d0e1e6867e8ee60cec134822f26f83081404d01444ddbd95a46172868a964ab34eed89e527714642842f7b82
+  checksum: 10c0/a32f9bd1c912e69f3a26fc973abbeb475fa26084e5f362a421e5f3e774d9b3f3e9195eee4e5ce47857a135e3aec25ac4a987976c9658416e5ee7bb8d24822e1d
   languageName: node
   linkType: hard
 
@@ -33206,7 +33206,7 @@ __metadata:
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     docx: "npm:^8.5.0"
-    docx-preview-cjs: "npm:^0.3.0"
+    docx-preview-cjs: "npm:0.3.7"
     eslint: "npm:^8.57.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-react-refresh: "npm:^0.4.9"
