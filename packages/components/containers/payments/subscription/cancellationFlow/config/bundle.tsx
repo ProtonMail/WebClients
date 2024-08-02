@@ -11,7 +11,8 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -29,9 +30,9 @@ import {
 
 export const getBundleConfig = (
     subscription: SubscriptionModel,
+    user: UserModel,
     plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number,
-    newCancellationPolicy?: boolean
+    vpnCountries: number
 ): PlanConfig => {
     const currentPlan = PLANS.BUNDLE;
     const planName = PLAN_NAMES[currentPlan];
@@ -85,12 +86,9 @@ export const getBundleConfig = (
         ],
     };
 
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(
-        subscription,
-        planName,
-        newCancellationPolicy
-    );
+    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
     return {
         planName,

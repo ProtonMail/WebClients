@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash';
 
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { External, Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { External, Renew, type Subscription, type SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 export const subscriptionMock: SubscriptionModel = {
     ID: 'subscriptionId123',
@@ -44,8 +44,8 @@ export const subscriptionMock: SubscriptionModel = {
     isManagedByMozilla: false,
 };
 
-export function getSubscriptionMock() {
-    return cloneDeep(subscriptionMock);
+export function getSubscriptionMock(subscription?: Partial<SubscriptionModel>) {
+    return { ...cloneDeep(subscriptionMock), ...subscription };
 }
 
 export const upcomingSubscriptionMock: Subscription = {
