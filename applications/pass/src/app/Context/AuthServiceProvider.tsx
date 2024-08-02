@@ -131,6 +131,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 authStore.setLockToken(undefined);
                 authStore.setLockTTL(undefined);
                 authStore.setLocked(false);
+                authStore.setEncryptedOfflineKD(undefined);
 
                 if (locked) window.location.reload();
             }
