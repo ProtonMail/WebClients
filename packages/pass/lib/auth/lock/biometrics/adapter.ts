@@ -93,12 +93,13 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
         /** Resets every auth store properties relative to offline
          * mode and re-persists the session accordingly */
         delete: async () => {
-            logger.info(`[PasswordLock] deleting password lock`);
+            logger.info(`[PasswordLock] deleting biometrics lock`);
             authStore.setLockLastExtendTime(undefined);
             authStore.setLockTTL(undefined);
             authStore.setLockMode(LockMode.NONE);
             authStore.setLocked(false);
             authStore.setUnlockRetryCount(0);
+            authStore.setEncryptedOfflineKD(undefined);
 
             await auth.persistSession().catch(noop);
 

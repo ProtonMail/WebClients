@@ -23,7 +23,7 @@ import { createAuthService as createCoreAuthService } from '@proton/pass/lib/aut
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import { canBiometricsUnlock, canPasswordUnlock } from '@proton/pass/lib/cache/utils';
+import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
@@ -155,26 +155,23 @@ export const createAuthService = ({
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
-                const biometricsUnlockable = canBiometricsUnlock({
+                const localUnlockableOpts = {
                     lockMode: authStore.getLockMode(),
                     offline: !getOnline(),
                     offlineConfig: authStore.getOfflineConfig(),
                     offlineVerifier: authStore.getOfflineVerifier(),
                     offlineEnabled: (await getOfflineEnabled?.()) ?? false,
                     encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
-                });
+                };
 
-                const passwordUnlockable = canPasswordUnlock({
-                    lockMode: authStore.getLockMode(),
-                    offline: !getOnline(),
-                    offlineConfig: authStore.getOfflineConfig(),
-                    offlineVerifier: authStore.getOfflineVerifier(),
-                    offlineEnabled: (await getOfflineEnabled?.()) ?? false,
-                });
-
-                if (biometricsUnlockable || passwordUnlockable) {
+                const isLocalUnlockable = canLocalUnlock(localUnlockableOpts);
+                if (isLocalUnlockable) {
                     authStore.setPassword(undefined);
-                    client.setStatus(biometricsUnlockable ? AppStatus.BIOMETRICS_LOCKED : AppStatus.PASSWORD_LOCKED);
+                    const appStatus =
+                        localUnlockableOpts.lockMode === LockMode.BIOMETRICS
+                            ? AppStatus.BIOMETRICS_LOCKED
+                            : AppStatus.PASSWORD_LOCKED;
+                    client.setStatus(appStatus);
                     return false;
                 }
             }
