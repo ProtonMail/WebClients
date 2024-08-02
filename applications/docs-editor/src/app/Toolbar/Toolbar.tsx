@@ -78,6 +78,8 @@ import { ShortcutLabelText } from '../Plugins/KeyboardShortcuts/ShortcutLabelTex
 import { ShortcutLabelContainer } from '../Plugins/KeyboardShortcuts/ShortcutLabelContainer'
 import ToolbarTooltip from './ToolbarTooltip'
 import { ModifierKbd, ShortcutKbd } from '../Plugins/KeyboardShortcuts/ShortcutKbd'
+import { INSERT_INLINE_COMMENT_COMMAND } from '../Commands'
+import AddCommentIcon from '../Icons/AddCommentIcon'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -267,6 +269,9 @@ export default function DocumentEditorToolbar({
     })
   }, [activeEditor])
 
+  const insertComment = () => {
+    activeEditor.dispatchCommand(INSERT_INLINE_COMMENT_COMMAND, undefined)
+  }
   const $updateToolbar = useCallback(() => {
     const selection = $getSelection()
     if ($isRangeSelection(selection)) {
@@ -1018,6 +1023,14 @@ export default function DocumentEditorToolbar({
               data-testid="table-button"
             >
               <TableIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={<ShortcutLabel shortcut="INSERT_COMMENT_SHORTCUT" label={c('Action').t`Insert comment`} />}
+              disabled={!isEditable}
+              onClick={insertComment}
+              data-testid="comment-button"
+            >
+              <AddCommentIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarSeparator />
           </>
