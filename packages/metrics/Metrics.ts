@@ -21,6 +21,7 @@ import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from 
 import type { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
 import type { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
+import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './types/docs_readonly_mode_documents_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from './types/docs_realtime_disconnect_error_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditTimeToAckHistogramV1SchemaJson } from './types/docs_realtime_edit_time_to_ack_histogram_v1.schema';
@@ -104,6 +105,8 @@ import type { WebCoreVpnSingleSignupStep4OrgSetupTotal } from './types/web_core_
 import type { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vpn_single_signup_step4_setup_2_total_v1.schema';
 import type { WebCoreVpnSingleSignupStep4SetupTotal } from './types/web_core_vpn_single_signup_step4_setup_total_v1.schema';
 import type { WebCryptoKeyTransparencyErrorsTotal } from './types/web_crypto_keytransparency_errors_total_v1.schema';
+import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
+import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
 import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
 import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
@@ -131,6 +134,8 @@ class Metrics extends MetricsBase {
     public docs_document_updates_total: Counter<HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson>;
 
     public docs_failed_websocket_connections_total: Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>;
+
+    public docs_readonly_mode_documents_total: Counter<HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson>;
 
     public docs_realtime_disconnect_error_total: Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson>;
 
@@ -296,6 +301,10 @@ class Metrics extends MetricsBase {
 
     public crypto_keytransparency_errors_total: Counter<WebCryptoKeyTransparencyErrorsTotal>;
 
+    public drive_public_share_load_error_total: Counter<HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson>;
+
+    public drive_public_share_load_success_total: Counter<HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson>;
+
     public payments_subscription_steps_total: Counter<WebPaymentsSubscriptionStepsTotal>;
 
     public payments_subscription_total: Counter<WebPaymentsSubscriptionTotal>;
@@ -367,6 +376,11 @@ class Metrics extends MetricsBase {
                 { name: 'docs_failed_websocket_connections_total', version: 1 },
                 this.requestService
             );
+
+        this.docs_readonly_mode_documents_total = new Counter<HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson>(
+            { name: 'docs_readonly_mode_documents_total', version: 1 },
+            this.requestService
+        );
 
         this.docs_realtime_disconnect_error_total =
             new Counter<HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson>(
@@ -809,6 +823,18 @@ class Metrics extends MetricsBase {
             { name: 'web_crypto_keytransparency_errors_total', version: 1 },
             this.requestService
         );
+
+        this.drive_public_share_load_error_total =
+            new Counter<HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson>(
+                { name: 'web_drive_public_share_load_error_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_public_share_load_success_total =
+            new Counter<HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson>(
+                { name: 'web_drive_public_share_load_success_total', version: 1 },
+                this.requestService
+            );
 
         this.payments_subscription_steps_total = new Counter<WebPaymentsSubscriptionStepsTotal>(
             { name: 'web_payments_subscription_steps_total', version: 1 },
