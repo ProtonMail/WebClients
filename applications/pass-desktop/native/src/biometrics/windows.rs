@@ -111,6 +111,7 @@ impl super::BiometricsTrait for Biometrics {
     }
 
     fn set_secret(key: String, data: String) -> Result<()> {
+        let _ = Self::delete_secret(key.clone());
         let mut target_name = U16CString::from_str(target_name(&key))?;
         let mut user_name = U16CString::from_str(key)?;
         let last_written = FILETIME {
