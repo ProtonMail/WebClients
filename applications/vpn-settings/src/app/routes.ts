@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getHasVpnB2BPlan, hasCancellablePlan, hasNewCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import type { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
@@ -12,7 +12,6 @@ interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     organization?: Organization;
-    isNewCancellationFlowExtended: boolean;
     isUserGroupsFeatureEnabled: boolean;
     canDisplayB2BLogsVPN: boolean;
 }
@@ -21,15 +20,11 @@ export const getRoutes = ({
     user,
     subscription,
     organization,
-    isNewCancellationFlowExtended,
     isUserGroupsFeatureEnabled,
     canDisplayB2BLogsVPN,
 }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-
-    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription, user);
-    const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
-
+    const cancellablePlan = hasCancellablePlan(subscription, user);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     const organizationRoutes = getOrganizationAppRoutes({

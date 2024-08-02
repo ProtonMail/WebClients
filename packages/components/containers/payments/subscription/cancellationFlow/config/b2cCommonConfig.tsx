@@ -49,14 +49,14 @@ export const getDefaultTestimonial = (): PlanConfigTestimonial => {
 
 export const ExpirationTime = ({
     subscription,
-    newCancellationPolicy,
+    cancellablePlan,
 }: {
     subscription: SubscriptionModel;
-    newCancellationPolicy?: boolean;
+    cancellablePlan?: boolean;
 }) => {
     const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
 
-    if (newCancellationPolicy) {
+    if (cancellablePlan) {
         const endDate = fromUnixTime(latestSubscription);
         const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
         return (
@@ -80,9 +80,9 @@ export const ExpirationTime = ({
 export const getDefaultConfirmationModal = (
     subscription: SubscriptionModel,
     planName: string,
-    newCancellationPolicy?: boolean
+    cancellablePlan: boolean
 ): ConfirmationModal => {
-    const expiryDate = <ExpirationTime subscription={subscription} newCancellationPolicy={newCancellationPolicy} />;
+    const expiryDate = <ExpirationTime subscription={subscription} cancellablePlan={cancellablePlan} />;
 
     const learnMoreLink = (
         <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')}>
@@ -90,7 +90,7 @@ export const getDefaultConfirmationModal = (
         </Href>
     );
 
-    const description = newCancellationPolicy
+    const description = cancellablePlan
         ? c('Subscription reminder')
               .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you'll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink}`
         : c('Subscription reminder')
@@ -111,8 +111,8 @@ export const getDefaultConfirmationModal = (
     };
 };
 
-export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string, newCancellationPolicy?: boolean) => {
-    const warning = newCancellationPolicy
+export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string, cancellablePlan?: boolean) => {
+    const warning = cancellablePlan
         ? c('Subscription reminder')
               .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.`
         : c('Subscription reminder')
@@ -126,8 +126,8 @@ export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: strin
     };
 };
 
-export const getDefaultTBStorageWarning = (planName: string, planMaxSpace: string, newCancellationPolicy?: boolean) => {
-    const warning = newCancellationPolicy
+export const getDefaultTBStorageWarning = (planName: string, planMaxSpace: string, cancellablePlan?: boolean) => {
+    const warning = cancellablePlan
         ? c('Subscription reminder')
               .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.`
         : c('Subscription reminder')

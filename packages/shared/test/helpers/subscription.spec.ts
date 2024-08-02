@@ -15,10 +15,10 @@ import type {
     SubscriptionCheckResponse,
     SubscriptionPlan,
 } from '@proton/shared/lib/interfaces';
-import { External, Renew } from '@proton/shared/lib/interfaces';
+import { BillingPlatform, ChargebeeEnabled, External, Renew } from '@proton/shared/lib/interfaces';
 // that has to be a very granular import, because in general @proton/testing depends on jest while @proton/shared
 // still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
-import { PLANS_MAP } from '@proton/testing/data';
+import { PLANS_MAP, getSubscriptionMock, getUserMock } from '@proton/testing/data';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import type { AggregatedPricing } from '../../lib/helpers/subscription';
@@ -27,6 +27,7 @@ import {
     customCycles,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
+    hasCancellablePlan,
     hasLifetime,
     hasSomeAddonOrPlan,
     isManagedExternally,
@@ -1317,5 +1318,167 @@ describe('cycles', () => {
 
     it('should return normal cycle from custom cycle - thirty', () => {
         expect(getNormalCycleFromCustomCycle(CYCLE.THIRTY)).toEqual(CYCLE.TWO_YEARS);
+    });
+});
+
+describe('hasCancellablePlan', () => {
+    it('should be cancellable with inhouse subscription', () => {
+        const testCases = [PLANS.PASS, PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED, ChargebeeUserExists: 0 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).toEqual(true);
+        });
+    });
+
+    it('should not be cancellable with inhouse subscription', () => {
+        const testCases = [
+            PLANS.BUNDLE,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.DRIVE,
+            PLANS.DRIVE_PRO,
+            PLANS.DUO,
+            PLANS.ENTERPRISE,
+            PLANS.FAMILY,
+            PLANS.FREE,
+            PLANS.MAIL,
+            PLANS.MAIL_BUSINESS,
+            PLANS.MAIL_PRO,
+            PLANS.PASS_BUSINESS,
+            PLANS.PASS_PRO,
+            PLANS.VISIONARY,
+            PLANS.VPN_BUSINESS,
+            PLANS.VPN_PRO,
+            PLANS.WALLET,
+        ];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED, ChargebeeUserExists: 0 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(false);
+        });
+    });
+
+    it('should have cancellable plan if user is on-session migration eligible', () => {
+        const testCases = [PLANS.PASS, PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 0 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(true);
+        });
+    });
+
+    it('should not have cancellable plan if user is on-session migration eligible', () => {
+        const testCases = [
+            PLANS.BUNDLE,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.DRIVE,
+            PLANS.DRIVE_PRO,
+            PLANS.DUO,
+            PLANS.ENTERPRISE,
+            PLANS.FAMILY,
+            PLANS.FREE,
+            PLANS.MAIL,
+            PLANS.MAIL_BUSINESS,
+            PLANS.MAIL_PRO,
+            PLANS.PASS_BUSINESS,
+            PLANS.PASS_PRO,
+            PLANS.VISIONARY,
+            PLANS.VPN_BUSINESS,
+            PLANS.VPN_PRO,
+            PLANS.WALLET,
+        ];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 0 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(false);
+        });
+    });
+
+    it('should have all plans cancellable if user is true chargebee user', () => {
+        const testCases = [
+            PLANS.PASS,
+            PLANS.VPN,
+            PLANS.VPN2024,
+            PLANS.VPN_PASS_BUNDLE,
+            // ---
+            PLANS.BUNDLE,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.DRIVE,
+            PLANS.DRIVE_PRO,
+            PLANS.DUO,
+            PLANS.ENTERPRISE,
+            PLANS.FAMILY,
+            PLANS.FREE,
+            PLANS.MAIL,
+            PLANS.MAIL_BUSINESS,
+            PLANS.MAIL_PRO,
+            PLANS.PASS_BUSINESS,
+            PLANS.PASS_PRO,
+            PLANS.VISIONARY,
+            PLANS.VPN_BUSINESS,
+            PLANS.VPN_PRO,
+            PLANS.WALLET,
+        ];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Chargebee });
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(true);
+        });
+    });
+
+    it('should have all plans cancellable if user is splitted', () => {
+        const testCases = [
+            PLANS.PASS,
+            PLANS.VPN,
+            PLANS.VPN2024,
+            PLANS.VPN_PASS_BUNDLE,
+            // ---
+            PLANS.BUNDLE,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.DRIVE,
+            PLANS.DRIVE_PRO,
+            PLANS.DUO,
+            PLANS.ENTERPRISE,
+            PLANS.FAMILY,
+            PLANS.FREE,
+            PLANS.MAIL,
+            PLANS.MAIL_BUSINESS,
+            PLANS.MAIL_PRO,
+            PLANS.PASS_BUSINESS,
+            PLANS.PASS_PRO,
+            PLANS.VISIONARY,
+            PLANS.VPN_BUSINESS,
+            PLANS.VPN_PRO,
+            PLANS.WALLET,
+        ];
+
+        const subscription = getSubscriptionMock({ BillingPlatform: BillingPlatform.Proton });
+        const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 1 });
+
+        testCases.forEach((plan) => {
+            subscription.Plans[0].Name = plan;
+            expect(hasCancellablePlan(subscription, user)).withContext(`plan: ${plan}`).toEqual(true);
+        });
     });
 });

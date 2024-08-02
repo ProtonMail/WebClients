@@ -102,7 +102,6 @@ const MainContainer: FunctionComponent = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
 
@@ -110,7 +109,6 @@ const MainContainer: FunctionComponent = () => {
         user,
         subscription,
         organization,
-        isNewCancellationFlowExtended,
         isUserGroupsFeatureEnabled,
         canDisplayB2BLogsVPN,
     });

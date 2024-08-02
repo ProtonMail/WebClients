@@ -1,6 +1,6 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getBundleConfig } from './config/bundle';
 import { getBundleProConfig } from './config/bundlePro';
@@ -16,11 +16,11 @@ import type { PlanConfig } from './interface';
 export const getReminderPageConfig = ({
     subscription,
     vpnCountries,
-    newCancellationPolicy,
+    user,
 }: {
     subscription?: SubscriptionModel;
     vpnCountries?: number | null;
-    newCancellationPolicy?: boolean;
+    user: UserModel;
 }): PlanConfig | null => {
     const plan = getPlan(subscription);
 
@@ -31,39 +31,39 @@ export const getReminderPageConfig = ({
     const vpnCountriesCount = vpnCountries || 90;
 
     if (plan.Name === PLANS.MAIL) {
-        return getMailPlusConfig(subscription, plan, newCancellationPolicy);
+        return getMailPlusConfig(subscription, user, plan);
     }
 
     if (plan.Name === PLANS.BUNDLE) {
-        return getBundleConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
+        return getBundleConfig(subscription, user, plan, vpnCountriesCount);
     }
 
     if (plan.Name === PLANS.FAMILY) {
-        return getFamilyConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
+        return getFamilyConfig(subscription, user, plan, vpnCountriesCount);
     }
 
     if (plan.Name === PLANS.DUO) {
-        return getDuoConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
+        return getDuoConfig(subscription, user, plan, vpnCountriesCount);
     }
 
     if (plan.Name === PLANS.VISIONARY) {
-        return getVisionaryConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
+        return getVisionaryConfig(subscription, user, plan, vpnCountriesCount);
     }
 
     if (plan.Name === PLANS.DRIVE) {
-        return getDrivePlusConfig(subscription, plan, newCancellationPolicy);
+        return getDrivePlusConfig(subscription, user, plan);
     }
 
     if (plan.Name === PLANS.MAIL_PRO) {
-        return getMailEssentialConfig(subscription, plan, newCancellationPolicy);
+        return getMailEssentialConfig(subscription, user, plan);
     }
 
     if (plan.Name === PLANS.MAIL_BUSINESS) {
-        return getMailBusinessConfig(subscription, plan, newCancellationPolicy);
+        return getMailBusinessConfig(subscription, user, plan);
     }
 
     if (plan.Name === PLANS.BUNDLE_PRO_2024 || plan.Name === PLANS.BUNDLE_PRO) {
-        return getBundleProConfig(subscription, plan, newCancellationPolicy);
+        return getBundleProConfig(subscription, user, plan);
     }
 
     return null;

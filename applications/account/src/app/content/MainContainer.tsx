@@ -139,7 +139,6 @@ const MainContainer = () => {
 
     const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
-    const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
@@ -176,7 +175,6 @@ const MainContainer = () => {
         isBreachesAccountDashboardEnabled,
         isUserGroupsFeatureEnabled,
         showThemeSelection,
-        isNewCancellationFlowExtended,
         assistantKillSwitch,
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
