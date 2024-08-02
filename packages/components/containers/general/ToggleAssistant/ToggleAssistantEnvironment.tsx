@@ -20,7 +20,7 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
             <>
                 <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run on servers`}</div>
                 <span className="shrink-0">
-                    <Info title={c('Assistant option').t`Faster, broader device compatibility`} />
+                    <Info title={c('Assistant option').t`Fast and secure. No logs are kept.`} />
                 </span>
             </>
         );
@@ -28,11 +28,11 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
 
     return (
         <>
-            <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run locally`}</div>
+            <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run on device`}</div>
             <span className="shrink-0">
                 <Info
                     title={c('Assistant option')
-                        .t`Prompts stay on your device but requires a one-time download and compatible hardware`}
+                        .t`Data stay on your device but requires a one-time download and compatible hardware`}
                 />
             </span>
         </>

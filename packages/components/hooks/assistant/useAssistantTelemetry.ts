@@ -1,38 +1,7 @@
 import { useApi } from '@proton/components/hooks';
 import { TelemetryMailComposerAssistantEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import type { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_TYPE, INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-
-export const enum ASSISTANT_TYPE {
-    SERVER = 'SERVER',
-    LOCAL = 'LOCAL',
-}
-
-export const enum GENERATION_TYPE {
-    WRITE_FULL_EMAIL = 'WRITE_FULL_EMAIL',
-    SHORTEN = 'SHORTEN',
-    PROOFREAD = 'PROOFREAD',
-    EXPAND = 'EXPAND',
-    FORMALIZE = 'FORMALIZE',
-    FRIENDLY = 'FRIENDLY',
-    CUSTOM_REFINE = 'CUSTOM_REFINE',
-}
-
-export const enum ERROR_TYPE {
-    GENERATION_HARMFUL = 'GENERATION_HARMFUL',
-    GENERATION_FAIL = 'GENERATION_FAIL',
-    LOADGPU_FAIL = 'LOADGPU_FAIL',
-    DOWNLOAD_FAIL = 'DOWNLOAD_FAIL',
-    DOWNLOAD_REQUEST_FAIL = 'DOWNLOAD_REQUEST_FAIL',
-    UNLOAD_FAIL = 'UNLOAD_FAIL',
-    GENERATION_CANCEL_FAIL = 'GENERATION_CANCEL_FAIL',
-    TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS',
-    CACHING_FAILED = 'CACHING_FAILED',
-}
-
-export const enum INCOMPATIBILITY_TYPE {
-    BROWSER = 'BROWSER',
-    HARDWARE = 'HARDWARE',
-}
 
 const useAssistantTelemetry = () => {
     const api = useApi();

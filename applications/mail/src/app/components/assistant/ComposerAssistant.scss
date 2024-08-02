@@ -2,7 +2,6 @@
 
 .composer-assistant {
 	// will need to taxonomise, left as exception ATM
-	--special-color: #d132ea;
 
 	position: relative;
 	block-size: 95%;
@@ -10,63 +9,34 @@
 	padding-block: 0;
 
 	&-special-color {
+		--special-color: #d132ea;
+
 		color: var(--special-color);
 	}
 
 	&-container {
 		inset-inline: 0;
-		padding-inline: 1em 1em;
+		padding-inline: 2em;
 		background: var(--background-norm);
 		z-index: 2;
-		margin-block-start: 3.5em;
-
-		// need to push the composer content when collapsed
-		+ .composer-body-container .editor-wrapper {
-			margin-block-start: 5em; // move it from good size (includes room for status and 2 lines error messages)
-		}
-
-		&:has(.composer-assistant-hint:empty) + .composer-body-container .editor-wrapper {
-			margin-block-start: 3em;
-		}
 
 		&--expanded {
-			// to hide properly everything, including dark modes
-			inset-block-end: 0.5em;
-		}
+			inset-block: 0 0.5em;
+			margin-block-start: 0;
+			padding-block-start: 1em;
 
-		// plain text case
-		&:has(+ .composer-body-container .editor-textarea) {
-			margin-block-start: 0.2em;
+			.composer-assistant-refine-popover {
+				inset-block: 3.5em auto;
+			}
 		}
-
-		+ .composer-body-container .editor-textarea {
-			margin-block-start: 5.5em; // move it from good size (includes room for status and 2 lines error messages)
-			block-size: calc(100% - 5.5em);
-		}
-
-		&:has(.composer-assistant-hint:empty) + .composer-body-container .editor-textarea {
-			margin-block-start: 3.5em;
-			block-size: calc(100% - 3.5em);
-		}
-	}
-
-	// If hint is empty in field, add some margin to generated content
-	&:has(.composer-assistant-hint:empty) .text-pre-line {
-		padding-block-start: 0.5em;
 	}
 
 	&-input {
 		color: var(--text-hint);
 		display: flex;
 		min-block-size: 0;
-
-		&:placeholder-shown {
-			block-size: rem(26);
-			overflow: hidden;
-		}
-
-		&[rows='1'] {
-			block-size: rem(26);
+		&#{&} {
+			font-family: var(--setting-font-family, var(--optional-font-family, system-ui, sans-serif));
 		}
 
 		&[rows='2'] {
@@ -107,14 +77,14 @@
 	&-refine-button {
 		font-size: em(12);
 		block-size: em(28, 12);
-
-		--padding-inline: #{em(8)};
 	}
 
 	&-refine-popover {
-		inset-inline: 0.5em;
-		inset-block-end: 100%;
+		inset-inline: 2em 1.8em;
+		inset-block-start: 100%;
 		margin-block-end: 0.8em;
+		z-index: 2;
+		max-inline-size: rem(500); // just to avoid it taking full width when composer is maximized
 
 		&:has(.composer-assistant-refine-content:empty) {
 			display: none;

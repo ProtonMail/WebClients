@@ -209,19 +209,29 @@ export const sanitizeContentToInsert = (textToInsert: string, isPlainText: boole
     return isPlainText ? unescape(sanitizedText) : sanitizedText;
 };
 
-export const insertTextBeforeContent = (message: MessageState, textToInsert: string, mailSettings: MailSettings) => {
+export const insertTextBeforeContent = (
+    message: MessageState,
+    textToInsert: string,
+    mailSettings: MailSettings,
+    needsSeparator: boolean
+) => {
     let newBody;
-    const separator = '--------------------';
+    // In both cases, add a separator only if there is already some content in the composer
+    // However we still need to add message body after because message might contain signature or blockquotes
     if (isPlainText(message.data)) {
+        const separator = '--------------------';
         const messageBody = message.messageDocument?.plainText;
 
-        newBody = `${textToInsert}\n${separator}\n${messageBody}`;
+        newBody = needsSeparator ? `${textToInsert}\n${separator}\n${messageBody}` : `${textToInsert}\n${messageBody}`;
     } else {
+        const separator = `<hr/>`;
         const messageBody = message.messageDocument?.document?.innerHTML;
         const textToInsertHTML = textToInsert.replaceAll('\n', '<br>');
         const fontStyles = getComposerDefaultFontStyles(mailSettings);
 
-        newBody = `<div style="${fontStyles}">${textToInsertHTML}</div><br>${separator}<br>${messageBody}`;
+        newBody = needsSeparator
+            ? `<div style="${fontStyles}">${textToInsertHTML}</div><br>${separator}<br>${messageBody}`
+            : `<div style="${fontStyles}">${textToInsertHTML}</div><br>${messageBody}`;
     }
     return newBody;
 };

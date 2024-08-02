@@ -469,6 +469,18 @@ export class GpuLlmManager implements LlmManager {
         return this.status === 'downloading';
     }
 
+    async isDownloaded(assistantConfig: AssistantConfig, setLlmStatus = true): Promise<boolean> {
+        const modelVariant = assistantConfig.model_list[0].model_id;
+
+        const { needsAdditionalDownload } = await getCachedFiles(modelVariant, assistantConfig);
+
+        if (!needsAdditionalDownload && setLlmStatus) {
+            this.status = 'unloaded';
+        }
+
+        return !needsAdditionalDownload;
+    }
+
     async startDownload(updateProgress: DownloadProgressCallback, assistantConfig: AssistantConfig): Promise<boolean> {
         this.status = 'downloading';
         const promises: Promise<void>[] = [];
