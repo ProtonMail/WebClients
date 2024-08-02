@@ -1,14 +1,15 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import type { ModalProps } from '@proton/components/index';
+import type { ModalProps, ModalStateProps } from '@proton/components/index';
 import { Prompt } from '@proton/components/index';
 
 interface Props extends ModalProps {
+    modalProps: ModalStateProps;
     onResumeDownload: () => void;
 }
-const ResumeDownloadingModal = ({ onResumeDownload, ...rest }: Props) => {
-    const { onClose } = rest;
+const ResumeDownloadingModal = ({ onResumeDownload, modalProps }: Props) => {
+    const { onClose } = modalProps;
 
     const handleResumeDownloading = () => {
         onResumeDownload();
@@ -28,7 +29,7 @@ const ResumeDownloadingModal = ({ onResumeDownload, ...rest }: Props) => {
                 <Button color="norm" onClick={handleResumeDownloading}>{c('Action').t`Resume downloading`}</Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
-            {...rest}
+            {...modalProps}
         >
             <span>{modalText}</span>
         </Prompt>

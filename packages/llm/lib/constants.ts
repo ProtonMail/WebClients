@@ -2,6 +2,8 @@ import { APPS, APPS_CONFIGURATION, MINUTE, SECOND } from '@proton/shared/lib/con
 
 const { PROTONMAIL } = APPS;
 
+export const ASSISTANT_SERVER_THROTTLE_TIMEOUT = 100;
+
 export const UNLOAD_ASSISTANT_TIMEOUT = 15 * MINUTE;
 
 export const IFRAME_COMMUNICATION_TIMEOUT = 30 * SECOND;
@@ -12,13 +14,5 @@ export const STOP_STRINGS_REFINE = ['</span>', '</div>'];
 
 export const FAILED_TO_DOWNLOAD = 'Failed to download:';
 export const CACHING_FAILED = 'Caching failed';
-
-export const enum AssistantStatus {
-    NOT_LOADED,
-    DOWNLOADING,
-    DOWNLOADED,
-    LOADING_GPU,
-    READY,
-}
 
 export const assistantAuthorizedApps = [APPS_CONFIGURATION[PROTONMAIL].subdomain];

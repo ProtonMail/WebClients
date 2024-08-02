@@ -35,6 +35,7 @@ interface Props {
     mailSettings?: MailSettings;
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
+    isInert?: boolean;
 }
 
 const ComposerContent = (
@@ -56,6 +57,7 @@ const ComposerContent = (
         mailSettings,
         userSettings,
         editorMetadata,
+        isInert,
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
@@ -69,6 +71,8 @@ const ComposerContent = (
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
             ref={ref}
+            // @ts-ignore
+            inert={isInert ? '' : undefined}
         >
             {disabled && (
                 <>

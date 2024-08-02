@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { getAssistantHasCompatibleBrowser, getAssistantHasCompatibleHardware } from '@proton/llm/lib';
 import useAssistantErrors from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -11,7 +11,6 @@ const { OFF } = AI_ASSISTANT_ACCESS;
 const useAssistantCommons = () => {
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
     const [{ AIAssistantFlags }] = useUserSettings();
-    const [hasCheckedCompatibility, setHasCheckedCompatibility] = useState(false);
 
     const assistantSubscriptionStatus = useAssistantSubscriptionStatus();
 
@@ -39,11 +38,7 @@ const useAssistantCommons = () => {
     const canUseAssistant = assistantSubscriptionStatus.canUseAssistant;
 
     const handleCheckHardwareCompatibility = async () => {
-        if (hasCheckedCompatibility) {
-            return { hasCompatibleBrowser, hasCompatibleHardware };
-        }
         const compatibility = await getAssistantHasCompatibleHardware();
-        setHasCheckedCompatibility(true);
         // If the webGPU is not working on Firefox, propose to the user to use the desktop app instead
         if (compatibility === 'noWebGpuFirefox' || compatibility === 'noWebGpuSafari') {
             setHasCompatibleBrowser(false);
