@@ -3,14 +3,7 @@ import { createContext, useContext, useMemo } from 'react';
 import type { AssistantError } from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AssistantErrorTypes } from '@proton/llm/lib/hooks/useAssistantErrors';
 
-import type {
-    Action,
-    AssistantConfig,
-    GenerationCallback,
-    OpenedAssistant,
-    OpenedAssistantStatus,
-    RunningAction,
-} from './types';
+import type { Action, AssistantConfig, GenerationCallback, OpenedAssistant, OpenedAssistantStatus } from '../types';
 
 export interface GenerateAssistantResult {
     assistantID: string;
@@ -18,15 +11,7 @@ export interface GenerateAssistantResult {
     callback: GenerationCallback;
 }
 
-export interface AssistantRunningActionResolver {
-    assistantID: string;
-    resolver: () => void;
-}
-
-export interface AssistantRunningAction {
-    assistantID: string;
-    runningAction: RunningAction;
-}
+export type AssistantRunningActions = Record<string, () => void>;
 
 /**
  * Warning: this is a POC, so several parts of this code have been implemented using "shortcuts"
@@ -40,7 +25,7 @@ export interface AssistantRunningAction {
  * In that case, we will have to start initializing the model, but depending on where the assistant is used, the hasAccessToAssistant
  * might be false.
  */
-export const AssistantContext = createContext<{
+export interface AssistantContextType {
     /**
      * All assistant instances opened in the context
      */
@@ -100,6 +85,10 @@ export const AssistantContext = createContext<{
      */
     downloadPaused: boolean;
     /**
+     * We are checking if user has all files in cache
+     */
+    isCheckingCache: boolean;
+    /**
      * Is the model being loaded on the GPU at the moment
      */
     isModelLoadedOnGPU: boolean;
@@ -134,7 +123,7 @@ export const AssistantContext = createContext<{
      * In this case assistant context is still set to server mode so initAssistant was undefined.
      * In order to call initAssistant with no side effects i made a duplicate
      */
-    handleSettingChange: () => void;
+    handleSettingChange?: () => void;
     /**
      * Generate a result from a prompt
      */
@@ -146,7 +135,7 @@ export const AssistantContext = createContext<{
     /**
      * All running actions in the assistant
      */
-    runningActionResolvers: AssistantRunningActionResolver[];
+    runningActions: AssistantRunningActions;
     /**
      * Config of the model used by the assistant
      */
@@ -154,7 +143,10 @@ export const AssistantContext = createContext<{
     resetAssistantState: () => void;
     getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
     handleCheckHardwareCompatibility: () => Promise<{ hasCompatibleBrowser: boolean; hasCompatibleHardware: boolean }>;
-} | null>(null);
+    cleanSpecificErrors: (assistantID: string) => void;
+}
+
+export const AssistantContext = createContext<AssistantContextType | null>(null);
 
 export const useAssistant = (assistantID?: string) => {
     const assistantContext = useContext(AssistantContext);
@@ -164,41 +156,37 @@ export const useAssistant = (assistantID?: string) => {
     }
 
     const {
+        cancelDownloadModel,
+        cancelRunningAction,
         canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
         canUseAssistant,
-        isModelDownloaded,
-        isModelDownloading,
-        downloadReceivedBytes,
+        closeAssistant,
         downloadModelSize,
         downloadPaused,
+        downloadReceivedBytes,
+        errors,
+        generateResult,
+        handleSettingChange,
+        hasCompatibleBrowser,
+        hasCompatibleHardware,
+        initAssistant,
+        isCheckingCache,
+        isModelDownloaded,
+        isModelDownloading,
         isModelLoadedOnGPU,
         isModelLoadingOnGPU,
-        openedAssistants,
-        errors,
         openAssistant,
-        closeAssistant,
-        setAssistantStatus,
-        cancelDownloadModel,
-        resumeDownloadModel,
-        unloadModelOnGPU,
-        initAssistant,
-        generateResult,
-        cancelRunningAction,
-        runningActionResolvers,
+        openedAssistants,
         resetAssistantState,
-        handleSettingChange,
+        resumeDownloadModel,
+        runningActions,
+        setAssistantStatus,
         getIsStickyAssistant,
         handleCheckHardwareCompatibility,
+        cleanSpecificErrors,
     } = assistantContext;
 
-    const isGeneratingResult = useMemo(() => {
-        const runningActionsInAssistant = runningActionResolvers.filter(
-            (resolver) => resolver.assistantID === assistantID
-        );
-        return runningActionsInAssistant.length > 0;
-    }, [assistantID, runningActionResolvers]);
+    const isGeneratingResult = !assistantID ? false : !!runningActions[assistantID];
 
     const error = useMemo(() => {
         const specificError = errors.find((error) => {
@@ -226,34 +214,41 @@ export const useAssistant = (assistantID?: string) => {
         }
     };
 
+    const handleCleanSpecifcErrors = () => {
+        if (assistantID) {
+            cleanSpecificErrors(assistantID);
+        }
+    };
+
     return {
+        assistantConfig: assistantContext.assistantConfig,
+        cancelDownloadModel,
+        cancelRunningAction: handleCancelRunningAction,
         canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
         canUseAssistant,
-        isModelDownloaded,
-        isModelDownloading,
-        downloadReceivedBytes,
+        closeAssistant,
         downloadModelSize,
         downloadPaused,
+        downloadReceivedBytes,
+        error,
+        generateResult: handleGenerateResult,
+        handleSettingChange,
+        hasCompatibleBrowser,
+        hasCompatibleHardware,
+        initAssistant,
+        isCheckingCache,
+        isGeneratingResult,
+        isModelDownloaded,
+        isModelDownloading,
         isModelLoadedOnGPU,
         isModelLoadingOnGPU,
-        isGeneratingResult,
-        openedAssistants,
-        error,
         openAssistant,
-        closeAssistant,
-        setAssistantStatus,
-        cancelDownloadModel,
-        resumeDownloadModel,
-        unloadModelOnGPU,
-        initAssistant,
-        generateResult: handleGenerateResult,
-        cancelRunningAction: handleCancelRunningAction,
-        assistantConfig: assistantContext.assistantConfig,
+        openedAssistants,
         resetAssistantState,
-        handleSettingChange,
+        resumeDownloadModel,
+        setAssistantStatus,
         getIsStickyAssistant,
         handleCheckHardwareCompatibility,
+        cleanSpecificErrors: handleCleanSpecifcErrors,
     };
 };

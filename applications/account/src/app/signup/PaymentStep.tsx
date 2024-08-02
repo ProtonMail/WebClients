@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components/components/icon';
 import { Price } from '@proton/components/components/price';
-import { useAssistantAddonEnabledSignup } from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import {
     Alert3ds,
     CurrencySelector,
@@ -22,6 +21,7 @@ import { WrappedTaxCountrySelector } from '@proton/components/containers/payment
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles, getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { useConfig, useHandler } from '@proton/components/hooks';
+import { useAssistantAddonEnabledSignup } from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';

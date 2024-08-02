@@ -18,14 +18,14 @@ import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/component
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { BRAND_NAME, DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -57,7 +57,13 @@ const MailQuickSettings = () => {
 
     const [{ Density, AIAssistantFlags }] = useUserSettings();
     const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
-    const { openedAssistants, resetAssistantState, closeAssistant, handleSettingChange } = useAssistant();
+    const {
+        openedAssistants,
+        resetAssistantState,
+        closeAssistant,
+        handleSettingChange,
+        handleCheckHardwareCompatibility,
+    } = useAssistant();
 
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
 
@@ -172,6 +178,17 @@ const MailQuickSettings = () => {
             closeAssistant(otherComposerID, true);
         }
         resetAssistantState();
+    };
+
+    const handleEnableAssistantLocal = async () => {
+        const { hasCompatibleHardware, hasCompatibleBrowser } = await handleCheckHardwareCompatibility();
+        if (!hasCompatibleBrowser || !hasCompatibleHardware) {
+            for (const { id: otherComposerID } of openedAssistants) {
+                closeAssistant(otherComposerID, true);
+            }
+        } else {
+            handleSettingChange?.();
+        }
     };
 
     const aiFlag = AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags;
@@ -313,12 +330,14 @@ const MailQuickSettings = () => {
             {assistantFeatureEnabled.enabled && (
                 <DrawerAppSection>
                     <QuickSettingsSectionRow
-                        label={c('Label').t`${BRAND_NAME} Scribe`}
+                        label={c('Label').t`Writing assistant`}
                         labelInfo={
-                            <Info
-                                title={c('Info').t`Learn more`}
-                                onClick={() => openNewTab(getKnowledgeBaseUrl('/proton-scribe-writing-assistant'))}
-                            />
+                            aiFlag === OFF ? (
+                                <Info
+                                    title={c('Info').t`Learn more`}
+                                    onClick={() => openNewTab(getKnowledgeBaseUrl('/proton-scribe-writing-assistant'))}
+                                />
+                            ) : undefined
                         }
                         action={
                             <ToggleAssistant
@@ -332,7 +351,7 @@ const MailQuickSettings = () => {
                     {aiFlag !== OFF && (
                         <ToggleAssistantEnvironment
                             aiFlag={AIAssistantFlags}
-                            onEnableLocal={handleSettingChange}
+                            onEnableLocal={handleEnableAssistantLocal}
                             onEnableServer={resetAssistantState}
                         />
                     )}
