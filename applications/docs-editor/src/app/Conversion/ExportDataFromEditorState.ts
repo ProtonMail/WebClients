@@ -8,10 +8,10 @@ import { generatePlaintextFromEditor } from './GeneratePlaintextFromEditor'
 import { generateMarkdownFromEditor } from './GenerateMarkdownFromEditor'
 import { $unwrapCommentThreadMarkNode, CommentThreadMarkNode } from '../Plugins/Comments/CommentThreadMarkNode'
 import { generateHTMLFromEditor } from './GenerateHTMLFromEditor'
-import { generateDocxFromEditor } from './GenerateDocxFromEditor/GenerateDocxFromEditor'
 import { Packer } from 'docx'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
-import type { DocxExportContext } from './GenerateDocxFromEditor/Context'
+import type { DocxExportContext } from './Docx/LexicalToDocx/Context'
+import { generateDocxFromEditor } from './Docx/LexicalToDocx/GenerateDocxFromEditor'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,
