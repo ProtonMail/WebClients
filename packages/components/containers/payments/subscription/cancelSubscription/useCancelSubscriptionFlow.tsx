@@ -15,14 +15,12 @@ import {
     getPlan,
     hasCancellablePlan,
     hasMigrationDiscount,
-    hasNewCancellablePlan,
     hasVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash';
 
 import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import {
@@ -90,8 +88,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plansMap = toMap(plans, 'Name');
-
-    const isCancellationExtended = useFlag('ExtendCancellationProcess');
 
     const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
         undefined,
@@ -322,25 +318,18 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 return SUBSCRIPTION_KEPT;
             }
 
-            // Splitted users should go to PUT v4 renew because they still have an active subscription in inhouse system
-            // And we force them to to the renew cancellation instead of subscription deletion because this case is much
-            // simpler to handle
-            const splittedUser = isSplittedUser(
-                user.ChargebeeUser,
-                user.ChargebeeUserExists,
-                subscription.BillingPlatform
-            );
-
-            if (
-                hasCancellablePlan(subscription) ||
-                (isCancellationExtended && hasNewCancellablePlan(subscription, user)) ||
-                splittedUser
-            ) {
+            if (hasCancellablePlan(subscription, user)) {
                 if (subscription.Renew === Renew.Disabled) {
                     return SUBSCRIPTION_KEPT;
                 }
 
-                const paymentsVersionOverride: PaymentsVersion | undefined = splittedUser ? 'v4' : undefined;
+                const paymentsVersionOverride: PaymentsVersion | undefined = isSplittedUser(
+                    user.ChargebeeUser,
+                    user.ChargebeeUserExists,
+                    subscription?.BillingPlatform
+                )
+                    ? 'v4'
+                    : undefined;
 
                 return cancelRenew(subscriptionReminderFlow, paymentsVersionOverride);
             }
