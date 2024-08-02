@@ -1,6 +1,7 @@
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -19,8 +20,8 @@ import {
 
 export const getMailEssentialConfig = (
     subscription: SubscriptionModel,
-    plan: SubscriptionPlan & { Name: PLANS },
-    newCancellationPolicy?: boolean
+    user: UserModel,
+    plan: SubscriptionPlan & { Name: PLANS }
 ): PlanConfig => {
     const currentPlan = PLANS.MAIL_PRO;
     const planName = PLAN_NAMES[currentPlan];
@@ -40,12 +41,9 @@ export const getMailEssentialConfig = (
         features: [...featuresTemp.features.filter(({ icon }) => icon !== 'shield-half-filled')],
     };
 
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(
-        subscription,
-        planName,
-        newCancellationPolicy
-    );
+    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
     return {
         planName,
