@@ -13,7 +13,8 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -31,8 +32,8 @@ import {
 
 export const getBundleProConfig = (
     subscription: SubscriptionModel,
-    plan: SubscriptionPlan & { Name: PLANS },
-    newCancellationPolicy?: boolean
+    user: UserModel,
+    plan: SubscriptionPlan & { Name: PLANS }
 ): PlanConfig => {
     const currentPlan = PLANS.BUNDLE_PRO_2024;
     const planName = PLAN_NAMES[currentPlan];
@@ -102,18 +103,15 @@ export const getBundleProConfig = (
         ],
     };
 
-    const tempStorage = getDefaultGBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
+    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const tempStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
     const storage: PlanConfigStorage = {
         ...tempStorage,
         description: c('Subscription reminder')
             .t`${planName} offers ${planMaxSpace} storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.`,
     };
 
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(
-        subscription,
-        planName,
-        newCancellationPolicy
-    );
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
 
     return {
         planName,

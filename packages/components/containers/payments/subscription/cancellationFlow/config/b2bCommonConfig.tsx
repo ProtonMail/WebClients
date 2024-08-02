@@ -114,14 +114,14 @@ export const getDefaultFeatures = (
 
 export const ExpirationTime = ({
     subscription,
-    newCancellationPolicy,
+    isChargeBeeUser,
 }: {
     subscription: SubscriptionModel;
-    newCancellationPolicy?: boolean;
+    isChargeBeeUser?: boolean;
 }) => {
     const latestSubscription = subscription.UpcomingSubscription?.PeriodEnd ?? subscription.PeriodEnd;
 
-    if (newCancellationPolicy) {
+    if (isChargeBeeUser) {
         const endDate = fromUnixTime(latestSubscription);
         const formattedEndDate = format(fromUnixTime(latestSubscription), 'PP');
         return (
@@ -145,9 +145,9 @@ export const ExpirationTime = ({
 export const getDefaultConfirmationModal = (
     subscription: SubscriptionModel,
     planName: string,
-    newCancellationPolicy?: boolean
+    isChargeBeeUser?: boolean
 ): ConfirmationModal => {
-    const expiryDate = <ExpirationTime subscription={subscription} newCancellationPolicy={newCancellationPolicy} />;
+    const expiryDate = <ExpirationTime subscription={subscription} isChargeBeeUser={isChargeBeeUser} />;
 
     const learnMoreLink = (
         <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')}>
@@ -155,7 +155,7 @@ export const getDefaultConfirmationModal = (
         </Href>
     );
 
-    const description = newCancellationPolicy
+    const description = isChargeBeeUser
         ? c('Subscription reminder')
               .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you'll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink}`
         : c('Subscription reminder')
@@ -175,8 +175,8 @@ export const getDefaultConfirmationModal = (
     };
 };
 
-export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string, newCancellationPolicy?: boolean) => {
-    const warning = newCancellationPolicy
+export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string, isChargeBeeUser?: boolean) => {
+    const warning = isChargeBeeUser
         ? c('Subscription reminder')
               .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.`
         : c('Subscription reminder')

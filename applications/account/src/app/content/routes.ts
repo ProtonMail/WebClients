@@ -25,7 +25,6 @@ interface Arguments {
     isBreachesAccountDashboardEnabled: boolean;
     isUserGroupsFeatureEnabled: boolean;
     showThemeSelection: boolean;
-    isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
     canDisplayB2BLogsPass: boolean;
     canDisplayB2BLogsVPN: boolean;
@@ -44,7 +43,6 @@ export const getRoutes = ({
     isBreachesAccountDashboardEnabled,
     isUserGroupsFeatureEnabled,
     showThemeSelection,
-    isNewCancellationFlowExtended,
     assistantKillSwitch,
     canDisplayB2BLogsPass,
     canDisplayB2BLogsVPN,
@@ -62,7 +60,6 @@ export const getRoutes = ({
             organization,
             isBreachesAccountDashboardEnabled,
             showThemeSelection,
-            isNewCancellationFlowExtended,
             assistantKillSwitch,
             isUserGroupsFeatureEnabled,
         }),

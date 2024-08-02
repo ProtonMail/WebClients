@@ -4,7 +4,6 @@ import { ButtonLike } from '@proton/atoms/Button';
 import type { ModalProps } from '@proton/components/components';
 import { Prompt, SettingsLink } from '@proton/components/components';
 import { PLANS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
 
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
 
@@ -15,16 +14,11 @@ interface Props extends ModalProps {
 
 const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     const { sendResubscribeModalResubcribeReport, sendResubscribeModalCloseReport } = useCancellationTelemetry();
-    const isCancellationExtended = useFlag('ExtendCancellationProcess');
 
     const ResubscribeButton = () => {
-        if (plan === PLANS.VISIONARY && !isCancellationExtended) {
+        if (plan === PLANS.VISIONARY) {
             return null;
         }
-
-        const path = isCancellationExtended
-            ? `/dashboard?source=${REACTIVATE_SOURCE.cancellationFlow}#your-subscriptions`
-            : `/dashboard/upgrade?plan=${plan}&target=compare`;
 
         return (
             <ButtonLike
@@ -33,7 +27,7 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
                     sendResubscribeModalResubcribeReport();
                 }}
                 fullWidth
-                path={path}
+                path={`/dashboard?source=${REACTIVATE_SOURCE.cancellationFlow}#your-subscriptions`}
                 color="norm"
                 data-testid="cancellation-reminder-resubscribe-button"
             >{c('Subscription reminder').t`Reactivate`}</ButtonLike>
