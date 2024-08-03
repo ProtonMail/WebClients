@@ -76,13 +76,18 @@ export const autofillIdentityFields = (
             ? [...sectionFields.slice(selectedFieldIndex), ...sectionFields.slice(0, selectedFieldIndex)]
             : sectionFields;
 
-    orderedFields.forEach((field) => {
+    orderedFields.forEach((field, idx) => {
         const { identityType } = field;
         if (identityType === undefined || autofilled.has(identityType)) return;
 
         const getValue = IDENTITY_FIELDS_CONFIG[identityType];
         const value = getValue(data);
-        if (value) field.autofill(value);
+
+        /** Use setTimeout to stagger autofill operations across multiple frames.
+         * This helps avoid potential blocking by browsers or websites that may
+         * detect and prevent rapid, simultaneous field autofill. The delay increases
+         * for each field, mimicking human-like interaction */
+        setTimeout(() => value && field.autofill(value), idx);
         autofilled.add(identityType);
     });
 };
