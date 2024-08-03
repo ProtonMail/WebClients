@@ -46,7 +46,6 @@ type Trainee = TrainingResults & {
 };
 declare enum FormType {
     LOGIN = 'login',
-    MFA = 'mfa',
     NOOP = 'noop',
     PASSWORD_CHANGE = 'password-change',
     RECOVERY = 'recovery',
@@ -91,7 +90,7 @@ declare const maybeHiddenUsername: (value: Fnode) => boolean;
 declare const isUsernameCandidate: (el: HTMLElement) => boolean;
 declare const isEmailCandidate: (el: HTMLElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
-declare const isSubmitBtnCandidate: (btn: HTMLElement) => boolean;
+declare const isBtnCandidate: (btn: HTMLElement) => boolean;
 declare const isProcessableField: (input: HTMLInputElement) => boolean;
 declare const isClassifiableField: (fnode: Fnode) => boolean;
 declare const selectInputCandidates: (target?: Document | HTMLElement) => HTMLInputElement[];
@@ -212,6 +211,7 @@ export {
     getTypeScore,
     getVisibilityCache,
     inputCandidateSelector,
+    isBtnCandidate,
     isClassifiable,
     isClassifiableField,
     isCluster,
@@ -223,7 +223,6 @@ export {
     isPrediction,
     isProcessableField,
     isProcessed,
-    isSubmitBtnCandidate,
     isUsernameCandidate,
     isVisible,
     isVisibleEl,
