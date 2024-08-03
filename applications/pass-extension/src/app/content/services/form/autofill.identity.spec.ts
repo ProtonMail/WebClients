@@ -17,6 +17,8 @@ const createField = (identityType: IdentityFieldType, sectionIndex: number = 1, 
     }) as any as FieldHandle;
 
 describe('Identity', () => {
+    jest.useFakeTimers();
+
     beforeEach(() => {
         MOCK_FIELDS.length = 0;
         MOCK_ITEM = itemBuilder('identity');
@@ -134,6 +136,8 @@ describe('Identity', () => {
             });
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
             expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Doe');
             expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('123 Main St');
@@ -154,6 +158,8 @@ describe('Identity', () => {
             });
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John');
             expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2].autofill).toHaveBeenCalledWith('Doe');
@@ -168,6 +174,8 @@ describe('Identity', () => {
             );
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
@@ -182,6 +190,8 @@ describe('Identity', () => {
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Middle Doe'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
             expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Middle');
             expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('Doe');
@@ -196,6 +206,8 @@ describe('Identity', () => {
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
             expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
@@ -212,6 +224,8 @@ describe('Identity', () => {
             });
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
             expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('12345');
         });
@@ -226,6 +240,8 @@ describe('Identity', () => {
             MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
             expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
@@ -241,6 +257,8 @@ describe('Identity', () => {
             MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('1234567890');
             expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2].autofill).not.toHaveBeenCalled();
@@ -252,6 +270,8 @@ describe('Identity', () => {
             MOCK_ITEM.set('content', (content) => content.set('organization', 'Proton'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('Proton');
         });
 
@@ -265,6 +285,8 @@ describe('Identity', () => {
             });
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
             expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('92190');
         });
