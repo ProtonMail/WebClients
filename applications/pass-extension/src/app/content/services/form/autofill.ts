@@ -164,12 +164,7 @@ export const createAutofillService = () => {
     const promptOTP = withContext<() => Promise<boolean>>(async (ctx) => {
         const otpFieldDetected = ctx?.service.formManager
             .getTrackedForms()
-            .some(
-                (form) =>
-                    !isIgnored(form.element) &&
-                    form.formType === FormType.MFA &&
-                    form.getFieldsFor(FieldType.OTP).length > 0
-            );
+            .some((form) => !isIgnored(form.element) && form.getFieldsFor(FieldType.OTP).length > 0);
 
         if (!(otpFieldDetected && ctx?.getFeatures().Autofill2FA)) return false;
 
