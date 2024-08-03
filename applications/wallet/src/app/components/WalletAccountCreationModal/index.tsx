@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
-import type { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps} from '@proton/components/components';
+import { Tooltip } from '@proton/components/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -28,7 +29,7 @@ import {
     walletAccountCreation,
 } from '@proton/wallet';
 
-import { Button, CoreButtonLike, Input, Modal, Select, SelectOption } from '../../atoms';
+import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -177,10 +178,12 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                 value: opt,
                                 id: opt.toString(),
                                 children: (
-                                    <SelectOption
-                                        label={getLabelByScriptType(opt as WasmScriptType)}
-                                        description={getDescriptionByScriptType(opt as WasmScriptType)}
-                                    />
+                                    <div className="flex flex-row items-center py-2">
+                                        {getLabelByScriptType(opt as WasmScriptType)}
+                                        <Tooltip title={getDescriptionByScriptType(opt as WasmScriptType)}>
+                                            <Icon name="info-circle" className="ml-auto color-hint" />
+                                        </Tooltip>
+                                    </div>
                                 ),
                             }))}
                             renderSelected={(selected) => getLabelByScriptType(selected as WasmScriptType)}
