@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { build1PassIdentity } from '@proton/pass/lib/import/builders/1password.builder';
+import { build1PassLegacyIdentity } from '@proton/pass/lib/import/builders/1password.builder';
 import type { ItemImportIntent, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -150,7 +150,7 @@ const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'identit
         note: item.secureContents.notesPlain,
         createTime: item.createdAt,
         modifyTime: item.updatedAt,
-        ...build1PassIdentity(item.secureContents.sections),
+        ...build1PassLegacyIdentity(item.secureContents.sections),
     });
 
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>

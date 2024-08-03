@@ -25,6 +25,7 @@ export enum OnePassCategory {
     LOGIN = '001',
     CREDIT_CARD = '002',
     NOTE = '003',
+    IDENTITY = '004',
     PASSWORD = '005',
     OTHER = '006',
 }
@@ -91,6 +92,7 @@ export type OnePassLogin = OnePassItemDetails & {
     }[];
 };
 export type OnePassCreditCard = OnePassItemDetails;
+export type OnePassIdentity = OnePassItemDetails;
 
 export type OnePassBaseItem = {
     uuid: string;
@@ -114,6 +116,7 @@ export type OnePassItem = OnePassBaseItem &
         | { categoryUuid: OnePassCategory.NOTE; details: OnePassNote }
         | { categoryUuid: OnePassCategory.PASSWORD; details: OnePassPassword }
         | { categoryUuid: OnePassCategory.CREDIT_CARD; details: OnePassCreditCard }
+        | { categoryUuid: OnePassCategory.IDENTITY; details: OnePassIdentity }
     );
 
 export type OnePass1PuxData = {
