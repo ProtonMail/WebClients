@@ -10,6 +10,7 @@ import {
 } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
+    FieldType,
     clearDetectionCache,
     getIgnoredParent,
     getParentFormPrediction,
@@ -100,6 +101,10 @@ export const createFormManager = (options: FormManagerOptions) => {
      */
     const runDetection = throttle(
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
+            const settings = ctx?.getSettings();
+            const detectIdentity = Boolean(settings?.autofill.identity);
+            const excludedFieldTypes = detectIdentity ? [] : [FieldType.IDENTITY];
+
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
@@ -110,7 +115,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                         logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                         try {
-                            const forms = ctx?.service.detector.runDetection({ onBottleneck });
+                            const forms = ctx?.service.detector.runDetection({ onBottleneck, excludedFieldTypes });
 
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
