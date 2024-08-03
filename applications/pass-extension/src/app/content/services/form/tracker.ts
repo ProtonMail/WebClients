@@ -76,11 +76,13 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
         const features = ctx?.getFeatures();
+        const settings = ctx?.getSettings();
 
         switch (action) {
             case DropdownAction.AUTOFILL_LOGIN:
-            case DropdownAction.AUTOFILL_IDENTITY:
                 return features?.Autofill ?? false;
+            case DropdownAction.AUTOFILL_IDENTITY:
+                return (features?.Autofill && settings?.autofill.identity) ?? false;
             case DropdownAction.AUTOSUGGEST_ALIAS:
                 return features?.AutosuggestAlias ?? false;
             case DropdownAction.AUTOSUGGEST_PASSWORD:

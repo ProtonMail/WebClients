@@ -1,4 +1,5 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
+import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
 
 import type { FieldType } from '@proton/pass/fathom';
@@ -123,10 +124,15 @@ const selectBestForm: PredictionBestSelector<FormType> = (candidates) => {
     else return login;
 };
 
+type DetectionRunnerOptions = {
+    excludedFieldTypes?: FieldType[];
+    onBottleneck: (data: { detectionTime: number; hostname: string }) => void;
+};
+
 /* Runs the fathom detection and returns a form handle for each detected form.. */
 const createDetectionRunner =
     (ruleset: ReturnType<typeof rulesetMaker>, doc: Document) =>
-    (options: { onBottleneck: (data: {}) => void }): DetectedForm[] => {
+    ({ excludedFieldTypes = [], onBottleneck }: DetectionRunnerOptions): DetectedForm[] => {
         const [formPredictions, fieldPredictions] = withMaxExecutionTime(
             (): [PredictionResult<FormType>[], PredictionResult<FieldType>[]] => {
                 const boundRuleset = ruleset.against(doc.body);
@@ -138,19 +144,19 @@ const createDetectionRunner =
                     }),
                     getPredictionsFor<FieldType>(boundRuleset, {
                         type: 'field',
-                        subTypes: fieldTypes,
+                        subTypes: fieldTypes.filter((type) => !excludedFieldTypes.includes(type)),
                         selectBest,
                     }),
                 ];
             },
             {
                 maxTime: MIN_MAX_DETECTION_TIME,
-                onMaxTime: (ms) => {
-                    const host = window.location.hostname;
-                    logger.info(`[Detector::run] detector slow down detected on ${host} (took ${ms}ms)`);
+                onMaxTime: (detectionTime) => {
+                    const { hostname } = window.location;
+                    logger.info(`[Detector::run] detector slow down detected on ${hostname} (took ${detectionTime}ms)`);
 
-                    if (ms >= MAX_MAX_DETECTION_TIME) {
-                        options.onBottleneck({ ms, host });
+                    if (detectionTime >= MAX_MAX_DETECTION_TIME) {
+                        onBottleneck({ detectionTime, hostname });
                         throw new Error();
                     }
                 },
@@ -184,8 +190,16 @@ const createDetectionRunner =
         return formsToTrack;
     };
 
+const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
+    features.Autofill ||
+    features.Autofill2FA ||
+    features.Autosave ||
+    features.AutosuggestAlias ||
+    features.AutosuggestPassword;
+
 export const createDetectorService = () => {
     return {
+        isEnabled,
         shouldRunDetection,
         runDetection: createDetectionRunner(ruleset, document),
     };
