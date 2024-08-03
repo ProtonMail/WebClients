@@ -14,12 +14,13 @@ import { ModalParagraph } from '../../../atoms/ModalParagraph';
 interface Props extends ModalOwnProps {
     provider: WasmGatewayProvider;
     onConfirm: () => void;
+    onClose: () => void;
 }
 
 const websiteUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, 'Unsupported'>, string> = {
     Banxa: 'https://banxa.com',
-    MoonPay: 'https://www.moonpay.com/',
-    Ramp: 'https://ramp.network/',
+    MoonPay: 'https://www.moonpay.com',
+    Ramp: 'https://ramp.network',
 };
 const termOfUseUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, 'Unsupported'>, string> = {
     Banxa: 'https://banxa.com/terms-of-use',
@@ -37,7 +38,7 @@ const supportEmailByGatewayProvider: Record<Exclude<WasmGatewayProvider, 'Unsupp
     Ramp: 'support@ramp.network',
 };
 
-export const DisclaimerModal = ({ provider, onConfirm, ...modalProps }: Props) => {
+export const DisclaimerModal = ({ provider, onConfirm, onClose, ...modalProps }: Props) => {
     const [hasReadAndAgree, setHasReadAndAgree] = useState(false);
 
     if (provider === 'Unsupported') {
@@ -82,6 +83,16 @@ export const DisclaimerModal = ({ provider, onConfirm, ...modalProps }: Props) =
                         onConfirm();
                     }}
                 >{c('Gateway disclaimer').t`Confirm`}</Button>,
+                <Button
+                    fullWidth
+                    className="mx-auto"
+                    size="large"
+                    shape="solid"
+                    color="weak"
+                    onClick={() => {
+                        onClose();
+                    }}
+                >{c('Gateway disclaimer').t`Not now`}</Button>,
             ]}
             actions={[
                 <Checkbox
@@ -99,7 +110,7 @@ export const DisclaimerModal = ({ provider, onConfirm, ...modalProps }: Props) =
             </h1>
             <ModalParagraph>
                 <p>{
-                    // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: Moonpay, Banxa and Ramp. The text contains the name of the provider as well as links to their own policies. An example with Ramp: You are now leaving Proton Wallet for Ramp (https://ramp.network/). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp, a separate third-party platform. By proceeding and procuring services from Ramp, you acknowledge that you have read and agreed to Ramp's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp's services, please contact Ramp at support.ramp.network.
+                    // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: Moonpay, Banxa and Ramp. The text contains the name of the provider as well as links to their own policies. An example with Ramp: You are now leaving Proton Wallet for Ramp (https://ramp.network). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp, a separate third-party platform. By proceeding and procuring services from Ramp, you acknowledge that you have read and agreed to Ramp's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp's services, please contact Ramp at support.ramp.network.
                     c('Gateway disclaimer')
                         .jt`You are now leaving ${WALLET_APP_NAME} for ${provider} (${websiteLink}). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${provider}, a separate third-party platform. By proceeding and procuring services from ${provider}, you acknowledge that you have read and agreed to ${provider}'s Terms of Service (${termOfUseLink}) and Privacy and Cookies Policy (${privacyAndCookiesPolicyLink}). For any questions related to ${provider}'s services, please contact ${provider} at ${supportEmailLink}`
                 }</p>
