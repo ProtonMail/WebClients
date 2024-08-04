@@ -2,7 +2,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/form/autofill.identity.sections';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
 import type { DetectedField, DetectedForm, FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
-import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/nodes';
+import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
     FieldType,
@@ -175,7 +175,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         withContext((ctx) => {
             repositionFields(true);
             const formParent = options.form.parentElement;
-            const triggerDetection = formParent === null || hasUnprocessedFields(formParent);
+            const triggerDetection = formParent === null || hasProcessableFields(formParent);
             if (triggerDetection) void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
         }),
         50
