@@ -2,11 +2,10 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createFormHandles } from 'proton-pass-extension/app/content/services/handles/form';
 import type { FormHandle } from 'proton-pass-extension/app/content/types';
 import {
-    hasUnprocessedFields,
-    hasUnprocessedForms,
+    hasProcessableFields,
+    hasProcessableForms,
     isAddedNodeOfInterest,
     isRemovedNodeOfInterest,
-    purgeStaleSeenFields,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
@@ -242,7 +241,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                     state.observer = listeners.addObserver(document.body, onMutation, config);
                 }
 
-                return hasUnprocessedFields(target);
+                return hasProcessableFields(target);
             }
 
             return false;
@@ -266,8 +265,11 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onTransitionEnd = debounce(
         ({ target }: Event) =>
             requestAnimationFrame(() => {
-                if (target !== document.body) purgeStaleSeenFields(target as HTMLElement);
-                if (hasUnprocessedForms()) void detect({ reason: 'TransitionEnd' });
+                if (target instanceof HTMLElement) {
+                    if (hasProcessableForms(target) || hasProcessableFields(target)) {
+                        void detect({ reason: 'TransitionEnd' });
+                    }
+                }
             }),
         250,
         { leading: true }
