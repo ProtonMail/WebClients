@@ -66,6 +66,11 @@ export const createIFrameService = (elements: PassElementsConfig) => {
 
             const handleRootRemoval = withContext((ctx) => {
                 state.root = null;
+                state.apps.dropdown?.destroy();
+                state.apps.notification?.destroy();
+                state.apps.dropdown = null;
+                state.apps.notification = null;
+
                 if (!ctx?.getState().stale) service.init();
                 else service.destroy();
             });
