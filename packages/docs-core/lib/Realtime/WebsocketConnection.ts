@@ -41,6 +41,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   constructor(
     readonly callbacks: WebsocketCallbacks,
     private logger: LoggerInterface,
+    private appVersion: string,
   ) {
     window.addEventListener('offline', this.handleWindowWentOfflineEvent)
     window.addEventListener('online', this.handleWindowCameOnlineEvent)
@@ -185,7 +186,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.logger.info('Opening websocket connection')
 
-    this.socket = new WebSocket(connectionUrl)
+    this.socket = new WebSocket(connectionUrl, [this.appVersion])
     this.socket.binaryType = 'arraybuffer'
 
     this.callbacks.onConnecting()

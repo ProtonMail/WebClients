@@ -45,6 +45,7 @@ describe('WebsocketService', () => {
         error: jest.fn(),
       } as unknown as jest.Mocked<LoggerInterface>,
       eventBus,
+      '0.0.0.0',
     )
   }
 
