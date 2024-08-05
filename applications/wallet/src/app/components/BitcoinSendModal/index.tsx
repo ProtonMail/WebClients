@@ -78,24 +78,20 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
         selectedWalletAccount[1]?.ID
     );
 
-    const { txBuilder, updateTxBuilder } = useTxBuilder();
+    const txBuilderHelpers = useTxBuilder();
+    const { updateTxBuilder } = txBuilderHelpers;
 
     const isUsingBitcoinViaEmail = Object.values(recipientHelpers.recipientEmailMap).some(
         (recipient) => recipient?.recipient.Address && validateEmailAddress(recipient?.recipient.Address)
     );
 
-    const { getFeesByBlockTarget } = useFeesInput(txBuilder, updateTxBuilder);
+    const { getFeesByBlockTarget } = useFeesInput(txBuilderHelpers);
 
     useEffect(() => {
         if (wasmAccount?.account) {
             updateTxBuilder((txBuilder) => txBuilder.setAccount(wasmAccount.account));
         }
     }, [updateTxBuilder, wasmAccount]);
-
-    useEffect(() => {
-        // This is needed because txBuilder is populated with one empty recipient on init
-        updateTxBuilder((txBuilder) => txBuilder.clearRecipients());
-    }, [updateTxBuilder]);
 
     if (!isWalletAccountSet(selectedWalletAccount)) {
         return null;
@@ -136,13 +132,12 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                     </div>
                 </div>
 
-                <div className='h-full overflow-auto'>
+                <div className="h-full overflow-auto">
                     <div className="wallet-fullscreen-modal-main">
                         {stepKey === StepKey.RecipientsSelection && walletAccount && (
                             <RecipientsSelection
                                 apiAccount={walletAccount}
-                                txBuilder={txBuilder}
-                                updateTxBuilder={updateTxBuilder}
+                                txBuilderHelpers={txBuilderHelpers}
                                 recipientHelpers={recipientHelpers}
                                 onRecipientsConfirm={() => {
                                     setStepKey(StepKey.AmountInput);
@@ -154,8 +149,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             <AmountInput
                                 apiAccount={walletAccount}
                                 account={wasmAccount}
-                                txBuilder={txBuilder}
-                                updateTxBuilder={updateTxBuilder}
+                                txBuilderHelpers={txBuilderHelpers}
                                 btcAddressMap={recipientHelpers.btcAddressMap}
                                 onBack={() => setStepKey(StepKey.RecipientsSelection)}
                                 onReview={(exchangeRate: WasmApiExchangeRate) => {
@@ -171,8 +165,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                                 wallet={wallet}
                                 account={walletAccount}
                                 exchangeRate={exchangeRate}
-                                txBuilder={txBuilder}
-                                updateTxBuilder={updateTxBuilder}
+                                txBuilderHelpers={txBuilderHelpers}
                                 btcAddressMap={recipientHelpers.btcAddressMap}
                                 onBack={() => setStepKey(StepKey.AmountInput)}
                                 getFeesByBlockTarget={getFeesByBlockTarget}
