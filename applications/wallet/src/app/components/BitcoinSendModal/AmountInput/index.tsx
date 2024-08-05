@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -12,7 +12,7 @@ import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
 import { usePsbt } from '../../../hooks/usePsbt';
-import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
+import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import type { AccountWithChainData } from '../../../types';
 import { convertAmount, getAccountBalance, getExchangeRateFromBitcoinUnit } from '../../../utils';
@@ -24,8 +24,7 @@ import { BitcoinAmountInputWithBalanceAndCurrencySelect } from './BitcoinAmountI
 const DEFAULT_MINIMUM_SATS_AMOUNT = 1000;
 
 interface Props {
-    txBuilder: WasmTxBuilder;
-    updateTxBuilder: (updater: TxBuilderUpdater) => void;
+    txBuilderHelpers: TxBuilderHelper;
     btcAddressMap: BtcAddressMap;
     account: AccountWithChainData;
     apiAccount: WasmApiWalletAccount;
@@ -48,18 +47,11 @@ const distributeAmount = (amount: number, recipients: number) => {
     return baseDistribution;
 };
 
-export const AmountInput = ({
-    txBuilder,
-    updateTxBuilder,
-    btcAddressMap,
-    onBack,
-    account,
-    apiAccount,
-    onReview,
-}: Props) => {
-    const [dirty, setDirty] = useState(false);
+export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, apiAccount, onReview }: Props) => {
     const [defaultExchangeRate] = useExchangeRate(apiAccount.FiatCurrency);
     const [settings] = useUserWalletSettings();
+
+    const { txBuilder, updateTxBuilder, updateTxBuilderAsync } = txBuilderHelpers;
 
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
     const { createDraftPsbt } = usePsbt({ txBuilder });
@@ -117,12 +109,10 @@ export const AmountInput = ({
     }, [constrainedMinElement, constrainedSatMin, createDraftPsbt, recipients, totalSentAmount]);
 
     useEffect(() => {
-        if (dirty) {
-            void checkCreatePsbt().then((error) => {
-                setErrorMessage(error);
-            });
-        }
-    }, [dirty, checkCreatePsbt]);
+        void checkCreatePsbt().then((error) => {
+            setErrorMessage(error);
+        });
+    }, [checkCreatePsbt]);
 
     const remainingAmount = accountBalance - totalSentAmount;
 
@@ -151,18 +141,19 @@ export const AmountInput = ({
 
         recipients.forEach((r, i) => {
             const amount = distributedAmount.at(i) ?? 0;
-
             const recipientAmount = r[2];
+
             if (Number(recipientAmount) !== amount) {
                 tryUpdateRecipientAmount(i, amount);
             }
         });
+
+        updateTxBuilderAsync((txBuilder) => txBuilder.constrainRecipientAmounts());
     };
 
     const handleReviewTransaction = async () => {
         const errorMessage = await withLoadingCreatePsbt(checkCreatePsbt());
         if (errorMessage) {
-            setDirty(true);
             return setErrorMessage(errorMessage);
         }
 
