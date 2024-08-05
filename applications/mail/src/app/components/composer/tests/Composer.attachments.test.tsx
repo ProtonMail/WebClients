@@ -112,7 +112,8 @@ describe('Composer attachments', () => {
         });
         jest.useRealTimers();
 
-        // Added after react 18 upgrade
+        // React 18 got issues with faketimers.
+        // Fix is to wait a bit for a proper rerender.
         await wait(100);
 
         await waitForSpyCall({ spy: updateSpy });
