@@ -1,78 +1,39 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton, useApi } from '@proton/components';
-import { createSLUser } from '@proton/shared/lib/api/simpleLogin';
-import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME, SIMPLE_LOGIN_EXTENSION_LINKS } from '@proton/shared/lib/constants';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
-import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
-
-import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
-import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
+import {
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
+    useDrawer,
+} from '@proton/components';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import passIconSvg from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
 import './SimpleLoginModal.scss';
 
 interface Props extends ModalProps {}
 
 const SimpleLoginModal = ({ ...rest }: Props) => {
-    const [loading, setLoading] = useState(false);
-    const { canUseExtension } = useSimpleLoginExtension();
-    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
-    const api = useApi();
-
-    const { onClose } = rest;
-
-    const BRAND_NAME_TWO = BRAND_NAME;
-
-    const installAndGoText = isSafari()
-        ? // translator: Full sentence "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.""
-          c('Info')
-              .t`Your ${BRAND_NAME} Account includes SimpleLogin. Install the browser extension with one click to get started.`
-        : // translator: Full sentence "SimpleLogin is a Proton service, and your Proton Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias."
-          c('Info')
-              .t`SimpleLogin is a ${BRAND_NAME} service, and your ${BRAND_NAME_TWO} Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
-
-    const handlePluginAction = async () => {
-        setLoading(true);
-
-        let url = '';
-        // In Safari there is no browser extension, so we redirect to the SL dashboard
-        if (isSafari()) {
-            void api(createSLUser());
-            url = SIMPLE_LOGIN_EXTENSION_LINKS.DASHBOARD;
-        } else {
-            // Otherwise, we can open the extension
-            const { Redirect } = await api(createSLUser('browser_extension'));
-            url = Redirect;
+    const { toggleDrawerApp, appInView } = useDrawer();
+    const openSecurityCenterInDrawer = () => {
+        if (appInView !== 'security-center') {
+            toggleDrawerApp({ app: 'security-center' })();
+            rest?.onClose?.();
         }
-        setLoading(false);
-
-        // We need to send a telemetry request when the user clicks on the go to SL button
-        handleSendTelemetryData(TelemetrySimpleLoginEvents.go_to_simplelogin, {}, true);
-
-        window.open(url, '_blank');
-        onClose?.();
-    };
-
-    const getButtonText = () => {
-        if (!canUseExtension) {
-            return c('Action').t`Go to SimpleLogin`;
-        }
-        return c('Action').t`Get SimpleLogin extension`;
     };
 
     return (
         <ModalTwo {...rest} className="simple-login-modal">
-            <ModalTwoHeader title={c('Title').t`Hide your email with SimpleLogin by ${BRAND_NAME}`} />
+            <ModalTwoHeader title={c('Title').t`Hide your email with ${PASS_APP_NAME}`} />
             <ModalTwoContent>
-                <div className="text-center">
-                    <img src={connectSimpleLoginSvg} alt={c('Alternative text for SimpleLogin image').t`SimpleLogin`} />
+                <div className="text-center mb-4">
+                    <img src={passIconSvg} width="195" alt="" />
                 </div>
                 <div>{c('Info')
-                    .t`SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.`}</div>
+                    .t`${PASS_APP_NAME} provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.`}</div>
                 <br />
                 <div className="mb-2">
                     <strong>{c('Info').t`How hide-my-email aliases works`}</strong>
@@ -85,15 +46,10 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
                     <li>{c('Info')
                         .t`If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.`}</li>
                 </ul>
-                <br />
-                <div className="mb-2">
-                    <strong>{c('Info').t`Using SimpleLogin is easy`}</strong>
-                </div>
-                <div>{installAndGoText}</div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <PrimaryButton onClick={handlePluginAction} className="ml-auto" loading={loading}>
-                    {getButtonText()}
+                <PrimaryButton onClick={openSecurityCenterInDrawer} className="ml-auto">
+                    {c('Action').t`Hide my email`}
                 </PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
