@@ -3,13 +3,14 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { useAddressesKeys, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { ANONYMOUS_SENDER_ADDRESS_ID } from '../../../constants/wallet';
 import { usePsbt } from '../../../hooks/usePsbt';
+import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
 export const getAnonymousSenderAddress = () => ({
@@ -22,7 +23,7 @@ export const useTransactionReview = ({
     wallet,
     account,
     exchangeRate,
-    txBuilder,
+    txBuilderHelpers,
     btcAddressMap,
     onSent,
 }: {
@@ -30,10 +31,12 @@ export const useTransactionReview = ({
     wallet: IWasmApiWalletData;
     account: WasmApiWalletAccount;
     exchangeRate: WasmApiExchangeRate;
-    txBuilder: WasmTxBuilder;
+    txBuilderHelpers: TxBuilderHelper;
     btcAddressMap: BtcAddressMap;
     onSent: () => void;
 }) => {
+    const { txBuilder } = txBuilderHelpers;
+
     const [addresses] = useAddressesKeys();
 
     // Address that will be used as a fallback when anonymous sender is selected
@@ -71,10 +74,8 @@ export const useTransactionReview = ({
     const totalAmount = totalFees + totalSentAmount;
 
     const [recipientsAddresses, emailAddressByBtcAddress] = useMemo(() => {
-        const recipients = txBuilder.getRecipients();
-
-        const recipientsAddresses = compact(recipients.map((r) => btcAddressMap[r[1]]));
-        const emailAddressByBtcAddress: SimpleMap<string> = recipients.reduce((acc, recipient) => {
+        const recipientsAddresses = compact(txBuilderRecipients.map((r) => btcAddressMap[r[1]]));
+        const emailAddressByBtcAddress: SimpleMap<string> = txBuilderRecipients.reduce((acc, recipient) => {
             const btcAddress = recipient[1];
             const emailAddress = btcAddressMap[btcAddress]?.recipient.Address;
 
@@ -82,7 +83,7 @@ export const useTransactionReview = ({
         }, {});
 
         return [recipientsAddresses, emailAddressByBtcAddress];
-    }, [btcAddressMap, txBuilder]);
+    }, [btcAddressMap, txBuilderRecipients]);
 
     const onSelectAddress = useCallback(
         async (senderAddressId?: string) => {

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { WasmApiWalletAccount, WasmInviteNotificationType, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmInviteNotificationType } from '@proton/andromeda';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
@@ -21,7 +21,7 @@ import {
 } from '@proton/wallet';
 
 import { Button } from '../../atoms';
-import type { TxBuilderUpdater } from '../../hooks/useTxBuilder';
+import type { TxBuilderHelper } from '../../hooks/useTxBuilder';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import type { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
@@ -35,8 +35,7 @@ interface Props {
     apiAccount: WasmApiWalletAccount;
     recipientHelpers: ReturnType<typeof useEmailAndBtcAddressesMaps>;
     onRecipientsConfirm: () => void;
-    txBuilder: WasmTxBuilder;
-    updateTxBuilder: (updater: TxBuilderUpdater) => void;
+    txBuilderHelpers: TxBuilderHelper;
 }
 
 interface WalletNotFoundModalData {
@@ -73,13 +72,7 @@ const getVerifiedAddressKey = async (
     return firstAddressKey;
 };
 
-export const RecipientsSelection = ({
-    apiAccount,
-    recipientHelpers,
-    txBuilder,
-    onRecipientsConfirm,
-    updateTxBuilder,
-}: Props) => {
+export const RecipientsSelection = ({ apiAccount, recipientHelpers, txBuilderHelpers, onRecipientsConfirm }: Props) => {
     const {
         recipientEmailMap,
         addValidRecipient,
@@ -89,6 +82,8 @@ export const RecipientsSelection = ({
         addRecipientWithSentInvite,
         checkHasSentInvite,
     } = recipientHelpers;
+
+    const { updateTxBuilder, txBuilder } = txBuilderHelpers;
 
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { contactEmails, contactEmailsMap } = useContactEmailsCache();
