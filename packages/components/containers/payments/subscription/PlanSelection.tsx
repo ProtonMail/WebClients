@@ -4,7 +4,14 @@ import { c } from 'ttag';
 
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
-import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
+import {
+    ADDON_NAMES,
+    APPS,
+    CYCLE,
+    PLANS,
+    PLAN_TYPES,
+    isFreeSubscription as getIsFreeSubscription,
+} from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIpPricePerMonth,
@@ -209,7 +216,8 @@ const PlanSelection = ({
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
-    const renderCycleSelector = isFreeSubscription(subscription);
+    const isFreeSubscription = getIsFreeSubscription(subscription);
+    const renderCycleSelector = isFreeSubscription;
     const enabledProductB2CPlans = [
         PLANS.MAIL,
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
@@ -269,7 +277,22 @@ const PlanSelection = ({
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
-        canAccessDuoPlan && hasSomeAddonOrPlan(subscription, [PLANS.MAIL, PLANS.BUNDLE]) ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan &&
+        (isFreeSubscription ||
+            hasSomeAddonOrPlan(subscription, [
+                PLANS.MAIL,
+                PLANS.DRIVE,
+                PLANS.VPN,
+                PLANS.BUNDLE,
+                PLANS.FAMILY,
+                PLANS.MAIL_PRO,
+                PLANS.VISIONARY,
+                PLANS.MAIL_BUSINESS,
+                PLANS.BUNDLE_PRO,
+                PLANS.BUNDLE_PRO_2024,
+            ]))
+            ? plansMap[PLANS.DUO]
+            : null,
     ]);
 
     let FamilyPlans = filterPlans([
@@ -323,16 +346,42 @@ const PlanSelection = ({
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
-    const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.FAMILY];
 
-    const renderPlanCard = (plan: Plan, audience: Audience) => {
+    const b2cRecommendedPlans = [
+        hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
+        PLANS.DUO,
+        PLANS.FAMILY,
+    ].filter(isTruthy);
+
+    const familyRecommendedPlans = [
+        hasSomeAddonOrPlan(subscription, [
+            PLANS.FAMILY,
+            PLANS.MAIL_PRO,
+            PLANS.MAIL_BUSINESS,
+            PLANS.BUNDLE_PRO,
+            PLANS.BUNDLE_PRO_2024,
+            PLANS.VISIONARY,
+        ])
+            ? undefined
+            : PLANS.DUO,
+        PLANS.FAMILY,
+    ].filter(isTruthy);
+
+    const b2bRecommendedPlans = [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024];
+    const hasRecommended = new Set<Audience>();
+
+    const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[]) => {
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
         if (shouldNotRenderCurrentPlan) {
             return null;
         }
-        const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
+        const isRecommended = !hasRecommended.has(audience) && recommendedPlans.includes(plan.Name as PLANS);
+        // Only find one recommended plan, in order of priority
+        if (isRecommended) {
+            hasRecommended.add(audience);
+        }
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan });
 
         if (!shortPlan) {
@@ -401,9 +450,7 @@ const PlanSelection = ({
                 disabled={
                     loading ||
                     (isFree && !isSignupMode && isCurrentPlan) ||
-                    (plan.ID === PLANS.FREE &&
-                        !isFreeSubscription(subscription) &&
-                        subscription?.Renew === Renew.Disabled)
+                    (plan.ID === PLANS.FREE && !isFreeSubscription && subscription?.Renew === Renew.Disabled)
                 }
                 cycle={cycle}
                 key={plan.ID}
@@ -465,7 +512,7 @@ const PlanSelection = ({
                     style={{ '--plan-selection-number': IndividualPlans.length }}
                     data-testid="b2c-plan"
                 >
-                    {IndividualPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
+                    {IndividualPlans.map((plan) => renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans))}
                 </div>
             ),
             audience: Audience.B2C,
@@ -477,7 +524,7 @@ const PlanSelection = ({
                     className="plan-selection plan-selection--family mt-4"
                     style={{ '--plan-selection-number': FamilyPlans.length }}
                 >
-                    {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}
+                    {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY, familyRecommendedPlans))}
                 </div>
             ),
             audience: Audience.FAMILY,
@@ -494,7 +541,7 @@ const PlanSelection = ({
                         if (isShortPlanLike(plan)) {
                             return renderShortPlanCard(plan);
                         } else {
-                            return renderPlanCard(plan, Audience.B2B);
+                            return renderPlanCard(plan, Audience.B2B, b2bRecommendedPlans);
                         }
                     })}
                 </div>
