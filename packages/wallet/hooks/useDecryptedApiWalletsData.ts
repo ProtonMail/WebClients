@@ -2,12 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { compact } from 'lodash';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import { type WasmApiWalletAccount } from '@proton/andromeda';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import useLoading from '@proton/hooks/useLoading';
 
 import { useApiWalletsData } from '../store';
-import { IWasmApiWalletData } from '../types';
+import { type IWasmApiWalletData } from '../types';
 import { getPassphraseLocalStorageKey } from '../utils';
 import { decryptWalletData, decryptWalletKey } from '../utils/crypto';
 import { buildMapFromWallets } from '../utils/wallet';
@@ -18,6 +18,7 @@ export type WalletMap = Partial<
 
 export const useDecryptedApiWalletsData = () => {
     const [apiWalletsData] = useApiWalletsData();
+
     const getUserKeys = useGetUserKeys();
     const [loadingApiWalletsData, withLoadingApiWalletsData] = useLoading();
 

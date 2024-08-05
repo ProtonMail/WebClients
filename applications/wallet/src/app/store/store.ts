@@ -1,9 +1,10 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
+import { type WalletThunkArguments, extraThunkArguments } from '@proton/wallet';
+
 import { start } from './listener';
 import { rootReducer } from './rootReducer';
-import { type WalletThunkArguments, extraThunkArguments } from './thunk';
 
 export type WalletState = ReturnType<typeof rootReducer>;
 
