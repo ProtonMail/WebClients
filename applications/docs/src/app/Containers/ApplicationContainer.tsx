@@ -16,6 +16,7 @@ import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
+import { APP_VERSION } from '../config'
 
 function ApplicationContainer() {
   void import('../tailwind.scss')
@@ -42,6 +43,7 @@ function ApplicationContainer() {
         uid: UID,
       },
       driveCompat,
+      APP_VERSION,
     )
     // Ensure only one application instance is created
     // eslint-disable-next-line react-hooks/exhaustive-deps
