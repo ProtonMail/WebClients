@@ -12,11 +12,11 @@ import {
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import passIconSvg from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
-import './SimpleLoginModal.scss';
+import './ProtonPassAliasesModal.scss';
 
 interface Props extends ModalProps {}
 
-const SimpleLoginModal = ({ ...rest }: Props) => {
+const ProtonPassAliasesModal = ({ ...rest }: Props) => {
     const { toggleDrawerApp, appInView } = useDrawer();
     const openSecurityCenterInDrawer = () => {
         if (appInView !== 'security-center') {
@@ -56,4 +56,4 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
     );
 };
 
-export default SimpleLoginModal;
+export default ProtonPassAliasesModal;
