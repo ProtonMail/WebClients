@@ -11,7 +11,12 @@ import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry
 import type { ClientContextValue } from 'proton-pass-web/src/app/Context/ClientProvider';
 
 import type { CreateNotificationOptions } from '@proton/components/containers/notifications';
-import { type RouteErrorState, getBootRedirectPath, getRouteError } from '@proton/pass/components/Navigation/routing';
+import {
+    type AuthRouteState,
+    getBootRedirectPath,
+    getLocalPath,
+    getRouteError,
+} from '@proton/pass/components/Navigation/routing';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
@@ -70,7 +75,7 @@ export const getPersistedSessionsForUserID = (UserID: string): string[] =>
 
 type AuthServiceBindings = {
     config: PassConfig;
-    history: History<MaybeNull<RouteErrorState>>;
+    history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
     getClient: () => ClientContextValue;
     getOfflineEnabled?: () => Promise<boolean>;
@@ -322,8 +327,10 @@ export const createAuthService = ({
             throw error;
         },
 
-        onLocked: async (mode, localID, broadcast) => {
+        onLocked: async (mode, localID, broadcast, userInitiatedLock) => {
             if (broadcast) sw?.send({ type: 'locked', localID, mode, broadcast });
+
+            if (userInitiatedLock) history.replace({ ...history.location, state: { userInitiatedLock } });
 
             flushSync(() => {
                 client.setBooted(false);
@@ -334,7 +341,7 @@ export const createAuthService = ({
             store.dispatch(cacheCancel());
             store.dispatch(stopEventPolling());
 
-            history.replace('/');
+            history.replace({ ...history.location, pathname: getLocalPath() });
         },
 
         onUnlocked: async (mode, _, localID) => {
