@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { getFormattedValue } from '@proton/components/components/v2/phone/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { AuthModal, useEventManager, useModalState, useSecurityCheckup } from '@proton/components/index';
+import { useApi, useEventManager, useSecurityCheckup } from '@proton/components/index';
+import useLoading from '@proton/hooks/useLoading';
 import { updateResetPhone } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
@@ -22,6 +23,7 @@ enum STEPS {
 }
 
 const EnablePhoneContainer = () => {
+    const api = useApi();
     const { securityState } = useSecurityCheckup();
     const { phone } = securityState;
 
@@ -29,9 +31,9 @@ const EnablePhoneContainer = () => {
 
     const { call } = useEventManager();
 
-    const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
+    const [enabling, withEnabling] = useLoading();
 
-    if (!phone.value || (phone.isEnabled && !authModalProps.open && step === STEPS.ENABLE)) {
+    if (!phone.value || (phone.isEnabled && !enabling && step === STEPS.ENABLE)) {
         return <Redirect to={SECURITY_CHECKUP_PATHS.ROOT} />;
     }
 
@@ -61,39 +63,39 @@ const EnablePhoneContainer = () => {
         );
     }
 
+    const enablePasswordResetViaPhone = async () => {
+        await api(updateResetPhone({ Reset: 1, PersistPasswordScope: true }));
+
+        await call();
+        setStep(STEPS.SUCCESS);
+    };
+
     return (
-        <>
-            {renderAuthModal && (
-                <AuthModal
-                    config={updateResetPhone({ Reset: 1 })}
-                    onCancel={authModalProps.onClose}
-                    onSuccess={async () => {
-                        await call();
-                        setStep(STEPS.SUCCESS);
-                    }}
-                    {...authModalProps}
-                />
-            )}
-            <SecurityCheckupMain>
-                <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="danger" />}>
-                    {c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
-                </SecurityCheckupMainTitle>
+        <SecurityCheckupMain>
+            <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="danger" />}>
+                {c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
+            </SecurityCheckupMainTitle>
 
-                <div className="mb-2">{c('l10n_nightly: Security checkup').t`You recovery phone number is:`}</div>
-                <div className="rounded bg-weak p-3 mb-4">{formattedPhoneNumber}</div>
+            <div className="mb-2">{c('l10n_nightly: Security checkup').t`You recovery phone number is:`}</div>
+            <div className="rounded bg-weak p-3 mb-4">{formattedPhoneNumber}</div>
 
-                <div>
-                    {getBoldFormattedText(
-                        c('l10n_nightly: Security checkup')
-                            .t` **Enable recovery by phone** to regain access to your account if you forget your password.`
-                    )}
-                </div>
+            <div>
+                {getBoldFormattedText(
+                    c('l10n_nightly: Security checkup')
+                        .t` **Enable recovery by phone** to regain access to your account if you forget your password.`
+                )}
+            </div>
 
-                <Button className="mt-8" fullWidth color="norm" onClick={() => setAuthModalOpen(true)}>
-                    {c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
-                </Button>
-            </SecurityCheckupMain>
-        </>
+            <Button
+                className="mt-8"
+                fullWidth
+                color="norm"
+                onClick={() => withEnabling(enablePasswordResetViaPhone)}
+                loading={enabling}
+            >
+                {c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
+            </Button>
+        </SecurityCheckupMain>
     );
 };
 
