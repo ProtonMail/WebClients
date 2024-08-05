@@ -61,7 +61,7 @@ const GroupList = ({
                 </Button>
             </div>
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
-            <Scroll className="mr-6">
+            <Scroll className="mr-4">
                 {uiState === 'new' && <GroupItem key="new" active groupData={newGroupData} isNew={true} />}
                 {groups.map((groupData) => (
                     <GroupItem

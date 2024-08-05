@@ -36,26 +36,30 @@ const GroupItem = ({ active, groupData: { ID, MemberCount, Address, Name }, onCl
     return (
         <div className="relative">
             <Button
-                className={clsx(['interactive-pseudo w-full', active && 'is-active'])}
+                className={clsx(['interactive-pseudo w-full pr-2 py-4', active && 'is-active'])}
                 color="weak"
                 shape="ghost"
                 onClick={onClick}
             >
-                <div className="text-left flex items-start">
+                <div className="text-left flex items-start flex-nowrap">
                     <div
-                        className="mr-2 mb-2 rounded flex w-custom h-custom group-item-avatar"
+                        className="mr-2 mb-2 rounded flex w-custom h-custom group-item-avatar shrink-0 "
                         style={{
                             '--w-custom': '1.75rem',
                             '--h-custom': '1.75rem',
                         }}
                     >
-                        <Icon className="m-auto shrink-0 color-primary" size={4} name="users-filled" />
+                        <Icon className="m-auto color-primary shrink-0" size={4} name="users-filled" />
                     </div>
-                    <div className="text-left flex flex-column gap-2">
-                        <p className="m-0">
-                            <p className="m-0 text-bold text-lg text-ellipsis">{Name}</p>
-                            {Address.Email && <p className="m-0 text-ellipsis">{Address.Email}</p>}
-                        </p>
+                    <div className="text-left flex flex-column flex-1">
+                        <span className="block max-w-full text-bold text-lg text-ellipsis" title={Name}>
+                            {Name}
+                        </span>
+                        {Address.Email && (
+                            <span className="block max-w-full text-ellipsis" title={Address.Email}>
+                                {Address.Email}
+                            </span>
+                        )}
                         {memberCount !== undefined && (
                             <p className="m-0 text-sm color-weak">
                                 {c('Group member count').ngettext(
@@ -67,7 +71,7 @@ const GroupItem = ({ active, groupData: { ID, MemberCount, Address, Name }, onCl
                         )}
                     </div>
                     {!isNew && (
-                        <div className="absolute top-0 right-0 mt-2 mr-2">
+                        <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
                                 handleDeleteGroup={handleDeleteGroup}
                                 handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
