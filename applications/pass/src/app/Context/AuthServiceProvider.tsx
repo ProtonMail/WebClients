@@ -13,7 +13,7 @@ import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/component
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { type RouteErrorState, isUnauthorizedPath } from '@proton/pass/components/Navigation/routing';
+import { type AuthRouteState, isUnauthorizedPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
@@ -45,7 +45,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getOfflineEnabled } = usePassCore();
     const sw = useServiceWorker();
     const client = useClientRef();
-    const history = useHistory<MaybeNull<RouteErrorState>>();
+    const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
     const checkConnectivity = useCheckConnectivity();

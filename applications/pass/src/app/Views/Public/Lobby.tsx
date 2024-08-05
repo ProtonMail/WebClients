@@ -8,7 +8,7 @@ import { c } from 'ttag';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
-import { type RouteErrorState } from '@proton/pass/components/Navigation/routing';
+import { type AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { clientBusy } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
@@ -23,7 +23,7 @@ export const Lobby: FC = () => {
     const client = useClient();
     const { status } = client.state;
     const authService = useAuthService();
-    const history = useHistory<MaybeNull<RouteErrorState>>();
+    const history = useHistory<MaybeNull<AuthRouteState>>();
 
     const connectivityBar = useConnectivityBar((online) => ({
         className: clsx('bg-danger fixed bottom-0 left-0'),
