@@ -1,10 +1,10 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
-import { WasmUserSettings as WalletSettings, WasmBitcoinUnit } from '@proton/andromeda';
+import type { WasmUserSettings as WalletSettings, WasmBitcoinUnit } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { WalletThunkArguments } from '../thunk';
+import type { WalletThunkArguments } from '../thunk';
 
 const name = 'wallet_settings' as const;
 
