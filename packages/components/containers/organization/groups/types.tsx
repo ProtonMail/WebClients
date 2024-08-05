@@ -15,7 +15,7 @@ export interface GroupsManagementReturn {
     selectedGroup: Group | undefined;
     uiState: string;
     form: any;
-    handleSaveGroup: () => Promise<void>;
+    handleSaveGroup: (newEmailsToAdd: string[]) => Promise<void>;
     onDeleteGroup: () => void;
     setSelectedGroup: (group: Group) => void;
     setUiState: (state: GROUPS_STATE) => void;
