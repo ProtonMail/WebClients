@@ -26,7 +26,7 @@ export const ExtraPassword: FC = () => {
     const enabled = useSelector(selectExtraPasswordEnabled);
     const biometricsEnabled = useSelector(selectLockMode) === LockMode.BIOMETRICS;
     const biometricsMessage = biometricsEnabled
-        ? c('Info').t`Biometrics will be disabled and will need to be enabled again.`
+        ? ' ' + c('Info').t`Biometrics will be disabled and will need to be enabled again.`
         : '';
 
     const getInitialModalState = (): PasswordModalProps => ({
