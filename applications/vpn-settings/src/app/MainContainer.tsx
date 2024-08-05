@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
+import OrganizationSettingsRouter from 'proton-account/src/app/containers/organization/OrganizationSettingsRouter';
+import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { c } from 'ttag';
 
 import {
@@ -11,23 +13,17 @@ import {
     AutomaticSubscriptionModal,
     CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
-    CatchAllSection,
     CreditsSection,
     DeleteSection,
-    DomainsSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     FreeUserLiveChatModal,
-    GatewaysSection,
     GiftCodeSection,
     InvoicesSection,
     LanguageSection,
     MainLogo,
-    MultiUserCreationSection,
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
-    OrganizationPasswordSection,
-    OrganizationSection,
     PasswordsSection,
     PaymentMethodsSection,
     PlansSection,
@@ -49,8 +45,6 @@ import {
     UpgradeVpnSection,
     UserDropdown,
     UsernameSection,
-    UsersAndAddressesSection,
-    VPNEvents,
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
@@ -61,17 +55,9 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import {
-    CancellationReminderSection,
-    OrganizationScheduleCallSection,
-    OrganizationTwoFAEnforcementSection,
-    OrganizationTwoFAHeader,
-    OrganizationTwoFARemindersSection,
-    SsoPage,
-} from '@proton/components/containers';
+import { CancellationReminderSection } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
-import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
-import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import type { BugModalMode } from '@proton/components/containers/support/BugModal';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
@@ -105,13 +91,20 @@ const MainContainer: FunctionComponent = () => {
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
 
-    const routes = getRoutes({
+    const vpnRoutes = getRoutes({
         user,
         subscription,
+    });
+
+    const organizationAppRoutes = getOrganizationAppRoutes({
+        app: APPS.PROTONVPN_SETTINGS,
         organization,
+        user,
+        subscription,
         isUserGroupsFeatureEnabled,
         canDisplayB2BLogsVPN,
     });
+
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -122,7 +115,6 @@ const MainContainer: FunctionComponent = () => {
         };
     });
     const app = APPS.PROTONVPN_SETTINGS;
-    const onceRef = useRef<boolean>(false);
 
     const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
         setAuthenticatedBugReportMode(mode);
@@ -194,7 +186,10 @@ const MainContainer: FunctionComponent = () => {
         >
             <SidebarNav>
                 <SidebarList>
-                    {Object.values(routes).map(
+                    {Object.values({
+                        ...vpnRoutes,
+                        ...(organizationAppRoutes.available ? organizationAppRoutes.routes : {}),
+                    }).map(
                         (section) =>
                             getIsSectionAvailable(section) && (
                                 <SettingsListItem
@@ -215,6 +210,18 @@ const MainContainer: FunctionComponent = () => {
     );
     const name = user.DisplayName || user.Name;
     const email = user.Email || userSettings?.Email?.Value;
+
+    const redirect =
+        loadingSubscription || loadingOrganization ? (
+            <PrivateMainAreaLoading />
+        ) : (
+            <Redirect
+                to={getIsSectionAvailable(vpnRoutes.dashboard) ? vpnRoutes.dashboard.to : vpnRoutes.downloads.to}
+            />
+        );
+
+    const anyOrganizationAppRoute = getRoutePaths('', Object.values(organizationAppRoutes.routes));
+
     return (
         <>
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
@@ -228,11 +235,11 @@ const MainContainer: FunctionComponent = () => {
                 <Route path="*">
                     <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
                         <Switch>
-                            {getIsSectionAvailable(routes.dashboard) && (
-                                <Route path={routes.dashboard.to}>
+                            {getIsSectionAvailable(vpnRoutes.dashboard) && (
+                                <Route path={vpnRoutes.dashboard.to}>
                                     <SubscriptionModalProvider app={app}>
                                         <AutomaticSubscriptionModal />
-                                        <PrivateMainSettingsArea config={routes.dashboard}>
+                                        <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
                                             <PlansSection app={app} />
                                             <YourPlanSection app={app} />
                                             <UpgradeVpnSection app={app} />
@@ -248,8 +255,8 @@ const MainContainer: FunctionComponent = () => {
                                     </SubscriptionModalProvider>
                                 </Route>
                             )}
-                            <Route path={routes.account.to}>
-                                <PrivateMainSettingsArea config={routes.account}>
+                            <Route path={vpnRoutes.account.to}>
+                                <PrivateMainSettingsArea config={vpnRoutes.account}>
                                     <>
                                         <UsernameSection app={app} />
                                         <PasswordsSection />
@@ -262,116 +269,31 @@ const MainContainer: FunctionComponent = () => {
                                     <DeleteSection />
                                 </PrivateMainSettingsArea>
                             </Route>
-                            <Route path={routes.appearance.to}>
-                                <PrivateMainSettingsArea config={routes.appearance}>
+                            <Route path={vpnRoutes.appearance.to}>
+                                <PrivateMainSettingsArea config={vpnRoutes.appearance}>
                                     <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
-                            <Route path={routes.downloads.to}>
-                                <PrivateMainSettingsArea config={routes.downloads}>
+                            <Route path={vpnRoutes.downloads.to}>
+                                <PrivateMainSettingsArea config={vpnRoutes.downloads}>
                                     <ProtonVPNClientsSection />
                                     <OpenVPNConfigurationSection />
                                     <WireGuardConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
-                            {getIsSectionAvailable(routes.setup) && (
-                                <Route path={routes.setup.to}>
-                                    <PrivateMainSettingsArea config={routes.setup}>
-                                        <OrganizationScheduleCallSection onOpenChat={openChat} />
-                                        <OrganizationSection organization={organization} app={app} />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {/* After the org is setup, and the setup route becomes unavailable, we redirect to the users route */}
-                            {!getIsSectionAvailable(routes.setup) && getIsSectionAvailable(routes.users) && (
-                                <Route path={routes.setup.to}>
-                                    <Redirect to={routes.users.to} />
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.domains) && (
-                                <Route path={routes.domains.to}>
-                                    <PrivateMainSettingsArea config={routes.domains}>
-                                        <DomainsSection onceRef={onceRef} />
-                                        <CatchAllSection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.orgKeys) && (
-                                <Route path={routes.orgKeys.to}>
-                                    <SubscriptionModalProvider app={app}>
-                                        <PrivateMainSettingsArea config={routes.orgKeys}>
-                                            <OrganizationScheduleCallSection onOpenChat={openChat} />
-                                            <OrganizationSection app={app} organization={organization} />
-                                            <OrganizationPasswordSection
-                                                organization={organization}
-                                                onceRef={onceRef}
-                                            />
-                                        </PrivateMainSettingsArea>
-                                    </SubscriptionModalProvider>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.users) && (
-                                <Route path={routes.users.to}>
-                                    <SubscriptionModalProvider app={app}>
-                                        <PrivateMainSettingsArea config={routes.users}>
-                                            <OrganizationScheduleCallSection onOpenChat={openChat} />
-                                            <UsersAndAddressesSection app={app} onceRef={onceRef} />
-                                            <MultiUserCreationSection app={app} />
-                                        </PrivateMainSettingsArea>
-                                    </SubscriptionModalProvider>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.gateways) && (
-                                <Route path={routes.gateways.to}>
-                                    <PrivateMainSettingsArea config={routes.gateways}>
-                                        <SubscriptionModalProvider app={app}>
-                                            <GatewaysSection organization={organization} />
-                                        </SubscriptionModalProvider>
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.security) && (
-                                <Route path={routes.security.to}>
-                                    <PrivateMainSettingsArea config={routes.security}>
-                                        <OrganizationTwoFAHeader organization={organization} />
-                                        <OrganizationTwoFARemindersSection organization={organization} />
-                                        <OrganizationTwoFAEnforcementSection organization={organization} />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.sso) && (
-                                <Route path={routes.sso.to}>
-                                    <PrivateMainSettingsAreaBase
-                                        title={routes.sso.title || routes.sso.text}
-                                        description={routes.sso.description}
-                                    >
-                                        <SubscriptionModalProvider app={app}>
-                                            <SsoPage />
-                                        </SubscriptionModalProvider>
-                                    </PrivateMainSettingsAreaBase>
-                                </Route>
-                            )}
-                            {getIsSectionAvailable(routes.connectionEvents) && (
-                                <Route path={routes.connectionEvents.to}>
-                                    <PrivateMainSettingsArea config={routes.connectionEvents}>
-                                        <VPNEvents />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
+                            <Route path={anyOrganizationAppRoute}>
+                                <OrganizationSettingsRouter
+                                    app={app}
+                                    path=""
+                                    organizationAppRoutes={organizationAppRoutes}
+                                    redirect={redirect}
+                                    onOpenChat={openChat}
+                                />
+                            </Route>
                             <Route path={`${CANCEL_ROUTE}`}>
                                 <CancellationReminderSection app={APPS.PROTONVPN_SETTINGS} />
                             </Route>
-                            {loadingSubscription || loadingOrganization ? (
-                                <PrivateMainAreaLoading />
-                            ) : (
-                                <Redirect
-                                    to={
-                                        getIsSectionAvailable(routes.dashboard)
-                                            ? routes.dashboard.to
-                                            : routes.downloads.to
-                                    }
-                                />
-                            )}
+                            {redirect}
                         </Switch>
                         {showChat.render && canEnableChat ? (
                             <LiveChatZendesk
