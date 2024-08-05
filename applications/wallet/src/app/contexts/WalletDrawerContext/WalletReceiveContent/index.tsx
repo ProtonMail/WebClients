@@ -14,7 +14,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Select } from '../../../atoms';
-import { BitcoinViaEmailNote } from '../../../atoms/BitcoinViaEmailNote';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
@@ -52,15 +51,11 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
 
     return (
         <div className="block">
-            <h3 className="text-4xl text-bold mx-auto text-center mb-6">{c('Receive bitcoin').t`Receive Bitcoin`}</h3>
-
-            {selectedAccount && (
-                <BitcoinViaEmailNote
-                    isActive={!!selectedAccount?.Addresses.length}
-                    email={selectedAccount?.Addresses?.[0]?.Email}
-                />
-            )}
-
+            <h3 className="text-4xl text-bold mx-auto text-center mb-3">{c('Receive bitcoin').t`Receive Bitcoin`}</h3>
+            <p className="text-center mt-0 mb-6">
+                {c('Receive bitcoin')
+                    .t`Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.`}
+            </p>
             <div className="flex flex-column items-center">
                 {/* Payment info data */}
                 {paymentLink && !loadingPaymentLink ? (
@@ -134,7 +129,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                     </div>
                 )}
 
-                <div className="flex flex-column items-center mt-6 w-full">
+                <div className="flex flex-column items-center mt-10 w-full">
                     <Button
                         fullWidth
                         shape="solid"
