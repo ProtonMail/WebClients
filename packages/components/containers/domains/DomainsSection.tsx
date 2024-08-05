@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
+import { getDomain } from '@proton/shared/lib/api/domains';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -21,7 +22,14 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
-import { useCustomDomains, useDomainsAddresses, useGetCustomDomains, useOrganization, useUser } from '../../hooks';
+import {
+    useApi,
+    useCustomDomains,
+    useDomainsAddresses,
+    useGetCustomDomains,
+    useOrganization,
+    useUser,
+} from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import useOrganizationModals from '../organization/useOrganizationModals';
 import useUnprivatizeMembers from '../organization/useUnprivatizeMembers';
@@ -43,6 +51,7 @@ const DomainsSectionText = () => {
 const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const getCustomDomains = useGetCustomDomains();
+    const api = useApi();
     const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(customDomains);
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
@@ -66,7 +75,13 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const MaxDomains = organization?.MaxDomains || 0;
 
     const handleRefresh = async () => {
-        await getCustomDomains({ cache: CacheType.None });
+        const domains = await getCustomDomains({ cache: CacheType.None });
+        // Fetch all domains individually to trigger a DNS refresh CP-8499
+        await Promise.all(
+            domains.map((domain) => {
+                return api(getDomain(domain.ID));
+            })
+        );
     };
 
     const reviewText = c('Action').t`Review`;
