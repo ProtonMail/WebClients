@@ -34,6 +34,7 @@ import { Application } from './Application'
 import { ThemeStyles } from './Theme'
 import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
+import { loadLocales } from '@proton/account/bootstrap'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -86,6 +87,10 @@ export function App({ nonInteractiveMode = false }: Props) {
       const requestHandler: ClientRequiresEditorMethods = {
         async receiveMessage(message: RtsMessagePayload) {
           void newDocState.receiveMessage(message)
+        },
+
+        async loadUserSettings(settings) {
+          void loadLocales({ locales, userSettings: settings })
         },
 
         async showEditor() {
