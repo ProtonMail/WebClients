@@ -1,13 +1,11 @@
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
 import { Badge } from '@proton/components/components';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
 
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
+import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 
 interface Props {
     groupMember: GroupMember;
@@ -15,26 +13,13 @@ interface Props {
 }
 
 export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
+    const { Email } = groupMember;
     const isInvitationPending = groupMember.State === GROUP_MEMBER_STATE.PENDING;
     const isRejected = groupMember.State === GROUP_MEMBER_STATE.REJECTED;
 
-    // no class for email if no memberName present
-    const emailClassName = memberName ? 'color-weak text-sm' : '';
-
     return (
         <>
-            <div className="flex gap-3">
-                <Avatar className="shrink-0 text-rg" color="weak">
-                    {getInitials(memberName ?? groupMember.Email)}
-                </Avatar>
-                <div className="flex-1 flex flex-column justify-center">
-                    <span className="block max-w-full text-ellipsis" title={memberName}>
-                        {memberName}
-                    </span>
-                    <span className={clsx('block max-w-full text-ellipsis', emailClassName)} title={groupMember.Email}>
-                        {groupMember.Email}
-                    </span>
-                </div>
+            <GroupMemberItemWrapper memberEmail={Email} memberName={memberName ?? Email}>
                 <div className="flex flex-column flex-nowrap self-center">
                     {isInvitationPending && (
                         <span>
@@ -56,7 +41,7 @@ export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
                     )}
                 </div>
                 <GroupMemberItemDropdown member={groupMember} />
-            </div>
+            </GroupMemberItemWrapper>
         </>
     );
 };
