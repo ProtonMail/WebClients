@@ -38,7 +38,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
         type: LockMode.BIOMETRICS,
 
         check: async () => {
-            logger.info(`[PasswordLock] checking password lock`);
+            logger.info(`[BiometricLock] checking password lock`);
 
             const offlineConfig = authStore.getOfflineConfig();
             const offlineVerifier = authStore.getOfflineVerifier();
@@ -53,7 +53,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
          * Repersists the session with the `offlineKD` encrypted in the session
          * blob. As such creating a biometrics lock is online-only. */
         create: async ({ secret, ttl }, onBeforeCreate) => {
-            logger.info(`[PasswordLock] creating biometrics lock`);
+            logger.info(`[BiometricLock] creating biometrics lock`);
 
             const verified = await auth.confirmPassword(secret);
             if (!verified) throw new Error(c('Error').t`Wrong password`);
@@ -93,7 +93,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
         /** Resets every auth store properties relative to offline
          * mode and re-persists the session accordingly */
         delete: async () => {
-            logger.info(`[PasswordLock] deleting biometrics lock`);
+            logger.info(`[BiometricLock] deleting biometrics lock`);
             authStore.setLockLastExtendTime(undefined);
             authStore.setLockTTL(undefined);
             authStore.setLockMode(LockMode.NONE);
@@ -111,7 +111,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
          * a user ends up in a situation with both a password and an
          * API lock - this should not happen */
         lock: async () => {
-            logger.info(`[PasswordLock] locking session`);
+            logger.info(`[BiometricLock] locking session`);
             authStore.setOfflineKD(undefined);
             authStore.setLockToken(undefined);
             authStore.setLocked(true);
@@ -163,11 +163,11 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
                 return hash;
             } catch (err) {
                 if (err instanceof PassCryptoError) {
-                    // Fall back to password lock in case the biometrics key can't be decrypted
+                    /* Fall back to password lock in case the biometrics key can't be decrypted */
                     authStore.setUnlockRetryCount(0);
                     authStore.setEncryptedOfflineKD(undefined);
                     authStore.setLockMode(LockMode.PASSWORD);
-                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
+                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true, userInitiated: true });
                     throw err;
                 }
 
@@ -175,12 +175,12 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
                     authStore.setUnlockRetryCount(0);
                     authStore.setEncryptedOfflineKD(undefined);
                     authStore.setLockMode(LockMode.PASSWORD);
-                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
+                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true, userInitiated: true });
                     throw new Error(c('Warning').t`Too many attempts`);
                 }
 
                 await setRetryCount(retryCount).catch(noop);
-                await auth.lock(adapter.type, { broadcast: true, soft: true });
+                await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
                 throw Error(c('Error').t`Invalid unlock key`);
             }
         },

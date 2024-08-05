@@ -149,7 +149,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                 }
 
                 await setRetryCount(retryCount).catch(noop);
-                await auth.lock(adapter.type, { broadcast: true, soft: true });
+                await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
                 throw Error(c('Error').t`Wrong password`);
             }
         },

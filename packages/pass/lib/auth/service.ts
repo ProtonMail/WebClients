@@ -117,7 +117,7 @@ export interface AuthServiceConfig {
     /** Called when a session is locked either through user action or when a
      * locked session is detected. The `broadcast` flag indicates wether we should
      * broadcast the locked session to other clients. */
-    onLocked?: (mode: LockMode, localID: Maybe<number>, broadcast: boolean) => void;
+    onLocked?: (mode: LockMode, localID: Maybe<number>, broadcast: boolean, userInitiated: boolean) => void;
     /** Callback when session lock is created, updated or deleted */
     onLockUpdate?: (lock: Lock, localID: Maybe<number>, broadcast: boolean) => MaybePromise<void>;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
@@ -323,12 +323,15 @@ export const createAuthService = (config: AuthServiceConfig) => {
             void config.onLockUpdate?.(lock, localID, true);
         },
 
-        lock: async (mode: LockMode, options: { broadcast?: boolean; soft: boolean }): Promise<Lock> => {
+        lock: async (
+            mode: LockMode,
+            options: { broadcast?: boolean; soft: boolean; userInitiated?: boolean }
+        ): Promise<Lock> => {
             const adapter = getLockAdapter(mode);
             const localID = authStore.getLocalID();
             const broadcast = options.broadcast ?? false;
 
-            config.onLocked?.(mode, localID, broadcast);
+            config.onLocked?.(mode, localID, broadcast, options.userInitiated ?? false);
             const lock = await adapter.lock(options);
 
             return lock;
