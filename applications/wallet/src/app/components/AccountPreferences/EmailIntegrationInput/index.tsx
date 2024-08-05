@@ -89,7 +89,7 @@ export const EmailIntegrationInput = ({
 
     const warning = (
         <div>{c('Wallet preferences')
-            .jt`For better privacy, we recommend ${walletAccountCreation} for receving Bitcoin via Email.`}</div>
+            .jt`For better privacy, we recommend ${walletAccountCreation} for receiving Bitcoin via Email.`}</div>
     );
 
     const isPrimaryAccount = walletAccount.Priority === 1;
@@ -99,7 +99,7 @@ export const EmailIntegrationInput = ({
             <InputFieldStacked isBigger isGroupElement>
                 <div className="flex flex-row items-center justify-space-between mb-3">
                     <div className="flex flex-column items-start">
-                        <span className="color-weak mb-1">{c('Wallet preferences').t`Bitcoin via Email`}</span>
+                        <span className="color-weak mb-1">{c('Wallet preferences').t`Receive Bitcoin via Email`}</span>
                         <span className="color-norm text-lg">{linkedEmail?.Email ?? ''}</span>
                     </div>
 
@@ -117,7 +117,7 @@ export const EmailIntegrationInput = ({
                     />
                 </div>
 
-                {shouldShowBvEWarning && <div className="mb-2">{warning}</div>}
+                {shouldShowBvEWarning && !linkedEmail && <div className="mb-2">{warning}</div>}
 
                 <div>
                     <CoreButton
@@ -144,6 +144,7 @@ export const EmailIntegrationInput = ({
                     }
                 }}
                 addresses={options}
+                linkedEmail={linkedEmail}
                 {...emailIntegrationModal}
             />
 
