@@ -1,7 +1,7 @@
 import { autoUpdater, session, app } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
-import { getPlatform, semver } from "./utils/helpers";
+import { getPlatform } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
@@ -13,6 +13,7 @@ import {
     VersionFile,
     VersionFileSchema,
 } from "./utils/external/packages/components/containers/desktop/useInboxDesktopVersion";
+import { semver } from "./utils/external/packages/pass/utils/string/semver";
 
 type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
