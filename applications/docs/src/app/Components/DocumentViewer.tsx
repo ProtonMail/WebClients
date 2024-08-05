@@ -31,6 +31,7 @@ import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { useAuthentication } from '@proton/components/hooks'
+import { useGetUserSettings } from '@proton/components/hooks/useUserSettings'
 
 type Props = {
   lookup: NodeMeta
@@ -62,12 +63,23 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   const [didLoadTitle, setDidLoadTitle] = useState(false)
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
   const debug = useDebug()
+  const getUserSettings = useGetUserSettings()
 
   useEffect(() => {
     if (action === 'download' && didLoadTitle && didLoadEditorContent && docOrchestrator) {
       void docOrchestrator.exportAndDownload('docx')
     }
   }, [action, docOrchestrator, didLoadTitle, didLoadEditorContent])
+
+  useEffect(() => {
+    if (!bridge) {
+      return
+    }
+
+    void getUserSettings().then((settings) => {
+      void bridge.editorInvoker.loadUserSettings(settings)
+    })
+  }, [bridge, getUserSettings])
 
   useEffect(() => {
     if (!bridge) {
