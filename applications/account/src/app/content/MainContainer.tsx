@@ -3,7 +3,6 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
 import {
     AppLink,
     CancellationReminderSection,
@@ -31,7 +30,7 @@ import {
     useUserSettings,
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
@@ -91,10 +90,6 @@ const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
 const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
-
-const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
-    return sectionConfigs.map((section) => getSectionPath(prefix, section));
-};
 
 const getDefaultPassRedirect = (
     user: UserModel,
