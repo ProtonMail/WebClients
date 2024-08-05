@@ -33,11 +33,13 @@ const OrganizationSettingsRouter = ({
     redirect,
     path,
     organizationAppRoutes,
+    onOpenChat,
 }: {
     app: APP_NAMES;
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
+    onOpenChat?: () => void;
 }) => {
     const onceRef = useRef(false);
     const [organization] = useOrganization();
@@ -64,7 +66,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(setup) && (
                 <Route path={getSectionPath(path, setup)}>
                     <PrivateMainSettingsArea config={setup}>
-                        <OrganizationScheduleCallSection />
+                        <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
                         <OrganizationSection organization={organization} app={app} />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -87,7 +89,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, orgKeys)}>
                     <SubscriptionModalProvider app={app}>
                         <PrivateMainSettingsArea config={orgKeys}>
-                            <OrganizationScheduleCallSection />
+                            <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
                             <OrganizationSection app={app} organization={organization} />
                             <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
                         </PrivateMainSettingsArea>
@@ -98,7 +100,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <SubscriptionModalProvider app={app}>
                         <PrivateMainSettingsArea config={users}>
-                            <OrganizationScheduleCallSection />
+                            <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
                             <UsersAndAddressesSection app={app} onceRef={onceRef} />
                             <MultiUserCreationSection app={app} />
                         </PrivateMainSettingsArea>
