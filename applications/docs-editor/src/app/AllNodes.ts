@@ -13,19 +13,19 @@ const CommonNodes = [
   AutoLinkNode,
   CodeHighlightNode,
   CodeNode,
+  CommentThreadMarkNode,
   HashtagNode,
   HeadingNode,
   HorizontalRuleNode,
+  ImageNode,
   LinkNode,
   ListItemNode,
+  ListNode,
   OverflowNode,
   QuoteNode,
   TableCellNode,
   TableNode,
   TableRowNode,
-  ListNode,
-  ImageNode,
-  CommentThreadMarkNode,
 ]
 
 export const AllNodes = CommonNodes
