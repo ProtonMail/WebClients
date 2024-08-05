@@ -6,6 +6,7 @@ import type { IFrameAppService, InjectedDropdown, InjectedNotification } from 'p
 
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 
 import { createDropdown } from './dropdown';
@@ -26,6 +27,8 @@ export interface IFrameService {
 }
 
 export const createIFrameService = (elements: PassElementsConfig) => {
+    const listeners = createListenerStore();
+
     const state: IFrameServiceState = {
         apps: { dropdown: null, notification: null },
         root: null,
@@ -75,11 +78,12 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 else service.destroy();
             });
 
-            state.root.addEventListener(PASS_ROOT_REMOVED_EVENT, handleRootRemoval, { once: true });
+            listeners.addListener(state.root, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
             return state.root;
         },
 
         destroy: () => {
+            listeners.removeAll();
             state.apps.dropdown?.destroy();
             state.apps.notification?.destroy();
         },
