@@ -61,11 +61,11 @@ const App = () => {
     void (async () => {
       try {
         /*
-                  Availability will report every 5 minutes the user status:
-                  - if an error occured and was reported to Sentry
-                  - if an error occured and was explicitely marked as an error
-                  - if an error occurred and was explicitely marked as critical
-                */
+          Availability will report every 5 minutes the user status:
+          - if an error occured and was reported to Sentry
+          - if an error occured and was explicitely marked as an error
+          - if an error occurred and was explicitely marked as critical
+        */
         Availability.init((report: AvailabilityReport) => {
           metrics.docs_users_success_rate_total.increment({
             plan: state.initialUser?.isFree ? 'free' : 'paid',
