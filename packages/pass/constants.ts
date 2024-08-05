@@ -99,4 +99,5 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassUsernameSplit]: false,
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
+    [PassFeature.PassIdentityV1]: false,
 };

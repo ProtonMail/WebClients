@@ -2,17 +2,18 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createFormHandles } from 'proton-pass-extension/app/content/services/handles/form';
 import type { FormHandle } from 'proton-pass-extension/app/content/types';
 import {
-    hasUnprocessedFields,
-    hasUnprocessedForms,
+    hasProcessableFields,
+    hasProcessableForms,
     isAddedNodeOfInterest,
     isRemovedNodeOfInterest,
-    purgeStaleSeenFields,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
+    FieldType,
     clearDetectionCache,
     getIgnoredParent,
     getParentFormPrediction,
+    isPrediction,
     removeClassifierFlags,
 } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
@@ -99,6 +100,10 @@ export const createFormManager = (options: FormManagerOptions) => {
      */
     const runDetection = throttle(
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
+            const settings = ctx?.getSettings();
+            const detectIdentity = Boolean(settings?.autofill.identity);
+            const excludedFieldTypes = detectIdentity ? [] : [FieldType.IDENTITY];
+
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
@@ -109,7 +114,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                         logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                         try {
-                            const forms = ctx?.service.detector.runDetection({ onBottleneck });
+                            const forms = ctx?.service.detector.runDetection({ onBottleneck, excludedFieldTypes });
 
                             forms?.forEach((options) => {
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
@@ -169,16 +174,16 @@ export const createFormManager = (options: FormManagerOptions) => {
     /* if a new field was added to a currently ignored form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
-    const onNewField = (field?: HTMLElement) => {
-        const ignored = getIgnoredParent(field);
+    const onNewField = (target?: HTMLElement) => {
+        const ignored = getIgnoredParent(target);
         if (ignored) removeClassifierFlags(ignored, { preserveIgnored: false });
     };
 
     /* if a field was deleted from a currently detected form :
      * reset all detection flags: the classification result
      * may change (ie: dynamic form recycling) */
-    const onDeletedField = (field?: HTMLElement) => {
-        const detected = getParentFormPrediction(field);
+    const onDeletedField = (target?: HTMLElement) => {
+        const detected = target && isPrediction(target) ? target : getParentFormPrediction(target);
         if (detected) removeClassifierFlags(detected, { preserveIgnored: false });
     };
 
@@ -212,6 +217,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
                 if (addedFields) onNewField(mutation.target as HTMLElement);
                 if (deletedFields) onDeletedField(mutation.target as HTMLElement);
+
                 return addedFields || deletedFields;
             }
 
@@ -235,7 +241,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                     state.observer = listeners.addObserver(document.body, onMutation, config);
                 }
 
-                return hasUnprocessedFields(target);
+                return hasProcessableFields(target);
             }
 
             return false;
@@ -259,8 +265,11 @@ export const createFormManager = (options: FormManagerOptions) => {
     const onTransitionEnd = debounce(
         ({ target }: Event) =>
             requestAnimationFrame(() => {
-                if (target !== document.body) purgeStaleSeenFields(target as HTMLElement);
-                if (hasUnprocessedForms()) void detect({ reason: 'TransitionEnd' });
+                if (target instanceof HTMLElement) {
+                    if (hasProcessableForms(target) || hasProcessableFields(target)) {
+                        void detect({ reason: 'TransitionEnd' });
+                    }
+                }
             }),
         250,
         { leading: true }
