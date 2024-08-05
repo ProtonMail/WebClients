@@ -82,6 +82,10 @@ export const getTransactionSenderHumanReadableName = (transaction: TransactionDa
         }
     }
 
+    if (transaction.apiData?.Type && transaction.apiData.Type === 'ProtonToProtonReceive') {
+        return c('Wallet transaction').t`Anonymous sender`;
+    }
+
     // Fallback
     return c('Wallet transaction').t`Unknown`;
 };
