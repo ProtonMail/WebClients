@@ -12,12 +12,13 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 
 export class Application implements ApplicationInterface {
-  private readonly deps = new AppDependencies(this.protonApi, this.imageProxyParams, this.driveCompat)
+  private readonly deps = new AppDependencies(this.protonApi, this.imageProxyParams, this.driveCompat, this.appVersion)
 
   constructor(
     private protonApi: Api,
     private imageProxyParams: ImageProxyParams,
     private driveCompat: DriveCompat,
+    private appVersion: string,
   ) {}
 
   destroy(): void {

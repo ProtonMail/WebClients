@@ -60,6 +60,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private _decryptMessage: DecryptMessage,
     private logger: LoggerInterface,
     private eventBus: InternalEventBusInterface,
+    private appVersion: string,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
@@ -199,7 +200,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       },
     }
 
-    const connection = new WebsocketConnection(callbacks, this.logger)
+    const connection = new WebsocketConnection(callbacks, this.logger, this.appVersion)
 
     const debouncer = new UpdateDebouncer(document, this.logger, (event) => {
       if (event.type === UpdateDebouncerEventType.DidFlush) {
