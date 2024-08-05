@@ -298,6 +298,15 @@ const DocumentTitleDropdown = ({
                 >
                   {c('Action').t`Markdown (.md)`}
                 </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center text-left"
+                  onClick={() => {
+                    void controller.exportAndDownload('pdf')
+                  }}
+                  data-testid="download-pdf"
+                >
+                  {c('Action').t`PDF (.pdf)`}
+                </DropdownMenuButton>
               </DropdownMenu>
             </SimpleDropdown>
           )}
