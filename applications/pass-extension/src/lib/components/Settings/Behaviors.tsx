@@ -7,11 +7,13 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -23,6 +25,7 @@ type SettingDefinition = {
     description: string;
     checked: boolean;
     disabled?: boolean;
+    hidden?: boolean;
     onChange: (value: boolean) => void;
 };
 
@@ -34,7 +37,7 @@ type SettingsSection = {
 };
 
 const getSettings =
-    (settings: ProxiedSettings) =>
+    (settings: ProxiedSettings, identityEnabled: boolean) =>
     (dispatch: Dispatch): SettingsSection[] => {
         const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
             dispatch(settingsEditIntent('behaviors', update));
@@ -48,13 +51,7 @@ const getSettings =
                         description: c('Info')
                             .t`You can quickly autofill your credentials by clicking on the ${PASS_APP_NAME} icon.`,
                         checked: settings.autofill.inject,
-                        onChange: (checked) =>
-                            onSettingsUpdate({
-                                autofill: {
-                                    inject: checked,
-                                    ...(!checked ? { openOnFocus: false } : {}),
-                                },
-                            }),
+                        onChange: (checked) => onSettingsUpdate({ autofill: { inject: checked } }),
                     },
                     {
                         label: c('Label').t`Automatically open autofill when a login field is focused`,
@@ -63,6 +60,14 @@ const getSettings =
                         checked: settings.autofill.inject && settings.autofill.openOnFocus,
                         disabled: !settings.autofill.inject,
                         onChange: (checked) => onSettingsUpdate({ autofill: { openOnFocus: checked } }),
+                    },
+                    {
+                        label: c('Label').t`Identity autofill`,
+                        description: c('Info').t`Quickly autofill your identities.`,
+                        checked: Boolean(settings.autofill.inject && settings.autofill.identity),
+                        disabled: !settings.autofill.inject,
+                        hidden: !identityEnabled,
+                        onChange: (checked) => onSettingsUpdate({ autofill: { identity: checked } }),
                     },
                 ],
             },
@@ -154,29 +159,32 @@ export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
     const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
+    const identityEnabled = useFeatureFlag(PassFeature.PassIdentityV1);
 
     return (
         <>
             {useMemo(
-                () => getSettings(settings),
-                [settings]
+                () => getSettings(settings, identityEnabled),
+                [settings, identityEnabled]
             )(dispatch).map((section, i) => (
                 <SettingsPanel key={`settings-section-${i}`} title={section.label}>
-                    {section.settings.map((setting, j) => (
-                        <Checkbox
-                            key={`setting-${i}-${j}`}
-                            className={clsx(j !== section.settings.length - 1 && 'mb-4')}
-                            checked={setting.checked}
-                            disabled={setting.disabled || loading}
-                            loading={loading}
-                            onChange={() => setting.onChange(!setting.checked)}
-                        >
-                            <span>
-                                {setting.label}
-                                <span className="block color-weak text-sm">{setting.description}</span>
-                            </span>
-                        </Checkbox>
-                    ))}
+                    {section.settings
+                        .filter((setting) => !setting.hidden)
+                        .map((setting, j) => (
+                            <Checkbox
+                                key={`setting-${i}-${j}`}
+                                className={clsx(j !== section.settings.length - 1 && 'mb-4')}
+                                checked={setting.checked}
+                                disabled={setting.disabled || loading}
+                                loading={loading}
+                                onChange={() => setting.onChange(!setting.checked)}
+                            >
+                                <span>
+                                    {setting.label}
+                                    <span className="block color-weak text-sm">{setting.description}</span>
+                                </span>
+                            </Checkbox>
+                        ))}
                     {section.extra && <hr className="mt-2 mb-4 border-weak" />}
                     {section.extra}
                 </SettingsPanel>

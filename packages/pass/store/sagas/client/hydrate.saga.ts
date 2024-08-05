@@ -54,7 +54,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         const addresses = Object.values(userState.addresses);
         const organization =
             userState.plan.Type === PlanType.business
-                ? cachedState?.organization ?? ((yield getOrganization()) as OrganizationState)
+                ? (cachedState?.organization ?? ((yield getOrganization()) as OrganizationState))
                 : null;
 
         /** Note: Settings may have been modified offline, thus they might not align
@@ -66,6 +66,15 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
         settings.extraPassword = authStore.getExtraPassword();
+
+        if (EXTENSION_BUILD) {
+            /** setup identity autofill IIF identity setting has not been
+             * touched and `PassIdentityV1` is active. */
+            const identityEnabled = userState.features?.PassIdentityV1 ?? false;
+            if (identityEnabled && settings.autofill && settings.autofill.identity === undefined) {
+                settings.autofill.identity = true;
+            }
+        }
 
         /** Activate offline mode by default for paid users who
          * haven't touched the `offlineEnabled` setting yet */

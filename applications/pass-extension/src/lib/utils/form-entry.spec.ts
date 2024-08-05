@@ -119,7 +119,7 @@ describe('Form entry utils', () => {
             });
         });
 
-        [FormType.RECOVERY, FormType.MFA].forEach((type) => {
+        [FormType.RECOVERY].forEach((type) => {
             describe(`${type}`, () => {
                 test('should return false', () => {
                     const options = { type: FormType.RECOVERY, partial: true };

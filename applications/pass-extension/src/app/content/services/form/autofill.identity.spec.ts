@@ -1,5 +1,6 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
+import { IdentityFieldType } from '@proton/pass/fathom';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
 import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMiddleName } from './autofill.identity';
@@ -7,12 +8,17 @@ import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMidd
 let MOCK_ITEM = itemBuilder('identity');
 let MOCK_FIELDS: FieldHandle[] = [];
 
-const getField = (autocomplete: AutoFill) => MOCK_FIELDS.find((field) => field.element.autocomplete === autocomplete);
-
-const createField = (autocomplete: string, value: string = '') =>
-    ({ element: { autocomplete, value }, autofill: jest.fn() }) as any as FieldHandle;
+const createField = (identityType: IdentityFieldType, sectionIndex: number = 1, value: string = '') =>
+    ({
+        sectionIndex,
+        identityType,
+        element: { value },
+        autofill: jest.fn(),
+    }) as any as FieldHandle;
 
 describe('Identity', () => {
+    jest.useFakeTimers();
+
     beforeEach(() => {
         MOCK_FIELDS.length = 0;
         MOCK_ITEM = itemBuilder('identity');
@@ -114,253 +120,175 @@ describe('Identity', () => {
     });
 
     describe('`autofillIdentityFields`', () => {
-        describe('Name fields', () => {
-            test('it autofills `fullName` when available', () => {
-                MOCK_FIELDS.push(createField('name'));
-                MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Doe'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('name')?.autofill).toHaveBeenCalledWith('John Doe');
+        test('it autofills fields with different types', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.LASTNAME),
+                createField(IdentityFieldType.ADDRESS),
+                createField(IdentityFieldType.ZIPCODE)
+            );
+            MOCK_ITEM.set('content', (content) => {
+                content.set('firstName', 'John');
+                content.set('lastName', 'Doe');
+                content.set('streetAddress', '123 Main St');
+                content.set('zipOrPostalCode', '12345');
+                return content;
             });
 
-            test('it autofills name subfields when available', () => {
-                MOCK_FIELDS.push(createField('given-name'), createField('additional-name'), createField('family-name'));
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('firstName', 'John');
-                    content.set('middleName', 'Middle');
-                    content.set('lastName', 'Doe');
-                    return content;
-                });
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
 
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-                expect(getField('additional-name')?.autofill).toHaveBeenCalledWith('Middle');
-                expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Doe');
-            });
-
-            test('it derives subfields from `fullName`', () => {
-                MOCK_FIELDS.push(createField('given-name'), createField('additional-name'), createField('family-name'));
-                MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Michael Charles Doe'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-                expect(getField('additional-name')?.autofill).toHaveBeenCalledWith('Michael Charles');
-                expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Doe');
-            });
-
-            test('it derives `fullName` from subfields', () => {
-                MOCK_FIELDS.push(createField('name'));
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('firstName', 'John');
-                    content.set('lastName', 'Doe');
-                    return content;
-                });
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('name')?.autofill).toHaveBeenCalledWith('John Doe');
-            });
-
-            test('it prioritizes subfields over `fullName`', () => {
-                MOCK_FIELDS.push(createField('name'), createField('given-name'), createField('family-name'));
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('fullName', 'John Doe');
-                    content.set('firstName', 'Jane');
-                    content.set('lastName', 'Smith');
-                    return content;
-                });
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('name')?.autofill).not.toHaveBeenCalled();
-                expect(getField('given-name')?.autofill).toHaveBeenCalledWith('Jane');
-                expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Smith');
-            });
-
-            test('it handles missing subfields', () => {
-                MOCK_FIELDS.push(createField('given-name'), createField('family-name'));
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('firstName', 'John');
-                    return content;
-                });
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-                expect(getField('family-name')?.autofill).not.toHaveBeenCalled();
-            });
-
-            test('it handles single-word fullName', () => {
-                MOCK_FIELDS.push(createField('name'), createField('given-name'), createField('family-name'));
-                MOCK_ITEM.set('content', (content) => content.set('fullName', 'Doe'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('name')?.autofill).not.toHaveBeenCalled();
-                expect(getField('given-name')?.autofill).toHaveBeenCalledWith('Doe');
-                expect(getField('family-name')?.autofill).not.toHaveBeenCalled();
-            });
-
-            test('it trims whitespace from name fields', () => {
-                MOCK_FIELDS.push(createField('given-name'), createField('family-name'));
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('firstName', '  John  ');
-                    content.set('lastName', '  Doe  ');
-                    return content;
-                });
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('given-name')?.autofill).toHaveBeenCalledWith('John');
-                expect(getField('family-name')?.autofill).toHaveBeenCalledWith('Doe');
-            });
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Doe');
+            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[3]?.autofill).toHaveBeenCalledWith('12345');
         });
 
-        describe('Address fields', () => {
-            test('it autofills complete address', () => {
-                MOCK_FIELDS.push(
-                    createField('street-address'),
-                    createField('address-level2'),
-                    createField('address-level1'),
-                    createField('postal-code'),
-                    createField('country')
-                );
-
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('streetAddress', '123 Main St');
-                    content.set('city', 'Meudon');
-                    content.set('stateOrProvince', 'State');
-                    content.set('zipOrPostalCode', '92190');
-                    content.set('countryOrRegion', 'Country');
-                    return content;
-                });
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('street-address')?.autofill).toHaveBeenCalledWith('123 Main St');
-                expect(getField('address-level2')?.autofill).toHaveBeenCalledWith('Meudon');
-                expect(getField('address-level1')?.autofill).toHaveBeenCalledWith('State');
-                expect(getField('postal-code')?.autofill).toHaveBeenCalledWith('92190');
-                expect(getField('country')?.autofill).toHaveBeenCalledWith('Country');
+        test('it skips fields that have already been autofilled', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.LASTNAME),
+                createField(IdentityFieldType.LASTNAME)
+            );
+            MOCK_ITEM.set('content', (content) => {
+                content.set('firstName', 'John');
+                content.set('lastName', 'Doe');
+                return content;
             });
 
-            test('it autofills address subfields', () => {
-                MOCK_FIELDS.push(
-                    createField('address-line1'),
-                    createField('address-line2'),
-                    createField('address-line3')
-                );
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
 
-                MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('address-line1')?.autofill).toHaveBeenCalledWith('123 Main St');
-                expect(getField('address-line2')?.autofill).not.toHaveBeenCalled();
-                expect(getField('address-line3')?.autofill).not.toHaveBeenCalled();
-            });
-
-            test('it autofills country', () => {
-                MOCK_FIELDS.push(createField('country'), createField('country-name'));
-                MOCK_ITEM.set('content', (content) => content.set('countryOrRegion', 'United States'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('country')?.autofill).not.toHaveBeenCalled();
-                expect(getField('country-name')?.autofill).toHaveBeenCalledWith('United States');
-            });
-
-            test('it prioritizes subfields over `streetAddress`', () => {
-                MOCK_FIELDS.push(createField('street-address'), createField('address-line1'));
-                MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('street-address')?.autofill).not.toHaveBeenCalled();
-                expect(getField('address-line1')?.autofill).toHaveBeenCalledWith('123 Main St');
-            });
-
-            test('it derives address subfields from `streetAddress`', () => {
-                MOCK_FIELDS.push(createField('address-line1'));
-                MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('address-line1')?.autofill).toHaveBeenCalledWith('123 Main St');
-            });
-
-            test('it handles partial address data', () => {
-                MOCK_FIELDS.push(
-                    createField('street-address'),
-                    createField('address-level2'),
-                    createField('address-level1'),
-                    createField('postal-code')
-                );
-
-                MOCK_ITEM.set('content', (content) => {
-                    content.set('city', 'Meudon');
-                    content.set('zipOrPostalCode', '92190');
-                    return content;
-                });
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('street-address')?.autofill).not.toHaveBeenCalled();
-                expect(getField('address-level2')?.autofill).toHaveBeenCalledWith('Meudon');
-                expect(getField('address-level1')?.autofill).not.toHaveBeenCalled();
-                expect(getField('postal-code')?.autofill).toHaveBeenCalledWith('92190');
-            });
-
-            test('it does not autofill address-line2 and address-line3', () => {
-                MOCK_FIELDS.push(
-                    createField('address-line1'),
-                    createField('address-line2'),
-                    createField('address-line3')
-                );
-
-                MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('address-line1')?.autofill).toHaveBeenCalledWith('123 Main St');
-                expect(getField('address-line2')?.autofill).not.toHaveBeenCalled();
-                expect(getField('address-line3')?.autofill).not.toHaveBeenCalled();
-            });
-
-            test('it autofills organization', () => {
-                MOCK_FIELDS.push(createField('organization'));
-                MOCK_ITEM.set('content', (content) => content.set('organization', 'Proton'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('organization')?.autofill).toHaveBeenCalledWith('Proton');
-            });
+            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2].autofill).toHaveBeenCalledWith('Doe');
+            expect(MOCK_FIELDS[3].autofill).not.toHaveBeenCalled();
         });
 
-        describe('Telephone fields', () => {
-            test('it autofills main `tel` field with `phoneNumber`', () => {
-                MOCK_FIELDS.push(createField('tel'));
-                MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
+        test('it does not autofill fields when no matching data is available', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.LASTNAME),
+                createField(IdentityFieldType.ADDRESS)
+            );
 
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('tel')?.autofill).toHaveBeenCalledWith('1234567890');
-            });
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
 
-            test('it derives `tel` subfields', () => {
-                MOCK_FIELDS.push(createField('tel'), createField('tel-national'), createField('tel-local'));
-                MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
-
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('tel')?.autofill).toHaveBeenCalledWith('1234567890');
-                expect(getField('tel-national')?.autofill).toHaveBeenCalledWith('1234567890');
-                expect(getField('tel-local')?.autofill).toHaveBeenCalledWith('1234567890');
-            });
+            expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
         });
 
-        describe('edge-cases', () => {
-            test('it skips unrecognized autocomplete attributes', () => {
-                MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Doe'));
-                MOCK_FIELDS.push(createField('unknown-attribute'));
+        test('it autofills name fields from fullName when individual fields are not available', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.MIDDLENAME),
+                createField(IdentityFieldType.LASTNAME)
+            );
+            MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Middle Doe'));
 
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(getField('unknown-attribute' as any)?.autofill).not.toHaveBeenCalled();
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Middle');
+            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('Doe');
+        });
+
+        test('it handles single-word fullName', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.FIRSTNAME),
+                createField(IdentityFieldType.MIDDLENAME),
+                createField(IdentityFieldType.LASTNAME)
+            );
+            MOCK_ITEM.set('content', (content) => content.set('fullName', 'John'));
+
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
+        });
+
+        test('it autofills address fields of different types', () => {
+            MOCK_FIELDS.push(createField(IdentityFieldType.ADDRESS), createField(IdentityFieldType.ZIPCODE));
+            MOCK_ITEM.set('content', (content) => {
+                content.set('streetAddress', '123 Main St');
+                content.set('city', 'Anytown');
+                content.set('stateOrProvince', 'State');
+                content.set('zipOrPostalCode', '12345');
+                return content;
             });
 
-            test('it handles forms with multiple fields of the same type', () => {
-                MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Doe'));
-                MOCK_FIELDS.push(createField('name'), createField('name'));
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
 
-                autofillIdentityFields(MOCK_FIELDS, MOCK_ITEM.data.content);
-                expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John Doe');
-                expect(MOCK_FIELDS[1].autofill).toHaveBeenCalledWith('John Doe');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('12345');
+        });
+
+        test('it autofills only the first occurrence of address fields with the same type', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.ADDRESS),
+                createField(IdentityFieldType.CITY),
+                createField(IdentityFieldType.ADDRESS)
+            );
+
+            MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
+
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
+        });
+
+        test('it autofills only the first occurrence of telephone fields with the same type', () => {
+            MOCK_FIELDS.push(
+                createField(IdentityFieldType.TELEPHONE),
+                createField(IdentityFieldType.TELEPHONE),
+                createField(IdentityFieldType.TELEPHONE),
+                createField(IdentityFieldType.TELEPHONE)
+            );
+            MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
+
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('1234567890');
+            expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[2].autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[3].autofill).not.toHaveBeenCalled();
+        });
+
+        test('it autofills organization', () => {
+            MOCK_FIELDS.push(createField(IdentityFieldType.ORGANIZATION));
+            MOCK_ITEM.set('content', (content) => content.set('organization', 'Proton'));
+
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('Proton');
+        });
+
+        test('it handles partial address data', () => {
+            MOCK_FIELDS.push(createField(IdentityFieldType.ADDRESS), createField(IdentityFieldType.ZIPCODE));
+
+            MOCK_ITEM.set('content', (content) => {
+                content.set('city', 'Meudon');
+                content.set('zipOrPostalCode', '92190');
+                return content;
             });
+
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('92190');
         });
     });
 });

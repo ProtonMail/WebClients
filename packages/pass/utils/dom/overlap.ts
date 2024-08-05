@@ -1,4 +1,5 @@
-import type { Rect, RectOffset } from '../../types/utils/dom';
+import type { MaybeNull } from '@proton/pass/types';
+import type { Rect, RectOffset } from '@proton/pass/types/utils/dom';
 
 const rectOffset = (rect: Rect, offset: RectOffset): Rect => ({
     top: rect.top - offset.y,
@@ -7,37 +8,44 @@ const rectOffset = (rect: Rect, offset: RectOffset): Rect => ({
     left: rect.left - offset.x,
 });
 
-const rectOverlap = (rectA: Rect, rectB: Rect, offset: RectOffset = { x: 0, y: 0 }): boolean => {
-    const a = rectOffset(rectA, offset);
-    const b = rectOffset(rectB, offset);
-    const xOverlap = Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left));
-    const yOverlap = Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
+const rectOverlap = (a: Rect, b: Rect): boolean => {
+    const xOverlap = Math.max(0, Math.floor(Math.min(a.right, b.right) - Math.max(a.left, b.left)));
+    const yOverlap = Math.max(0, Math.floor(Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top)));
 
     return xOverlap > 0 && yOverlap > 0;
 };
-export const allChildrenOverlap = (el: HTMLElement, offset: RectOffset): boolean => {
-    const siblings = ([...el.children] as HTMLElement[])
-        .map((el) => el.getBoundingClientRect())
-        .filter(({ height, width }) => height > 0 && width > 0);
 
-    if (siblings.length <= 1) return true;
-    const [head, ...rest] = siblings;
+/** Checks if all child elements overlap within a combined bounding rectangle.
+ * This function iterates through the provided child elements, calculating their
+ * bounding rectangles with an applied offset. It then checks if each child's
+ * rectangle overlaps with a progressively expanding combined rectangle of all
+ * previous children. The purpose is to determine if all children form a contiguous
+ * area for identifying cohesive UI components or form fields. */
+export const allChildrenOverlap = (children: Element[], offset: RectOffset): boolean =>
+    children.reduce<[boolean, MaybeNull<Rect>]>(
+        ([allOverlap, combinedRect], child) => {
+            if (!allOverlap) return [allOverlap, combinedRect];
 
-    return rest.reduce<[boolean, Rect]>(
-        ([all, rect], nodeRect) => {
-            const hidden = nodeRect.height === 0 && nodeRect.width === 0;
-            const overlap = hidden || rectOverlap(nodeRect, rect, offset);
+            const boundingRect = child.getBoundingClientRect();
+            const { height, width } = boundingRect;
+
+            /* Skip elements with zero height or width */
+            if (height <= 0 || width <= 0) return [allOverlap, combinedRect];
+
+            const rect = rectOffset(boundingRect, offset);
+
+            /* If this is the first valid Rect, use as initial */
+            if (combinedRect === null) return [true, rect];
 
             return [
-                all && overlap,
+                allOverlap && rectOverlap(rect, combinedRect),
                 {
-                    top: Math.min(rect.top, nodeRect.top),
-                    right: Math.max(rect.right, nodeRect.right),
-                    bottom: Math.max(rect.bottom, nodeRect.bottom),
-                    left: Math.min(rect.left, nodeRect.left),
+                    top: Math.floor(Math.min(combinedRect.top, rect.top)),
+                    right: Math.floor(Math.max(combinedRect.right, rect.right)),
+                    bottom: Math.floor(Math.max(combinedRect.bottom, rect.bottom)),
+                    left: Math.floor(Math.min(combinedRect.left, rect.left)),
                 },
             ];
         },
-        [true, head]
+        [true, null]
     )[0];
-};
