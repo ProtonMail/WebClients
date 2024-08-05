@@ -3,8 +3,7 @@ import { createAction, createSlice } from '@reduxjs/toolkit';
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-
-import type { WalletThunkArguments } from '../thunk';
+import type { WalletThunkArguments } from '@proton/wallet';
 
 const name = 'remaining_invites' as const;
 

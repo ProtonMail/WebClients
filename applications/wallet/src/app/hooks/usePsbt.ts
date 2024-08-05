@@ -153,8 +153,8 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                 incrementSyncKey(apiAccount.WalletID, apiAccount.ID);
 
                 setBroadcastedTxId(txId);
-            } catch (e) {
-                throw new Error(c('Wallet Send').t`Could not broadcast transaction`);
+            } catch (error: any) {
+                throw new Error(error?.error ?? c('Wallet Send').t`Could not broadcast transaction`);
             }
         });
     };
