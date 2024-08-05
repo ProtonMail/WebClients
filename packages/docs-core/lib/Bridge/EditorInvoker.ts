@@ -13,6 +13,7 @@ import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shar
 import type { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import type { SerializedEditorState } from 'lexical'
+import type { UserSettings } from '@proton/shared/lib/interfaces'
 
 /** Allows the client to invoke methods on the editor */
 export class EditorInvoker implements ClientRequiresEditorMethods {
@@ -22,6 +23,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     private editorFrame: HTMLIFrameElement,
     private readonly logger: LoggerInterface,
   ) {}
+
+  async loadUserSettings(settings: UserSettings): Promise<void> {
+    return this.invokeEditorMethod('loadUserSettings', [settings])
+  }
 
   async getClientId(): Promise<number> {
     return this.invokeEditorMethod('getClientId', [])
