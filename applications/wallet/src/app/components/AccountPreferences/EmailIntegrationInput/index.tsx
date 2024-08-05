@@ -3,18 +3,19 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
 import { Prompt, Toggle, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import { useAddresses, useOrganization, useUser } from '@proton/components/hooks';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { type IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, CoreButton, CoreButtonLike } from '../../../atoms';
+import { Button, CoreButton } from '../../../atoms';
+import { WalletSetupModalKind, useWalletSetupModalContext } from '../../../contexts/WalletSetupModalContext';
 import { EmailAddressCreationModal } from '../../EmailAddressCreationModal';
 import { WalletUpgradeModal } from '../../WalletUpgradeModal';
 import { EmailIntegrationModal } from '../EmailIntegrationModal';
 
 interface Props {
+    wallet: IWasmApiWalletData;
     walletAccount: WasmApiWalletAccount;
     /**
      * Expected to have only one element
@@ -30,6 +31,7 @@ interface Props {
 }
 
 export const EmailIntegrationInput = ({
+    wallet,
     walletAccount,
     value,
     options,
@@ -44,6 +46,8 @@ export const EmailIntegrationInput = ({
     const [emailCreationModal, setEmailCreationModal] = useModalState();
     const [walletUpgradeModal, setWalletUpgradeModal] = useModalState();
     const [bveWarningPrompt, setBveWarningPrompt] = useModalState();
+
+    const { open } = useWalletSetupModalContext();
 
     const [user] = useUser();
     const [addresses] = useAddresses();
@@ -65,20 +69,27 @@ export const EmailIntegrationInput = ({
 
     const canCreateAddress = user.isAdmin;
 
-    const promptButton = (
-        <CoreButton
-            shape="underline"
+    const walletAccountCreation = (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <span
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
             key="prompt-button"
-            className="p-0"
-            onClick={() => {
-                setBveWarningPrompt(true);
+            className="p-0 link link-focus color-norm"
+            onKeyDown={(event) => {
+                if (event.key === ' ') {
+                    setBveWarningPrompt(true);
+                }
             }}
-        >{c('Wallet preferences').t`creating a new BTC account`}</CoreButton>
+            onClick={() => {
+                open({ kind: WalletSetupModalKind.WalletAccountCreation, apiWalletData: wallet });
+            }}
+        >{c('Wallet preferences').t`creating a new BTC account`}</span>
     );
 
     const warning = (
         <div>{c('Wallet preferences')
-            .jt`For better privacy, we recommend ${promptButton} for receving Bitcoin via Email.`}</div>
+            .jt`For better privacy, we recommend ${walletAccountCreation} for receving Bitcoin via Email.`}</div>
     );
 
     const isPrimaryAccount = walletAccount.Priority === 1;
@@ -109,12 +120,13 @@ export const EmailIntegrationInput = ({
                 {shouldShowBvEWarning && <div className="mb-2">{warning}</div>}
 
                 <div>
-                    <CoreButtonLike
+                    <CoreButton
                         shape="underline"
                         color="weak"
-                        as={Href}
-                        href={getKnowledgeBaseUrl('/wallet-bitcoin-via-email')}
-                    >{c('Action').t`Learn more`}</CoreButtonLike>
+                        onClick={() => {
+                            setBveWarningPrompt(true);
+                        }}
+                    >{c('Action').t`Learn more`}</CoreButton>
                 </div>
             </InputFieldStacked>
 
