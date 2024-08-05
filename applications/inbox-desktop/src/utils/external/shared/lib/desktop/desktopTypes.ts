@@ -1,3 +1,4 @@
+import { DesktopVersion } from "../../../packages/components/containers/desktop/useInboxDesktopVersion";
 import { Environment } from "../interfaces/Environment";
 import { ThemeSetting } from "../themes/themes";
 
@@ -10,8 +11,15 @@ export type ElectronNotification = {
     labelID?: string;
 };
 
-export type IPCInboxDesktopFeature = "ThemeSelection" | "InAppPayments" | "EarlyAccess" | "MultiAccount";
-export type IPCGetInfoMessage = { type: "theme"; result: ThemeSetting };
+export type IPCInboxDesktopFeature =
+    | "ThemeSelection"
+    | "InAppPayments"
+    | "EarlyAccess"
+    | "MultiAccount"
+    | "LatestVersionCheck";
+export type IPCGetInfoMessage =
+    | { type: "theme"; result: ThemeSetting }
+    | { type: "latestVersion"; result: DesktopVersion | null };
 export type IPCClientUpdateMessage =
     | { type: "updateNotification"; payload: number }
     | { type: "userLogin"; payload?: undefined }

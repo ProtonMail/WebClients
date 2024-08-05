@@ -22,6 +22,7 @@ type LocalDesktopVersion = {
 };
 
 export let updateDownloaded = false;
+export let cachedLatestVersion: DesktopVersion | null = null;
 
 autoUpdater.on("update-downloaded", () => {
     updateDownloaded = true;
@@ -70,6 +71,7 @@ async function checkForValidUpdates() {
     }
 
     const newUpdate = getNewUpdate(local, availableVersions);
+    cachedLatestVersion = newUpdate ?? null;
 
     if (!newUpdate) {
         return;

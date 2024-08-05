@@ -8,6 +8,7 @@ import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import { getConfig } from "../utils/config";
 import { ipcLogger } from "../utils/log";
 import { IPCClientUpdateMessage, IPCGetInfoMessage } from "../utils/external/shared/lib/desktop/desktopTypes";
+import { cachedLatestVersion } from "../update";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -22,6 +23,9 @@ export const handleIPCCalls = () => {
         switch (message) {
             case "theme":
                 event.returnValue = getTheme();
+                break;
+            case "latestVersion":
+                event.returnValue = cachedLatestVersion;
                 break;
             default:
                 ipcLogger.error(`Invalid getInfo message: ${message}`);
