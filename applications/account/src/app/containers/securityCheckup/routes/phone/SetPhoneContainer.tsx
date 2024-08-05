@@ -39,6 +39,7 @@ const SetPhoneContainer = () => {
 
             <RecoveryPhone
                 autoFocus
+                persistPasswordScope
                 defaultCountry={defaultCountry}
                 phone={userSettings.Phone}
                 hasReset={!!userSettings.Phone.Reset}

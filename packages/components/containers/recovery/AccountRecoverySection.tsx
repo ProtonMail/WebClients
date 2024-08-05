@@ -34,7 +34,9 @@ const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
             });
         }
         await new Promise((resolve, reject) => {
-            createModal(<AuthModal onCancel={reject} onSuccess={resolve} config={updateResetEmail(value)} />);
+            createModal(
+                <AuthModal onCancel={reject} onSuccess={resolve} config={updateResetEmail({ Reset: value })} />
+            );
         });
         await call();
     };

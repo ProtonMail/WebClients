@@ -7,14 +7,12 @@ import { c } from 'ttag';
 import { useInactiveKeys } from '@proton/account';
 import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import {
-    AuthModal,
     Checkbox,
     Icon,
     Label,
     useApi,
     useEventManager,
     useGetUserKeys,
-    useModalState,
     useSecurityCheckup,
     useUser,
 } from '@proton/components';
@@ -22,7 +20,6 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useLoading from '@proton/hooks/useLoading';
 import { generatePDFKit } from '@proton/recovery-kit/index';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, RECOVERY_KIT_FILE_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -57,8 +54,6 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
     const [step, setStep] = useState(STEPS.DOWNLOAD);
 
     const [downloading, withDownloading] = useLoading();
-
-    const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
 
     const [{ MnemonicStatus }] = useUser();
 
@@ -123,9 +118,18 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
         setStep(STEPS.SUCCESS);
     };
 
-    const handleReactivate = async () => {
+    const handleDownload = async () => {
+        const callReactivateEndpoint =
+            MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
+            MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
+            MnemonicStatus === MNEMONIC_STATUS.PROMPT;
+
         try {
-            await api(reactivateMnemonicPhrase(payload));
+            if (callReactivateEndpoint) {
+                await api(reactivateMnemonicPhrase(payload));
+            } else {
+                await api(updateMnemonicPhrase({ ...payload, PersistPasswordScope: true }));
+            }
 
             await downloadRecoveryKit();
         } catch (error: any) {
@@ -133,120 +137,86 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
         }
     };
 
-    const handleDownload = async () => {
-        const callReactivateEndpoint =
-            MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-            MnemonicStatus === MNEMONIC_STATUS.OUTDATED ||
-            MnemonicStatus === MNEMONIC_STATUS.PROMPT;
-
-        if (callReactivateEndpoint) {
-            await handleReactivate();
-            return;
-        }
-
-        setAuthModalOpen(true);
-    };
-
     const size = `(${humanSize({ bytes: blob.size })})`;
 
     const showUnderstoodCheckBox = phrase.isOutdated && !!inactiveKeys.length;
 
     return (
-        <>
-            {renderAuthModal && (
-                <AuthModal
-                    config={unlockPasswordChanges()}
-                    {...authModalProps}
-                    onCancel={() => authModalProps.onClose()}
-                    onSuccess={async () => {
-                        try {
-                            await api(updateMnemonicPhrase(payload));
-                            await api(lockSensitiveSettings());
+        <SecurityCheckupMain>
+            <SecurityCheckupMainTitle
+                prefix={
+                    <SecurityCheckupMainIcon
+                        icon={phraseIcon}
+                        color={phrase.isSet || phrase.isOutdated ? 'warning' : 'danger'}
+                    />
+                }
+            >
+                {phrase.isSet || phrase.isOutdated
+                    ? c('l10n_nightly: Security checkup').t`Update your Recovery Kit?`
+                    : c('l10n_nightly: Security checkup').t`Download your Recovery Kit`}
+            </SecurityCheckupMainTitle>
 
-                            await downloadRecoveryKit();
-                        } catch (error) {
-                            setStep(STEPS.ERROR);
-                        }
-                    }}
-                />
-            )}
+            <div>
+                <img className="w-full mb-6" src={recoveryKitSrc} alt="" />
+            </div>
 
-            <SecurityCheckupMain>
-                <SecurityCheckupMainTitle
-                    prefix={
-                        <SecurityCheckupMainIcon
-                            icon={phraseIcon}
-                            color={phrase.isSet || phrase.isOutdated ? 'warning' : 'danger'}
-                        />
-                    }
-                >
-                    {phrase.isSet || phrase.isOutdated
-                        ? c('l10n_nightly: Security checkup').t`Update your Recovery Kit?`
-                        : c('l10n_nightly: Security checkup').t`Download your Recovery Kit`}
-                </SecurityCheckupMainTitle>
-
-                <div>
-                    <img className="w-full mb-6" src={recoveryKitSrc} alt="" />
-                </div>
-
-                <div className="flex flex-column gap-4">
-                    {phrase.isOutdated ? (
+            <div className="flex flex-column gap-4">
+                {phrase.isOutdated ? (
+                    <div>
+                        {c('l10n_nightly: Security checkup')
+                            .t`Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.`}
+                    </div>
+                ) : (
+                    <>
                         <div>
                             {c('l10n_nightly: Security checkup')
-                                .t`Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.`}
+                                .t`If you get locked out of your ${BRAND_NAME} Account, your Recovery Kit will allow you to sign in and recover your data.`}
                         </div>
-                    ) : (
-                        <>
-                            <div>
-                                {c('l10n_nightly: Security checkup')
-                                    .t`If you get locked out of your ${BRAND_NAME} Account, your Recovery Kit will allow you to sign in and recover your data.`}
-                            </div>
 
-                            <div>
-                                {c('l10n_nightly: Security checkup')
-                                    .t`It’s the only way to fully restore your account, so make sure you keep it somewhere safe.`}
-                            </div>
-                        </>
-                    )}
-
-                    {phrase.isSet || phrase.isOutdated ? (
                         <div>
-                            {getBoldFormattedText(
-                                c('l10n_nightly: Security checkup')
-                                    .t`You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.`
-                            )}
+                            {c('l10n_nightly: Security checkup')
+                                .t`It’s the only way to fully restore your account, so make sure you keep it somewhere safe.`}
                         </div>
-                    ) : null}
+                    </>
+                )}
 
-                    {showUnderstoodCheckBox ? (
-                        <div className="flex flex-row items-start">
-                            <Checkbox
-                                id="understood-recovery-necessity"
-                                className="mt-2 mr-2"
-                                checked={understood}
-                                onChange={downloading ? noop : () => setUnderstood(!understood)}
-                            />
-                            <Label htmlFor="understood-recovery-necessity" className="flex-1">
-                                {c('l10n_nightly: Security checkup')
-                                    .t`I understand that I will not be able to recover currently locked data with this Recovery Kit`}
-                            </Label>
-                        </div>
-                    ) : null}
-                </div>
+                {phrase.isSet || phrase.isOutdated ? (
+                    <div>
+                        {getBoldFormattedText(
+                            c('l10n_nightly: Security checkup')
+                                .t`You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.`
+                        )}
+                    </div>
+                ) : null}
 
-                <Button
-                    className="mt-8"
-                    fullWidth
-                    color="norm"
-                    loading={downloading}
-                    disabled={showUnderstoodCheckBox && !understood}
-                    onClick={() => withDownloading(handleDownload)}
-                >
-                    <Icon name="arrow-down-line" className="mr-2" />
-                    {c('l10n_nightly: Security checkup').t`Download ${size}`}
-                </Button>
-            </SecurityCheckupMain>
-        </>
+                {showUnderstoodCheckBox ? (
+                    <div className="flex flex-row items-start">
+                        <Checkbox
+                            id="understood-recovery-necessity"
+                            className="mt-2 mr-2"
+                            checked={understood}
+                            onChange={downloading ? noop : () => setUnderstood(!understood)}
+                        />
+                        <Label htmlFor="understood-recovery-necessity" className="flex-1">
+                            {c('l10n_nightly: Security checkup')
+                                .t`I understand that I will not be able to recover currently locked data with this Recovery Kit`}
+                        </Label>
+                    </div>
+                ) : null}
+            </div>
+
+            <Button
+                className="mt-8"
+                fullWidth
+                color="norm"
+                loading={downloading}
+                disabled={showUnderstoodCheckBox && !understood}
+                onClick={() => withDownloading(handleDownload)}
+            >
+                <Icon name="arrow-down-line" className="mr-2" />
+                {c('l10n_nightly: Security checkup').t`Download ${size}`}
+            </Button>
+        </SecurityCheckupMain>
     );
 };
 

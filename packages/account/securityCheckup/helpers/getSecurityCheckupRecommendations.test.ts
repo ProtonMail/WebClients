@@ -311,8 +311,8 @@ describe('No recovery method', () => {
 
             expect(result).toEqual({
                 cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['email'],
-                furtherActions: ['phrase'],
+                actions: ['email', 'phrase'],
+                furtherActions: ['phone'],
             });
         });
 
@@ -331,8 +331,8 @@ describe('No recovery method', () => {
 
             expect(result).toEqual({
                 cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['email'],
-                furtherActions: ['phrase'],
+                actions: ['email', 'phrase'],
+                furtherActions: ['phone'],
             });
         });
     });
@@ -353,8 +353,8 @@ describe('No recovery method', () => {
 
             expect(result).toEqual({
                 cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['phone'],
-                furtherActions: ['phrase'],
+                actions: ['phone', 'phrase'],
+                furtherActions: ['email'],
             });
         });
 
@@ -373,8 +373,8 @@ describe('No recovery method', () => {
 
             expect(result).toEqual({
                 cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['phone'],
-                furtherActions: ['phrase'],
+                actions: ['phone', 'phrase'],
+                furtherActions: ['email'],
             });
         });
     });
