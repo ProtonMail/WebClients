@@ -1,25 +1,8 @@
 @import '~@proton/styles/scss/lib';
 
-.tip-box {
-	min-block-size: 4.75rem;
-	container-type: inline-size;
-}
-
 .close-button {
 	inline-size: 1.5rem;
 	block-size: 1.5rem;
 	inset-block-start: -0.625rem;
 	inset-inline-end: -0.625rem;
-}
-
-@container (min-width: #{rem(768)}) {
-	.tip-box-content {
-		align-items: center;
-	}
-
-	.tip-box-text {
-		flex-direction: row;
-		align-items: center;
-		gap: 1rem;
-	}
 }
