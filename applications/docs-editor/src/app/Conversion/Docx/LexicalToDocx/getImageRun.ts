@@ -1,8 +1,10 @@
 import { ImageRun } from 'docx'
 import type { ImageNode } from '../../../Plugins/Image/ImageNode'
 import { toImage } from '@proton/shared/lib/helpers/image'
-import { isBase64Image } from '@proton/shared/lib/helpers/validators'
 import type { DocxExportContext } from './Context'
+
+const isBase64Image = (value = '') =>
+  (value.startsWith('data:image') || value.startsWith('data:application/octet-stream')) && value.includes(';base64')
 
 export async function getImageRun(
   node: ImageNode,
@@ -16,6 +18,7 @@ export async function getImageRun(
     }
     src = fetched
   }
+
   let width = node.getWidth()
   let height = node.getHeight()
   if (width === 'inherit' || height === 'inherit') {
@@ -23,6 +26,7 @@ export async function getImageRun(
     width = width === 'inherit' ? image.width : width
     height = height === 'inherit' ? image.height : height
   }
+
   return new ImageRun({
     data: src,
     transformation: {
