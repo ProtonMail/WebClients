@@ -7,7 +7,7 @@ import { DESKTOP_FEATURES } from "./ipcConstants";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import { getConfig } from "../utils/config";
 import { ipcLogger } from "../utils/log";
-import { IPCClientUpdateMessage, IPCGetInfoMessage } from "../utils/external/shared/lib/desktop/desktopTypes";
+import { IPCClientUpdateMessage, IPCGetInfoMessage } from "../utils/external/packages/shared/lib/desktop/desktopTypes";
 import { cachedLatestVersion } from "../update";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCClientUpdateMessage {

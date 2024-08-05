@@ -1,4 +1,4 @@
-import { DesktopVersion } from "../../../packages/components/containers/desktop/useInboxDesktopVersion";
+import { DesktopVersion } from "../../../components/containers/desktop/useInboxDesktopVersion";
 import { Environment } from "../interfaces/Environment";
 import { ThemeSetting } from "../themes/themes";
 

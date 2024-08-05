@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { RELEASE_CATEGORIES } from "../../../../shared/lib/apps/desktopVersions";
+import { RELEASE_CATEGORIES } from "../../../shared/lib/apps/desktopVersions";
 
 export const DesktopVersionSchema = z.object({
     CategoryName: z.enum(Object.values(RELEASE_CATEGORIES) as [string, ...string[]]),

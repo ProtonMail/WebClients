@@ -1,6 +1,6 @@
 import { getNewUpdateTestOnly, releaseInfoSchemaTestOnly, releaseListSchemaTestOnly } from "./update";
 import { describe } from "@jest/globals";
-import { RELEASE_CATEGORIES } from "./utils/external/shared/lib/apps/desktopVersions";
+import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/desktopVersions";
 
 jest.mock("./utils/view/viewManagement", () => ({
     getCalendarView: () => {},

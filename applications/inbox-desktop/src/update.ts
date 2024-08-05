@@ -5,8 +5,8 @@ import { getPlatform } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
-import { RELEASE_CATEGORIES } from "./utils/external/shared/lib/apps/desktopVersions";
-import { DESKTOP_PLATFORMS } from "./utils/external/shared/lib/constants";
+import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/desktopVersions";
+import { DESKTOP_PLATFORMS } from "./utils/external/packages/shared/lib/constants";
 import {
     DesktopVersion,
     DesktopVersionSchema,

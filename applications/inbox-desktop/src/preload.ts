@@ -1,7 +1,10 @@
 import { contextBridge, ipcRenderer } from "electron";
 import { DESKTOP_FEATURES, IPCClientUpdateMessagePayload } from "./ipc/ipcConstants";
 import { ipcLogger } from "./utils/log";
-import { IPCClientUpdateMessageType, IPCGetInfoMessage } from "./utils/external/shared/lib/desktop/desktopTypes";
+import {
+    IPCClientUpdateMessageType,
+    IPCGetInfoMessage,
+} from "./utils/external/packages/shared/lib/desktop/desktopTypes";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     hasFeature: (feature: keyof typeof DESKTOP_FEATURES) => {

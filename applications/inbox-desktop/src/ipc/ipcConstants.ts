@@ -2,7 +2,7 @@ import {
     IPCClientUpdateMessage,
     IPCClientUpdateMessageType,
     IPCInboxDesktopFeature,
-} from "../utils/external/shared/lib/desktop/desktopTypes";
+} from "../utils/external/packages/shared/lib/desktop/desktopTypes";
 
 export const DESKTOP_FEATURES = {
     InAppPayments: true,
