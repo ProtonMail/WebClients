@@ -37,7 +37,7 @@ import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 
 export class AppDependencies extends DependencyContainer {
-  constructor(api: Api, imageProxyParams: ImageProxyParams, driveCompat: DriveCompat) {
+  constructor(api: Api, imageProxyParams: ImageProxyParams, driveCompat: DriveCompat, appVersion: string) {
     super()
 
     this.bind(App_TYPES.Logger, () => {
@@ -192,6 +192,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<DecryptMessage>(App_TYPES.DecryptMessage),
         this.get<LoggerInterface>(App_TYPES.Logger),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
+        appVersion,
       )
     })
 
