@@ -128,17 +128,15 @@ export const findBoundingInputElement = (
     /* If the parent is fully bordered consider it to be the bounding box */
     if (isBorderedElement(parent)) return parent;
 
+    /* If a parent is much taller than its child, stop.
+     * Indicates container size affected by CSS (float, flexbox) */
+    const styles = createStyleCompute(parent);
+    const parentInnerHeight = getComputedHeight(styles, { mode: 'inner', node: parent });
+    if (!isInput && parentInnerHeight.value > curr.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return curr;
+
     /* Check for single child, excluding injected elements */
     const children = getChildren(parent);
-
-    if (children.length === 1) {
-        /* If single-child parent is much taller than its child, stop.
-         * Indicates container size affected by CSS (float, flexbox) */
-        const styles = createStyleCompute(parent);
-        const parentInnerHeight = getComputedHeight(styles, { mode: 'inner', node: parent });
-        if (parentInnerHeight.value > curr.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return curr;
-        return findBoundingInputElement(parent, constraints);
-    }
+    if (children.length === 1) return findBoundingInputElement(parent, constraints);
 
     /* If all children overlap, parent might be suitable  */
     const childrenOverlap = allChildrenOverlap(children, BOUNDING_ELEMENT_OFFSET);
