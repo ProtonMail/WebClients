@@ -2,6 +2,7 @@ import groupBy from 'lodash/groupBy';
 import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
+import { buildBitwardenIdentity, extraFieldsFactory } from '@proton/pass/lib/import/builders/bitwarden.builder';
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -12,6 +13,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '../helpers/transformers';
@@ -47,27 +49,10 @@ const extractUrls = (item: BitwardenLoginItem) =>
         { web: [], android: [] }
     );
 
-const extractExtraFields = (item: BitwardenLoginItem) => {
-    return item.fields
+const extractExtraFields = (item: BitwardenLoginItem) =>
+    item.fields
         ?.filter((field) => Object.values(BitwardenCustomFieldType).includes(field.type))
-        .map<UnsafeItemExtraField>(({ name, type, value }) => {
-            switch (type) {
-                case BitwardenCustomFieldType.TEXT:
-                    return {
-                        fieldName: name || c('Label').t`Text`,
-                        type: 'text',
-                        data: { content: value ?? '' },
-                    };
-                case BitwardenCustomFieldType.HIDDEN:
-                    return {
-                        // translator: label for a field that is hidden. Singular only.
-                        fieldName: name || c('Label').t`Hidden`,
-                        type: 'hidden',
-                        data: { content: value ?? '' },
-                    };
-            }
-        });
-};
+        .map<UnsafeItemExtraField>(({ name, type, value }) => extraFieldsFactory[type](name, value));
 
 const formatCCExpirationDate = (item: BitwardenCCItem) => {
     const { expMonth, expYear } = item.card;
@@ -145,9 +130,13 @@ export const readBitwardenData = ({
                                 verificationNumber: item.card.code,
                                 expirationDate: formatCCExpirationDate(item),
                             });
-                        default:
-                            ignored.push(`[${BitwardenTypeMap[item.type] ?? c('Placeholder').t`Other`}] ${item.name}`);
-                            return;
+                        case BitwardenType.IDENTITY:
+                            addCustomFieldsWarning(ignored, item);
+                            return importIdentityItem({
+                                name: item.name,
+                                note: item.notes,
+                                ...buildBitwardenIdentity(item),
+                            });
                     }
                 })
                 .filter(truthy),
