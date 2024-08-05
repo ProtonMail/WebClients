@@ -8,6 +8,7 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { WasmProtonWalletApiClient } from '@proton/andromeda';
+import { type NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -28,7 +29,15 @@ import { extendStore, setupStore } from './store/store';
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer').then((result) => result.default);
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export const bootstrapApp = async ({
+    config,
+    signal,
+    notificationsManager,
+}: {
+    config: ProtonConfig;
+    signal?: AbortSignal;
+    notificationsManager: NotificationsManager;
+}) => {
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
     const isIframe = getIsIframe();
@@ -70,7 +79,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
-        extendStore({ config, api, authentication, unleashClient, history, walletApi });
+        extendStore({ config, api, authentication, unleashClient, history, walletApi, notificationsManager });
 
         const store = setupStore();
         const dispatch = store.dispatch;
