@@ -1,22 +1,16 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useModalState } from '@proton/components/components';
-import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
+import { useDrawer } from '@proton/components/hooks';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
-import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
-import SimpleLoginModal from '../simpleLogin/SimpleLoginModal';
-
 const SimpleLoginPlaceholder = () => {
-    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
-    const [simpleLoginModalProps, setSimpleLoginModalOpen, renderSimpleLoginModal] = useModalState();
+    const { toggleDrawerApp, appInView } = useDrawer();
 
-    const handleSimpleLoginModal = () => {
-        // We need to send a telemetry request when the user clicks on the mask my email button
-        handleSendTelemetryData(TelemetrySimpleLoginEvents.simplelogin_modal_view, {}, true);
-
-        setSimpleLoginModalOpen(true);
+    const openSecurityCenterInDrawer = () => {
+        if (appInView !== 'security-center') {
+            toggleDrawerApp({ app: 'security-center' })();
+        }
     };
 
     return (
@@ -33,10 +27,9 @@ const SimpleLoginPlaceholder = () => {
                 {c('Info')
                     .t`They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.`}
             </p>
-            <Button onClick={() => handleSimpleLoginModal()} color="norm" shape="outline">
+            <Button onClick={openSecurityCenterInDrawer} color="norm" shape="outline">
                 {c('Action').t`Hide my email`}
             </Button>
-            {renderSimpleLoginModal && <SimpleLoginModal {...simpleLoginModalProps} />}
         </>
     );
 };
