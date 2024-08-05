@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
@@ -23,12 +23,19 @@ import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
 import GroupMemberList from './GroupMemberList';
+import { NewGroupMemberInput } from './NewGroupMemberInput';
+import { NewGroupMemberItem } from './NewGroupMemberItem';
 import { getAddressSuggestedLocalPart } from './helpers';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;
     groupData: Group;
+}
+
+export interface NewGroupMember {
+    Name: string;
+    Address: string;
 }
 
 const EditGroup = ({ groupsManagement, groupData }: Props) => {
@@ -44,11 +51,15 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
     } = groupsManagement;
+
     const { resetForm, dirty, values: formValues, setFieldValue } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
     const { validator, onFormSubmit } = useFormErrors();
     const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
     const [loading, withLoading] = useLoading();
+    const [newGroupMembers, setNewGroupMembers] = useState<NewGroupMember[]>([]);
+
+    const newEmailsToAdd = newGroupMembers.map((member) => member.Address);
 
     useEffect(() => {
         if (uiState === 'edit') {
@@ -72,6 +83,15 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 members: '',
             },
         });
+    };
+
+    const handleAddNewMembers = (newMembers: NewGroupMember[]) => {
+        setNewGroupMembers((prev) => [...prev, ...newMembers]);
+    };
+
+    const handleRemoveNewGroupMember = (memberToRemove: NewGroupMember) => {
+        const updatedNewMembersList = newGroupMembers.filter((prev) => prev !== memberToRemove);
+        setNewGroupMembers(updatedNewMembersList);
     };
 
     return (
@@ -104,7 +124,8 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     loading={loading}
                                     onClick={() => {
                                         onFormSubmit();
-                                        void withLoading(handleSaveGroup());
+                                        void withLoading(handleSaveGroup(newEmailsToAdd));
+                                        setNewGroupMembers([]);
                                     }}
                                 >
                                     {c('Action').t`Save`}
@@ -220,26 +241,26 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 </InputFieldTwo>
                             </InputFieldStacked>
                         </InputFieldStackedGroup>
-                        <InputFieldStackedGroup>
-                            <InputFieldStacked isGroupElement icon="pass-group">
-                                <InputFieldTwo
-                                    label={c('Label').t`Group members`}
-                                    type="text"
-                                    unstyled
-                                    inputClassName="rounded-none"
-                                    name="members"
-                                    placeholder={c('placeholder').t`Add member`}
-                                    value={formValues.members}
-                                    onValue={(members: string) => {
-                                        setFieldValue('members', members);
-                                    }}
-                                />
-                            </InputFieldStacked>
-                        </InputFieldStackedGroup>
                     </Form>
                 </FormikProvider>
-
-                <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} />
+                <NewGroupMemberInput
+                    newGroupMembers={newGroupMembers}
+                    handleAddNewGroupMembers={handleAddNewMembers}
+                    groupMembers={groupMembers}
+                />
+                <div className="mt-3 flex flex-column gap-3">
+                    <div className="flex flex-column gap-3">
+                        {newGroupMembers.reverse().map((member) => {
+                            return (
+                                <NewGroupMemberItem
+                                    member={member}
+                                    handleRemoveNewMember={handleRemoveNewGroupMember}
+                                />
+                            );
+                        })}
+                    </div>
+                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} edit />
+                </div>
             </Panel>
         </>
     );
