@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -12,7 +12,7 @@ import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
-import type { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
+import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
@@ -31,8 +31,7 @@ interface Props {
     wallet: IWasmApiWalletData;
     account: WasmApiWalletAccount;
     exchangeRate: WasmApiExchangeRate;
-    txBuilder: WasmTxBuilder;
-    updateTxBuilder: (updater: TxBuilderUpdater) => void;
+    txBuilderHelpers: TxBuilderHelper;
     btcAddressMap: BtcAddressMap;
     onBack: () => void;
     onSent: () => void;
@@ -45,11 +44,10 @@ export const TransactionReview = ({
     wallet,
     account,
     exchangeRate,
-    txBuilder,
+    txBuilderHelpers,
     btcAddressMap,
     onBackToEditRecipients,
     onSent,
-    updateTxBuilder,
     getFeesByBlockTarget,
 }: Props) => {
     const [accountExchangeRate] = useExchangeRate(account.FiatCurrency);
@@ -60,6 +58,9 @@ export const TransactionReview = ({
 
     const [textAreaModal, setTextAreaModal] = useModalStateWithData<{ kind: 'message' | 'note' }>();
     const [recipientDetailsModal, setRecipientDetailsModal] = useModalStateWithData<RecipientDetailsModalOwnProps>();
+
+    const { txBuilder } = txBuilderHelpers;
+    const recipients = txBuilder.getRecipients();
 
     const {
         message,
@@ -78,7 +79,7 @@ export const TransactionReview = ({
         wallet,
         account,
         exchangeRate,
-        txBuilder,
+        txBuilderHelpers,
         btcAddressMap,
         onSent,
     });
@@ -137,7 +138,7 @@ export const TransactionReview = ({
                 </div>
 
                 <div className="flex flex-column w-full mt-2">
-                    {txBuilder.getRecipients().map((txBuilderRecipient, index) => {
+                    {recipients.map((txBuilderRecipient, index) => {
                         const recipientUid = txBuilderRecipient[0];
                         const btcAddress = txBuilderRecipient[1];
                         const amount = txBuilderRecipient[2];
@@ -157,7 +158,7 @@ export const TransactionReview = ({
                                     name={recipient.recipient.Name ?? recipient.recipient.Address}
                                     address={recipient.recipient.Address}
                                     rightNode={
-                                        txBuilder.getRecipients().length > 1 ? (
+                                        recipients.length > 1 ? (
                                             <>
                                                 <div
                                                     className="w-custom flex flex-column items-end mr-1 shrink-0"
@@ -302,8 +303,7 @@ export const TransactionReview = ({
                         <FeesModal
                             accountExchangeRate={accountExchangeRate}
                             exchangeRate={exchangeRate}
-                            txBuilder={txBuilder}
-                            updateTxBuilder={updateTxBuilder}
+                            txBuilderHelpers={txBuilderHelpers}
                             getFeesByBlockTarget={getFeesByBlockTarget}
                             psbtExpectedSize={psbtExpectedSize}
                             {...feesModal}

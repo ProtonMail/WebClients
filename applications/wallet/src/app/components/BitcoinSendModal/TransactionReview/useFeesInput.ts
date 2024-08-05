@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from 'react';
 
-import type { WasmTxBuilder } from '@proton/andromeda';
 import { DEFAULT_TARGET_BLOCK } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../../contexts';
+import { type TxBuilderHelper } from '../../../hooks/useTxBuilder';
 
 type BlockTarget = number;
 type FeeRate = number;
@@ -27,10 +27,8 @@ const findNearestBlockTargetFeeRate = (
     return (nearestAbove ?? nearestBelow ?? first)?.[1];
 };
 
-export const useFeesInput = (
-    txBuilder: WasmTxBuilder,
-    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void
-) => {
+export const useFeesInput = (txBuilderHelpers: TxBuilderHelper) => {
+    const { txBuilder, updateTxBuilder } = txBuilderHelpers;
     const { feesEstimation: contextFeesEstimation } = useBitcoinBlockchainContext();
 
     const feesEstimations = useMemo(() => {
