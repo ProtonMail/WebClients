@@ -146,17 +146,17 @@ function isANewerThanB(a: string, b: string) {
     return semver(a) > semver(b);
 }
 
-function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<ReleaseList | undefined> {
-    const ses = session.fromPartition("persist:update", { cache: false });
+async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<ReleaseList | undefined> {
+    const updateSession = session.fromPartition("persist:update", { cache: false });
 
-    return ses
-        .fetch(getVersionURL(platform), { cache: "no-cache" })
-        .then((r) => r.json())
-        .then((data) => releaseListSchema.parse(data))
-        .catch((e) => {
-            updateLogger.warn("Check update: failed to get available versions:", e);
-            return undefined;
-        });
+    try {
+        const response = await updateSession.fetch(getVersionURL(platform), { cache: "no-cache" });
+        const json = await response.json();
+        return releaseListSchema.parse(json);
+    } catch (error) {
+        updateLogger.warn("Check update: failed to get available versions:", error);
+        return undefined;
+    }
 }
 
 export const getNewUpdateTestOnly = getNewUpdate;
