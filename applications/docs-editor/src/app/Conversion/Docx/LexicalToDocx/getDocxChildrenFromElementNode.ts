@@ -25,10 +25,12 @@ export async function getDocxChildrenFromElementNode(
       }
       continue
     }
+
     if ($isTextNode(child)) {
       children.push(getTextRun(child, node, context.state))
       continue
     }
+
     if ($isLinkNode(child)) {
       const linkNodeChildren = await getDocxChildrenFromElementNode(child, context)
       children.push(
