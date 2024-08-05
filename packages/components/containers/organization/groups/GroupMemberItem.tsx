@@ -5,6 +5,7 @@ import { Badge } from '@proton/components/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 
@@ -26,9 +27,13 @@ export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
                 <Avatar className="shrink-0 text-rg" color="weak">
                     {getInitials(memberName ?? groupMember.Email)}
                 </Avatar>
-                <div className="text-ellipsis flex-1 flex flex-column justify-center">
-                    {memberName}
-                    <div className={emailClassName}>{groupMember.Email}</div>
+                <div className="flex-1 flex flex-column justify-center">
+                    <span className="block max-w-full text-ellipsis" title={memberName}>
+                        {memberName}
+                    </span>
+                    <span className={clsx('block max-w-full text-ellipsis', emailClassName)} title={groupMember.Email}>
+                        {groupMember.Email}
+                    </span>
                 </div>
                 <div className="flex flex-column flex-nowrap self-center">
                     {isInvitationPending && (
