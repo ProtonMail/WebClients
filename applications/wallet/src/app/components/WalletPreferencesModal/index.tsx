@@ -14,7 +14,6 @@ import InputFieldStackedGroup from '@proton/components/components/inputFieldStac
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
-import { BitcoinViaEmailNote } from '../../atoms/BitcoinViaEmailNote';
 import type { SubTheme } from '../../utils';
 import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
@@ -99,15 +98,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                     </InputFieldStackedGroup>
 
                     <div className="flex flex-column mb-3">
-                        <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
-
-                        {/* If no account if recommended to turn on BvE, we don't want to display the note */}
-                        {Object.values(shouldShowBvEWarningByAccountId).some((s) => !s) && (
-                            <BitcoinViaEmailNote
-                                isActive={wallet.WalletAccounts.some((acc) => Boolean(acc.Addresses.length))}
-                            />
-                        )}
-
+                        <span className="block color-weak mb-3">{c('Wallet preference').t`Accounts`}</span>
                         <div className="flex flex-column gap-4">
                             {wallet.WalletAccounts.map((walletAccount, index) => {
                                 return (
