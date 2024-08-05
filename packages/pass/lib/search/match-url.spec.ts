@@ -248,6 +248,14 @@ describe('match url', () => {
             ).toBe(ItemUrlMatch.NO_MATCH);
 
             expect(
+                getItemPriorityForUrl(createMockItem(['https://a.b.example.com']))('b.example.com', {
+                    protocolFilter: [],
+                    isPrivate: false,
+                    strict: true,
+                })
+            ).toBe(ItemUrlMatch.NO_MATCH);
+
+            expect(
                 getItemPriorityForUrl(createMockItem(['https://a.example.com']))('b.example.com', {
                     protocolFilter: [],
                     isPrivate: false,
