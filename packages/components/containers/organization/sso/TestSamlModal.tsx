@@ -162,9 +162,7 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                 {state.extra && (
                                     <div>
                                         <div className="text-semibold">{c('saml: Info').t`Details`}</div>
-                                        <div className="rounded border bg-weak p-4 flex justify-space-between gap-2 items-center lg:flex-nowrap">
-                                            {state.extra}
-                                        </div>
+                                        <div className="rounded border bg-weak p-4 text-break-all">{state.extra}</div>
                                     </div>
                                 )}
                             </div>
