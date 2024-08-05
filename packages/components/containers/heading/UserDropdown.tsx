@@ -357,7 +357,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
 
                                 {Email ? (
                                     <div className="flex flex-nowrap justify-space-between items-center">
-                                        <Tooltip title={c('Action').t`Copy address`}>
+                                        <Tooltip title={c('Action').t`Copy address`} openDelay={250}>
                                             <button
                                                 type="button"
                                                 className={clsx([
