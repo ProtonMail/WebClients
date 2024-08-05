@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useLoading from '@proton/hooks/useLoading';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
@@ -11,8 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
-import { useEventManager, useNotifications } from '../../../hooks';
-import AuthModal from '../../password/AuthModal';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
 import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
 
@@ -52,6 +52,7 @@ interface Props {
     renderForm?: (props: RenderFormProps) => ReactNode;
     inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label'>>;
     disableVerifyCta?: boolean;
+    persistPasswordScope?: boolean;
 }
 
 const RecoveryPhone = ({
@@ -64,40 +65,38 @@ const RecoveryPhone = ({
     autoFocus,
     inputProps,
     disableVerifyCta,
+    persistPasswordScope = false,
 }: Props) => {
+    const api = useApi();
     const [input, setInput] = useState(phone.Value || '');
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { onFormSubmit } = useFormErrors();
     const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
-    const [authModal, setAuthModal, renderAuthModal] = useModalState();
+
+    const [updatingPhone, withUpdatingPhone] = useLoading();
 
     const confirmStep = !input && hasReset;
-    const loading = renderConfirmModal || renderAuthModal || renderVerifyRecoveryPhoneModal;
+    const loading = renderVerifyRecoveryPhoneModal || renderConfirmModal || updatingPhone;
+
+    const handleUpdatePhone = async () => {
+        await api(
+            updatePhone({
+                Phone: input,
+                PersistPasswordScope: persistPasswordScope,
+            })
+        );
+        await call();
+
+        createNotification({ text: c('Success').t`Phone number updated` });
+        onSuccess?.();
+    };
 
     return (
         <>
             {renderConfirmModal && (
-                <ConfirmRemovePhoneModal
-                    {...confirmModal}
-                    onConfirm={() => {
-                        setAuthModal(true);
-                    }}
-                />
-            )}
-            {renderAuthModal && (
-                <AuthModal
-                    {...authModal}
-                    onCancel={undefined}
-                    onSuccess={async () => {
-                        await call();
-                        createNotification({ text: c('Success').t`Phone number updated` });
-
-                        onSuccess?.();
-                    }}
-                    config={updatePhone({ Phone: input })}
-                />
+                <ConfirmRemovePhoneModal {...confirmModal} onConfirm={() => withUpdatingPhone(handleUpdatePhone)} />
             )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             {renderForm({
@@ -110,7 +109,7 @@ const RecoveryPhone = ({
                     if (confirmStep) {
                         setConfirmModal(true);
                     } else {
-                        setAuthModal(true);
+                        void withUpdatingPhone(handleUpdatePhone);
                     }
                 },
                 input: (

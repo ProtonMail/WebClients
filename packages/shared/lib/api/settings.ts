@@ -93,7 +93,7 @@ export const updateDensity = (Density: DENSITY) => ({
     data: { Density },
 });
 
-export const updateEmail = (data: { Email: string }) => ({
+export const updateEmail = (data: { Email: string; PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/email',
     method: 'put',
     data,
@@ -105,10 +105,10 @@ export const updateNotifyEmail = (Notify: number) => ({
     data: { Notify },
 });
 
-export const updateResetEmail = (Reset: number) => ({
+export const updateResetEmail = (data: { Reset: number; PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/email/reset',
     method: 'put',
-    data: { Reset },
+    data,
 });
 
 export const verifyEmail = (Token: string) => ({
@@ -117,7 +117,7 @@ export const verifyEmail = (Token: string) => ({
     data: { Token },
 });
 
-export const updatePhone = (data: { Phone: string }) => ({
+export const updatePhone = (data: { Phone: string; PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/phone',
     method: 'put',
     data,
@@ -129,7 +129,7 @@ export const updateNotifyPhone = (Notify: string) => ({
     data: { Notify },
 });
 
-export const updateResetPhone = (data: { Reset: number }) => ({
+export const updateResetPhone = (data: { Reset: number; PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/phone/reset',
     method: 'put',
     data,

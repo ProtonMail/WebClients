@@ -196,14 +196,16 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         if (isAlmostPerfectPhoneState) {
             actions.phone();
         }
-    } else {
-        actions.phrase();
     }
 
-    if (!isAlmostPerfectEmailState && !isAlmostPerfectPhoneState) {
-        furtherActions.emailOrPhone();
-    } else {
-        furtherActions.phrase();
+    actions.phrase();
+
+    if (!isAlmostPerfectEmailState) {
+        furtherActions.email();
+    }
+
+    if (!isAlmostPerfectPhoneState) {
+        furtherActions.phone();
     }
 
     return serialize({
