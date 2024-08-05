@@ -9,13 +9,12 @@ import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/de
 import { DESKTOP_PLATFORMS } from "./utils/external/packages/shared/lib/constants";
 import {
     DesktopVersion,
-    DesktopVersionSchema,
     VersionFile,
     VersionFileSchema,
 } from "./utils/external/packages/components/containers/desktop/useInboxDesktopVersion";
 import { semver } from "./utils/external/packages/pass/utils/string/semver";
 
-type LocalDesktopVersion = {
+export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
     RolloutProportion: DesktopVersion["RolloutProportion"];
     CategoryName: DesktopVersion["CategoryName"];
@@ -163,4 +162,3 @@ async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<Versio
 
 export const getNewUpdateTestOnly = getNewUpdate;
 export const releaseListSchemaTestOnly = VersionFileSchema;
-export const releaseInfoSchemaTestOnly = DesktopVersionSchema;
