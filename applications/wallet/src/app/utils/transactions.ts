@@ -78,7 +78,7 @@ export const getTransactionSenderHumanReadableName = (transaction: TransactionDa
             if (sender.name && sender.email) {
                 return formatReadableNameAndEmail(sender.name, sender.email);
             }
-            return sender.email;
+            return sender.email || sender.name;
         }
     }
 
