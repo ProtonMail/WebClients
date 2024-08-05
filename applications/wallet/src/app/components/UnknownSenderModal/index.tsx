@@ -64,6 +64,11 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
     const saveVCardContact = useSaveVCardContact();
 
     const checkData = useCallback(() => {
+        if (!!name) {
+            setError(null);
+            return true;
+        }
+
         if (!validateEmailAddress(email)) {
             setError(c('Unknown sender').t`Email address is invalid`);
             return false;
@@ -71,7 +76,7 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
 
         setError(null);
         return true;
-    }, [email]);
+    }, [email, name]);
 
     useEffect(() => {
         if (error) {
