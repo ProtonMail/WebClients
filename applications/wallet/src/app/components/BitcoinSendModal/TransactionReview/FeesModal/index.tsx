@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiExchangeRate } from '@proton/andromeda';
 import type { IconName } from '@proton/components/components';
 import { Icon, Tooltip } from '@proton/components/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +12,7 @@ import { useUserWalletSettings } from '@proton/wallet';
 import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
 import { Price } from '../../../../atoms/Price';
-import type { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
+import type { TxBuilderHelper } from '../../../../hooks/useTxBuilder';
 import { secondaryAmount } from '../../AmountInput/BitcoinAmountInputWithBalanceAndCurrencySelect';
 
 import './FeesModal.scss';
@@ -20,21 +20,21 @@ import './FeesModal.scss';
 interface Props extends ModalOwnProps {
     accountExchangeRate?: WasmApiExchangeRate;
     exchangeRate: WasmApiExchangeRate;
-    txBuilder: WasmTxBuilder;
+    txBuilderHelpers: TxBuilderHelper;
     psbtExpectedSize: number | undefined;
-    updateTxBuilder: (updater: TxBuilderUpdater) => void;
     getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
 export const FeesModal = ({
     accountExchangeRate,
     exchangeRate,
-    txBuilder,
-    updateTxBuilder,
+    txBuilderHelpers,
     getFeesByBlockTarget,
     psbtExpectedSize,
     ...modalProps
 }: Props) => {
+    const { updateTxBuilder, updateTxBuilderAsync } = txBuilderHelpers;
+
     const [settings] = useUserWalletSettings();
 
     const getFeeOption = useCallback(
@@ -59,6 +59,13 @@ export const FeesModal = ({
             })
             .catch(noop);
     }, [getFeeOption]);
+
+    const handleFeesSelection = async (feeRate: number) => {
+        updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(feeRate)));
+        updateTxBuilderAsync((txBuilder) => txBuilder.constrainRecipientAmounts());
+
+        modalProps.onClose?.();
+    };
 
     return (
         <Modal
@@ -91,8 +98,7 @@ export const FeesModal = ({
                     <button
                         key={feeRate}
                         onClick={() => {
-                            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(feeRate)));
-                            modalProps.onClose?.();
+                            void handleFeesSelection(feeRate);
                         }}
                         className="fees-selection-button unstyled flex flex-row py-4 px-6 items-center"
                     >
