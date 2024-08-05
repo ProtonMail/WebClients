@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import protonPassIcon from '@proton/pass/assets/protonpass-icon.svg';
+import protonPassIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 import clsx from '@proton/utils/clsx';
 
 import './LobbyLayout.scss';
