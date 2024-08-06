@@ -229,24 +229,26 @@ const ComposerActions = ({
 
                 <div className="flex flex-1">
                     <div className="flex">
-                        <Tooltip title={titleDeleteDraft}>
-                            <Button
-                                icon
-                                disabled={disabled}
-                                onClick={onDelete}
-                                shape="ghost"
-                                className="mr-1 sm:mr-2"
-                                data-testid="composer:delete-draft-button"
-                            >
-                                <Icon name="trash" alt={c('Action').t`Delete draft`} />
-                            </Button>
-                        </Tooltip>
                         {!isSmallViewport && (
-                            <ComposerPasswordActions
-                                isPassword={isPassword}
-                                onPassword={onPassword}
-                                onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
-                            />
+                            <>
+                                <Tooltip title={titleDeleteDraft}>
+                                    <Button
+                                        icon
+                                        disabled={disabled}
+                                        onClick={onDelete}
+                                        shape="ghost"
+                                        className="mr-1 sm:mr-2"
+                                        data-testid="composer:delete-draft-button"
+                                    >
+                                        <Icon name="trash" alt={c('Action').t`Delete draft`} />
+                                    </Button>
+                                </Tooltip>
+                                <ComposerPasswordActions
+                                    isPassword={isPassword}
+                                    onPassword={onPassword}
+                                    onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                                />
+                            </>
                         )}
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton
@@ -291,9 +293,13 @@ const ComposerActions = ({
                                     onClick={onToggleToolbar}
                                     shape="ghost"
                                     data-testid="composer:show-toolbar-button"
+                                    aria-expanded={displayToolbar}
                                     className="flex sm:mx-2"
                                 >
-                                    <Icon name="text-underline" alt={c('Action').t`Display toolbar`} />
+                                    <Icon
+                                        name="text-underline"
+                                        alt={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}
+                                    />
                                 </Button>
                             </div>
                         </Tooltip>
@@ -307,10 +313,11 @@ const ComposerActions = ({
                             editorActionsRef={editorActionsRef}
                             editorMetadata={editorMetadata}
                             onChange={onChange}
-                            showExternalEncryption={isSmallViewport}
+                            isSmallViewport={isSmallViewport}
                             isPassword={isPassword}
                             onPassword={onPassword}
                             onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                            onDelete={onDelete}
                         />
                     </div>
                     <div className="flex-1 flex pr-4">
