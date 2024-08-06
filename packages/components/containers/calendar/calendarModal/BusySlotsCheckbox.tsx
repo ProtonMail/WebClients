@@ -3,7 +3,6 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Info, Toggle } from '@proton/components/components';
-import { useConfig } from '@proton/components/hooks';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS } from '@proton/shared/lib/calendar/constants';
 
 import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
@@ -29,10 +28,9 @@ const BusySlotsLabel = () => (
 );
 
 const BusySlotsCheckbox = ({ value, onChange, disabled }: Props) => {
-    const { APP_NAME } = useConfig();
     const isBusySlotsAvailable = useBusySlotsAvailable(undefined, true);
 
-    if (!isBusySlotsAvailable || APP_NAME !== 'proton-calendar') {
+    if (!isBusySlotsAvailable) {
         return null;
     }
 
