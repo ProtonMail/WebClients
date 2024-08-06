@@ -54,6 +54,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
          * blob. As such creating a biometrics lock is online-only. */
         create: async ({ secret, ttl }, onBeforeCreate) => {
             logger.info(`[BiometricLock] creating biometrics lock`);
+            if (!window.ctxBridge) throw new Error('Biometrics unsupported');
 
             const verified = await auth.confirmPassword(secret);
             if (!verified) throw new Error(c('Error').t`Wrong password`);
@@ -71,7 +72,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
             if (!offlineKD) throw new Error('Missing offline KD');
 
             const keyBytes = crypto.getRandomValues(new Uint8Array(32));
-            await (window as any).ctxBridge.setSecret(BIOMETRICS_KEY, uint8ArrayToString(keyBytes));
+            await window.ctxBridge?.setSecret(BIOMETRICS_KEY, uint8ArrayToString(keyBytes));
 
             const key = await getSymmetricKey(keyBytes);
             const encryptedOfflineKD = await encryptData(
