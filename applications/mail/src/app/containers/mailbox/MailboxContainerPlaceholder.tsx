@@ -37,7 +37,7 @@ const MailboxContainerPlaceholder = ({ showPlaceholder, welcomeFlag, labelID, ch
                     checkedIDs={checkedIDs}
                     onCheckAll={handleCheckAll}
                 />
-                {shouldDisplayTips && tips.length && (
+                {shouldDisplayTips && tips.length > 0 && (
                     <TipBox tips={tips} isDismissed={isTipDismissed} setIsDismissed={setIsTipDismissed} />
                 )}
             </>

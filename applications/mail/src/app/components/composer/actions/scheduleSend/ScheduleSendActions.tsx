@@ -20,6 +20,9 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
 
+import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
 import { isScheduledDuringNight } from './helpers';
 import useScheduleSendFeature from './useScheduleSendFeature';
@@ -30,6 +33,7 @@ interface Props {
     onDropdownToggle: (isOpen: boolean) => void;
     onScheduleSend: (scheduledAt: number) => void;
     scheduledAtUnixTimestamp: number | undefined;
+    composerID: string;
 }
 
 type Actions = {
@@ -54,7 +58,7 @@ const ScheduleSendActions = ({
     onScheduleSend,
     scheduledAtUnixTimestamp,
     onUpsellModalShow,
-}: Omit<Props, 'onDropdownToggle' | 'loading'> & { onUpsellModalShow: () => void }) => {
+}: Omit<Props, 'onDropdownToggle' | 'loading' | 'composerID'> & { onUpsellModalShow: () => void }) => {
     const { canScheduleSendCustom } = useScheduleSendFeature();
     const actions = useMemo(() => {
         const now = new Date();
@@ -151,6 +155,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             onDisplayScheduleSendModal,
             scheduledAtUnixTimestamp: scheduledAt,
             onDropdownToggle,
+            composerID,
             ...rest
         },
         ref
@@ -159,6 +164,8 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
         const handleShowUpsellModal = () => {
             handleUpsellModalDisplay(true);
         };
+
+        const composer = useMailSelector((store) => selectComposer(store, composerID));
 
         const upsellRef = getUpsellRef({
             app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -181,6 +188,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                     ref={ref}
                     title={c('Title').t`Open actions dropdown`}
                     dropdownStyle={{ '--min-width': '23em', '--custom-max-width': '95vw' }}
+                    forceOpen={composer.forceOpenScheduleSend}
                     // contains buttonGroup props
                     {...rest}
                 >
