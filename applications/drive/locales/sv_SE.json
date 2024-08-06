@@ -1015,6 +1015,11 @@
         "Händelse stöds inte"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Inbjuden"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
@@ -3121,9 +3126,6 @@
       "Access denied": [
         "Åtkomst nekad"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Alias ​​kan inte användas när ett extra lösenord är aktiverat i ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
       ],
@@ -3299,8 +3301,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsutrymme tilldelat till dig: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Prenumerationen faktureras till Visionary eller familjepaketets primära administratör."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary och familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
@@ -3317,8 +3319,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Du har gått med i familjepaketet"
+      "You have successfully joined the family group": [
+        "Du har gått med i familjegruppen"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
@@ -4137,7 +4139,7 @@
         "Kontakt borttagen från grupp ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp disken senare"
+        "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp Drive senare"
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
@@ -5133,7 +5135,7 @@
         "Okänt fel"
       ],
       "Unlock drive to recover files": [
-        "Lås upp hårddisken för att återställa filer"
+        "Lås upp Drive för att återställa filer"
       ],
       "Unsaved changes": [
         "Osparade ändringar"
@@ -5142,7 +5144,7 @@
         "Fil stöds inte"
       ],
       "Updating drive search...": [
-        "Uppdaterar hårddisksökning..."
+        "Uppdaterar Drive-sök …"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
@@ -5303,7 +5305,7 @@
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Du kan aktivera aviseringar för att få aviseringar när nya e-postmeddelanden kommer in i den här mappen."
+        "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
@@ -5346,7 +5348,7 @@
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Du har nått det maximala antalet adresser i kontaktgruppen (kontaktgrupperna):"
+        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -6618,6 +6620,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Kom igång för $1"
+      ],
+      "Get started for 1 €": [
+        "Kom igång för 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom igång för CHF 1"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ]
@@ -7117,6 +7128,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Säkra ditt digitala liv med ${ BRAND_NAME } för två personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
       ],
@@ -7166,8 +7180,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
@@ -8878,6 +8892,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } ger dig obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } ger ditt team vad de behöver för att bli mer produktiva och organiserade i sitt arbete med åtkomst till alla ${ BRAND_NAME }-appar och deras premiumfunktioner."
       ],
@@ -8910,6 +8927,9 @@
       ],
       "10 email addresses": [
         "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 användare"
       ],
       "20 email addresses per user": [
         "20 e-postadresser per användare"
@@ -9060,6 +9080,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Unlimited privacy for two": [
+        "Obegränsad integritet för två"
       ],
       "Users won’t be able to manage their calendars": [
         "Användare kommer inte att kunna hantera sina kalendrar"

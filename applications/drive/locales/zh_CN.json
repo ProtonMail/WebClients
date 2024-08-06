@@ -732,6 +732,9 @@
       "Select all": [
         "全选"
       ],
+      "Select billing cycle ${ billingText }": [
+        "选择计费周期 ${ billingText }"
+      ],
       "Select country": [
         "选择国家/地区"
       ],
@@ -948,6 +951,9 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } 个额外的自有域名"
+      ],
       "${ ips } server": [
         "${ ips } 个服务器"
       ],
@@ -995,6 +1001,11 @@
       ],
       "Unsupported event": [
         "不支持的日程"
+      ]
+    },
+    "Badge": {
+      "Invited": [
+        "已被邀请"
       ]
     },
     "bf2023: Deal details": {
@@ -1207,6 +1218,14 @@
       ],
       "Continue your subscription": [
         "继续您的订阅"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate by ${ formattedEndDate } to keep these features:": [
+        "在 ${ formattedEndDate } 前重新激活以保留这些功能："
+      ],
+      "Your subscription is ending soon": [
+        "您的订阅即将结束"
       ]
     },
     "Checkout row": {
@@ -1491,6 +1510,9 @@
       "British Indian Ocean Territory": [
         "英属印度洋领地"
       ],
+      "British Virgin Islands": [
+        "英属维尔京群岛"
+      ],
       "Brunei Darussalam": [
         "文莱达鲁萨兰"
       ],
@@ -1545,6 +1567,9 @@
       "Congo": [
         "刚果（布）"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "刚果民主共和国"
+      ],
       "Congo, Democratic Republic of the": [
         "刚果（金）"
       ],
@@ -1583,6 +1608,9 @@
       ],
       "Dominican Republic": [
         "多米尼加共和国"
+      ],
+      "East Timor": [
+        "东帝汶"
       ],
       "Ecuador": [
         "厄瓜多尔"
@@ -1725,6 +1753,9 @@
       "Ireland": [
         "爱尔兰"
       ],
+      "Islamic Republic of Iran": [
+        "伊朗"
+      ],
       "Isle of Man": [
         "马恩岛"
       ],
@@ -1764,6 +1795,9 @@
       "Kyrgyzstan": [
         "吉尔吉斯斯坦"
       ],
+      "Lao People's Democratic Republic": [
+        "老挝"
+      ],
       "Laos": [
         "老挝"
       ],
@@ -1780,6 +1814,9 @@
         "利比里亚"
       ],
       "Libya": [
+        "利比亚"
+      ],
+      "Libyan Arab Jamahiriya": [
         "利比亚"
       ],
       "Liechtenstein": [
@@ -2049,6 +2086,9 @@
       "Svalbard and Jan Mayen": [
         "斯瓦尔巴和扬马延"
       ],
+      "Swaziland": [
+        "斯威士兰"
+      ],
       "Sweden": [
         "瑞典"
       ],
@@ -2068,6 +2108,9 @@
         "塔吉克斯坦"
       ],
       "Tanzania": [
+        "坦桑尼亚"
+      ],
+      "Tanzania, United Republic of": [
         "坦桑尼亚"
       ],
       "Thailand": [
@@ -2228,6 +2271,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "设置账户恢复方式，防止因遗忘密码而丧失账户使用权。"
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "为了使您的账户受到最高安全保护，请设置恢复短语。"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
@@ -3178,9 +3224,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "分配给您的存储空间：${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "订阅费用由 Visionary 计划或家庭计划的主要管理员支付。"
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary 账户与家庭账户目前不支持第三方平台，请创建 ${ BRAND_NAME } 邮箱地址后再加入。${ addressSettingsLink }"
       ],
@@ -3195,9 +3238,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "有人邀请您加入 ${ bannerOrganization }。${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "您已成功加入家庭账户"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "有人邀请您将 ${ BRAND_NAME } 账户接入此团体账户中，共同享受所有 ${ BRAND_NAME_TWO } 高级功能。"
@@ -4313,6 +4353,9 @@
       "It’s easy and secure": [
         "简便与安全兼得"
       ],
+      "JCB logo": [
+        "JCB 徽标"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
       ],
@@ -4502,6 +4545,9 @@
       "Photos have been successfully recovered.": [
         "照片已成功恢复。"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "请让所有者直接邀请您加入文档。"
+      ],
       "Please authenticate your card in the verification tab.": [
         "请在验证页面完成银行卡核验。"
       ],
@@ -4525,6 +4571,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
+      ],
+      "Please open the document to view it.": [
+        "请打开文档查看。"
       ],
       "Please provide a name and an email address for creating a group.": [
         "请填写名称和邮箱地址以创建群组。"
@@ -4591,6 +4640,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "隐私搜索已启用，您可以关闭对话框并开始搜索文件和文件夹了。"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "暂不支持公开分享。"
       ],
       "Queued": [
         "等待中"
@@ -4738,6 +4790,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "订阅将每${ cycle }个月自动续期。"
       ],
       "Subscription auto-renews every month.": [
         "订阅将每月自动续期。"
@@ -5035,6 +5090,9 @@
       ],
       "Would you like to restore your files?": [
         "想要恢复您的文件吗？"
+      ],
+      "Writing assistant": [
+        "写作助手"
       ],
       "Yes": [
         "是"
@@ -5821,6 +5879,9 @@
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "您取消或降级订阅的主要原因是什么？"
       ],
       "Wonderful": [
         "非常好"
@@ -6770,9 +6831,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }：使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名等高级功能。"
       ],
@@ -7370,14 +7428,41 @@
       "Card number": [
         "卡号"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "当前自动续订已禁用。如果您现在更改订阅，则自动续订将被重新开启。"
+      ],
       "Got it": [
         "好"
       ],
       "MM/YY": [
         "月/年"
       ],
+      "Payment Processing": [
+        "付款处理中"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "请先重新激活您的订阅以减少附加功能。"
+      ],
+      "Please select billing country": [
+        "请选择您的计费国家"
+      ],
+      "Please select billing state": [
+        "请选择账单省（州）"
+      ],
+      "Please select your billing country first.": [
+        "请先选择您的账单国家。"
+      ],
+      "Please select your billing state first.": [
+        "请先选择您的账单省（州）。"
+      ],
+      "Select billing country to pay": [
+        "选择要支付的账单国家"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "特别折扣价 ${ priceWithDiscount } 仅首月有效，之后将以每月 ${ price } 的价格自动续订，您可随时取消。"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "我们正在处理您的付款信息。请等待付款完成后再更改您的计划或更新您的付款详细信息。感谢您的耐心等待。"
       ]
     },
     "Payments.Error": {
@@ -7499,6 +7584,9 @@
       ],
       "Set date": [
         "设置日期"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Start typing an email address": [
         "请输入邮箱地址"
@@ -8055,6 +8143,11 @@
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正在取消您的订阅，请稍候。"
+      ]
+    },
     "Status": {
       "Accepted": [
         "已接受"
@@ -8179,6 +8272,11 @@
         "订阅"
       ]
     },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "总计${ totalPrice }"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "剩余 ${ dayDiff } 天"
@@ -8207,20 +8305,59 @@
       "10 email addresses": [
         "10 个邮箱地址"
       ],
+      "20 email addresses per user": [
+        "每位用户 20 个邮箱地址"
+      ],
+      "25 calendars per user": [
+        "每位用户 25 个日历"
+      ],
       "6 users": [
         "6 位用户"
+      ],
+      "Add any new files": [
+        "添加任意文件"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "您的 ${ planName } 订阅到期后，您将被降级为 ${ BRAND_NAME } 免费计划。该计划仅提供至多1GB的邮件存储和最多5GB的网盘存储。 您还将失去所有先前获得的额外存储空间。"
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "您的 ${ planName } 订阅到期后，您将被降级为 ${ BRAND_NAME } 免费计划。该计划仅提供至多5GB的网盘存储和至多1GB的邮件存储。您还将失去所有先前获得的额外存储空间。"
+      ],
+      "All you need for your business": [
+        "您的业务所需的一切"
+      ],
+      "Any custom email domains will be disabled": [
+        "任何自定义电子邮件域名都将被禁用"
       ],
       "Automatic email forwarding": [
         "自动转发邮件"
       ],
+      "Back up photos from your devices": [
+        "从您的设备上备份照片"
+      ],
       "Calendar sharing": [
         "日历共享"
+      ],
+      "Catch-all email address": [
+        "通配邮件地址"
       ],
       "Custom schedule send and snooze times": [
         "自由调整定时发送和延迟通知时间"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "桌面应用程序和电子邮件客户端支持（IMAP）"
+      ],
       "Early access to new apps and features": [
         "抢先访问新应用和功能"
+      ],
+      "Email productivity features": [
+        "电子邮件生产力功能"
+      ],
+      "Extra storage and bonuses": [
+        "额外储存空间和奖励"
+      ],
+      "Extra storage and users": [
+        "额外存储空间和用户"
       ],
       "Learn more": [
         "了解更多信息"
@@ -8231,14 +8368,35 @@
       "Priority support": [
         "优先支持"
       ],
+      "Productivity features": [
+        "生产力功能"
+      ],
+      "Stay secure and connected anywhere": [
+        "随时保持安全和连接"
+      ],
       "Unlimited folders and labels": [
         "文件夹和标签不限量"
       ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
       ],
+      "Users won’t be able to manage their calendars": [
+        "用户将无法管理他们的日历"
+      ],
+      "Users won’t be able to send emails": [
+        "用户将无法发送电子邮件"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "用户将无法同步他们设备上的文件"
+      ],
       "Version history": [
         "版本历史"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "当您取消 ${ planName } 订阅后，您将被降级为 ${ BRAND_NAME } 免费计划。该计划仅提供至多1GB的邮件存储和最多5GB的网盘存储。 您还将失去所有先前获得的额外存储空间。"
+      ],
+      "Yearly free storage bonuses": [
+        "年度免费存储奖励"
       ]
     },
     "subscription reminder": {
@@ -8627,6 +8785,9 @@
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
+      "Coupon": [
+        "优惠券"
+      ],
       "Create a new file": [
         "新建文件"
       ],
@@ -8797,6 +8958,9 @@
       ],
       "Import failed": [
         "导入失败"
+      ],
+      "Import groups": [
+        "导入群组"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -9266,8 +9430,14 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "每个钱包${ n }个 账户"
+      ],
       "${ n } email address": [
         "${ n } 个邮箱地址"
+      ],
+      "${ n } wallet": [
+        "${ n } 个钱包"
       ]
     },
     "Warning": {

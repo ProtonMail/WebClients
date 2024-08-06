@@ -1019,6 +1019,11 @@
         "Ikke-understøttet begivenhed"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Inviteret"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -3122,9 +3127,6 @@
       "Access denied": [
         "Adgang nægtet"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasser kan ikke bruges, når en ekstra adgangskode er aktiveret i ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
       ],
@@ -3157,6 +3159,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Med ekstra adgangskode aktiveret kan håndteringen af alias kun ske i ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
         "Du kan også opfriske siden, eller forsøge igen senere."
@@ -3300,8 +3305,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagerplads tildelt dig: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonnementet faktureres til Visionary- eller Family-abonnementets primære administrator."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonnementet faktureres til den primære administrator af denne abonnement."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
@@ -3318,8 +3323,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Du er tilmeldt familie-abonnementet."
+      "You have successfully joined the family group": [
+        "Du er blevet medlem af familiegruppen"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
@@ -6550,6 +6555,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
       "Upgrade now": [
         "Opgradér nu"
       ]
@@ -7055,6 +7069,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sikr dit digitale liv med ${ BRAND_NAME } for to personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skræddersyede løsninger til større organisationer med specifikke sikkerhedsbehov"
       ],
@@ -7099,8 +7116,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og mere."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
@@ -8808,6 +8825,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } giver dig ubegrænset privatliv og mere lagerplads til op til 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } giver dit team det, de har brug for at være mere produktive og organiserede i deres arbejde med adgang til alle ${ BRAND_NAME }-apps og deres premiumfunktioner."
       ],
@@ -8843,6 +8863,9 @@
       ],
       "10 email addresses": [
         "10 e-mailadresse"
+      ],
+      "2 users": [
+        "2 brugere"
       ],
       "20 email addresses per user": [
         "20 e-mailadresser pr. bruger"
@@ -8996,6 +9019,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited privacy for two": [
+        "Ubegrænset privatliv for to"
       ],
       "Users won’t be able to manage their calendars": [
         "Brugerne vil ikke kunne håndtere deres kalendere"
