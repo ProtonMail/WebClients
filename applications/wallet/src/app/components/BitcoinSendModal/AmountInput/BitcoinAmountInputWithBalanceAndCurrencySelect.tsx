@@ -126,7 +126,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                 <div className="shrink-0">
                     <CurrencySelect
                         dense
-                        popularSymbols={['BTC', ...DEFAULT_POPULAR_SYMBOLS]}
+                        popularSymbols={['BTC', 'SATS', ...DEFAULT_POPULAR_SYMBOLS]}
                         options={[BITCOIN_CURRENCY, SATS_CURRENCY, ...(currencies ?? [])]}
                         value={exchangeRateSymbolOrBitcoinUnit}
                         onSelect={(u) => handleChange(u)}
