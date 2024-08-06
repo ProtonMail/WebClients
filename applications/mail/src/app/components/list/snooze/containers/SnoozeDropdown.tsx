@@ -1,4 +1,5 @@
 import type { MouseEvent } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +8,8 @@ import { useApi, useUser } from '@proton/components/hooks';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { selectSnoozeDropdownState } from 'proton-mail/store/snooze/snoozeSliceSelectors';
 
 import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useSnooze from '../../../../hooks/actions/useSnooze';
@@ -32,6 +34,15 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
 
     const { anchorRef, isOpen, toggle, close: dropdownClose } = usePopperAnchor<HTMLButtonElement>();
     const { canSnooze, canUnsnooze, snooze, unsnooze, handleClose, handleCustomClick, snoozeState } = useSnooze();
+
+    const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+
+    useEffect(() => {
+        if (snoozeDropdownState === 'forceOpen') {
+            dispatch(snoozeActions.setSnoozeDropdownOpen());
+            toggle();
+        }
+    }, [snoozeDropdownState]);
 
     if (!elements.length || (!canSnooze && !canUnsnooze)) {
         return null;
@@ -79,7 +90,7 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
 
             dispatch(
                 snoozeActions.setSnoozeDropdown({
-                    dropdownState: true,
+                    dropdownState: 'open',
                     element: elements[0],
                 })
             );

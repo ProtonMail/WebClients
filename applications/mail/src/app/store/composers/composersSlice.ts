@@ -27,12 +27,23 @@ const composersSlice = createSlice({
             state,
             action: PayloadAction<
                 Optional<
-                    Pick<Composer, 'messageID' | 'type' | 'senderEmailAddress' | 'recipients' | 'status'>,
+                    Pick<
+                        Composer,
+                        'messageID' | 'type' | 'senderEmailAddress' | 'recipients' | 'status' | 'forceOpenScheduleSend'
+                    >,
                     'recipients'
                 > & { ID?: string }
             >
         ) {
-            const { ID = getComposerUID(), messageID, type, senderEmailAddress, recipients, status } = action.payload;
+            const {
+                ID = getComposerUID(),
+                messageID,
+                type,
+                senderEmailAddress,
+                recipients,
+                status,
+                forceOpenScheduleSend,
+            } = action.payload;
 
             const composer = {
                 ID,
@@ -46,6 +57,7 @@ const composersSlice = createSlice({
                     BCCList: recipients?.BCCList || [],
                 },
                 status,
+                forceOpenScheduleSend,
             } as Composer;
 
             state.composers[composer.ID] = composer;
