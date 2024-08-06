@@ -1,20 +1,12 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
-export type ContextBridgeApi = {
-    writeToClipboard: (text: string) => Promise<void>;
-    canCheckPresence: () => Promise<boolean>;
-    checkPresence: (reason?: string) => Promise<boolean>;
-    getDecryptionKey: (challenge: string) => Promise<Buffer | null>;
-    getSecret: (key: string) => Promise<string>;
-    setSecret: (key: string, data: string) => Promise<void>;
-    deleteSecret: (key: string) => Promise<void>;
-};
+import type { ContextBridgeApi } from '@proton/pass/types';
 
 const contextBridgeApi: ContextBridgeApi = {
-    // clipboard
+    /* clipboard */
     writeToClipboard: (text: string) => ipcRenderer.invoke('clipboard:writeText', text),
 
-    // secrets
+    /* secrets */
     canCheckPresence: () => ipcRenderer.invoke('biometrics:canCheckPresence'),
     checkPresence: (reason?: string) => ipcRenderer.invoke('biometrics:checkPresence', reason),
     getDecryptionKey: (challenge: string) => ipcRenderer.invoke('biometrics:getDecryptionKey', challenge),
