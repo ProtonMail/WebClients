@@ -56,15 +56,15 @@ function getMetricName(fileName: string) {
     return fileName.replace(/_v\d.schema.d.ts/, '');
 }
 
-function getVersion(fileName: string) {
+function getVersion(fileName: string): number {
     const regex = /_v(\d+)\.schema\.d\.ts/;
     const match = fileName.match(regex);
 
     if (!match) {
-        return '';
+        return NaN;
     }
 
-    return match[1];
+    return parseInt(match[1]);
 }
 
 function getVersionInMetricsClassByName(metricsClass: string, metricName: string) {
@@ -79,7 +79,7 @@ async function handleFile(fileName: string) {
     const type = getType(fileName);
     const propName = getPropName(fileName);
     const metricName = getMetricName(fileName);
-    const version = parseInt(getVersion(fileName));
+    const version = getVersion(fileName);
 
     const parsedFile: ParsedFile = {
         importName,
