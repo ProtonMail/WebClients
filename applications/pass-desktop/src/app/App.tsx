@@ -104,15 +104,11 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 
     prepareImport: prepareImport,
     getLogs: logStore.read,
-    writeToClipboard: window.ctxBridge.writeToClipboard,
-    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-    onSetupBiometrics: async (authStore: AuthStore) => {
-        throw new Error('TODO: Not implemented - see biometrics lock adapter instead');
-    },
+    writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
     getBiometricsKey: async (authStore: AuthStore) => {
         const encryptedKD = authStore.getEncryptedOfflineKD();
         if (!encryptedKD) return;
-        const biometricsKey = await window.ctxBridge.getSecret(BIOMETRICS_KEY).catch(noop);
+        const biometricsKey = await window.ctxBridge?.getSecret(BIOMETRICS_KEY).catch(noop);
         return biometricsKey;
     },
 });
