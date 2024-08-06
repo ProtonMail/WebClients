@@ -333,7 +333,6 @@ export const PersonalCalendarModal = ({
                     {calendarNameRow}
                     {descriptionRow}
                     {colorRow}
-                    {busySlotsCheckbox}
                 </>
             );
         }
