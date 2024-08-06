@@ -144,8 +144,9 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
                 const offlineEncryptedKD = authStore.getEncryptedOfflineKD();
 
                 if (!(offlineConfig && offlineVerifier && offlineEncryptedKD)) {
-                    throw new PassCryptoError('Invalid biometrics lock');
+                    throw new PassCryptoError('Invalid biometric lock');
                 }
+
                 const biometricsCryptoKey = await getSymmetricKey(stringToUint8Array(biometricsSecret));
                 const offlineKD = await decryptData(
                     biometricsCryptoKey,
@@ -182,7 +183,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService): LockAdapter => 
 
                 await setRetryCount(retryCount).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
-                throw Error(c('Error').t`Invalid unlock key`);
+                throw Error(c('Error').t`Biometric authentication failed`);
             }
         },
     };
