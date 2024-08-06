@@ -346,8 +346,6 @@ const useTips = () => {
     };
 
     const tips = loading ? [] : tipMessages.filter((tip) => showTip(tip.action));
-    console.log({ tips });
-
     return {
         tips,
         isTipDismissed,
