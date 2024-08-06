@@ -147,8 +147,16 @@ function isSupportedLocale(locale: string): boolean {
     return SUPPORTED_LLM_LANGS.some((prefix) => locale.startsWith(prefix));
 }
 
+function getCustomStopStringsForAction(action: Action): string[] {
+    switch (action.type) {
+        case 'writeFullEmail':
+            return STOP_STRINGS_WRITE_FULL_EMAIL;
+        default:
+            return STOP_STRINGS_REFINE;
+    }
+}
+
 const makeRefineCleanup = (action: Action) => {
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     const customStopStrings = getCustomStopStringsForAction(action);
     const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
     return (fulltext: string): string => {
@@ -729,15 +737,6 @@ export function getTransformForAction(action: Action): TransformCallback {
             return makeTransformWriteFullEmail(action.sender);
         default:
             return makeRefineCleanup(action);
-    }
-}
-
-function getCustomStopStringsForAction(action: Action): string[] {
-    switch (action.type) {
-        case 'writeFullEmail':
-            return STOP_STRINGS_WRITE_FULL_EMAIL;
-        default:
-            return STOP_STRINGS_REFINE;
     }
 }
 
