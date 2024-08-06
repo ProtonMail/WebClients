@@ -133,7 +133,7 @@ const OpenVPNConfigurationSection = ({
     }, [allServers, isUpgradeRequiredForCountries]);
 
     const freeServers = useMemo(() => {
-        return allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
+        return allServers.filter(({ Tier }) => Tier === 0);
     }, [allServers]);
 
     useEffect(() => {
@@ -326,6 +326,7 @@ const OpenVPNConfigurationSection = ({
                             protocol={protocol}
                             loading={loading}
                             servers={allServers}
+                            defaultOpen={false}
                             onSelect={onSelect}
                             selecting={selecting}
                             countryOptions={countryOptions}
@@ -347,6 +348,7 @@ const OpenVPNConfigurationSection = ({
                             protocol={protocol}
                             loading={loading}
                             servers={freeServers}
+                            defaultOpen={true}
                             onSelect={onSelect}
                             selecting={selecting}
                         />
