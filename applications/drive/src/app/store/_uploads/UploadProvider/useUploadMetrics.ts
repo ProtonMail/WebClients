@@ -8,6 +8,7 @@ import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import useShareState from '../../_shares/useSharesState';
 import { isVerificationError } from '../worker/verifier';
+import type { FileUploadReady } from './interface';
 
 // TODO: DRVWEB-4123 Unify Share Types
 export enum UploadShareType {
@@ -25,6 +26,13 @@ export enum UploadErrorCategory {
     Unknown = 'unknown',
 }
 
+export interface FailedUploadMetadata {
+    shareId: string;
+    numberOfErrors: number;
+    encryptedTotalTransferSize: number;
+    roundedUnencryptedFileSize: number;
+}
+
 const IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE = [
     UploadErrorCategory.FreeSpaceExceeded,
     UploadErrorCategory.TooManyChildren,
@@ -32,6 +40,20 @@ const IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE = [
 ];
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
+
+const ROUND_BYTES = 10000; // For privacy we round file.size metrics to 10k bytes
+
+export const getFailedUploadMetadata = (
+    nextFileUpload: FileUploadReady,
+    progresses: {
+        [x: string]: number;
+    }
+): FailedUploadMetadata => ({
+    shareId: nextFileUpload.shareId,
+    numberOfErrors: nextFileUpload.numberOfErrors,
+    encryptedTotalTransferSize: Object.values(progresses).reduce((sum, value) => sum + value, 0),
+    roundedUnencryptedFileSize: Math.max(Math.round(nextFileUpload.file.size / ROUND_BYTES) * ROUND_BYTES, ROUND_BYTES),
+});
 
 export default function useUploadMetrics(isPaid: boolean, metricsModule = metrics) {
     const lastErroringUserReport = useRef(0);
@@ -59,10 +81,10 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         });
     };
 
-    const uploadFailed = (shareId: string, error: any, numberOfErrors = 0) => {
-        const shareType = getShareIdType(shareId);
+    const uploadFailed = (failedUploadMetadata: FailedUploadMetadata, error: any) => {
+        const shareType = getShareIdType(failedUploadMetadata.shareId);
         const errorCategory = getErrorCategory(error);
-        const retry = numberOfErrors > 1;
+        const retry = failedUploadMetadata.numberOfErrors > 1;
 
         if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory)) {
             metricsModule.drive_upload_success_rate_total.increment({
@@ -72,10 +94,23 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
                 initiator: 'explicit',
             });
         }
+        // Type of error
         metricsModule.drive_upload_errors_total.increment({
             type: errorCategory,
             shareType: shareType === UploadShareType.Own ? 'main' : shareType,
             initiator: 'explicit',
+        });
+
+        // How many encrypted bytes were sent before it failed
+        metricsModule.drive_upload_errors_transfer_size_histogram.observe({
+            Value: failedUploadMetadata.encryptedTotalTransferSize,
+            Labels: {},
+        });
+
+        // Rounded unencrypted file size of the file that failed the upload
+        metricsModule.drive_upload_errors_file_size_histogram.observe({
+            Value: failedUploadMetadata.roundedUnencryptedFileSize,
+            Labels: {},
         });
 
         if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {

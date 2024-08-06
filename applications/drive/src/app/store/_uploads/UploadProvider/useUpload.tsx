@@ -33,7 +33,7 @@ import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
 import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
-import useUploadMetrics from './useUploadMetrics';
+import useUploadMetrics, { getFailedUploadMetadata } from './useUploadMetrics';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
 export default function useUpload(): [UploadProviderState, UploadModalContainer] {
@@ -267,7 +267,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
-                        metrics.uploadFailed(nextFileUpload.shareId, error, nextFileUpload.numberOfErrors);
+                        metrics.uploadFailed(getFailedUploadMetadata(nextFileUpload, control.getProgresses()), error);
                     }
 
                     // If the error is 429 (rate limited), we should not continue
