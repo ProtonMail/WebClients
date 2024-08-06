@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 
+import { groupBy } from 'lodash';
+
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import compare from '@proton/utils/compare';
-import groupWith from '@proton/utils/groupWith';
 
 import { Details, Summary } from '../../../components';
 import type { CountryOptions } from '../../../helpers/countries';
@@ -34,28 +35,18 @@ interface Props {
 const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions, ...rest }: Props) => {
     // Free servers at the top, then sorted by Name#ID
     const sortedGroups = useMemo(() => {
-        const groupedServers = groupWith(
-            (a, b) => a.country === b.country,
-            servers.filter(({ Features = 0 }) => !isSecureCoreEnabled(Features))
+        const groupedServers = groupBy(
+            servers.filter(({ Features = 0 }) => !isSecureCoreEnabled(Features)),
+            (a) => a.country
         );
 
-        return groupedServers.map((group) => {
-            const sortedList = group.sort(serverNameAsc);
-
-            const [freeServers, otherServers] = sortedList.reduce<[EnhancedLogical[], EnhancedLogical[]]>(
-                (acc, logical) => {
-                    if (logical.Name.includes('FREE')) {
-                        acc[0].push(logical);
-                    } else {
-                        acc[1].push(logical);
-                    }
-                    return acc;
-                },
-                [[], []]
-            );
-
-            return [...freeServers, ...otherServers].map((server) => {
-                return server;
+        return Object.values(groupedServers).map((group) => {
+            return group.sort((a, b) => {
+                const freeAsc = +b.Name.includes('FREE') - +a.Name.includes('FREE');
+                if (freeAsc !== 0) {
+                    return freeAsc;
+                }
+                return serverNameAsc(a, b);
             });
         });
     }, [servers]);
