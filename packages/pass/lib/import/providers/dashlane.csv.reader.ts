@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
+import { FileKey, groupItems } from '@proton/pass/lib/import/builders/dashlane.builder';
 import {
     processCreditCardItem,
     processIdentityItem,
     processLoginItem,
     processNoteItem,
 } from '@proton/pass/lib/import/providers/dashlane.zip.reader';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -15,14 +14,6 @@ import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { DashlaneItem, ParserFunction } from './dashlane.types';
-
-enum FileKey {
-    Login = 'Login',
-    Ids = 'Ids',
-    Payments = 'Payments',
-    PersonalInfo = 'PersonalInfo',
-    SecureNotes = 'SecureNotes',
-}
 
 const Criteria = {
     [FileKey.Login]: {
@@ -57,23 +48,6 @@ const getParser = (item: DashlaneItem): [ParserFunction, FileKey] => {
     }
 
     throw new Error(c('Error').t`Unknown item`);
-};
-
-const groupItems = (items: ItemImportIntent[], itemKey: FileKey) => {
-    const shouldGroupItems = oneOf(FileKey.Ids, FileKey.PersonalInfo)(itemKey);
-
-    if (!shouldGroupItems) return items;
-
-    // Dashlane creates N entries for each piece of identity information.
-    // We need to create a single object with all these entries.
-    return [
-        items.reduce<any>((acc, { content }) => {
-            Object.entries(content).forEach(([k, v]) => {
-                if (acc.content[k] === '') acc.content[k] = v;
-            });
-            return acc;
-        }, items[0]),
-    ];
 };
 
 export const readDashlaneDataCSV = async ({

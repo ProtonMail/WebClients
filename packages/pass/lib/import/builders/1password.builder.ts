@@ -69,7 +69,7 @@ const build1PassBaseIdentity =
 export const build1PassLegacyIdentity = build1PassBaseIdentity<OnePassLegacySectionField, OnePassLegacySection>(
     (acc: Partial<ItemContent<'identity'>>, { n, v }) => {
         const identityFieldName = onePasswordDictionary[n];
-        return identityFieldName ? { ...acc, [identityFieldName]: v } : acc;
+        return identityFieldName ? { ...acc, [identityFieldName]: v ?? '' } : acc;
     }
 );
 

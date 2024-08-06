@@ -1,8 +1,18 @@
+import type { IdentityFieldName } from '@proton/pass/hooks/identity/useIdentityForm';
 import type { DashlaneIdItem, DashlanePersonalInfoItem } from '@proton/pass/lib/import/providers/dashlane.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent } from '@proton/pass/types';
+import type { ItemContent, ItemImportIntent } from '@proton/pass/types';
+import { oneOf } from '@proton/pass/utils/fp/predicates';
 
 import type { IdentityDictionary } from './builders.types';
+
+export enum FileKey {
+    Login = 'Login',
+    Ids = 'Ids',
+    Payments = 'Payments',
+    PersonalInfo = 'PersonalInfo',
+    SecureNotes = 'SecureNotes',
+}
 
 const dashlaneDictionary: IdentityDictionary = {
     address: 'streetAddress',
@@ -42,4 +52,22 @@ export const buildDashlaneIdentity = (item: DashlanePersonalInfoItem | DashlaneI
         const field = dashlaneDictionary[key];
         return field ? { ...acc, [field]: value } : acc;
     }, itemBuilder('identity').data.content);
+};
+
+export const groupItems = (items: ItemImportIntent[], itemKey: FileKey) => {
+    const shouldGroupItems = oneOf(FileKey.Ids, FileKey.PersonalInfo)(itemKey);
+
+    if (!shouldGroupItems) return items;
+
+    // Dashlane creates N entries for each piece of identity information.
+    // We need to create a single object with all these entries.
+    return [
+        items.reduce<ItemImportIntent<'identity'>>((acc, { content }) => {
+            Object.entries(content).forEach(([k, v]) => {
+                const key = k as IdentityFieldName;
+                if (!acc.content[key]) acc.content[key] = v ?? '';
+            });
+            return acc;
+        }, items[0] as ItemImportIntent<'identity'>),
+    ];
 };

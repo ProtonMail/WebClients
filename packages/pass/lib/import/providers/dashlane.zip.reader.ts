@@ -1,9 +1,8 @@
 import jszip from 'jszip';
 
-import { buildDashlaneIdentity } from '@proton/pass/lib/import/builders/dashlane.builder';
+import { FileKey, buildDashlaneIdentity, groupItems } from '@proton/pass/lib/import/builders/dashlane.builder';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
@@ -44,6 +43,43 @@ const DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS: (keyof DashlanePaymentItem)[] = [
     'code',
     'expiration_month',
     'expiration_year',
+];
+
+const DASHLANE_IDS_EXPECTED_HEADERS: (keyof DashlaneIdItem)[] = [
+    'type',
+    'number',
+    'name',
+    'issue_date',
+    'expiration_date',
+    'place_of_issue',
+    'state',
+];
+
+const DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS: (keyof DashlanePersonalInfoItem)[] = [
+    'type',
+    'address',
+    'address_apartment',
+    'address_building',
+    'address_door_code',
+    'address_floor',
+    'address_recipient',
+    'city',
+    'country',
+    'date_of_birth',
+    'email',
+    'email_type',
+    'first_name',
+    'item_name',
+    'job_title',
+    'last_name',
+    'login',
+    'middle_name',
+    'phone_number',
+    'place_of_birth',
+    'state',
+    'title',
+    'url',
+    'zip',
 ];
 
 export const processLoginItem = (item: DashlaneLoginItem, importUsername?: boolean): ItemImportIntent<'login'> =>
@@ -139,28 +175,31 @@ export const readDashlaneDataZIP = async ({
             })
         ).map(processCreditCardItem);
 
-        /* unsupported ids */
-        const ids = await parseDashlaneCSV<DashlaneIdItem>({
-            data: await zipFile.file('ids.csv')?.async('string'),
-            headers: ['type', 'number'],
-        });
+        const ids = groupItems(
+            (
+                await parseDashlaneCSV<DashlaneIdItem>({
+                    data: await zipFile.file('ids.csv')?.async('string'),
+                    headers: DASHLANE_IDS_EXPECTED_HEADERS,
+                })
+            ).map(processIdentityItem),
+            FileKey.Ids
+        );
 
-        /* unsupported personal info */
-        const personalInfos = await parseDashlaneCSV<DashlanePersonalInfoItem>({
-            data: await zipFile.file('personalInfo.csv')?.async('string'),
-            headers: ['title'],
-        });
-
-        ignored.push(
-            ...ids.map(({ type, name }) => `[${capitalize(type ?? 'ID')}] ${name || 'Unknown ID'}`),
-            ...personalInfos.map(({ title }) => `[Personal Info] ${title || 'Unnamed'}`)
+        const personalInfos = groupItems(
+            (
+                await parseDashlaneCSV<DashlanePersonalInfoItem>({
+                    data: await zipFile.file('personalInfo.csv')?.async('string'),
+                    headers: DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS,
+                })
+            ).map(processIdentityItem),
+            FileKey.PersonalInfo
         );
 
         const vaults: ImportVault[] = [
             {
                 name: getImportedVaultName(),
                 shareId: null,
-                items: [...loginItems, ...noteItems, ...creditCards],
+                items: [...loginItems, ...noteItems, ...creditCards, ...ids, ...personalInfos],
             },
         ];
 
