@@ -196,7 +196,7 @@ export const LockSettings: FC = () => {
     useEffect(() => {
         (async () => {
             if (!DESKTOP_BUILD || currentLockMode === LockMode.BIOMETRICS) return;
-            const canCheckPresence = await (window as any).ctxBridge.canCheckPresence();
+            const canCheckPresence = (await window.ctxBridge?.canCheckPresence?.()) ?? false;
             setBiometricsOptionEnabled(canCheckPresence && biometricsRolledOut);
         })().catch(noop);
     }, [currentLockMode, biometricsRolledOut]);
