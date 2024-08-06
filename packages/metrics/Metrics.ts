@@ -30,7 +30,6 @@ import type { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_sq
 import type { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
 import type { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from './types/drive_download_erroring_users_total_v1.schema';
-import type { HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson } from './types/drive_download_errors_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from './types/drive_download_errors_total_v2.schema';
 import type { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_block_verification_errors_total_v1.schema';
@@ -425,11 +424,6 @@ class Metrics extends MetricsBase {
                 { name: 'drive_download_erroring_users_total', version: 1 },
                 this.requestService
             );
-
-        this.drive_download_errors_total = new Counter<HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson>(
-            { name: 'drive_download_errors_total', version: 1 },
-            this.requestService
-        );
 
         this.drive_download_errors_total = new Counter<HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson>(
             { name: 'drive_download_errors_total', version: 2 },
