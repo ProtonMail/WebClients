@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { groupBy } from 'lodash';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
@@ -7,7 +8,6 @@ import { SettingsSectionWide } from '@proton/components/containers';
 import type { EnhancedLogical } from '@proton/components/containers/vpn/OpenVPNConfigurationSection/interface';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
-import groupWith from '@proton/utils/groupWith';
 
 import { Block, Icon, Info, Radio, RadioGroup, SettingsLink } from '../../../components';
 import {
@@ -110,23 +110,27 @@ const OpenVPNConfigurationSection = ({
             });
     }, [allServers, isUpgradeRequiredForSecureCore]);
 
-    const countryServers = groupWith(
-        (a, b) => a.ExitCountry === b.ExitCountry,
-        allServers.filter(({ Tier, Features }) => {
-            return Tier === 2 && !isSecureCoreEnabled(Features) && !isTorEnabled(Features);
-        })
-    ).map((groups) => {
-        const [first] = groups;
-        const activeServers = groups.filter(({ Status }) => Status === 1);
-        const load = activeServers.reduce((acc, { Load }) => acc + (Load || 0), 0) / activeServers.length;
-        return {
-            ...first,
-            isUpgradeRequired: isUpgradeRequiredForCountries,
-            Load: Number.isNaN(load) ? 0 : Math.round(load),
-            Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.net`, // Forging domain
-            Servers: groups.flatMap((logical) => logical.Servers || []),
-        };
-    });
+    const countryServers = useMemo(() => {
+        return Object.values(
+            groupBy(
+                allServers.filter(({ Tier, Features }) => {
+                    return Tier === 2 && !isSecureCoreEnabled(Features) && !isTorEnabled(Features);
+                }),
+                (a) => a.ExitCountry
+            )
+        ).map((groups) => {
+            const [first] = groups;
+            const activeServers = groups.filter(({ Status }) => Status === 1);
+            const load = activeServers.reduce((acc, { Load }) => acc + (Load || 0), 0) / activeServers.length;
+            return {
+                ...first,
+                isUpgradeRequired: isUpgradeRequiredForCountries,
+                Load: Number.isNaN(load) ? 0 : Math.round(load),
+                Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.net`, // Forging domain
+                Servers: groups.flatMap((logical) => logical.Servers || []),
+            };
+        });
+    }, [allServers, isUpgradeRequiredForCountries]);
 
     const freeServers = useMemo(() => {
         return allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
