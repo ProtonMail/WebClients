@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
+      "Accept": [
+        "Принять"
       ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -123,6 +126,9 @@
       ],
       "Add PayPal": [
         "Добавить PayPal"
+      ],
+      "Add phone number": [
+        "Добавить номер телефона"
       ],
       "Add public holidays": [
         "Добавить государственные праздники"
@@ -324,6 +330,9 @@
       ],
       "Customize plan": [
         "Настроить тариф"
+      ],
+      "Decline": [
+        "Отклонить"
       ],
       "Decrease": [
         "Уменьшить"
@@ -703,10 +712,10 @@
       "No, thanks": [
         "Нет, спасибо"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -769,11 +778,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1403,11 +1412,8 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Более быстрая и широкая совместимость устройств"
-      ],
-      "Run locally": [
-        "Запустить локально"
+      "Fast and secure. No logs are kept.": [
+        "Быстро и безопасно. Журналы не сохраняются."
       ],
       "Run on servers": [
         "Выполнять на серверах"
@@ -1558,6 +1564,14 @@
         "Выберите Новогоднее предложение"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1579,14 +1593,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5059,20 +5065,11 @@
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Отключиться от семейного тарифа"
-      ],
-      "Leave visionary plan": [
-        "Покинуть тариф Visionary"
-      ],
       "Manage addresses.": [
         "Управляйте адресами."
       ],
       "Manage user accounts": [
         "Управление аккаунтами пользователей"
-      ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "За полгода может быть принято не более 10 приглашений."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
@@ -5091,9 +5088,6 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Доступный объем хранилища: ${ assignedStorage }"
-      ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Подписка оплачивается основным администратором семейного плана или тарифа Visionary."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Для облегчения перехода мы дарим вам 30-дневную пробную версию ${ BRAND_NAME } Unlimited*."
@@ -5115,15 +5109,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Вы достигли предела в 10 принятых приглашений за 6 месяцев."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Вы достигли лимита в 10 принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной."
-      ],
-      "You have successfully joined the Family plan": [
-        "Вы успешно присоединились к тарифу Family"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
@@ -5237,9 +5222,6 @@
       ],
       "Family name": [
         "Название семьи"
-      ],
-      "Family plan": [
-        "Тариф Family"
       ],
       "Invite a user": [
         "Пригласить пользователя"
@@ -6932,11 +6914,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -8267,9 +8249,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Проверка может занять до одного часа. После успешной проверки не удаляйте запись TXT, так как она необходима для подтверждения того, что вы продолжаете владеть доменом."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Это удалит все предыдущие версии ваших файлов, старше ${ rententionLabel }."
       ],
@@ -8965,9 +8944,6 @@
       ],
       "Your recovery phrase": [
         "Ваша фраза для восстановления"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ваша фраза для восстановления – это набор из 12 слов в определенном порядке."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
@@ -11992,9 +11968,6 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
-      ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает историю версий, общий доступ к зашифрованным файлам и многое другое."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
@@ -15884,10 +15857,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -17529,9 +17502,6 @@
       "Join ${ appName } early access!": [
         "Присоединитесь к ${ appName } для раннего доступа!"
       ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "Зарегистрируйтесь для Free аккаунта ${ BRAND_NAME }, чтобы закрепить свое место. Чем раньше вы зарегистрируетесь, тем скорее получите доступ к ${ appName }."
-      ],
       "Unlock ${ appName } premium features by upgrading": [
         "Разблокируйте платные функции ${ appName }, улучшив тариф"
       ],
@@ -17553,6 +17523,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
+        "${ WALLET_APP_NAME } находится в раннем доступе. Вы можете скачать приложение iOS через Apple TestFlight и Android через открытое Google-тестирование."
+      ],
       "Coming soon": [
         "Скоро"
       ]

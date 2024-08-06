@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
+      "Accept": [
+        "Accepta"
       ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -123,6 +126,9 @@
       ],
       "Add PayPal": [
         "Afegir PayPal"
+      ],
+      "Add phone number": [
+        "Afegeix número de telèfon"
       ],
       "Add public holidays": [
         "Afegeix dies festius"
@@ -324,6 +330,9 @@
       ],
       "Customize plan": [
         "Personalitza el pla"
+      ],
+      "Decline": [
+        "Rebutja"
       ],
       "Decrease": [
         "Redueix"
@@ -689,7 +698,7 @@
         "Necessiteu ajuda?"
       ],
       "New group": [
-        "Grup nou"
+        "Crea un grup"
       ],
       "Next": [
         "Següent"
@@ -703,10 +712,10 @@
       "No, thanks": [
         "No, gràcies"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open": [
@@ -769,17 +778,20 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
       ],
       "Remove": [
         "Esborra"
+      ],
+      "Remove all members": [
+        "Suprimeix tots els membres"
       ],
       "Remove bonuses": [
         "Esborra les bonificacions"
@@ -1401,11 +1413,8 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Compatibilitat amb dispositius més ràpida i àmplia"
-      ],
-      "Run locally": [
-        "Executa localment"
+      "Fast and secure. No logs are kept.": [
+        "Ràpid i segur. No es guarden registres."
       ],
       "Run on servers": [
         "Executa als servidors"
@@ -1556,6 +1565,14 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1577,14 +1594,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1877,8 +1886,8 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
-        "Mostra ${ remainingItems } més",
-        "Mostra ${ remainingItems } més"
+        "Mostra'n ${ remainingItems } més",
+        "Mostra'n ${ remainingItems } més"
       ]
     },
     "Calendar share permission label": {
@@ -2496,6 +2505,9 @@
       "Congo": [
         "República del Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo, (República Democràtica del)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
       ],
@@ -3031,7 +3043,7 @@
         "Tanzània"
       ],
       "Tanzania, United Republic of": [
-        "Tanzània (República Unida)"
+        "Tanzània"
       ],
       "Thailand": [
         "Tailàndia"
@@ -5008,20 +5020,11 @@
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Deixa el pla familiar"
-      ],
-      "Leave visionary plan": [
-        "Deixa el pla Visionary"
-      ],
       "Manage addresses.": [
         "Gestiona les adreces."
       ],
       "Manage user accounts": [
         "Gestiona comptes d'usuari"
-      ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Només es permeten 10 invitacions acceptades en un període de 6 mesos."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
@@ -5040,9 +5043,6 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
-      ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "La subscripció es factura a l'administrador principal del pla Visionary o familiar."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Per a facilitar la transició, us oferim una prova de cortesia de 30 dies de ${ BRAND_NAME } Il·limitat*."
@@ -5064,15 +5064,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Heu arribat al límit de 10 invitacions acceptades en 6 mesos."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Heu arribat al límit de 10 invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
-      ],
-      "You have successfully joined the Family plan": [
-        "Us heu unit al pla familiar"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
@@ -5186,9 +5177,6 @@
       ],
       "Family name": [
         "Nom de la família"
-      ],
-      "Family plan": [
-        "Pla familiar"
       ],
       "Invite a user": [
         "Convida un usuari"
@@ -6813,11 +6801,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -8171,9 +8159,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Això cancel·larà la vostra subscripció de pagament actual i perdreu els beneficis de fidelitat que heu acumulat."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Això eliminarà totes les versions anteriors dels vostres fitxers prèvies a ${ rententionLabel }."
       ],
@@ -8864,9 +8849,6 @@
       "Your recovery phrase": [
         "La vostra frase de recuperació"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "La vostra frase de recuperació és una sèrie de 12 paraules en un ordre específic."
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
       ],
@@ -9027,7 +9009,7 @@
         "No s'ha pogut generar la clau. Torneu-ho a provar més tard."
       ],
       "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Si esteu generant una clau nova perquè creieu que la vostra clau existent s'ha vist compromesa, marqueu-la com a compromesa després de generar aquesta."
+        "Si esteu generant una clau nova perquè creieu que la clau existent s'ha vist compromesa, marqueu-la com a compromesa després de generar aquesta."
       ],
       "Key successfully generated.": [
         "S'ha generat la clau."
@@ -11830,9 +11812,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
@@ -12794,7 +12773,7 @@
         "Xifratge d'extrem a extrem"
       ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Indiqueu un nom a mostrar per a **${ username }**. Aquest és el que els vostres usuaris veuran quan canvieu els seus permisos o compartiu dades amb ells."
+        "Indiqueu un nom per a mostrar per a **${ username }**. Aquest és el que els vostres usuaris veuran quan canvieu els seus permisos o compartiu dades amb ells."
       ],
       "Essential protection and secure collaboration for unlimited users": [
         "Protecció essencial i col·laboració segura per a usuaris il·limitats"
@@ -12833,7 +12812,7 @@
         "Entenc que si perdo els detalls de recuperació, podria perdre permanentment l'accés al meu compte."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Si se us bloqueja el vostre compte de ${ BRAND_NAME }, el vostre **Joc de recuperació** us permetrà iniciar sessió i recuperar les vostres dades."
+        "Si se us bloqueja el compte de ${ BRAND_NAME }, el vostre **Joc de recuperació** us permetrà iniciar sessió i recuperar les vostres dades."
       ],
       "Includes:": [
         "Inclou:"
@@ -12848,7 +12827,7 @@
         "Instal·leu l'aplicació i l'extensió"
       ],
       "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "És l'única forma de recuperar completament el vostre compte, per tant assegureu-vos de guardar-lo en un lloc segur."
+        "És l'única forma de recuperar completament el vostre compte. Per tant, assegureu-vos de guardar-lo en un lloc segur."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Afegiu-vos a més de 100 milions de persones que han escollit ${ BRAND_NAME } per mantenir-se segurs en línia"
@@ -13305,9 +13284,6 @@
       ]
     },
     "placeholder": {
-      "Add member": [
-        "Afegeix un membre"
-      ],
       "Members": [
         "Membres"
       ]
@@ -15606,10 +15582,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -15674,6 +15650,9 @@
       ],
       "Couldn’t create accounts": [
         "No s'han pogut crear els comptes"
+      ],
+      "Coupon": [
+        "Cupó"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crea ${ selectedUserIds.length } usuari",
@@ -17176,9 +17155,17 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte per cartera",
+        "${ n } comptes per cartera"
+      ],
       "${ n } email address": [
         "${ n } adreça de correu electrònic",
         "${ n } adreces de correu electrònic"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteres"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
@@ -17197,7 +17184,7 @@
     },
     "wallet_signup_2024:Navigation": {
       "Wallet": [
-        "Cartera"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {

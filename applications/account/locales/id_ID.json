@@ -31,7 +31,7 @@
         "Penerusan akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
-        "Penerusan email diberhentikan"
+        "Penerusan email dihentikan"
       ],
       "Reconnect": [
         "Hubungkan Ulang"
@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
+      "Accept": [
+        "Terima"
       ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -109,6 +112,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add email address": [
+        "Tambah alamat email"
+      ],
       "Add filter": [
         "Tambah filter"
       ],
@@ -123,6 +129,9 @@
       ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
+      ],
+      "Add phone number": [
+        "Tambah nomor telepon"
       ],
       "Add public holidays": [
         "Tambahkan hari libur umum"
@@ -325,6 +334,9 @@
       "Customize plan": [
         "Atur paket"
       ],
+      "Decline": [
+        "Tolak"
+      ],
       "Decrease": [
         "Kurangi"
       ],
@@ -339,6 +351,9 @@
       ],
       "Delete Gateway": [
         "Hapus Gateway"
+      ],
+      "Delete group": [
+        "Hapus grup"
       ],
       "Delete link": [
         "Hapus tautan"
@@ -378,6 +393,9 @@
       ],
       "Discard": [
         "Buang"
+      ],
+      "Discard changes": [
+        "Buang perubahan"
       ],
       "Don't show again": [
         "Jangan tampilkan lagi"
@@ -421,6 +439,9 @@
       "Edit Gateway": [
         "Sunting Gateway"
       ],
+      "Edit group": [
+        "Sunting grup"
+      ],
       "Edit invoice details": [
         "Sunting rincian faktur"
       ],
@@ -462,6 +483,9 @@
       ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
+      ],
+      "Enable device-based recovery": [
+        "Aktifkan pemulihan berbasis perangkat"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -703,10 +727,10 @@
       "No, thanks": [
         "Tidak, terima kasih"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -769,11 +793,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -858,6 +882,9 @@
       ],
       "Review": [
         "Ulas"
+      ],
+      "Review account security": [
+        "Tinjau keamanan akun"
       ],
       "Revoke": [
         "Cabut"
@@ -1409,14 +1436,14 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Lebih cepat dan lebih kompatibel dengan berbagai perangkat"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Data akan tetap tersimpan pada perangkat Anda, namun memerlukan unduhan satu kali dan perangkat keras yang kompatibel"
       ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Perintah akan tetap tersimpan pada perangkat Anda, namun memerlukan unduhan satu kali dan perangkat keras yang kompatibel"
+      "Fast and secure. No logs are kept.": [
+        "Cepat dan aman. Tanpa log apa pun yang disimpan."
       ],
-      "Run locally": [
-        "Jalankan secara lokal"
+      "Run on device": [
+        "Jalankan pada perangkat"
       ],
       "Run on servers": [
         "Jalankan pada server"
@@ -1567,6 +1594,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1588,14 +1623,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5017,11 +5044,14 @@
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Tinggalkan paket keluarga"
+      "Leave Duo plan": [
+        "Keluar dari paket Duo"
       ],
-      "Leave visionary plan": [
-        "Tinggalkan paket Visionary"
+      "Leave Family plan": [
+        "Keluar dari paket Family"
+      ],
+      "Leave Visionary plan": [
+        "Keluar dari paket Visionary"
       ],
       "Manage addresses.": [
         "Kelola alamat."
@@ -5029,8 +5059,8 @@
       "Manage user accounts": [
         "Kelola akun pengguna"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Hanya 10 undangan tersetujui yang diperbolehkan dalam periode 6 bulan."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Hanya ${ n } undangan yang diterima yang diizinkan dalam kurun waktu 6 bulan."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
@@ -5050,8 +5080,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Untuk memudahkan transisi, kami memberi Anda uji coba ${ BRAND_NAME } Unlimited selama 30 hari*."
@@ -5074,14 +5104,14 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Anda telah mencapai batas 10 undangan dalam 6 bulan."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Anda telah mencapai batas ${ n } undangan yang diterima dalam kurun waktu 6 bulan."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Anda telah mencapai batas 10 undangan diterima dalam 6 bulan. Tombol di bawah dapat diklik ketika Anda dapat mengundang pengguna tambahan."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Anda telah mencapai batas ${ n } undangan yang diterima dalam kurun waktu 6 bulan. Tombol ini akan dapat diklik pada saat Anda dapat mengundang pengguna tambahan."
       ],
-      "You have successfully joined the Family plan": [
-        "Anda berhasil bergabung ke paket Keluarga"
+      "You have successfully joined the family group": [
+        "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Anda harus mengatur domain khusus sebelum menambahkan lebih dari satu pengguna."
@@ -5195,9 +5225,6 @@
       ],
       "Family name": [
         "Nama keluarga"
-      ],
-      "Family plan": [
-        "Paket keluarga"
       ],
       "Invite a user": [
         "Undang pengguna"
@@ -5671,6 +5698,19 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } anggota"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Aktif"
+      ],
+      "Unanswered": [
+        "Tidak terjawab"
+      ]
+    },
+    "group_invitation: Success": {
+      "Left group": [
+        "Telah meninggalkan grup"
       ]
     },
     "Header": {
@@ -6640,6 +6680,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
       ],
+      "Breach Custom Email Created": [
+        "Email Khusus Kebocoran Dibuat"
+      ],
       "Breach Custom Email Deleted": [
         "Email Khusus Kebocoran Dihapus"
       ],
@@ -6784,11 +6827,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -8101,6 +8144,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Tautan undangan ini telah kedaluwarsa. Silakan hubungi administrator Anda untuk meminta akses."
       ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "Tautan undangan ini telah kedaluwarsa. Kami baru saja mengirimkan Anda tautan yang baru."
+      ],
       "This invitation link is already used. Please sign in directly instead.": [
         "Tautan undangan ini telah digunakan. Silakan masuk secara langsung."
       ],
@@ -8145,9 +8191,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Proses verifikasi ini dapat memakan waktu hingga satu jam. Setelah proses verifikasi berhasil, jangan hapus rekaman TXT ini karena rekaman ini akan dibutuhkan untuk mengonfirmasi bahwa Anda tetap merupakan pemilik dari domain yang bersangkutan."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan menganulir seluruh manfaat loyalitas yang telah Anda peroleh."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dengan ini, seluruh versi berkas Anda yang lebih lawas dari ${ rententionLabel } akan dihapus."
@@ -8434,6 +8477,9 @@
       "Version number successfully copied to clipboard": [
         "Nomor versi berhasil disalin ke papan klip"
       ],
+      "View and manage your groups.": [
+        "Lihat dan kelola grup Anda."
+      ],
       "View, download, and manage your invoices.": [
         "Tampilkan, unduh, dan kelola faktur Anda."
       ],
@@ -8607,6 +8653,9 @@
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Anda sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang Anda miliki."
+      ],
+      "You are in no group nor invited to any": [
+        "Anda tidak berada di atau diundang ke grup mana pun"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
@@ -8830,7 +8879,7 @@
       "Your recovery phrase": [
         "Frasa pemulihan Anda"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
@@ -8926,6 +8975,14 @@
     "Input placeholder": {
       "Add label": [
         "Tambah label"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "Tertunda"
+      ],
+      "Rejected": [
+        "Ditolak"
       ]
     },
     "Invoice state display as badge": {
@@ -11665,6 +11722,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
+      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Siapkan pesan balasan otomatis untuk menginformasikan pengirim pesan bahwa Anda sedang tidak berada di kantor atau tidak dapat membalas."
       ],
@@ -11769,8 +11829,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi riwayat versi, file sharing terenkripsi, dan masih banyak lagi."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
@@ -13265,9 +13325,6 @@
       "Add a group name": [
         "Tambah nama grup"
       ],
-      "Add member": [
-        "Tambah anggota"
-      ],
       "e.g. distribution list for marketing team": [
         "mis. daftar distribusi untuk tim pemasaran"
       ],
@@ -13491,9 +13548,6 @@
     "saml: Error": {
       "Something went wrong": [
         "Terdapat suatu kesalahan"
-      ],
-      "Something went wrong. Please try again.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi"
       ]
     },
     "saml: Info": {
@@ -14635,6 +14689,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } memberikan Anda privasi yang tak terbatas dan ruang penyimpanan yang lebih untuk hingga 2 pengguna."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } memberikan tim Anda apa yang diperlukan untuk menjadi lebih produktif dan teratur dalam pekerjaan mereka dengan akses ke semua aplikasi ${ BRAND_NAME } dan setiap fitur premiumnya."
       ],
@@ -14670,6 +14727,9 @@
       ],
       "10 email addresses": [
         "10 alamat email"
+      ],
+      "2 users": [
+        "2 pengguna"
       ],
       "20 email addresses per user": [
         "20 alamat email per pengguna"
@@ -14851,6 +14911,9 @@
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
+      "Unlimited privacy for two": [
+        "Privasi tak terbatas untuk dua pengguna"
+      ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"
       ],
@@ -14858,7 +14921,7 @@
         "Pengguna tidak akan dapat mengirim email"
       ],
       "Users won’t be able to sync files on their devices": [
-        "Pengguna tidak akan dapat menyinkronkan berkas di perangkatnya"
+        "Para pengguna tidak akan dapat menyinkronkan berkas pada perangkat mereka"
       ],
       "Version history": [
         "Riwayat versi"
@@ -15510,6 +15573,9 @@
       "Add users": [
         "Tambah pengguna"
       ],
+      "Address": [
+        "Alamat"
+      ],
       "Address and key verification": [
         "Verifikasi alamat dan kunci"
       ],
@@ -15576,11 +15642,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -15746,6 +15812,9 @@
       ],
       "Delete folder?": [
         "Hapus folder?"
+      ],
+      "Delete group?": [
+        "Hapus grup?"
       ],
       "Delete key permanently?": [
         "Hapus kunci secara permanen?"
@@ -15975,6 +16044,9 @@
       "Gift code": [
         "Kode hadiah"
       ],
+      "Group": [
+        "Grup"
+      ],
       "Groups": [
         "Grup"
       ],
@@ -16196,6 +16268,9 @@
       ],
       "Refer a friend": [
         "Rujuk teman"
+      ],
+      "Remove all members?": [
+        "Hapus seluruh anggota?"
       ],
       "Remove calendar": [
         "Hapus kalender"
@@ -17185,9 +17260,6 @@
       "Join ${ appName } early access!": [
         "Bergabunglah ke akses dini ${ appName }!"
       ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "Daftarkan diri Anda ke akun ${ BRAND_NAME } gratis untuk mengamankan tempat Anda. Semakin dini Anda mendaftar, semakin cepat pula Anda akan memperoleh akses ke ${ appName }."
-      ],
       "Unlock ${ appName } premium features by upgrading": [
         "Dapatkan berbagai fitur premium ${ appName } dengan meningkatkan paket langganan"
       ],
@@ -17221,7 +17293,7 @@
         "Kembali ke dompet"
       ],
       "Wallet": [
-        "Dompet"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {
