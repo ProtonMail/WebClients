@@ -32,7 +32,7 @@ const ProtonTipCTA = ({ actionType, settingsUrl, ctaText }: Props) => {
                 disabled={actionType === TipActionType.GetProtonSubdomainAddress && loadingProtonDomains}
                 shape="underline"
                 size="small"
-                className="link align-baseline py-0"
+                className="link align-baseline"
             >
                 {ctaText}
             </Button>
