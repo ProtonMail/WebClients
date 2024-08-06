@@ -359,6 +359,7 @@ export type IconName =
     | 'text-quote'
     | 'text-quote-filled'
     | 'text-strikethrough'
+    | 'text-style'
     | 'text-title'
     | 'text-underline'
     | 'three-dots-horizontal'

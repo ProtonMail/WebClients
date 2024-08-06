@@ -297,7 +297,7 @@ const ComposerActions = ({
                                     className="flex sm:mx-2"
                                 >
                                     <Icon
-                                        name="text-underline"
+                                        name="text-style"
                                         alt={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}
                                     />
                                 </Button>
