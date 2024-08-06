@@ -38,6 +38,9 @@
       "Add user": [
         "افزودن کاربر"
       ],
+      "Allow": [
+        "اجازه بده"
+      ],
       "Apply": [
         "اعمال"
       ],
@@ -49,6 +52,9 @@
       ],
       "Back": [
         "بازگشت"
+      ],
+      "Block": [
+        "مسدود کردن"
       ],
       "Cancel": [
         "انصراف"
@@ -176,6 +182,9 @@
       "Get verification code": [
         "دریافت کد تایید"
       ],
+      "Go to label": [
+        "رفتن به برچسب"
+      ],
       "Got it": [
         "متوجه شدم"
       ],
@@ -203,8 +212,14 @@
       "More info: ${ safeTitle }": [
         "اطلاعات بیشتر: ${ safeTitle }"
       ],
+      "More options": [
+        "گزینه‌های بیشتر"
+      ],
       "Need help?": [
         "کمک می‌خواهید؟"
+      ],
+      "New group": [
+        "گروه جدید"
       ],
       "Next": [
         "بعدی"
@@ -212,10 +227,10 @@
       "Next month": [
         "ماه بعد"
       ],
-      "OK": [
+      "Ok": [
         "تایید"
       ],
-      "Ok": [
+      "OK": [
         "تایید"
       ],
       "Open": [
@@ -382,6 +397,9 @@
       ],
       "Signing in": [
         "در حال ورود به حساب"
+      ],
+      "Spam": [
+        "هرزنامه"
       ],
       "Submit": [
         "ثبت"
@@ -1558,6 +1576,11 @@
         "اعتبار باقی مانده"
       ]
     },
+    "cta": {
+      "Learn more": [
+        "برای کسب اطلاعات بیشتر در این مورد اینجا را کلیک کنید."
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ماهانه"
@@ -1594,6 +1617,23 @@
         "زیر دامنه‌های \"www\" معمولا برای رایانامه استفاده نمی‌شوند. آیا مطمئن هستید که می‌خواهید از این مقدار دامنه استفاده کنید؟"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } افزوده شد"
+      ],
+      "${ name } deletion failed": [
+        "حذف ${ name } انجام نشد"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } موفق نشد تا به لیست هرزنامه انتقال پیدا کند"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } به لیست هرزنامه نقل مکان داده شد"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } با موفقیت حذف شد"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "اشکالات یا مشکل کیفی"
@@ -1619,6 +1659,23 @@
     "driveplus2024: Deal details": {
       "Priority support": [
         "اولویت پشتیبانی"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } افزوده شد"
+      ],
+      "${ name } deletion failed": [
+        "حذف ${ name } انجام نشد"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } موفق نشد تا به لیست هرزنامه انتقال پیدا کند"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } به لیست هرزنامه نقل مکان داده شد"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } با موفقیت حذف شد"
       ]
     },
     "Email verification": {
@@ -1679,6 +1736,12 @@
       ],
       "Invalid code": [
         "کد نامعتبر است"
+      ],
+      "Invalid domain": [
+        "دامنه نامعتبر است"
+      ],
+      "Invalid email address": [
+        "رایانشانی نامعتبر است"
       ],
       "Invalid expiration date": [
         "تاریخ انقضا نامعتبر است"
@@ -1950,6 +2013,17 @@
         "مگابایت"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "اجازه بده:"
+      ],
+      "Block:": [
+        "مسدود کردن:"
+      ],
+      "Spam:": [
+        "هرزنامه:"
+      ]
+    },
     "Font face option": {
       "System default": [
         "پیش‌فرض سیستم"
@@ -1986,6 +2060,12 @@
       ],
       "Services": [
         "خدمات"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } عضو",
+        "${ memberCount } عضو"
       ]
     },
     "Header": {
@@ -2056,6 +2136,15 @@
         "تماس با ما"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید.",
+        "${ items.length } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "پس از درج، از کلیدهای بالا و پایین برای دسترسی و مرور پیشنهادها استفاده کنید. برای تایید انتخاب خود Enter را فشار داده یا برای بستن جعبه پیشنهادات Escape را فشار دهید."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "رایانامه"
@@ -2094,6 +2183,10 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } بروز شد"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } عضو)",
+        "(${ memberCount } عضو)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
@@ -2363,6 +2456,9 @@
       ],
       "Internet connection restored.": [
         "اتصال اینترنت برقرار شد."
+      ],
+      "Labels:": [
+        "برچسب‌ها:"
       ],
       "Learn more": [
         "بیشتر بدانید"
@@ -2831,8 +2927,14 @@
       "Address": [
         "نشانی"
       ],
+      "Address type": [
+        "نوع آدرس"
+      ],
       "Addresses": [
         "نشانی‌ها"
+      ],
+      "Allow": [
+        "اجازه بده"
       ],
       "Allow recovery by email": [
         "اجازه بازیابی از طریق رایانامه"
@@ -2854,6 +2956,9 @@
       ],
       "Billing cycle": [
         "دوره صورت‌حساب"
+      ],
+      "Block": [
+        "مسدود کردن"
       ],
       "Block malware only": [
         "فقط بدافزارها مسدود شوند"
@@ -2951,6 +3056,9 @@
       "Do you have any suggestions for our team?": [
         "آیا برای تیم ما پیشنهادی دارید؟"
       ],
+      "Domain": [
+        "دامنه"
+      ],
       "Domain name": [
         "نام دامنه"
       ],
@@ -2971,6 +3079,9 @@
       ],
       "Gift code": [
         "کد هدیه"
+      ],
+      "Group name": [
+        "نام گروه"
       ],
       "Hide password": [
         "پنهان‌سازی گذرواژه"
@@ -3079,6 +3190,9 @@
       ],
       "Reveal password": [
         "افشای گذرواژه"
+      ],
+      "Spam": [
+        "هرزنامه"
       ],
       "Start date": [
         "تاریخ شروع"
@@ -3330,6 +3444,20 @@
       ],
       "Swiss franc": [
         "فرانک سوئیس"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "همه"
+      ],
+      "Allow": [
+        "اجازه بده"
+      ],
+      "Block": [
+        "مسدود کردن"
+      ],
+      "Spam": [
+        "هرزنامه"
       ]
     },
     "new_plans": {
@@ -3883,6 +4011,11 @@
         "پیکربندی‌های سرور استاندارد"
       ]
     },
+    "option": {
+      "Members": [
+        "اعضا"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
         "سازمان خود را راه اندازی کنید"
@@ -3978,6 +4111,9 @@
       "End date": [
         "تاریخ پایان"
       ],
+      "example@domain.com": [
+        "example@domain.com"
+      ],
       "Feedback": [
         "بازخورد"
       ],
@@ -4007,6 +4143,11 @@
       ],
       "Start date": [
         "تاریخ شروع"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "اعضا"
       ]
     },
     "plan customizer, users": {
@@ -4616,6 +4757,9 @@
       "Country": [
         "کشور"
       ],
+      "Edit": [
+        "ویرایش"
+      ],
       "Email": [
         "ایمیل"
       ],
@@ -4624,6 +4768,9 @@
       ],
       "Email addresses": [
         "رایانشانی‌ها"
+      ],
+      "Marked as": [
+        "علامت زده شده به عنوان"
       ],
       "Name": [
         "نام"
@@ -4700,6 +4847,9 @@
       ],
       "Add PayPal payment method": [
         "افزودن روش پرداخت با PayPal"
+      ],
+      "Add to spam list": [
+        "افزودن به لیست هرزنامه"
       ],
       "Allocate storage": [
         "اختصاص فضای ذخیره‌سازی"
@@ -4799,6 +4949,9 @@
       ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
+      ],
+      "Discard changes?": [
+        "تغییرات نادیده گرفته شود؟"
       ],
       "Domain names": [
         "نام‌های دامنه"
