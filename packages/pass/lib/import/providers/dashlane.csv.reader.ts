@@ -2,25 +2,19 @@ import { c } from 'ttag';
 
 import {
     processCreditCardItem,
+    processIdentityItem,
     processLoginItem,
     processNoteItem,
 } from '@proton/pass/lib/import/providers/dashlane.zip.reader';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
-import type { DashlaneIdItem, DashlaneItem, DashlanePersonalInfoItem, ParserFunction } from './dashlane.types';
-
-const processIdsItem = ({ name, type }: DashlaneIdItem): string =>
-    `[${capitalize(type ?? 'ID')}] ${name || 'Unknown ID'}`;
-
-const processPersonalInfoItem = ({ title }: DashlanePersonalInfoItem): string =>
-    `[Personal Info] ${title || 'Unnamed'}`;
+import type { DashlaneItem, ParserFunction } from './dashlane.types';
 
 enum FileKey {
     Login = 'Login',
@@ -37,7 +31,7 @@ const Criteria = {
     },
     [FileKey.Ids]: {
         keys: ['issue_date', 'expiration_date'],
-        parser: processIdsItem as ParserFunction,
+        parser: processIdentityItem as ParserFunction,
     },
     [FileKey.Payments]: {
         keys: ['cc_number', 'account_number'],
@@ -45,7 +39,7 @@ const Criteria = {
     },
     [FileKey.PersonalInfo]: {
         keys: ['date_of_birth', 'email'],
-        parser: processPersonalInfoItem as ParserFunction,
+        parser: processIdentityItem as ParserFunction,
     },
     [FileKey.SecureNotes]: {
         keys: ['title', 'note'],
@@ -65,13 +59,21 @@ const getParser = (item: DashlaneItem): [ParserFunction, FileKey] => {
     throw new Error(c('Error').t`Unknown item`);
 };
 
-const groupItem = (item: (ItemImportIntent | string)[], itemKey: FileKey) => {
-    const isItemIgnored = oneOf(FileKey.Ids, FileKey.PersonalInfo)(itemKey);
+const groupItems = (items: ItemImportIntent[], itemKey: FileKey) => {
+    const shouldGroupItems = oneOf(FileKey.Ids, FileKey.PersonalInfo)(itemKey);
 
-    return {
-        vaultItems: isItemIgnored ? [] : (item as ItemImportIntent[]),
-        ignored: isItemIgnored ? (item as string[]) : [],
-    };
+    if (!shouldGroupItems) return items;
+
+    // Dashlane creates N entries for each piece of identity information.
+    // We need to create a single object with all these entries.
+    return [
+        items.reduce<any>((acc, { content }) => {
+            Object.entries(content).forEach(([k, v]) => {
+                if (acc.content[k] === '') acc.content[k] = v;
+            });
+            return acc;
+        }, items[0]),
+    ];
 };
 
 export const readDashlaneDataCSV = async ({
@@ -92,10 +94,8 @@ export const readDashlaneDataCSV = async ({
         });
 
         const [parser, itemKey] = getParser(items[0]);
-
-        const item = items.map((item) => parser(item, importUsername));
-
-        const { vaultItems, ignored } = groupItem(item, itemKey);
+        const importItems = items.map((item) => parser(item, importUsername));
+        const vaultItems = groupItems(importItems, itemKey);
 
         const vaults: ImportVault[] = [
             {
@@ -105,7 +105,7 @@ export const readDashlaneDataCSV = async ({
             },
         ];
 
-        return { vaults, ignored, warnings };
+        return { vaults, ignored: [], warnings };
     } catch (e) {
         logger.warn('[Importer::Dashlane]', e);
         throw new ImportProviderError('Dashlane', e);
