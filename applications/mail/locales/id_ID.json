@@ -9,7 +9,7 @@
         "Penerusan akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
-        "Penerusan email diberhentikan"
+        "Penerusan email dihentikan"
       ]
     },
     "Account Settings - Info": {
@@ -224,9 +224,6 @@
       ],
       "Close & discard": [
         "Tutup & buang"
-      ],
-      "Close AI refine suggestion": [
-        "Tutup saran perbaikan AI"
       ],
       "Close composer": [
         "Tutup komposer"
@@ -564,6 +561,9 @@
       "hide-my-email aliases": [
         "alias hide-my-email"
       ],
+      "I like this response": [
+        "Saya menyukai respon ini"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
@@ -725,6 +725,9 @@
       ],
       "Minimize composer": [
         "Minimalkan komposer"
+      ],
+      "Modify": [
+        "Ubah"
       ],
       "Monday": [
         "Senin"
@@ -954,6 +957,12 @@
       "Remove this label": [
         "Hapus label ini"
       ],
+      "Replace": [
+        "Ubah"
+      ],
+      "Replaces the selected text in your message": [
+        "Mengubah teks yang dipilih dalam pesan Anda"
+      ],
       "Reply": [
         "Balas"
       ],
@@ -962,9 +971,6 @@
       ],
       "Reply securely": [
         "Balas secara aman"
-      ],
-      "Report a good content": [
-        "Laporkan konten yang baik"
       ],
       "Report a problem": [
         "Laporkan masalah"
@@ -1188,9 +1194,6 @@
       "Stay": [
         "Tinggal"
       ],
-      "Stop downloading the writing assistant": [
-        "Berhenti mengunduh asisten penulisan"
-      ],
       "Stop generating result": [
         "Berhenti menghasilkan"
       ],
@@ -1232,6 +1235,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -1317,9 +1323,6 @@
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
-      "Use this": [
-        "Gunakan ini"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
       ],
@@ -1364,6 +1367,9 @@
       ],
       "Why not?": [
         "Mengapa tidak?"
+      ],
+      "Write for me": [
+        "Tulis untuk saya"
       ],
       "Yes": [
         "Ya"
@@ -1529,20 +1535,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Data akan tetap tersimpan pada perangkat Anda, namun memerlukan unduhan satu kali dan perangkat keras yang kompatibel"
+      ],
       "Fast and secure. No logs are kept.": [
         "Cepat dan aman. Tanpa log apa pun yang disimpan."
       ],
-      "Faster, broader device compatibility": [
-        "Lebih cepat dan lebih kompatibel dengan berbagai perangkat"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Perintah akan tetap tersimpan pada perangkat Anda, namun memerlukan unduhan satu kali dan perangkat keras yang kompatibel"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Memerlukan pengunduhan sekali dan perangkat keras yang kompatibel."
-      ],
-      "Run locally": [
-        "Jalankan secara lokal"
+      "Run on device": [
+        "Jalankan pada perangkat"
       ],
       "Run on servers": [
         "Jalankan pada server"
@@ -3840,7 +3840,7 @@
       "Draft could not be saved. Try again.": [
         "Draf tidak dapat disimpan. Coba lagi."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "Karena suatu kesalahan, pembuatan teks tidak dapat dibatalkan"
       ],
       "Email address disabled": [
@@ -4445,9 +4445,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
       ],
@@ -4619,8 +4616,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
@@ -4637,8 +4634,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Anda berhasil bergabung ke paket Keluarga"
+      "You have successfully joined the family group": [
+        "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
@@ -5083,10 +5080,10 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Teruskan secara otomatis"
+        "Teruskan"
       ],
       "Gmail messages to your inbox": [
-        "Pesan Gmail ke kotak masuk Anda"
+        "pesan Gmail ke kotak masuk Anda secara otomatis"
       ],
       "Sign in with Google": [
         "Masuk dengan Google"
@@ -5554,9 +5551,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } mengenai asisten penulisan ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
@@ -5950,14 +5944,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Mengunduh asisten… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Pengunduhan dijeda"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Unduhan dijeda: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Mengunduh asisten penulisan: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Draf"
@@ -6231,6 +6225,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Pelajari lebih lanjut mengenai asisten penulisan ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -7228,9 +7225,6 @@
       "You selected **${ elementsCount } message**.": [
         "Anda memilih **${ elementsCount } pesan**,"
       ],
-      "You selected some content:": [
-        "Anda memilih beberapa konten:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Anda akan kehilangan akses ke berbagai fitur Plus pada tanggal ini."
       ],
@@ -7589,9 +7583,6 @@
       ],
       " and ${ l }": [
         " dan ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
@@ -8108,9 +8099,6 @@
       ],
       "Type a command...": [
         "Masukkan perintah..."
-      ],
-      "Type a prompt to generate an output": [
-        "Tulis perintah untuk menghasilkan keluaran"
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
@@ -9272,6 +9260,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
@@ -9316,8 +9307,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi riwayat versi, file sharing terenkripsi, dan masih banyak lagi."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
@@ -9938,8 +9929,8 @@
       "First name": [
         "Nama depan"
       ],
-      "Generating...": [
-        "Menghasilkan..."
+      "Generating": [
+        "Menghasilkan"
       ],
       "Gift code": [
         "Kode hadiah"
@@ -9980,9 +9971,6 @@
       "Please share what you expected": [
         "Silakan bagikan hal seperti apa yang Anda harapkan"
       ],
-      "Refining your text...": [
-        "Memperbaiki teks Anda..."
-      ],
       "Search date, name, email address, or subject line": [
         "Cari tanggal, nama, alamat email, atau baris subjek"
       ],
@@ -10022,29 +10010,29 @@
       "Subject": [
         "Subjek"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Umumkan acara yang akan datang di suatu buletin\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Batalkan keanggotaan gym saya\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Undang Jane ke pesta saya\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Ucapkan terima kasih kepada rekan kerja saya atas bantuannya pada suatu proyek\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Tulis surat pengantar untuk melamar magang\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Tulis email balasan kepada klien\""
+      ],
       "Text": [
         "Teks"
       ],
       "To": [
         "Kepada"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Coba \"Umumkan acara yang akan datang dalam buletin berita\""
-      ],
-      "Try “Cancel my gym membership”": [
-        "Coba \"Batalkan keanggotaan gym saya\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Coba \"Undang Jane ke pesta saya\""
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Coba \"Ucapkan terima kasih kepada rekan kerja saya atas bantuannya pada proyek tertentu\""
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Coba \"Tulis surat pengantar untuk melamar magang\""
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Coba \"Tulis email balasan kepada klien\""
       ],
       "Type a command…": [
         "Masukkan perintah…"
@@ -10847,7 +10835,7 @@
         "Pesan ini berasal dari milis."
       ],
       "Unsubscribed": [
-        "Langganan diberhentikan"
+        "Langganan dihentikan"
       ]
     },
     "Step in filter modal": {
@@ -11088,6 +11076,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } memberikan Anda privasi yang tak terbatas dan ruang penyimpanan yang lebih untuk hingga 2 pengguna."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } memberikan tim Anda apa yang diperlukan untuk menjadi lebih produktif dan teratur dalam pekerjaan mereka dengan akses ke semua aplikasi ${ BRAND_NAME } dan setiap fitur premiumnya."
       ],
@@ -11123,6 +11114,9 @@
       ],
       "10 email addresses": [
         "10 alamat email"
+      ],
+      "2 users": [
+        "2 pengguna"
       ],
       "20 email addresses per user": [
         "20 alamat email per pengguna"
@@ -11277,6 +11271,9 @@
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
+      "Unlimited privacy for two": [
+        "Privasi tak terbatas untuk dua pengguna"
+      ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"
       ],
@@ -11284,7 +11281,7 @@
         "Pengguna tidak akan dapat mengirim email"
       ],
       "Users won’t be able to sync files on their devices": [
-        "Pengguna tidak akan dapat menyinkronkan berkas di perangkatnya"
+        "Para pengguna tidak akan dapat menyinkronkan berkas pada perangkat mereka"
       ],
       "Version history": [
         "Riwayat versi"
@@ -11649,6 +11646,9 @@
       ],
       "Self-destruction set": [
         "Waktu penghapusan otomatis diatur"
+      ],
+      "Text copied to clipboard": [
+        "Teks disalin ke papan klip"
       ],
       "Thanks for the feedback!": [
         "Terima kasih atas masukannya!"
@@ -12082,7 +12082,7 @@
         "Rincian"
       ],
       "Don't give spam a chance": [
-        "Jangan berikan spam kesempatan"
+        "Jangan beri spam kesempatan"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"

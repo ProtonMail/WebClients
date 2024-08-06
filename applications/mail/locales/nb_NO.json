@@ -93,6 +93,9 @@
       "Add to group": [
         "Legg til gruppe"
       ],
+      "Adds it below your existing message": [
+        "Legger den til under den eksisterende meldingen"
+      ],
       "Align center": [
         "Midtstill"
       ],
@@ -225,9 +228,6 @@
       ],
       "Close & discard": [
         "Lukk & forkast"
-      ],
-      "Close AI refine suggestion": [
-        "Lukk KI-avgrens forslag"
       ],
       "Close composer": [
         "Lukk skrivevinduet"
@@ -567,6 +567,9 @@
       "hide-my-email aliases": [
         "hide-my-email-aliaser"
       ],
+      "I like this response": [
+        "Jeg liker denne responsen"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Bilde kunne ikke lastes med sporingsbeskyttelse."
       ],
@@ -729,6 +732,12 @@
       ],
       "Minimize composer": [
         "Minimer skrivevinduet"
+      ],
+      "Modify": [
+        "Endre"
+      ],
+      "Modify selection": [
+        "Endre utvalg"
       ],
       "Monday": [
         "Mandag"
@@ -958,6 +967,12 @@
       "Remove this label": [
         "Fjern denne etiketten"
       ],
+      "Replace": [
+        "Erstatt"
+      ],
+      "Replaces the selected text in your message": [
+        "Erstatter den merkede teksten i meldingen din"
+      ],
       "Reply": [
         "Svar"
       ],
@@ -966,9 +981,6 @@
       ],
       "Reply securely": [
         "Svar sikkert"
-      ],
-      "Report a good content": [
-        "Rapportér et godt innhold"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -1192,8 +1204,8 @@
       "Stay": [
         "Bli"
       ],
-      "Stop downloading the writing assistant": [
-        "Stopp nedlastingen av skriveassistenten"
+      "Stop downloading assistant": [
+        "Slutt å laste ned assistenten"
       ],
       "Stop generating result": [
         "Slutt å generere resultater"
@@ -1236,6 +1248,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1321,9 +1337,6 @@
       "Use recovery code": [
         "Bruk gjenopprettingskode"
       ],
-      "Use this": [
-        "Bruk dette"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Bruk musen for å endre størrelsen på visningen. Bruker du tastaturet, kan du bruke venstre og høyre piltast for å endre størrelsen."
       ],
@@ -1368,6 +1381,9 @@
       ],
       "Why not?": [
         "Hvorfor ikke?"
+      ],
+      "Write for me": [
+        "Skriv for meg"
       ],
       "Yes": [
         "Ja"
@@ -1538,20 +1554,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Data forblir på enheten din, men krever en engangsnedlasting og kompatibel maskinvare"
+      ],
       "Fast and secure. No logs are kept.": [
         "Raskt og sikkert. Det føres ingen logger."
       ],
-      "Faster, broader device compatibility": [
-        "Raskere, bredere enhetskompatibilitet"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Forespørsler forblir på enheten, men krever en engangsnedlasting og kompatibel maskinvare"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Krever en engangs nedlasting og kompatibel maskinvare."
-      ],
-      "Run locally": [
-        "Kjør lokalt"
+      "Run on device": [
+        "Kjør på enhet"
       ],
       "Run on servers": [
         "Kjør på tjenere"
@@ -3863,7 +3873,7 @@
       "Draft could not be saved. Try again.": [
         "Utkastet kunne ikke lagres. Prøv igjen."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "På grunn av en feil kunne ikke tekstgenerering avbrytes"
       ],
       "Email address disabled": [
@@ -4478,9 +4488,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliaser kan ikke brukes når et ekstra passord er aktivert i ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
@@ -4652,8 +4659,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsplass tilordnet deg: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonnementet faktureres til Visionary- eller familieabonnementets primære administrator."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonnementet faktureres til den primære administratoren for denne planen."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- og familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
@@ -4670,8 +4677,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Du har blitt med i familieplanen"
+      "You have successfully joined the family group": [
+        "Du har blitt med i familiegruppen"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne gruppeplanen og sammen nyte alle ${ BRAND_NAME_TWO }-premiumfunksjoner."
@@ -5631,9 +5638,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } om ${ BRAND_NAME }s skriveassistent"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe funnet",
         "${ providerFoldersNumLocalized } mapper funnet"
@@ -6049,14 +6053,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Laster ned assistent… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Nedlastingen satt på pause"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Nedlasting satt på vent: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Laster ned skriveassistenten: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Utkast"
@@ -6337,6 +6341,9 @@
       ],
       "Learn more": [
         "Lær mer"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Lær mer om ${ BRAND_NAME }s skriveassistent"
       ],
       "Left to Right": [
         "Venstre til høyre"
@@ -7353,9 +7360,6 @@
         "Du valgte **${ elementsCount } melding**.",
         "Du valgte **${ elementsCount } meldinger**."
       ],
-      "You selected some content:": [
-        "Du har valgt noe innhold:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Du vil miste tilgang til Plus-funksjoner på denne datoen."
       ],
@@ -7720,9 +7724,6 @@
       ],
       " and ${ l }": [
         " og ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
@@ -8241,9 +8242,6 @@
       "Type a command...": [
         "Skriv en kommando..."
       ],
-      "Type a prompt to generate an output": [
-        "Skriv inn en melding for å generere utdata"
-      ],
       "Undisclosed Recipients": [
         "Ikke avslørte mottakere"
       ],
@@ -8273,6 +8271,9 @@
       ],
       "Wonderful": [
         "Fantastisk"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
       ],
       "Your alias": [
         "Ditt alias"
@@ -8925,6 +8926,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
       ]
@@ -9430,6 +9440,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sikre ditt digitale liv med ${ BRAND_NAME } for to personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov"
       ],
@@ -9474,8 +9487,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: sikre e-postene dine med ende-til-ende kryptering. Inkluderer støtte for egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser og mer."
@@ -10100,8 +10113,8 @@
       "First name": [
         "Fornavn"
       ],
-      "Generating...": [
-        "Genererer..."
+      "Generating": [
+        "Genererer"
       ],
       "Gift code": [
         "Gavekode"
@@ -10142,9 +10155,6 @@
       "Please share what you expected": [
         "Vennligst del hva du forventet"
       ],
-      "Refining your text...": [
-        "Finjusterer teksten din..."
-      ],
       "Search date, name, email address, or subject line": [
         "Søk dato, navn, e-postadresse eller emnelinje"
       ],
@@ -10184,29 +10194,29 @@
       "Subject": [
         "Emne"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Fortell skriveassistenten hva den skal skrive. Eksempel: \"Kunngjør kommende hendelser i et nyhetsbrev\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Fortell skriveassistenten hva den skal skrive. Eksempel: \"Si opp treningsmedlemskapet mitt\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Fortell skriveassistenten hva den skal skrive. Eksempel: \"Inviter Janne til festen min\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Fortell skriveassistenten hva den skal skrive. Eksempel: \"Takk kollegaen min for hjelpen på et prosjekt\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Fortell skriveassistenten hva den skal skrive. Eksempel: \"Skriv et følgebrev for en praksisplass\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Fortell skriveassistenten hva den skal skrive. Eksempel: \"Skriv en oppfølgings-e-post til en klient\""
+      ],
       "Text": [
         "Tekst"
       ],
       "To": [
         "Til"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Prøv \"kunngjør kommende hendelser i et nyhetsbrev\""
-      ],
-      "Try “Cancel my gym membership”": [
-        "Prøv \"avbryt treningsmedlemskapet mitt\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Prøv \"inviter Janne til festen min\""
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Prøv \"takk kollegaen min for hjelp med et prosjekt\""
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Prøv \"skriv et følgebrev for en praksisplass\""
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Prøv \"skriv en oppfølgings-e-post til en klient\""
       ],
       "Type a command…": [
         "Skriv en kommando…"
@@ -11289,6 +11299,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } gir deg ubegrenset privatliv og mer lagringsplass for opptil 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } gir teamet ditt det de trenger for å være mer produktive og organiserte i arbeidet med tilgang til alle ${ BRAND_NAME }-apper og deres premiumfunksjoner."
       ],
@@ -11324,6 +11337,9 @@
       ],
       "10 email addresses": [
         "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 brukere"
       ],
       "20 email addresses per user": [
         "20 e-postadresser per bruker"
@@ -11477,6 +11493,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Unlimited privacy for two": [
+        "Ubegrenset personvern for to"
       ],
       "Users won’t be able to manage their calendars": [
         "Brukere kan ikke administrere kalenderne sine"
@@ -11876,6 +11895,9 @@
       ],
       "Self-destruction set": [
         "Selvdestruksjon angitt"
+      ],
+      "Text copied to clipboard": [
+        "Tekst kopiert til utklippstavlen"
       ],
       "Thanks for the feedback!": [
         "Takk for tilbakemeldingen!"
@@ -13051,7 +13073,7 @@
     },
     "wallet_signup_2024:Title": {
       "Wallet": [
-        "Lommebok"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet setup": {

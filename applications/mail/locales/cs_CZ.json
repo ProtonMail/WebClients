@@ -93,6 +93,9 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
+      "Adds it below your existing message": [
+        "Přidá ho pod vaší stávající zprávu"
+      ],
       "Align center": [
         "Zarovnat na střed"
       ],
@@ -227,9 +230,6 @@
       ],
       "Close & discard": [
         "Zavřít a zahodit"
-      ],
-      "Close AI refine suggestion": [
-        "Zavřít zpřesňující návrh AI"
       ],
       "Close composer": [
         "Zavřít editor"
@@ -573,6 +573,9 @@
       "hide-my-email aliases": [
         "aliasy Hide-my-email"
       ],
+      "I like this response": [
+        "Odpověď je dobrá"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Obrázek nemohl být načten kvůli ochraně před sledovacími prvky."
       ],
@@ -737,6 +740,12 @@
       ],
       "Minimize composer": [
         "Minimalizovat editor"
+      ],
+      "Modify": [
+        "Upravit"
+      ],
+      "Modify selection": [
+        "Upravit výběr"
       ],
       "Monday": [
         "Pondělí"
@@ -966,6 +975,12 @@
       "Remove this label": [
         "Odebrat štítek"
       ],
+      "Replace": [
+        "Nahradit"
+      ],
+      "Replaces the selected text in your message": [
+        "Nahradí vybraný text vaší zprávy"
+      ],
       "Reply": [
         "Odpovědět"
       ],
@@ -974,9 +989,6 @@
       ],
       "Reply securely": [
         "Odpovědět bezpečně"
-      ],
-      "Report a good content": [
-        "Nahlásit dobrý obsah"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -1200,8 +1212,8 @@
       "Stay": [
         "Zůstat"
       ],
-      "Stop downloading the writing assistant": [
-        "Zastavit stahování asistenta psaní"
+      "Stop downloading assistant": [
+        "Zastavit stahování asistenta"
       ],
       "Stop generating result": [
         "Zastavit generování výsledku"
@@ -1244,6 +1256,12 @@
       ],
       "Trust": [
         "Důvěřovat"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1329,9 +1347,6 @@
       "Use recovery code": [
         "Použít kód pro obnovení"
       ],
-      "Use this": [
-        "Použít toto"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocí myši změňte velikost zobrazení. Pokud používáte klávesnici, můžete ke změně velikosti použít klávesy se šipkami doleva a doprava."
       ],
@@ -1376,6 +1391,9 @@
       ],
       "Why not?": [
         "Proč ne?"
+      ],
+      "Write for me": [
+        "Napsat pro mě"
       ],
       "Yes": [
         "Ano"
@@ -1556,20 +1574,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Data zůstávají na vašem zařízení, vyžadují ale jednorázové stažení a kompatibilní hardware."
+      ],
       "Fast and secure. No logs are kept.": [
         "Rychlé a bezpečné. Nejsou uchovávány logy."
       ],
-      "Faster, broader device compatibility": [
-        "Rychlejší a s širší kompatibilitou se zařízeními"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Požadavky zůstávají na vašem zařízení, ale vyžadují jednorázové stažení a kompatibilní hardware"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Vyžaduje jednorázové stažení a kompatibilní hardware."
-      ],
-      "Run locally": [
-        "Lokální fungování"
+      "Run on device": [
+        "Spusťte na zařízení"
       ],
       "Run on servers": [
         "Provozovat na serverech"
@@ -3909,7 +3921,7 @@
       "Draft could not be saved. Try again.": [
         "Koncept se nepodařilo uložit, zkuste to znovu."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "Kvůli chybě nemohlo být zrušeno generování textu"
       ],
       "Email address disabled": [
@@ -4544,9 +4556,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasy nelze použít, pokud je v ${ PASS_APP_NAME } povoleno další heslo."
-      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -4718,8 +4727,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Úložiště, které vám bylo přiděleno: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Předplatné se účtuje hlavnímu správci tarifu Visionary nebo rodinného tarifu."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -4736,8 +4745,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Úspěšně jste se připojili k rodinnému tarifu"
+      "You have successfully joined the family group": [
+        "Úspěšně jste se připojili k rodinné skupině"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
@@ -5785,9 +5794,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } o ${ BRAND_NAME } asistentovi psaní"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
         "${ providerFoldersNumLocalized } složky nalezeny",
@@ -6247,14 +6253,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Stahování asistenta… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Stahování pozastaveno"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Stahování pozastaveno: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Stahování asistenta psaní: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Koncept"
@@ -6549,6 +6555,9 @@
       ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Více informací o ${ BRAND_NAME } asistentovi psaní"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -7603,9 +7612,6 @@
         "Vybrali jste **${ elementsCount } zpráv**.",
         "Vybrali jste **${ elementsCount } zpráv**."
       ],
-      "You selected some content:": [
-        "Vybrali jste některý obsah:"
-      ],
       "You will lose access to Plus features on this date.": [
         "K tomuto datu ztratíte přístup k Plus serverům a funkcím."
       ],
@@ -7982,9 +7988,6 @@
       ],
       " and ${ l }": [
         " a ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -8505,9 +8508,6 @@
       "Type a command...": [
         "Zadejte příkaz…"
       ],
-      "Type a prompt to generate an output": [
-        "Napište požadavek pro vygenerování odpovědi"
-      ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
       ],
@@ -8537,6 +8537,9 @@
       ],
       "Wonderful": [
         "Úžasné"
+      ],
+      "Writing assistant": [
+        "Asistent psaní"
       ],
       "Your alias": [
         "Váš alias"
@@ -9205,6 +9208,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Začít za cenu $1"
+      ],
+      "Get started for 1 €": [
+        "Začít za €1"
+      ],
+      "Get started for CHF 1": [
+        "Začít za 1 CHF"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ]
@@ -9746,6 +9758,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Zabezpečte svůj digitální život pomocí ${ BRAND_NAME } pro dva uživatele."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
@@ -9790,8 +9805,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
@@ -10424,8 +10439,8 @@
       "First name": [
         "Křestní jméno"
       ],
-      "Generating...": [
-        "Generování..."
+      "Generating": [
+        "Generování"
       ],
       "Gift code": [
         "Dárkový kód"
@@ -10466,9 +10481,6 @@
       "Please share what you expected": [
         "Prosím, uveďte to, co jste očekávali"
       ],
-      "Refining your text...": [
-        "Zpřesňuji váš text..."
-      ],
       "Search date, name, email address, or subject line": [
         "Vyhledávání podle data, jména, e-mailové adresy nebo předmětu zprávy"
       ],
@@ -10508,29 +10520,29 @@
       "Subject": [
         "Předmět"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Sdělte asistentovi psaní, co má napsat. Příklad: “Oznam nadcházející události ve zpravodaji”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Sdělte asistentovi psaní, co má napsat. Příklad: “Zruš moje členství v posilovně”"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Sdělte asistentovi psaní, co má napsat. Příklad: “Pozvi Janu na večírek”"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Sdělte asistentovi psaní, co má napsat. Příklad: “Poděkuj mému kolegovi za pomoc s projektem”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Sdělte asistentovi psaní, co má napsat. Příklad: “Napiš motivační dopis na stáž”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Sdělte asistentovi psaní, co má napsat. Příklad: “Napiš následný e-mail zákazníkovi”"
+      ],
       "Text": [
         "Text"
       ],
       "To": [
         "Komu"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Zkuste “Oznámit o nadcházejících událostech ve zpravodaji”"
-      ],
-      "Try “Cancel my gym membership”": [
-        "Zkuste “Zrušit moje členství v posilovně”"
-      ],
-      "Try “Invite Jane to my party”": [
-        "Zkuste “Pozvat Janu na mojí párty”"
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Zkuste “Poděkovat kolegovi za pomoc s projektem”"
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Zkuste “Napsat motivační dopis na stáž”"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Zkuste “Napsat následný e-mail zákazníkovi”"
       ],
       "Type a command…": [
         "Zadejte příkaz…"
@@ -11691,6 +11703,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vám zajišťuje neomezené soukromí a více úložného prostoru pro až 2 uživatele."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } poskytne vašemu týmu vše, co potřebuje k vyšší produktivitě a organizaci práce, a to díky přístupu ke všem aplikacím ${ BRAND_NAME } a jejich prémiovým funkcím."
       ],
@@ -11726,6 +11741,9 @@
       ],
       "10 email addresses": [
         "10 e-mailových adres"
+      ],
+      "2 users": [
+        "2 uživatelé"
       ],
       "20 email addresses per user": [
         "20 e-mailových adres na uživatele"
@@ -11879,6 +11897,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited privacy for two": [
+        "Neomezené soukromí pro dva"
       ],
       "Users won’t be able to manage their calendars": [
         "Uživatelé nebudou moci spravovat své kalendáře"
@@ -12330,6 +12351,9 @@
       ],
       "Self-destruction set": [
         "Samozničení nastaveno"
+      ],
+      "Text copied to clipboard": [
+        "Text zkopírován do schránky"
       ],
       "Thanks for the feedback!": [
         "Děkujeme za zpětnou vazbu!"
@@ -13282,7 +13306,7 @@
         "Ověřování vaší platby..."
       ],
       "Want to snooze any time?": [
-        "Chcete odložit kdykoliv?"
+        "Chcete odložit na kdykoliv?"
       ],
       "Warning": [
         "Varování"
