@@ -19,7 +19,7 @@ export const DesktopVersionSchema = z.object({
         }),
     ),
     RolloutProportion: z.number(),
-    ManualUpdate: z.array(z.string()),
+    ManualUpdate: z.array(z.string()).optional(),
 });
 
 export const VersionFileSchema = z.object({
