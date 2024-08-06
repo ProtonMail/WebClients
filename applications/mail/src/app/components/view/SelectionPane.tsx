@@ -7,7 +7,6 @@ import { c, msgid } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { Loader, useFolders, useLabels, useModalState } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -23,7 +22,6 @@ import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
-import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import type { SearchParameters } from '../../models/tools';
 import { total as totalSelector } from '../../store/elements/elementsSelectors';
@@ -46,7 +44,6 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
     const appLocation = useLocation();
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
-    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
     const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
     const conversationMode = isConversationMode(labelID, mailSettings, location);
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
@@ -196,7 +193,6 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     useEffect(() => {
         if (showSimpleLoginPlaceholder && !placeholderSLSeenSent) {
             // We need to send to telemetry the total number of messages that the user has in spam
-            handleSendTelemetryData(TelemetrySimpleLoginEvents.spam_view, {}, false, total);
             setPlaceholderSLSeenSent(true);
         }
     }, [showSimpleLoginPlaceholder]);
