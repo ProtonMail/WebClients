@@ -242,7 +242,7 @@
         "Obtén Pass Business"
       ],
       "Get Pass Plus": [
-        "Consigues Pass Plus"
+        "Consigue Pass Plus"
       ],
       "Get Started": [
         "Comenzar"
@@ -762,7 +762,7 @@
         "Error al mover elementos a la papelera"
       ],
       "Failed to pin item": [
-        "No se pudo anclar el elemento"
+        "No se ha podido anclar el elemento"
       ],
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
@@ -1171,7 +1171,7 @@
         "Autenticador de 2FA integrado"
       ],
       "Can be viewed": [
-        "Puede ser visto"
+        "Leer"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta caja fuerte."
@@ -1353,7 +1353,7 @@
         "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
       ],
       "Invitation sent": [
-        "La invitación ha sido enviada."
+        "Se ha enviado la invitación."
       ],
       "Invite specific people and set the right permissions.": [
         "Invita a personas específicas y establece los permisos correctos."
@@ -1449,8 +1449,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Mover un elemento a otra caja fuerte eliminará el historial y todos los enlaces seguros."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Mover un elemento a otra caja fuerte eliminará su historial."
+      ],
       "Moving items": [
         "Moviendo elementos"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Mover los elementos a otra caja fuerte eliminará el historial y todos los enlaces seguros."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
         "Moviendo elemento a la papelera"
@@ -2455,7 +2467,7 @@
         "Detalles de trabajo"
       ],
       "Work email": [
-        "Dirección de correo del trabajo"
+        "Correo electrónico del trabajo"
       ],
       "Work phone number": [
         "Número de teléfono del trabajo"
@@ -2578,7 +2590,7 @@
         "Nombre completo"
       ],
       "me@example.com": [
-        "correo@ejemplo.com"
+        "correo@ejemplo.es"
       ],
       "MM/YY": [
         "MM/AA"
@@ -2750,7 +2762,7 @@
         "Importar a las cajas fuertes"
       ],
       "Import your data": [
-        "Importa tus datos"
+        "Importa los datos"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
@@ -2784,6 +2796,15 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "¿Mover todos los elementos a «${ vaultName }»?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "¿Mover el elemento a «${ vaultName }»?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "¿Mover los elementos a «${ vaultName }»?"
       ],
       "No excluded items": [
         "No hay elementos excluidos."
@@ -2955,6 +2976,9 @@
       ],
       "OTP secret or URI required": [
         "Se requiere una clave secreta OTP o una URL."
+      ],
+      "Section name cannot be empty": [
+        "El nombre de la sección no puede estar vacío."
       ],
       "Url already exists": [
         "La URL ya existe."
