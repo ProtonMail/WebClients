@@ -482,10 +482,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3396,9 +3396,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -3425,6 +3422,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Cuando la contraseña adicional está activada, la gestión de alias solo puede hacerse en ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Necesita un calendario personal activo para importar eventos"
@@ -3614,8 +3614,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Almacenamiento asignado a usted: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "La suscripción se factura al administrador principal del plan Visionary o Family."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "La suscripción se facturará al administrador principal de este plan."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Los planes Visionary y familiar actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
@@ -3632,8 +3632,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Recibió una invitación para unirse a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Se ha unido al plan familiar."
+      "You have successfully joined the family group": [
+        "Se ha unido al grupo familiar con éxito"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está invitado a vincular la cuenta de ${ BRAND_NAME } a este plan de grupo y disfrutar juntos de todas las funciones premium de ${ BRAND_NAME_TWO }."
@@ -6224,6 +6224,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Comenzar por $1"
+      ],
+      "Get started for 1 €": [
+        "Comenzar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Comenzar por CHF 1"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
       ]
@@ -6729,6 +6738,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para su día a día."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Asegure su vida digital con ${ BRAND_NAME } para dos personas."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -6773,8 +6785,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja el calendario con cifrado de extremo a extremo. Incluye compatibilidad con calendarios personalizados, calendarios compartidos y más."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja los archivos con almacenamiento cifrado en la nube. Se incluyen el historial de versiones, intercambio de archivos, cifrado y más."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Proteja sus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja los correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y más."
@@ -8467,6 +8479,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } le da privacidad ilimitada y más almacenamiento para hasta dos personas."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } ofrece a su equipo lo que necesita para ser más productivo y organizado en su trabajo con acceso a todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium."
       ],
@@ -8502,6 +8517,9 @@
       ],
       "10 email addresses": [
         "10 direcciones de correo electrónico"
+      ],
+      "2 users": [
+        "2 usuarios"
       ],
       "20 email addresses per user": [
         "20 direcciones de correo por usuario"
@@ -8655,6 +8673,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited privacy for two": [
+        "Privacidad ilimitada para dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Los usuarios no podrán gestionar sus calendarios"

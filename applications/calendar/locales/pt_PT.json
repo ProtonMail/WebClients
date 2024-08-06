@@ -458,11 +458,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -3427,9 +3427,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a si: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "A subscrição é faturada ao administrador principal do plano Visionary ou family."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Os planos Visionary e Family não suportam actualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
       ],
@@ -3444,9 +3441,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Foi convidado a juntar-se a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Aderiu com êxito ao plano Family"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
@@ -4120,7 +4114,7 @@
         "Ciclo de faturação: ${ text }"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Impulsione a identidade da sua organização e crie uma experiência on-line mais consistente para os seus utilizadores."
+        "Impulsione a identidade da sua organização e crie uma experiência online mais consistente para os seus utilizadores."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
@@ -6441,9 +6435,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
@@ -7903,7 +7894,7 @@
         "Armazenamento adicional e bónus"
       ],
       "Learn more": [
-        "Mais informação"
+        "Saiba mais"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
