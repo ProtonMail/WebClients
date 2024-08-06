@@ -5,10 +5,13 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import { VerificationError } from '../worker/verifier';
+import type { FileUploadReady } from './interface';
+import type { FailedUploadMetadata } from './useUploadMetrics';
 import useUploadMetrics, {
     UploadErrorCategory,
     UploadShareType,
     getErrorCategory,
+    getFailedUploadMetadata,
     getShareType,
 } from './useUploadMetrics';
 
@@ -22,6 +25,13 @@ jest.mock('../../_shares/useSharesState', () => {
         };
     };
     return useSharesState;
+});
+
+const mockFailedUploadMetadata = (numberOfErrors: number, size: number = 10000) => ({
+    shareId: 'defaultShareId',
+    numberOfErrors: numberOfErrors,
+    encryptedTotalTransferSize: size + 45000, // random number
+    roundedUnencryptedFileSize: size,
 });
 
 describe('useUploadMetrics::', () => {
@@ -122,10 +132,12 @@ describe('useUploadMetrics::', () => {
         const mockMetricsSuccessRate = jest.fn();
         const mockMetricsErrors = jest.fn();
         const mockMetricsErroringUsers = jest.fn();
+        const mockMetricsErrorFileSize = jest.fn();
+        const mockMetricsErrorTransferSize = jest.fn();
 
         let hook: {
             current: {
-                uploadFailed: (shareId: string, error: any, numberOfErrors: number) => void;
+                uploadFailed: (failedUploadMetadata: FailedUploadMetadata, error: any) => void;
             };
         };
 
@@ -137,19 +149,21 @@ describe('useUploadMetrics::', () => {
                     drive_upload_success_rate_total: { increment: mockMetricsSuccessRate },
                     drive_upload_errors_total: { increment: mockMetricsErrors },
                     drive_upload_erroring_users_total: { increment: mockMetricsErroringUsers },
+                    drive_upload_errors_file_size_histogram: { observe: mockMetricsErrorFileSize },
+                    drive_upload_errors_transfer_size_histogram: { observe: mockMetricsErrorTransferSize },
                 } as any)
             );
             hook = result;
         });
 
-        it('does capture erroring user only every 10 minutes', () => {
+        it('does capture erroring user only every 5 minutes', () => {
             act(() => {
                 jest.useFakeTimers().setSystemTime(new Date('2020-01-01 10:00:00'));
-                hook.current.uploadFailed('defaultShareId', new Error('error'), 1);
-                hook.current.uploadFailed('defaultShareId', new Error('error'), 2);
-                hook.current.uploadFailed('defaultShareId', new Error('error'), 3);
-                jest.useFakeTimers().setSystemTime(new Date('2020-01-01 10:10:10')); // 10 minutes + few sec later
-                hook.current.uploadFailed('defaultShareId', new Error('error'), 4);
+                hook.current.uploadFailed(mockFailedUploadMetadata(1, 10000), new Error('error'));
+                hook.current.uploadFailed(mockFailedUploadMetadata(2, 20000), new Error('error'));
+                hook.current.uploadFailed(mockFailedUploadMetadata(3, 30000), new Error('error'));
+                jest.useFakeTimers().setSystemTime(new Date('2020-01-01 10:5:10')); // 5minutes + few sec later
+                hook.current.uploadFailed(mockFailedUploadMetadata(4, 40000), new Error('error'));
             });
             expect(mockMetricsSuccessRate).toHaveBeenCalledTimes(4);
             expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
@@ -176,11 +190,29 @@ describe('useUploadMetrics::', () => {
                 plan: 'paid',
                 shareType: 'shared',
             });
+            expect(mockMetricsErrorFileSize).toHaveBeenCalledTimes(4);
+            expect(mockMetricsErrorFileSize).toHaveBeenNthCalledWith(1, {
+                Value: 10000,
+                Labels: {},
+            });
+            expect(mockMetricsErrorFileSize).toHaveBeenNthCalledWith(2, {
+                Value: 20000,
+                Labels: {},
+            });
+            expect(mockMetricsErrorFileSize).toHaveBeenNthCalledWith(3, {
+                Value: 30000,
+                Labels: {},
+            });
+            expect(mockMetricsErrorFileSize).toHaveBeenNthCalledWith(4, {
+                Value: 40000,
+                Labels: {},
+            });
+            expect(mockMetricsErrorTransferSize).toHaveBeenCalledTimes(4);
         });
 
         it('ignores sucess rate metric for validation error', () => {
             act(() => {
-                hook.current.uploadFailed('defaultShareId', freeSpaceExceeded, 1);
+                hook.current.uploadFailed(mockFailedUploadMetadata(1), freeSpaceExceeded);
                 expect(mockMetricsSuccessRate).toHaveBeenCalledTimes(0);
                 expect(mockMetricsErrors).toHaveBeenCalledTimes(1);
             });
@@ -188,10 +220,67 @@ describe('useUploadMetrics::', () => {
 
         it('doesnt ignore sucess rate metric for unknown error', () => {
             act(() => {
-                hook.current.uploadFailed('defaultShareId', new Error('unknown error'), 1);
+                hook.current.uploadFailed(mockFailedUploadMetadata(1), new Error('unknown error'));
                 expect(mockMetricsSuccessRate).toHaveBeenCalledTimes(1);
                 expect(mockMetricsErrors).toHaveBeenCalledTimes(1);
             });
+        });
+    });
+
+    describe('getFailedUploadMetadata', () => {
+        const mockFileUploadReady = {
+            shareId: 'test-share-id',
+            numberOfErrors: 2,
+            file: {
+                size: 25000,
+            },
+        } as FileUploadReady;
+
+        it('should calculate metadata correctly', () => {
+            const mockProgresses = {
+                file1: 5000,
+                file2: 7000,
+                file3: 3000,
+            };
+
+            const result = getFailedUploadMetadata(mockFileUploadReady, mockProgresses);
+
+            const expectedResult: FailedUploadMetadata = {
+                shareId: 'test-share-id',
+                numberOfErrors: 2,
+                encryptedTotalTransferSize: 15000,
+                roundedUnencryptedFileSize: 30000,
+            };
+
+            expect(result).toEqual(expectedResult);
+        });
+
+        it('should handle empty progresses object', () => {
+            const result = getFailedUploadMetadata(mockFileUploadReady, {});
+
+            expect(result.encryptedTotalTransferSize).toBe(0);
+        });
+
+        it('should round up file size to minimum ROUND_BYTES', () => {
+            const smallFileUpload = {
+                ...mockFileUploadReady,
+                file: { size: 5000 },
+            } as FileUploadReady;
+
+            const result = getFailedUploadMetadata(smallFileUpload, {});
+
+            expect(result.roundedUnencryptedFileSize).toBe(10000);
+        });
+
+        it('should round file size to nearest ROUND_BYTES multiple', () => {
+            const largeFileUpload = {
+                ...mockFileUploadReady,
+                file: { size: 55000 },
+            } as FileUploadReady;
+
+            const result = getFailedUploadMetadata(largeFileUpload, {});
+
+            expect(result.roundedUnencryptedFileSize).toBe(60000);
         });
     });
 });
