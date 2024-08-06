@@ -46,7 +46,7 @@ export const LockSettings: FC = () => {
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
     const canToggleTTL = currentLockMode !== LockMode.NONE;
     const biometricsRolledOut = useFeatureFlag(PassFeature.PassDesktopBiometrics);
-    const [biometricsOptionEnabled, setBiometricsOptionEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
+    const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
     const plan = useSelector(selectPassPlan);
     const onFreePlan = !isPaidPlan(plan);
     const spotlight = useSpotlight();
@@ -197,7 +197,7 @@ export const LockSettings: FC = () => {
         (async () => {
             if (!DESKTOP_BUILD || currentLockMode === LockMode.BIOMETRICS) return;
             const canCheckPresence = (await window.ctxBridge?.canCheckPresence?.()) ?? false;
-            setBiometricsOptionEnabled(canCheckPresence && biometricsRolledOut);
+            setBiometricsEnabled(canCheckPresence && biometricsRolledOut);
         })().catch(noop);
     }, [currentLockMode, biometricsRolledOut]);
 
@@ -245,7 +245,7 @@ export const LockSettings: FC = () => {
                           ]
                         : []),
 
-                    ...(canPasswordLock && biometricsRolledOut
+                    ...(DESKTOP_BUILD && canPasswordLock && biometricsRolledOut
                         ? [
                               {
                                   label: (
@@ -253,7 +253,7 @@ export const LockSettings: FC = () => {
                                           <span className="block">
                                               {c('Label').t`Biometrics`}
                                               <span className="block color-weak text-sm">
-                                                  {biometricsOptionEnabled
+                                                  {biometricsEnabled
                                                       ? c('Info')
                                                             .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`
                                                       : c('Info')
@@ -263,7 +263,7 @@ export const LockSettings: FC = () => {
                                           {onFreePlan && <PassPlusPromotionButton className="button-xs" />}
                                       </span>
                                   ),
-                                  disabled: !biometricsOptionEnabled,
+                                  disabled: !biometricsEnabled,
                                   value: LockMode.BIOMETRICS,
                               },
                           ]
