@@ -162,7 +162,7 @@ const ConfigsTable = ({
                                         as={SettingsLink}
                                         color="norm"
                                         size="small"
-                                        path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN}` : '/upgrade'}
+                                        path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN2024}` : '/upgrade'}
                                     >{c('Action').t`Upgrade`}</ButtonLike>
                                 </Tooltip>
                             ) : onSelect ? (
