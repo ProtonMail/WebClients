@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import { useDrawer } from '@proton/components/hooks';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
-const SimpleLoginPlaceholder = () => {
+const ProtonPassPlaceholder = () => {
     const { toggleDrawerApp, appInView } = useDrawer();
 
     const openSecurityCenterInDrawer = () => {
@@ -34,4 +34,4 @@ const SimpleLoginPlaceholder = () => {
     );
 };
 
-export default SimpleLoginPlaceholder;
+export default ProtonPassPlaceholder;

@@ -28,7 +28,7 @@ import { useDeepMemo } from '../../hooks/useDeepMemo';
 import type { SearchParameters } from '../../models/tools';
 import { total as totalSelector } from '../../store/elements/elementsSelectors';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
-import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
+import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
 import './SelectionPane.scss';
 
@@ -218,7 +218,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     return (
         <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
             {showSimpleLoginPlaceholder ? (
-                <SimpleLoginPlaceholder />
+                <ProtonPassPlaceholder />
             ) : (
                 <>
                     <div className="mb-8">
@@ -242,12 +242,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         )}
                     </div>
                     <div className="mb-2">
-                        <img
-                            src={conversationSvg}
-                            width={144}
-                            height={101}
-                            alt=""
-                        />
+                        <img src={conversationSvg} width={144} height={101} alt="" />
                     </div>
                     {checkeds === 0 && labelName && (
                         <h3 className="lh-rg text-ellipsis" title={labelName}>
