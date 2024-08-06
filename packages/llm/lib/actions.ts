@@ -160,7 +160,7 @@ const makeRefineCleanup = (action: Action) => {
     const customStopStrings = getCustomStopStringsForAction(action);
     const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
     return (fulltext: string): string => {
-        fulltext = removeStopStrings(fulltext);
+        fulltext = removeStopStrings(fulltext, customStopStrings);
         fulltext = fulltext.replaceAll(/<\/?[a-z][^>]*>/gi, '');
         fulltext = fulltext.replaceAll(/^(Harmful|Subject|Body|Language) ?:.*$/gm, '');
         fulltext = convertToDoubleNewlines(fulltext);
@@ -281,7 +281,7 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
         },
         {
             role: 'assistant',
-            contents: `Sure, here's your email:\n\n\`\`\`markdown\n<!-- ${HARMFUL_CHECK_PREFIX}`,
+            contents: `Sure, here's your email:\n\n\`\`\`plaintext\n${HARMFUL_CHECK_PREFIX}`,
         },
     ]);
 }
@@ -337,7 +337,7 @@ function formatPromptCustomRefine(action: CustomRefineAction): string {
     const turns = [
         {
             role: 'user',
-            contents: `Here's my original email:\n\n\`\`\`markdown\n${oldEmail}\n\`\`\`\n\n${user}`,
+            contents: `Here's my original email:\n\n\`\`\`plaintext\n${oldEmail}\n\`\`\`\n\n${user}`,
         },
         {
             role: 'system',
@@ -345,7 +345,7 @@ function formatPromptCustomRefine(action: CustomRefineAction): string {
         },
         {
             role: 'assistant',
-            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`markdown\n${newEmailStart}`,
+            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`plaintext\n${newEmailStart}`,
         },
     ];
 
