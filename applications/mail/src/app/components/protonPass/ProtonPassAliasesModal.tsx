@@ -30,7 +30,7 @@ const ProtonPassAliasesModal = ({ ...rest }: Props) => {
             <ModalTwoHeader title={c('Title').t`Hide your email with ${PASS_APP_NAME}`} />
             <ModalTwoContent>
                 <div className="text-center mb-4">
-                    <img src={passIconSvg} width="195" alt="" />
+                    <img src={passIconSvg} width="120" alt="" />
                 </div>
                 <div>{c('Info')
                     .t`${PASS_APP_NAME} provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.`}</div>
