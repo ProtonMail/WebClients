@@ -1019,6 +1019,11 @@
         "L'événement n'est pas pris en charge."
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Invité"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
@@ -3122,9 +3127,6 @@
       "Access denied": [
         "L'accès est refusé."
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -3157,6 +3159,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Lorsque le mot de passe supplémentaire est activé, la gestion des alias ne peut se faire que dans ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
         "Vous pouvez aussi rafraîchir la page ou réessayer plus tard."
@@ -3300,8 +3305,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espace de stockage qui vous est attribué : ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "L'abonnement est facturé à l'administrateur principal de l'abonnement Visionary ou de l'abonnement familial."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "L'abonnement sera facturé à l'administrateur principal."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
@@ -3318,8 +3323,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Vous avez rejoint l'abonnement Family."
+      "You have successfully joined the family group": [
+        "Vous avez rejoint le groupe famillal."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
@@ -6550,6 +6555,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Lancez-vous pour 1 $"
+      ],
+      "Get started for 1 €": [
+        "Lancez-vous pour 1  €"
+      ],
+      "Get started for CHF 1": [
+        "Lancez-vous pour 1  CHF"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -7055,6 +7069,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
@@ -7099,8 +7116,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } : sécurisez vos fichiers avec un stockage cloud chiffré. Comprend l'historique des versions, le partage chiffré des fichiers et bien d'autres fonctionnalités."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
@@ -7801,7 +7818,7 @@
         "Traitement des paiements"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
+        "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Please select billing country": [
         "Veuillez sélectionner le pays pour la facturation."
@@ -7813,16 +7830,16 @@
         "Veuillez d'abord sélectionner votre pays de facturation."
       ],
       "Please select your billing state first.": [
-        "Veuillez d'abord sélectionner votre état de facturation."
+        "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
       "Select billing country to pay": [
-        "Veuillez sélectionner l'état pour la facturation à payer."
+        "Veuillez sélectionner l'état pour la facture à payer."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
@@ -7831,7 +7848,7 @@
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -8808,6 +8825,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vous offre une confidentialité illimitée et plus d'espace de stockage pour un maximum de 2 personnes."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } permet à votre équipe d'être plus productive, mieux organiser leur travail avec un accès à toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium."
       ],
@@ -8830,7 +8850,7 @@
         "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements et fichiers. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
+        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus d'espace de stockage annuels."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programme ${ PROTON_SENTINEL_NAME }"
@@ -8843,6 +8863,9 @@
       ],
       "10 email addresses": [
         "10 adresses e-mail"
+      ],
+      "2 users": [
+        "2 utilisateurs"
       ],
       "20 email addresses per user": [
         "20 adresses e-mail par utilisateur"
@@ -8860,7 +8883,7 @@
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
+        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -8914,7 +8937,7 @@
         "Aider les militants à Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN pour tous."
+        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN à tous."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Voici comment nous avons riposté lorsque ${ BRAND_NAME } a été la cible d'une campagne de censure agressive."
@@ -8929,7 +8952,7 @@
         "Les membres invités seront retirés de votre organisation."
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Garantirez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
+        "Garantissez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
       ],
       "Learn more": [
         "En savoir plus"
@@ -8947,7 +8970,7 @@
         "La protection de la vie privée en ligne, pour toute la famille"
       ],
       "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Les organisations, utilisateurs supplémentaires et domaine de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
+        "Les organisations, utilisateurs supplémentaires et domaines de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
       ],
       "Our fight against censorship in Russia": [
         "Notre combat contre la censure en Russie"
@@ -8997,6 +9020,9 @@
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
+      "Unlimited privacy for two": [
+        "Confidentialité illimitée pour deux personnes"
+      ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
       ],
@@ -9019,7 +9045,7 @@
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 1 Go d'espace de stockage pour Mail et jusqu'à 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Votre équipe sera interrompue dans son travail car les utilisateurs supplémentaires ne sont pas pris en charge par l'abonnement gratuit."
+        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -9034,13 +9060,13 @@
         "Vous disposez encore de ${ expiryDate } pour votre abonnement ${ planName }. Nous ajouterons ces crédits pour le temps restant sur votre compte ${ BRAND_NAME }. Assurez-vous de ne pas dépasser les limites de l'abonnement gratuit avant d'annuler votre abonnement. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de votre entreprise. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et maintient la connexion au sein de votre équipe."
+        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de vos activités. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et permet à votre équipe de rester connectée."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un aboonement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Votre domaine de messagerie personnalisé"

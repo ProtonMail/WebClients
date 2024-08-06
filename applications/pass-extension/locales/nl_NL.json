@@ -711,6 +711,9 @@
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
       ],
+      "File could not be read": [
+        "Bestand kon niet worden gelezen"
+      ],
       "File does not match expected format": [
         "Bestand komt niet overeen met verwacht formaat"
       ],
@@ -825,6 +828,9 @@
       "Unknown passkey": [
         "Onbekende toegangssleutel"
       ],
+      "Unlock failure": [
+        "Fout bij ontgrendelen"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Niet-ondersteund ${ PASS_APP_NAME }-bestandsformaat"
       ],
@@ -851,6 +857,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Verkeerde pincode. Probeer opnieuw."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
@@ -928,6 +937,9 @@
       "${ n } item": [
         "${ n } item",
         "${ n } items"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } zal altijd toegankelijk zijn"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zal het favicon van het item weergeven via de geanonimiseerde afbeeldingsproxy van ${ BRAND_NAME }."
@@ -1062,6 +1074,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" verwijderen"
       ],
+      "Disabling auto-lock": [
+        "Automatisch vergrendelen uitschakelen"
+      ],
+      "Disabling auto-lock failed": [
+        "Uitschakelen automatische vergrendeling mislukt"
+      ],
+      "Disabling offline mode...": [
+        "Offline modus uitschakelen..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Ontdek ${ PASS_APP_NAME } YouTube-video"
       ],
@@ -1091,6 +1112,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Schakel ${ PASS_APP_NAME } in door uw ${ BRAND_NAME }-account te verbinden"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Schakel auto-vergrendeling in om uw gegevens te beveiligen"
+      ],
+      "Enabling offline mode...": [
+        "Offline modus inschakelen..."
+      ],
+      "Enabling password auto-lock": [
+        "Automatisch vergrendelen wachtwoord inschakelen"
+      ],
+      "Enabling password lock failed": [
+        "Inschakelen van wachtwoordvergrendeling mislukt"
+      ],
+      "Enabling PIN auto-lock": [
+        "PIN-autovergrendeling inschakelen"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
@@ -1251,11 +1287,17 @@
       "None": [
         "Geen"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Offline modus kon momenteel niet worden uitgeschakeld"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Offline modus kon momenteel niet worden ingeschakeld"
       ],
       "Offline support successfully disabled": [
         "Offline ondersteuning succesvol uitgeschakeld"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code om uw sessie te ontgrendelen. U wordt uitgelogd na 3 mislukte pogingen."
       ],
       "Open the Extensions menu": [
         "Open het Extensie-menu"
@@ -1274,6 +1316,9 @@
       ],
       "Password copied": [
         "Wachtwoord gekopieerd"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Wachtwoordvergrendeling succesvol geregistreerd. Gebruik het om ${ PASS_APP_NAME } te ontgrendelen"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
@@ -1297,6 +1342,9 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Bevestig uw PIN-code om uw huidige vergrendeling te deactiveren."
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "Bevestig uw pincode om deze instelling te wijzigen."
       ],
@@ -1317,6 +1365,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
+      ],
+      "Registering PIN lock failed": [
+        "Registreren PIN-vergrendeling mislukt"
       ],
       "Restoring items from trash": [
         "Items herstellen uit prullenbak"

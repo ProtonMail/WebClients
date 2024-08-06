@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
+      "Accept": [
+        "Accepter"
       ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -109,6 +112,9 @@
       "Add domain": [
         "Ajouter un domaine"
       ],
+      "Add email address": [
+        "Ajouter une adresse e-mail"
+      ],
       "Add filter": [
         "Ajouter un filtre"
       ],
@@ -123,6 +129,9 @@
       ],
       "Add PayPal": [
         "Ajouter PayPal"
+      ],
+      "Add phone number": [
+        "Ajouter un numéro de téléphone"
       ],
       "Add public holidays": [
         "Ajouter les jours fériés"
@@ -171,6 +180,12 @@
       ],
       "Bold": [
         "Gras"
+      ],
+      "Can send to this group": [
+        "Vous pouvez effectuer des envois à ce groupe."
+      ],
+      "Can't send to this group": [
+        "Vous ne pouvez rien envoyer à ce groupe."
       ],
       "Cancel": [
         "Annuler"
@@ -325,6 +340,9 @@
       "Customize plan": [
         "Personnaliser l'abonnement"
       ],
+      "Decline": [
+        "Refuser"
+      ],
       "Decrease": [
         "Diminuer"
       ],
@@ -340,11 +358,17 @@
       "Delete Gateway": [
         "Supprimer la Passerelle"
       ],
+      "Delete group": [
+        "Supprimer le groupe"
+      ],
       "Delete link": [
         "Supprimer le lien"
       ],
       "Delete logo": [
         "Supprimer le logo"
+      ],
+      "Delete member": [
+        "Supprimer le membre"
       ],
       "Delete permanently": [
         "Supprimer définitivement"
@@ -378,6 +402,9 @@
       ],
       "Discard": [
         "Abandonner"
+      ],
+      "Discard changes": [
+        "Abandonner les modifications"
       ],
       "Don't show again": [
         "Ne plus afficher"
@@ -421,6 +448,9 @@
       "Edit Gateway": [
         "Modifier la Passerelle"
       ],
+      "Edit group": [
+        "Modifier le groupe"
+      ],
       "Edit invoice details": [
         "Modifier les informations de la facture"
       ],
@@ -462,6 +492,9 @@
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
+      ],
+      "Enable device-based recovery": [
+        "Activer la récupération à partir d'un appareil"
       ],
       "Enable multi-user support": [
         "Activer la prise en charge multi-utilisateur"
@@ -703,10 +736,10 @@
       "No, thanks": [
         "Non merci"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -769,17 +802,23 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reload": [
         "Recharger"
       ],
       "Remove": [
         "Retirer"
+      ],
+      "Remove all members": [
+        "Retirer tous les membres"
+      ],
+      "Remove all members from group": [
+        "Retirer tous les membres du groupe"
       ],
       "Remove bonuses": [
         "Retirer les bonus"
@@ -859,6 +898,9 @@
       "Review": [
         "Examiner"
       ],
+      "Review account security": [
+        "Examiner la sécurité du compte"
+      ],
       "Revoke": [
         "Révoquer"
       ],
@@ -867,6 +909,9 @@
       ],
       "Revoke all other sessions": [
         "Révoquer toutes les autres sessions"
+      ],
+      "Revoke invitation": [
+        "Révoquer l'invitation"
       ],
       "Revoke this invitation": [
         "Révoquer cette invitation"
@@ -1413,14 +1458,14 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Compatibilité avec plus d'appareils et plus rapide"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Les données restent sur votre appareil mais ceci nécessite un seul téléchargement et un matériel compatible."
       ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Les prompts restent sur votre appareil mais ceci nécessite un téléchargement unique et un matériel compatible."
+      "Fast and secure. No logs are kept.": [
+        "Rapide et sécurisé. Aucune trace de vos activités n'est conservée."
       ],
-      "Run locally": [
-        "Exécuter sur cet appareil"
+      "Run on device": [
+        "Exécuter sur l'appareil"
       ],
       "Run on servers": [
         "Exécuter sur les serveurs"
@@ -1571,6 +1616,14 @@
         "Choisissez votre offre de fin d'année"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 To d'espace de stockage (2 fois plus que tout autre abonnement)"
@@ -1592,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "L'abonnement ${ plan } est de retour pour une durée limitée."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5038,10 +5083,13 @@
       "Invited by: ${ inviteEmail }": [
         "Invitation de : ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Quitter l'abonnement familial"
+      "Leave Duo plan": [
+        "Quitter l'abonnement Duo"
       ],
-      "Leave visionary plan": [
+      "Leave Family plan": [
+        "Quitter l'abonnement Familiy"
+      ],
+      "Leave Visionary plan": [
         "Quitter l'abonnement Visionary"
       ],
       "Manage addresses.": [
@@ -5050,8 +5098,9 @@
       "Manage user accounts": [
         "Gérer les comptes utilisateur"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Le nombre d'invitations acceptées est limité à 10 par période de 6 mois."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Seule ${ n } invitation tous les 6 mois est acceptée.",
+        "Seules ${ n } invitations tous les 6 mois sont acceptées."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement de groupe."
@@ -5071,8 +5120,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espace de stockage qui vous est attribué : ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "L'abonnement est facturé à l'administrateur principal de l'abonnement Visionary ou de l'abonnement familial."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "L'abonnement sera facturé à l'administrateur principal."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Pour faciliter la transition, nous vous offrons un essai gratuit de 30 jours pour ${ BRAND_NAME } Unlimited*."
@@ -5095,14 +5144,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Vous avez atteint le nombre maximum de 10 invitations acceptées en 6 mois."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Vous avez atteint la limite maximale : seule ${ n } invitation tous les 6 mois est acceptée.",
+        "Vous avez atteint la limite maximale : seules ${ n } invitations tous les 6 mois sont acceptées."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Vous avez atteint la limite de 10 invitations acceptées en 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Vous avez atteint le nombre maximum, à savoir ${ n } invitation tous les 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs.",
+        "Vous avez atteint le nombre maximum, à savoir ${ n } invitations tous les 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs."
       ],
-      "You have successfully joined the Family plan": [
-        "Vous avez rejoint l'abonnement Family."
+      "You have successfully joined the family group": [
+        "Vous avez rejoint le groupe famillal."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Vous devez configurer un domaine personnalisé avant d'ajouter plusieurs utilisateurs."
@@ -5214,11 +5265,11 @@
       "Edit user storage": [
         "Modifiez l'espace de stockage de l'utilisateur"
       ],
+      "Family": [
+        "Family"
+      ],
       "Family name": [
         "Nom de la famille"
-      ],
-      "Family plan": [
-        "Abonnement Family"
       ],
       "Invite a user": [
         "Invitez un utilisateur"
@@ -5702,6 +5753,46 @@
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Actif"
+      ],
+      "Unanswered": [
+        "Sans réponse"
+      ]
+    },
+    "group_invitation: Success": {
+      "Group invitation accepted": [
+        "L'invitation du groupe a été acceptée."
+      ],
+      "Group invitation declined": [
+        "L'invitation du groupe a été refusée."
+      ],
+      "Left group": [
+        "Quitter le groupe"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Essayez d'ouvrir le lien à nouveau."
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Vous pouvez fermer cet onglet en toute sécurité."
+      ],
+      "You have declined the group invitation and will not receive any email from this group.": [
+        "Vous avez décliné l'invitation du groupe et ne recevrez pas d'e-mail de ce groupe."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "L'invitation du groupe a été acceptée."
+      ],
+      "Group invitation declined": [
+        "L'invitation du groupe a été refusée."
       ]
     },
     "Header": {
@@ -6280,7 +6371,7 @@
         "${ inviterEmailJSX } veut partager des données avec vous dans ${ PASS_APP_NAME }."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
+        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe unique, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -6586,6 +6677,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Les personnes qui disposent de ce lien ne pourront pas synchroniser votre calendrier ni recevoir ses futures mises à jour. Si vous voulez leur redonner l'accès, vous devrez créer un nouveau lien."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Êtes-vous sûr de vouloir annuler la modification du groupe ?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Voulez-vous vraiment supprimer ce calendrier ?"
       ],
@@ -6603,6 +6697,9 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Voulez-vous vraiment supprimer ce dossier ?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Êtes-vous sûr de vouloir supprimer ce groupe ? L'adresse du groupe ne fonctionnera plus."
       ],
       "Are you sure you want to delete this label?": [
         "Voulez-vous vraiment supprimer ce label ?"
@@ -6624,6 +6721,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Êtes-vous sûr de vouloir retirer tous les membres de ce groupe ?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
@@ -6702,6 +6802,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
+      ],
+      "Breach Custom Email Created": [
+        "L'e-mail personnalisé en cas de fuite de données a été créé."
       ],
       "Breach Custom Email Deleted": [
         "L'e-mail personnalisé en cas de fuite de données a été supprimé."
@@ -6849,11 +6952,11 @@
       "Data locked": [
         "Les données sont verrouillées."
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -7667,6 +7770,15 @@
       "Paid for a monthly plan": [
         "Payé pour un abonnement mensuel"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - l'e-mail personnalisé a été confirmé."
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - l'e-mail personnalisé a été créé."
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - l'e-mail personnalisé a été supprimé."
+      ],
       "password": [
         "mot de passe"
       ],
@@ -8169,13 +8281,16 @@
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Cette fonctionnalité retarde l'envoi de vos messages, vous donnant la possibilité d'annuler l'envoi pendant un délai choisi."
+        "Cette fonctionnalité retarde l'envoi de vos messages, vous donnant la possibilité d'annuler l'envoi dans un délai imparti."
       ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Ce lien d'invitation est arrivé à expiration. Contactez l'administrateur pour en demander l'accès."
+      ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "Ce lien d'invitation a expiré. Nous venons de vous envoyer un nouveau lien."
       ],
       "This invitation link is already used. Please sign in directly instead.": [
         "Ce lien d'invitation est déjà utilisé. Connectez-vous directement à la place."
@@ -8221,9 +8336,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Cette vérification peut prendre jusqu'à une heure. Après une vérification réussie, ne supprimez pas l'enregistrement TXT car il est nécessaire pour confirmer que vous possédez toujours le domaine."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Cela supprimera toutes les versions précédentes de vos fichiers qui datent de plus de ${ rententionLabel }."
@@ -8510,6 +8622,9 @@
       "Version number successfully copied to clipboard": [
         "Le numéro de version a été copié dans le presse-papiers."
       ],
+      "View and manage your groups.": [
+        "Affichez et gérez vos groupes."
+      ],
       "View, download, and manage your invoices.": [
         "Consultez, téléchargez et gérez vos factures."
       ],
@@ -8687,6 +8802,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }",
         "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }"
+      ],
+      "You are in no group nor invited to any": [
+        "Vous ne faites partie d'aucun groupe et n'êtes invité à aucun."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté au compte ${ memberAddress }."
@@ -8915,8 +9033,8 @@
       "Your recovery phrase": [
         "Votre phrase de récupération"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Votre phrase de récupération est une série de 12 mots dans un ordre spécifique."
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Votre phrase de récupération est une série de 12 mots générés aléatoirement dans un ordre spécifique."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
@@ -9013,6 +9131,14 @@
     "Input placeholder": {
       "Add label": [
         "Ajoutez un label."
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "En attente"
+      ],
+      "Rejected": [
+        "Rejeté"
       ]
     },
     "Invoice state display as badge": {
@@ -11246,6 +11372,15 @@
       "From ${ price }": [
         "À partir de ${ price }"
       ],
+      "Get started for $1": [
+        "Lancez-vous pour 1 $"
+      ],
+      "Get started for 1 €": [
+        "Lancez-vous pour 1  €"
+      ],
+      "Get started for CHF 1": [
+        "Lancez-vous pour 1  CHF"
+      ],
       "Upgrade": [
         "Changer d'abonnement"
       ],
@@ -11789,6 +11924,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
+      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Définissez des réponses automatiques pour informer les personnes qui vous écrivent que vous êtes absent ou que vous ne pouvez pas répondre."
       ],
@@ -11893,8 +12031,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } : sécurisez vos fichiers avec un stockage cloud chiffré. Comprend l'historique des versions, le partage chiffré des fichiers et bien d'autres fonctionnalités."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
@@ -13186,7 +13324,7 @@
         "Pour continuer, ajoutez un moyen de paiement dans le tableau de bord."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
+        "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Please select billing country": [
         "Veuillez sélectionner le pays pour la facturation."
@@ -13198,31 +13336,31 @@
         "Veuillez d'abord sélectionner votre pays de facturation."
       ],
       "Please select your billing state first.": [
-        "Veuillez d'abord sélectionner votre état de facturation."
+        "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
       "Processing payment": [
         "Traitement du paiement"
       ],
       "Select billing country to pay": [
-        "Veuillez sélectionner l'état pour la facturation à payer."
+        "Veuillez sélectionner l'état pour la facture à payer."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "La transaction a été détectée avec succès. Les crédits seront ajoutés à votre compte une fois la transaction confirmée."
+        "La transaction a été détectée. Les crédits seront ajoutés à votre compte une fois la transaction entièrement confirmée."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -13400,9 +13538,6 @@
     "placeholder": {
       "Add a group name": [
         "Ajouter un nom au groupe"
-      ],
-      "Add member": [
-        "Ajouter un membre"
       ],
       "e.g. distribution list for marketing team": [
         "par exemple une liste de diffusion pour l'équipe marketing"
@@ -13628,11 +13763,11 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "La connexion n'a pas abouti."
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
-      ],
-      "Something went wrong. Please try again.": [
-        "Une erreur s'est produite. Nous vous invitons à réessayer."
       ]
     },
     "saml: Info": {
@@ -14813,6 +14948,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vous offre une confidentialité illimitée et plus d'espace de stockage pour un maximum de 2 personnes."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } permet à votre équipe d'être plus productive, mieux organiser leur travail avec un accès à toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium."
       ],
@@ -14835,7 +14973,7 @@
         "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements et fichiers. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
+        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus d'espace de stockage annuels."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programme ${ PROTON_SENTINEL_NAME }"
@@ -14848,6 +14986,9 @@
       ],
       "10 email addresses": [
         "10 adresses e-mail"
+      ],
+      "2 users": [
+        "2 utilisateurs"
       ],
       "20 email addresses per user": [
         "20 adresses e-mail par utilisateur"
@@ -14865,7 +15006,7 @@
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
+        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -14931,7 +15072,7 @@
         "Aider les militants à Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN pour tous."
+        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN à tous."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Voici comment nous avons riposté lorsque ${ BRAND_NAME } a été la cible d'une campagne de censure agressive."
@@ -14952,7 +15093,7 @@
         "Conserver ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Garantirez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
+        "Garantissez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
       ],
       "Learn more": [
         "En savoir plus"
@@ -14970,7 +15111,7 @@
         "La protection de la vie privée en ligne, pour toute la famille"
       ],
       "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Les organisations, utilisateurs supplémentaires et domaine de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
+        "Les organisations, utilisateurs supplémentaires et domaines de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
       ],
       "Our fight against censorship in Russia": [
         "Notre combat contre la censure en Russie"
@@ -15029,6 +15170,9 @@
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
+      "Unlimited privacy for two": [
+        "Confidentialité illimitée pour deux personnes"
+      ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
       ],
@@ -15051,7 +15195,7 @@
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 1 Go d'espace de stockage pour Mail et jusqu'à 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Votre équipe sera interrompue dans son travail car les utilisateurs supplémentaires ne sont pas pris en charge par l'abonnement gratuit."
+        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -15069,13 +15213,13 @@
         "${ planName } a été annulé."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de votre entreprise. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et maintient la connexion au sein de votre équipe."
+        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de vos activités. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et permet à votre équipe de rester connectée."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un aboonement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Votre domaine de messagerie personnalisé"
@@ -15694,6 +15838,9 @@
       "Add users": [
         "Ajouter des utilisateurs"
       ],
+      "Address": [
+        "Adresse"
+      ],
       "Address and key verification": [
         "Vérification de l'adresse et de la clé"
       ],
@@ -15760,10 +15907,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -15931,6 +16078,9 @@
       ],
       "Delete folder?": [
         "Supprimer le dossier ?"
+      ],
+      "Delete group?": [
+        "Supprimer le groupe ?"
       ],
       "Delete key permanently?": [
         "Supprimer la clé définitivement ?"
@@ -16162,6 +16312,12 @@
       "Gift code": [
         "Code-cadeau"
       ],
+      "Group": [
+        "Groupe"
+      ],
+      "Group membership": [
+        "Membres du groupe"
+      ],
       "Groups": [
         "Groupes"
       ],
@@ -16384,6 +16540,9 @@
       ],
       "Refer a friend": [
         "Parrainer un ami"
+      ],
+      "Remove all members?": [
+        "Retirer tous les membres ?"
       ],
       "Remove calendar": [
         "Retirer le calendrier"
@@ -17011,6 +17170,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ],
+      "User rejected invitation": [
+        "L'utilisateur a refusé l'invitation."
+      ],
+      "Waiting user to accept the invitation": [
+        "En attente de l’acceptation de l’invitation par l’utilisateur"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17355,19 +17520,19 @@
         "${ n } portefeuilles"
       ],
       "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Obtenez ${ plan }** pour un accès en avant-première à ${ appName }!"
+        "**Optez pour ${ plan }** et bénéficiez d'un accès anticipé à ${ appName } !"
       ],
       "A safer way to hold your Bitcoin": [
         "Une manière plus sûre de détenir votre Bitcoin"
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "En tant qu'utilisateur invité, inscrivez-vous pour un compte Free ${ BRAND_NAME } afin d'accéder uniquement à ${ appName }"
+        "En tant qu'utilisateur invité, inscrivez-vous pour obtenir un compte ${ BRAND_NAME } gratuit afin d'accéder en exclusivité à ${ appName }."
       ],
       "Bitcoin via email": [
         "Bitcoin par e-mail"
       ],
       "Create ${ BRAND_NAME } Account now": [
-        "Créez votre compte ${ BRAND_NAME } dès à présent"
+        "Créez dès à présent votre compte ${ BRAND_NAME }"
       ],
       "Early access to new features": [
         "Accès anticipé aux nouvelles fonctionnalités"
@@ -17376,7 +17541,7 @@
         "Liste d'attente pour un accès anticipé"
       ],
       "Exclusive early access to ${ appName }.": [
-        "Accès exclusif en avant-première à ${ appName }."
+        "Accès exclusif anticipé à ${ appName }."
       ],
       "Get started": [
         "Démarrer"
@@ -17387,14 +17552,14 @@
       "Join ${ appName } early access!": [
         "Rejoignez ${ appName } en avant-première !"
       ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "Inscrivez-vous gratuitement pour un compte Free ${ BRAND_NAME } pour sécuriser votre place. Plus tôt vous vous inscrivez, plus tôt vous aurez accès à ${ appName }."
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
+        "Inscrivez-vous et obtenez un compte ${ BRAND_NAME } gratuit pour garantir votre place. Plus vous vous inscrivez tôt, plus vous aurez accès rapidement à ${ appName }. Après l'inscription, vous pouvez également passer à notre abonnement exclusif Visionary pour éviter la liste d'attente et commencer à utiliser ${ appName } immédiatement."
       ],
       "Unlock ${ appName } premium features by upgrading": [
-        "Bénéficiez des fonctionnalités premium de ${ appName } en mettant à jour votre abonnement."
+        "Bénéficiez des fonctionnalités premium de ${ appName } en améliorant votre abonnement."
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Les utilisateurs Visionary et leurs amis invités peuvent partager un accès en avant-première avec d'autres personnes, invitez vos amis à essayer ${ appName } gratuitement !"
+        "Les utilisateurs Visionary et leurs amis invités peuvent partager un accès anticipé avec d'autres personnes. Invitez vos amis à essayer ${ appName } gratuitement !"
       ],
       "You're Invited.": [
         "Vous êtes invité."
@@ -17412,7 +17577,7 @@
     },
     "wallet_signup_2024:Info": {
       "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
-        "${ WALLET_APP_NAME } est disponible en accès anticipé. Vous pouvez télécharger l'application iOS depuis Apple TestFlight et l'application Android depuis  Google Open Testing."
+        "${ WALLET_APP_NAME } est disponible en accès anticipé. Vous pouvez télécharger l'application iOS depuis Apple TestFlight et l'application Android depuis Google Open Testing."
       ],
       "Coming soon": [
         "Prochainement disponible"

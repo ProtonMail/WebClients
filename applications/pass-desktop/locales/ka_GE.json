@@ -14,6 +14,9 @@
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
       ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -592,6 +595,9 @@
         "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს",
         "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს"
       ],
+      "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
+        "2FA თქვენს სისტემაში შესვლას დამატებით ფენას ამატებს. ${ PASS_APP_NAME } 2FA-ს აადვილებს თქვენი კოდების დამახსოვრებით და ავტომატური შევსებით."
+      ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "ელფოსტის ფსევდონიმი ელფოსტის მისამართივით მუშაობს, მაგრამ ამცირებს სპამს და თქვენს ნამდვილ ელფოსის მისამართს და იდენტიფიკატორს დამალულად შეინარჩუნებს."
       ],
@@ -633,6 +639,9 @@
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "განბლოკეთ დამატებითი უსაფრთხოების ფუნქციები და დეტალური ჟურნალი, რომ დაიცვათ თქვენი კვალი ინტერნეტში."
+      ],
+      "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "გაუსწარით ${ PASS_SHORT_APP_NAME } Monitor-თან ერთად საშიშროებებს, მიიღეთ გაფრთხილებები, თუ თქვენი ავტორიზაციი დეტალები გატეხეს. განბლოკეთ დამატებთი უსაფრთხოების ფუნქციები და დეტალური ჟურნალი, რომ თქვენი ინტერნეტი მუშაობა დაიცვათ."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "თქვენი ელფოსტის მისამართები, სულ ცოტა, 1 მონაცემების გაჟონვაში გამოჩნდა."
@@ -929,6 +938,9 @@
       "Vault name does not match": [
         "საცავის სახელი არ ემთხვევა"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "აღმოჩენილია შეცდომა ${ PASS_SHORT_APP_NAME }-ის გაშვებისას. თუ ეს პრობლემა გაგრძელდება, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
+      ],
       "Wrong password": [
         "არასწორი პაროლი"
       ],
@@ -1146,6 +1158,9 @@
       "Auto-lock successfully disabled.": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "თქვენი მონაცემების ამ ფორმატში გატანამდე გახსენთ Safari-ის პარამეტრებ -> \"ზოგადი\" ჩანართი -> გათიშეთ პარამეტრი \"Safari-ის ფაილების გახსნა მათი გამოწერის შემდეგ\". ეს Safari-ი ხელს შეუშლის, გატანილი ფაილი გააფუჭოს."
+      ],
       "Breaches detected": [
         "აღმოჩენილია გაჟონვები"
       ],
@@ -1217,6 +1232,9 @@
       ],
       "Drop to import": [
         "შემოსატანად დააგდეთ"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari ბრაუზერის გაფართოებების შეზღუდვის გამო, მონაცემების გატანის შემდეგ ფაილის გაფართოებას დააკლდება \".pgp\". გადაარქვით ფაილს სახელი, რომ .pgp მიემატოს ბოლოში (მაგალითად: file.pgp) მას შემდეგ, რაც გაიტანთ."
       ],
       "Editor": [
         "რედაქტორი"
@@ -1653,6 +1671,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "გატანილი ფაილი PGP-ით დაიშიფრება და რთულ საკვანძო ფრაზას მოითხოვს."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "გაჟონილი ინფორმაცია მესამე პირების მიერ იქნა გავრცელებული. თქვენი ${ BRAND_NAME }-ის ანგარიშის ინფორმაცია დაცულად და დაშიფრულად რჩება. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "დამატებითი პაროლი აუცილებელია ${ PASS_APP_NAME }-ის გამოყენებისას. ის ${ BRAND_NAME }-ის პაროლთან ერთად დამატებით პაროლად გამოიყენება."
@@ -2299,6 +2320,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "უსაფრთხოდ შეინახეთ, გააზიარეთ და შედით უსაფრთხოდ თქვენს ანგარიშებში ${ PASS_APP_NAME }-ით, რომელიც იყენებს გამჭოლ დაშიფვრას, რომელსაც მილიონობით ადამიანი ენდობა."
       ],
       "Security": [
         "უსაფრთხოება"

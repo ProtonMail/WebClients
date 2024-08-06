@@ -1583,6 +1583,9 @@
       "Congo": [
         "República del Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo, (República Democràtica del)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
       ],
@@ -2118,7 +2121,7 @@
         "Tanzània"
       ],
       "Tanzania, United Republic of": [
-        "Tanzània (República Unida)"
+        "Tanzània"
       ],
       "Thailand": [
         "Tailàndia"
@@ -3273,9 +3276,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "La subscripció es factura a l'administrador principal del pla Visionary o familiar."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
       ],
@@ -3290,9 +3290,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Us heu unit al pla familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
@@ -7066,9 +7063,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
@@ -7598,7 +7592,7 @@
     },
     "Onboarding Action": {
       "Create new document": [
-        "Crea un nou document"
+        "Crea un document nou"
       ],
       "Next": [
         "Següent"
@@ -9408,6 +9402,9 @@
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
+      "Coupon": [
+        "Cupó"
+      ],
       "Create a new file": [
         "Crea un fitxer"
       ],
@@ -10083,9 +10080,17 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte per cartera",
+        "${ n } comptes per cartera"
+      ],
       "${ n } email address": [
         "${ n } adreça de correu electrònic",
         "${ n } adreces de correu electrònic"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteres"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"

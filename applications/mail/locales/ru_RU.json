@@ -225,9 +225,6 @@
       "Close & discard": [
         "Закрыть и сбросить"
       ],
-      "Close AI refine suggestion": [
-        "Закройте предложение ИИ об уточнении"
-      ],
       "Close composer": [
         "Закрыть редактор писем"
       ],
@@ -720,6 +717,9 @@
       "Minimize composer": [
         "Свернуть редактор писем"
       ],
+      "Modify": [
+        "Изменить"
+      ],
       "Monday": [
         "Понедельник"
       ],
@@ -957,9 +957,6 @@
       "Reply securely": [
         "Ответить безопасно"
       ],
-      "Report a good content": [
-        "Сообщить о хорошем содержимом"
-      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -1176,9 +1173,6 @@
       "Stay": [
         "Остаться"
       ],
-      "Stop downloading the writing assistant": [
-        "Прекратить загрузку помощника по написанию"
-      ],
       "Stop generating result": [
         "Остановить создание результата"
       ],
@@ -1220,6 +1214,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1304,9 +1304,6 @@
       ],
       "Use recovery code": [
         "Использовать код восстановления"
-      ],
-      "Use this": [
-        "Использовать это"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
@@ -1528,15 +1525,6 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Быстро и безопасно. Журналы не сохраняются."
-      ],
-      "Faster, broader device compatibility": [
-        "Более быстрая и широкая совместимость устройств"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Требуется одноразовая загрузка и совместимое оборудование."
-      ],
-      "Run locally": [
-        "Запустить локально"
       ],
       "Run on servers": [
         "Выполнять на серверах"
@@ -3873,9 +3861,6 @@
       "Draft could not be saved. Try again.": [
         "Черновик не сохранился. Попробуйте ещё раз."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
-        "Из-за ошибки генерирование текста не может быть отменено"
-      ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
       ],
@@ -4676,9 +4661,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Доступный объем хранилища: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Подписка оплачивается основным администратором семейного плана или тарифа Visionary."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "На данный момент семейный план и тариф Visionary не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
@@ -4693,9 +4675,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Вы успешно присоединились к тарифу Family"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
@@ -5740,9 +5719,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } о помощнике по написанию ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
         "Найдены ${ providerFoldersNumLocalized } папки",
@@ -6186,9 +6162,6 @@
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Скачивание приостановлено: ${ progressDisplay } ГБ"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Скачивание помощника по написанию: ${ progressDisplay } ГБ"
       ],
       "Draft": [
         "Черновик"
@@ -7507,9 +7480,6 @@
         "Вы выбрали **${ elementsCount } сообщений**.",
         "Вы выбрали **${ elementsCount } сообщений**."
       ],
-      "You selected some content:": [
-        "Вы выбрали некоторое содержимое:"
-      ],
       "You will lose access to Plus features on this date.": [
         "С этой даты вы потеряете доступ к функциям Plus."
       ],
@@ -8405,9 +8375,6 @@
       ],
       "Type a command...": [
         "Введите команду..."
-      ],
-      "Type a prompt to generate an output": [
-        "Введите запрос для создания выходных данных"
       ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
@@ -9688,9 +9655,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает историю версий, общий доступ к зашифрованным файлам и многое другое."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
       ],
@@ -10307,9 +10271,6 @@
       "First name": [
         "Имя"
       ],
-      "Generating...": [
-        "Генерирование..."
-      ],
       "Gift code": [
         "Подарочный код"
       ],
@@ -10348,9 +10309,6 @@
       ],
       "Please share what you expected": [
         "Поделитесь тем, что вы ожидали"
-      ],
-      "Refining your text...": [
-        "Доработка текста..."
       ],
       "Search date, name, email address, or subject line": [
         "Поиск по дате, имени, адресу электронной почты или теме письма"
@@ -10396,24 +10354,6 @@
       ],
       "To": [
         "Кому"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Попробуйте \"Объявить о предстоящих событиях в информационном бюллетене\"."
-      ],
-      "Try “Cancel my gym membership”": [
-        "Попробовать \"Отменить абонемент в спортзал\"."
-      ],
-      "Try “Invite Jane to my party”": [
-        "Попробовать \"Пригласить Джейн на мою вечеринку\"."
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Попробовать \"Поблагодарить коллегу за помощь в проекте\"."
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Попробовать \"Написать сопроводительное письмо для стажировки\"."
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Попробовать \"Написать повторное письмо клиенту\"."
       ],
       "Type a command…": [
         "Введите команду…"
