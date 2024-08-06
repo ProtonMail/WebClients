@@ -9,7 +9,7 @@
         "Cuenta"
       ],
       "Account settings": [
-        "Configuración de cuenta"
+        "Ajustes de cuenta"
       ],
       "Add": [
         "Añadir"
@@ -141,7 +141,7 @@
         "Crear inicio de sesión"
       ],
       "Create new login": [
-        "Crear un nuevo inicio de sesión"
+        "Crear un inicio de sesión"
       ],
       "Create note": [
         "Crear nota"
@@ -246,7 +246,7 @@
         "Obtén Pass Business"
       ],
       "Get Pass Plus": [
-        "Consigues Pass Plus"
+        "Consigue Pass Plus"
       ],
       "Help us improve": [
         "Ayúdanos a mejorar"
@@ -733,7 +733,7 @@
         "Error al mover elementos a la papelera"
       ],
       "Failed to pin item": [
-        "No se pudo anclar el elemento"
+        "No se ha podido anclar el elemento"
       ],
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
@@ -1111,6 +1111,9 @@
       "Auto-lock successfully disabled.": [
         "Se ha desactivado el bloqueo automático."
       ],
+      "Automatically copy the generated password to the clipboard": [
+        "Copiar automáticamente la contraseña generada al portapapeles"
+      ],
       "Autosaved on ${ payload.domain }": [
         "Guardado automáticamente en ${ payload.domain }"
       ],
@@ -1121,7 +1124,7 @@
         "Autenticador de 2FA integrado"
       ],
       "Can be viewed": [
-        "Puede ser visto"
+        "Leer"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta caja fuerte."
@@ -1306,7 +1309,7 @@
         "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
       ],
       "Invitation sent": [
-        "La invitación ha sido enviada."
+        "Se ha enviado la invitación."
       ],
       "Invite successfully removed": [
         "La invitación ha sido borrada."
@@ -1384,14 +1387,29 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Mover un elemento a otra caja fuerte eliminará el historial y todos los enlaces seguros."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Mover un elemento a otra caja fuerte eliminará su historial."
+      ],
       "Moving items": [
         "Moviendo elementos"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Mover los elementos a otra caja fuerte eliminará el historial y todos los enlaces seguros."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
         "Moviendo elemento a la papelera"
       ],
       "Never": [
         "Nunca"
+      ],
+      "No identity item found": [
+        "No se ha encontrado ningún elemento de identidad."
       ],
       "No login found": [
         "No se ha encontrado ningún inicio de sesión."
@@ -1427,7 +1445,7 @@
         "Inicio de sesión con clave de acceso"
       ],
       "Password copied": [
-        "La contraseña ha sido copiada."
+        "Se ha copiado la contraseña."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se ha registrado el bloqueo por contraseña. Utilízalo para desbloquear ${ PASS_APP_NAME }."
@@ -2401,7 +2419,7 @@
         "Detalles de trabajo"
       ],
       "Work email": [
-        "Dirección de correo del trabajo"
+        "Correo electrónico del trabajo"
       ],
       "Work phone number": [
         "Número de teléfono del trabajo"
@@ -2564,6 +2582,9 @@
       "Auto-lock update": [
         "Actualización de bloqueo automático"
       ],
+      "Autofill": [
+        "Relleno automático"
+      ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"
       ],
@@ -2621,6 +2642,9 @@
       "History": [
         "Historial"
       ],
+      "Identity": [
+        "Identidad"
+      ],
       "Import - ${ date }": [
         "Importación - ${ date }"
       ],
@@ -2650,6 +2674,15 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "¿Mover todos los elementos a «${ vaultName }»?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "¿Mover el elemento a «${ vaultName }»?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "¿Mover los elementos a «${ vaultName }»?"
       ],
       "No items selected": [
         "No hay elementos seleccionados."
@@ -2778,6 +2811,9 @@
       ],
       "OTP secret or URI required": [
         "Se requiere una clave secreta OTP o una URL."
+      ],
+      "Section name cannot be empty": [
+        "El nombre de la sección no puede estar vacío."
       ],
       "Url already exists": [
         "La URL ya existe."

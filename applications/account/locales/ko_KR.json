@@ -67,10 +67,13 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "activate": [
-        "활성화"
+      "Accept": [
+        "수락"
       ],
       "Activate": [
+        "활성화"
+      ],
+      "activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -109,6 +112,9 @@
       "Add domain": [
         "도메인 추가"
       ],
+      "Add email address": [
+        "이메일 주소 추가"
+      ],
       "Add filter": [
         "필터 추가"
       ],
@@ -123,6 +129,9 @@
       ],
       "Add PayPal": [
         "PayPal 추가"
+      ],
+      "Add phone number": [
+        "휴대전화 번호 추가"
       ],
       "Add public holidays": [
         "공휴일 추가"
@@ -171,6 +180,12 @@
       ],
       "Bold": [
         "굵게"
+      ],
+      "Can send to this group": [
+        "이 그룹에 전송 가능"
+      ],
+      "Can't send to this group": [
+        "이 그룹에 전송 불가"
       ],
       "Cancel": [
         "취소"
@@ -256,6 +271,9 @@
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
       ],
+      "Continue to ${ name }": [
+        "${ name }(으)로 계속하기"
+      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets }으로 계속하기"
       ],
@@ -322,6 +340,9 @@
       "Customize plan": [
         "플랜 고급 설정"
       ],
+      "Decline": [
+        "거절"
+      ],
       "Decrease": [
         "감소"
       ],
@@ -336,6 +357,9 @@
       ],
       "Delete Gateway": [
         "게이트웨이 삭제"
+      ],
+      "Delete group": [
+        "그룹 삭제"
       ],
       "Delete link": [
         "링크 삭제"
@@ -375,6 +399,9 @@
       ],
       "Discard": [
         "저장 안함"
+      ],
+      "Discard changes": [
+        "변경사항 취소"
       ],
       "Don't show again": [
         "다시 표시하지 않음"
@@ -418,6 +445,9 @@
       "Edit Gateway": [
         "게이트웨이 편집"
       ],
+      "Edit group": [
+        "그룹 편집"
+      ],
       "Edit invoice details": [
         "신용 청구서 세부 정보 편집"
       ],
@@ -459,6 +489,9 @@
       ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
+      ],
+      "Enable device-based recovery": [
+        "기기 기반 복구 활성화"
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
@@ -700,10 +733,10 @@
       "No, thanks": [
         "아니요, 괜찮아요"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open": [
@@ -766,17 +799,23 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reload": [
         "새로고침"
       ],
       "Remove": [
         "삭제"
+      ],
+      "Remove all members": [
+        "모든 구성원 추방"
+      ],
+      "Remove all members from group": [
+        "이 그룹내의 모든 구성원 추방"
       ],
       "Remove bonuses": [
         "보너스 제거"
@@ -856,6 +895,9 @@
       "Review": [
         "검토"
       ],
+      "Review account security": [
+        "계정 보안 검토"
+      ],
       "Revoke": [
         "취소"
       ],
@@ -864,6 +906,9 @@
       ],
       "Revoke all other sessions": [
         "모든 세션 비활성화"
+      ],
+      "Revoke invitation": [
+        "초대 취소"
       ],
       "Revoke this invitation": [
         "초대 무효화"
@@ -1053,6 +1098,12 @@
       ],
       "Switch or add account": [
         "계정 전환 및 추가"
+      ],
+      "Test": [
+        "테스트"
+      ],
+      "Test SAML configuration": [
+        "SAML 구성 테스트"
       ],
       "Top up": [
         "지갑 충전"
@@ -1400,14 +1451,14 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "빨라지고, 폭넓어진 기기 호환성"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "데이터는 기기 내에서만 존재합니다. 1회 다운로드 및 호환 기기가 필요합니다."
       ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "프롬포트가 기기 내에서만 존재합니다. 1회 다운로드 및 호환 기기가 필요합니다."
+      "Fast and secure. No logs are kept.": [
+        "안전하고 빠르게. 로그 없이."
       ],
-      "Run locally": [
-        "로컬에서 실행"
+      "Run on device": [
+        "디바이스에서 실행"
       ],
       "Run on servers": [
         "서버에서 실행"
@@ -1558,6 +1609,14 @@
         "연말 할인 선택"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1579,14 +1638,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -5008,10 +5059,13 @@
       "Invited by: ${ inviteEmail }": [
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
       ],
-      "Leave family plan": [
+      "Leave Duo plan": [
+        "듀오 플랜 취소"
+      ],
+      "Leave Family plan": [
         "가족 요금제 취소"
       ],
-      "Leave visionary plan": [
+      "Leave Visionary plan": [
         "Visionary 요금제 떠나기"
       ],
       "Manage addresses.": [
@@ -5020,8 +5074,8 @@
       "Manage user accounts": [
         "사용자 계정 관리"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6개월 기간 동안 10개 초대 수락이 가능합니다."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "오직 6개월 기간 동안 ${ n }명의 수락된 초대만 가능합니다."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "구성원들이 있는 요금제의 소유자가 다른 그룹 요금제에 합류할 수 없습니다."
@@ -5041,8 +5095,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "저장 공간이 사용자에게 할당됨: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "구독이 Visionary 및 가족 요금제의 관리자에게 결제됩니다."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "구독이 해당 플랜의 기본 관리자에게 청구됩니다."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "원활한 플랜 전환을 위해 ${ BRAND_NAME } Unlimited*의 30일간의 무료 체험판을 제공해 드립니다."
@@ -5065,14 +5119,11 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } 가입에 초대되었습니다. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "6개월 동안 10개의 수락된 초대장 수의 제한에 도달했습니다."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "6개월 동안 ${ n }명의 수락된 초대 제한수에 도달했습니다."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "6개월 동안 10개의 초대를 수락한 한도에 도달했습니다. 추가 사용자를 초대할 수 있는 상태가 되면 버튼이 클릭 가능해집니다."
-      ],
-      "You have successfully joined the Family plan": [
-        "가족 요금제에 성공적으로 가입했습니다"
+      "You have successfully joined the family group": [
+        "가족 그룹에 성공적으로 가입했습니다."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "여러 사용자를 추가하기 전에 지정 도메인을 설정해야 합니다."
@@ -5186,9 +5237,6 @@
       ],
       "Family name": [
         "가족 이름"
-      ],
-      "Family plan": [
-        "가족 요금제"
       ],
       "Invite a user": [
         "사용자 초대"
@@ -5662,6 +5710,46 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount }명 회원"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "활성"
+      ],
+      "Unanswered": [
+        "응답 없음"
+      ]
+    },
+    "group_invitation: Success": {
+      "Group invitation accepted": [
+        "그룹 초대 수락됨"
+      ],
+      "Group invitation declined": [
+        "그룹 초대 거절됨"
+      ],
+      "Left group": [
+        "그룹 나가기"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "이 링크 열기를 다시 시도하세요."
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "이 탭을 닫아도 안전합니다."
+      ],
+      "You have declined the group invitation and will not receive any email from this group.": [
+        "그룹에 대한 초대를 거절했으며 이 초대에 대한 어떠한 이메일도 받지 않게 됩니다."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "그룹 초대 수락됨"
+      ],
+      "Group invitation declined": [
+        "그룹 초대 거절됨"
       ]
     },
     "Header": {
@@ -6514,6 +6602,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "이 링크를 가진 사용자는 일정관리를 동기화하거나 이후 업데이트를 받을 수 없습니다. 액세스 권한을 부여하려면 다시 새 링크를 만들어야 합니다."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "편집 중인 그룹을 정말 삭제하시겠어요?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "이 캘린더를 정말로 제거하시겠어요?"
       ],
@@ -6531,6 +6622,9 @@
       ],
       "Are you sure you want to delete this folder?": [
         "이 폴더를 삭제하는 것이 확실합니까?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "이 그룹을 정말 삭제하시겠어요? 그룹 주소를 더 이상 사용할 수 없습니다."
       ],
       "Are you sure you want to delete this label?": [
         "이 라벨을 정말 제거하시겠어요?"
@@ -6552,6 +6646,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "이 그룹의 모든 구성원을 정말 추방하시겠어요?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
@@ -6630,6 +6727,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
+      ],
+      "Breach Custom Email Created": [
+        "침해된 커스텀 이메일 주소 삭제됨"
       ],
       "Breach Custom Email Deleted": [
         "침해된 사용자 지정 이메일 삭제됨"
@@ -6775,10 +6875,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7591,6 +7691,15 @@
       "Paid for a monthly plan": [
         "매달 플랜 결제"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - 커스텀 이메일 주소 확인됨"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - 커스텀 이메일 주소 추가됨"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - 커스텀 이메일 주소 삭제됨"
+      ],
       "password": [
         "비밀번호"
       ],
@@ -8092,6 +8201,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "이 초대 링크는 만료되었습니다. 관리자에게 접근이 가능한지 문의해 주세요."
       ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "이 초대 링크는 만료되었습니다. 새 링크를 조금 전 보내드렸습니다."
+      ],
       "This invitation link is already used. Please sign in directly instead.": [
         "이 초대 링크는 이미 사용되었습니다. 대신 직접 로그인 해주세요."
       ],
@@ -8136,9 +8248,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
@@ -8425,6 +8534,9 @@
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
       ],
+      "View and manage your groups.": [
+        "그룹을 확인 및 관리하세요."
+      ],
       "View, download, and manage your invoices.": [
         "청구서를 보고 다운로드 하고 관리하세요."
       ],
@@ -8592,6 +8704,9 @@
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "현재 ${ maxMembers } 사용 가능한 사용자 라이선스 ${ usedMembers }을(를) 사용하고 있습니다."
+      ],
+      "You are in no group nor invited to any": [
+        "소속되거나 초대된 그룹이 없습니다."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } 계정으로 로그인했습니다."
@@ -8815,8 +8930,8 @@
       "Your recovery phrase": [
         "내 복구 키"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "복구 키는 특정 순서로 된 12단어입니다."
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "복구 문구는 특정 순서로 무작위로 생성된 12개의 단어입니다."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
@@ -8911,6 +9026,14 @@
     "Input placeholder": {
       "Add label": [
         "라벨 추가"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "대기 중"
+      ],
+      "Rejected": [
+        "거절됨"
       ]
     },
     "Invoice state display as badge": {
@@ -11132,6 +11255,15 @@
       "From ${ price }": [
         "시작 가격: ${ price }"
       ],
+      "Get started for $1": [
+        "$1로 시작하기"
+      ],
+      "Get started for 1 €": [
+        "1€로 시작하기"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF로 시작하기"
+      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -11656,6 +11788,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "두 명의 사용자를 위한 ${ BRAND_NAME }으로 내 디지털 생활을 보호하세요."
+      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "자동 회신을 설정하여 부재중이거나 응답할 수 없는 전송자에 알릴 수 있습니다."
       ],
@@ -11760,7 +11895,7 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
@@ -12582,7 +12717,7 @@
         "업그레이드 없이 ${ appName } 계속"
       ],
       "Continue to ${ free }": [
-        "${ free }로 계속하기"
+        "${ free }(으)로 계속하기"
       ],
       "Continue with Bitcoin": [
         "Bitcoin으로 계속하기"
@@ -12802,6 +12937,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 실행 중"
+      ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "기간 한정 할인: ${ title }를 첫 한달 간 ${ price }에"
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "기간 한정 세일: ${ title }을(를) 월간 사용자 당 ${ price }으로 누리세요!"
@@ -13271,9 +13409,6 @@
       "Add a group name": [
         "그룹 이름 추가"
       ],
-      "Add member": [
-        "구성원 추가"
-      ],
       "e.g. distribution list for marketing team": [
         "예: 마케팅 팀을 위한 배포 목록"
       ],
@@ -13492,6 +13627,50 @@
     "saml: Action": {
       "Cancel": [
         "취소"
+      ]
+    },
+    "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "로그인이 성공적으로 완료되지 못했습니다."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "SSO 구성을 테스트하는 도중에 문제가 발생했습니다."
+      ],
+      "Details": [
+        "세부 사항"
+      ],
+      "Test in progress...": [
+        "테스트 진행 중..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "SAML 구성을 테스트하려면, **${ domainName }**와(과) 연관된 사용자의 로그인 자격 증명을 입력하세요."
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "신원 제공자로 부터 유효한 SAML 응답을 수신받았습니다. SSO가 사용자 조직에서 활성화 되었습니다."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "SSO가 작동하는지 확인하기 위해 구성을 테스트하는 중입니다."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "이메일"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "잘 작동하네요!"
+      ],
+      "Test SAML configuration": [
+        "SAML 구성 테스트"
+      ],
+      "Testing SAML configuration": [
+        "SAML 구성 테스트 중"
       ]
     },
     "scim: Action": {
@@ -14597,6 +14776,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName }이 최대 두 명의 사용자에게 무제한 프라이버시 및 확장된 스토리지 공간을 제공합니다."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName }는 모든 ${ BRAND_NAME } 앱과 프리미엄 기능에 액세스하여 작업에서 더 생산적이고 체계적인 작업에 필요한 것을 제공합니다."
       ],
@@ -14632,6 +14814,9 @@
       ],
       "10 email addresses": [
         "이메일 주소 10개"
+      ],
+      "2 users": [
+        "2명의 사용자"
       ],
       "20 email addresses per user": [
         "사용자당 이메일 주소 20개"
@@ -14812,6 +14997,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
+      ],
+      "Unlimited privacy for two": [
+        "두 명을 위한 무제한 프라이버시"
       ],
       "Users won’t be able to manage their calendars": [
         "구성원이 개개인의 캘린더를 관리할 수 없습니다."
@@ -15469,6 +15657,9 @@
       "Add users": [
         "사용자 추가"
       ],
+      "Address": [
+        "주소"
+      ],
       "Address and key verification": [
         "주소 및 키 인증"
       ],
@@ -15535,11 +15726,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -15705,6 +15896,9 @@
       ],
       "Delete folder?": [
         "폴더를 삭제합니까?"
+      ],
+      "Delete group?": [
+        "그룹을 삭제하시겠습니까?"
       ],
       "Delete key permanently?": [
         "키를 영구적으로 지울까요?"
@@ -15934,6 +16128,12 @@
       "Gift code": [
         "기프트 코드"
       ],
+      "Group": [
+        "그룹"
+      ],
+      "Group membership": [
+        "그룹 구성원"
+      ],
       "Groups": [
         "그룹"
       ],
@@ -16152,6 +16352,9 @@
       ],
       "Refer a friend": [
         "친구 초대"
+      ],
+      "Remove all members?": [
+        "그룹 구성원을 추방하시겠습니까?"
       ],
       "Remove calendar": [
         "캘린더 삭제"
@@ -16778,6 +16981,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "User rejected invitation": [
+        "사용자가 초대를 거절함"
+      ],
+      "Waiting user to accept the invitation": [
+        "사용자의 초대 수락 대기 중"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17131,6 +17340,9 @@
       "${ n } wallet": [
         "${ n }개 지갑"
       ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "${ appName }에 얼리 액세스하려면 **${ plan }을(를) 구매하세요!**"
+      ],
       "A safer way to hold your Bitcoin": [
         "Bitcoin을 보관하는 가장 안전한 방법"
       ],
@@ -17139,6 +17351,12 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
+      ],
+      "Create ${ BRAND_NAME } Account now": [
+        "지금 ${ BRAND_NAME } 계정 생성"
+      ],
+      "Early access to new features": [
+        "새 기능에 접근에 대한 얼리 액세스"
       ],
       "Early access waitlist": [
         "얼리 액세스 대기명단"
@@ -17155,8 +17373,8 @@
       "Join ${ appName } early access!": [
         "${ appName } 얼리 액세스에 가입하세요."
       ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "무료 ${ BRAND_NAME } 계정에 가입하여 자리를 확보하세요. 일찍 가입할수록 ${ appName }에 더 빨리 액세스할 수 있습니다."
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
+        "얼리 액세스 권한 목록에 추가하기 위해 무료 ${ BRAND_NAME } 계정을 생성하세요. 더 빨리 로그인할 수록 ${ appName } 접근 권한에 대한 우선 순위가 부여됩니다. 로그인 한 후, 대기 명단을 건너뛰고 즉시 ${ appName }을 사용할 수 있도록 최상위 플랜인 Visionary 플랜 업그레이드가 가능합니다."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "업그레이드하여 ${ appName } 프리미엄 기능을 잠금 해제하세요"
@@ -17179,8 +17397,19 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
+        "${ WALLET_APP_NAME }은 얼리 액세스 상태입니다. Apple TestFlight를 통한 iOS 앱 다운로드를 하거나 Google 오픈테스팅으로 Android 앱을 다운로드할 수 있습니다."
+      ],
       "Coming soon": [
         "출시 예정"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "지갑으로 이동"
+      ],
+      "Wallet": [
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {

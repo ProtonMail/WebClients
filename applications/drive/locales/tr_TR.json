@@ -735,6 +735,9 @@
       "Select all": [
         "Tümünü seç"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Fatura dönemini seçin ${ billingText }"
+      ],
       "Select country": [
         "Ülke seçin"
       ],
@@ -1014,6 +1017,11 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "Badge": {
+      "Invited": [
+        "Davet edildi"
       ]
     },
     "bf2023: Deal details": {
@@ -3119,9 +3127,6 @@
       "Access denied": [
         "Erişim reddedildi"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
-      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -3297,8 +3302,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Size ayrılmış depolama alanı: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonelik faturası, Visionary ya da Family planının birincil yöneticisine kesilir."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
@@ -3315,8 +3320,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Aile tarifesine katıldınız"
+      "You have successfully joined the family group": [
+        "Aile grubuna katıldınız"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
@@ -4503,6 +4508,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
+      ],
+      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
+        "Dosyanızı ${ DRIVE_APP_NAME } uçtan uca şifrelemesiyle güvende tutun."
       ],
       "Key fingerprint": [
         "Anahtar parmak izi"
@@ -6544,6 +6552,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get started for $1": [
+        "$1 ile başlayın"
+      ],
+      "Get started for 1 €": [
+        "1 € ile başlayın"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF ile başlayın"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ]
@@ -7049,6 +7066,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "İki kişilik ${ BRAND_NAME } ile dijital yaşamınızı koruyun."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
@@ -7093,8 +7113,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
@@ -7512,6 +7532,9 @@
       "Failed to open document": [
         "Belge açılamadı"
       ],
+      "Failed to reject share invitation": [
+        "Paylaşma daveti reddedilemedi"
+      ],
       "Failed to remove the file": [
         "Dosya kaldırılamadı"
       ],
@@ -7557,6 +7580,9 @@
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"
+      ],
+      "Share invitation declined": [
+        "Paylaşma daveti reddedildi"
       ],
       "Stopping to share this item has failed": [
         "Bu ögenin paylaşması durdurulamadı"
@@ -7618,14 +7644,23 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "Yeni belge oluştur"
+      ],
       "Next": [
         "Sonraki"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } kullanmaya başlayın"
+      ],
+      "Try it later": [
+        "Daha sonra deneyin"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Belgeler oluşturun ve üzerinde işbirliği yapın. Her şey uçtan uca şifreleme ile korunur."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME } kullanmaya başladığınızda ücretsiz depolama alanınızı 5 GB yapacağız!"
       ],
@@ -7781,6 +7816,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+      ],
+      "Please select billing country": [
+        "Lütfen faturanın kesileceği ülkeyi seçin"
+      ],
+      "Please select billing state": [
+        "Lütfen faturanın kesileceği ili seçin"
+      ],
+      "Please select your billing country first.": [
+        "Lütfen önce faturanın kesileceği ülkeyi seçin."
+      ],
+      "Please select your billing state first.": [
+        "Lütfen önce faturanın kesileceği ili seçin."
+      ],
+      "Select billing country to pay": [
+        "Ödeme için fatura ülkesini seçin"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -8772,6 +8822,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } size sınırsız gizlilik ve 2 kişiye kadar daha fazla depolama alanı sağlar."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName }, tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklere erişim sunarak ekibinize işlerinde daha üretken ve düzenli olmaları için gerekenleri sağlar."
       ],
@@ -8808,6 +8861,9 @@
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "2 users": [
+        "2 kullanıcı"
+      ],
       "20 email addresses per user": [
         "Her kullanıcı için 20 e-posta adresi"
       ],
@@ -8822,6 +8878,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 1 GB boyutuna kadar e-posta depolama alanı ve 5 GB boyutuna kadar Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Free tarifesinde ek kullanıcılar desteklenmediğinden ekibinizin işlerinde kesintiler olacak."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 5 GB Drive depolama alanı ve 1 GB Mail depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
@@ -8957,6 +9016,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Unlimited privacy for two": [
+        "İki kişi için sınırsız gizlilik"
       ],
       "Users won’t be able to manage their calendars": [
         "Kullanıcılar takvimlerini yönetemeyecekler"
@@ -9437,6 +9499,9 @@
       ],
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create a new file": [
         "Yeni bir dosya oluştur"

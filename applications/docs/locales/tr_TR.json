@@ -178,6 +178,9 @@
       "Create and copy alias": [
         "Takma ad ekle ve kopyala"
       ],
+      "Create new document": [
+        "Yeni belge oluştur"
+      ],
       "Current plan": [
         "Geçerli tarife"
       ],
@@ -491,6 +494,9 @@
       ],
       "Select all": [
         "Tümünü seç"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Fatura dönemini seçin ${ billingText }"
       ],
       "Select country": [
         "Ülke seçin"
@@ -2198,6 +2204,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Tutar en az miktarın altında (${ minimumAmount })."
       ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Belge dönüştürülürken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Belge kopyalanırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -2469,6 +2478,9 @@
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
       ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "Dönüştürmeye çalıştığınız belge çok büyük. Belgede çok sayıda görsel veya diğer ortamlar varsa bu durum ortaya çıkabilir. Lütfen daha küçük bir belge kullanarak yeniden deneyin."
+      ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
@@ -2567,6 +2579,9 @@
       ],
       "Validation error": [
         "Doğrulama sorunu"
+      ],
+      "We are having trouble saving recent edits. Please refresh the page.": [
+        "Son değişiklikleri kaydetmekte sorun yaşıyoruz. Lütfen sayfayı yenileyin."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
@@ -2751,9 +2766,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
-      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -2906,8 +2918,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Size ayrılmış depolama alanı: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonelik faturası, Visionary ya da Family planının birincil yöneticisine kesilir."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
@@ -2924,8 +2936,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Aile tarifesine katıldınız"
+      "You have successfully joined the family group": [
+        "Aile grubuna katıldınız"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
@@ -4164,6 +4176,9 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Bu belgede çok sayıda işlem yapılmış. Bazı özellikler geçici olarak kullanılamayabilir."
       ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Bu belge var olmayabilir veya onu görüntüleme izniniz olmayabilir. Sorun sürüyor mu anlamak için sayfayı yeniden yüklemeyi deneyebilirsiniz."
+      ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
       ],
@@ -5394,6 +5409,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get started for $1": [
+        "$1 ile başlayın"
+      ],
+      "Get started for 1 €": [
+        "1 € ile başlayın"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF ile başlayın"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ]
@@ -5899,6 +5923,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "İki kişilik ${ BRAND_NAME } ile dijital yaşamınızı koruyun."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
@@ -5933,8 +5960,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
@@ -6496,6 +6523,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+      ],
+      "Please select billing country": [
+        "Lütfen faturanın kesileceği ülkeyi seçin"
+      ],
+      "Please select billing state": [
+        "Lütfen faturanın kesileceği ili seçin"
+      ],
+      "Please select your billing country first.": [
+        "Lütfen önce faturanın kesileceği ülkeyi seçin."
+      ],
+      "Please select your billing state first.": [
+        "Lütfen önce faturanın kesileceği ili seçin."
+      ],
+      "Select billing country to pay": [
+        "Ödeme için fatura ülkesini seçin"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -7662,6 +7704,9 @@
       ],
       "Continue with partial import?": [
         "Kısmi içe aktarmay ile ilerlensin mi?"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create contact": [
         "Kişi ekle"

@@ -52,11 +52,14 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
+      "Accept": [
+        "Aceitar"
       ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -108,6 +111,9 @@
       ],
       "Add PayPal": [
         "Adicionar PayPal"
+      ],
+      "Add phone number": [
+        "Adicionar número de telefone"
       ],
       "Add public holidays": [
         "Adicionar feriados públicos"
@@ -309,6 +315,9 @@
       ],
       "Customize plan": [
         "Personalizar plano"
+      ],
+      "Decline": [
+        "Recusar"
       ],
       "Decrease": [
         "Diminuir"
@@ -682,11 +691,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open": [
         "Abrir"
@@ -745,11 +754,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1354,9 +1363,6 @@
       ]
     },
     "Assistant option": {
-      "Run locally": [
-        "Executar localmente"
-      ],
       "Run on servers": [
         "Executar em servidores"
       ]
@@ -2998,7 +3004,7 @@
     },
     "cta": {
       "Learn more": [
-        "Mais informação"
+        "Saiba mais"
       ]
     },
     "Cycle": {
@@ -4684,20 +4690,11 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Deixar o plano Family"
-      ],
-      "Leave visionary plan": [
-        "Deixar o plano Visionary"
-      ],
       "Manage addresses.": [
         "Gerir endereços."
       ],
       "Manage user accounts": [
         "Gerir as contas dos utilizadores"
-      ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Só são permitidos 10 convites aceites num período de 6 meses."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Os titulares de um plano com membros não podem aderir a outro plano de grupo."
@@ -4716,9 +4713,6 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a si: ${ assignedStorage }"
-      ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "A subscrição é faturada ao administrador principal do plano Visionary ou family."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Para facilitar a transição, estamos a oferecer-lhe uma avaliação gratuita de 30 dias da ${ BRAND_NAME } Unlimited*."
@@ -4740,15 +4734,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Foi convidado a juntar-se a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Atingiu o limite de 10 convites aceites em 6 meses."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Atingiu o limite de 10 convites aceites em 6 meses. O botão tornar-se-á clicável quando puder convidar mais utilizadores."
-      ],
-      "You have successfully joined the Family plan": [
-        "Aderiu com êxito ao plano Family"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "É necessário configurar um domínio personalizado antes de adicionar vários utilizadores."
@@ -4859,9 +4844,6 @@
       ],
       "Family name": [
         "Nome da família"
-      ],
-      "Family plan": [
-        "Plano familiar"
       ],
       "Invite a user": [
         "Convidar um utilizador"
@@ -6269,7 +6251,7 @@
         "Bloquear os remetentes de verem se e quando abriu a mensagem"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Impulsione a identidade da sua organização e crie uma experiência on-line mais consistente para os seus utilizadores."
+        "Impulsione a identidade da sua organização e crie uma experiência online mais consistente para os seus utilizadores."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
@@ -6387,11 +6369,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -7490,9 +7472,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esta ação cancelará a sua subscrição paga atual e perderá quaisquer benefícios de fidelidade que tenha acumulado."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Isto eliminará todas as versões anteriores dos seus ficheiros com mais de ${ rententionLabel }."
       ],
@@ -8084,9 +8063,6 @@
       ],
       "Your recovery phrase": [
         "A sua frase de recuperação"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "A sua frase de recuperação é uma série de 12 palavras numa ordem específica."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
@@ -10809,9 +10785,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
@@ -12703,7 +12676,7 @@
     },
     "signup_2024: Feature": {
       "GDPR compliant": [
-        "Em conformidade com o RGPDD\n"
+        "Em conformidade com o RGPD"
       ]
     },
     "specialoffer: Action": {
@@ -13190,7 +13163,7 @@
         "Manter ${ config.planName }"
       ],
       "Learn more": [
-        "Mais informação"
+        "Saiba mais"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
@@ -13881,11 +13854,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"

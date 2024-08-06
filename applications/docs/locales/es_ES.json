@@ -442,7 +442,7 @@
         "Borrar los beneficios"
       ],
       "Remove gift code": [
-        "Eliminar código de regalo"
+        "Borrar el código de regalo"
       ],
       "Rename document": [
         "Cambiar el nombre del documento"
@@ -494,6 +494,9 @@
       ],
       "Select all": [
         "Seleccionar todo"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecciona el ciclo de facturación de ${ billingText }"
       ],
       "Select country": [
         "Seleccionar un país"
@@ -580,7 +583,7 @@
         "Utilizar código de autenticación"
       ],
       "Use for sending": [
-        "Utilizar para el envío"
+        "Usar para el envío"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -889,7 +892,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar utilizando ${ MAIL_APP_NAME }."
+        "Continuar usando ${ MAIL_APP_NAME }."
       ],
       "Continue using ${ planTitle }": [
         "Continuar usando ${ planTitle }"
@@ -1473,6 +1476,9 @@
       "Kyrgyzstan": [
         "Kirguistán"
       ],
+      "Lao People's Democratic Republic": [
+        "Laos, República Democrática Popular"
+      ],
       "Laos": [
         "Laos"
       ],
@@ -2049,7 +2055,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "${ eventTitle } ha sido cancelado."
+        "Se ha cancelado ${ eventTitle }."
       ],
       "All events in this series were updated.": [
         "Se han actualizado todos los eventos en esta serie."
@@ -2181,7 +2187,7 @@
         "El alias no es válido."
       ],
       "Alias is required": [
-        "Se requiere un alias"
+        "Se requiere un alias."
       ],
       "Alias options could not be resolved": [
         "No se han podido resolver las opciones de alias."
@@ -2312,7 +2318,7 @@
         "Servidor IMAP requerido"
       ],
       "Incorrect username": [
-        "Nombre de usuario incorrecto"
+        "El nombre de usuario no es correcto."
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
@@ -2361,7 +2367,7 @@
         "Falta la firma."
       ],
       "Name is required": [
-        "El nombre es obligatorio"
+        "El nombre es obligatorio."
       ],
       "No calendars found to import": [
         "No se han encontrado calendarios para importar."
@@ -2760,9 +2766,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -2915,8 +2918,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espacio de almacenamiento que te ha asignado: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "El pago de la suscripción lo acomete el administrador principal del plan Visionary o familiar."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "La suscripción se facturará al administrador principal de este plan."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Los planes Visionary y familiar no admiten cuentas externas en este momento. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
@@ -2933,8 +2936,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Has recibido una invitación para unirte a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Te has unido correctamente al plan familiar"
+      "You have successfully joined the family group": [
+        "Te has unido al grupo familiar."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
@@ -2943,7 +2946,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -3150,7 +3153,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como simples eventos sin detalles del organizador ni de los participantes. Para recibir actualizaciones del evento y ver a los participantes, pide a los organizadores que te inviten utilizando tu dirección de correo electrónico de ${ BRAND_NAME }."
+        "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como simples eventos sin detalles del organizador ni de los participantes. Para recibir actualizaciones del evento y ver a los participantes, pide a los organizadores que te inviten usando tu dirección de correo electrónico de ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Este archivo contiene una invitación a un evento:",
@@ -3593,7 +3596,7 @@
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Contacto eliminado del grupo ${ contactGroupName }."
+        "Contacto no asignado al grupo ${ contactGroupName }"
       ],
       "Converting document...": [
         "Convirtiendo el documento..."
@@ -3621,7 +3624,7 @@
         "Crear en"
       ],
       "Create public link": [
-        "Crear enlace público"
+        "Crear un enlace público"
       ],
       "Creating link to file": [
         "Creando enlace al archivo"
@@ -3693,7 +3696,7 @@
         "Cada código puede utilizarse solo una vez."
       ],
       "Edit email address": [
-        "Editar dirección de correo electrónico"
+        "Editar la dirección de correo electrónico"
       ],
       "email": [
         "correo electrónico"
@@ -3844,7 +3847,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Invite link copied": [
-        "El enlace de la invitación ha sido copiado."
+        "Se ha copiado el enlace de la invitación."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
@@ -3999,7 +4002,7 @@
         "El formato PGP/Inline solo es compatible con el formato de texto plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "El formato PGP/MIME automáticamente envía el mensaje utilizando el modo de composición actual."
+        "El formato PGP/MIME automáticamente envía el mensaje usando el modo de composición actual."
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
@@ -4126,7 +4129,7 @@
         "Ha ocurrido un error."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
+        "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
         "La suscripción se renueva automáticamente cada ${ cycle } meses."
@@ -4417,7 +4420,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -5409,6 +5412,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Pasar a ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Comenzar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Comenzar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Comenzar por 1 CHF"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
       ]
@@ -5562,6 +5574,9 @@
       "Collaborate and share large files": [
         "Colabora y comparte archivos grandes"
       ],
+      "Collaborative document editor": [
+        "Editor de documentos colaborativo"
+      ],
       "Contact groups": [
         "Grupos de contactos"
       ],
@@ -5666,7 +5681,7 @@
         "Organizar elementos en cajas fuertes múltiples"
       ],
       "Passkeys supported": [
-        "Las claves de acceso están admitidas."
+        "Se admiten las claves de acceso."
       ],
       "Password health": [
         "Estado de la contraseña"
@@ -5911,6 +5926,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Asegura tu vida digital con ${ BRAND_NAME } para dos personas."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -5945,8 +5963,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protege tu calendario con cifrado de extremo a extremo. Incluye soporte para calendarios personalizados, calendarios compartidos y mucho más."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protege tus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protege tus correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y mucho más."
@@ -6004,7 +6022,7 @@
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Comparte calendarios con familiares, amigos y compañeros fácilmente"
+        "Comparte calendarios con familiares, amigos y compañeros fácilmente."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Te garantiza que recibes todos los correos que se envían a tu dominio aunque la dirección no exista, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico."
@@ -6509,8 +6527,20 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Please select billing country": [
+        "Selecciona el país de facturación"
+      ],
+      "Please select billing state": [
+        "Selecciona el estado de facturación"
+      ],
+      "Please select your billing country first.": [
+        "Selecciona primero tu país de facturación"
+      ],
       "Please select your billing state first.": [
         "Selecciona primero tu estado de facturación"
+      ],
+      "Select billing country to pay": [
+        "Selecciona el país de facturación para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -6522,7 +6552,7 @@
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ price } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "Timeout exceeded": [
-        "Se ha superado el tiempo de espera."
+        "Se ha agotado el tiempo de espera."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
@@ -6899,7 +6929,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "La contraseña ha sido guardada."
+        "Se ha guardado la contraseña."
       ]
     },
     "session_recovery:available:title": {
@@ -7329,10 +7359,10 @@
         "Suscripciones"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Has comprado tu plan utilizando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+        "Has comprado tu plan usando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
     "Subscription price": {
@@ -7452,7 +7482,7 @@
         "Preferencias guardadas"
       ],
       "Secure link copied": [
-        "El enlace seguro ha sido copiado."
+        "Se ha copiado el enlace seguro."
       ],
       "The link to your file was successfully copied": [
         "Se ha copiado el enlace a tu archivo ."
@@ -7483,7 +7513,7 @@
         "por mes"
       ],
       "per user per month": [
-        "/usuario al mes"
+        "por usuario por mes"
       ]
     },
     "summer2023: Tooltip": {
@@ -7856,7 +7886,7 @@
         "Mis archivos"
       ],
       "Need more aliases?": [
-        "¿Necesitas más aliases?"
+        "¿Necesitas más alias?"
       ],
       "Network error": [
         "Error de red"
@@ -7934,7 +7964,7 @@
         "Solicitar un nuevo código"
       ],
       "Security center": [
-        "Centro de seguridad."
+        "Centro de seguridad"
       ],
       "Select a plan": [
         "Selecciona un plan"

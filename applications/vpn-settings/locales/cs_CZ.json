@@ -43,6 +43,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add address or domain": [
+        "Přidat adresu nebo doménu"
+      ],
       "Add credit / debit card": [
         "Přidat kreditní / debetní kartu"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Přidat uživatele"
       ],
+      "Allow": [
+        "Povolit"
+      ],
       "Apply": [
         "Použít"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Zpět"
+      ],
+      "Block": [
+        "Blokovat"
+      ],
+      "Can send to this group": [
+        "Může posílat do této skupiny"
+      ],
+      "Can't send to this group": [
+        "Nemůže posílat do této skupiny"
       ],
       "Cancel": [
         "Zrušit"
@@ -166,6 +181,9 @@
       "Delete Gateway": [
         "Smazat bránu"
       ],
+      "Delete group": [
+        "Smazat skupinu"
+      ],
       "Delete logo": [
         "Smazat logo"
       ],
@@ -186,6 +204,9 @@
       ],
       "Discard": [
         "Zahodit"
+      ],
+      "Discard changes": [
+        "Zahodit změny"
       ],
       "Done": [
         "Hotovo"
@@ -216,6 +237,9 @@
       ],
       "Edit Gateway": [
         "Upravit bránu"
+      ],
+      "Edit group": [
+        "Upravit skupinu"
       ],
       "Edit invoice details": [
         "Upravit fakturační údaje"
@@ -295,6 +319,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Go to label": [
+        "Přejít na štítek"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -343,8 +370,14 @@
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
+      "More options": [
+        "Více možností"
+      ],
       "Need help?": [
         "Potřebujete pomoc?"
+      ],
+      "New group": [
+        "Nová skupina"
       ],
       "Next": [
         "Další"
@@ -352,11 +385,11 @@
       "Next month": [
         "Další měsíc"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otevřít"
@@ -409,6 +442,12 @@
       "Remove": [
         "Odstranit"
       ],
+      "Remove all members": [
+        "Odebrat všechny členy"
+      ],
+      "Remove all members from group": [
+        "Odebrat všechny členy ze skupiny"
+      ],
       "Remove bonuses": [
         "Odebrat bonusy"
       ],
@@ -439,6 +478,9 @@
       "Resend code": [
         "Znovu odeslat kód"
       ],
+      "Resend invitation": [
+        "Znovu poslat pozvánku"
+      ],
       "Reset credentials": [
         "Resetovat pověření"
       ],
@@ -465,6 +507,9 @@
       ],
       "Revoke ${ name }": [
         "Zrušit ${ name }"
+      ],
+      "Revoke invitation": [
+        "Zrušit pozvánku"
       ],
       "Save": [
         "Uložit"
@@ -562,6 +607,9 @@
       "Signing in": [
         "Přihlašování"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Start live chat": [
         "Spustit živý chat"
       ],
@@ -579,6 +627,12 @@
       ],
       "Switch or add account": [
         "Přepnout nebo přidat účet"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Otestovat nastavení SAML"
       ],
       "Top up": [
         "Dobít"
@@ -669,6 +723,11 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Přidat doménu pm.me"
       ]
     },
     "Action subscription": {
@@ -2028,6 +2087,11 @@
         "Při importu jsme zjistili chyby ve více řádcích, zkontrolujte prosím svůj soubor CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Více informací"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/měsíčně"
@@ -2115,6 +2179,35 @@
         "Subdomény 'www' se obvykle nepoužívají pro e-mail. Opravdu chcete použít tuto doménu?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "Doména ${ name } přidána"
+      ],
+      "${ name } deletion failed": [
+        "Smazání domény ${ name } selhalo"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } se nepodařilo přesunout na Seznam povolených"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } se nepodařilo přesunout na Seznam blokovaných"
+      ],
+      "${ name } failed to move to spam list": [
+        "Doménu ${ name } se nepodařilo přesunout na Seznam spamů"
+      ],
+      "${ name } moved to allow list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam povolených"
+      ],
+      "${ name } moved to block list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
+      ],
+      "${ name } moved to spam list": [
+        "Doména ${ name } byla přesunuta na seznam spamů"
+      ],
+      "${ name } successfully deleted": [
+        "Doména ${ name } úspěšně smazána"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
@@ -2172,9 +2265,43 @@
         "Prioritní podpora"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "E-mailová adresa ${ name } přidána"
+      ],
+      "${ name } deletion failed": [
+        "Smazání e-mailové adresy ${ name } selhalo"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } se nepodařilo přesunout na Seznam povolených"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } se nepodařilo přesunout na Seznam blokovaných"
+      ],
+      "${ name } failed to move to spam list": [
+        "E-mailovou adresu ${ name } se nepodařilo přesunout na Seznam spamů"
+      ],
+      "${ name } moved to allow list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam povolených"
+      ],
+      "${ name } moved to block list": [
+        "E-mailová adresa ${ name } přesunuta na Seznam blokovaných"
+      ],
+      "${ name } moved to spam list": [
+        "E-mailová adresa ${ name } byla přesunuta na seznam nevyžádaných e-mailů"
+      ],
+      "${ name } successfully deleted": [
+        "E-mailová adresa ${ name } úspěšně smazána"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Ověřovací e-mail byl odeslán na ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Bez názvu"
       ]
     },
     "eof2023: Deal details": {
@@ -2288,6 +2415,12 @@
       ],
       "Invalid code": [
         "Neplatný kód"
+      ],
+      "Invalid domain": [
+        "Neplatná doména"
+      ],
+      "Invalid email address": [
+        "Neplatná e-mailová adresa"
       ],
       "Invalid expiration date": [
         "Neplatné datum expirace"
@@ -2594,8 +2727,11 @@
       "Manage user accounts": [
         "Spravovat uživatelské účty"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Během 6 měsíců je povoleno přijmout jen 10 pozvánek."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánku.",
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánky.",
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek.",
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Vlastníci tarifu se členy, se nemohou připojit k jinému skupinovému tarifu."
@@ -2615,8 +2751,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Úložiště, které vám bylo přiděleno: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Předplatné se účtuje hlavnímu správci tarifu Visionary nebo rodinného tarifu."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -2633,14 +2769,20 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Dosáhli jste limitu 10 přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
       ],
-      "You have successfully joined the Family plan": [
-        "Úspěšně jste se připojili k rodinnému tarifu"
+      "You have successfully joined the family group": [
+        "Úspěšně jste se připojili k rodinné skupině"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Před přidáním více uživatelů je třeba nakonfigurovat vlastní doménu."
@@ -2951,6 +3093,35 @@
         "Terabajtů"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Povolit:"
+      ],
+      "Block:": [
+        "Blokovat:"
+      ],
+      "Search list": [
+        "Vyhledat v seznamu"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Vytvořením následujících seznamů převezměte kontrolu nad tím, co přijde členům vaší organizace do doručené pošty:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Tyto seznamy se vztahují na všechny účty ve vaší organizaci. Členové si mohou vytvořit vlastní individuální filtry, ale nebudou moci přepsat pravidla pro adresy nebo domény, které jste zablokovali."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Aby důležité zprávy neskončily ve spamu a nebyly přehlédnuty"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Zabraňuje zahlcení doručené pošty nevyžádanou poštou"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Zabraňuje phishingovým nebo podezřelým e-mailům vstup do e-mailového systému vaší organizace"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systémové výchozí"
@@ -3021,6 +3192,19 @@
       ],
       "Services": [
         "Služby"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Skupinová adresa"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členové",
+        "${ memberCount } členů",
+        "${ memberCount } členů"
       ]
     },
     "Header": {
@@ -3115,6 +3299,15 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Přidejte tento záznam do své domény v ovládacím panelu svého registrátora doménových jmen"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Nalezen ${ items.length } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ items.length } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
     },
     "Human verification method": {
@@ -3228,6 +3421,12 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "Funkce Secure Core vyžaduje ${ vpnPlus }."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /měsíc)"
       ],
@@ -3248,6 +3447,9 @@
       ],
       "30-day money-back guarantee.": [
         "30denní záruka vrácení peněz."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } hostuje ${ BRAND_NAME }, což umožňuje rychlé zprovoznění subdomény. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
@@ -3342,6 +3544,12 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Opravdu chcete zrušit úpravu skupiny?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Opravdu chcete smazat tuto skupinu? Adresa skupiny přestane fungovat."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Opravdu chcete zakázat dvoufázové ověřování?"
       ],
@@ -3353,6 +3561,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Opravdu chcete tomuto uživatelovi odebrat oprávnění správce?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Opravdu chcete odebrat všechny členy z této skupiny?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Opravdu chcete odebrat doménu ${ boldDomain }?"
@@ -3398,6 +3609,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "Vlastní e-mail pro úniky přidán"
       ],
       "Breach Custom Email Deleted": [
         "Vlastní e-mail pro úniky smazán"
@@ -3867,6 +4081,9 @@
       "Keys created": [
         "Klíče vytvořeny"
       ],
+      "Labels:": [
+        "Štítky:"
+      ],
       "Lean more about gateways": [
         "Více informací o branách"
       ],
@@ -3878,6 +4095,9 @@
       ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Začněme stisknutím tlačítka Nová skupina, které je výše"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -4007,6 +4227,15 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - potvrzen vlastní e-mail"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - vytvořen vlastní e-mail"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - smazán vlastní e-mail"
       ],
       "password": [
         "heslo"
@@ -4362,9 +4591,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto ověření může trvat až jednu hodinu. Po úspěšném ověření neodebírejte záznam TXT, protože je potřebný k potvrzení, že jste nadále vlastníkem domény."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby ${ BRAND_NAME } předplatného. Přesměrujeme vás na váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím než budete pokračovat."
       ],
@@ -4644,6 +4870,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME }"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Pomocí skupin uživatelů můžete snadno odesílat e-maily, sdílet data nebo měnit nastavení pro určité skupiny uživatelů najednou."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
       ],
@@ -4877,6 +5106,14 @@
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Čeká na vyřízení"
+      ],
+      "Rejected": [
+        "Odmítnuto"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Darované"
@@ -4966,11 +5203,17 @@
       "Address": [
         "Adresa"
       ],
+      "Address type": [
+        "Typ adresy"
+      ],
       "Addresses": [
         "Adresy"
       ],
       "Administrators": [
         "Správci"
+      ],
+      "Allow": [
+        "Povolit"
       ],
       "Allow recovery by email": [
         "Povolit obnovení e-mailem"
@@ -5004,6 +5247,9 @@
       ],
       "Billing cycle": [
         "Fakturační období"
+      ],
+      "Block": [
+        "Blokovat"
       ],
       "Block malware only": [
         "Blokovat pouze malware"
@@ -5116,6 +5362,9 @@
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
       ],
+      "Domain": [
+        "Doména"
+      ],
       "Domain name": [
         "Název domény"
       ],
@@ -5145,6 +5394,15 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Group address": [
+        "Skupinová adresa"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "Group name": [
+        "Název skupiny"
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -5287,6 +5545,9 @@
       "Public certificate (X.509)": [
         "Veřejný certifikát (X.509)"
       ],
+      "Purpose": [
+        "Účel"
+      ],
       "Recovery email address": [
         "E-mailová adresa pro obnovení"
       ],
@@ -5319,6 +5580,9 @@
       ],
       "Single sign-on URL": [
         "URL pro jednotné přihlášení"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start date": [
         "Datum zahájení"
@@ -5370,6 +5634,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
+      ],
+      "Who can send to this group address?": [
+        "Kdo může odesílat na tuto adresu skupiny?"
       ],
       "Why would you like to cancel?": [
         "Proč chcete zušit?"
@@ -5756,6 +6023,20 @@
         "Švýcarský frank"
       ]
     },
+    "Navigation": {
+      "All": [
+        "Vše"
+      ],
+      "Allow": [
+        "Povolit"
+      ],
+      "Block": [
+        "Blokovat"
+      ],
+      "Spam": [
+        "Spam"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
@@ -5776,6 +6057,15 @@
       ],
       "From ${ price }": [
         "Od ${ price }"
+      ],
+      "Get started for $1": [
+        "Začít za cenu $1"
+      ],
+      "Get started for 1 €": [
+        "Začít za €1"
+      ],
+      "Get started for CHF 1": [
+        "Začít za 1 CHF"
       ],
       "Upgrade": [
         "Navýšit"
@@ -6354,6 +6644,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Zabezpečte svůj digitální život pomocí ${ BRAND_NAME } pro dva uživatele."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
@@ -6425,8 +6718,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
@@ -6825,6 +7118,20 @@
         "Windows"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Všichni, včetně externích"
+      ],
+      "Members": [
+        "Členové"
+      ],
+      "Nobody by default": [
+        "Ve výchozím stavu nikdo"
+      ],
+      "Organization members": [
+        "Členové organizace"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pro přidání dalších uživatelů, nebo uvolněte místo odebráním některých uživatelských účtů."
@@ -7154,6 +7461,9 @@
       "Payment Processing": [
         "Zpracování platby"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Chcete-li pokračovat, přidejte prosím platební metodu na ovládacím panelu."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
@@ -7250,6 +7560,9 @@
       "Confirm": [
         "Potvrdit"
       ],
+      "domain.com": [
+        "domena.cz"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "např.: https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7267,6 +7580,9 @@
       ],
       "End date": [
         "Datum ukončení"
+      ],
+      "example@domain.com": [
+        "priklad@domena.cz"
       ],
       "Feedback": [
         "Zpětná vazba"
@@ -7312,6 +7628,20 @@
       ],
       "yourdomain.com": [
         "vasedomena.cz"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Přidat název skupiny"
+      ],
+      "e.g. distribution list for marketing team": [
+        "např. distribuční seznam pro marketingový tým"
+      ],
+      "e.g. marketing": [
+        "např. marketing"
+      ],
+      "Members": [
+        "Členové"
       ]
     },
     "plan customizer, ips": {
@@ -7444,6 +7774,55 @@
       ],
       "User": [
         "Uživatel"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Zrušit"
+      ]
+    },
+    "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Při testování nastavení SSO došlo k chybě."
+      ],
+      "Details": [
+        "Detaily"
+      ],
+      "Test in progress...": [
+        "Probíhá testování..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Chcete-li otestovat toto nastavení SAML, zadejte přihlašovací údaje uživatele přidruženého k **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Od vašeho poskytovatele identit jsme obdrželi platnou odpověď SAML. SSO je pro vaši organizaci povoleno."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Testujeme vaše nastavení, abychom se ujistili, že SSO funguje."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-mail"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Funguje to!"
+      ],
+      "Test SAML configuration": [
+        "Otestovat nastavení SAML"
+      ],
+      "Testing SAML configuration": [
+        "Testování nastavení SAML"
       ]
     },
     "scim: Action": {
@@ -8449,6 +8828,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vám zajišťuje neomezené soukromí a více úložného prostoru pro až 2 uživatele."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } poskytne vašemu týmu vše, co potřebuje k vyšší produktivitě a organizaci práce, a to díky přístupu ke všem aplikacím ${ BRAND_NAME } a jejich prémiovým funkcím."
       ],
@@ -8484,6 +8866,9 @@
       ],
       "10 email addresses": [
         "10 e-mailových adres"
+      ],
+      "2 users": [
+        "2 uživatelé"
       ],
       "20 email addresses per user": [
         "20 e-mailových adres na uživatele"
@@ -8664,6 +9049,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited privacy for two": [
+        "Neomezené soukromí pro dva"
       ],
       "Users won’t be able to manage their calendars": [
         "Uživatelé nebudou moci spravovat své kalendáře"
@@ -9015,17 +9403,29 @@
       "Country": [
         "Stát"
       ],
+      "Edit": [
+        "Upravit"
+      ],
       "Email": [
         "E-mail"
       ],
       "Email address": [
         "E-mailová adresa"
       ],
+      "Email address or domain": [
+        "E-mailová adresa nebo doména"
+      ],
       "Email addresses": [
         "E-mailové adresy"
       ],
       "Invitation email": [
         "E-mail pozvánky"
+      ],
+      "List": [
+        "Seznam"
+      ],
+      "Marked as": [
+        "Označeno jako"
       ],
       "Name": [
         "Jméno"
@@ -9109,8 +9509,20 @@
       "Add PayPal payment method": [
         "Přidat PayPal jako platební metodu"
       ],
+      "Add pm.me subdomain": [
+        "Přidat subdoménu pm.me"
+      ],
       "Add servers": [
         "Přidat servery"
+      ],
+      "Add to allow list": [
+        "Přidat na seznam povolených"
+      ],
+      "Add to block list": [
+        "Přidat na seznam blokovaných"
+      ],
+      "Add to spam list": [
+        "Přidat do seznamu spamů"
       ],
       "Add user accounts": [
         "Přidat uživatelské účty"
@@ -9262,6 +9674,9 @@
       "Delete account": [
         "Smazat účet"
       ],
+      "Delete group?": [
+        "Smazat skupinu?"
+      ],
       "Delete organization logo?": [
         "Smazat logo organizace?"
       ],
@@ -9279,6 +9694,9 @@
       ],
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
+      ],
+      "Discard changes?": [
+        "Zahodit změny?"
       ],
       "Domain names": [
         "Názvy domén"
@@ -9490,6 +9908,9 @@
       "Recovery": [
         "Obnovení"
       ],
+      "Remove all members?": [
+        "Odebrat všechny členy?"
+      ],
       "Remove domain": [
         "Odebrat doménu"
       ],
@@ -9600,6 +10021,9 @@
       ],
       "Switch to two-password mode": [
         "Přepnout do režimu dvou hesel"
+      ],
+      "There are no groups": [
+        "Nejsou zde žádné skupiny"
       ],
       "Time": [
         "Čas"
@@ -9796,6 +10220,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ],
+      "User rejected invitation": [
+        "Uživatel odmítl pozvánku"
+      ],
+      "Waiting user to accept the invitation": [
+        "Čekání až uživatel přijme pozvánku"
       ]
     },
     "Tooltip for news": {

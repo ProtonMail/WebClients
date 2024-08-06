@@ -93,6 +93,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Adds it below your existing message": [
+        "Adaugă-l sub mesajul existent"
+      ],
       "Align center": [
         "Centrare"
       ],
@@ -226,9 +229,6 @@
       ],
       "Close & discard": [
         "Închidere și înlăturare"
-      ],
-      "Close AI refine suggestion": [
-        "Închidere sugerare rafinare IA"
       ],
       "Close composer": [
         "Închidere panou editare"
@@ -570,6 +570,9 @@
       "hide-my-email aliases": [
         "aliasuri hide-my-email"
       ],
+      "I like this response": [
+        "Îmi place acest răspuns"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
       ],
@@ -733,6 +736,12 @@
       ],
       "Minimize composer": [
         "Micșorare panou editare"
+      ],
+      "Modify": [
+        "Modificare"
+      ],
+      "Modify selection": [
+        "Modificare selecție"
       ],
       "Monday": [
         "Luni"
@@ -962,6 +971,12 @@
       "Remove this label": [
         "Eliminare etichetă"
       ],
+      "Replace": [
+        "Înlocuire"
+      ],
+      "Replaces the selected text in your message": [
+        "Înlocuiește textul selectat din mesaj"
+      ],
       "Reply": [
         "Răspuns"
       ],
@@ -970,9 +985,6 @@
       ],
       "Reply securely": [
         "Răspuns în siguranță"
-      ],
-      "Report a good content": [
-        "Raportare conținut bun"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -1196,8 +1208,8 @@
       "Stay": [
         "Nu închide"
       ],
-      "Stop downloading the writing assistant": [
-        "Oprire descărcare asistent de scriere"
+      "Stop downloading assistant": [
+        "Oprire descărcare asistent"
       ],
       "Stop generating result": [
         "Oprire generare rezultat"
@@ -1240,6 +1252,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1325,9 +1342,6 @@
       "Use recovery code": [
         "Folosire cod de recuperare"
       ],
-      "Use this": [
-        "Folosire asta"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilizați mouse-ul pentru a redimensiona vizualizarea. Dacă folosiți tastatura, puteți utiliza tastele săgeată stânga și dreapta pentru redimensionare."
       ],
@@ -1372,6 +1386,9 @@
       ],
       "Why not?": [
         "De ce nu?"
+      ],
+      "Write for me": [
+        "Scrie pentru mine"
       ],
       "Yes": [
         "Da"
@@ -1547,20 +1564,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Datele rămân pe dispozitiv, dar necesită o descărcare unică și hardware compatibil."
+      ],
       "Fast and secure. No logs are kept.": [
         "Rapid și sigur. Nu se păstrează jurnale."
       ],
-      "Faster, broader device compatibility": [
-        "Compatibilitate cu mai multe dispozitive și mai rapid."
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Interogările rămân pe dispozitiv, dar necesită o descărcare unică și hardware compatibil."
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Necesită o singură descărcare și dispozitiv fizic compatibil."
-      ],
-      "Run locally": [
-        "Rulare locală"
+      "Run on device": [
+        "Rulare pe dispozitiv"
       ],
       "Run on servers": [
         "Rulare pe servere."
@@ -3886,7 +3897,7 @@
       "Draft could not be saved. Try again.": [
         "Ciorna nu a putut fi salvată. Mai încercați."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "Din cauza unei erori, generarea textului nu a putut fi anulată."
       ],
       "Email address disabled": [
@@ -4511,9 +4522,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasurile nu pot fi folosite atunci când este activată o parolă suplimentară în ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
@@ -4685,8 +4693,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Spațiu disponibil: ${ assignedStorage }:"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonamentul este facturat administratorului principal al planului Visionary sau de familie."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonamentul va fi facturat administratorului principal al acestui plan."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Planurile vizionare și de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
@@ -4703,8 +4711,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "V-ați alăturat cu succes planului de familie."
+      "You have successfully joined the family group": [
+        "V-ați alăturat cu succes grupului de familie."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
@@ -5708,9 +5716,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } despre asistentul de scriere al ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
         "S-au găsit ${ providerFoldersNumLocalized } foldere",
@@ -6148,14 +6153,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Descărcare asistent… ${ progressDisplay } GiB"
+      ],
       "Downloading paused": [
         "Descărcare suspendată"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Descărcare suspendată: ${ progressDisplay } GiB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Se descarcă asistentul de scriere: ${ progressDisplay } GiB"
       ],
       "Draft": [
         "Ciornă"
@@ -6443,6 +6448,9 @@
       ],
       "Learn more": [
         "Detalii"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Aflați mai multe despre asistentul de scriere din ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "De la stânga la dreapta"
@@ -7478,9 +7486,6 @@
         "Ați selectat **${ elementsCount } mesaje**.",
         "Ați selectat **${ elementsCount } de mesaje**."
       ],
-      "You selected some content:": [
-        "Ați selectat ceva conținut:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Veți pierde accesul la funcțiile Plus la această dată."
       ],
@@ -7851,9 +7856,6 @@
       ],
       " and ${ l }": [
         " și ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
@@ -8373,9 +8375,6 @@
       "Type a command...": [
         "Scrieți o comandă..."
       ],
-      "Type a prompt to generate an output": [
-        "Scrieți o solicitare pentru a genera un text"
-      ],
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
       ],
@@ -8405,6 +8404,9 @@
       ],
       "Wonderful": [
         "Minunată"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ],
       "Your alias": [
         "Aliasuri personale"
@@ -9065,6 +9067,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Începeți cu 1 $"
+      ],
+      "Get started for 1 €": [
+        "Începeți cu 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Începeți cu 1 CHF"
+      ],
       "Upgrade now": [
         "Modificare"
       ]
@@ -9588,6 +9599,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Asigurați-vă viața digitală cu ${ BRAND_NAME } pentru două persoane."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
@@ -9632,8 +9646,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include istoricul versiunilor, partajarea fișierelor criptate și multe altele."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
@@ -10262,8 +10276,8 @@
       "First name": [
         "Prenume"
       ],
-      "Generating...": [
-        "Se generează..."
+      "Generating": [
+        "Se generează"
       ],
       "Gift code": [
         "Cod cadou"
@@ -10304,9 +10318,6 @@
       "Please share what you expected": [
         "Spuneți-ne la ce v-ați așteptat"
       ],
-      "Refining your text...": [
-        "Se rafinează textul..."
-      ],
       "Search date, name, email address, or subject line": [
         "Căutare dată, nume, adresă de e-mail sau subiect"
       ],
@@ -10346,29 +10357,29 @@
       "Subject": [
         "Subiect"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Spuneți-i asistentului de scriere ce să scrie. Exemplu: „Anunță evenimentele viitoare într-un buletin informativ”."
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Spuneți-i asistentului de scriere ce să scrie. Exemplu: „Anulează-mi abonamentul la sală”."
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Spuneți-i asistentului de scriere ce să scrie. Exemplu: „Invită-l pe Ion la petrecerea mea”."
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Spuneți-i asistentului de scriere ce să scrie. Exemplu: „Mulțumește-i colegului meu pentru ajutor în cadrul unui proiect”."
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Spuneți-i asistentului de scriere ce să scrie. Exemplu: „Scrie o scrisoare de intenție pentru un stagiu”."
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Spuneți-i asistentului de scriere ce să scrie. Exemplu: „Scrie continuarea unui e-mail al unui client”."
+      ],
       "Text": [
         "Text"
       ],
       "To": [
         "Către"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Încercați „Anunță evenimentele următoare într-un buletin de știri”"
-      ],
-      "Try “Cancel my gym membership”": [
-        "Încercați „Anulează-mi abonamentul la sala de sport”"
-      ],
-      "Try “Invite Jane to my party”": [
-        "Încercați „Invit-o pe Ioana la petrecerea mea”"
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Încercați „Mulțumește-i colegului meu de serviciu pentru ajutorul la un proiect”"
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Încercați „Scrie o scrisoare de intenție pentru un stagiu”"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Încercați „Scrie un mesaj de e-mail unui client”"
       ],
       "Type a command…": [
         "Scrieți o comandă..."
@@ -11490,6 +11501,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vă oferă toate aplicațiile, toate funcțiile, acces anticipat la versiuni noi și tot ce aveți nevoie pentru a avea controlul asupra datelor și asupra securității acestora."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vă oferă confidențialitate nelimitată și mai mult spațiu de stocare pentru până la două persoane."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } vă oferă echipei tot ce are nevoie pentru a fi mai productivă și organizată în muncă, cu acces la toate aplicațiile ${ BRAND_NAME } și la funcțiile lor premium."
       ],
@@ -11525,6 +11539,9 @@
       ],
       "10 email addresses": [
         "10 adrese de e-mail"
+      ],
+      "2 users": [
+        "2 utilizatori"
       ],
       "20 email addresses per user": [
         "20 de adrese de e-mail per utilizator"
@@ -11678,6 +11695,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited privacy for two": [
+        "Intimitate nelimitată pentru doi"
       ],
       "Users won’t be able to manage their calendars": [
         "Utilizatorii nu își vor putea gestiona calendarele."
@@ -12103,6 +12123,9 @@
       ],
       "Self-destruction set": [
         "Autodistrugere setată"
+      ],
+      "Text copied to clipboard": [
+        "Textul a fost copiat în memorie."
       ],
       "Thanks for the feedback!": [
         "Mulțumim pentru informare!"
@@ -13305,7 +13328,7 @@
     },
     "wallet_signup_2024:Title": {
       "Wallet": [
-        "Portofel"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet setup": {

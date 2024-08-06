@@ -1035,6 +1035,11 @@
         "Událost není podporována"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Pozváno"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
@@ -3166,9 +3171,6 @@
       "Access denied": [
         "Přístup zamítnut"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasy nelze použít, pokud je v ${ PASS_APP_NAME } povoleno další heslo."
-      ],
       "App currently unavailable": [
         "Aplikace je momentálně nedostupná"
       ],
@@ -3346,8 +3348,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Úložiště, které vám bylo přiděleno: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Předplatné se účtuje hlavnímu správci tarifu Visionary nebo rodinného tarifu."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -3364,8 +3366,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Úspěšně jste se připojili k rodinnému tarifu"
+      "You have successfully joined the family group": [
+        "Úspěšně jste se připojili k rodinné skupině"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
@@ -6736,6 +6738,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Začít za cenu $1"
+      ],
+      "Get started for 1 €": [
+        "Začít za €1"
+      ],
+      "Get started for CHF 1": [
+        "Začít za 1 CHF"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ]
@@ -7277,6 +7288,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Zabezpečte svůj digitální život pomocí ${ BRAND_NAME } pro dva uživatele."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
@@ -7321,8 +7335,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
@@ -9134,6 +9148,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vám zajišťuje neomezené soukromí a více úložného prostoru pro až 2 uživatele."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } poskytne vašemu týmu vše, co potřebuje k vyšší produktivitě a organizaci práce, a to díky přístupu ke všem aplikacím ${ BRAND_NAME } a jejich prémiovým funkcím."
       ],
@@ -9169,6 +9186,9 @@
       ],
       "10 email addresses": [
         "10 e-mailových adres"
+      ],
+      "2 users": [
+        "2 uživatelé"
       ],
       "20 email addresses per user": [
         "20 e-mailových adres na uživatele"
@@ -9322,6 +9342,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited privacy for two": [
+        "Neomezené soukromí pro dva"
       ],
       "Users won’t be able to manage their calendars": [
         "Uživatelé nebudou moci spravovat své kalendáře"

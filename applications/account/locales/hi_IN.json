@@ -67,10 +67,13 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "activate": [
-        "सक्रिय"
+      "Accept": [
+        "स्वीकार करें"
       ],
       "Activate": [
+        "सक्रिय"
+      ],
+      "activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -123,6 +126,9 @@
       ],
       "Add PayPal": [
         "PayPal जोड़ें"
+      ],
+      "Add phone number": [
+        "फोन नंबर डालें"
       ],
       "Add public holidays": [
         "सार्वजनिक छुट्टियां जोड़ें"
@@ -318,6 +324,9 @@
       ],
       "Customize plan": [
         "योजना अनुकूलित करें"
+      ],
+      "Decline": [
+        "मना करें"
       ],
       "Decrease": [
         "कम करें"
@@ -694,10 +703,10 @@
       "No, thanks": [
         "नहीं, शुक्रिया"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open": [
@@ -760,11 +769,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "refresh the page": [
-        "पृष्ठ रिफ्रेश करें"
-      ],
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
+      ],
+      "refresh the page": [
+        "पृष्ठ रिफ्रेश करें"
       ],
       "Reload": [
         "रिलोड"
@@ -1472,6 +1481,14 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1493,14 +1510,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
     "bf2023: Offers": {
@@ -4560,20 +4569,11 @@
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "परिवार प्लान छोड़ें"
-      ],
-      "Leave visionary plan": [
-        "Visionary प्लान छोड़ें"
-      ],
       "Manage addresses.": [
         "पते संभालें"
       ],
       "Manage user accounts": [
         "यूज़र खाते संभालें"
-      ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6 महीने की अवधि में केवल 10 स्वीकृत निमंत्रणों की अनुमति है।"
       ],
       "Pending": [
         "लंबित"
@@ -4598,15 +4598,6 @@
       ],
       "You are part of ${ organization.Name }.": [
         "आप ${ organization.Name } के सदस्य है।"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "आप 6 महीने में 10 स्वीकृत आमंत्रणों की सीमा तक पहुँच चुके हैं।"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "आप 6 महीनों में 10 स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त उपयोगकर्ताओं को आमंत्रित कर सकेंगे तो बटन क्लिक करने योग्य हो जाएगा।"
-      ],
-      "You have successfully joined the Family plan": [
-        "आप परिवार प्लान से जुड़ गए है"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "आपको एकाधिक उपयोगकर्ताओं को जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
@@ -4697,9 +4688,6 @@
       ],
       "Family name": [
         "परिवार नाम"
-      ],
-      "Family plan": [
-        "परिवार प्लान"
       ],
       "Invite a user": [
         "किसी यूज़र को न्योता भेजें"
@@ -6243,11 +6231,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "Dedicated servers": [
-        "विशेष सर्वर"
-      ],
       "dedicated servers": [
         "समर्पित सर्वर"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -7460,9 +7448,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "इससे आपकी वर्तमान सशुल्क सदस्यता रद्द हो जाएगी और आपने जो भी लॉयल्टी लाभ अर्जित किया है वह खो देंगे।"
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "इससे ${ rententionLabel } से पुराने आपके फ़ाइलों के सभी पिछले संस्करण हटा दिए जाएंगे।"
       ],
@@ -8081,9 +8066,6 @@
       ],
       "Your recovery phrase": [
         "आपका पुनर्प्राप्ति वाक्यांश"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "आपका पुनर्प्राप्ति वाक्यांश एक विशिष्ट क्रम में 12 शब्दों की एक श्रृंखला है।"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "आपकी सदस्यता का प्रबंधन मोज़िला द्वारा किया जाता है। कृपया मोज़िला समर्थन से संपर्क करें।"
@@ -10752,9 +10734,6 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: एंड-टू-एंड एन्क्रिप्शन के साथ अपना शेड्यूल सुरक्षित करें। इसमें कस्टम कैलेंडर, कैलेंडर शेयरिंग और बहुत कुछ के लिए समर्थन शामिल है।"
-      ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: अपने ईमेल को एंड-टू-एंड एन्क्रिप्शन से सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम और बहुत कुछ के लिए समर्थन शामिल है।"
@@ -13520,10 +13499,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [

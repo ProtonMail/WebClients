@@ -41,11 +41,14 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "activate": [
-        "rmed"
+      "Accept": [
+        "Qbel"
       ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -97,6 +100,9 @@
       ],
       "Add PayPal": [
         "Rnu PayPal"
+      ],
+      "Add phone number": [
+        "Rnu uṭṭun n usawal"
       ],
       "Add public holidays": [
         "Rnu ismiras izayazen"
@@ -268,6 +274,9 @@
       ],
       "Customize plan": [
         "Mudd udem i uɣawas"
+      ],
+      "Decline": [
+        "Agi"
       ],
       "Decrease": [
         "Senqes"
@@ -599,10 +608,10 @@
       "No, thanks": [
         "Uhu, tanemmirt"
       ],
-      "OK": [
+      "Ok": [
         "Ih"
       ],
-      "Ok": [
+      "OK": [
         "Ih"
       ],
       "Open": [
@@ -665,11 +674,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -3910,9 +3919,6 @@
       "Family name": [
         "Isem n twacult"
       ],
-      "Family plan": [
-        "Aɣawas Family"
-      ],
       "Invite a user": [
         "Nced aseqdac"
       ],
@@ -5082,11 +5088,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "Dedicated servers": [
-        "Iqeddacen yettwagen"
-      ],
       "dedicated servers": [
         "iqeddacen yettwagen"
+      ],
+      "Dedicated servers": [
+        "Iqeddacen yettwagen"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
@@ -6075,9 +6081,6 @@
       ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Tafyirt-ik·im n tririt d azrar n 12 wawalen deg umizwer ameẓlu."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
@@ -10206,10 +10209,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [
