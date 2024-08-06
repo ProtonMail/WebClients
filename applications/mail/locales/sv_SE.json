@@ -93,6 +93,9 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Adds it below your existing message": [
+        "Lägger till det under ditt befintliga meddelande"
+      ],
       "Align center": [
         "Centrera"
       ],
@@ -567,6 +570,9 @@
       "hide-my-email aliases": [
         "hide-my-email-alias"
       ],
+      "I like this response": [
+        "Jag gillar detta svar"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Bild kunde inte laddas med spårningsskydd."
       ],
@@ -729,6 +735,12 @@
       ],
       "Minimize composer": [
         "Minimera redigeringsfönstret"
+      ],
+      "Modify": [
+        "Modifiera"
+      ],
+      "Modify selection": [
+        "Modifiera val"
       ],
       "Monday": [
         "Måndag"
@@ -958,6 +970,12 @@
       "Remove this label": [
         "Ta bort denna etikett"
       ],
+      "Replace": [
+        "Ersätt"
+      ],
+      "Replaces the selected text in your message": [
+        "Ersätter markerade texten i ditt meddelande"
+      ],
       "Reply": [
         "Svara"
       ],
@@ -966,9 +984,6 @@
       ],
       "Reply securely": [
         "Svara säkert"
-      ],
-      "Report a good content": [
-        "Rapportera ett bra innehåll"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -1192,8 +1207,8 @@
       "Stay": [
         "Stanna"
       ],
-      "Stop downloading the writing assistant": [
-        "Stoppa ladda ner skrivassistenten"
+      "Stop downloading assistant": [
+        "Stoppa ladda ner assistent"
       ],
       "Stop generating result": [
         "Stoppa generera resultat"
@@ -1236,6 +1251,10 @@
       ],
       "Trust": [
         "Lita på"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1321,11 +1340,8 @@
       "Use recovery code": [
         "Använd återställningskod"
       ],
-      "Use this": [
-        "Använd detta"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        "Använd musen för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda vänster- och högerpiltangenterna för att ändra storlek."
+        "Använd din mus för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda piltangenterna för vänster- och höger för att ändra storlek."
       ],
       "Verify": [
         "Verifiera"
@@ -1368,6 +1384,9 @@
       ],
       "Why not?": [
         "Varför inte?"
+      ],
+      "Write for me": [
+        "Skriv åt mig"
       ],
       "Yes": [
         "Ja"
@@ -1539,20 +1558,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Data finns kvar på din enhet men kräver en engångsnedladdning och kompatibel hårdvara"
+      ],
       "Fast and secure. No logs are kept.": [
         "Snabbt och säkert. Inga loggar förs."
       ],
-      "Faster, broader device compatibility": [
-        "Snabbare, bredare enhetskompatibilitet"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Promptar finns kvar på din enhet men kräver en engångsnedladdning och kompatibel hårdvara"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Kräver en engångsnedladdning och kompatibel hårdvara."
-      ],
-      "Run locally": [
-        "Kör lokalt"
+      "Run on device": [
+        "Kör på enhet"
       ],
       "Run on servers": [
         "Kör på servrar"
@@ -3863,8 +3876,8 @@
       "Draft could not be saved. Try again.": [
         "Utkast kunde inte sparas. Försök igen."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
-        "På grund av ett fel kunde textgenereringen inte avbrytas"
+      "Due to an error, text generation couldn't be canceled": [
+        "På grund av ett fel kunde textgenerering inte avbrytas"
       ],
       "Email address disabled": [
         "E-postadress inaktiverad"
@@ -4475,9 +4488,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Alias ​​kan inte användas när ett extra lösenord är aktiverat i ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
       ],
@@ -4649,8 +4659,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsutrymme tilldelat till dig: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Prenumerationen faktureras till Visionary eller familjepaketets primära administratör."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary och familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
@@ -4667,8 +4677,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Du har gått med i familjepaketet"
+      "You have successfully joined the family group": [
+        "Du har gått med i familjegruppen"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
@@ -5642,9 +5652,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } om ${ BRAND_NAME } skrivassistent"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapp hittades",
         "${ providerFoldersNumLocalized } mappar hittades"
@@ -5804,7 +5811,7 @@
         "Alla schemalagda eller snoozade meddelanden kommer att avbrytas."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Eventuella undermappar kommer också att raderas. E-post som finns i mappen ${ nameDeleted } kommer inte att raderas, de finns i mappen All e-post."
+        "Alla undermappar kommer också att tas bort. E-post lagrad i mappen ${ nameDeleted } kommer dock inte att tas bort och kan hittas i mappen ”All e-post”."
       ],
       "Applying actions to conversations": [
         "Tillämpar åtgärder på konversationer"
@@ -6060,14 +6067,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Laddar ner assistent… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Nedladdning pausad"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Nedladdning pausad: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Laddar ner skrivassistenten: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Utkast"
@@ -6348,6 +6355,9 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Lär dig mer om skrivassistent för ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Vänster till höger"
@@ -7278,7 +7288,7 @@
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Du kan aktivera aviseringar för att få aviseringar när nya e-postmeddelanden kommer in i den här mappen."
+        "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
         "Du kan använda ${ VPN_APP_NAME } gratis idag."
@@ -7364,9 +7374,6 @@
         "Du valde **${ elementsCount } meddelande**.",
         "Du valde **${ elementsCount } meddelanden**."
       ],
-      "You selected some content:": [
-        "Du valde lite innehåll:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Du kommer förlora åtkomst till Plus-funktioner på detta datum."
       ],
@@ -7380,7 +7387,7 @@
         "Du skrev “${ attachmentsFoundKeyword }”, men ingen bilaga har lagts till. Vill du skicka ditt meddelande i alla fall?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Du har nått det maximala antalet adresser i kontaktgruppen (kontaktgrupperna):"
+        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -7737,9 +7744,6 @@
       ],
       " and ${ l }": [
         " och ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -8258,9 +8262,6 @@
       "Type a command...": [
         "Skriv ett kommando..."
       ],
-      "Type a prompt to generate an output": [
-        "Skriv en prompt för att generera en utdata"
-      ],
       "Undisclosed Recipients": [
         "Hemliga mottagare"
       ],
@@ -8290,6 +8291,9 @@
       ],
       "Wonderful": [
         "Underbar"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ],
       "Your alias": [
         "Ditt alias"
@@ -8939,6 +8943,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Kom igång för $1"
+      ],
+      "Get started for 1 €": [
+        "Kom igång för 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom igång för CHF 1"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ]
@@ -9438,6 +9451,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Säkra ditt digitala liv med ${ BRAND_NAME } för två personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
       ],
@@ -9487,8 +9503,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
@@ -10116,8 +10132,8 @@
       "First name": [
         "Förnamn"
       ],
-      "Generating...": [
-        "Genererar …"
+      "Generating": [
+        "Genererar"
       ],
       "Gift code": [
         "Presentkod"
@@ -10158,9 +10174,6 @@
       "Please share what you expected": [
         "Dela vad du förväntade dig"
       ],
-      "Refining your text...": [
-        "Förfinar din text …"
-      ],
       "Search date, name, email address, or subject line": [
         "Sök datum, namn, e-postadress eller ämnesrad"
       ],
@@ -10200,29 +10213,29 @@
       "Subject": [
         "Ämne"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Meddela kommande händelser i ett nyhetsbrev”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Avsluta mitt gymmedlemskap”"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Bjud in Jane till min fest”"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Tacka min medarbetare för hjälpen med ett projekt”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Skriv ett personligt brev till en praktikplats”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Berätta för skrivassistenten vad som ska skrivas. Exempel: ”Skriv ett uppföljande e-postmeddelande till en klient”"
+      ],
       "Text": [
         "Text"
       ],
       "To": [
         "Till"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Prova ”Annonsera kommande evenemang i ett nyhetsbrev”"
-      ],
-      "Try “Cancel my gym membership”": [
-        "Prova ”Avsluta mitt gymmedlemskap”"
-      ],
-      "Try “Invite Jane to my party”": [
-        "Prova ”Bjud in Jane till min fest”"
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Prova ”Tacka min medarbetare för hjälp med ett projekt”"
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Prova ”Skriv ett personligt brev för en praktikplats”"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Prova ”Skriv en uppföljande e-post till en klient”"
       ],
       "Type a command…": [
         "Skriv ett kommando…"
@@ -11305,6 +11318,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } ger dig obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } ger ditt team vad de behöver för att bli mer produktiva och organiserade i sitt arbete med åtkomst till alla ${ BRAND_NAME }-appar och deras premiumfunktioner."
       ],
@@ -11337,6 +11353,9 @@
       ],
       "10 email addresses": [
         "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 användare"
       ],
       "20 email addresses per user": [
         "20 e-postadresser per användare"
@@ -11487,6 +11506,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Unlimited privacy for two": [
+        "Obegränsad integritet för två"
       ],
       "Users won’t be able to manage their calendars": [
         "Användare kommer inte att kunna hantera sina kalendrar"
@@ -11877,6 +11899,9 @@
       ],
       "Self-destruction set": [
         "Självförstörelse inställt"
+      ],
+      "Text copied to clipboard": [
+        "Text kopierad till urklipp"
       ],
       "Thanks for the feedback!": [
         "Tack för feedbacken!"
