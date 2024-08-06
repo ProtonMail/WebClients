@@ -26,6 +26,9 @@
       "Add new item": [
         "Додати новий елемент"
       ],
+      "Add section": [
+        "Додати розділ"
+      ],
       "Add username field": [
         "Додати поле імені користувача"
       ],
@@ -92,6 +95,9 @@
       "Continue": [
         "Продовжити"
       ],
+      "Continue offline": [
+        "Продовжити в автономному режимі"
+      ],
       "Continue without pinning": [
         "Продовжити без закріплення"
       ],
@@ -128,6 +134,9 @@
       "Create card": [
         "Створити картку"
       ],
+      "Create identity": [
+        "Створити ідентичність"
+      ],
       "Create login": [
         "Створити запис входу"
       ],
@@ -142,6 +151,9 @@
       ],
       "Creating vault": [
         "Створення сховища"
+      ],
+      "Custom section": [
+        "Власний розділ"
       ],
       "Customize": [
         "Налаштувати"
@@ -194,6 +206,9 @@
       "Edit vault": [
         "Редагувати сховище"
       ],
+      "Entire vault": [
+        "Все сховище"
+      ],
       "Exclude from monitoring": [
         "Виключити з моніторингу"
       ],
@@ -215,8 +230,14 @@
       "Generate password": [
         "Згенерувати пароль"
       ],
+      "Generate secure link": [
+        "Створити безпечне посилання"
+      ],
       "Generated passwords": [
         "Згенеровані паролі"
+      ],
+      "Generating secure link...": [
+        "Створення безпечного посилання..."
       ],
       "Get mobile apps": [
         "Отримати програму для мобільного пристрою"
@@ -287,6 +308,9 @@
       "Manage access": [
         "Керувати доступом"
       ],
+      "Manage vault access": [
+        "Керування доступом до сховища"
+      ],
       "Manually sync your data": [
         "Синхронізація даних вручну"
       ],
@@ -319,6 +343,9 @@
       ],
       "Multiple select": [
         "Множинний вибір"
+      ],
+      "No expired links": [
+        "Немає прострочених посилань"
       ],
       "Not now": [
         "Не зараз"
@@ -365,6 +392,9 @@
       "Remove access": [
         "Вилучити доступ"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Видалити всі прострочені посилання (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Вилучити посилання"
       ],
@@ -389,6 +419,9 @@
       "Retry": [
         "Повторити спробу"
       ],
+      "Right click and download this CSV": [
+        "Клацніть ПКМ та завантажте цей CSV"
+      ],
       "Save": [
         "Зберегти"
       ],
@@ -400,6 +433,9 @@
       ],
       "Saving passkey...": [
         "Збереження ключа доступу..."
+      ],
+      "Section name": [
+        "Назва розділу"
       ],
       "Secure links": [
         "Безпечні посилання"
@@ -419,11 +455,17 @@
       "Set access level": [
         "Задати рівень доступу"
       ],
+      "Set extra password": [
+        "Встановити додатковий пароль"
+      ],
       "Setup 2FA": [
         "Налаштування 2FA"
       ],
       "Share": [
         "Поділитися"
+      ],
+      "Share secure link": [
+        "Поділитися безпечним посиланням"
       ],
       "Share this vault": [
         "Поділитися цим сховищем"
@@ -467,6 +509,9 @@
       "Try again": [
         "Спробувати знову"
       ],
+      "Unlock offline with password": [
+        "Розблокувати в автономному режимі паролем"
+      ],
       "Unpin item": [
         "Відкріпити елемент"
       ],
@@ -487,6 +532,9 @@
       ],
       "Upgrade now to share with more people": [
         "Оновіться зараз, щоб поділитися з більшою кількістю людей"
+      ],
+      "Via secure link": [
+        "Через безпечне посилання"
       ],
       "View app logs": [
         "Перегляд журналів програми"
@@ -729,6 +777,9 @@
       "File could not be parsed": [
         "Не вдалося проаналізувати файл"
       ],
+      "File could not be read": [
+        "Неможливо прочитати файл"
+      ],
       "File does not match expected format": [
         "Файл не відповідає очікуваному формату"
       ],
@@ -843,6 +894,9 @@
       "Unknown passkey": [
         "Невідомий ключ доступу"
       ],
+      "Unlock failure": [
+        "Помилка розблокування"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Непідтримуваний формат файлу ${ PASS_APP_NAME }"
       ],
@@ -869,6 +923,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Зараз ви не в мережі. Відновіть з'єднання для розблокування ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код був видалений іншим клієнтом ${ PASS_APP_NAME }"
@@ -953,6 +1010,12 @@
         "${ count } рази",
         "${ count } рази"
       ],
+      "${ count } view": [
+        "${ count } перегляд",
+        "${ count } перегляди",
+        "${ count } переглядів",
+        "${ count } переглядів"
+      ],
       "${ memberCount } member": [
         "${ memberCount } учасник",
         "${ memberCount } учасники",
@@ -964,6 +1027,9 @@
         "Елементів: ${ n }",
         "Елементів: ${ n }",
         "Елементів: ${ n }"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } буде завжди доступним"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
@@ -1013,8 +1079,14 @@
       "Access successfully confirmed": [
         "Доступ успішно підтверджено"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Для доступу до ${ PASS_APP_NAME } завжди буде потрібен ваш пароль ${ BRAND_NAME }."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Отримуйте доступ до своїх паролів на ходу за допомогою наших програм для мобільних пристроїв."
+      ],
+      "Add a username field": [
+        "Додати поле імені користувача"
       ],
       "Admin": [
         "Адміністратор"
@@ -1043,11 +1115,20 @@
       "An item previously shared with you was removed": [
         "Елемент, до якого раніше було надано доступ, було видалено"
       ],
+      "Are you sure you want to remove the link?": [
+        "Ви впевнені, що хочете видалити посилання?"
+      ],
       "Auto-lock successfully disabled.": [
         "Автоблокування успішно вимкнено."
       ],
+      "Automatically copy the generated password to the clipboard": [
+        "Автоматично копіювати згенерований пароль в буфер обміну"
+      ],
       "Autosaved on ${ payload.domain }": [
         "Автоматично збережено ${ payload.domain }"
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Перед експортом даних у цьому форматі, відкрийте налаштування Safari -> вкладка «Загальні» -> вимкніть параметр «Відкривати безпечні файли після завантаження». Це запобіжить некоректному розпакуванню Safari експортованого файлу."
       ],
       "Built in 2FA authenticator": [
         "Створений у 2FA автентифікатор"
@@ -1069,6 +1150,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Оберіть збережений ключ доступу для входу до ${ domain }"
+      ],
+      "Click here to add a field for a username.": [
+        "Натисніть тут, щоби додати поле для імені користувача."
       ],
       "Click the icon to open it anytime.": [
         "Клацніть на іконку щоб відкрити його будь-коли."
@@ -1103,6 +1187,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Видалення ${ payload.content.name }"
       ],
+      "Disabling auto-lock": [
+        "Вимкнення автоблокування"
+      ],
+      "Disabling auto-lock failed": [
+        "Не вдалося вимкнути автоблокування"
+      ],
+      "Disabling offline mode...": [
+        "Вимкнення автономного режиму..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Перегляньте відео про ${ PASS_APP_NAME } на Youtube"
       ],
@@ -1111,6 +1204,9 @@
       ],
       "Drop to import": [
         "Перетягніть, щоб імпортувати"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Через обмеження розширень браузера Safari, після експорту даних у розширенні файлу буде відсутнє розширення «.pgp». Перейменуйте файл так, щоб він містив це розширення (наприклад, file.pgp) після експорту."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко імпортуйте наявні паролі в ${ PASS_APP_NAME }."
@@ -1132,6 +1228,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ввімкніть ${ PASS_APP_NAME }, під'єднавши обліковий запис ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Увімкнути автоблокування для захисту даних"
+      ],
+      "Enabling offline mode...": [
+        "Увімкнення автономного режиму..."
+      ],
+      "Enabling password auto-lock": [
+        "Увімкнення автоблокування паролем"
+      ],
+      "Enabling password lock failed": [
+        "Не вдалося ввімкнути блокування паролем"
+      ],
+      "Enabling PIN auto-lock": [
+        "Увімкнення автоблокування PIN-кодом"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
@@ -1283,11 +1394,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Переміщення елемента до іншого сховища зітре його історію та всі захищені посилання."
+      ],
       "Moving an item to another vault will erase its history.": [
         "Переміщення предмета до іншого сховища призведе до стирання його історії."
       ],
       "Moving items": [
         "Переміщення елементів"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Переміщення елементів до іншого сховища призведе до стирання їхньої історії та всіх захищених посилань."
       ],
       "Moving items to another vault will erase their history.": [
         "Переміщення елементів до іншого сховища призведе до стирання їх історії."
@@ -1298,17 +1415,26 @@
       "Never": [
         "Ніколи"
       ],
+      "No identity item found": [
+        "Не знайдено ідентифікаційного елемента"
+      ],
       "No login found": [
         "Записів для входу не знайдено"
       ],
       "None": [
         "Немає"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Наразі неможливо вимкнути автономний режим"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Наразі неможливо увімкнути автономний режим"
       ],
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Мережевий доступ до ${ PASS_APP_NAME } вимагатиме PIN-коду для розблокування сеансу. Ви вийдете з системи після 3 невдалих спроб."
       ],
       "Open the Extensions menu": [
         "Відкрити меню розширень"
@@ -1327,6 +1453,9 @@
       ],
       "Password copied": [
         "Пароль скопійовано"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Блокування паролем успішно зареєстровано. Використовуйте його, щоб розблокувати ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тиждень автоматично видаляються з історії.",
@@ -1352,6 +1481,12 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Будь ласка, підтвердьте свій пароль ${ BRAND_NAME }, щоб експортувати дані ${ PASS_APP_NAME }."
       ],
+      "Please confirm your password": [
+        "Підтвердьте свій пароль"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Підтвердьте PIN-код, щоб скасувати реєстрацію поточного блокування."
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "Введіть свій PIN-код, щоб змінити це налаштування."
       ],
@@ -1360,6 +1495,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Щоб продовжити, введіть поточний PIN-код"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Введіть ваш додатковий пароль, щоби почати використовувати ${ PASS_SHORT_APP_NAME }."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Будь ласка, оновіть, щоб отримати ранній доступ до web програми ${ PASS_APP_NAME }"
@@ -1372,6 +1510,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Захищений ${ PROTON_SENTINEL_LINK }, нашою вдосконаленою програмою захисту облікового запису"
+      ],
+      "Registering PIN lock failed": [
+        "Не вдалося зареєструвати блокування PIN-кодом"
       ],
       "Restoring items from trash": [
         "Відновлення елементів зі смітника"
@@ -1499,6 +1640,12 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Розблокуйте ${ PASS_APP_NAME } за допомогою PIN-коду, щоб зберегти цей ключ доступу"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Розблокувати ${ PASS_SHORT_APP_NAME } паролем ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Розблокувати ${ PASS_SHORT_APP_NAME } додатковим паролем"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Розблокуйте за допомогою PIN-коду, щоб отримати доступ до налаштувань"
       ],
@@ -1623,6 +1770,12 @@
         "${ hours } години",
         "${ hours } годин",
         "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } монітор"
@@ -1777,6 +1930,9 @@
       "Create an encrypted note": [
         "Створити зашифровану нотатку"
       ],
+      "Create lock": [
+        "Створити блокування"
+      ],
       "Create new vault": [
         "Створити нове сховище"
       ],
@@ -1806,6 +1962,12 @@
       ],
       "Email": [
         "Е-пошта"
+      ],
+      "Email (alias)": [
+        "Пошта (псевдонім)"
+      ],
+      "Email (new alias)": [
+        "Пошта (новий псевдонім)"
       ],
       "Email aliases": [
         "Псевдоніми електронної пошти"
@@ -2122,6 +2284,12 @@
       "Text": [
         "Текст"
       ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особою",
+        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами",
+        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами",
+        "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами"
+      ],
       "Title": [
         "Назва"
       ],
@@ -2163,6 +2331,9 @@
       ],
       "Username": [
         "Ім'я користувача"
+      ],
+      "Username/email": [
+        "Ім'я користувача / пошта"
       ],
       "Vault ID": [
         "ID сховища"
@@ -2265,11 +2436,17 @@
       "Enter a prefix": [
         "Введіть префікс"
       ],
+      "Enter email": [
+        "Введіть пошту"
+      ],
       "Enter email or username": [
         "Введіть адресу електронної пошти або ім'я користувача"
       ],
       "Enter password": [
         "Введіть пароль"
+      ],
+      "Enter username": [
+        "Введіть ім'я користувача"
       ],
       "Full Name": [
         "Повне ім'я"
@@ -2341,6 +2518,12 @@
       "Auto-lock update": [
         "Оновлення автоблокування"
       ],
+      "Autofill": [
+        "Автозаповнення"
+      ],
+      "Confirm extra password": [
+        "Підтвердження додаткового пароля"
+      ],
       "Confirm PIN code": [
         "Підтвердьте PIN-код"
       ],
@@ -2395,6 +2578,9 @@
       "History": [
         "Історія"
       ],
+      "Identity": [
+        "Ідентичність"
+      ],
       "Import - ${ date }": [
         "Імпорт - ${ date }"
       ],
@@ -2425,8 +2611,14 @@
       "Modified": [
         "Змінено"
       ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Перемістити всі елементи до «${ vaultName }»?"
+      ],
       "No items selected": [
         "Жоден елемент не вибрано"
+      ],
+      "No shared secure links": [
+        "Немає поширених безпечних посилань"
       ],
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"
@@ -2449,6 +2641,12 @@
       "Pinned (${ items.length })": [
         "Закріплено (${ items.length })"
       ],
+      "Remove extra password": [
+        "Видалення додаткового пароля"
+      ],
+      "Remove secure link?": [
+        "Видалити безпечне посилання?"
+      ],
       "Restore this version?": [
         "Відновити цю версію?"
       ],
@@ -2460,6 +2658,9 @@
       ],
       "Set access level": [
         "Задати рівень доступу"
+      ],
+      "Set extra password": [
+        "Встановлення додаткового пароля"
       ],
       "Set up 2FA for more security": [
         "Налаштуйте 2FA для більшої безпеки"
@@ -2541,6 +2742,9 @@
       "OTP secret or URI required": [
         "Потрібен секрет OTP або URI"
       ],
+      "Section name cannot be empty": [
+        "Назва розділу не може бути пустою"
+      ],
       "Url already exists": [
         "Url вже існує"
       ],
@@ -2573,6 +2777,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Наразі неможливо отримати поштові скриньки для цього псевдоніма"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Увага: Ви не зможете отримати доступ до свого облікового запису ${ PASS_APP_NAME }, якщо втратите цей пароль."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Не вдалося створити сховище \"${ vaultName }\""
       ],
@@ -2593,6 +2800,9 @@
       ],
       "Extra password cannot be empty": [
         "Додатковий пароль не може бути порожнім"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Додатковий пароль повинен містити щонайменше 8 символів"
       ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
@@ -2653,6 +2863,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Будь ласка, підтвердьте вашу адресу електронної пошти, щоб використовувати поширення сховища"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Видалення додаткового пароля призведе до виходу з усіх пристроїв і завершення всіх активних сеансів."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
