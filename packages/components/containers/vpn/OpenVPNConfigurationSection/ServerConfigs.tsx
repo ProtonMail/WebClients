@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 import { groupBy } from 'lodash';
 
@@ -30,9 +30,12 @@ interface Props {
     platform: string;
     protocol: string;
     loading?: boolean;
+    defaultOpen: boolean;
 }
 
-const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions, ...rest }: Props) => {
+const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions, defaultOpen, ...rest }: Props) => {
+    const [openMap, setOpen] = useState<{ [key: string]: boolean }>({});
+
     // Free servers at the top, then sorted by Name#ID
     const sortedGroups = useMemo(() => {
         const groupedServers = groupBy(
@@ -55,8 +58,16 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
         <div className="mb-6">
             {sortedGroups.map((group) => {
                 const server = group[0];
+                const id = server.country || '';
+                const open = !!openMap[id] !== defaultOpen;
                 return (
-                    <Details key={server.country || 'XX'} open={server.open}>
+                    <Details
+                        key={id}
+                        open={open}
+                        onToggle={() => {
+                            setOpen((prev) => ({ ...prev, [id]: !prev[id] }));
+                        }}
+                    >
                         <Summary>
                             <div className="ml-2 flex flex-nowrap items-center">
                                 <div className={clsx([category === CATEGORY.SERVER ? 'w-1/3' : ''])}>
@@ -82,16 +93,18 @@ const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions,
                                 )}
                             </div>
                         </Summary>
-                        <div className="p-4">
-                            <ConfigsTable
-                                {...rest}
-                                category={category}
-                                servers={group}
-                                onSelect={onSelect}
-                                selecting={selecting}
-                                countryOptions={countryOptions}
-                            />
-                        </div>
+                        {open && (
+                            <div className="p-4">
+                                <ConfigsTable
+                                    {...rest}
+                                    category={category}
+                                    servers={group}
+                                    onSelect={onSelect}
+                                    selecting={selecting}
+                                    countryOptions={countryOptions}
+                                />
+                            </div>
+                        )}
                     </Details>
                 );
             })}
