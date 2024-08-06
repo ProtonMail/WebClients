@@ -7,6 +7,7 @@ export interface Photo {
     exif?: string;
     hash?: string;
     contentHash?: string;
+    relatedPhotosLinkIds?: string[];
 }
 
 export type PhotoLink =
