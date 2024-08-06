@@ -429,7 +429,7 @@ export const createAuthService = ({
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
-    auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth));
+    if (DESKTOP_BUILD) auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth));
 
     return auth;
 };
