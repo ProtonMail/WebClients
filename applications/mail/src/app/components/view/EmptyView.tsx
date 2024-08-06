@@ -24,7 +24,7 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
-    const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
+    const { isFetchingAccountLinked } = useSimpleLoginExtension();
 
     const { esStatus } = useEncryptedSearchContext();
     const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
@@ -76,8 +76,6 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         }
     })();
 
-    const showSimpleLoginPlaceholder = isSpam && !hasSimpleLogin;
-
     if (isFetchingAccountLinked) {
         return (
             <div className="m-auto text-center p-7 max-w-full">
@@ -86,7 +84,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         );
     }
 
-    return showSimpleLoginPlaceholder ? (
+    return isSpam ? (
         <div className="m-auto text-center p-7 max-w-full">
             <ProtonPassPlaceholder />
         </div>
