@@ -921,6 +921,9 @@
       "Vault name does not match": [
         "საცავის სახელი არ ემთხვევა"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "აღმოჩენილია შეცდომა ${ PASS_SHORT_APP_NAME }-ის გაშვებისას. თუ ეს პრობლემა გაგრძელდება, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
+      ],
       "Wrong password": [
         "არასწორი პაროლი"
       ],
@@ -1114,6 +1117,9 @@
       "Autosaved on ${ payload.domain }": [
         "ავტომატურად შენახულია ბმულზე ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "თქვენი მონაცემების ამ ფორმატში გატანამდე გახსენთ Safari-ის პარამეტრებ -> \"ზოგადი\" ჩანართი -> გათიშეთ პარამეტრი \"Safari-ის ფაილების გახსნა მათი გამოწერის შემდეგ\". ეს Safari-ი ხელს შეუშლის, გატანილი ფაილი გააფუჭოს."
+      ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "Drop to import": [
         "შემოსატანად დააგდეთ"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari ბრაუზერის გაფართოებების შეზღუდვის გამო, მონაცემების გატანის შემდეგ ფაილის გაფართოებას დააკლდება \".pgp\". გადაარქვით ფაილს სახელი, რომ .pgp მიემატოს ბოლოში (მაგალითად: file.pgp) მას შემდეგ, რაც გაიტანთ."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
@@ -1398,6 +1407,9 @@
       ],
       "Never": [
         "არასოდეს"
+      ],
+      "No identity item found": [
+        "იდენტიფიკატორის ელემენტის გარეშე"
       ],
       "No login found": [
         "შესვლის პარამეტრები აღმოჩენილი არაა"
@@ -2570,6 +2582,9 @@
       "Auto-lock update": [
         "ავტომატური დაბლოკვის განახლება"
       ],
+      "Autofill": [
+        "ავტოშევსება"
+      ],
       "Confirm extra password": [
         "დაადასტურეთ დამატებითი პაროლი"
       ],
@@ -2626,6 +2641,9 @@
       ],
       "History": [
         "ისტორია"
+      ],
+      "Identity": [
+        "იდენტიფიკატორი"
       ],
       "Import - ${ date }": [
         "შემოტანა - ${ date }"

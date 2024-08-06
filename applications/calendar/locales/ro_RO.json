@@ -485,10 +485,10 @@
       "Not now": [
         "Nu acum"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3430,9 +3430,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasurile nu pot fi folosite atunci când este activată o parolă suplimentară în ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
@@ -3650,8 +3647,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Spațiu disponibil: ${ assignedStorage }:"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonamentul este facturat administratorului principal al planului Visionary sau de familie."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonamentul va fi facturat administratorului principal al acestui plan."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Planurile vizionare și de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
@@ -3668,8 +3665,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "V-ați alăturat cu succes planului de familie."
+      "You have successfully joined the family group": [
+        "V-ați alăturat cu succes grupului de familie."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
@@ -6310,6 +6307,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Începeți cu 1 $"
+      ],
+      "Get started for 1 €": [
+        "Începeți cu 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Începeți cu 1 CHF"
+      ],
       "Upgrade now": [
         "Modificare"
       ]
@@ -6833,6 +6839,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Asigurați-vă viața digitală cu ${ BRAND_NAME } pentru două persoane."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
@@ -6877,8 +6886,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include istoricul versiunilor, partajarea fișierelor criptate și multe altele."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
@@ -8633,6 +8642,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vă oferă toate aplicațiile, toate funcțiile, acces anticipat la versiuni noi și tot ce aveți nevoie pentru a avea controlul asupra datelor și asupra securității acestora."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vă oferă confidențialitate nelimitată și mai mult spațiu de stocare pentru până la două persoane."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } vă oferă echipei tot ce are nevoie pentru a fi mai productivă și organizată în muncă, cu acces la toate aplicațiile ${ BRAND_NAME } și la funcțiile lor premium."
       ],
@@ -8668,6 +8680,9 @@
       ],
       "10 email addresses": [
         "10 adrese de e-mail"
+      ],
+      "2 users": [
+        "2 utilizatori"
       ],
       "20 email addresses per user": [
         "20 de adrese de e-mail per utilizator"
@@ -8821,6 +8836,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited privacy for two": [
+        "Intimitate nelimitată pentru doi"
       ],
       "Users won’t be able to manage their calendars": [
         "Utilizatorii nu își vor putea gestiona calendarele."

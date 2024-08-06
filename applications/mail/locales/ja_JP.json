@@ -219,9 +219,6 @@
       "Close & discard": [
         "閉じて破棄"
       ],
-      "Close AI refine suggestion": [
-        "AI 修正提案を閉じる"
-      ],
       "Close composer": [
         "閉じる"
       ],
@@ -1140,9 +1137,6 @@
       "Stay": [
         "終了しない"
       ],
-      "Stop downloading the writing assistant": [
-        "執筆アシスタントのダウンロードを停止"
-      ],
       "Stop generating result": [
         "結果の生成を停止"
       ],
@@ -1181,6 +1175,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -1265,9 +1262,6 @@
       ],
       "Use recovery code": [
         "回復用コードを使用"
-      ],
-      "Use this": [
-        "これを使用"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
@@ -4278,9 +4272,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "割り当てられたストレージ: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "サブスクリプション料金は Visionary またはファミリープランのプライマリー管理者に請求されます。"
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary とファミリープランは外部のアカウントをサポートしていません。参加するには ${ BRAND_NAME } アドレスを作成してください。 ${ addressSettingsLink }"
       ],
@@ -4295,9 +4286,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } から招待されています。 ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "ファミリープランに参加しました"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
@@ -5542,9 +5530,6 @@
       ],
       "Downloading paused": [
         "ダウンロード一時停止"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "執筆アシスタントをダウンロード中: ${ progressDisplay } GB"
       ],
       "Draft": [
         "下書き"
@@ -8673,9 +8658,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: 暗号化されたクラウド ストレージでファイルを保護します。 バージョン履歴、暗号化されたファイル共有などが含まれます。"
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタム電子メール ドメイン、15 個の電子メール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
       ],
@@ -9204,9 +9186,6 @@
       "First name": [
         "名"
       ],
-      "Generating...": [
-        "生成中..."
-      ],
       "Gift code": [
         "ギフトコード"
       ],
@@ -9242,9 +9221,6 @@
       ],
       "Please insert link first": [
         "最初にリンクを挿入してください"
-      ],
-      "Refining your text...": [
-        "テキストを修正中..."
       ],
       "Search date, name, email address, or subject line": [
         "日付、名前、メールアドレス、件名で検索"
@@ -9284,24 +9260,6 @@
       ],
       "To": [
         "終了日"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "「ニュースレターで今後のイベントをお知らせ」を試す"
-      ],
-      "Try “Cancel my gym membership”": [
-        "「ジムのメンバーシップをキャンセル」を試す"
-      ],
-      "Try “Invite Jane to my party”": [
-        "「パーティーにジェーンを招待」を試す"
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "「プロジェクトを手伝ってくれた同僚にお礼を言う」を試す"
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "「インターンシップの送付状を書く」を試す"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "「顧客にフォローアップメールを書く」を試す"
       ],
       "Type a command…": [
         "コマンドを入力…"

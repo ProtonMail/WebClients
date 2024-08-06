@@ -1019,6 +1019,11 @@
         "Ikke støttet hendelse"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Invitert"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
@@ -3122,9 +3127,6 @@
       "Access denied": [
         "Tilgang nektet"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliaser kan ikke brukes når et ekstra passord er aktivert i ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
@@ -3300,8 +3302,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsplass tilordnet deg: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonnementet faktureres til Visionary- eller familieabonnementets primære administrator."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonnementet faktureres til den primære administratoren for denne planen."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- og familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
@@ -3318,8 +3320,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Du har blitt med i familieplanen"
+      "You have successfully joined the family group": [
+        "Du har blitt med i familiegruppen"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne gruppeplanen og sammen nyte alle ${ BRAND_NAME_TWO }-premiumfunksjoner."
@@ -6607,6 +6609,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
       ]
@@ -7112,6 +7123,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sikre ditt digitale liv med ${ BRAND_NAME } for to personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov"
       ],
@@ -7156,8 +7170,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: sikre e-postene dine med ende-til-ende kryptering. Inkluderer støtte for egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser og mer."
@@ -8865,6 +8879,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } gir deg ubegrenset privatliv og mer lagringsplass for opptil 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } gir teamet ditt det de trenger for å være mer produktive og organiserte i arbeidet med tilgang til alle ${ BRAND_NAME }-apper og deres premiumfunksjoner."
       ],
@@ -8900,6 +8917,9 @@
       ],
       "10 email addresses": [
         "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 brukere"
       ],
       "20 email addresses per user": [
         "20 e-postadresser per bruker"
@@ -9053,6 +9073,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Unlimited privacy for two": [
+        "Ubegrenset personvern for to"
       ],
       "Users won’t be able to manage their calendars": [
         "Brukere kan ikke administrere kalenderne sine"

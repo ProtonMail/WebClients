@@ -226,9 +226,6 @@
       "Close & discard": [
         "Tanca i descarta"
       ],
-      "Close AI refine suggestion": [
-        "Tanca el suggeriment de perfeccionament de l'IA"
-      ],
       "Close composer": [
         "Tancar l'editor"
       ],
@@ -497,6 +494,9 @@
       ],
       "Get in touch": [
         "Contacte"
+      ],
+      "Get it": [
+        "Aconseguiu-ho"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Aconseguiu-lo a partir de només ${ addonPriceWithCurrency }/mes"
@@ -958,9 +958,6 @@
       "Reply securely": [
         "Respon de manera segura"
       ],
-      "Report a good content": [
-        "Informeu d'un bon contingut"
-      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -1180,9 +1177,6 @@
       "Stay": [
         "Mantenir"
       ],
-      "Stop downloading the writing assistant": [
-        "Deixa de descarregar l'assistent d'escriptura"
-      ],
       "Stop generating result": [
         "Atura la generació del resultat"
       ],
@@ -1224,6 +1218,10 @@
       ],
       "Trust": [
         "De confiança"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1308,9 +1306,6 @@
       ],
       "Use recovery code": [
         "Utilitza un codi de recuperació"
-      ],
-      "Use this": [
-        "Usa això"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
@@ -1528,15 +1523,6 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
-      ],
-      "Faster, broader device compatibility": [
-        "Compatibilitat amb dispositius més ràpida i àmplia"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Requereix una descàrrega única i un maquinari compatible."
-      ],
-      "Run locally": [
-        "Executa localment"
       ],
       "Run on servers": [
         "Executa als servidors"
@@ -2628,6 +2614,9 @@
       "Congo": [
         "República del Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo, (República Democràtica del)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
       ],
@@ -3163,7 +3152,7 @@
         "Tanzània"
       ],
       "Tanzania, United Republic of": [
-        "Tanzània (República Unida)"
+        "Tanzània"
       ],
       "Thailand": [
         "Tailàndia"
@@ -3830,9 +3819,6 @@
       "Draft could not be saved. Try again.": [
         "L'esborrany no s'ha pogut desar. Torni a provar-ho."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
-        "A causa d'un error, la generació de text no es va poder cancel·lar."
-      ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
       ],
@@ -4016,6 +4002,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Seleccioneu una categoria i el que no ha funcionat amb el text generat."
+      ],
+      "Please try again or refresh the page.": [
+        "Torneu a provar o refresqueu la pàgina."
       ],
       "Please try generating the text again": [
         "Proveu de generar el text de nou"
@@ -4613,9 +4602,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "La subscripció es factura a l'administrador principal del pla Visionary o familiar."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
       ],
@@ -4630,9 +4616,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Us heu unit al pla familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
@@ -5592,9 +5575,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } sobre l'assistent d'escriptura de ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
         "${ providerFoldersNumLocalized } carpetes trobades"
@@ -5747,6 +5727,9 @@
       "and": [
         "i"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Es mostrarà un altre consell la pròxima vegada que obriu el Mail"
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Es cancel·larà qualsevol missatge planificat o posposat."
       ],
@@ -5891,6 +5874,9 @@
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Tingueu en compte quan és el millor moment perquè el destinatari rebi el teu correu electrònic i programeu-ne l'enviament."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "S'ha assignat el contacte al grup ${ contactGroupName }."
       ],
@@ -5906,9 +5892,15 @@
       "Country code": [
         "Codi de país"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Milloreu els vostres correus electrònics, de manera ràpida i sense esforç. Proveu-ho ara."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crea ${ calendarsToBeCreatedCount } calendari",
         "Crea ${ calendarsToBeCreatedCount } calendaris"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Creeu una carpeta com ara «${ suggestedFolderName }» per a mantenir tots els rebuts en línia en un sol lloc."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -5961,6 +5953,12 @@
       "Default email application": [
         "Aplicació de correu electrònic per defecte"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Sabíeu que teniu inclòs l'emmagatzematge al núvol xifrat amb el compte de ${ BRAND_NAME }? Passeu a ${ DRIVE_APP_NAME } i aprofiteu al màxim el vostre espai. És gratuït."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Ho sabíeu? Us hem reservat una adreça electrònica més curta. És el vostre nom d'usuari seguit de “@${ PM_DOMAIN }”."
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -5976,6 +5974,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "No oblidi compartir la contrassenya amb el destinatari"
+      ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "No teniu temps d'abordar un correu important ara, però no voleu oblidar-lo? Establiu un moment millor perquè aparegui a la safata d'entrada."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "No veieu res? Recordeu desactivar els bloquejadors de finestres emergents."
@@ -5994,9 +5995,6 @@
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "La descàrrega s'ha posat en pausa: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "S'està descarregant l'assistent d'escriptura: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Esborrany"
@@ -6138,6 +6136,9 @@
       "Generate text": [
         "Genera text"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Apliqueu als rebuts entrants una etiqueta amb codi de color, com ara «${ suggestedLabelName }». Un cop pagats, canvieu l'etiqueta a «${ suggestedPaidLabelName }»."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Té ${ numAttachments } fitxer adjunt (${ numAttachmentsSize })",
         "Té ${ numAttachments } fitxers adjunts (${ numAttachmentsSize })"
@@ -6177,6 +6178,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si el vostre àlies és venut, filtrat o abusat, desactiveu-lo i deixeu de rebre correu brossa."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Si la vostra contrasenya acaba a la web fosca, ${ BRAND_NAME } us pot dir de quin servei s'han filtrat les vostres dades i com aturar el dany."
       ],
       "Image description": [
         "Descripció de la imatge"
@@ -6247,6 +6251,12 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Mantingueu les dades d'inici de sessió i de la targeta de crèdit segures però sempre a mà afegint-les a ${ PASS_APP_NAME }. És gratuït i s'inclou amb el compte de ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Mantingueu la bústia ordenada amb la neteja automàtica dels elements de la paperera i el correu brossa de més de 30 dies."
       ],
       "Key fingerprint": [
         "Clau d'empremta digital"
@@ -6907,6 +6917,9 @@
       "to ${ destinationElement } folder.": [
         "a la carpeta ${ destinationElement }."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Per a evitar que les pestanyes obertes del navegador us distreguin, utilitzeu l'aplicació d'escriptori."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per a completar el pagament, envieu ${ btcAmountBold } a l'adreça següent."
       ],
@@ -6966,6 +6979,9 @@
       ],
       "Unread conversations": [
         "Conversacions sense llegir"
+      ],
+      "Unread messages": [
+        "Missatges sense llegir"
       ],
       "Unsaved changes": [
         "Canvis no desats"
@@ -7029,6 +7045,9 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Utilitzeu diferents adreces de correu electrònic per a diferents propòsits perquè pugueu separar fàcilment els correus electrònics per àrees laborals, personals o d'altres."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
@@ -7119,6 +7138,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat queda amagada, i podeu desactivar l'àlies en qualsevol moment."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Quan viatgeu o utilitzeu una WiFi pública, connecteu-vos a ${ VPN_APP_NAME } per a evitar que ningú faci el seguiment de la vostra activitat en línia o robi les vostres dades. És gratuït."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -7266,9 +7291,6 @@
         "Heu seleccionat **${ elementsCount } missatge**.",
         "Heu seleccionat **${ elementsCount } missatges**."
       ],
-      "You selected some content:": [
-        "Heu seleccionat contingut:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Perdreu accés a les funcions Plus en aquesta data."
       ],
@@ -7327,7 +7349,7 @@
         "Es xifraran els fitxers i després es desaran."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "El vostre maquinari no permet executar l'assistent d'escriptura localment. Proveu d'executar-lo als servidors."
+        "El vostre maquinari no permet executar l'assistent d'escriptura localment. Proveu d'executar-lo en servidors."
       ],
       "Your information was found on ${ displayedDate }": [
         "La vostra informació es va trobar el ${ displayedDate }"
@@ -7633,9 +7655,6 @@
       ],
       " and ${ l }": [
         " i ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
@@ -8153,9 +8172,6 @@
       ],
       "Type a command...": [
         "Escriviu una ordre..."
-      ],
-      "Type a prompt to generate an output": [
-        "Escriviu una indicació per generar una sortida"
       ],
       "Undisclosed Recipients": [
         "Destinataris ocults"
@@ -9384,9 +9400,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
@@ -9995,9 +10008,6 @@
       "First name": [
         "Nom"
       ],
-      "Generating...": [
-        "S'està generant..."
-      ],
       "Gift code": [
         "Codi regal"
       ],
@@ -10036,9 +10046,6 @@
       ],
       "Please share what you expected": [
         "Compartiu el que esperàveu"
-      ],
-      "Refining your text...": [
-        "S'està optimitzant el vostre text..."
       ],
       "Search date, name, email address, or subject line": [
         "Cerca data, nom, adreça de correu electrònic o línia de l'assumpte"
@@ -10084,24 +10091,6 @@
       ],
       "To": [
         "Per a"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Proveu “Anuncia esdeveniments propers en un butlletí”"
-      ],
-      "Try “Cancel my gym membership”": [
-        "Proveu \"Cancel·la la meva subscripció al gimnàs\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Proveu «Convida la Joana a la meva festa»."
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Proveu «Agraïu al meu company de feina per l'ajuda en un projecte»."
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Proveu «Escriu una carta de presentació per a una pràctica professional»."
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Proveu «Escriu un correu electrònic de seguiment a un client»."
       ],
       "Type a command…": [
         "Escriviu una ordre…"
@@ -12107,6 +12096,9 @@
       "Conversation list": [
         "Llista de converses"
       ],
+      "Coupon": [
+        "Cupó"
+      ],
       "Create contact": [
         "Crea un contacte"
       ],
@@ -12889,9 +12881,17 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte per cartera",
+        "${ n } comptes per cartera"
+      ],
       "${ n } email address": [
         "${ n } adreça de correu electrònic",
         "${ n } adreces de correu electrònic"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteres"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"

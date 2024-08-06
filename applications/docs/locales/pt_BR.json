@@ -2772,9 +2772,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliases não podem ser usados quando uma senha extra está ativada em ${ PASS_APP_NAME }"
-      ],
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
       ],
@@ -2927,8 +2924,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a você: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "A assinatura será cobrada do administrador principal do plano Visionary ou familiar."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "A assinatura será cobrada do administrador principal desse plano."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
@@ -2945,8 +2942,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Você entrou no plano Family"
+      "You have successfully joined the family group": [
+        "Você entrou com sucesso no grupo familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -3409,7 +3406,7 @@
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
@@ -5490,6 +5487,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Começar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Começar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Começar por CHF 1"
+      ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
@@ -5995,6 +6001,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com recursos avançados para suas comunicações do dia a dia."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Proteja sua vida digital com a ${ BRAND_NAME } para duas pessoas."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
       ],
@@ -6034,8 +6043,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sinclonização automática, compartilhamento de arquivo criptografado e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."

@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "activate": [
-        "kullanıma al"
+      "Accept": [
+        "Kabul et"
       ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -109,6 +112,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add email address": [
+        "E-posta adresi ekle"
+      ],
       "Add filter": [
         "Süzgeç ekle"
       ],
@@ -123,6 +129,9 @@
       ],
       "Add PayPal": [
         "PayPal ekle"
+      ],
+      "Add phone number": [
+        "Telefon numarası ekle"
       ],
       "Add public holidays": [
         "Resmi tatilleri ekle"
@@ -171,6 +180,12 @@
       ],
       "Bold": [
         "Koyu"
+      ],
+      "Can send to this group": [
+        "Bu gruba gönderebilir"
+      ],
+      "Can't send to this group": [
+        "Bu gruba gönderemez"
       ],
       "Cancel": [
         "İptal"
@@ -325,6 +340,9 @@
       "Customize plan": [
         "Tarifeyi özelleştir"
       ],
+      "Decline": [
+        "Reddet"
+      ],
       "Decrease": [
         "Azalt"
       ],
@@ -339,6 +357,9 @@
       ],
       "Delete Gateway": [
         "Ağ geçidini sil"
+      ],
+      "Delete group": [
+        "Grubu sil"
       ],
       "Delete link": [
         "Bağlantıyı sil"
@@ -378,6 +399,9 @@
       ],
       "Discard": [
         "Sil"
+      ],
+      "Discard changes": [
+        "Değişiklileri yok say"
       ],
       "Don't show again": [
         "Bir daha görüntülenmesin"
@@ -421,6 +445,9 @@
       "Edit Gateway": [
         "Ağ geçidini düzenle"
       ],
+      "Edit group": [
+        "Grubu düzenle"
+      ],
       "Edit invoice details": [
         "Fatura ayrıntılarını düzenle"
       ],
@@ -462,6 +489,9 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini açmak"
+      ],
+      "Enable device-based recovery": [
+        "Aygıt ile kurtarmayı kullanıma al"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
@@ -703,10 +733,10 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open": [
@@ -769,17 +799,23 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
       ],
       "Remove": [
         "Kaldır"
+      ],
+      "Remove all members": [
+        "Tüm üyeleri kaldır"
+      ],
+      "Remove all members from group": [
+        "Gruptaki tüm üyeleri kaldır"
       ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
@@ -859,6 +895,9 @@
       "Review": [
         "İncele"
       ],
+      "Review account security": [
+        "Hesap güvenliğini gözden geçir"
+      ],
       "Revoke": [
         "Geçersiz kıl"
       ],
@@ -867,6 +906,9 @@
       ],
       "Revoke all other sessions": [
         "Diğer tüm oturumları kapat"
+      ],
+      "Revoke invitation": [
+        "Daveti geri al"
       ],
       "Revoke this invitation": [
         "Bu daveti geri çek"
@@ -909,6 +951,9 @@
       ],
       "Select a calendar to export": [
         "Dışa aktarılacak bir takvim seçin"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Fatura dönemini seçin ${ billingText }"
       ],
       "Select calendar view": [
         "Takvim görünümünü seçin"
@@ -1053,6 +1098,12 @@
       ],
       "Switch or add account": [
         "Hesap değiştirin ya da ekleyin"
+      ],
+      "Test": [
+        "Sına"
+      ],
+      "Test SAML configuration": [
+        "SAML yapılandırmasını sına"
       ],
       "Top up": [
         "Doldur"
@@ -1206,6 +1257,9 @@
       ]
     },
     "action": {
+      "Add pm.me domain": [
+        "pm.me etki alanı ekle"
+      ],
       "Resuming forward": [
         "İletme sürdürülüyor"
       ]
@@ -1401,11 +1455,14 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Daha hızlı, daha geniş aygıt uyumluluğu"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Veriler aygıtınızda kalır ancak bir seferlik indirme ve uyumlu donanım gerekir"
       ],
-      "Run locally": [
-        "Yerel olarak çalışır"
+      "Fast and secure. No logs are kept.": [
+        "Hızlı ve güvenli. Herhangi bir kayıt tutulmaz."
+      ],
+      "Run on device": [
+        "Aygıt üzerinde çalışsın"
       ],
       "Run on servers": [
         "Sunucular üzerinde çalışır"
@@ -1556,6 +1613,14 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1577,14 +1642,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -4000,6 +4057,11 @@
         "Uyarı"
       ]
     },
+    "Empty group name": {
+      "Unnamed": [
+        "Adlandırılmamış"
+      ]
+    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri"
@@ -5018,10 +5080,13 @@
       "Invited by: ${ inviteEmail }": [
         "Davet eden: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Aile tarifesinden ayrıl"
+      "Leave Duo plan": [
+        "Duo tarifesinden ayrıl"
       ],
-      "Leave visionary plan": [
+      "Leave Family plan": [
+        "Family tarifesinden ayrıl"
+      ],
+      "Leave Visionary plan": [
         "Visionary tarifesinden ayrıl"
       ],
       "Manage addresses.": [
@@ -5030,8 +5095,9 @@
       "Manage user accounts": [
         "Kullanıcı hesaplarını yönet"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6 ay içinde yalnızca 10 kabul edilen davete izin verilir."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir.",
+        "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Üyeleri olan bir tarifenin sahipleri başka bir grup tarifesine katılamaz."
@@ -5051,8 +5117,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Size ayrılmış depolama alanı: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonelik faturası, Visionary ya da Family planının birincil yöneticisine kesilir."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Geçişi kolaylaştırmak için size 30 günlük ücretsiz ${ BRAND_NAME } Unlimited* deneme süresi sunuyoruz."
@@ -5075,14 +5141,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "6 ayda 10 kabul edilmiş davet sınırını aştınız."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "6 ayda ${ n } kabul edilmiş davet sınırına ulaştınız.",
+        "6 ayda ${ n } kabul edilmiş davet sınırına ulaştınız."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "6 ayda kabul edilebilecek 10 davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "6 ayda kabul edilebilecek ${ n } davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak.",
+        "6 ayda kabul edilebilecek ${ n } davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak."
       ],
-      "You have successfully joined the Family plan": [
-        "Aile tarifesine katıldınız"
+      "You have successfully joined the family group": [
+        "Aile grubuna katıldınız"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
@@ -5196,9 +5264,6 @@
       ],
       "Family name": [
         "Aile adı"
-      ],
-      "Family plan": [
-        "Aile tarifesi"
       ],
       "Invite a user": [
         "Kullanıcı davet et"
@@ -5682,6 +5747,46 @@
       "${ memberCount } member": [
         "${ memberCount } üye",
         "${ memberCount } üye"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Etkin"
+      ],
+      "Unanswered": [
+        "Yanıtlanmamış"
+      ]
+    },
+    "group_invitation: Success": {
+      "Group invitation accepted": [
+        "Grup daveti kabul edildi"
+      ],
+      "Group invitation declined": [
+        "Grup daveti reddedildi"
+      ],
+      "Left group": [
+        "Gruptan ayrıldı"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Lütfen bağlantıyı açmayı yeniden deneyin."
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Bu sekmeyi güvenle kapatabilirsiniz."
+      ],
+      "You have declined the group invitation and will not receive any email from this group.": [
+        "Grup davetini reddettiniz ve bu gruptan herhangi bir e-posta almayacaksınız."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "Grup daveti kabul edildi"
+      ],
+      "Group invitation declined": [
+        "Grup daveti reddedildi"
       ]
     },
     "Header": {
@@ -6394,6 +6499,9 @@
       "30-day money-back guarantee.": [
         "30 gün içinde ücreti geri ödeme garantisi."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
       ],
@@ -6563,6 +6671,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Bu bağlantıya sahip olan kimseler takviminizi eşitleyemeyecek ya da gelecekteki güncellemeleri alamayacak. Bu kişilere yeniden erişim vermek için yeni bir bağlantı oluşturmalısınız."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Bu grubu düzenlemeyi iptal etmek istediğinizden emin misiniz?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Bu takvimi silmek istediğinize emin misiniz?"
       ],
@@ -6580,6 +6691,9 @@
       ],
       "Are you sure you want to delete this folder?": [
         "Bu dosyayı silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Bu grubu silmek istediğinize emin misiniz? Artık grup adresi kullanılamayacak."
       ],
       "Are you sure you want to delete this label?": [
         "Bu etiketi silmek istediğinize emin misiniz?"
@@ -6601,6 +6715,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Bu kullanıcının yönetici yetkilerini kaldırmak istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Bu gruptaki tüm kullanıcıları kaldırmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
@@ -6679,6 +6796,9 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
+      ],
+      "Breach Custom Email Created": [
+        "Verilerin ele geçirilmesi özel e-posta adresi oluşturuldu"
       ],
       "Breach Custom Email Deleted": [
         "Verilerin ele geçirilmesi özel e-posta adresi silindi"
@@ -6826,11 +6946,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7415,6 +7535,9 @@
       "Let your contacts know you care about their privacy.": [
         "Kişilerinize, onların gizliliğine önem verdiğinizi gösterin."
       ],
+      "Let's get started by pressing the New group button above": [
+        "Yukarıdaki Yeni grup düğmesine tıklayarak başlayalım"
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -7640,6 +7763,15 @@
       ],
       "Paid for a monthly plan": [
         "Bir aylık tarife ödemesi yaptı"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - Özel e-posta adresi doğrulandı"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - Özel e-posta adresi oluşturuldu"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - Özel e-posta adresi silindi"
       ],
       "password": [
         "parola"
@@ -8148,6 +8280,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Bu davet bağlantısının geçerlilik süresi dolmuş. Erişim isteğinde bulunmak için lütfen yöneticinizle görüşün."
       ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "Davet bağlantısının geçerlilik süresi dolmuş. Size yeni bir bağlantı gönderdik."
+      ],
       "This invitation link is already used. Please sign in directly instead.": [
         "Bu davet bağlantısı zaten kullanılmış. Lütfen bunun yerine doğrudan oturum açın."
       ],
@@ -8192,9 +8327,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Bu işlem, dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini siler."
@@ -8481,6 +8613,9 @@
       "Version number successfully copied to clipboard": [
         "Sürüm numarası kopyalandı"
       ],
+      "View and manage your groups.": [
+        "Gruplarınızı görüntüleyin ve yönetin."
+      ],
       "View, download, and manage your invoices.": [
         "Faturalarınızı görüntüleyin, indirin ve yönetin."
       ],
@@ -8658,6 +8793,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz.",
         "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz."
+      ],
+      "You are in no group nor invited to any": [
+        "Herhangi bir grupta değilsiniz ya da bir gruba davet edilmemişsiniz"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } hesabıyla oturum açtınız."
@@ -8886,8 +9024,8 @@
       "Your recovery phrase": [
         "Kurtarma ifadeniz"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Kurtarma ifadeniz, belirli bir sırada 12 sözcükten oluşan bir dizidir."
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Kurtarma ifadeniz, belirli bir sırada rastgele oluşturulmuş 12 sözcükten oluşan bir dizidir."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
@@ -8976,9 +9114,22 @@
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Bağlantı etiketi (isteğe bağlı)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Etiket ekle"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "Bekliyor"
+      ],
+      "Rejected": [
+        "Reddedildi"
       ]
     },
     "Invoice state display as badge": {
@@ -9797,6 +9948,9 @@
       "Group address": [
         "Grup adresi"
       ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
       "Group name": [
         "Grup adı"
       ],
@@ -9874,6 +10028,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
+      ],
+      "Link label (optional)": [
+        "Bağlantı etiketi (isteğe bağlı)"
       ],
       "Logo": [
         "Logo"
@@ -10063,6 +10220,9 @@
       ],
       "Public certificate (X.509)": [
         "Herkese açık sertifika (X.509)"
+      ],
+      "Purpose": [
+        "Amaç"
       ],
       "Read": [
         "Okunmuş"
@@ -10261,6 +10421,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
+      ],
+      "Who can send to this group address?": [
+        "Bu grup adresine kimler gönderebilir?"
       ],
       "Why would you like to cancel?": [
         "Neden iptal etmek istiyorsunuz?"
@@ -11200,6 +11363,15 @@
       "From ${ price }": [
         "${ price } ile başlar"
       ],
+      "Get started for $1": [
+        "$1 ile başlayın"
+      ],
+      "Get started for 1 €": [
+        "1 € ile başlayın"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF ile başlayın"
+      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -11743,6 +11915,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "İki kişilik ${ BRAND_NAME } ile dijital yaşamınızı koruyun."
+      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Otomatik yanıtlar ayarlayarak, göndericilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirin."
       ],
@@ -11847,8 +12022,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
@@ -12497,8 +12672,17 @@
       ]
     },
     "option": {
+      "Everyone, incl. outside": [
+        "Herkes, dışardakilerle"
+      ],
       "Members": [
         "Üyeler"
+      ],
+      "Nobody by default": [
+        "Varsayılan olarak hiç kimse"
+      ],
+      "Organization members": [
+        "Kuruluş üyeleri"
       ]
     },
     "Option delay send seconds": {
@@ -12873,6 +13057,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulaması başlatılıyor"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Sınırlı süreli teklif: İlk ay için ${ price } karşılığında ${ title }"
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Sınırlı süreli teklif: Kullanıcı başına aylık ${ price } karşılığında ${ title } alın!"
       ],
@@ -13124,11 +13311,29 @@
       "Payment Processing": [
         "Ödeme işleniyor"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "İlerlemek içn lütfen panodan bir ödeme yöntemi ekleyin."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
+      "Please select billing country": [
+        "Lütfen faturanın kesileceği ülkeyi seçin"
+      ],
+      "Please select billing state": [
+        "Lütfen faturanın kesileceği ili seçin"
+      ],
+      "Please select your billing country first.": [
+        "Lütfen önce faturanın kesileceği ülkeyi seçin."
+      ],
+      "Please select your billing state first.": [
+        "Lütfen önce faturanın kesileceği ili seçin."
+      ],
       "Processing payment": [
         "Ödeme işleniyor"
+      ],
+      "Select billing country to pay": [
+        "Ödeme için fatura ülkesini seçin"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -13138,6 +13343,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "İşlem bulundu. İşlem tam olarak onaylandığında krediler hesabınıza eklenecek."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -13319,6 +13527,15 @@
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "Bir grup adı yazın"
+      ],
+      "e.g. distribution list for marketing team": [
+        "örneğin pazarlama ekibi dağıtım listesi"
+      ],
+      "e.g. marketing": [
+        "örneğin pazarlama"
+      ],
       "Members": [
         "Üyeler"
       ]
@@ -13529,6 +13746,55 @@
       ],
       "User": [
         "Kullanıcı"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "İptal"
+      ]
+    },
+    "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Tek oturum açma yapılandırmanız sınanırken bir sorun çıktı."
+      ],
+      "Details": [
+        "Ayrıntılar"
+      ],
+      "Test in progress...": [
+        "Sınama sürüyor..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Bu SAML yapılandırmasını sınamak için lütfen **${ domainName }** ile ilişkili bir kullanıcının oturum açma bilgilerini yazın"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Kimlik hizmeti sağlayıcınızdan geçerli bir SAML yanıtı aldık. Kuruluşunuz için tek oturum açma kullanıma alındı."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Tek oturum açmanın çalıştığından emin olmak için yapılandırmanızı sınıyoruz."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-posta adresi"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Çalışıyor!"
+      ],
+      "Test SAML configuration": [
+        "SAML yapılandırmasını sına"
+      ],
+      "Testing SAML configuration": [
+        "SAML yapılandırması sınanıyor"
       ]
     },
     "scim: Action": {
@@ -14673,6 +14939,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } size sınırsız gizlilik ve 2 kişiye kadar daha fazla depolama alanı sağlar."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName }, tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklere erişim sunarak ekibinize işlerinde daha üretken ve düzenli olmaları için gerekenleri sağlar."
       ],
@@ -14709,6 +14978,9 @@
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "2 users": [
+        "2 kullanıcı"
+      ],
       "20 email addresses per user": [
         "Her kullanıcı için 20 e-posta adresi"
       ],
@@ -14723,6 +14995,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 1 GB boyutuna kadar e-posta depolama alanı ve 5 GB boyutuna kadar Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Free tarifesinde ek kullanıcılar desteklenmediğinden ekibinizin işlerinde kesintiler olacak."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 5 GB Drive depolama alanı ve 1 GB Mail depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
@@ -14885,6 +15160,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Unlimited privacy for two": [
+        "İki kişi için sınırsız gizlilik"
       ],
       "Users won’t be able to manage their calendars": [
         "Kullanıcılar takvimlerini yönetemeyecekler"
@@ -15527,6 +15805,9 @@
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
       ],
+      "Add pm.me subdomain": [
+        "pm.me alt etki alanı ekle"
+      ],
       "Add servers": [
         "Sunucular ekle"
       ],
@@ -15547,6 +15828,9 @@
       ],
       "Add users": [
         "Kullanıcılar ekle"
+      ],
+      "Address": [
+        "Adres"
       ],
       "Address and key verification": [
         "Adres ve anahtar doğrulama"
@@ -15614,10 +15898,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -15682,6 +15966,9 @@
       ],
       "Couldn’t create accounts": [
         "Hesaplar eklenemedi"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } kullanıcıyı ekle",
@@ -15782,6 +16069,9 @@
       ],
       "Delete folder?": [
         "Klasör silinsin mi?"
+      ],
+      "Delete group?": [
+        "Grup silinsin mi?"
       ],
       "Delete key permanently?": [
         "Anahtar kalıcı olarak silinsin mi?"
@@ -16013,6 +16303,12 @@
       "Gift code": [
         "Hediye kodu"
       ],
+      "Group": [
+        "Grup"
+      ],
+      "Group membership": [
+        "Grup üyeliği"
+      ],
       "Groups": [
         "Gruplar"
       ],
@@ -16233,6 +16529,9 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
+      "Remove all members?": [
+        "Tüm üyeler kaldırılsın mı?"
+      ],
       "Remove calendar": [
         "Takvimi kaldır"
       ],
@@ -16425,6 +16724,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "There are no groups": [
+        "Herhangi bir grup yok"
       ],
       "This field cannot be empty": [
         "Bu alan boş olamaz"
@@ -16856,6 +17158,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "User rejected invitation": [
+        "Kullanıcı daveti reddetti"
+      ],
+      "Waiting user to accept the invitation": [
+        "Kullanıcının daveti kabul etmesi bekleniyor"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17200,13 +17508,13 @@
         "${ n } cüzdan"
       ],
       "**Get ${ plan }** for early access to ${ appName }!": [
-        "**${ plan } edinin** ${ appName } erken erişim için!"
+        "${ appName } erken erişim için **${ plan } edinin**!"
       ],
       "A safer way to hold your Bitcoin": [
         "Bitcoinlerinizi saklamanın daha güvenli bir yolu"
       ],
       "As an invited user, sign up for a free ${ BRAND_NAME } account to exclusively get access to ${ appName }": [
-        "Davetli bir kullanıcı olarak, ${ appName } uygulamasına özel erişim sağlamak için ücretsiz bir ${ BRAND_NAME } hesap aç."
+        "Davetli bir kullanıcı olarak, ${ appName } uygulamasına özel erişim sağlamak için ücretsiz bir ${ BRAND_NAME } hesabı açın."
       ],
       "Bitcoin via email": [
         "E-posta ile Bitcoin"
@@ -17227,19 +17535,19 @@
         "Başlayalım"
       ],
       "Invite Friends": [
-        "Arkadaşlarını Davet Et"
+        "Arkadaşlarınızı davet edin"
       ],
       "Join ${ appName } early access!": [
         "${ appName } erken erişimine katılın!"
       ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "Ücretsiz bir ${ BRAND_NAME } hesap açarak yerinizi garantiye alın. Ne kadar erken hesap açarsanız, ${ appName } erişiminiz o kadar çabuk olur."
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
+        "Yerinizi garantilemek için ücretsiz bir ${ BRAND_NAME } hesabı açın. Hesabınızı ne kadar erken açarsanız, ${ appName } uygulamasına o kadar erken erişirsiniz. Hesabınızı açtıktan sonra, bekleme listesini atlayıp ${ appName } uygulamasını hemen kullanmaya başlamak için özel Visionary tarifemize de yükseltebilirsiniz."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Tarifenizi yükselterek ücretli ${ appName } özelliklerine erişin"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
-        "Visionary kullanıcıları ve davet ettikleri arkadaşları erken erişimi başkalarıyla paylaşabilir, arkadaşlarını ${ appName } uygulamasını ücretsiz denemeleri için davet et!"
+        "Visionary kullanıcıları ve davet ettikleri arkadaşları erken erişimi başkalarıyla paylaşabilir. Arkadaşlarınızı ${ appName } uygulamasını ücretsiz olarak denemeleri için davet edin!"
       ],
       "You're Invited.": [
         "Davetlisiniz."
@@ -17256,13 +17564,16 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
+        "${ WALLET_APP_NAME } erken erişime sunuldu. iOS uygulamasını Apple TestFlight üzerinden, Android uygulamasını ise Google açık beta üzerinden indirebilirsiniz."
+      ],
       "Coming soon": [
-        "Çok yakında"
+        "Yakında"
       ]
     },
     "wallet_signup_2024:Navigation": {
       "Back to wallet": [
-        "Cüzdana geri dön"
+        "Cüzdana dön"
       ],
       "Wallet": [
         "Wallet"

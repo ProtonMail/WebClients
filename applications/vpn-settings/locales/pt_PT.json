@@ -28,6 +28,9 @@
       "Add address": [
         "Adicionar um endereço"
       ],
+      "Add address or domain": [
+        "Adicionar um endereço ou domínio"
+      ],
       "Add credit / debit card": [
         "Adicionar cartão de crédito/débito"
       ],
@@ -43,6 +46,9 @@
       "Add user": [
         "Adicionar utilizador"
       ],
+      "Allow": [
+        "Permitir"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -57,6 +63,9 @@
       ],
       "Back": [
         "Recuar"
+      ],
+      "Block": [
+        "Bloquear"
       ],
       "Cancel": [
         "Cancelar"
@@ -277,6 +286,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Go to label": [
+        "Ir para a etiqueta"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -322,8 +334,14 @@
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
+      "More options": [
+        "Mais opções"
+      ],
       "Need help?": [
         "Precisa de ajuda?"
+      ],
+      "New group": [
+        "Novo grupo"
       ],
       "Next": [
         "Seguinte"
@@ -331,11 +349,11 @@
       "Next month": [
         "Mês seguinte"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open": [
         "Abrir"
@@ -414,6 +432,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Resend invitation": [
+        "Reenviar o convite"
       ],
       "Reset credentials": [
         "Repor credenciais"
@@ -534,6 +555,9 @@
       ],
       "Signing in": [
         "A iniciar sessão"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start live chat": [
         "Iniciar um chat ao vivo"
@@ -1850,6 +1874,11 @@
         "Detetámos erros em várias linhas durante a importação. Verifique o seu arquivo CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mês"
@@ -1919,6 +1948,35 @@
         "Os sub-domínios \"www\" não são utilizados normalmente para e-mail. Tem a certeza de que deseja utilizar este valor de domínio?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } adicionado"
+      ],
+      "${ name } deletion failed": [
+        "Erro ao eliminar ${ name }"
+      ],
+      "${ name } failed to move to allow list": [
+        "Erro ao mover ${ name } para a lista de endereços permitidos"
+      ],
+      "${ name } failed to move to block list": [
+        "Erro ao mover ${ name } para a lista de endereços bloqueados"
+      ],
+      "${ name } failed to move to spam list": [
+        "Erro ao mover ${ name } para a lista de spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } foi movido para a lista de endereços permitidos."
+      ],
+      "${ name } moved to block list": [
+        "${ name } foi movido para a lista de endereços bloqueados"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } foi movido para a lista de spam."
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Erros ou problema de qualidade"
@@ -1968,6 +2026,35 @@
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } adicionado"
+      ],
+      "${ name } deletion failed": [
+        "Erro ao eliminar ${ name }"
+      ],
+      "${ name } failed to move to allow list": [
+        "Erro ao mover ${ name } para a lista de endereços permitidos"
+      ],
+      "${ name } failed to move to block list": [
+        "Erro ao mover ${ name } para a lista de endereços bloqueados"
+      ],
+      "${ name } failed to move to spam list": [
+        "Erro ao mover ${ name } para a lista de spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } foi movido para a lista de endereços permitidos."
+      ],
+      "${ name } moved to block list": [
+        "${ name } foi movido para a lista de endereços bloqueados."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } foi movido para a lista de spam."
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado"
       ]
     },
     "Email verification": {
@@ -2064,6 +2151,12 @@
       ],
       "Invalid code": [
         "O código é inválido."
+      ],
+      "Invalid domain": [
+        "O domínio é inválido"
+      ],
+      "Invalid email address": [
+        "Endereço de email inválido"
       ],
       "Invalid expiration date": [
         "A data de expiração é inválida."
@@ -2349,9 +2442,6 @@
       "Manage user accounts": [
         "Gerir as contas dos utilizadores"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Só são permitidos 10 convites aceites num período de 6 meses."
-      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Os titulares de um plano com membros não podem aderir a outro plano de grupo."
       ],
@@ -2370,9 +2460,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a si: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "A subscrição é faturada ao administrador principal do plano Visionary ou family."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Os planos Visionary e Family não suportam actualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
       ],
@@ -2387,15 +2474,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Foi convidado a juntar-se a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Atingiu o limite de 10 convites aceites em 6 meses."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Atingiu o limite de 10 convites aceites em 6 meses. O botão tornar-se-á clicável quando puder convidar mais utilizadores."
-      ],
-      "You have successfully joined the Family plan": [
-        "Aderiu com êxito ao plano Family"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "É necessário configurar um domínio personalizado antes de adicionar vários utilizadores."
@@ -2685,6 +2763,35 @@
         "Terabytes"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Endereços permitidos:"
+      ],
+      "Block:": [
+        "Endereços bloqueados:"
+      ],
+      "Search list": [
+        "Pesquisar lista"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Assuma o controlo do que chega às caixas de entrada dos membros da sua organização criando as seguintes listas:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Estas listas aplicam-se a todas as contas da sua organização. Os membros podem criar os seus próprios filtros individuais, mas não poderão substituir os endereços ou domínios que bloqueou."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Para garantir que as mensagens críticas não acabem no spam e sejam perdidas"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Para evitar que o spam obstrua as suas caixas de entrada"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Para impedir que e-mails suspeitos ou de phishing entrem no sistema de e-mail da sua organização"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Predefinição do sistema"
@@ -2755,6 +2862,12 @@
       ],
       "Services": [
         "Serviços"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membros"
       ]
     },
     "Header": {
@@ -2843,6 +2956,15 @@
         "Contacte-nos"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } sugestão foi encontrada. Utilize o teclado para navegar.",
+        "${ items.length } sugestões foram encontradas. Utilize o teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilize as setas Acima e Abaixo para aceder e pesquisar sugestões após a entrada. Prima la tecla Enter para confirmar a sua escolha ou la tecla Esc para fechar a caixa de sugestões."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2911,6 +3033,10 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } ou $ obrigatórios para a funcionalidade Secure Core."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /mês)"
@@ -3370,6 +3496,9 @@
       "Keys created": [
         "Chaves criadas"
       ],
+      "Labels:": [
+        "Etiquetas:"
+      ],
       "Lean more about gateways": [
         "Saiba mais sobre gateways"
       ],
@@ -3759,9 +3888,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esta ação cancelará a sua subscrição paga atual e perderá quaisquer benefícios de fidelidade que tenha acumulado."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isto permitirá que o PayPal seja utilizado para pagar a sua subscrição da ${ BRAND_NAME }. Será redirecionado para o PayPal num novo separador do navegador. Se utiliza algum bloqueador de pop-ups, desative-o para continuar."
@@ -4262,11 +4388,17 @@
       "Address": [
         "Endereço"
       ],
+      "Address type": [
+        "Tipo de endereço"
+      ],
       "Addresses": [
         "Endereços"
       ],
       "Administrators": [
         "Administradores"
+      ],
+      "Allow": [
+        "Endereços permitidos"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
@@ -4297,6 +4429,9 @@
       ],
       "Billing cycle": [
         "Ciclo de faturação"
+      ],
+      "Block": [
+        "Endereços bloqueados"
       ],
       "Block malware only": [
         "Bloquear só malware"
@@ -4406,6 +4541,9 @@
       "Do you have any suggestions for our team?": [
         "Tem algumas sugestões para a nossa equipa?"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Domain name": [
         "Nome do domínio"
       ],
@@ -4435,6 +4573,9 @@
       ],
       "Gift code": [
         "Código de oferta"
+      ],
+      "Group name": [
+        "Nome do grupo"
       ],
       "Hide password": [
         "Ocultar a palavra-passe"
@@ -4588,6 +4729,9 @@
       ],
       "Single sign-on URL": [
         "URL do início de sessão único"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start date": [
         "Data inicial"
@@ -4963,6 +5107,20 @@
       ],
       "Swiss franc": [
         "Franco suíço"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Todos"
+      ],
+      "Allow": [
+        "Endereços permitidos"
+      ],
+      "Block": [
+        "Endereços bloqueados"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "new_plans": {
@@ -5523,9 +5681,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
@@ -5851,6 +6006,11 @@
         "UDP"
       ]
     },
+    "option": {
+      "Members": [
+        "Membros"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } para adicionar mais utilizadores ou remova algumas contas de utilizador para libertar espaço."
@@ -6092,6 +6252,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "domain.com": [
+        "domínio.com"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -6100,6 +6263,9 @@
       ],
       "End date": [
         "Data de término"
+      ],
+      "example@domain.com": [
+        "exemplo@domínio.com"
       ],
       "Feedback": [
         "Comentários"
@@ -6142,6 +6308,11 @@
       ],
       "yourdomain.com": [
         "oseudomínio.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Membros"
       ]
     },
     "plan customizer, ips": {
@@ -7054,7 +7225,7 @@
         "Manter ${ config.planName }"
       ],
       "Learn more": [
-        "Mais informação"
+        "Saiba mais"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
@@ -7379,17 +7550,29 @@
       "Country": [
         "País"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Email": [
         "E-mail"
       ],
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email address or domain": [
+        "Endereço de e-mail ou domínio"
+      ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
       "Invitation email": [
         "E-mail de convite"
+      ],
+      "List": [
+        "Lista"
+      ],
+      "Marked as": [
+        "Marcado como"
       ],
       "Name": [
         "Nome"
@@ -7475,6 +7658,15 @@
       ],
       "Add servers": [
         "Adicionar servidores"
+      ],
+      "Add to allow list": [
+        "Adicionar à lista de endereços permitidos"
+      ],
+      "Add to block list": [
+        "Adicionar à lista de endereços bloqueados"
+      ],
+      "Add to spam list": [
+        "Adicionar à lista de endereços spam"
       ],
       "Add user accounts": [
         "Adicionar contas de utilizador"
@@ -7633,6 +7825,9 @@
       ],
       "Disable two-factor authentication": [
         "Desativar a autenticação de dois fatores"
+      ],
+      "Discard changes?": [
+        "Descartar alterações?"
       ],
       "Domain names": [
         "Nomes de domínio"

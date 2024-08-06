@@ -13,11 +13,14 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "activate": [
-        "aktiviraj"
+      "Accept": [
+        "Prihvati"
       ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -63,6 +66,9 @@
       ],
       "Add PayPal": [
         "Dodaj PayPal"
+      ],
+      "Add phone number": [
+        "Dodajte telefonski broj"
       ],
       "Add sieve filter": [
         "Dodaj Sieve filtar"
@@ -204,6 +210,9 @@
       ],
       "Customize import": [
         "Prilagodi uvoz"
+      ],
+      "Decline": [
+        "Odbij"
       ],
       "Decrease": [
         "Smanji"
@@ -472,10 +481,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open": [
@@ -538,11 +547,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -947,6 +956,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Kupi sada"
+      ],
       "New": [
         "Novo"
       ]
@@ -6975,6 +6987,21 @@
         "Korisnik"
       ]
     },
+    "saml: Action": {
+      "Cancel": [
+        "Poništi"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Pojedinosti"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-pošta"
+      ]
+    },
     "scim: Action": {
       "Generate token": [
         "Stvori token"
@@ -7828,6 +7855,9 @@
       "Add Sieve filter": [
         "Dodaj Sieve filtar"
       ],
+      "Address": [
+        "Adresa"
+      ],
       "Address and key verification": [
         "Potvrda adrese i ključa"
       ],
@@ -7879,10 +7909,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
@@ -8124,6 +8154,9 @@
       ],
       "Gift code": [
         "Darovni kôd"
+      ],
+      "Group": [
+        "Grupa"
       ],
       "Groups": [
         "Grupe"

@@ -482,11 +482,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -1982,7 +1982,7 @@
         "Macao"
       ],
       "Macedonia": [
-        "Macedónsko"
+        "Severné Macedónsko"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3452,9 +3452,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasy nie je možné použiť, ak je v ${ PASS_APP_NAME } povolené dodatočné heslo."
-      ],
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
@@ -3674,9 +3671,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Pridelené úložisko: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Predplatné sa účtuje správcovi plánu Visionary alebo primárnemu správcovi rodinného plánu."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Plán Visionary a rodinné plány aktuálne nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
@@ -3691,9 +3685,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Boli ste pozvaní, aby ste sa pripojili k ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Úspešne ste sa pripojili k rodinnému plánu."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
@@ -6972,9 +6963,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Súčasťou je história verzií, šifrované zdieľanie súborov a ďalšie funkcie."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
@@ -9536,6 +9524,9 @@
       "Continue with partial import?": [
         "Pokračovať s čiastočným importom?"
       ],
+      "Coupon": [
+        "Kupón"
+      ],
       "Create contact": [
         "Vytvoriť kontakt"
       ],
@@ -10132,14 +10123,34 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } účet na peňaženku",
+        "${ n } účty na peňaženku",
+        "${ n } účtov na peňaženku",
+        "${ n } účtov na peňaženku"
+      ],
       "${ n } email address": [
         "${ n } emailová adresa",
         "${ n } emailových adries",
         "${ n } emailových adries",
-        "${ n } emailové adresy"
+        "${ n } emailových adries"
+      ],
+      "${ n } wallet": [
+        "${ n } peňaženka",
+        "${ n } peňaženky",
+        "${ n } peňaženiek",
+        "${ n } peňaženiek"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
       "Bitcoin via email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problém s Wallet"
       ]
     },
     "Warning": {

@@ -402,6 +402,9 @@
       "Pay ${ price } now": [
         "Payer ${ price } maintenant"
       ],
+      "PDF (.pdf)": [
+        "PDF (.pdf)"
+      ],
       "Plain Text (.txt)": [
         "Texte brut (.txt)"
       ],
@@ -2503,7 +2506,7 @@
         "Le nom du label est trop long, veuillez en choisir un autre."
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
-        "La dernière mise à jour que vous avez apportée au document est soit trop volumineuse, soit dépasserait la limite de taille totale du document. La modification a été temporairement désactivée. Votre changement ne sera pas sauvegardé. Veuillez exporter une copie de votre document et recharger la page."
+        "La dernière mise à jour que vous avez apportée au document est soit trop volumineuse, soit dépasserait la limite de taille totale du document. La modification a été temporairement désactivée. Votre changement ne sera pas enregistré. Veuillez exporter une copie de votre document et recharger la page."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
@@ -2766,9 +2769,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -2792,6 +2792,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Lorsque le mot de passe supplémentaire est activé, la gestion des alias ne peut se faire que dans ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -2921,8 +2924,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espace de stockage qui vous est attribué : ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "L'abonnement est facturé à l'administrateur principal de l'abonnement Visionary ou de l'abonnement familial."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "L'abonnement sera facturé à l'administrateur principal."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
@@ -2939,8 +2942,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Vous avez rejoint l'abonnement Family."
+      "You have successfully joined the family group": [
+        "Vous avez rejoint le groupe famillal."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
@@ -4441,7 +4444,7 @@
         "Vos changements sont en cours de synchronisation avec Drive. Veuillez ne pas fermer cette page web."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "La synchronisation n'a pas abouti. Drive va tenter d'enregistrer automatiquement les modifications. Veuillez ne pas fermer cette page web."
+        "La synchronisation n'a pas abouti. Drive tentera d'enregistrer automatiquement les modifications. Veuillez ne pas fermer cette page web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
@@ -5412,6 +5415,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Lancez-vous pour 1 $"
+      ],
+      "Get started for 1 €": [
+        "Lancez-vous pour 1  €"
+      ],
+      "Get started for CHF 1": [
+        "Lancez-vous pour 1  CHF"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -5917,6 +5929,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
@@ -5951,8 +5966,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } : sécurisez vos fichiers avec un stockage cloud chiffré. Comprend l'historique des versions, le partage chiffré des fichiers et bien d'autres fonctionnalités."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
@@ -6513,7 +6528,7 @@
         "Traitement des paiements"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
+        "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Please select billing country": [
         "Veuillez sélectionner le pays pour la facturation."
@@ -6525,16 +6540,16 @@
         "Veuillez d'abord sélectionner votre pays de facturation."
       ],
       "Please select your billing state first.": [
-        "Veuillez d'abord sélectionner votre état de facturation."
+        "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
       "Select billing country to pay": [
-        "Veuillez sélectionner l'état pour la facturation à payer."
+        "Veuillez sélectionner l'état pour la facture à payer."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
@@ -6543,7 +6558,7 @@
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {

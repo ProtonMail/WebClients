@@ -93,6 +93,9 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Adds it below your existing message": [
+        "Дадае яго ніжэй вашага бягучага паведамлення"
+      ],
       "Align center": [
         "Выраўнаваць па цэнтры"
       ],
@@ -227,9 +230,6 @@
       ],
       "Close & discard": [
         "Закрыць і адхіліць"
-      ],
-      "Close AI refine suggestion": [
-        "Закрыць удасканаленыя прапановы ШІ"
       ],
       "Close composer": [
         "Закрыць рэдактар"
@@ -573,6 +573,9 @@
       "hide-my-email aliases": [
         "псеўданімаў Hide-my-email"
       ],
+      "I like this response": [
+        "Мне падабаецца гэты адказ"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Не атрымалася загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
@@ -737,6 +740,12 @@
       ],
       "Minimize composer": [
         "Згарнуць рэдактар"
+      ],
+      "Modify": [
+        "Змяніць"
+      ],
+      "Modify selection": [
+        "Змніць выбранае"
       ],
       "Monday": [
         "Панядзелак"
@@ -966,6 +975,12 @@
       "Remove this label": [
         "Выдаліць гэту метку"
       ],
+      "Replace": [
+        "Замяніць"
+      ],
+      "Replaces the selected text in your message": [
+        "Замяняе выбраны тэкст у вашым паведамленні"
+      ],
       "Reply": [
         "Адказаць"
       ],
@@ -974,9 +989,6 @@
       ],
       "Reply securely": [
         "Бяспечны адказ"
-      ],
-      "Report a good content": [
-        "Паведаміць аб добрым змесціве"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -1200,8 +1212,8 @@
       "Stay": [
         "Застацца"
       ],
-      "Stop downloading the writing assistant": [
-        "Спыніць спампоўванне памочніка ў напісанні"
+      "Stop downloading assistant": [
+        "Спыніць спампоўванне памочніка"
       ],
       "Stop generating result": [
         "Спыніць генерацыю выніку"
@@ -1244,6 +1256,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1329,9 +1347,6 @@
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
       ],
-      "Use this": [
-        "Выкарыстоўваць гэта"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Выкарыстоўвайце мышку, каб змяніць памер акна прагляду. Калі выкарыстоўваеце клавіятуру, то можаце змяняць памер стрэлкамі ўлева/управа."
       ],
@@ -1376,6 +1391,9 @@
       ],
       "Why not?": [
         "Чаму не?"
+      ],
+      "Write for me": [
+        "Напісаць для мяне"
       ],
       "Yes": [
         "Так"
@@ -1556,20 +1574,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Даныя застануцца на вашай прыладзе, але неабходна будзе аднаразовае спампоўка і сумяшчальнае абсталяванне"
+      ],
       "Fast and secure. No logs are kept.": [
         "Хуткі і бяспечны. Не пакідае журналаў."
       ],
-      "Faster, broader device compatibility": [
-        "Хутчэйшая і больш шырокая сумяшчальнасць прылад"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Запыты застануцца на вашай прыладзе, але неабходна будзе аднаразовае спампоўванне і сумяшчальнае абсталяванне."
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Патрабуе аднаразовае спампоўванне і сумяшчальнае абсталяванне."
-      ],
-      "Run locally": [
-        "Выканаць лакальна"
+      "Run on device": [
+        "Выканаць на прыладзе"
       ],
       "Run on servers": [
         "Выканаць на серверах"
@@ -3909,7 +3921,7 @@
       "Draft could not be saved. Try again.": [
         "Не атрымалася захаваць чарнавік. Паспрабуйце яшчэ раз."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "Па прычыне памылкі немагчыма скасаваць генерацыю тэксту"
       ],
       "Email address disabled": [
@@ -4544,9 +4556,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -4718,8 +4727,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Прызначанае вам сховішча: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Падпіска аплачваецца асноўным адміністратарам сямейнага тарыфнага плана або адміністратарам тарыфнага плана Visionary."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Тарыфны план Visionary і сямейны тарыфны план у цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -4736,8 +4745,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Вы паспяхова далучыліся да тарыфнага плана Family"
+      "You have successfully joined the family group": [
+        "Вы паспяхова далучыліся да сямейнай групы"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
@@ -5785,9 +5794,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } аб памочніку ў напісанні ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
         "Знойдзены ${ providerFoldersNumLocalized } папкі",
@@ -6247,14 +6253,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Спампоўванне памочніка… ${ progressDisplay } ГБ"
+      ],
       "Downloading paused": [
         "Спампоўванне прыпынена"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Спампоўванне прыпынена: ${ progressDisplay } ГБ"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Спампоўванне памочніка ў напісанні: ${ progressDisplay } ГБ"
       ],
       "Draft": [
         "Чарнавік"
@@ -6549,6 +6555,9 @@
       ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Даведацца больш аб помочніку ў напісанні ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Злева направа"
@@ -7603,9 +7612,6 @@
         "Вы выбралі **${ elementsCount } паведамленняў**.",
         "Вы выбралі **${ elementsCount } паведамленняў**."
       ],
-      "You selected some content:": [
-        "Вы выбралі некаторае змесціва:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Вы страціце доступ да функцый Plus пасля наступлення гэтай даты."
       ],
@@ -7982,9 +7988,6 @@
       ],
       " and ${ l }": [
         " і ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
@@ -8505,9 +8508,6 @@
       "Type a command...": [
         "Увядзіце каманду..."
       ],
-      "Type a prompt to generate an output": [
-        "Надрукуйце запыт, каб згенерыраваць тэкст"
-      ],
       "Undisclosed Recipients": [
         "Схаваныя атрымальнікі"
       ],
@@ -8537,6 +8537,9 @@
       ],
       "Wonderful": [
         "Цудоўна"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
       ],
       "Your alias": [
         "Ваш псеўданім"
@@ -9205,6 +9208,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Пачніце за 1 $"
+      ],
+      "Get started for 1 €": [
+        "Пачніце за 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Пачніце за 1 CHF"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ]
@@ -9746,6 +9758,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Абараніце сваё лічбавае жыццё з дапамогай ${ BRAND_NAME } для двух карыстальнікаў."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
@@ -9790,8 +9805,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Абараняйце свае лісты з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і іншыя функцыі."
@@ -10424,8 +10439,8 @@
       "First name": [
         "Імя"
       ],
-      "Generating...": [
-        "Генерацыя..."
+      "Generating": [
+        "Генерацыя"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -10466,9 +10481,6 @@
       "Please share what you expected": [
         "Падзяліцеся з намі, што вы чакалі"
       ],
-      "Refining your text...": [
-        "Удасканаленне тэксту..."
-      ],
       "Search date, name, email address, or subject line": [
         "Пошук па даце, імі, адрасе электроннай пошце або радку тэмы"
       ],
@@ -10508,29 +10520,29 @@
       "Subject": [
         "Тэма"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажыце памочніку, што яму трэба напісаць. Напрыклад: “Абвясці аб надыходзячых падзеях у інфармацыйнай рассылцы\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Скажыце памочніку, што яму трэба напісаць. Напрыклад: “Скасуй мой абанемент у спартыўную залю\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Скажыце памочніку, што яму трэба напісаць. Напрыклад: “Запрасі Алесю на маю вечарыну”"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Скажыце памочніку, што яму трэба напісаць. Напрыклад: “Напішы ліст падзякі майму калегу за дапамагу ў праекце\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Скажыце памочніку, што яму трэба напісаць. Напрыклад: “Напішы суправаджальнае пісьмо на стажыроўку\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Скажыце памочніку, што яму трэба напісаць. Напрыклад: “Напішы электронны ліст кліенту\""
+      ],
       "Text": [
         "Тэкст"
       ],
       "To": [
         "Каму"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Паспрабуйце \"Апавясціць аб надыходзячых падзеях у інфармацыйнай рассылцы\""
-      ],
-      "Try “Cancel my gym membership”": [
-        "Паспрабуйце \"Скасаваць мой абанемент у спартыўную залю\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Паспрабуйце \"Запрасіць Джэйн на маю вечарыну\""
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Паспрабуйце \"Падзякаваць свайго калегу за дапамагу ў праекце\""
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Паспрабуйце \"Напісаць суправаджальнае пісьмо на стажыроўку\""
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Паспрабуйце \"Напісаць электронны ліст кліенту\""
       ],
       "Type a command…": [
         "Увядзіце каманду…"
@@ -11691,6 +11703,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } дае вам неабмежаваную прыватнасць і больш сховішча, які разлічаны на 1 або 2 карыстальнікаў."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай і арганізаванай у сваёй працы з доступам да ўсіх праграм ${ BRAND_NAME } і іх прэміяльных функцый."
       ],
@@ -11726,6 +11741,9 @@
       ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
+      ],
+      "2 users": [
+        "2 карыстальнікі"
       ],
       "20 email addresses per user": [
         "20 адрасоў электроннай пошты на карыстальніка"
@@ -11879,6 +11897,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Unlimited privacy for two": [
+        "Неабмежаваная прыватнасць для дваіх"
       ],
       "Users won’t be able to manage their calendars": [
         "У карыстальнікаў не будзе магчымасці кіраваць іх календарамі"
@@ -12330,6 +12351,9 @@
       ],
       "Self-destruction set": [
         "Прызначана самазнішчэнне"
+      ],
+      "Text copied to clipboard": [
+        "Тэкст скапіяваны ў буфер абмену"
       ],
       "Thanks for the feedback!": [
         "Дзякуй за водгук!"
@@ -13559,7 +13583,7 @@
     },
     "wallet_signup_2024:Title": {
       "Wallet": [
-        "Кашалёк"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet setup": {
