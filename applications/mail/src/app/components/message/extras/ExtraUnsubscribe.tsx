@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import {
-    FeatureCode,
     Field,
     Icon,
     Label,
@@ -18,7 +17,6 @@ import {
     useAddresses,
     useApi,
     useEventManager,
-    useFeature,
     useModalState,
     useNotifications,
 } from '@proton/components';
@@ -51,10 +49,6 @@ interface Props {
 }
 
 const ExtraUnsubscribe = ({ message }: Props) => {
-    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
-        FeatureCode.SLIntegration
-    );
-
     const { createNotification } = useNotifications();
     const api = useApi();
     const { call } = useEventManager();
@@ -76,11 +70,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     // If the user doesn't have the simple login extension, we want to show an extra modal to upsell the feature
     // However, if the received email is coming from Simple Login, the user is probably already using SL, so we don't want to display the extra modal
     // Finally, if the sender is an official Proton address, we don't want to show this modal
-    const needsSimpleLoginPresentation =
-        simpleLoginIntegrationFeature?.Value &&
-        !hasSimpleLogin &&
-        !hasSimpleLoginSender(message) &&
-        !hasProtonSender(message);
+    const needsSimpleLoginPresentation = !hasSimpleLogin && !hasSimpleLoginSender(message) && !hasProtonSender(message);
 
     const [unsubscribeModalProps, setUnsubscribeModalOpen, renderUnsubscribeModal] = useModalState();
     const [unsubscribedModalProps, setUnsubscribedModalOpen, renderUnsubscribedModal] = useModalState();
@@ -221,10 +211,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         unsubscribedModalProps.onClose();
         setPassAliasesModalOpen(true);
     };
-
-    if (loadingSimpleLoadingFeature) {
-        return null;
-    }
 
     /*
      * translator:

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { EmptyViewContainer, FeatureCode, Loader, useFeature, useModalState } from '@proton/components';
+import { EmptyViewContainer, Loader, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
@@ -24,9 +24,6 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
-    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
-        FeatureCode.SLIntegration
-    );
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
 
     const { esStatus } = useEncryptedSearchContext();
@@ -79,9 +76,9 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         }
     })();
 
-    const showSimpleLoginPlaceholder = simpleLoginIntegrationFeature?.Value && isSpam && !hasSimpleLogin;
+    const showSimpleLoginPlaceholder = isSpam && !hasSimpleLogin;
 
-    if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
+    if (isFetchingAccountLinked) {
         return (
             <div className="m-auto text-center p-7 max-w-full">
                 <Loader />

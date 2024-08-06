@@ -5,7 +5,7 @@ import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { FeatureCode, Loader, useFeature, useFolders, useLabels, useModalState } from '@proton/components';
+import { Loader, useFolders, useLabels, useModalState } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -45,9 +45,6 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
     const appLocation = useLocation();
-    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
-        FeatureCode.SLIntegration
-    );
     const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
     const { handleSendTelemetryData } = useSimpleLoginTelemetry();
     const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
@@ -193,8 +190,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const showText = checkeds || labelCount;
 
-    const showSimpleLoginPlaceholder =
-        simpleLoginIntegrationFeature?.Value && checkeds === 0 && labelID === SPAM && !hasSimpleLogin;
+    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM && !hasSimpleLogin;
 
     // If the user sees the SL placeholder, we need to send once a telemetry request
     useEffect(() => {
@@ -205,7 +201,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
         }
     }, [showSimpleLoginPlaceholder]);
 
-    if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
+    if (isFetchingAccountLinked) {
         return (
             <div className="flex h-full py-4 px-7">
                 <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
