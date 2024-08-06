@@ -105,7 +105,7 @@ const ItemColumnLayout = ({
 
     const isStarred = testIsStarred(element || ({} as Element));
     const isCompactView = userSettings?.Density === DENSITY.COMPACT;
-    const isSnoozeDropdownOpen = snoozeDropdownState && snoozedElement?.ID === element.ID;
+    const isSnoozeDropdownOpen = snoozeDropdownState === 'open' && snoozedElement?.ID === element.ID;
 
     const showThumbnails = canShowAttachmentThumbnails(
         isCompactView,

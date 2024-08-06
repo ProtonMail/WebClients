@@ -3,8 +3,11 @@ import { useMemo } from 'react';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { TipData } from 'proton-mail/models/tip';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 const useGetRandomTip = (tipMessages: TipData[]) => {
+    const labelID = useMailSelector((store) => store.elements.params.labelID);
+
     const encounteredMessagesIDs = JSON.parse(getItem('MailboxPlaceholderEncounteredTips') || '[]');
 
     const getRandomOption = (): TipData => {
@@ -21,7 +24,7 @@ const useGetRandomTip = (tipMessages: TipData[]) => {
         return randomOption;
     };
 
-    const randomOption = useMemo(() => getRandomOption(), []);
+    const randomOption = useMemo(() => getRandomOption(), [labelID]);
 
     return {
         randomOption,
