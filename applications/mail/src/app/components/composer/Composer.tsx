@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
+import { useHandler, useLocalState, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
@@ -74,7 +74,7 @@ const Composer = (
     ref: Ref<ComposerAction>
 ) => {
     // TODO: Define this value depending on EO or not.
-    const [displayToolbar, setDisplayToolbar] = useState(true);
+    const [displayToolbar, setDisplayToolbar] = useLocalState(true, 'composer-toolbar-expanded');
     const toolbarWrapperRef = useRef<HTMLDivElement>(null);
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
@@ -437,6 +437,10 @@ const Composer = (
                         }
                     />
                 </div>
+
+                {/* Used to display the toolbar below the composer*/}
+                <div ref={toolbarWrapperRef} />
+
                 <ComposerActions
                     composerID={composerID}
                     addressesBlurRef={addressesBlurRef}
@@ -462,8 +466,8 @@ const Composer = (
                     showAssistantButton={canShowAssistant}
                     onToggleAssistant={handleToggleAssistant}
                     isInert={isAssistantExpanded}
-                    onToggleToobar={() => setDisplayToolbar(!displayToolbar)}
-                    toolbarWrapperRef={toolbarWrapperRef}
+                    onToggleToolbar={() => setDisplayToolbar(!displayToolbar)}
+                    displayToolbar={displayToolbar}
                 />
             </div>
             {waitBeforeScheduleModal}
