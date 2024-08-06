@@ -11,13 +11,7 @@ import { createMemoryHistory } from 'history';
 import { getModelState } from '@proton/account/test';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import type { PrivateAuthenticationStore } from '@proton/components';
-import {
-    CacheProvider,
-    CalendarModelEventManagerProvider,
-    FeatureCode,
-    ModalsChildren,
-    ModalsProvider,
-} from '@proton/components';
+import { CacheProvider, CalendarModelEventManagerProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
@@ -36,7 +30,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { getFeatureFlagsState, registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
+import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
@@ -187,7 +181,6 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             calendarUserSettings: getModelState({} as CalendarUserSettings),
             holidaysDirectory: getModelState([]),
             importerConfig: getModelState({} as ApiEnvironmentConfig),
-            features: getFeatureFlagsState([[FeatureCode.SLIntegration, true]]),
             conversationCounts: getModelState([]),
             messageCounts: getModelState([]),
             attachments: {} as AttachmentsState,
