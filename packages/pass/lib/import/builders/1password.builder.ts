@@ -1,4 +1,3 @@
-import type { IdentityFieldName } from '@proton/pass/hooks/identity/useIdentityForm';
 import type {
     OnePassLegacySection,
     OnePassLegacySectionField,
@@ -13,9 +12,11 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { ItemContent, Maybe } from '@proton/pass/types';
 import { objectKeys } from '@proton/pass/utils/object/generic';
 
+import type { IdentityDictionary } from './builders.types';
+
 const fixedSections = ['name', 'address', 'internet'];
 
-const onePasswordDictionary: { [key: string]: IdentityFieldName } = {
+const onePasswordDictionary: IdentityDictionary = {
     address1: 'streetAddress',
     busphone: 'workPhoneNumber',
     cellphone: 'secondPhoneNumber',

@@ -1,1 +1,1 @@
-export const objectKeys = <T, O extends Object = Object>(o: O) => Object.keys(o) as T[];
+export const objectKeys = <T>(o: Object) => Object.keys(o) as T[];
