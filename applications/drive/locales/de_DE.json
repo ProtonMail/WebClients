@@ -1019,6 +1019,11 @@
         "Nicht unterstützter Termin"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Eingeladen"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } Speicherplatz"
@@ -3122,9 +3127,6 @@
       "Access denied": [
         "Zugriff verweigert"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliasse können nicht verwendet werden, wenn ein zusätzliches Passwort in ${ PASS_APP_NAME } aktiviert ist."
-      ],
       "App currently unavailable": [
         "Die App ist derzeit nicht verfügbar."
       ],
@@ -3300,8 +3302,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Dir zugewiesener Speicher: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Das Abonnement wird dem primären Administrator des Visionary- oder Family-Abonnements in Rechnung gestellt."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
@@ -3318,8 +3320,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Du bist dem Family-Abonnement erfolgreich beigetreten"
+      "You have successfully joined the family group": [
+        "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
@@ -6607,6 +6609,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade auf ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Starten Sie für 1 $"
+      ],
+      "Get started for 1 €": [
+        "Starten Sie für 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Starten Sie für 1 CHF"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ]
@@ -7112,6 +7123,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sichere dein digitales Leben mit ${ BRAND_NAME } für zwei Personen."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Maßgeschneiderte Lösungen für größere Organisationen mit spezifischen Sicherheitsanforderungen"
       ],
@@ -7156,8 +7170,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive Versionsverlauf, verschlüsselter Dateifreigabe und mehr."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Sichern deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Enthält Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte hide-my-email-Aliase und mehr."
@@ -7747,6 +7761,9 @@
     "Onboarding Title": {
       "Final approval in progress": [
         "Endgültige Genehmigung in Bearbeitung"
+      ],
+      "Hang tight!": [
+        "Einen Moment bitte."
       ],
       "Your welcome bonus": [
         "Dein Willkommensbonus"
@@ -8850,6 +8867,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } bietet dir unbegrenzte Privatsphäre und mehr Speicherplatz für bis zu 2 Personen."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } gibt deinem Team das, was es braucht, um produktiver und organisierter zu arbeiten, mit Zugang zu allen ${ BRAND_NAME }-Apps und deren Premium-Funktionen."
       ],
@@ -8885,6 +8905,9 @@
       ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
+      ],
+      "2 users": [
+        "2 Benutzer"
       ],
       "20 email addresses per user": [
         "20 E-Mail-Adressen pro Benutzer"
@@ -9038,6 +9061,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Unlimited privacy for two": [
+        "Unbegrenzte Privatsphäre für zwei"
       ],
       "Users won’t be able to manage their calendars": [
         "Die Benutzer werden ihre Kalender nicht verwalten können."

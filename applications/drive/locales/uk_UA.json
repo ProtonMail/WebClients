@@ -741,6 +741,9 @@
       "Select all": [
         "Вибрати все"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Вибрати період оплати ${ billingText }"
+      ],
       "Select country": [
         "Виберіть країну"
       ],
@@ -1007,6 +1010,11 @@
         "Програми ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Підніміть продуктивність пошти на новий рівень. Нехай ${ BRAND_NAME } Scribe допоможе вам писати, відповідати та вичитувати ваші листи."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Порожній файл ICS"
@@ -1025,6 +1033,11 @@
       ],
       "Unsupported event": [
         "Непідтримувана подія"
+      ]
+    },
+    "Badge": {
+      "Invited": [
+        "Запрошено"
       ]
     },
     "bf2023: Deal details": {
@@ -1073,6 +1086,12 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } місяць",
+        "перші ${ n } місяці",
+        "перших ${ n } місяців",
+        "перших ${ n } місяців"
+      ],
       "the first month": [
         "перший місяць"
       ],
@@ -1175,6 +1194,9 @@
       ],
       "Custom domain problem": [
         "Проблема з власним доменом"
+      ],
+      "Docs problem": [
+        "Проблема з Docs"
       ],
       "Drive problem": [
         "Проблема з Drive"
@@ -1809,6 +1831,9 @@
       "Korea (Democratic People's Republic of)": [
         "Північна Корея (Корейська народно-демократична республіка)"
       ],
+      "Korea (Republic of)": [
+        "Південна Корея (Республіка)"
+      ],
       "Kosovo": [
         "Косово"
       ],
@@ -1817,6 +1842,9 @@
       ],
       "Kyrgyzstan": [
         "Киргизстан"
+      ],
+      "Lao People's Democratic Republic": [
+        "Лаоська народно-демократична республіка"
       ],
       "Laos": [
         "Лаос"
@@ -1835,6 +1863,9 @@
       ],
       "Libya": [
         "Лівія"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Лівійська арабська джамахірія"
       ],
       "Liechtenstein": [
         "Ліхтенштейн"
@@ -2103,6 +2134,9 @@
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
       ],
+      "Swaziland": [
+        "Есватіні"
+      ],
       "Sweden": [
         "Швеція"
       ],
@@ -2123,6 +2157,9 @@
       ],
       "Tanzania": [
         "Танзанія"
+      ],
+      "Tanzania, United Republic of": [
+        "Танзанія, Об'єднана республіка"
       ],
       "Thailand": [
         "Таїланд"
@@ -2783,6 +2820,12 @@
       "Process aborted": [
         "Процес перервано"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Видалено дублікат запрошення: ${ joinedInvitee }",
+        "Видалено дублікати запрошень: ${ joinedInvitee }",
+        "Видалено дублікати запрошень: ${ joinedInvitee }",
+        "Видалено дублікати запрошень: ${ joinedInvitee }"
+      ],
       "Report failed to be sent": [
         "Не вдалося надіслати звіт"
       ],
@@ -3294,8 +3337,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за передплату виставляється головному адміністратору Visionary або сімейного плану."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Рахунок за підписку буде виставлено головному адміністратору цього тарифу."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -3312,8 +3355,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Ви успішно приєдналися до Сімейного плану"
+      "You have successfully joined the family group": [
+        "Ви успішно приєдналися до сімейної групи"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
@@ -3931,6 +3974,12 @@
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
       ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } зашифрований файл...",
+        "${ nbFile } зашифровані файли...",
+        "${ nbFile } зашифрованих файлів...",
+        "${ nbFile } зашифрованих файлів"
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } призупинено",
         "${ pausedCount } призупинено",
@@ -3981,6 +4030,12 @@
         "${ selectedFoldersCountLocalized } вибрані мітки",
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } пропущено",
+        "${ skippedCount } пропущено",
+        "${ skippedCount } пропущено",
+        "${ skippedCount } пропущено"
       ],
       "${ speed }/s": [
         "${ speed }/с"
@@ -4645,6 +4700,12 @@
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів"
+      ],
       "Medium Priority": [
         "Середній пріоритет"
       ],
@@ -4929,6 +4990,12 @@
       ],
       "Search Enabled": [
         "Пошук увімкнено"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "Безпечно завантажено ${ nbFile } файл",
+        "Безпечно завантажено ${ nbFile } файли",
+        "Безпечно завантажено ${ nbFile } файлів",
+        "Безпечно завантажено ${ nbFile } файлів"
       ],
       "Securely downloaded all encrypted files": [
         "Усі зашифровані файли безпечно завантажено"
@@ -5380,6 +5447,12 @@
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
       ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "У вас залишився ${ expiresInDays } день, щоб отримати привітальний бонус у розмірі 3 ГБ та ",
+        "У вас залишилося ${ expiresInDays } дні, щоб отримати привітальний бонус у розмірі 3 ГБ та ",
+        "У вас залишилося ${ expiresInDays } днів, щоб отримати привітальний бонус у розмірі 3 ГБ та ",
+        "У вас залишилося ${ expiresInDays } днів, щоб отримати привітальний бонус у розмірі 3 ГБ та "
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас є пробний період передплати ${ planTitle }. Якщо ви бажаєте продовжити передплату після пробного періоду, будь ласка, додайте спосіб оплати."
       ],
@@ -5526,6 +5599,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Тільки перегляд"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помічник на основі ШІ допоможе вам створювати кращі листи швидко та без зайвих зусиль"
       ]
     },
     "Item": {
@@ -6338,6 +6416,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Додати помічника у написанні ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "за ${ price }"
       ]
@@ -6640,6 +6721,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Почати за 1$"
+      ],
+      "Get started for 1 €": [
+        "Почати за 1€"
+      ],
+      "Get started for CHF 1": [
+        "Почати за 1 CHF"
+      ],
       "Upgrade now": [
         "Покращити"
       ]
@@ -6821,6 +6911,9 @@
       "Collaborate and share large files": [
         "Співпраця та обмін великими файлами"
       ],
+      "Collaborative document editor": [
+        "Спільний редактор документів"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
@@ -6890,6 +6983,9 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Генерування листів лише за запитом"
+      ],
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
@@ -6946,6 +7042,9 @@
       ],
       "Priority support & live chat": [
         "Пріоритетна підтримка і чат"
+      ],
+      "Proofread and refine your texts": [
+        "Коректура і перевірка ваших текстів"
       ],
       "Protect ${ n } device at a time": [
         "Захист ${ n } пристрою",
@@ -7033,6 +7132,9 @@
       ],
       "Unlimited logins and notes": [
         "Необмежена кількість імен користувачів та нотаток"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Необмежена кількість записів входу, нотаток та кредитних карток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -7213,8 +7315,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: захистіть свій порядок денний наскрізним шифруванням. Підтримуються користувацькі календарі, спільний доступ до календарів тощо."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: захистіть свої файли за допомогою зашифрованого хмарного сховища. Підтримується історія версій, зашифрований обмін файлами та багато інших функцій."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Захистіть свої файли у зашифрованому хмарному сховищі. Містить автоматичну синхронізацію, зашифрований обмін файлами тощо."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: захистіть свої електронні листи за допомогою наскрізного шифрування. Підтримуються власні домени електронної пошти, 15 адрес електронної пошти, необмежена кількість псевдонімів hide-my-email та багато інших можливостей."
@@ -7284,6 +7386,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
+      ],
+      "Increase or reallocate storage for a user": [
+        "Збільшити або перерозподілити сховище для користувача"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Захистіть приватність власних і родинних планів, користуючись зашифрованим календарем"
@@ -7366,6 +7471,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження та особисті примітки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для ${ BRAND_NAME }."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Переглядайте доступність учасників та заощаджуйте час на плануванні зустрічей"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Швидко та легко надсилайте листи великим групам, створюючи скільки завгодно груп контактів (до 100 контактів на групу)"
       ],
@@ -7392,6 +7500,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Завантажте логотип вашого бізнесу, щоби персоналізувати роботу ваших команд у вебзастосунках ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -7628,8 +7739,17 @@
       "Encrypted search activated": [
         "Зашифрований пошук активовано"
       ],
+      "External invitation removed from the share": [
+        "Зовнішнє запрошення вилучено зі спільного доступу"
+      ],
+      "External invitation's email was sent again": [
+        "Зовнішній лист із запрошенням надіслано знову"
+      ],
       "Failed to accept share invitation": [
         "Не вдалося прийняти запрошення на спільний доступ"
+      ],
+      "Failed to convert external invitation": [
+        "Не вдалося перетворити зовнішнє запрошення"
       ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
@@ -7639,6 +7759,9 @@
       ],
       "Failed to open document": [
         "Не вдалося відкрити документ"
+      ],
+      "Failed to reject share invitation": [
+        "Не вдалося відхилити запрошення, яким поділилися"
       ],
       "Failed to remove the file": [
         "Не вдалося вилучити файл"
@@ -7661,6 +7784,9 @@
       "File removed": [
         "Файл вилучено"
       ],
+      "Invitation's email was sent again": [
+        "Лист із запрошенням надіслано знову"
+      ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
       ],
@@ -7669,6 +7795,12 @@
         "Перемістити ${ n } файли",
         "Перемістити ${ n } файлів",
         "Перемістити ${ n } файлів"
+      ],
+      "Move ${ n } folder": [
+        "Перемістити ${ n } теку",
+        "Перемістити ${ n } теки",
+        "Перемістити ${ n } тек",
+        "Перемістити ${ n } тек"
       ],
       "Move ${ n } item": [
         "Перемістити ${ n } елемент",
@@ -7684,6 +7816,9 @@
       ],
       "Share invitation accepted successfully": [
         "Запрошення на спільний доступ прийнято"
+      ],
+      "Share invitation declined": [
+        "Запрошення, яким поділилися, відхилено"
       ],
       "Stopping to share this item has failed": [
         "Не вдалося припинити спільний доступ для цього елемента"
@@ -7745,14 +7880,23 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "Створити новий документ"
+      ],
       "Next": [
         "Далі"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Розпочніть користуватися ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Спробуйте пізніше"
       ]
     },
     "Onboarding Info": {
+      "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
+        "Створюйте та працюйте над документами разом. Все це захищено наскрізним шифруванням."
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Почніть користуватися ${ DRIVE_APP_NAME } і ми збільшимо ваше сховище до 5 ГБ!"
       ],
@@ -7762,11 +7906,20 @@
       "Set a recovery method": [
         "Налаштуйте спосіб відновлення"
       ],
+      "Share a file": [
+        "Поділитися файлом"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Просто завершіть описані дії впродовж наступного дня:",
         "Просто завершіть описані дії впродовж наступних ${ expiresInDays } днів:",
         "Просто завершіть описані дії впродовж наступних ${ expiresInDays } днів:",
         "Просто завершіть описані дії впродовж наступних ${ expiresInDays } днів:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Зберігайте свої файли та безпечно ними діліться. Почніть із захисту найприватніших файлів, таких як посвідчення особи, контракти та особисті фотографії."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Власник повинен підтвердити спільний доступ. Ви отримаєте повідомлення на пошту, коли це буде зроблено."
       ],
       "Upload a file": [
         "Вивантажте файл"
@@ -7796,6 +7949,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Триває остаточне затвердження"
+      ],
+      "Hang tight!": [
+        "Тримайтеся!"
+      ],
+      "Upload and protect your important files": [
+        "Завантажуйте та захищайте важливі файли"
+      ],
       "Your welcome bonus": [
         "Ваш вітальний бонус"
       ]
@@ -7831,6 +7993,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Безпечне сховище і обмін посиланнями"
+      ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ],
@@ -7884,6 +8049,9 @@
       ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "Payment Processing": [
+        "Обробка платежу"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ months }. Купон дійсний для поновлення ${ couponRedemptions }. Після цього він буде автоматично подовжений за ціною ${ price } на ${ months } місяців."
@@ -8675,6 +8843,9 @@
       ]
     },
     "Status": {
+      "Accepted": [
+        "Прийнято"
+      ],
       "Pending": [
         "У черзі"
       ]
@@ -9156,6 +9327,12 @@
         "${ countMergeableContacts } контактів мають ідентичний вигляд.",
         "${ countMergeableContacts } контакти мають ідентичний вигляд."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Залишилося ${ countOfUnrecoveredLinksLeft }",
+        "Залишилося ${ countOfUnrecoveredLinksLeft }",
+        "Залишилося ${ countOfUnrecoveredLinksLeft }",
+        "Залишилося ${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -9260,6 +9437,9 @@
     "Suffix for price": {
       "per month": [
         "на місяць"
+      ],
+      "per user per month": [
+        "для користувача на місяць"
       ]
     },
     "summer2023: Tooltip": {
@@ -9517,6 +9697,9 @@
       ],
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create a new file": [
         "Створити новий файл"
@@ -10217,11 +10400,39 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } обліковий запис на гаманець",
+        "${ n } облікові записи на гаманець",
+        "${ n } облікових записів на гаманець",
+        "${ n } облікових записів на гаманець"
+      ],
       "${ n } email address": [
         "${ n } адреса е-пошти",
         "${ n } адреси е-пошти",
         "${ n } адрес е-пошти",
         "${ n } адрес е-пошти"
+      ],
+      "${ n } wallet": [
+        "${ n } гаманець",
+        "${ n } гаманці",
+        "${ n } гаманців",
+        "${ n } гаманців"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Безпечний спосіб тримати Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin через пошту"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Безпечно тримайте і переводьте bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема з Wallet"
       ]
     },
     "Warning": {
