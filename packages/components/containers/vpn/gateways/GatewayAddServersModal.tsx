@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components/components';
 import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 
+import type { CountryOptions } from '../../../helpers/countries';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
 import type { GatewayDto } from './GatewayDto';
 import type { GatewayUser } from './GatewayUser';
@@ -19,7 +20,7 @@ interface Props extends ModalStateProps {
     ownedCount: number;
     usedCount: number;
     users: readonly GatewayUser[];
-    language: string | readonly string[];
+    countryOptions: CountryOptions;
     singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (quantities: Record<string, number>) => void;
@@ -32,7 +33,7 @@ const GatewayAddServersModal = ({
     ownedCount,
     usedCount,
     users,
-    language,
+    countryOptions,
     onSubmitDone,
     onUpsell,
     singleServer = false,
@@ -71,7 +72,7 @@ const GatewayAddServersModal = ({
                     addedCount={numberOfAddedServers}
                     needUpsell={needUpsell}
                     specificCountryCount={specificCountryCount}
-                    language={language}
+                    countryOptions={countryOptions}
                     onUpsell={() => {
                         rest.onClose?.();
                         onUpsell();
