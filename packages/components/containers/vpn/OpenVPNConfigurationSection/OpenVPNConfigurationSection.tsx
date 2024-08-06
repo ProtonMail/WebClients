@@ -395,7 +395,11 @@ const OpenVPNConfigurationSection = ({
                                     </li>
                                 </ul>
                                 <div>
-                                    <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN}`}>
+                                    <ButtonLike
+                                        as={SettingsLink}
+                                        color="norm"
+                                        path={`/dashboard?plan=${PLANS.VPN2024}`}
+                                    >
                                         {
                                             // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
                                             c('Action').t`Get ${vpnPlus}`
