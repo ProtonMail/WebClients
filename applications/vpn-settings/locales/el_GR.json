@@ -43,6 +43,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add address or domain": [
+        "Προσθήκη διεύθυνσης ή τομέα"
+      ],
       "Add credit / debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Προσθήκη χρήστη"
       ],
+      "Allow": [
+        "Επιτρέπεται"
+      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Block": [
+        "Αποκλεισμός"
+      ],
+      "Can send to this group": [
+        "Μπορεί να στείλει σε αυτήν την ομάδα"
+      ],
+      "Can't send to this group": [
+        "Δεν μπορεί να στείλει σε αυτήν την ομάδα"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -166,6 +181,9 @@
       "Delete Gateway": [
         "Διαγραφή Πύλης"
       ],
+      "Delete group": [
+        "Διαγραφή ομάδας"
+      ],
       "Delete logo": [
         "Διαγραφή λογότυπου"
       ],
@@ -186,6 +204,9 @@
       ],
       "Discard": [
         "Απόρριψη"
+      ],
+      "Discard changes": [
+        "Απόρριψη αλλαγών"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -216,6 +237,9 @@
       ],
       "Edit Gateway": [
         "Επεξεργασία Πύλης"
+      ],
+      "Edit group": [
+        "Επεξεργασία ομάδας"
       ],
       "Edit invoice details": [
         "Επεξεργασία στοιχείων τιμολογίου"
@@ -295,6 +319,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to label": [
+        "Μετάβαση στην ετικέτα"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -343,8 +370,14 @@
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
+      "More options": [
+        "Περισσότερες επιλογές"
+      ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
+      ],
+      "New group": [
+        "Νέα ομάδα"
       ],
       "Next": [
         "Επόμενο"
@@ -352,11 +385,11 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open": [
         "Άνοιγμα"
@@ -409,6 +442,12 @@
       "Remove": [
         "Αφαίρεση"
       ],
+      "Remove all members": [
+        "Κατάργηση όλων των μελών"
+      ],
+      "Remove all members from group": [
+        "Κατάργηση όλων των μελών από την ομάδα"
+      ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
       ],
@@ -439,6 +478,9 @@
       "Resend code": [
         "Επαναποστολή κωδικού"
       ],
+      "Resend invitation": [
+        "Επανάληψη αποστολής πρόσκλησης"
+      ],
       "Reset credentials": [
         "Επαναφορά διαπιστευτηρίων"
       ],
@@ -465,6 +507,9 @@
       ],
       "Revoke ${ name }": [
         "Ανάκληση ${ name }"
+      ],
+      "Revoke invitation": [
+        "Ανάκληση πρόσκλησης"
       ],
       "Save": [
         "Αποθήκευση"
@@ -562,6 +607,9 @@
       "Signing in": [
         "Γίνεται είσοδος"
       ],
+      "Spam": [
+        "Ανεπιθύμητο"
+      ],
       "Start live chat": [
         "Ξεκινήστε ζωντανή συνομιλία"
       ],
@@ -579,6 +627,12 @@
       ],
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
+      ],
+      "Test": [
+        "Δοκιμή"
+      ],
+      "Test SAML configuration": [
+        "Δοκιμή διαμόρφωσης SAML"
       ],
       "Top up": [
         "Προσθήκη ποσού"
@@ -669,6 +723,11 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Προσθήκη τομέα pm.me"
       ]
     },
     "Action subscription": {
@@ -2010,6 +2069,11 @@
         "Εντοπίσαμε σφάλματα σε πολλές σειρές κατά την εισαγωγή, παρακαλούμε ελέγξτε το αρχείο CSV σας."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/μήνα"
@@ -2097,6 +2161,35 @@
         "Κατά κανόνα οι υποτομείς «www» δεν χρησιμοποιούνται για ηλεκτρονικό ταχυδρομείο. Θέλετε σίγουρα να χρησιμοποιήσετε αυτήν την τιμή τομέα;"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } προστέθηκε"
+      ],
+      "${ name } deletion failed": [
+        "Αποτυχία διαγραφής ${ name }"
+      ],
+      "${ name } failed to move to allow list": [
+        "Αποτυχία μετακίνησης ${ name } στη λίστα αποδεκτών διευθύνσεων"
+      ],
+      "${ name } failed to move to block list": [
+        "Αποτυχία μετακίνησης ${ name } στη λίστα αποκλεισμένων διευθύνσεων"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } απέτυχε η μετακινηθεί στη λίστα ανεπιθύμητων"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } μετακινήθηκε στη λίστα αποδοχής"
+      ],
+      "${ name } moved to block list": [
+        "${ name } μετακινήθηκε στη λίστα αποκλεισμού"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } μετακινήθηκε στη λίστα ανεπιθύμητων"
+      ],
+      "${ name } successfully deleted": [
+        "Το ${ name } διαγράφηκε επιτυχώς"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Σφάλματα ή ζητήματα ποιότητας"
@@ -2154,9 +2247,43 @@
         "Υποστήριξη με προτεραιότητα"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } προστέθηκαν"
+      ],
+      "${ name } deletion failed": [
+        "Η διαγραφή του ${ name } απέτυχε"
+      ],
+      "${ name } failed to move to allow list": [
+        "Αποτυχία μετακίνησης ${ name } στη λίστα αποδεκτών διευθύνσεων"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } απέτυχε η μετακινηθεί στη λίστα αποκλεισμού"
+      ],
+      "${ name } failed to move to spam list": [
+        "Αποτυχία μετακίνησης ${ name } στη λίστα ενοχλητικών διευθύνσεων"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } μετακινήθηκε στη λίστα αποδοχής"
+      ],
+      "${ name } moved to block list": [
+        "${ name } μετακινήθηκε στη λίστα αποκλεισμού"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } μετακινήθηκε στη λίστα ανεπιθύμητων"
+      ],
+      "${ name } successfully deleted": [
+        "Το ${ name } διαγράφηκε επιτυχώς"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Στάλθηκε μήνυμα επαλήθευσης στο ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Χωρίς όνομα"
       ]
     },
     "eof2023: Deal details": {
@@ -2270,6 +2397,12 @@
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
+      ],
+      "Invalid domain": [
+        "Μη έγκυρος τομέας"
+      ],
+      "Invalid email address": [
+        "Μη έγκυρη διεύθυνση email"
       ],
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
@@ -2576,8 +2709,9 @@
       "Manage user accounts": [
         "Διαχείριση λογαριασμών χρηστών"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Μόνο 10 αποδεκτές προσκλήσεις επιτρέπονται σε περίοδο 6 μηνών."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Μόνο ${ n } αποδεκτή πρόσκληση επιτρέπεται σε περίοδο 6 μηνών.",
+        "Μόνο ${ n } αποδεκτές προσκλήσεις επιτρέπονται σε περίοδο 6 μηνών."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο ομαδικό σχέδιο."
@@ -2597,8 +2731,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Αποθηκευτικός χώρος που σας έχει εκχωρηθεί: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Η συνδρομή χρεώνεται στον κύριο διαχειριστή του Visionary ή του οικογενειακού προγράμματος."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του προγράμματος."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
@@ -2615,14 +2749,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Έχετε φτάσει το όριο των 10 αποδεκτών προσκλήσεων σε 6 μήνες."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Έχετε φτάσει το όριο της ${ n } αποδεκτής πρόσκλησης σε 6 μήνες.",
+        "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Έχετε φτάσει το όριο των 10 αποδεκτών προσκλήσεων σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Έχετε φτάσει το όριο της ${ n } αποδεκτής πρόσκλησης σε 6 μήνες. Μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες.",
+        "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες. Μπορείτε να κάνετε κλικ στο κουμπί όταν μπορείτε να προσκαλέσετε επιπλέον χρήστες."
       ],
-      "You have successfully joined the Family plan": [
-        "Έχετε εγγραφεί επιτυχώς στο Οικογενειακό πρόγραμμα"
+      "You have successfully joined the family group": [
+        "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε πολλούς χρήστες."
@@ -2915,6 +3051,35 @@
         "Terabytes"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Επιτρέπεται:"
+      ],
+      "Block:": [
+        "Αποκλεισμός:"
+      ],
+      "Search list": [
+        "Λίστα αναζήτησης"
+      ],
+      "Spam:": [
+        "Ανεπιθύμητα:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Πάρτε τον έλεγχο των εισερχομένων των μελών του οργανισμού σας, δημιουργώντας τις ακόλουθες λίστες:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Αυτές οι λίστες ισχύουν για όλους τους λογαριασμούς στον οργανισμό σας. Τα μέλη μπορούν να δημιουργήσουν τα δικά τους μεμονωμένα φίλτρα, αλλά δε θα μπορούν να παρακάμψουν διευθύνσεις ή τομείς που έχετε αποκλείσει."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Για να εξασφαλίσουμε ότι τα κρίσιμα μηνύματα δεν καταλήγουν στα ενοχλητικά με αποτέλεσμα να χάνονται."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Για να αποτρέψετε τη συσσώρευση ανεπιθύμητων μηνυμάτων στα εισερχόμενά σας"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Για να σταματήσετε το ηλεκτρονικό ψάρεμα ή τα ύποπτα μηνύματα ηλεκτρονικού ταχυδρομείου από την είσοδο τους στο σύστημα ηλεκτρονικού ταχυδρομείου του οργανισμού σας"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Προεπιλογή συστήματος"
@@ -2985,6 +3150,17 @@
       ],
       "Services": [
         "Υπηρεσίες"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Διεύθυνση ομάδας"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } μέλος",
+        "${ memberCount } μέλη"
       ]
     },
     "Header": {
@@ -3079,6 +3255,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Προσθέστε αυτήν την εγγραφή στον τομέα σας στον πίνακα ελέγχου του μητρώου καταχώρησης ονομάτων τομέα"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
     },
     "Human verification method": {
@@ -3178,6 +3361,10 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } απαιτείται για το χαρακτηριστικό Secure Core."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /μήνα)"
       ],
@@ -3196,6 +3383,9 @@
       ],
       "30-day money-back guarantee.": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
@@ -3282,6 +3472,12 @@
       "Amount due": [
         "Οφειλόμενο ποσό"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Είστε βέβαιοι ότι θέλετε να ακυρώσετε την επεξεργασία της ομάδας;"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την ομάδα. Η διεύθυνση ομάδας δε θα λειτουργεί πλέον."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
       ],
@@ -3293,6 +3489,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε όλα τα μέλη από αυτήν την ομάδα;"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
@@ -3338,6 +3537,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "Δημιουργήθηκε Προσαρμοσμένο Email Παραβίασης"
       ],
       "Breach Custom Email Deleted": [
         "Διαγράφηκε Προσαρμοσμένο Email Παραβίασης"
@@ -3801,6 +4003,9 @@
       "Keys created": [
         "Τα κλειδιά δημιουργήθηκαν"
       ],
+      "Labels:": [
+        "Ετικέτες:"
+      ],
       "Lean more about gateways": [
         "Μάθετε περισσότερα σχετικά με τις πύλες"
       ],
@@ -3812,6 +4017,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Ας ξεκινήσουμε πατώντας το κουμπί Νέα ομάδα παραπάνω"
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
@@ -3938,6 +4146,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - επιβεβαιώθηκε προσαρμοσμένο email"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - δημιουργήθηκε προσαρμοσμένο email"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - διαγράφηκε προσαρμοσμένο email"
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -4281,9 +4498,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μετά την επιτυχή επαλήθευση, μην καταργήσετε την εγγραφή TXT, καθώς είναι απαραίτητη για να επιβεβαιώσετε ότι εξακολουθείτε να είστε κάτοχος του τομέα."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
@@ -4563,6 +4777,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Με τις ομάδες χρηστών, μπορείτε εύκολα να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου, να μοιραστείτε δεδομένα ή να αλλάξετε τις ρυθμίσεις για συγκεκριμένες ομάδες χρηστών ταυτόχρονα."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
       ],
@@ -4782,6 +4999,14 @@
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ],
+      "Rejected": [
+        "Απορριφθέντες"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Δωρίστηκε"
@@ -4865,11 +5090,17 @@
       "Address": [
         "Διεύθυνση"
       ],
+      "Address type": [
+        "Τύπος διεύθυνσης"
+      ],
       "Addresses": [
         "Διευθύνσεις"
       ],
       "Administrators": [
         "Διαχειριστές"
+      ],
+      "Allow": [
+        "Αποδεκτή"
       ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
@@ -4903,6 +5134,9 @@
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
+      ],
+      "Block": [
+        "Αποκλεισμένη"
       ],
       "Block malware only": [
         "Αποκλεισμός μόνο κακόβουλου λογισμικού"
@@ -5015,6 +5249,9 @@
       "Do you have any suggestions for our team?": [
         "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
+      "Domain": [
+        "Τομέας (Domain)"
+      ],
       "Domain name": [
         "Όνομα domain"
       ],
@@ -5044,6 +5281,15 @@
       ],
       "Gift code": [
         "Κωδικός δώρου"
+      ],
+      "Group address": [
+        "Διεύθυνση ομάδας"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "Group name": [
+        "Όνομα ομάδας"
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
@@ -5186,6 +5432,9 @@
       "Public certificate (X.509)": [
         "Δημόσιο πιστοποιητικό (X.509)"
       ],
+      "Purpose": [
+        "Σκοπός"
+      ],
       "Recovery email address": [
         "Email Ανάκτησης"
       ],
@@ -5218,6 +5467,9 @@
       ],
       "Single sign-on URL": [
         "URL καθολικής σύνδεσης"
+      ],
+      "Spam": [
+        "Ενοχλητικό"
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
@@ -5266,6 +5518,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Ποιος είναι ο κύριος λόγος ακύρωσης ή υποβάθμισης;"
+      ],
+      "Who can send to this group address?": [
+        "Ποιος μπορεί να στείλει σε αυτήν τη διεύθυνση ομάδας;"
       ],
       "Why would you like to cancel?": [
         "Γιατί θέλετε να ακυρώσετε;"
@@ -5650,6 +5905,20 @@
         "Ελβετικό Φράγκο"
       ]
     },
+    "Navigation": {
+      "All": [
+        "Όλα"
+      ],
+      "Allow": [
+        "Επιτρέπεται"
+      ],
+      "Block": [
+        "Αποκλεισμός"
+      ],
+      "Spam": [
+        "Ανεπιθύμητα"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
@@ -5670,6 +5939,15 @@
       ],
       "From ${ price }": [
         "Από ${ price }"
+      ],
+      "Get started for $1": [
+        "Ξεκινήστε με $1"
+      ],
+      "Get started for 1 €": [
+        "Ξεκινήστε με 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Ξεκινήστε με CHF 1"
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -6210,6 +6488,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Ασφαλίστε την ψηφιακή σας ζωή με ${ BRAND_NAME } για δύο άτομα."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
@@ -6281,8 +6562,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -6656,6 +6937,20 @@
         "Ολόκληρος ο οργανισμός"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Όλοι, συμπεριλαμβανομένου του εξωτερικού"
+      ],
+      "Members": [
+        "Μέλη"
+      ],
+      "Nobody by default": [
+        "Κανείς από προεπιλογή"
+      ],
+      "Organization members": [
+        "Μέλη οργανισμού"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } για να προσθέσετε περισσότερους χρήστες ή να καταργήσετε ορισμένους λογαριασμούς χρηστών για να ελευθερώσετε χώρο."
@@ -6975,6 +7270,9 @@
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Παρακαλούμε προσθέστε έναν τρόπο πληρωμής στον πίνακα ελέγχου για να συνεχίσετε."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
@@ -7071,6 +7369,9 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "π.χ. https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7088,6 +7389,9 @@
       ],
       "End date": [
         "Ημερομηνία λήξης"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "Αξιολόγηση"
@@ -7133,6 +7437,20 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Προσθήκη ονόματος ομάδας"
+      ],
+      "e.g. distribution list for marketing team": [
+        "π.χ. λίστα διανομής για ομάδα μάρκετινγκ"
+      ],
+      "e.g. marketing": [
+        "π.χ. μάρκετινγκ"
+      ],
+      "Members": [
+        "Μέλη"
       ]
     },
     "plan customizer, ips": {
@@ -7259,6 +7577,55 @@
       ],
       "User": [
         "Χρήστης"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Ακύρωση"
+      ]
+    },
+    "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Η είσοδος δεν ολοκληρώθηκε με επιτυχία."
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Παρουσιάστηκε σφάλμα κατά τον έλεγχο της ρύθμισης παραμέτρων SSO."
+      ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
+      "Test in progress...": [
+        "Δοκιμή σε εξέλιξη..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Για να δοκιμάσετε αυτήν τη διαμόρφωση SAML, παρακαλούμε εισαγάγετε τα διαπιστευτήρια σύνδεσης για έναν χρήστη που σχετίζεται με το **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Λάβαμε μια έγκυρη απάντηση SAML από τον πάροχο ταυτότητάς σας. Η SSO είναι ενεργοποιημένη για τον οργανισμό σας."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Δοκιμάζουμε τη διαμόρφωσή σας για να διασφαλίσουμε ότι η SSO λειτουργεί."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Ηλεκτρονικό ταχυδρομείο"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Δούλεψε!"
+      ],
+      "Test SAML configuration": [
+        "Δοκιμή διαμόρφωσης SAML"
+      ],
+      "Testing SAML configuration": [
+        "Δοκιμή διαμόρφωσης SAML"
       ]
     },
     "scim: Action": {
@@ -8188,6 +8555,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "Το ${ planName } σας δίνει απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "Το ${ planName } δίνει στην ομάδα σας αυτό που χρειάζεται για να είναι πιο παραγωγική και οργανωμένη στην εργασία της με πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητές τους."
       ],
@@ -8223,6 +8593,9 @@
       ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "2 users": [
+        "2 χρήστες"
       ],
       "20 email addresses per user": [
         "20 διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
@@ -8403,6 +8776,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Unlimited privacy for two": [
+        "Απεριόριστη ιδιωτικότητα για δύο"
       ],
       "Users won’t be able to manage their calendars": [
         "Οι χρήστες δε θα μπορούν να διαχειρίζονται τα ημερολόγιά τους"
@@ -8754,17 +9130,29 @@
       "Country": [
         "Χώρα"
       ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Email address": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Email address or domain": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου ή τομέας"
+      ],
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
       "Invitation email": [
         "Μήνυμα πρόσκλησης"
+      ],
+      "List": [
+        "Λίστα"
+      ],
+      "Marked as": [
+        "Σημειώθηκε ως"
       ],
       "Name": [
         "Όνομα"
@@ -8845,8 +9233,20 @@
       "Add PayPal payment method": [
         "Προσθέστε μία μέθοδο πληρωμής PayPal"
       ],
+      "Add pm.me subdomain": [
+        "Προσθήκη υποτομέα pm.me"
+      ],
       "Add servers": [
         "Προσθήκη διακομιστών"
+      ],
+      "Add to allow list": [
+        "Προσθήκη στη λίστα επιτρεπόμενων"
+      ],
+      "Add to block list": [
+        "Προσθήκη στη λίστα αποκλεισμένων"
+      ],
+      "Add to spam list": [
+        "Προσθήκη στη λίστα ανεπιθύμητων"
       ],
       "Add user accounts": [
         "Προσθήκη λογαριασμών χρηστών"
@@ -8996,6 +9396,9 @@
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
+      "Delete group?": [
+        "Διαγραφή ομάδας;"
+      ],
       "Delete organization logo?": [
         "Διαγραφή λογότυπου οργανισμού;"
       ],
@@ -9011,6 +9414,9 @@
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
+      ],
+      "Discard changes?": [
+        "Απόρριψη αλλαγών;"
       ],
       "Domain names": [
         "Ονόματα τομέων"
@@ -9220,6 +9626,9 @@
       "Recovery": [
         "Ανάκτηση"
       ],
+      "Remove all members?": [
+        "Κατάργηση όλων των μελών;"
+      ],
       "Remove domain": [
         "Αφαίρεση τομέα"
       ],
@@ -9328,6 +9737,9 @@
       ],
       "Switch to two-password mode": [
         "Μετάβαση σε λειτουργία δύο κωδικών πρόσβασης"
+      ],
+      "There are no groups": [
+        "Δεν υπάρχουν ομάδες"
       ],
       "Time": [
         "Ώρα"
@@ -9524,6 +9936,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ],
+      "User rejected invitation": [
+        "Ο χρήστης απέρριψε την πρόσκληση"
+      ],
+      "Waiting user to accept the invitation": [
+        "Αναμονή χρήστη για αποδοχή της πρόσκλησης"
       ]
     },
     "Tooltip for news": {
