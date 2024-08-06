@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
 import { useDrawer } from '@proton/components/hooks';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
@@ -8,7 +9,9 @@ const ProtonPassPlaceholder = () => {
     const { toggleDrawerApp, appInView } = useDrawer();
 
     const openSecurityCenterInDrawer = () => {
-        if (appInView !== 'security-center') {
+        if (appInView === 'security-center') {
+            document.getElementById(DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID)?.click();
+        } else {
             toggleDrawerApp({ app: 'security-center' })();
         }
     };
@@ -28,7 +31,7 @@ const ProtonPassPlaceholder = () => {
                     .t`They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.`}
             </p>
             <Button onClick={openSecurityCenterInDrawer} color="norm" shape="outline">
-                {c('Action').t`Hide my email`}
+                {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide my email`}
             </Button>
         </>
     );

@@ -9,6 +9,7 @@ import {
     PrimaryButton,
     useDrawer,
 } from '@proton/components';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import passIconSvg from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
@@ -19,10 +20,12 @@ interface Props extends ModalProps {}
 const ProtonPassAliasesModal = ({ ...rest }: Props) => {
     const { toggleDrawerApp, appInView } = useDrawer();
     const openSecurityCenterInDrawer = () => {
-        if (appInView !== 'security-center') {
+        if (appInView === 'security-center') {
+            document.getElementById(DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID)?.click();
+        } else {
             toggleDrawerApp({ app: 'security-center' })();
-            rest?.onClose?.();
         }
+        rest?.onClose?.();
     };
 
     return (
@@ -49,7 +52,7 @@ const ProtonPassAliasesModal = ({ ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <PrimaryButton onClick={openSecurityCenterInDrawer} className="ml-auto">
-                    {c('Action').t`Hide my email`}
+                    {appInView === 'security-center' ? c('Action').t`Create alias` : c('Action').t`Hide my email`}
                 </PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
