@@ -216,6 +216,7 @@ const ComposerActions = ({
                                     onDisplayScheduleSendModal={onScheduleSendModal}
                                     onScheduleSend={onScheduleSend}
                                     scheduledAtUnixTimestamp={message.draftFlags?.scheduledAt}
+                                    composerID={composerID}
                                 />
                             )
                         }

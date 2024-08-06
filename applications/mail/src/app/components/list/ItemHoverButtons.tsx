@@ -112,7 +112,7 @@ const ItemHoverButtons = ({
             <div
                 className={clsx(
                     'hidden flex-nowrap justify-space-between relative item-hover-action-buttons gap-1',
-                    snoozeDropdownState && snoozedElement?.ID === element.ID
+                    snoozeDropdownState === 'open' && snoozedElement?.ID === element.ID
                         ? 'item-hover-action-buttons--dropdown-open'
                         : '',
                     className

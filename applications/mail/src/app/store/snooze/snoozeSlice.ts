@@ -5,12 +5,12 @@ import type { Element } from '../../models/element';
 
 interface SnoozeState {
     element?: Element;
-    dropdownState: boolean;
+    dropdownState: 'open' | 'close' | 'forceOpen';
 }
 
 export const snoozeInitialState: SnoozeState = {
     element: undefined,
-    dropdownState: false,
+    dropdownState: 'close',
 };
 
 const name = 'snooze';
@@ -19,12 +19,15 @@ const snoozeSlice = createSlice({
     initialState: snoozeInitialState,
     reducers: {
         resetSnoozeDropdown: (state) => {
-            state.dropdownState = false;
+            state.dropdownState = 'close';
             state.element = undefined;
         },
         setSnoozeDropdown: (state, action: PayloadAction<SnoozeState>) => {
             state.dropdownState = action.payload.dropdownState;
             state.element = action.payload.element;
+        },
+        setSnoozeDropdownOpen: (state) => {
+            state.dropdownState = 'open';
         },
     },
 });
