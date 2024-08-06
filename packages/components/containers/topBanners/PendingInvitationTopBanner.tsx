@@ -33,7 +33,7 @@ const PendingInvitationTopBanner = () => {
             return;
         }
 
-        goToSettings('/dashboard', APPS.PROTONACCOUNT);
+        goToSettings('/dashboard#your-plan');
     };
 
     const viewInviteButton = (
