@@ -4,6 +4,8 @@ import type { ILevelsOptions } from 'docx'
 import { AlignmentType, Document, LevelFormat, SectionType, convertInchesToTwip } from 'docx'
 import { getTopLevelChildrenFromElementNode } from './getTopLevelChildrenFromElementNode'
 import type { DocxExportContext } from './Context'
+import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
+import { createHorizontalRuleChild } from './createHorizontalRuleChild'
 
 export const DummyElementUsedToConvertTextNodeCSSTextToComputedStyles = document.createElement('span')
 
@@ -47,6 +49,9 @@ export async function generateDocxFromEditor(
     for (const child of root.getChildren()) {
       if ($isElementNode(child)) {
         topLevelChildren.push(getTopLevelChildrenFromElementNode(child, context))
+      }
+      if ($isHorizontalRuleNode(child)) {
+        topLevelChildren.push(createHorizontalRuleChild())
       }
     }
   })

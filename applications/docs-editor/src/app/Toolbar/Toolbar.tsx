@@ -80,6 +80,8 @@ import ToolbarTooltip from './ToolbarTooltip'
 import { ModifierKbd, ShortcutKbd } from '../Plugins/KeyboardShortcuts/ShortcutKbd'
 import { INSERT_INLINE_COMMENT_COMMAND } from '../Commands'
 import AddCommentIcon from '../Icons/AddCommentIcon'
+import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
+import DividerIcon from '../Icons/DividerIcon'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -268,6 +270,10 @@ export default function DocumentEditorToolbar({
       fullWidth: true,
     })
   }, [activeEditor])
+
+  const insertHorizontalRule = () => {
+    activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
+  }
 
   const insertComment = () => {
     activeEditor.dispatchCommand(INSERT_INLINE_COMMENT_COMMAND, undefined)
@@ -1104,6 +1110,16 @@ export default function DocumentEditorToolbar({
                 {c('Action').t`Outdent`}
               </DropdownMenuButton>
             </ToolbarTooltip>
+
+            <DropdownMenuButton
+              className="flex items-center gap-2 text-left text-sm"
+              disabled={!isEditable}
+              onClick={insertHorizontalRule}
+              data-testid="divider-dropdown"
+            >
+              <DividerIcon className="h-4 w-4 fill-current" />
+              {c('Action').t`Divider`}
+            </DropdownMenuButton>
             {!showAlignmentOptionsInToolbar && (
               <>
                 <hr className="my-1" />
