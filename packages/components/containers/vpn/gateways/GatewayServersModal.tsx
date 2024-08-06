@@ -21,17 +21,18 @@ import {
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
 
+import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
+import { CountryFlagAndName } from './CountryFlagAndName';
 import type { Gateway } from './Gateway';
 import GatewayAddServersModal from './GatewayAddServersModal';
 import type { GatewayLogical } from './GatewayLogical';
 import type { GatewayUser } from './GatewayUser';
-import { getCountryFlagAndName } from './getCountryFlagAndName';
 import { getFormattedLoad, getSuffix, getTotalAdded } from './helpers';
 
 interface Props extends ModalProps<typeof Form> {
     gateway: Gateway;
-    language: string | readonly string[];
     countries: readonly string[];
+    countryOptions: CountryOptions;
     deletedInCountries: Record<string, number>;
     users: readonly GatewayUser[];
     ownedCount: number;
@@ -49,8 +50,8 @@ interface Props extends ModalProps<typeof Form> {
 
 const GatewayServersModal = ({
     gateway,
-    language,
     countries,
+    countryOptions,
     deletedInCountries,
     users,
     ownedCount,
@@ -142,7 +143,7 @@ const GatewayServersModal = ({
             ownedCount,
             usedCount: usedCount - deletedServerCount + addedServerCount,
             users,
-            language,
+            countryOptions,
             singleServer,
             showCancelButton,
             onSubmitDone: addQuantities,
@@ -216,10 +217,11 @@ const GatewayServersModal = ({
                                     key={'logical-' + logical.ID}
                                     className={deleted[logical.ID] ? 'opacity-50' : undefined}
                                     cells={[
-                                        getCountryFlagAndName(language, logical.ExitCountry, undefined, {
-                                            className: 'mb-1',
-                                            key: `country-logical-${logical.ID}-${logical.ExitCountry}`,
-                                        }),
+                                        <CountryFlagAndName
+                                            countryCode={logical.ExitCountry}
+                                            countryName={getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions)}
+                                            className="mb-1"
+                                        />,
                                         getSuffix(logical.Name),
                                         <span className="py-1 px-2 rounded text-uppercase bg-success">{
                                             /** translator: status of the server: people can connect to it */
@@ -258,10 +260,14 @@ const GatewayServersModal = ({
                                         key={'logical-' + logical.ID}
                                         className="opacity-50"
                                         cells={[
-                                            getCountryFlagAndName(language, logical.ExitCountry, undefined, {
-                                                className: 'mb-1',
-                                                key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
-                                            }),
+                                            <CountryFlagAndName
+                                                countryCode={logical.ExitCountry}
+                                                countryName={getLocalizedCountryByAbbr(
+                                                    logical.ExitCountry,
+                                                    countryOptions
+                                                )}
+                                                className="mb-1"
+                                            />,
                                             getSuffix(logical.Name),
                                             <span className="py-1 px-2 rounded text-uppercase bg-weak color-weak">{
                                                 /** translator: status of the server: people cannot connect to it */
@@ -288,10 +294,11 @@ const GatewayServersModal = ({
                                     key={'logical-' + logical.ID}
                                     className={deleted[logical.ID] ? 'opacity-50' : undefined}
                                     cells={[
-                                        getCountryFlagAndName(language, logical.ExitCountry, undefined, {
-                                            className: 'mb-1',
-                                            key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
-                                        }),
+                                        <CountryFlagAndName
+                                            countryCode={logical.ExitCountry}
+                                            countryName={getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions)}
+                                            className="mb-1"
+                                        />,
                                         getSuffix(logical.Name),
                                         <span className="py-1 px-2 rounded text-uppercase bg-info">{
                                             /** translator: status of the server: people cannot yet use it */
@@ -310,10 +317,11 @@ const GatewayServersModal = ({
                                     <TableRow
                                         key={'future-logical-' + country + '-' + index}
                                         cells={[
-                                            getCountryFlagAndName(language, country, undefined, {
-                                                className: 'mb-1',
-                                                key: 'country-future-logical-' + country + '-' + index,
-                                            }),
+                                            <CountryFlagAndName
+                                                countryCode={country}
+                                                countryName={getLocalizedCountryByAbbr(country, countryOptions)}
+                                                className="mb-1"
+                                            />,
                                             '',
                                             new Cell(
                                                 (

@@ -1,4 +1,5 @@
-import type { Logical } from '../Logical';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
+
 import { normalizeName } from './normalizeName';
 
 describe('normalizeName', () => {

@@ -1,13 +1,13 @@
 import { c, msgid } from 'ttag';
 
-import type { VPNServer } from '@proton/shared/lib/interfaces/VPNServer';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
 interface Props {
-    group: VPNServer[];
+    group: Logical[];
 }
 
 const ServerNumber = ({ group }: Props) => {
-    const number = group.reduce((acc, { Servers }) => acc + Servers.length, 0);
+    const number = group.reduce((acc, { Servers }) => acc + (Servers?.length || 0), 0);
     return (
         <div className="inline-flex *:self-center">
             {c('Info').ngettext(msgid`${number} server`, `${number} servers`, number)}

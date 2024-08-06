@@ -1,6 +1,6 @@
-import type { Logical } from '../Logical';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-export const normalizeName = (server: Logical): string => {
+export const normalizeName = (server: Pick<Logical, 'Name' | 'Tier'>): string => {
     let name = server.Name.toLowerCase()
         .replace(/[^a-zA-Z0-9.#-]/g, '')
         .replace(/[#.-]+/g, '-')

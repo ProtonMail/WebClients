@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import type { VPNServer } from '@proton/shared/lib/interfaces/VPNServer';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 interface Props {
-    group: VPNServer[];
+    group: Logical[];
 }
 
 const CityNumber = ({ group }: Props) => {

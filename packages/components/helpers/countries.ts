@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { localeCode } from '@proton/shared/lib/i18n';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 const getTopCounties = () => [
     { value: 'US', label: c('Country name').t`United States` },
@@ -266,26 +267,39 @@ const getSortedCountries = () => {
     return countries;
 };
 
-const getCountryByAbbr = (abbr: string) => {
-    const countriesByAbbr = getCountries().reduce<{ [key: string]: string }>(
+export const getCountryByAbbrMap = () => {
+    return getCountries().reduce<{ [key: string]: string }>(
         (list, country) => ({ ...list, [country.value]: country.label }),
         {}
     );
+};
 
+export type CountryAbbrMap = ReturnType<typeof getCountryByAbbrMap>;
+
+const getCountryByAbbr = (abbr: string, countriesByAbbr: CountryAbbrMap) => {
     return countriesByAbbr[abbr];
 };
 
-export const getLocalizedCountryByAbbr = (
-    abbr: string,
-    languageOrLanguages: string | readonly string[]
-): string | undefined => {
+export interface CountryOptions {
+    countryByAbbr: CountryAbbrMap;
+    language: string | readonly string[];
+}
+
+export const getCountryOptions = (userSettings?: Pick<UserSettings, 'Locale'>): CountryOptions => {
+    return {
+        countryByAbbr: getCountryByAbbrMap(),
+        language: userSettings?.Locale || navigator.languages,
+    };
+};
+
+export const getLocalizedCountryByAbbr = (abbr: string, options: CountryOptions): string | undefined => {
     const [language, languages] =
-        languageOrLanguages instanceof Array
-            ? [languageOrLanguages[0], languageOrLanguages]
-            : [languageOrLanguages, [languageOrLanguages]];
+        options.language instanceof Array
+            ? [options.language[0], options.language]
+            : [options.language, [options.language]];
 
     if (!language || /^en([_-].*)?$/.test(language)) {
-        return getCountryByAbbr(abbr);
+        return getCountryByAbbr(abbr, options.countryByAbbr);
     }
 
     const normalizedLanguages = languages.map((l) => l.replace(/_/g, '-'));
@@ -296,18 +310,18 @@ export const getLocalizedCountryByAbbr = (
         switch (language.split(/[_-]/)[0]) {
             case 'jp':
             case 'zh':
-                return shortName || getCountryByAbbr(abbr);
+                return shortName || getCountryByAbbr(abbr, options.countryByAbbr);
         }
 
         const longName = new Intl.DisplayNames(normalizedLanguages, { type: 'region' }).of(abbr);
 
         if (shortName && longName && shortName.length < 6 && longName.length < 14) {
-            return longName || getCountryByAbbr(abbr);
+            return longName || getCountryByAbbr(abbr, options.countryByAbbr);
         }
 
-        return shortName || getCountryByAbbr(abbr);
+        return shortName || getCountryByAbbr(abbr, options.countryByAbbr);
     } catch (e) {
-        return getCountryByAbbr(abbr);
+        return getCountryByAbbr(abbr, options.countryByAbbr);
     }
 };
 

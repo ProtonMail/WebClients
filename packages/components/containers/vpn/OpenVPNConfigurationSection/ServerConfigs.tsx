@@ -1,71 +1,75 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 
-import PropTypes from 'prop-types';
-
-import { PLANS } from '@proton/shared/lib/constants';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import compare from '@proton/utils/compare';
 import groupWith from '@proton/utils/groupWith';
 
 import { Details, Summary } from '../../../components';
-import { useUser, useUserVPN } from '../../../hooks';
+import type { CountryOptions } from '../../../helpers/countries';
 import CityNumber from './CityNumber';
 import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
 import Country from './Country';
 import ServerNumber from './ServerNumber';
+import type { EnhancedLogical } from './interface';
 import { isP2PEnabled, isSecureCoreEnabled, isTorEnabled } from './utils';
 
-const getServerNum = (server) => Number(server.Name.replace('-TOR', '').split('#')[1]);
-const getServerRegion = (server) => server.Name.split('#')[0];
-const serverRegionAsc = (a, b) => compare(getServerRegion(a), getServerRegion(b));
-const serverNumAsc = (a, b) => compare(getServerNum(a), getServerNum(b));
-const serverNameAsc = (a, b) => serverRegionAsc(a, b) || serverNumAsc(a, b);
+const getServerNum = (server: Logical) => Number(server.Name.replace('-TOR', '').split('#')[1]);
+const getServerRegion = (server: Logical) => server.Name.split('#')[0];
+const serverRegionAsc = (a: Logical, b: Logical) => compare(getServerRegion(a), getServerRegion(b));
+const serverNumAsc = (a: Logical, b: Logical) => compare(getServerNum(a), getServerNum(b));
+const serverNameAsc = (a: Logical, b: Logical) => serverRegionAsc(a, b) || serverNumAsc(a, b);
 
-const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
-    const [{ hasPaidVpn }] = useUser();
-    const { result, fetch: fetchUserVPN } = useUserVPN();
-    const userVPN = result?.VPN || {};
-    const isBasicVPN = userVPN && userVPN.PlanName === PLANS.VPNBASIC;
-    const isUpgradeRequired = useCallback(
-        (server) => {
-            return !userVPN || (!hasPaidVpn && server.Tier > 0) || (isBasicVPN && server.Tier === 2);
-        },
-        [userVPN, hasPaidVpn, isBasicVPN]
-    );
+interface Props {
+    servers: EnhancedLogical[];
+    category: CATEGORY;
+    onSelect?: (logical: Logical) => void;
+    selecting?: boolean;
+    countryOptions: CountryOptions;
+    platform: string;
+    protocol: string;
+    loading?: boolean;
+}
 
-    useEffect(() => {
-        fetchUserVPN(30_000);
-    }, [hasPaidVpn]);
-
+const ServerConfigs = ({ servers, category, onSelect, selecting, countryOptions, ...rest }: Props) => {
     // Free servers at the top, then sorted by Name#ID
     const sortedGroups = useMemo(() => {
         const groupedServers = groupWith(
-            (a, b) => a.Country === b.Country,
+            (a, b) => a.country === b.country,
             servers.filter(({ Features = 0 }) => !isSecureCoreEnabled(Features))
         );
 
         return groupedServers.map((group) => {
-            const freeServers = group.filter(({ Name }) => Name.includes('FREE')).sort(serverNameAsc);
-            const otherServers = group.filter(({ Name }) => !Name.includes('FREE')).sort(serverNameAsc);
+            const sortedList = group.sort(serverNameAsc);
+
+            const [freeServers, otherServers] = sortedList.reduce<[EnhancedLogical[], EnhancedLogical[]]>(
+                (acc, logical) => {
+                    if (logical.Name.includes('FREE')) {
+                        acc[0].push(logical);
+                    } else {
+                        acc[1].push(logical);
+                    }
+                    return acc;
+                },
+                [[], []]
+            );
+
             return [...freeServers, ...otherServers].map((server) => {
-                return {
-                    ...server,
-                    isUpgradeRequired: isUpgradeRequired(server),
-                };
+                return server;
             });
         });
-    }, [servers, isUpgradeRequired]);
+    }, [servers]);
 
     return (
         <div className="mb-6">
             {sortedGroups.map((group) => {
                 const server = group[0];
                 return (
-                    <Details key={server.Country || 'XX'} open={server.open}>
+                    <Details key={server.country || 'XX'} open={server.open}>
                         <Summary>
                             <div className="ml-2 flex flex-nowrap items-center">
                                 <div className={clsx([category === CATEGORY.SERVER ? 'w-1/3' : ''])}>
-                                    <Country server={server} />
+                                    <Country server={server} countryOptions={countryOptions} />
                                 </div>
                                 {category === CATEGORY.SERVER && (
                                     <>
@@ -92,8 +96,9 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                                 {...rest}
                                 category={category}
                                 servers={group}
-                                onSelect={select}
+                                onSelect={onSelect}
                                 selecting={selecting}
+                                countryOptions={countryOptions}
                             />
                         </div>
                     </Details>
@@ -101,24 +106,6 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
             })}
         </div>
     );
-};
-
-ServerConfigs.propTypes = {
-    servers: PropTypes.arrayOf(
-        PropTypes.shape({
-            ID: PropTypes.string,
-            Country: PropTypes.string,
-            EntryCountry: PropTypes.string,
-            ExitCountry: PropTypes.string,
-            Domain: PropTypes.string,
-            Features: PropTypes.number,
-            Load: PropTypes.number,
-            Tier: PropTypes.number,
-        })
-    ),
-    category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER, CATEGORY.FREE]),
-    select: PropTypes.func,
-    isSelected: PropTypes.func,
 };
 
 export default ServerConfigs;

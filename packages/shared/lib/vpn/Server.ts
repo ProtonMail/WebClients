@@ -15,4 +15,5 @@ export interface Server {
     Bytes?: number | null;
     Load?: number | null;
     ServicesDown?: number | null;
+    Status?: boolean;
 }
