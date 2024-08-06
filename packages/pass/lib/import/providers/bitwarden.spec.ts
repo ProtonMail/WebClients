@@ -38,7 +38,7 @@ describe('Import bitwarden json', () => {
 
         expect(vaults.length).toEqual(2);
 
-        expect(primary.items.length).toEqual(5);
+        expect(primary.items.length).toEqual(6);
         expect(primary.name).not.toBeUndefined();
 
         expect(secondary.items.length).toEqual(2);
@@ -67,15 +67,58 @@ describe('Import bitwarden json', () => {
         expect(allowedApp?.packageName).toEqual('ch.protonmail.android');
         expect(allowedApp?.hashes).toContain('ch.protonmail.android');
 
+        /* Identity */
+        const identityItem = deobfuscateItem(primary.items[1] as any) as unknown as ItemImportIntent<'identity'>;
+        expect(identityItem.type).toBe('identity');
+        expect(identityItem.metadata.name).toBe('IdentityItem');
+        expect(identityItem.content.fullName).toStrictEqual('');
+        expect(identityItem.content.firstName).toStrictEqual('John');
+        expect(identityItem.content.middleName).toStrictEqual('F');
+        expect(identityItem.content.lastName).toStrictEqual('Kennedy');
+        expect(identityItem.content.fullName).toStrictEqual('');
+        expect(identityItem.content.email).toStrictEqual('');
+        expect(identityItem.content.phoneNumber).toStrictEqual('');
+        expect(identityItem.content.birthdate).toStrictEqual('');
+        expect(identityItem.content.gender).toStrictEqual('');
+        expect(identityItem.content.organization).toStrictEqual('');
+        expect(identityItem.content.streetAddress).toStrictEqual('');
+        expect(identityItem.content.zipOrPostalCode).toStrictEqual('');
+        expect(identityItem.content.city).toStrictEqual('');
+        expect(identityItem.content.stateOrProvince).toStrictEqual('');
+        expect(identityItem.content.countryOrRegion).toStrictEqual('');
+        expect(identityItem.content.floor).toStrictEqual('');
+        expect(identityItem.content.county).toStrictEqual('');
+        expect(identityItem.content.socialSecurityNumber).toStrictEqual('');
+        expect(identityItem.content.passportNumber).toStrictEqual('');
+        expect(identityItem.content.licenseNumber).toStrictEqual('');
+        expect(identityItem.content.website).toStrictEqual('');
+        expect(identityItem.content.xHandle).toStrictEqual('');
+        expect(identityItem.content.secondPhoneNumber).toStrictEqual('');
+        expect(identityItem.content.linkedin).toStrictEqual('');
+        expect(identityItem.content.reddit).toStrictEqual('');
+        expect(identityItem.content.facebook).toStrictEqual('');
+        expect(identityItem.content.yahoo).toStrictEqual('');
+        expect(identityItem.content.instagram).toStrictEqual('');
+        expect(identityItem.content.company).toStrictEqual('');
+        expect(identityItem.content.jobTitle).toStrictEqual('');
+        expect(identityItem.content.personalWebsite).toStrictEqual('');
+        expect(identityItem.content.workPhoneNumber).toStrictEqual('');
+        expect(identityItem.content.workEmail).toStrictEqual('');
+        expect(identityItem.content.extraAddressDetails).toStrictEqual([]);
+        expect(identityItem.content.extraContactDetails).toStrictEqual([]);
+        expect(identityItem.content.extraPersonalDetails).toStrictEqual([]);
+        expect(identityItem.content.extraWorkDetails).toStrictEqual([]);
+        expect(identityItem.content.extraSections).toStrictEqual([]);
+
         /* Note */
-        const noteItem = deobfuscateItem(primary.items[1] as any) as unknown as ItemImportIntent<'note'>;
+        const noteItem = deobfuscateItem(primary.items[2] as any) as unknown as ItemImportIntent<'note'>;
         expect(noteItem.type).toBe('note');
         expect(noteItem.metadata.name).toBe('NoteItem');
         expect(noteItem.metadata.note).toBe('note content');
         expect(noteItem.content).toStrictEqual({});
 
         /* Login empty */
-        const loginItem2 = deobfuscateItem(primary.items[2] as any) as unknown as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(primary.items[3] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toBe('login');
         expect(loginItem2.metadata.name).toBe('LoginItemEmptyFields');
         expect(loginItem2.metadata.note).toBe('login note');
@@ -86,7 +129,7 @@ describe('Import bitwarden json', () => {
         expect(loginItem2.content.totpUri).toStrictEqual('');
 
         /* Login broken url */
-        const loginItem3 = deobfuscateItem(primary.items[3] as any) as unknown as ItemImportIntent<'login'>;
+        const loginItem3 = deobfuscateItem(primary.items[4] as any) as unknown as ItemImportIntent<'login'>;
         expect(loginItem3.type).toBe('login');
         expect(loginItem3.metadata.name).toBe('LoginItemBrokenUrl');
         expect(loginItem3.metadata.note).toBe('');
@@ -97,7 +140,7 @@ describe('Import bitwarden json', () => {
         expect(loginItem3.content.totpUri).toStrictEqual('');
 
         /* Credit Card */
-        const ccItem1 = deobfuscateItem(primary.items[4] as any) as unknown as ItemImportIntent<'creditCard'>;
+        const ccItem1 = deobfuscateItem(primary.items[5] as any) as unknown as ItemImportIntent<'creditCard'>;
         expect(ccItem1.type).toBe('creditCard');
         expect(ccItem1.metadata.name).toBe('Credit Card Y');
         expect(ccItem1.metadata.note).toBe('Credit Card Y AMEX note');
@@ -110,8 +153,7 @@ describe('Import bitwarden json', () => {
     it('correctly keeps a reference to ignored items', () => {
         const [source] = sourceFiles;
         const payload = payloads[source];
-        expect(payload.ignored).not.toEqual([]);
-        expect(payload.ignored[0]).toEqual('[Identification] IdentityItem');
+        expect(payload.ignored).toEqual([]);
     });
 
     it('correctly parses b2b exports', () => {

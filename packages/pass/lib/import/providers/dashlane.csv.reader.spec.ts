@@ -247,8 +247,7 @@ describe('Import Dashlane CSV', () => {
 
     test('should correctly hydrate ignored and warnings arrays', async () => {
         const payload = await readCSVData('dashlane-personal-info.csv');
-        expect(payload.ignored.length).toEqual(1);
-        expect(payload.ignored[0]).toEqual('[Personal Info] Unnamed');
+        expect(payload.ignored.length).toEqual(0);
         expect(payload.warnings.length).toEqual(0);
     });
 });

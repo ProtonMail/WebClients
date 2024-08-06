@@ -44,6 +44,7 @@ export type DashlanePaymentItem = {
 };
 
 export type DashlanePersonalInfoItem = {
+    type: Maybe<string>;
     address: Maybe<string>;
     address_apartment: Maybe<string>;
     address_building: Maybe<string>;
@@ -65,7 +66,6 @@ export type DashlanePersonalInfoItem = {
     place_of_birth: Maybe<string>;
     state: Maybe<string>;
     title: Maybe<string>;
-    type: Maybe<string>;
     url: Maybe<string>;
     zip: Maybe<string>;
 };

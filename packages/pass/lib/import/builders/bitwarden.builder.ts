@@ -57,6 +57,6 @@ export const buildBitwardenIdentity = (item: BitwardenIdentityItem): ItemContent
 
     return Object.entries(item.identity).reduce((acc, [key, value]) => {
         const field = bitwardenDictionary[key];
-        return field ? { ...acc, [field]: value } : acc;
+        return field ? { ...acc, [field]: value ?? '' } : acc;
     }, emptyIdentity);
 };
