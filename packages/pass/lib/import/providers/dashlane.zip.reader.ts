@@ -1,5 +1,6 @@
 import jszip from 'jszip';
 
+import { buildDashlaneIdentity } from '@proton/pass/lib/import/builders/dashlane.builder';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
@@ -10,6 +11,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '../helpers/transformers';
@@ -77,6 +79,9 @@ export const processCreditCardItem = (item: DashlanePaymentItem): ItemImportInte
                 ? `${item.expiration_month.padStart(2, '0')}${item.expiration_year}`
                 : '',
     });
+
+export const processIdentityItem = (item: DashlanePersonalInfoItem | DashlaneIdItem): ItemImportIntent<'identity'> =>
+    importIdentityItem(buildDashlaneIdentity(item));
 
 const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
     data: Maybe<string>;

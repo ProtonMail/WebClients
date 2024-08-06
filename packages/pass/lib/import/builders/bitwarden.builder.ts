@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { IdentityFieldName } from '@proton/pass/hooks/identity/useIdentityForm';
 import {
     BitwardenCustomFieldType,
     type BitwardenIdentityItem,
@@ -8,7 +7,9 @@ import {
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { ItemContent, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 
-const bitwardenDictionary: { [key: string]: IdentityFieldName } = {
+import type { IdentityDictionary } from './builders.types';
+
+const bitwardenDictionary: IdentityDictionary = {
     firstName: 'firstName',
     middleName: 'middleName',
     lastName: 'lastName',
