@@ -1,5 +1,5 @@
 import type { ElementType, ForwardedRef, HTMLAttributes, MouseEventHandler, ReactNode, RefObject } from 'react';
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 
@@ -27,6 +27,7 @@ interface OwnProps<E extends ElementType> {
     dropdownClassName?: DropdownProps['className'];
     dropdownStyle?: DropdownProps['style'];
     dropdownSize?: DropdownProps['size'];
+    forceOpen?: boolean;
 }
 
 export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps<T>;
@@ -46,6 +47,7 @@ const SimpleDropdownBase = <E extends ElementType>(
         onToggle,
         as,
         dropdownSize,
+        forceOpen,
         ...rest
     }: Props<E>,
     ref: ForwardedRef<Element>
@@ -53,6 +55,12 @@ const SimpleDropdownBase = <E extends ElementType>(
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>(onToggle);
+
+    useEffect(() => {
+        if (forceOpen) {
+            toggle();
+        }
+    }, []);
 
     const handleClick: MouseEventHandler<E> = !!onClick
         ? (e) => {

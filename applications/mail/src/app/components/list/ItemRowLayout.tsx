@@ -191,7 +191,7 @@ const ItemRowLayout = ({
                         <span
                             className={clsx(
                                 'flex flex-1 flex-nowrap justify-end items-center',
-                                snoozeDropdownState && snoozedElement?.ID === element.ID && 'invisible'
+                                snoozeDropdownState === 'open' && snoozedElement?.ID === element.ID && 'invisible'
                             )}
                         >
                             <ItemDate
