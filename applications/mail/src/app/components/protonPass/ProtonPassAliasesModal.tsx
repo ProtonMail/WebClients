@@ -26,7 +26,7 @@ const ProtonPassAliasesModal = ({ ...rest }: Props) => {
     };
 
     return (
-        <ModalTwo {...rest} className="simple-login-modal">
+        <ModalTwo {...rest} className="pass-aliases-modal">
             <ModalTwoHeader title={c('Title').t`Hide your email with ${PASS_APP_NAME}`} />
             <ModalTwoContent>
                 <div className="text-center mb-4">

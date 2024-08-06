@@ -15,7 +15,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
-import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
+import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
 interface Props {
     labelID: string;
@@ -91,7 +91,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
 
     return showSimpleLoginPlaceholder ? (
         <div className="m-auto text-center p-7 max-w-full">
-            <SimpleLoginPlaceholder />
+            <ProtonPassPlaceholder />
         </div>
     ) : (
         <EmptyViewContainer imageProps={imageProps}>
@@ -99,10 +99,10 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                 {isSearch
                     ? c('Search - no results').t`No results found`
                     : isFolder
-                    ? c('Search - no results').t`No messages found`
-                    : isScheduled
-                    ? c('Search - no results').t`No messages scheduled`
-                    : c('Search - no results').t`No messages found`}
+                      ? c('Search - no results').t`No messages found`
+                      : isScheduled
+                        ? c('Search - no results').t`No messages scheduled`
+                        : c('Search - no results').t`No messages found`}
             </h3>
             <p>
                 {isSearch ? (
