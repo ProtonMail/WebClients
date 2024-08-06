@@ -160,7 +160,7 @@ const DocumentTitleDropdown = ({
         }}
         data-testid="document-name-dropdown"
       >
-        <MimeIcon name="proton-doc" size={5} className="mr-2" />
+        <MimeIcon name="proton-doc" size={5} className="mr-2 shrink-0" />
         <span className="text-ellipsis text-sm">{title}</span>
       </DropdownButton>
       <Dropdown
@@ -337,7 +337,7 @@ const DocumentTitleDropdown = ({
           <hr className="mt-1 min-h-px" />
 
           <div
-            className="color-weak px-4 py-2"
+            className="color-weak px-4 py-2 text-xs"
             style={{
               background: 'var(--primary-minor-2)',
             }}

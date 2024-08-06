@@ -10,6 +10,7 @@ import { getFontSizeForHeading } from './getFontSizeForHeading'
 import { getListItemNode } from './getListItemNode'
 import { getNodeTextAlignment } from './getNodeTextAlignment'
 import type { PDFDataNode } from '../PDFDataNode'
+import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 
 export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode => {
   const parent = node.getParent()
@@ -228,6 +229,16 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
           children,
         },
       ],
+    }
+  }
+
+  if ($isHorizontalRuleNode(node)) {
+    return {
+      type: 'View',
+      style: {
+        width: '100%',
+        borderBottom: '1px solid black',
+      },
     }
   }
 
