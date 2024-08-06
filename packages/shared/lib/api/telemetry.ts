@@ -169,7 +169,6 @@ export enum TelemetryCollapsibleLeftSidebarEvents {
 }
 
 export type TelemetryEvents =
-    | TelemetrySimpleLoginEvents
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
     | TelemetryCalendarEvents
