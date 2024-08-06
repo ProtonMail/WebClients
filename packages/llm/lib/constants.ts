@@ -10,7 +10,7 @@ export const IFRAME_COMMUNICATION_TIMEOUT = 30 * SECOND;
 
 export const GENERAL_STOP_STRINGS = ['</s>', '<|', '[INST]', '[/INST]', '\n\n\n'];
 export const STOP_STRINGS_WRITE_FULL_EMAIL = ['\n[Your Name]'];
-export const STOP_STRINGS_REFINE = ['</span>', '</div>'];
+export const STOP_STRINGS_REFINE = ['</span>', '</div>', '```'];
 
 export const FAILED_TO_DOWNLOAD = 'Failed to download:';
 export const CACHING_FAILED = 'Caching failed';
