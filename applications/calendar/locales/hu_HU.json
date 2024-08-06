@@ -447,10 +447,10 @@
       "Not now": [
         "Most nem"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3314,9 +3314,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Az ön számára lefoglalt tárhely: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Az előfizetést a Visionary vagy a Family csomag elsődleges adminisztrátora fizeti."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "A Visionary és a Family csomagok jelenleg nem támogatnak külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet mielőtt csatlakozna. ${ addressSettingsLink }"
       ],
@@ -3331,9 +3328,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Meghívást kapott a következőhöz: ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Sikeresen csatlakozott a Family csomaghoz"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a csoporthoz és együtt használhassák a ${ BRAND_NAME_TWO } prémium lehetőségeit."
@@ -3807,6 +3801,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
       ],
@@ -4094,6 +4091,9 @@
       "Discover ProtectBuy logo": [
         "Fedezze fel a ProtectBuy-t logó"
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Nem lát semmit? Ne felejtse el engedélyezni a felugró ablakokat."
+      ],
       "Downgrade": [
         "Kisebb csomagra váltás"
       ],
@@ -4279,6 +4279,9 @@
       "MM/YY": [
         "HH/ÉÉ"
       ],
+      "Monitor accounts": [
+        "Fiókok megfigyelése"
+      ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
@@ -4335,6 +4338,12 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "A PGP/MIME automatikusan a szerkesztőablak módja szerinti formátumban küldi az üzenetet."
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Kérjük, hitelesítse a kártyáját az ellenőrző lapon."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Kérjük, hitelesítse a befizetését az ellenőrző lapon."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -4466,6 +4475,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végponttól-végpontig titkosítást."
       ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Az ellenőrzés egy új böngészőlapot nyit meg. Kérjük, kapcsolja ki a felugró ablakok letiltását."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
       ],
@@ -4546,6 +4558,9 @@
       ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "A befizetési módot hitelesítenünk kell a bankjánál."
       ],
       "We need to authenticate your payment with your bank.": [
         "A befizetését hitelesítenünk kell a bankjánál."
@@ -5259,6 +5274,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "VAT": [
+        "ÁFA"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -6044,8 +6062,8 @@
         "Felhasználói tárhely kezelés"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "Archívum megosztás (${ n } személyig).",
-        "Archívum megosztás (${ n } személyig)."
+        "Tároló megosztás (${ n } személyig)",
+        "Tároló megosztás (${ n } személyig)"
       ]
     },
     "new_plans: feature info": {
@@ -7468,6 +7486,9 @@
       "6 users": [
         "6 felhasználó"
       ],
+      "All you need for your business": [
+        "Minden, amire az üzlethez szüksége van"
+      ],
       "Calendar sharing": [
         "Naptár megosztás"
       ],
@@ -8113,6 +8134,9 @@
       ],
       "Recommended": [
         "Javasolt"
+      ],
+      "Recommended actions": [
+        "Javasolt műveletek"
       ],
       "Reconnect your account": [
         "Újracsatlakozás a fiókhoz"
