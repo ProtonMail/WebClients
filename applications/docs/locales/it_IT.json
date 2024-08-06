@@ -402,6 +402,9 @@
       "Pay ${ price } now": [
         "Paga ${ price } adesso"
       ],
+      "PDF (.pdf)": [
+        "PDF (.pdf)"
+      ],
       "Plain Text (.txt)": [
         "Testo semplice (.txt)"
       ],
@@ -2766,9 +2769,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Gli alias non possono essere usati quando è abilitata la password aggiuntiva in ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "App attualmente non disponibile"
       ],
@@ -2792,6 +2792,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quando è abilitata la password aggiuntiva, la gestione degli alias può essere effettuata solo in ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -2921,8 +2924,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Spazio di archivazione assegnato a te: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Il costo dell'abbonamento è addebitato all'amministratore principale del piano Visionary o del piano famiglia."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "I piani Visionary e i piani famiglia attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
@@ -2939,8 +2942,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Hai ricevuto un invito a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Hai aderito al piano Family"
+      "You have successfully joined the family group": [
+        "Ti sei unito al gruppo famiglia"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano collettivo, per beneficiare insieme di tutte le funzioni premium di ${ BRAND_NAME_TWO }."
@@ -5463,6 +5466,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Inizia con 1$"
+      ],
+      "Get started for 1 €": [
+        "Inizia con 1€"
+      ],
+      "Get started for CHF 1": [
+        "Inizia con 1 CHF"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ]
@@ -5968,6 +5980,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email sicura con funzioni avanzate per le tue comunicazioni quotidiane."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Proteggi la tua vita digitale con ${ BRAND_NAME } per due persone."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluzioni su misura per organizzazioni più grandi con esigenze di sicurezza specifiche"
       ],
@@ -6007,8 +6022,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteggi la tua agenda con la crittografia end-to-end. Include il supporto per i calendari personalizzati, la condivisione dei calendari e molto altro."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la cronologia delle versioni, la condivisione dei file crittografata e molto altro."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione dei file crittografata e molto altro."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteggi le tue email con la crittografia end-to-end. Include il supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati e molto altro."
