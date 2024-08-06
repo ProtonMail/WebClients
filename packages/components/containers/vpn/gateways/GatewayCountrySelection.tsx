@@ -1,15 +1,15 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Field, Icon, Label, Option, Row, SelectTwo } from '@proton/components/components';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { vpnEnterpriseContactUrl } from '@proton/components/containers/payments/subscription/helpers';
-import { getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 
+import { Field, Icon, Label, Option, Row, SelectTwo } from '../../../components';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { ButtonNumberInput } from './ButtonNumberInput';
+import { CountryFlagAndName } from './CountryFlagAndName';
 import type { GatewayDto } from './GatewayDto';
-import { getCountryFlagAndName } from './getCountryFlagAndName';
 
 interface Props {
     singleServer: boolean;
@@ -17,7 +17,7 @@ interface Props {
     ownedCount: number;
     usedCount: number;
     addedCount: number;
-    language: string | readonly string[];
+    countryOptions: CountryOptions;
     onUpsell: () => void;
     specificCountryCount: number;
     loading?: boolean;
@@ -32,7 +32,7 @@ export const GatewayCountrySelection = ({
     ownedCount,
     usedCount,
     addedCount,
-    language,
+    countryOptions,
     onUpsell,
     loading = false,
     needUpsell,
@@ -52,17 +52,14 @@ export const GatewayCountrySelection = ({
             <Label htmlFor="domain">{c('Label').t`Country`}</Label>
             <Field>
                 <SelectTwo value={model.country} onChange={handleCountryChange}>
-                    {countries.map((country) => (
-                        <Option
-                            key={country}
-                            value={country}
-                            title={getLocalizedCountryByAbbr(country, language) || country}
-                        >
-                            {getCountryFlagAndName(language, country, undefined, {
-                                key: country + '-country-option-image',
-                            })}
-                        </Option>
-                    ))}
+                    {countries.map((country) => {
+                        const title = getLocalizedCountryByAbbr(country, countryOptions) || country;
+                        return (
+                            <Option key={country} value={country} title={title}>
+                                <CountryFlagAndName countryCode={country} countryName={title} />
+                            </Option>
+                        );
+                    })}
                 </SelectTwo>
             </Field>
         </Row>
@@ -75,40 +72,42 @@ export const GatewayCountrySelection = ({
                     availableCount
                 )}
             </p>
-            {countries.map((country) => (
-                <div key={'country-' + country} className="flex *:min-size-auto md:flex-nowrap items-center mb-4">
-                    <Label htmlFor={'country-number-' + country} className="flex-1">
-                        {getCountryFlagAndName(language, country, undefined, {
-                            key: country + '-country-label-image',
-                        })}
-                    </Label>
-                    <ButtonNumberInput
-                        id={'country-number-' + country}
-                        value={model.quantities?.[country] || 0}
-                        min={0}
-                        max={99}
-                        disabled={loading}
-                        onChange={(newQuantity) => {
-                            const quantities = {
-                                ...model.quantities,
-                                [country]: newQuantity,
-                            };
-                            const mainCountry = Object.keys(quantities).reduce(
-                                (previous, country) =>
-                                    (quantities[country] || 0) > (quantities[previous] || 0) ? country : previous,
-                                'US'
-                            );
+            {countries.map((country) => {
+                const title = getLocalizedCountryByAbbr(country, countryOptions);
+                const id = `country-number-${country}`;
+                return (
+                    <div key={id} className="flex *:min-size-auto md:flex-nowrap items-center mb-4">
+                        <Label htmlFor={id} className="flex-1">
+                            <CountryFlagAndName countryCode={country} countryName={title} />
+                        </Label>
+                        <ButtonNumberInput
+                            id={id}
+                            value={model.quantities?.[country] || 0}
+                            min={0}
+                            max={99}
+                            disabled={loading}
+                            onChange={(newQuantity) => {
+                                const quantities = {
+                                    ...model.quantities,
+                                    [country]: newQuantity,
+                                };
+                                const mainCountry = Object.keys(quantities).reduce(
+                                    (previous, country) =>
+                                        (quantities[country] || 0) > (quantities[previous] || 0) ? country : previous,
+                                    'US'
+                                );
 
-                            if (mainCountry !== model.country) {
-                                changeModel({ country: mainCountry });
-                            }
+                                if (mainCountry !== model.country) {
+                                    changeModel({ country: mainCountry });
+                                }
 
-                            changeModel({ quantities });
-                        }}
-                        step={1}
-                    />
-                </div>
-            ))}
+                                changeModel({ quantities });
+                            }}
+                            step={1}
+                        />
+                    </div>
+                );
+            })}
             <Row>
                 {c('Info').t`Want servers in other countries?`}
                 <a href={vpnEnterpriseContactUrl} className="ml-1">{c('Link').t`Contact us`}</a>

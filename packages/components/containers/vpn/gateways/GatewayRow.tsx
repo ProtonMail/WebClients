@@ -4,13 +4,14 @@ import { Copy, TableRow } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
+import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
+import { CountryFlagAndName } from './CountryFlagAndName';
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';
 import GatewayManageButton from './GatewayManageButton';
 import type { GatewayServer } from './GatewayServer';
 import type { GatewayUser } from './GatewayUser';
-import { getCountryFlagAndName } from './getCountryFlagAndName';
-import { getFormattedLoad, getMembers, getSuffix } from './helpers';
+import { getFormattedLoad, getMembers } from './helpers';
 
 interface Props {
     isAdmin: boolean;
@@ -21,7 +22,7 @@ interface Props {
     gateway: Gateway;
     isDeleted: (logical: GatewayLogical) => boolean;
     users: readonly GatewayUser[];
-    language: string | readonly string[];
+    countryOptions: CountryOptions;
     provisioningDuration: string;
     deletingLogicals: readonly string[];
     deletedLogicals: Record<string, boolean>;
@@ -40,7 +41,7 @@ export const GatewayRow = ({
     gateway,
     isDeleted,
     users,
-    language,
+    countryOptions,
     provisioningDuration,
     renameGateway,
     editGatewayServers,
@@ -99,27 +100,31 @@ export const GatewayRow = ({
                 <span className={clsx(['py-1 px-2 rounded text-uppercase', statusClasses])}>{statusText}</span>,
                 <div>
                     {provisionedLogicals.length < 1 && !hasPendingServers && '0'}
-                    {provisionedLogicals.map((logical) => (
-                        <div key={'logical-' + logical.ID}>
-                            <span className="text-nowrap bg-weak py-1 px-2 rounded">
-                                {getCountryFlagAndName(language, logical.ExitCountry, getSuffix(logical.Name), {
-                                    className: 'mb-1',
-                                    key: 'country-logical-' + logical.ID + '-' + logical.ExitCountry,
-                                })}
-                                <span className="color-weak">&nbsp; • &nbsp;</span>
-                                {getIpsCell(logical.Servers)}
-                                <Copy
-                                    value={logical.Servers[0].ExitIPv4}
-                                    shape="ghost"
-                                    onCopy={() => {
-                                        createNotification({
-                                            text: c('Notification').t`IP Address copied to clipboard`,
-                                        });
-                                    }}
-                                />
-                            </span>
-                        </div>
-                    ))}
+                    {provisionedLogicals.map((logical) => {
+                        const title = getLocalizedCountryByAbbr(logical.ExitCountry, countryOptions);
+                        return (
+                            <div key={'logical-' + logical.ID}>
+                                <span className="text-nowrap bg-weak py-1 px-2 rounded">
+                                    <CountryFlagAndName
+                                        countryCode={logical.ExitCountry}
+                                        countryName={title}
+                                        className="mb-1"
+                                    />
+                                    <span className="color-weak">&nbsp; • &nbsp;</span>
+                                    {getIpsCell(logical.Servers)}
+                                    <Copy
+                                        value={logical.Servers[0].ExitIPv4}
+                                        shape="ghost"
+                                        onCopy={() => {
+                                            createNotification({
+                                                text: c('Notification').t`IP Address copied to clipboard`,
+                                            });
+                                        }}
+                                    />
+                                </span>
+                            </div>
+                        );
+                    })}
                     {hasPendingServers && (
                         <div className="color-weak">
                             {c('Info').ngettext(
