@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Vr } from '@proton/atoms';
 import type { EditorMetadata } from '@proton/components';
 import {
     FeatureCode,
@@ -66,8 +66,8 @@ interface Props {
     showAssistantButton: boolean;
     onToggleAssistant: () => void;
     isInert: boolean;
-    onToggleToobar: () => void;
-    toolbarWrapperRef: MutableRefObject<HTMLDivElement | null>;
+    onToggleToolbar: () => void;
+    displayToolbar: boolean;
 }
 
 const ComposerActions = ({
@@ -95,8 +95,8 @@ const ComposerActions = ({
     showAssistantButton,
     onToggleAssistant,
     isInert,
-    onToggleToobar,
-    toolbarWrapperRef,
+    onToggleToolbar,
+    displayToolbar,
 }: Props) => {
     const dispatch = useMailDispatch();
 
@@ -229,19 +229,6 @@ const ComposerActions = ({
 
                 <div className="flex flex-1">
                     <div className="flex">
-                        <Tooltip
-                            title={
-                                // TODO: which translation ? / Which icon ? / Which icon title ? / Which open/close state ?
-                                c('Action').t`Display toolbar`
-                            }
-                        >
-                            <div className="relative">
-                                <div className="absolute" style={{ bottom: '100%' }} ref={toolbarWrapperRef} />
-                                <Button onClick={onToggleToobar}>
-                                    <Icon name="palette" alt={c('Action').t`Display toolbar`} />
-                                </Button>
-                            </div>
-                        </Tooltip>
                         <Tooltip title={titleDeleteDraft}>
                             <Button
                                 icon
@@ -272,6 +259,7 @@ const ComposerActions = ({
                         </Tooltip>
                         {showAssistantButton && (
                             <>
+                                <Vr aria-hidden="true" />
                                 <Tooltip title={assistantTooltipText}>
                                     <div>
                                         <ComposerAssistantSpotlight {...assistantSpotlight}>
@@ -295,6 +283,21 @@ const ComposerActions = ({
                                 </Tooltip>
                             </>
                         )}
+                        <Tooltip title={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}>
+                            <div className="relative">
+                                <Button
+                                    icon
+                                    disabled={disabled}
+                                    onClick={onToggleToolbar}
+                                    shape="ghost"
+                                    data-testid="composer:show-toolbar-button"
+                                    className="flex sm:mx-2"
+                                >
+                                    <Icon name="text-underline" alt={c('Action').t`Display toolbar`} />
+                                </Button>
+                            </div>
+                        </Tooltip>
+                        {showAssistantButton && <Vr aria-hidden="true" />}
                         <ComposerMoreActions
                             isExpiration={isExpiration}
                             message={message}
