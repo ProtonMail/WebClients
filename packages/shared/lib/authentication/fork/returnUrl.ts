@@ -8,7 +8,8 @@ const key = 'returnUrl';
 
 export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
     try {
-        const url = searchParams.get(key) || '';
+        // Must be encoded to support params in itself
+        const url = decodeURIComponent(searchParams.get(key) || '');
         if (!url.startsWith('/')) {
             return;
         }
