@@ -16,7 +16,9 @@ export type AliasState = {
     aliasDetails: { [aliasEmail: string]: AliasMailbox[] };
 };
 
-const reducer: Reducer<AliasState> = (state = { aliasOptions: null, aliasDetails: {} }, action) => {
+const getInitialState = (): AliasState => ({ aliasOptions: null, aliasDetails: {} });
+
+const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
     if (getAliasOptionsSuccess.match(action)) {
         return merge(state, { aliasOptions: { ...action.payload.options } });
     }
