@@ -79,7 +79,13 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 />
                 {canLock && (
                     <DropdownMenuButton
-                        onClick={() => authService.lock(lockMode, { broadcast: true, soft: false })}
+                        onClick={() =>
+                            authService.lock(lockMode, {
+                                broadcast: true,
+                                soft: false,
+                                userInitiated: true,
+                            })
+                        }
                         label={c('Action').t`Lock ${PASS_APP_NAME}`}
                         icon="lock"
                         parentClassName="mx-3"

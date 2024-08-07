@@ -7,6 +7,7 @@ export enum PassEncryptionTag {
     ItemKey = 'itemkey',
     VaultContent = 'vaultcontent',
     LinkKey = 'linkkey',
+    BiometricOfflineKD = 'biometricofflinekd',
 }
 
 export enum PassSignatureContext {

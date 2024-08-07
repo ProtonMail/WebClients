@@ -1,6 +1,5 @@
+import '@proton/pass/globals.d';
 import type { Maybe } from '@proton/pass/types';
-
-export * from '@proton/pass/globals.d';
 
 export type ExportFunction = (fn: Function, target: any, options: { defineAs: string }) => void;
 export type CloneInto = <T>(obj: T, target: any, options: { cloneFunctions?: boolean; wrapReflectors?: boolean }) => T;

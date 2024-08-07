@@ -6,24 +6,32 @@ import { c } from 'ttag';
 import { RadioGroup, useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
-import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
+import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL, selectUserSettings } from '@proton/pass/store/selectors';
+import { selectLockMode, selectLockTTL, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { SettingsPanel } from './SettingsPanel';
 
 export const LockSettings: FC = () => {
+    const { getBiometricsKey } = usePassCore();
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
     const authStore = useAuthStore();
@@ -32,11 +40,16 @@ export const LockSettings: FC = () => {
 
     const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const lockTTL = useSelector(selectLockTTL);
-    const lockMode = useSelector(selectLockMode);
+    const currentLockMode = useSelector(selectLockMode);
     const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
     const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
-    const canToggleTTL = lockMode !== LockMode.NONE;
+    const canToggleTTL = currentLockMode !== LockMode.NONE;
+    const biometricsRolledOut = useFeatureFlag(PassFeature.PassDesktopBiometrics);
+    const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
+    const plan = useSelector(selectPassPlan);
+    const onFreePlan = !isPaidPlan(plan);
+    const spotlight = useSpotlight();
 
     /** When switching locks, the next lock might temporarily
      * be set to `LockMode.NONE` before updating to the new lock.
@@ -54,26 +67,47 @@ export const LockSettings: FC = () => {
     });
 
     const handleLockModeSwitch = async (mode: LockMode) => {
+        if (onFreePlan && mode === LockMode.BIOMETRICS) {
+            return spotlight.setUpselling({
+                type: 'pass-plus',
+                upsellRef: UpsellRef.PASS_BIOMETRICS,
+            });
+        }
+
         const ttl = lockTTL ?? DEFAULT_LOCK_TTL;
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
         const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
-            switch (lockMode) {
+            switch (currentLockMode) {
                 case LockMode.SESSION:
                     return confirmPin({
                         title: c('Title').t`Confirm PIN code`,
                         assistiveText: c('Info')
                             .t`Please confirm your PIN code in order to unregister your current lock.`,
                         onSubmit: async (secret) => {
-                            await unlock({ mode: lockMode, secret });
+                            await unlock({ mode: currentLockMode, secret });
                             resolve({ secret });
                         },
                     });
+
+                case LockMode.BIOMETRICS: {
+                    /** Confirm the biometric key before proceeding */
+                    const secret = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
+                    return unlock({ mode: currentLockMode, secret })
+                        .then(() => resolve({ secret }))
+                        .catch(() => resolve(undefined));
+                }
+
                 case LockMode.PASSWORD:
                     return confirmPassword({
-                        message: c('Info').t`Please confirm your password in order to unregister your current lock.`,
+                        message:
+                            /** If the next mode is `BIOMETRIC` then we'll feed the result of this
+                             *  first unlock call to the `BIOMETRIC` lock creation */
+                            mode === LockMode.BIOMETRICS
+                                ? c('Info').t`Please confirm your password in order to auto-lock with biometrics.`
+                                : c('Info').t`Please confirm your password in order to unregister your current lock.`,
                         onSubmit: async (secret) => {
-                            await unlock({ mode: lockMode, secret });
+                            await unlock({ mode: currentLockMode, secret });
                             resolve({ secret });
                         },
                     });
@@ -107,22 +141,38 @@ export const LockSettings: FC = () => {
                     message: c('Info').t`Please confirm your password in order to auto-lock with your password.`,
                 });
 
+            case LockMode.BIOMETRICS: {
+                if (currentLockMode === LockMode.PASSWORD) {
+                    /** if unregistered password lock then we have the secret already */
+                    return createLock.dispatch({ mode, secret: current?.secret ?? '', ttl });
+                }
+
+                /* else prompt for password */
+                return confirmPassword({
+                    onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
+                    message: c('Info').t`Please confirm your password in order to auto-lock with biometrics.`,
+                });
+            }
+
             case LockMode.NONE:
                 return createLock.dispatch({ mode, secret: '', ttl, current });
         }
     };
 
     const handleLockTTLChange = async (ttl: number) => {
-        switch (lockMode) {
+        switch (currentLockMode) {
             case LockMode.SESSION:
                 return confirmPin({
-                    onSubmit: (secret) => createLock.dispatch({ mode: lockMode, secret, ttl, current: { secret } }),
+                    onSubmit: (secret) =>
+                        createLock.dispatch({ mode: currentLockMode, secret, ttl, current: { secret } }),
                     title: c('Title').t`Auto-lock update`,
                     assistiveText: c('Info').t`Please confirm your PIN code to edit this setting.`,
                 });
+
             case LockMode.PASSWORD:
+            case LockMode.BIOMETRICS:
                 return confirmPassword({
-                    onSubmit: (secret) => createLock.dispatch({ mode: lockMode, secret, ttl }),
+                    onSubmit: (secret) => createLock.dispatch({ mode: currentLockMode, secret, ttl }),
                     message: c('Info').t`Please confirm your password in order to update the auto-lock time.`,
                 });
         }
@@ -143,12 +193,20 @@ export const LockSettings: FC = () => {
         return () => window.removeEventListener('beforeunload', onBeforeUnload);
     }, [createLock.loading]);
 
+    useEffect(() => {
+        (async () => {
+            if (!DESKTOP_BUILD || currentLockMode === LockMode.BIOMETRICS) return;
+            const canCheckPresence = (await window.ctxBridge?.canCheckPresence?.()) ?? false;
+            setBiometricsEnabled(canCheckPresence && biometricsRolledOut);
+        })().catch(noop);
+    }, [currentLockMode, biometricsRolledOut]);
+
     return (
-        <SettingsPanel title={c('Label').t`Session locking`}>
+        <SettingsPanel title={c('Label').t`Unlock with`}>
             <RadioGroup<LockMode>
                 name="lock-mode"
                 onChange={handleLockModeSwitch}
-                value={nextLock?.mode ?? lockMode}
+                value={nextLock?.mode ?? currentLockMode}
                 className={clsx('flex-nowrap gap-3', !online && 'opacity-70 pointer-events-none')}
                 disableChange={!online || createLock.loading}
                 options={[
@@ -183,6 +241,30 @@ export const LockSettings: FC = () => {
                                       </span>
                                   ),
                                   value: LockMode.PASSWORD,
+                              },
+                          ]
+                        : []),
+
+                    ...(DESKTOP_BUILD && canPasswordLock && biometricsRolledOut
+                        ? [
+                              {
+                                  label: (
+                                      <span className="flex w-full justify-space-between items-center">
+                                          <span className="block">
+                                              {c('Label').t`Biometrics`}
+                                              <span className="block color-weak text-sm">
+                                                  {biometricsEnabled
+                                                      ? c('Info')
+                                                            .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`
+                                                      : c('Info')
+                                                            .t`This option is currently not available on your device.`}
+                                              </span>
+                                          </span>
+                                          {onFreePlan && <PassPlusPromotionButton className="button-xs" />}
+                                      </span>
+                                  ),
+                                  disabled: !biometricsEnabled,
+                                  value: LockMode.BIOMETRICS,
                               },
                           ]
                         : []),
