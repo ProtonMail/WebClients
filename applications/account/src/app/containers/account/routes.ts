@@ -278,7 +278,7 @@ export const getAccountAppRoutes = ({
                         available: !isSSOUser,
                     },
                     {
-                        text: c('Title').t`Security logs`,
+                        text: c('Title').t`Security events`,
                         id: 'logs',
                         available: !isSSOUser,
                     },
