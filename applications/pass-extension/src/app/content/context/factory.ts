@@ -72,7 +72,7 @@ export const createContentScriptContext = (options: {
 
             return {
                 Autofill: autofill.inject && !hasCriteria(mask, 'Autofill'),
-                Autofill2FA: !hasCriteria(mask, 'Autofill2FA'),
+                Autofill2FA: autofill.twofa && !hasCriteria(mask, 'Autofill2FA'),
                 AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
                 AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
                 Autosave: autosave.prompt && !hasCriteria(mask, 'Autosave'),
