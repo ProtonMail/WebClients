@@ -50,6 +50,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         domainData,
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
+        selectedGroup,
     } = groupsManagement;
 
     const { resetForm, dirty, values: formValues, setFieldValue } = form;
@@ -259,7 +260,12 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                             );
                         })}
                     </div>
-                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} edit />
+                    <GroupMemberList
+                        groupMembers={groupMembers}
+                        loading={loadingGroupMembers}
+                        group={selectedGroup}
+                        edit
+                    />
                 </div>
             </Panel>
         </>
