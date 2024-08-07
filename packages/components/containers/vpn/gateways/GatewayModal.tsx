@@ -13,6 +13,7 @@ import {
     useFormErrors,
 } from '@proton/components/components';
 
+import type { CountryOptions } from '../../../helpers/countries';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
 import type { GatewayDto } from './GatewayDto';
 import type { GatewayModel } from './GatewayModel';
@@ -29,7 +30,7 @@ interface Props extends ModalProps<typeof Form> {
     ownedCount: number;
     usedCount: number;
     users: readonly GatewayUser[];
-    language: string | readonly string[];
+    countryOptions: CountryOptions;
     isEditing?: boolean;
     singleServer?: boolean;
     showCancelButton?: boolean;
@@ -49,7 +50,7 @@ const GatewayModal = ({
     ownedCount,
     usedCount,
     users,
-    language,
+    countryOptions,
     onSubmitDone,
     onUpsell,
     isEditing = false,
@@ -173,7 +174,7 @@ const GatewayModal = ({
                         addedCount={addedCount}
                         needUpsell={needUpsell}
                         specificCountryCount={specificCountryCount}
-                        language={language}
+                        countryOptions={countryOptions}
                         onUpsell={() => {
                             rest.onClose?.();
                             onUpsell();
