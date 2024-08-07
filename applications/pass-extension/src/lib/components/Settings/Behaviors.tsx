@@ -69,6 +69,12 @@ const getSettings =
                         hidden: !identityEnabled,
                         onChange: (checked) => onSettingsUpdate({ autofill: { identity: checked } }),
                     },
+                    {
+                        label: c('Label').t`2FA autofill`,
+                        description: c('Info').t`Quickly autofill your 2FA tokens.`,
+                        checked: settings.autofill.twofa,
+                        onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
+                    },
                 ],
             },
             {
