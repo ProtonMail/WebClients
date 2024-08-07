@@ -16,6 +16,7 @@ import SettingsSectionWide from '../../../containers/account/SettingsSectionWide
 import { EmptyViewContainer } from '../../../containers/app';
 import PromotionBanner from '../../../containers/banner/PromotionBanner';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../containers/payments';
+import { getCountryOptions } from '../../../helpers/countries';
 import { useApi, useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';
@@ -133,6 +134,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const isAdmin = user.isAdmin && !user.isSubUser;
 
+    const countryOptions = getCountryOptions(userSettings);
+
     if (organization.PlanName !== PLANS.VPN_BUSINESS) {
         const boldDedicatedServers = (
             <b key="bold-dedicated-servers">{
@@ -206,7 +209,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         );
     }, 0);
     const canAdd = ipAddresses > ipCount;
-    const language = userSettings.Locale || navigator.languages;
 
     const createServersSequentially = async (
         data: GatewayModel,
@@ -302,13 +304,13 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const addGateway = () =>
         showCreateModal({
+            countryOptions,
             showCancelButton,
             countries,
             deletedInCountries,
             ownedCount: ipAddresses,
             usedCount: ipCount,
             users,
-            language,
             onSubmitDone: async (data: GatewayModel) => {
                 const gateway = await buildGateway(data);
 
@@ -328,7 +330,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const editGatewayServers = (gateway: Gateway) => () =>
         showServersModal({
-            language,
+            countryOptions,
             showCancelButton,
             gateway,
             countries,
@@ -561,7 +563,8 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <TableBody colSpan={3 + (isAdmin ? 2 : 0)}>
                             {sortedList.map((gateway) => (
                                 <GatewayRow
-                                    key={'gateway-' + gateway.Name}
+                                    countryOptions={countryOptions}
+                                    key={`gateway-${gateway.Name}`}
                                     isAdmin={isAdmin}
                                     showDeleted={Deleted}
                                     showIPv4={IPv4}
@@ -570,7 +573,6 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                     gateway={gateway}
                                     isDeleted={isDeleted}
                                     users={users ?? []}
-                                    language={language}
                                     provisioningDuration={provisioningDuration}
                                     renameGateway={renameGateway}
                                     editGatewayServers={editGatewayServers}

@@ -57,7 +57,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
                         size="small"
                         pill
                         color="norm"
-                        path={`/dashboard?plan=${PLANS.VPN}&cycle=1`}
+                        path={`/dashboard?plan=${PLANS.VPN2024}&cycle=1`}
                         onClick={handleClose}
                     >
                         {c('Live Chat Modal').t`Upgrade subscription`}
