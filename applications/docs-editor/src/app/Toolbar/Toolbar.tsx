@@ -789,7 +789,7 @@ export default function DocumentEditorToolbar({
         </SimpleDropdown>
         <ToolbarSeparator />
         <ToolbarTooltip
-          originalPlacement="right"
+          originalPlacement="bottom"
           title={
             <ShortcutLabelContainer>
               <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
