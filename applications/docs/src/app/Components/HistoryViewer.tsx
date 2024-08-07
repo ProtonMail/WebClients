@@ -68,7 +68,7 @@ function HistoryViewerModalContent({
   }
 
   return (
-    <div className="grid h-full grid-cols-[2fr,_minmax(20%,_auto)]">
+    <div className="grid h-full grid-cols-[2fr,_minmax(18.75rem,_auto)]">
       <div className="flex flex-col">
         <div className="flex items-center gap-3 px-3 py-2.5">
           <Icon name="clock-rotate-left" size={5} />
@@ -82,7 +82,7 @@ function HistoryViewerModalContent({
           <EditorFrame key={selectedBatchTimestamp + `${Math.random()}`} isViewOnly onFrameReady={onFrameReady} />
         </div>
       </div>
-      <div className="w-[18.75rem] overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">
+      <div className="overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">
         <div className="sticky top-0 flex items-center justify-between gap-2 bg-[--optional-background-lowered] px-3.5 py-1.5">
           <div className="text-bold text-base">Document History</div>
           <Tooltip title={c('Action').t`Close`}>
