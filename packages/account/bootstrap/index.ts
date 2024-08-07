@@ -70,24 +70,16 @@ class InvalidSessionError extends Error {
 }
 
 export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof consumeFork>[0], 'api' | 'mode'>) => {
-    const hashParams = new URLSearchParams(window.location.hash.slice(1));
-    const { state, selector, key, persistent, trusted, payloadVersion } = getConsumeForkParameters(hashParams);
-    if (!state && !selector && !key) {
-        return null;
-    }
-    if (!state || !selector || !key) {
-        return null;
-    }
     try {
+        const hashParams = new URLSearchParams(window.location.hash.slice(1));
+        const parameters = getConsumeForkParameters(hashParams);
+        if (!parameters) {
+            return null;
+        }
         return await consumeFork({
-            selector,
             api,
-            state,
-            key,
-            persistent,
-            trusted,
-            payloadVersion,
             mode,
+            parameters,
         });
     } catch (e: any) {
         removeHashParameters();
