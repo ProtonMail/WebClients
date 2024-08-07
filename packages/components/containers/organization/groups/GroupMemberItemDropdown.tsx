@@ -4,14 +4,26 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useApi } from '@proton/components';
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components/components';
-import { resendGroupInvitation, deleteGroupMember as revokeGroupInvitation } from '@proton/shared/lib/api/groups';
-import type { GroupMember } from '@proton/shared/lib/interfaces';
-import { GroupMemberPermissions } from '@proton/shared/lib/interfaces';
+import {
+    Dropdown,
+    DropdownMenu,
+    DropdownMenuButton,
+    DropdownSizeUnit,
+    Icon,
+    usePopperAnchor,
+} from '@proton/components/components';
+import {
+    resendGroupInvitation,
+    deleteGroupMember as revokeGroupInvitation,
+    updateGroupMember,
+} from '@proton/shared/lib/api/groups';
+import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
 
 interface PermissionOption {
     label: string;
-    value: GroupMemberPermissions;
+    value: GROUP_MEMBER_PERMISSIONS;
 }
 
 const Option = ({
@@ -21,7 +33,7 @@ const Option = ({
 }: {
     option: PermissionOption;
     isSelected?: boolean;
-    onSelect: (value: GroupMemberPermissions) => void;
+    onSelect: (value: GROUP_MEMBER_PERMISSIONS) => void;
 }) => {
     return (
         <DropdownMenuButton
@@ -37,27 +49,42 @@ const Option = ({
 
 interface Props {
     member: GroupMember;
+    group: Group; // needs to be removed once backend doesn't need Group.ID
 }
 
-const GroupMemberItemDropdown = ({ member }: Props) => {
+const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [selectedPermission, setSelectedPermission] = useState(GroupMemberPermissions.CanSend);
+    const [selectedPermission, setSelectedPermission] = useState(member.Permissions);
     const api = useApi();
 
     const memberPermissionOptions: PermissionOption[] = [
         {
-            label: c('Action').t`Can send to this group`,
-            value: GroupMemberPermissions.CanSend,
+            label: c('Action').t`Always allow sending mail to group`,
+            value: GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions,
         },
-        { label: c('Action').t`Can't send to this group`, value: GroupMemberPermissions.CantSend },
+        { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
     ];
 
     const handleResentInvitation = () => {
-        api(resendGroupInvitation(member.ID));
+        void api(resendGroupInvitation(member.ID));
     };
 
     const handleRevokeInvitation = () => {
-        api(revokeGroupInvitation(member.ID));
+        void api(revokeGroupInvitation(member.ID));
+    };
+
+    const handleOverrideGroupPermissions = (value: number) => {
+        setSelectedPermission(value);
+        const newPermissions = setBit(
+            clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions),
+            value
+        );
+        void api(
+            updateGroupMember(member.ID, {
+                GroupID: group.ID,
+                Permissions: newPermissions,
+            })
+        );
     };
 
     return (
@@ -75,16 +102,20 @@ const GroupMemberItemDropdown = ({ member }: Props) => {
             >
                 <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
             </Button>
-            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
+            <Dropdown
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                originalPlacement="bottom-start"
+                size={{ width: DropdownSizeUnit.Dynamic, maxWidth: DropdownSizeUnit.Viewport }}
+            >
                 <DropdownMenu>
                     {memberPermissionOptions.map((option) => (
                         <Option
                             key={option.value}
                             option={option}
                             isSelected={option.value === selectedPermission}
-                            onSelect={(value) => {
-                                setSelectedPermission(value);
-                            }}
+                            onSelect={handleOverrideGroupPermissions}
                         />
                     ))}
                     <hr className="mt-2" />
