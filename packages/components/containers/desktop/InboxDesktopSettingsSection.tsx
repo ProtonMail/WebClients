@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Pill } from '@proton/atoms/Pill';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
+import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -13,7 +14,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IconName } from '../../components';
 import { Icon, Option, SelectTwo } from '../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-import type { DesktopVersion } from './useInboxDesktopVersion';
 import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 interface DownloadSectionProps extends PropsWithChildren {

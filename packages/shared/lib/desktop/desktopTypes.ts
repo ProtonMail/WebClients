@@ -1,7 +1,7 @@
-import type { DesktopVersion } from '@proton/components/containers/desktop/useInboxDesktopVersion';
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ThemeSetting } from '../themes/themes';
+import type { DesktopVersion } from './DesktopVersion';
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {

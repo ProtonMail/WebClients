@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import { semver } from '@proton/pass/utils/string/semver';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import {
     electronAppVersion,
@@ -15,7 +16,6 @@ import {
 
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
-import type { DesktopVersion } from './useInboxDesktopVersion';
 import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 /**
