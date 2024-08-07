@@ -51,7 +51,7 @@ export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
  * sequence  (ie: if the user has been logged out) */
 export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 
-export const INITIAL_SETTINGS: ProxiedSettings = {
+export const getInitialSettings = (): ProxiedSettings => ({
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true, passwordSuggest: true },
     autosuggest: { password: true, email: true, passwordCopy: false },
@@ -59,16 +59,16 @@ export const INITIAL_SETTINGS: ProxiedSettings = {
     loadDomainImages: true,
     passkeys: { get: true, create: true },
     passwordOptions: null,
-};
+});
 
-const INITIAL_STATE: SettingsState = {
+const getInitialState = (): SettingsState => ({
     createdItemsCount: 0,
     lockMode: LockMode.NONE,
     lockTTL: undefined,
-    ...INITIAL_SETTINGS,
-};
+    ...getInitialSettings(),
+});
 
-const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
     if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
 
     if (itemCreationSuccess.match(action)) {

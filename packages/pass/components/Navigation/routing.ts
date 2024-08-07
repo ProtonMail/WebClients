@@ -53,11 +53,11 @@ export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type
 export const getTrashRoute = () => getLocalPath('trash');
 export const getOnboardingRoute = () => getLocalPath('onboarding');
 
-export const INITIAL_FILTERS: ItemFilters = { search: '', sort: 'recent', type: '*', selectedShareId: null };
+export const getInitialFilters = (): ItemFilters => ({ search: '', sort: 'recent', type: '*', selectedShareId: null });
 
 export const decodeFilters = (encodedFilters: MaybeNull<string>): ItemFilters =>
     partialMerge(
-        INITIAL_FILTERS,
+        getInitialFilters(),
         (() => {
             try {
                 if (!encodedFilters) return {};
@@ -92,7 +92,7 @@ export const getBootRedirectPath = (bootLocation: Location) => {
 
         const [, shareId, itemId] = bootLocation.pathname.match('share/([^/]+)(/item/([^/]+))?') || [];
         if (shareId || itemId) {
-            const filters = partialMerge(INITIAL_FILTERS, { selectedShareId: shareId });
+            const filters = partialMerge(getInitialFilters(), { selectedShareId: shareId });
             searchParams.set('filters', encodeFilters(filters));
             return `${bootLocation.pathname}?${searchParams.toString()}`;
         }
