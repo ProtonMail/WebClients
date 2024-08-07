@@ -35,9 +35,6 @@ import androidStore from './store/android.svg';
 import iosStore from './store/ios.svg';
 
 const getBrowserTitle = (appName: string, browserName: string) => {
-    if (browserName === 'Safari') {
-        return c('pass_signup_2023: Info').t`Get ${appName} for ${browserName} soon`;
-    }
     return c('pass_signup_2023: Info').t`Get ${appName} for ${browserName}`;
 };
 
@@ -209,11 +206,12 @@ export const getInfo = (
         [Clients.Brave]: brave,
         [Clients.Firefox]: firefox,
         [Clients.Android]: playStore,
+        [Clients.Safari]: safari,
     };
 
-    const card = (clientType: Clients | 'safari') => {
-        const client = clientType === 'safari' ? { link: '', title: 'Safari' } : clients[clientType];
-        const logo = clientType === 'safari' ? safari : logos[clientType];
+    const card = (clientType: Clients) => {
+        const client = clients[clientType];
+        const logo = logos[clientType];
         const type = getTelemetryClientType(clientType);
         return (
             <ButtonLike
@@ -222,7 +220,6 @@ export const getInfo = (
                 size="large"
                 shape="outline"
                 className="flex-1 py-4"
-                disabled={clientType === 'safari'}
                 onClick={() => {
                     onClickDownload(type);
                 }}
@@ -255,7 +252,7 @@ export const getInfo = (
                     })}
                 </div>
                 <div className="flex gap-2">
-                    {[Clients.Brave, 'safari' as const].map((client) => {
+                    {[Clients.Brave, Clients.Safari].map((client) => {
                         return card(client);
                     })}
                 </div>
