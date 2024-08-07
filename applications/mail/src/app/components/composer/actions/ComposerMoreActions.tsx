@@ -72,9 +72,8 @@ const ComposerMoreActions = ({
 
     return (
         <ComposerMoreOptionsDropdown
-            title={titleMoreOptions}
             titleTooltip={titleMoreOptions}
-            className="button button-for-icon composer-more-dropdown"
+            className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
             content={
                 <Icon
                     name="three-dots-horizontal"
