@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { restoreSecurityCheckupSession, securityCheckupSlice } from '@proton/account';
-import { useUser } from '@proton/components';
+import { useApi, useUser } from '@proton/components';
+import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import { useAccountDispatch } from '../../store/hooks';
@@ -18,6 +19,7 @@ import VerifyPhoneContainer from './routes/phone/VerifyPhoneContainer';
 import DownloadPhraseContainer from './routes/phrase/DownloadPhraseContainer';
 
 const SecurityCheckupRouter = () => {
+    const api = useApi();
     const dispatch = useAccountDispatch();
     const [user] = useUser();
 
@@ -30,6 +32,12 @@ const SecurityCheckupRouter = () => {
             dispatch(securityCheckupSlice.actions.clearSession());
         };
     }, [user.ID]);
+
+    useEffect(() => {
+        return () => {
+            void api(lockSensitiveSettings());
+        };
+    }, []);
 
     return (
         <Switch>

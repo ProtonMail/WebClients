@@ -2804,9 +2804,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Nie możesz używać aliasów przy włączonym dodatkowym haśle w ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
       ],
@@ -2959,8 +2956,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Przypisana przestrzeń dyskowa: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Subskrypcja rozliczana jako plan Visionary lub rodzinny głównego administratora."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Subskrypcja zostanie naliczona głównemu administratorowi planu."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Plan Visionary i rodzinny nie obsługuje obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
@@ -2977,8 +2974,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Dołącz do organizacji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Dołączono do planu rodzinnego"
+      "You have successfully joined the family group": [
+        "Dołączono do grupy rodzinnej"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
@@ -5604,6 +5601,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Rozpocznij od 1 $"
+      ],
+      "Get started for 1 €": [
+        "Rozpocznij od 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Rozpocznij od 1 CHF"
+      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ]
@@ -6145,6 +6151,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Zabezpiecz cyfrowe życie 2 użytkowników z ${ BRAND_NAME }."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Indywidualne rozwiązania dla większych organizacji o specyficznych potrzebach w zakresie bezpieczeństwa"
       ],
@@ -6179,8 +6188,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpiecz swój harmonogram dzięki szyfrowaniu end-to-end. Zawiera obsługę niestandardowych kalendarzy, udostępnianie kalendarzy i wiele więcej."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpiecz pocztę e-mail za pomocą szyfrowania end-to-end. Zawiera obsługę niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."

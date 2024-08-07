@@ -2653,6 +2653,21 @@
         "${ contactsLength } kontakta",
         "${ contactsLength } kontakata"
       ],
+      "${ doneCount } finished": [
+        "${ doneCount } dovršen",
+        "${ doneCount } dovršena",
+        "${ doneCount } dovršenih"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } preuzet",
+        "${ doneDownloadsCount } preuzeta",
+        "${ doneDownloadsCount } preuzetih"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } učitan",
+        "${ doneUploadsCount } učitana",
+        "${ doneUploadsCount } učitanih"
+      ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } na App Storeu"
       ],
@@ -2797,6 +2812,11 @@
       ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "Delete locked drive": [
+        "Obriši zaključani disk",
+        "Obriši zaključane diskove",
+        "Obriši zaključane diskove"
       ],
       "Downgrade": [
         "Snizi status"
@@ -2986,6 +3006,11 @@
       "of": [
         "od"
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znak je dozvoljen",
+        "Samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znaka je dozvoljeno",
+        "Samo ${ MAX_CUSTOM_PASSWORD_LENGTH } znakova je dozvoljeno"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Samo osobe s poveznicom i lozinkom mogu pristupiti ovoj datoteci."
       ],
@@ -3084,6 +3109,11 @@
       ],
       "This month": [
         "Ovaj mjesec"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Ovo će obrisati poveznicu i ukloniti pristup do vaše datoteke ili mape za sve koji imaju poveznicu.",
+        "Ovo će obrisati poveznice i ukloniti pristup do vaših datoteka ili mapa za sve koji imaju poveznice.",
+        "Ovo će obrisati poveznice i ukloniti pristup do vaših datoteka ili mapa za sve koji imaju poveznice."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -4041,6 +4071,11 @@
         "Premjesti ${ n } datoteku",
         "Premjesti ${ n } datoteke",
         "Premjesti ${ n } datoteka"
+      ],
+      "Move ${ n } folder": [
+        "Premjesti ${ n } mapu",
+        "Premjesti ${ n } mape",
+        "Premjesti ${ n } mapa"
       ],
       "Move ${ n } item": [
         "Premjesti ${ n } stavku",
@@ -5228,7 +5263,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
+        "Automatski - označava da se format teksta koji je u prozoru za novu poruku koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
       ],
       "Customize import to reduce the number of folders": [
         "Prilagodite uvoz da biste smanjili broj mapa"

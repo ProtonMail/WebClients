@@ -1199,7 +1199,7 @@
         "Déposez ici pour importer"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "En raison de la limitation des extensions du navigateur Safari, l'extension de fichier « *.pgp » sera manquante après l'exportation. Veuillez renommer le fichier pour y ajouter l'extension *.pgp (par ex. fichier.pgp) après l'avoir exporté."
+        "En raison de la limitation des extensions du navigateur Safari, l'extension de fichier « *.pgp » sera manquante après l'exportation des données. Veuillez renommer le fichier pour y ajouter l'extension *.pgp (par ex. fichier.pgp) après l'avoir exporté."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importez facilement vos mots de passe dans ${ PASS_APP_NAME }."
@@ -1408,6 +1408,9 @@
       "Never": [
         "Jamais"
       ],
+      "No identity item found": [
+        "Aucun élément d'identité n'a été trouvé."
+      ],
       "No login found": [
         "Aucun identifiant n'a été trouvé."
       ],
@@ -1510,6 +1513,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
+      ],
+      "Quickly autofill your identities.": [
+        "Remplissez automatiquement et rapidement vos identités."
       ],
       "Registering extra password...": [
         "Enregistrement du mot de passe supplémentaire..."
@@ -2063,6 +2069,9 @@
       "Identity": [
         "Identité"
       ],
+      "Identity autofill": [
+        "Remplissage automatique de l'identité"
+      ],
       "Import": [
         "Importation"
       ],
@@ -2579,6 +2588,9 @@
       "Auto-lock update": [
         "Mise à jour du verrouillage automatique"
       ],
+      "Autofill": [
+        "Remplissage automatique"
+      ],
       "Confirm extra password": [
         "Confirmer le mot de passe supplémentaire"
       ],
@@ -2635,6 +2647,9 @@
       ],
       "History": [
         "Historique"
+      ],
+      "Identity": [
+        "Identité"
       ],
       "Import - ${ date }": [
         "Importation - ${ date }"

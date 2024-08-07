@@ -54,7 +54,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
         {
             type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            injection: FieldInjectionRule.FIRST_OF_SECTION,
             action: DropdownAction.AUTOFILL_IDENTITY,
         },
     ],
@@ -77,7 +77,6 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
     ],
-    [FormType.MFA]: [],
     /* NOOP forms are forms that were not classified into
      * one of our form types. This can either be a detection
      * error - in that case, if we match any fields of interest
@@ -101,7 +100,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         },
         {
             type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            injection: FieldInjectionRule.FIRST_OF_SECTION,
             action: DropdownAction.AUTOFILL_IDENTITY,
         },
     ],

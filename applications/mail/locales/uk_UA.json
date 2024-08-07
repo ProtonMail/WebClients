@@ -93,6 +93,9 @@
       "Add to group": [
         "Додати до групи"
       ],
+      "Adds it below your existing message": [
+        "Додає його під вашим наявним повідомленням"
+      ],
       "Align center": [
         "Вирівняти по центру"
       ],
@@ -227,9 +230,6 @@
       ],
       "Close & discard": [
         "Закрити й відхилити"
-      ],
-      "Close AI refine suggestion": [
-        "Закрити пропозицію по вдосконаленню від ШІ"
       ],
       "Close composer": [
         "Закрити редактор"
@@ -573,6 +573,9 @@
       "hide-my-email aliases": [
         "псевдонімів Hide-my-email"
       ],
+      "I like this response": [
+        "Мені подобається ця відповідь"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
       ],
@@ -737,6 +740,12 @@
       ],
       "Minimize composer": [
         "Згорнути редактор"
+      ],
+      "Modify": [
+        "Змінити"
+      ],
+      "Modify selection": [
+        "Змінити вибір"
       ],
       "Monday": [
         "Понеділок"
@@ -966,6 +975,12 @@
       "Remove this label": [
         "Вилучити цю мітку"
       ],
+      "Replace": [
+        "Замінити"
+      ],
+      "Replaces the selected text in your message": [
+        "Замінює виділений текст у повідомленні"
+      ],
       "Reply": [
         "Відповісти"
       ],
@@ -974,9 +989,6 @@
       ],
       "Reply securely": [
         "Захищена відповідь"
-      ],
-      "Report a good content": [
-        "Повідомити про хороший вміст"
       ],
       "Report a problem": [
         "Повідомити про проблему"
@@ -1070,6 +1082,9 @@
       ],
       "Select all messages": [
         "Вибрати усі повідомлення"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Вибрати період оплати ${ billingText }"
       ],
       "Select country": [
         "Виберіть країну"
@@ -1197,8 +1212,8 @@
       "Stay": [
         "Залишитися"
       ],
-      "Stop downloading the writing assistant": [
-        "Зупинити завантаження помічника у написанні"
+      "Stop downloading assistant": [
+        "Зупинити завантаження помічника"
       ],
       "Stop generating result": [
         "Зупинити генерування"
@@ -1241,6 +1256,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -1326,9 +1347,6 @@
       "Use recovery code": [
         "Використати код відновлення"
       ],
-      "Use this": [
-        "Скористатися"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Змініть розмір вікна перегляду за допомогою миші. Якщо ви використовуєте клавіатуру, можете змінювати розмір стрілками ліворуч та праворуч."
       ],
@@ -1373,6 +1391,9 @@
       ],
       "Why not?": [
         "Чому б ні?"
+      ],
+      "Write for me": [
+        "Написати про мене"
       ],
       "Yes": [
         "Так"
@@ -1548,11 +1569,22 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Швидше, ширша сумісність пристроїв"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Дані залишаться на вашому пристрої, але потребують одноразове завантаження та сумісного пристрою"
+      ],
+      "Fast and secure. No logs are kept.": [
+        "Швидко і безпечно. Журнали не зберігаються."
+      ],
+      "Run on device": [
+        "Запустити на пристрої"
       ],
       "Run on servers": [
         "Запустити на серверах"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Підніміть продуктивність пошти на новий рівень. Нехай ${ BRAND_NAME } Scribe допоможе вам писати, відповідати та вичитувати ваші листи."
       ]
     },
     "Attached ics file error": {
@@ -1629,6 +1661,12 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } місяць",
+        "перші ${ n } місяці",
+        "перших ${ n } місяців",
+        "перших ${ n } місяців"
+      ],
       "the first month": [
         "перший місяць"
       ],
@@ -1731,6 +1769,9 @@
       ],
       "Custom domain problem": [
         "Проблема з власним доменом"
+      ],
+      "Docs problem": [
+        "Проблема з Docs"
       ],
       "Drive problem": [
         "Проблема з Drive"
@@ -2848,6 +2889,9 @@
       "Korea (Democratic People's Republic of)": [
         "Північна Корея (Корейська народно-демократична республіка)"
       ],
+      "Korea (Republic of)": [
+        "Південна Корея (Республіка)"
+      ],
       "Kosovo": [
         "Косово"
       ],
@@ -2856,6 +2900,9 @@
       ],
       "Kyrgyzstan": [
         "Киргизстан"
+      ],
+      "Lao People's Democratic Republic": [
+        "Лаоська народно-демократична республіка"
       ],
       "Laos": [
         "Лаос"
@@ -2874,6 +2921,9 @@
       ],
       "Libya": [
         "Лівія"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Лівійська арабська джамахірія"
       ],
       "Liechtenstein": [
         "Ліхтенштейн"
@@ -3142,6 +3192,9 @@
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
       ],
+      "Swaziland": [
+        "Есватіні"
+      ],
       "Sweden": [
         "Швеція"
       ],
@@ -3162,6 +3215,9 @@
       ],
       "Tanzania": [
         "Танзанія"
+      ],
+      "Tanzania, United Republic of": [
+        "Танзанія, Об'єднана республіка"
       ],
       "Thailand": [
         "Таїланд"
@@ -3424,6 +3480,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Налаштуйте спосіб відновлення, щоб запобігти втраті доступу до облікового запису."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Щоб продовжувати використовувати помічника у написанні, додайте його до вашої підписки."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Щоб продовжувати використовувати помічника у написанні, запитайте доступ у вашого адміністратора."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
       ],
@@ -3453,6 +3515,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "Use the writing assistant to:": [
+        "Використовуйте помічника у написанні для:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "У цьому електронному листі не знайдено відомих вистежувачів чи URL-адрес із вбудованими елементами стеження."
@@ -3840,8 +3905,8 @@
       "Draft could not be saved. Try again.": [
         "Не вдалося зберегти чернетку. Спробуйте знову."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
-        "Через помилку не вдалося скасувати створення тексту"
+      "Due to an error, text generation couldn't be canceled": [
+        "Через помилку не вдалося скасувати генерацію тексту"
       ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
@@ -4646,8 +4711,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Призначений вам обсяг сховища: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Рахунок за передплату виставляється головному адміністратору Visionary або сімейного плану."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Рахунок за підписку буде виставлено головному адміністратору цього тарифу."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -4664,8 +4729,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Ви успішно приєдналися до Сімейного плану"
+      "You have successfully joined the family group": [
+        "Ви успішно приєдналися до сімейної групи"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
@@ -5167,6 +5232,9 @@
       "Contacts": [
         "Контакти"
       ],
+      "Hardware not compatible": [
+        "Несумісне обладнання"
+      ],
       "Report an issue": [
         "Повідомити про проблему"
       ],
@@ -5178,6 +5246,12 @@
       ],
       "Security Center": [
         "Центр безпеки"
+      ],
+      "Set up the writing assistant": [
+        "Налаштування помічника у написанні"
+      ],
+      "Tell us more": [
+        "Розказати докладніше"
       ]
     },
     "Hint": {
@@ -5704,9 +5778,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } про помічника з написання ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
         "Знайдено ${ providerFoldersNumLocalized } теки",
@@ -6166,14 +6237,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Завантаження помічника… ${ progressDisplay } ГБ"
+      ],
       "Downloading paused": [
         "Завантаження призупинено"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Завантаження призупинено: ${ progressDisplay } ГБ"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Завантаження помічника з написання: ${ progressDisplay } ГБ"
       ],
       "Draft": [
         "Чернетка"
@@ -6322,6 +6393,9 @@
       "From": [
         "Від"
       ],
+      "Generate text": [
+        "Згенерувати текст"
+      ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Задайте кольорову мітку для вхідних рахунків, наприклад \"${ suggestedLabelName }\". Після оплати змініть мітку на \"${ suggestedPaidLabelName }\"."
       ],
@@ -6465,6 +6539,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Докладніше про помічника у написанні ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Зліва направо"
@@ -7519,9 +7596,6 @@
         "Ви вибрали **${ elementsCount } повідомлень**.",
         "Ви вибрали **${ elementsCount } повідомлень**."
       ],
-      "You selected some content:": [
-        "Ви вибрали певний вміст:"
-      ],
       "You will lose access to Plus features on this date.": [
         "З цієї дати ви втратите доступ до функцій Plus."
       ],
@@ -7656,6 +7730,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Тільки перегляд"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Помічник на основі ШІ допоможе вам створювати кращі листи швидко та без зайвих зусиль"
       ]
     },
     "Key badge": {
@@ -8077,11 +8156,17 @@
       "Density": [
         "Щільність"
       ],
+      "Did not follow instructions": [
+        "Не дотримувався інструкцій"
+      ],
       "Do you have any suggestions for our team?": [
         "У вас є пропозиції для нашої команди?"
       ],
       "Don't ask again": [
         "Не питати знову"
+      ],
+      "Don't like the style": [
+        "Не подобається стиль"
       ],
       "Don't show this again": [
         "Більше не показувати"
@@ -8410,6 +8495,9 @@
       "Undisclosed Recipients": [
         "Приховані отримувачі"
       ],
+      "Unsafe or problematic": [
+        "Небезпечний або проблематичний"
+      ],
       "Upload picture": [
         "Завантажити зображення"
       ],
@@ -8433,6 +8521,9 @@
       ],
       "Wonderful": [
         "Дивовижно"
+      ],
+      "Writing assistant": [
+        "Помічник у написанні"
       ],
       "Your alias": [
         "Ваш псевдонім"
@@ -8796,6 +8887,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Додати помічника у написанні ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "за ${ price }"
       ]
@@ -9098,6 +9192,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Почати за 1$"
+      ],
+      "Get started for 1 €": [
+        "Почати за 1€"
+      ],
+      "Get started for CHF 1": [
+        "Почати за 1 CHF"
+      ],
       "Upgrade now": [
         "Покращити"
       ]
@@ -9279,6 +9382,9 @@
       "Collaborate and share large files": [
         "Співпраця та обмін великими файлами"
       ],
+      "Collaborative document editor": [
+        "Спільний редактор документів"
+      ],
       "Contact groups": [
         "Групи контактів"
       ],
@@ -9348,6 +9454,9 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
+      "Generate emails with only a prompt": [
+        "Генерування листів лише за запитом"
+      ],
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
@@ -9404,6 +9513,9 @@
       ],
       "Priority support & live chat": [
         "Пріоритетна підтримка і чат"
+      ],
+      "Proofread and refine your texts": [
+        "Коректура і перевірка ваших текстів"
       ],
       "Protect ${ n } device at a time": [
         "Захист ${ n } пристрою",
@@ -9491,6 +9603,9 @@
       ],
       "Unlimited logins and notes": [
         "Необмежена кількість імен користувачів та нотаток"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Необмежена кількість записів входу, нотаток та кредитних карток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -9671,8 +9786,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: захистіть свій порядок денний наскрізним шифруванням. Підтримуються користувацькі календарі, спільний доступ до календарів тощо."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: захистіть свої файли за допомогою зашифрованого хмарного сховища. Підтримується історія версій, зашифрований обмін файлами та багато інших функцій."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Захистіть свої файли у зашифрованому хмарному сховищі. Містить автоматичну синхронізацію, зашифрований обмін файлами тощо."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: захистіть свої електронні листи за допомогою наскрізного шифрування. Підтримуються власні домени електронної пошти, 15 адрес електронної пошти, необмежена кількість псевдонімів hide-my-email та багато інших можливостей."
@@ -9742,6 +9857,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
+      ],
+      "Increase or reallocate storage for a user": [
+        "Збільшити або перерозподілити сховище для користувача"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Захистіть приватність власних і родинних планів, користуючись зашифрованим календарем"
@@ -9824,6 +9942,9 @@
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження та особисті примітки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для ${ BRAND_NAME }."
       ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Переглядайте доступність учасників та заощаджуйте час на плануванні зустрічей"
+      ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Швидко та легко надсилайте листи великим групам, створюючи скільки завгодно груп контактів (до 100 контактів на групу)"
       ],
@@ -9850,6 +9971,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Завантажте логотип вашого бізнесу, щоби персоналізувати роботу ваших команд у вебзастосунках ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Використовуйте власні домени адрес електронної пошти, наприклад, you@yourname.com"
@@ -10121,6 +10245,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Безпечне сховище і обмін посиланнями"
+      ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ],
@@ -10174,6 +10301,9 @@
       ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "Payment Processing": [
+        "Обробка платежу"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ months }. Купон дійсний для поновлення ${ couponRedemptions }. Після цього він буде автоматично подовжений за ціною ${ price } на ${ months } місяців."
@@ -10266,8 +10396,8 @@
       "First name": [
         "Ім'я"
       ],
-      "Generating...": [
-        "Створення..."
+      "Generating": [
+        "Генерація"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -10308,9 +10438,6 @@
       "Please share what you expected": [
         "Будь ласка, поділіться тим, що ви очікували"
       ],
-      "Refining your text...": [
-        "Вдосконалення вашого тексту..."
-      ],
       "Search date, name, email address, or subject line": [
         "Пошук за датою, ім'ям, електронною адресою або темою листа"
       ],
@@ -10350,29 +10477,29 @@
       "Subject": [
         "Тема"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажіть помічнику, що писати. Наприклад: «Анонсуй майбутні події у розсилці»"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Скажіть асистенту, що писати. Наприклад: «Скасуй мій абонемент у спортзал»"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Скажіть помічнику, що писати. Наприклад: «Запроси Джейн на мою вечірку»"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Скажіть помічнику, що писати. Наприклад: «Подякуй моєму колезі за допомогу в проєкті»"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Скажіть помічнику, що писати. Наприклад: «Напиши супровідний лист для стажування»"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Скажіть помічнику, що писати. Наприклад: «Напиши повторний лист клієнту»"
+      ],
       "Text": [
         "Текст"
       ],
       "To": [
         "Кому"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Спробуйте «Анонсувати майбутні події в інформаційній розсилці»"
-      ],
-      "Try “Cancel my gym membership”": [
-        "Спробуйте \"Скасувати участь у тренажерній залі\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Спробуйте \"Запросити Джейн на мою вечірку\""
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Спробуйте \"Подякувати колезі за допомогу з проєктом\""
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Спробуйте «Написати супровідний лист на стажування»"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Спробуйте \"Написати листа клієнту\""
       ],
       "Type a command…": [
         "Введіть команду…"
@@ -12068,6 +12195,9 @@
       "Self-destruction set": [
         "Самознищення встановлено"
       ],
+      "Text copied to clipboard": [
+        "Текст скопійовано до буфера обміну"
+      ],
       "Thanks for the feedback!": [
         "Дякуємо за відгук!"
       ],
@@ -12094,6 +12224,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " зараз активна"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } вилучено"
       ]
@@ -12114,6 +12247,9 @@
     "Suffix for price": {
       "per month": [
         "на місяць"
+      ],
+      "per user per month": [
+        "для користувача на місяць"
       ]
     },
     "summer2023: Tooltip": {
@@ -12417,6 +12553,9 @@
       ],
       "Conversation list": [
         "Список розмов"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create contact": [
         "Створити контакт"
@@ -13230,16 +13369,49 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } обліковий запис на гаманець",
+        "${ n } облікові записи на гаманець",
+        "${ n } облікових записів на гаманець",
+        "${ n } облікових записів на гаманець"
+      ],
       "${ n } email address": [
         "${ n } адреса е-пошти",
         "${ n } адреси е-пошти",
         "${ n } адрес е-пошти",
         "${ n } адрес е-пошти"
+      ],
+      "${ n } wallet": [
+        "${ n } гаманець",
+        "${ n } гаманці",
+        "${ n } гаманців",
+        "${ n } гаманців"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Безпечний спосіб тримати Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin через пошту"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Доступ до застосунку Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Безпечно тримайте і переводьте bitcoins"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Проблема з Wallet"
       ]
     },
     "wallet_signup_2024:Title": {
       "Wallet": [
-        "Гаманець"
+        "Wallet"
       ]
     },
     "Warning": {

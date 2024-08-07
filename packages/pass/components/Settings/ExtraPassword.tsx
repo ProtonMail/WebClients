@@ -9,30 +9,37 @@ import { PasswordModal, type PasswordModalProps } from '@proton/pass/components/
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
 import { extraPasswordToggle } from '@proton/pass/store/actions';
 import { extraPasswordToggleRequest } from '@proton/pass/store/actions/requests';
-import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
+import { selectExtraPasswordEnabled, selectLockMode } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { SettingsPanel } from './SettingsPanel';
-
-const getInitialModalState = (): PasswordModalProps => ({
-    label: c('Label').t`Extra password`,
-    message: c('Info').t`You will be logged out and need to log in again on all of your other devices.`,
-    submitLabel: c('Action').t`Continue`,
-    title: c('Title').t`Set extra password`,
-    type: 'new-password',
-    warning: c('Warning')
-        .t`Caution: You won’t be able to access your ${PASS_APP_NAME} account if you lose this password.`,
-});
 
 export const ExtraPassword: FC = () => {
     const online = useConnectivity();
     const confirmPassword = usePasswordUnlock();
     const toggle = useRequest(extraPasswordToggle, { initialRequestId: extraPasswordToggleRequest() });
     const enabled = useSelector(selectExtraPasswordEnabled);
+    const biometricsEnabled = useSelector(selectLockMode) === LockMode.BIOMETRICS;
+    const biometricsMessage = biometricsEnabled
+        ? ' ' + c('Info').t`Biometrics will be disabled and will need to be enabled again.`
+        : '';
+
+    const getInitialModalState = (): PasswordModalProps => ({
+        label: c('Label').t`Extra password`,
+        message:
+            c('Info').t`You will be logged out and need to log in again on all of your other devices.` +
+            biometricsMessage,
+        submitLabel: c('Action').t`Continue`,
+        title: c('Title').t`Set extra password`,
+        type: 'new-password',
+        warning: c('Warning')
+            .t`Caution: You won’t be able to access your ${PASS_APP_NAME} account if you lose this password.`,
+    });
 
     const modal = useAsyncModalHandles<string, PasswordModalProps>({ getInitialModalState });
 

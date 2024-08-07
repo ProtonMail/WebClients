@@ -17,6 +17,9 @@ import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
 import usePremiumAddress from 'proton-mail/hooks/usePremiumAddress';
 import { TipActionType } from 'proton-mail/models/tip';
+import { elements } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { snoozeActions } from 'proton-mail/store/snooze/snoozeSlice';
 
 const MAX_LABEL_COUNT_FOR_FREE_USER = 3;
 const SUGGESTED_FOLDER_NAME = 'Receipts';
@@ -26,7 +29,11 @@ interface Props {
     actionType: TipActionType;
 }
 
-const hasSettingsUrlTypes = new Set([TipActionType.CreateEmailAddress, TipActionType.EnableDarkWebMonitoring]);
+const hasSettingsUrlTypes = new Set([
+    TipActionType.CreateEmailAddress,
+    TipActionType.EnableDarkWebMonitoring,
+    TipActionType.DownloadDesktopApp,
+]);
 
 const useTipConfig = ({ actionType }: Props) => {
     const api = useApi();
@@ -37,6 +44,8 @@ const useTipConfig = ({ actionType }: Props) => {
     const { createNotification } = useNotifications();
     const onCompose = useOnCompose();
     const { createPremiumAddress, loadingProtonDomains } = usePremiumAddress();
+    const dispatch = useMailDispatch();
+    const mailboxElements = useMailSelector(elements);
 
     const labelsUpsellModal = useModalStateObject();
     const createLabelModal = useModalStateObject();
@@ -157,6 +166,9 @@ const useTipConfig = ({ actionType }: Props) => {
             case TipActionType.CreateLabel:
                 return labels ? !(user.isFree && labels.length >= MAX_LABEL_COUNT_FOR_FREE_USER) : false;
             case TipActionType.CreateAlias:
+            case TipActionType.ScheduleMessage:
+            case TipActionType.SnoozeEmail:
+            case TipActionType.DownloadDesktopApp:
                 return true;
             default:
                 return user.isPaid;
@@ -208,6 +220,13 @@ const useTipConfig = ({ actionType }: Props) => {
                     pmMeUpsellModal.openModal(true);
                 }
                 break;
+            case TipActionType.ScheduleMessage:
+                void onCompose({
+                    type: ComposeTypes.newMessage,
+                    action: MESSAGE_ACTIONS.NEW,
+                    forceOpenScheduleSend: true,
+                });
+                break;
             case TipActionType.ClearMailbox:
                 if (isUserEligible) {
                     void activateAutoDeleteSpamAndTrash();
@@ -219,6 +238,14 @@ const useTipConfig = ({ actionType }: Props) => {
                 if (!isUserEligible) {
                     increasePrivacyUpsellModal.openModal(true);
                 }
+                break;
+            case TipActionType.SnoozeEmail:
+                dispatch(
+                    snoozeActions.setSnoozeDropdown({
+                        dropdownState: 'forceOpen',
+                        element: mailboxElements[0],
+                    })
+                );
                 break;
             case TipActionType.EnableDarkWebMonitoring:
                 if (!isUserEligible) {

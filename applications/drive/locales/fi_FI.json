@@ -1019,6 +1019,11 @@
         "Tapahtumaa ei tueta"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Kutsuttu"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
@@ -3122,9 +3127,6 @@
       "Access denied": [
         "Käyttöoikeutta ei ole"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Aliaksia ei voida käyttää, kun lisäsalasana on käytössä sovelluksessa ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
       ],
@@ -3300,8 +3302,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Käyttöösi varattu tallennustila: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Tilaus laskutetaan Visionary- tai perhetilauksen ensisijaiselta ylläpitäjältä."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- ja Family-tilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME }-osoite ennen liittymistä. ${ addressSettingsLink }"
@@ -3318,8 +3320,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Olet liittynyt perhetilaukseen"
+      "You have successfully joined the family group": [
+        "Olet liittynyt perheryhmään"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
@@ -6550,6 +6552,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Aloitushinta: $1"
+      ],
+      "Get started for 1 €": [
+        "Aloitushinta: 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Aloitushinta: CHF 1"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ]
@@ -7055,6 +7066,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Suojaa digitaalinen elämäsi ${ BRAND_NAME }:lla kahdelle ihmisille."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Räätälöityjä ratkaisuja suuremmille organisaatioille, joilla on erityisiä turvallisuustarpeita"
       ],
@@ -7099,8 +7113,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Suojaa tiedostosi salatulla pilvitallennuksella. Sisältää versiohistorian ja salatun tiedostojen jakamisen sekä paljon muuta."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Suojaa tiedostosi salatulla pilvitallennuksella. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Suojaa viestisi päästä päähän -salauksella. Sisältää mm. tuen omille sähköpostiverkkotunnuksille, 15 sähköpostiosoitetta sekä rajattomasti Hide-my-email-aliaksia."
@@ -8808,6 +8822,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } antaa sinulle rajattoman yksityisyyden ja lisätallennustilaa enintään kahdelle henkilölle."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } -tilauksella tiimisi voi työskennellä tuottavammin ja järjestelmällisemmin kaikkien ${ BRAND_NAME }-sovellusten ja niiden lisäominaisuuksien avulla."
       ],
@@ -8843,6 +8860,9 @@
       ],
       "10 email addresses": [
         "10 sähköpostiosoitetta"
+      ],
+      "2 users": [
+        "2 käyttäjää"
       ],
       "20 email addresses per user": [
         "20 sähköpostiosoitetta per käyttäjä"
@@ -8996,6 +9016,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Unlimited privacy for two": [
+        "Rajaton yksityisyys kahdelle"
       ],
       "Users won’t be able to manage their calendars": [
         "Käyttäjät eivät voi hallita kalentereitaan"

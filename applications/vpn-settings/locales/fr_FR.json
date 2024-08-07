@@ -43,6 +43,9 @@
       "Add address": [
         "Ajouter une adresse"
       ],
+      "Add address or domain": [
+        "Ajouter une adresse ou un domaine"
+      ],
       "Add credit / debit card": [
         "Ajouter une carte de paiement"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Ajouter un utilisateur"
       ],
+      "Allow": [
+        "Autoriser"
+      ],
       "Apply": [
         "Appliquer"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Précédent"
+      ],
+      "Block": [
+        "Bloquer"
+      ],
+      "Can send to this group": [
+        "Vous pouvez effectuer des envois à ce groupe."
+      ],
+      "Can't send to this group": [
+        "Vous ne pouvez rien envoyer à ce groupe."
       ],
       "Cancel": [
         "Annuler"
@@ -166,8 +181,14 @@
       "Delete Gateway": [
         "Supprimer la Passerelle"
       ],
+      "Delete group": [
+        "Supprimer le groupe"
+      ],
       "Delete logo": [
         "Supprimer le logo"
+      ],
+      "Delete member": [
+        "Supprimer le membre"
       ],
       "Delete user": [
         "Supprimer un utilisateur"
@@ -186,6 +207,9 @@
       ],
       "Discard": [
         "Abandonner"
+      ],
+      "Discard changes": [
+        "Abandonner les modifications"
       ],
       "Done": [
         "Terminé"
@@ -216,6 +240,9 @@
       ],
       "Edit Gateway": [
         "Modifier la Passerelle"
+      ],
+      "Edit group": [
+        "Modifier le groupe"
       ],
       "Edit invoice details": [
         "Modifier les informations de la facture"
@@ -295,6 +322,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go to label": [
+        "Afficher le label"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -343,8 +373,14 @@
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
       ],
+      "More options": [
+        "Plus d'options"
+      ],
       "Need help?": [
         "Besoin d'aide ?"
+      ],
+      "New group": [
+        "Nouveau groupe"
       ],
       "Next": [
         "Suivant"
@@ -352,10 +388,10 @@
       "Next month": [
         "Mois suivant"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -409,6 +445,12 @@
       "Remove": [
         "Retirer"
       ],
+      "Remove all members": [
+        "Retirer tous les membres"
+      ],
+      "Remove all members from group": [
+        "Retirer tous les membres du groupe"
+      ],
       "Remove bonuses": [
         "Retirer les bonus"
       ],
@@ -439,6 +481,9 @@
       "Resend code": [
         "Renvoyer le code"
       ],
+      "Resend invitation": [
+        "Renvoyer l'invitation"
+      ],
       "Reset credentials": [
         "Réinitialiser les identifiants"
       ],
@@ -465,6 +510,9 @@
       ],
       "Revoke ${ name }": [
         "Révoquer ${ name }"
+      ],
+      "Revoke invitation": [
+        "Révoquer l'invitation"
       ],
       "Save": [
         "Enregistrer"
@@ -561,6 +609,9 @@
       ],
       "Signing in": [
         "Connexion en cours"
+      ],
+      "Spam": [
+        "Indésirables/spam"
       ],
       "Start live chat": [
         "Démarrer le chat en direct"
@@ -675,6 +726,11 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Ajouter le domaine pm.me"
       ]
     },
     "Action subscription": {
@@ -2016,6 +2072,11 @@
         "Nous avons détecté des erreurs dans plusieurs lignes lors de l'importation, nous vous invitons à vérifier votre fichier CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "En savoir plus"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mois"
@@ -2103,6 +2164,35 @@
         "Les sous-domaines « www » ne sont généralement pas utilisés pour les e-mails. Voulez-vous vraiment utiliser cette valeur de domaine ?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } a été ajouté."
+      ],
+      "${ name } deletion failed": [
+        "${ name } n'a pas pu être supprimé."
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } n'a pas pu être placé dans la liste d'adresses autorisées."
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
+      ],
+      "${ name } moved to allow list": [
+        "${ name } a été placé dans la liste d'adresses autorisées."
+      ],
+      "${ name } moved to block list": [
+        "${ name } a été placé dans la liste d'adresses bloquées."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } a été placé dans la liste des indésirables/spam."
+      ],
+      "${ name } successfully deleted": [
+        "${ name } a été supprimé."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
@@ -2160,9 +2250,43 @@
         "Assistance prioritaire"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } a été ajouté."
+      ],
+      "${ name } deletion failed": [
+        "${ name } n'a pas pu être supprimé."
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } n'a pas pu être placé dans la liste d'adresses autorisées."
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } n'a pas pu être placé dans la liste d'adresses bloquées."
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } n'a pas pu être placé dans la liste des indésirables/spam."
+      ],
+      "${ name } moved to allow list": [
+        "${ name } a été placé dans la liste d'adresses autorisées."
+      ],
+      "${ name } moved to block list": [
+        "${ name } a été placé dans la liste d'adresses bloquées."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } a été placé dans la liste des indésirables/spam."
+      ],
+      "${ name } successfully deleted": [
+        "${ name } a été supprimé."
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Le message de vérification a été envoyé à ${ address }."
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sans nom"
       ]
     },
     "eof2023: Deal details": {
@@ -2276,6 +2400,12 @@
       ],
       "Invalid code": [
         "Le code n'est pas valide."
+      ],
+      "Invalid domain": [
+        "Le domaine n'est pas valide."
+      ],
+      "Invalid email address": [
+        "L'adresse e-mail n'est pas valide."
       ],
       "Invalid expiration date": [
         "La date d'expiration n’est pas valide."
@@ -2582,8 +2712,9 @@
       "Manage user accounts": [
         "Gérer les comptes utilisateur"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Le nombre d'invitations acceptées est limité à 10 par période de 6 mois."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Seule ${ n } invitation tous les 6 mois est acceptée.",
+        "Seules ${ n } invitations tous les 6 mois sont acceptées."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Les utilisateurs qui ont un abonnement avec des membres ne peuvent pas rejoindre un autre abonnement de groupe."
@@ -2603,8 +2734,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espace de stockage qui vous est attribué : ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "L'abonnement est facturé à l'administrateur principal de l'abonnement Visionary ou de l'abonnement familial."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "L'abonnement sera facturé à l'administrateur principal."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
@@ -2621,14 +2752,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Vous avez atteint le nombre maximum de 10 invitations acceptées en 6 mois."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Vous avez atteint la limite maximale : seule ${ n } invitation tous les 6 mois est acceptée.",
+        "Vous avez atteint la limite maximale : seules ${ n } invitations tous les 6 mois sont acceptées."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Vous avez atteint la limite de 10 invitations acceptées en 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Vous avez atteint le nombre maximum, à savoir ${ n } invitation tous les 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs.",
+        "Vous avez atteint le nombre maximum, à savoir ${ n } invitations tous les 6 mois. Vous pourrez de nouveau cliquer sur le bouton quand vous pourrez inviter d'autres utilisateurs."
       ],
-      "You have successfully joined the Family plan": [
-        "Vous avez rejoint l'abonnement Family."
+      "You have successfully joined the family group": [
+        "Vous avez rejoint le groupe famillal."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Vous devez configurer un domaine personnalisé avant d'ajouter plusieurs utilisateurs."
@@ -2921,6 +3054,35 @@
         "Téraoctets"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Adresses autorisées :"
+      ],
+      "Block:": [
+        "Adresses bloquées :"
+      ],
+      "Search list": [
+        "Rechercher dans la liste"
+      ],
+      "Spam:": [
+        "Indésirables/spam :"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Maîtrisez ce qui arrive dans les boites de réception des membres de votre organisation en créant ces listes :"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Ces listes s'appliquent à tous les comptes de votre organisation. Les membres de votre organisation peuvent créer leurs propres filtres, mais ne pourront pas remplacer les adresses ou les domaines que vous avez bloqués."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "pour que les messages importants ne se retrouvent pas dans les indésirables/spam."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "pour que les messages indésirables/spam n'encombrent pas les boites de réception."
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "pour que les messages de phishing/hameçonnage ou les messages suspects ne puissent pas arriver dans les messageries de votre organisation."
+      ]
+    },
     "Font face option": {
       "System default": [
         "Identique au système"
@@ -2991,6 +3153,17 @@
       ],
       "Services": [
         "Services"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Groupe d'adresses"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
       ]
     },
     "Header": {
@@ -3085,6 +3258,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Ajoutez cet enregistrement à votre domaine dans le panneau de contrôle gestionnaire de nom de domaine."
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } suggestion trouvée, utilisez le clavier pour naviguer.",
+        "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
       ]
     },
     "Human verification method": {
@@ -3121,7 +3301,7 @@
         "${ fileName } : aperçu en basse résolution"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
+        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe unique, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -3184,6 +3364,10 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } est nécessaire pour la fonctionnalité Secure Core."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/mois)"
       ],
@@ -3202,6 +3386,9 @@
       ],
       "30-day money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours"
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Un ${ protonSubdomain } est hébergé par ${ BRAND_NAME }, ce qui vous permet de rapidement créer un sous-domaine. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
@@ -3288,6 +3475,12 @@
       "Amount due": [
         "Montant à payer"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Êtes-vous sûr de vouloir annuler la modification du groupe ?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Êtes-vous sûr de vouloir supprimer ce groupe ? L'adresse du groupe ne fonctionnera plus."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Voulez-vous vraiment désactiver l'authentification à deux facteurs ?"
       ],
@@ -3299,6 +3492,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Êtes-vous sûr de vouloir retirer tous les membres de ce groupe ?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
@@ -3344,6 +3540,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "L'e-mail personnalisé en cas de fuite de données a été créé."
       ],
       "Breach Custom Email Deleted": [
         "L'e-mail personnalisé en cas de fuite de données a été supprimé."
@@ -3807,6 +4006,9 @@
       "Keys created": [
         "Les clés ont été créées."
       ],
+      "Labels:": [
+        "Labels :"
+      ],
       "Lean more about gateways": [
         "En savoir plus sur les Passerelles"
       ],
@@ -3818,6 +4020,9 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Commençons par sélectionner le bouton Nouveau groupe ci-dessus."
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
@@ -3944,6 +4149,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - l'e-mail personnalisé a été confirmé."
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - l'e-mail personnalisé a été créé."
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - l'e-mail personnalisé a été supprimé."
       ],
       "password": [
         "mot de passe"
@@ -4287,9 +4501,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Cette vérification peut prendre jusqu'à une heure. Après une vérification réussie, ne supprimez pas l'enregistrement TXT car il est nécessaire pour confirmer que vous possédez toujours le domaine."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
@@ -4569,6 +4780,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Grâce aux groupes d'utilisateurs, vous pouvez facilement envoyer des messages, partager des données ou modifier les paramètres de certains groupes d'utilisateurs en une seule fois."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
       ],
@@ -4788,6 +5002,14 @@
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "En attente"
+      ],
+      "Rejected": [
+        "Rejeté"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Offert"
@@ -4871,11 +5093,17 @@
       "Address": [
         "Adresse"
       ],
+      "Address type": [
+        "Type d'adresse"
+      ],
       "Addresses": [
         "Adresses"
       ],
       "Administrators": [
         "Administrateurs"
+      ],
+      "Allow": [
+        "Adresses autorisées"
       ],
       "Allow recovery by email": [
         "Autoriser la récupération par e-mail"
@@ -4909,6 +5137,9 @@
       ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Block": [
+        "Adresses bloquées"
       ],
       "Block malware only": [
         "Bloquer uniquement les logiciels malveillants"
@@ -5021,6 +5252,9 @@
       "Do you have any suggestions for our team?": [
         "Avez-vous des suggestions pour notre équipe ?"
       ],
+      "Domain": [
+        "Domaine"
+      ],
       "Domain name": [
         "Nom de domaine"
       ],
@@ -5050,6 +5284,15 @@
       ],
       "Gift code": [
         "Code-cadeau"
+      ],
+      "Group address": [
+        "Groupe d'adresses"
+      ],
+      "Group members": [
+        "Membres du groupe"
+      ],
+      "Group name": [
+        "Nom du groupe"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -5192,6 +5435,9 @@
       "Public certificate (X.509)": [
         "Certificat public (X.509)"
       ],
+      "Purpose": [
+        "Utilité"
+      ],
       "Recovery email address": [
         "Adresse e-mail de récupération"
       ],
@@ -5224,6 +5470,9 @@
       ],
       "Single sign-on URL": [
         "URL d’authentification unique"
+      ],
+      "Spam": [
+        "Indésirables/spam"
       ],
       "Start date": [
         "Date de début"
@@ -5272,6 +5521,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quelle est la principale raison pour laquelle vous annulez votre abonnement ou passez à un abonnement inférieur ?"
+      ],
+      "Who can send to this group address?": [
+        "Qui peut envoyer des messages à cette adresse de groupe ?"
       ],
       "Why would you like to cancel?": [
         "Pourquoi voulez-vous annuler votre abonnement ?"
@@ -5656,6 +5908,20 @@
         "Franc suisse"
       ]
     },
+    "Navigation": {
+      "All": [
+        "Tout"
+      ],
+      "Allow": [
+        "Adresses autorisées"
+      ],
+      "Block": [
+        "Adresses bloquées"
+      ],
+      "Spam": [
+        "Indésirables/spam"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Vitesse VPN maximale"
@@ -5676,6 +5942,15 @@
       ],
       "From ${ price }": [
         "À partir de ${ price }"
+      ],
+      "Get started for $1": [
+        "Lancez-vous pour 1 $"
+      ],
+      "Get started for 1 €": [
+        "Lancez-vous pour 1  €"
+      ],
+      "Get started for CHF 1": [
+        "Lancez-vous pour 1  CHF"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -6216,6 +6491,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
@@ -6287,8 +6565,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } : sécurisez vos fichiers avec un stockage cloud chiffré. Comprend l'historique des versions, le partage chiffré des fichiers et bien d'autres fonctionnalités."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
@@ -6662,6 +6940,20 @@
         "Toute l'organisation"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Tout le monde, y compris les utilisateurs extérieurs"
+      ],
+      "Members": [
+        "Membres"
+      ],
+      "Nobody by default": [
+        "Personne par défaut"
+      ],
+      "Organization members": [
+        "Membres de l'organisation"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pour ajouter d'autres utilisateurs ou retirer certains comptes utilisateurs afin de libérer de l'espace."
@@ -6985,7 +7277,7 @@
         "Pour continuer, ajoutez un moyen de paiement dans le tableau de bord."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
+        "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Please select billing country": [
         "Veuillez sélectionner le pays pour la facturation."
@@ -6997,31 +7289,31 @@
         "Veuillez d'abord sélectionner votre pays de facturation."
       ],
       "Please select your billing state first.": [
-        "Veuillez d'abord sélectionner votre état de facturation."
+        "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
       "Processing payment": [
         "Traitement du paiement"
       ],
       "Select billing country to pay": [
-        "Veuillez sélectionner l'état pour la facturation à payer."
+        "Veuillez sélectionner l'état pour la facture à payer."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "La transaction a été détectée avec succès. Les crédits seront ajoutés à votre compte une fois la transaction confirmée."
+        "La transaction a été détectée. Les crédits seront ajoutés à votre compte une fois la transaction entièrement confirmée."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -7080,6 +7372,9 @@
       "Confirm": [
         "Confirmer"
       ],
+      "domain.com": [
+        "domaine.fr"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "ex. : https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7097,6 +7392,9 @@
       ],
       "End date": [
         "Date de fin"
+      ],
+      "example@domain.com": [
+        "exemple@domaine.fr"
       ],
       "Feedback": [
         "Votre avis"
@@ -7142,6 +7440,20 @@
       ],
       "yourdomain.com": [
         "votredomaine.fr"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Ajouter un nom au groupe"
+      ],
+      "e.g. distribution list for marketing team": [
+        "par exemple une liste de diffusion pour l'équipe marketing"
+      ],
+      "e.g. marketing": [
+        "par ex. : marketing"
+      ],
+      "Members": [
+        "Membres"
       ]
     },
     "plan customizer, ips": {
@@ -7276,11 +7588,11 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "La connexion n'a pas abouti."
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
-      ],
-      "Something went wrong. Please try again.": [
-        "Une erreur s'est produite. Nous vous invitons à réessayer."
       ]
     },
     "saml: Info": {
@@ -8246,6 +8558,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vous offre une confidentialité illimitée et plus d'espace de stockage pour un maximum de 2 personnes."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } permet à votre équipe d'être plus productive, mieux organiser leur travail avec un accès à toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium."
       ],
@@ -8268,7 +8583,7 @@
         "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements et fichiers. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
+        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus d'espace de stockage annuels."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programme ${ PROTON_SENTINEL_NAME }"
@@ -8281,6 +8596,9 @@
       ],
       "10 email addresses": [
         "10 adresses e-mail"
+      ],
+      "2 users": [
+        "2 utilisateurs"
       ],
       "20 email addresses per user": [
         "20 adresses e-mail par utilisateur"
@@ -8298,7 +8616,7 @@
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
+        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -8364,7 +8682,7 @@
         "Aider les militants à Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN pour tous."
+        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN à tous."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Voici comment nous avons riposté lorsque ${ BRAND_NAME } a été la cible d'une campagne de censure agressive."
@@ -8385,7 +8703,7 @@
         "Conserver ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Garantirez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
+        "Garantissez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
       ],
       "Learn more": [
         "En savoir plus"
@@ -8403,7 +8721,7 @@
         "La protection de la vie privée en ligne, pour toute la famille"
       ],
       "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Les organisations, utilisateurs supplémentaires et domaine de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
+        "Les organisations, utilisateurs supplémentaires et domaines de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
       ],
       "Our fight against censorship in Russia": [
         "Notre combat contre la censure en Russie"
@@ -8462,6 +8780,9 @@
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
+      "Unlimited privacy for two": [
+        "Confidentialité illimitée pour deux personnes"
+      ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
       ],
@@ -8484,7 +8805,7 @@
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 1 Go d'espace de stockage pour Mail et jusqu'à 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Votre équipe sera interrompue dans son travail car les utilisateurs supplémentaires ne sont pas pris en charge par l'abonnement gratuit."
+        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -8502,13 +8823,13 @@
         "${ planName } a été annulé."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de votre entreprise. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et maintient la connexion au sein de votre équipe."
+        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de vos activités. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et permet à votre équipe de rester connectée."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un aboonement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Votre domaine de messagerie personnalisé"
@@ -8812,17 +9133,29 @@
       "Country": [
         "Pays"
       ],
+      "Edit": [
+        "Modifier"
+      ],
       "Email": [
         "E-mail"
       ],
       "Email address": [
         "Adresse e-mail"
       ],
+      "Email address or domain": [
+        "Adresse e-mail ou domaine"
+      ],
       "Email addresses": [
         "Adresses e-mail"
       ],
       "Invitation email": [
         "E-mail d’invitation"
+      ],
+      "List": [
+        "Liste"
+      ],
+      "Marked as": [
+        "Marqué comme"
       ],
       "Name": [
         "Nom"
@@ -8906,8 +9239,20 @@
       "Add PayPal payment method": [
         "Ajouter le moyen de paiement PayPal"
       ],
+      "Add pm.me subdomain": [
+        "Ajouter le sous-domaine pm.me"
+      ],
       "Add servers": [
         "Ajouter des serveurs"
+      ],
+      "Add to allow list": [
+        "Ajouter à la liste d'adresses autorisées"
+      ],
+      "Add to block list": [
+        "Ajouter à la liste d'adresses bloquées"
+      ],
+      "Add to spam list": [
+        "Ajouter à la liste des indésirables/spam"
       ],
       "Add user accounts": [
         "Ajouter des comptes utilisateur"
@@ -9057,6 +9402,9 @@
       "Delete account": [
         "Supprimer le compte"
       ],
+      "Delete group?": [
+        "Supprimer le groupe ?"
+      ],
       "Delete organization logo?": [
         "Supprimer le logo de l’organisation ?"
       ],
@@ -9072,6 +9420,9 @@
       ],
       "Disable two-factor authentication": [
         "Désactiver l'authentification à deux facteurs"
+      ],
+      "Discard changes?": [
+        "Abandonner les modifications ?"
       ],
       "Domain names": [
         "Noms de domaine"
@@ -9281,6 +9632,9 @@
       "Recovery": [
         "Récupération"
       ],
+      "Remove all members?": [
+        "Retirer tous les membres ?"
+      ],
       "Remove domain": [
         "Retirer le domaine"
       ],
@@ -9389,6 +9743,9 @@
       ],
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
+      ],
+      "There are no groups": [
+        "Il n'y a pas de groupe."
       ],
       "Time": [
         "Heure"
@@ -9585,6 +9942,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ],
+      "User rejected invitation": [
+        "L'utilisateur a refusé l'invitation."
+      ],
+      "Waiting user to accept the invitation": [
+        "En attente de l’acceptation de l’invitation par l’utilisateur"
       ]
     },
     "Tooltip for news": {

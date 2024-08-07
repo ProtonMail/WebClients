@@ -563,6 +563,9 @@
       "Minimize composer": [
         "Smanji prozor za novu poruku"
       ],
+      "Modify": [
+        "Izmijeniti"
+      ],
       "Monday": [
         "Ponedjeljak"
       ],
@@ -931,6 +934,11 @@
       ],
       "Trust": [
         "Vjeruj"
+      ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -4434,7 +4442,7 @@
         "Ova poruka se automatski stvara kao odgovor na prethodnu poruku."
       ],
       "This message is from a mailing list.": [
-        "Ovo poruka je s mailing liste."
+        "Ova poruka je s mailing liste."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Ova poruka je potpisana ključem koji još nije pouzdan."
@@ -4555,6 +4563,11 @@
       ],
       "You have ${ unread } in your inbox.": [
         "Imate ${ unread }} u vašoj pristigloj pošti."
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Imate **${ count } poruku** spremljenu u ovoj mapi",
+        "Imate **${ count } poruke** spremljene u ovoj mapi",
+        "Imate **${ count } poruka** spremljenih u ovoj mapi"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Vaša poruka nema predmet. Želite li svejedno poslati poruku?"
@@ -6618,7 +6631,7 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        "Ovo poruka je s mailing liste."
+        "Ova poruka je s mailing liste."
       ],
       "Unsubscribed": [
         "Otkazana pretplata"
@@ -7606,7 +7619,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatski - označava da se format teksta koji je u prozoru za novu poruku, koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
+        "Automatski - označava da se format teksta koji je u prozoru za novu poruku koristi i kod slanja poruke ovom korisniku. Obični tekst - označava da će se poruka uvijek pretvoriti u običan tekst prilikom slanja."
       ],
       "Customize import to reduce the number of folders": [
         "Prilagodite uvoz da biste smanjili broj mapa"

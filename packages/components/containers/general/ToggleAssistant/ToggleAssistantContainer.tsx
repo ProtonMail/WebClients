@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, useUserSettings } from '@proton/components';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -36,7 +36,7 @@ const ToggleAssistantContainer = () => {
                         'Link'
                     ).t`Learn more`}</Href>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight>
+                <SettingsLayoutRight isToggleContainer>
                     <ToggleAssistant id="assistantSelect" aiFlag={aiFlag} />
                 </SettingsLayoutRight>
             </SettingsLayout>

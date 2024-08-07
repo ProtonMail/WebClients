@@ -152,7 +152,7 @@ export default function PassAliasesWrapper() {
                                 <GenericErrorDisplay title={''} customImage={aliasSampleSvg}>
                                     <div className="text-weak text-sm color-weak text-center">
                                         {c('Error message')
-                                            .t`Aliases cannot be used when an extra password is enabled in ${PASS_APP_NAME}.`}
+                                            .t`When extra password is enabled, alias management can only be done in ${PASS_APP_NAME}.`}
                                     </div>
                                 </GenericErrorDisplay>
                             </DrawerAppSection>

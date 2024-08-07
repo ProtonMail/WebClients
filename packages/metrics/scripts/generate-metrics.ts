@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import * as prettier from 'prettier';
+import readline from 'readline';
 import ts from 'typescript';
 
 type MetricType = 'Counter' | 'Histogram';
@@ -11,7 +12,7 @@ interface ParsedFile {
     type: MetricType;
     propName: string;
     metricName: string;
-    version: string;
+    version: number;
 }
 
 async function findFirstInterfaceName(fileName: string) {
@@ -55,15 +56,21 @@ function getMetricName(fileName: string) {
     return fileName.replace(/_v\d.schema.d.ts/, '');
 }
 
-function getVersion(fileName: string) {
+function getVersion(fileName: string): number {
     const regex = /_v(\d+)\.schema\.d\.ts/;
     const match = fileName.match(regex);
 
     if (!match) {
-        return '';
+        return NaN;
     }
 
-    return match[1];
+    return parseInt(match[1]);
+}
+
+function getVersionInMetricsClassByName(metricsClass: string, metricName: string) {
+    const existingVersionMatch = metricsClass.match(new RegExp(`${metricName}.*version: (\\d+)`));
+    const existingVersion = existingVersionMatch ? parseInt(existingVersionMatch[1], 10) : 0;
+    return existingVersion;
 }
 
 async function handleFile(fileName: string) {
@@ -177,24 +184,53 @@ import Histogram from './lib/Histogram';
     return prettier.format(code, { ...options, parser: 'typescript' });
 }
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+const promptUser = (question: string): Promise<string> => {
+    return new Promise((resolve) => {
+        rl.question(question, resolve);
+    });
+};
+
 async function main() {
+    const existingMetricsContent = await fs.readFile('./Metrics.ts', 'utf-8');
+
     const files = await fs.readdir(typesDirectoryPath);
 
     const tsFiles = files.filter((fileName) => fileName.endsWith('.ts'));
 
     const parsedFiles = await Promise.all(tsFiles.map((file) => handleFile(file)));
 
-    let dedupedFiles: { [interfaceName: string]: ParsedFile } = {};
+    const dedupedFiles: { [metricName: string]: ParsedFile } = {};
 
-    parsedFiles.forEach((file) => {
-        const existingVersion = dedupedFiles[file.interfaceName];
+    for (const file of parsedFiles) {
+        const existingVersion = getVersionInMetricsClassByName(existingMetricsContent, file.metricName);
 
-        if (existingVersion && existingVersion.version >= file.version) {
-            return;
+        const futureVersion = dedupedFiles[file.metricName];
+        if (futureVersion && futureVersion.version >= file.version) {
+            continue;
         }
 
-        dedupedFiles[file.interfaceName] = file;
-    });
+        if (existingVersion !== 0 && file.version > existingVersion) {
+            const answer = await promptUser(
+                `Metric "${file.metricName}" already exists with version ${existingVersion}. ` +
+                    `Do you want to replace it with version ${file.version}? (y/n): `
+            );
+            if (answer.toLowerCase().includes('y')) {
+                console.log(
+                    `\x1b[1m\x1b[31mConsider deleting the version ${existingVersion} of ${file.metricName} when possible. See documentation here: https://confluence.protontech.ch/pages/viewpage.action?pageId=121927830#id-@proton/metrics-Deletinganexistingmetric\x1b[0m`
+                );
+                dedupedFiles[file.metricName] = file;
+            }
+        } else {
+            dedupedFiles[file.metricName] = file;
+        }
+    }
+
+    rl.close();
 
     const code = await generateCode(Object.values(dedupedFiles));
 

@@ -57,7 +57,7 @@ const PassAliasTipCTA = ({ ctaText }: Props) => {
                     modalProps={createPassAliasesForm.modalProps}
                 />
             )}
-            <Button onClick={onClick} shape="underline" size="small" className="link align-baseline py-0">
+            <Button onClick={onClick} shape="underline" size="small" className="link align-baseline">
                 {ctaText}
             </Button>
         </>

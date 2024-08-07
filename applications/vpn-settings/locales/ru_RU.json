@@ -43,6 +43,9 @@
       "Add address": [
         "Добавить адрес"
       ],
+      "Add address or domain": [
+        "Добавить адрес или домен"
+      ],
       "Add credit / debit card": [
         "Добавить кредитную / дебетовую карту"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Добавить пользователя"
       ],
+      "Allow": [
+        "Разрешить"
+      ],
       "Apply": [
         "Применить"
       ],
@@ -72,6 +78,9 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Block": [
+        "Заблокировать"
       ],
       "Cancel": [
         "Отменить"
@@ -295,6 +304,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Go to label": [
+        "Перейти к ярлыку"
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -343,8 +355,14 @@
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
+      "More options": [
+        "Дополнительные параметры"
+      ],
       "Need help?": [
         "Нужна помощь?"
+      ],
+      "New group": [
+        "Новая группа"
       ],
       "Next": [
         "Далее"
@@ -352,10 +370,10 @@
       "Next month": [
         "Следующий месяц"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -438,6 +456,9 @@
       ],
       "Resend code": [
         "Повторно отправить код"
+      ],
+      "Resend invitation": [
+        "Отправить повторное приглашение"
       ],
       "Reset credentials": [
         "Сбросить учётные данные"
@@ -558,6 +579,9 @@
       ],
       "Signing in": [
         "Выполняется вход"
+      ],
+      "Spam": [
+        "Спам"
       ],
       "Start live chat": [
         "Начать онлайн чат"
@@ -2019,6 +2043,11 @@
         "Мы обнаружили ошибки в нескольких строках во время импорта, просмотрите ваш файл CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Подробнее"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/месяц"
@@ -2106,6 +2135,35 @@
         "Поддомены с 'www' для эл. почты обычно не применяются. Вы уверены, что хотите использовать это значение для домена?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } добавлено"
+      ],
+      "${ name } deletion failed": [
+        "Удаление ${ name } не удалось"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } не удалось переместить в черный список"
+      ],
+      "${ name } failed to move to block list": [
+        "Не удалось переместить ${ name } в список блокируемых"
+      ],
+      "${ name } failed to move to spam list": [
+        "Не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } перемещен(а) в черный список"
+      ],
+      "${ name } moved to block list": [
+        "${ name } перемещен(а) в черный список"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } перемещён в список спама"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успешно удалено"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Ошибки или проблемы с качеством"
@@ -2163,9 +2221,43 @@
         "Приоритетная поддержка"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } добавлено"
+      ],
+      "${ name } deletion failed": [
+        "Удаление ${ name } не удалось"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } не удалось переместить в белый список"
+      ],
+      "${ name } failed to move to block list": [
+        "Не удалось переместить ${ name } в список блокируемых"
+      ],
+      "${ name } failed to move to spam list": [
+        "Не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } перемещен(а) в черный список"
+      ],
+      "${ name } moved to block list": [
+        "${ name } перемещен(а) в черный список"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } перемещён в список спама"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успешно удалено"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Электронное письмо с подтверждением отправлено на ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Без имени"
       ]
     },
     "eof2023: Deal details": {
@@ -2279,6 +2371,12 @@
       ],
       "Invalid code": [
         "Недействительный код"
+      ],
+      "Invalid domain": [
+        "Недействительный домен"
+      ],
+      "Invalid email address": [
+        "Недействительный адрес электронной почты"
       ],
       "Invalid expiration date": [
         "Недействительный срок действия"
@@ -2585,9 +2683,6 @@
       "Manage user accounts": [
         "Управление аккаунтами пользователей"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "За полгода может быть принято не более 10 приглашений."
-      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Владельцы групповых тарифов не могут присоединиться к другим групповым тарифам."
       ],
@@ -2606,9 +2701,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Доступный объем хранилища: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Подписка оплачивается основным администратором семейного плана или тарифа Visionary."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "На данный момент семейный план и тариф Visionary не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
@@ -2623,15 +2715,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Вы достигли предела в 10 принятых приглашений за 6 месяцев."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Вы достигли лимита в 10 принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной."
-      ],
-      "You have successfully joined the Family plan": [
-        "Вы успешно присоединились к тарифу Family"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перед добавлением нескольких пользователей необходимо настроить пользовательский домен."
@@ -2942,6 +3025,35 @@
         "Терабайтов"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Разрешить:"
+      ],
+      "Block:": [
+        "Блокировка:"
+      ],
+      "Search list": [
+        "Искать в списке"
+      ],
+      "Spam:": [
+        "Спам:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Возьмите под контроль то, что попадает в почтовые ящики членов вашей организации, создав следующие списки:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Эти списки применяются ко всем аккаунтам в вашей организации. Пользователи могут создавать собственные индивидуальные фильтры, но не смогут переопределить заблокированные вами адреса или домены."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Чтобы гарантировать, что критические сообщения не попали в спам и не пропущены"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Чтобы предотвратить заполнение входящих нежелательной почтой"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Чтобы остановить попадание фишинговых или подозрительных писем в систему электронной почты вашей организации"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Системный по умолчанию"
@@ -3012,6 +3124,14 @@
       ],
       "Services": [
         "Службы"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } член",
+        "${ memberCount } члена",
+        "${ memberCount } членов",
+        "${ memberCount } член"
       ]
     },
     "Header": {
@@ -3106,6 +3226,15 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Добавьте эту запись к вашему домену в панели управления регистратора доменных имен"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
       ]
     },
     "Human verification method": {
@@ -3209,6 +3338,12 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функции Secure Core требуется ${ vpnPlus }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участника)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /месяц)"
@@ -3810,6 +3945,9 @@
       "Keys created": [
         "Ключи созданы"
       ],
+      "Labels:": [
+        "Ярлыки:"
+      ],
       "Lean more about gateways": [
         "Узнайте больше о шлюзах"
       ],
@@ -4283,9 +4421,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Проверка может занять до одного часа. После успешной проверки не удаляйте запись TXT, так как она необходима для подтверждения того, что вы продолжаете владеть доменом."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит использовать PayPal для оплаты подписки на ${ BRAND_NAME }. Мы перенаправим вас на PayPal в новой вкладке браузера. Если вы используете какие-либо блокировщики всплывающих окон, пожалуйста, отключите их, чтобы продолжить."
@@ -4888,11 +5023,17 @@
       "Address": [
         "Адрес"
       ],
+      "Address type": [
+        "Тип адреса"
+      ],
       "Addresses": [
         "Адреса"
       ],
       "Administrators": [
         "Администраторы"
+      ],
+      "Allow": [
+        "Разрешить"
       ],
       "Allow recovery by email": [
         "Разрешить восстановление по электронной почте"
@@ -4926,6 +5067,9 @@
       ],
       "Billing cycle": [
         "Платежный цикл"
+      ],
+      "Block": [
+        "Заблокировать"
       ],
       "Block malware only": [
         "Блокировать только вредоносные программы"
@@ -5038,6 +5182,9 @@
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
+      "Domain": [
+        "Домен"
+      ],
       "Domain name": [
         "Доменное имя"
       ],
@@ -5067,6 +5214,9 @@
       ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "Group name": [
+        "Название группы"
       ],
       "Hide password": [
         "Скрыть пароль"
@@ -5241,6 +5391,9 @@
       ],
       "Single sign-on URL": [
         "URL единого входа"
+      ],
+      "Spam": [
+        "Спам"
       ],
       "Start date": [
         "Дата начала"
@@ -5670,6 +5823,20 @@
       ],
       "Swiss franc": [
         "Швейцарский франк"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Все"
+      ],
+      "Allow": [
+        "Разрешить"
+      ],
+      "Block": [
+        "Заблокировать"
+      ],
+      "Spam": [
+        "Спам"
       ]
     },
     "new_plans": {
@@ -6341,9 +6508,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает историю версий, общий доступ к зашифрованным файлам и многое другое."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
       ],
@@ -6718,6 +6882,11 @@
       ],
       "The whole organization": [
         "Вся организация"
+      ]
+    },
+    "option": {
+      "Members": [
+        "Участники"
       ]
     },
     "Organization capacity error": {
@@ -7127,6 +7296,9 @@
       "Confirm": [
         "Подтвердить"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "например, https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7144,6 +7316,9 @@
       ],
       "End date": [
         "Дата окончания"
+      ],
+      "example@domain.com": [
+        "primer@domain.com"
       ],
       "Feedback": [
         "Обратная связь"
@@ -7189,6 +7364,11 @@
       ],
       "yourdomain.com": [
         "vashdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Участники"
       ]
     },
     "plan customizer, ips": {
@@ -8899,17 +9079,29 @@
       "Country": [
         "Страна"
       ],
+      "Edit": [
+        "Изменить"
+      ],
       "Email": [
         "Электронная почта"
       ],
       "Email address": [
         "Адрес электронной почты"
       ],
+      "Email address or domain": [
+        "Адрес электронной поты или домен"
+      ],
       "Email addresses": [
         "Адреса электронной почты"
       ],
       "Invitation email": [
         "Электронное письмо-приглашение"
+      ],
+      "List": [
+        "Список"
+      ],
+      "Marked as": [
+        "Отмечено как"
       ],
       "Name": [
         "Имя"
@@ -8992,6 +9184,15 @@
       ],
       "Add servers": [
         "Добавить серверы"
+      ],
+      "Add to allow list": [
+        "Добавить в список разрешённых"
+      ],
+      "Add to block list": [
+        "Добавить в список блокируемых"
+      ],
+      "Add to spam list": [
+        "Добавить в список спама"
       ],
       "Add user accounts": [
         "Добавить аккаунты пользователя"
@@ -9154,6 +9355,9 @@
       ],
       "Disable two-factor authentication": [
         "Отключение двухфакторной аутентификации"
+      ],
+      "Discard changes?": [
+        "Сбросить изменения?"
       ],
       "Domain names": [
         "Доменные имена"

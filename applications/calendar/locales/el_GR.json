@@ -482,11 +482,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -3396,9 +3396,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -3614,8 +3611,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Αποθηκευτικός χώρος που σας έχει εκχωρηθεί: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Η συνδρομή χρεώνεται στον κύριο διαχειριστή του Visionary ή του οικογενειακού προγράμματος."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του προγράμματος."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
@@ -3632,8 +3629,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Έχετε εγγραφεί επιτυχώς στο Οικογενειακό πρόγραμμα"
+      "You have successfully joined the family group": [
+        "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
@@ -6221,6 +6218,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Ξεκινήστε με $1"
+      ],
+      "Get started for 1 €": [
+        "Ξεκινήστε με 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Ξεκινήστε με CHF 1"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -6726,6 +6732,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Ασφαλίστε την ψηφιακή σας ζωή με ${ BRAND_NAME } για δύο άτομα."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
@@ -6770,8 +6779,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -8464,6 +8473,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "Το ${ planName } σας δίνει απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "Το ${ planName } δίνει στην ομάδα σας αυτό που χρειάζεται για να είναι πιο παραγωγική και οργανωμένη στην εργασία της με πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητές τους."
       ],
@@ -8499,6 +8511,9 @@
       ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "2 users": [
+        "2 χρήστες"
       ],
       "20 email addresses per user": [
         "20 διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
@@ -8652,6 +8667,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Unlimited privacy for two": [
+        "Απεριόριστη ιδιωτικότητα για δύο"
       ],
       "Users won’t be able to manage their calendars": [
         "Οι χρήστες δε θα μπορούν να διαχειρίζονται τα ημερολόγιά τους"

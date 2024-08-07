@@ -24,11 +24,14 @@ const config = {
         name: 'Proton Pass',
         appCategoryType: 'public.app-category.productivity',
         osxSign: {},
-        osxNotarize: {
-            appleId: process.env.PASS_DESKTOP_APPLE_ID,
-            appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD,
-            teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID,
-        },
+        osxNotarize:
+            process.env.CI || process.env.PASS_DESKTOP_NOTARIZE
+                ? {
+                      appleId: process.env.PASS_DESKTOP_APPLE_ID,
+                      appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD,
+                      teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID,
+                  }
+                : undefined,
     },
     rebuildConfig: {},
     makers: [

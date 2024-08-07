@@ -6,11 +6,11 @@ import { c, msgid } from 'ttag';
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import {
     getInvitationAcceptLimit,
     getInvitationLimit,
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

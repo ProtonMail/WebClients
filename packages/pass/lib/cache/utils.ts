@@ -9,13 +9,16 @@ type PasswordUnlockOptions = {
     offlineConfig: Maybe<OfflineConfig>;
     offlineEnabled: boolean;
     offlineVerifier: Maybe<string>;
+    encryptedOfflineKD: Maybe<string>;
 };
 /** We consider that the user can unlock with his proton
  * password if we have an encrypted cache key & state and
  * an offline configuration. If the user is offline, allow
  * unlocking without checking the LockMode. */
-export const canPasswordUnlock = (options: PasswordUnlockOptions): boolean => {
+export const canLocalUnlock = (options: PasswordUnlockOptions): boolean => {
     if (!(options.offlineConfig && options.offlineVerifier)) return false;
     if (options.offline) return OFFLINE_SUPPORTED && options.offlineEnabled;
-    return options.lockMode === LockMode.PASSWORD;
+    if (options.lockMode === LockMode.BIOMETRICS) return Boolean(options.encryptedOfflineKD);
+    if (options.lockMode === LockMode.PASSWORD) return true;
+    return false;
 };

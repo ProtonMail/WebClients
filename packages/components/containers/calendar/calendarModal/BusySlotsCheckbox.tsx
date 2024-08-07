@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, Info, InputFieldTwo } from '@proton/components/components';
+import { Info, Toggle } from '@proton/components/components';
 import { useConfig } from '@proton/components/hooks';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS } from '@proton/shared/lib/calendar/constants';
 
@@ -23,7 +23,7 @@ export const BusySlotsLabelInfo = () => (
 
 const BusySlotsLabel = () => (
     <>
-        <span>{c('Label').t`Access to my events`}</span>
+        <span className="text-semibold">{c('Label').t`Show others when I'm busy`}</span>
         <BusySlotsLabelInfo />
     </>
 );
@@ -45,16 +45,20 @@ const BusySlotsCheckbox = ({ value, onChange, disabled }: Props) => {
     };
 
     return (
-        <InputFieldTwo
-            as={Checkbox}
-            checked={value === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES}
-            id="default-share-busy-schedule"
-            label={<BusySlotsLabel />}
-            onChange={handleChange}
-            disabled={disabled}
-        >
-            {c('Label').t`Show others when I'm busy`}{' '}
-        </InputFieldTwo>
+        <>
+            <div>
+                <BusySlotsLabel />
+            </div>
+            <div className="flex items-center gap-x-1">
+                <Toggle
+                    id="share-busy-schedule-toggle"
+                    aria-describedby="busy-slots-sharing"
+                    checked={value === CALENDAR_SHARE_BUSY_TIME_SLOTS.YES}
+                    disabled={disabled}
+                    onChange={handleChange}
+                />
+            </div>
+        </>
     );
 };
 

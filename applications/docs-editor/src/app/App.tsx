@@ -29,11 +29,12 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 import type { LexicalEditor, SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
-import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
+import { exportDataFromEditorState } from './Conversion/Exporter/ExportDataFromEditorState'
 import { Application } from './Application'
 import { ThemeStyles } from './Theme'
 import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
+import { loadLocales } from '@proton/account/bootstrap'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -86,6 +87,10 @@ export function App({ nonInteractiveMode = false }: Props) {
       const requestHandler: ClientRequiresEditorMethods = {
         async receiveMessage(message: RtsMessagePayload) {
           void newDocState.receiveMessage(message)
+        },
+
+        async loadUserSettings(settings) {
+          void loadLocales({ locales, userSettings: settings })
         },
 
         async showEditor() {

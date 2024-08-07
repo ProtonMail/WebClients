@@ -1,9 +1,11 @@
-import { PayloadAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import type { PayloadAction, UnknownAction} from '@reduxjs/toolkit';
+import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type {
+    CacheType} from '@proton/redux-utilities';
 import {
-    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
@@ -14,11 +16,12 @@ import { queryDomains } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Domain, User } from '@proton/shared/lib/interfaces';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
-import { UserState, userThunk } from '../user';
+import type { UserState} from '../user';
+import { userThunk } from '../user';
 
 const name = 'domains' as const;
 
@@ -37,7 +40,7 @@ type Model = NonNullable<SliceState['value']>;
 export const selectDomains = (state: State) => state.domains;
 
 const canFetch = (user: User) => {
-    return isPaid(user);
+    return isAdmin(user);
 };
 const freeDomains: Domain[] = [];
 

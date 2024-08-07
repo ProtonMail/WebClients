@@ -28,6 +28,7 @@ import {
     StandardLoadErrorPage,
     StandardPrivateApp,
     SubscriptionModalProvider,
+    useNotifications,
 } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
@@ -39,6 +40,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
+import { extraThunkArguments } from '@proton/wallet';
 import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/ExtendedApiProvider';
 
 import { bootstrapApp } from './bootstrap';
@@ -48,7 +50,6 @@ import { WalletDrawerContextProvider } from './contexts/WalletDrawerContext/Wall
 import { WalletSetupModalContextProvider } from './contexts/WalletSetupModalContext/WalletSetupModalContextProvider';
 import locales from './locales';
 import type { WalletStore } from './store/store';
-import { extraThunkArguments } from './store/thunk';
 
 setTtagLocales(locales);
 setupGuestCrossStorage();
@@ -68,8 +69,9 @@ const defaultState: {
     showDrawerSidebar: false,
 };
 
-const App = () => {
+const AppInner = () => {
     const [state, setState] = useState(defaultState);
+    const notificationsManager = useNotifications();
 
     useEffect(() => {
         setPanicHook();
@@ -78,7 +80,10 @@ const App = () => {
     useEffectOnce(() => {
         void (async () => {
             try {
-                const { scopes, userSettings, MainContainer, store } = await bootstrapApp({ config });
+                const { scopes, userSettings, MainContainer, store } = await bootstrapApp({
+                    config,
+                    notificationsManager,
+                });
 
                 setState({
                     store,
@@ -95,55 +100,55 @@ const App = () => {
         })();
     });
 
+    if (state.error) {
+        return <StandardLoadErrorPage errorMessage={state.error.message} />;
+    }
+
+    const loader = <LoaderPage />;
+    if (!state.MainContainer || !state.store) {
+        return loader;
+    }
+
     return (
-        <ProtonApp config={config}>
-            {(() => {
-                if (state.error) {
-                    return <StandardLoadErrorPage errorMessage={state.error.message} />;
-                }
-
-                const loader = <LoaderPage />;
-                if (!state.MainContainer || !state.store) {
-                    return loader;
-                }
-
-                return (
-                    <ProtonStoreProvider store={state.store}>
-                        <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ApiProvider api={extraThunkArguments.api}>
-                                <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                                        <Router history={extraThunkArguments.history}>
-                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp
-                                                        hasReadableMemberKeyActivation
-                                                        hasMemberKeyMigration
-                                                        hasPrivateMemberKeyGeneration
-                                                        loader={loader}
-                                                    >
-                                                        <SubscriptionModalProvider app={config.APP_NAME}>
-                                                            <BitcoinBlockchainContextProvider>
-                                                                <WalletSetupModalContextProvider>
-                                                                    <WalletDrawerContextProvider>
-                                                                        <state.MainContainer />
-                                                                    </WalletDrawerContextProvider>
-                                                                </WalletSetupModalContextProvider>
-                                                            </BitcoinBlockchainContextProvider>
-                                                        </SubscriptionModalProvider>
-                                                    </StandardPrivateApp>
-                                                </ErrorBoundary>
-                                            </EventManagerProvider>
-                                        </Router>
-                                    </FlagProvider>
-                                </ExtendedApiProvider>
-                            </ApiProvider>
-                        </AuthenticationProvider>
-                    </ProtonStoreProvider>
-                );
-            })()}
-        </ProtonApp>
+        <ProtonStoreProvider store={state.store}>
+            <AuthenticationProvider store={extraThunkArguments.authentication}>
+                <ApiProvider api={extraThunkArguments.api}>
+                    <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
+                        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                            <Router history={extraThunkArguments.history}>
+                                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                        <StandardPrivateApp
+                                            hasReadableMemberKeyActivation
+                                            hasMemberKeyMigration
+                                            hasPrivateMemberKeyGeneration
+                                            loader={loader}
+                                        >
+                                            <SubscriptionModalProvider app={config.APP_NAME}>
+                                                <BitcoinBlockchainContextProvider>
+                                                    <WalletSetupModalContextProvider>
+                                                        <WalletDrawerContextProvider>
+                                                            <state.MainContainer />
+                                                        </WalletDrawerContextProvider>
+                                                    </WalletSetupModalContextProvider>
+                                                </BitcoinBlockchainContextProvider>
+                                            </SubscriptionModalProvider>
+                                        </StandardPrivateApp>
+                                    </ErrorBoundary>
+                                </EventManagerProvider>
+                            </Router>
+                        </FlagProvider>
+                    </ExtendedApiProvider>
+                </ApiProvider>
+            </AuthenticationProvider>
+        </ProtonStoreProvider>
     );
 };
+
+const App = () => (
+    <ProtonApp config={config}>
+        <AppInner />
+    </ProtonApp>
+);
 
 export default App;

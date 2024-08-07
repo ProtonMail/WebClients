@@ -33,6 +33,7 @@ type CreateContentScriptOptions = {
     mainFrame: boolean;
     elements: PassElementsConfig;
 };
+
 export const createContentScriptClient = ({ scriptId, mainFrame, elements }: CreateContentScriptOptions) => {
     const context = createContentScriptContext({
         elements,
@@ -117,7 +118,9 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
-            const enable = Object.values(context.getFeatures()).reduce((pass, feat) => pass || feat);
+            const features = context.getFeatures();
+            const enableDetector = context.service.detector.isEnabled(features);
+            const enable = enableDetector || features.Passkeys;
             if (!enable) return context.destroy({ reason: 'injection settings' });
 
             /* if we're in an iframe and the initial detection should not
@@ -128,11 +131,12 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
 
             await reconciliate();
-
             port.onMessage.addListener(onPortMessage);
-            context.service.formManager.observe();
 
-            await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
+            if (enableDetector) {
+                context.service.formManager.observe();
+                await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
+            }
         } else context.destroy({ reason: 'Start failure' });
     };
 

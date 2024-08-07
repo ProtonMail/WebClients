@@ -14,12 +14,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import {
-    getHasVpnB2BPlan,
-    getHasVpnOrPassB2BPlan,
-    hasCancellablePlan,
-    hasNewCancellablePlan,
-} from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
@@ -39,7 +34,6 @@ export const getAccountAppRoutes = ({
     organization,
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
-    isNewCancellationFlowExtended,
     assistantKillSwitch,
     isUserGroupsFeatureEnabled,
 }: {
@@ -54,7 +48,6 @@ export const getAccountAppRoutes = ({
     organization?: Organization;
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
-    isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
     isUserGroupsFeatureEnabled: boolean;
 }) => {
@@ -71,9 +64,7 @@ export const getAccountAppRoutes = ({
 
     const hasVPNOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
 
-    // This condition is temporary and required to control the launch of the feature. Will be merged with the condition below once the feature is fully launched.
-    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription, user);
-    const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
+    const cancellablePlan = hasCancellablePlan(subscription, user);
 
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const hasSplitStorage =

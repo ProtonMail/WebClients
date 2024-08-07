@@ -3,9 +3,8 @@ import React, { createContext, useContext, useMemo } from 'react';
 
 import { useModalStateObject, useModalTwoPromise } from '@proton/components/components';
 import { AssistantIncompatibleBrowserModal, AssistantIncompatibleHardwareModal } from '@proton/components/containers';
-import useAssistantTelemetry, { INCOMPATIBILITY_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
-
-import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 
 interface Manager<TElement> {
     get: (composerID: string) => RefObject<TElement>;
@@ -24,9 +23,7 @@ interface ComposerAssistantContextType {
     displayAssistantModalPromise: (modalType: 'incompatibleHardware' | 'incompatibleBrowser') => Promise<void>;
     /** Manage different kind of Assistant needed refs */
     assistantRefManager: {
-        input: Manager<HTMLTextAreaElement>;
         container: Manager<HTMLDivElement>;
-        composerSpotlight: Manager<ComposerAssistantInitialSetupSpotlightRef>;
     };
 }
 
@@ -72,9 +69,7 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
     };
 
     const assistantRefManager = useMemo(() => {
-        const assistantInputs: Record<string, RefObject<HTMLTextAreaElement>> = {};
         const assistantContainers: Record<string, RefObject<HTMLDivElement>> = {};
-        const assistantComposerSpotlightRefs: Record<string, RefObject<ComposerAssistantInitialSetupSpotlightRef>> = {};
         const managerFactory = <TElement extends unknown>(
             store: Record<string, RefObject<TElement>>
         ): Manager<TElement> => ({
@@ -88,9 +83,7 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
         });
 
         return {
-            input: managerFactory(assistantInputs),
             container: managerFactory(assistantContainers),
-            composerSpotlight: managerFactory(assistantComposerSpotlightRefs),
         };
     }, []);
 

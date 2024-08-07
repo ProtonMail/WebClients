@@ -122,7 +122,7 @@ const Item = ({
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
 
-        if (target.closest('.stop-propagation') || snoozeDropdownState) {
+        if (target.closest('.stop-propagation') || snoozeDropdownState === 'open') {
             event.stopPropagation();
             return;
         }

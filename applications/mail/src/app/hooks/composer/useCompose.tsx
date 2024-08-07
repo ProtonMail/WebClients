@@ -54,6 +54,7 @@ export interface ComposeNew {
     type: ComposeTypes.newMessage;
     action: MESSAGE_ACTIONS;
     referenceMessage?: PartialMessageState;
+    forceOpenScheduleSend?: boolean;
 }
 
 export interface ComposeModelMessage {
@@ -106,10 +107,13 @@ export const useCompose = ({
             messageID,
             type,
             returnFocusTo,
+            forceOpenScheduleSend,
         }: {
             messageID: string;
             type: ComposeTypes;
             returnFocusTo?: HTMLElement;
+
+            forceOpenScheduleSend?: boolean;
         }) => {
             const message = getMessage(messageID);
 
@@ -120,6 +124,7 @@ export const useCompose = ({
                         messageID,
                         senderEmailAddress: undefined,
                         status: 'loading',
+                        forceOpenScheduleSend,
                     })
                 );
             } else {
@@ -134,6 +139,7 @@ export const useCompose = ({
                         senderEmailAddress: message.data.Sender.Address,
                         recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
                         status: 'idle',
+                        forceOpenScheduleSend,
                     })
                 );
             }
@@ -246,7 +252,7 @@ export const useCompose = ({
         }
 
         if (compose.type === ComposeTypes.newMessage) {
-            const { action, referenceMessage, returnFocusTo } = compose;
+            const { action, referenceMessage, returnFocusTo, forceOpenScheduleSend } = compose;
             const message = referenceMessage?.data;
 
             if (isOutbox(message) && message?.ID) {
@@ -262,7 +268,7 @@ export const useCompose = ({
 
             const newMessageID = await createDraft(action, referenceMessage);
 
-            openComposer({ messageID: newMessageID, returnFocusTo, type: compose.type });
+            openComposer({ messageID: newMessageID, returnFocusTo, type: compose.type, forceOpenScheduleSend });
             const composer = Object.values(store.getState().composers.composers).find(
                 ({ messageID }) => messageID === newMessageID
             );

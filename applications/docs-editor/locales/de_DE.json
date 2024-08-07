@@ -14,17 +14,29 @@
       "Add new table row": [
         "Neue Tabellenzeile hinzufügen"
       ],
+      "Adjust font size": [
+        "Schriftgröße anpassen"
+      ],
+      "and": [
+        "und"
+      ],
       "Apply": [
         "Übernehmen"
       ],
       "Bold": [
         "Fett"
       ],
+      "Bulleted List": [
+        "Aufzählungsliste"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
       "Center align": [
         "Zentrieren"
+      ],
+      "Check List": [
+        "Checkliste"
       ],
       "Clear contents": [
         "Inhalt löschen"
@@ -92,6 +104,9 @@
       "Insert left": [
         "Links einfügen"
       ],
+      "Insert link": [
+        "Link einfügen"
+      ],
       "Insert right": [
         "Rechts einfügen"
       ],
@@ -109,6 +124,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Numbered List": [
+        "Nummerierte Liste"
       ],
       "Options": [
         "Optionen"
@@ -151,6 +169,9 @@
       ],
       "Show thread": [
         "Unterhaltung anzeigen"
+      ],
+      "Strike-through": [
+        "Durchgestrichen"
       ],
       "Strikethrough": [
         "Durchstreichen"
@@ -347,11 +368,26 @@
       ]
     },
     "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Fehler beim Importieren der HTML-Daten aufgrund eines unbekannten Fehlers."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Fehler beim Importieren der Markdown-Daten aufgrund eines unbekannten Fehlers."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Fehler beim Konvertieren des Word-Dokumentes aufgrund eines unbekannten Fehlers."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Fehler beim Initialisieren des Editors aufgrund eines unbekannten Fehlers."
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Fehler beim Konvertieren des Word-Dokumentes. Ist es passwortgeschützt? Wenn ja, entferne bitte das Passwort und versuche es erneut."
       ]
     },
     "Error message": {
@@ -441,6 +477,9 @@
     "Label": {
       "Background colour": [
         "Hintergrundfarbe"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastaturkürzel: ${ shortcut }"
       ],
       "Link text": [
         "Text verlinken"

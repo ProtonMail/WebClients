@@ -48,12 +48,13 @@ export const createListenerStore = () => {
     const addListener = <T extends EventSource, E extends keyof EventMap<T>>(
         element: Maybe<T>,
         type: E,
-        fn: (e: EventType<T, E>) => void
+        fn: (e: EventType<T, E>) => void,
+        options?: AddEventListenerOptions
     ): (() => void) => {
         if (element !== undefined) {
             const listener: Listener = { kind: 'listener', element, type, fn };
             listeners.push(listener);
-            element.addEventListener(type as string, fn as EventListener);
+            element.addEventListener(type as string, fn as EventListener, options);
 
             return () => {
                 element.removeEventListener(type as string, fn as EventListener);

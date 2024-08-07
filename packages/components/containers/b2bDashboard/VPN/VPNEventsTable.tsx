@@ -2,9 +2,9 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Table, TableBody, TableHeader, TableRow, Time } from '@proton/components/components';
-import { getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 
+import { Table, TableBody, TableHeader, TableRow, Time } from '../../../components';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { getVPNEventColor } from './helpers';
 import type { VPNEvent } from './interface';
 
@@ -14,10 +14,17 @@ interface Props {
     handleEventClick: (event: string) => void;
     handleTimeClick: (time: string) => void;
     getEventTypeText: (eventType: string) => string;
-    locale: string;
+    countryOptions: CountryOptions;
 }
 
-const VPNEventsTable = ({ events, loading, handleEventClick, handleTimeClick, getEventTypeText, locale }: Props) => {
+const VPNEventsTable = ({
+    events,
+    loading,
+    handleEventClick,
+    handleTimeClick,
+    getEventTypeText,
+    countryOptions,
+}: Props) => {
     return (
         <Table responsive="cards">
             <TableHeader
@@ -63,7 +70,9 @@ const VPNEventsTable = ({ events, loading, handleEventClick, handleTimeClick, ge
                                 </Button>,
                                 <div className="flex flex-column flex-nowrap">
                                     <span>{ip}</span>
-                                    <span className="color-weak">{getLocalizedCountryByAbbr(location, locale)}</span>
+                                    <span className="color-weak">
+                                        {getLocalizedCountryByAbbr(location, countryOptions)}
+                                    </span>
                                 </div>,
                                 <div className="flex flex-column">
                                     <span>{gatewayName}</span>

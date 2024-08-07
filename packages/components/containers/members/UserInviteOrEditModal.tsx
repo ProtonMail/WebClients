@@ -11,7 +11,6 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
-import noop from '@proton/utils/noop';
 
 import type { ModalStateProps } from '../../components';
 import {
@@ -82,8 +81,8 @@ const UserInviteOrEditModal = ({
         const res = await api(inviteMember(model.address, model.storage));
 
         // Users could have the Writing Assistant enabled when created and we need to update the member when this is the case
-        if (model.numAI) {
-            await api(updateAI(res.Member.ID, 1)).catch(noop);
+        if (allowAIAssistantConfiguration) {
+            await api(updateAI(res.Member.ID, model.numAI ? 1 : 0));
         }
 
         createNotification({ text: c('Success').t`Invitation sent` });
@@ -92,7 +91,11 @@ const UserInviteOrEditModal = ({
     const editInvitation = async () => {
         let updated = false;
         await api(editMemberInvitation(member!.ID, model.storage));
-        await api(updateAI(member!.ID, model.numAI ? 1 : 0));
+
+        if (allowAIAssistantConfiguration) {
+            await api(updateAI(member!.ID, model.numAI ? 1 : 0));
+        }
+
         updated = true;
         if (updated) {
             createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });

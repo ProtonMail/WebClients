@@ -46,7 +46,6 @@ type Trainee = TrainingResults & {
 };
 declare enum FormType {
     LOGIN = 'login',
-    MFA = 'mfa',
     NOOP = 'noop',
     PASSWORD_CHANGE = 'password-change',
     RECOVERY = 'recovery',
@@ -63,24 +62,6 @@ declare enum FieldType {
 }
 declare const formTypes: FormType[];
 declare const fieldTypes: FieldType[];
-declare enum IdentityFieldType {
-    ADDITIONAL_NAME = 'additional-name',
-    ADDRESS = 'street-address',
-    ADDRESS_LEVEL1 = 'address-level1',
-    ADDRESS_LEVEL2 = 'address-level2',
-    ADDRESS_LINE1 = 'address-line1',
-    COUNTRY = 'country',
-    COUNTRY_NAME = 'country-name',
-    FAMILY_NAME = 'family-name',
-    GIVEN_NAME = 'given-name',
-    NAME = 'name',
-    ORGANIZATION = 'organization',
-    POSTAL_CODE = 'postal-code',
-    TEL = 'tel',
-    TEL_LOCAL = 'tel-local',
-    TEL_NATIONAL = 'tel-national',
-}
-declare const IdentityFieldTypes: IdentityFieldType[];
 
 declare const trainees: {
     forms: Record<string, Trainee>;
@@ -98,23 +79,27 @@ declare const getTextAttributes: (el: HTMLElement) => string[];
 declare const getFieldAttributes: (el: HTMLElement) => string[];
 declare const getFormAttributes: (el: HTMLElement) => string[];
 
+declare const getTypeScore: (node: Fnode | null, type: string) => any;
+
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
-declare const maybeEmail: (fnode: Fnode) => boolean;
-declare const maybePassword: (fnode: Fnode) => boolean;
-declare const maybeOTP: (fnode: Fnode) => boolean;
-declare const maybeUsername: (fnode: Fnode) => boolean;
-declare const maybeHiddenUsername: (fnode: Fnode) => boolean;
-declare const maybeIdentity: (fnode: Fnode) => boolean;
+declare const maybeEmail: (value: Fnode) => boolean;
+declare const maybePassword: (value: Fnode) => boolean;
+declare const maybeOTP: (value: Fnode) => boolean;
+declare const maybeUsername: (value: Fnode) => boolean;
+declare const maybeHiddenUsername: (value: Fnode) => boolean;
 declare const isUsernameCandidate: (el: HTMLElement) => boolean;
 declare const isEmailCandidate: (el: HTMLElement) => boolean;
 declare const isOAuthCandidate: (el: HTMLElement) => boolean;
-declare const isSubmitBtnCandidate: (btn: HTMLElement) => boolean;
+declare const isBtnCandidate: (btn: HTMLElement) => boolean;
 declare const isProcessableField: (input: HTMLInputElement) => boolean;
 declare const isClassifiableField: (fnode: Fnode) => boolean;
 declare const selectInputCandidates: (target?: Document | HTMLElement) => HTMLInputElement[];
 
 declare const isCluster: (el: HTMLElement) => boolean;
 declare const flagCluster: (el: HTMLElement) => void;
+declare const isHidden: (el: HTMLElement) => boolean;
+declare const flagAsHidden: (el: HTMLElement) => boolean;
+declare const removeHiddenFlag: (el: HTMLElement) => boolean;
 declare const attrIgnored: (el: HTMLElement) => boolean;
 declare const isIgnored: (el: HTMLElement) => boolean;
 declare const getIgnoredParent: (el?: HTMLElement) => HTMLElement | null;
@@ -127,7 +112,8 @@ declare const removeProcessedFlag: (el: HTMLElement) => boolean;
 declare const isPrediction: (el: HTMLElement) => boolean;
 declare const removePredictionFlag: (el: HTMLElement) => boolean;
 declare const getParentFormPrediction: (el?: HTMLElement) => HTMLElement | null;
-declare const setPrediction: (_el: HTMLElement, type: string) => void;
+declare const setCachedPredictionScore: (_el: HTMLElement, type: string, score: number) => void;
+declare const getCachedPredictionScore: (type: string) => (fnode: Fnode) => number;
 declare const isPredictedType: (type: string) => (fnode: Fnode) => boolean;
 declare const isClassifiable: (el: HTMLElement) => boolean;
 declare const removeClassifierFlags: (
@@ -144,6 +130,23 @@ declare const createInputIterator: (form: HTMLElement) => {
     next(input: HTMLElement): HTMLElement | null;
 };
 declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLElement[];
+
+declare enum IdentityFieldType {
+    FULLNAME = 1,
+    FIRSTNAME = 2,
+    MIDDLENAME = 3,
+    LASTNAME = 4,
+    TELEPHONE = 5,
+    ADDRESS = 6,
+    STATE = 7,
+    CITY = 8,
+    ZIPCODE = 9,
+    ORGANIZATION = 10,
+    COUNTRY = 11,
+}
+declare const getIdentityHaystack: (input: HTMLInputElement) => string;
+declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
+declare const maybeIdentity: (fnode: Fnode) => boolean;
 
 declare const prepass: (doc?: Document) => void;
 declare const shouldRunClassifier: () => boolean;
@@ -175,7 +178,6 @@ export {
     type FormInputIterator,
     FormType,
     IdentityFieldType,
-    IdentityFieldTypes,
     type Ruleset,
     type RulesetAggregation,
     TEXT_ATTRIBUTES,
@@ -188,6 +190,7 @@ export {
     clearVisibilityCache,
     createInputIterator,
     fieldTypes,
+    flagAsHidden,
     flagAsIgnored,
     flagAsProcessed,
     flagCluster,
@@ -196,25 +199,30 @@ export {
     formTypes,
     getAttributes,
     getBaseAttributes,
+    getCachedPredictionScore,
     getFieldAttributes,
     getFormAttributes,
     getFormParent,
+    getIdentityFieldType,
+    getIdentityHaystack,
     getIgnoredParent,
     getParentFormPrediction,
     getTextAttributes,
+    getTypeScore,
     getVisibilityCache,
     inputCandidateSelector,
+    isBtnCandidate,
     isClassifiable,
     isClassifiableField,
     isCluster,
     isEmailCandidate,
+    isHidden,
     isIgnored,
     isOAuthCandidate,
     isPredictedType,
     isPrediction,
     isProcessableField,
     isProcessed,
-    isSubmitBtnCandidate,
     isUsernameCandidate,
     isVisible,
     isVisibleEl,
@@ -242,13 +250,14 @@ export {
     otpSelector,
     prepass,
     removeClassifierFlags,
+    removeHiddenFlag,
     removeIgnoredFlag,
     removePredictionFlag,
     removeProcessedFlag,
     rulesetMaker,
     selectFormCandidates,
     selectInputCandidates,
-    setPrediction,
+    setCachedPredictionScore,
     shouldRunClassifier,
     splitFieldsByVisibility,
     trainees,

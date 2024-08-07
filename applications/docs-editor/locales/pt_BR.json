@@ -14,17 +14,29 @@
       "Add new table row": [
         "Adicionar nova linha na tabela"
       ],
+      "Adjust font size": [
+        "Ajustar tamanho da fonte"
+      ],
+      "and": [
+        "e"
+      ],
       "Apply": [
         "Aplicar"
       ],
       "Bold": [
         "Negrito"
       ],
+      "Bulleted List": [
+        "Lista com marcadores"
+      ],
       "Cancel": [
         "Cancelar"
       ],
       "Center align": [
         "Centralizar"
+      ],
+      "Check List": [
+        "Lista de verifverificação"
       ],
       "Clear contents": [
         "Limpar conteúdos"
@@ -86,11 +98,17 @@
       "Insert below": [
         "Inserir abaixo"
       ],
+      "Insert comment": [
+        "Inserir comentário"
+      ],
       "Insert image": [
         "Inserir imagem"
       ],
       "Insert left": [
         "Inserir à esquerda"
+      ],
+      "Insert link": [
+        "Inserir link"
       ],
       "Insert right": [
         "Iserir à direita"
@@ -109,6 +127,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Numbered List": [
+        "Lista numerada"
       ],
       "Options": [
         "Opções"
@@ -151,6 +172,9 @@
       ],
       "Show thread": [
         "Mostrar tópico"
+      ],
+      "Strike-through": [
+        "Tachado"
       ],
       "Strikethrough": [
         "Tachado"
@@ -347,11 +371,26 @@
       ]
     },
     "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Falha ao importar HTML devido a um erro desconhecido."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Falha ao importar Markdown devido a um erro desconhecido."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Falha ao importar documento do Word devido a um erro desconhecido."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Falha ao inicializar o editor devido a um erro desconhecido."
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Não é possível converter o documento do Word. Ele é protegido por senha? Se sim, remova a senha e tente novamente."
       ]
     },
     "Error message": {
@@ -441,6 +480,9 @@
     "Label": {
       "Background colour": [
         "Cor de fundo"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
       ],
       "Link text": [
         "Texto do link"

@@ -2,6 +2,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
+import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useMemo } from 'react'
 import type { Provider } from '@lexical/yjs'
@@ -147,6 +148,7 @@ export function Editor({
           ErrorBoundary={LexicalErrorBoundary}
         />
         <MarkdownShortcutPlugin transformers={MarkdownTransformers} />
+        <HorizontalRulePlugin />
         <ListPlugin />
         <CheckListPlugin />
         <TablePlugin hasCellBackgroundColor hasTabHandler />

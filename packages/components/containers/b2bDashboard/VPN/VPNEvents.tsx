@@ -9,11 +9,11 @@ import { useApi, useErrorHandler, useNotifications } from '@proton/components/ho
 import { useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getVPNLogs } from '@proton/shared/lib/api/b2blogs';
-import { localeCode } from '@proton/shared/lib/i18n';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
 import { GenericError, SettingsSectionWide } from '../..';
+import { getCountryOptions } from '../../../helpers/countries';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
 import { ALL_EVENTS_DEFAULT, PAGINATION_LIMIT, getLocalTimeStringFromDate, getSearchType } from '../Pass/helpers';
@@ -26,6 +26,7 @@ export interface FilterModel {
     start: Date | undefined;
     end: Date | undefined;
 }
+
 const initialFilter = {
     eventType: ALL_EVENTS_DEFAULT,
     start: undefined,
@@ -46,7 +47,9 @@ const VPNEvents = () => {
     const api = useApi();
     const handleError = useErrorHandler();
     const [userSettings] = useUserSettings();
-    const locale = userSettings.Locale || localeCode;
+
+    const countryOptions = getCountryOptions(userSettings);
+
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -186,7 +189,7 @@ const VPNEvents = () => {
                     handleEventClick={handleClickableEvent}
                     handleTimeClick={handleClickableTime}
                     getEventTypeText={getVPNEventNameText}
-                    locale={locale}
+                    countryOptions={countryOptions}
                 />
             )}
         </SettingsSectionWide>

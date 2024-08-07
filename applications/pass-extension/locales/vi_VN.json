@@ -380,6 +380,9 @@
       "Retry": [
         "Thử lại"
       ],
+      "Right click and download this CSV": [
+        "Nhấp phải để tải tập tin CSV"
+      ],
       "Save": [
         "Lưu"
       ],
@@ -412,6 +415,9 @@
       ],
       "Set extra password": [
         "Thiết lập mật khẩu phụ"
+      ],
+      "Setup 2FA": [
+        "Thiết lập 2FA"
       ],
       "Share": [
         "Chia sẻ"
@@ -663,6 +669,9 @@
       ],
       "File could not be parsed": [
         "Không thể phân tích cú pháp tệp."
+      ],
+      "File could not be read": [
+        "Không thể đọc tập tin"
       ],
       "File does not match expected format": [
         "Tệp không khớp với định dạng được mong chờ"
@@ -948,8 +957,14 @@
       "Auto-lock successfully disabled.": [
         "Đã vô hiệu hóa Tự động khóa thành công."
       ],
+      "Automatically copy the generated password to the clipboard": [
+        "Tự động sao chép các mật khẩu được tạo vào bộ nhớ đệm"
+      ],
       "Autosaved on ${ payload.domain }": [
         "Đã tự động lưu trên ${ payload.domain }"
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Trước khi trích xuất dữ liệu của bạn với định dạng này, vui lòng mở tùy chỉnh Safari -> \"Tổng quan\" -> tắt tùy chọn \"Mở các tập tin an toàn sau khi tải về\". Điều này sẽ giúp trình duyệt Safari tránh khỏi trích xuất sai tập tin."
       ],
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
@@ -1016,6 +1031,9 @@
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Xem video YouTube của ${ PASS_APP_NAME }"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Do một hạn chế của trình mở rộng trên Safari, tập tin sau khi được xuất ra sẽ thiếu phần mở rộng \".pgp\". Vui lòng thêm mở rộng \".pgp\" vào tập tin sau khi xuất ra (ví dụ file.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Dễ dàng nhập các mật khẩu hiện tại của bạn vào ${ PASS_APP_NAME }."
@@ -1191,6 +1209,9 @@
       "Never": [
         "Không bao giờ"
       ],
+      "No identity item found": [
+        "Không có nội dung danh tính nào"
+      ],
       "No login found": [
         "Không có đăng nhập được tìm thấy"
       ],
@@ -1253,6 +1274,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Vui lòng nhập mã PIN hiện tại để tiếp tục"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Vui lòng nhập mật khẩu phụ để có thể sử dụng ${ PASS_SHORT_APP_NAME }."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Vui lòng nâng cấp để được truy cập sớm ứng dụng ${ PASS_APP_NAME } trên web"
@@ -1469,6 +1493,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Phiên làm việc của bạn trên ${ PASS_APP_NAME } đã khóa"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Tài khoản bị hạn chế vì tổ chức của bạn yêu cầu xác minh 2FA. Vui lòng bật xác minh 2FA trong mục cài đặt tài khoản hoặc liên hệ với quản trị viên."
       ]
     },
     "Label": {
@@ -2207,6 +2234,9 @@
       "Auto-lock update": [
         "Cập nhật tự động khóa"
       ],
+      "Autofill": [
+        "Tự động điền"
+      ],
       "Confirm extra password": [
         "Xác nhận mật khẩu phụ"
       ],
@@ -2263,6 +2293,9 @@
       ],
       "History": [
         "Lịch sử"
+      ],
+      "Identity": [
+        "Danh tính"
       ],
       "Import - ${ date }": [
         "Nhập - ${ date }"

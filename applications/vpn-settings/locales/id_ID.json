@@ -43,6 +43,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add address or domain": [
+        "Tambah alamat atau domain"
+      ],
       "Add credit / debit card": [
         "Tambah kartu kredit / debit"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Tambah pengguna"
       ],
+      "Allow": [
+        "Izinkan"
+      ],
       "Apply": [
         "Terapkan"
       ],
@@ -72,6 +78,9 @@
       ],
       "Back": [
         "Kembali"
+      ],
+      "Block": [
+        "Blokir"
       ],
       "Cancel": [
         "Batal"
@@ -166,6 +175,9 @@
       "Delete Gateway": [
         "Hapus Gateway"
       ],
+      "Delete group": [
+        "Hapus grup"
+      ],
       "Delete logo": [
         "Hapus logo"
       ],
@@ -186,6 +198,9 @@
       ],
       "Discard": [
         "Buang"
+      ],
+      "Discard changes": [
+        "Buang perubahan"
       ],
       "Done": [
         "Selesai"
@@ -216,6 +231,9 @@
       ],
       "Edit Gateway": [
         "Sunting Gateway"
+      ],
+      "Edit group": [
+        "Sunting grup"
       ],
       "Edit invoice details": [
         "Sunting rincian faktur"
@@ -295,6 +313,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to label": [
+        "Tuju label"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -343,8 +364,14 @@
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
+      "More options": [
+        "Opsi lainnya"
+      ],
       "Need help?": [
         "Butuh bantuan?"
+      ],
+      "New group": [
+        "Grup baru"
       ],
       "Next": [
         "Selanjutnya"
@@ -352,10 +379,10 @@
       "Next month": [
         "Bulan selanjutnya"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -438,6 +465,9 @@
       ],
       "Resend code": [
         "Kirim ulang kode"
+      ],
+      "Resend invitation": [
+        "Kirim ulang undangan"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -562,6 +592,9 @@
       "Signing in": [
         "Masuk"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Start live chat": [
         "Mulai sesi live chat"
       ],
@@ -675,6 +708,11 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Tambah domain pm.me"
       ]
     },
     "Action subscription": {
@@ -2007,6 +2045,11 @@
         "Kami mendeteksi kesalahan pada beberapa baris dalam proses impor. Silakan periksa kembali berkas CSV Anda."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/bulan"
@@ -2094,6 +2137,35 @@
         "Subdomain 'www' pada umumnya tidak digunakan untuk email. Apakah Anda tetap ingin menggunakan domain ini?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } ditambahkan"
+      ],
+      "${ name } deletion failed": [
+        "${ name } gagal dihapus"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diblokir"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } gagal dipindahkan ke daftar spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } moved to block list": [
+        "${ name } dipindahkan ke daftar alamat yang diblokir"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } dipindahkan ke daftar spam"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } berhasil dihapus"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
@@ -2151,9 +2223,43 @@
         "Dukungan prioritas"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } ditambahkan"
+      ],
+      "${ name } deletion failed": [
+        "${ name } gagal dihapus"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } gagal dipindahkan ke daftar alamat yang diblokir"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } gagal dipindahkan ke daftar spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } dipindahkan ke daftar alamat yang diizinkan"
+      ],
+      "${ name } moved to block list": [
+        "${ name } dipindahkan ke daftar alamat yang diblokir"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } dipindahkan ke daftar spam"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } berhasil dihapus"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Email verifikasi dikirim ke ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Tanpa nama"
       ]
     },
     "eof2023: Deal details": {
@@ -2267,6 +2373,12 @@
       ],
       "Invalid code": [
         "Kode tidak valid"
+      ],
+      "Invalid domain": [
+        "Domain tidak valid"
+      ],
+      "Invalid email address": [
+        "Alamat email tidak valid"
       ],
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
@@ -2573,8 +2685,8 @@
       "Manage user accounts": [
         "Kelola akun pengguna"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Hanya 10 undangan tersetujui yang diperbolehkan dalam periode 6 bulan."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Hanya ${ n } undangan yang diterima yang diizinkan dalam kurun waktu 6 bulan."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Pemilik paket dengan anggota tidak dapat bergabung ke paket grup lain."
@@ -2594,8 +2706,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
@@ -2612,14 +2724,14 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Anda telah mencapai batas 10 undangan dalam 6 bulan."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Anda telah mencapai batas ${ n } undangan yang diterima dalam kurun waktu 6 bulan."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Anda telah mencapai batas 10 undangan diterima dalam 6 bulan. Tombol di bawah dapat diklik ketika Anda dapat mengundang pengguna tambahan."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Anda telah mencapai batas ${ n } undangan yang diterima dalam kurun waktu 6 bulan. Tombol ini akan dapat diklik pada saat Anda dapat mengundang pengguna tambahan."
       ],
-      "You have successfully joined the Family plan": [
-        "Anda berhasil bergabung ke paket Keluarga"
+      "You have successfully joined the family group": [
+        "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Anda harus mengatur domain khusus sebelum menambahkan lebih dari satu pengguna."
@@ -2903,6 +3015,35 @@
         "Terabyte"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Izin:"
+      ],
+      "Block:": [
+        "Blokir:"
+      ],
+      "Search list": [
+        "Daftar pencarian"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Kendalikan hal-hal apa saja yang akan masuk ke dalam kotak masuk milik para anggota organisasi Anda dengan membuat daftar berikut:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Daftar ini akan berlaku bagi seluruh akun pada organisasi Anda. Masing-masing anggota organisasi akan dapat membuat filter khusus untuk diri mereka sendiri, namun mereka tidak akan dapat melewati batasan alamat atau domain yang Anda tentukan."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Untuk memastikan agar pesan penting tidak sampai masuk ke spam dan terlewatkan"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Untuk mencegah agar email sampah tidak sampai memenuhi kotak masuk yang ada"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Untuk menghentikan email phishing atau yang mencurigakan agar tidak masuk ke sistem email organisasi Anda"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Bawaan sistem"
@@ -2973,6 +3114,16 @@
       ],
       "Services": [
         "Layanan"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Alamat grup"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } anggota"
       ]
     },
     "Header": {
@@ -3067,6 +3218,12 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Tambahkan rekaman ini ke domain Anda pada panel kontrol pencatat nama domain Anda"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
       ]
     },
     "Human verification method": {
@@ -3159,6 +3316,9 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } diperlukan untuk fitur Secure Core."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } anggota)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /bulan)"
       ],
@@ -3176,6 +3336,9 @@
       ],
       "30-day money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } di-host oleh ${ BRAND_NAME }, yang memungkinkan Anda untuk mengatur subdomain secara cepat. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
@@ -3314,6 +3477,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "Email Khusus Kebocoran Dibuat"
       ],
       "Breach Custom Email Deleted": [
         "Email Khusus Kebocoran Dihapus"
@@ -3774,6 +3940,9 @@
       "Keys created": [
         "Kunci dihasilkan"
       ],
+      "Labels:": [
+        "Label:"
+      ],
       "Lean more about gateways": [
         "Pelajari lebih lanjut tentang gateway"
       ],
@@ -3785,6 +3954,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Mari kita mulai dengan mengeklik tombol Grup baru di atas"
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
@@ -4248,9 +4420,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Proses verifikasi ini dapat memakan waktu hingga satu jam. Setelah proses verifikasi berhasil, jangan hapus rekaman TXT ini karena rekaman ini akan dibutuhkan untuk mengonfirmasi bahwa Anda tetap merupakan pemilik dari domain yang bersangkutan."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan menganulir seluruh manfaat loyalitas yang telah Anda peroleh."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
@@ -4530,6 +4699,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Dengan kelompok pengguna, Anda dapat mengirim email, membagikan data, atau mengubah pengaturan bagi kelompok pengguna tertentu dengan mudah secara sekaligus."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
@@ -4742,6 +4914,14 @@
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Tertunda"
+      ],
+      "Rejected": [
+        "Ditolak"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Dihadiahkan"
@@ -4822,11 +5002,17 @@
       "Address": [
         "Alamat"
       ],
+      "Address type": [
+        "Jenis alamat"
+      ],
       "Addresses": [
         "Alamat"
       ],
       "Administrators": [
         "Administrator"
+      ],
+      "Allow": [
+        "Alamat yang diizinkan"
       ],
       "Allow recovery by email": [
         "Izinkan pemulihan akun melalui email"
@@ -4860,6 +5046,9 @@
       ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Block": [
+        "Diblokir"
       ],
       "Block malware only": [
         "Blokir malware saja"
@@ -4972,6 +5161,9 @@
       "Do you have any suggestions for our team?": [
         "Apakah Anda memiliki saran untuk tim kami?"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Domain name": [
         "Nama domain"
       ],
@@ -5001,6 +5193,15 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Group address": [
+        "Alamat grup"
+      ],
+      "Group members": [
+        "Anggota grup"
+      ],
+      "Group name": [
+        "Nama grup"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -5143,6 +5344,9 @@
       "Public certificate (X.509)": [
         "Sertifikat publik (X.509)"
       ],
+      "Purpose": [
+        "Tujuan"
+      ],
       "Recovery email address": [
         "Alamat email pemulihan"
       ],
@@ -5175,6 +5379,9 @@
       ],
       "Single sign-on URL": [
         "URL single sign-on"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start date": [
         "Tanggal mulai"
@@ -5223,6 +5430,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Apa alasan utamamu dalam membatalkan atau menurunkan paket?"
+      ],
+      "Who can send to this group address?": [
+        "Siapa saja yang akan dapat mengirim ke alamat grup ini?"
       ],
       "Why would you like to cancel?": [
         "Mengapa Anda ingin membatalkan?"
@@ -5601,6 +5811,20 @@
       ],
       "Swiss franc": [
         "Franc Swiss"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Semua"
+      ],
+      "Allow": [
+        "Alamat yang diotorisir"
+      ],
+      "Block": [
+        "Alamat yang diblokir"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "new_plans": {
@@ -6144,6 +6368,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
@@ -6215,8 +6442,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi riwayat versi, file sharing terenkripsi, dan masih banyak lagi."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
@@ -6586,6 +6813,20 @@
       ],
       "The whole organization": [
         "Seluruh organisasi"
+      ]
+    },
+    "option": {
+      "Everyone, incl. outside": [
+        "Siapa pun, termasuk orang luar"
+      ],
+      "Members": [
+        "Anggota"
+      ],
+      "Nobody by default": [
+        "Tidak ada siapa pun secara bawaan"
+      ],
+      "Organization members": [
+        "Anggota organisasi"
       ]
     },
     "Organization capacity error": {
@@ -7001,6 +7242,9 @@
       "Confirm": [
         "Konfirmasi"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "mis. https://contoh.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7018,6 +7262,9 @@
       ],
       "End date": [
         "Tanggal berakhir"
+      ],
+      "example@domain.com": [
+        "contoh@domain.com"
       ],
       "Feedback": [
         "Kritik dan Saran"
@@ -7063,6 +7310,20 @@
       ],
       "yourdomain.com": [
         "domainanda.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Tambah nama grup"
+      ],
+      "e.g. distribution list for marketing team": [
+        "mis. daftar distribusi untuk tim pemasaran"
+      ],
+      "e.g. marketing": [
+        "mis. pemasaran"
+      ],
+      "Members": [
+        "Anggota"
       ]
     },
     "plan customizer, ips": {
@@ -7196,9 +7457,6 @@
     "saml: Error": {
       "Something went wrong": [
         "Terdapat suatu kesalahan"
-      ],
-      "Something went wrong. Please try again.": [
-        "Terdapat suatu kesalahan. Silakan coba lagi"
       ]
     },
     "saml: Info": {
@@ -8126,6 +8384,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } memberikan Anda privasi yang tak terbatas dan ruang penyimpanan yang lebih untuk hingga 2 pengguna."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } memberikan tim Anda apa yang diperlukan untuk menjadi lebih produktif dan teratur dalam pekerjaan mereka dengan akses ke semua aplikasi ${ BRAND_NAME } dan setiap fitur premiumnya."
       ],
@@ -8161,6 +8422,9 @@
       ],
       "10 email addresses": [
         "10 alamat email"
+      ],
+      "2 users": [
+        "2 pengguna"
       ],
       "20 email addresses per user": [
         "20 alamat email per pengguna"
@@ -8342,6 +8606,9 @@
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
+      "Unlimited privacy for two": [
+        "Privasi tak terbatas untuk dua pengguna"
+      ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"
       ],
@@ -8349,7 +8616,7 @@
         "Pengguna tidak akan dapat mengirim email"
       ],
       "Users won’t be able to sync files on their devices": [
-        "Pengguna tidak akan dapat menyinkronkan berkas di perangkatnya"
+        "Para pengguna tidak akan dapat menyinkronkan berkas pada perangkat mereka"
       ],
       "Version history": [
         "Riwayat versi"
@@ -8692,17 +8959,29 @@
       "Country": [
         "Negara"
       ],
+      "Edit": [
+        "Sunting"
+      ],
       "Email": [
         "Email"
       ],
       "Email address": [
         "Alamat email"
       ],
+      "Email address or domain": [
+        "Alamat email atau domain"
+      ],
       "Email addresses": [
         "Alamat email"
       ],
       "Invitation email": [
         "Email undangan"
+      ],
+      "List": [
+        "Daftar"
+      ],
+      "Marked as": [
+        "Ditandai sebagai"
       ],
       "Name": [
         "Nama"
@@ -8786,8 +9065,20 @@
       "Add PayPal payment method": [
         "Tambah metode pembayaran PayPal"
       ],
+      "Add pm.me subdomain": [
+        "Tambah subdomain pm.me"
+      ],
       "Add servers": [
         "Tambah server"
+      ],
+      "Add to allow list": [
+        "Tambahkan ke daftar alamat yang diizinkan"
+      ],
+      "Add to block list": [
+        "Tambahkan ke daftar alamat yang diblokir"
+      ],
+      "Add to spam list": [
+        "Tambahkan ke daftar spam"
       ],
       "Add user accounts": [
         "Tambah akun pengguna"
@@ -8936,6 +9227,9 @@
       "Delete account": [
         "Hapus akun"
       ],
+      "Delete group?": [
+        "Hapus grup?"
+      ],
       "Delete organization logo?": [
         "Hapus logo organisasi?"
       ],
@@ -8950,6 +9244,9 @@
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
+      ],
+      "Discard changes?": [
+        "Batalkan perubahan?"
       ],
       "Domain names": [
         "Nama domain"
@@ -9158,6 +9455,9 @@
       "Recovery": [
         "Pemulihan"
       ],
+      "Remove all members?": [
+        "Hapus seluruh anggota?"
+      ],
       "Remove domain": [
         "Hapus domain"
       ],
@@ -9265,6 +9565,9 @@
       ],
       "Switch to two-password mode": [
         "Beralih ke mode kata sandi ganda"
+      ],
+      "There are no groups": [
+        "Tidak ada grup"
       ],
       "Time": [
         "Waktu"

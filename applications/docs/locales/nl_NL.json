@@ -19,6 +19,15 @@
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
       ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Er is een potentieel lek van ${ name } gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel lek van ${ name } werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
       ]
@@ -483,6 +492,9 @@
       "Select all": [
         "Alles selecteren"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selecteer factureringscyclus ${ billingText }"
+      ],
       "Select country": [
         "Selecteer land"
       ],
@@ -622,6 +634,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } extra aangepast domein",
+        "${ domains } extra aangepaste domeinen"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servers"
@@ -635,6 +651,10 @@
       "${ price } per user": [
         "${ price } per gebruiker"
       ],
+      "${ seats } writing assistant seat": [
+        "${ seats } plaats voor schrijfassistent",
+        "${ seats } plaatsen voor schrijfassistent"
+      ],
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
@@ -646,6 +666,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
     "Attached ics file error": {
@@ -803,6 +828,9 @@
       ],
       "Custom domain problem": [
         "Probleem met eigen domeinnaam"
+      ],
+      "Docs problem": [
+        "Probleem met Docs"
       ],
       "Drive problem": [
         "Probleem met Drive"
@@ -1154,6 +1182,9 @@
       "British Indian Ocean Territory": [
         "Brits Indische Oceaan Territorium"
       ],
+      "British Virgin Islands": [
+        "Britse Maagdeneilanden"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1208,6 +1239,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Democratische Republiek)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, Democratische Republiek"
       ],
@@ -1246,6 +1280,9 @@
       ],
       "Dominican Republic": [
         "Dominicaanse Republiek"
+      ],
+      "East Timor": [
+        "Oost-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1388,6 +1425,9 @@
       "Ireland": [
         "Ierland"
       ],
+      "Islamic Republic of Iran": [
+        "Islamitische Republiek Iran"
+      ],
       "Isle of Man": [
         "Isle of Man"
       ],
@@ -1418,6 +1458,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Democratische Volksrepubliek van)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republiek van)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1426,6 +1472,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgizië"
+      ],
+      "Lao People's Democratic Republic": [
+        "Lao Democratische Volksrepubliek"
       ],
       "Laos": [
         "Laos"
@@ -1443,6 +1492,9 @@
         "Liberia"
       ],
       "Libya": [
+        "Libië"
+      ],
+      "Libyan Arab Jamahiriya": [
         "Libië"
       ],
       "Liechtenstein": [
@@ -1712,6 +1764,9 @@
       "Svalbard and Jan Mayen": [
         "Spitsbergen en Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Zweden"
       ],
@@ -1732,6 +1787,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, Verenigde Republiek van"
       ],
       "Thailand": [
         "Thailand"
@@ -1891,6 +1949,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Stel een herstelmethode in om te voorkomen dat u de toegang tot uw account verliest."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
@@ -2845,8 +2906,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Aan u toegewezen opslagruimte: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "De abonnementskosten worden in rekening gebracht bij de primaire beheerder van het Visionary- of gezinsabonnement."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- en gezinsabonnmenten bieden op dit moment geen ondersteuning voor externe accounts. Maak een adres voor ${ BRAND_NAME } voordat u zich hierbij aansluit. ${ addressSettingsLink }"
@@ -2863,8 +2924,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "U hebt zich aangesloten bij het Family-abonnement"
+      "You have successfully joined the family group": [
+        "U hebt zich succesvol aangesloten bij de familiegroep"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "U bent uitgenodigd om uw ${ BRAND_NAME }-account te koppelen aan dit groepsabonnement en samen gebruik te maken van alle premium functies van ${ BRAND_NAME_TWO }."
@@ -3316,6 +3377,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
@@ -4418,6 +4482,11 @@
         "Alleen bekijken"
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
+      ]
+    },
     "Item": {
       "file attributes": [
         "bestandsattributen"
@@ -5034,6 +5103,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
       "for ${ price }": [
         "voor ${ price }"
       ]
@@ -5310,6 +5382,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Ga aan de slag voor $1"
+      ],
+      "Get started for 1 €": [
+        "Ga aan de slag voor 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Ga aan de slag voor CHF 1"
+      ],
       "Upgrade now": [
         "Upgrade nu"
       ]
@@ -5463,6 +5544,9 @@
       "Collaborate and share large files": [
         "Samenwerken en grote bestanden delen"
       ],
+      "Collaborative document editor": [
+        "Collaboratieve document-editor"
+      ],
       "Contact groups": [
         "Contactgroepen"
       ],
@@ -5480,6 +5564,9 @@
       ],
       "Custom snooze time": [
         "Aangepaste snoozetijd"
+      ],
+      "Custom workspace branding": [
+        "Aangepaste workspace branding"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -5618,6 +5705,9 @@
       "Secure Core servers": [
         "Secure Core-servers"
       ],
+      "See team's availability": [
+        "Bekijk beschikbaarheid van het team"
+      ],
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
       ],
@@ -5672,6 +5762,9 @@
       "Unlimited logins and notes": [
         "Onbeperkt aantal logins en notities"
       ],
+      "Unlimited logins, notes and credit cards": [
+        "Onbeperkt aantal logins, notities en creditcards"
+      ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
       ],
@@ -5705,6 +5798,9 @@
       ],
       "User session management": [
         "Gebruikerssessiebeheer"
+      ],
+      "User storage management": [
+        "Beheer gebruikersopslag"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Kluis delen (tot ${ n } persoon)",
@@ -5752,11 +5848,20 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "Alle ${ BRAND_NAME }-apps en hun premium functies"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Alle ${ BRAND_NAME } zakelijke apps en premiumfuncties om uw hele bedrijf te beschermen."
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
       ],
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Versleutelde e-mail en agenda's om mee aan de slag te gaan."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Verbeterde beveiligings- en premiumfuncties voor teams."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
         "Essentiële bescherming en veilige samenwerking voor een onbeperkt aantal gebruikers."
@@ -5790,6 +5895,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
+      ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Beveilig uw digitale leven met ${ BRAND_NAME } voor twee personen."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Op maat gemaakte oplossingen voor grotere organisaties met specifieke beveiligingsbehoeften."
@@ -5825,8 +5933,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestandsdeling en meer."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloud-opslag. Inclusief automatisch synchroniseren, versleutelde bestandsdeling en meer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beveilig uw e-mails met end-to-end versleuteling. Dit is inclusief ondersteuning voor eigen e-mail domeinen, 15 e-mailadressen, ongelimiteerde hide-my-email aliassen en meer."
@@ -5895,6 +6003,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-ondersteuning is beperkt tot het gebruik van desktop-apps (zoals Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. IMAP-integraties in de cloud worden op dit moment niet ondersteund."
       ],
+      "Increase or reallocate storage for a user": [
+        "Opslag voor een gebruiker vergroten of opnieuw toewijzen"
+      ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
       ],
@@ -5949,6 +6060,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Bescherm uw gezin tegen schadelijke websites en krijg toegang tot onze supersnelle VPN-servers om uw favoriete inhoud te streamen"
       ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Bescherm je echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar je hoofdinbox stuurt)."
+      ],
       "Provides the highest level of account security protection and specialist support": [
         "Voorziet het hoogste niveau van account beveiliging en gespecialiseerde ondersteuning"
       ],
@@ -5972,6 +6086,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Zie de beschikbaarheid van de deelnemers aan de vergadering en bespaar tijd bij het plannen van vergaderingen"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Stuur snel en eenvoudig e-mails naar grote groepen door zoveel contactgroepen te maken als u wilt (tot 100 contactpersonen per groep)"
@@ -5999,6 +6116,9 @@
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Upload uw bedrijfslogo om uw teamervaring aan te passen aan de ${ BRAND_NAME } webapps"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
@@ -6315,8 +6435,19 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Veilige kluis en het delen van links"
+      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Veilig delen van kluis (${ n } kluis)",
+        "Veilig delen van kluis (${ n } kluizen)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Veilig delen van kluis (${ n } kluis) en het delen van links",
+        "Veilig delen van kluis (${ n } kluizen) en het delen van links"
       ]
     },
     "passwordless": {
@@ -6348,6 +6479,9 @@
       "Card number": [
         "Kaartnummer"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -6357,6 +6491,30 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "Payment Processing": [
+        "Betaling Wordt Verwerkt"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
+      ],
+      "Please select billing country": [
+        "Selecteer factureringsland"
+      ],
+      "Please select billing state": [
+        "Selecteer factureringsstaat"
+      ],
+      "Please select your billing country first.": [
+        "Selecteer eerst uw factureringsland."
+      ],
+      "Please select your billing state first.": [
+        "Selecteer eerst uw factureringsstaat."
+      ],
+      "Select billing country to pay": [
+        "Selecteer factureringsland om te betalen"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months }. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna zal deze automatisch vernieuwd worden voor ${ price } voor ${ months } maanden. U kunt op ieder moment annuleren."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } voor ${ months } maanden. U kunt opzeggen wanneer u wilt."
       ],
@@ -6365,6 +6523,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
       ]
     },
     "Payments.Error": {
@@ -7179,6 +7340,11 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat je nodig hebt om de controle over de veiligheid van de veiligheid te hebben."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Weet u het zeker?"
@@ -7315,6 +7481,9 @@
     "Suffix for price": {
       "per month": [
         "per maand"
+      ],
+      "per user per month": [
+        "per gebruiker per maand"
       ]
     },
     "summer2023: Tooltip": {
@@ -7509,6 +7678,9 @@
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
+      "Coupon": [
+        "Kortingscode"
+      ],
       "Create contact": [
         "Contact aanmaken"
       ],
@@ -7655,6 +7827,9 @@
       ],
       "Import failed": [
         "Import mislukt"
+      ],
+      "Import groups": [
+        "Importeer groepen"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"

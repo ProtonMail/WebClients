@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { queryVPNLogicalServerInfo } from '@proton/shared/lib/api/vpn';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import type { Logical } from '../containers/vpn/Logical';
 import useApi from './useApi';
 import useCache from './useCache';
 

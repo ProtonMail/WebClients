@@ -4,6 +4,11 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "加入"

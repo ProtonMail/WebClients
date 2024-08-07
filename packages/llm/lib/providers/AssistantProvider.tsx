@@ -3,11 +3,11 @@ import type { ReactNode } from 'react';
 import { useUserSettings } from '@proton/components/hooks';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
+import { AssistantContext } from '../hooks/useAssistant';
 import useAssistantCommons from '../hooks/useAssistantCommons';
 import { useAssistantLocal } from '../hooks/useAssistantLocal';
 import { useAssistantServer } from '../hooks/useAssistantServer';
 import useOpenedAssistants from '../hooks/useOpenedAssistants';
-import { AssistantContext } from '../useAssistant';
 
 export interface AssistantProviderProps {
     children: ReactNode;
@@ -46,6 +46,7 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
                 handleSettingChange: assistantLocalState.initAssistant,
                 getIsStickyAssistant: openedAssistantsState.getIsStickyAssistant,
                 handleCheckHardwareCompatibility: commonState.handleCheckHardwareCompatibility,
+                cleanSpecificErrors: commonState.cleanSpecificErrors,
             }}
         >
             {children}

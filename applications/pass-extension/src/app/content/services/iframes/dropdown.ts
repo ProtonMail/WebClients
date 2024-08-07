@@ -179,11 +179,11 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
     iframe.registerMessageHandler(
         IFramePortMessageType.DROPDOWN_AUTOFILL_IDENTITY,
         withContext((ctx, { payload }) => {
-            const form = fieldRef.current?.getFormHandle();
-            if (!form) return;
-
-            ctx?.service.autofill.autofillIdentity(form, payload);
-            fieldRef.current?.focus({ preventAction: true });
+            const field = fieldRef.current;
+            if (field) {
+                ctx?.service.autofill.autofillIdentity(field, payload);
+                fieldRef.current?.focus({ preventAction: true });
+            }
         })
     );
 

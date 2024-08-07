@@ -46,7 +46,6 @@ enum AccountFlag {
     AddressDeletion = 'AddressDeletion',
     LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
-    ExtendCancellationProcess = 'ExtendCancellationProcess',
     B2BLogsPass = 'B2BLogsPass',
     SingleSignup = 'SingleSignup',
     B2BLogsVPN = 'B2BLogsVPN',

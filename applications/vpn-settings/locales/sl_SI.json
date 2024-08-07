@@ -43,6 +43,9 @@
       "Add address": [
         "Dodaj naslov"
       ],
+      "Add address or domain": [
+        "Dodaj naslov ali domeno"
+      ],
       "Add credit / debit card": [
         "Dodaj kreditno/debetno kartico"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Dodaj uporabnika"
       ],
+      "Allow": [
+        "Dovoli"
+      ],
       "Apply": [
         "Potrdi"
       ],
@@ -72,6 +78,9 @@
       ],
       "Back": [
         "Nazaj"
+      ],
+      "Block": [
+        "Blokiraj"
       ],
       "Cancel": [
         "Prekliči"
@@ -295,6 +304,9 @@
       "Get verification code": [
         "Pridobi kodo za preverjanje"
       ],
+      "Go to label": [
+        "Pojdi na oznako"
+      ],
       "Got it": [
         "Razumem"
       ],
@@ -343,8 +355,14 @@
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
       ],
+      "More options": [
+        "Več možnosti"
+      ],
       "Need help?": [
         "Potrebujete pomoč?"
+      ],
+      "New group": [
+        "Nova skupina"
       ],
       "Next": [
         "Naprej"
@@ -352,10 +370,10 @@
       "Next month": [
         "Naslednji mesec"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
       "Open": [
@@ -438,6 +456,9 @@
       ],
       "Resend code": [
         "Znova pošlji kodo"
+      ],
+      "Resend invitation": [
+        "Ponovno pošlji povabilo"
       ],
       "Reset credentials": [
         "Ponastavite poverilnice"
@@ -558,6 +579,9 @@
       ],
       "Signing in": [
         "Prijavljanje"
+      ],
+      "Spam": [
+        "Neželena pošta"
       ],
       "Start live chat": [
         "Začnite klepet v živo"
@@ -1989,6 +2013,11 @@
         "Zaznali smo napake v več vrsticah med uvozom, prosimo preglejte svojo CSV datoteko."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Več informacij"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mesec"
@@ -2076,6 +2105,35 @@
         "Poddomene 'www' se običajno ne uporabljajo za e-pošto. Ali ste prepričani, da želite uporabiti to domeno?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } dodano"
+      ],
+      "${ name } deletion failed": [
+        "Izbris ${ name } je spodletel."
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } ni uspelo premakniti na seznam dovoljenih naslovov."
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } ni uspelo premakniti na seznam blokiranih naslovov."
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } ni uspelo premakniti na seznam neželene pošte."
+      ],
+      "${ name } moved to allow list": [
+        "${ name } je bil premaknjen na seznam dovoljenih naslovov."
+      ],
+      "${ name } moved to block list": [
+        "${ name } je bil premaknjen na seznam blokiranih naslovov."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } je bil premaknjen na seznam neželene pošte."
+      ],
+      "${ name } successfully deleted": [
+        "Uspešno je bil izbrisan ${ name }."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Hrošči ali težave s kakovostjo"
@@ -2131,6 +2189,35 @@
       ],
       "Priority support": [
         "Prednostna podpora"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } dodano"
+      ],
+      "${ name } deletion failed": [
+        "Izbris ${ name } je spodletel."
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } ni uspelo premakniti na seznam dovoljenih naslovov."
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } ni uspelo premakniti na seznam blokiranih naslovov."
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } ni uspelo premakniti na seznam neželene pošte."
+      ],
+      "${ name } moved to allow list": [
+        "${ name } je bil premaknjen na seznam dovoljenih naslovov."
+      ],
+      "${ name } moved to block list": [
+        "${ name } je bil premaknjen na seznam blokiranih naslovov."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } je bil premaknjen na seznam neželene pošte."
+      ],
+      "${ name } successfully deleted": [
+        "Uspešno je bil izbrisan ${ name }."
       ]
     },
     "Email verification": {
@@ -2249,6 +2336,12 @@
       ],
       "Invalid code": [
         "Neveljavna koda"
+      ],
+      "Invalid domain": [
+        "Neveljavna domena"
+      ],
+      "Invalid email address": [
+        "Neveljaven e-poštni naslov"
       ],
       "Invalid expiration date": [
         "Neveljaven datum poteka veljavnosti"
@@ -2555,9 +2648,6 @@
       "Manage user accounts": [
         "Uredi račune"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "V obdobju 6 mesecev je dovoljeno sprejeti le 10 povabil."
-      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Lastniki paketa s člani se ne morejo pridružiti drugemu skupinskemu paketu."
       ],
@@ -2576,9 +2666,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Prostor, ki vam je dodeljen: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Naročnina se zaračuna glavnemu skrbniku Visionary ali družinskega paketa."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary in družinski paket trenutno ne omogočata uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
@@ -2593,15 +2680,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Povabljeni ste, da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Dosegli ste omejitev 10 sprejetih povabil v 6 mesecih."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Dosegli ste omejitev 10 sprejetih vabil v 6 mesecih. Gumb bo omogočen, ko boste lahko povabili dodatne uporabnike."
-      ],
-      "You have successfully joined the Family plan": [
-        "Uspešno ste se pridružili družinskemu paketu."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred dodajanjem več uporabnikov morate nastaviti domeno po meri."
@@ -2912,6 +2990,35 @@
         "Terabajtov"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Dovoli:"
+      ],
+      "Block:": [
+        "Blokiraj:"
+      ],
+      "Search list": [
+        "Seznam za iskanje"
+      ],
+      "Spam:": [
+        "Neželena pošta:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Prevzemite nadzor nad tem, kar pristane v predalih članov vaše organizacije z ustvarjanjem naslednjih seznamov:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Te sezname je mogoče uporabiti za vse račune v vaši organizaciji. Člani lahko ustvarijo svoje lastne filtre, vendar ne bodo mogli spremeniti vaših blokiranih naslovov ali domen."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Da se zagotovi, da pomembna sporočila ne končajo v neželeni pošti in se ne spregledajo."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Za preprečevanje neželene pošte, ki zamaši vaš nabiralnik."
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Zaustavitev prevar ali sumljivih e-poštnih sporočil pred vstopom v sistem za e-pošto vaše organizacije"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Sistemsko privzeto"
@@ -2982,6 +3089,14 @@
       ],
       "Services": [
         "Storitve"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } članov",
+        "${ memberCount } članov",
+        "${ memberCount } člani"
       ]
     },
     "Header": {
@@ -3076,6 +3191,15 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Dodajte ta zapis svoji domeni na nadzorni plošči registrarja domenskih imen"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Najden ${ items.length } predlog, za krmarjenje uporabite tipkovnico.",
+        "Najdena ${ items.length } predloga, za krmarjenje uporabite tipkovnico.",
+        "Najdenih ${ items.length } predlogov, za navigacijo uporabite tipkovnico.",
+        "Najdenih ${ items.length } predlogov, za krmarjenje uporabite tipkovnico."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "S smernimi tipkama gor in dol si oglejte in izberite predloge. Za potrditev izbire pritisnite Enter, za preklic in zapiranje polja s predlogi pritisnite Esc."
       ]
     },
     "Human verification method": {
@@ -3179,6 +3303,12 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Za funkcijo Secure Core je potreben ${ vpnPlus }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } člani)",
+        "(${ memberCount } članov)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } na mesec)"
@@ -3714,6 +3844,9 @@
       "Keys created": [
         "Ključi so bili ustvarjeni"
       ],
+      "Labels:": [
+        "Oznake:"
+      ],
       "Lean more about gateways": [
         "Več o prehodih"
       ],
@@ -4151,9 +4284,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ta uporabnik trenutno skrbi za plačila za vašo organizacijo. Z odstranitvijo tega člana boste vi postali odgovorni za plačila za vašo organizacijo."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "To bo omogočilo uporabo PayPal-a za plačilo naročnine na ${ BRAND_NAME }. Preusmerili vas bomo na PayPal v nov zavihek brskalnika. Če uporabljate prepoved za pojavna okna, jo prosimo onemogočite, da nadaljujete."
@@ -4715,11 +4845,17 @@
       "Address": [
         "Naslov"
       ],
+      "Address type": [
+        "Vrsta naslova"
+      ],
       "Addresses": [
         "Naslovi"
       ],
       "Administrators": [
         "Skrbniki"
+      ],
+      "Allow": [
+        "Dovoli"
       ],
       "Allow recovery by email": [
         "Omogoči obnovitev preko e-pošte."
@@ -4753,6 +4889,9 @@
       ],
       "Billing cycle": [
         "Cikel obračunavanja"
+      ],
+      "Block": [
+        "Blokiraj"
       ],
       "Block malware only": [
         "Blokiraj samo zlonamerne programe."
@@ -4865,6 +5004,9 @@
       "Do you have any suggestions for our team?": [
         "Imate kak predlog za našo ekipo?"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Domain name": [
         "Ime domene"
       ],
@@ -4894,6 +5036,9 @@
       ],
       "Gift code": [
         "Darilna koda"
+      ],
+      "Group name": [
+        "Ime skupine"
       ],
       "Hide password": [
         "Skrij geslo"
@@ -5068,6 +5213,9 @@
       ],
       "Single sign-on URL": [
         "URL za enotno prijavo"
+      ],
+      "Spam": [
+        "Neželena pošta"
       ],
       "Start date": [
         "Začetni datum"
@@ -5485,6 +5633,20 @@
       ],
       "Swiss franc": [
         "Švicarski frank"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Vse"
+      ],
+      "Allow": [
+        "Dovoli"
+      ],
+      "Block": [
+        "Blokiraj"
+      ],
+      "Spam": [
+        "Neželena pošta"
       ]
     },
     "new_plans": {
@@ -6147,9 +6309,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zaščitite vaša dnevna opravila s celovitim šifriranjem. Vključuje podporo za koledarje po meri, delitev koledarjev in drugo."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zavarujte vaša sporočila s celovitim šifriranjem. Vključuje podporo za e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email in drugo."
       ],
@@ -6521,6 +6680,11 @@
       ],
       "The whole organization": [
         "Celotna organizacija"
+      ]
+    },
+    "option": {
+      "Members": [
+        "Člani"
       ]
     },
     "Organization capacity error": {
@@ -6903,6 +7067,9 @@
       "Confirm": [
         "Potrdi"
       ],
+      "domain.com": [
+        "domena.si"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "npr. https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -6920,6 +7087,9 @@
       ],
       "End date": [
         "Končni datum"
+      ],
+      "example@domain.com": [
+        "primer@domena.si"
       ],
       "Feedback": [
         "Povratne informacije"
@@ -6965,6 +7135,11 @@
       ],
       "yourdomain.com": [
         "vašadomena.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Člani"
       ]
     },
     "plan customizer, ips": {
@@ -8560,14 +8735,26 @@
       "Country": [
         "Država"
       ],
+      "Edit": [
+        "Uredi"
+      ],
       "Email": [
         "E-pošta"
       ],
       "Email address": [
         "E-poštni naslov"
       ],
+      "Email address or domain": [
+        "Naslov e-pošte ali domena"
+      ],
       "Email addresses": [
         "E-poštni naslovi"
+      ],
+      "List": [
+        "Seznam"
+      ],
+      "Marked as": [
+        "Označeno kot"
       ],
       "Name": [
         "Ime"
@@ -8650,6 +8837,15 @@
       ],
       "Add servers": [
         "Dodajte strežnike"
+      ],
+      "Add to allow list": [
+        "Dodaj v seznam dovoljenih"
+      ],
+      "Add to block list": [
+        "Dodaj na seznam blokiranih"
+      ],
+      "Add to spam list": [
+        "Dodaj na seznam neželene pošte"
       ],
       "Add user accounts": [
         "Dodaj uporabniške račune"
@@ -8812,6 +9008,9 @@
       ],
       "Disable two-factor authentication": [
         "Onemogoči dvojno preverjanje pristnosti"
+      ],
+      "Discard changes?": [
+        "Zavrzi spremembe?"
       ],
       "Domain names": [
         "Imena domen"

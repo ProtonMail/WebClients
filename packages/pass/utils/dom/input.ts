@@ -12,6 +12,36 @@ const BOUNDING_ELEMENT_OFFSET: RectOffset = { x: 10, y: 0 };
 const BOUNDING_ELEMENT_MAX_RATIO = 1.2;
 const INVALID_BOUNDING_TAGS = ['TD', 'TR', 'FORM'];
 
+/** Retrieves the child elements of a given element, excluding any injected
+ * pass specific elements that could interfer with layout analysis */
+const getChildren = (el: Element) => [...el.children].filter((el) => !el.tagName.startsWith('PROTONPASS'));
+
+/** Checks if an element has a visible border or box shadow.
+ * Used to identify potential bounding box elements for inputs */
+const isBorderedElement = (el: HTMLElement): boolean => {
+    const styles = getComputedStyle(el);
+
+    if (styles.boxShadow !== 'none') return true;
+
+    const significantBorders = [
+        pixelParser(styles.borderTopWidth),
+        pixelParser(styles.borderRightWidth),
+        pixelParser(styles.borderBottomWidth),
+        pixelParser(styles.borderLeftWidth),
+    ].every((width) => width > 0);
+
+    if (significantBorders) {
+        return (
+            styles.borderTopStyle !== 'none' &&
+            styles.borderRightStyle !== 'none' &&
+            styles.borderBottomStyle !== 'none' &&
+            styles.borderLeftStyle !== 'none'
+        );
+    }
+
+    return false;
+};
+
 /** Recursively finds the optimal bounding element for an input element.
  * This function traverses up the DOM tree to find the most appropriate
  * container for positioning injected UI page-elements.
@@ -57,7 +87,7 @@ export const findBoundingInputElement = (
 
         if (label && label.querySelectorAll('input:not([type="hidden"])').length === 1) {
             const labelHeightCheck = label.getBoundingClientRect().height >= minHeight;
-            const labelChildrenOverlap = allChildrenOverlap(label, BOUNDING_ELEMENT_OFFSET);
+            const labelChildrenOverlap = allChildrenOverlap(getChildren(label), BOUNDING_ELEMENT_OFFSET);
             if (labelHeightCheck && labelChildrenOverlap) return label;
         }
     }
@@ -95,20 +125,21 @@ export const findBoundingInputElement = (
     /* Avoid parents with non-empty text nodes (may affect layout) */
     if (containsTextNode(parent)) return curr;
 
-    /* Check for single child, excluding injected elements */
-    const singleChild = [...parent.children].filter((el) => !el.tagName.startsWith('PROTONPASS')).length === 1;
+    /* If the parent is fully bordered consider it to be the bounding box */
+    if (isBorderedElement(parent)) return parent;
 
-    if (singleChild) {
-        /* If single-child parent is much taller than its child, stop.
-         * Indicates container size affected by CSS (float, flexbox) */
-        const styles = createStyleCompute(parent);
-        const parentInnerHeight = getComputedHeight(styles, { mode: 'inner', node: parent });
-        if (parentInnerHeight.value > curr.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return curr;
-        return findBoundingInputElement(parent, constraints);
-    }
+    /* If a parent is much taller than its child, stop.
+     * Indicates container size affected by CSS (float, flexbox) */
+    const styles = createStyleCompute(parent);
+    const parentInnerHeight = getComputedHeight(styles, { mode: 'inner', node: parent });
+    if (!isInput && parentInnerHeight.value > curr.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return curr;
+
+    /* Check for single child, excluding injected elements */
+    const children = getChildren(parent);
+    if (children.length === 1) return findBoundingInputElement(parent, constraints);
 
     /* If all children overlap, parent might be suitable  */
-    const childrenOverlap = allChildrenOverlap(parent, BOUNDING_ELEMENT_OFFSET);
+    const childrenOverlap = allChildrenOverlap(children, BOUNDING_ELEMENT_OFFSET);
     if (childrenOverlap) return findBoundingInputElement(parent, constraints);
 
     return curr;

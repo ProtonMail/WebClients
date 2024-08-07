@@ -1,25 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
+import { semver } from '@proton/pass/utils/string/semver';
 import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import { type DesktopVersion, VersionFileSchema } from '@proton/shared/lib/desktop/DesktopVersion';
+import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
+import { isElectronOnLinux, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
-
-export interface DesktopVersion {
-    CategoryName: RELEASE_CATEGORIES;
-    Version: string;
-    ReleaseDate: string;
-    File: {
-        Identifier?: string;
-        Url: string;
-        Sha512CheckSum: string;
-    }[];
-    ReleaseNotes: {
-        Type: string;
-        Notes: string[];
-    }[];
-    RolloutProportion?: number;
-    ManualUpdate: string[];
-}
 
 const initialLinuxClients: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,
@@ -76,14 +63,15 @@ const initialMacosClient: DesktopVersion = {
     ManualUpdate: ['0.9.0', '0.9.1'],
 };
 
-const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS): Promise<DesktopVersion[] | undefined> => {
+const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS) => {
     try {
         const response = await fetch(getDownloadUrl(`/mail/${platform}/version.json`));
         if (!response.ok) {
             throw new Error(response.statusText);
         }
 
-        const res = await response.json();
+        const json = await response.json();
+        const res = VersionFileSchema.parse(json);
         return res.Releases;
     } catch (e: any) {
         return undefined;
@@ -98,31 +86,65 @@ const useInboxDesktopVersion = () => {
     const [windowsApp, setWindowsApp] = useState<DesktopVersion | undefined>(initialWindowsClient);
     const [macosApp, setMacosApp] = useState<DesktopVersion | undefined>(initialMacosClient);
     const [linuxApp, setLinuxApp] = useState<DesktopVersion | undefined>(initialLinuxClients);
-    const [allLinuxVersions, setAllLinuxVersions] = useState<DesktopVersion[]>([]);
 
     useEffect(() => {
+        const getLatestRelease = (releaseList: DesktopVersion[]) => {
+            let latestRelease = releaseList[0];
+            let latestReleaseSemver = semver(latestRelease.Version);
+
+            for (const release of releaseList) {
+                const releaseSemver = semver(release.Version);
+
+                if (releaseSemver > latestReleaseSemver) {
+                    latestRelease = release;
+                    latestReleaseSemver = releaseSemver;
+                }
+            }
+
+            return latestRelease;
+        };
+
         const fetchDesktopVersion = async () => {
             const promises = [fetchDesktopClient(WINDOWS), fetchDesktopClient(MACOS), fetchDesktopClient(LINUX)];
             const [windowsClient, macosClient, linuxClient] = await Promise.all(promises);
 
             if (windowsClient) {
-                setWindowsApp(windowsClient[0]);
+                setWindowsApp(getLatestRelease(windowsClient));
             }
 
             if (macosClient) {
-                setMacosApp(macosClient[0]);
+                setMacosApp(getLatestRelease(macosClient));
             }
 
             if (linuxClient) {
-                setLinuxApp(linuxClient[0]);
-                setAllLinuxVersions(linuxClient);
+                setLinuxApp(getLatestRelease(linuxClient));
             }
         };
 
-        withLoading(fetchDesktopVersion());
+        const fetchDesktopVersionFromElectron = async () => {
+            const latestDesktopVersion = getInboxDesktopInfo('latestVersion');
+
+            if (!latestDesktopVersion) {
+                return;
+            }
+
+            if (isElectronOnWindows) {
+                setWindowsApp(latestDesktopVersion);
+            } else if (isElectronOnMac) {
+                setMacosApp(latestDesktopVersion);
+            } else if (isElectronOnLinux) {
+                setLinuxApp(latestDesktopVersion);
+            }
+        };
+
+        if (hasInboxDesktopFeature('LatestVersionCheck')) {
+            void withLoading(fetchDesktopVersionFromElectron());
+        } else {
+            void withLoading(fetchDesktopVersion());
+        }
     }, []);
 
-    return { windowsApp, macosApp, linuxApp, allLinuxVersions, loading };
+    return { windowsApp, macosApp, linuxApp, loading };
 };
 
 export default useInboxDesktopVersion;
