@@ -112,9 +112,6 @@ export const consumeFork = async ({
     forkState: ForkState;
 }> => {
     const forkState = getForkStateData(stateKey);
-    if (!forkState) {
-        throw new InvalidForkConsumeError(`Missing state ${stateKey}`);
-    }
 
     const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
