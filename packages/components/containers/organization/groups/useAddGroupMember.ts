@@ -8,7 +8,7 @@ import {
 } from '@proton/components';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
-import type { AddMemberParameters } from '@proton/shared/lib/api/groups';
+import type { GroupMemberParameters } from '@proton/shared/lib/api/groups';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
@@ -329,7 +329,7 @@ const useAddGroupMember = () => {
             organizationKey,
         });
 
-        const apiParams: AddMemberParameters = {
+        const apiParams: GroupMemberParameters = {
             Type,
             GroupID,
             Email: email,
