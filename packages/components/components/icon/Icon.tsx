@@ -99,6 +99,7 @@ export type IconName =
     | 'brand-proton-vpn'
     | 'brand-proton-vpn-filled'
     | 'brand-reddit'
+    | 'brand-safari'
     | 'brand-simple-login'
     | 'brand-tor'
     | 'brand-twitter'
