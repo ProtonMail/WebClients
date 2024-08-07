@@ -200,7 +200,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         await sync({ partial: true, submit: true });
     });
 
-    const getTrackableFields = (): FieldsForFormResults => {
+    const getTrackableFields = (injectIcon: boolean): FieldsForFormResults => {
         const results: FieldsForFormResults = new WeakMap();
         const status = {
             injections: new Map<FieldType, boolean>(),
@@ -216,21 +216,21 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                     case FieldInjectionRule.NEVER:
                         break;
                     case FieldInjectionRule.ALWAYS:
-                        attachIcon = true;
+                        attachIcon = injectIcon;
                         break;
                     /* inject only if no previous injections */
                     case FieldInjectionRule.FIRST_OF_FORM:
-                        attachIcon = !status.injected;
+                        attachIcon = injectIcon && !status.injected;
                         break;
                     /* inject only if no other field of type attached */
                     case FieldInjectionRule.FIRST_OF_TYPE:
-                        attachIcon = !status.injections.get(type);
+                        attachIcon = injectIcon && !status.injections.get(type);
                         break;
 
                     /** inject only on the first field of each form section */
                     case FieldInjectionRule.FIRST_OF_SECTION:
                         if (field.sectionIndex === undefined) break;
-                        attachIcon = status.sections.get(type) !== field.sectionIndex;
+                        attachIcon = injectIcon && status.sections.get(type) !== field.sectionIndex;
                         status.sections.set(type, field.sectionIndex);
                         break;
                 }
@@ -252,7 +252,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     const reconciliate = withContext<() => void>((ctx) => {
         if (!ctx) return;
 
-        const fieldsToTrack = getTrackableFields();
+        const fieldsToTrack = getTrackableFields(ctx.getSettings().autofill.inject);
 
         form.getFields().forEach((field) => {
             const match = fieldsToTrack.get(field);

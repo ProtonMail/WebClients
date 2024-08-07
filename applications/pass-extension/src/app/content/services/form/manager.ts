@@ -102,7 +102,7 @@ export const createFormManager = (options: FormManagerOptions) => {
         withContext<(reason: string) => Promise<boolean>>(async (ctx, reason: string) => {
             const settings = ctx?.getSettings();
             const features = ctx?.getFeatures();
-            const detectIdentity = Boolean(settings?.autofill.identity);
+            const detectIdentity = Boolean(features?.Autofill && settings?.autofill.identity);
             const excludedFieldTypes: FieldType[] = [];
 
             if (!detectIdentity) excludedFieldTypes.push(FieldType.IDENTITY);
