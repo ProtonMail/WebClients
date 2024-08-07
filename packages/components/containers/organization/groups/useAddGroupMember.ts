@@ -1,16 +1,11 @@
-import { c } from 'ttag';
-
 import {
     useApi,
     useAuthentication,
     useEventManager,
     useGetMembers,
     useGetOrganizationKey,
-    useGetUser,
-    useKTVerifier,
     useNotifications,
 } from '@proton/components';
-import { setAddressFlags } from '@proton/components/hooks/helpers/addressFlagsHelper';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import type { AddMemberParameters } from '@proton/shared/lib/api/groups';
@@ -19,7 +14,7 @@ import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
-import { encryptionDisabled, expectSignatureDisabled } from '@proton/shared/lib/helpers/address';
+import { encryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type {
     Address,
@@ -101,15 +96,12 @@ const mapProxyInstance = (proxyInstances: {
 const useAddGroupMember = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
-    const getUser = useGetUser();
-    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
-    const { keyTransparencyVerify } = useKTVerifier(silentApi, getUser);
     const getOrganizationKey = useGetOrganizationKey();
     const { call } = useEventManager();
 
     const { getGroupAddressKey, getMemberPublicKeys } = useGroupKeys();
 
-    const { signMemberEmail } = useGroupCrypto();
+    const { signMemberEmail, disableEncryption } = useGroupCrypto();
     const getMembers = useGetMembers();
     const authentication = useAuthentication();
 
@@ -153,7 +145,7 @@ const useAddGroupMember = () => {
         }
 
         return {
-            forwarderKey: forwarderKey,
+            forwarderKey,
             forwardeeKeysConfig,
             forwardeeAddress,
             organizationKey: cachedOrganizationKey,
@@ -276,24 +268,6 @@ const useAddGroupMember = () => {
             Token,
             Signature,
         };
-    };
-
-    const disableEncryption = async (forwarderAddress: Address, forwarderKey: DecryptedAddressKey) => {
-        await setAddressFlags({
-            encryptionDisabled: true,
-            expectSignatureDisabled: expectSignatureDisabled(forwarderAddress),
-            address: forwarderAddress,
-            addressesKeys: [
-                {
-                    address: forwarderAddress,
-                    keys: [forwarderKey],
-                },
-            ],
-            keyTransparencyVerify,
-            api,
-        });
-        await call();
-        createNotification({ text: c('Success notification').t`Preference updated` });
     };
 
     const migrateAddressKeys = async (addresses: Address[], userKeys: DecryptedKey[]) => {
