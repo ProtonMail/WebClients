@@ -11,7 +11,7 @@ import {
     DesktopVersion,
     VersionFile,
     VersionFileSchema,
-} from "./utils/external/packages/components/containers/desktop/useInboxDesktopVersion";
+} from "./utils/external/packages/shared/lib/desktop/DesktopVersion";
 import { semver } from "./utils/external/packages/pass/utils/string/semver";
 
 export type LocalDesktopVersion = {
