@@ -3,6 +3,7 @@ import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import type { EditorInitializationConfig } from '../EditorInitializationConfig'
 import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 import type { SerializedEditorState } from 'lexical'
+import type { UserSettings } from '@proton/shared/lib/interfaces'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -29,4 +30,5 @@ export interface ClientRequiresEditorMethods {
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob>
   getCurrentEditorState(): Promise<SerializedEditorState | undefined>
   printAsPDF(): Promise<void>
+  loadUserSettings(settings: UserSettings): Promise<void>
 }

@@ -1,16 +1,15 @@
 import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectItem, selectOTPCandidate } from '@proton/pass/store/selectors';
-import type { Maybe, OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
+import type { Maybe, OtpRequest } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import type { ParsedSender } from '@proton/pass/utils/url/parser';
 import { parseSender } from '@proton/pass/utils/url/parser';
 
 import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
+import { onContextReady } from '../context';
 import store from '../store';
 
 /* Although clients should store a complete OTP URI in the `totpUri` field.
@@ -50,17 +49,18 @@ export const createOTPService = () => {
         }
     };
 
-    const handleOTPCheck = withContext<
-        (sender: ParsedSender) => WorkerMessageResponse<WorkerMessageType.AUTOFILL_OTP_CHECK>
-    >(({ service: { formTracker } }, { tabId, url }) => {
-        const submission = formTracker.get(tabId, url.domain ?? '');
-        const match = selectOTPCandidate({ ...url, submission })(store.getState());
-        return match ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId } : { shouldPrompt: false };
-    });
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, withPayload(handleTOTPRequest));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOFILL_OTP_CHECK, (_, sender) =>
-        handleOTPCheck(parseSender(sender))
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_OTP_CHECK,
+        onContextReady((ctx, _, sender) => {
+            const { url, tabId } = parseSender(sender);
+            const submission = ctx.service.formTracker.get(tabId, url?.domain ?? '');
+            const match = selectOTPCandidate({ ...url, submission })(store.getState());
+            return match
+                ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId }
+                : { shouldPrompt: false };
+        })
     );
 
     return {};

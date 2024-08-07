@@ -151,11 +151,6 @@ const MailboxContainer = ({
         },
         [history]
     );
-    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), [history]);
-    const handleFilter = useCallback(
-        (filter: Filter) => history.push(setFilterInUrl(history.location, filter)),
-        [history]
-    );
 
     const [isMessageOpening, setIsMessageOpening] = useState(false);
 
@@ -234,11 +229,27 @@ const MailboxContainer = ({
     const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
         elementIDs,
         page,
+        filter,
+        sort,
         showList,
         listRef,
         labelID,
         isComposerOpened,
     });
+
+    const handleSort = useCallback(
+        (sort: Sort) => {
+            history.push(setSortInUrl(history.location, sort));
+        },
+        [history]
+    );
+
+    const handleFilter = useCallback(
+        (filter: Filter) => {
+            history.push(setFilterInUrl(history.location, filter));
+        },
+        [history]
+    );
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 

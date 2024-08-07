@@ -1023,6 +1023,9 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } kommer fråga dig så snart genererade lösenord fylls i automatiskt."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } kommer uppmana dig att spara eller uppdatera inloggningsuppgifter."
       ],
@@ -2572,6 +2575,9 @@
       ],
       "Auto-lock update": [
         "Uppdatering av autolås"
+      ],
+      "Autofill": [
+        "Fyll automatiskt"
       ],
       "Confirm extra password": [
         "Bekräfta extra lösenord"

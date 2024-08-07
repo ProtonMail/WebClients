@@ -23,7 +23,8 @@ interface UpdateMnemonicPhrasePayload {
         Verifier: string;
     };
 }
-export const updateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload) => ({
+
+export const updateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload & { PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/mnemonic',
     method: 'put',
     data,

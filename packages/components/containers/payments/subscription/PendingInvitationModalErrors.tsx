@@ -36,14 +36,12 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     );
 
     if (errors.IsLifetimeAccount) {
-        errorDescription = c('familyOffer_2023:Family plan')
-            .t`Visionary and family plans do not currently support lifetime accounts.`;
+        errorDescription = c('familyOffer_2023:Family plan').t`Lifetime accounts cannot join a group plan.`;
     } else if (errors.HasOrgWithMembers) {
         errorDescription = c('familyOffer_2023:Family plan')
             .t`Owners of a plan with members cannot join another group plan.`;
     } else if (errors.HasCustomDomains) {
-        errorDescription = c('familyOffer_2023:Family plan')
-            .t`Accounts with custom domains cannot join a Visionary or family plan.`;
+        errorDescription = c('familyOffer_2023:Family plan').t`Accounts with custom domains cannot join a group plan.`;
     } else if (errors.ExceedsMaxSpace) {
         errorDescription = c('familyOffer_2023:Family plan')
             .t`Your account is using ${usedSpace} of storage, which exceeds the ${inviteSpace} you were allocated. Delete some data or ask the plan admin to increase your storage.`;
@@ -56,10 +54,10 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
             .jt`You can only accept 3 invitations in a 6-month period. Please contact ${supportLink} if you require an exception.`;
     } else if (errors.IsOnForbiddenPlan) {
         errorDescription = c('familyOffer_2023:Family plan')
-            .t`Your current plan cannot join a Visionary or family plan.`;
+            .t`Your cannot accept this invitation with your current plan.`;
     } else if (errors.IsExternalUser) {
         errorDescription = c('familyOffer_2023:Family plan')
-            .jt`Visionary and family plans do not currently support external accounts. Create a ${BRAND_NAME} address before joining. ${addressSettingsLink}`;
+            .jt`Group plans do not currently support external accounts. Create a ${BRAND_NAME} address before joining. ${addressSettingsLink}`;
     }
 
     return (

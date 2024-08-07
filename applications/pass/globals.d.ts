@@ -1,1 +1,1 @@
-export * from '@proton/pass/globals.d';
+import '@proton/pass/globals.d';

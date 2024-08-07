@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmNetwork } from '@proton/andromeda';
+import { type ModelState, getInitialModelState } from '@proton/account';
+import { type WasmNetwork } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { WalletThunkArguments } from '../thunk';
+import { type WalletThunkArguments } from '../thunk';
 
 const name = 'bitcoin_network' as const;
 

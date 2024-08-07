@@ -5,6 +5,8 @@ export enum LockMode {
     SESSION = 'SESSION',
     /** Master Proton password lock with argon2 */
     PASSWORD = 'PASSWORD',
+    /** OS-provided biometrics key */
+    BIOMETRICS = 'BIOMETRICS',
     /** No locking mechanisms */
     NONE = 'NONE',
 }
@@ -12,6 +14,7 @@ export enum LockMode {
 export const AppStatusFromLockMode = {
     [LockMode.SESSION]: AppStatus.SESSION_LOCKED,
     [LockMode.PASSWORD]: AppStatus.PASSWORD_LOCKED,
+    [LockMode.BIOMETRICS]: AppStatus.BIOMETRICS_LOCKED,
     [LockMode.NONE]: AppStatus.IDLE,
 };
 

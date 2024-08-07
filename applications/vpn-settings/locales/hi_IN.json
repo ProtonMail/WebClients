@@ -43,6 +43,9 @@
       "Add address": [
         "पता जोड़ें"
       ],
+      "Add address or domain": [
+        "ईमेल पता या डोमेन जोड़ें"
+      ],
       "Add credit / debit card": [
         "क्रेडिट / डेबिट कार्ड जोड़ें"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "उपयोगकर्ता जोड़ें"
       ],
+      "Allow": [
+        "अनुमति दें"
+      ],
       "Apply": [
         "लागू करें"
       ],
@@ -72,6 +78,9 @@
       ],
       "Back": [
         "पीछे जाएं"
+      ],
+      "Block": [
+        "ब्लॉक करें"
       ],
       "Cancel": [
         "रद्द करें"
@@ -292,6 +301,9 @@
       "Get verification code": [
         "सत्यापन कोड लें"
       ],
+      "Go to label": [
+        "लेबल पे जाएं"
+      ],
       "Got it": [
         "समझ गए"
       ],
@@ -337,8 +349,14 @@
       "More info: ${ safeTitle }": [
         "और जानकारी: ${ safeTitle }"
       ],
+      "More options": [
+        "अधिक विकल्प"
+      ],
       "Need help?": [
         "मदद चाहिए?"
+      ],
+      "New group": [
+        "नया ग्रुप"
       ],
       "Next": [
         "अगला"
@@ -346,10 +364,10 @@
       "Next month": [
         "अगले महीने"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open": [
@@ -552,6 +570,9 @@
       ],
       "Signing in": [
         "साइनिंग इन"
+      ],
+      "Spam": [
+        "स्पैम"
       ],
       "Start live chat": [
         "लाइव चैट शुरू करें"
@@ -1893,6 +1914,11 @@
         "हमने आयात के वक्त कई रो में गड़बड़ पाई। अपनी CSV फाइल देख लें।"
       ]
     },
+    "cta": {
+      "Learn more": [
+        "ज़्यादा जानें"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/माह"
@@ -1956,6 +1982,35 @@
         "'www' उप-डोमेन आमतौर पर ईमेल के लिए उपयोग नहीं किए जाते हैं। क्या आप वाकई इस डोमेन मान का उपयोग करना चाहते हैं?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } जोड़ा"
+      ],
+      "${ name } deletion failed": [
+        "${ name } मिटाना असफल"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } को अलाउ सूची में ले जाने में विफल रहे"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } को ब्लॉक सूची में ले जाने में विफल रहे"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } को स्पैम लिस्ट में ले जाने में असफल"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } को अलाउ सूची में ले जाया गया"
+      ],
+      "${ name } moved to block list": [
+        "${ name } को ब्लॉक सूची में ले जाया गया"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } स्पैम लिस्ट में ले जाया गया"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } सफलतापूर्वक मिटाया गया"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "बग या गुणवत्ता समस्या"
@@ -1984,6 +2039,35 @@
     "driveplus2024: Deal details": {
       "Priority support": [
         "प्राथमिक सहायता"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } जोड़ा"
+      ],
+      "${ name } deletion failed": [
+        "${ name } मिटाना असफल"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } को अलाउ सूची में ले जाने में विफल रहे"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } को ब्लॉक सूची में ले जाने में विफल रहे"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } को स्पैम लिस्ट में ले जाने में असफल"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } अलाउ सूची में ले जाया गया"
+      ],
+      "${ name } moved to block list": [
+        "${ name } ब्लॉक सूची में ले जाया गया"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } स्पैम लिस्ट में ले जाया गया"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } सफलतापूर्वक मिटाया गया"
       ]
     },
     "Email verification": {
@@ -2071,6 +2155,12 @@
       ],
       "Invalid code": [
         "अवैध कोड"
+      ],
+      "Invalid domain": [
+        "अमान्य डोमेन"
+      ],
+      "Invalid email address": [
+        "अमान्य ईमेल पता"
       ],
       "Invalid expiration date": [
         "अमान्य समाप्ति तिथि"
@@ -2342,9 +2432,6 @@
       "Manage user accounts": [
         "यूज़र खाते संभालें"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6 महीने की अवधि में केवल 10 स्वीकृत निमंत्रणों की अनुमति है।"
-      ],
       "Pending": [
         "लंबित"
       ],
@@ -2362,15 +2449,6 @@
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary और पारिवारिक योजनाएँ वर्तमान में बाहरी खातों का समर्थन नहीं करती हैं। शामिल होने से पहले एक ${ BRAND_NAME } पता बनाएं। ${ addressSettingsLink }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "आप 6 महीने में 10 स्वीकृत आमंत्रणों की सीमा तक पहुँच चुके हैं।"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "आप 6 महीनों में 10 स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त उपयोगकर्ताओं को आमंत्रित कर सकेंगे तो बटन क्लिक करने योग्य हो जाएगा।"
-      ],
-      "You have successfully joined the Family plan": [
-        "आप परिवार प्लान से जुड़ गए है"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "आपको एकाधिक उपयोगकर्ताओं को जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
@@ -2628,6 +2706,35 @@
         "टेराबाइट"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "अनुमति:"
+      ],
+      "Block:": [
+        "ब्लॉक:"
+      ],
+      "Search list": [
+        "सूची मे सर्च"
+      ],
+      "Spam:": [
+        "स्पैम:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "निम्नलिखित सूचियाँ बनाकर अपने संगठन के सदस्यों के इनबॉक्स में क्या आता है, उस पर नियंत्रण रखें:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "ये सूचियाँ आपके संगठन के सभी खातों पर लागू होती हैं। सदस्य अपने स्वयं के व्यक्तिगत फ़िल्टर बना सकते हैं, लेकिन आपके द्वारा अवरुद्ध किए गए पते या डोमेन को ओवरराइड नहीं कर पाएंगे।"
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "यह सुनिश्चित करें कि महत्वपूर्ण संदेश स्पैम में न जाएं और छूट न जाएं"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "इनबॉक्स को जंक मेल से भरने से रोकने के लिए"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "फ़िशिंग या संदिग्ध ईमेल को अपने संगठन के ईमेल सिस्टम में प्रवेश करने से रोकने के लिए"
+      ]
+    },
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
@@ -2698,6 +2805,12 @@
       ],
       "Services": [
         "सेवाएं"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } मेंबर",
+        "${ memberCount } मेंबर"
       ]
     },
     "Header": {
@@ -2789,6 +2902,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में इस रिकॉर्ड को डोमेन में जोड़ें"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
+        "${ items.length } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "इनपुट के बाद सुझावों को एक्सेस और ब्राउज़ करने के लिए ऊपर और नीचे कुंजी का उपयोग करें। अपनी पसंद की पुष्टि करने के लिए Enter दबाएं, या सुझाव बॉक्स को बंद करने के लिए Escape दबाएं।"
       ]
     },
     "Human verification method": {
@@ -2875,6 +2995,10 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core सुविधा के लिए ${ vpnPlus } चाहिए।"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } सदस्य)",
+        "(${ memberCount } सदस्य)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /महीना)"
@@ -3433,6 +3557,9 @@
       "Keys created": [
         "कुंजी बनाई गई"
       ],
+      "Labels:": [
+        "लेबल:"
+      ],
       "Lean more about gateways": [
         "गेटवे के बारे में और जानें"
       ],
@@ -3852,9 +3979,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "वर्तमान में यह उपयोगकर्ता आपके संगठन के लिए भुगतान के लिए जिम्मेदार है। इस सदस्य को डिमोट करके, आप अपने संगठन के लिए भुगतान के लिए जिम्मेदार बन जाएंगे।"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "इससे आपकी वर्तमान सशुल्क सदस्यता रद्द हो जाएगी और आपने जो भी लॉयल्टी लाभ अर्जित किया है वह खो देंगे।"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "ये PayPal को ${ BRAND_NAME } सदस्यता के भुगतान के इस्तेमाल के लिए सक्षम कर देगा। हम आपको एक नए ब्राउज़र टैब में PayPal को रिडाइरेक्ट कर देंगे। अगर आप कोई पॉपअप ब्लॉकर इस्तेमाल करते है, तो जारी रखने के लिए कृपया उसे अक्षम कर दे।"
@@ -4374,11 +4498,17 @@
       "Address": [
         "पता"
       ],
+      "Address type": [
+        "पते का प्रकार"
+      ],
       "Addresses": [
         "पतों"
       ],
       "Administrators": [
         "प्रशासकों"
+      ],
+      "Allow": [
+        "अनुमति दें"
       ],
       "Allow recovery by email": [
         "ईमेल द्वारा पुनर्प्राप्ति की अनुमति दें"
@@ -4412,6 +4542,9 @@
       ],
       "Billing cycle": [
         "बिल चक्र"
+      ],
+      "Block": [
+        "ब्लॉक करें"
       ],
       "Block malware only": [
         "मैलवेयर ब्लॉक करें"
@@ -4523,6 +4656,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "क्या आपके पास हमारी टीम के लिए कोई सुझाव है?"
+      ],
+      "Domain": [
+        "डोमेन"
       ],
       "Domain name": [
         "डोमेन नाम"
@@ -4727,6 +4863,9 @@
       ],
       "Single sign-on URL": [
         "एकल साइन-ऑन URL"
+      ],
+      "Spam": [
+        "स्पैम"
       ],
       "Start date": [
         "आरंभ करने की तिथि"
@@ -5065,6 +5204,20 @@
       ],
       "Swiss franc": [
         "स्विस फ्रैंक"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "सब"
+      ],
+      "Allow": [
+        "अनुमति दें"
+      ],
+      "Block": [
+        "ब्लॉक करें"
+      ],
+      "Spam": [
+        "स्पैम"
       ]
     },
     "new_plans": {
@@ -5618,9 +5771,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: एंड-टू-एंड एन्क्रिप्शन के साथ अपना शेड्यूल सुरक्षित करें। इसमें कस्टम कैलेंडर, कैलेंडर शेयरिंग और बहुत कुछ के लिए समर्थन शामिल है।"
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: अपने ईमेल को एंड-टू-एंड एन्क्रिप्शन से सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम और बहुत कुछ के लिए समर्थन शामिल है।"
       ],
@@ -5881,6 +6031,11 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
+      ]
+    },
+    "option": {
+      "Members": [
+        "सदस्य"
       ]
     },
     "Organization capacity error": {
@@ -6151,6 +6306,9 @@
       "Confirm": [
         "पुष्टि करें"
       ],
+      "domain.com": [
+        "domain.in"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "उदा. https://example.in/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -6168,6 +6326,9 @@
       ],
       "End date": [
         "समाप्ति दिनांक"
+      ],
+      "example@domain.com": [
+        "udharan@domain.in"
       ],
       "Feedback": [
         "सुझाव"
@@ -6207,6 +6368,11 @@
       ],
       "yourdomain.com": [
         "aapkadomain.in"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "सदस्य"
       ]
     },
     "plan customizer, ips": {
@@ -7277,17 +7443,29 @@
       "Country": [
         "देश"
       ],
+      "Edit": [
+        "बदलाव करें"
+      ],
       "Email": [
         "ईमेल"
       ],
       "Email address": [
         "ईमेल पता"
       ],
+      "Email address or domain": [
+        "ईमेल पता या डोमेन"
+      ],
       "Email addresses": [
         "ईमेल पता"
       ],
       "Invitation email": [
         "न्योता ईमेल"
+      ],
+      "List": [
+        "सूची"
+      ],
+      "Marked as": [
+        "मार्क करें"
       ],
       "Name": [
         "नाम"
@@ -7370,6 +7548,15 @@
       ],
       "Add servers": [
         "सर्वर जोड़ें"
+      ],
+      "Add to allow list": [
+        "अलाउ सूची में जोड़ें"
+      ],
+      "Add to block list": [
+        "ब्लॉक सूची में जोड़ें"
+      ],
+      "Add to spam list": [
+        "स्पैम लिस्ट में डाले"
       ],
       "Add user accounts": [
         "उपयोगकर्ता खाता जोड़ें"
@@ -7528,6 +7715,9 @@
       ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
+      ],
+      "Discard changes?": [
+        "बदलाव रद्द करें?"
       ],
       "Domain names": [
         "डोमेन नाम"

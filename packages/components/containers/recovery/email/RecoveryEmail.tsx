@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { Input } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import useLoading from '@proton/hooks/useLoading';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -14,8 +15,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { Icon, InputFieldTwo, useFormErrors, useModalState } from '../../../components';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
-import { useEventManager, useNotifications } from '../../../hooks';
-import AuthModal from '../../password/AuthModal';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
 import VerifyRecoveryEmailModal from './VerifyRecoveryEmailModal';
 
@@ -55,6 +55,7 @@ interface Props {
     renderForm?: (props: RenderFormProps) => ReactNode;
     inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label'>>;
     disableVerifyCta?: boolean;
+    persistPasswordScope?: boolean;
 }
 
 const RecoveryEmail = ({
@@ -67,41 +68,42 @@ const RecoveryEmail = ({
     autoFocus,
     inputProps,
     disableVerifyCta,
+    persistPasswordScope = false,
 }: Props) => {
+    const api = useApi();
     const [input, setInput] = useState(email.Value || '');
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
     const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
-    const [authModal, setAuthModal, renderAuthModal] = useModalState();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
 
-    const loading = renderVerifyRecoveryEmailModal || renderConfirmModal || renderAuthModal;
+    const [updatingEmail, withUpdatingEmail] = useLoading();
+
+    const loading = renderVerifyRecoveryEmailModal || renderConfirmModal || updatingEmail;
     const confirmStep = !input && (hasReset || hasNotify);
+
+    const handleUpdateEmail = async () => {
+        await api(
+            updateEmail({
+                Email: input,
+                PersistPasswordScope: persistPasswordScope,
+            })
+        );
+        await call();
+
+        createNotification({ text: c('Success').t`Email updated` });
+        onSuccess?.();
+    };
 
     return (
         <>
-            {renderAuthModal && (
-                <AuthModal
-                    {...authModal}
-                    onCancel={undefined}
-                    onSuccess={async () => {
-                        await call();
-
-                        createNotification({ text: c('Success').t`Email updated` });
-                        onSuccess?.();
-                    }}
-                    config={updateEmail({ Email: input })}
-                />
-            )}
             {renderConfirmModal && (
                 <ConfirmRemoveEmailModal
                     hasReset={hasReset}
                     hasNotify={hasNotify}
                     {...confirmModal}
-                    onConfirm={() => {
-                        setAuthModal(true);
-                    }}
+                    onConfirm={() => withUpdatingEmail(handleUpdateEmail)}
                 />
             )}
             {renderVerifyRecoveryEmailModal && <VerifyRecoveryEmailModal email={email} {...verifyRecoveryEmailModal} />}
@@ -116,7 +118,7 @@ const RecoveryEmail = ({
                     if (confirmStep) {
                         setConfirmModal(true);
                     } else {
-                        setAuthModal(true);
+                        void withUpdatingEmail(handleUpdateEmail);
                     }
                 },
                 input: (

@@ -93,6 +93,9 @@
       "Add to group": [
         "Dodaj do grupy"
       ],
+      "Adds it below your existing message": [
+        "Dodaje poniżej obecnej wiadomości"
+      ],
       "Align center": [
         "Wyśrodkuj"
       ],
@@ -227,9 +230,6 @@
       ],
       "Close & discard": [
         "Zamknij i odrzuć"
-      ],
-      "Close AI refine suggestion": [
-        "Zamknij sugestie Al"
       ],
       "Close composer": [
         "Zamknij edytor"
@@ -573,6 +573,9 @@
       "hide-my-email aliases": [
         "aliasów hide-my-email"
       ],
+      "I like this response": [
+        "Lubię tę odpowiedź"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Obraz nie mógł zostać załadowany z ochroną przed śledzeniem."
       ],
@@ -737,6 +740,12 @@
       ],
       "Minimize composer": [
         "Minimalizuj edytor"
+      ],
+      "Modify": [
+        "Zmień"
+      ],
+      "Modify selection": [
+        "Zmień zaznaczenie"
       ],
       "Monday": [
         "Poniedziałek"
@@ -966,6 +975,12 @@
       "Remove this label": [
         "Usuń etykietę"
       ],
+      "Replace": [
+        "Zastąp"
+      ],
+      "Replaces the selected text in your message": [
+        "Zastępuje zaznaczony tekst w wiadomości"
+      ],
       "Reply": [
         "Odpowiedz"
       ],
@@ -974,9 +989,6 @@
       ],
       "Reply securely": [
         "Odpowiedz bezpiecznie"
-      ],
-      "Report a good content": [
-        "Zgłoś dobrą zawartość"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -1200,8 +1212,8 @@
       "Stay": [
         "Pozostań"
       ],
-      "Stop downloading the writing assistant": [
-        "Zatrzymaj pobieranie asystenta pisania"
+      "Stop downloading assistant": [
+        "Zatrzymaj pobieranie asystenta"
       ],
       "Stop generating result": [
         "Zatrzymaj tworzenie tekstu"
@@ -1244,6 +1256,12 @@
       ],
       "Trust": [
         "Zaufaj"
+      ],
+      "Trust key": [
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1329,9 +1347,6 @@
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
       ],
-      "Use this": [
-        "Użyj tego"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Użyj myszy, aby zmienić rozmiar widoku. Jeśli używasz klawiatury, możesz użyć lewego i prawego klawisza strzałki."
       ],
@@ -1376,6 +1391,9 @@
       ],
       "Why not?": [
         "Dlaczego?"
+      ],
+      "Write for me": [
+        "Napisz za mnie"
       ],
       "Yes": [
         "Tak"
@@ -1556,20 +1574,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Dane pozostaną na urządzeniu, ale wymaga jednorazowego pobrania i obsługiwanego sprzętu"
+      ],
       "Fast and secure. No logs are kept.": [
         "Szybko i bezpiecznie. Brak przechowywania logów."
       ],
-      "Faster, broader device compatibility": [
-        "Szybsza i większa kompatybilność urządzeń"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Zadanie pozostanie na urządzeniu, ale wymaga jednorazowego pobrania i obsługiwanego sprzętu"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Wymaga jednorazowego pobrania i kompatybilnego sprzętu."
-      ],
-      "Run locally": [
-        "Uruchom lokalnie"
+      "Run on device": [
+        "Uruchom na urządzeniu"
       ],
       "Run on servers": [
         "Uruchom na serwerach"
@@ -3903,8 +3915,8 @@
       "Draft could not be saved. Try again.": [
         "Szkic nie mógł zostać zapisany. Spróbuj ponownie."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
-        "Wygenerowany tekst nie może zostać anulowany"
+      "Due to an error, text generation couldn't be canceled": [
+        "Nie można anulować generowania tekstu"
       ],
       "Email address disabled": [
         "Adres e-mail został wyłączony"
@@ -4538,9 +4550,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Nie możesz używać aliasów przy włączonym dodatkowym haśle w ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
       ],
@@ -4712,8 +4721,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Przypisana przestrzeń dyskowa: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Subskrypcja rozliczana jako plan Visionary lub rodzinny głównego administratora."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Subskrypcja zostanie naliczona głównemu administratorowi planu."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Plan Visionary i rodzinny nie obsługuje obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
@@ -4730,8 +4739,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Dołącz do organizacji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Dołączono do planu rodzinnego"
+      "You have successfully joined the family group": [
+        "Dołączono do grupy rodzinnej"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
@@ -5779,9 +5788,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } o asystencie pisania ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
         "${ providerFoldersNumLocalized } znalezione foldery",
@@ -5867,7 +5873,7 @@
         "(Filtruj, jeśli JAKIKOLWIEK warunek jest spełniony)"
       ],
       "(No Recipient)": [
-        "(Brak odbiorców)"
+        "(brak odbiorcy)"
       ],
       "**${ elementsFoundCount }** result found in ${ labelName }": [
         "Znaleziono **${ elementsFoundCount }** wynik w ${ labelName }",
@@ -6203,7 +6209,7 @@
         "Domyślna aplikacja pocztowa"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
-        "Czy wiesz, że na koncie ${ BRAND_NAME } masz szyfrowaną przestrzeń dyskową w chmurze? Przejdź do ${ DRIVE_APP_NAME } i wykorzystaj w pełni swoją przestrzeń dyskową. Jest darmowa."
+        "Czy wiesz, że na koncie ${ BRAND_NAME } masz szyfrowaną przestrzeń dyskową w chmurze? Przejdź do ${ DRIVE_APP_NAME } i wykorzystaj w pełni swoje miejsce. Usługa jest darmowa."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Czy wiesz, że zarezerwowaliśmy dla Ciebie krótszy adres e-mail? To jest nazwa użytkownika, po której następuje “@${ PM_DOMAIN }”."
@@ -6227,7 +6233,7 @@
         "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
       "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
-        "Nie masz czasu zająć ważną wiadomością, ale nie chcesz o niej zapomnieć? Ustaw lepszy czas na pojawienie się wiadomości w skrzynce odbiorczej."
+        "Nie masz czasu zająć się ważną wiadomością, ale nie chcesz o niej zapomnieć? Ustaw lepszy czas na pojawienie się wiadomości w skrzynce odbiorczej."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nie widzisz nic? Wyłącz blokadę wyskakujących okien."
@@ -6241,14 +6247,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Pobieranie asystenta… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Pobieranie zostało wstrzymane"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Pobieranie wstrzymane: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Pobieranie asystenta pisania: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Szkic"
@@ -6518,7 +6524,10 @@
         "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Przechowuj bezpieczne dane logowania i karty płatnicze w ${ PASS_APP_NAME }. Usługa jest bezpłatna i dostępna na koncie ${ BRAND_NAME }."
+        "Przechowuj w ${ PASS_APP_NAME } dane logowania i karty płatnicze. Usługa jest darmowa i dostępna na koncie ${ BRAND_NAME }."
+      ],
+      "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
+        "Utrzymaj porządek w swojej skrzynce pocztowej, automatycznie usuwając wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
       ],
       "Key fingerprint": [
         "Odcisk klucza"
@@ -6537,6 +6546,9 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Dowiedz się więcej o asystencie pisania ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Od lewej do prawej"
@@ -7408,6 +7420,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
       ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Gdy zapisujesz się do newslettera, użyj aliasu zamiast adresu e-mail. Twoja tożsamość pozostaje ukryta, a alias możesz wyłączyć w dowolnym momencie."
+      ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Połącz się z ${ VPN_APP_NAME } podczas podróży lub korzystania z publicznej sieci Wi-Fi, aby uniemożliwić śledzenie Twojej aktywności online lub kradzież danych. Usługa jest darmowa."
       ],
@@ -7584,9 +7599,6 @@
         "Zaznaczono **${ elementsCount } wiadomości**.",
         "Zaznaczono **${ elementsCount } wiadomości**.",
         "Zaznaczono **${ elementsCount } wiadomości**."
-      ],
-      "You selected some content:": [
-        "Zaznaczono fragment:"
       ],
       "You will lose access to Plus features on this date.": [
         "W tym dniu stracisz dostęp do funkcji planu Plus."
@@ -7964,9 +7976,6 @@
       ],
       " and ${ l }": [
         " oraz ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nazwa użytkownika ${ BRAND_NAME }"
@@ -8487,9 +8496,6 @@
       "Type a command...": [
         "Wpisz polecenie…"
       ],
-      "Type a prompt to generate an output": [
-        "Wpisz zadanie, aby wygenerować tekst"
-      ],
       "Undisclosed Recipients": [
         "Nieznani odbiorcy"
       ],
@@ -8519,6 +8525,9 @@
       ],
       "Wonderful": [
         "Wspaniale"
+      ],
+      "Writing assistant": [
+        "Asystent pisania"
       ],
       "Your alias": [
         "Twój alias"
@@ -9187,6 +9196,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Rozpocznij od 1 $"
+      ],
+      "Get started for 1 €": [
+        "Rozpocznij od 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Rozpocznij od 1 CHF"
+      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ]
@@ -9728,6 +9746,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Zabezpiecz cyfrowe życie 2 użytkowników z ${ BRAND_NAME }."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Indywidualne rozwiązania dla większych organizacji o specyficznych potrzebach w zakresie bezpieczeństwa"
       ],
@@ -9772,8 +9793,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpiecz swój harmonogram dzięki szyfrowaniu end-to-end. Zawiera obsługę niestandardowych kalendarzy, udostępnianie kalendarzy i wiele więcej."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpiecz swoje pliki za pomocą szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpiecz pocztę e-mail za pomocą szyfrowania end-to-end. Zawiera obsługę niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."
@@ -10403,8 +10424,8 @@
       "First name": [
         "Imię"
       ],
-      "Generating...": [
-        "Generowanie..."
+      "Generating": [
+        "Generowanie"
       ],
       "Gift code": [
         "Kod podarunkowy"
@@ -10445,9 +10466,6 @@
       "Please share what you expected": [
         "Jakie były Twoje oczekiwania"
       ],
-      "Refining your text...": [
-        "Poprawa tekstu..."
-      ],
       "Search date, name, email address, or subject line": [
         "Szukaj daty, nazwy, adresu e-mail lub tematu"
       ],
@@ -10487,29 +10505,29 @@
       "Subject": [
         "Temat"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Powiedz asystentowi, co ma napisać. Na przykład: “Zapowiedź nadchodzące wydarzenia w newsletterze”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Powiedz asystentowi, co ma napisać. Na przykład: “Anuluj moje członkostwo na siłowni”"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Powiedz asystentowi, co ma napisać. Na przykład: “Zaproś Jane na swoją imprezę”"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Powiedz asystentowi, co ma napisać. Na przykład: “Podziękuj współpracownikowi za pomoc w projekcie”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Powiedz asystentowi, co ma napisać. Na przykład: “Napisz list motywacyjny na staż”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Powiedz asystentowi, co ma napisać. Na przykład: “Napisz wiadomość do klienta”"
+      ],
       "Text": [
         "Tekst"
       ],
       "To": [
         "Do"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Wypróbuj \"Zapowiedź nadchodzące wydarzenia w newsletterze\""
-      ],
-      "Try “Cancel my gym membership”": [
-        "Wypróbuj \"Anuluj moje członkostwo na siłowni\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Wypróbuj \"Zaproś Joannę na imprezę\""
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Wypróbuj \"Podziękuj współpracownikowi za pomoc w projekcie\""
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Wypróbuj \"Napisz list motywacyjny na staż\""
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Wypróbuj \"Napisz wiadomość do klienta\""
       ],
       "Type a command…": [
         "Wpisz polecenie…"
@@ -11670,6 +11688,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "Plan ${ planName } zapewnia nieograniczoną prywatność i więcej przestrzeni dyskowej dla 2 użytkowników."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "Plan ${ planName } zwiększa zespołowi produktywność i zorganizowanie oraz zapewnia dostęp do wszystkich aplikacji ${ BRAND_NAME } i ich funkcji premium."
       ],
@@ -11705,6 +11726,9 @@
       ],
       "10 email addresses": [
         "10 adresów e-mail"
+      ],
+      "2 users": [
+        "2 użytkowników"
       ],
       "20 email addresses per user": [
         "20 adresów na użytkownika"
@@ -11858,6 +11882,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Unlimited privacy for two": [
+        "Nieograniczona prywatność dla dwojga"
       ],
       "Users won’t be able to manage their calendars": [
         "Użytkownicy nie będą mogli zarządzać kalendarzami"
@@ -12309,6 +12336,9 @@
       ],
       "Self-destruction set": [
         "Samozniszczenie zostało ustawione"
+      ],
+      "Text copied to clipboard": [
+        "Tekst został skopiowany do schowka"
       ],
       "Thanks for the feedback!": [
         "Dziękujemy za opinię!"
@@ -13533,7 +13563,7 @@
     },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
-        "Problem z aplikacją Wallet"
+        "Problem z portfelem"
       ]
     },
     "wallet_signup_2024:Title": {

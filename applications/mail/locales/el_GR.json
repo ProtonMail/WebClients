@@ -93,6 +93,9 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
+      "Adds it below your existing message": [
+        "Το προσθέτει κάτω από το υπάρχον μήνυμά σας"
+      ],
       "Align center": [
         "Στοίχιση στο κέντρο"
       ],
@@ -225,9 +228,6 @@
       ],
       "Close & discard": [
         "Κλείσιμο & απόρριψη"
-      ],
-      "Close AI refine suggestion": [
-        "Κλείσιμο πρότασης βελτίωσης από το AI"
       ],
       "Close composer": [
         "Κλείσιμο συντάκτη"
@@ -567,6 +567,9 @@
       "hide-my-email aliases": [
         "hide-my-email ψευδώνυμα"
       ],
+      "I like this response": [
+        "Μου αρέσει αυτή η απάντηση"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
       ],
@@ -729,6 +732,12 @@
       ],
       "Minimize composer": [
         "Ελαχιστοποίηση συντάκτη"
+      ],
+      "Modify": [
+        "Τροποποίηση"
+      ],
+      "Modify selection": [
+        "Τροποποίηση επιλογής"
       ],
       "Monday": [
         "Δευτέρα"
@@ -958,6 +967,12 @@
       "Remove this label": [
         "Αφαίρεση αυτής της ετικέτας"
       ],
+      "Replace": [
+        "Αντικατάσταση"
+      ],
+      "Replaces the selected text in your message": [
+        "Αντικαθιστά το επιλεγμένο κείμενο στο μήνυμά σας"
+      ],
       "Reply": [
         "Απάντηση"
       ],
@@ -966,9 +981,6 @@
       ],
       "Reply securely": [
         "Απάντηση με διασφάλιση"
-      ],
-      "Report a good content": [
-        "Αναφορά κατάλληλου περιεχομένου"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -1192,8 +1204,8 @@
       "Stay": [
         "Παραμονή"
       ],
-      "Stop downloading the writing assistant": [
-        "Διακοπή λήψης του βοηθού γραφής"
+      "Stop downloading assistant": [
+        "Διακοπή λήψης βοηθού"
       ],
       "Stop generating result": [
         "Διακοπή δημιουργίας αποτελέσματος"
@@ -1236,6 +1248,10 @@
       ],
       "Trust": [
         "Αξιόπιστο"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1321,9 +1337,6 @@
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
-      "Use this": [
-        "Χρησιμοποιήστε αυτό"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Χρησιμοποιήστε το ποντίκι σας για να αλλάξετε το μέγεθος της προβολής. Εάν χρησιμοποιείτε το πληκτρολόγιό σας, μπορείτε να χρησιμοποιήσετε τα πλήκτρα αριστερού και δεξιού βέλους για να αλλάξετε το μέγεθος."
       ],
@@ -1368,6 +1381,9 @@
       ],
       "Why not?": [
         "Γιατί όχι;"
+      ],
+      "Write for me": [
+        "Γράψε για μένα"
       ],
       "Yes": [
         "Ναι"
@@ -1538,20 +1554,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Τα δεδομένα παραμένουν στη συσκευή σας, αλλά απαιτείται εφάπαξ λήψη και συμβατό υλικό"
+      ],
       "Fast and secure. No logs are kept.": [
         "Γρήγορα και με ασφάλεια. Δεν τηρούνται αρχεία καταγραφής."
       ],
-      "Faster, broader device compatibility": [
-        "Ταχύτερη, ευρύτερη συμβατότητα συσκευών"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Οι προτροπές παραμένουν στη συσκευή σας, αλλά απαιτείται εφάπαξ λήψη και συμβατό υλικό"
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Απαιτεί εφάπαξ λήψη και συμβατό υλικό."
-      ],
-      "Run locally": [
-        "Εκτέλεση τοπικά"
+      "Run on device": [
+        "Εκτέλεση στη συσκευή"
       ],
       "Run on servers": [
         "Εκτέλεση σε διακομιστές"
@@ -3863,7 +3873,7 @@
       "Draft could not be saved. Try again.": [
         "Αδυναμία αποθήκευσης προχείρου. Δοκιμάστε ξανά."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "Λόγω σφάλματος, δεν ήταν δυνατή η ακύρωση της δημιουργίας κειμένου"
       ],
       "Email address disabled": [
@@ -4478,9 +4488,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -4652,8 +4659,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Αποθηκευτικός χώρος που σας έχει εκχωρηθεί: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Η συνδρομή χρεώνεται στον κύριο διαχειριστή του Visionary ή του οικογενειακού προγράμματος."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του προγράμματος."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
@@ -4670,8 +4677,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Έχετε εγγραφεί επιτυχώς στο Οικογενειακό πρόγραμμα"
+      "You have successfully joined the family group": [
+        "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
@@ -5631,9 +5638,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } περί του βοηθού γραφής του ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
         "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
@@ -6049,14 +6053,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Λήψη του βοηθού… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "Η λήψη τέθηκε σε παύση"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Λήψη σε παύση: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Λήψη του βοηθού γραφής: ${ progressDisplay } GB"
       ],
       "Draft": [
         "Πρόχειρο"
@@ -6337,6 +6341,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "Μάθετε περισσότερα περί του βοηθού γραφής του ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
@@ -7353,9 +7360,6 @@
         "Επιλέξατε **${ elementsCount } μήνυμα**.",
         "Επιλέξατε **${ elementsCount } μηνύματα**."
       ],
-      "You selected some content:": [
-        "Επιλέξατε κάποιο περιεχόμενο:"
-      ],
       "You will lose access to Plus features on this date.": [
         "Θα χάσετε την πρόσβαση στις λειτουργίες του Plus αυτήν την ημέρα."
       ],
@@ -7720,9 +7724,6 @@
       ],
       " and ${ l }": [
         " και ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
@@ -8241,9 +8242,6 @@
       "Type a command...": [
         "Πληκτρολογήστε μια εντολή..."
       ],
-      "Type a prompt to generate an output": [
-        "Πληκτρολογήστε μια προτροπή για να δημιουργήσετε ένα αποτέλεσμα"
-      ],
       "Undisclosed Recipients": [
         "Μη κοινοποιημένοι παραλήπτες"
       ],
@@ -8273,6 +8271,9 @@
       ],
       "Wonderful": [
         "Θαυμάσια"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
       ],
       "Your alias": [
         "Το ψευδώνυμο σας"
@@ -8925,6 +8926,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Ξεκινήστε με $1"
+      ],
+      "Get started for 1 €": [
+        "Ξεκινήστε με 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Ξεκινήστε με CHF 1"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -9430,6 +9440,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Ασφαλίστε την ψηφιακή σας ζωή με ${ BRAND_NAME } για δύο άτομα."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
@@ -9474,8 +9487,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -10100,8 +10113,8 @@
       "First name": [
         "Όνομα"
       ],
-      "Generating...": [
-        "Παραγωγή..."
+      "Generating": [
+        "Παραγωγή"
       ],
       "Gift code": [
         "Κωδικός δώρου"
@@ -10142,9 +10155,6 @@
       "Please share what you expected": [
         "Παρακαλώ μοιραστείτε αυτό που περιμένατε"
       ],
-      "Refining your text...": [
-        "Τελειοποίηση του κειμένου σας..."
-      ],
       "Search date, name, email address, or subject line": [
         "Αναζητήστε με ημερομηνία, όνομα, διεύθυνση ηλεκτρονικού ταχυδρομείου ή γραμμή θέματος"
       ],
@@ -10184,29 +10194,29 @@
       "Subject": [
         "Θέμα"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Ανακοίνωσε προσεχές εκδηλώσεις σε ενημερωτικό δελτίο\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Ακύρωσε τη συνδρομή μου στο γυμναστήριο\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Προσκάλεσε τη Jane στο πάρτι μου\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Ευχαρίστησε το συνάδελφό μου για τη βοήθειά του σε ένα έργο\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Γράψε μια συνοδευτική επιστολή για πρακτική άσκηση\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Πείτε στον βοηθό γραφής τι να γράψει. Παράδειγμα: \"Γράψε ένα μήνυμα ηλεκτρονικού ταχυδρομείου παρακολούθησης σε έναν πελάτη\""
+      ],
       "Text": [
         "Κείμενο"
       ],
       "To": [
         "Προς"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Δοκιμάστε την επιλογή \"Ανακοίνωση επερχόμενων εκδηλώσεων σε ενημερωτικό δελτίο\""
-      ],
-      "Try “Cancel my gym membership”": [
-        "Δοκιμάστε το \"Ακύρωση της συνδρομής μου στο γυμναστήριο\""
-      ],
-      "Try “Invite Jane to my party”": [
-        "Δοκιμάστε το \"Προσκαλέστε την Jane στο πάρτι μου\""
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Δοκιμάστε το \"Ευχαριστήσω τον συνάδελφό μου για βοήθεια σε ένα έργο\""
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Δοκιμάστε \"Γράψτε μια συνοδευτική επιστολή για πρακτική άσκηση\""
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Δοκιμάστε \"Γράψτε ένα επακόλουθο μήνυμα ηλεκτρονικού ταχυδρομείου σε έναν πελάτη\""
       ],
       "Type a command…": [
         "Πληκτρολογήστε μια εντολή…"
@@ -11289,6 +11299,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "Το ${ planName } σας δίνει απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "Το ${ planName } δίνει στην ομάδα σας αυτό που χρειάζεται για να είναι πιο παραγωγική και οργανωμένη στην εργασία της με πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητές τους."
       ],
@@ -11324,6 +11337,9 @@
       ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "2 users": [
+        "2 χρήστες"
       ],
       "20 email addresses per user": [
         "20 διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
@@ -11477,6 +11493,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Unlimited privacy for two": [
+        "Απεριόριστη ιδιωτικότητα για δύο"
       ],
       "Users won’t be able to manage their calendars": [
         "Οι χρήστες δε θα μπορούν να διαχειρίζονται τα ημερολόγιά τους"
@@ -11876,6 +11895,9 @@
       ],
       "Self-destruction set": [
         "Η αυτοκαταστροφή ορίστηκε"
+      ],
+      "Text copied to clipboard": [
+        "Το κείμενο αντιγράφτηκε στο πρόχειρο"
       ],
       "Thanks for the feedback!": [
         "Ευχαριστούμε για τα σχόλιά σου!"
@@ -13051,7 +13073,7 @@
     },
     "wallet_signup_2024:Title": {
       "Wallet": [
-        "Πορτοφόλι"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet setup": {

@@ -93,6 +93,9 @@
       "Add to group": [
         "그룹에 추가"
       ],
+      "Adds it below your existing message": [
+        "작성된 메시지 아래에 추가하기"
+      ],
       "Align center": [
         "중앙 정렬"
       ],
@@ -224,9 +227,6 @@
       ],
       "Close & discard": [
         "취소 & 닫기"
-      ],
-      "Close AI refine suggestion": [
-        "AI 개선 제안 닫기"
       ],
       "Close composer": [
         "작성기 닫기"
@@ -564,6 +564,9 @@
       "hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
+      "I like this response": [
+        "이 결과물이 마음에 들어요"
+      ],
       "Image could not be loaded with tracker protection.": [
         "트래커 보호로 인하여 이미지가 불러오지 않을 수 있습니다."
       ],
@@ -725,6 +728,12 @@
       ],
       "Minimize composer": [
         "최소화"
+      ],
+      "Modify": [
+        "수정"
+      ],
+      "Modify selection": [
+        "선택 수정"
       ],
       "Monday": [
         "월요일"
@@ -954,6 +963,12 @@
       "Remove this label": [
         "라벨 삭제"
       ],
+      "Replace": [
+        "대체"
+      ],
+      "Replaces the selected text in your message": [
+        "메시지 내의 선택된 문장을 대체하기"
+      ],
       "Reply": [
         "답장"
       ],
@@ -962,9 +977,6 @@
       ],
       "Reply securely": [
         "보안 회신"
-      ],
-      "Report a good content": [
-        "좋은 콘텐츠를 제안"
       ],
       "Report a problem": [
         "문제 신고"
@@ -1188,7 +1200,7 @@
       "Stay": [
         "기다리기"
       ],
-      "Stop downloading the writing assistant": [
+      "Stop downloading assistant": [
         "글쓰기 도우미 다운로드 중단"
       ],
       "Stop generating result": [
@@ -1232,6 +1244,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -1317,9 +1332,6 @@
       "Use recovery code": [
         "복구코드 사용"
       ],
-      "Use this": [
-        "사용하기"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "마우스를 이용해 크기를 조절합니다. 마우스 대신 키보드의 왼쪽, 오른쪽 방향키를 이용하여 조절할 수 있습니다."
       ],
@@ -1364,6 +1376,9 @@
       ],
       "Why not?": [
         "왜 안되나요?"
+      ],
+      "Write for me": [
+        "나를 위해 작성하기"
       ],
       "Yes": [
         "예"
@@ -1529,20 +1544,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "데이터는 기기 내에서만 존재합니다. 1회 다운로드 및 호환 기기가 필요합니다."
+      ],
       "Fast and secure. No logs are kept.": [
         "안전하고 빠르게. 로그 없이."
       ],
-      "Faster, broader device compatibility": [
-        "빨라지고, 폭넓어진 기기 호환성"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "프롬포트가 기기 내에서만 존재합니다. 1회 다운로드 및 호환 기기가 필요합니다."
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "1회 다운로드와 호환 가능한 기기가 필요합니다."
-      ],
-      "Run locally": [
-        "로컬에서 실행"
+      "Run on device": [
+        "디바이스에서 실행"
       ],
       "Run on servers": [
         "서버에서 실행"
@@ -3840,7 +3849,7 @@
       "Draft could not be saved. Try again.": [
         "임시 보관함에 저장할 수 없음. 다시 시도하세요."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "오류로 인해 문장 생성이 취소되었습니다."
       ],
       "Email address disabled": [
@@ -4445,9 +4454,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "별명은 추가 비밀번호가 ${ PASS_APP_NAME }에서 활성화 된 상태에서 사용할 수 없습니다."
-      ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
       ],
@@ -4619,8 +4625,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "저장 공간이 사용자에게 할당됨: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "구독이 Visionary 및 가족 요금제의 관리자에게 결제됩니다."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "구독이 해당 플랜의 기본 관리자에게 청구됩니다."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary 및 가족 요금제가 현재 외부 계정을 지원하지 않습니다. 가입 전에 ${ BRAND_NAME } 주소를 생성하세요. ${ addressSettingsLink }"
@@ -4637,8 +4643,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } 가입에 초대되었습니다. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "가족 요금제에 성공적으로 가입했습니다"
+      "You have successfully joined the family group": [
+        "가족 그룹에 성공적으로 가입했습니다."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "사용자가 ${ BRAND_NAME } 계정이 이 그룹 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ BRAND_NAME_TWO } 프리미엄 기능들을 즐기세요."
@@ -5554,9 +5560,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ BRAND_NAME } 글쓰기 도우미에 관한 ${ PrivacyLink }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized }개 폴더 찾음"
       ],
@@ -5950,14 +5953,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "글쓰기 도우미 다운로드 중… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "다운로드 일시정지됨"
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "다운로드 중단됨: ${ progressDisplay } GB"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "글쓰기 도우미 다운로드 중: ${ progressDisplay } GB"
       ],
       "Draft": [
         "초안"
@@ -6231,6 +6234,9 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "${ BRAND_NAME } 글쓰기 도우미에 대해 더 알아보기"
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
@@ -7225,9 +7231,6 @@
       "You selected **${ elementsCount } message**.": [
         "**${ elementsCount }개 메시지**를 선택했습니다."
       ],
-      "You selected some content:": [
-        "몇 가지 콘텐츠를 선택하셨습니다:"
-      ],
       "You will lose access to Plus features on this date.": [
         "오늘 부터 Plus 기능을 잃게 됩니다."
       ],
@@ -7586,9 +7589,6 @@
       ],
       " and ${ l }": [
         " 그리고 ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
@@ -8106,9 +8106,6 @@
       "Type a command...": [
         "명령 입력..."
       ],
-      "Type a prompt to generate an output": [
-        "문장을 생성하기 위해 프롬프트를 입력해 주세요"
-      ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
       ],
@@ -8138,6 +8135,9 @@
       ],
       "Wonderful": [
         "최고"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
       ],
       "Your alias": [
         "내 별칭"
@@ -8782,6 +8782,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
+      "Get started for $1": [
+        "$1로 시작하기"
+      ],
+      "Get started for 1 €": [
+        "1€로 시작하기"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF로 시작하기"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ]
@@ -9269,6 +9278,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "두 명의 사용자를 위한 ${ BRAND_NAME }으로 내 디지털 생활을 보호하세요."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
       ],
@@ -9313,7 +9325,7 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
@@ -9935,8 +9947,8 @@
       "First name": [
         "이름"
       ],
-      "Generating...": [
-        "생성 중..."
+      "Generating": [
+        "생성 중"
       ],
       "Gift code": [
         "기프트 코드"
@@ -9977,9 +9989,6 @@
       "Please share what you expected": [
         "기대했던 것을 공유해 주세요"
       ],
-      "Refining your text...": [
-        "문장을 다듬는 중..."
-      ],
       "Search date, name, email address, or subject line": [
         "날짜, 이름, 이메일 주소 및 제목 제목을 입력하세요"
       ],
@@ -10019,29 +10028,29 @@
       "Subject": [
         "제목"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"곧 다가오는 이벤트에 대한 뉴스레터를 소개해줘\""
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"내 체육관 멤버십을 취소해 줘\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"영희를 파티에 초대해줘\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"프로젝트에 도움을 준 동료들에게 감사 편지를 써줘\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"인턴십에 쓸 자기 소개서를 작성해 줘\""
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "작성하고자 하는 것을 글쓰기 도우미에게 알려주세요. 예시: \"고객에게 보낼 후속 이메일을 작성해 줘\""
+      ],
       "Text": [
         "텍스트"
       ],
       "To": [
         "받는 사람:"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "\"뉴스레터에 다가오는 이벤트를 발표해 줘\"를 시도해 보세요"
-      ],
-      "Try “Cancel my gym membership”": [
-        "\"체육관 멤버십을 취소해 줘\"를 시도해 보세요"
-      ],
-      "Try “Invite Jane to my party”": [
-        "\"철수를 내 파티에 초대해 줘\"를 시도해 보세요"
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "\"프로젝트에 도움을 준 동료에게 감사하다고 보내줘\"를 시도해 보세요"
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "\"인턴십에 쓸 자기 소개서를 작성해 줘\"를 시도해 보세요"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "\"고객에게 보낼 후속 이메일을 작성해 줘\"를 시도해 보세요"
       ],
       "Type a command…": [
         "명령 입력..."
@@ -11085,6 +11094,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName }이 최대 두 명의 사용자에게 무제한 프라이버시 및 확장된 스토리지 공간을 제공합니다."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName }는 모든 ${ BRAND_NAME } 앱과 프리미엄 기능에 액세스하여 작업에서 더 생산적이고 체계적인 작업에 필요한 것을 제공합니다."
       ],
@@ -11120,6 +11132,9 @@
       ],
       "10 email addresses": [
         "이메일 주소 10개"
+      ],
+      "2 users": [
+        "2명의 사용자"
       ],
       "20 email addresses per user": [
         "사용자당 이메일 주소 20개"
@@ -11273,6 +11288,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
+      ],
+      "Unlimited privacy for two": [
+        "두 명을 위한 무제한 프라이버시"
       ],
       "Users won’t be able to manage their calendars": [
         "구성원이 개개인의 캘린더를 관리할 수 없습니다."
@@ -11646,6 +11664,9 @@
       ],
       "Self-destruction set": [
         "자동 폭파 설정"
+      ],
+      "Text copied to clipboard": [
+        "텍스트가 클립보드에 복사되었습니다"
       ],
       "Thanks for the feedback!": [
         "의견을 주셔서 감사합니다!"
@@ -12794,7 +12815,7 @@
     },
     "wallet_signup_2024:Title": {
       "Wallet": [
-        "지갑"
+        "Wallet"
       ]
     },
     "wallet_signup_2024:Wallet setup": {

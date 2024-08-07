@@ -23,6 +23,9 @@
       "Add address": [
         "Dodajte adresu"
       ],
+      "Add address or domain": [
+        "Dodaj adresu ili domenu"
+      ],
       "Add credit / debit card": [
         "Dodaj kreditnu/debitnu karticu"
       ],
@@ -38,6 +41,9 @@
       "Add user": [
         "Dodaj korisnika"
       ],
+      "Allow": [
+        "Dopusti"
+      ],
       "Apply": [
         "Primijeni"
       ],
@@ -49,6 +55,9 @@
       ],
       "Back": [
         "Natrag"
+      ],
+      "Block": [
+        "Blokiraj"
       ],
       "Cancel": [
         "Poništi"
@@ -200,6 +209,9 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go to label": [
+        "Idi na oznaku"
+      ],
       "Got it": [
         "Shvaćam"
       ],
@@ -233,8 +245,14 @@
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
       ],
+      "More options": [
+        "Više opcija"
+      ],
       "Need help?": [
         "Trebate pomoć?"
+      ],
+      "New group": [
+        "Nova grupa"
       ],
       "Next": [
         "Sljedeće"
@@ -242,10 +260,10 @@
       "Next month": [
         "Sljedeći mjesec"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open": [
@@ -403,6 +421,9 @@
       ],
       "sign up for free": [
         "registrirajte se besplatno"
+      ],
+      "Spam": [
+        "Neželjena pošta"
       ],
       "Submit": [
         "Pošalji"
@@ -1567,6 +1588,11 @@
         "(putem ${ entryCountryName })"
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Više informacija"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mjesec"
@@ -1658,6 +1684,12 @@
       ],
       "Invalid code": [
         "Nevažeći kôd"
+      ],
+      "Invalid domain": [
+        "Nevažeća domena"
+      ],
+      "Invalid email address": [
+        "Nevažeća adresa e-pošte"
       ],
       "Invalid expiration date": [
         "Nevažeći datum isteka"
@@ -1931,6 +1963,23 @@
         "Terabajta"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Dopusti:"
+      ],
+      "Block:": [
+        "Blokiraj:"
+      ],
+      "Search list": [
+        "Pretraži"
+      ],
+      "Spam:": [
+        "Neželjena pošta:"
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Kako bi osigurali da vaše najvažnije poruke ne završe u neželjenoj pošti i da ih se ne preskoči"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Zadani sustav"
@@ -1996,6 +2045,13 @@
       ],
       "Services": [
         "Usluge"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } članova",
+        "${ memberCount } člana"
       ]
     },
     "Header": {
@@ -2072,6 +2128,16 @@
         "Kontaktirajte nas"
       ]
     },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-pošta"
@@ -2107,6 +2173,11 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } ažurirano"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -2304,6 +2375,9 @@
       ],
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
+      ],
+      "Labels:": [
+        "Oznake:"
       ],
       "Learn more": [
         "Saznajte više"
@@ -2684,6 +2758,9 @@
       "Addresses": [
         "Adrese"
       ],
+      "Allow": [
+        "Dopusti"
+      ],
       "Allow recovery by email": [
         "Omogući oporavak putem adrese e-pošte"
       ],
@@ -2704,6 +2781,9 @@
       ],
       "Billing cycle": [
         "Ciklus naplate"
+      ],
+      "Block": [
+        "Blokiraj"
       ],
       "Block malware only": [
         "Blokiraj samo zlonamjerne programe"
@@ -2774,6 +2854,9 @@
       "Display name": [
         "Zaslonski naziv"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Domain name": [
         "Naziv domene"
       ],
@@ -2794,6 +2877,9 @@
       ],
       "Gift code": [
         "Darovni kôd"
+      ],
+      "Group name": [
+        "Naziv grupe"
       ],
       "Hide password": [
         "Sakrij lozinku"
@@ -2881,6 +2967,9 @@
       ],
       "Reveal password": [
         "Prikaži lozinku"
+      ],
+      "Spam": [
+        "Neželjena pošta"
       ],
       "Start date": [
         "Početni datum"
@@ -3100,6 +3189,20 @@
       ],
       "Swiss franc": [
         "Švicarski franak"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Sve"
+      ],
+      "Allow": [
+        "Dopusti"
+      ],
+      "Block": [
+        "Blokiraj"
+      ],
+      "Spam": [
+        "Neželjena pošta"
       ]
     },
     "new_plans": {
@@ -3363,6 +3466,11 @@
         "Postavke standardnog poslužitelja"
       ]
     },
+    "option": {
+      "Members": [
+        "Članovi"
+      ]
+    },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
         "Postavite vašu organizaciju"
@@ -3452,11 +3560,17 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "domain.com": [
+        "domena.hr"
+      ],
       "E.g., ": [
         "Npr. "
       ],
       "End date": [
         "Datum završetka"
+      ],
+      "example@domain.com": [
+        "primjer@domena.hr"
       ],
       "Feedback": [
         "Povratne informacije"
@@ -3490,6 +3604,11 @@
       ],
       "yourdomain.com": [
         "vasadomena.hr"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Članovi"
       ]
     },
     "plan customizer, users": {
@@ -3546,6 +3665,21 @@
       ],
       "User": [
         "Korisnik"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Poništi"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Pojedinosti"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "E-pošta"
       ]
     },
     "scim: Action": {
@@ -4105,14 +4239,23 @@
       "Country": [
         "Država"
       ],
+      "Edit": [
+        "Uredi"
+      ],
       "Email": [
         "E-pošta"
       ],
       "Email address": [
         "Adresa e-pošte"
       ],
+      "Email address or domain": [
+        "E-pošta ili domena"
+      ],
       "Email addresses": [
         "Adrese e-pošte"
+      ],
+      "List": [
+        "Lista"
       ],
       "Name": [
         "Naziv"
@@ -4276,6 +4419,9 @@
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
+      ],
+      "Discard changes?": [
+        "Odbaci promjene?"
       ],
       "Domain names": [
         "Nazivi domena"

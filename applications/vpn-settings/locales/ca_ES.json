@@ -43,6 +43,9 @@
       "Add address": [
         "Afegeix una adreça"
       ],
+      "Add address or domain": [
+        "Afegeix una adreça o domini"
+      ],
       "Add credit / debit card": [
         "Afegir targeta de crèdit/dèbit"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Afegir usuari"
       ],
+      "Allow": [
+        "Permet"
+      ],
       "Apply": [
         "Aplica"
       ],
@@ -72,6 +78,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Block": [
+        "Bloqueja"
       ],
       "Cancel": [
         "Cancel·la"
@@ -295,6 +304,9 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
+      "Go to label": [
+        "Ves a l'etiqueta"
+      ],
       "Got it": [
         "D'acord"
       ],
@@ -343,8 +355,14 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
+      "More options": [
+        "Més opcions"
+      ],
       "Need help?": [
         "Necessiteu ajuda?"
+      ],
+      "New group": [
+        "Crea un grup"
       ],
       "Next": [
         "Següent"
@@ -352,10 +370,10 @@
       "Next month": [
         "Mes següent"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open": [
@@ -409,6 +427,9 @@
       "Remove": [
         "Esborra"
       ],
+      "Remove all members": [
+        "Suprimeix tots els membres"
+      ],
       "Remove bonuses": [
         "Esborra les bonificacions"
       ],
@@ -438,6 +459,9 @@
       ],
       "Resend code": [
         "Reenvia el codi"
+      ],
+      "Resend invitation": [
+        "Reenvia la invitació"
       ],
       "Reset credentials": [
         "Restaurar credencials"
@@ -558,6 +582,9 @@
       ],
       "Signing in": [
         "Iniciant sessió"
+      ],
+      "Spam": [
+        "Correu brossa"
       ],
       "Start live chat": [
         "Inicia el xat en directe"
@@ -1330,6 +1357,9 @@
       "Congo": [
         "República del Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo, (República Democràtica del)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
       ],
@@ -1865,7 +1895,7 @@
         "Tanzània"
       ],
       "Tanzania, United Republic of": [
-        "Tanzània (República Unida)"
+        "Tanzània"
       ],
       "Thailand": [
         "Tailàndia"
@@ -1992,6 +2022,11 @@
         "Hem detectat errors en múltiples files durant la importació. Reviseu el vostre fitxer CSV."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Més informació"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mes"
@@ -2079,6 +2114,35 @@
         "Els subdominis \"www\" normalment no s'utilitzen per enviar missatges de correu electrònic. Està segur que vol utilitzar aquest valor de domini?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "S'ha afegit ${ name }."
+      ],
+      "${ name } deletion failed": [
+        "No s'ha pogut eliminar ${ name }."
+      ],
+      "${ name } failed to move to allow list": [
+        "No s'ha pogut moure ${ name } a la llista d'adreces permeses."
+      ],
+      "${ name } failed to move to block list": [
+        "No s'ha pogut moure ${ name } a la vostra llista d'adreces bloquejades"
+      ],
+      "${ name } failed to move to spam list": [
+        "No s'ha pogut moure ${ name } a la llista de correu brossa"
+      ],
+      "${ name } moved to allow list": [
+        "S'ha mogut ${ name } a la llista d'adreces permeses."
+      ],
+      "${ name } moved to block list": [
+        "S'ha mogut ${ name } a la vostra llista d'adreces bloquejades"
+      ],
+      "${ name } moved to spam list": [
+        "S'ha mogut ${ name } a la llista de correu brossa"
+      ],
+      "${ name } successfully deleted": [
+        "S'ha eliminat ${ name }."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errors o problema de qualitat"
@@ -2136,9 +2200,43 @@
         "Suport prioritari"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "S'ha afegit ${ name }"
+      ],
+      "${ name } deletion failed": [
+        "No s'ha pogut eliminar ${ name }."
+      ],
+      "${ name } failed to move to allow list": [
+        "No s'ha pogut moure ${ name } a la llista d'adreces permeses."
+      ],
+      "${ name } failed to move to block list": [
+        "No s'ha pogut moure ${ name } a la llista d'adreces bloquejades"
+      ],
+      "${ name } failed to move to spam list": [
+        "No s'ha pogut moure ${ name } a la llista de correu brossa"
+      ],
+      "${ name } moved to allow list": [
+        "S'ha mogut ${ name } a la llista d'adreces permeses."
+      ],
+      "${ name } moved to block list": [
+        "S'ha mogut ${ name } a la llista d'adreces bloquejades"
+      ],
+      "${ name } moved to spam list": [
+        "S'ha mogut ${ name } a la llista de correu brossa"
+      ],
+      "${ name } successfully deleted": [
+        "S'ha eliminat ${ name }."
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "S'ha enviat un correu electrònic de verificació a ${ address }."
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sense nom"
       ]
     },
     "eof2023: Deal details": {
@@ -2252,6 +2350,12 @@
       ],
       "Invalid code": [
         "Codi invàlid"
+      ],
+      "Invalid domain": [
+        "Domini invàlid"
+      ],
+      "Invalid email address": [
+        "L'adreça de correu electrònic no és vàlida."
       ],
       "Invalid expiration date": [
         "Data de caducitat invàlida"
@@ -2558,9 +2662,6 @@
       "Manage user accounts": [
         "Gestiona comptes d'usuari"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Només es permeten 10 invitacions acceptades en un període de 6 mesos."
-      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Els propietaris d'un pla amb membres no poden unir-se a un altre pla de grup."
       ],
@@ -2579,9 +2680,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "La subscripció es factura a l'administrador principal del pla Visionary o familiar."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
       ],
@@ -2596,15 +2694,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Heu arribat al límit de 10 invitacions acceptades en 6 mesos."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Heu arribat al límit de 10 invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
-      ],
-      "You have successfully joined the Family plan": [
-        "Us heu unit al pla familiar"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Heu de configurar un domini personalitzat abans d'afegir diversos usuaris."
@@ -2897,6 +2986,35 @@
         "Terabytes"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Adreces permeses:"
+      ],
+      "Block:": [
+        "Adreces bloquejades:"
+      ],
+      "Search list": [
+        "Cerca a la llista"
+      ],
+      "Spam:": [
+        "Correu brossa:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Preneu el control sobre què aterra a les safates d'entrada dels membres de la vostra organització creant les llistes següents:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Aquestes llistes s'apliquen a tots els comptes de la vostra organització. Els membres poden crear els seus propis filtres individuals, però no podran substituir les adreces o dominis que heu blocat."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Per a assegurar que els missatges crítics no acabin al correu brossa i es perdin"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Per a evitar que el correu brossa ompli les safates d'entrada"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Per a evitar que s'introdueixin missatges de correu electrònic de suplantació d'identitat o sospitosos a les bústies de la vostra organització"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Valor per defecte del sistema"
@@ -2967,6 +3085,17 @@
       ],
       "Services": [
         "Serveis"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Adreça del grup"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
       ]
     },
     "Header": {
@@ -3061,6 +3190,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Afegiu aquest registre al domini, al panell de control del registrador de noms de domini"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
+        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
     },
     "Human verification method": {
@@ -3159,6 +3295,10 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "La característica Secure Core requereix ${ vpnPlus }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/mes)"
@@ -3783,6 +3923,9 @@
       "Keys created": [
         "S'han creat les claus."
       ],
+      "Labels:": [
+        "Etiquetes:"
+      ],
       "Lean more about gateways": [
         "Obteniu més informació sobre les passarel·les"
       ],
@@ -4257,9 +4400,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Això cancel·larà la vostra subscripció de pagament actual i perdreu els beneficis de fidelitat que heu acumulat."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Això permetrà que PayPal s'utilitzi per pagar la vostra subscripció a ${ BRAND_NAME }. Us redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors de finestres emergents, desactiveu-los per a continuar."
       ],
@@ -4538,6 +4678,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Amb els grups d'usuaris, podeu enviar correus electrònics, compartir dades o canviar la configuració per a grups específics d'usuaris tot alhora de manera senzilla."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
@@ -4841,11 +4984,17 @@
       "Address": [
         "Adreça"
       ],
+      "Address type": [
+        "Tipus d'adreça"
+      ],
       "Addresses": [
         "Adreces"
       ],
       "Administrators": [
         "Administradors"
+      ],
+      "Allow": [
+        "Adreces permeses"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -4879,6 +5028,9 @@
       ],
       "Billing cycle": [
         "Cicle de facturació"
+      ],
+      "Block": [
+        "Adreces bloquejades"
       ],
       "Block malware only": [
         "Bloqueja només el programari maliciós"
@@ -4991,6 +5143,9 @@
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
       ],
+      "Domain": [
+        "Domini"
+      ],
       "Domain name": [
         "Nom de domini"
       ],
@@ -5020,6 +5175,15 @@
       ],
       "Gift code": [
         "Codi regal"
+      ],
+      "Group address": [
+        "Adreça del grup"
+      ],
+      "Group members": [
+        "Membres del grup"
+      ],
+      "Group name": [
+        "Nom del grup"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -5162,6 +5326,9 @@
       "Public certificate (X.509)": [
         "Certificat públic (X.509)"
       ],
+      "Purpose": [
+        "Propòsit"
+      ],
       "Recovery email address": [
         "Correu electrònic de recuperació"
       ],
@@ -5194,6 +5361,9 @@
       ],
       "Single sign-on URL": [
         "URL d'inici de sessió únic"
+      ],
+      "Spam": [
+        "Correu brossa"
       ],
       "Start date": [
         "Data d'inici"
@@ -5624,6 +5794,20 @@
       ],
       "Swiss franc": [
         "Franc suís"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Tot"
+      ],
+      "Allow": [
+        "Adreces permeses"
+      ],
+      "Block": [
+        "Adreces bloquejades"
+      ],
+      "Spam": [
+        "Correu brossa"
       ]
     },
     "new_plans": {
@@ -6254,9 +6438,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
@@ -6629,6 +6810,14 @@
         "Tota l'organització"
       ]
     },
+    "option": {
+      "Members": [
+        "Membres"
+      ],
+      "Organization members": [
+        "Membres de l'organització"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } el vostre pla per afegir més usuaris o esborreu alguns comptes d'usuari per alliberar espai."
@@ -6751,7 +6940,7 @@
         "Pla actual"
       ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
-        "Indiqueu un nom a mostrar per a **${ username }**. Aquest és el que els vostres usuaris veuran quan canvieu els seus permisos o compartiu dades amb ells."
+        "Indiqueu un nom per a mostrar per a **${ username }**. Aquest és el que els vostres usuaris veuran quan canvieu els seus permisos o compartiu dades amb ells."
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Per només **${ relativePrice } mensuals** més, tindreu accés al gestor de contrasenyes prèmium de ${ BRAND_NAME }."
@@ -7026,6 +7215,9 @@
       "Confirm": [
         "Confirma"
       ],
+      "domain.com": [
+        "domini.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "p. ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7043,6 +7235,9 @@
       ],
       "End date": [
         "Data de finalització"
+      ],
+      "example@domain.com": [
+        "exemple@domini.com"
       ],
       "Feedback": [
         "Comentaris"
@@ -7088,6 +7283,11 @@
       ],
       "yourdomain.com": [
         "elteudomini.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "Membres"
       ]
     },
     "plan customizer, ips": {
@@ -8709,17 +8909,29 @@
       "Country": [
         "País"
       ],
+      "Edit": [
+        "Edita"
+      ],
       "Email": [
         "Corrreu electrònic"
       ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Email address or domain": [
+        "Adreça de correu electrònic o domini"
+      ],
       "Email addresses": [
         "Adreces de correu electrònic"
       ],
       "Invitation email": [
         "Correu electrònic d'invitació"
+      ],
+      "List": [
+        "Llista"
+      ],
+      "Marked as": [
+        "Marcat com a"
       ],
       "Name": [
         "Nom"
@@ -8805,6 +9017,15 @@
       ],
       "Add servers": [
         "Afegeix servidors"
+      ],
+      "Add to allow list": [
+        "Afegeix a la llista de permesos"
+      ],
+      "Add to block list": [
+        "Afegeix a la llista de bloquejats"
+      ],
+      "Add to spam list": [
+        "Afegeix a la llista de correu brossa"
       ],
       "Add user accounts": [
         "Afegeix comptes d'usuari"
@@ -8899,6 +9120,9 @@
       "Couldn’t create accounts": [
         "No s'han pogut crear els comptes"
       ],
+      "Coupon": [
+        "Cupó"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "Crea ${ selectedUserIds.length } usuari",
         "Crea ${ selectedUserIds.length } usuaris"
@@ -8966,6 +9190,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
+      ],
+      "Discard changes?": [
+        "Voleu descartar els canvis?"
       ],
       "Domain names": [
         "Noms de domini"
@@ -9736,9 +9963,17 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } compte per cartera",
+        "${ n } comptes per cartera"
+      ],
       "${ n } email address": [
         "${ n } adreça de correu electrònic",
         "${ n } adreces de correu electrònic"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteres"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"

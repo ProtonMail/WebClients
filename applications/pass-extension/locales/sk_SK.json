@@ -1146,7 +1146,7 @@
         "Automaticky uložené na ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Zabránite tým tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
+        "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Tým sa zabráni tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
       ],
       "Built in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
@@ -1441,6 +1441,9 @@
       ],
       "Never": [
         "Nikdy"
+      ],
+      "No identity item found": [
+        "Nenašla sa žiadna položka identity"
       ],
       "No login found": [
         "Nenašlo sa žiadne prihlásenie"
@@ -1992,6 +1995,9 @@
       ],
       "Create an encrypted note": [
         "Vytvoriť zašifrovanú poznámku"
+      ],
+      "Create an Identity": [
+        "Vytvoriť identitu"
       ],
       "Create lock": [
         "Vytvoriť zámok"
@@ -2632,6 +2638,9 @@
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
+      "Autofill": [
+        "Automatické vypĺňanie"
+      ],
       "Confirm extra password": [
         "Potvrďte dodatočné heslo"
       ],
@@ -2688,6 +2697,9 @@
       ],
       "History": [
         "História"
+      ],
+      "Identity": [
+        "Identita"
       ],
       "Import - ${ date }": [
         "Importované - ${ date }"

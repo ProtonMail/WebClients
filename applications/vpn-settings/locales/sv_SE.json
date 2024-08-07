@@ -43,6 +43,9 @@
       "Add address": [
         "Lägg till adress"
       ],
+      "Add address or domain": [
+        "Lägg till adress eller domän"
+      ],
       "Add credit / debit card": [
         "Lägg till kredit-/betalkort"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Lägg till användare"
       ],
+      "Allow": [
+        "Tillåt"
+      ],
       "Apply": [
         "Tillämpa"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Tillbaka"
+      ],
+      "Block": [
+        "Blockera"
+      ],
+      "Can send to this group": [
+        "Kan skicka till denna grupp"
+      ],
+      "Can't send to this group": [
+        "Kan inte skicka till denna grupp"
       ],
       "Cancel": [
         "Avbryt"
@@ -166,6 +181,9 @@
       "Delete Gateway": [
         "Ta bort gateway"
       ],
+      "Delete group": [
+        "Ta bort grupp"
+      ],
       "Delete logo": [
         "Ta bort logga"
       ],
@@ -186,6 +204,9 @@
       ],
       "Discard": [
         "Avfärda"
+      ],
+      "Discard changes": [
+        "Kasta ändringar"
       ],
       "Done": [
         "Klar"
@@ -216,6 +237,9 @@
       ],
       "Edit Gateway": [
         "Redigera gateway"
+      ],
+      "Edit group": [
+        "Redigera grupp"
       ],
       "Edit invoice details": [
         "Redigera fakturadetaljer"
@@ -295,6 +319,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "Go to label": [
+        "Gå till etikett"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -343,8 +370,14 @@
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
       ],
+      "More options": [
+        "Fler alternativ"
+      ],
       "Need help?": [
         "Behöver du hjälp?"
+      ],
+      "New group": [
+        "Ny grupp"
       ],
       "Next": [
         "Nästa"
@@ -352,11 +385,11 @@
       "Next month": [
         "Nästa månad"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Öppna"
@@ -409,6 +442,12 @@
       "Remove": [
         "Ta bort"
       ],
+      "Remove all members": [
+        "Ta bort alla medlemmar"
+      ],
+      "Remove all members from group": [
+        "Ta bort alla medlemmar från grupp"
+      ],
       "Remove bonuses": [
         "Ta bort bonusar"
       ],
@@ -439,6 +478,9 @@
       "Resend code": [
         "Skicka koden igen"
       ],
+      "Resend invitation": [
+        "Skicka inbjudan igen"
+      ],
       "Reset credentials": [
         "Återställ användaruppgifter"
       ],
@@ -465,6 +507,9 @@
       ],
       "Revoke ${ name }": [
         "Återkalla ${ name }"
+      ],
+      "Revoke invitation": [
+        "Återkalla inbjudan"
       ],
       "Save": [
         "Spara"
@@ -561,6 +606,9 @@
       ],
       "Signing in": [
         "Loggar in"
+      ],
+      "Spam": [
+        "Skräppost"
       ],
       "Start live chat": [
         "Starta livechatt"
@@ -675,6 +723,11 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Lägg till pm.me-domän"
       ]
     },
     "Action subscription": {
@@ -2012,6 +2065,11 @@
         "Vi upptäckte fel på flera rader under importen. Granska din CSV-fil."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Lär dig mer"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/månad"
@@ -2099,6 +2157,35 @@
         "'www' som underdomän används vanligtvis inte för e-post. Är du säker på att du vill använda detta domänvärde?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } har lagts till"
+      ],
+      "${ name } deletion failed": [
+        "Borttagning av ${ name } misslyckades"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } misslyckades att flyttas till listan ”Tillåt”"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } misslyckades att flyttas till blockeringslista"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } misslyckades att flyttas till skräppostlista"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } flyttades till listan ”Tillåt”"
+      ],
+      "${ name } moved to block list": [
+        "${ name } flyttades till blocklista"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } flyttades till skräppostlista"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } togs bort"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
@@ -2156,9 +2243,43 @@
         "Prioriterad support"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } har lagts till"
+      ],
+      "${ name } deletion failed": [
+        "Borttagning av ${ name } misslyckades"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } misslyckades att flyttas till listan ”Tillåt”"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } misslyckades att flyttas till blockeringslista"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } misslyckades att flyttas till skräppostlista"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } flyttades till listan ”Tillåt”"
+      ],
+      "${ name } moved to block list": [
+        "${ name } flyttades till blocklista"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } flyttades till skräppostlista"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } togs bort"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "E-postverifiering skickat till ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Namnlös"
       ]
     },
     "eof2023: Deal details": {
@@ -2272,6 +2393,12 @@
       ],
       "Invalid code": [
         "Ogiltig kod"
+      ],
+      "Invalid domain": [
+        "Ogiltig domän"
+      ],
+      "Invalid email address": [
+        "Ogiltig e-postadress"
       ],
       "Invalid expiration date": [
         "Ogiltigt förfallodatum"
@@ -2578,8 +2705,9 @@
       "Manage user accounts": [
         "Hantera användarkonton"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Endast 10 accepterade inbjudningar är tillåtna under en 6-månadersperiod."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Endast ${ n } accepterad inbjudan är tillåten under en 6-månadersperiod.",
+        "Endast ${ n } accepterade inbjudningar är tillåtna under en 6-månadersperiod."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Ägare av ett paket med medlemmar kan inte gå med i ett annat gruppaket."
@@ -2599,8 +2727,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsutrymme tilldelat till dig: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Prenumerationen faktureras till Visionary eller familjepaketets primära administratör."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary och familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
@@ -2617,14 +2745,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Du har nått gränsen på 10 accepterade inbjudningar på 6 månader."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Du har nått gränsen på ${ n } accepterad inbjudan på 6 månader.",
+        "Du har nått gränsen på ${ n } accepterade inbjudningar på 6 månader."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Du har nått gränsen på 10 accepterade inbjudningar på 6 månader. Knappen kommer att bli klickbar när du kan bjuda in ytterligare användare."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Du har nått gränsen på ${ n } accepterad inbjudan på 6 månader. Knappen kommer bli klickbar när du kan bjuda in ytterligare användare.",
+        "Du har nått gränsen på ${ n } accepterade inbjudningar på 6 månader. Knappen kommer bli klickbar när du kan bjuda in ytterligare användare."
       ],
-      "You have successfully joined the Family plan": [
-        "Du har gått med i familjepaketet"
+      "You have successfully joined the family group": [
+        "Du har gått med i familjegruppen"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du måste konfigurera en anpassad domän innan du lägger till flera användare."
@@ -2917,6 +3047,35 @@
         "Terabyte"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Tillåt:"
+      ],
+      "Block:": [
+        "Blockera:"
+      ],
+      "Search list": [
+        "Sök lista"
+      ],
+      "Spam:": [
+        "Skräppost:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Ta kontroll över vad som hamnar i dina organisationsmedlemmars inkorgar genom att skapa följande listor:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Dessa listor tillämpas för alla konton i din organisation. Medlemmar kan skapa sina egna individuella filter, men kommer inte att kunna åsidosätta adresser eller domäner du blockerat."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "För att säkerställa att viktiga meddelanden inte hamnar i skräppost och missas"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "För att förhindra att skräppost täpper till inkorgar"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "För att stoppa nätfiske eller misstänkta e-postmeddelanden från att komma in i din organisations e-postsystem"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systemstandard"
@@ -2992,6 +3151,17 @@
       ],
       "Services": [
         "Tjänster"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Gruppadress"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmar"
       ]
     },
     "Header": {
@@ -3086,6 +3256,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Lägg till denna post till din domän i adminpanelen hos din domännamnsregistrator."
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Hittade ${ items.length } förslag, använd tangentbordet för att navigera.",
+        "Hittade ${ items.length } förslag, använd tangentbordet för att navigera."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Använd upp och ner tangenterna för att komma åt och bläddra genom förslag efter inmatning. Tryck på Enter för att bekräfta ditt val, eller Esc för att stänga förslagsrutan."
       ]
     },
     "Human verification method": {
@@ -3126,6 +3303,9 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: lågupplöst förhandsgranskning"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggning och andra lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på ”Spara”."
       ],
       "${ n } address": [
         "${ n } adress",
@@ -3187,6 +3367,10 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } krävs för Secure Core-funktion."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmar)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/månad)"
@@ -3292,6 +3476,12 @@
       "Amount due": [
         "Att betala"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Är du säker på att du vill avbryta redigeringen av gruppen?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Är du säker på att du vill ta bort denna grupp? Gruppadressen kommer inte att fungera längre."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Är du säker på att du vill inaktivera tvåfaktorsautentisering?"
       ],
@@ -3303,6 +3493,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Är du säker du vill ta bort alla medlemmar från denna grupp?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
@@ -3724,6 +3917,15 @@
       "Invite Rejected": [
         "Inbjudan avvisad"
       ],
+      "Item Autofilled": [
+        "Objekt automatiskt ifyllt"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "Objekt automatiskt ifyllt i ${ vaultLink }"
+      ],
+      "Item autofilled in vault": [
+        "Objekt automatiskt ifyllt i valv"
+      ],
       "Item Changed Flags": [
         "Objekt ändrade flaggor"
       ],
@@ -3775,6 +3977,9 @@
       "Keys created": [
         "Nycklar skapade"
       ],
+      "Labels:": [
+        "Etiketter:"
+      ],
       "Lean more about gateways": [
         "Lär dig mer om gateways"
       ],
@@ -3786,6 +3991,9 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Låt oss komma igång genom att trycka på knappen ”Ny grupp” ovan"
       ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
@@ -3915,6 +4123,15 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - anpassad e-post bekräftad"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - anpassad e-post skapad"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - anpassad e-post borttagen"
       ],
       "password": [
         "lösenord"
@@ -4255,9 +4472,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
       ],
@@ -4531,6 +4745,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Med användargrupper kan du enkelt skicka e-post, dela data eller ändra inställningarna för specifika grupper av användare samtidigt."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utan aktivering kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
       ],
@@ -4742,6 +4959,14 @@
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Väntande"
+      ],
+      "Rejected": [
+        "Avvisad"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Gåva"
@@ -4825,11 +5050,17 @@
       "Address": [
         "Adress"
       ],
+      "Address type": [
+        "Adresstyp"
+      ],
       "Addresses": [
         "Adresser"
       ],
       "Administrators": [
         "Administratörer"
+      ],
+      "Allow": [
+        "Tillåt"
       ],
       "Allow recovery by email": [
         "Tillåt återställning via e-post"
@@ -4863,6 +5094,9 @@
       ],
       "Billing cycle": [
         "Faktureringsperiod"
+      ],
+      "Block": [
+        "Blockera"
       ],
       "Block malware only": [
         "Blockera endast skadlig kod"
@@ -4975,6 +5209,9 @@
       "Do you have any suggestions for our team?": [
         "Har du några förslag till vårt team?"
       ],
+      "Domain": [
+        "Domän"
+      ],
       "Domain name": [
         "Domännamn"
       ],
@@ -5004,6 +5241,15 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "Group address": [
+        "Gruppadress"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "Group name": [
+        "Gruppnamn"
       ],
       "Hide password": [
         "Dölj lösenord"
@@ -5146,6 +5392,9 @@
       "Public certificate (X.509)": [
         "Offentligt certifikat (X.509)"
       ],
+      "Purpose": [
+        "Syfte"
+      ],
       "Recovery email address": [
         "E-postadress för återställning"
       ],
@@ -5175,6 +5424,9 @@
       ],
       "Single sign-on URL": [
         "URL för enkel inloggning"
+      ],
+      "Spam": [
+        "Skräppost"
       ],
       "Start date": [
         "Startdatum"
@@ -5226,6 +5478,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
+      ],
+      "Who can send to this group address?": [
+        "Vem kan skicka till denna gruppadress?"
       ],
       "Why would you like to cancel?": [
         "Vad vill du avbryta?"
@@ -5607,6 +5862,20 @@
         "Schweizisk franc"
       ]
     },
+    "Navigation": {
+      "All": [
+        "Alla"
+      ],
+      "Allow": [
+        "Tillåt"
+      ],
+      "Block": [
+        "Blockera"
+      ],
+      "Spam": [
+        "Skräppost"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
@@ -5627,6 +5896,15 @@
       ],
       "From ${ price }": [
         "Från ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom igång för $1"
+      ],
+      "Get started for 1 €": [
+        "Kom igång för 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom igång för CHF 1"
       ],
       "Upgrade": [
         "Uppgradera"
@@ -6161,6 +6439,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Säkra ditt digitala liv med ${ BRAND_NAME } för två personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
       ],
@@ -6235,8 +6516,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
@@ -6444,6 +6725,9 @@
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inkluderat med ${ plus }, ${ bundle } och ${ BRAND_NAME } för företag."
+      ],
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inkluderad med flera användare ${ BRAND_NAME } för Business-paket."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6626,6 +6910,20 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone, incl. outside": [
+        "Alla, inkl. utanför"
+      ],
+      "Members": [
+        "Medlemmar"
+      ],
+      "Nobody by default": [
+        "Ingen som standard"
+      ],
+      "Organization members": [
+        "Organisationsmedlemmar"
       ]
     },
     "Organization capacity error": {
@@ -7049,6 +7347,9 @@
       "Confirm": [
         "Bekräfta"
       ],
+      "domain.com": [
+        "domän.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "t.ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7066,6 +7367,9 @@
       ],
       "End date": [
         "Slutdatum"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "Feedback"
@@ -7111,6 +7415,20 @@
       ],
       "yourdomain.com": [
         "dindomän.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Lägg till ett gruppnamn"
+      ],
+      "e.g. distribution list for marketing team": [
+        "t.ex. distributionslista för marknadsföringsteam"
+      ],
+      "e.g. marketing": [
+        "t.ex. marknadsföring"
+      ],
+      "Members": [
+        "Medlemmar"
       ]
     },
     "plan customizer, ips": {
@@ -7245,19 +7563,31 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Inloggning slutfördes inte."
+      ],
       "Something went wrong": [
         "Något gick fel"
-      ],
-      "Something went wrong. Please try again.": [
-        "Något gick fel. Försök igen."
       ]
     },
     "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Ett fel uppstod under testning av din SSO-konfiguration."
+      ],
       "Details": [
         "Detaljer"
       ],
       "Test in progress...": [
         "Test pågår …"
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "För att testa denna SAML-konfiguration, ange inloggningsuppgifterna för en användare associerad med **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Vi mottog ett giltigt SAML-svar från din identitetsleverantör. SSO är aktiverat för din organisation."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Vi testar din konfiguration för att säkerställa att SSO fungerar."
       ]
     },
     "saml: Label": {
@@ -8015,6 +8345,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe skrivassistent för ${ maxAi } användare",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ maxAi } användare"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
@@ -8170,6 +8504,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } ger dig obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } ger ditt team vad de behöver för att bli mer produktiva och organiserade i sitt arbete med åtkomst till alla ${ BRAND_NAME }-appar och deras premiumfunktioner."
       ],
@@ -8202,6 +8539,9 @@
       ],
       "10 email addresses": [
         "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 användare"
       ],
       "20 email addresses per user": [
         "20 e-postadresser per användare"
@@ -8379,6 +8719,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Unlimited privacy for two": [
+        "Obegränsad integritet för två"
       ],
       "Users won’t be able to manage their calendars": [
         "Användare kommer inte att kunna hantera sina kalendrar"
@@ -8721,17 +9064,29 @@
       "Country": [
         "Land"
       ],
+      "Edit": [
+        "Redigera"
+      ],
       "Email": [
         "E-post"
       ],
       "Email address": [
         "E-postadress"
       ],
+      "Email address or domain": [
+        "E-postadress eller domän"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
       "Invitation email": [
         "E-postinbjudan"
+      ],
+      "List": [
+        "Lista"
+      ],
+      "Marked as": [
+        "Markerad som"
       ],
       "Name": [
         "Namn"
@@ -8815,8 +9170,20 @@
       "Add PayPal payment method": [
         "Lägg till PayPal betalningsmetod"
       ],
+      "Add pm.me subdomain": [
+        "Lägg till pm.me-underdomän"
+      ],
       "Add servers": [
         "Lägg till servrar"
+      ],
+      "Add to allow list": [
+        "Lägg till i listan ”Tillåt”"
+      ],
+      "Add to block list": [
+        "Lägg till i blockeringslista"
+      ],
+      "Add to spam list": [
+        "Lägg till i skräppostlista"
       ],
       "Add user accounts": [
         "Lägg till användarkonton"
@@ -8966,6 +9333,9 @@
       "Delete account": [
         "Ta bort konto"
       ],
+      "Delete group?": [
+        "Ta bort grupp?"
+      ],
       "Delete organization logo?": [
         "Ta bort organisationslogga?"
       ],
@@ -8981,6 +9351,9 @@
       ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
+      ],
+      "Discard changes?": [
+        "Ignorera ändringar?"
       ],
       "Domain names": [
         "Domännamn"
@@ -9190,6 +9563,9 @@
       "Recovery": [
         "Återställning"
       ],
+      "Remove all members?": [
+        "Ta bort alla medlemmar?"
+      ],
       "Remove domain": [
         "Ta bort domän"
       ],
@@ -9298,6 +9674,9 @@
       ],
       "Switch to two-password mode": [
         "Växla till två-lösenordsläge"
+      ],
+      "There are no groups": [
+        "Det finns inga grupper"
       ],
       "Time": [
         "Tid"
@@ -9494,6 +9873,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "User rejected invitation": [
+        "Användare avvisade inbjudan"
+      ],
+      "Waiting user to accept the invitation": [
+        "Väntar på att användaren ska acceptera inbjudan"
       ]
     },
     "Tooltip for news": {

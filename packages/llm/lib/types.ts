@@ -14,6 +14,7 @@ export interface LlmManager {
     startDownload: (updateProgress: DownloadProgressCallback, assistantConfig: AssistantConfig) => Promise<boolean>; // returns whether it completed
     cancelDownload: () => void;
     loadOnGpu: (assistantConfig: AssistantConfig) => Promise<LlmModel>;
+    isDownloaded: (assistantConfig: AssistantConfig, setLlmStatus?: boolean) => Promise<boolean>;
 }
 
 export interface LlmModel {

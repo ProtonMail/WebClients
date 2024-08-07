@@ -43,6 +43,9 @@
       "Add address": [
         "Tilføj adresse"
       ],
+      "Add address or domain": [
+        "Tilføj adresse eller domæne"
+      ],
       "Add credit / debit card": [
         "Tilføj kredit/debetkort"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Tilføj bruger"
       ],
+      "Allow": [
+        "Tillad"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Tilbage"
+      ],
+      "Block": [
+        "Blokér"
+      ],
+      "Can send to this group": [
+        "Kan sende til denne gruppe"
+      ],
+      "Can't send to this group": [
+        "Kan ikke sende til denne gruppe"
       ],
       "Cancel": [
         "Annullér"
@@ -166,8 +181,14 @@
       "Delete Gateway": [
         "Slet gateway"
       ],
+      "Delete group": [
+        "Slet gruppe"
+      ],
       "Delete logo": [
         "Slet logo"
+      ],
+      "Delete member": [
+        "Slet medlem"
       ],
       "Delete user": [
         "Slet bruger"
@@ -186,6 +207,9 @@
       ],
       "Discard": [
         "Kassér"
+      ],
+      "Discard changes": [
+        "Kassér ændringer"
       ],
       "Done": [
         "Udført"
@@ -216,6 +240,9 @@
       ],
       "Edit Gateway": [
         "Redigér gateway"
+      ],
+      "Edit group": [
+        "Rediger gruppe"
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
@@ -295,6 +322,9 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "Go to label": [
+        "Gå til etikette"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -343,8 +373,14 @@
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
+      "More options": [
+        "Flere muligheder"
+      ],
       "Need help?": [
         "Brug for hjælp?"
+      ],
+      "New group": [
+        "Ny gruppe"
       ],
       "Next": [
         "Næste"
@@ -352,10 +388,10 @@
       "Next month": [
         "Næste måned"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open": [
@@ -409,6 +445,12 @@
       "Remove": [
         "Fjern"
       ],
+      "Remove all members": [
+        "Fjern alle medlemmer"
+      ],
+      "Remove all members from group": [
+        "Fjern alle medlemmer fra gruppe"
+      ],
       "Remove bonuses": [
         "Fjern bonusser"
       ],
@@ -439,6 +481,9 @@
       "Resend code": [
         "Send kode igen"
       ],
+      "Resend invitation": [
+        "Gensend invitation"
+      ],
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
       ],
@@ -465,6 +510,9 @@
       ],
       "Revoke ${ name }": [
         "Tilbagekald ${ name }"
+      ],
+      "Revoke invitation": [
+        "Tilbagetræk invitation"
       ],
       "Save": [
         "Gem"
@@ -561,6 +609,9 @@
       ],
       "Signing in": [
         "Logger ind"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start live chat": [
         "Start live chat"
@@ -675,6 +726,11 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Tilføj pm.me-domæne"
       ]
     },
     "Action subscription": {
@@ -2016,6 +2072,11 @@
         "Vi fandt fejl i flere rækker under import, gennemse venligst din CSV-fil."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Få mere at vide"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/måned"
@@ -2103,6 +2164,35 @@
         "'www' -underdomæner benyttes typisk ikke til e-mail. Er du sikker på, at du vil benytte denne domæneværdi?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } tilføjet"
+      ],
+      "${ name } deletion failed": [
+        "${ name } sletning mislykkedes"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } kunne ikke flyttes til tillad-liste"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } kunne ikke flyttes til blokeringsliste"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } kunne ikke flyttes til spamliste"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } flyttet til tillad-liste"
+      ],
+      "${ name } moved to block list": [
+        "${ name } flyttet til blokeringsliste"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } flyttet til spam-liste"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } slettet"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fejl eller kvalitetsproblem"
@@ -2160,9 +2250,43 @@
         "Prioriteret support"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } tilføjet"
+      ],
+      "${ name } deletion failed": [
+        "${ name } sletning mislykkedes"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } kunne ikke flyttes til tillad-liste"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } kunne ikke flyttes til blokeringsliste"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } kunne ikke flyttes til spamliste"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } flyttet til tillad-liste"
+      ],
+      "${ name } moved to block list": [
+        "${ name } flyttet til blokeringsliste"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } flyttet til spam-liste"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } slettet"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Bekræftelses e-mail afsendt til ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Unavngiven"
       ]
     },
     "eof2023: Deal details": {
@@ -2276,6 +2400,12 @@
       ],
       "Invalid code": [
         "Ugyldig kode"
+      ],
+      "Invalid domain": [
+        "Ugyldigt domæne"
+      ],
+      "Invalid email address": [
+        "Ugyldig e-mailadresse"
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
@@ -2582,8 +2712,9 @@
       "Manage user accounts": [
         "Administrer brugerkonti"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Kun 10 accepterede invitationer er tilladt i en periode på 6 måneder."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Kun ${ n } accepteret invitation tilladt i en 6-måneders periode.",
+        "Kun ${ n } accepterede invitationer tilladt i en 6-måneders periode."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
@@ -2603,8 +2734,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagerplads tildelt dig: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonnementet faktureres til Visionary- eller Family-abonnementets primære administrator."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonnementet faktureres til den primære administrator af denne abonnement."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
@@ -2621,14 +2752,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Du har nået grænsen på 10 accepterede invitationer på 6 måneder."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Du har nået grænsen på ${ n } accepteret invitation på 6 måneder.",
+        "Du har nået grænsen på ${ n } accepterede invitationer på 6 måneder."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Du har nået grænsen på 10 accepterede invitationer på 6 måneder. Knappen bliver klikbar, når du kan invitere ekstra brugere."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Du har nået grænsen på ${ n } accepteret invitation på 6 måneder. Knappen bliver klikbar, når du kan invitere flere brugere.",
+        "Du har nået grænsen på ${ n } accepterede invitationer på 6 måneder. Knappen bliver klikbar, når du kan invitere flere brugere."
       ],
-      "You have successfully joined the Family plan": [
-        "Du er tilmeldt familie-abonnementet."
+      "You have successfully joined the family group": [
+        "Du er blevet medlem af familiegruppen"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer flere brugere."
@@ -2921,6 +3054,35 @@
         "Terabyte"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Tillad:"
+      ],
+      "Block:": [
+        "Blokér:"
+      ],
+      "Search list": [
+        "Søgeliste"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Tag kontrol over, hvad der lander i dine organisationsmedlemmers indbakker ved at oprette følgende lister:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Disse lister gælder for alle konti i din organisation. Medlemmer kan oprette deres egne individuelle filtre, men vil ikke kunne tilsidesætte adresser eller domæner, du har blokeret."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "For at sikre, at vigtige beskeder ikke ender i spam og bliver overset."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "For at forhindre junkmail i at fylde indbakker."
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "For at forhindre phishing eller mistænkelige e-mails i at komme ind i din organisations e-mailsystem"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Systemstandard"
@@ -2991,6 +3153,17 @@
       ],
       "Services": [
         "Tjenester"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Gruppeadresse"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
       ]
     },
     "Header": {
@@ -3085,6 +3258,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Tilføj denne post til dit domæne i kontrolpanelet hos din domæneregistrator"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Fandt ${ items.length } forslag, brug tastaturet til at navigere.",
+        "Fandt ${ items.length } forslag, brug tastaturet til at navigere."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Brug op- og ned-tasterne til at få adgang til og gennemse forslag efter input. Tryk på Enter for at bekræfte dit valg eller Escape for at lukke forslagsfeltet."
       ]
     },
     "Human verification method": {
@@ -3184,6 +3364,10 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } påkrævet for at få Secure Core-funktion."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmer)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } måned)"
       ],
@@ -3202,6 +3386,9 @@
       ],
       "30-day money-back guarantee.": [
         "30 dages tilbagebetalingsgaranti."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Et ${ protonSubdomain } hostes af ${ BRAND_NAME }, hvor du hurtigt kan oprette et underdomæne. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
@@ -3288,6 +3475,12 @@
       "Amount due": [
         "Forfaldent beløb"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Er du sikker på, at du vil annullere ændringen af gruppen?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Er du sikker på, at du vil slette denne gruppe? Gruppens adresse vil ikke længere fungere."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sikker på, at du vil deaktivere to-faktor-godkendelse?"
       ],
@@ -3299,6 +3492,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Er du sikker på, at du vil fjerne alle medlemmer fra denne gruppe?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
@@ -3810,6 +4006,9 @@
       "Keys created": [
         "Nøgler oprettet"
       ],
+      "Labels:": [
+        "Etiketter:"
+      ],
       "Lean more about gateways": [
         "Lær mere om gateways"
       ],
@@ -3821,6 +4020,9 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Lad os starte med at trykke på knappen Ny gruppe ovenfor."
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -4299,9 +4501,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Dette vil opsige dit nuværende betalte abonnement, og du vil miste alle de loyalitetsfordele, du har optjent."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
       ],
@@ -4581,6 +4780,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Med brugergrupper kan du nemt sende mails, dele data eller ændre indstillingerne for bestemte grupper af brugere på én gang."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
@@ -4800,6 +5002,14 @@
         "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Afventer"
+      ],
+      "Rejected": [
+        "Afvist"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Gave"
@@ -4883,11 +5093,17 @@
       "Address": [
         "Adresse"
       ],
+      "Address type": [
+        "Adressetype"
+      ],
       "Addresses": [
         "Adresser"
       ],
       "Administrators": [
         "Administratorer"
+      ],
+      "Allow": [
+        "Tillad"
       ],
       "Allow recovery by email": [
         "Tillad gendannelse via e-mail"
@@ -4921,6 +5137,9 @@
       ],
       "Billing cycle": [
         "Faktureringsperiode"
+      ],
+      "Block": [
+        "Blokér"
       ],
       "Block malware only": [
         "Blokér kun malware"
@@ -5033,6 +5252,9 @@
       "Do you have any suggestions for our team?": [
         "Har du forslag til vores team?"
       ],
+      "Domain": [
+        "Domæne"
+      ],
       "Domain name": [
         "Domænenavn"
       ],
@@ -5062,6 +5284,15 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Group address": [
+        "Gruppeadresse"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "Group name": [
+        "Gruppenavn"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -5204,6 +5435,9 @@
       "Public certificate (X.509)": [
         "Offentligt certifikat (X.509)"
       ],
+      "Purpose": [
+        "Formål"
+      ],
       "Recovery email address": [
         "E-mailadresse til gendannelse"
       ],
@@ -5236,6 +5470,9 @@
       ],
       "Single sign-on URL": [
         "Single sign-on URL"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start date": [
         "Startdato"
@@ -5284,6 +5521,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Hvad er årsagen til, at du har opsagt eller nedgraderet?"
+      ],
+      "Who can send to this group address?": [
+        "Hvem kan sende til denne gruppeadresse?"
       ],
       "Why would you like to cancel?": [
         "Hvorfor ønsker du at opsige?"
@@ -5668,6 +5908,20 @@
         "Schweizer franc"
       ]
     },
+    "Navigation": {
+      "All": [
+        "Alle"
+      ],
+      "Allow": [
+        "Tillad"
+      ],
+      "Block": [
+        "Blokér"
+      ],
+      "Spam": [
+        "Spam"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
@@ -5688,6 +5942,15 @@
       ],
       "From ${ price }": [
         "Fra ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
       ],
       "Upgrade": [
         "Opgradér"
@@ -6228,6 +6491,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sikr dit digitale liv med ${ BRAND_NAME } for to personer."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skræddersyede løsninger til større organisationer med specifikke sikkerhedsbehov"
       ],
@@ -6299,8 +6565,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og mere."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
@@ -6672,6 +6938,20 @@
       ],
       "The whole organization": [
         "Hele organisationen"
+      ]
+    },
+    "option": {
+      "Everyone, incl. outside": [
+        "Alle, inkl. dem udenfor"
+      ],
+      "Members": [
+        "Medlemmer"
+      ],
+      "Nobody by default": [
+        "Ingen som standard"
+      ],
+      "Organization members": [
+        "Organisationsmedlemmer"
       ]
     },
     "Organization capacity error": {
@@ -7092,6 +7372,9 @@
       "Confirm": [
         "Bekræft"
       ],
+      "domain.com": [
+        "domæne.dk"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "f.eks. https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7109,6 +7392,9 @@
       ],
       "End date": [
         "Slutdato"
+      ],
+      "example@domain.com": [
+        "eksempel@domæne.dk"
       ],
       "Feedback": [
         "Feedback"
@@ -7154,6 +7440,20 @@
       ],
       "yourdomain.com": [
         "ditdomæne.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Tilføj en gruppenavn"
+      ],
+      "e.g. distribution list for marketing team": [
+        "f.eks. distributionsliste til markedsføringsteam"
+      ],
+      "e.g. marketing": [
+        "f.eks. markedsføring"
+      ],
+      "Members": [
+        "Medlemmer"
       ]
     },
     "plan customizer, ips": {
@@ -7288,11 +7588,11 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Indlogningen var ikke gennemført."
+      ],
       "Something went wrong": [
         "Et eller andet gik galt"
-      ],
-      "Something went wrong. Please try again.": [
-        "Et eller andet gik galt. Prøv igen."
       ]
     },
     "saml: Info": {
@@ -8258,6 +8558,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } giver dig ubegrænset privatliv og mere lagerplads til op til 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } giver dit team det, de har brug for at være mere produktive og organiserede i deres arbejde med adgang til alle ${ BRAND_NAME }-apps og deres premiumfunktioner."
       ],
@@ -8293,6 +8596,9 @@
       ],
       "10 email addresses": [
         "10 e-mailadresse"
+      ],
+      "2 users": [
+        "2 brugere"
       ],
       "20 email addresses per user": [
         "20 e-mailadresser pr. bruger"
@@ -8473,6 +8779,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited privacy for two": [
+        "Ubegrænset privatliv for to"
       ],
       "Users won’t be able to manage their calendars": [
         "Brugerne vil ikke kunne håndtere deres kalendere"
@@ -8824,17 +9133,29 @@
       "Country": [
         "Land"
       ],
+      "Edit": [
+        "Redigér"
+      ],
       "Email": [
         "E-mail"
       ],
       "Email address": [
         "E-mailadresse"
       ],
+      "Email address or domain": [
+        "E-mailadresse eller domæne"
+      ],
       "Email addresses": [
         "E-mailadresser"
       ],
       "Invitation email": [
         "Invitationsmail"
+      ],
+      "List": [
+        "Liste"
+      ],
+      "Marked as": [
+        "Markeret som"
       ],
       "Name": [
         "Navn"
@@ -8918,8 +9239,20 @@
       "Add PayPal payment method": [
         "Tilføj PayPal-betalingsmetode"
       ],
+      "Add pm.me subdomain": [
+        "Tilføj pm.me-underdomæne"
+      ],
       "Add servers": [
         "Tilføj servere"
+      ],
+      "Add to allow list": [
+        "Føj til tillad-liste"
+      ],
+      "Add to block list": [
+        "Føj til blokeringsliste"
+      ],
+      "Add to spam list": [
+        "Føj til spam-liste"
       ],
       "Add user accounts": [
         "Tilføj brugerkonti"
@@ -9069,6 +9402,9 @@
       "Delete account": [
         "Slet konto"
       ],
+      "Delete group?": [
+        "Slet gruppe?"
+      ],
       "Delete organization logo?": [
         "Slet organisationens logo?"
       ],
@@ -9084,6 +9420,9 @@
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
+      ],
+      "Discard changes?": [
+        "Kassér ændringer?"
       ],
       "Domain names": [
         "Domænenavne"
@@ -9293,6 +9632,9 @@
       "Recovery": [
         "Gendannelse"
       ],
+      "Remove all members?": [
+        "Fjern alle medlemmer?"
+      ],
       "Remove domain": [
         "Fjern domæne"
       ],
@@ -9401,6 +9743,9 @@
       ],
       "Switch to two-password mode": [
         "Skift til to-adgangskode-tilstand"
+      ],
+      "There are no groups": [
+        "Der er ingen grupper"
       ],
       "Time": [
         "Tid"
@@ -9597,6 +9942,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "User rejected invitation": [
+        "Bruger afviste invitation"
+      ],
+      "Waiting user to accept the invitation": [
+        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tooltip for news": {

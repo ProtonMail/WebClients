@@ -15,6 +15,7 @@ jest.mock('@proton/components/hooks/useUserSettings');
 jest.mock('@proton/components/components/link/useSettingsLink');
 jest.mock('proton-mail/store/hooks', () => ({
     useMailDispatch: jest.fn().mockReturnValue(jest.fn()),
+    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
 }));
 jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
     __esModule: true,

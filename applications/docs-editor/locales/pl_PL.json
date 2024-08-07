@@ -14,17 +14,29 @@
       "Add new table row": [
         "Dodaj nowy wiersz tabeli"
       ],
+      "Adjust font size": [
+        "Dostosuj rozmiar czcionki"
+      ],
+      "and": [
+        "i"
+      ],
       "Apply": [
         "Zastosuj"
       ],
       "Bold": [
         "Pogrubienie"
       ],
+      "Bulleted List": [
+        "Lista punktowana"
+      ],
       "Cancel": [
         "Anuluj"
       ],
       "Center align": [
         "Wyśrodkuj"
+      ],
+      "Check List": [
+        "Lista kontrolna"
       ],
       "Clear contents": [
         "Wyczyść zawartość"
@@ -92,6 +104,9 @@
       "Insert left": [
         "Wstaw z lewej"
       ],
+      "Insert link": [
+        "Wstaw link"
+      ],
       "Insert right": [
         "Wstaw z prawej"
       ],
@@ -109,6 +124,9 @@
       ],
       "Link": [
         "Link"
+      ],
+      "Numbered List": [
+        "Lista numerowana"
       ],
       "Options": [
         "Opcje"
@@ -151,6 +169,9 @@
       ],
       "Show thread": [
         "Pokaż wątek"
+      ],
+      "Strike-through": [
+        "Przekreślenie"
       ],
       "Strikethrough": [
         "Przekreślenie"
@@ -347,11 +368,26 @@
       ]
     },
     "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Nie udało się zaimportować pliku HTML z powodu nieznanego błędu."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Nie udało się zaimportować pliku Markdown z powodu nieznanego błędu."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Nie udało się zaimportować dokumentu Word z powodu nieznanego błędu."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Nie udało się zainicjować edytora z powodu nieznanego błędu."
+      ],
       "Request timed out": [
         "Upłynął limit czasu żądania"
       ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Nie można przekonwertować dokumentu Word. Czy jest on chroniony hasłem? Jeśli tak, usuń hasło i spróbuj ponownie."
       ]
     },
     "Error message": {
@@ -443,6 +479,9 @@
     "Label": {
       "Background colour": [
         "Kolor tła"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Skrót klawiszowy: ${ shortcut }"
       ],
       "Link text": [
         "Tekst linku"

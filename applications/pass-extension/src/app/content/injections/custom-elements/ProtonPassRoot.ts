@@ -1,11 +1,11 @@
 import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/constants.static';
 
-import { StyledShadowHost } from './StyledShadowHost';
+import { PASS_ELEMENT_ROLE, ProtonPassElement } from './ProtonPassElement';
 
 // @ts-ignore
 import styles from './ProtonPassRoot.raw.scss';
 
-export class ProtonPassRoot extends StyledShadowHost {
+export class ProtonPassRoot extends ProtonPassElement {
     static getTagName = (hash: string) => `protonpass-root-${hash}`;
 
     constructor() {
@@ -13,6 +13,7 @@ export class ProtonPassRoot extends StyledShadowHost {
     }
 
     disconnectedCallback() {
+        super.disconnectedCallback();
         /* When the `ProtonPassRoot` custom element is removed, it triggers
          * re-injection via the IFrameService. This ensures proper support for
          * SPA websites that may dynamically rewrite the DOM. To handle potential
@@ -26,6 +27,7 @@ export class ProtonPassRoot extends StyledShadowHost {
     }
 
     connectedCallback() {
-        this.setAttribute('data-protonpass-role', 'root');
+        super.connectedCallback();
+        this.setAttribute(PASS_ELEMENT_ROLE, 'root');
     }
 }

@@ -8,7 +8,7 @@ import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/pay
 import { APPS, FREE_SUBSCRIPTION, PLANS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
-import { Renew } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { PLANS_MAP, subscriptionMock } from '@proton/testing/data';
 import { apiMock } from '@proton/testing/lib/api';
@@ -72,7 +72,7 @@ describe('cancel subscription', () => {
         const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as SubscriptionModel),
-                user: getModelState(user),
+                user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -89,7 +89,7 @@ describe('cancel subscription', () => {
         } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
-                user: getModelState(user),
+                user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -111,7 +111,7 @@ describe('cancel subscription', () => {
         } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
-                user: getModelState(user),
+                user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -148,7 +148,7 @@ describe('cancel subscription', () => {
             } = setup({
                 preloadedState: {
                     subscription: getSubscriptionState(subscription),
-                    user: getModelState(user),
+                    user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                     organization: getOrganizationState(organization),
                 },
             });

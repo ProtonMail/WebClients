@@ -13,6 +13,7 @@ import usePublicToken from '../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_shares/useDriveShareURLBookmarking';
+import { sendErrorReport } from '../utils/errorHandling';
 import { deleteStoredUrlPassword } from '../utils/url/password';
 
 export default function PublicSharedLinkContainer() {
@@ -33,9 +34,14 @@ export default function PublicSharedLinkContainer() {
 function PublicShareLinkInitContainer() {
     const { clearDownloads } = useDownload();
     const { token, urlPassword } = usePublicToken();
-    const { isLoading, error, isPasswordNeeded, submitPassword } = usePublicAuth(token, urlPassword);
+    const { isLoading, error: authError, isPasswordNeeded, submitPassword } = usePublicAuth(token, urlPassword);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const isProtonUser = isProtonUserFromCookie();
+    const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
+    const [errorMessage, setError] = useState<string | undefined>();
+    const [link, setLink] = useState<DecryptedLink>();
+    const { loadPublicShare } = usePublicShare();
+
     // If password to the share was changed, page need to reload everything.
     // In such case we need to also clear all downloads to not keep anything
     // from before.
@@ -50,63 +56,59 @@ function PublicShareLinkInitContainer() {
         deleteStoredUrlPassword();
     }, []);
 
-    if (isLoading) {
-        return <LoadingPage />;
-    }
+    useEffect(() => {
+        const error = authError || errorMessage;
+        if (error) {
+            sendErrorReport(new Error(error));
+        }
+    }, [authError, errorMessage]);
 
-    if (error) {
-        return <ErrorPage />;
-    }
+    useEffect(() => {
+        const abortController = new AbortController();
+
+        if (token && !isLoading && !authError && !isPasswordNeeded) {
+            void withLoading(
+                loadPublicShare(abortController.signal)
+                    .then(({ link }) => setLink(link))
+                    .catch((error) => {
+                        console.error(error);
+                        const apiError = getApiError(error);
+                        setError(apiError.message || error.message || c('Info').t`Cannot load shared link`);
+                    })
+            );
+        } else if (authError) {
+            setLoading(false);
+        }
+
+        return () => {
+            abortController.abort();
+        };
+    }, [token, isLoading, authError, isPasswordNeeded]);
+
+    const showLoadingPage = isLoading || isLoadingDecrypt;
+    const showErrorPage = authError || errorMessage || (showLoadingPage === false && link === undefined);
 
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} />;
     }
 
+    if (showLoadingPage) {
+        return <LoadingPage />;
+    }
+
+    if (showErrorPage || !link) {
+        return <ErrorPage />;
+    }
+
     return (
         <>
-            <PublicSharedLink token={token} />
+            {link.isFile ? (
+                <SharedFilePage token={token} link={link} />
+            ) : (
+                <SharedFolderPage token={token} rootLink={link} />
+            )}
             {/** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */}
             {isDriveShareUrlBookmarkingEnabled && !isProtonUser && <SignUpFlowModal urlPassword={urlPassword} />}
         </>
     );
-}
-
-/**
- * PublicSharedLink loads and decrypt the public share.
- * Based on the link it renders shared file or folder page.
- */
-function PublicSharedLink({ token }: { token: string }) {
-    const { loadPublicShare } = usePublicShare();
-    const [isLoading, withLoading] = useLoading(true);
-    const [link, setLink] = useState<DecryptedLink>();
-    const [error, setError] = useState<string>();
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        void withLoading(
-            loadPublicShare(abortController.signal)
-                .then(({ link }) => setLink(link))
-                .catch((error) => {
-                    console.error(error);
-                    const apiError = getApiError(error);
-                    setError(apiError.message || error.message || c('Info').t`Cannot load shared link`);
-                })
-        );
-        return () => {
-            abortController.abort();
-        };
-    }, []);
-
-    if (isLoading) {
-        return <LoadingPage />;
-    }
-
-    if (error || !link) {
-        return <ErrorPage />;
-    }
-
-    if (link.isFile) {
-        return <SharedFilePage token={token} link={link} />;
-    }
-    return <SharedFolderPage token={token} rootLink={link} />;
 }

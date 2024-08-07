@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { semver } from '@proton/pass/utils/string/semver';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
+import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import {
     electronAppVersion,
     isElectronMail,
@@ -13,21 +16,24 @@ import {
 
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
-import type { DesktopVersion } from './useInboxDesktopVersion';
 import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 /**
  * Linux is different from Windows and MacOS. There is no auto updates, this means that any user running a version that is not the latest
  * is running an outdated version. A manual update is required if that's the case.
- * The latests version is always the first element in the array, if the current version is not at index 0 then it's outdated.
  *
+ * @param latestVersion Latest version of the electron app
  * @param currentVersion Current version of the electron app
- * @param linuxVersions Array of all Linux versions coming from the version.json file
  * @returns
  */
-const isLinuxOutdated = (currentVersion: string, linuxVersions: DesktopVersion[]) => {
-    const currentVersionIndex = linuxVersions.findIndex(({ Version }) => Version === currentVersion);
-    return currentVersionIndex > 0;
+const isLinuxOutdated = (app: DesktopVersion, currentVersion: string) => {
+    // We want to ignore less than 100% available rollouts until
+    // the desktop app is ready to handle them.
+    if (!hasInboxDesktopFeature('LatestVersionCheck') && app.RolloutProportion < 1) {
+        return false;
+    }
+
+    return semver(app.Version) > semver(currentVersion);
 };
 
 /**
@@ -40,6 +46,12 @@ const isLinuxOutdated = (currentVersion: string, linuxVersions: DesktopVersion[]
  * For example, if the latest version is 0.9.1 and the ManualUpdate is [0.9.0, 0.9.1], no prompt since current version requires manual update.
  */
 const doesEarlyVersionNeedsManualUpdate = (app: DesktopVersion, version: string) => {
+    // We want to ignore less than 100% available rollouts until
+    // the desktop app is ready to handle them.
+    if (!hasInboxDesktopFeature('LatestVersionCheck') && app.RolloutProportion < 1) {
+        return false;
+    }
+
     if (!app.ManualUpdate || app.Version === version || app.ManualUpdate.includes(app.Version)) {
         return false;
     }
@@ -77,7 +89,7 @@ const DisplayTopBanner = ({ displayTopBanner, link }: { displayTopBanner: boolea
 
 const InboxDesktopOutdatedAppTopBanner = () => {
     const version = electronAppVersion;
-    const { windowsApp, macosApp, linuxApp, allLinuxVersions, loading } = useInboxDesktopVersion();
+    const { windowsApp, macosApp, linuxApp, loading } = useInboxDesktopVersion();
 
     if (!isElectronMail || !version || loading) {
         return null;
@@ -85,7 +97,7 @@ const InboxDesktopOutdatedAppTopBanner = () => {
 
     const displayMac = (isMac && macosApp && doesEarlyVersionNeedsManualUpdate(macosApp, version)) || false;
     const displayWindows = (isWindows && windowsApp && doesEarlyVersionNeedsManualUpdate(windowsApp, version)) || false;
-    const displayLinux = (isLinux && linuxApp && isLinuxOutdated(version, allLinuxVersions)) || false;
+    const displayLinux = (isLinux && linuxApp && isLinuxOutdated(linuxApp, version)) || false;
 
     return (
         <>

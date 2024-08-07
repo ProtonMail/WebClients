@@ -134,7 +134,7 @@ export enum SharedURLFlags {
     // All new shares should use new logic, and the legacy mode should be
     // removed when all old shares are cancelled.
     CustomPassword = 1,
-    GeneratedPasswordIncluded,
+    GeneratedPasswordIncluded = 2,
 }
 
 export interface AbuseReportPayload {

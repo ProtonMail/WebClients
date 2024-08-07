@@ -43,6 +43,9 @@
       "Add address": [
         "주소 추가"
       ],
+      "Add address or domain": [
+        "주소 및 도메인 추가"
+      ],
       "Add credit / debit card": [
         "신용 / 체크카드 추가"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "사용자 추가"
       ],
+      "Allow": [
+        "허용"
+      ],
       "Apply": [
         "적용"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "이전"
+      ],
+      "Block": [
+        "차단"
+      ],
+      "Can send to this group": [
+        "이 그룹에 전송 가능"
+      ],
+      "Can't send to this group": [
+        "이 그룹에 전송 불가"
       ],
       "Cancel": [
         "취소"
@@ -166,6 +181,9 @@
       "Delete Gateway": [
         "게이트웨이 삭제"
       ],
+      "Delete group": [
+        "그룹 삭제"
+      ],
       "Delete logo": [
         "로고 삭제"
       ],
@@ -186,6 +204,9 @@
       ],
       "Discard": [
         "저장 안함"
+      ],
+      "Discard changes": [
+        "변경사항 취소"
       ],
       "Done": [
         "완료"
@@ -216,6 +237,9 @@
       ],
       "Edit Gateway": [
         "게이트웨이 편집"
+      ],
+      "Edit group": [
+        "그룹 편집"
       ],
       "Edit invoice details": [
         "신용 청구서 세부 정보 편집"
@@ -295,6 +319,9 @@
       "Get verification code": [
         "인증코드 전송"
       ],
+      "Go to label": [
+        "라벨로 이동"
+      ],
       "Got it": [
         "알겠습니다"
       ],
@@ -343,8 +370,14 @@
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
+      "More options": [
+        "더 많은 옵션"
+      ],
       "Need help?": [
         "도움이 필요하신가요?"
+      ],
+      "New group": [
+        "새 그룹"
       ],
       "Next": [
         "다음"
@@ -352,10 +385,10 @@
       "Next month": [
         "다음 달"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open": [
@@ -409,6 +442,12 @@
       "Remove": [
         "삭제"
       ],
+      "Remove all members": [
+        "모든 구성원 추방"
+      ],
+      "Remove all members from group": [
+        "이 그룹내의 모든 구성원 추방"
+      ],
       "Remove bonuses": [
         "보너스 제거"
       ],
@@ -439,6 +478,9 @@
       "Resend code": [
         "코드 다시 보내기"
       ],
+      "Resend invitation": [
+        "초대장 재전송"
+      ],
       "Reset credentials": [
         "자격 증명 초기화"
       ],
@@ -465,6 +507,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } 취소하기"
+      ],
+      "Revoke invitation": [
+        "초대 취소"
       ],
       "Save": [
         "저장"
@@ -562,6 +607,9 @@
       "Signing in": [
         "로그인 중"
       ],
+      "Spam": [
+        "스팸"
+      ],
       "Start live chat": [
         "라이브 채팅 시작하기"
       ],
@@ -579,6 +627,12 @@
       ],
       "Switch or add account": [
         "계정 전환 및 추가"
+      ],
+      "Test": [
+        "테스트"
+      ],
+      "Test SAML configuration": [
+        "SAML 구성 테스트"
       ],
       "Top up": [
         "지갑 충전"
@@ -669,6 +723,11 @@
       ],
       "Zoom out": [
         "축소"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "pm.me 도메인 추가"
       ]
     },
     "Action subscription": {
@@ -2001,6 +2060,11 @@
         "불러오기 중 다중 행 오류를 감지했습니다, CSV 파일을 확인해 주십시오."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "더 알아보기"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/월"
@@ -2088,6 +2152,35 @@
         "'www' 하위 도메인은 일반적으로 이메일에 사용되지 않습니다. 이 도메인 값을 사용하시겠습니까?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } 추가됨"
+      ],
+      "${ name } deletion failed": [
+        "${ name } 삭제 실패"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name }을(를) 허용 목록으로 이동하는 데 실패했습니다"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name }을(를) 차단 목록으로 이동하는 데 실패했습니다"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } 을(를) 스팸 목록으로 이동하는데 실패했습니다"
+      ],
+      "${ name } moved to allow list": [
+        "${ name }을(를) 허용 목록으로 이동했습니다"
+      ],
+      "${ name } moved to block list": [
+        "${ name }을(를) 차단 목록으로 이동했습니다"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } 을(를) 스팸 목록으로 이동했습니다"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } 을(를) 성공적으로 삭제했습니다"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "버그 또는 품질 문제"
@@ -2145,9 +2238,43 @@
         "우선 지원"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } 추가됨"
+      ],
+      "${ name } deletion failed": [
+        "${ name } 삭제 실패"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name }을(를) 허용 목록으로 이동하는 데 실패했습니다"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name }을(를) 차단 목록으로 이동하는 데 실패했습니다"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } 을(를) 스팸 목록으로 이동하는데 실패했습니다"
+      ],
+      "${ name } moved to allow list": [
+        "${ name }을(를) 허용 목록으로 이동했습니다"
+      ],
+      "${ name } moved to block list": [
+        "${ name }을(를) 차단 목록으로 이동했습니다"
+      ],
+      "${ name } moved to spam list": [
+        "${ name }을(를) 스팸 목록으로 이동함"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } 을(를) 성공적으로 삭제했습니다"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "인증 이메일이 ${ address }으로 전송되었습니다."
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "빈 그룹 이름"
       ]
     },
     "eof2023: Deal details": {
@@ -2261,6 +2388,12 @@
       ],
       "Invalid code": [
         "잘못된 코드입니다."
+      ],
+      "Invalid domain": [
+        "유효하지 않은 도메인"
+      ],
+      "Invalid email address": [
+        "유효하지 않은 이메일 주소"
       ],
       "Invalid expiration date": [
         "올바르지 않은 만료 기한"
@@ -2567,8 +2700,8 @@
       "Manage user accounts": [
         "사용자 계정 관리"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6개월 기간 동안 10개 초대 수락이 가능합니다."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "오직 6개월 기간 동안 ${ n }명의 수락된 초대만 가능합니다."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "구성원들이 있는 요금제의 소유자가 다른 그룹 요금제에 합류할 수 없습니다."
@@ -2588,8 +2721,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "저장 공간이 사용자에게 할당됨: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "구독이 Visionary 및 가족 요금제의 관리자에게 결제됩니다."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "구독이 해당 플랜의 기본 관리자에게 청구됩니다."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary 및 가족 요금제가 현재 외부 계정을 지원하지 않습니다. 가입 전에 ${ BRAND_NAME } 주소를 생성하세요. ${ addressSettingsLink }"
@@ -2606,14 +2739,11 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } 가입에 초대되었습니다. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "6개월 동안 10개의 수락된 초대장 수의 제한에 도달했습니다."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "6개월 동안 ${ n }명의 수락된 초대 제한수에 도달했습니다."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "6개월 동안 10개의 초대를 수락한 한도에 도달했습니다. 추가 사용자를 초대할 수 있는 상태가 되면 버튼이 클릭 가능해집니다."
-      ],
-      "You have successfully joined the Family plan": [
-        "가족 요금제에 성공적으로 가입했습니다"
+      "You have successfully joined the family group": [
+        "가족 그룹에 성공적으로 가입했습니다."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "여러 사용자를 추가하기 전에 지정 도메인을 설정해야 합니다."
@@ -2897,6 +3027,35 @@
         "테라바이트"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "허용:"
+      ],
+      "Block:": [
+        "차단:"
+      ],
+      "Search list": [
+        "검색 내역"
+      ],
+      "Spam:": [
+        "스팸:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "조직 멤버의 받은 편지함에 도착하는 메일을 제어하기 위해 다음 목록을 생성하여 사용하세요:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "이 목록은 조직의 모든 계정에 적용됩니다. 개개인이 자신만의 개별 필터를 만들 수 있지만, 차단한 주소나 도메인을 재정의할 수 없습니다."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "중요한 메시지들이 스팸으로 분류되어 놓쳐버리지 않도록 하기 위해"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "받은 편지함을 메우는 광고 메일을 방지하기 위해서"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "피싱 또는 의심스러운 이메일이 조직의 이메일 시스템에 진입하는 것을 막으려면"
+      ]
+    },
     "Font face option": {
       "System default": [
         "시스템 기본값"
@@ -2967,6 +3126,16 @@
       ],
       "Services": [
         "서비스"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "그룹 주소"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount }명 회원"
       ]
     },
     "Header": {
@@ -3061,6 +3230,12 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "도메인 이름 등록 기관의 제어판에서 이 기록을 도메인에 추가하세요."
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } 개 제안 찾음. 탐색하려면 키보드를 사용하세요."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "위 아래 키를 사용하여 입력 뒤의 브라우저 제안에 접근하세요. 엔터를 눌러 선택을 확인하거나, Esc키를 눌러 제안 창을 닫으세요."
       ]
     },
     "Human verification method": {
@@ -3153,6 +3328,9 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core 기능은 ${ vpnPlus }가 필요합니다."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 회원)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } / 개월)"
       ],
@@ -3170,6 +3348,9 @@
       ],
       "30-day money-back guarantee.": [
         "30일 환불 보장"
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
@@ -3252,6 +3433,12 @@
       "Amount due": [
         "총 금액"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "편집 중인 그룹을 정말 삭제하시겠어요?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "이 그룹을 정말 삭제하시겠어요? 그룹 주소를 더 이상 사용할 수 없습니다."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "정말 이중 인증을 비활성화 하시겠습니까?"
       ],
@@ -3263,6 +3450,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "이 그룹의 모든 구성원을 정말 추방하시겠어요?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
@@ -3308,6 +3498,9 @@
       ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "침해된 커스텀 이메일 주소 삭제됨"
       ],
       "Breach Custom Email Deleted": [
         "침해된 사용자 지정 이메일 삭제됨"
@@ -3768,6 +3961,9 @@
       "Keys created": [
         "키 생성됨"
       ],
+      "Labels:": [
+        "라벨:"
+      ],
       "Lean more about gateways": [
         "게이트웨이에 대해 더 알아보기"
       ],
@@ -3779,6 +3975,9 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "위의 새 그룹 버튼을 눌러 시작해 보세요"
       ],
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
@@ -3908,6 +4107,15 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - 커스텀 이메일 주소 확인됨"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - 커스텀 이메일 주소 추가됨"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - 커스텀 이메일 주소 삭제됨"
       ],
       "password": [
         "비밀번호"
@@ -4245,9 +4453,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
-      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "이렇게 하면 PayPal을 사용하여 Proton 구독 비용을 지불할 수 있습니다. 새 브라우저 탭에서 ${ BRAND_NAME } 로 리디렉션합니다. 팝업 차단기를 사용하는 경우 계속하려면 팝업 차단기를 비활성화하십시오."
       ],
@@ -4527,6 +4732,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "사용자 그룹을 이용하면, 특정한 유저 그룹에 대해 이메일을 보내거나 데이터를 공유하고 설정을 변경하는 것이 한 번에 간편하게 가능합니다."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
       ],
@@ -4733,6 +4941,14 @@
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "대기 중"
+      ],
+      "Rejected": [
+        "거절됨"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "선물됨"
@@ -4813,11 +5029,17 @@
       "Address": [
         "주소"
       ],
+      "Address type": [
+        "주소 유형"
+      ],
       "Addresses": [
         "주소"
       ],
       "Administrators": [
         "관리자"
+      ],
+      "Allow": [
+        "허용"
       ],
       "Allow recovery by email": [
         "이메일을 통한 복구 허용"
@@ -4851,6 +5073,9 @@
       ],
       "Billing cycle": [
         "결제 주기"
+      ],
+      "Block": [
+        "차단"
       ],
       "Block malware only": [
         "멀웨어만 차단"
@@ -4963,6 +5188,9 @@
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
       ],
+      "Domain": [
+        "도메인"
+      ],
       "Domain name": [
         "도메인 이름"
       ],
@@ -4992,6 +5220,15 @@
       ],
       "Gift code": [
         "기프트 코드"
+      ],
+      "Group address": [
+        "그룹 주소"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "Group name": [
+        "그룹 이름"
       ],
       "Hide password": [
         "비밀번호 숨기기"
@@ -5134,6 +5371,9 @@
       "Public certificate (X.509)": [
         "공개 인증서 (X.509)"
       ],
+      "Purpose": [
+        "목적"
+      ],
       "Recovery email address": [
         "복구 이메일 주소"
       ],
@@ -5166,6 +5406,9 @@
       ],
       "Single sign-on URL": [
         "싱글 사인 온 URL"
+      ],
+      "Spam": [
+        "스팸"
       ],
       "Start date": [
         "시작일"
@@ -5217,6 +5460,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
+      ],
+      "Who can send to this group address?": [
+        "누가 이 그룹의 주소에 전송 가능한가요?"
       ],
       "Why would you like to cancel?": [
         "취소하려는 이유가 무엇인가요?"
@@ -5600,6 +5846,20 @@
         "스위스 프랑"
       ]
     },
+    "Navigation": {
+      "All": [
+        "전체"
+      ],
+      "Allow": [
+        "허용"
+      ],
+      "Block": [
+        "차단"
+      ],
+      "Spam": [
+        "스팸"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "빠른 VPN 속도"
@@ -5620,6 +5880,15 @@
       ],
       "From ${ price }": [
         "시작 가격: ${ price }"
+      ],
+      "Get started for $1": [
+        "$1로 시작하기"
+      ],
+      "Get started for 1 €": [
+        "1€로 시작하기"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF로 시작하기"
       ],
       "Upgrade": [
         "업그레이드"
@@ -6141,6 +6410,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "두 명의 사용자를 위한 ${ BRAND_NAME }으로 내 디지털 생활을 보호하세요."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
       ],
@@ -6212,7 +6484,7 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
@@ -6604,6 +6876,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone, incl. outside": [
+        "모든 사람, 외부인 포함"
+      ],
+      "Members": [
+        "구성원"
+      ],
+      "Organization members": [
+        "조직 구성원"
       ]
     },
     "Organization capacity error": {
@@ -7019,6 +7302,9 @@
       "Confirm": [
         "확인"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "예시: https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7036,6 +7322,9 @@
       ],
       "End date": [
         "종료일"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "의견"
@@ -7081,6 +7370,20 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "그룹 이름 추가"
+      ],
+      "e.g. distribution list for marketing team": [
+        "예: 마케팅 팀을 위한 배포 목록"
+      ],
+      "e.g. marketing": [
+        "예: 마케팅"
+      ],
+      "Members": [
+        "구성원"
       ]
     },
     "plan customizer, ips": {
@@ -7209,6 +7512,50 @@
     "saml: Action": {
       "Cancel": [
         "취소"
+      ]
+    },
+    "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "로그인이 성공적으로 완료되지 못했습니다."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "SSO 구성을 테스트하는 도중에 문제가 발생했습니다."
+      ],
+      "Details": [
+        "세부 사항"
+      ],
+      "Test in progress...": [
+        "테스트 진행 중..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "SAML 구성을 테스트하려면, **${ domainName }**와(과) 연관된 사용자의 로그인 자격 증명을 입력하세요."
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "신원 제공자로 부터 유효한 SAML 응답을 수신받았습니다. SSO가 사용자 조직에서 활성화 되었습니다."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "SSO가 작동하는지 확인하기 위해 구성을 테스트하는 중입니다."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "이메일"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "잘 작동하네요!"
+      ],
+      "Test SAML configuration": [
+        "SAML 구성 테스트"
+      ],
+      "Testing SAML configuration": [
+        "SAML 구성 테스트 중"
       ]
     },
     "scim: Action": {
@@ -8100,6 +8447,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName }이 최대 두 명의 사용자에게 무제한 프라이버시 및 확장된 스토리지 공간을 제공합니다."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName }는 모든 ${ BRAND_NAME } 앱과 프리미엄 기능에 액세스하여 작업에서 더 생산적이고 체계적인 작업에 필요한 것을 제공합니다."
       ],
@@ -8135,6 +8485,9 @@
       ],
       "10 email addresses": [
         "이메일 주소 10개"
+      ],
+      "2 users": [
+        "2명의 사용자"
       ],
       "20 email addresses per user": [
         "사용자당 이메일 주소 20개"
@@ -8315,6 +8668,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
+      ],
+      "Unlimited privacy for two": [
+        "두 명을 위한 무제한 프라이버시"
       ],
       "Users won’t be able to manage their calendars": [
         "구성원이 개개인의 캘린더를 관리할 수 없습니다."
@@ -8666,17 +9022,29 @@
       "Country": [
         "국가"
       ],
+      "Edit": [
+        "편집"
+      ],
       "Email": [
         "이메일"
       ],
       "Email address": [
         "이메일 주소"
       ],
+      "Email address or domain": [
+        "이메일 주소 또는 도메인"
+      ],
       "Email addresses": [
         "이메일 주소"
       ],
       "Invitation email": [
         "초대 이메일"
+      ],
+      "List": [
+        "목록"
+      ],
+      "Marked as": [
+        "표시함"
       ],
       "Name": [
         "이름"
@@ -8757,8 +9125,20 @@
       "Add PayPal payment method": [
         "PayPal을 결제 수단으로 추가"
       ],
+      "Add pm.me subdomain": [
+        "pm.me 하위 도매인 생성"
+      ],
       "Add servers": [
         "서버 추가"
+      ],
+      "Add to allow list": [
+        "허용 리스트에 추가"
+      ],
+      "Add to block list": [
+        "차단 리스트에 추가"
+      ],
+      "Add to spam list": [
+        "스팸 목록에 추가"
       ],
       "Add user accounts": [
         "사용자 계정 추가"
@@ -8907,6 +9287,9 @@
       "Delete account": [
         "계정 삭제"
       ],
+      "Delete group?": [
+        "그룹을 삭제하시겠습니까?"
+      ],
       "Delete organization logo?": [
         "조직 로고를 삭제하시겠습니까?"
       ],
@@ -8921,6 +9304,9 @@
       ],
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
+      ],
+      "Discard changes?": [
+        "변경 사항을 취소할까요?"
       ],
       "Domain names": [
         "도메인 이름"
@@ -9129,6 +9515,9 @@
       "Recovery": [
         "복구"
       ],
+      "Remove all members?": [
+        "그룹 구성원을 추방하시겠습니까?"
+      ],
       "Remove domain": [
         "도메인 제거"
       ],
@@ -9236,6 +9625,9 @@
       ],
       "Switch to two-password mode": [
         "이중 비밀번호 모드로 전환"
+      ],
+      "There are no groups": [
+        "그룹이 존재하지 않습니다."
       ],
       "Time": [
         "시간"
@@ -9432,6 +9824,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "User rejected invitation": [
+        "사용자가 초대를 거절함"
+      ],
+      "Waiting user to accept the invitation": [
+        "사용자의 초대 수락 대기 중"
       ]
     },
     "Tooltip for news": {

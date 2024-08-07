@@ -21,8 +21,10 @@ export const getItemPriorityForUrl =
              * we're dealing with a corrupted url */
             if (parsedUrl.domain === null) return priority;
 
-            /** In `strict` mode we only consider exact matches */
-            if (options.strict && !match.includes(parsedUrl.subdomain ?? parsedUrl.domain)) return priority;
+            /** In strict mode :
+             * - If `match` is a top-level domain: only matches URLs without a subdomain
+             * - If `match` is a sub-domain: only matches on exact URL match */
+            if (options.strict && (parsedUrl.subdomain ?? parsedUrl.domain) !== match) return priority;
 
             /* Check for strict domain match - this leverages
              * the public suffix list from `tldts`. If dealing

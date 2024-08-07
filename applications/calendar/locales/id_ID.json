@@ -17,7 +17,7 @@
         "Penerusan akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
-        "Penerusan email diberhentikan"
+        "Penerusan email dihentikan"
       ]
     },
     "Account Settings - Info": {
@@ -479,10 +479,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3362,9 +3362,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
       ],
@@ -3578,8 +3575,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Ruang penyimpanan yang diberikan kepada Anda: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Tagihan untuk paket langganan ini dibebankan kepada admin utama paket Visionary atau paket keluarga."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
@@ -3596,8 +3593,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Anda berhasil bergabung ke paket Keluarga"
+      "You have successfully joined the family group": [
+        "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
@@ -6619,6 +6616,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
@@ -6663,8 +6663,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi riwayat versi, file sharing terenkripsi, dan masih banyak lagi."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain email kustom, 15 alamat email, alias hide-my-email tak terbatas, dan masih banyak lagi."
@@ -8295,6 +8295,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } memberikan Anda privasi yang tak terbatas dan ruang penyimpanan yang lebih untuk hingga 2 pengguna."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } memberikan tim Anda apa yang diperlukan untuk menjadi lebih produktif dan teratur dalam pekerjaan mereka dengan akses ke semua aplikasi ${ BRAND_NAME } dan setiap fitur premiumnya."
       ],
@@ -8330,6 +8333,9 @@
       ],
       "10 email addresses": [
         "10 alamat email"
+      ],
+      "2 users": [
+        "2 pengguna"
       ],
       "20 email addresses per user": [
         "20 alamat email per pengguna"
@@ -8484,6 +8490,9 @@
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
+      "Unlimited privacy for two": [
+        "Privasi tak terbatas untuk dua pengguna"
+      ],
       "Users won’t be able to manage their calendars": [
         "Pengguna tidak akan dapat mengelola kalendernya"
       ],
@@ -8491,7 +8500,7 @@
         "Pengguna tidak akan dapat mengirim email"
       ],
       "Users won’t be able to sync files on their devices": [
-        "Pengguna tidak akan dapat menyinkronkan berkas di perangkatnya"
+        "Para pengguna tidak akan dapat menyinkronkan berkas pada perangkat mereka"
       ],
       "Version history": [
         "Riwayat versi"

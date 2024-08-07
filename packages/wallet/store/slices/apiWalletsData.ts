@@ -1,21 +1,22 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
-import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmApiWalletAccount, WasmApiWalletSettings } from '@proton/andromeda';
+import { type ModelState, getInitialModelState } from '@proton/account';
+import type { WasmApiWalletAccount, WasmApiWalletSettings } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { IWasmApiWalletData, WalletEventLoop } from '../../types';
+import type { IWasmApiWalletData, WalletEventLoop } from '../../types';
 import { stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils';
-import { WalletThunkArguments } from '../thunk';
+import type { WalletThunkArguments } from '../thunk';
 
 export const apiWalletsDataSliceName = 'api_wallets_data' as const;
 
 export interface ApiWalletsDataState {
-    [apiWalletsDataSliceName]: ModelState<IWasmApiWalletData[]>;
+    [apiWalletsDataSliceName]: ModelState<IWasmApiWalletData[] | null>;
 }
 
 type SliceState = ApiWalletsDataState[typeof apiWalletsDataSliceName];
-type Model = NonNullable<SliceState['value']>;
+type Model = SliceState['value'];
 
 export const selectApiWalletsData = (state: ApiWalletsDataState) => state[apiWalletsDataSliceName];
 
@@ -23,7 +24,9 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
     `${apiWalletsDataSliceName}/fetch`,
     {
         miss: ({ extraArgument }) => {
-            return extraArgument.walletApi
+            const { walletApi, notificationsManager } = extraArgument;
+
+            return walletApi
                 .clients()
                 .wallet.getWallets()
                 .then(async (payload) => {
@@ -45,6 +48,14 @@ const modelThunk = createAsyncModelThunk<Model, ApiWalletsDataState, WalletThunk
                             };
                         })
                     );
+                })
+                .catch((error: any) => {
+                    notificationsManager.createNotification({
+                        type: 'error',
+                        text: error?.error ?? c('Wallet').t`Could not fetch wallets data`,
+                    });
+
+                    return null;
                 });
         },
         previous: previousSelector(selectApiWalletsData),

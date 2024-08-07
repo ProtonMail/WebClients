@@ -1136,6 +1136,10 @@
       "Trust": [
         "Megbízható"
       ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
+      ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
       ],
@@ -3484,9 +3488,6 @@
       "Draft could not be saved. Try again.": [
         "Piszkozat mentése nem sikerült. Próbálja újra."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
-        "Hiba miatt a szöveg előállítása nem szakítható meg."
-      ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
@@ -4231,9 +4232,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Az ön számára lefoglalt tárhely: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Az előfizetést a Visionary vagy a Family csomag elsődleges adminisztrátora fizeti."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "A Visionary és a Family csomagok jelenleg nem támogatnak külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet mielőtt csatlakozna. ${ addressSettingsLink }"
       ],
@@ -4248,9 +4246,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Meghívást kapott a következőhöz: ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the Family plan": [
-        "Sikeresen csatlakozott a Family csomaghoz"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a csoporthoz és együtt használhassák a ${ BRAND_NAME_TWO } prémium lehetőségeit."
@@ -5053,6 +5048,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
       ],
@@ -5538,6 +5536,9 @@
       "Don't forget to share the password with the recipient": [
         "Ne felejtse el megosztani a jelszót a címzettel"
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Nem lát semmit? Ne felejtse el engedélyezni a felugró ablakokat."
+      ],
       "Downgrade": [
         "Kisebb csomagra váltás"
       ],
@@ -5857,6 +5858,9 @@
       "MM/YY": [
         "HH/ÉÉ"
       ],
+      "Monitor accounts": [
+        "Fiókok megfigyelése"
+      ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
@@ -5955,6 +5959,12 @@
       ],
       "Please add at least one recipient.": [
         "Kérjük, adjon meg legalább egy címzettet."
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Kérjük, hitelesítse a kártyáját az ellenőrző lapon."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Kérjük, hitelesítse a befizetését az ellenőrző lapon."
       ],
       "Please fill out this field.": [
         "Kérjük, töltse ki ezt a mezőt."
@@ -6207,6 +6217,9 @@
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyet.",
         "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyeket."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Az ellenőrzés egy új böngészőlapot nyit meg. Kérjük, kapcsolja ki a felugró ablakok letiltását."
       ],
       "Themes can give your inbox a new look.": [
         "A témák egy új kinézetet adnak a levelezésének."
@@ -6470,6 +6483,9 @@
       ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "A befizetési módot hitelesítenünk kell a bankjánál."
       ],
       "We need to authenticate your payment with your bank.": [
         "A befizetését hitelesítenünk kell a bankjánál."
@@ -7492,6 +7508,9 @@
       "Upload picture": [
         "Kép feltöltése"
       ],
+      "VAT": [
+        "ÁFA"
+      ],
       "Verification code": [
         "Ellenőrző kód"
       ],
@@ -8417,8 +8436,8 @@
         "Felhasználói tárhely kezelés"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "Archívum megosztás (${ n } személyig).",
-        "Archívum megosztás (${ n } személyig)."
+        "Tároló megosztás (${ n } személyig)",
+        "Tároló megosztás (${ n } személyig)"
       ]
     },
     "new_plans: feature info": {
@@ -9892,6 +9911,9 @@
       "6 users": [
         "6 felhasználó"
       ],
+      "All you need for your business": [
+        "Minden, amire az üzlethez szüksége van"
+      ],
       "Calendar sharing": [
         "Naptár megosztás"
       ],
@@ -10841,6 +10863,9 @@
       ],
       "Recommended": [
         "Javasolt"
+      ],
+      "Recommended actions": [
+        "Javasolt műveletek"
       ],
       "Reconnect your account": [
         "Újracsatlakozás a fiókhoz"

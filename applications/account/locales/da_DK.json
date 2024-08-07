@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivér"
+      "Accept": [
+        "Accepter"
       ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -109,6 +112,9 @@
       "Add domain": [
         "Tilføj domæne"
       ],
+      "Add email address": [
+        "Tilføj e-mailadresse"
+      ],
       "Add filter": [
         "Tilføj filter"
       ],
@@ -123,6 +129,9 @@
       ],
       "Add PayPal": [
         "Tilføj PayPal"
+      ],
+      "Add phone number": [
+        "Tilføj telefonnummer"
       ],
       "Add public holidays": [
         "Tilføj nationale helligdage"
@@ -331,6 +340,9 @@
       "Customize plan": [
         "Tilpas abonnement"
       ],
+      "Decline": [
+        "Afslå"
+      ],
       "Decrease": [
         "Formindsk"
       ],
@@ -354,6 +366,9 @@
       ],
       "Delete logo": [
         "Slet logo"
+      ],
+      "Delete member": [
+        "Slet medlem"
       ],
       "Delete permanently": [
         "Slet permanent"
@@ -477,6 +492,9 @@
       ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
+      ],
+      "Enable device-based recovery": [
+        "Aktivér enhedsbaseret gendannelse"
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
@@ -718,10 +736,10 @@
       "No, thanks": [
         "Nej tak"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open": [
@@ -784,11 +802,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -879,6 +897,9 @@
       ],
       "Review": [
         "Gennemse"
+      ],
+      "Review account security": [
+        "Gennemgå kontoens sikkerhed"
       ],
       "Revoke": [
         "Tilbagekald"
@@ -1437,14 +1458,14 @@
       ]
     },
     "Assistant option": {
-      "Faster, broader device compatibility": [
-        "Hurtigere, bredere enhedskompatibilitet"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Data forbliver på din enhed, men kræver en engangsoverførsel og kompatibel hardware"
       ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Beskeder forbliver på din enhed, men kræver en engangsoverførsel og kompatibel hardware"
+      "Fast and secure. No logs are kept.": [
+        "Hurtig og sikker. Ingen logføring."
       ],
-      "Run locally": [
-        "Kør lokalt"
+      "Run on device": [
+        "Kør på enhed"
       ],
       "Run on servers": [
         "Kør på servere"
@@ -1595,6 +1616,14 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1616,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5062,11 +5083,14 @@
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Afmeld familie-abonnementet"
+      "Leave Duo plan": [
+        "Forlad Duo-abonnementet"
       ],
-      "Leave visionary plan": [
-        "Forlad Visionary-abonnement"
+      "Leave Family plan": [
+        "Forlad Familieabonnementet"
+      ],
+      "Leave Visionary plan": [
+        "Forlad Visionary-abonnementet"
       ],
       "Manage addresses.": [
         "Administrer adresser."
@@ -5074,8 +5098,9 @@
       "Manage user accounts": [
         "Administrer brugerkonti"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Kun 10 accepterede invitationer er tilladt i en periode på 6 måneder."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Kun ${ n } accepteret invitation tilladt i en 6-måneders periode.",
+        "Kun ${ n } accepterede invitationer tilladt i en 6-måneders periode."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Ejere af et abonnement med medlemmer kan ikke blive medlem af et andet gruppe-abonnement."
@@ -5095,8 +5120,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagerplads tildelt dig: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Abonnementet faktureres til Visionary- eller Family-abonnementets primære administrator."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Abonnementet faktureres til den primære administrator af denne abonnement."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "For at lette overgangen giver vi dig en 30-dages prøveversion af ${ BRAND_NAME } Unlimited*."
@@ -5119,14 +5144,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Du har nået grænsen på 10 accepterede invitationer på 6 måneder."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Du har nået grænsen på ${ n } accepteret invitation på 6 måneder.",
+        "Du har nået grænsen på ${ n } accepterede invitationer på 6 måneder."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Du har nået grænsen på 10 accepterede invitationer på 6 måneder. Knappen bliver klikbar, når du kan invitere ekstra brugere."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Du har nået grænsen på ${ n } accepteret invitation på 6 måneder. Knappen bliver klikbar, når du kan invitere flere brugere.",
+        "Du har nået grænsen på ${ n } accepterede invitationer på 6 måneder. Knappen bliver klikbar, når du kan invitere flere brugere."
       ],
-      "You have successfully joined the Family plan": [
-        "Du er tilmeldt familie-abonnementet."
+      "You have successfully joined the family group": [
+        "Du er blevet medlem af familiegruppen"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer flere brugere."
@@ -5238,11 +5265,11 @@
       "Edit user storage": [
         "Redigér brugerlager"
       ],
+      "Family": [
+        "Family"
+      ],
       "Family name": [
         "Familienavn"
-      ],
-      "Family plan": [
-        "Family-abonnement"
       ],
       "Invite a user": [
         "Inviter en bruger"
@@ -5726,6 +5753,46 @@
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Unanswered": [
+        "Ubesvaret"
+      ]
+    },
+    "group_invitation: Success": {
+      "Group invitation accepted": [
+        "Gruppeinvitation accepteret"
+      ],
+      "Group invitation declined": [
+        "Gruppeinvitation frabedt"
+      ],
+      "Left group": [
+        "Forlod gruppe"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Prøv at åbne linket igen."
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Du kan trygt lukke denne fane."
+      ],
+      "You have declined the group invitation and will not receive any email from this group.": [
+        "Du har afvist gruppeinvitationen og vil ikke modtage nogen mail fra denne gruppe."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "Gruppeinvitation accepteret"
+      ],
+      "Group invitation declined": [
+        "Gruppeinvitation afvist"
       ]
     },
     "Header": {
@@ -6885,11 +6952,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -8222,6 +8289,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Dette invitationslink er udløbet. Kontakt din administrator for at anmode om adgang."
       ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "Dette invitationslink er udløbet. Vi har lige sendt dig et nyt link."
+      ],
       "This invitation link is already used. Please sign in directly instead.": [
         "Dette invitationslink er allerede anvendt. Log ind direkte i stedet."
       ],
@@ -8266,9 +8336,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Dette vil opsige dit nuværende betalte abonnement, og du vil miste alle de loyalitetsfordele, du har optjent."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Dette vil slette alle tidligere versioner af dine filer, som er ældre end ${ rententionLabel }."
@@ -8555,6 +8622,9 @@
       "Version number successfully copied to clipboard": [
         "Versionsnummer er kopieret til udklipsholder"
       ],
+      "View and manage your groups.": [
+        "Vis og håndter dine grupper."
+      ],
       "View, download, and manage your invoices.": [
         "Se, download og administrer dine fakturaer."
       ],
@@ -8732,6 +8802,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
         "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser."
+      ],
+      "You are in no group nor invited to any": [
+        "Du er ikke i gruppe eller inviteret til nogen"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
@@ -8960,8 +9033,8 @@
       "Your recovery phrase": [
         "Din gendannelsessætning"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Din gendannelsessætning er en serie af 12 ord i en bestemt rækkefølge."
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Din gendannelsessætning er en serie af 12 tilfældigt genererede ord i en bestemt rækkefølge."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
@@ -9063,6 +9136,9 @@
     "invitation status": {
       "Pending": [
         "Afventer"
+      ],
+      "Rejected": [
+        "Afvist"
       ]
     },
     "Invoice state display as badge": {
@@ -11296,6 +11372,15 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
       "Upgrade": [
         "Opgradér"
       ],
@@ -11839,6 +11924,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sikr dit digitale liv med ${ BRAND_NAME } for to personer."
+      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere afsendere om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
       ],
@@ -11943,8 +12031,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og mere."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
@@ -13451,9 +13539,6 @@
       "Add a group name": [
         "Tilføj en gruppenavn"
       ],
-      "Add member": [
-        "Tilføj medlem"
-      ],
       "e.g. distribution list for marketing team": [
         "f.eks. distributionsliste til markedsføringsteam"
       ],
@@ -13678,11 +13763,11 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Indlogningen var ikke gennemført."
+      ],
       "Something went wrong": [
         "Et eller andet gik galt"
-      ],
-      "Something went wrong. Please try again.": [
-        "Et eller andet gik galt. Prøv igen."
       ]
     },
     "saml: Info": {
@@ -14863,6 +14948,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } giver dig ubegrænset privatliv og mere lagerplads til op til 2 personer."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } giver dit team det, de har brug for at være mere produktive og organiserede i deres arbejde med adgang til alle ${ BRAND_NAME }-apps og deres premiumfunktioner."
       ],
@@ -14898,6 +14986,9 @@
       ],
       "10 email addresses": [
         "10 e-mailadresse"
+      ],
+      "2 users": [
+        "2 brugere"
       ],
       "20 email addresses per user": [
         "20 e-mailadresser pr. bruger"
@@ -15078,6 +15169,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited privacy for two": [
+        "Ubegrænset privatliv for to"
       ],
       "Users won’t be able to manage their calendars": [
         "Brugerne vil ikke kunne håndtere deres kalendere"
@@ -15744,6 +15838,9 @@
       "Add users": [
         "Tilføj brugere"
       ],
+      "Address": [
+        "Adresse"
+      ],
       "Address and key verification": [
         "Adresse- og nøglebekræftelse"
       ],
@@ -15810,11 +15907,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -16214,6 +16311,12 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Group": [
+        "Gruppe"
+      ],
+      "Group membership": [
+        "Gruppemedlemskab"
       ],
       "Groups": [
         "Grupper"
@@ -17068,6 +17171,9 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ],
+      "User rejected invitation": [
+        "Bruger afviste invitation"
+      ],
       "Waiting user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
       ]
@@ -17446,8 +17552,8 @@
       "Join ${ appName } early access!": [
         "Deltag i tidlig adgang til ${ appName }!"
       ],
-      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }.": [
-        "Tilmeld dig en gratis ${ BRAND_NAME }-konto for at sikre en plads. Så hurtigt som du tilmelder dig, så hurtigt får du adgang til ${ appName }."
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
+        "Tilmeld dig en gratis ${ BRAND_NAME }-konto for at sikre dig en plads. Jo hurtigere, du tilmelder dig, jo før kan du tilgå ${ appName }. Du kan også opgradere til vores eksklusive Visionary-abonnement for at undgå ventelisten og starte med at bruge ${ appName } med det samme."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Lås op for ${ appName }-premiumfunktioner ved at opgradere"

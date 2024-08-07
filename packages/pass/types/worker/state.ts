@@ -11,6 +11,7 @@ export enum AppStatus {
     IDLE = 'IDLE' /* initial app state - pending initalization */,
     OFFLINE = 'OFFLINE' /* app is unlocked for offline usage */,
     PASSWORD_LOCKED = 'PASSWORD_LOCKED' /* offline locked app */,
+    BIOMETRICS_LOCKED = 'BIOMETRICS_LOCKED' /* biometrics locked app */,
     READY = 'READY' /* app is authorized and has booted */,
     SESSION_LOCKED = 'SESSION_LOCKED' /* session is locked back-end side */,
     UNAUTHORIZED = 'UNAUTHORIZED' /* app is pending login */,

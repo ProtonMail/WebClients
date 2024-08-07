@@ -12,7 +12,7 @@ import { eq, oneOf, or } from '@proton/pass/utils/fp/predicates';
 export const clientAuthorized = eq(AppStatus.AUTHORIZED);
 export const clientErrored = eq(AppStatus.ERROR);
 export const clientOffline = eq(AppStatus.OFFLINE);
-export const clientPasswordLocked = eq(AppStatus.PASSWORD_LOCKED);
+export const clientPasswordLocked = oneOf(AppStatus.PASSWORD_LOCKED, AppStatus.BIOMETRICS_LOCKED);
 export const clientReady = eq(AppStatus.READY);
 export const clientSessionLocked = eq(AppStatus.SESSION_LOCKED);
 export const clientStale = eq(AppStatus.IDLE);

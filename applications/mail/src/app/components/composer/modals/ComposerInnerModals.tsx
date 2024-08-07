@@ -4,6 +4,7 @@ import { Href } from '@proton/atoms';
 import { Alert, ErrorButton } from '@proton/components';
 import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
@@ -30,6 +31,7 @@ interface Props {
     handleCancelSend: (error: string) => void;
     attachmentsFoundKeyword: string;
     composerID: string;
+    handleToggleAssistant: (aiFlag: AI_ASSISTANT_ACCESS) => void;
 }
 
 const ComposerInnerModals = ({
@@ -46,6 +48,7 @@ const ComposerInnerModals = ({
     handleCancelSend,
     attachmentsFoundKeyword,
     composerID,
+    handleToggleAssistant,
 }: Props) => {
     return (
         <>
@@ -121,7 +124,11 @@ const ComposerInnerModals = ({
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.AssistantSettings && (
-                <ComposerAssistantSettingModal onClose={handleCloseInnerModal} composerID={composerID} />
+                <ComposerAssistantSettingModal
+                    onClose={handleCloseInnerModal}
+                    composerID={composerID}
+                    onToggleAssistant={handleToggleAssistant}
+                />
             )}
         </>
     );

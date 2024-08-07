@@ -43,6 +43,9 @@
       "Add address": [
         "Pridať adresu"
       ],
+      "Add address or domain": [
+        "Pridať adresu alebo doménu"
+      ],
       "Add credit / debit card": [
         "Pridať platobnú kartu"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Pridať používateľa"
       ],
+      "Allow": [
+        "Povoliť"
+      ],
       "Apply": [
         "Použiť"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Späť"
+      ],
+      "Block": [
+        "Blokovať"
+      ],
+      "Can send to this group": [
+        "Môže posielať do tejto skupiny"
+      ],
+      "Can't send to this group": [
+        "Nemôže posielať do tejto skupiny"
       ],
       "Cancel": [
         "Zrušiť"
@@ -166,6 +181,9 @@
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
+      "Delete group": [
+        "Vymazať skupinu"
+      ],
       "Delete logo": [
         "Vymazať logo"
       ],
@@ -186,6 +204,9 @@
       ],
       "Discard": [
         "Zahodiť"
+      ],
+      "Discard changes": [
+        "Zahodiť zmeny"
       ],
       "Done": [
         "Hotovo"
@@ -216,6 +237,9 @@
       ],
       "Edit Gateway": [
         "Upraviť bránu"
+      ],
+      "Edit group": [
+        "Upraviť skupinu"
       ],
       "Edit invoice details": [
         "Upraviť fakturačné údaje"
@@ -295,6 +319,9 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
+      "Go to label": [
+        "Prejsť na štítok"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -343,8 +370,14 @@
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
       ],
+      "More options": [
+        "Ďalšie možnosti"
+      ],
       "Need help?": [
         "Potrebujete pomoc?"
+      ],
+      "New group": [
+        "Nová skupina"
       ],
       "Next": [
         "Ďalej"
@@ -352,11 +385,11 @@
       "Next month": [
         "Budúci mesiac"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otvoriť"
@@ -409,6 +442,12 @@
       "Remove": [
         "Vymazať"
       ],
+      "Remove all members": [
+        "Odstrániť všetkých členov"
+      ],
+      "Remove all members from group": [
+        "Odstrániť všetkých členov zo skupiny"
+      ],
       "Remove bonuses": [
         "Odstrániť bonusy"
       ],
@@ -439,6 +478,9 @@
       "Resend code": [
         "Znovu odoslať kód"
       ],
+      "Resend invitation": [
+        "Znovu poslať pozvánku"
+      ],
       "Reset credentials": [
         "Resetovať poverenia"
       ],
@@ -465,6 +507,9 @@
       ],
       "Revoke ${ name }": [
         "Zrušiť ${ name }"
+      ],
+      "Revoke invitation": [
+        "Odvolať pozvanie"
       ],
       "Save": [
         "Uložiť"
@@ -559,6 +604,9 @@
       "Signing in": [
         "Prihlasuje sa"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Start live chat": [
         "Spustiť živý chat"
       ],
@@ -576,6 +624,12 @@
       ],
       "Switch or add account": [
         "Prepnúť alebo pridať účet"
+      ],
+      "Test": [
+        "Test"
+      ],
+      "Test SAML configuration": [
+        "Otestovať nastavenie SAML"
       ],
       "Top up": [
         "Dobiť"
@@ -666,6 +720,11 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Pridať doménu pm.me"
       ]
     },
     "Action subscription": {
@@ -1619,7 +1678,7 @@
         "Macao"
       ],
       "Macedonia": [
-        "Macedónsko"
+        "Severné Macedónsko"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2025,6 +2084,11 @@
         "Počas importu sme zistili chyby vo viacerých riadkoch. Skontrolujte svoj CSV súbor."
       ]
     },
+    "cta": {
+      "Learn more": [
+        "Zistiť viac"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mesiac"
@@ -2112,6 +2176,35 @@
         "Subdomény 'www' sa obvykle nepoužívajú pre email. Naozaj chcete použiť túto doménu?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } pridaná"
+      ],
+      "${ name } deletion failed": [
+        "${ name } sa nepodarilo odstrániť"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } sa nepodarilo presunúť do zoznamu povolených"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } sa nepodarilo presunúť do zoznamu blokovaných"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } sa nepodarilo presunúť na zoznam spamov"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } presunutý do zoznamu povolených"
+      ],
+      "${ name } moved to block list": [
+        "${ name } presunuté do zoznamu blokovaných"
+      ],
+      "${ name } moved to spam list": [
+        "Doména ${ name } bola presunutá do zoznamu nevyžiadaných"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } úspešne odstránené"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby alebo problém s kvalitou"
@@ -2169,9 +2262,43 @@
         "Prioritná podpora"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } pridaný"
+      ],
+      "${ name } deletion failed": [
+        "${ name } sa nepodarilo odstrániť"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } sa nepodarilo presunúť do zoznamu povolených"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name } sa nepodarilo presunúť do zoznamu blokovaných"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } sa nepodarilo presunúť na zoznam spamov"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } presunutý do zoznamu povolených"
+      ],
+      "${ name } moved to block list": [
+        "${ name } presunuté do zoznamu blokovaných"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } bola presunutá na zoznam spamov"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } úspešne odstránený"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Overovací email bol odoslaný na ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Bez názvu"
       ]
     },
     "eof2023: Deal details": {
@@ -2285,6 +2412,12 @@
       ],
       "Invalid code": [
         "Neplatný kód"
+      ],
+      "Invalid domain": [
+        "Neplatná doména"
+      ],
+      "Invalid email address": [
+        "Neplatná emailová adresa"
       ],
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
@@ -2591,9 +2724,6 @@
       "Manage user accounts": [
         "Spravovať používateľské účty"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Za 6 mesiacov je povolené prijať iba 10 pozvánok"
-      ],
       "Owners of a plan with members cannot join another group plan.": [
         "Vlastníci plánu s členmi sa nemôžu pripojiť k inému skupinovému plánu."
       ],
@@ -2612,9 +2742,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Pridelené úložisko: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Predplatné sa účtuje správcovi plánu Visionary alebo primárnemu správcovi rodinného plánu."
-      ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Plán Visionary a rodinné plány aktuálne nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
@@ -2629,15 +2756,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Boli ste pozvaní, aby ste sa pripojili k ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Dosiahli ste limit 10 prijatých pozvánok za 6 mesiacov."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Dosiahli ste limit 10 prijatých pozvánok za 6 mesiacov. Na tlačidlo budete môcť kliknúť, keď bude možné pozvať ďalších používateľov."
-      ],
-      "You have successfully joined the Family plan": [
-        "Úspešne ste sa pripojili k rodinnému plánu."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred pridaním viacerých používateľov, musíte nakonfigurovať vlastnú doménu."
@@ -2948,6 +3066,35 @@
         "terabajtov"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Povolené:"
+      ],
+      "Block:": [
+        "Blokované:"
+      ],
+      "Search list": [
+        "Vyhľadať v zozname"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Získajte kontrolu nad tým, čo sa dostane do doručenej pošty členov vašej organizácie vytvorením nasledujúcich zoznamov:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Tieto zoznamy platia pre všetky účty vo vašej organizácii. Členovia si môžu vytvoriť svoje vlastné individuálne filtre, nebudú však môcť prepísať adresy alebo domény, ktoré ste zablokovali vy."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Aby dôležité správy neskončili v spame a nezmeškali ste ich"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Bráni upchávaniu schránok nevyžiadanou poštou"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Bráni phishingu a podozrivým emailom dostať sa do emailového systému vašej organizácie"
+      ]
+    },
     "Font face option": {
       "System default": [
         "Podľa systému"
@@ -3018,6 +3165,19 @@
       ],
       "Services": [
         "Služby"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Skupinové adresy"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členov",
+        "${ memberCount } členovia",
+        "${ memberCount } členovia"
       ]
     },
     "Header": {
@@ -3112,6 +3272,15 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Našiel sa ${ items.length } návrh, na navigáciu použite klávesnicu.",
+        "Našli sa ${ items.length } návrhy, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
       ]
     },
     "Human verification method": {
@@ -3210,6 +3379,9 @@
       "${ vaultLink } created": [
         "Štítok ${ vaultLink } bol vytvorený"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } bol vymazaný"
+      ],
       "${ vaultLink } updated": [
         "Štítok ${ vaultLink } bol aktualizovaný"
       ],
@@ -3218,6 +3390,12 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } sa vyžaduje pre funkciu Secure Core."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členovia)",
+        "(${ memberCount } členov)",
+        "(${ memberCount } členov)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } mesačne)"
@@ -3239,6 +3417,9 @@
       ],
       "30-day money-back guarantee.": [
         "30-dňová záruka vrátenia peňazí."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } hosťuje ${ BRAND_NAME }, čo umožňuje rýchle sprevádzkovanie subdomény. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Názov, ktorý vám pomôže identifikovať, kde ho používate, aby ste ho mohli neskôr jednoducho odvolať alebo predĺžiť."
@@ -3333,6 +3514,12 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Skutočne chcete zrušiť úpravy skupiny?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Skutočne chcete vymazať túto skupinu? Adresa skupiny prestane fungovať."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Naozaj chcete vypnúť dvojfázové overovanie?"
       ],
@@ -3344,6 +3531,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Naozaj chcete tomuto používateľovi odobrať oprávnenie správcu?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Skutočne chcete odstrániť všetkých členov z tejto skupiny?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Skutočne chcete odstrániť doménu ${ boldDomain }?"
@@ -3795,11 +3985,20 @@
       "Item Deleted": [
         "Položka bola vymazaná"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Položka z ${ vaultLink } bola vymazaná"
+      ],
       "Item deleted from vault": [
         "Položka bola z trezora vymazaná"
       ],
       "Item flags changed in vault": [
         "Príznaky položky v trezore zmenené"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Položka v ${ vaultLink } bola presunutá do koša"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Položka v ${ vaultLink } bola vyňatá z koša"
       ],
       "Item in vault trashed": [
         "Položka v trezore bola presunutá do koša"
@@ -3834,6 +4033,9 @@
       "Keys created": [
         "Kľúče vytvorené"
       ],
+      "Labels:": [
+        "Štítky:"
+      ],
       "Lean more about gateways": [
         "Zistiť viac o sieťových bránach"
       ],
@@ -3845,6 +4047,9 @@
       ],
       "Learn more": [
         "Zistiť viac"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Začnime stlačením vyššie uvedeného tlačidla Nová skupina"
       ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
@@ -3971,6 +4176,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Vo vašej organizácii existujú ďalší správcovia, vašou povinnosťou je oznámiť im nové heslo."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - vlastný email potvredený"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - vlastný email vytvorený"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - vlastný email vymazaný"
       ],
       "password": [
         "heslo"
@@ -4152,6 +4366,9 @@
       "Session Ended": [
         "Koniec relácie"
       ],
+      "Session Roaming": [
+        "Roaming relácie"
+      ],
       "Session Started": [
         "Začiatok relácie"
       ],
@@ -4316,9 +4533,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
@@ -4599,6 +4813,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Pomocou skupín používateľov môžete jednoducho odosielať emaily, zdieľať údaje alebo meniť nastavenia pre konkrétne skupiny používateľov naraz."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
       ],
@@ -4832,6 +5049,14 @@
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Čakajúce"
+      ],
+      "Rejected": [
+        "Odmietnuté"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Darované"
@@ -4921,11 +5146,17 @@
       "Address": [
         "Adresa"
       ],
+      "Address type": [
+        "Typ adresy"
+      ],
       "Addresses": [
         "Adresy"
       ],
       "Administrators": [
         "Správcovia"
+      ],
+      "Allow": [
+        "Povoliť"
       ],
       "Allow recovery by email": [
         "Povoliť obnovenie emailom"
@@ -4959,6 +5190,9 @@
       ],
       "Billing cycle": [
         "Fakturačné obdobie"
+      ],
+      "Block": [
+        "Blokovať"
       ],
       "Block malware only": [
         "Blokovať iba malvér"
@@ -5071,6 +5305,9 @@
       "Do you have any suggestions for our team?": [
         "Máte nejaké návrhy pre náš tím?"
       ],
+      "Domain": [
+        "Doména"
+      ],
       "Domain name": [
         "Názov domény"
       ],
@@ -5100,6 +5337,15 @@
       ],
       "Gift code": [
         "Darčekový kód"
+      ],
+      "Group address": [
+        "Skupinové adresy"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "Group name": [
+        "Názov skupiny"
       ],
       "Hide password": [
         "Skryť heslo"
@@ -5242,6 +5488,9 @@
       "Public certificate (X.509)": [
         "Verejný certifikát (X.509)"
       ],
+      "Purpose": [
+        "Dôvod"
+      ],
       "Recovery email address": [
         "Emailová adresa pre obnovenie"
       ],
@@ -5274,6 +5523,9 @@
       ],
       "Single sign-on URL": [
         "URL adresa jednotného prihlásenia"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start date": [
         "Dátum začiatku"
@@ -5322,6 +5574,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
+      ],
+      "Who can send to this group address?": [
+        "Kto môže posielať na túto skupinovú adresu?"
       ],
       "Why would you like to cancel?": [
         "Prečo chcete zrušiť?"
@@ -5426,7 +5681,7 @@
         "Pridať darčekový kód"
       ],
       "Add to your subscription": [
-        "Pridať do vášho preplatného"
+        "Pridať do vášho predplatného"
       ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
@@ -5706,6 +5961,20 @@
       ],
       "Swiss franc": [
         "Švajčiarsky frank"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "Všetky"
+      ],
+      "Allow": [
+        "Povolené"
+      ],
+      "Block": [
+        "Blokované"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "new_plans": {
@@ -6377,9 +6646,6 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Súčasťou je história verzií, šifrované zdieľanie súborov a ďalšie funkcie."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
@@ -6756,6 +7022,20 @@
         "Celá organizácia"
       ]
     },
+    "option": {
+      "Everyone, incl. outside": [
+        "Všetci, vrátane externých"
+      ],
+      "Members": [
+        "Členovia"
+      ],
+      "Nobody by default": [
+        "Predvolene nikto"
+      ],
+      "Organization members": [
+        "Členovia organizácie"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } na pridanie ďalších používateľov alebo odstráňte niektorých používateľských účtov, aby ste uvoľnili miesto."
@@ -7085,6 +7365,9 @@
       "Payment Processing": [
         "Spracovanie platby"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Ak chcete pokračovať, pridajte, prosím, spôsob platby na ovládacom paneli."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -7099,6 +7382,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ price }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transakcia bola úspešne rozpoznaná. Kredity budú pripísané na váš účet po úplnom potvrdení transakcie."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -7163,6 +7449,9 @@
       "Confirm": [
         "Potvrdiť"
       ],
+      "domain.com": [
+        "domena.sk"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "napr. https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7180,6 +7469,9 @@
       ],
       "End date": [
         "Dátum ukončenia"
+      ],
+      "example@domain.com": [
+        "priklad@domena.sk"
       ],
       "Feedback": [
         "Spätná väzba"
@@ -7225,6 +7517,20 @@
       ],
       "yourdomain.com": [
         "vasadomena.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Pridať názov skupiny"
+      ],
+      "e.g. distribution list for marketing team": [
+        "napr. distribučný zoznam pre marketingový tím"
+      ],
+      "e.g. marketing": [
+        "napr. marketing"
+      ],
+      "Members": [
+        "Členovia"
       ]
     },
     "plan customizer, ips": {
@@ -7357,6 +7663,52 @@
       ],
       "User": [
         "Používateľ"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Zrušiť"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Niečo sa pokazilo"
+      ]
+    },
+    "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Pri testovaní nastavenia SSO došlo k chybe."
+      ],
+      "Details": [
+        "Podrobnosti"
+      ],
+      "Test in progress...": [
+        "Prebieha testovanie..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Ak chcete otestovať toto nastavenie SAML, zadajte prihlasovacie údaje používateľa spojeného s **${ domainName }**."
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Od vášho poskytovateľa identity sme dostali platnú odpoveď SAML. SSO je pre vašu organizáciu povolené."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Testujeme vaše nastavenie, aby sme sa uistili, že SSO funguje."
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Email"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Funguje to!"
+      ],
+      "Test SAML configuration": [
+        "Otestovať nastavenie SAML"
+      ],
+      "Testing SAML configuration": [
+        "Testovanie nastavenia SAML"
       ]
     },
     "scim: Action": {
@@ -8925,17 +9277,29 @@
       "Country": [
         "Krajina"
       ],
+      "Edit": [
+        "Upraviť"
+      ],
       "Email": [
         "Email"
       ],
       "Email address": [
         "Emailová adresa"
       ],
+      "Email address or domain": [
+        "Emailová adresa alebo doména"
+      ],
       "Email addresses": [
         "Emailové adresy"
       ],
       "Invitation email": [
         "Pozývací email"
+      ],
+      "List": [
+        "Zoznam"
+      ],
+      "Marked as": [
+        "Označené ako"
       ],
       "Name": [
         "Meno"
@@ -9019,8 +9383,20 @@
       "Add PayPal payment method": [
         "Pridať PayPal platobnú metódu"
       ],
+      "Add pm.me subdomain": [
+        "Pridať subdoménu pm.me"
+      ],
       "Add servers": [
         "Pridať servery"
+      ],
+      "Add to allow list": [
+        "Pridať do zoznamu povolených"
+      ],
+      "Add to block list": [
+        "Pridať do zoznamu blokovaných"
+      ],
+      "Add to spam list": [
+        "Pridať do zoznamu spamov"
       ],
       "Add user accounts": [
         "Spravovať používateľské účty"
@@ -9106,11 +9482,17 @@
       "Confirm phone number": [
         "Potvrdenie telefónneho čísla"
       ],
+      "Connection events": [
+        "Udalosti pripojenia"
+      ],
       "Contact us": [
         "Kontaktujte nás"
       ],
       "Couldn’t create accounts": [
         "Nepodarilo sa vytvoriť účty"
+      ],
+      "Coupon": [
+        "Kupón"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Vytvoriť ${ selectedUserIds.length } používateľa",
@@ -9166,6 +9548,9 @@
       "Delete account": [
         "Zmazať účet"
       ],
+      "Delete group?": [
+        "Vymazať skupinu?"
+      ],
       "Delete organization logo?": [
         "Vymazať logo organizácie?"
       ],
@@ -9183,6 +9568,9 @@
       ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
+      ],
+      "Discard changes?": [
+        "Zrušiť zmeny?"
       ],
       "Domain names": [
         "Názvy domén"
@@ -9394,6 +9782,9 @@
       "Recovery": [
         "Obnovenie"
       ],
+      "Remove all members?": [
+        "Odstrániť všetkých členov?"
+      ],
       "Remove domain": [
         "Odstrániť doménu"
       ],
@@ -9504,6 +9895,9 @@
       ],
       "Switch to two-password mode": [
         "Prepnúť do režimu s dvomi heslami"
+      ],
+      "There are no groups": [
+        "Nie sú tu žiadne skupiny"
       ],
       "Time": [
         "Čas"
@@ -9700,6 +10094,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ],
+      "User rejected invitation": [
+        "Používateľ pozvánku odmietol"
+      ],
+      "Waiting user to accept the invitation": [
+        "Čakanie na prijatie pozvania zo strany používateľa"
       ]
     },
     "Tooltip for news": {
@@ -9978,14 +10378,34 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } účet na peňaženku",
+        "${ n } účty na peňaženku",
+        "${ n } účtov na peňaženku",
+        "${ n } účtov na peňaženku"
+      ],
       "${ n } email address": [
         "${ n } emailová adresa",
         "${ n } emailových adries",
         "${ n } emailových adries",
-        "${ n } emailové adresy"
+        "${ n } emailových adries"
+      ],
+      "${ n } wallet": [
+        "${ n } peňaženka",
+        "${ n } peňaženky",
+        "${ n } peňaženiek",
+        "${ n } peňaženiek"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bezpečnejší spôsob vlastnenia Bitcoinu"
       ],
       "Bitcoin via email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problém s Wallet"
       ]
     },
     "Warning": {

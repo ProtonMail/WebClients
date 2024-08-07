@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { AuthModal, useEventManager, useModalState, useSecurityCheckup } from '@proton/components/index';
+import { useApi, useEventManager, useSecurityCheckup } from '@proton/components/index';
+import useLoading from '@proton/hooks/useLoading';
 import { updateResetEmail } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
@@ -21,6 +22,7 @@ enum STEPS {
 }
 
 const EnableEmailContainer = () => {
+    const api = useApi();
     const { securityState } = useSecurityCheckup();
     const { email } = securityState;
 
@@ -28,9 +30,9 @@ const EnableEmailContainer = () => {
 
     const { call } = useEventManager();
 
-    const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
+    const [enabling, withEnabling] = useLoading();
 
-    if (!email.value || (email.isEnabled && !authModalProps.open && step === STEPS.ENABLE)) {
+    if (!email.value || (email.isEnabled && !enabling && step === STEPS.ENABLE)) {
         return <Redirect to={SECURITY_CHECKUP_PATHS.ROOT} />;
     }
 
@@ -58,39 +60,39 @@ const EnableEmailContainer = () => {
         );
     }
 
+    const enablePasswordResetViaEmail = async () => {
+        await api(updateResetEmail({ Reset: 1, PersistPasswordScope: true }));
+
+        await call();
+        setStep(STEPS.SUCCESS);
+    };
+
     return (
-        <>
-            {renderAuthModal && (
-                <AuthModal
-                    config={updateResetEmail(1)}
-                    onCancel={authModalProps.onClose}
-                    onSuccess={async () => {
-                        await call();
-                        setStep(STEPS.SUCCESS);
-                    }}
-                    {...authModalProps}
-                />
-            )}
-            <SecurityCheckupMain>
-                <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="danger" />}>
-                    {c('l10n_nightly: Security checkup').t`Enable recovery by email`}
-                </SecurityCheckupMainTitle>
+        <SecurityCheckupMain>
+            <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="danger" />}>
+                {c('l10n_nightly: Security checkup').t`Enable recovery by email`}
+            </SecurityCheckupMainTitle>
 
-                <div className="mb-2">{c('l10n_nightly: Security checkup').t`You recovery email address is:`}</div>
-                <div className="rounded bg-weak p-3 mb-4">{email.value}</div>
+            <div className="mb-2">{c('l10n_nightly: Security checkup').t`You recovery email address is:`}</div>
+            <div className="rounded bg-weak p-3 mb-4">{email.value}</div>
 
-                <div>
-                    {getBoldFormattedText(
-                        c('l10n_nightly: Security checkup')
-                            .t`**Enable recovery by email** to regain access to your account if you forget your password.`
-                    )}
-                </div>
+            <div>
+                {getBoldFormattedText(
+                    c('l10n_nightly: Security checkup')
+                        .t`**Enable recovery by email** to regain access to your account if you forget your password.`
+                )}
+            </div>
 
-                <Button className="mt-8" fullWidth color="norm" onClick={() => setAuthModalOpen(true)}>
-                    {c('l10n_nightly: Security checkup').t`Enable recovery by email`}
-                </Button>
-            </SecurityCheckupMain>
-        </>
+            <Button
+                className="mt-8"
+                fullWidth
+                color="norm"
+                onClick={() => withEnabling(enablePasswordResetViaEmail)}
+                loading={enabling}
+            >
+                {c('l10n_nightly: Security checkup').t`Enable recovery by email`}
+            </Button>
+        </SecurityCheckupMain>
     );
 };
 

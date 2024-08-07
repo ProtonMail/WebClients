@@ -14,17 +14,29 @@
       "Add new table row": [
         "Ajouter une ligne au tableau"
       ],
+      "Adjust font size": [
+        "Ajuster la taille de la police"
+      ],
+      "and": [
+        "et"
+      ],
       "Apply": [
         "Appliquer"
       ],
       "Bold": [
         "Gras"
       ],
+      "Bulleted List": [
+        "Liste à puces"
+      ],
       "Cancel": [
         "Annuler"
       ],
       "Center align": [
         "Centrer"
+      ],
+      "Check List": [
+        "Liste de vérification"
       ],
       "Clear contents": [
         "Effacer les contennus"
@@ -86,11 +98,17 @@
       "Insert below": [
         "Insérer en-dessous"
       ],
+      "Insert comment": [
+        "Ajouter un commentaire"
+      ],
       "Insert image": [
         "Insérer une image"
       ],
       "Insert left": [
         "Insérer à gauche"
+      ],
+      "Insert link": [
+        "Insérer un lien"
       ],
       "Insert right": [
         "Insérer à droite"
@@ -109,6 +127,9 @@
       ],
       "Link": [
         "Lien"
+      ],
+      "Numbered List": [
+        "Liste numérotée"
       ],
       "Options": [
         "Options"
@@ -151,6 +172,9 @@
       ],
       "Show thread": [
         "Afficher le fil de discussion"
+      ],
+      "Strike-through": [
+        "Texte barré"
       ],
       "Strikethrough": [
         "Barré"
@@ -347,11 +371,26 @@
       ]
     },
     "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "L'importation du HTML n'a pas abouti en raison d'une erreur inconnue."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "L'importation du balisage/markdown n'a pas abouti en raison d'une erreur inconnue."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "L'importation du document Word n'a pas abouti en raison d'une erreur inconnue."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "L'initialisation de l'éditeur n'a pas abouti en raison d'une erreur inconnue."
+      ],
       "Request timed out": [
         "La requête a expiré."
       ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "La conversion du document Word n'a pas abouti. Est-il protégé par un mot de passe ? Si c'est le cas, nous vous invitons à retirer le mot de passe et à réessayer."
       ]
     },
     "Error message": {
@@ -441,6 +480,9 @@
     "Label": {
       "Background colour": [
         "Couleur d'arrière-plan"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Raccourci clavier : ${ shortcut }"
       ],
       "Link text": [
         "Texte du lien"

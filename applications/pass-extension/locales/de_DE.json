@@ -419,6 +419,9 @@
       "Retry": [
         "Erneut versuchen"
       ],
+      "Right click and download this CSV": [
+        "Rechtsklick und diese CSV herunterladen."
+      ],
       "Save": [
         "Speichern"
       ],
@@ -1105,6 +1108,9 @@
       "Are you sure you want to remove the link?": [
         "Bist du sicher, dass du diesen Link entfernen möchtest?"
       ],
+      "Auto-lock successfully disabled.": [
+        "Automatische Sperre erfolgreich deaktiviert."
+      ],
       "Automatically copy the generated password to the clipboard": [
         "Automatisches Kopieren des generierten Passworts in die Zwischenablage"
       ],
@@ -1171,6 +1177,12 @@
       "Deleting \"${ payload.content.name }\"": [
         "„${ payload.content.name }“ wird gelöscht"
       ],
+      "Disabling auto-lock": [
+        "Automatische Sperre deaktivieren"
+      ],
+      "Disabling auto-lock failed": [
+        "Deaktivieren der automatischen Sperre fehlgeschlagen"
+      ],
       "Disabling offline mode...": [
         "Offline-Modus wird deaktiviert..."
       ],
@@ -1207,11 +1219,20 @@
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktiviere ${ PASS_APP_NAME }, indem du dein ${ BRAND_NAME }-Konto verbindest."
       ],
+      "Enable auto-locking to secure your data": [
+        "Aktiviere die automatische Sperre, um deine Daten zu sichern"
+      ],
       "Enabling offline mode...": [
         "Offline-Modus wird aktiviert..."
       ],
+      "Enabling password auto-lock": [
+        "Aktivieren der automatischen Passwort-Sperre"
+      ],
       "Enabling password lock failed": [
         "Fehler beim Aktivieren der Passwortsperre."
+      ],
+      "Enabling PIN auto-lock": [
+        "Aktivieren der automatischen PIN-Sperre"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -1384,6 +1405,9 @@
       "Never": [
         "Niemals"
       ],
+      "No identity item found": [
+        "Kein Identitätselement gefunden"
+      ],
       "No login found": [
         "Keine Zugangsdaten gefunden."
       ],
@@ -1420,6 +1444,9 @@
       "Password copied": [
         "Passwort kopiert"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Passwortsperre erfolgreich registriert. Verwenden es, um ${ PASS_APP_NAME } zu entsperren."
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
         "Passwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
@@ -1444,6 +1471,15 @@
       ],
       "Please confirm your password": [
         "Bitte bestätige dein Passwort"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Bitte bestätige dein Passwort, damit die automatische Passwort-Sperre aktiviert wird."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Bitte bestätige dein Passwort, um die aktuelle Sperre aufzuheben."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Bitte bestätige dein Passwort, um die automatische Sperrzeit zu aktualisieren."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben."
@@ -1477,6 +1513,9 @@
       ],
       "Registering extra password...": [
         "Zusätzliches Passwort wird registriert..."
+      ],
+      "Registering PIN lock failed": [
+        "Registrierung der PIN-Sperre fehlgeschlagen"
       ],
       "Removing all inactive secure links...": [
         "Entferne alle inaktiven sicheren Links..."
@@ -1570,6 +1609,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Die exportierte Datei wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Das zusätzliche Passwort wird für die Verwendung von ${ PASS_APP_NAME } benötigt. Es dient als zusätzliches Passwort zu deinem ${ BRAND_NAME }-Passwort."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
@@ -2537,6 +2579,9 @@
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
       ],
+      "Autofill": [
+        "Automatisches Auffüllen"
+      ],
       "Confirm extra password": [
         "Zusätzliches Passwort bestätigen"
       ],
@@ -2593,6 +2638,9 @@
       ],
       "History": [
         "Verlauf"
+      ],
+      "Identity": [
+        "Identität"
       ],
       "Import - ${ date }": [
         "Import - ${ date }"
