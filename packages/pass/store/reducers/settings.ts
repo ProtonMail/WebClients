@@ -52,7 +52,7 @@ export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
 export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 
 export const getInitialSettings = (): ProxiedSettings => ({
-    autofill: { inject: true, openOnFocus: true },
+    autofill: { inject: true, openOnFocus: true, twofa: true },
     autosave: { prompt: true, passwordSuggest: true },
     autosuggest: { password: true, email: true, passwordCopy: false },
     disallowedDomains: {},
