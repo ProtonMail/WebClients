@@ -8,7 +8,7 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 
 import { hasCriteria } from '@proton/pass/lib/settings/criteria';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
-import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
@@ -32,7 +32,7 @@ export const createContentScriptContext = (options: {
         UID: undefined,
     };
 
-    const settings: ProxiedSettings = INITIAL_SETTINGS;
+    const settings: ProxiedSettings = getInitialSettings();
     const featureFlags: FeatureFlagState = {};
 
     const context: ContentScriptContext = CSContext.set({
