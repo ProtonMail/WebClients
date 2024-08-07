@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Badge } from '@proton/components/components';
-import type { GroupMember } from '@proton/shared/lib/interfaces';
+import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
@@ -10,12 +10,12 @@ import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 interface Props {
     groupMember: GroupMember;
     memberName?: string;
+    group: Group; // needs to be removed once GroupMemberItemDropdown does not need it
 }
 
-export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
-    const { Email } = groupMember;
-    const isInvitationPending = groupMember.State === GROUP_MEMBER_STATE.PENDING;
-    const isRejected = groupMember.State === GROUP_MEMBER_STATE.REJECTED;
+export const GroupMemberItem = ({ groupMember, groupMember: { Email, State }, memberName, group }: Props) => {
+    const isInvitationPending = State === GROUP_MEMBER_STATE.PENDING;
+    const isRejected = State === GROUP_MEMBER_STATE.REJECTED;
 
     return (
         <>
@@ -40,7 +40,9 @@ export const GroupMemberItem = ({ groupMember, memberName }: Props) => {
                         </span>
                     )}
                 </div>
-                <GroupMemberItemDropdown member={groupMember} />
+                <div>
+                    <GroupMemberItemDropdown member={groupMember} group={group} />
+                </div>
             </GroupMemberItemWrapper>
         </>
     );
