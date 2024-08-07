@@ -20,6 +20,7 @@ import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
 import type { Api, User as tsUser } from '../../interfaces';
 import { getForkDecryptedBlob } from './blob';
 import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkVersion } from './constants';
+import type { ConsumeForkParameters } from './getConsumeForkParameters';
 
 export const removeHashParameters = () => {
     window.location.hash = '';
@@ -27,13 +28,8 @@ export const removeHashParameters = () => {
 
 interface ConsumeForkArguments {
     api: Api;
-    selector: string;
-    state: string;
-    key: Uint8Array;
-    persistent: boolean;
-    trusted: boolean;
-    payloadVersion: 1 | 2;
     mode: 'sso' | 'standalone';
+    parameters: ConsumeForkParameters;
 }
 
 export const requestFork = ({
@@ -99,19 +95,15 @@ export const requestFork = ({
 };
 
 export const consumeFork = async ({
-    selector,
     api,
-    state: stateKey,
-    key,
-    persistent,
-    trusted,
-    payloadVersion,
     mode,
+    parameters,
+    parameters: { selector, state: stateKey, key, persistent, trusted, payloadVersion },
 }: ConsumeForkArguments): Promise<{
     session: ResumedSessionResult;
     forkState: ForkState;
 }> => {
-    const forkState = getForkStateData(stateKey);
+    const forkState = getForkStateData(stateKey, parameters);
 
     const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
