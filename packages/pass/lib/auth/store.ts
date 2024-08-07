@@ -32,6 +32,7 @@ const PASS_SESSION_VERSION_KEY = 'pass:session_version';
 const PASS_UID_KEY = 'pass:uid';
 const PASS_UNLOCK_RETRY_KEY = 'pass:unlock_retry_count';
 const PASS_USER_ID_KEY = 'pass:user_id';
+const PASS_ENCRYPTED_OFFLINE_KD = 'pass:encrypted_offline_kd';
 
 export const createAuthStore = (store: Store) => {
     const authStore = {
@@ -62,6 +63,7 @@ export const createAuthStore = (store: Store) => {
             UID: authStore.getUID() ?? '',
             unlockRetryCount: authStore.getUnlockRetryCount(),
             UserID: authStore.getUserID() ?? '',
+            encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
         }),
 
         shouldCookieUpgrade: (data: Partial<AuthSession>) => AUTH_MODE === AuthMode.COOKIE && !data.cookies,
@@ -105,6 +107,7 @@ export const createAuthStore = (store: Store) => {
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
             if (session.UserID) authStore.setUserID(session.UserID);
             if (session.cookies) authStore.setCookieAuth(session.cookies);
+            if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
         },
 
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
@@ -129,6 +132,8 @@ export const createAuthStore = (store: Store) => {
         getOfflineConfig: (): Maybe<OfflineConfig> => store.get(PASS_OFFLINE_CONFIG_KEY),
         setOfflineVerifier: encodedSetter(store)(PASS_OFFLINE_VERIFIER_KEY),
         getOfflineVerifier: encodedGetter(store)(PASS_OFFLINE_VERIFIER_KEY),
+        setEncryptedOfflineKD: (enryptedKD: Maybe<string>) => store.set(PASS_ENCRYPTED_OFFLINE_KD, enryptedKD),
+        getEncryptedOfflineKD: (): Maybe<string> => store.get(PASS_ENCRYPTED_OFFLINE_KD),
 
         setLockMode: (mode: LockMode): void => store.set(PASS_LOCK_MODE_KEY, mode),
         getLockMode: (): LockMode => store.get(PASS_LOCK_MODE_KEY) ?? LockMode.NONE,

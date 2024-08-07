@@ -4,6 +4,7 @@
     "license": "GPL-3.0",
     "workspaces": [
         "applications/*",
+        "applications/pass-desktop/native",
         "packages/*",
         "packages/wasm/*",
         "tests",

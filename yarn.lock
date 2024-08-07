@@ -5070,6 +5070,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@napi-rs/cli@npm:^2.18.0":
+  version: 2.18.0
+  resolution: "@napi-rs/cli@npm:2.18.0"
+  bin:
+    napi: scripts/index.js
+  checksum: 10c0/db00a70212511bf19a5165bb5397af40b8ee8be26345fa0c7fe3f35803216603f6f757dec99bf385e6db377b8eb82d69956e073c315e3e1f8e0452af04a7ce7f
+  languageName: node
+  linkType: hard
+
 "@netlify/binary-info@npm:^1.0.0":
   version: 1.0.0
   resolution: "@netlify/binary-info@npm:1.0.0"
@@ -11891,12 +11900,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/webpack-asset-relocator-loader@npm:1.7.4":
-  version: 1.7.4
-  resolution: "@vercel/webpack-asset-relocator-loader@npm:1.7.4"
+"@vercel/webpack-asset-relocator-loader@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@vercel/webpack-asset-relocator-loader@npm:1.7.3"
   dependencies:
     resolve: "npm:^1.10.0"
-  checksum: 10c0/0a04cecad5e1910e64c2e9eaacea36336e1aa1fd74e3077b078b327340634744e480ac60322d0dd60461734568811d02473a7a8c433a3c51cb2878650dd933bb
+  checksum: 10c0/5b35ee7c5cab08ef8ee9f0a2413be220e905824d1481bf6bed3ba2d8e97d052448317654f9e947b698da51f27f255940e9e8209db9123d8ddcb0bc9cd2a502d3
   languageName: node
   linkType: hard
 
@@ -29715,6 +29724,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"native@workspace:applications/pass-desktop/native":
+  version: 0.0.0-use.local
+  resolution: "native@workspace:applications/pass-desktop/native"
+  dependencies:
+    "@napi-rs/cli": "npm:^2.18.0"
+  languageName: unknown
+  linkType: soft
+
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
@@ -33728,7 +33745,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/pack": "workspace:^"
-    "@vercel/webpack-asset-relocator-loader": "npm:1.7.4"
+    "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
     electron: "npm:^31.3.1"
     electron-log: "npm:^5.1.7"

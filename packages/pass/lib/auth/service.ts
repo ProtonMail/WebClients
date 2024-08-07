@@ -117,7 +117,7 @@ export interface AuthServiceConfig {
     /** Called when a session is locked either through user action or when a
      * locked session is detected. The `broadcast` flag indicates wether we should
      * broadcast the locked session to other clients. */
-    onLocked?: (mode: LockMode, localID: Maybe<number>, broadcast: boolean) => void;
+    onLocked?: (mode: LockMode, localID: Maybe<number>, broadcast: boolean, userInitiated: boolean) => void;
     /** Callback when session lock is created, updated or deleted */
     onLockUpdate?: (lock: Lock, localID: Maybe<number>, broadcast: boolean) => MaybePromise<void>;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
@@ -323,12 +323,15 @@ export const createAuthService = (config: AuthServiceConfig) => {
             void config.onLockUpdate?.(lock, localID, true);
         },
 
-        lock: async (mode: LockMode, options: { broadcast?: boolean; soft: boolean }): Promise<Lock> => {
+        lock: async (
+            mode: LockMode,
+            options: { broadcast?: boolean; soft: boolean; userInitiated?: boolean }
+        ): Promise<Lock> => {
             const adapter = getLockAdapter(mode);
             const localID = authStore.getLocalID();
             const broadcast = options.broadcast ?? false;
 
-            config.onLocked?.(mode, localID, broadcast);
+            config.onLocked?.(mode, localID, broadcast, options.userInitiated ?? false);
             const lock = await adapter.lock(options);
 
             return lock;
@@ -496,7 +499,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         /** Online extra password verification will happen on
                          * first login after a successful fork. At this point
                          * we can enable the password lock automatically. */
-                        if (!EXTENSION_BUILD && authStore.getLockMode() === LockMode.NONE) {
+                        if (
+                            !EXTENSION_BUILD &&
+                            [LockMode.NONE, LockMode.BIOMETRICS].includes(authStore.getLockMode())
+                        ) {
                             authStore.setLockMode(LockMode.PASSWORD);
                             authStore.setLockTTL(DEFAULT_LOCK_TTL);
                         }
@@ -523,6 +529,17 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const { offlineConfig, offlineKD } = await getOfflineComponents(password);
             await registerExtraPassword({ password });
 
+            // Clear biometrics
+            if (authStore.getLockMode() === LockMode.BIOMETRICS) {
+                authStore.setEncryptedOfflineKD(undefined);
+                authStore.setLockMode(LockMode.PASSWORD);
+                await authService.config.onLockUpdate?.(
+                    { mode: LockMode.PASSWORD, locked: false, ttl: authStore.getLockTTL() },
+                    authStore.getLocalID(),
+                    true
+                );
+            }
+
             authStore.setExtraPassword(true);
             authStore.setOfflineConfig(offlineConfig);
             authStore.setOfflineKD(offlineKD);
@@ -533,6 +550,16 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         removeExtraPassword: async (password: string) => {
+            // Clear biometrics
+            if (authStore.getLockMode() === LockMode.BIOMETRICS) {
+                authStore.setEncryptedOfflineKD(undefined);
+                await authService.config.onLockUpdate?.(
+                    { mode: LockMode.PASSWORD, locked: false },
+                    authStore.getLocalID(),
+                    true
+                );
+            }
+
             await verifyExtraPassword({ password });
             await removeExtraPassword();
             await authService.logout({ soft: true, broadcast: true });
