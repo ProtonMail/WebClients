@@ -28,10 +28,16 @@ export const setForkStateData = (stateKey: string, data?: ForkState) => {
     sessionStorage.setItem(`f${stateKey}`, JSON.stringify(data));
 };
 
-export const getForkStateData = (stateKey: string): ForkState | undefined => {
+const defaultForkState: ForkState = {
+    url: '',
+    returnUrl: '',
+};
+
+export const getForkStateData = (stateKey: string): ForkState => {
     const data = sessionStorage.getItem(`f${stateKey}`);
+    // Ignore if this fork request wasn't initiated from here, CSRF protection lives in the API
     if (!data) {
-        return undefined;
+        return defaultForkState;
     }
     try {
         const { url, returnUrl } = JSON.parse(data);
@@ -40,6 +46,6 @@ export const getForkStateData = (stateKey: string): ForkState | undefined => {
             returnUrl,
         };
     } catch (e: any) {
-        return undefined;
+        return defaultForkState;
     }
 };
