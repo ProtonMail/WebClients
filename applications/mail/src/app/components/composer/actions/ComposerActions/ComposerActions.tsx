@@ -228,7 +228,7 @@ const ComposerActions = ({
                 </ComposerScheduleSendSpotlight>
 
                 <div className="flex flex-1">
-                    <div className="flex">
+                    <div className="flex gap-1">
                         {!isSmallViewport && (
                             <>
                                 <Tooltip title={titleDeleteDraft}>
@@ -237,7 +237,6 @@ const ComposerActions = ({
                                         disabled={disabled}
                                         onClick={onDelete}
                                         shape="ghost"
-                                        className="mr-1 sm:mr-2"
                                         data-testid="composer:delete-draft-button"
                                     >
                                         <Icon name="trash" alt={c('Action').t`Delete draft`} />
@@ -261,7 +260,7 @@ const ComposerActions = ({
                         </Tooltip>
                         {showAssistantButton && (
                             <>
-                                <Vr aria-hidden="true" />
+                                <Vr className="border-weak" aria-hidden="true" />
                                 <Tooltip title={assistantTooltipText}>
                                     <div>
                                         <ComposerAssistantSpotlight {...assistantSpotlight}>
@@ -272,7 +271,8 @@ const ComposerActions = ({
                                                 shape="ghost"
                                                 data-testid="composer:use-assistant-button"
                                                 aria-expanded={isAssistantOpened}
-                                                className="flex sm:mx-2"
+                                                aria-pressed={isAssistantOpened}
+                                                className="flex"
                                             >
                                                 <Icon
                                                     name="pen-sparks"
@@ -294,16 +294,14 @@ const ComposerActions = ({
                                     shape="ghost"
                                     data-testid="composer:show-toolbar-button"
                                     aria-expanded={displayToolbar}
-                                    className="flex sm:mx-2"
+                                    aria-pressed={displayToolbar}
+                                    className="flex"
                                 >
-                                    <Icon
-                                        name="text-style"
-                                        alt={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}
-                                    />
+                                    <Icon name="text-style" alt={c('Action').t`Show toolbar`} />
                                 </Button>
                             </div>
                         </Tooltip>
-                        {showAssistantButton && <Vr aria-hidden="true" />}
+                        {showAssistantButton && <Vr className="border-weak" aria-hidden="true" />}
                         <ComposerMoreActions
                             isExpiration={isExpiration}
                             message={message}
