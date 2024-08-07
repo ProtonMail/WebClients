@@ -1,41 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { z } from 'zod';
-
 import useLoading from '@proton/hooks/useLoading';
 import { semver } from '@proton/pass/utils/string/semver';
 import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import { type DesktopVersion, VersionFileSchema } from '@proton/shared/lib/desktop/DesktopVersion';
 import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronOnLinux, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
-
-export const DesktopVersionSchema = z.object({
-    CategoryName: z.enum(Object.values(RELEASE_CATEGORIES) as [string, ...string[]]),
-    Version: z.string(),
-    ReleaseDate: z.string(),
-    File: z.array(
-        z.object({
-            Identifier: z.string().optional(),
-            Url: z.string(),
-            Sha512CheckSum: z.string(),
-        })
-    ),
-    ReleaseNotes: z.array(
-        z.object({
-            Type: z.string(),
-            Notes: z.array(z.string()),
-        })
-    ),
-    RolloutProportion: z.number(),
-    ManualUpdate: z.array(z.string()).optional(),
-});
-
-export const VersionFileSchema = z.object({
-    Releases: z.array(DesktopVersionSchema),
-});
-
-export type DesktopVersion = z.infer<typeof DesktopVersionSchema>;
-export type VersionFile = z.infer<typeof VersionFileSchema>;
 
 const initialLinuxClients: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,
