@@ -10,7 +10,7 @@ import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 
 export type ItemNewRouteParams = { type: ItemType };
 export type ItemRouteOptions = { trashed?: boolean; prefix?: string };
-export type RouteErrorState = { error?: string };
+export type AuthRouteState = { error?: string; userInitiatedLock?: boolean };
 
 export enum UnauthorizedRoutes {
     SecureLink = '/secure-link/:token',

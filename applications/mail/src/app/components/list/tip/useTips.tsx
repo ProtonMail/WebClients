@@ -4,19 +4,42 @@ import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { FeatureCode, useAddresses, useFeature, useMailSettings, useUser } from '@proton/components';
+import {
+    ErrorBoundary,
+    FeatureCode,
+    useAddresses,
+    useFeature,
+    useMailSettings,
+    useSubscription,
+    useUser,
+} from '@proton/components';
 import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import { ADDRESS_TYPE, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_TYPE,
+    BRAND_NAME,
+    DRIVE_APP_NAME,
+    MAILBOX_LABEL_IDS,
+    PASS_APP_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { getIsB2BAudienceFromSubscription } from '@proton/shared/lib/helpers/subscription';
+import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from 'proton-mail/constants';
+import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import useHasScheduledMessages from 'proton-mail/hooks/useHasScheduledMessages';
+import useHasSnoozedMessages from 'proton-mail/hooks/useHasSnoozedMessages';
 import type { TipData } from 'proton-mail/models/tip';
 import { TipActionType } from 'proton-mail/models/tip';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import PassAliasTipCTA from './PassAliasTipCTA';
 import ProtonTipCTA from './ProtonTipCTA';
@@ -26,13 +49,34 @@ const PM_DOMAIN = 'pm.me';
 const { vpn, drive, pass } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
 const useTips = () => {
-    const [addresses] = useAddresses();
-    const [folders] = useFolders();
-    const [labels] = useLabels();
-    const [user] = useUser();
-    const [mailSettings] = useMailSettings();
-    const [userSettings] = useUserSettings();
+    const [addresses, loadingAddresses] = useAddresses();
+    const [folders, loadingFolders] = useFolders();
+    const [labels, loadingLabels] = useLabels();
+    const [user, loadingUser] = useUser();
+    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const [userSettings, loadingSettings] = useUserSettings();
     const activeAddresses = getActiveAddresses(addresses ?? []);
+    const [subscription, loadingSubscription] = useSubscription();
+    const [missScopePass, setMissScopePass] = useState(false);
+
+    const isB2BAudience = getIsB2BAudienceFromSubscription(subscription);
+
+    const [hasSnoozedMessages, loadingSnoozedMessages] = useHasSnoozedMessages();
+    const [hasScheduledMessages, loadingScheduledMessages] = useHasScheduledMessages();
+
+    const loading =
+        loadingSubscription ||
+        loadingSettings ||
+        loadingMailSettings ||
+        loadingAddresses ||
+        loadingLabels ||
+        loadingFolders ||
+        loadingUser ||
+        loadingSnoozedMessages ||
+        loadingScheduledMessages;
+
+    const labelID = useMailSelector((store) => store.elements.params.labelID);
+    const conversationMode = isConversationMode(labelID, mailSettings);
 
     const [isTipDismissed, setIsTipDismissed] = useState(false);
     const [shouldDisplayTips, setShouldDisplayTips] = useState(false);
@@ -60,7 +104,7 @@ const useTips = () => {
     const tipMessages: TipData[] = useMemo(
         () => [
             {
-                id: 1,
+                id: 0,
                 icon: 'folders',
                 // translator: the sentence contains a non-translatable text and is as follows: Create a folder such as "Receipts" to keep all your online receipts in one place.
                 message: c('Info')
@@ -74,7 +118,7 @@ const useTips = () => {
                 action: TipActionType.CreateFolder,
             },
             {
-                id: 2,
+                id: 1,
                 icon: 'tag',
                 // translator: the sentence contains a non-translatable text and is as follows: Give incoming bills a color-coded label, such as "To Pay". Once they’re paid, change the label to "Paid".
                 message: c('Info')
@@ -88,7 +132,7 @@ const useTips = () => {
                 action: TipActionType.CreateLabel,
             },
             {
-                id: 3,
+                id: 2,
                 icon: 'tv',
                 message: c('Info')
                     .t`To avoid getting sidetracked by the open tabs in your browser, use the desktop app.`,
@@ -96,13 +140,13 @@ const useTips = () => {
                     <ProtonTipCTA
                         actionType={TipActionType.DownloadDesktopApp}
                         ctaText={c('Tip Action').t`Download Desktop app`}
-                        settingsUrl="get-the-apps#proton-mail-desktop-apps"
+                        settingsUrl="/get-the-apps#proton-mail-desktop-apps"
                     />
                 ),
                 action: TipActionType.DownloadDesktopApp,
             },
             {
-                id: 4,
+                id: 3,
                 icon: 'at',
                 message: c('Info')
                     .t`Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${PM_DOMAIN}”.`,
@@ -116,29 +160,45 @@ const useTips = () => {
                 action: TipActionType.GetProtonSubdomainAddress,
             },
             {
-                id: 5,
+                id: 4,
                 icon: 'alias',
                 message: c('Info')
                     .t`When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.`,
                 cta: (
-                    <PassBridgeProvider>
-                        <PassAliasesProvider>
-                            <PassAliasTipCTA ctaText={c('Tip Action').t`Create an alias`} />
-                        </PassAliasesProvider>
-                    </PassBridgeProvider>
+                    <ErrorBoundary
+                        renderFunction={(e: any) => {
+                            if (e?.message.includes(PassErrorCode.MISSING_SCOPE)) {
+                                setMissScopePass(true);
+                                return (
+                                    <p className="m-0 text-weak text-sm">
+                                        {c('Error message')
+                                            .t`Aliases cannot be used when an extra password is enabled in ${PASS_APP_NAME}.`}
+                                    </p>
+                                );
+                            }
+
+                            return null;
+                        }}
+                    >
+                        <PassBridgeProvider>
+                            <PassAliasesProvider>
+                                <PassAliasTipCTA ctaText={c('Tip Action').t`Create an alias`} />
+                            </PassAliasesProvider>
+                        </PassBridgeProvider>
+                    </ErrorBoundary>
                 ),
                 action: TipActionType.CreateAlias,
             },
             {
-                id: 6,
+                id: 5,
                 icon: 'paper-plane-clock',
                 message: c('Info')
                     .t`Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.`,
-                cta: showMeHowCTA,
+                cta: <ProtonTipCTA actionType={TipActionType.ScheduleMessage} ctaText={showMeHowCTA} />,
                 action: TipActionType.ScheduleMessage,
             },
             {
-                id: 7,
+                id: 6,
                 icon: 'trash-clock',
                 message: c('Info')
                     .t`Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.`,
@@ -152,7 +212,7 @@ const useTips = () => {
                 action: TipActionType.ClearMailbox,
             },
             {
-                id: 8,
+                id: 7,
                 icon: 'envelopes',
                 message: c('Info')
                     .t`Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.`,
@@ -166,15 +226,15 @@ const useTips = () => {
                 action: TipActionType.CreateEmailAddress,
             },
             {
-                id: 9,
+                id: 8,
                 icon: 'clock',
                 message: c('Info')
                     .t`Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.`,
-                cta: showMeHowCTA,
+                cta: <ProtonTipCTA actionType={TipActionType.SnoozeEmail} ctaText={showMeHowCTA} />,
                 action: TipActionType.SnoozeEmail,
             },
             {
-                id: 10,
+                id: 9,
                 icon: 'shield-2-bolt',
                 message: c('Info')
                     .t`If your password ends up on the dark web, ${BRAND_NAME} can tell you which service your data was leaked from and how to halt the damage.`,
@@ -188,7 +248,7 @@ const useTips = () => {
                 action: TipActionType.EnableDarkWebMonitoring,
             },
             {
-                id: 11,
+                id: 10,
                 icon: 'brand-proton-drive',
                 message: c('Info')
                     .t`Did you know you have encrypted cloud storage included with your ${BRAND_NAME} Account? Head over to ${DRIVE_APP_NAME} and make the most of your space. It's free.`,
@@ -197,11 +257,11 @@ const useTips = () => {
                     <Href href={drive} className="link align-baseline" tabIndex={0}>
                         {openAppCTA + `${DRIVE_APP_NAME}`}
                     </Href>
-                ), //,
+                ),
                 action: TipActionType.OpenProtonDrive,
             },
             {
-                id: 12,
+                id: 11,
                 icon: 'brand-proton-pass',
                 message: c('Info')
                     .t`Keep your login and credit card details safe but always on hand by adding it to ${PASS_APP_NAME}. It's free, and included with your ${BRAND_NAME} Account.`,
@@ -214,7 +274,7 @@ const useTips = () => {
                 action: TipActionType.OpenProtonPass,
             },
             {
-                id: 13,
+                id: 12,
                 icon: 'brand-proton-vpn',
                 message: c('Info')
                     .t`When you're traveling or using public WiFi, connect to ${VPN_APP_NAME} to prevent anyone from tracking your online activity or stealing your data. It's free.`,
@@ -236,17 +296,25 @@ const useTips = () => {
     const showTip = (actionType: TipActionType) => {
         switch (actionType) {
             case TipActionType.CreateFolder:
-                return folders
-                    ? !folders.some((folder) => folder.Name.toLowerCase() === suggestedFolderName.toLowerCase())
-                    : false;
+                return (
+                    !!folders &&
+                    !folders.some((folder) => folder.Name.toLowerCase() === suggestedFolderName.toLowerCase())
+                );
             case TipActionType.CreateLabel:
-                return labels
-                    ? !labels.some((label) => label.Name.toLowerCase() === suggestedLabelName.toLowerCase())
-                    : false;
+                return (
+                    !!labels && !labels.some((label) => label.Name.toLowerCase() === suggestedLabelName.toLowerCase())
+                );
+            case TipActionType.DownloadDesktopApp:
+                if (isElectronMail) {
+                    return false;
+                }
+                return userSettings && !isDesktopInboxUser(BigInt(userSettings.UsedClientFlags));
             case TipActionType.GetProtonSubdomainAddress:
-                return user.isFree || !(user.isAdmin && !user.isSubUser && hasEnabledPremiumAddresses);
+                return user.isFree || (user.isAdmin && !user.isSubUser && !hasEnabledPremiumAddresses);
             case TipActionType.CreateAlias:
-                return true;
+                return !missScopePass;
+            case TipActionType.ScheduleMessage:
+                return !hasScheduledMessages;
             case TipActionType.ClearMailbox:
                 return mailSettings
                     ? mailSettings.AutoDeleteSpamAndTrashDays !== AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE
@@ -258,22 +326,31 @@ const useTips = () => {
                 if (user.isAdmin) {
                     return hasEnabledPremiumAddresses ? premiumAddresses.length <= 2 : premiumAddresses.length <= 1;
                 }
-
                 return false;
+            case TipActionType.SnoozeEmail:
+                const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX;
+                return conversationMode && isInbox && !hasSnoozedMessages;
             case TipActionType.EnableDarkWebMonitoring:
                 return userSettings
                     ? userSettings.BreachAlerts.Eligible === 0 || userSettings.BreachAlerts.Value === 0
                     : false;
+            case TipActionType.OpenProtonPass:
+                return userSettings && !isPassUser(BigInt(userSettings.UsedClientFlags));
+            case TipActionType.OpenProtonDrive:
+                return userSettings && !isDriveUser(BigInt(userSettings.UsedClientFlags));
+            case TipActionType.DownloadProtonVPN:
+                return userSettings && !isVPNUser(BigInt(userSettings.UsedClientFlags));
             default:
                 return false;
         }
     };
 
+    const tips = loading ? [] : tipMessages.filter((tip) => showTip(tip.action));
     return {
-        tips: tipMessages.filter((tip) => showTip(tip.action)),
+        tips,
         isTipDismissed,
         setIsTipDismissed,
-        shouldDisplayTips: shouldDisplayTips && protonTipsEnabled,
+        shouldDisplayTips: !isB2BAudience && shouldDisplayTips && protonTipsEnabled,
     };
 };
 

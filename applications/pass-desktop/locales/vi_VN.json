@@ -347,6 +347,9 @@
       "Retry": [
         "Thử lại"
       ],
+      "Right click and download this CSV": [
+        "Nhấp phải để tải tập tin CSV"
+      ],
       "Save": [
         "Lưu"
       ],
@@ -373,6 +376,9 @@
       ],
       "Set extra password": [
         "Thiết lập mật khẩu phụ"
+      ],
+      "Setup 2FA": [
+        "Thiết lập 2FA"
       ],
       "Share": [
         "Chia sẻ"
@@ -615,6 +621,9 @@
       ],
       "File could not be parsed": [
         "Không thể phân tích cú pháp tệp."
+      ],
+      "File could not be read": [
+        "Không thể đọc tập tin"
       ],
       "File does not match expected format": [
         "Tệp không khớp với định dạng được mong chờ"
@@ -894,6 +903,9 @@
       "Auto-lock successfully disabled.": [
         "Đã vô hiệu hóa Tự động khóa thành công."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Trước khi trích xuất dữ liệu của bạn với định dạng này, vui lòng mở tùy chỉnh Safari -> \"Tổng quan\" -> tắt tùy chọn \"Mở các tập tin an toàn sau khi tải về\". Điều này sẽ giúp trình duyệt Safari tránh khỏi trích xuất sai tập tin."
+      ],
       "Built in 2FA authenticator": [
         "Trình xác thực 2 bước tích hợp"
       ],
@@ -944,6 +956,9 @@
       ],
       "Disabling offline mode...": [
         "Đang tắt chế độ ngoại tuyến..."
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Do một hạn chế của trình mở rộng trên Safari, tập tin sau khi được xuất ra sẽ thiếu phần mở rộng \".pgp\". Vui lòng thêm mở rộng \".pgp\" vào tập tin sau khi xuất ra (ví dụ file.pgp)."
       ],
       "Editor": [
         "Biên tập viên"
@@ -1361,6 +1376,9 @@
       ],
       "You're invited to a vault.": [
         "Bạn được mời vào một kho lưu trữ."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Tài khoản bị hạn chế vì tổ chức của bạn yêu cầu xác minh 2FA. Vui lòng bật xác minh 2FA trong mục cài đặt tài khoản hoặc liên hệ với quản trị viên."
       ]
     },
     "Label": {

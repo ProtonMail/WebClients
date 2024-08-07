@@ -11,6 +11,7 @@ type ComposerFields = {
     /** TODO: Remove later. Used to trigger changes from a hook while moving to Redux */
     changesCount: number;
     type: EditorTypes;
+    forceOpenScheduleSend?: boolean;
 };
 
 /**

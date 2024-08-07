@@ -25,6 +25,7 @@ interface Props {
     addressesBlurRef: MutableRefObject<() => void>;
     addressesFocusRef: MutableRefObject<() => void>;
     onEditExpiration: () => void;
+    isInert: boolean;
 }
 
 const ComposerMeta = forwardRef<HTMLDivElement, Props>(
@@ -39,6 +40,7 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
             addressesBlurRef,
             addressesFocusRef,
             onEditExpiration,
+            isInert,
         },
         ref
     ) => {
@@ -50,7 +52,12 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
         };
 
         return (
-            <div className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1" ref={ref}>
+            <div
+                className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1"
+                ref={ref}
+                // @ts-ignore
+                inert={isInert ? '' : undefined}
+            >
                 <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
                     <Label
                         htmlFor={`from-${uid}`}

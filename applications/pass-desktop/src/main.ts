@@ -1,15 +1,17 @@
 import {
     BrowserWindow,
     type Event,
+    Menu,
     type Session,
+    Tray,
     app,
-    clipboard,
-    ipcMain,
+    nativeImage,
     nativeTheme,
     session,
     shell,
 } from 'electron';
 import logger from 'electron-log/main';
+import { join } from 'path';
 
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
@@ -23,10 +25,14 @@ import { isSquirrelStartup } from './startup';
 import { certificateVerifyProc } from './tls';
 import { SourceType, updateElectronApp } from './update';
 
+import './lib/biometrics';
+import './lib/clipboard';
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (isSquirrelStartup()) app.quit();
 
-let mainWindow: BrowserWindow | null;
+export let mainWindow: BrowserWindow | null;
+let isAppQuitting = false;
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
@@ -138,16 +144,55 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         minHeight: 480,
     });
 
+    mainWindow.on('close', (e) => {
+        if (isAppQuitting) return;
+        e.preventDefault();
+        mainWindow?.hide();
+    });
+
     mainWindow.on('closed', () => (mainWindow = null));
 
-    mainWindow.webContents.addListener('did-finish-load', () => mainWindow?.show());
-
     await mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+
+    mainWindow.show();
 
     return mainWindow;
 };
 
-const onActivate = (secureSession: Session) => async () => {
+const createTrayIcon = (session: Session) => {
+    const trayIconName = (() => {
+        switch (process.platform) {
+            case 'darwin':
+                return 'trayTemplate.png';
+            case 'win32':
+                return 'logo.ico';
+            default:
+                return 'tray.png';
+        }
+    })();
+
+    const trayIconPath = join(app.isPackaged ? process.resourcesPath : app.getAppPath(), 'assets', trayIconName);
+    const trayIcon = nativeImage.createFromPath(trayIconPath);
+    const tray = new Tray(trayIcon);
+    tray.setToolTip('Proton Pass');
+
+    const onOpenPassHandler = async () => {
+        const window = mainWindow || (await createWindow(session));
+        window.show();
+    };
+
+    const contextMenu = Menu.buildFromTemplate([
+        { label: 'Open Proton Pass', click: onOpenPassHandler },
+        { type: 'separator' },
+        { label: 'Quit', role: 'quit', click: app.quit },
+    ]);
+
+    tray.setContextMenu(contextMenu);
+
+    if (process.platform === 'win32') tray.on('double-click', onOpenPassHandler);
+};
+
+const onActivate = (secureSession: Session) => () => {
     if (mainWindow) return mainWindow.show();
     if (BrowserWindow.getAllWindows().length === 0) return createWindow(secureSession);
 };
@@ -164,6 +209,9 @@ app.addListener('ready', async () => {
     // Use dark title bar
     nativeTheme.themeSource = 'dark';
 
+    // Create tray icon
+    createTrayIcon(secureSession);
+
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     app.addListener('activate', handleActivate);
@@ -171,6 +219,9 @@ app.addListener('ready', async () => {
     // On Windows, launching Pass while it's already running shold focus
     // or create the main window of the existing process
     app.addListener('second-instance', handleActivate);
+
+    // Prevent hiding windows when explicitly quitting
+    app.addListener('before-quit', () => (isAppQuitting = true));
 
     await createWindow(secureSession);
 
@@ -237,11 +288,4 @@ app.addListener('window-all-closed', () => {
 const windowsAppId = 'com.squirrel.proton_pass_desktop.ProtonPass';
 app.addListener('will-finish-launching', () => {
     if (process.platform === 'win32') app.setAppUserModelId(windowsAppId);
-});
-
-let clipboardTimer: NodeJS.Timeout;
-ipcMain.handle('clipboard:writeText', (_event, text) => {
-    clearTimeout(clipboardTimer);
-    clipboard.writeText(text);
-    clipboardTimer = setTimeout(clipboard.clear, 30_000);
 });

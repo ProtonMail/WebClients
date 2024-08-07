@@ -5,23 +5,22 @@ import { useComposerAssistantProvider } from 'proton-mail/components/assistant/p
 
 interface Props {
     assistantResultRef: RefObject<HTMLDivElement>;
-    inputSelectedText?: string;
+    composerSelectedText?: string;
     onResetRequest?: () => void;
     assistantID: string;
 }
 const useComposerAssistantSelectedText = ({
     assistantID,
     assistantResultRef,
-    inputSelectedText,
+    composerSelectedText,
     onResetRequest,
 }: Props) => {
     // Selected text in the composer or assistant result that the user might want to refine
-    const [selectedText, setSelectedText] = useState(inputSelectedText);
+    const [selectedText, setSelectedText] = useState(composerSelectedText);
     const prevSelectionRef = useRef<string>('');
+    const composerSelectionRef = useRef<string>(composerSelectedText || '');
 
     const { assistantRefManager } = useComposerAssistantProvider();
-
-    const [displayRefinePopover, setDisplayRefinePopover] = useState<boolean>(false);
 
     const mouseDownRef = useRef(false);
 
@@ -42,7 +41,10 @@ const useComposerAssistantSelectedText = ({
                     return;
                 }
             }
-            setSelectedText('');
+            // Use the composer selection (if any) as selected text when we want to reset the selection
+            // The user might cancel and re-generate using the previous composer selection
+            const composerSelection = composerSelectionRef.current;
+            setSelectedText(composerSelection ? composerSelection : '');
         }, 0);
     };
 
@@ -72,37 +74,18 @@ const useComposerAssistantSelectedText = ({
         };
     }, []);
 
-    // Controls the popover display
-    useEffect(() => {
-        if (selectedText && !displayRefinePopover) {
-            setDisplayRefinePopover(true);
-        } else if (!selectedText) {
-            setDisplayRefinePopover(false);
-        }
-    }, [selectedText, displayRefinePopover]);
-
     // Update selected text when selection in editor is changing,
     // and hide the refine popover when the user deselect content in the editor.
     useEffect(() => {
-        setSelectedText(inputSelectedText);
-        if (inputSelectedText) {
-            setDisplayRefinePopover(true);
-        }
-    }, [inputSelectedText]);
-
-    const handleCloseRefinePopover = () => {
-        // Make a real clear selection on the UI so that we re-trigger the selection change and set selected text to ""
-        document.getSelection()?.removeAllRanges();
-        setDisplayRefinePopover(false);
-    };
+        setSelectedText(composerSelectedText);
+        composerSelectionRef.current = composerSelectedText || '';
+    }, [composerSelectedText]);
 
     return {
         selectedText,
         setSelectedText,
         handleMouseDown,
-        handleCloseRefinePopover,
         handleSelectionChange,
-        displayRefinePopover,
     };
 };
 

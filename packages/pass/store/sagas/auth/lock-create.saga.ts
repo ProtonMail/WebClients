@@ -21,6 +21,7 @@ function* lockCreateWorker(
             switch (payload.lock.mode) {
                 case LockMode.SESSION:
                 case LockMode.PASSWORD:
+                case LockMode.BIOMETRICS:
                     yield auth.createLock(payload.lock);
                     return { mode: payload.lock.mode, locked: false, ttl: payload.lock.ttl };
                 case LockMode.NONE:

@@ -13,8 +13,9 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel, SubscriptionPlan, UserModel } from '@proton/shared/lib/interfaces';
 
 import type {
     ConfirmationModal,
@@ -33,9 +34,9 @@ import {
 
 export const getVisionaryConfig = (
     subscription: SubscriptionModel,
+    user: UserModel,
     plan: SubscriptionPlan & { Name: PLANS },
-    vpnCountries: number,
-    newCancellationPolicy?: boolean
+    vpnCountries: number
 ): PlanConfig => {
     const currentPlan = PLANS.VISIONARY;
     const planName = PLAN_NAMES[currentPlan];
@@ -89,9 +90,10 @@ export const getVisionaryConfig = (
         ],
     };
 
-    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, newCancellationPolicy);
+    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, cancellablePlan);
 
-    const expiryDate = <ExpirationTime subscription={subscription} newCancellationPolicy={newCancellationPolicy} />;
+    const expiryDate = <ExpirationTime subscription={subscription} cancellablePlan={cancellablePlan} />;
     const learnMoreLink = (
         <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')}>
             {c('Link').t`Learn more`}
@@ -103,9 +105,9 @@ export const getVisionaryConfig = (
             .t`Please note that ${planName} is no longer available for purchase. If you downgrade your account, you will lose all plan benefits and won't be able to resubscribe.`}</p>
     );
 
-    const config = getDefaultConfirmationModal(subscription, planName, newCancellationPolicy);
+    const config = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
     //Your Proton Visionary subscription ends on June 6, 2024.  Learn more
-    const description = newCancellationPolicy
+    const description = cancellablePlan
         ? c('Subscription reminder')
               .jt`Your ${planName} subscription ends on ${expiryDate}. After that, you’ll be on the ${BRAND_NAME} Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${learnMoreLink} ${unavailablePlan}`
         : c('Subscription reminder')

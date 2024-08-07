@@ -9,6 +9,7 @@ import { Button, CircleLoader, Href } from '@proton/atoms';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
 import {
     Alert,
@@ -28,7 +29,7 @@ import {
     useModalTwoStatic,
 } from '../../../components';
 import { getObjectKeys } from '../../../helpers';
-import { getLocalizedCountryByAbbr } from '../../../helpers/countries';
+import { getCountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import {
     useApi,
     useApiResult,
@@ -41,7 +42,6 @@ import {
 } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import type { Certificate } from '../Certificate';
-import type { Logical } from '../Logical';
 import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';
 import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 import { getFlagSvg } from '../flag';
@@ -186,20 +186,13 @@ const getCertificateModel = (
 
 const paginationSize = 50;
 
-const formatServerName = (bestServerName: string, locale: string | readonly string[]) => {
+const formatServerName = (bestServerName: string, alt: (code: string) => string | undefined) => {
     const countryCode = bestServerName.split(/#/g)[0];
     const flag = getFlagSvg(countryCode);
 
     return (
         <>
-            {flag && (
-                <img
-                    width={20}
-                    className="mx-2 border"
-                    src={flag}
-                    alt={getLocalizedCountryByAbbr(countryCode, locale)}
-                />
-            )}
+            {flag && <img width={20} className="mx-2 border" src={flag} alt={alt(countryCode)} />}
             <strong className="align-middle">{bestServerName}</strong>
         </>
     );
@@ -251,6 +244,8 @@ const WireGuardConfigurationSection = () => {
     const [limit, setLimit] = useState(paginationSize);
     const { loading: certificatesLoading, result: certificatesResult, moreToLoad } = useCertificates(limit);
 
+    const countryOptions = getCountryOptions(userSettings);
+
     const logicalInfoLoading = logicalsLoading || vpnLoading;
     const maxTier = userVPN?.MaxTier || 0;
     const logicals = useMemo(
@@ -269,7 +264,7 @@ const WireGuardConfigurationSection = () => {
     const bestLogical = bestLogicals[0];
     const bestServerName = bestLogical?.Name;
     const formattedBestServerName = bestServerName
-        ? formatServerName(bestServerName, userSettings.Locale || navigator.languages)
+        ? formatServerName(bestServerName, (code) => getLocalizedCountryByAbbr(code, countryOptions))
         : '';
 
     const getCertificates = (): Certificate[] => {

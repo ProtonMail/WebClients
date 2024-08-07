@@ -83,6 +83,8 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                             contentHash: link.FileProperties.ActiveRevision.Photo.ContentHash ?? undefined,
                             mainPhotoLinkId: link.FileProperties.ActiveRevision.Photo.MainPhotoLinkID ?? undefined,
                             hash: link.FileProperties.ActiveRevision.Photo.Hash ?? undefined,
+                            relatedPhotosLinkIds:
+                                link.FileProperties.ActiveRevision.Photo.RelatedPhotosLinkIDs ?? undefined,
                         }
                       : undefined,
               }

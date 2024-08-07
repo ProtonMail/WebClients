@@ -1,45 +1,21 @@
-import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getHasVpnB2BPlan, hasCancellablePlan, hasNewCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import type { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
 interface Arguments {
     user: UserModel;
     subscription?: Subscription;
-    organization?: Organization;
-    isNewCancellationFlowExtended: boolean;
-    isUserGroupsFeatureEnabled: boolean;
-    canDisplayB2BLogsVPN: boolean;
 }
 
-export const getRoutes = ({
-    user,
-    subscription,
-    organization,
-    isNewCancellationFlowExtended,
-    isUserGroupsFeatureEnabled,
-    canDisplayB2BLogsVPN,
-}: Arguments) => {
+export const getRoutes = ({ user, subscription }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-
-    const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription, user);
-    const cancellablePlan = canCancelNewPlan || hasCancellablePlan(subscription);
-
+    const cancellablePlan = hasCancellablePlan(subscription, user);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
-
-    const organizationRoutes = getOrganizationAppRoutes({
-        app: APPS.PROTONVPN_SETTINGS,
-        organization,
-        user,
-        subscription,
-        isUserGroupsFeatureEnabled,
-        canDisplayB2BLogsVPN,
-    });
 
     return {
         dashboard: <SectionConfig>{
@@ -173,6 +149,5 @@ export const getRoutes = ({
                 },
             ],
         },
-        ...organizationRoutes.routes,
     };
 };

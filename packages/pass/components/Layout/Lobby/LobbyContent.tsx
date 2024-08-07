@@ -8,6 +8,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
 import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
@@ -136,6 +137,8 @@ export const LobbyContent: FC<Props> = ({
                                 return hasExtraPassword
                                     ? c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`
                                     : c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
+                            case AppStatus.BIOMETRICS_LOCKED:
+                                return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with biometrics`;
                             case AppStatus.MISSING_SCOPE:
                                 return c('Info').t`Enter your extra password`;
                             default:
@@ -173,6 +176,9 @@ export const LobbyContent: FC<Props> = ({
 
                         case AppStatus.PASSWORD_LOCKED:
                             return <PasswordUnlock offlineEnabled={offlineEnabled} />;
+
+                        case AppStatus.BIOMETRICS_LOCKED:
+                            return <BiometricsUnlock offlineEnabled={offlineEnabled} />;
 
                         default:
                             return (

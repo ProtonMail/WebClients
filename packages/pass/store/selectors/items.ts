@@ -255,7 +255,9 @@ export const selectAutofillLoginCandidates = (options: SelectAutofillCandidatesO
 };
 
 export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
-    createSelector(selectIdentityItems, (items) => items.filter(and(isActive, belongsToShares(shareIds))));
+    createSelector(selectIdentityItems, (items) =>
+        items.filter(and(isActive, belongsToShares(shareIds))).sort(sortOn('lastUseTime'))
+    );
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) =>
     createSelector(
@@ -272,7 +274,7 @@ export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions
     );
 
 export const selectOTPCandidate = ({ submission, ...options }: SelectOTPAutofillCandidateOptions) =>
-    createSelector(selectAutofillLoginCandidates(options), (candidates) => {
+    createSelector(selectAutofillLoginCandidates({ ...options, strict: true }), (candidates) => {
         const otpItems = candidates.filter(hasOTP);
         const userIdentifier = submission?.data.userIdentifier;
 

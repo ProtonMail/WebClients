@@ -1035,6 +1035,11 @@
         "Падзея не падтрымліваецца"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Запрошаны"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
@@ -3166,9 +3171,6 @@
       "Access denied": [
         "У доступе адмоўлена"
       ],
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -3346,8 +3348,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Прызначанае вам сховішча: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Падпіска аплачваецца асноўным адміністратарам сямейнага тарыфнага плана або адміністратарам тарыфнага плана Visionary."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Тарыфны план Visionary і сямейны тарыфны план у цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
@@ -3364,8 +3366,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Вы паспяхова далучыліся да тарыфнага плана Family"
+      "You have successfully joined the family group": [
+        "Вы паспяхова далучыліся да сямейнай групы"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
@@ -6787,6 +6789,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Пачніце за 1 $"
+      ],
+      "Get started for 1 €": [
+        "Пачніце за 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Пачніце за 1 CHF"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ]
@@ -7328,6 +7339,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Абараніце сваё лічбавае жыццё з дапамогай ${ BRAND_NAME } для двух карыстальнікаў."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
@@ -7372,8 +7386,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Абараняйце свае лісты з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і іншыя функцыі."
@@ -9185,6 +9199,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } дае вам неабмежаваную прыватнасць і больш сховішча, які разлічаны на 1 або 2 карыстальнікаў."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай і арганізаванай у сваёй працы з доступам да ўсіх праграм ${ BRAND_NAME } і іх прэміяльных функцый."
       ],
@@ -9220,6 +9237,9 @@
       ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
+      ],
+      "2 users": [
+        "2 карыстальнікі"
       ],
       "20 email addresses per user": [
         "20 адрасоў электроннай пошты на карыстальніка"
@@ -9373,6 +9393,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Unlimited privacy for two": [
+        "Неабмежаваная прыватнасць для дваіх"
       ],
       "Users won’t be able to manage their calendars": [
         "У карыстальнікаў не будзе магчымасці кіраваць іх календарамі"

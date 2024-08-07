@@ -1,9 +1,7 @@
-import { GENERATION_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { isURLProtonInternal } from '@proton/components/helpers/url';
 import type { TransformCallback } from '@proton/llm/lib/actions';
 import { getAssistantModels } from '@proton/llm/lib/api';
 import {
-    AssistantStatus,
     GENERAL_STOP_STRINGS,
     STOP_STRINGS_WRITE_FULL_EMAIL,
     assistantAuthorizedApps,
@@ -17,7 +15,7 @@ import type {
     ParentToIframeMessage,
 } from '@proton/llm/lib/types';
 import { AssistantEvent } from '@proton/llm/lib/types';
-import { checkHardwareForAssistant } from '@proton/shared/lib/assistant';
+import { GENERATION_TYPE, checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -65,33 +63,6 @@ export const getHasAssistantStatus = (
     status: OpenedAssistantStatus
 ) => {
     return openedAssistants.find((assistant) => assistant.id === assistantID)?.status === status;
-};
-
-export const getAssistantStatus = ({
-    isModelDownloading,
-    isModelDownloaded,
-    isModelLoadingOnGPU,
-    isModelLoadedOnGPU,
-}: {
-    isModelDownloading: boolean;
-    isModelDownloaded: boolean;
-    isModelLoadingOnGPU: boolean;
-    isModelLoadedOnGPU: boolean;
-}): AssistantStatus => {
-    if (isModelDownloading) {
-        return AssistantStatus.DOWNLOADING;
-    }
-    if (isModelLoadingOnGPU) {
-        return AssistantStatus.LOADING_GPU;
-    }
-    if (isModelLoadedOnGPU) {
-        return AssistantStatus.READY;
-    }
-    if (isModelDownloaded) {
-        return AssistantStatus.DOWNLOADED;
-    }
-
-    return AssistantStatus.NOT_LOADED;
 };
 
 export const checkHarmful = (inputText: string) => {

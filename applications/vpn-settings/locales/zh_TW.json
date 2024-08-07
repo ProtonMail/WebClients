@@ -4,6 +4,11 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
@@ -23,6 +28,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add address or domain": [
+        "加入位址或網域"
+      ],
       "Add credit / debit card": [
         "加入信用卡 / 簽帳金融卡"
       ],
@@ -38,6 +46,9 @@
       "Add user": [
         "加入使用者"
       ],
+      "Allow": [
+        "允許"
+      ],
       "Apply": [
         "套用"
       ],
@@ -52,6 +63,9 @@
       ],
       "Back": [
         "返回"
+      ],
+      "Block": [
+        "封鎖"
       ],
       "Cancel": [
         "取消"
@@ -275,6 +289,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "Go to label": [
+        "跳至標籤"
+      ],
       "Got it": [
         "了解"
       ],
@@ -323,8 +340,14 @@
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
+      "More options": [
+        "更多選項"
+      ],
       "Need help?": [
         "需要說明嗎？"
+      ],
+      "New group": [
+        "新增群組"
       ],
       "Next": [
         "下一個"
@@ -332,11 +355,11 @@
       "Next month": [
         "下個月"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open": [
         "開啟"
@@ -418,6 +441,9 @@
       ],
       "Resend code": [
         "重新傳送驗證碼"
+      ],
+      "Resend invitation": [
+        "重新發送邀請"
       ],
       "Reset credentials": [
         "重設認證"
@@ -541,6 +567,9 @@
       ],
       "Signing in": [
         "正在登入"
+      ],
+      "Spam": [
+        "垃圾郵件"
       ],
       "Start live chat": [
         "開始即時聊天"
@@ -753,6 +782,11 @@
     "app-switcher": {
       "Secure your communications": [
         "安全您的通訊"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
       ]
     },
     "Badge for domain": {
@@ -1281,6 +1315,9 @@
       "Congo": [
         "剛果"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "剛果(民主共和國)"
+      ],
       "Congo, Democratic Republic of the": [
         "剛果民主共和國"
       ],
@@ -1319,6 +1356,9 @@
       ],
       "Dominican Republic": [
         "多明尼加"
+      ],
+      "East Timor": [
+        "東帝汶"
       ],
       "Ecuador": [
         "厄瓜多"
@@ -1461,6 +1501,9 @@
       "Ireland": [
         "愛爾蘭"
       ],
+      "Islamic Republic of Iran": [
+        "伊朗伊斯蘭共和國"
+      ],
       "Isle of Man": [
         "曼島"
       ],
@@ -1491,6 +1534,12 @@
       "Kiribati": [
         "吉里巴斯"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "北韓(朝鮮民主主義人民共和國)"
+      ],
+      "Korea (Republic of)": [
+        "南韓(大韓民國)"
+      ],
       "Kosovo": [
         "科索沃"
       ],
@@ -1499,6 +1548,9 @@
       ],
       "Kyrgyzstan": [
         "吉爾吉斯"
+      ],
+      "Lao People's Democratic Republic": [
+        "寮國"
       ],
       "Laos": [
         "寮國"
@@ -1517,6 +1569,9 @@
       ],
       "Libya": [
         "利比亞"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "阿拉伯利比亞民眾國"
       ],
       "Liechtenstein": [
         "列支敦斯登"
@@ -1785,6 +1840,9 @@
       "Svalbard and Jan Mayen": [
         "挪威屬斯瓦巴及尖棉"
       ],
+      "Swaziland": [
+        "史瓦帝尼"
+      ],
       "Sweden": [
         "瑞典"
       ],
@@ -1804,6 +1862,9 @@
         "塔吉克"
       ],
       "Tanzania": [
+        "坦尚尼亞"
+      ],
+      "Tanzania, United Republic of": [
         "坦尚尼亞"
       ],
       "Thailand": [
@@ -1931,6 +1992,11 @@
         "匯入時偵測到多行有錯誤，請覆閱您的 CSV 檔案。"
       ]
     },
+    "cta": {
+      "Learn more": [
+        "了解更多"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -2009,6 +2075,35 @@
         "'www' 子網域通常不會用於電郵。您確定要使用此子網域數值嗎？"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } 已加入"
+      ],
+      "${ name } deletion failed": [
+        "${ name } 刪除失敗"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name }移至允許清單失敗"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name }移至攔截清單失敗"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } 無法移至垃圾郵件黑名單"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } 已移動至允許清單"
+      ],
+      "${ name } moved to block list": [
+        "${ name }移至攔截清單"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } 已移至垃圾郵件黑名單"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } 刪除成功"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "臭蟲或品質問題"
@@ -2064,6 +2159,35 @@
       ],
       "Priority support": [
         "優先支援"
+      ]
+    },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } 已加入"
+      ],
+      "${ name } deletion failed": [
+        "${ name } 刪除失敗"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } 無法移至允許清單"
+      ],
+      "${ name } failed to move to block list": [
+        "${ name }移至攔截清單失敗"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } 無法移至垃圾郵件黑名單"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } 已移至允許清單"
+      ],
+      "${ name } moved to block list": [
+        "${ name }移至攔截清單"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } 已移至垃圾郵件黑名單"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } 刪除成功"
       ]
     },
     "Email verification": {
@@ -2182,6 +2306,12 @@
       ],
       "Invalid code": [
         "代碼無效"
+      ],
+      "Invalid domain": [
+        "網域無效"
+      ],
+      "Invalid email address": [
+        "電郵位址無效"
       ],
       "Invalid expiration date": [
         "到期日無效"
@@ -2488,9 +2618,6 @@
       "Manage user accounts": [
         "管理使用者帳號"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6 個月期間僅允許 10 個已接受邀請。"
-      ],
       "Owners of a plan with members cannot join another group plan.": [
         "有成員的方案的擁有者無法加入其他群組方案。"
       ],
@@ -2509,8 +2636,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "指派給您的儲存空間：${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "訂購授權費用由 Visionary 或家庭方案的主要管理員支付。"
+      "The subscription will be billed to the primary admin of this plan.": [
+        "此訂購授權將向主要管理員收取方案費用。"
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Visionary 與家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 位址。${ addressSettingsLink }"
@@ -2527,14 +2654,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "你已達到每六個月十個邀請函限制。"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "您已到達 6 個月內 10 個已接受邀請的上限。待您可再邀請額外使用者時，自可按下此按鈕。"
-      ],
-      "You have successfully joined the Family plan": [
-        "您已成功加入家庭方案"
+      "You have successfully joined the family group": [
+        "您已成功加入家庭群組"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "您需要先架構自訂網域，才能加入多位使用者。"
@@ -2815,6 +2936,35 @@
         "TB"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "允許:"
+      ],
+      "Block:": [
+        "攔截:"
+      ],
+      "Search list": [
+        "搜索列表"
+      ],
+      "Spam:": [
+        "垃圾郵件:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "透過以下控制您組織成員的收件匣:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "此清單套用至所有組織成員帳號。成員可以設定獨立的過濾清單，但無法覆您封鎖的電子郵件位址或網域。"
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "避免重要訊息於垃圾郵件中出現而錯過"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "避免垃圾郵件淹滿信箱"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "停止網路釣魚及可疑電子郵進入您組織的電子郵件系統"
+      ]
+    },
     "Font face option": {
       "System default": [
         "系統預設值"
@@ -2885,6 +3035,11 @@
       ],
       "Services": [
         "服務"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } 位成員"
       ]
     },
     "Header": {
@@ -2976,6 +3131,12 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "請在您的網域名稱註冊機構的控制台中新增此記錄到您的網域中"
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
     },
     "Human verification method": {
@@ -3050,6 +3211,9 @@
       "${ vaultLink } created": [
         "${ vaultLink } 已創建"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink }已刪除"
+      ],
       "${ vaultLink } shared with email": [
         "用電子郵件分享${ vaultLink }"
       ],
@@ -3061,6 +3225,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "使用安全核心功能需要 ${ vpnPlus } 。"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 位成員)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /月)"
@@ -3208,6 +3375,12 @@
       ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "外洩自訂電子郵件已創建"
+      ],
+      "Breach Custom Email Validated": [
+        "外洩自訂電子郵件已驗證"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
@@ -3650,6 +3823,9 @@
       "Keys created": [
         "金鑰已更新"
       ],
+      "Labels:": [
+        "標籤："
+      ],
       "Lean more about gateways": [
         "取得更多關於閘道的資訊"
       ],
@@ -3787,6 +3963,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - 自訂電子郵件已確認"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - 自訂電子郵件已創建"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - 自訂電子郵件已刪除"
       ],
       "password": [
         "密碼"
@@ -3971,6 +4156,12 @@
       "Share Updated": [
         "共享已更新"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "共享${ vaultLink }刪除"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "共享${ vaultLink }已更新"
+      ],
       "Shared vault deleted": [
         "共享保管庫已刪除"
       ],
@@ -4096,9 +4287,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "若您仍要進行這步驟，則現有付費的授權會被取消，您過去累積的老客戶專屬福利，也無法續存。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將允許使用 PayPal 來支付您的 ${ BRAND_NAME } 訂購授權。我們將在瀏覽器的新分頁中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用它然後再繼續。"
@@ -4545,6 +4733,11 @@
         "僅能檢視"
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "禮物"
@@ -4625,11 +4818,17 @@
       "Address": [
         "電郵位址"
       ],
+      "Address type": [
+        "位址類型"
+      ],
       "Addresses": [
         "電郵位址"
       ],
       "Administrators": [
         "管理員"
+      ],
+      "Allow": [
+        "允許"
       ],
       "Allow recovery by email": [
         "允許透過電郵復原"
@@ -4663,6 +4862,9 @@
       ],
       "Billing cycle": [
         "繳款單週期"
+      ],
+      "Block": [
+        "攔截"
       ],
       "Block malware only": [
         "僅阻擋惡意軟體"
@@ -4772,6 +4974,9 @@
       "Do you have any suggestions for our team?": [
         "您對我們的團隊有什麼建議嗎？"
       ],
+      "Domain": [
+        "網域"
+      ],
       "Domain name": [
         "網域名稱"
       ],
@@ -4801,6 +5006,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "Group name": [
+        "群組名稱"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -4972,6 +5180,9 @@
       ],
       "Single sign-on URL": [
         "單一登入網址"
+      ],
+      "Spam": [
+        "垃圾郵件"
       ],
       "Start date": [
         "開始日期"
@@ -5394,6 +5605,20 @@
         "瑞士法郎"
       ]
     },
+    "Navigation": {
+      "All": [
+        "全部"
+      ],
+      "Allow": [
+        "允許"
+      ],
+      "Block": [
+        "攔截"
+      ],
+      "Spam": [
+        "垃圾郵件"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "頂尖 VPN 速度"
@@ -5414,6 +5639,15 @@
       ],
       "From ${ price }": [
         "${ price }起"
+      ],
+      "Get started for $1": [
+        "以 $1 美元開始"
+      ],
+      "Get started for 1 €": [
+        "以 €1 歐元開始"
+      ],
+      "Get started for CHF 1": [
+        "以 CHF1 瑞士法郎開始"
       ],
       "Upgrade": [
         "升級"
@@ -5565,6 +5799,9 @@
       ],
       "Collaborate and share large files": [
         "合作和共享大型檔案"
+      ],
+      "Collaborative document editor": [
+        "合作文件編輯者"
       ],
       "Contact groups": [
         "聯絡人群組"
@@ -5878,6 +6115,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "所有 ${ BRAND_NAME } 應用程式與其進階功能"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "全部${ BRAND_NAME }企業應用程式和頂級功能以保護整個企業。"
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
       ],
@@ -5916,6 +6156,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
+      ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "透過${ BRAND_NAME }為兩人保護您的數位生活。"
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "為具有特定安全需求的大型組織量身訂作的解決方案"
@@ -5987,9 +6230,6 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
-      ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }：透過端對端加密保護您的電子郵件。包含對自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名等的支援。"
@@ -6328,6 +6568,11 @@
         "整個組織"
       ]
     },
+    "option": {
+      "Members": [
+        "成員"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } 點擊加入更多使用者；或是移除一些使用者帳號以釋出可用空間。"
@@ -6649,6 +6894,9 @@
       "Confirm": [
         "確認"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "例如 https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -6666,6 +6914,9 @@
       ],
       "End date": [
         "結束日期"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "意見回饋"
@@ -6703,11 +6954,19 @@
       "Select state": [
         "請選州"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
+      ],
       "Start date": [
         "開始日期"
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "placeholder": {
+      "Members": [
+        "成員"
       ]
     },
     "plan customizer, ips": {
@@ -7609,6 +7868,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName }提供無限隱私及更多儲存給至多兩人。"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 方案"
       ],
@@ -7617,6 +7879,9 @@
       ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "2 users": [
+        "2 位使用者"
       ],
       "20 email addresses per user": [
         "每位使用者20組電郵位址"
@@ -7632,6 +7897,9 @@
       ],
       "All you need for your business": [
         "這是您公司只須要的"
+      ],
+      "Any custom email domains will be disabled": [
+        "任何自訂電子郵件網域名稱將被停用"
       ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
@@ -7654,8 +7922,14 @@
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "桌面應用程式和電子郵件用戶端支援(透過 IMAP)"
+      ],
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
+      ],
+      "Email productivity features": [
+        "電子郵件生產力功能"
       ],
       "Extra storage and users": [
         "更多儲存和使用者"
@@ -7668,6 +7942,9 @@
       ],
       "I still want to cancel": [
         "我還想取消"
+      ],
+      "Invited members will be removed from your organization": [
+        "邀請的成員將被從組織移除"
       ],
       "Keep ${ config.planName }": [
         "保留 ${ config.planName }"
@@ -7686,6 +7963,9 @@
       ],
       "Online privacy, for your whole family": [
         "您整個家庭的線上隱私"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "免費方案支援組織，添加使用者，和自訂電子郵件網域名稱。代表:"
       ],
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
@@ -7722,6 +8002,15 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "Unlimited privacy for two": [
+        "無限隱私提供給兩位"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "使用者將無法管理行事曆"
+      ],
+      "Users won’t be able to send emails": [
+        "使用者將無法傳送電子郵件"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -8031,17 +8320,29 @@
       "Country": [
         "國家"
       ],
+      "Edit": [
+        "編輯"
+      ],
       "Email": [
         "電子郵件"
       ],
       "Email address": [
         "電子郵件位址"
       ],
+      "Email address or domain": [
+        "電子郵件位址或網域"
+      ],
       "Email addresses": [
         "電郵位址"
       ],
       "Invitation email": [
         "邀請電子郵件"
+      ],
+      "List": [
+        "列表"
+      ],
+      "Marked as": [
+        "標示為"
       ],
       "Name": [
         "名稱"
@@ -8125,8 +8426,20 @@
       "Add PayPal payment method": [
         "加入 PayPal 繳款方式"
       ],
+      "Add pm.me subdomain": [
+        "添加pm.me子網域"
+      ],
       "Add servers": [
         "新增伺服器"
+      ],
+      "Add to allow list": [
+        "新增至允許清單"
+      ],
+      "Add to block list": [
+        "加入至攔截清單"
+      ],
+      "Add to spam list": [
+        "新增到垃圾郵件清單"
       ],
       "Add user accounts": [
         "添加使用者帳號"
@@ -8191,6 +8504,9 @@
       "Change role": [
         "變更角色"
       ],
+      "Change second password": [
+        "變更第二密碼"
+      ],
       "Close": [
         "關閉"
       ],
@@ -8208,6 +8524,9 @@
       ],
       "Confirm phone number": [
         "確認手機號碼"
+      ],
+      "Connection events": [
+        "連線行程"
       ],
       "Contact us": [
         "聯絡我們"
@@ -8269,6 +8588,9 @@
       "Delete account": [
         "刪除帳號"
       ],
+      "Delete group?": [
+        "刪除群組?"
+      ],
       "Delete organization logo?": [
         "刪除組織標誌？"
       ],
@@ -8283,6 +8605,9 @@
       ],
       "Disable two-factor authentication": [
         "停用兩步驟驗證"
+      ],
+      "Discard changes?": [
+        "捨棄變更？"
       ],
       "Domain names": [
         "網域名稱"
@@ -8449,6 +8774,9 @@
       "Organization name": [
         "組織名稱"
       ],
+      "Origin": [
+        "起源"
+      ],
       "Password": [
         "密碼"
       ],
@@ -8487,6 +8815,9 @@
       ],
       "Recovery": [
         "復原"
+      ],
+      "Remove all members?": [
+        "移除所有成員?"
       ],
       "Remove domain": [
         "移除網域"
@@ -8596,6 +8927,9 @@
       "Switch to two-password mode": [
         "切換為雙重密碼模式"
       ],
+      "There are no groups": [
+        "沒有小組"
+      ],
       "Time": [
         "時間"
       ],
@@ -8613,6 +8947,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Unlock your data": [
+        "解鎖您的資料"
       ],
       "Upgrade your network protection with dedicated servers": [
         "透過專用伺服器提升您的網路保護"
@@ -8997,6 +9334,9 @@
       ],
       "A safer way to hold your Bitcoin": [
         "更安全的方法持有Bitcoin"
+      ],
+      "Bitcoin via email": [
+        "Bitcoin透過電子郵件"
       ]
     },
     "wallet_signup_2024:app-switcher": {

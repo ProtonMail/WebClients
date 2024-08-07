@@ -3,7 +3,6 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
 import {
     AppLink,
     CancellationReminderSection,
@@ -31,11 +30,11 @@ import {
     useUserSettings,
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
+import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -92,10 +91,6 @@ const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
 const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
 
-const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
-    return sectionConfigs.map((section) => getSectionPath(prefix, section));
-};
-
 const getDefaultPassRedirect = (
     user: UserModel,
     accountRoutes: ReturnType<typeof getRoutes>['account'],
@@ -139,7 +134,6 @@ const MainContainer = () => {
 
     const showThemeSelection = useShowThemeSelection();
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
-    const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
@@ -176,7 +170,6 @@ const MainContainer = () => {
         isBreachesAccountDashboardEnabled,
         isUserGroupsFeatureEnabled,
         showThemeSelection,
-        isNewCancellationFlowExtended,
         assistantKillSwitch,
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,

@@ -7,6 +7,7 @@ export interface Photo {
     Exif: string | null;
     Hash: string | null;
     ContentHash: string | null;
+    RelatedPhotosLinkIDs?: string[] | null;
 }
 
 export interface DuplicatePhotosHash {

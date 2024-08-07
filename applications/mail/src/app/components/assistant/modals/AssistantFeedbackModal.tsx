@@ -65,7 +65,7 @@ const AssistantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, s
             Category: selectedOption,
             Sentiment: 'Negative',
             Environment: isServerGeneration ? 'Remote' : 'Local',
-            ModelID: isServerGeneration ? undefined : assistantConfig?.model_list[0]?.model_id ?? '',
+            ModelID: isServerGeneration ? undefined : (assistantConfig?.model_list[0]?.model_id ?? ''),
             Body: body,
             Component: 'Mail',
             Prompt: undefined,
@@ -91,7 +91,7 @@ const AssistantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, s
                 Category: 'positive',
                 Sentiment: 'Positive',
                 Environment: isServerGeneration ? 'Remote' : 'Local',
-                ModelID: isServerGeneration ? undefined : assistantConfig?.model_list[0]?.model_id ?? '',
+                ModelID: isServerGeneration ? undefined : (assistantConfig?.model_list[0]?.model_id ?? ''),
                 Body: '',
                 Component: 'Mail',
             })
@@ -136,16 +136,18 @@ const AssistantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, s
 
     return (
         <>
-            <Button
-                icon
-                shape="ghost"
-                style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
-                disabled={disableButtons}
-                loading={loading}
-                onClick={() => withLoading(handlePositiveSubmit())}
-            >
-                <Icon name="thumb-up" size={6} alt={c('Action').t`Report a good content`} />
-            </Button>
+            <Tooltip title={c('Action').t`I like this response`}>
+                <Button
+                    icon
+                    shape="ghost"
+                    style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
+                    disabled={disableButtons}
+                    loading={loading}
+                    onClick={() => withLoading(handlePositiveSubmit())}
+                >
+                    <Icon name="thumb-up" size={6} alt={c('Action').t`I like this response`} />
+                </Button>
+            </Tooltip>
             <Tooltip title={c('Action').t`Report an issue`}>
                 <Button
                     icon

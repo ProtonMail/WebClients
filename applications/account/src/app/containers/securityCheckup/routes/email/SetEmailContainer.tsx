@@ -38,6 +38,7 @@ const SetEmailContainer = () => {
 
             <RecoveryEmail
                 autoFocus
+                persistPasswordScope
                 email={userSettings.Email}
                 hasReset={!!userSettings.Email.Reset}
                 hasNotify={!!userSettings.Email.Notify}

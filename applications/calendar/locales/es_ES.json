@@ -187,7 +187,7 @@
         "Copiar dirección"
       ],
       "Copy email address": [
-        "Copiar la dirección de correo"
+        "Copiar la dirección de correo electrónico"
       ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
@@ -482,10 +482,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -549,7 +549,7 @@
         "Borrar los beneficios"
       ],
       "Remove gift code": [
-        "Eliminar código de regalo"
+        "Borrar el código de regalo"
       ],
       "Remove this notification": [
         "Borrar esta notificación"
@@ -601,6 +601,9 @@
       ],
       "Select all": [
         "Seleccionar todo"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecciona el ciclo de facturación de ${ billingText }"
       ],
       "Select calendar view": [
         "Seleccionar vista de calendario"
@@ -735,7 +738,7 @@
         "Utilizar código de autenticación"
       ],
       "Use for sending": [
-        "Utilizar para el envío"
+        "Usar para el envío"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -1144,7 +1147,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar utilizando ${ MAIL_APP_NAME }."
+        "Continuar usando ${ MAIL_APP_NAME }."
       ],
       "Continue using ${ planTitle }": [
         "Continuar usando ${ planTitle }"
@@ -1922,6 +1925,9 @@
       "Kyrgyzstan": [
         "Kirguistán"
       ],
+      "Lao People's Democratic Republic": [
+        "Laos, República Democrática Popular"
+      ],
       "Laos": [
         "Laos"
       ],
@@ -2488,7 +2494,7 @@
         "Establece un método de recuperación para evitar perder el acceso a tu cuenta."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Esto puede tomar unos minutos. Mientras tanto puedes continuar utilizando el calendario."
+        "Esto puede tomar unos minutos. Mientras tanto puedes continuar usando el calendario."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
@@ -2641,7 +2647,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
-        "${ eventTitle } ha sido cancelado."
+        "Se ha cancelado ${ eventTitle }."
       ],
       "All events in this series were updated.": [
         "Se han actualizado todos los eventos en esta serie."
@@ -2774,7 +2780,7 @@
         "Ya existe un grupo con este nombre."
       ],
       "A problem occurred, please try again.": [
-        "Se ha producido un error, inténtalo de nuevo."
+        "Se ha producido un error. Inténtalo de nuevo."
       ],
       "Account does not exist": [
         "La cuenta no existe."
@@ -2786,7 +2792,7 @@
         "El alias no es válido."
       ],
       "Alias is required": [
-        "Se requiere un alias"
+        "Se requiere un alias."
       ],
       "Alias options could not be resolved": [
         "No se han podido resolver las opciones de alias."
@@ -2920,7 +2926,7 @@
         "Servidor IMAP requerido"
       ],
       "Incorrect username": [
-        "Nombre de usuario incorrecto"
+        "El nombre de usuario no es correcto."
       ],
       "Intended recipient does not support calendar sharing": [
         "El destinatario previsto no admite compartir calendarios."
@@ -2987,7 +2993,7 @@
         "Falta la firma."
       ],
       "Name is required": [
-        "El nombre es obligatorio"
+        "El nombre es obligatorio."
       ],
       "Name required": [
         "Nombre requerido"
@@ -3390,9 +3396,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -3608,8 +3611,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espacio de almacenamiento que te ha asignado: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "El pago de la suscripción lo acomete el administrador principal del plan Visionary o familiar."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "La suscripción se facturará al administrador principal de este plan."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Los planes Visionary y familiar no admiten cuentas externas en este momento. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
@@ -3626,8 +3629,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Has recibido una invitación para unirte a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Te has unido correctamente al plan familiar"
+      "You have successfully joined the family group": [
+        "Te has unido al grupo familiar."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
@@ -3636,7 +3639,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -3812,7 +3815,7 @@
         "Buscar"
       ],
       "Security Center": [
-        "Centro de Seguridad"
+        "Centro de seguridad"
       ]
     },
     "Hint": {
@@ -3876,7 +3879,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como simples eventos sin detalles del organizador ni de los participantes. Para recibir actualizaciones del evento y ver a los participantes, pide a los organizadores que te inviten utilizando tu dirección de correo electrónico de ${ BRAND_NAME }."
+        "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como simples eventos sin detalles del organizador ni de los participantes. Para recibir actualizaciones del evento y ver a los participantes, pide a los organizadores que te inviten usando tu dirección de correo electrónico de ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Este archivo contiene una invitación a un evento:",
@@ -4349,7 +4352,7 @@
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Contacto eliminado del grupo ${ contactGroupName }."
+        "Contacto no asignado al grupo ${ contactGroupName }"
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -4440,7 +4443,7 @@
         "Cada código puede utilizarse solo una vez."
       ],
       "Edit email address": [
-        "Editar dirección de correo electrónico"
+        "Editar la dirección de correo electrónico"
       ],
       "email": [
         "correo electrónico"
@@ -4691,7 +4694,7 @@
         "El formato PGP/Inline solo es compatible con el formato de texto plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "El formato PGP/MIME automáticamente envía el mensaje utilizando el modo de composición actual."
+        "El formato PGP/MIME automáticamente envía el mensaje usando el modo de composición actual."
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
@@ -4788,7 +4791,7 @@
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
+        "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
         "La suscripción se renueva automáticamente cada ${ cycle } meses."
@@ -5099,7 +5102,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -6218,6 +6221,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Pasar a ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Comenzar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Comenzar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Comenzar por 1 CHF"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
       ]
@@ -6371,6 +6383,9 @@
       "Collaborate and share large files": [
         "Colabora y comparte archivos grandes"
       ],
+      "Collaborative document editor": [
+        "Editor de documentos colaborativo"
+      ],
       "Contact groups": [
         "Grupos de contactos"
       ],
@@ -6475,7 +6490,7 @@
         "Organizar elementos en cajas fuertes múltiples"
       ],
       "Passkeys supported": [
-        "Las claves de acceso están admitidas."
+        "Se admiten las claves de acceso."
       ],
       "Password health": [
         "Estado de la contraseña"
@@ -6720,6 +6735,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Asegura tu vida digital con ${ BRAND_NAME } para dos personas."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -6764,8 +6782,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protege tu calendario con cifrado de extremo a extremo. Incluye soporte para calendarios personalizados, calendarios compartidos y mucho más."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protege tus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protege tus correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y mucho más."
@@ -6823,7 +6841,7 @@
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Comparte calendarios con familiares, amigos y compañeros fácilmente"
+        "Comparte calendarios con familiares, amigos y compañeros fácilmente."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Te garantiza que recibes todos los correos que se envían a tu dominio aunque la dirección no exista, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico."
@@ -7054,10 +7072,10 @@
         "Error al añadir el calendario de días festivos"
       ],
       "Calendar added": [
-        "El calendario ha sido añadido."
+        "Se ha añadido el calendario."
       ],
       "Calendar updated": [
-        "Calendario actualizado"
+        "Se ha actualizado el calendario."
       ]
     },
     "Notification in share calendar modal": {
@@ -7391,8 +7409,20 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Please select billing country": [
+        "Selecciona el país de facturación"
+      ],
+      "Please select billing state": [
+        "Selecciona el estado de facturación"
+      ],
+      "Please select your billing country first.": [
+        "Selecciona primero tu país de facturación"
+      ],
       "Please select your billing state first.": [
         "Selecciona primero tu estado de facturación"
+      ],
+      "Select billing country to pay": [
+        "Selecciona el país de facturación para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -7404,7 +7434,7 @@
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ price } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "Timeout exceeded": [
-        "Se ha superado el tiempo de espera."
+        "Se ha agotado el tiempo de espera."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
@@ -7812,7 +7842,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "La contraseña ha sido guardada."
+        "Se ha guardado la contraseña."
       ]
     },
     "session_recovery:available:title": {
@@ -8373,10 +8403,10 @@
         "Suscripciones"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Has comprado tu plan utilizando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+        "Has comprado tu plan usando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
     "Subscription price": {
@@ -8446,6 +8476,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } te da privacidad ilimitada y más almacenamiento para hasta dos personas."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } ofrece a tu equipo lo que necesita para ser más productivo y organizado en su trabajo con acceso a todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium."
       ],
@@ -8481,6 +8514,9 @@
       ],
       "10 email addresses": [
         "10 direcciones de correo electrónico"
+      ],
+      "2 users": [
+        "2 usuarios"
       ],
       "20 email addresses per user": [
         "20 direcciones de correo electrónico por usuario"
@@ -8634,6 +8670,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited privacy for two": [
+        "Privacidad ilimitada para dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Los usuarios no podrán gestionar sus calendarios."
@@ -8955,7 +8994,7 @@
         "por mes"
       ],
       "per user per month": [
-        "/usuario al mes"
+        "por usuario por mes"
       ]
     },
     "summer2023: Tooltip": {
@@ -9071,7 +9110,7 @@
     },
     "Timezone search placeholder": {
       "Search time zones": [
-        "Buscar en las zonas horarias"
+        "Buscar zonas horarias"
       ]
     },
     "Title": {
@@ -9351,7 +9390,7 @@
         "Minicalendario"
       ],
       "Need more aliases?": [
-        "¿Necesitas más aliases?"
+        "¿Necesitas más alias?"
       ],
       "Network error": [
         "Error de red"
@@ -9438,7 +9477,7 @@
         "Guardar cambios"
       ],
       "Security center": [
-        "Centro de seguridad."
+        "Centro de seguridad"
       ],
       "Select a day in the month": [
         "Selecciona un día del mes."

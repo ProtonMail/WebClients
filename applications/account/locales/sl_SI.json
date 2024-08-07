@@ -67,11 +67,14 @@
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktiviraj"
+      "Accept": [
+        "Sprejmi"
       ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -123,6 +126,9 @@
       ],
       "Add PayPal": [
         "Dodaj PayPal"
+      ],
+      "Add phone number": [
+        "Dodaj telefonsko številko"
       ],
       "Add public holidays": [
         "Dodaj praznike"
@@ -324,6 +330,9 @@
       ],
       "Customize plan": [
         "Prilagajanje naročnine"
+      ],
+      "Decline": [
+        "Zavrni"
       ],
       "Decrease": [
         "Zmanjšaj"
@@ -703,10 +712,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
       "Open": [
@@ -769,11 +778,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Reload": [
         "Osveži"
@@ -1546,6 +1555,14 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1567,14 +1584,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4997,20 +5006,11 @@
       "Invited by: ${ inviteEmail }": [
         "Vabilo od: ${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "Zapusti družinski paket."
-      ],
-      "Leave visionary plan": [
-        "Zapusti vizionarski paket."
-      ],
       "Manage addresses.": [
         "Upravljanje naslovov"
       ],
       "Manage user accounts": [
         "Uredi račune"
-      ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "V obdobju 6 mesecev je dovoljeno sprejeti le 10 povabil."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Lastniki paketa s člani se ne morejo pridružiti drugemu skupinskemu paketu."
@@ -5029,9 +5029,6 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Prostor, ki vam je dodeljen: ${ assignedStorage }"
-      ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "Naročnina se zaračuna glavnemu skrbniku Visionary ali družinskega paketa."
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Za lažji prehod vam dajemo 30-dnevni preizkus brezplačnega ${ BRAND_NAME } Unlimited*."
@@ -5053,15 +5050,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Povabljeni ste, da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Dosegli ste omejitev 10 sprejetih povabil v 6 mesecih."
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Dosegli ste omejitev 10 sprejetih vabil v 6 mesecih. Gumb bo omogočen, ko boste lahko povabili dodatne uporabnike."
-      ],
-      "You have successfully joined the Family plan": [
-        "Uspešno ste se pridružili družinskemu paketu."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred dodajanjem več uporabnikov morate nastaviti domeno po meri."
@@ -5175,9 +5163,6 @@
       ],
       "Family name": [
         "Družinsko ime"
-      ],
-      "Family plan": [
-        "Družinski paket"
       ],
       "Invite a user": [
         "Povabite uporabnika"
@@ -6864,11 +6849,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenski strežniki"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -8079,9 +8064,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ta uporabnik trenutno skrbi za plačila za vašo organizacijo. Z odstranitvijo tega člana boste vi postali odgovorni za plačila za vašo organizacijo."
       ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
-      ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "To bo izbrisalo vse prejšnje različice vaših datotek, starejše od ${ rententionLabel }."
       ],
@@ -8738,9 +8720,6 @@
       ],
       "Your recovery phrase": [
         "Vaša obnovitvena fraza"
-      ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Obnovitvena fraza je niz 12 besed v določenem vrstnem redu."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vašo naročnino upravlja Mozilla. Prosimo, obrnite se na podporo Mozilla."
@@ -11709,9 +11688,6 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zaščitite vaša dnevna opravila s celovitim šifriranjem. Vključuje podporo za koledarje po meri, delitev koledarjev in drugo."
-      ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zavarujte vaša sporočila s celovitim šifriranjem. Vključuje podporo za e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email in drugo."
@@ -15428,10 +15404,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

@@ -43,6 +43,9 @@
       "Add address": [
         "Añadir dirección"
       ],
+      "Add address or domain": [
+        "Añadir un dominio o una dirección"
+      ],
       "Add credit / debit card": [
         "Añadir tarjeta de crédito / débito"
       ],
@@ -58,6 +61,9 @@
       "Add user": [
         "Añadir usuario"
       ],
+      "Allow": [
+        "Permitir"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -72,6 +78,15 @@
       ],
       "Back": [
         "Atrás"
+      ],
+      "Block": [
+        "Bloquear"
+      ],
+      "Can send to this group": [
+        "Puedes enviar a este grupo."
+      ],
+      "Can't send to this group": [
+        "No puedes enviar a este grupo."
       ],
       "Cancel": [
         "Cancelar"
@@ -166,6 +181,9 @@
       "Delete Gateway": [
         "Eliminar la puerta de enlace"
       ],
+      "Delete group": [
+        "Eliminar el grupo"
+      ],
       "Delete logo": [
         "Eliminar el logo"
       ],
@@ -186,6 +204,9 @@
       ],
       "Discard": [
         "Descartar"
+      ],
+      "Discard changes": [
+        "Descartar los cambios"
       ],
       "Done": [
         "Hecho"
@@ -216,6 +237,9 @@
       ],
       "Edit Gateway": [
         "Editar la puerta de enlace"
+      ],
+      "Edit group": [
+        "Editar el grupo"
       ],
       "Edit invoice details": [
         "Editar los datos de la factura"
@@ -295,6 +319,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go to label": [
+        "Ir a la etiqueta"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -343,8 +370,14 @@
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
+      "More options": [
+        "Más opciones"
+      ],
       "Need help?": [
         "¿Necesitas ayuda?"
+      ],
+      "New group": [
+        "Nuevo grupo"
       ],
       "Next": [
         "Siguiente"
@@ -352,10 +385,10 @@
       "Next month": [
         "Mes siguiente"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
       "Open": [
@@ -409,6 +442,12 @@
       "Remove": [
         "Borrar"
       ],
+      "Remove all members": [
+        "Borrar todos los miembros"
+      ],
+      "Remove all members from group": [
+        "Borrar todos los miembros del grupo"
+      ],
       "Remove bonuses": [
         "Borrar los beneficios"
       ],
@@ -416,7 +455,7 @@
         "Borrar el dominio"
       ],
       "Remove gift code": [
-        "Eliminar código de regalo"
+        "Borrar el código de regalo"
       ],
       "Remove single sign-on": [
         "Eliminar el inicio de sesión único"
@@ -438,6 +477,9 @@
       ],
       "Resend code": [
         "Reenviar código"
+      ],
+      "Resend invitation": [
+        "Reenviar la invitación"
       ],
       "Reset credentials": [
         "Restablecer credenciales"
@@ -466,6 +508,9 @@
       "Revoke ${ name }": [
         "Revocar ${ name }"
       ],
+      "Revoke invitation": [
+        "Revocar la invitación"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -492,6 +537,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecciona el ciclo de facturación de ${ billingText }"
       ],
       "Select country": [
         "Seleccionar un país"
@@ -558,6 +606,9 @@
       ],
       "Signing in": [
         "Iniciando sesión"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start live chat": [
         "Iniciar un chat en directo"
@@ -672,6 +723,11 @@
       ],
       "Zoom out": [
         "Alejar"
+      ]
+    },
+    "action": {
+      "Add pm.me domain": [
+        "Añadir el dominio pm.me"
       ]
     },
     "Action subscription": {
@@ -1066,7 +1122,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar utilizando ${ MAIL_APP_NAME }."
+        "Continuar usando ${ MAIL_APP_NAME }."
       ],
       "Continue using ${ planTitle }": [
         "Continuar usando ${ planTitle }"
@@ -1570,6 +1626,9 @@
       "Kyrgyzstan": [
         "Kirguistán"
       ],
+      "Lao People's Democratic Republic": [
+        "Laos, República Democrática Popular"
+      ],
       "Laos": [
         "Laos"
       ],
@@ -1986,7 +2045,7 @@
     },
     "Create user accounts empty state": {
       "No search results found": [
-        "No hay resultados de búsqueda"
+        "No se han encontrado resultados de búsqueda."
       ]
     },
     "Credits": {
@@ -2008,6 +2067,11 @@
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Se han detectado errores en varias filas durante la importación. Verifica tu archivo CSV."
+      ]
+    },
+    "cta": {
+      "Learn more": [
+        "Más información"
       ]
     },
     "Cycle": {
@@ -2097,6 +2161,35 @@
         "Los subdominios 'www' no se utilizan para correo electrónico. ¿Estás seguro que quieres utilizar este valor de dominio?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } añadido"
+      ],
+      "${ name } deletion failed": [
+        "Error al eliminar ${ name }"
+      ],
+      "${ name } failed to move to allow list": [
+        "Error al mover ${ name } a tu lista de direcciones permitidas."
+      ],
+      "${ name } failed to move to block list": [
+        "Error al mover ${ name } a tu lista de direcciones bloqueadas"
+      ],
+      "${ name } failed to move to spam list": [
+        "Error al mover ${ name } a la lista Spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } ha sido movido a tu lista de direcciones permitidas."
+      ],
+      "${ name } moved to block list": [
+        "${ name } ha sido movido a tu lista de direcciones bloqueadas."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } movido a la lista Spam"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
@@ -2154,9 +2247,43 @@
         "Soporte prioritario"
       ]
     },
+    "Email spam notification": {
+      "${ name } added": [
+        "${ name } añadido"
+      ],
+      "${ name } deletion failed": [
+        "Error al eliminar ${ name }"
+      ],
+      "${ name } failed to move to allow list": [
+        "Error al mover ${ name } a tu lista de direcciones permitidas."
+      ],
+      "${ name } failed to move to block list": [
+        "Error al mover ${ name } a tu lista de direcciones bloqueadas"
+      ],
+      "${ name } failed to move to spam list": [
+        "Error al mover ${ name } a la lista Spam"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } ha sido movido a tu lista de direcciones permitidas."
+      ],
+      "${ name } moved to block list": [
+        "${ name } ha sido movido a tu lista de direcciones bloqueadas."
+      ],
+      "${ name } moved to spam list": [
+        "${ name } movido a la lista Spam"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "El correo electrónico de verificación fue enviado a ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sin nombre"
       ]
     },
     "eof2023: Deal details": {
@@ -2260,7 +2387,7 @@
         "La segunda contraseña no es correcta. Inténtalo de nuevo."
       ],
       "Incorrect username": [
-        "Nombre de usuario incorrecto"
+        "El nombre de usuario no es correcto."
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
@@ -2270,6 +2397,12 @@
       ],
       "Invalid code": [
         "Código no válido"
+      ],
+      "Invalid domain": [
+        "Dominio no válido"
+      ],
+      "Invalid email address": [
+        "Dirección de correo electrónico no válida"
       ],
       "Invalid expiration date": [
         "Fecha de expiración no válida"
@@ -2445,7 +2578,7 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
-        "Se ha producido un error al leer el archivo \"${ formattedFilename }\". Formato de archivo incorrecto."
+        "Se ha producido un error al leer el archivo «${ formattedFilename }». El formato de archivo es incorrecto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo debe ser de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2576,8 +2709,9 @@
       "Manage user accounts": [
         "Gestionar cuentas de usuario"
       ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "Solo se permiten 10 invitaciones aceptadas en un plazo de 6 meses."
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Solo se permite ${ n } invitación aceptada en un periodo de 6 meses.",
+        "Solo se permiten ${ n } invitaciones aceptadas en un periodo de 6 meses."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Los dueños de un plan con miembros no pueden unirse al plan de otro grupo."
@@ -2597,8 +2731,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espacio de almacenamiento que te ha asignado: ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "El pago de la suscripción lo acomete el administrador principal del plan Visionary o familiar."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "La suscripción se facturará al administrador principal de este plan."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Los planes Visionary y familiar no admiten cuentas externas en este momento. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
@@ -2615,14 +2749,16 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Has recibido una invitación para unirte a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Has alcanzado el límite de 10 invitaciones aceptadas en 6 meses."
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Has alcanzado el límite de ${ n } invitación aceptada en 6 meses.",
+        "Ha alcanzado el límite de ${ n } invitaciones aceptadas en 6 meses."
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Has alcanzado el límite de 10 invitaciones aceptadas en 6 meses. El botón pasará a estar disponible tan pronto puedas invitar a más usuarios."
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Has alcanzado el límite de ${ n } invitación aceptada en 6 meses. Se podrá hacer clic en el botón cuando puedas invitar a otros usuarios.",
+        "Has alcanzado el límite de ${ n } invitaciones aceptadas en 6 meses. Se podrá hacer clic en el botón cuando puedas invitar a otros usuarios."
       ],
-      "You have successfully joined the Family plan": [
-        "Te has unido correctamente al plan familiar"
+      "You have successfully joined the family group": [
+        "Te has unido al grupo familiar."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Debes configurar un dominio personalizado antes de crear múltiples usuarios."
@@ -2637,7 +2773,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -2817,7 +2953,7 @@
         "Te permite registrar claves de seguridad integradas (como Windows Hello, Face ID, Touch ID o TPM internos)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿Estás seguro de querer eliminar la llave de seguridad ${ name }?"
+        "¿Está seguro de que quieres eliminar la clave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
@@ -2915,6 +3051,35 @@
         "Terabytes"
       ]
     },
+    "FilterSettings": {
+      "Allow:": [
+        "Direcciones permitidas:"
+      ],
+      "Block:": [
+        "Direcciones bloqueadas:"
+      ],
+      "Search list": [
+        "Buscar en lista"
+      ],
+      "Spam:": [
+        "Spam:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Controla lo que llega a las bandejas de entrada de los miembros de tu organización creando estas listas:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Estas listas se aplican a todas las cuentas de tu organización. Los miembros de tu organización pueden crear sus propios filtros, pero no podrán sustituir las direcciones o dominios que hayas bloqueado."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Para mantener los mensajes importantes fuera de la carpeta de spam."
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Para mantener los mensajes no deseados o spam fuera de las bandejas de entrada."
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "Para evitar que lleguen a la bandeja de entrada de tu organización mensajes de phishing o sospechosos."
+      ]
+    },
     "Font face option": {
       "System default": [
         "Valor por defecto"
@@ -2985,6 +3150,17 @@
       ],
       "Services": [
         "Servicios"
+      ]
+    },
+    "Group address title": {
+      "Group address": [
+        "Dirección del grupo"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } miembro",
+        "${ memberCount } miembros"
       ]
     },
     "Header": {
@@ -3079,6 +3255,13 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Añade este registro en el panel de control de tu dominio en tu registrador de nombre de dominio."
+      ],
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Se ha encontrado ${ items.length } sugerencia. Utiliza el teclado para navegar.",
+        "Se han encontrado ${ items.length } sugerencias. Utiliza el teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
       ]
     },
     "Human verification method": {
@@ -3178,6 +3361,10 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } para la función Secure Core."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/mes)"
       ],
@@ -3196,6 +3383,9 @@
       ],
       "30-day money-back guarantee.": [
         "Garantía de reembolso de 30 días."
+      ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "Un ${ protonSubdomain } es alojado por ${ BRAND_NAME }, que fácilmente te permite configurar un subdominio. ${ learnMoreLink }"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
@@ -3282,6 +3472,12 @@
       "Amount due": [
         "Importe a pagar"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "¿Estás seguro de que quieres cancelar la edición del grupo?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "¿Estás seguro de que quieres eliminar este grupo? La dirección del grupo dejará de funcionar."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "¿Estás seguro de que quieres desactivar la autenticación de dos factores?"
       ],
@@ -3293,6 +3489,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "¿Estás seguro de que quieres borrar los privilegios administrativos de este usuario?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "¿Estás seguro de que quieres borrar a todos los miembros de este grupo?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "¿Estás seguro de que quieres borrar el dominio ${ boldDomain }?"
@@ -3338,6 +3537,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "Se ha creado el correo electrónico personalizado en caso de vulneración."
       ],
       "Breach Custom Email Deleted": [
         "Se ha eliminado el correo electrónico personalizado en caso de vulneración."
@@ -3496,7 +3698,7 @@
         "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes agregar ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
       ],
       "Edit email address": [
-        "Editar dirección de correo electrónico"
+        "Editar la dirección de correo electrónico"
       ],
       "email": [
         "correo electrónico"
@@ -3718,13 +3920,13 @@
         "La invitación ha sido creada para la organización."
       ],
       "Invite rejected": [
-        "La invitación ha sido rechazada."
+        "Se ha rechazado la invitación."
       ],
       "Invite Rejected": [
-        "La invitación ha sido rechazada."
+        "Se ha rechazado la invitación."
       ],
       "Item Autofilled": [
-        "El elemento ha sido rellenado automaticamente."
+        "Se ha rellenado el elemento automaticamente."
       ],
       "Item autofilled in ${ vaultLink }": [
         "Se ha rellenado automáticamente el elemento en ${ vaultLink }."
@@ -3733,7 +3935,7 @@
         "El elemento en la caja fuerte ha sido rellenado automaticamente."
       ],
       "Item Changed Flags": [
-        "Los marcadores del elemento han sido cambiados."
+        "Se han cambiado los marcadores del elemento."
       ],
       "Item Created": [
         "Se ha creado el elemento."
@@ -3772,13 +3974,13 @@
         "El elemento en la caja fuerte ha sido restaurado."
       ],
       "Item Read": [
-        "El elemento ha sido leído."
+        "Se ha leído el elemento."
       ],
       "Item read in ${ vaultLink }": [
         "Elemento leído en ${ vaultLink }"
       ],
       "Item read in vault": [
-        "El elemento en la caja fuerte ha sido leído."
+        "Se ha leído el elemento en la caja fuerte."
       ],
       "Item Trashed": [
         "El elemento está en la papelera."
@@ -3801,6 +4003,9 @@
       "Keys created": [
         "Se han creado las claves."
       ],
+      "Labels:": [
+        "Etiquetas:"
+      ],
       "Lean more about gateways": [
         "Más información sobre puertas de enlace"
       ],
@@ -3812,6 +4017,9 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Comienza por pulsar el botón Grupo nuevo abajo."
       ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
@@ -3938,6 +4146,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existen otros administradores en tu organización. Eres responsable de comunicarles la nueva contraseña."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - se ha confirmado el correo personalizado."
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - se ha creado el correo personalizado."
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - se ha eliminado correo personalizado."
       ],
       "password": [
         "contraseña"
@@ -4119,7 +4336,7 @@
         "Sesión itinerante"
       ],
       "Session Started": [
-        "Sesión iniciada"
+        "Se ha iniciado la sesión."
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
@@ -4186,7 +4403,7 @@
         "Almacenamiento utilizado por este usuario"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
+        "Envía un depósito usando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
         "La suscripción se renueva automáticamente cada ${ cycle } meses."
@@ -4280,9 +4497,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no borra el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Esto cancelará la suscripción de pago y perderás todas las ventajas de fidelidad acumuladas."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que se utilice PayPal para pagar tu suscripción a ${ BRAND_NAME }. Te redirigiremos a PayPal en una nueva pestaña del navegador. Si utilizas algún bloqueador de ventanas emergentes, desactívalo para continuar."
@@ -4563,6 +4777,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }."
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Con grupos de usuarios puedes fácilmente enviar correos, compartir datos o cambiar los ajustes de grupos específicos todo a la vez."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrás crear nuevos usuarios, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
@@ -4582,8 +4799,8 @@
         "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Actualmente estás utilizando ${ ipCount } de ${ ipAddresses } servidor dedicado disponible.",
-        "Actualmente estás utilizando ${ ipCount } de ${ ipAddresses } servidores dedicados disponibles."
+        "Actualmente estás usando ${ ipCount } de ${ ipAddresses } servidor dedicado disponible.",
+        "Actualmente estás usando ${ ipCount } de ${ ipAddresses } servidores dedicados disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "Actualmente estás usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible y ${ usedAI } de ${ maxAI } licencia de asistente de escritura disponible.",
@@ -4594,8 +4811,8 @@
         "Actualmente estás usando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles y ninguna de ${ maxAI } licencias de asistente de escritura disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Actualmente estás utilizando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible.",
-        "Actualmente estás utilizando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles."
+        "Actualmente estás usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible.",
+        "Actualmente estás usando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Has iniciado sesión en la cuenta ${ memberAddress }."
@@ -4627,7 +4844,7 @@
         "Solo puedes tener una instancia de chat abierta a la vez. Cierra las conversaciones anteriores antes de empezar una nueva."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Puedes utilizar las siguientes credenciales para conectarte a un servidor ${ VPN_APP_NAME } utilizando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
+        "Puedes utilizar las siguientes credenciales para conectarte a un servidor ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Tienes ${ availableCount } servidor dedicado disponible.",
@@ -4682,7 +4899,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } password": [
         "Tu contraseña de ${ BRAND_NAME }"
@@ -4721,7 +4938,7 @@
         "Tu organización utiliza el inicio de sesión único (SSO). Presiona iniciar sesión para continuar con tu proveedor de SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo utilizando la clave de la organización. Se puede utilizar esta huella digital para verificar que todos los administradores en tu cuenta tienen la misma clave."
+        "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo usando la clave de la organización. Se puede utilizar esta huella digital para verificar que todos los administradores en tu cuenta tienen la misma clave."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Los detalles de pago están protegidos con cifrado TLS y por las leyes de privacidad suizas."
@@ -4780,6 +4997,14 @@
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "Pendiente"
+      ],
+      "Rejected": [
+        "Rechazada"
       ]
     },
     "Invoice state display as badge": {
@@ -4865,11 +5090,17 @@
       "Address": [
         "Dirección"
       ],
+      "Address type": [
+        "Tipo de dirección"
+      ],
       "Addresses": [
         "Direcciones"
       ],
       "Administrators": [
         "Administradores"
+      ],
+      "Allow": [
+        "Direcciones permitidas"
       ],
       "Allow recovery by email": [
         "Permitir recuperación por correo electrónico"
@@ -4903,6 +5134,9 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Block": [
+        "Direcciones bloqueadas"
       ],
       "Block malware only": [
         "Bloquear solo malware"
@@ -5015,11 +5249,14 @@
       "Do you have any suggestions for our team?": [
         "¿Tienes alguna sugerencia para nuestro equipo?"
       ],
+      "Domain": [
+        "Dominio"
+      ],
       "Domain name": [
         "Nombre del dominio"
       ],
       "e.g. example.com": [
-        "por ejemplo ejemplo.com"
+        "por ejemplo ejemplo.es"
       ],
       "Email": [
         "Correo electrónico"
@@ -5044,6 +5281,15 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Group address": [
+        "Dirección del grupo"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "Group name": [
+        "Nombre del grupo"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -5186,6 +5432,9 @@
       "Public certificate (X.509)": [
         "Certificado público (X.509)"
       ],
+      "Purpose": [
+        "Propósito"
+      ],
       "Recovery email address": [
         "Correo electrónico de recuperación"
       ],
@@ -5218,6 +5467,9 @@
       ],
       "Single sign-on URL": [
         "URL de inicio de sesión único"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start date": [
         "Fecha de inicio"
@@ -5266,6 +5518,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "¿Cuál es tu motivo principal por el que cancelas o bajas de plan?"
+      ],
+      "Who can send to this group address?": [
+        "¿Quién puede enviar a la dirección del grupo?"
       ],
       "Why would you like to cancel?": [
         "¿Por qué quieres cancelar?"
@@ -5650,6 +5905,20 @@
         "Franco suizo"
       ]
     },
+    "Navigation": {
+      "All": [
+        "Todos"
+      ],
+      "Allow": [
+        "Direcciones permitidas"
+      ],
+      "Block": [
+        "Direcciones bloqueadas"
+      ],
+      "Spam": [
+        "Spam"
+      ]
+    },
     "new_plans": {
       "Highest VPN speed": [
         "Velocidad VPN máxima"
@@ -5670,6 +5939,15 @@
       ],
       "From ${ price }": [
         "Desde ${ price }"
+      ],
+      "Get started for $1": [
+        "Comenzar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Comenzar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Comenzar por 1 CHF"
       ],
       "Upgrade": [
         "Mejorar"
@@ -5836,6 +6114,9 @@
       "Collaborate and share large files": [
         "Colabora y comparte archivos grandes"
       ],
+      "Collaborative document editor": [
+        "Editor de documentos colaborativo"
+      ],
       "Contact groups": [
         "Grupos de contactos"
       ],
@@ -5949,7 +6230,7 @@
         "Organizar elementos en cajas fuertes múltiples"
       ],
       "Passkeys supported": [
-        "Las claves de acceso están admitidas."
+        "Se admiten las claves de acceso."
       ],
       "Password health": [
         "Estado de la contraseña"
@@ -6207,6 +6488,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Asegura tu vida digital con ${ BRAND_NAME } para dos personas."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -6278,8 +6562,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protege tu calendario con cifrado de extremo a extremo. Incluye soporte para calendarios personalizados, calendarios compartidos y mucho más."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protege tus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protege tus correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y mucho más."
@@ -6337,7 +6621,7 @@
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Comparte calendarios con familiares, amigos y compañeros fácilmente"
+        "Comparte calendarios con familiares, amigos y compañeros fácilmente."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Te garantiza que recibes todos los correos que se envían a tu dominio aunque la dirección no exista, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico."
@@ -6651,6 +6935,20 @@
       ],
       "The whole organization": [
         "Toda la organización"
+      ]
+    },
+    "option": {
+      "Everyone, incl. outside": [
+        "Todo el mundo, incluidos los usuarios externos"
+      ],
+      "Members": [
+        "Miembros"
+      ],
+      "Nobody by default": [
+        "Nadie por defecto"
+      ],
+      "Organization members": [
+        "Miembros de la organización"
       ]
     },
     "Organization capacity error": {
@@ -6972,14 +7270,29 @@
       "Payment Processing": [
         "Procesando el pago"
       ],
+      "Please add a payment method in the dashboard to continue.": [
+        "Añade un método de pago en el panel de control para continuar."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
+      ],
+      "Please select billing country": [
+        "Selecciona el país de facturación"
+      ],
+      "Please select billing state": [
+        "Selecciona el estado de facturación"
+      ],
+      "Please select your billing country first.": [
+        "Selecciona primero tu país de facturación"
       ],
       "Please select your billing state first.": [
         "Selecciona primero tu estado de facturación"
       ],
       "Processing payment": [
         "Procesando el pago"
+      ],
+      "Select billing country to pay": [
+        "Selecciona el país de facturación para pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -6990,8 +7303,11 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ price } cada mes. Puedes cancelarla en cualquier momento."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Se ha detectado la transacción. Los créditos se añadirán a la cuenta una vez que se confirme la transacción por completo."
+      ],
       "Timeout exceeded": [
-        "Se ha superado el tiempo de espera."
+        "Se ha agotado el tiempo de espera."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
@@ -7053,6 +7369,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "domain.com": [
+        "dominio.es"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "por ejemplo https://ejemplo.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -7070,6 +7389,9 @@
       ],
       "End date": [
         "Fecha de fin"
+      ],
+      "example@domain.com": [
+        "ejemplo@dominio.es"
       ],
       "Feedback": [
         "Comentarios"
@@ -7115,6 +7437,20 @@
       ],
       "yourdomain.com": [
         "tudominio.com"
+      ]
+    },
+    "placeholder": {
+      "Add a group name": [
+        "Añadir un nombre al grupo"
+      ],
+      "e.g. distribution list for marketing team": [
+        "p. ej., lista de distribución para equipo de marketing"
+      ],
+      "e.g. marketing": [
+        "p. ej. marketing"
+      ],
+      "Members": [
+        "Miembros"
       ]
     },
     "plan customizer, ips": {
@@ -7249,19 +7585,31 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "No se ha completado el inicio de sesión."
+      ],
       "Something went wrong": [
         "Se ha producido un error."
-      ],
-      "Something went wrong. Please try again.": [
-        "Se ha producido un error. Inténtalo de nuevo."
       ]
     },
     "saml: Info": {
+      "An error occurred while testing your SSO configuration.": [
+        "Se ha producido un error al probar la configuración SSO."
+      ],
       "Details": [
         "Detalles"
       ],
       "Test in progress...": [
         "Prueba en progreso..."
+      ],
+      "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
+        "Para probar esta configuración SAML, ingresa las credenciales de inicio de sesión de algún usuario asociado con **${ domainName }**"
+      ],
+      "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
+        "Hemos recibido una respuesta SAML válida de tu proveedor de identidad. SSO está activado para tu organización."
+      ],
+      "We’re testing your configuration to ensure SSO is working.": [
+        "Estamos probando la configuración para asegurarnos que el SSO funciona."
       ]
     },
     "saml: Label": {
@@ -7510,7 +7858,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "La contraseña ha sido guardada."
+        "Se ha guardado la contraseña."
       ]
     },
     "session_recovery:available:title": {
@@ -8134,10 +8482,10 @@
         "Suscripciones"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "Has comprado tu plan utilizando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
+        "Has comprado tu plan usando una app de Android. Para realizar cambios en tu plan o actualizar tus datos de pago necesitarás conectarte a Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Has comprado tu plan utilizando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
+        "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
     "Subscription price": {
@@ -8207,6 +8555,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } te ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesitas para tener control de tus datos y seguridad."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } te da privacidad ilimitada y más almacenamiento para hasta dos personas."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } ofrece a tu equipo lo que necesita para ser más productivo y organizado en su trabajo con acceso a todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium."
       ],
@@ -8242,6 +8593,9 @@
       ],
       "10 email addresses": [
         "10 direcciones de correo electrónico"
+      ],
+      "2 users": [
+        "2 usuarios"
       ],
       "20 email addresses per user": [
         "20 direcciones de correo electrónico por usuario"
@@ -8422,6 +8776,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited privacy for two": [
+        "Privacidad ilimitada para dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Los usuarios no podrán gestionar sus calendarios."
@@ -8714,7 +9071,7 @@
         "Creando archivo de configuración para ${ serverName }"
       ],
       "Preference updated": [
-        "Preferencia actualizada"
+        "Se ha actualizado la preferencia."
       ]
     },
     "Suffix": {
@@ -8730,7 +9087,7 @@
         "por mes"
       ],
       "per user per month": [
-        "/usuario al mes"
+        "por usuario por mes"
       ]
     },
     "summer2023: Tooltip": {
@@ -8773,17 +9130,29 @@
       "Country": [
         "País"
       ],
+      "Edit": [
+        "Editar"
+      ],
       "Email": [
         "Correo electrónico"
       ],
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email address or domain": [
+        "Dirección de correo o nombre de dominio"
+      ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
       "Invitation email": [
         "Correo de invitación"
+      ],
+      "List": [
+        "Lista"
+      ],
+      "Marked as": [
+        "Marcado como"
       ],
       "Name": [
         "Nombre"
@@ -8867,8 +9236,20 @@
       "Add PayPal payment method": [
         "Añadir PayPal como método de pago"
       ],
+      "Add pm.me subdomain": [
+        "Añadir un subdominio pm.me"
+      ],
       "Add servers": [
         "Añadir servidores"
+      ],
+      "Add to allow list": [
+        "Añadir a la lista de direcciones permitidas"
+      ],
+      "Add to block list": [
+        "Añadir a la lista de direcciones bloqueadas"
+      ],
+      "Add to spam list": [
+        "Añadir a la lista de spam"
       ],
       "Add user accounts": [
         "Añadir cuentas de usuario"
@@ -9018,6 +9399,9 @@
       "Delete account": [
         "Eliminar cuenta"
       ],
+      "Delete group?": [
+        "¿Eliminar el grupo?"
+      ],
       "Delete organization logo?": [
         "¿Eliminar el logo de la organización?"
       ],
@@ -9033,6 +9417,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
+      ],
+      "Discard changes?": [
+        "¿Descartar los cambios?"
       ],
       "Domain names": [
         "Nombres de dominio"
@@ -9059,7 +9446,7 @@
         "Editar dominio"
       ],
       "Edit email address": [
-        "Editar dirección de correo electrónico"
+        "Editar la dirección de correo electrónico"
       ],
       "Edit Gateway ${ currentName }": [
         "Editar la puerta de enlace ${ currentName }"
@@ -9242,6 +9629,9 @@
       "Recovery": [
         "Recuperación"
       ],
+      "Remove all members?": [
+        "¿Borrar todos los miembros?"
+      ],
       "Remove domain": [
         "Borrar el dominio"
       ],
@@ -9350,6 +9740,9 @@
       ],
       "Switch to two-password mode": [
         "Cambiar al modo de doble contraseña"
+      ],
+      "There are no groups": [
+        "No hay grupos."
       ],
       "Time": [
         "Hora"
@@ -9534,7 +9927,7 @@
         "Correo electrónico verificado"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Hemos detectado un problema con tu configuración DNS. Asegúrate de que tus registros coincidan con las instrucciones de abajo. Si el problema persiste, tendremos que desactivar el DKIM."
+        "Se ha detectado un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, se tendrá que cerrar la sesión de DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
@@ -9546,6 +9939,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ],
+      "User rejected invitation": [
+        "El usuario ha rechazado la invitación."
+      ],
+      "Waiting user to accept the invitation": [
+        "Esperando que el usuario acepte la invitación"
       ]
     },
     "Tooltip for news": {

@@ -43,14 +43,22 @@
         "您將停止郵件轉寄。"
       ]
     },
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
-        "啟用"
+      "Accept": [
+        "接受"
       ],
       "Activate": [
+        "啟用"
+      ],
+      "activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -103,6 +111,9 @@
       ],
       "Add PayPal": [
         "加入 PayPal"
+      ],
+      "Add phone number": [
+        "加入手機號碼"
       ],
       "Add public holidays": [
         "新增公眾假期"
@@ -304,6 +315,9 @@
       ],
       "Customize plan": [
         "客製化您的專屬方案"
+      ],
+      "Decline": [
+        "婉拒"
       ],
       "Decrease": [
         "減"
@@ -683,11 +697,11 @@
       "No, thanks": [
         "不用了，謝謝"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open": [
         "開啟"
@@ -749,10 +763,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1368,8 +1382,14 @@
       ]
     },
     "Assistant option": {
-      "Run locally": [
-        "本地化執行"
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "資料會保留在您的裝置上，但需要一次性下載和相容的硬體"
+      ],
+      "Fast and secure. No logs are kept.": [
+        "塊和安全。無紀錄被保存。"
+      ],
+      "Run on device": [
+        "在裝置上執行"
       ],
       "Run on servers": [
         "於伺服器執行"
@@ -1378,6 +1398,9 @@
     "Assistant toggle": {
       "New": [
         "新版"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
       ],
       "Trial expires on ${ formattedDate }": [
         "適用將於${ formattedDate }過期"
@@ -1508,6 +1531,14 @@
         "選擇你的年終優惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1523,14 +1554,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -2433,6 +2456,9 @@
       "Congo": [
         "剛果"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "剛果(民主共和國)"
+      ],
       "Congo, Democratic Republic of the": [
         "剛果民主共和國"
       ],
@@ -2471,6 +2497,9 @@
       ],
       "Dominican Republic": [
         "多明尼加"
+      ],
+      "East Timor": [
+        "東帝汶"
       ],
       "Ecuador": [
         "厄瓜多"
@@ -2613,6 +2642,9 @@
       "Ireland": [
         "愛爾蘭"
       ],
+      "Islamic Republic of Iran": [
+        "伊朗伊斯蘭共和國"
+      ],
       "Isle of Man": [
         "曼島"
       ],
@@ -2643,6 +2675,12 @@
       "Kiribati": [
         "吉里巴斯"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "北韓(朝鮮民主主義人民共和國)"
+      ],
+      "Korea (Republic of)": [
+        "南韓(大韓民國)"
+      ],
       "Kosovo": [
         "科索沃"
       ],
@@ -2651,6 +2689,9 @@
       ],
       "Kyrgyzstan": [
         "吉爾吉斯"
+      ],
+      "Lao People's Democratic Republic": [
+        "寮國"
       ],
       "Laos": [
         "寮國"
@@ -2669,6 +2710,9 @@
       ],
       "Libya": [
         "利比亞"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "阿拉伯利比亞民眾國"
       ],
       "Liechtenstein": [
         "列支敦斯登"
@@ -2937,6 +2981,9 @@
       "Svalbard and Jan Mayen": [
         "挪威屬斯瓦巴及尖棉"
       ],
+      "Swaziland": [
+        "史瓦帝尼"
+      ],
       "Sweden": [
         "瑞典"
       ],
@@ -2956,6 +3003,9 @@
         "塔吉克"
       ],
       "Tanzania": [
+        "坦尚尼亞"
+      ],
+      "Tanzania, United Republic of": [
         "坦尚尼亞"
       ],
       "Thailand": [
@@ -4871,20 +4921,11 @@
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
       ],
-      "Leave family plan": [
-        "離開家庭方案"
-      ],
-      "Leave visionary plan": [
-        "離開永續未來方案"
-      ],
       "Manage addresses.": [
         "管理電子郵件位址。"
       ],
       "Manage user accounts": [
         "管理使用者帳號"
-      ],
-      "Only 10 accepted invitations are allowed in a 6-month period.": [
-        "6 個月期間僅允許 10 個已接受邀請。"
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "有成員的方案的擁有者無法加入其他群組方案。"
@@ -4904,8 +4945,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "指派給您的儲存空間：${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "訂購授權費用由 Visionary 或家庭方案的主要管理員支付。"
+      "The subscription will be billed to the primary admin of this plan.": [
+        "此訂購授權將向主要管理員收取方案費用。"
       ],
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "我們專案提供 30 天滿意體驗 ${ BRAND_NAME } Unlimited*，讓您有足夠時間快速上手。"
@@ -4928,14 +4969,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
-      "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "你已達到每六個月十個邀請函限制。"
-      ],
-      "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "您已到達 6 個月內 10 個已接受邀請的上限。待您可再邀請額外使用者時，自可按下此按鈕。"
-      ],
-      "You have successfully joined the Family plan": [
-        "您已成功加入家庭方案"
+      "You have successfully joined the family group": [
+        "您已成功加入家庭群組"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "您需要先架構自訂網域，才能加入多位使用者。"
@@ -5046,9 +5081,6 @@
       ],
       "Family name": [
         "家庭名稱"
-      ],
-      "Family plan": [
-        "家庭方案"
       ],
       "Invite a user": [
         "邀請使用者"
@@ -6129,6 +6161,9 @@
       "${ vaultLink } created": [
         "${ vaultLink } 已創建"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink }已刪除"
+      ],
       "${ vaultLink } shared with email": [
         "用電子郵件分享${ vaultLink }"
       ],
@@ -6447,6 +6482,12 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升您組織機構的品牌形象，為您的使用者創造更一致的線上體驗。"
       ],
+      "Breach Custom Email Created": [
+        "外洩自訂電子郵件已創建"
+      ],
+      "Breach Custom Email Validated": [
+        "外洩自訂電子郵件已驗證"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
@@ -6582,10 +6623,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6599,6 +6640,9 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
+      ],
+      "Discount": [
+        "折扣"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
@@ -7356,6 +7400,15 @@
       "Paid for a monthly plan": [
         "以每月方案付費"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - 自訂電子郵件已確認"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - 自訂電子郵件已創建"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - 自訂電子郵件已刪除"
+      ],
       "password": [
         "密碼"
       ],
@@ -7635,6 +7688,12 @@
       "Share Updated": [
         "共享已更新"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "共享${ vaultLink }刪除"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "共享${ vaultLink }已更新"
+      ],
       "Shared vault deleted": [
         "共享保管庫已刪除"
       ],
@@ -7862,9 +7921,6 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
-      ],
-      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "若您仍要進行這步驟，則現有付費的授權會被取消，您過去累積的老客戶專屬福利，也無法續存。"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "這將會為您的檔案刪除${ rententionLabel }之前所有先前的版本。"
@@ -8490,9 +8546,6 @@
       "Your recovery phrase": [
         "您的復原短語"
       ],
-      "Your recovery phrase is a series of 12 words in a specific order.": [
-        "您的復原短語是按特定順序排列的一系列 12 個單字。"
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
       ],
@@ -8563,6 +8616,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "僅能檢視"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
       ]
     },
     "Input label": {
@@ -10704,6 +10762,15 @@
       "From ${ price }": [
         "${ price }起"
       ],
+      "Get started for $1": [
+        "以 $1 美元開始"
+      ],
+      "Get started for 1 €": [
+        "以 €1 歐元開始"
+      ],
+      "Get started for CHF 1": [
+        "以 CHF1 瑞士法郎開始"
+      ],
       "Upgrade": [
         "升級"
       ],
@@ -10834,6 +10901,9 @@
       ],
       "Collaborate and share large files": [
         "合作和共享大型檔案"
+      ],
+      "Collaborative document editor": [
+        "合作文件編輯者"
       ],
       "Contact groups": [
         "聯絡人群組"
@@ -11165,6 +11235,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "所有 ${ BRAND_NAME } 應用程式與其進階功能"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "全部${ BRAND_NAME }企業應用程式和頂級功能以保護整個企業。"
+      ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
       ],
@@ -11206,6 +11279,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
+      ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "透過${ BRAND_NAME }為兩人保護您的數位生活。"
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "設定自動回覆，可告知聯絡人您不在辦公室或暫時無法親自回應。"
@@ -11310,9 +11386,6 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
-      ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }：透過端對端加密保護您的電子郵件。包含對自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名等的支援。"
@@ -12614,6 +12687,9 @@
       "Select state": [
         "請選州"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
+      ],
       "Start date": [
         "開始日期"
       ],
@@ -13811,6 +13887,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName }提供無限隱私及更多儲存給至多兩人。"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 方案"
       ],
@@ -13819,6 +13898,9 @@
       ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "2 users": [
+        "2 位使用者"
       ],
       "20 email addresses per user": [
         "每位使用者20組電郵位址"
@@ -13834,6 +13916,9 @@
       ],
       "All you need for your business": [
         "這是您公司只須要的"
+      ],
+      "Any custom email domains will be disabled": [
+        "任何自訂電子郵件網域名稱將被停用"
       ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
@@ -13856,8 +13941,14 @@
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "桌面應用程式和電子郵件用戶端支援(透過 IMAP)"
+      ],
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
+      ],
+      "Email productivity features": [
+        "電子郵件生產力功能"
       ],
       "Extra storage and users": [
         "更多儲存和使用者"
@@ -13870,6 +13961,9 @@
       ],
       "I still want to cancel": [
         "我還想取消"
+      ],
+      "Invited members will be removed from your organization": [
+        "邀請的成員將被從組織移除"
       ],
       "Keep ${ config.planName }": [
         "保留 ${ config.planName }"
@@ -13888,6 +13982,9 @@
       ],
       "Online privacy, for your whole family": [
         "您整個家庭的線上隱私"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "免費方案支援組織，添加使用者，和自訂電子郵件網域名稱。代表:"
       ],
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
@@ -13924,6 +14021,15 @@
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
+      ],
+      "Unlimited privacy for two": [
+        "無限隱私提供給兩位"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "使用者將無法管理行事曆"
+      ],
+      "Users won’t be able to send emails": [
+        "使用者將無法傳送電子郵件"
       ],
       "Version history": [
         "版本歷史紀錄"
@@ -14512,6 +14618,9 @@
       "Add PayPal payment method": [
         "加入 PayPal 繳款方式"
       ],
+      "Add pm.me subdomain": [
+        "添加pm.me子網域"
+      ],
       "Add servers": [
         "新增伺服器"
       ],
@@ -14532,6 +14641,9 @@
       ],
       "Add users": [
         "新增使用者"
+      ],
+      "Address": [
+        "地址"
       ],
       "Address and key verification": [
         "位址與金鑰驗證"
@@ -14599,10 +14711,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -14619,6 +14731,9 @@
       ],
       "Change role": [
         "變更角色"
+      ],
+      "Change second password": [
+        "變更第二密碼"
       ],
       "Choose an account": [
         "選擇一個帳號"
@@ -14652,6 +14767,9 @@
       ],
       "Connect ${ name }": [
         "連接 ${ name }"
+      ],
+      "Connection events": [
+        "連線行程"
       ],
       "Contact us": [
         "聯絡我們"
@@ -14763,6 +14881,9 @@
       ],
       "Delete folder?": [
         "刪除資料夾?"
+      ],
+      "Delete group?": [
+        "刪除群組?"
       ],
       "Delete key permanently?": [
         "永久刪除金鑰?"
@@ -14992,6 +15113,12 @@
       "Gift code": [
         "禮品代碼"
       ],
+      "Group": [
+        "群組"
+      ],
+      "Group membership": [
+        "組織成員"
+      ],
       "Groups": [
         "群組"
       ],
@@ -15109,6 +15236,9 @@
       "Night theme": [
         "夜間布景主題"
       ],
+      "No account information was found in any data breaches": [
+        "無帳號於此資料外洩被發現"
+      ],
       "No recovery method": [
         "沒有復原方法"
       ],
@@ -15132,6 +15262,9 @@
       ],
       "Organization name": [
         "組織名稱"
+      ],
+      "Origin": [
+        "起源"
       ],
       "Other calendars": [
         "其他行事曆"
@@ -15204,6 +15337,9 @@
       ],
       "Refer a friend": [
         "引薦親友"
+      ],
+      "Remove all members?": [
+        "移除所有成員?"
       ],
       "Remove calendar": [
         "移除行事曆"
@@ -15397,6 +15533,9 @@
       "Theme": [
         "布景主題"
       ],
+      "There are no groups": [
+        "沒有小組"
+      ],
       "This field cannot be empty": [
         "此欄無法空白"
       ],
@@ -15426,6 +15565,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Unlock your data": [
+        "解鎖您的資料"
       ],
       "Upgrade plan": [
         "升級方案"
@@ -16104,6 +16246,9 @@
       "A safer way to hold your Bitcoin": [
         "更安全的方法持有Bitcoin"
       ],
+      "Bitcoin via email": [
+        "Bitcoin透過電子郵件"
+      ],
       "Get started": [
         "開始使用"
       ],
@@ -16127,6 +16272,9 @@
       ]
     },
     "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "授權"
+      ],
       "Downloads": [
         "下載"
       ]

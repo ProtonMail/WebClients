@@ -93,6 +93,9 @@
       "Add to group": [
         "Ajouter au groupe"
       ],
+      "Adds it below your existing message": [
+        "L'ajouter au-dessous de votre message existant"
+      ],
       "Align center": [
         "Centrer"
       ],
@@ -225,9 +228,6 @@
       ],
       "Close & discard": [
         "Fermer & abandonner"
-      ],
-      "Close AI refine suggestion": [
-        "Fermer les suggestions d'optimisation de l'IA"
       ],
       "Close composer": [
         "Fermer l'éditeur"
@@ -567,6 +567,9 @@
       "hide-my-email aliases": [
         "les alias « hide-my-email »"
       ],
+      "I like this response": [
+        "Cette réponse me convient."
+      ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
       ],
@@ -729,6 +732,12 @@
       ],
       "Minimize composer": [
         "Réduire l'éditeur"
+      ],
+      "Modify": [
+        "Modifier"
+      ],
+      "Modify selection": [
+        "Modifier la sélection"
       ],
       "Monday": [
         "Lundi"
@@ -958,6 +967,12 @@
       "Remove this label": [
         "Retirer ce label"
       ],
+      "Replace": [
+        "Remplacer"
+      ],
+      "Replaces the selected text in your message": [
+        "Remplacer le texte sélectionné dans votre message."
+      ],
       "Reply": [
         "Répondre"
       ],
@@ -966,9 +981,6 @@
       ],
       "Reply securely": [
         "Répondre en toute sécurité"
-      ],
-      "Report a good content": [
-        "Signaler un contenu de qualité"
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -1192,8 +1204,8 @@
       "Stay": [
         "Rester"
       ],
-      "Stop downloading the writing assistant": [
-        "Arrêter le téléchargement de l'assistant d'écriture"
+      "Stop downloading assistant": [
+        "Arrêter le téléchargement de l'assistant"
       ],
       "Stop generating result": [
         "Arrêter la génération du résultat"
@@ -1236,6 +1248,10 @@
       ],
       "Trust": [
         "Faire confiance"
+      ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1321,9 +1337,6 @@
       "Use recovery code": [
         "Utiliser un code de récupération"
       ],
-      "Use this": [
-        "Utiliser ceci"
-      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilisez votre souris pour redimensionner la vue. Si vous utilisez votre clavier, vous pouvez utiliser les touches fléchées gauche et droite pour redimensionner."
       ],
@@ -1368,6 +1381,9 @@
       ],
       "Why not?": [
         "Pourquoi ?"
+      ],
+      "Write for me": [
+        "Écrire pour moi"
       ],
       "Yes": [
         "Oui"
@@ -1538,20 +1554,14 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "Les données restent sur votre appareil mais ceci nécessite un seul téléchargement et un matériel compatible."
+      ],
       "Fast and secure. No logs are kept.": [
         "Rapide et sécurisé. Aucune trace de vos activités n'est conservée."
       ],
-      "Faster, broader device compatibility": [
-        "Compatibilité avec plus d'appareils et plus rapide"
-      ],
-      "Prompts stay on your device but requires a one-time download and compatible hardware": [
-        "Les prompts restent sur votre appareil mais ceci nécessite un téléchargement unique et un matériel compatible."
-      ],
-      "Requires a one-time download and compatible hardware.": [
-        "Nécessite un seul téléchargement et le matériel compatible."
-      ],
-      "Run locally": [
-        "Exécuter sur cet appareil"
+      "Run on device": [
+        "Exécuter sur l'appareil"
       ],
       "Run on servers": [
         "Exécuter sur les serveurs"
@@ -3863,7 +3873,7 @@
       "Draft could not be saved. Try again.": [
         "Le brouillon n'a pas pu être enregistré. Nous vous invitons à réessayer."
       ],
-      "Due to an error, text generation couldn’t be canceled": [
+      "Due to an error, text generation couldn't be canceled": [
         "En raison d'une erreur, la génération du texte n'a pas pu être annulée."
       ],
       "Email address disabled": [
@@ -4478,9 +4488,6 @@
       ]
     },
     "Error message": {
-      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
-        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
-      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -4510,6 +4517,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Lorsque le mot de passe supplémentaire est activé, la gestion des alias ne peut se faire que dans ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
@@ -4652,8 +4662,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Espace de stockage qui vous est attribué : ${ assignedStorage }"
       ],
-      "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "L'abonnement est facturé à l'administrateur principal de l'abonnement Visionary ou de l'abonnement familial."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "L'abonnement sera facturé à l'administrateur principal."
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
         "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
@@ -4670,8 +4680,8 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Vous avez une invitation à rejoindre ${ bannerOrganization }. ${ viewInviteButton }"
       ],
-      "You have successfully joined the Family plan": [
-        "Vous avez rejoint l'abonnement Family."
+      "You have successfully joined the family group": [
+        "Vous avez rejoint le groupe famillal."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
@@ -5631,9 +5641,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
-      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
-        "${ PrivacyLink } à propos de l'assistant d'écriture de ${ BRAND_NAME }"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
         "${ providerFoldersNumLocalized } dossiers trouvés"
@@ -6049,14 +6056,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Téléchargement de l'assistant… ${ progressDisplay } Go"
+      ],
       "Downloading paused": [
         "Le téléchargement a été mis en pause."
       ],
       "Downloading paused: ${ progressDisplay } GB": [
         "Téléchargement suspendu : ${ progressDisplay } Go"
-      ],
-      "Downloading the writing assistant: ${ progressDisplay } GB": [
-        "Téléchargement de l'assistant d'écriture : ${ progressDisplay } Go"
       ],
       "Draft": [
         "Brouillon"
@@ -6199,7 +6206,7 @@
         "Générer du texte"
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
-        "Donnez un label coloré à vos factures entrantes comme \"${ suggestedLabelName }\". Quand elles sont payées, remplacez le label par \"${ suggestedPaidLabelName }\"."
+        "Attribuez un label avec code couleur aux factures entrantes, comme « ${ suggestedLabelName } ». Une fois qu'elles sont payées, changez le label en « ${ suggestedPaidLabelName } »."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize }).",
@@ -6242,7 +6249,7 @@
         "Si votre alias est vendu, divulgué ou utilisé de manière abusive, il suffit de le désactiver pour ne plus recevoir d'indésirables/spam."
       ],
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
-        "Si votre mot de passe se retrouve sur le Dark Web, ${ BRAND_NAME } peut vous indiquer depuis quel service vos données ont été divulguées et comment mettre un terme à la situation."
+        "Si votre mot de passe se retrouve sur le dark web, ${ BRAND_NAME } peut vous indiquer depuis quel service vos données ont été divulguées et comment mettre un terme à la situation."
       ],
       "Image description": [
         "Description de l'image"
@@ -6315,10 +6322,10 @@
         "Confirmez simplement votre sélection et nous ferons le reste."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Gardez vos informations de connexion et carte de paiement en sécurité et toujours à portée de main en les ajoutant à ${ PASS_APP_NAME }. C'est gratuit et inclus dans votre compte ${ BRAND_NAME }."
+        "Gardez vos informations de connexion et cartes de paiement en sécurité et toujours à portée de main en les ajoutant à ${ PASS_APP_NAME }. C'est gratuit et inclus dans votre compte ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "Gardez votre messagerie ordonnée en vidant automatiquement la corbeille et les courriers indésirables qui s'y trouvent depuis plus de 30 jours."
+        "Gardez votre messagerie ordonnée en vidant automatiquement la corbeille et les courriers indésirables/spam qui s'y trouvent depuis plus de 30 jours."
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
@@ -6337,6 +6344,9 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Learn more about ${ BRAND_NAME }'s writing assistant": [
+        "En savoir plus sur l'assistant d'écriture de ${ BRAND_NAME }."
       ],
       "Left to Right": [
         "De gauche à droite"
@@ -7109,7 +7119,7 @@
         "URL : ${ unsubscribeMethods.HttpClient }"
       ],
       "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
-        "Utilisez différentes adresses e-mail à des fins différentes afin de pouvoir facilement séparer vos e-mails par domaine professionnel, personnel ou autre."
+        "Utilisez différentes adresses e-mail pour des usages variés afin de pouvoir facilement séparer vos e-mails par domaine professionnel, personnel ou autre."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilisez les raccourcis clavier pour gérer vos messages plus rapidement."
@@ -7205,7 +7215,7 @@
         "Quand vous vous inscrivez à une newsletter, utilisez un alias plutôt que votre adresse e-mail. Votre identité est ainsi cachée et vous pouvez désactiver cet alias n'importe quand."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
-        "Lorsque vous voyagez ou que vous utilisez un réseau WiFi public, connectez-vous à ${ VPN_APP_NAME } pour empêcher quiconque de suivre votre activité en ligne ou de voler vos données. C'est gratuit."
+        "Lorsque vous voyagez ou que vous utilisez un réseau WiFi public, connectez-vous à ${ VPN_APP_NAME } pour empêcher quiconque de suivre vos activités en ligne ou de voler vos données. C'est gratuit."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -7352,9 +7362,6 @@
       "You selected **${ elementsCount } message**.": [
         "Vous avez sélectionné **${ elementsCount } message**.",
         "Vous avez sélectionné **${ elementsCount } messages**."
-      ],
-      "You selected some content:": [
-        "Vous avez sélectionné du contenu :"
       ],
       "You will lose access to Plus features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de Plus."
@@ -7720,9 +7727,6 @@
       ],
       " and ${ l }": [
         " et ${ l }"
-      ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -8241,9 +8245,6 @@
       "Type a command...": [
         "Saisissez une commande…"
       ],
-      "Type a prompt to generate an output": [
-        "Saisissez un prompt pour générer un résultat."
-      ],
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
       ],
@@ -8273,6 +8274,9 @@
       ],
       "Wonderful": [
         "Merveilleux"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
       ],
       "Your alias": [
         "Votre alias"
@@ -8925,6 +8929,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Lancez-vous pour 1 $"
+      ],
+      "Get started for 1 €": [
+        "Lancez-vous pour 1  €"
+      ],
+      "Get started for CHF 1": [
+        "Lancez-vous pour 1  CHF"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -9430,6 +9443,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
@@ -9474,8 +9490,8 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME } : sécurisez vos fichiers avec un stockage cloud chiffré. Comprend l'historique des versions, le partage chiffré des fichiers et bien d'autres fonctionnalités."
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
@@ -9989,7 +10005,7 @@
         "Traitement des paiements"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
-        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
+        "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Please select billing country": [
         "Veuillez sélectionner le pays pour la facturation."
@@ -10001,16 +10017,16 @@
         "Veuillez d'abord sélectionner votre pays de facturation."
       ],
       "Please select your billing state first.": [
-        "Veuillez d'abord sélectionner votre état de facturation."
+        "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
       "Select billing country to pay": [
-        "Veuillez sélectionner l'état pour la facturation à payer."
+        "Veuillez sélectionner l'état pour la facture à payer."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. L'offre est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier ${ months }. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Puis il sera reconduit automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant le premier ${ months }. Puis, il sera renouvelé automatiquement à ${ price } pendant ${ months }. Vous pouvez annuler à tout moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ price } par mois. Vous pouvez résilier l'abonnement à tout moment."
@@ -10019,7 +10035,7 @@
         "Le délai est dépassé."
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {
@@ -10100,8 +10116,8 @@
       "First name": [
         "Prénom"
       ],
-      "Generating...": [
-        "Génération..."
+      "Generating": [
+        "Génération"
       ],
       "Gift code": [
         "Code-cadeau"
@@ -10142,9 +10158,6 @@
       "Please share what you expected": [
         "Veuillez partager ce à quoi vous vous attendiez."
       ],
-      "Refining your text...": [
-        "Optimisation de votre texte..."
-      ],
       "Search date, name, email address, or subject line": [
         "Recherchez par date, nom, adresse e-mail ou objet du message."
       ],
@@ -10184,29 +10197,29 @@
       "Subject": [
         "Sujet"
       ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Indiquez à l'assistant de rédaction ce qu'il doit écrire. Exemple : « Annoncer des événements à venir dans une newsletter »"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Indiquez à l'assistant de rédaction ce qu'il doit écrire. Exemple : « Annuler mon abonnement à la salle de sport »"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Indiquez à l'assistant de rédaction ce qu'il doit écrire. Exemple : « Inviter Jane à ma fête »"
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Indiquez à l'assistant de rédaction ce qu'il doit écrire. Exemple : « Remercier un collègue pour son aide sur un projet »"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Indiquez à l'assistant de rédaction ce qu'il doit écrire. Exemple : « Rédiger une lettre de motivation pour un stage »"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Indiquez à l'assistant de rédaction ce qu'il doit écrire. Exemple : « Écrire un e-mail de relance à un client »"
+      ],
       "Text": [
         "Texte"
       ],
       "To": [
         "Pour"
-      ],
-      "Try “Announce upcoming events in a newsletter”": [
-        "Essayez « Annoncer les prochains événements dans une newsletter »"
-      ],
-      "Try “Cancel my gym membership”": [
-        "Essayez « Annuler mon abonnement à la salle de sport »"
-      ],
-      "Try “Invite Jane to my party”": [
-        "Essayez « Invitez Jeanne à ma fête »"
-      ],
-      "Try “Thank my coworker for help on a project”": [
-        "Essayez « Une note de remerciement à un collègue pour son aide sur un projet »"
-      ],
-      "Try “Write a cover letter for an internship”": [
-        "Essayez « Écrire une lettre de motivation pour un stage »"
-      ],
-      "Try “Write a follow-up email to a client”": [
-        "Essayez « Écrire un e-mail de suivi à un client. »"
       ],
       "Type a command…": [
         "Saisissez une commande…"
@@ -11289,6 +11302,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } vous offre une confidentialité illimitée et plus d'espace de stockage pour un maximum de 2 personnes."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } permet à votre équipe d'être plus productive, mieux organiser leur travail avec un accès à toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium."
       ],
@@ -11311,7 +11327,7 @@
         "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements et fichiers. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
-        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus annuels d'espace de stockage."
+        "${ planName } vous propose ${ planMaxSpace } d'espace de stockage par utilisateur pour vos messages, pièces jointes, événements, fichiers et mots de passe. Vous pouvez également bénéficier de bonus d'espace de stockage annuels."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programme ${ PROTON_SENTINEL_NAME }"
@@ -11324,6 +11340,9 @@
       ],
       "10 email addresses": [
         "10 adresses e-mail"
+      ],
+      "2 users": [
+        "2 utilisateurs"
       ],
       "20 email addresses per user": [
         "20 adresses e-mail par utilisateur"
@@ -11341,7 +11360,7 @@
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
+        "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement jusqu'à 1 Go d'espace de stockage pour Mail et 5 Go d'espace de stockage pour Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque votre abonnement ${ planName } se terminera, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -11395,7 +11414,7 @@
         "Aider les militants à Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN pour tous."
+        "Voici comment l'équipe de notre service client a réussi à donner un accès direct à notre application VPN à tous."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
         "Voici comment nous avons riposté lorsque ${ BRAND_NAME } a été la cible d'une campagne de censure agressive."
@@ -11410,7 +11429,7 @@
         "Les membres invités seront retirés de votre organisation."
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Garantirez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
+        "Garantissez la sécurité de votre équipe lors de ses déplacements avec nos applications web, iOS, Android, Windows, Mac et Linux."
       ],
       "Learn more": [
         "En savoir plus"
@@ -11428,7 +11447,7 @@
         "La protection de la vie privée en ligne, pour toute la famille"
       ],
       "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
-        "Les organisations, utilisateurs supplémentaires et domaine de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
+        "Les organisations, utilisateurs supplémentaires et domaines de messagerie personnalisés ne sont pas pris en charge dans l'abonnement gratuit. En d'autres termes :"
       ],
       "Our fight against censorship in Russia": [
         "Notre combat contre la censure en Russie"
@@ -11478,6 +11497,9 @@
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
+      "Unlimited privacy for two": [
+        "Confidentialité illimitée pour deux personnes"
+      ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
       ],
@@ -11500,7 +11522,7 @@
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 1 Go d'espace de stockage pour Mail et jusqu'à 5 Go d'espace de stockage pour Drive. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Votre équipe sera interrompue dans son travail car les utilisateurs supplémentaires ne sont pas pris en charge par l'abonnement gratuit."
+        "Lorsque vous annulez ${ planName }, votre abonnement passera à ${ BRAND_NAME } Free qui n'offre que jusqu'à 1 Go d'espace de stockage pour vos messages courrier et jusqu'à 5 Go d'espace de stockage sur Drive. Le travail de votre équipe sera interrompu car l'abonnement gratuit ne prend pas en charge les utilisateurs supplémentaires."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Lorsque vous annulez ${ planName }, vous passerez à un abonnement ${ BRAND_NAME } Free. Cet abonnement comprend uniquement 5 Go d'espace de stockage pour Drive et jusqu'à 1 Go d'espace de stockage pour Mail. Vous ne pourrez plus bénéficier des espaces de stockage précédemment acquis en bonus."
@@ -11515,13 +11537,13 @@
         "Vous disposez encore de ${ expiryDate } pour votre abonnement ${ planName }. Nous ajouterons ces crédits pour le temps restant sur votre compte ${ BRAND_NAME }. Assurez-vous de ne pas dépasser les limites de l'abonnement gratuit avant d'annuler votre abonnement. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de votre entreprise. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et maintient la connexion au sein de votre équipe."
+        "Votre abonnement ${ planName } ne se contente pas de protéger les données et les communications de vos activités. Il soutient vos objectifs de conformité, permet à votre entreprise de se détacher du lot et permet à votre équipe de rester connectée."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès restreint aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
+        "Votre abonnement ${ planName } se termine le ${ expiryDate }. Après cela, vous passerez à un aboonement ${ BRAND_NAME } Free. Si votre utilisation dépasse les limites de l'abonnement gratuit, l'accès aux fonctionnalités du produit et à vos données pourrait être restreint. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "Votre domaine de messagerie personnalisé"
@@ -11876,6 +11898,9 @@
       ],
       "Self-destruction set": [
         "L'autodestruction est programmée."
+      ],
+      "Text copied to clipboard": [
+        "Le texte a été copié dans le presse-papiers."
       ],
       "Thanks for the feedback!": [
         "Merci pour vos commentaires !"

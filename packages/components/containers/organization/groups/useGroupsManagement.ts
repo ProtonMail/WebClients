@@ -122,7 +122,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         }
     };
 
-    const handleSaveGroup = async () => {
+    const handleSaveGroup = async (newEmails: string[]) => {
         if (selectedGroup === undefined) {
             return;
         }
@@ -160,11 +160,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         const { Group } = await api(
             uiState === 'new' ? createGroup(groupData) : editGroup(selectedGroup.ID, { ...groupData })
         );
-        await call();
-
-        resetForm();
-        setUiState('view');
-        setSelectedGroup(Group);
 
         if (uiState === 'new') {
             Group.Address.Keys = await createGroupAddressKey({
@@ -175,11 +170,18 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             });
         }
 
-        const memberEmail = formValues.members;
-        if (memberEmail) {
-            await addGroupMember(Group, memberEmail);
-            await fetchGroupMembers(Group.ID);
-        }
+        const addMembersPromises = newEmails.map((email) =>
+            addGroupMember(Group, email).catch((error) => {
+                console.error(`Failed to add recipient ${email}:`, error);
+            })
+        );
+        await Promise.all(addMembersPromises);
+
+        resetForm();
+        setUiState('view');
+        setSelectedGroup(Group);
+
+        return;
     };
 
     const domainData = { loadingCustomDomains, selectedDomain, customDomains, setSelectedDomain };

@@ -80,7 +80,6 @@ const onKeyDownField =
 
 export const createFieldHandles = ({
     element,
-    formType,
     fieldType,
     zIndex,
     getFormHandle,
@@ -88,7 +87,6 @@ export const createFieldHandles = ({
     const listeners = createListenerStore();
 
     const field: FieldHandle = {
-        formType,
         fieldType,
         element,
         boxElement: findBoundingInputElement(element),

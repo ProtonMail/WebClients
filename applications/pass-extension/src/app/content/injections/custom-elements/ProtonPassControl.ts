@@ -1,9 +1,9 @@
-import { StyledShadowHost } from './StyledShadowHost';
+import { PASS_ELEMENT_ROLE, ProtonPassElement } from './ProtonPassElement';
 
 // @ts-ignore
 import styles from './ProtonPassControl.raw.scss';
 
-export class ProtonPassControl extends StyledShadowHost {
+export class ProtonPassControl extends ProtonPassElement {
     static getTagName = (hash: string) => `protonpass-control-${hash}`;
 
     constructor() {
@@ -11,6 +11,7 @@ export class ProtonPassControl extends StyledShadowHost {
     }
 
     connectedCallback() {
-        this.setAttribute('data-protonpass-role', 'icon');
+        super.connectedCallback();
+        this.setAttribute(PASS_ELEMENT_ROLE, 'icon');
     }
 }

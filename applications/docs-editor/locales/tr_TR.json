@@ -14,17 +14,29 @@
       "Add new table row": [
         "Tabloya satır ekle"
       ],
+      "Adjust font size": [
+        "Yazı boyutunu ayarla"
+      ],
+      "and": [
+        "ve"
+      ],
       "Apply": [
         "Uygula"
       ],
       "Bold": [
         "Koyu"
       ],
+      "Bulleted List": [
+        "Madde imli liste"
+      ],
       "Cancel": [
         "İptal"
       ],
       "Center align": [
         "Ortaya hizala"
+      ],
+      "Check List": [
+        "Kontrol listesi"
       ],
       "Clear contents": [
         "İçeriği temizle"
@@ -92,6 +104,9 @@
       "Insert left": [
         "Sola ekle"
       ],
+      "Insert link": [
+        "Bağlantı ekle"
+      ],
       "Insert right": [
         "Sağa ekle"
       ],
@@ -109,6 +124,9 @@
       ],
       "Link": [
         "Bağlantı"
+      ],
+      "Numbered List": [
+        "Numaralı liste"
       ],
       "Options": [
         "Seçenekler"
@@ -151,6 +169,9 @@
       ],
       "Show thread": [
         "Konuyu görüntüle"
+      ],
+      "Strike-through": [
+        "Üzeri çizili"
       ],
       "Strikethrough": [
         "Üstü çizili"
@@ -347,11 +368,26 @@
       ]
     },
     "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "HTML kodu bilinmeyen bir sorun nedeniyle içe aktarılamadı."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Markdown kodu bilinmeyen bir sorun nedeniyle içe aktarılamadı."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Word dosyası bilinmeyen bir sorun nedeniyle içe aktarılamadı."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Düzenleyici bilinmeyen bir sorun nedeniyle başlatılamadı."
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Word dosyası dönüştürülemedi. Parola ile korunmuş olabilir mi? Öyleyse lütfen parolayı kaldırıp yeniden deneyin."
       ]
     },
     "Error message": {
@@ -441,6 +477,9 @@
     "Label": {
       "Background colour": [
         "Arka plan rengi"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
       ],
       "Link text": [
         "Bağlantı metni"

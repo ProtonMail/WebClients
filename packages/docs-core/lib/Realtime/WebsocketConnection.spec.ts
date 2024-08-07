@@ -26,6 +26,7 @@ describe('WebsocketConnection', () => {
         error: jest.fn(),
         info: jest.fn(),
       } as unknown as LoggerInterface,
+      '0.0.0.0',
     )
 
     Object.defineProperty(document, 'visibilityState', {
@@ -256,6 +257,7 @@ describe('WebsocketConnection', () => {
           error: jest.fn(),
           info: jest.fn(),
         } as unknown as LoggerInterface,
+        '0.0.0.0',
       )
 
       await connection.getTokenOrFailConnection()

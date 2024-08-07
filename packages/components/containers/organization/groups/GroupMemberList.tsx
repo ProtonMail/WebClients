@@ -10,9 +10,10 @@ import { GroupMemberItem } from './GroupMemberItem';
 interface Props {
     groupMembers: GroupMember[];
     loading: boolean;
+    edit?: boolean;
 }
 
-const GroupMemberList = ({ groupMembers, loading }: Props) => {
+const GroupMemberList = ({ groupMembers, loading, edit = false }: Props) => {
     const [members] = useMembers();
 
     if (loading) {
@@ -23,16 +24,25 @@ const GroupMemberList = ({ groupMembers, loading }: Props) => {
 
     return (
         <>
-            <p className="color-weak text-sm p-0">
-                {c('Group member count').ngettext(msgid`${memberCount} member`, `${memberCount} members`, memberCount)}
-            </p>
+            {!edit && (
+                <p className="color-weak text-sm p-0">
+                    {c('Group member count').ngettext(
+                        msgid`${memberCount} member`,
+                        `${memberCount} members`,
+                        memberCount
+                    )}
+                </p>
+            )}
             <Scroll>
-                {groupMembers.map((memberData: GroupMember) => {
-                    const memberName = members?.find(({ Addresses }) =>
-                        Addresses?.some(({ ID }) => ID === (memberData?.AddressID ?? memberData?.AddressId))
-                    )?.Name;
-                    return <GroupMemberItem groupMember={memberData} memberName={memberName}></GroupMemberItem>;
-                })}
+                <div className="flex flex-column gap-3">
+                    {groupMembers &&
+                        groupMembers.map((memberData: GroupMember) => {
+                            const memberName = members?.find(({ Addresses }) =>
+                                Addresses?.some(({ ID }) => ID === (memberData?.AddressID ?? memberData?.AddressId))
+                            )?.Name;
+                            return <GroupMemberItem groupMember={memberData} memberName={memberName} />;
+                        })}
+                </div>
             </Scroll>
         </>
     );

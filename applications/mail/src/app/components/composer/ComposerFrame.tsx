@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
-import { useAssistant } from '@proton/llm/lib/useAssistant';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 

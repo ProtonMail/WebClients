@@ -76,11 +76,13 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
         const features = ctx?.getFeatures();
+        const settings = ctx?.getSettings();
 
         switch (action) {
             case DropdownAction.AUTOFILL_LOGIN:
-            case DropdownAction.AUTOFILL_IDENTITY:
                 return features?.Autofill ?? false;
+            case DropdownAction.AUTOFILL_IDENTITY:
+                return (features?.Autofill && settings?.autofill.identity) ?? false;
             case DropdownAction.AUTOSUGGEST_ALIAS:
                 return features?.AutosuggestAlias ?? false;
             case DropdownAction.AUTOSUGGEST_PASSWORD:
@@ -200,7 +202,11 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     const getTrackableFields = (): FieldsForFormResults => {
         const results: FieldsForFormResults = new WeakMap();
-        const status = { injections: new Map<FieldType, boolean>(), injected: false };
+        const status = {
+            injections: new Map<FieldType, boolean>(),
+            sections: new Map<FieldType, number>(),
+            injected: false,
+        };
 
         FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action: fieldAction }) => {
             form.getFieldsFor(type).forEach((field) => {
@@ -219,6 +225,13 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                     /* inject only if no other field of type attached */
                     case FieldInjectionRule.FIRST_OF_TYPE:
                         attachIcon = !status.injections.get(type);
+                        break;
+
+                    /** inject only on the first field of each form section */
+                    case FieldInjectionRule.FIRST_OF_SECTION:
+                        if (field.sectionIndex === undefined) break;
+                        attachIcon = status.sections.get(type) !== field.sectionIndex;
+                        status.sections.set(type, field.sectionIndex);
                         break;
                 }
 

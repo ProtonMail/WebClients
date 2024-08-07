@@ -10,7 +10,7 @@ import { createIFrameApp } from 'proton-pass-extension/app/content/injections/if
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
-import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
+import { FieldType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -48,7 +48,7 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
                     if (options?.discard) {
                         ctx?.service.formManager
                             .getTrackedForms()
-                            .filter(({ formType }) => formType === FormType.MFA)
+                            .filter(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0)
                             .forEach(({ element }) => {
                                 removeClassifierFlags(element, { preserveIgnored: true });
                                 flagAsIgnored(element);
@@ -86,10 +86,11 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
     iframe.registerMessageHandler(
         IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP,
         withContext((ctx, { payload: { code } }) => {
-            const form = ctx?.service.formManager.getTrackedForms().find(({ formType }) => formType === FormType.MFA);
-            if (!form) return;
+            const form = ctx?.service.formManager
+                .getTrackedForms()
+                .find(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0);
 
-            ctx?.service.autofill.autofillOTP(form, code);
+            if (form) ctx?.service.autofill.autofillOTP(form, code);
         })
     );
 

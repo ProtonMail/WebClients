@@ -7,7 +7,6 @@ import {
 import { type ProtonPassControl } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl';
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
-import type { MaybeNull } from '@proton/pass/types';
 import {
     type BoundComputeStyles,
     createStyleCompute,
@@ -35,37 +34,44 @@ type InjectionOptions = {
 /* input styles we may override */
 type InputInitialStyles = { ['padding-right']?: string };
 
-const getOverlayedElement = (options: {
+/** Calculates the maximum horizontal shift required for injected elements.
+ * Determines the optimal positioning to avoid overlap with existing elements */
+const getOverlayShift = (options: {
     x: number;
     y: number;
     inputBox: HTMLElement;
+    input: HTMLElement;
     form: HTMLElement;
-}): MaybeNull<HTMLElement> => {
+}): number => {
     try {
-        const { x, y, form, inputBox } = options;
+        const { x, y, form, input, inputBox } = options;
         const maxWidth = inputBox.offsetWidth;
+        const maxShift = maxWidth * 0.5; /* Maximum allowed shift */
 
-        if (Number.isNaN(x) || Number.isNaN(y)) return null;
-        const overlays = Array.from(document.elementsFromPoint(x, y));
+        if (Number.isNaN(x) || Number.isNaN(y)) return 0;
+        const overlays = document.elementsFromPoint(x, y);
 
-        return (
-            overlays.find((el): el is HTMLElement => {
-                /* exclude non-html elements */
-                if (!(el instanceof HTMLElement)) return false;
-                /* exclude svg elements */
-                if (el.matches('svg *')) return false;
-                /* exclude our own injected elements */
-                if (el.matches('protonpass-control')) return false;
-                /* exclude elements not in the current form stack */
-                if (!form.contains(el)) return false;
-                /* exclude "placeholder" overlays */
-                if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.85) return false;
+        let maxDx: number = 0;
 
-                return true;
-            }) ?? null
-        );
+        for (const el of overlays) {
+            if (el === input || el === inputBox) break; /* Stop at target elements */
+            if (!(el instanceof HTMLElement)) continue; /* Skip non-HTMLElements */
+            if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
+            if (!form.contains(el)) continue; /* Skip elements outside form */
+            if (el.matches('svg *')) continue; /* Skip SVG subtrees */
+            if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.8) continue; /* Skip large text elements */
+
+            const style = getComputedStyle(el);
+            if (style.display === 'none' || style.visibility === 'hidden') continue; /* Skip hidden elements */
+
+            const { left } = el.getBoundingClientRect();
+            const dx = Math.max(0, x - left);
+            if (dx > maxDx && dx < maxShift) maxDx = dx;
+        }
+
+        return maxDx;
     } catch (e) {
-        return null;
+        return 0;
     }
 };
 
@@ -104,21 +110,15 @@ const computeIconInjectionStyles = (
     /* look for any overlayed elements if we were to inject
      * the icon on the right hand-side of the input element
      * accounting for icon size and padding  */
-    const overlayEl = getOverlayedElement({
+    let overlayDx = getOverlayShift({
         x: inputRight - (iconPaddingRight + size / 2),
         y: inputTop + inputHeight / 2,
         inputBox,
+        input,
         form,
     });
 
-    const overlayWidth = (() => {
-        if (!overlayEl) return 0;
-        const { clientWidth, offsetWidth } = overlayEl;
-        if (clientWidth === 0) return offsetWidth; /* support :before pseudo elements */
-        return clientWidth;
-    })();
-
-    const overlayDx = overlayEl !== input && overlayWidth !== 0 ? overlayWidth + iconPaddingLeft : 0;
+    overlayDx = overlayDx !== 0 ? overlayDx + iconPaddingLeft + size / 2 : 0;
 
     /* Compute the new input padding :
      * Take into account the input element's current padding as it
