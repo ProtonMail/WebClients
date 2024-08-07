@@ -73,9 +73,9 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
                 shape={shape}
                 size={size}
                 style={style}
-                title={c('Action').t`More options`}
+                title={dropdownHeader ?? c('Action').t`More options`}
             >
-                <Icon name={icon} alt={c('Action').t`More options`} size={iconSize} />
+                <Icon name={icon} size={iconSize} />
                 {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
             </Button>
 
