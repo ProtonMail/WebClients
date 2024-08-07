@@ -82,6 +82,7 @@ export enum UpsellRef {
     SECURE_LINKS = 'secure_links',
     SETTING = 'setting',
     PASS_MONITOR = 'pass_monitor',
+    PASS_BIOMETRICS = 'pass_biometrics',
 }
 
 export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
@@ -90,6 +91,7 @@ export const MAX_LOG_STORAGE_LINES = 2_000;
 export const AVERAGE_BYTES_PER_LOG_LINE = 100;
 export const SAFARI_MESSAGE_KEY = 'application.id';
 export const SAFARI_URL_SCHEME = 'proton-pass:';
+export const BIOMETRICS_KEY = 'offlineKey_biometrics';
 
 /** Default feature flag states : These values are used as a
  * fallback if the feature flag endpoint is unavailable.
@@ -100,4 +102,5 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
     [PassFeature.PassIdentityV1]: false,
+    [PassFeature.PassDesktopBiometrics]: false,
 };
