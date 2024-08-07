@@ -1,15 +1,21 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import PropTypes from 'prop-types';
+import { groupBy } from 'lodash';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import { SettingsSectionWide } from '@proton/components/containers';
+import type { EnhancedLogical } from '@proton/components/containers/vpn/OpenVPNConfigurationSection/interface';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
-import groupWith from '@proton/utils/groupWith';
+import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
 import { Block, Icon, Info, Radio, RadioGroup, SettingsLink } from '../../../components';
-import { correctAbbr, getLocalizedCountryByAbbr } from '../../../helpers/countries';
+import {
+    type CountryOptions,
+    correctAbbr,
+    getCountryOptions,
+    getLocalizedCountryByAbbr,
+} from '../../../helpers/countries';
 import { usePlans, useSortedList, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { SettingsParagraph } from '../../account';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
@@ -30,22 +36,34 @@ const PROTOCOL = {
     UDP: 'udp',
 };
 
-const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, excludedCategories = [] }) => {
+interface Props {
+    onSelect?: (logical: Logical) => void;
+    selecting?: boolean;
+    listOnly?: boolean;
+    excludedCategories?: CATEGORY[];
+    countryOptions?: CountryOptions;
+}
+
+const OpenVPNConfigurationSection = ({
+    countryOptions: maybeCountryOptions,
+    onSelect,
+    selecting,
+    listOnly = false,
+    excludedCategories = [],
+}: Props) => {
     const [platform, setPlatform] = useState(PLATFORM.ANDROID);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans || [];
-    const { loading, result = {}, fetch: fetchLogicals } = useVPNLogicals();
+    const { loading, result, fetch: fetchLogicals } = useVPNLogicals();
     const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
     const [userSettings] = useUserSettings();
-    const userVPN = vpnResult?.VPN || {};
-    const isBasicVPN = userVPN?.PlanName === PLANS.VPNBASIC;
+    const userVPN = vpnResult?.VPN;
     const maxTier = userVPN?.MaxTier || 0;
     const [category, setCategory] = useState(CATEGORY.FREE);
-    const excludeCategoryMap = excludedCategories.reduce((map, excludedCategory) => {
+    const excludeCategoryMap = excludedCategories.reduce<{ [key in CATEGORY]?: boolean }>((map, excludedCategory) => {
         map[excludedCategory] = true;
-
         return map;
     }, {});
 
@@ -55,22 +73,31 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
 
     const selectedCategory = maxTier && category === CATEGORY.FREE ? CATEGORY.SERVER : category;
 
-    const servers = useMemo(
-        () =>
-            (result.LogicalServers || []).map((server) => ({
-                ...server,
-                Country: getLocalizedCountryByAbbr(
-                    correctAbbr(server.ExitCountry),
-                    userSettings.Locale || navigator.languages
-                ),
-            })),
-        [result.LogicalServers]
+    const countryOptions = maybeCountryOptions || getCountryOptions(userSettings);
+
+    const getIsUpgradeRequired = useCallback(
+        (server: Logical) => {
+            return !userVPN || (!hasPaidVpn && server.Tier > 0);
+        },
+        [userVPN, hasPaidVpn]
     );
 
-    const { sortedList: allServers } = useSortedList(servers, { key: 'Country', direction: SORT_DIRECTION.ASC });
+    const servers = useMemo((): EnhancedLogical[] => {
+        return (result?.LogicalServers || []).map((server) => ({
+            ...server,
+            country: getLocalizedCountryByAbbr(correctAbbr(server.ExitCountry), countryOptions),
+            isUpgradeRequired: getIsUpgradeRequired(server),
+        }));
+    }, [result?.LogicalServers, getIsUpgradeRequired]);
 
-    const isUpgradeRequiredForSecureCore = !Object.keys(userVPN).length || !hasPaidVpn || isBasicVPN;
-    const isUpgradeRequiredForCountries = !Object.keys(userVPN).length || !hasPaidVpn;
+    const { sortedList: allServers } = useSortedList(servers, { key: 'country', direction: SORT_DIRECTION.ASC });
+
+    const isUpgradeRequiredForSecureCore = !Object.keys(userVPN || {}).length || !hasPaidVpn;
+    const isUpgradeRequiredForCountries = !Object.keys(userVPN || {}).length || !hasPaidVpn;
+
+    useEffect(() => {
+        fetchUserVPN(30_000);
+    }, [hasPaidVpn]);
 
     const secureCoreServers = useMemo(() => {
         return allServers
@@ -83,33 +110,37 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
             });
     }, [allServers, isUpgradeRequiredForSecureCore]);
 
-    const countryServers = groupWith(
-        (a, b) => a.ExitCountry === b.ExitCountry,
-        allServers.filter(
-            ({ Tier, Features }) => Tier === 2 && !isSecureCoreEnabled(Features) && !isTorEnabled(Features)
-        )
-    ).map((groups) => {
-        const [first] = groups;
-        const activeServers = groups.filter(({ Status }) => Status === 1);
-        const load = activeServers.reduce((acc, { Load }) => acc + Load, 0) / activeServers.length;
-        return {
-            ...first,
-            isUpgradeRequired: isUpgradeRequiredForCountries,
-            Load: Number.isNaN(load) ? 0 : Math.round(load),
-            Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.net`, // Forging domain
-            Servers: groups.reduce((acc, { Servers = [] }) => {
-                acc.push(...Servers);
-                return acc;
-            }, []),
-        };
-    });
+    const countryServers = useMemo(() => {
+        return Object.values(
+            groupBy(
+                allServers.filter(({ Tier, Features }) => {
+                    return Tier === 2 && !isSecureCoreEnabled(Features) && !isTorEnabled(Features);
+                }),
+                (a) => a.ExitCountry
+            )
+        ).map((groups) => {
+            const [first] = groups;
+            const activeServers = groups.filter(({ Status }) => Status === 1);
+            const load = activeServers.reduce((acc, { Load }) => acc + (Load || 0), 0) / activeServers.length;
+            return {
+                ...first,
+                isUpgradeRequired: isUpgradeRequiredForCountries,
+                Load: Number.isNaN(load) ? 0 : Math.round(load),
+                Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.net`, // Forging domain
+                Servers: groups.flatMap((logical) => logical.Servers || []),
+            };
+        });
+    }, [allServers, isUpgradeRequiredForCountries]);
 
     const freeServers = useMemo(() => {
-        return allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
+        return allServers.filter(({ Tier }) => Tier === 0);
     }, [allServers]);
 
     useEffect(() => {
-        if (!hasPaidVpn || userVPN.PlanName === 'trial') {
+        if (vpnLoading) {
+            return;
+        }
+        if (!hasPaidVpn || userVPN?.PlanName === 'trial') {
             setCategory(CATEGORY.FREE);
         }
     }, [vpnLoading]);
@@ -252,6 +283,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             servers={secureCoreServers}
                             onSelect={onSelect}
                             selecting={selecting}
+                            countryOptions={countryOptions}
                         />
                     </>
                 )}
@@ -278,6 +310,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             servers={countryServers}
                             onSelect={onSelect}
                             selecting={selecting}
+                            countryOptions={countryOptions}
                         />
                     </>
                 )}
@@ -293,8 +326,10 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             protocol={protocol}
                             loading={loading}
                             servers={allServers}
-                            select={onSelect}
+                            defaultOpen={false}
+                            onSelect={onSelect}
                             selecting={selecting}
+                            countryOptions={countryOptions}
                         />
                     </>
                 )}
@@ -307,19 +342,21 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             </SettingsParagraph>
                         )}
                         <ServerConfigs
+                            countryOptions={countryOptions}
                             category={selectedCategory}
                             platform={platform}
                             protocol={protocol}
                             loading={loading}
                             servers={freeServers}
-                            select={onSelect}
+                            defaultOpen={true}
+                            onSelect={onSelect}
                             selecting={selecting}
                         />
                     </>
                 )}
                 {!listOnly && (
                     <>
-                        {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
+                        {!loadingPlans && (userVPN?.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
                             <div className="border p-7 text-center">
                                 <h3 className="color-primary mt-0 mb-4">{
                                     // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
@@ -364,7 +401,11 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     </li>
                                 </ul>
                                 <div>
-                                    <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN}`}>
+                                    <ButtonLike
+                                        as={SettingsLink}
+                                        color="norm"
+                                        path={`/dashboard?plan=${PLANS.VPN2024}`}
+                                    >
                                         {
                                             // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
                                             c('Action').t`Get ${vpnPlus}`
@@ -378,15 +419,6 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
             </Block>
         </SettingsSectionWide>
     );
-};
-
-OpenVPNConfigurationSection.propTypes = {
-    onSelect: PropTypes.func,
-    selecting: PropTypes.bool,
-    listOnly: PropTypes.bool,
-    excludedCategories: PropTypes.arrayOf(
-        PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER, CATEGORY.FREE])
-    ),
 };
 
 export default OpenVPNConfigurationSection;

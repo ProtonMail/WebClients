@@ -22,4 +22,5 @@ export interface Logical {
     Visible: boolean | number;
     Score: number;
     Load?: number;
+    Status: number;
 }
