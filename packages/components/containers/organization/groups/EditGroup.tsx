@@ -126,7 +126,6 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     onClick={() => {
                                         onFormSubmit();
                                         void withLoading(handleSaveGroup(newEmailsToAdd));
-                                        setNewGroupMembers([]);
                                     }}
                                 >
                                     {c('Action').t`Save`}
@@ -256,6 +255,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 <NewGroupMemberItem
                                     member={member}
                                     handleRemoveNewMember={handleRemoveNewGroupMember}
+                                    submitting={loading}
                                 />
                             );
                         })}
