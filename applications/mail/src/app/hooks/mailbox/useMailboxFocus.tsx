@@ -4,10 +4,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHandler } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
+import type { Filter, Sort } from 'proton-mail/models/tools';
+
 export interface MailboxFocusContext {
     elementIDs: string[];
     page: number;
-    showList: boolean;
+    filter: Filter;
+    sort: Sort;
+    showList: boolean; // Column is visible
     listRef: MutableRefObject<HTMLElement | null>;
     labelID: string;
     isComposerOpened: boolean;
@@ -16,6 +20,8 @@ export interface MailboxFocusContext {
 export const useMailboxFocus = ({
     elementIDs,
     page,
+    filter,
+    sort,
     showList,
     listRef,
     labelID,
@@ -29,7 +35,7 @@ export const useMailboxFocus = ({
         [focusIndex, elementIDs]
     );
 
-    const labelIDRef = useRef(labelID);
+    const labelIDRef = useRef(labelID); // It corresponds to the current location
     const focusedIDRef = useRef(getFocusedId());
 
     const handleFocus = useHandler((index) => setFocusIndex(index));
@@ -42,8 +48,27 @@ export const useMailboxFocus = ({
                 index + 1
             }) [data-shortcut-target="item-container"]`
         ) as HTMLElement;
-        element?.focus();
+        if (!element) {
+            return;
+        }
+        // Skip focus if the element is already focused
+        if (element === document.activeElement) {
+            return;
+        }
+        element.scrollIntoView();
+        element.focus();
     };
+
+    const resetFocusIndex = useCallback(() => {
+        if (elementIDs.length) {
+            setFocusIndex(0);
+            focusOnElementByIndex(0);
+        } else {
+            setFocusIndex(undefined);
+        }
+
+        focusedIDRef.current = undefined;
+    }, [elementIDs]);
 
     const focusOnLastMessage = useCallback(() => {
         const messages = document.querySelectorAll('[data-shortcut-target="message-container"]');
@@ -67,8 +92,7 @@ export const useMailboxFocus = ({
 
     useEffect(() => {
         if (labelIDRef.current !== labelID) {
-            setFocusIndex(undefined);
-            focusedIDRef.current = undefined;
+            resetFocusIndex();
             labelIDRef.current = labelID;
             return;
         }
@@ -77,7 +101,7 @@ export const useMailboxFocus = ({
             return;
         }
 
-        // keep focus on the same element if new messages are coming in
+        // Keep focus on the same element if new messages are coming in
         if (focusedIDRef.current && elementIDs.includes(focusedIDRef.current)) {
             setTimeout(() => {
                 if (isMounted()) {
@@ -87,8 +111,8 @@ export const useMailboxFocus = ({
             return;
         }
 
-        // keep focus position when updating the list (moving/deleting items)
-        if (typeof focusIndex !== 'undefined') {
+        // Keep focus position when updating the list (moving/deleting items)
+        if (focusedIDRef.current && typeof focusIndex !== 'undefined') {
             if (elementIDs[focusIndex]) {
                 setTimeout(() => focusOnElementByIndex(focusIndex));
                 return;
@@ -109,25 +133,27 @@ export const useMailboxFocus = ({
         }
     }, [showList]);
 
-    // Page change: focus on first element
+    // When page, filter, or sort changes, focus on the first element
     useEffect(() => {
         if (showList && elementIDs.length) {
-            setFocusIndex(0);
+            resetFocusIndex();
         }
-    }, [page]);
+    }, [page, filter, sort]);
 
     useEffect(() => {
-        if (typeof focusIndex !== 'undefined') {
+        if (typeof focusIndex === 'undefined') {
+            focusedIDRef.current = undefined;
+        } else {
             focusOnElementByIndex(focusIndex);
+            focusedIDRef.current = getFocusedId();
         }
-
-        focusedIDRef.current = getFocusedId();
     }, [focusIndex]);
 
     return {
         focusIndex,
         getFocusedId,
         setFocusIndex,
+        resetFocusIndex,
         handleFocus,
         focusOnLastMessage,
     };
