@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { Loader, useFolders, useLabels, useModalState } from '@proton/components';
+import { useFolders, useLabels, useModalState } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -21,7 +21,6 @@ import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
-import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import type { SearchParameters } from '../../models/tools';
 import { total as totalSelector } from '../../store/elements/elementsSelectors';
@@ -43,8 +42,6 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
     const appLocation = useLocation();
-    const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
-    const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
     const conversationMode = isConversationMode(labelID, mailSettings, location);
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
 
@@ -187,25 +184,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const showText = checkeds || labelCount;
 
-    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM && !hasSimpleLogin;
-
-    // If the user sees the SL placeholder, we need to send once a telemetry request
-    useEffect(() => {
-        if (showSimpleLoginPlaceholder && !placeholderSLSeenSent) {
-            // We need to send to telemetry the total number of messages that the user has in spam
-            setPlaceholderSLSeenSent(true);
-        }
-    }, [showSimpleLoginPlaceholder]);
-
-    if (isFetchingAccountLinked) {
-        return (
-            <div className="flex h-full py-4 px-7">
-                <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
-                    <Loader />
-                </div>
-            </div>
-        );
-    }
+    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
 
     return (
         <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
