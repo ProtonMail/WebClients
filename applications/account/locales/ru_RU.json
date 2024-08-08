@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -712,10 +712,10 @@
       "No, thanks": [
         "Нет, спасибо"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -778,11 +778,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1564,14 +1564,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1593,6 +1585,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3354,12 +3354,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Включите ${ PROTON_SENTINEL_NAME } для доступа к этим функциям"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Включите расширенные журналы и ${ PROTON_SENTINEL_NAME } для доступа к этим функциям"
-      ],
-      "Enable advanced logs to access these features": [
-        "Включите расширенные журналы, чтобы получить доступ к этим функциям"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
@@ -5050,9 +5044,6 @@
       "*Only one free trial per customer.": [
         "*По одной бесплатной пробной версии для каждого клиента."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Аккаунты с пользовательскими доменами не могут подключиться к семейному плану или перейти на тариф Visionary."
-      ],
       "customer support": [
         "служба поддержки"
       ],
@@ -5092,12 +5083,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Для облегчения перехода мы дарим вам 30-дневную пробную версию ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент семейный план и тариф Visionary не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "На данный момент тариф Visionary и семейный план не доступны для пожизненных аккаунтов."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
       ],
@@ -5116,9 +5101,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перед регистрацией нового пользователя необходимо настроить пользовательский домен."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Вы потеряете доступ ко всем платным функциям и хранилищу ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
@@ -5127,9 +5109,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш текущий план не позволяет присоединиться к семейной подписке или тарифу Visionary."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6914,11 +6893,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -7510,9 +7489,6 @@
       ],
       "Loading...": [
         "Загрузка..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "В журналах записаны попытки аутентификации во всех службах ${ BRAND_NAME }, которые используют ваши учетные данные ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Низкий приоритет"
@@ -9421,9 +9397,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
       ],
-      "Access to my events": [
-        "Доступ к моим событиям"
-      ],
       "Account recovery": [
         "Восстановление аккаунта"
       ],
@@ -10747,12 +10720,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Включите ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Включить расширенное журналирование"
-      ],
-      "Enable authentication logs": [
-        "Включить журнал аутентификации"
       ]
     },
     "Mail import summary": {
@@ -12972,9 +12939,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Получить ${ appName } для ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Получите ${ appName } для ${ browserName } в ближайшее время"
       ],
       "Get in touch with our sales team": [
         "Свяжитесь с нашим отделом продаж"
@@ -15857,10 +15821,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -15922,6 +15886,9 @@
       ],
       "Couldn’t create accounts": [
         "Не могу создать аккаунты"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Создать ${ selectedUserIds.length } пользователя",
@@ -16955,9 +16922,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Включить/отключить уведомления на рабочем столе, а также мобильные"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Включение расширенного журналирования записывает IP-адрес каждого события в журнале безопасности."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
       ],
@@ -17570,9 +17534,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Удалив этот номер телефона, вы больше не сможете восстановить свою учётную запись."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Отключив журналы, вы также очистите всю свою историю журналов. Вы уверены, что хотите отключить журналы?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"

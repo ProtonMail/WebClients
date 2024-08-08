@@ -41,11 +41,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -151,12 +151,6 @@
       ],
       "Bold": [
         "Félkövér"
-      ],
-      "Can send to this group": [
-        "Küldhet ennek a csoportnak"
-      ],
-      "Can't send to this group": [
-        "Nem küldhet ennek a csoportnak"
       ],
       "Cancel": [
         "Mégsem"
@@ -677,10 +671,10 @@
       "No, thanks": [
         "Köszönöm, nem"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -743,11 +737,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reload": [
         "Újratöltés"
@@ -3039,12 +3033,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "A funkciók eléréshez engedélyezze a ${ PROTON_SENTINEL_NAME } funkciót"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "A funkciók eléréshez engedélyezze a haladó naplózást és a ${ PROTON_SENTINEL_NAME } funkciót"
-      ],
-      "Enable advanced logs to access these features": [
-        "A funkciók eléréshez engedélyezze a haladó naplózást"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
@@ -4288,9 +4276,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } csoportok"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Saját domain névvel rendelkező felhasználók nem csatlakozhatnak Visionary és családi csomagokhoz."
-      ],
       "customer support": [
         "ügyfélszolgálat"
       ],
@@ -4319,12 +4304,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Az ön számára lefoglalt tárhely: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "A Visionary és a Family csomagok jelenleg nem támogatnak külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet mielőtt csatlakozna. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "A Visionary és a családi csomagok jelenleg nem támogatják az egész életre szóló fiókokat."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"
       ],
@@ -4350,9 +4329,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "A jelenlegi csomagja nem csatlakozhat egy Visionary vagy Family csomaghoz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5332,6 +5308,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } adatokat kíván megosztani önnel a ${ PASS_APP_NAME } rendszeren"
+      ],
       "${ n } address": [
         "${ n } cím",
         "${ n } cím"
@@ -5695,6 +5674,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus vagy Visionary előfizetés szükséges"
       ],
+      "Be sure to copy your password and store it somewhere safe.": [
+        "Feltétlenül másolja le a jelszavát és tárolja biztonságos helyen."
+      ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
         "A felhasználó aktiválása előtt, meg kell adnia egy jelszót és létrehoznia az címek titkosítási kulcsait."
       ],
@@ -5712,6 +5694,9 @@
       ],
       "Beta": [
         "Béta"
+      ],
+      "Billed at ${ price }": [
+        "${ price } számlázva"
       ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
@@ -5743,6 +5728,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "A naptár eseményeinek minden részletének megosztásakor elfogadja, hogy elérést biztosít a ${ BRAND_NAME } számára a naptár titkosított tartalmához."
       ],
+      "Cancel anytime": [
+        "Bármikor lemondhatja"
+      ],
       "Center": [
         "Középre"
       ],
@@ -5751,6 +5739,9 @@
       ],
       "Check the status of imports and forwarding.": [
         "Importálások és továbbítások helyzetének ellenőrzése."
+      ],
+      "Choose an app to get started": [
+        "Válasszon egy alkalmazást"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
@@ -5772,6 +5763,9 @@
       ],
       "Copy the link to clipboard": [
         "Hivatkozás másolása a vágólapra"
+      ],
+      "Copy the suggested password to clipboard": [
+        "A javasolt jelszó másolása a vágólapra"
       ],
       "Copy your referral link": [
         "Ajánló hivatkozás másolása"
@@ -5840,6 +5834,9 @@
       "Data locked": [
         "Adatok zárolva"
       ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez."
       ],
@@ -5848,6 +5845,9 @@
       ],
       "Delete link?": [
         "Hivatkozás törlése?"
+      ],
+      "Discount": [
+        "Kedvezmény"
       ],
       "Discover ProtectBuy logo": [
         "Fedezze fel a ProtectBuy-t logó"
@@ -6009,6 +6009,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
       ],
+      "for choosing ${ product }": [
+        "hogy a ${ product }t választotta"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Amennyiben egy másik e-mail szolgáltatásról vált a ${ MAIL_APP_NAME } szolgáltatásra, válassza a ${ boldAddresses } lapot, és az MX rekord módosítása előtt vegyen fel minden aktív e-mail címet, a zökkenőmentes átállás érdekében."
       ],
@@ -6029,6 +6032,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } beszerzése"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "A hozzáféréshez hozzon létre egy ${ BRAND_NAME } fiókot, a meghívó elfogadásával."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Adjon a tokennek egy leíró nevet, például annak a szolgáltatásnak, amellyel használni kívánja, és válassza ki az egyik aktív egyéni tartománycímet. Csak ez a cím tud majd e-mailt küldeni ezzel a tokennel."
@@ -6062,6 +6068,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "A máshonnan még be van jelentkezve, megpróbálhatja ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
@@ -6183,6 +6192,12 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Invitation link expired": [
+        "A meghívó hivatkozás lejárt"
+      ],
+      "Invitation link used": [
+        "A meghívó hivatkozást már felhasználta"
       ],
       "Invite Accepted": [
         "Meghívás elfogadva"
@@ -6374,9 +6389,6 @@
       "Loading...": [
         "Betöltés..."
       ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "A naplók minden azonosítási kísérletet tárolnak, az összes ${ BRAND_NAME } szolgáltatáshoz, amelyek a ${ BRAND_NAME_TWO } bejelentkezését használják."
-      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "A jelentősebb e-mail szolgáltatások elutasíthatják vagy levélszemétként kezelhetik az e-maileket, ha az SPF/DKIM/DMARC hiányzik vagy nem megfelelően van beállítva."
       ],
@@ -6537,6 +6549,9 @@
       "per month": [
         "havonta"
       ],
+      "per month, billed at ${ price }": [
+        "havonta, ${ price } számlázva"
+      ],
       "per month, billed every 12 months": [
         "havonta, 12 havonta számlázva"
       ],
@@ -6653,6 +6668,9 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
       ],
+      "Recovery kit copied to clipboard": [
+        "A helyreállító csomag a vágólapra másolva"
+      ],
       "Recovery phrase copied to clipboard": [
         "A helyreállító jelmondat a vágólapra másolva"
       ],
@@ -6698,11 +6716,17 @@
       "Right to Left": [
         "Jobbról balra"
       ],
+      "Save ${ percentage }": [
+        "${ percentage } megtakarítás"
+      ],
       "Save your password somewhere safe.": [
         "Tárolja a jelszavát biztonságos helyen."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "A jelszavát tárolja biztonságos helyen. A ikonra kattintva ellenőrizze, hogy helyesen írta be a jelszót."
+      ],
+      "Saving your password": [
+        "Jelszó tárolása"
       ],
       "Scan QR code instead": [
         "QR kód beolvasása"
@@ -6757,6 +6781,9 @@
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
+      ],
+      "Setting up your organization": [
+        "Szervezet beállítása"
       ],
       "Settings update failed": [
         "Beállítások módosítása sikertelen"
@@ -6862,7 +6889,7 @@
         "Megjelenő szöveg"
       ],
       "Thank you": [
-        "Köszönöm"
+        "Köszönjük"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "A ${ boldDataLocked } üzenetet többé nem mutatjuk, de az adatait továbbra is feloldhatja ezen a hivatkozáson keresztül: ${ encryptionAndKeysLink } ."
@@ -6945,6 +6972,15 @@
       "This file is too large to preview": [
         "Ez a fájl túl nagy az előnézethez"
       ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Ez a meghívó hivatkozás lejárt. Vegye fel a kapcsolatot az adminisztrátorával és kérjen hozzáférést."
+      ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "Ez a meghívó hivatkozás lejárt. Kiküldtünk önnek egy újat."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Ezt a hivatkozást már felhasználta. Ehelyett kérjük, jelentkezzen be."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ez egy 12 szóból álló jelmondat, amelynek kértük öntől a beállítását."
       ],
@@ -6953,6 +6989,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Ez egy titkosítási kulcs amelyet korábban lementhetett."
+      ],
+      "This is an invitation from:": [
+        "Ez egy meghívó a következőtől:"
       ],
       "This is the password you used before the password reset.": [
         "Ez az a jelszó, amelyet a jelszó visszaállítása előtt használt."
@@ -7002,11 +7041,17 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Ez lecseréli az ideiglenes jelszavát. Ezzel jelentkezhet be jövőben a ${ BRAND_NAME } fiókjába."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ez minden aktív munkafolyamatból kilépteti és kikapcsolja a kétlépcsős hitelesítést."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést a ${ BRAND_NAME } fiókjában. A kétlépcsős hitelesítés biztonságosabbá teszi a ${ BRAND_NAME_TWO } fiókját, ezért javasolt engedélyezni."
+      ],
+      "to ${ product } Business": [
+        "a ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
         "Ahhoz, hogy a(z) **${ domainName }** domain név SAML SSO-t használhasson, meg kell erősíteniea tulajdonjogát az alábbi TXT rekord felvételével, a domain név szolgáltatójánál."
@@ -7239,6 +7284,9 @@
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
       ],
+      "We generated a strong password for you": [
+        "Létrehoztunk önnek egy erős jelszót"
+      ],
       "We just sent you a new link.": [
         "Most küldtünk önnek új hivatkozást."
       ],
@@ -7288,7 +7336,7 @@
         "A heti és havi nézet csak számítógépen érhető el."
       ],
       "Welcome": [
-        "Üdvözöljük"
+        "Üdvözli"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "A fiók helyreállítási célra megadott e-mail címére fog kapni egy visszaállító kódot."
@@ -7397,6 +7445,9 @@
       "You can now access and manage the account as an administrator.": [
         "Most adminisztrátorként érheti el és kezelheti a fiókot."
       ],
+      "You can now close this tab.": [
+        "Most már bezárhatja ezt a lapot."
+      ],
       "You can now close this window.": [
         "Most már bezárhatja ezt az ablakot."
       ],
@@ -7485,6 +7536,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
       ],
+      "Your ${ BRAND_NAME } password": [
+        "A ${ BRAND_NAME } jelszava"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "A ${ VPN_APP_NAME } és ${ MAIL_APP_NAME } fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
       ],
@@ -7542,6 +7596,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "Az ügyfélszolgálati megkeresése lezárásra került. Köszönjük, hogy felvette a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
       ],
       "Zoom meeting": [
         "Zoom találkozót"
@@ -7949,9 +8006,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
-      ],
-      "Access to my events": [
-        "Hozzáférés az eseményeimhez"
       ],
       "Account recovery": [
         "Fiók helyreállítás"
@@ -9075,6 +9129,9 @@
       "Paypal without credit card": [
         "Paypal bankkártya nélkül"
       ],
+      "perform a password reset from your active session": [
+        "visszaállítani a jelszavát az aktív munkafolyamatból."
+      ],
       "Privacy policy": [
         "Adatvédelmi irányelvek"
       ],
@@ -9165,12 +9222,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } engedélyezése"
-      ],
-      "Enable advanced logs": [
-        "Részletes naplózás engedélyezése"
-      ],
-      "Enable authentication logs": [
-        "Hitelesítési naplók engedélyezése"
       ]
     },
     "Mail import summary": {
@@ -12505,10 +12556,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -13524,9 +13575,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Mobil és asztali értesítések ki- és bekapcsolása"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "A részletes naplózás bekapcsolásakor az egyes műveletekhez tartozó IP címek is bekerülnek a naplóba."
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
@@ -13910,9 +13958,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "A telefonszám törlésével a továbbiakban nem lesz képes helyreállítani fiókját."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "A naplózás letiltásával törli a naplózási előzményeket is. Biztos benne, hogy le akarja tiltani a naplózást?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Ha megszakítja az importálást, nem lehet folytatni. A ${ BRAND_NAME } már mentette az eddig feldolgozott adatokat a fiókjába. Megszakítja?"

@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Lihavointi"
-      ],
-      "Can send to this group": [
-        "Voi lähettää tälle ryhmälle"
-      ],
-      "Can't send to this group": [
-        "Ei voi lähettää tälle ryhmälle"
       ],
       "Cancel": [
         "Peruuta"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Poista logo"
+      ],
+      "Delete member": [
+        "Poista jäsen"
       ],
       "Delete permanently": [
         "Poista pysyvästi"
@@ -733,10 +730,10 @@
       "No, thanks": [
         "Ei kiitos"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -799,10 +796,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -1613,14 +1610,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1642,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3383,12 +3380,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Käytä näitä ominaisuuksia aktivoimalla laaja lokikirjaus ja ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Enable advanced logs to access these features": [
-        "Käytä näitä ominaisuuksia aktivoimalla laaja lokikirjaus"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
@@ -5065,9 +5056,6 @@
       "*Only one free trial per customer.": [
         "*Vain yksi ilmainen kokeilu asiakasta kohden."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä Visionary- tai perhetilaukseen."
-      ],
       "customer support": [
         "asiakaspalveluun"
       ],
@@ -5123,12 +5111,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Muutoksen helpottamiseksi tarjoamme sinulle ${ BRAND_NAME } rajattoman 30 päivän kokeilujakson*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- ja Family-tilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME }-osoite ennen liittymistä. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary- ja Family-tilaukset eivät tällä hetkellä tue elinikäisiä tilejä."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
       ],
@@ -5158,9 +5140,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin luot uuden käyttäjän."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Menetät pääsyn kaikkiin ${ BRAND_NAME } -perheen premium-ominaisuuksiin ja tallennustilaan."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
       ],
@@ -5169,9 +5148,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Nykyinen tilauksesi ei voi liittyä Visionary- tai perhetilaukseen."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6946,11 +6922,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7573,9 +7549,6 @@
       ],
       "Loading...": [
         "Ladataan..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Lokitietoihin sisältyvät tunnistautumisyritykset kaikkiin ${ BRAND_NAME }-tunnustasi käyttäviin ${ BRAND_NAME_TWO }-palveluihin."
       ],
       "Low Priority": [
         "Alhainen tärkeys"
@@ -9504,9 +9477,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
-      "Access to my events": [
-        "Tapahtumieni käyttöoikeudet"
-      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -10841,12 +10811,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
-      ],
-      "Enable advanced logs": [
-        "Käytä laajaa lokikirjausta"
-      ],
-      "Enable authentication logs": [
-        "Käytä todennuslokia"
       ]
     },
     "Mail import summary": {
@@ -13017,9 +12981,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Hanki ${ appName } selaimelle ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Hanki ${ appName } selaimelle ${ browserName } pian"
       ],
       "Get in touch with our sales team": [
         "Ota yhteyttä myyntitiimiimme"
@@ -15898,10 +15859,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -17013,9 +16974,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Laajaa lokikirjausta käytettässä suojauslokiin kirjataan jokaisen tapahtuman IP-osoite."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
@@ -17611,9 +17569,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Lokikirjauksen käytöstäpoiston yhteydessä tyhjennetään myös kaikki vanhat lokitiedot. Haluatko varmasti poistaa sen käytöstä?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"
