@@ -3,10 +3,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 import {
     allowAddressDeletionReducer,
     domainsAddressesReducer,
-    domainsReducer,
     inactiveKeysReducer,
     paymentMethodsReducer,
-    protonDomainsReducer,
     samlReducer,
 } from '@proton/account';
 import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } from '@proton/calendar';
@@ -17,8 +15,6 @@ import { selectPersistModel } from '@proton/redux-utilities';
 export const rootReducer = combineReducers({
     ...sharedReducers,
     ...paymentMethodsReducer,
-    ...domainsReducer,
-    ...protonDomainsReducer,
     ...filtersReducer,
     ...incomingAddressForwardingsReducer,
     ...outgoingAddressForwardingsReducer,
@@ -36,9 +32,7 @@ export type AccountState = ReturnType<typeof rootReducer>;
 export const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     ...sharedPersistReducer,
     paymentMethods: selectPersistModel,
-    domains: selectPersistModel,
     members: selectPersistModel,
-    protonDomains: selectPersistModel,
     filters: selectPersistModel,
     incomingAddressForwarding: selectPersistModel,
     outgoingAddressForwarding: selectPersistModel,

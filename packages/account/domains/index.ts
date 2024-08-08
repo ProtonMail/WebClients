@@ -30,14 +30,14 @@ enum ValueType {
     complete,
 }
 
-interface State extends UserState {
+export interface DomainsState extends UserState {
     [name]: ModelState<Domain[]> & { meta: { type: ValueType } };
 }
 
-type SliceState = State[typeof name];
+type SliceState = DomainsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectDomains = (state: State) => state.domains;
+export const selectDomains = (state: DomainsState) => state.domains;
 
 const canFetch = (user: User) => {
     return isAdmin(user);
@@ -110,7 +110,7 @@ const previous = previousSelector(selectDomains);
 
 const modelThunk = (options?: {
     cache?: CacheType;
-}): ThunkAction<Promise<Model>, State, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<Promise<Model>, DomainsState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
             return previous({ dispatch, getState, extraArgument, options });
