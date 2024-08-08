@@ -6,6 +6,7 @@ import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
 import type { Address, Organization, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getNCalendarsText } from '../../features/calendar';
+import { getFreeUsersText } from '../../features/highlights';
 import {
     getB2BFreeVPNConnectionsText,
     getB2BHighSpeedVPNConnectionsText,
@@ -16,6 +17,10 @@ import {
 const getUserText = (isOrganizationDelinquent: boolean, MaxMembers: number, UsedMembers: number) => {
     if (isOrganizationDelinquent) {
         return null;
+    }
+
+    if (MaxMembers === 1) {
+        return getFreeUsersText();
     }
 
     return c('Subscription attribute').ngettext(

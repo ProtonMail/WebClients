@@ -130,7 +130,7 @@ const MailSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={`${path}/invitation/view`}>
-                <Redirect to={`${path}/dashboard`} />
+                <Redirect to={`${path}/dashboard#your-plan`} />
             </Route>
             <Route path={`${path}/import-export`}>
                 <Redirect to={`${path}/easy-switch`} />
