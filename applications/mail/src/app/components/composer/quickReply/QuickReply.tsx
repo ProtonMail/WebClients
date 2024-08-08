@@ -302,7 +302,7 @@ const QuickReply = ({
                             modalLink={modalLink}
                             modalImage={modalImage}
                             modalDefaultFont={modalDefaultFont}
-                            hasToolbar={false}
+                            displayToolbar={false}
                             onFocus={handleFocusCallback}
                             hasDropzone={false}
                         />
