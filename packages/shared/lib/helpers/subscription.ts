@@ -4,7 +4,8 @@ import { isSplittedUser, onSessionMigrationChargebeeStatus } from '@proton/compo
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 
-import type { FreeSubscription } from '../constants';
+import type {
+    FreeSubscription} from '../constants';
 import {
     ADDON_NAMES,
     APPS,
@@ -272,6 +273,22 @@ export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
 
 export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     return [PASS, VPN_PASS_BUNDLE].includes(planName as any);
+};
+
+export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    return [
+        VISIONARY,
+        BUNDLE,
+        FAMILY,
+        DUO,
+        BUNDLE_PRO,
+        BUNDLE_PRO_2024,
+        PASS,
+        VPN_PASS_BUNDLE,
+        PASS_PRO,
+        PASS_BUSINESS,
+        MAIL_BUSINESS,
+    ].includes(planName as any);
 };
 
 export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {

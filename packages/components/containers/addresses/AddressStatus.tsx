@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Badge } from '../../components';
+import { Badge, Tooltip } from '../../components';
 import type { AddressStatuses } from './helper';
 
 const AddressStatus = ({
@@ -43,8 +44,9 @@ const AddressStatus = ({
             } as const),
         isMissingKeys &&
             ({
-                text: c('Address status').t`Missing keys`,
-                type: 'warning',
+                text: c('Address status').t`Inactive`,
+                type: 'light',
+                tooltip: c('Tooltip').t`This can be caused by a password reset or the user not logging in yet.`,
             } as const),
         isNotEncrypted &&
             ({
@@ -59,12 +61,22 @@ const AddressStatus = ({
             } as const),
     ]
         .filter(isTruthy)
-        .map(({ text, type }) => {
-            return (
-                <Badge key={text} type={type} className="mr-1 mb-1">
+        .map(({ text, type, tooltip }) => {
+            const addresssBadge = (
+                <Badge key={text} type={type} className={clsx('mr-1 mb-1', tooltip && 'cursor-default')}>
                     {text}
                 </Badge>
             );
+
+            if (tooltip) {
+                return (
+                    <Tooltip title={tooltip} key={text}>
+                        <span>{addresssBadge}</span>
+                    </Tooltip>
+                );
+            }
+
+            return addresssBadge;
         });
 
     return <>{list}</>;

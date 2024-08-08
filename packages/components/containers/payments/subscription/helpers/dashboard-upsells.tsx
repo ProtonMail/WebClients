@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import type { APP_NAMES} from '@proton/shared/lib/constants';
-import { DUO_MAX_USERS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     BRAND_NAME,
     CYCLE,
     DASHBOARD_UPSELL_PATHS,
+    DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     FREE_VPN_CONNECTIONS,
     PLANS,
@@ -24,6 +24,7 @@ import {
     getPricePerCycle,
     hasBundle,
     hasDrive,
+    hasDuo,
     hasMail,
     hasMailBusiness,
     hasMailPro,
@@ -48,7 +49,6 @@ import { getCustomBranding, getSentinel, getUsersFeature } from '../../features/
 import type { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     getB2BNDomainsFeature,
-    getFoldersAndLabelsFeature,
     getNAddressesFeature,
     getNAddressesFeatureB2B,
     getNDomainsFeature,
@@ -143,7 +143,23 @@ type GetUpsellArgs = {
 type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
     hasPaidMail?: boolean;
     hasVPN: boolean;
+    hasUsers?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
+};
+
+const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback): UpsellCta | ReactNode => {
+    return {
+        label: c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`,
+        color: 'norm',
+        shape: 'ghost',
+        action: () =>
+            openSubscriptionModal({
+                step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+    };
 };
 
 const getUpsell = ({
@@ -204,7 +220,6 @@ const getMailPlusUpsell = ({
         getStorageFeature(mailPlusPlan?.MaxSpace ?? 15, { freePlan }),
         getNAddressesFeature({ n: 10 }),
         getNDomainsFeature({ n: 1 }),
-        getFoldersAndLabelsFeature('unlimited'),
         getNCalendarsFeature(MAX_CALENDARS_PAID),
         getVPNConnectionsFeature(FREE_VPN_CONNECTIONS),
         getProtonPassFeature(FREE_PASS_ALIASES),
@@ -216,22 +231,7 @@ const getMailPlusUpsell = ({
         upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         freePlan,
-        otherCtas: isTrialEnding
-            ? [
-                  {
-                      label: c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`,
-                      color: 'norm',
-                      shape: 'ghost',
-                      action: () =>
-                          openSubscriptionModal({
-                              step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                              metrics: {
-                                  source: 'upsells',
-                              },
-                          }),
-                  },
-              ]
-            : [],
+        otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
         isTrialEnding,
         onUpgrade: () =>
             openSubscriptionModal({
@@ -310,23 +310,23 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
  */
 const getBundleUpsell = ({
     plansMap,
-    hasPaidMail,
-    hasVPN,
     openSubscriptionModal,
     freePlan,
+    isTrialEnding,
+    hasUsers,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const bundlePlan = plansMap[PLANS.BUNDLE];
 
     const features: MaybeUpsellFeature[] = [
         getStorageFeature(bundlePlan?.MaxSpace ?? 500, { freePlan }),
+        hasUsers ? getUsersFeature(1) : undefined,
         getNAddressesFeature({ n: 15 }),
-        getNDomainsFeature({ n: 3 }),
-        getSentinel(true),
-        getFoldersAndLabelsFeature('unlimited'),
-        hasPaidMail ? undefined : getNCalendarsFeature(MAX_CALENDARS_PAID),
-        hasVPN ? undefined : getHighSpeedVPNConnectionsFeature(),
+        getNDomainsFeature({ n: bundlePlan?.MaxDomains ?? 3 }),
+        getNCalendarsFeature(MAX_CALENDARS_PAID),
+        getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
+        getSentinel(true),
     ];
 
     return getUpsell({
@@ -345,6 +345,8 @@ const getBundleUpsell = ({
                     source: 'upsells',
                 },
             }),
+        otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
+        isTrialEnding,
         ...rest,
     });
 };
@@ -352,8 +354,6 @@ const getBundleUpsell = ({
 const getDuoUpsell = ({
     plansMap,
     freePlan,
-    hasVPN,
-    hasPaidMail,
     openSubscriptionModal,
     currency,
     app,
@@ -369,10 +369,11 @@ const getDuoUpsell = ({
         getStorageFeature(duoPlan.MaxSpace, { duo: true, freePlan }),
         getUsersFeature(DUO_MAX_USERS),
         getNAddressesFeature({ n: duoPlan.MaxAddresses, duo: true }),
-        getFoldersAndLabelsFeature('unlimited'),
-        hasPaidMail ? undefined : getNCalendarsFeature(MAX_CALENDARS_PAID),
-        hasVPN ? undefined : getHighSpeedVPNConnectionsFeature(),
+        getNDomainsFeature({ n: duoPlan.MaxDomains }),
+        getNCalendarsFeature(MAX_CALENDARS_PAID),
+        getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
+        getSentinel(true),
     ];
 
     return getUpsell({
@@ -401,12 +402,11 @@ const getDuoUpsell = ({
 const getFamilyUpsell = ({
     plansMap,
     freePlan,
-    hasVPN,
-    hasPaidMail,
     openSubscriptionModal,
     currency,
     app,
     serversCount,
+    ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const familyPlan = plansMap[PLANS.FAMILY];
     if (!familyPlan) {
@@ -417,10 +417,11 @@ const getFamilyUpsell = ({
         getStorageFeature(familyPlan.MaxSpace, { family: true, freePlan }),
         getUsersFeature(FAMILY_MAX_USERS),
         getNAddressesFeature({ n: familyPlan.MaxAddresses, family: true }),
-        getFoldersAndLabelsFeature('unlimited'),
-        hasPaidMail ? undefined : getNCalendarsFeature(MAX_CALENDARS_PAID),
-        hasVPN ? undefined : getHighSpeedVPNConnectionsFeature(),
+        getNDomainsFeature({ n: familyPlan.MaxDomains }),
+        getNCalendarsFeature(MAX_CALENDARS_PAID),
+        getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
+        getSentinel(true),
     ];
 
     return getUpsell({
@@ -442,6 +443,7 @@ const getFamilyUpsell = ({
                     source: 'upsells',
                 },
             }),
+        ...rest,
     });
 };
 
@@ -634,6 +636,7 @@ export const resolveUpsellsToDisplay = ({
                 return [
                     getBundleUpsell({
                         ...upsellsPayload,
+                        hasUsers: canAccessDuoPlan,
                         isRecommended: true,
                     }),
                     canAccessDuoPlan ? getDuoUpsell(upsellsPayload) : getFamilyUpsell(upsellsPayload),
@@ -647,6 +650,13 @@ export const resolveUpsellsToDisplay = ({
                         }),
                     getFamilyUpsell(upsellsPayload),
                 ].filter(isTruthy);
+            case hasDuo(subscription):
+                return [
+                    getFamilyUpsell({
+                        ...upsellsPayload,
+                        isRecommended: true,
+                    }),
+                ];
             case hasMailPro(subscription):
                 return [getMailBusinessUpsell(upsellsPayload)];
             case hasMailBusiness(subscription):
