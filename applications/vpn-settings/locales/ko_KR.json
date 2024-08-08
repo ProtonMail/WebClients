@@ -82,12 +82,6 @@
       "Block": [
         "차단"
       ],
-      "Can send to this group": [
-        "이 그룹에 전송 가능"
-      ],
-      "Can't send to this group": [
-        "이 그룹에 전송 불가"
-      ],
       "Cancel": [
         "취소"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "로고 삭제"
+      ],
+      "Delete member": [
+        "멤버 삭제"
       ],
       "Delete user": [
         "사용자 삭제"
@@ -2679,9 +2676,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "지정 도메인 계정을 Visionary 및 가족 요금제에서 사용할 수 없습니다."
-      ],
       "customer support": [
         "고객 지원"
       ],
@@ -2724,12 +2718,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "구독이 해당 플랜의 기본 관리자에게 청구됩니다."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 및 가족 요금제가 현재 외부 계정을 지원하지 않습니다. 가입 전에 ${ BRAND_NAME } 주소를 생성하세요. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary 및 가족 요금제는 현재 평생 요금제를 지원하지 않습니다."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } 에 가입이 초대되었습니다"
       ],
@@ -2759,9 +2747,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace } 을(를) 초과하는 스토리지의 ${ usedSpace } 을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 요금제의 구매 관리자에게 저장 공간을 늘리도록 요청하세요."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "현재 요금제는 Visionary 및 가족 요금제에 가입할 수 없습니다."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3580,10 +3565,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -4496,7 +4481,7 @@
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
       "to continue to ${ product }": [
-        "${ product }으(로) 계속하기"
+        "${ product }(으)로 계속하기"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸 및 남용을 방지하려면 사람임을 확인하세요."
@@ -9182,11 +9167,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"

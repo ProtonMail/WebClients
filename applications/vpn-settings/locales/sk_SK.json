@@ -82,12 +82,6 @@
       "Block": [
         "Blokovať"
       ],
-      "Can send to this group": [
-        "Môže posielať do tejto skupiny"
-      ],
-      "Can't send to this group": [
-        "Nemôže posielať do tejto skupiny"
-      ],
       "Cancel": [
         "Zrušiť"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Vymazať logo"
+      ],
+      "Delete member": [
+        "Vymazať člena"
       ],
       "Delete user": [
         "Vymazať používateľa"
@@ -537,6 +534,9 @@
       ],
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Vyberte fakturačný cyklus ${ billingText }"
       ],
       "Select country": [
         "Vyberte krajinu"
@@ -2703,9 +2703,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť k plánu Visionary ani rodinnému plánu."
-      ],
       "customer support": [
         "zákaznícka podpora"
       ],
@@ -2723,6 +2720,12 @@
       ],
       "Manage user accounts": [
         "Spravovať používateľské účty"
+      ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánku.",
+        "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánky.",
+        "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánok.",
+        "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánok."
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "Vlastníci plánu s členmi sa nemôžu pripojiť k inému skupinovému plánu."
@@ -2742,11 +2745,8 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Pridelené úložisko: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plán Visionary a rodinné plány aktuálne nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Plán Visionary a rodinné plány v súčasnosti nepodporujú celoživotné účty."
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Predplatné sa bude účtovať primárnemu správcovi tohto plánu."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -2756,6 +2756,21 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Boli ste pozvaní, aby ste sa pripojili k ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Dosiahli ste limit ${ n } prijatej pozvánky za 6 mesiacov.",
+        "Dosiahli ste limit ${ n } prijatých pozvánok za 6 mesiacov.",
+        "Dosiahli ste limit ${ n } prijatých pozvánok za 6 mesiacov.",
+        "Dosiahli ste limit ${ n } prijatých pozvánok za 6 mesiacov."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Dosiahli ste limit ${ n } prijatej pozvánky v priebehu 6 mesiacov. Na tlačidlo bude možné kliknúť, až keď budete môcť pozvať ďalších používateľov.",
+        "Dosiahli ste limit ${ n } prijatých pozvánok v priebehu 6 mesiacov. Na tlačidlo bude možné kliknúť, až keď budete môcť pozvať ďalších používateľov.",
+        "Dosiahli ste limit ${ n } prijatých pozvánok v priebehu 6 mesiacov. Na tlačidlo bude možné kliknúť, až keď budete môcť pozvať ďalších používateľov.",
+        "Dosiahli ste limit ${ n } prijatých pozvánok v priebehu 6 mesiacov. Na tlačidlo bude možné kliknúť, až keď budete môcť pozvať ďalších používateľov."
+      ],
+      "You have successfully joined the family group": [
+        "Úspešne ste sa pripojili do rodinnej skupiny"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred pridaním viacerých používateľov, musíte nakonfigurovať vlastnú doménu."
@@ -2771,9 +2786,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Váš aktuálny plán sa nemôže pripojiť k plánu Visionary ani k rodinnému plánu."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3655,11 +3667,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -5998,6 +6010,15 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
+      "Get started for $1": [
+        "Začnite teraz za $1"
+      ],
+      "Get started for 1 €": [
+        "Začnite teraz za 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Začnite teraz za CHF 1"
+      ],
       "Upgrade": [
         "Upgradovať"
       ],
@@ -6575,6 +6596,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
+      "Secure your digital life with ${ BRAND_NAME } for two people.": [
+        "Zabezpečte svoj digitálny život s ${ BRAND_NAME } pre dve osoby."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Riešenia na mieru pre väčšie organizácie so špecifickými bezpečnostnými potrebami"
       ],
@@ -6645,6 +6669,9 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -7371,8 +7398,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
+      "Please select billing country": [
+        "Vyberte fakturačnú krajinu, prosím"
+      ],
+      "Please select billing state": [
+        "Vyberte štát platby, prosím"
+      ],
+      "Please select your billing country first.": [
+        "Najprv vyberte fakturačnú krajinu, prosím."
+      ],
+      "Please select your billing state first.": [
+        "Najprv vyberte fakturačnú krajinu, prosím."
+      ],
       "Processing payment": [
         "Spracováva sa platba"
+      ],
+      "Select billing country to pay": [
+        "Vyberte fakturačnú krajinu na platbu"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
@@ -7671,6 +7713,9 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Registrácia nebola úspešne dokončená."
+      ],
       "Something went wrong": [
         "Niečo sa pokazilo"
       ]
@@ -8714,6 +8759,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
       ],
+      "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
+        "${ planName } poskytuje neobmedzené súkromie a viac úložného priestoru až pre 2 osoby."
+      ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } poskytne vášmu tímu všetko, čo potrebuje na zvýšenie produktivity a organizácie práce, a to vďaka prístupu ku všetkým aplikáciám ${ BRAND_NAME } a ich prémiovým funkciám."
       ],
@@ -8750,6 +8798,9 @@
       "10 email addresses": [
         "10 emailových adries"
       ],
+      "2 users": [
+        "2 používatelia"
+      ],
       "20 email addresses per user": [
         "20 emailových adries na používateľa"
       ],
@@ -8764,6 +8815,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } predplatného bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Po vypršaní platnosti vášho predplatného ${ planName } budete preradení do ${ BRAND_NAME } Free, ktorý ponúka len do 1 GB úložiska pošty a do 5 GB úložiska disku. Váš tím bude mať výpadky v práci, pretože v bezplatnom pláne nie sú podporovaní ďalší používatelia."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 5 GB Drive úložiska a maximálne 1 GB Mail úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
@@ -8926,6 +8980,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Unlimited privacy for two": [
+        "Neobmedzené súkromie pre dvoch"
       ],
       "Users won’t be able to manage their calendars": [
         "Používatelia nebudú môcť spravovať svoje kalendáre"
@@ -9440,10 +9497,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -10401,6 +10458,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "Securely hold and transfer your bitcoins": [
+        "Bezpečne uchovávajte a prenášajte svoje bitcoiny"
       ]
     },
     "wallet_signup_2024:Bug category": {

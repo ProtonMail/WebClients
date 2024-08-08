@@ -82,12 +82,6 @@
       "Block": [
         "Блакіраваць"
       ],
-      "Can send to this group": [
-        "Можа адпраўляць у гэту групу"
-      ],
-      "Can't send to this group": [
-        "Не можа адпраўляць у гэту групу"
-      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Выдаліць лагатып"
+      ],
+      "Delete member": [
+        "Выдаліць ўдзельніка"
       ],
       "Delete user": [
         "Выдаліць карыстальніка"
@@ -2706,9 +2703,6 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Уліковыя запісы з карыстальніцкімі даменамі не могуць далучацца да сямейнага тарыфнага плана або перайсці на тарыфны план Visionary."
-      ],
       "customer support": [
         "падтрымка кліентаў"
       ],
@@ -2754,12 +2748,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Тарыфны план Visionary і сямейны тарыфны план у цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "У цяперашні час тарыфныя планы Visionary і сямейны недаступны для ўліковых запісаў з пажыццёвай падпіскай."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
@@ -2798,9 +2786,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш бягучы тарыфны план не дазваляе далучацца да тарыфнага плана Visionary або сямейнага тарыфнага плана."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3548,7 +3533,7 @@
         "Вы сапраўды хочаце скасаваць рэдагаванне групы?"
       ],
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Вы сапраўды хочаце выдаліць гэту групу. Адрас групы больш не будзе працаваць."
+        "Вы сапраўды хочаце выдаліць гэту групу? Адрас групы больш не будзе працаваць."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Вы сапраўды хочаце адключыць двухфактарную аўтэнтыфікацыю?"
@@ -3694,11 +3679,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7456,7 +7441,7 @@
         "Апрацоўка плацяжу"
       ],
       "Select billing country to pay": [
-        "Выберыце краіну выстаўлення рахунку для алпаты"
+        "Выберыце краіну выстаўлення рахунку для аплаты"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
@@ -9539,10 +9524,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
