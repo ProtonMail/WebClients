@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { EmptyViewContainer, Loader, useModalState } from '@proton/components';
+import { EmptyViewContainer, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
@@ -13,7 +13,6 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -24,8 +23,6 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
-    const { isFetchingAccountLinked } = useSimpleLoginExtension();
-
     const { esStatus } = useEncryptedSearchContext();
     const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
         esStatus;
@@ -75,14 +72,6 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
             return { src: noResultSearchSvg, alt: c('Search - no results').t`No snoozed messages` };
         }
     })();
-
-    if (isFetchingAccountLinked) {
-        return (
-            <div className="m-auto text-center p-7 max-w-full">
-                <Loader />
-            </div>
-        );
-    }
 
     return isSpam ? (
         <div className="m-auto text-center p-7 max-w-full">

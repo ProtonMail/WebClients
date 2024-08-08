@@ -27,7 +27,7 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
-import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } from '@proton/shared/lib/mail/messages';
+import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -36,7 +36,6 @@ import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
-import { useSimpleLoginExtension } from '../../../hooks/simpleLogin/useSimpleLoginExtension';
 import type {
     MessageStateWithData,
     MessageWithOptionalBody,
@@ -54,7 +53,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const { call } = useEventManager();
     const [addresses] = useAddresses();
     const { extendedVerifications: sendVerification } = useSendVerifications();
-    const { hasSimpleLogin } = useSimpleLoginExtension();
     const saveDraft = useSaveDraft();
     const getMessage = useGetMessage();
     const sendMessage = useSendMessage();
@@ -66,11 +64,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     );
 
     const unsubscribeMethods = message.UnsubscribeMethods || {};
-
-    // If the user doesn't have the simple login extension, we want to show an extra modal to upsell the feature
-    // However, if the received email is coming from Simple Login, the user is probably already using SL, so we don't want to display the extra modal
-    // Finally, if the sender is an official Proton address, we don't want to show this modal
-    const needsSimpleLoginPresentation = !hasSimpleLogin && !hasSimpleLoginSender(message) && !hasProtonSender(message);
 
     const [unsubscribeModalProps, setUnsubscribeModalOpen, renderUnsubscribeModal] = useModalState();
     const [unsubscribedModalProps, setUnsubscribedModalOpen, renderUnsubscribedModal] = useModalState();
@@ -198,9 +191,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     const handleSubmit = async () => {
         unsubscribeModalProps.onClose();
-        if (needsSimpleLoginPresentation) {
-            setUnsubscribedModalOpen(true);
-        }
+        setUnsubscribedModalOpen(true);
         await submit();
         await api(markAsUnsubscribed([messageID]));
         await call();
