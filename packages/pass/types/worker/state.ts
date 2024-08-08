@@ -47,8 +47,8 @@ export type SessionStoreData = AuthSession;
 export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
-    /** flag indicating if we should force lock on next resume */
     b2bEvents: string;
+    /** flag indicating if we should force lock on next resume */
     forceLock: boolean;
     lastReload: number;
     logs: string;
@@ -60,6 +60,7 @@ export type LocalStoreData = {
     state: string;
     telemetry: string;
     version: string;
+    websiteRules: string;
 };
 
 export type LocalStoreKeys = keyof LocalStoreData;

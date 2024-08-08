@@ -5,6 +5,7 @@ import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup-icon';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { clientReady } from '@proton/pass/lib/client';
+import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
@@ -26,6 +27,8 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
+
+import { getWebsiteRules } from './website-rules';
 
 export const createAutoFillService = () => {
     const getLoginCandidates = (options: SelectAutofillCandidatesOptions): ItemRevision<'login'>[] =>
@@ -174,6 +177,11 @@ export const createAutoFillService = () => {
                 }
             } catch {}
         })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.WEBSITE_RULES_REQUEST,
+        withContext<MessageHandlerCallback<WorkerMessageType.WEBSITE_RULES_REQUEST>>(getWebsiteRules)
     );
 
     return { getLoginCandidates, sync, clear };

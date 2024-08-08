@@ -8,7 +8,7 @@ import type { ExtensionContextType } from 'proton-pass-extension/lib/context/ext
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, Maybe } from '@proton/pass/types';
+import type { AppState, CurrentWebsiteExcludeRules, Maybe } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
 export type CSContextState = AppState & { stale: boolean; ready: boolean };
@@ -21,6 +21,7 @@ export type CSFeatures =
     | 'AutosuggestPassword'
     | 'Passkeys';
 
+export type CurrentWebsiteRules = { exclude?: CurrentWebsiteExcludeRules };
 export interface ContentScriptContext {
     mainFrame: boolean;
     elements: PassElementsConfig;
@@ -39,6 +40,7 @@ export interface ContentScriptContext {
     getFeatures: () => Record<CSFeatures, boolean>;
     getSettings: () => ProxiedSettings;
     getState: () => CSContextState;
+    getWebsiteRules: () => Promise<CurrentWebsiteRules>;
     setFeatureFlags: (update: FeatureFlagState) => void;
     setSettings: (update: Partial<ProxiedSettings>) => void;
     setState: (update: Partial<CSContextState>) => void;
