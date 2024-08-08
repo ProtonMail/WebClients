@@ -20,6 +20,7 @@ export interface DefaultPersistedSession {
     trusted: boolean;
     payloadVersion: 2 | 1;
     payloadType: 'default';
+    persistedAt: number;
 }
 
 export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, 'payloadType'> {
