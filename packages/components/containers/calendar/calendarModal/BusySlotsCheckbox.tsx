@@ -30,7 +30,7 @@ const BusySlotsLabel = () => (
 
 const BusySlotsCheckbox = ({ value, onChange, disabled }: Props) => {
     const { APP_NAME } = useConfig();
-    const isBusySlotsAvailable = useBusySlotsAvailable();
+    const isBusySlotsAvailable = useBusySlotsAvailable(undefined, true);
 
     if (!isBusySlotsAvailable || APP_NAME !== 'proton-calendar') {
         return null;
@@ -45,11 +45,11 @@ const BusySlotsCheckbox = ({ value, onChange, disabled }: Props) => {
     };
 
     return (
-        <>
-            <div>
+        <div className="flex">
+            <div className="mr-4 cursor-pointer" onClick={handleChange}>
                 <BusySlotsLabel />
             </div>
-            <div className="flex items-center gap-x-1">
+            <div>
                 <Toggle
                     id="share-busy-schedule-toggle"
                     aria-describedby="busy-slots-sharing"
@@ -58,7 +58,7 @@ const BusySlotsCheckbox = ({ value, onChange, disabled }: Props) => {
                     onChange={handleChange}
                 />
             </div>
-        </>
+        </div>
     );
 };
 
