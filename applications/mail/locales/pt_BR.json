@@ -4493,6 +4493,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliases não podem ser usados quando uma senha extra está ativada em ${ PASS_APP_NAME }"
+      ],
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
       ],
@@ -4522,6 +4525,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quando a senha adicional está ativado, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Você ainda não tem nenhum contato. Comece criando um novo contato"
@@ -4640,17 +4646,23 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Contas com domínios personalizados não podem participar de um plano de grupo."
       ],
       "customer support": [
         "suporte ao cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "As contas Lifetime não podem participar de um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -4666,12 +4678,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -4694,8 +4700,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Com seu plano atual, não é possível participar de um plano Visionary ou familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "Você não pode aceitar esse convite com seu plano atual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -10224,6 +10230,24 @@
       ],
       "Subject": [
         "Assunto"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Anunciar eventos próximos em um boletim informativo”"
+      ],
+      "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Cancelar minha associação da academia\""
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Agradecer ao meu colega pela ajuda em um projeto”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escrever uma carta de apresentação para um estágio”"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escreva um email de acompanhamento para um cliente”"
       ],
       "Text": [
         "Texto"

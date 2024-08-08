@@ -405,6 +405,9 @@
       "Pay ${ price } now": [
         "Pagar ${ price } agora"
       ],
+      "PDF (.pdf)": [
+        "PDF (.pdf)"
+      ],
       "Plain Text (.txt)": [
         "Texto sem formatação (.txt)"
       ],
@@ -2795,6 +2798,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Quando a senha adicional está ativado, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -2900,17 +2906,23 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Contas com domínios personalizados não podem participar de um plano de grupo."
       ],
       "customer support": [
         "suporte ao cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "As contas Lifetime não podem participar de um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -2926,12 +2938,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -2954,8 +2960,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Com seu plano atual, não é possível participar de um plano Visionary ou familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "Você não pode aceitar esse convite com seu plano atual."
       ]
     },
     "familyOffer_2023:Label": {

@@ -3587,9 +3587,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები Visionary და საოჯახო ტარიფებს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
@@ -3614,12 +3611,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary და საოჯახო გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary და საოჯახო ტარიფებს ამჟამად ცხოვრებისეული ანგარიშების მხარდაჭერა არ გააჩნიათ"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
       ],
@@ -3640,9 +3631,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "თქვენი მიმდინარე ანგარიში Visionary ან საოჯახო გეგმას ვერ შეუერთდება."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5291,9 +5279,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
-      ],
-      "Access to my events": [
-        "წვდომა ჩემს მოვლენებთან"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"

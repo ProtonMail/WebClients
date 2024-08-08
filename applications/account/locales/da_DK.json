@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -157,6 +157,9 @@
       "Allow": [
         "Tillad"
       ],
+      "Always allow sending mail to group": [
+        "Tillad altid at sende mail til gruppen"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -180,12 +183,6 @@
       ],
       "Bold": [
         "Fed"
-      ],
-      "Can send to this group": [
-        "Kan sende til denne gruppe"
-      ],
-      "Can't send to this group": [
-        "Kan ikke sende til denne gruppe"
       ],
       "Cancel": [
         "Annullér"
@@ -394,6 +391,9 @@
       "Disable": [
         "Deaktivér"
       ],
+      "Disable E2EE for group address": [
+        "Deaktiver E2EE for gruppeadresse"
+      ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsessætning"
       ],
@@ -495,6 +495,9 @@
       ],
       "Enable device-based recovery": [
         "Aktivér enhedsbaseret gendannelse"
+      ],
+      "Enable E2EE for group address": [
+        "Aktiver E2EE for gruppeadresse"
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
@@ -736,10 +739,10 @@
       "No, thanks": [
         "Nej tak"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open": [
@@ -802,11 +805,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1185,6 +1188,9 @@
       ],
       "Use authentication code": [
         "Brug godkendelseskode"
+      ],
+      "Use group sending permissions": [
+        "Brug tilladelser til gruppeafsendelse"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
@@ -1616,14 +1622,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1645,6 +1643,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3386,11 +3392,11 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for at få adgang til disse funktioner"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiver avancerede logs og ${ PROTON_SENTINEL_NAME }, for at få adgang til disse funktioner"
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktiver detaljerede begivenheder og ${ PROTON_SENTINEL_NAME }for at tilgå disse funktioner"
       ],
-      "Enable advanced logs to access these features": [
-        "Aktiver avancerede logs, for at få adgang til disse funktioner"
+      "Enable detailed events to access these features": [
+        "Aktiver detaljerede begivenheder for at tilgå disse funktioner"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -5068,11 +5074,14 @@
       "*Only one free trial per customer.": [
         "*Kun én gratis prøveperiode pr. kunde."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konti med brugerdomæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konti med tilpassede domæner kan ikke deltage i et gruppeabonnement."
       ],
       "customer support": [
         "kundeservice"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppeabonnementer understøttes pt. ikke af eksterne konti. Opret en ${ BRAND_NAME }-adresse før tilmelding. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -5091,6 +5100,9 @@
       ],
       "Leave Visionary plan": [
         "Forlad Visionary-abonnementet"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livstidskonti kan ikke indgå i et gruppeabonnement."
       ],
       "Manage addresses.": [
         "Administrer adresser."
@@ -5126,12 +5138,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "For at lette overgangen giver vi dig en 30-dages prøveversion af ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
       ],
@@ -5161,8 +5167,8 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du skal konfigurere et brugerdefineret domæne, før du tilføjer en ny bruger."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Du mister adgang til alle premium-funktioner og lagerplads, der er inkluderet i ${ BRAND_NAME } Family."
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Du mister adgang til alle premium-funktioner og lagerplads, der indgår i ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
@@ -5173,8 +5179,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6952,11 +6958,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -7142,6 +7148,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Invitationer til begivenheder og tilmeldingsbekræftelser vil blive afsendt på dette sprog."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Begivenheder omfatter godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, der bruger dine ${ BRAND_NAME_TWO }-legitimationsoplysninger."
       ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
@@ -7579,9 +7588,6 @@
       ],
       "Loading...": [
         "Indlæser..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Logs inkluderer godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, der bruger dine ${ BRAND_NAME_TWO }-legitimationsoplysninger."
       ],
       "Low Priority": [
         "Lav prioritet"
@@ -9123,6 +9129,11 @@
         "AI-drevet assistent afhjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Ikke en gyldig e-mailadresse"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Link-etiket (valgfrit)"
@@ -9139,6 +9150,9 @@
       ],
       "Rejected": [
         "Afvist"
+      ],
+      "Sending invite...": [
+        "Sender invitation..."
       ]
     },
     "Invoice state display as badge": {
@@ -9512,9 +9526,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
-      ],
-      "Access to my events": [
-        "Adgang til mine begivenheder"
       ],
       "Account recovery": [
         "Kontogendannelse"
@@ -10851,11 +10862,11 @@
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
       ],
-      "Enable advanced logs": [
-        "Aktiver avancerede logs"
+      "Enable detailed events": [
+        "Aktiver detaljerede begivenheder"
       ],
-      "Enable authentication logs": [
-        "Aktiver godkendelseslogs"
+      "Enable security events": [
+        "Aktiver sikkerhedsbegivenheder"
       ]
     },
     "Mail import summary": {
@@ -13026,9 +13037,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Få ${ appName } til ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Få ${ appName } til ${ browserName } snart"
       ],
       "Get in touch with our sales team": [
         "Kontakt vores salgsteam"
@@ -15907,11 +15915,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -16598,6 +16606,9 @@
       "Security and privacy": [
         "Sikkerhed og privatliv"
       ],
+      "Security events": [
+        "Sikkerhedsbegivenheder"
+      ],
       "Security logs": [
         "Sikkerhedslog"
       ],
@@ -17025,8 +17036,8 @@
       "Enable/disable desktop and mobile notifications": [
         "Aktiver/deaktiver notifikationer på desktop og mobil"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
+      "Enabling detailed events records the IP address for each event.": [
+        "Når detaljerede begivenheder aktiveres, registreres IP-adressen for hver begivenhed."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse til slutpunkt fra identitetsudbyder (f.eks. https://idp.example.com/sso/saml)"
@@ -17170,6 +17181,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitation"
       ],
       "User rejected invitation": [
         "Bruger afviste invitation"
@@ -17624,8 +17638,8 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
       ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Ved at deaktivere logfilerne vil du også rydde hele din logfilshistorik. Er du sikker på, at du vil deaktivere loggerne?"
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ved at slå overvågning af sikkerhedsbegivenheder fra, slettes også hele din historik. Er du sikker på, at du vil deaktivere dette?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Udløbsdatoen er ikke i formatet MM/ÅÅ"

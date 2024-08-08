@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -658,10 +658,10 @@
       "No, thanks": [
         "不，谢谢"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open": [
@@ -724,10 +724,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -1403,14 +1403,6 @@
         "选择您的年终优惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1432,6 +1424,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -3136,12 +3136,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "开启高级日志和 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
-      ],
-      "Enable advanced logs to access these features": [
-        "开启高级日志即可使用这些功能"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
@@ -4542,9 +4536,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "使用自有域名的邮箱不能加入 Visionary 或家庭账户。"
-      ],
       "customer support": [
         "客户支持"
       ],
@@ -4569,12 +4560,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "分配给您的存储空间：${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 账户与家庭账户目前不支持第三方平台，请创建 ${ BRAND_NAME } 邮箱地址后再加入。${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary 与家庭账户暂不支持终身制。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "有人邀请您加入 ${ invite.OrganizationName }"
       ],
@@ -4592,9 +4577,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "您的当前账户无法加入 Visionary 或家庭账户。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -6072,10 +6054,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6560,9 +6542,6 @@
       ],
       "Loading...": [
         "加载中..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "试图使用您的 ${ BRAND_NAME } 账户登录任何 ${ BRAND_NAME_TWO } 产品的操作都会被记录。"
       ],
       "Low Priority": [
         "较低优先顺序"
@@ -8201,9 +8180,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
-      "Access to my events": [
-        "访问我的活动"
-      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -9431,12 +9407,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "开启详细日志"
-      ],
-      "Enable authentication logs": [
-        "开启登录日志"
       ]
     },
     "Mail import summary": {
@@ -13159,10 +13129,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -14125,9 +14095,6 @@
       "Enable/disable desktop and mobile notifications": [
         "开启或关闭推送通知"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "详细日志会记录触发各事件的 IP 地址。"
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
@@ -14533,9 +14500,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "删除此号码后，您将无法再重置账户密码。"
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "关闭日志功能后，现有日志将被清空。确定要关闭日志吗？"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容 ${ BRAND_NAME } 会正常保存。确定要取消吗？"

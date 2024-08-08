@@ -490,7 +490,7 @@
         "Gestionar enlaces compartidos"
       ],
       "Mark as resolved": [
-        "Marcar como resuelto"
+        "Marcar como resuelta"
       ],
       "Mark for deletion": [
         "Marcar para eliminar"
@@ -1817,7 +1817,7 @@
         "RPD de Corea"
       ],
       "Korea (Republic of)": [
-        "República de Corea"
+        "Corea (República)"
       ],
       "Kosovo": [
         "Kosovo"
@@ -3281,17 +3281,23 @@
       "${ BRAND_NAME } groups": [
         "Grupos de ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o un plan familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan grupal."
       ],
       "customer support": [
         "soporte al cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes grupales actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si acepta la invitación, lo cambiaremos del plan actual y acreditaremos la cuenta con cualquier saldo restante."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitado por: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Las cuentas Lifetime no pueden unirse a un plan grupal."
       ],
       "Manage addresses.": [
         "Gestionar direcciones."
@@ -3307,12 +3313,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes Visionary y familiar actualmente no admiten cuentas externas. Cree una dirección de ${ BRAND_NAME } antes de unirse. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Los planes Visionary y familiar actualmente no admiten cuentas de por vida."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Recibió una invitación para unirse a ${ invite.OrganizationName }"
@@ -3335,8 +3335,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "La cuenta está usando ${ usedSpace } de almacenamiento, que supera los ${ inviteSpace } que tiene asignados. Elimine algunos datos o solicite al administrador del plan que aumente el almacenamiento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "El plan actual no puede unirse a un plan Visionary o un plan familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "No puede aceptar esta invitación con el plan actual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -9161,7 +9161,7 @@
         "Dirección de correo corta @pm.me"
       ],
       "Support our mission": [
-        "Apoya nuestra misión"
+        "Apoye nuestra misión"
       ],
       "Upgrade": [
         "Mejorar"

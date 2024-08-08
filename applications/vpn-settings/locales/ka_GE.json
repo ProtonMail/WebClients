@@ -82,12 +82,6 @@
       "Block": [
         "დაბლოკვა"
       ],
-      "Can send to this group": [
-        "ამ ჯგუფთან გაგზავნა შეუძლებელია"
-      ],
-      "Can't send to this group": [
-        "ამ ჯგუფთან გაგზავნა შეუძლებელია"
-      ],
       "Cancel": [
         "გაუქმება"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "ლოგოს წაშლა"
+      ],
+      "Delete member": [
+        "წევრის წაშლა"
       ],
       "Delete user": [
         "მომხმარებლის წაშლა"
@@ -2688,9 +2685,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები Visionary და საოჯახო ტარიფებს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
@@ -2734,12 +2728,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary და საოჯახო გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary და საოჯახო ტარიფებს ამჟამად ცხოვრებისეული ანგარიშების მხარდაჭერა არ გააჩნიათ"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
       ],
@@ -2774,9 +2762,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "თქვენი მიმდინარე ანგარიში Visionary ან საოჯახო გეგმას ვერ შეუერთდება."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3620,11 +3605,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -9293,10 +9278,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [

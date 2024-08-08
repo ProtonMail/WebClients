@@ -745,7 +745,7 @@
         "Змяніць"
       ],
       "Modify selection": [
-        "Змніць выбранае"
+        "Змяніць выбранае"
       ],
       "Monday": [
         "Панядзелак"
@@ -1575,7 +1575,7 @@
     },
     "Assistant option": {
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "Даныя застануцца на вашай прыладзе, але неабходна будзе аднаразовае спампоўка і сумяшчальнае абсталяванне"
+        "Даныя застануцца на вашай прыладзе, але неабходна будзе аднаразовая спампоўка і сумяшчальнае абсталяванне"
       ],
       "Fast and secure. No logs are kept.": [
         "Хуткі і бяспечны. Не пакідае журналаў."
@@ -4703,9 +4703,6 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Уліковыя запісы з карыстальніцкімі даменамі не могуць далучацца да сямейнага тарыфнага плана або перайсці на тарыфны план Visionary."
-      ],
       "customer support": [
         "падтрымка кліентаў"
       ],
@@ -4730,12 +4727,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Тарыфны план Visionary і сямейны тарыфны план у цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "У цяперашні час тарыфныя планы Visionary і сямейны недаступны для ўліковых запісаў з пажыццёвай падпіскай."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
@@ -4756,9 +4747,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш бягучы тарыфны план не дазваляе далучацца да тарыфнага плана Visionary або сямейнага тарыфнага плана."
       ]
     },
     "familyOffer_2023:Label": {
@@ -7211,7 +7199,7 @@
         "у папку ${ destinationElement }."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "Выкарыстоўвайце настольную праграму, каб не адцягваць увагу на іншых адкрытых укладках у вашым браўзеры."
+        "Выкарыстоўвайце настольную праграму, каб не адцягваць увагу на іншыя адкрытыя ўкладкі ў вашым браўзеры."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
@@ -7433,7 +7421,7 @@
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
-        "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на навіны. Ваша ідэнтычнасць застанецца схаванай дзякуючы таму, што псеўданім можна адключыць у любы момант."
+        "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на навіны. Ваша ідэнтычнасць застанецца схаванай і псеўданім таксама можна адключыць у любы момант."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Падключайцеся да ${ VPN_APP_NAME }, каб прадухіліць адсочванне вашай актыўнасці ў інтэрнэце або крадзеж вашых даных падчас падарожжаў або выкарыстання публічных сетак Wi-Fi. Гэта абсалютна бясплатна."
@@ -10343,7 +10331,7 @@
         "Першапачаткова выберыце ваш стан выстаўлення рахунку."
       ],
       "Select billing country to pay": [
-        "Выберыце краіну выстаўлення рахунку для алпаты"
+        "Выберыце краіну выстаўлення рахунку для аплаты"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
@@ -12563,7 +12551,7 @@
         "Уключыць Dark Web Monitoring"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
-        "Атрымаць адрас з маім імем “@${ PM_DOMAIN }“"
+        "Атрымаць мой адрас “@${ PM_DOMAIN }“"
       ],
       "Open ": [
         "Адкрыць "
@@ -13591,7 +13579,7 @@
         "Уліковы запіс ${ indexStr }"
       ],
       "My imported wallet${ indexStr }": [
-        "Мае імпартаваныя кашалькі${ indexStr }"
+        "Мой імпартаваны кашалёк${ indexStr }"
       ],
       "My wallet${ indexStr }": [
         "Мой кашалёк${ indexStr }"

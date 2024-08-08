@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Tučně"
-      ],
-      "Can send to this group": [
-        "Může posílat do této skupiny"
-      ],
-      "Can't send to this group": [
-        "Nemůže posílat do této skupiny"
       ],
       "Cancel": [
         "Zrušit"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Smazat logo"
+      ],
+      "Delete member": [
+        "Smazat člena"
       ],
       "Delete permanently": [
         "Trvale smazat"
@@ -733,11 +730,11 @@
       "No, thanks": [
         "Ne, děkuji"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otevřít"
@@ -799,11 +796,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -1621,14 +1618,6 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1650,6 +1639,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3411,12 +3408,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Pro přístup k těmto funkcím povolte rozšířené logy a ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Enable advanced logs to access these features": [
-        "Povolením pokročilých logů získáte přístup k těmto funkcím"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
@@ -5107,9 +5098,6 @@
       "*Only one free trial per customer.": [
         "*Pouze jedna bezplatná zkušební verze na zákazníka."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Účty s vlastními doménami se nemohou připojit k tarifu Visionary nebo rodinnému tarifu."
-      ],
       "customer support": [
         "zákaznická podpora"
       ],
@@ -5167,12 +5155,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Abychom vám usnadnili přechod, nabízíme vám 30denní zkušební verzi služby ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Tarify Visionary a rodinné tarify v současné době nepodporují doživotní účty."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
       ],
@@ -5206,9 +5188,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Před vytvořením nového uživatele je třeba nakonfigurovat vlastní doménu."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Ztratíte přístup ke všem prémiovým funkcím a úložnému prostoru, které jsou součástí služby ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
       ],
@@ -5217,9 +5196,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Váš aktuální tarif se nemůže připojit k tarifu Visionary nebo rodinnému tarifu."
       ]
     },
     "familyOffer_2023:Info": {
@@ -7082,11 +7058,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -7717,9 +7693,6 @@
       ],
       "Loading...": [
         "Načítání..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Nízká priorita"
@@ -9695,9 +9668,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
-      "Access to my events": [
-        "Přístup k mým událostem"
-      ],
       "Account recovery": [
         "Obnovení účtu"
       ],
@@ -11039,12 +11009,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povolit ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Povolit pokročilé protokoly"
-      ],
-      "Enable authentication logs": [
-        "Povolit ověřovací protokoly"
       ]
     },
     "Mail import summary": {
@@ -13312,9 +13276,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Získat ${ appName } pro ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Získejte ${ appName } pro ${ browserName } již brzy"
       ],
       "Get in touch with our sales team": [
         "Kontaktujte náš obchodní tým"
@@ -16293,10 +16254,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -17418,9 +17379,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Povolit/zakázat oznamování na ploše a mobilu"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Umožňuje nahrávat pokročilé protokoly IP adres v bezpečnostním protokolu pro každou událost."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL adresa endpointu od poskytovatele identity (např. https://idp.example.com/sso/saml)"
       ],
@@ -18065,9 +18023,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Po vymazáním tohoto telefonního čísla, již nebudete moci obnovit svůj účet."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Deaktivací záznamů aktivity také vyčistíte celou historii záznamů. Jste si jistí, že chcete deaktivovat záznamy?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"

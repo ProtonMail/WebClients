@@ -155,6 +155,9 @@
       "Close this banner": [
         "Закрыть этот баннер"
       ],
+      "Collapse navigation bar": [
+        "Свернуть панель навигации"
+      ],
       "Compose": [
         "Новое письмо"
       ],
@@ -640,6 +643,9 @@
       ],
       "Show more": [
         "Показать больше"
+      ],
+      "Show navigation bar": [
+        "Показать панель навигации"
       ],
       "Show side panel": [
         "Показать боковую панель"
@@ -2517,6 +2523,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Это может занять несколько минут. Тем временем вы можете продолжать использовать календарь как обычно."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Чтобы убедиться в высшей безопасности вашего аккаунта, установите фразу для восстановления."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
@@ -3635,9 +3644,6 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Аккаунты с пользовательскими доменами не могут подключиться к семейному плану или перейти на тариф Visionary."
-      ],
       "customer support": [
         "служба поддержки"
       ],
@@ -3659,12 +3665,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Доступный объем хранилища: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент семейный план и тариф Visionary не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "На данный момент тариф Visionary и семейный план не доступны для пожизненных аккаунтов."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
       ],
@@ -3682,9 +3682,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш текущий план не позволяет присоединиться к семейной подписке или тарифу Visionary."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5413,9 +5410,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
-      ],
-      "Access to my events": [
-        "Доступ к моим событиям"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -9500,6 +9494,9 @@
       ],
       "Continue with partial import?": [
         "Продолжить частичный импорт?"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create contact": [
         "Создать контакт"
