@@ -9,7 +9,10 @@ export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
   performOpeningCeremony(): Promise<void>
   performClosingCeremony(): Promise<void>
+  /** Returns the document Yjs state */
   getDocumentState(): Promise<Uint8Array>
+  /** Returns the Lexical state of the editor, unrelated to the Yjs state */
+  getCurrentEditorState(): Promise<SerializedEditorState | undefined>
   getClientId(): Promise<number>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>
@@ -27,8 +30,7 @@ export interface ClientRequiresEditorMethods {
   handleUnresolveCommentMarkNode(markID: string): Promise<void>
   changeLockedState(locked: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
-  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob>
-  getCurrentEditorState(): Promise<SerializedEditorState | undefined>
+  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>
 }
