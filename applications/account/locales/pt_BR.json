@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Negrito"
-      ],
-      "Can send to this group": [
-        "Pode enviar para esse grupo"
-      ],
-      "Can't send to this group": [
-        "Não é possível enviar para este grupo"
       ],
       "Cancel": [
         "Cancelar"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Excluir logotipo"
+      ],
+      "Delete member": [
+        "Excluir membro"
       ],
       "Delete permanently": [
         "Excluir permanentemente"
@@ -733,11 +730,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -799,11 +796,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1613,14 +1610,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1642,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3386,12 +3383,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Ative registros avançados e ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
-      ],
-      "Enable advanced logs to access these features": [
-        "Ative os registros avançados para acessar esses recursos"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
@@ -5068,11 +5059,14 @@
       "*Only one free trial per customer.": [
         "*Somente uma avaliação gratuita por cliente."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Contas com domínios personalizados não podem participar de um plano de grupo."
       ],
       "customer support": [
         "suporte ao cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -5091,6 +5085,9 @@
       ],
       "Leave Visionary plan": [
         "Sair do plano Visionary"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "As contas Lifetime não podem participar de um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -5126,12 +5123,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Para facilitar a transação, estamos oferecendo a você uma avaliação gratuita de 30 dias do ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
       ],
@@ -5161,9 +5152,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Você precisa configurar um domínio personalizado antes de criar um novo usuário."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Você perderá o acesso a todos os recursos premium e espaço de armazenamento incluso com ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
@@ -5173,8 +5161,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Com seu plano atual, não é possível participar de um plano Visionary ou familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "Você não pode aceitar esse convite com seu plano atual."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6961,11 +6949,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -7588,9 +7576,6 @@
       ],
       "Loading...": [
         "Carregando..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Os registros incluem tentativas de autenticação para todos os serviços da ${ BRAND_NAME } que usam suas credenciais da ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Baixa prioridade"
@@ -9525,9 +9510,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
-      "Access to my events": [
-        "Acesso aos meus eventos"
-      ],
       "Account recovery": [
         "Recuperar conta"
       ],
@@ -10865,12 +10847,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ativar ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Ativar registros avançados"
-      ],
-      "Enable authentication logs": [
-        "Ativar registros de autenticação"
       ]
     },
     "Mail import summary": {
@@ -13068,9 +13044,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Obtenha ${ appName } para ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Obtenha ${ appName } para ${ browserName } em breve"
       ],
       "Get in touch with our sales team": [
         "Entre em contato com nossa equipe de vendas"
@@ -15955,11 +15928,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -17082,9 +17055,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Ativar/desativar notificações na área de trabalho e dispositivos móveis"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Ativar registros avançados registra o endereço IP para cada evento no registro de segurança."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do provedor de identidade (por exemplo, https://idp.exemplo.com/sso/saml)"
       ],
@@ -17700,9 +17670,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao excluir este número de telefone, você não poderá mais recuperar sua conta."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Ao desativar os registros, você também estará limpando o seu histórico de registros. Você tem certeza que deseja desativar os registros?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "A data de expiração não está no formato MM/AA"

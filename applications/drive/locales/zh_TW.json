@@ -3219,9 +3219,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "有自訂網域的帳號無法加入 Visionary 或家庭方案。"
-      ],
       "customer support": [
         "客服"
       ],
@@ -3246,12 +3243,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "此訂購授權將向主要管理員收取方案費用。"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 與家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 位址。${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary 與家庭方案目前不支援 lifetime 帳號。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -3272,9 +3263,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "您目前的方案無法加入 Visionary 或家庭方案。"
       ]
     },
     "familyOffer_2023:Label": {

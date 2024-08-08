@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -712,10 +712,10 @@
       "No, thanks": [
         "No, gràcies"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -778,11 +778,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1416,6 +1416,9 @@
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
       ],
+      "Run on device": [
+        "Executa al dispositiu"
+      ],
       "Run on servers": [
         "Executa als servidors"
       ]
@@ -1565,14 +1568,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1594,6 +1589,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -2691,6 +2694,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "República Islàmica de l'Iran"
+      ],
       "Isle of Man": [
         "Illa de Man"
       ],
@@ -3322,12 +3328,6 @@
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
-      ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Activa els registres avançats i ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions."
-      ],
-      "Enable advanced logs to access these features": [
-        "Activeu els registres avançats per accedir a aquestes funcions."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
@@ -5005,9 +5005,6 @@
       "*Only one free trial per customer.": [
         "*Només una prova gratuïta per client."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Els comptes amb dominis personalitzats no poden unir-se a un pla Visionary o familiar."
-      ],
       "customer support": [
         "atenció al client"
       ],
@@ -5047,12 +5044,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Per a facilitar la transició, us oferim una prova de cortesia de 30 dies de ${ BRAND_NAME } Il·limitat*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Els plans Visionary i familiar actualment no admeten comptes vitalicis."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
       ],
@@ -5071,9 +5062,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Perdreu l'accés a totes les característiques prèmium i a l'espai d'emmagatzematge inclòs amb ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla de grup i gaudir junts de totes les característiques prèmium de ${ BRAND_NAME_TWO }."
       ],
@@ -5082,9 +5070,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "El vostre pla actual no pot unir-se a un pla Visionary o familiar."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6801,11 +6786,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -7422,9 +7407,6 @@
       ],
       "Loading...": [
         "S'està carregant..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Els registres inclouen els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que empren les vostres credencials de ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Prioritat baixa"
@@ -8250,7 +8232,7 @@
         "Per a continuar, seleccioneu un mètode de recuperació del compte perquè puguem verificar la sol·licitud."
       ],
       "To proceed, we must verify the request.": [
-        "Per a continuar, hem de verificar la petició."
+        "Per a continuar, hem de verificar la sol·licitud."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ${ VPN_APP_NAME } per al vostre dispositiu i connecteu a un servidor."
@@ -9317,9 +9299,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
-      ],
-      "Access to my events": [
-        "Accés als meus esdeveniments."
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -10649,12 +10628,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Habilita ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Activa els registres avançats"
-      ],
-      "Enable authentication logs": [
-        "Activa els registres d'autenticació"
       ]
     },
     "Mail import summary": {
@@ -11167,6 +11140,12 @@
       ],
       "From ${ price }": [
         "Des de ${ price }"
+      ],
+      "Get started for $1": [
+        "Comenceu per $1"
+      ],
+      "Get started for 1 €": [
+        "Comenceu per 1€"
       ],
       "Upgrade": [
         "Millora"
@@ -12799,9 +12778,6 @@
       "Get ${ appName } for ${ browserName }": [
         "Obtingueu ${ appName } per a ${ browserName }."
       ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Obtingueu ${ appName } per a ${ browserName } pròximament."
-      ],
       "Get in touch with our sales team": [
         "Poseu-vos en contacte amb el nostre equip comercial"
       ],
@@ -13091,6 +13067,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
+      ],
+      "Please select billing state": [
+        "Seleccioneu l'estat de facturació"
       ],
       "Processing payment": [
         "S'està processant el pagament."
@@ -14674,6 +14653,9 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "2 users": [
+        "2 usuaris"
+      ],
       "20 email addresses per user": [
         "20 adreces de correu electrònic per usuari"
       ],
@@ -14853,6 +14835,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Unlimited privacy for two": [
+        "Privadesa il·limitada per a dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Els usuaris no podran gestionar els seus calendaris"
@@ -15582,10 +15567,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -16682,9 +16667,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Activa/desactiva les notificacions a l'escriptori i al mòbil"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Habitar els registres avançats enregistra l'adreça IP per a cada esdeveniment al registre de seguretat."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"
       ],
@@ -17177,6 +17159,11 @@
         "Desbloquegeu característiques prèmium de ${ appName } millorant la subscripció"
       ]
     },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema amb Wallet"
+      ]
+    },
     "wallet_signup_2024:Info": {
       "Coming soon": [
         "Disponible pròximament"
@@ -17216,9 +17203,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Si suprimiu aquest número de telèfon, ja no podreu recuperar el vostre compte."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Al desactivar els registres, també netejaràs l'historial complet de registres. Esteu segur que voleu desactivar els registres?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "La data de caducitat no té el format MM/AA"

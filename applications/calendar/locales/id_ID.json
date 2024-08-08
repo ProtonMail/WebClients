@@ -3551,9 +3551,6 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket Visionary atau paket keluarga."
-      ],
       "customer support": [
         "layanan dukungan"
       ],
@@ -3578,12 +3575,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Paket Visionary dan keluarga saat ini tidak mendukung akun seumur hidup."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"
       ],
@@ -3604,9 +3595,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Paket Anda saat ini tidak dapat bergabung ke paket Visionary atau paket keluarga."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5212,9 +5200,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
-      "Access to my events": [
-        "Akses menuju acara saya"
-      ],
       "Add email address": [
         "Tambah alamat email"
       ],
@@ -6128,6 +6113,15 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Get started for $1": [
+        "Mulai dengan harga $1"
+      ],
+      "Get started for 1 €": [
+        "Mulai dengan harga 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Mulai dengan harga CHF 1"
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"

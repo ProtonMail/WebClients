@@ -2996,7 +2996,7 @@
         "Le chiffrement n'a pas abouti."
       ],
       "Missing FN property": [
-        "Les propriétés FN sont manquantes."
+        "La propriété FN est manquante."
       ],
       "vCard versions < 3.0 not supported": [
         "Versions de vCard < 3.0 non prises en charge"
@@ -3281,17 +3281,23 @@
       "${ BRAND_NAME } groups": [
         "Groupes ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement Visionary ou un abonnement familial."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement de groupe."
       ],
       "customer support": [
         "service client"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Actuellement, les abonnements de groupe ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si vous acceptez l'invitation, nous changerons votre abonnement actuel et nous créditerons votre compte de l'éventuel solde restant."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitation de : ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Les comptes Lifetime ne peuvent rejoindre un abonnement de groupe."
       ],
       "Manage addresses.": [
         "Gérer les adresses"
@@ -3307,12 +3313,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abonnement sera facturé à l'administrateur principal."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Actuellement, l'abonnement Visionary et les abonnements familiaux ne prennent pas en charge les comptes à vie."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -3335,8 +3335,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Votre abonnement actuel ne peut pas être associé à un abonnement Visionary ou à un abonnement familial."
+      "Your cannot accept this invitation with your current plan.": [
+        "Vous ne pouvez pas accepter cette invitation avec votre abonnement actuel."
       ]
     },
     "familyOffer_2023:Label": {
