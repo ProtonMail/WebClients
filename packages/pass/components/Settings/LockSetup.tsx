@@ -29,9 +29,9 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-type Props = { onSuccess?: () => void };
+type Props = { noTTL?: boolean };
 
-export const LockSetup: FC<Props> = ({ onSuccess }) => {
+export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const { getBiometricsKey } = usePassCore();
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
@@ -67,10 +67,7 @@ export const LockSetup: FC<Props> = ({ onSuccess }) => {
         initialRequestId: lockCreateRequest(),
         onStart: ({ data }) => setNextLock({ ttl: data.lock.ttl, mode: data.lock.mode }),
         onFailure: () => setNextLock(null),
-        onSuccess: () => {
-            setNextLock(null);
-            onSuccess?.();
-        },
+        onSuccess: () => setNextLock(null),
     });
 
     const handleLockModeSwitch = async (mode: LockMode) => {
@@ -282,24 +279,26 @@ export const LockSetup: FC<Props> = ({ onSuccess }) => {
                 ]}
             />
 
-            <hr className="mt-2 mb-4 border-weak shrink-0" />
-
-            <LockTTLField
-                ttl={nextLock?.ttl ?? orgLockTTL ?? lockTTL}
-                disabled={!online || !canToggleTTL || createLock.loading}
-                onChange={handleLockTTLChange}
-                label={
-                    <>
-                        {c('Label').t`Auto-lock after`}
-                        {orgLockTTL && (
+            {!noTTL && (
+                <>
+                    <hr className="mt-2 mb-4 border-weak shrink-0" />
+                    <LockTTLField
+                        ttl={nextLock?.ttl ?? orgLockTTL ?? lockTTL}
+                        disabled={!online || !canToggleTTL || createLock.loading}
+                        onChange={handleLockTTLChange}
+                        label={
                             <>
-                                {' '}
-                                <span className="color-weak text-sm">{c('Info').t`(set by your organization)`}</span>
+                                {c('Label').t`Auto-lock after`}
+                                {orgLockTTL && (
+                                    <span className="color-weak text-sm">
+                                        {` (${c('Info').t`Set by your organization`})`}
+                                    </span>
+                                )}
                             </>
-                        )}
-                    </>
-                }
-            />
+                        }
+                    />
+                </>
+            )}
         </>
     );
 };
