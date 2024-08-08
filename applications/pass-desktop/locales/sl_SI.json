@@ -6,19 +6,19 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "${ name } in ${ remainingCount } drugih možnih odtekanj podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo ${ name } in 1 drugo potencialno odtekanje podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
@@ -474,6 +474,9 @@
       ],
       "Try for free": [
         "Preizkusite brezplačno"
+      ],
+      "Unlock": [
+        "Odkleni"
       ],
       "Unpin item": [
         "Odpni predmet"
@@ -2180,9 +2183,6 @@
       ],
       "Selected": [
         "Izbrano"
-      ],
-      "Session locking": [
-        "Zaklepanje seje"
       ],
       "Share": [
         "Deli"
