@@ -509,6 +509,9 @@
       "Try again": [
         "Yeniden dene"
       ],
+      "Unlock": [
+        "Kilidi aç"
+      ],
       "Unlock offline with password": [
         "Parola ile çevrim dışı kilidi aç"
       ],
@@ -1514,6 +1517,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
       ],
+      "Quickly autofill your identities.": [
+        "Kimliklerinizi kolayca otomatik olarak doldurun"
+      ],
       "Registering extra password...": [
         "Ek parola kaydediliyor..."
       ],
@@ -1973,9 +1979,6 @@
       "Display": [
         "Görünüm"
       ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Oturum açma alanlarında ${ PASS_APP_NAME } simgesi görüntülensin"
-      ],
       "Domain": [
         "Etki alanı"
       ],
@@ -2065,6 +2068,9 @@
       ],
       "Identity": [
         "Kimlik"
+      ],
+      "Identity autofill": [
+        "Otomatik kimlik doldurma"
       ],
       "Import": [
         "İçe aktar"
@@ -2296,9 +2302,6 @@
       ],
       "Selected": [
         "Seçilmiş"
-      ],
-      "Session locking": [
-        "Oturum kilitleme"
       ],
       "Settings": [
         "Ayarlar"
