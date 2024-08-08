@@ -76,7 +76,11 @@ const useGroupKeys = () => {
     };
 
     const getMemberPublicKeys = async (memberEmail: string) => {
-        const memberPublicKeys = await getPublicKeysForInbox({ email: memberEmail, lifetime: 0 });
+        const memberPublicKeys = await getPublicKeysForInbox({
+            email: memberEmail,
+            lifetime: 0,
+            noCache: true,
+        });
 
         if (memberPublicKeys.Errors) {
             memberPublicKeys.Errors.forEach((error: string) => {
