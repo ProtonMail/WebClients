@@ -34,7 +34,8 @@ import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusRe
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { selectLockSetupRequired } from '@proton/pass/store/selectors';
+import { type AppState, AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import createStore from '@proton/shared/lib/helpers/store';
@@ -53,6 +54,15 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     exposePassCrypto(createPassCrypto());
+
+    const onStateUpdate = (state: AppState) => {
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.WORKER_STATUS,
+                payload: { state },
+            })
+        );
+    };
 
     const context = WorkerContext.set({
         status: AppStatus.IDLE,
@@ -87,40 +97,48 @@ export const createWorkerContext = (config: ProtonConfig) => {
             return context;
         },
 
-        getState: () => ({
-            booted: clientBooted(context.status),
-            localID: authStore.getLocalID(),
-            loggedIn: authStore.hasSession() && clientReady(context.status),
-            status: context.status,
-            UID: authStore.getUID(),
-        }),
+        getState: () => {
+            /** Note: A user is not considered fully logged in if lock setup is required.
+             * This allows blocking other extension components (e.g., injected dropdown)
+             * when the user is in this state. */
+            const lockSetup = selectLockSetupRequired(store.getState());
+
+            return {
+                booted: clientBooted(context.status),
+                localID: authStore.getLocalID(),
+                loggedIn: authStore.hasSession() && clientReady(context.status) && !lockSetup,
+                status: context.status,
+                UID: authStore.getUID(),
+            };
+        },
 
         setStatus(status: AppStatus) {
             logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
             context.status = status;
-
-            void setPopupIcon({
-                disabled: clientDisabled(status),
-                locked: clientLocked(status),
-            });
-
-            WorkerMessageBroker.ports.broadcast(
-                backgroundMessage({
-                    type: WorkerMessageType.WORKER_STATUS,
-                    payload: { state: context.getState() },
-                })
-            );
+            void setPopupIcon({ disabled: clientDisabled(status), locked: clientLocked(status) });
+            onStateUpdate(context.getState());
         },
-    });
-
-    WorkerMessageBroker.registerMessage(WorkerMessageType.SET_APP_STATUS, ({ payload }) => {
-        context.setStatus(payload.status);
-        return true;
     });
 
     context.service.onboarding.init().catch(noop);
     context.service.apiProxy.clean?.().catch(noop);
     context.service.i18n.init().catch(noop);
+
+    store.subscribe(
+        (() => {
+            const cache = { lockSetup: false };
+
+            return () => {
+                /* Watch for `lockSetup` state changes. Notify all extension
+                 * components on update in order for clients' states to sync. */
+                const lockSetup = selectLockSetupRequired(store.getState());
+                if (lockSetup !== cache.lockSetup) {
+                    cache.lockSetup = lockSetup;
+                    onStateUpdate(context.getState());
+                }
+            };
+        })()
+    );
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
