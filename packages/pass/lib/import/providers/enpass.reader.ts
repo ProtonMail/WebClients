@@ -1,13 +1,20 @@
 import capitalize from 'lodash/capitalize';
 import { c } from 'ttag';
 
+import { buildEnpassIdentity } from '@proton/pass/lib/import/builders/enpass.builder';
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
 import { ImportProviderError, ImportReaderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getImportedVaultName,
+    importCreditCardItem,
+    importIdentityItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { EnpassField, EnpassItem } from './enpass.types';
 import { EnpassCategory, type EnpassData } from './enpass.types';
@@ -130,6 +137,13 @@ const processCreditCardItem = (
     return [ccItem];
 };
 
+const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImportIntent<'identity'> =>
+    importIdentityItem({
+        name: item.title,
+        note: item.note,
+        ...buildEnpassIdentity(item),
+    });
+
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
 
@@ -148,7 +162,7 @@ export const readEnpassData = ({ data, importUsername }: { data: string; importU
                 name: getImportedVaultName(),
                 shareId: null,
                 items: items
-                    .map((item): Maybe<ItemImportIntent | ItemImportIntent[]> => {
+                    .flatMap((item): Maybe<ItemImportIntent | ItemImportIntent[]> => {
                         switch (item.category) {
                             case EnpassCategory.LOGIN:
                             case EnpassCategory.PASSWORD:
@@ -157,12 +171,13 @@ export const readEnpassData = ({ data, importUsername }: { data: string; importU
                                 return processNoteItem(item);
                             case EnpassCategory.CREDIT_CARD:
                                 return processCreditCardItem(item, importUsername);
+                            case EnpassCategory.IDENTITY:
+                                return processIdentityItem(item);
                             default:
                                 ignored.push(`[${capitalize(item.category) ?? 'Other'}] ${item.title}`);
                                 return;
                         }
                     })
-                    .flat()
                     .filter(truthy),
             },
         ];
