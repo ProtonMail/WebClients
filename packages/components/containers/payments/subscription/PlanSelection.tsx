@@ -16,6 +16,7 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIpPricePerMonth,
     getPricePerCycle,
+    hasFamily,
     hasMaximumCycle,
     hasSomeAddonOrPlan,
 } from '@proton/shared/lib/helpers/subscription';
@@ -273,6 +274,8 @@ const PlanSelection = ({
         return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
     }
 
+    const isFamilySubscription = hasFamily(subscription);
+
     let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
@@ -284,7 +287,6 @@ const PlanSelection = ({
                 PLANS.DRIVE,
                 PLANS.VPN,
                 PLANS.BUNDLE,
-                PLANS.FAMILY,
                 PLANS.MAIL_PRO,
                 PLANS.VISIONARY,
                 PLANS.MAIL_BUSINESS,
@@ -297,7 +299,7 @@ const PlanSelection = ({
 
     let FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan && !isFamilySubscription ? plansMap[PLANS.DUO] : null,
         plansMap[PLANS.FAMILY],
     ]);
 
