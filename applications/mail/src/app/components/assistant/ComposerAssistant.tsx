@@ -95,7 +95,6 @@ const ComposerAssistant = ({
         onResetFeedbackSubmitted: () => {
             setFeedbackSubmitted(false);
         },
-        hasSelection: selectedText ? selectedText.length > 0 : false,
         expanded: isAssistantExpanded,
         recipients,
         sender,

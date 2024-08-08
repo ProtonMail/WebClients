@@ -1,7 +1,15 @@
 import { useApi } from '@proton/components/hooks';
 import { TelemetryMailComposerAssistantEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import type { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_TYPE, INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
+import type {
+    ASSISTANT_TYPE,
+    ERROR_TYPE,
+    GENERATION_SELECTION_TYPE,
+    GENERATION_TYPE,
+    INCOMPATIBILITY_TYPE,
+} from '@proton/shared/lib/assistant';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+
+import type { ASSISTANT_INSERT_TYPE } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
 
 const useAssistantTelemetry = () => {
     const api = useApi();
@@ -33,11 +41,14 @@ const useAssistantTelemetry = () => {
         });
     };
 
-    const sendUseAnswerAssistantReport = () => {
+    const sendUseAnswerAssistantReport = (insertionType: ASSISTANT_INSERT_TYPE) => {
         void sendTelemetryReport({
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
             event: TelemetryMailComposerAssistantEvents.use_answer,
+            dimensions: {
+                insertion_type: insertionType,
+            },
         });
     };
 
@@ -52,12 +63,14 @@ const useAssistantTelemetry = () => {
     const sendRequestAssistantReport = ({
         assistantType,
         generationType,
+        selectionType,
         ingestionTime,
         generationTime,
         tokensGenerated,
     }: {
         assistantType: ASSISTANT_TYPE;
         generationType: GENERATION_TYPE;
+        selectionType: GENERATION_SELECTION_TYPE;
         ingestionTime: number;
         generationTime: number;
         tokensGenerated: number;
@@ -74,6 +87,7 @@ const useAssistantTelemetry = () => {
             dimensions: {
                 assistant_type: assistantType,
                 generation_type: generationType,
+                selection_type: selectionType,
             },
         });
     };
