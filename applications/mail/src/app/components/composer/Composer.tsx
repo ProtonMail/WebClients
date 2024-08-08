@@ -439,11 +439,13 @@ const Composer = (
                 </div>
 
                 {/* Used to display the toolbar below the composer*/}
-                <div
-                    ref={toolbarWrapperRef}
-                    // @ts-ignore
-                    inert={isAssistantExpanded ? '' : undefined}
-                />
+                {!metadata.isPlainText && (
+                    <div
+                        ref={toolbarWrapperRef}
+                        // @ts-ignore
+                        inert={isAssistantExpanded ? '' : undefined}
+                    />
+                )}
 
                 <ComposerActions
                     composerID={composerID}
