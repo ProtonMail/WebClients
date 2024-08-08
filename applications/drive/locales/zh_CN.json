@@ -3200,9 +3200,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "使用自有域名的邮箱不能加入 Visionary 或家庭账户。"
-      ],
       "customer support": [
         "客户支持"
       ],
@@ -3224,12 +3221,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "分配给您的存储空间：${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 账户与家庭账户目前不支持第三方平台，请创建 ${ BRAND_NAME } 邮箱地址后再加入。${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary 与家庭账户暂不支持终身制。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "有人邀请您加入 ${ invite.OrganizationName }"
       ],
@@ -3247,9 +3238,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "您的当前账户无法加入 Visionary 或家庭账户。"
       ]
     },
     "familyOffer_2023:Label": {
