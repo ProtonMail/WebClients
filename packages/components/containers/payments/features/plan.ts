@@ -540,7 +540,7 @@ export const getDuoPlan = ({
         plan: PLANS.DUO,
         title: plan.Title,
         label: '',
-        description: c('new_plans: info').t`Secure your digital life with ${BRAND_NAME} for two people.`,
+        description: c('new_plans: info').t`Unlimited privacy and more storage for up to 2 people.`,
         cta: getCTA(plan.Title),
         features: [
             getUsersFeature(DUO_MAX_USERS),

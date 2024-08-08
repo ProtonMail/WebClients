@@ -1,6 +1,6 @@
 import type { JSXElementConstructor, ReactNode } from 'react';
 
-import type { ButtonLikeShape } from '@proton/atoms/Button';
+import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button';
 import type { FeatureCode, IconName } from '@proton/components';
 import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces';
@@ -8,6 +8,8 @@ import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces'
 export type OfferId =
     // This offer runs all the time and is used to remind users to upgrade once their account is old enough
     | 'subscription-reminder'
+    | 'duo-plan-2024-yearly'
+    | 'duo-plan-2024-two-years'
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
     | 'mail-trial-2024'
@@ -45,6 +47,7 @@ export interface Operation {
     isValid: boolean;
     isLoading: boolean;
     isEligible: boolean;
+    isUsingMoreThan80PercentStorage?: boolean;
 }
 
 export interface OfferImages {
@@ -69,6 +72,7 @@ export interface OfferConfig {
         iconGradient?: boolean;
         icon?: IconName;
         getCTAContent?: () => string;
+        variant?: string;
     };
     images?: OfferImages;
     darkBackground?: boolean; // Will use a light close button if true (ghost button with white text)
@@ -94,6 +98,7 @@ export interface Deal {
     cycle: CYCLE;
     features?: () => Feature[];
     getCTAContent?: () => string;
+    buttonSize?: ButtonLikeSize;
     planIDs: PlanIDs; // planIDs used to subscribe
     dealName: string; // most of the time we show the plan name of the deal
     popular?: number; // 1 = most popular, 2 = second most popular, etc.

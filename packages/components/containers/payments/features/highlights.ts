@@ -18,13 +18,17 @@ export const getNUsersText = (n: number) => {
     return c('new_plans: feature').ngettext(msgid`Up to ${n} user`, `Up to ${n} users`, n);
 };
 
+export const getFreeUsersText = () => {
+    return c('new_plans: feature').t`1 user`;
+};
+
 const getUsers = (): PlanCardFeature => {
     return {
         name: 'user-number',
         target: Audience.FAMILY,
         plans: {
             [PLANS.FREE]: {
-                text: c('new_plans: feature').t`1 user`,
+                text: getFreeUsersText(),
                 included: true,
             },
             [PLANS.BUNDLE]: null,
@@ -57,7 +61,7 @@ const getUsers = (): PlanCardFeature => {
 
 export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        text: getNUsersText(n),
+        text: n === 1 ? getFreeUsersText() : getNUsersText(n),
         icon: 'users',
         included: true,
     };

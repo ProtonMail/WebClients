@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { OfferModal, useOfferModal } from '../../containers';
 import type { OfferConfig } from '../../containers/offers/interface';
@@ -135,6 +136,10 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                         setFetchOffer(true);
                     }}
                     loading={loadingOffer && !offer}
+                    className={clsx([
+                        offerConfig.topButton?.variant && `button-promotion--${offerConfig.topButton?.variant}`,
+                    ])}
+                    pill={!!offerConfig.topButton?.variant}
                     data-testid="cta:special-offer"
                 >
                     {CTAText}

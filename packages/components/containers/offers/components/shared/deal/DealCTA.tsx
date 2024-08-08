@@ -6,13 +6,14 @@ import { useDealContext } from './DealContext';
 
 const DealCTA = () => {
     const { deal, onSelectDeal, offer, currency } = useDealContext();
-    const { popular } = deal;
+    const { popular, buttonSize } = deal;
 
     return (
         <Button
             color="norm"
             shape={popular === 1 ? 'solid' : 'outline'}
             className="mb-4"
+            size={buttonSize || 'medium'}
             fullWidth
             onClick={() => {
                 onSelectDeal(offer, deal, currency);

@@ -559,15 +559,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                             >
                                 <TableCell className="align-baseline">
                                     <div className="flex items-center gap-3">
-                                        <Avatar className="shrink-0 text-rg" color="weak">
-                                            {getInitials(memberName)}
-                                        </Avatar>
-                                        <div
-                                            className="text-ellipsis shrink-0"
-                                            data-testid="users-and-addresses-table:memberName"
-                                            title={memberName}
-                                        >
-                                            {memberName}
+                                        <div className="flex flex-nowrap items-center gap-3">
+                                            <Avatar className="shrink-0 text-rg" color="weak">
+                                                {getInitials(memberName)}
+                                            </Avatar>
+                                            <div
+                                                className="text-ellipsis shrink"
+                                                data-testid="users-and-addresses-table:memberName"
+                                                title={memberName}
+                                            >
+                                                {memberName}
+                                            </div>
                                         </div>
                                         <div className="flex items-center gap-1">
                                             {(() => {

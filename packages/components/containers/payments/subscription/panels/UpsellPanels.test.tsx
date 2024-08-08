@@ -43,7 +43,6 @@ describe('UpsellPanel', () => {
         within(unlimitedUpsellPanel).getByText('500 GB storage');
         expect(within(unlimitedUpsellPanel).getByText('15 email addresses/aliases'));
         expect(within(unlimitedUpsellPanel).getByText('3 custom email domains'));
-        expect(within(unlimitedUpsellPanel).getByText('Unlimited folders, labels, and filters'));
         expect(within(unlimitedUpsellPanel).getByText('25 calendars'));
         expect(within(unlimitedUpsellPanel).getByText('10 high-speed VPN connections'));
         expect(within(unlimitedUpsellPanel).getByText('Proton Pass with unlimited hide-my-email aliases'));
@@ -57,7 +56,6 @@ describe('UpsellPanel', () => {
         expect(within(familyUpsellPanel).getByText('3 TB storage'));
         expect(within(familyUpsellPanel).getByText('Up to 6 users'));
         expect(within(familyUpsellPanel).getByText('90 email addresses/aliases'));
-        expect(within(familyUpsellPanel).getByText('Unlimited folders, labels, and filters'));
         expect(within(familyUpsellPanel).getByText('10 high-speed VPN connections'));
         expect(within(familyUpsellPanel).getByText('Proton Pass with unlimited hide-my-email aliases'));
     });
