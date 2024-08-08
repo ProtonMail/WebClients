@@ -286,20 +286,18 @@ const ComposerActions = ({
                             </>
                         )}
                         <Tooltip title={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}>
-                            <div className="relative">
-                                <Button
-                                    icon
-                                    disabled={disabled || editorMetadata.isPlainText}
-                                    onClick={onToggleToolbar}
-                                    shape="ghost"
-                                    data-testid="composer:show-toolbar-button"
-                                    aria-expanded={displayToolbar}
-                                    aria-pressed={displayToolbar}
-                                    className="flex"
-                                >
-                                    <Icon name="text-style" alt={c('Action').t`Show toolbar`} />
-                                </Button>
-                            </div>
+                            <Button
+                                icon
+                                disabled={disabled || editorMetadata.isPlainText}
+                                onClick={onToggleToolbar}
+                                shape="ghost"
+                                data-testid="composer:show-toolbar-button"
+                                aria-expanded={displayToolbar}
+                                aria-pressed={displayToolbar}
+                                className="flex"
+                            >
+                                <Icon name="text-style" alt={c('Action').t`Show toolbar`} />
+                            </Button>
                         </Tooltip>
                         {showAssistantButton && <Vr className="border-weak" aria-hidden="true" />}
                         <ComposerMoreActions
