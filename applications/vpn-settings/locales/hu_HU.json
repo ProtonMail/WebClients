@@ -62,12 +62,6 @@
       "Block": [
         "Tiltás"
       ],
-      "Can send to this group": [
-        "Küldhet ennek a csoportnak"
-      ],
-      "Can't send to this group": [
-        "Nem küldhet ennek a csoportnak"
-      ],
       "Cancel": [
         "Mégsem"
       ],
@@ -2289,9 +2283,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } csoportok"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Saját domain névvel rendelkező felhasználók nem csatlakozhatnak Visionary és családi csomagokhoz."
-      ],
       "customer support": [
         "ügyfélszolgálat"
       ],
@@ -2320,12 +2311,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Az ön számára lefoglalt tárhely: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "A Visionary és a Family csomagok jelenleg nem támogatnak külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet mielőtt csatlakozna. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "A Visionary és a családi csomagok jelenleg nem támogatják az egész életre szóló fiókokat."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"
       ],
@@ -2351,9 +2336,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "A jelenlegi csomagja nem csatlakozhat egy Visionary vagy Family csomaghoz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -2922,6 +2904,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus vagy Visionary előfizetés szükséges"
       ],
+      "Be sure to copy your password and store it somewhere safe.": [
+        "Feltétlenül másolja le a jelszavát és tárolja biztonságos helyen."
+      ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
         "A felhasználó aktiválása előtt, meg kell adnia egy jelszót és létrehoznia az címek titkosítási kulcsait."
       ],
@@ -2939,6 +2924,9 @@
       ],
       "Beta": [
         "Béta"
+      ],
+      "Billed at ${ price }": [
+        "${ price } számlázva"
       ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
@@ -2973,6 +2961,9 @@
       "Copied to clipboard": [
         "Vágólapra másolva"
       ],
+      "Copy the suggested password to clipboard": [
+        "A javasolt jelszó másolása a vágólapra"
+      ],
       "Country code": [
         "Országkód"
       ],
@@ -2999,6 +2990,9 @@
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Szabja testre a ${ BRAND_NAME } alkalmazások megjelenését."
+      ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez."
@@ -3118,6 +3112,9 @@
       "Fill in user details": [
         "Adja meg a felhasználó adatait"
       ],
+      "for choosing ${ product }": [
+        "hogy a ${ product }t választotta"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Amennyiben egy másik e-mail szolgáltatásról vált a ${ MAIL_APP_NAME } szolgáltatásra, válassza a ${ boldAddresses } lapot, és az MX rekord módosítása előtt vegyen fel minden aktív e-mail címet, a zökkenőmentes átállás érdekében."
       ],
@@ -3141,6 +3138,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "A máshonnan még be van jelentkezve, megpróbálhatja ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
@@ -3436,6 +3436,9 @@
       "per month": [
         "havonta"
       ],
+      "per month, billed at ${ price }": [
+        "havonta, ${ price } számlázva"
+      ],
       "per month, billed every 12 months": [
         "havonta, 12 havonta számlázva"
       ],
@@ -3531,11 +3534,17 @@
       "Revoke certificate ${ name }": [
         "${ name } tanúsítvány visszavonása"
       ],
+      "Save ${ percentage }": [
+        "${ percentage } megtakarítás"
+      ],
       "Save your password somewhere safe.": [
         "Tárolja a jelszavát biztonságos helyen."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "A jelszavát tárolja biztonságos helyen. A ikonra kattintva ellenőrizze, hogy helyesen írta be a jelszót."
+      ],
+      "Saving your password": [
+        "Jelszó tárolása"
       ],
       "Scan QR code instead": [
         "QR kód beolvasása"
@@ -3575,6 +3584,9 @@
       ],
       "Session timed out": [
         "A munkamenet lejárt"
+      ],
+      "Setting up your organization": [
+        "Szervezet beállítása"
       ],
       "Share Created": [
         "Megosztás létrehozva"
@@ -3638,7 +3650,7 @@
         "Svájci székhelyű"
       ],
       "Thank you": [
-        "Köszönöm"
+        "Köszönjük"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
@@ -3720,6 +3732,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést a ${ BRAND_NAME } fiókjában. A kétlépcsős hitelesítés biztonságosabbá teszi a ${ BRAND_NAME_TWO } fiókját, ezért javasolt engedélyezni."
+      ],
+      "to ${ product } Business": [
+        "a ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
         "Ahhoz, hogy a(z) **${ domainName }** domain név SAML SSO-t használhasson, meg kell erősíteniea tulajdonjogát az alábbi TXT rekord felvételével, a domain név szolgáltatójánál."
@@ -3865,6 +3880,9 @@
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
       ],
+      "We generated a strong password for you": [
+        "Létrehoztunk önnek egy erős jelszót"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "A befizetési módot hitelesítenünk kell a bankjánál."
       ],
@@ -3896,7 +3914,7 @@
         "Hét"
       ],
       "Welcome": [
-        "Üdvözöljük"
+        "Üdvözli"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "A fiók helyreállítási célra megadott e-mail címére fog kapni egy visszaállító kódot."
@@ -4007,6 +4025,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
+      ],
+      "Your ${ BRAND_NAME } password": [
+        "A ${ BRAND_NAME } jelszava"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "A ${ VPN_APP_NAME } és ${ MAIL_APP_NAME } fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
@@ -4660,6 +4681,9 @@
       ],
       "Paypal without credit card": [
         "Paypal bankkártya nélkül"
+      ],
+      "perform a password reset from your active session": [
+        "visszaállítani a jelszavát az aktív munkafolyamatból."
       ],
       "Privacy policy": [
         "Adatvédelmi irányelvek"
@@ -6895,10 +6919,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
