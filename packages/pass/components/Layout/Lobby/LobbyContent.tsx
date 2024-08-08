@@ -175,7 +175,7 @@ export const LobbyContent: FC<Props> = ({
                             );
 
                         case AppStatus.PASSWORD_LOCKED:
-                            return <PasswordUnlock offlineEnabled={offlineEnabled} />;
+                            return <PasswordUnlock offlineEnabled={offlineEnabled} extraPassword={hasExtraPassword} />;
 
                         case AppStatus.BIOMETRICS_LOCKED:
                             return <BiometricsUnlock offlineEnabled={offlineEnabled} />;
