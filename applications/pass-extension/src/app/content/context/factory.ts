@@ -6,15 +6,17 @@ import { createIFrameService } from 'proton-pass-extension/app/content/services/
 import { createWebAuthNService } from 'proton-pass-extension/app/content/services/webauthn';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { hasCriteria } from '@proton/pass/lib/settings/criteria';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import { AppStatus } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import noop from '@proton/utils/noop';
 
 import { CSContext } from './context';
-import type { CSContextState, ContentScriptContext } from './types';
+import type { CSContextState, ContentScriptContext, CurrentWebsiteRules } from './types';
 
 export const createContentScriptContext = (options: {
     scriptId: string;
@@ -34,6 +36,7 @@ export const createContentScriptContext = (options: {
 
     const settings: ProxiedSettings = getInitialSettings();
     const featureFlags: FeatureFlagState = {};
+    const websiteRules: CurrentWebsiteRules = {};
 
     const context: ContentScriptContext = CSContext.set({
         elements: options.elements,
@@ -85,6 +88,18 @@ export const createContentScriptContext = (options: {
         setFeatureFlags: (update) => {
             (Object.keys(featureFlags) as PassFeature[]).forEach((key) => delete featureFlags[key]);
             return Object.assign(featureFlags, update);
+        },
+        getWebsiteRules: async () => {
+            if (Object.keys(websiteRules).length > 0) return websiteRules;
+
+            const rules = await sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.WEBSITE_RULES_REQUEST,
+                })
+            ).catch(noop);
+
+            Object.assign(websiteRules, { exclude: rules?.type === 'success' ? (rules.result ?? []) : [] });
+            return websiteRules;
         },
         setSettings: (update) => Object.assign(settings, update),
         setState: (update) => Object.assign(state, update),
