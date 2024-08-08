@@ -42,6 +42,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
             payloadVersion: parsedValue.payloadVersion || 1,
+            persistedAt: parsedValue.persistedAt || 0,
             ...(parsedValue.offlineKeySalt
                 ? {
                       payloadType: 'offline',
@@ -189,6 +190,7 @@ export const setPersistedSessionWithBlob = async (
             JSON.stringify(encryptedPayloadData),
             payloadVersion === 2 ? stringToUtf8Array('session') : undefined
         ),
+        persistedAt: Date.now(),
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };
