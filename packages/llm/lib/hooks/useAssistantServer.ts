@@ -12,7 +12,7 @@ import {
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
-import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -68,7 +68,7 @@ export const useAssistantServer = ({
         }
     };
 
-    const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
+    const generateResult = async ({ action, callback, assistantID, hasSelection }: GenerateAssistantResult) => {
         if (assistantID in runningActions) {
             return;
         }
@@ -164,6 +164,9 @@ export const useAssistantServer = ({
             sendRequestAssistantReport({
                 assistantType: ASSISTANT_TYPE.SERVER,
                 generationType: getGenerationType(action),
+                selectionType: hasSelection
+                    ? GENERATION_SELECTION_TYPE.HAS_SELECTION
+                    : GENERATION_SELECTION_TYPE.NO_SELECTION,
                 ingestionTime: ingestionTime,
                 generationTime: GenerationTime,
                 tokensGenerated: generatedTokens,

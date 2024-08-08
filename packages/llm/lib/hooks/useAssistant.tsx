@@ -9,6 +9,7 @@ export interface GenerateAssistantResult {
     assistantID: string;
     action: Action;
     callback: GenerationCallback;
+    hasSelection: boolean;
 }
 
 export type AssistantRunningActions = Record<string, () => void>;
@@ -208,9 +209,13 @@ export const useAssistant = (assistantID?: string) => {
         }
     };
 
-    const handleGenerateResult = async ({ action, callback }: Omit<GenerateAssistantResult, 'assistantID'>) => {
+    const handleGenerateResult = async ({
+        action,
+        callback,
+        hasSelection,
+    }: Omit<GenerateAssistantResult, 'assistantID'>) => {
         if (assistantID) {
-            return generateResult({ action, callback, assistantID });
+            return generateResult({ action, callback, assistantID, hasSelection });
         }
     };
 
