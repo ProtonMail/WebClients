@@ -10,7 +10,7 @@ import { getStyle } from '@proton/components/containers/credentialLeak/helpers';
 type Props = { breach: FetchedBreaches; onClose: () => void };
 
 export const BreachModal = ({ breach, onClose }: Props) => {
-    const { name, createdAt, email, severity, passwordLastChars, actions, exposedData } = breach;
+    const { name, createdAt, severity, actions, exposedData } = breach;
     const hasActions = actions && actions?.length > 0;
     const isResolved = false;
 
@@ -32,7 +32,7 @@ export const BreachModal = ({ breach, onClose }: Props) => {
             <ModalTwoContent className="pb-4">
                 <div className="flex flex-column flex-nowrap gap-2">
                     <BreachInfo exposedData={exposedData} inModal />
-                    <UserBreachInfo email={email} passwordLastChars={passwordLastChars} inModal />
+                    <UserBreachInfo exposedData={exposedData} inModal />
                     {hasActions && <BreachRecommendations actions={actions} inModal />}
 
                     <BreachInfoNote />
