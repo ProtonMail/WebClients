@@ -13,8 +13,13 @@ export abstract class EditorExporter {
   protected editor: LexicalEditor
 
   constructor(
-    editorState: SerializedEditorState | string,
+    protected editorState: SerializedEditorState | string,
     protected callbacks: ExporterRequiredCallbacks,
+    /**
+     * If custom state handling is enabled, subclasses will be responsible
+     * for setting the editor state on the headless editor.
+     */
+    protected options = { customStateHandling: false },
   ) {
     this.editor = createHeadlessEditor({
       editable: false,
@@ -26,15 +31,16 @@ export abstract class EditorExporter {
       },
     })
 
-    this.editor.setEditorState(this.editor.parseEditorState(editorState))
-
-    this.removeCommentThreadMarks()
+    if (!options.customStateHandling) {
+      this.editor.setEditorState(this.editor.parseEditorState(editorState))
+      this.removeCommentThreadMarks()
+    }
   }
 
   /**
    * We don't want comment thread highlights in the exported document so we remove them before exporting
    */
-  private removeCommentThreadMarks() {
+  protected removeCommentThreadMarks() {
     this.editor.update(
       () => {
         const commentMarkNodes = $nodesOfType(CommentThreadMarkNode)
@@ -48,5 +54,5 @@ export abstract class EditorExporter {
     )
   }
 
-  abstract export(): Promise<Uint8Array | Blob>
+  abstract export(): Promise<Uint8Array>
 }

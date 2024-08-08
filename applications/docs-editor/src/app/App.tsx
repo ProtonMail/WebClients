@@ -28,7 +28,6 @@ import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 import type { LexicalEditor, SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
-import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
 import { exportDataFromEditorState } from './Conversion/Exporter/ExportDataFromEditorState'
 import { Application } from './Application'
 import { ThemeStyles } from './Theme'
@@ -200,8 +199,13 @@ export function App({ nonInteractiveMode = false }: Props) {
           newDocState.broadcastPresenceState()
         },
 
-        async exportData(format): Promise<Uint8Array | Blob> {
-          const editorState = generateEditorStatefromYDoc(newDocState.getDoc())
+        async exportData(format): Promise<Uint8Array> {
+          if (!editorRef.current) {
+            throw new Error('Editor is not initialized')
+          }
+
+          const editorState = editorRef.current.getEditorState().toJSON()
+
           return exportDataFromEditorState(editorState, format, {
             fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
           })
@@ -215,6 +219,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           if (!editorRef.current) {
             return undefined
           }
+
           return editorRef.current.getEditorState().toJSON()
         },
       }
