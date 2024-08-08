@@ -1,6 +1,5 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
-import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -124,6 +123,7 @@ const YourPlanSection = ({ app }: Props) => {
                     user={user}
                     addresses={addresses}
                     vpnServers={serversCount}
+                    upsells={shouldRenderUpsells ? upsells : []}
                 />
 
                 {/* Usage for plans with >1 Members */}

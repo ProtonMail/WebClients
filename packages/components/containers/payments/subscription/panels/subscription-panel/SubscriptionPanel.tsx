@@ -14,6 +14,7 @@ import {
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
+    getIsSentinelPlan,
     getPrimaryPlan,
     hasPass,
     hasVPN,
@@ -40,6 +41,7 @@ import percentage from '@proton/utils/percentage';
 
 import type { IconName } from '../../../../../components';
 import { Icon, Meter, Price, StripedItem, StripedList } from '../../../../../components';
+import { getSentinel } from '../../../features/highlights';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -50,6 +52,7 @@ import {
     getDevices,
     getHideMyEmailAliases,
     getLoginsAndNotes,
+    getProtonPassFeature,
     getVaultSharing,
     getVaults,
 } from '../../../features/pass';
@@ -63,6 +66,7 @@ import {
     getWalletEmailAddresses,
     getWallets,
 } from '../../../features/wallet';
+import type { Upsell } from '../../../subscription/helpers';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
 import Panel from '../Panel';
@@ -79,9 +83,19 @@ interface Props {
     organization?: Organization;
     vpnServers: VPNServersCountData;
     addresses?: Address[];
+    upsells: Upsell[];
 }
 
-const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organization, user, addresses }: Props) => {
+const SubscriptionPanel = ({
+    app,
+    currency,
+    vpnServers,
+    subscription,
+    organization,
+    user,
+    addresses,
+    upsells,
+}: Props) => {
     const primaryPlan = getPrimaryPlan(subscription);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
     const isPassB2bPlan = getIsPassB2BPlan(primaryPlan?.Name);
@@ -293,7 +307,9 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
     const getDefault = () => {
         const items: (Item | false)[] = [
             !!userText &&
-                (MaxMembers > 1 || getIsB2BAudienceFromSubscription(subscription)) && {
+                (MaxMembers > 1 ||
+                    getIsB2BAudienceFromSubscription(subscription) ||
+                    upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
                     icon: 'users',
                     text: userText,
                 },
@@ -316,6 +332,8 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
                 icon: 'brand-proton-vpn',
                 text: vpnText,
             },
+            getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
+            getIsSentinelPlan(organization?.PlanName) ? getSentinel(true) : false,
             MaxAI > 0 &&
                 !!writingAssistantText && {
                     icon: 'pen-sparks',
