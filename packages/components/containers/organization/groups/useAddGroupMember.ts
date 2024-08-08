@@ -10,7 +10,7 @@ import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib
 import { CryptoProxy } from '@proton/crypto/lib';
 import type { GroupMemberParameters } from '@proton/shared/lib/api/groups';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
-import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
+import { getAllPublicKeys, replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
@@ -39,18 +39,37 @@ import { getInternalParameters } from '../../forward/helpers';
 import useGroupCrypto from './useGroupCrypto';
 import useGroupKeys from './useGroupKeys';
 
-const isExternal = (forwardeeKeysConfig: ApiKeysConfig): boolean => {
+// Returns true for external addresses (e.g. pedro@gmail.com)
+// and internal type external (e.g. pedro_registered_at_proton_pass@gmail.com)
+const isExternalForMail = (forwardeeKeysConfig: ApiKeysConfig): boolean => {
     return forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_EXTERNAL;
 };
 
-const isInternal = (forwardeeKeysConfig: ApiKeysConfig): boolean => {
-    return forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
+// Returns true for external addresses not registered at proton ONLY (e.g. pedro@gmail.com)
+const isGroupMemberTypeExternal = (
+    forwardeeKeysConfig: ApiKeysConfig,
+    forwardeeArmoredPrimaryPublicKey: string | undefined
+): boolean => {
+    return isExternalForMail(forwardeeKeysConfig) && forwardeeArmoredPrimaryPublicKey === undefined;
 };
 
-const getType = (forwardeeKeysConfig: ApiKeysConfig): GroupMemberType => {
-    if (isExternal(forwardeeKeysConfig)) {
+// Returns true for all addresses registered at Proton
+const isGroupMemberTypeInternal = (
+    forwardeeKeysConfig: ApiKeysConfig,
+    forwardeeArmoredPrimaryPublicKey: string | undefined
+): boolean => {
+    const isRecipientTypeExternal = forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_EXTERNAL;
+    const isRecipientTypeInternal = forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
+    return isRecipientTypeInternal || (isRecipientTypeExternal && forwardeeArmoredPrimaryPublicKey !== undefined);
+};
+
+const getGroupMemberType = (
+    forwardeeKeysConfig: ApiKeysConfig,
+    forwardeeArmoredPrimaryPublicKey: string | undefined
+): GroupMemberType => {
+    if (isGroupMemberTypeExternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)) {
         return GroupMemberType.External;
-    } else if (isInternal(forwardeeKeysConfig)) {
+    } else if (isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)) {
         return GroupMemberType.Internal;
     } else {
         throw new Error('Cannot figure out group member type from forwardee keys config');
@@ -65,19 +84,24 @@ const isManaged = (member: EnhancedMember): boolean => {
     return member.Type === MEMBER_TYPE.MANAGED;
 };
 
-const isManagedAndSameOrg = (member: EnhancedMember | undefined, forwardeeKeysConfig: ApiKeysConfig): boolean => {
+const isManagedAndSameOrg = (
+    member: EnhancedMember | undefined,
+    forwardeeKeysConfig: ApiKeysConfig,
+    forwardeeArmoredPrimaryPublicKey: string | undefined
+): boolean => {
     if (member === undefined) {
         return false;
     }
 
-    const isSameOrg = isInternal(forwardeeKeysConfig);
+    const isSameOrg = isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
     return isManaged(member) && isSameOrg;
 };
 
-const getForwardeePublicKey = async (memberPublicKeys: ApiKeysConfig): Promise<PublicKeyReference> => {
-    const [primaryForwardeeKey] = memberPublicKeys.publicKeys;
+const getForwardeePublicKey = async (
+    forwardeeArmoredPrimaryPublicKey: string | undefined
+): Promise<PublicKeyReference> => {
     return CryptoProxy.importPublicKey({
-        armoredKey: primaryForwardeeKey.armoredKey,
+        armoredKey: forwardeeArmoredPrimaryPublicKey,
     });
 };
 
@@ -114,6 +138,7 @@ const useAddGroupMember = () => {
         forwardeeKeysConfig: ApiKeysConfig;
         forwardeeAddress: Address | undefined;
         organizationKey: KeyPair;
+        forwardeeArmoredPrimaryPublicKey: string | undefined;
     }> => {
         const cachedOrganizationKey = await getOrganizationKey();
         if (cachedOrganizationKey.privateKey === undefined) {
@@ -127,9 +152,24 @@ const useAddGroupMember = () => {
 
         const forwardeeAddress = memberAddresses.find(({ Email }) => Email === memberEmail) as Address | undefined; // can cast to Address as addressState is full
 
-        const [forwarderKey, forwardeeKeysConfig] = await Promise.all([
+        const [
+            forwarderKey,
+            forwardeeKeysConfig,
+            {
+                Address: { Keys: forwardeeAddressKeys },
+            },
+        ] = await Promise.all([
             getGroupAddressKey(groupAddress, organizationPrivateKey).catch(noop),
             getMemberPublicKeys(memberEmail).catch(noop),
+            // note: we might be able to remove the getter below, by changing getMemberPublicKeys
+            // to also return keys for internal type external; or using a different function,
+            // but there is no time for that
+            api(
+                getAllPublicKeys({
+                    Email: memberEmail,
+                    InternalOnly: 1,
+                })
+            ),
         ]);
 
         if (forwarderKey === undefined) {
@@ -144,11 +184,18 @@ const useAddGroupMember = () => {
             throw new Error('This address cannot be used as group member');
         }
 
+        const forwardeePublicKeys = [
+            ...forwardeeKeysConfig.publicKeys.map((v) => v.armoredKey),
+            ...forwardeeAddressKeys.map((v: { PublicKey: string }) => v.PublicKey),
+        ];
+        const forwardeeArmoredPrimaryPublicKey = forwardeePublicKeys[0];
+
         return {
             forwarderKey,
             forwardeeKeysConfig,
             forwardeeAddress,
             organizationKey: cachedOrganizationKey,
+            forwardeeArmoredPrimaryPublicKey,
         };
     };
 
@@ -172,6 +219,7 @@ const useAddGroupMember = () => {
         Signature,
         member,
         organizationKey,
+        forwardeeArmoredPrimaryPublicKey,
     }: {
         forwardeeKeysConfig: ApiKeysConfig;
         memberEmail: string;
@@ -180,12 +228,13 @@ const useAddGroupMember = () => {
         Signature: string | undefined;
         member: EnhancedMember | undefined;
         organizationKey: KeyPair;
+        forwardeeArmoredPrimaryPublicKey: string | undefined;
     }): Promise<{
         ActivationToken: string | undefined;
         GroupMemberAddressPrivateKey: string | undefined;
         ProxyInstances: ProxyInstances[] | undefined;
     }> => {
-        if (!isInternal(forwardeeKeysConfig)) {
+        if (!isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)) {
             return {
                 ActivationToken: undefined,
                 GroupMemberAddressPrivateKey: undefined,
@@ -193,7 +242,7 @@ const useAddGroupMember = () => {
             };
         }
 
-        const forwardeePublicKey = await getForwardeePublicKey(forwardeeKeysConfig);
+        const forwardeePublicKey = await getForwardeePublicKey(forwardeeArmoredPrimaryPublicKey);
         const Email = getEmailFromKey(forwardeePublicKey) ?? memberEmail;
 
         let userKeys = undefined;
@@ -229,10 +278,12 @@ const useAddGroupMember = () => {
         member,
         forwardeeAddress,
         forwardeeKeysConfig,
+        forwardeeArmoredPrimaryPublicKey,
     }: {
         member: EnhancedMember | undefined;
         forwardeeAddress: Address | undefined;
         forwardeeKeysConfig: ApiKeysConfig;
+        forwardeeArmoredPrimaryPublicKey: string | undefined;
     }): Promise<{
         Token: string | undefined;
         Signature: string | undefined;
@@ -241,7 +292,7 @@ const useAddGroupMember = () => {
             member === undefined ||
             forwardeeAddress === undefined ||
             isPrivate(member) ||
-            !isManagedAndSameOrg(member, forwardeeKeysConfig)
+            !isManagedAndSameOrg(member, forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)
         ) {
             return {
                 Token: undefined,
@@ -295,13 +346,18 @@ const useAddGroupMember = () => {
         const member: EnhancedMember | undefined = await getMember(email);
         const memberAddresses: Address[] = await getMemberAddresses(member);
 
-        const { forwarderKey, forwardeeKeysConfig, forwardeeAddress, organizationKey } = await getKeys(
-            groupAddress,
-            memberAddresses,
-            email
-        );
+        const {
+            forwarderKey,
+            forwardeeKeysConfig,
+            forwardeeAddress,
+            organizationKey,
+            forwardeeArmoredPrimaryPublicKey,
+        } = await getKeys(groupAddress, memberAddresses, email);
 
-        if (member !== undefined && isManagedAndSameOrg(member, forwardeeKeysConfig)) {
+        if (
+            member !== undefined &&
+            isManagedAndSameOrg(member, forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)
+        ) {
             // migrate address keys if needed and possible
             const keyPassword = authentication.getPassword();
             const userKeys: DecryptedKey[] = await getDecryptedUserKeys(member.Keys, keyPassword, organizationKey);
@@ -309,15 +365,20 @@ const useAddGroupMember = () => {
             await migrateAddressKeys(memberAddresses, userKeys);
         }
 
-        const Type = getType(forwardeeKeysConfig);
+        const Type = getGroupMemberType(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
         const canonicalEmail = canonicalizeInternalEmail(email);
         const AddressSignaturePacket = await signMemberEmail(canonicalEmail, forwarderKey.privateKey);
 
-        if (isExternal(forwardeeKeysConfig) && !encryptionDisabled(groupAddress)) {
+        if (isExternalForMail(forwardeeKeysConfig) && !encryptionDisabled(groupAddress)) {
             await disableEncryption(groupAddress, forwarderKey);
         }
 
-        const { Token, Signature } = await getTokenAndSignature({ member, forwardeeAddress, forwardeeKeysConfig });
+        const { Token, Signature } = await getTokenAndSignature({
+            member,
+            forwardeeAddress,
+            forwardeeKeysConfig,
+            forwardeeArmoredPrimaryPublicKey,
+        });
 
         const { ActivationToken, GroupMemberAddressPrivateKey, ProxyInstances } = await getProxyParameters({
             forwardeeKeysConfig,
@@ -327,6 +388,7 @@ const useAddGroupMember = () => {
             Signature,
             member,
             organizationKey,
+            forwardeeArmoredPrimaryPublicKey,
         });
 
         const apiParams: GroupMemberParameters = {
