@@ -4,6 +4,7 @@ import type {
     PendingInvitation,
     Subscription,
     User,
+    UserSettings,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
@@ -35,11 +36,6 @@ export const mailPlusUpsell = {
             tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
             icon: 'globe',
-        },
-        {
-            text: 'Unlimited folders, labels, and filters',
-            included: true,
-            icon: 'tag',
         },
         {
             text: '25 calendars',
@@ -110,17 +106,6 @@ export const unlimitedUpsell = {
             icon: 'globe',
         },
         {
-            text: 'Proton Sentinel program',
-            tooltip: `Provides the highest level of account security protection and specialist support`,
-            included: true,
-            icon: 'shield',
-        },
-        {
-            text: 'Unlimited folders, labels, and filters',
-            included: true,
-            icon: 'tag',
-        },
-        {
             icon: 'brand-proton-calendar',
             included: true,
             text: '25 calendars',
@@ -136,6 +121,12 @@ export const unlimitedUpsell = {
             icon: 'brand-proton-pass',
             included: true,
             hideInDowngrade: true,
+        },
+        {
+            text: 'Proton Sentinel program',
+            tooltip: `Provides the highest level of account security protection and specialist support`,
+            included: true,
+            icon: 'shield',
         },
     ],
     otherCtas: [],
@@ -173,9 +164,16 @@ export const familyUpsell = {
             icon: 'envelope',
         },
         {
-            text: 'Unlimited folders, labels, and filters',
+            text: '3 custom email domains',
+            tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
-            icon: 'tag',
+            icon: 'globe',
+        },
+        {
+            text: '25 calendars',
+            tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
+            included: true,
+            icon: 'brand-proton-calendar',
         },
         {
             icon: 'brand-proton-vpn',
@@ -188,6 +186,12 @@ export const familyUpsell = {
             included: true,
             hideInDowngrade: true,
         },
+        {
+            text: 'Proton Sentinel program',
+            tooltip: `Provides the highest level of account security protection and specialist support`,
+            included: true,
+            icon: 'shield',
+        },
     ],
     otherCtas: [],
     price: { value: 1999, currency: 'EUR' },
@@ -197,7 +201,7 @@ export const duoUpsell = {
     plan: PLANS.DUO,
     planKey: PLANS.DUO,
     title: 'Proton Duo',
-    description: 'Secure your digital life with Proton for two people.',
+    description: 'Unlimited privacy and more storage for up to 2 people.',
     upsellRefLink: 'upsell_mail-button-duo-dashboard_settings',
     features: [
         {
@@ -220,9 +224,16 @@ export const duoUpsell = {
             icon: 'envelope',
         },
         {
-            text: 'Unlimited folders, labels, and filters',
+            text: '3 custom email domains',
+            tooltip: 'Use your own custom email domain addresses, e.g., you@yourname.com',
             included: true,
-            icon: 'tag',
+            icon: 'globe',
+        },
+        {
+            text: '25 calendars',
+            tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
+            included: true,
+            icon: 'brand-proton-calendar',
         },
         {
             icon: 'brand-proton-vpn',
@@ -234,6 +245,12 @@ export const duoUpsell = {
             icon: 'brand-proton-pass',
             included: true,
             hideInDowngrade: true,
+        },
+        {
+            text: 'Proton Sentinel program',
+            tooltip: `Provides the highest level of account security protection and specialist support`,
+            included: true,
+            icon: 'shield',
         },
     ],
     otherCtas: [],
@@ -555,6 +572,12 @@ export const user = {
     hasPaidVpn: true,
     canPay: true,
 } as unknown as User;
+
+export const userSettings = {
+    HighSecurity: {
+        Eligible: false,
+    },
+} as unknown as UserSettings;
 
 export const pendingInvite = {
     ID: 'ZhhRDNTAVfX9seV5rWSw_2_4rP23tplH2ajNld9iOJc49qiL_cafDdQvHIG3dHXpYsbcmPUKdZjz3Bb7S81Uiw==',

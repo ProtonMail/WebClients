@@ -1,16 +1,18 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getSelfMember } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Member, User } from '@proton/shared/lib/interfaces';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
+import { isAdmin, isMember } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import { UserState, userThunk } from '../user';
+import type { UserState} from '../user';
+import { userThunk } from '../user';
 
 const name = 'member';
 
@@ -23,7 +25,7 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectMember = (state: MemberState) => state[name];
 
-const canFetch = (user: User) => isAdmin(user);
+const canFetch = (user: User) => isAdmin(user) || isMember(user);
 
 const modelThunk = createAsyncModelThunk<Model | undefined, MemberState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {

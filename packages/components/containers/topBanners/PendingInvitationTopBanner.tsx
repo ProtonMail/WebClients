@@ -9,6 +9,7 @@ import { useConfig, usePendingUserInvitations } from '../../hooks';
 import PendingInvitationModal from '../payments/subscription/PendingInvitationModal';
 import TopBanner from './TopBanner';
 
+const allowedApps: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL, APPS.PROTONDRIVE];
 const PendingInvitationTopBanner = () => {
     const protonConfig = useConfig();
     const [invites = []] = usePendingUserInvitations();
@@ -18,7 +19,6 @@ const PendingInvitationTopBanner = () => {
 
     const inviteLengths = invites.length;
 
-    const allowedApps: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL, APPS.PROTONDRIVE];
     if (!allowedApps.includes(protonConfig.APP_NAME)) {
         return null;
     }
