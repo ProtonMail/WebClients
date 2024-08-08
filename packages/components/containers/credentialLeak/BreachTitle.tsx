@@ -27,9 +27,13 @@ const BreachTitle = ({ name, createdAt, style, className, inModal = false, sever
             </span>
             <span className="flex-1 text-left pl-2 pr-1">
                 {inModal ? (
-                    <span className="block text-bold">{name}</span>
+                    <div className="inline-flex items-center">
+                        <span className="block text- mr-1">{name}</span>
+                    </div>
                 ) : (
-                    <h3 className="block text-bold">{name}</h3>
+                    <div className="flex flex-nowrap items-center">
+                        <h3 className="block text-bold">{name}</h3>
+                    </div>
                 )}
                 <ReadableDate
                     value={createdAt}

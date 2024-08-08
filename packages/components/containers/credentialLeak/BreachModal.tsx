@@ -73,7 +73,12 @@ const BreachModal = ({ modalProps, breachData, securityCenter, onResolve }: Brea
             <ModalTwoContent className="pb-4">
                 <div className="flex flex-column flex-nowrap gap-2">
                     <BreachInfo exposedData={exposedData} inModal />
-                    <UserBreachInfo email={email} passwordLastChars={passwordLastChars} inModal />
+                    <UserBreachInfo
+                        email={email}
+                        passwordLastChars={passwordLastChars}
+                        exposedData={exposedData}
+                        inModal
+                    />
                     {hasActions && <BreachRecommendations actions={actions} inModal />}
 
                     <BreachInfoNote />
