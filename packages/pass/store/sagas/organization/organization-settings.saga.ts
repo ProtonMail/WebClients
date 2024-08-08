@@ -6,9 +6,10 @@ import { lockSync } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { selectOrganization } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { AppStatus, type MaybeNull, type OrganizationGetResponse } from '@proton/pass/types';
+import { type MaybeNull, type OrganizationGetResponse } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 function* getOrganizationSettingsWorker(
     options: RootSagaOptions,
@@ -19,28 +20,24 @@ function* getOrganizationSettingsWorker(
         if (!organization) throw new Error('User not in organization');
 
         const data: OrganizationGetResponse = yield call(fetchOrganizationSettings);
+        const orgLockTTL = data?.Settings?.ForceLockSeconds;
+
         yield put(getOrganizationSettings.success(meta.request.id, data));
 
-        /* if the user has an org, check if the org's ForceLockSeconds setting is set
-        /* if it is set and the user has no lock mode, show them a screen to setup lock */
         try {
-            if (data?.Settings?.ForceLockSeconds) {
+            if (orgLockTTL) {
                 const authStore = options.getAuthStore();
+                const auth = options.getAuthService();
                 const lockMode = authStore.getLockMode();
-                const ttl = authStore.getLockTTL();
-                if (lockMode === LockMode.NONE) {
-                    logger.info(`[Saga::Org] Lock setup required by organization`);
-                    options.setAppStatus(AppStatus.LOCK_SETUP);
-                } else if (ttl !== data.Settings.ForceLockSeconds) {
-                    authStore.setLockTTL(data.Settings.ForceLockSeconds);
-                    yield put(
-                        lockSync({
-                            mode: lockMode,
-                            locked: false,
-                            ttl: data.Settings.ForceLockSeconds,
-                        })
-                    );
-                    logger.info(`[Saga::Org] Lock TTL updated to ${data.Settings.ForceLockSeconds}s by organization`);
+                const lockTTL = authStore.getLockTTL();
+
+                /** If the user's organization has a `ForceLockSeconds` setting, ensure
+                 * the user's local lock TTL matches and re-persist the session. If no lock
+                 * is setup, user will be brought to the "lock-setup" screen (`AppGuard.tsx`) */
+                if (lockMode !== LockMode.NONE && lockTTL !== orgLockTTL) {
+                    authStore.setLockTTL(orgLockTTL);
+                    yield put(lockSync({ mode: lockMode, locked: false, ttl: orgLockTTL }));
+                    yield auth.persistSession().catch(noop);
                 }
             }
         } catch (error) {

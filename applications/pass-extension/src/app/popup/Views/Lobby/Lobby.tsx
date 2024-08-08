@@ -53,9 +53,6 @@ export const Lobby: FC = () => {
                         </div>
                     ) : null
                 }
-                setAppStatus={(status) =>
-                    sendMessage(popupMessage({ type: WorkerMessageType.SET_APP_STATUS, payload: { status } }))
-                }
             />
         </LobbyLayout>
     );
