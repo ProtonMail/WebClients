@@ -16,13 +16,13 @@ export const getSubTitle = (isUsingMoreThan80PercentStorage: boolean) => {
 };
 
 export const getInfosUser = () => {
-    return c('duoplan2024: Info').t`2 users.`;
+    return c('duoplan2024: Info').t`2 users`;
 };
 export const getInfos = () => {
-    return c('duoplan2024: Info').jt`Full access to all ${BRAND_NAME} products.`;
+    return c('duoplan2024: Info').jt`Full access to all ${BRAND_NAME} products`;
 };
 export const getStorage = () => {
-    return c('duoplan2024: Info').t`1 TB shared storage.`;
+    return c('duoplan2024: Info').t`1 TB shared storage`;
 };
 
 export const getCTAContent = (price: string | ReactNode) => {

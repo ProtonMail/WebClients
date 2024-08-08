@@ -34,7 +34,7 @@ const roundAmount = (amount: number) => {
 const Layout = (props: OfferLayoutProps) => {
     const [user] = useUser();
     const { maxSpace, usedSpace } = getAppSpace(getSpace(user), APPS.PROTONMAIL);
-    const isUsingMoreThan80PercentStorage = percentage(maxSpace, usedSpace) > 80; // should be ok but double-check with Mattias
+    const isUsingMoreThan80PercentStorage = percentage(maxSpace, usedSpace) > 80;
     const { offer, currency, onSelectDeal } = props;
     const [deal] = offer?.deals || [];
     const [plansResult] = usePlans();
