@@ -13,13 +13,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Localized } from '@proton/pass/components/Core/Localized';
-import {
-    clientBusy,
-    clientErrored,
-    clientMissingScope,
-    clientSessionLocked,
-    clientUnauthorized,
-} from '@proton/pass/lib/client';
+import { clientBusy, clientErrored, clientMissingScope, clientSessionLocked } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -125,7 +119,7 @@ export const Dropdown: FC = () => {
                         );
                     }
 
-                    if (clientUnauthorized(status)) {
+                    if (!appState.loggedIn) {
                         return (
                             <ListItem
                                 onClick={async () => {
