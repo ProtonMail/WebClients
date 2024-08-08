@@ -11,7 +11,13 @@ export interface SettingsService {
 export const createSettingsService = (options: SettingsService): SettingsService => {
     return {
         clear: options.clear,
-        resolve: async () => merge(getInitialSettings(), await options.resolve().catch(() => ({}))),
+        resolve: async () => {
+            try {
+                return merge(getInitialSettings(), await options.resolve());
+            } catch {
+                return getInitialSettings();
+            }
+        },
         sync: options.sync,
     };
 };
