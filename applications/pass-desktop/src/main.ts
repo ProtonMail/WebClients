@@ -19,32 +19,33 @@ import { getAppUrlFromApiUrl, getSecondLevelDomain } from '@proton/shared/lib/he
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
-import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
-import { ARCH } from './lib/env';
-import { isSquirrelStartup } from './startup';
-import { certificateVerifyProc } from './tls';
-import { SourceType, updateElectronApp } from './update';
-
 import './lib/biometrics';
 import './lib/clipboard';
-
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (isSquirrelStartup()) app.quit();
+import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
+import { ARCH } from './lib/env';
+import { setApplicationMenu } from './menu-view/application-menu';
+import { startup } from './startup';
+import { certificateVerifyProc } from './tls';
+import { SourceType, updateElectronApp } from './update';
+import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 export let mainWindow: BrowserWindow | null;
+
+await startup();
+
 let isAppQuitting = false;
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
 const createSession = () => {
-    const paritionKey = ENV !== 'production' ? 'app-dev' : 'app';
-    const secureSession = session.fromPartition(`persist:${paritionKey}`, { cache: false });
+    const partitionKey = ENV !== 'production' ? 'app-dev' : 'app';
+    const secureSession = session.fromPartition(`persist:${partitionKey}`, { cache: false });
 
     const filter = { urls: [`${getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS)}*`] };
 
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
 
-    if (app.isPackaged) {
+    if (isProdEnv()) {
         // Always use system DNS settings
         app.configureHostResolver({
             enableAdditionalDnsQueryTypes: false,
@@ -132,10 +133,10 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             contextIsolation: true,
             nodeIntegration: false,
             disableBlinkFeatures: 'Auxclick',
-            devTools: Boolean(process.env.PASS_DEBUG) || !app.isPackaged,
+            devTools: Boolean(process.env.PASS_DEBUG) || !isProdEnv(),
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
         },
-        titleBarStyle: process.platform === 'darwin' ? 'hidden' : 'default',
+        titleBarStyle: isMac ? 'hidden' : 'default',
         trafficLightPosition: {
             x: 20,
             y: 18,
@@ -143,6 +144,8 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         minWidth: 881,
         minHeight: 480,
     });
+
+    setApplicationMenu(mainWindow);
 
     mainWindow.on('close', (e) => {
         if (isAppQuitting) return;
@@ -155,7 +158,6 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     await mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     mainWindow.show();
-
     return mainWindow;
 };
 
@@ -280,12 +282,12 @@ app.addListener('web-contents-created', (_ev, contents) => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.addListener('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
+    if (!isMac) {
         app.quit();
     }
 });
 
 const windowsAppId = 'com.squirrel.proton_pass_desktop.ProtonPass';
 app.addListener('will-finish-launching', () => {
-    if (process.platform === 'win32') app.setAppUserModelId(windowsAppId);
+    if (isWindows) app.setAppUserModelId(windowsAppId);
 });

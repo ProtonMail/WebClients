@@ -11,6 +11,7 @@ import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
 import { ARCH } from './lib/env';
+import { isMac, isProdEnv, isWindows } from './utils/platform';
 
 type StoreUpdateProperties = {
     'update.distribution': number;
@@ -122,7 +123,7 @@ const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
     }
 
     // don't attempt to update during development
-    if (!app.isPackaged) {
+    if (!isProdEnv()) {
         logger.log(`[Update] Unpacked app short-circuit triggered`);
         return;
     }
@@ -144,7 +145,7 @@ const initUpdater = (opts: ReturnType<typeof validateInput>) => {
     let feedURL = updateSource.baseUrl;
     let serverType: 'default' | 'json' = 'default';
 
-    if (process.platform === 'darwin') {
+    if (isMac) {
         feedURL += '/RELEASES.json';
         serverType = 'json';
     }
@@ -185,7 +186,7 @@ const initUpdater = (opts: ReturnType<typeof validateInput>) => {
                 type: 'info',
                 buttons: ['Restart', 'Later'],
                 title: 'Update Available',
-                message: process.platform === 'win32' ? releaseNotes : releaseName,
+                message: isWindows ? releaseNotes : releaseName,
                 detail: 'A new version of Proton Pass has been downloaded. Restart the application to apply the updates.',
             };
 
