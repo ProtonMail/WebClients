@@ -12,13 +12,13 @@ export class EditorPdfExporter extends EditorExporter {
     super(editorState, callbacks)
   }
 
-  async export(): Promise<Uint8Array | Blob> {
+  async export(): Promise<Uint8Array> {
     const { $generatePDFFromEditor } = await import('./PDFExport/PDFExport')
 
     const pdf = await $generatePDFFromEditor(this.editor, this.pageSize)
 
     const blob = await fetch(pdf).then((res) => res.blob())
 
-    return blob
+    return new Uint8Array(await blob.arrayBuffer())
   }
 }
