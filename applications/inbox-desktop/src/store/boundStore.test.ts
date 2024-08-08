@@ -49,6 +49,8 @@ describe("boundStore", () => {
         it("detaults to the center of the nearest display", () => {
             (screen.getDisplayNearestPoint as jest.MockedFn<typeof screen.getDisplayNearestPoint>).mockReturnValue({
                 workArea: {
+                    x: 123,
+                    y: 456,
                     width: 1920,
                     height: 1080,
                 },
@@ -63,8 +65,8 @@ describe("boundStore", () => {
             });
 
             expect(getWindowBounds()).toEqual({
-                x: 460,
-                y: 290,
+                x: 583,
+                y: 746,
                 width: 1000,
                 height: 500,
                 maximized: false,
@@ -74,6 +76,8 @@ describe("boundStore", () => {
         it("rounds to the nearest integer when centering the window", () => {
             (screen.getDisplayNearestPoint as jest.MockedFn<typeof screen.getDisplayNearestPoint>).mockReturnValue({
                 workArea: {
+                    x: 123,
+                    y: 456,
                     width: 1921,
                     height: 1081,
                 },
@@ -88,8 +92,8 @@ describe("boundStore", () => {
             });
 
             expect(getWindowBounds()).toEqual({
-                x: 461,
-                y: 291,
+                x: 584,
+                y: 747,
                 width: 1000,
                 height: 500,
                 maximized: false,
