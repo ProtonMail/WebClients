@@ -289,7 +289,7 @@ const ComposerActions = ({
                             <div className="relative">
                                 <Button
                                     icon
-                                    disabled={disabled}
+                                    disabled={disabled || editorMetadata.isPlainText}
                                     onClick={onToggleToolbar}
                                     shape="ghost"
                                     data-testid="composer:show-toolbar-button"
