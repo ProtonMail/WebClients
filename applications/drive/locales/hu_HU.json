@@ -2932,9 +2932,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } csoportok"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Saját domain névvel rendelkező felhasználók nem csatlakozhatnak Visionary és családi csomagokhoz."
-      ],
       "customer support": [
         "ügyfélszolgálat"
       ],
@@ -2956,12 +2953,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Az ön számára lefoglalt tárhely: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "A Visionary és a Family csomagok jelenleg nem támogatnak külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet mielőtt csatlakozna. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "A Visionary és a családi csomagok jelenleg nem támogatják az egész életre szóló fiókokat."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Meghívást kapott a csatlakozáshoz: ${ invite.OrganizationName }"
       ],
@@ -2979,9 +2970,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "A jelenlegi csomagja nem csatlakozhat egy Visionary vagy Family csomaghoz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3814,6 +3802,9 @@
       ],
       "Decrypting files": [
         "Fájlok visszafejtése"
+      ],
+      "Dedicated servers": [
+        "Dedikált szerverek"
       ],
       "Delete locked drive": [
         "Zárolt tárhely törlése",

@@ -237,6 +237,9 @@
       "Close this banner": [
         "Закрыть этот баннер"
       ],
+      "Collapse navigation bar": [
+        "Свернуть панель навигации"
+      ],
       "Collapse URL": [
         "Свернуть URL"
       ],
@@ -948,6 +951,9 @@
       "Remove this label": [
         "Удалить этот ярлык"
       ],
+      "Replaces the selected text in your message": [
+        "Заменяет выбранный текст в вашем сообщении"
+      ],
       "Reply": [
         "Ответить"
       ],
@@ -1137,6 +1143,9 @@
       "Show more search options": [
         "Показать больше настроек поиска"
       ],
+      "Show navigation bar": [
+        "Показать панель навигации"
+      ],
       "Show preview": [
         "Показать предпросмотр"
       ],
@@ -1172,6 +1181,9 @@
       ],
       "Stay": [
         "Остаться"
+      ],
+      "Stop downloading assistant": [
+        "Остановить скачивание помощника"
       ],
       "Stop generating result": [
         "Остановить создание результата"
@@ -1349,6 +1361,9 @@
       ],
       "Why not?": [
         "Почему нет?"
+      ],
+      "Write for me": [
+        "Напиши за меня"
       ],
       "Yes": [
         "Да"
@@ -3445,6 +3460,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Чтобы продолжить пользоваться помощником по написанию, запросите доступ у своего администратора."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Чтобы убедиться в высшей безопасности вашего аккаунта, установите фразу для восстановления."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
@@ -3861,6 +3879,9 @@
       "Draft could not be saved. Try again.": [
         "Черновик не сохранился. Попробуйте ещё раз."
       ],
+      "Due to an error, text generation couldn't be canceled": [
+        "Генерацию текста не удалось отменить из-за ошибки."
+      ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
       ],
@@ -4052,6 +4073,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Пожалуйста, выберите категорию и укажите, что пошло не так в сгенерированном тексте"
+      ],
+      "Please try again or refresh the page.": [
+        "Повторите попытку или обновите страницу."
       ],
       "Please try generating the text again": [
         "Попробуйте сгенерировать текст еще раз"
@@ -4637,9 +4661,6 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Аккаунты с пользовательскими доменами не могут подключиться к семейному плану или перейти на тариф Visionary."
-      ],
       "customer support": [
         "служба поддержки"
       ],
@@ -4661,12 +4682,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Доступный объем хранилища: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "На данный момент семейный план и тариф Visionary не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "На данный момент тариф Visionary и семейный план не доступны для пожизненных аккаунтов."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
       ],
@@ -4684,9 +4699,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш текущий план не позволяет присоединиться к семейной подписке или тарифу Visionary."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5905,6 +5917,9 @@
       "and": [
         "и"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "В следующий раз при открытии Mail, будет показана другая подсказка."
+      ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Все запланированные или отложенные сообщения будут отменены."
       ],
@@ -6055,6 +6070,9 @@
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
       ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Учтите, когда вашему получателю будет лучше всего получить ваше письмо, и запланируйте его отправку на то время."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Контакт назначен группе ${ contactGroupName }"
       ],
@@ -6070,11 +6088,17 @@
       "Country code": [
         "Код страны"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Пишите письма лучше, быстро и просто. Попробуйте сейчас."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Создать ${ calendarsToBeCreatedCount } новый календарь",
         "Создать ${ calendarsToBeCreatedCount } новых календаря",
         "Создать ${ calendarsToBeCreatedCount } новых календарей",
         "Создать ${ calendarsToBeCreatedCount } новых календарей"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Создайте папку, как «${ suggestedFolderName }», чтобы хранить все ваши чеки в одном месте."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
@@ -6127,6 +6151,12 @@
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
+      "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
+        "Знаете ли вы, что вместе с вашим аккаунтом ${ BRAND_NAME } у вас также есть зашифрованное место в облаке? Перейдите в ${ DRIVE_APP_NAME } и используйте своё место по максимуму. Это бесплатно."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Знаете ли вы, что мы зарезервировали более короткий адрес электронной почты специально для вас? Это ваше имя пользователя, за которым следует «@${ PM_DOMAIN }»."
+      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -6145,6 +6175,9 @@
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
+      "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
+        "У вас сейчас нет времени на важное письмо, но вы не хотите о нём забыть? Установите время для его появления в папке «Входящие»."
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
       ],
@@ -6156,6 +6189,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
+      ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Скачивание помощника… ${ progressDisplay } ГБ"
       ],
       "Downloading paused": [
         "Скачивание приостановлено"
@@ -6313,6 +6349,9 @@
       "Generate text": [
         "Сгенерировать текст"
       ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Дайте входящим счетам цветной ярлык, как «${ suggestedLabelName }». А после оплаты, поменяйте ярлык на «${ suggestedPaidLabelName }»."
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Есть ${ numAttachments } вложение (${ numAttachmentsSize })",
         "Есть ${ numAttachments } вложения (${ numAttachmentsSize })",
@@ -6354,6 +6393,9 @@
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Если ваш алиас будет продан, утечёт или будет использоваться не по назначению, просто отключите его, чтобы перестать получать спам."
+      ],
+      "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
+        "Если ваш пароль окажется в даркнете, ${ BRAND_NAME } может сказать вам, из какого сервиса произошла утечка ваших данных и как остановить ущерб."
       ],
       "Image description": [
         "Описание изображения"
@@ -6426,6 +6468,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Держите данные своего аккаунта и кредитной карты в безопасности, но всегда под рукой, добавив их в ${ PASS_APP_NAME }. Это бесплатно и включено с вашим аккаунтом ${ BRAND_NAME }."
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
@@ -7096,6 +7141,9 @@
       "to ${ destinationElement } folder.": [
         "в ${ destinationElement } папку."
       ],
+      "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
+        "Чтобы вам не мешали открытые вкладки в вашем браузере, используйте настольное приложение."
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
       ],
@@ -7216,6 +7264,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.": [
+        "Используйте разные адреса электронной почты для разных целей, чтобы вы легко могли разделять свои письма по рабочим, личным или другим областям."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Используйте горячие клавиши, чтобы работать с почтой быстрее."
       ],
@@ -7305,6 +7356,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Когда вы подписываетесь на рассылку, используйте псевдоним вместо своего адреса электронной почты. Ваши личные данные остаются скрытыми, и отключить псевдоним можно в любое время."
+      ],
+      "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
+        "Когда вы путешествуете или используете публичный WiFi, подключитесь к ${ VPN_APP_NAME }, чтобы никто не мог отслеживать вашу активность в сети или украсть ваши данные. Это бесплатно."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -8405,6 +8462,9 @@
       ],
       "Wonderful": [
         "Прекрасно"
+      ],
+      "Writing assistant": [
+        "Помощник по написанию"
       ],
       "Your alias": [
         "Ваш псевдоним"
@@ -10271,6 +10331,9 @@
       "First name": [
         "Имя"
       ],
+      "Generating": [
+        "Генерируем..."
+      ],
       "Gift code": [
         "Подарочный код"
       ],
@@ -10348,6 +10411,15 @@
       ],
       "Subject": [
         "Тема"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "Скажите помощнику по письму, что написать. К примеру, «Объяви грядущие события в рассылке»."
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Скажите помощнику по письму, что написать. К примеру, «Пригласи Жанну на мою вечеринку»."
+      ],
+      "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
+        "Скажите помощнику по письму, что написать. К примеру, «Поблагодари моего коллегу за помощь над проектом»."
       ],
       "Text": [
         "Текст"
@@ -12151,6 +12223,9 @@
       "Self-destruction set": [
         "Самоуничтожение установлено"
       ],
+      "Text copied to clipboard": [
+        "Текст скопирован в буфер обмена"
+      ],
       "Thanks for the feedback!": [
         "Спасибо за отзыв!"
       ],
@@ -12506,6 +12581,9 @@
       ],
       "Conversation list": [
         "Список обсуждений"
+      ],
+      "Coupon": [
+        "Купон"
       ],
       "Create contact": [
         "Создать контакт"

@@ -509,6 +509,9 @@
       "Try again": [
         "Inténtalo de nuevo"
       ],
+      "Unlock": [
+        "Desbloquear"
+      ],
       "Unlock offline with password": [
         "Desbloquear el modo sin conexión con contraseña"
       ],
@@ -733,7 +736,7 @@
         "Error al mover elementos a la papelera"
       ],
       "Failed to pin item": [
-        "No se ha podido anclar el elemento"
+        "No se ha podido anclar el elemento."
       ],
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
@@ -1514,6 +1517,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
       ],
+      "Quickly autofill your identities.": [
+        "Rellena rápidamente tus identidades."
+      ],
       "Registering extra password...": [
         "Registrando la contraseña adicional..."
       ],
@@ -1973,9 +1979,6 @@
       "Display": [
         "Mostrar"
       ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Mostrar el icono de ${ PASS_APP_NAME } en campos de inicio de sesión"
-      ],
       "Domain": [
         "Dominio"
       ],
@@ -2065,6 +2068,9 @@
       ],
       "Identity": [
         "Identidad"
+      ],
+      "Identity autofill": [
+        "Relleno automático de identidad"
       ],
       "Import": [
         "Importar"
@@ -2296,9 +2302,6 @@
       ],
       "Selected": [
         "Seleccionado"
-      ],
-      "Session locking": [
-        "Bloqueo de sesión"
       ],
       "Settings": [
         "Configuración"

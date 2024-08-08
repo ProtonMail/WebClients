@@ -64,6 +64,9 @@
       "Allow": [
         "Tillåt"
       ],
+      "Always allow sending mail to group": [
+        "Tillåt alltid att skicka e-post till grupp"
+      ],
       "Apply": [
         "Tillämpa"
       ],
@@ -81,12 +84,6 @@
       ],
       "Block": [
         "Blockera"
-      ],
-      "Can send to this group": [
-        "Kan skicka till denna grupp"
-      ],
-      "Can't send to this group": [
-        "Kan inte skicka till denna grupp"
       ],
       "Cancel": [
         "Avbryt"
@@ -187,6 +184,9 @@
       "Delete logo": [
         "Ta bort logga"
       ],
+      "Delete member": [
+        "Ta bort medlem"
+      ],
       "Delete user": [
         "Ta bort användare"
       ],
@@ -201,6 +201,9 @@
       ],
       "Disable": [
         "Inaktivera"
+      ],
+      "Disable E2EE for group address": [
+        "Inaktivera E2EE för gruppadress"
       ],
       "Discard": [
         "Avfärda"
@@ -273,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
+      ],
+      "Enable E2EE for group address": [
+        "Aktivera E2EE för gruppadress"
       ],
       "Enable multi-user support": [
         "Aktivera stöd för flera användare"
@@ -2684,9 +2690,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konton med anpassade domäner kan inte gå med i ett Visionary eller familjepaket."
-      ],
       "customer support": [
         "kundsupport"
       ],
@@ -2730,12 +2733,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary och familjepaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary och familjepaket stöder för närvarande inte konton på livstid."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
       ],
@@ -2771,8 +2768,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ditt nuvarande paket kan inte gå med i ett Visionary eller familjepaket."
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3615,11 +3612,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -4959,12 +4956,20 @@
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Inte en giltig e-postadress"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Väntande"
       ],
       "Rejected": [
         "Avvisad"
+      ],
+      "Sending invite...": [
+        "Skickar inbjudan …"
       ]
     },
     "Invoice state display as badge": {
@@ -9227,10 +9232,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -9873,6 +9878,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "Sending member invitation": [
+        "Skickar medlemsinbjudan"
       ],
       "User rejected invitation": [
         "Användare avvisade inbjudan"

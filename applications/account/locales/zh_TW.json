@@ -55,10 +55,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -697,11 +697,11 @@
       "No, thanks": [
         "不用了，謝謝"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open": [
         "開啟"
@@ -763,10 +763,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1531,14 +1531,6 @@
         "選擇你的年終優惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1554,6 +1546,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -3276,12 +3276,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "啟用${ PROTON_SENTINEL_NAME }以存取此功能"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "啟用進階記錄檔${ PROTON_SENTINEL_NAME }以存取此功能"
-      ],
-      "Enable advanced logs to access these features": [
-        "啟用進階記錄檔以存取功能"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
@@ -4906,9 +4900,6 @@
       "*Only one free trial per customer.": [
         "*每位客戶僅限一次免費滿意體驗。"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "有自訂網域的帳號無法加入 Visionary 或家庭方案。"
-      ],
       "customer support": [
         "客服"
       ],
@@ -4951,12 +4942,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "我們專案提供 30 天滿意體驗 ${ BRAND_NAME } Unlimited*，讓您有足夠時間快速上手。"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 與家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 位址。${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary 與家庭方案目前不支援 lifetime 帳號。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -4978,9 +4963,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "你必須先設定自訂網域，才可以創建新的使用者"
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "您將失去存取 ${ BRAND_NAME } Family 包含的所有尊享功能和儲存空間。"
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
       ],
@@ -4989,9 +4971,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "您目前的方案無法加入 Visionary 或家庭方案。"
       ]
     },
     "familyOffer_2023:Info": {
@@ -6623,10 +6602,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7213,9 +7192,6 @@
       ],
       "Loading...": [
         "載入中‧‧‧"
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "紀錄檔包含所有使用 ${ BRAND_NAME_TWO } 憑證的 ${ BRAND_NAME } 服務的驗證嘗試。"
       ],
       "Low Priority": [
         "較低優先順序"
@@ -8986,9 +8962,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
-      "Access to my events": [
-        "存取我的行程"
-      ],
       "Account recovery": [
         "帳號復原"
       ],
@@ -10273,12 +10246,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "啟用${ reason }"
-      ],
-      "Enable advanced logs": [
-        "啟用進階記錄"
-      ],
-      "Enable authentication logs": [
-        "啟用認證記錄"
       ]
     },
     "Mail import summary": {
@@ -12287,9 +12254,6 @@
         "來自於了解加密的團隊"
       ],
       "Get ${ appName } for ${ browserName }": [
-        "盡快為${ browserName }取得${ appName }。"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
         "盡快為${ browserName }取得${ appName }。"
       ],
       "Get in touch with our sales team": [
@@ -14711,10 +14675,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -15821,9 +15785,6 @@
       "Enable/disable desktop and mobile notifications": [
         "啟用／停用桌面與行動裝置通知"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "啟用進階日誌記錄安全記錄檔中每項行程的 IP 位址。"
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"
       ],
@@ -16303,9 +16264,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "一旦刪除此手機號碼，您日後將不能救援您的帳號。"
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "停用記錄將一併清除您整個記錄歷程。您確定要停用記錄嗎？"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "如果您取消此匯入，您將無法復原。 ${ BRAND_NAME } 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"

@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Έντονη γραφή"
-      ],
-      "Can send to this group": [
-        "Μπορεί να στείλει σε αυτήν την ομάδα"
-      ],
-      "Can't send to this group": [
-        "Δεν μπορεί να στείλει σε αυτήν την ομάδα"
       ],
       "Cancel": [
         "Ακύρωση"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Διαγραφή λογότυπου"
+      ],
+      "Delete member": [
+        "Διαγραφή μέλους"
       ],
       "Delete permanently": [
         "Οριστική διαγραφή"
@@ -733,11 +730,11 @@
       "No, thanks": [
         "Όχι, ευχαριστώ"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Άνοιγμα"
@@ -799,11 +796,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reload": [
         "Ανανέωση"
@@ -1613,14 +1610,6 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1642,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -3383,12 +3380,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Ενεργοποιήστε τα αρχεία καταγραφής για προχωρημένους και το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
-      ],
-      "Enable advanced logs to access these features": [
-        "Ενεργοποίηση αρχείων καταγραφής για προχωρημένους για πρόσβαση σε αυτές τις δυνατότητες"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
@@ -5065,9 +5056,6 @@
       "*Only one free trial per customer.": [
         "*Μόνο μία δωρεάν δοκιμή ανά πελάτη."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε οραματικό ή οικογενειακό πρόγραμμα."
-      ],
       "customer support": [
         "υποστήριξη πελατών"
       ],
@@ -5123,12 +5111,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Για να διευκολύνουμε τη μετάβαση, σας προσφέρουμε μια δοκιμή ευγένειας 30 ημερών για ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Τα οραματικά και οικογενειακά σχέδια δεν υποστηρίζουν επί του παρόντος λογαριασμούς διάρκειας ζωής."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
       ],
@@ -5158,9 +5140,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν δημιουργήσετε έναν νέο χρήστη."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Θα χάσετε την πρόσβαση σε όλες τις premium δυνατότητες και τον αποθηκευτικό χώρο που περιλαμβάνονται στο ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
       ],
@@ -5169,9 +5148,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Το τρέχον σχέδιό σας δεν μπορεί να συμμετάσχει σε ένα Οραματικό ή οικογενειακό σχέδιο."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6946,11 +6922,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -7573,9 +7549,6 @@
       ],
       "Loading...": [
         "Φόρτωση..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
@@ -9504,9 +9477,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
-      "Access to my events": [
-        "Πρόσβαση στις εκδηλώσεις μου"
-      ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
@@ -10841,12 +10811,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Ενεργοποίηση προηγμένων αρχείων καταγραφής"
-      ],
-      "Enable authentication logs": [
-        "Ενεργοποίηση αρχείων καταγραφής ταυτοποίησης"
       ]
     },
     "Mail import summary": {
@@ -13017,9 +12981,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Λάβετε το ${ appName } για ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Λάβετε το ${ appName } για ${ browserName } σύντομα"
       ],
       "Get in touch with our sales team": [
         "Επικοινωνήστε με την ομάδα πωλήσεών μας"
@@ -15895,10 +15856,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -17010,9 +16971,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Ενεργοποίηση/απενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας και κινητού"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Η ενεργοποίηση προηγμένων αρχείων καταγραφής, καταγράφουν τη διεύθυνση IP για κάθε συμβάν στο αρχείο καταγραφής ασφαλείας."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"
       ],
@@ -17608,9 +17566,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Η απενεργοποίηση των αρχείων καταγραφής θα κάνει επίσης πλήρη εκκαθάριση του καταγεγραμμένου ιστορικού σας. Θέλετε σίγουρα να απενεργοποιήσετε τα αρχεία καταγραφής;"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"

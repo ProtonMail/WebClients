@@ -181,6 +181,9 @@
       "Delete logo": [
         "Hapus logo"
       ],
+      "Delete member": [
+        "Hapus anggota"
+      ],
       "Delete user": [
         "Hapus pengguna"
       ],
@@ -436,6 +439,12 @@
       "Remove": [
         "Hapus"
       ],
+      "Remove all members": [
+        "Keluarkan semua anggota"
+      ],
+      "Remove all members from group": [
+        "Keluarkan semua anggota dari grup"
+      ],
       "Remove bonuses": [
         "Hapus bonus"
       ],
@@ -495,6 +504,9 @@
       ],
       "Revoke ${ name }": [
         "Cabut ${ name }"
+      ],
+      "Revoke invitation": [
+        "Cabut undangan"
       ],
       "Save": [
         "Simpan"
@@ -2664,9 +2676,6 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket Visionary atau paket keluarga."
-      ],
       "customer support": [
         "layanan dukungan"
       ],
@@ -2709,12 +2718,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Paket Visionary dan keluarga saat ini tidak mendukung akun seumur hidup."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"
       ],
@@ -2747,9 +2750,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Paket Anda saat ini tidak dapat bergabung ke paket Visionary atau paket keluarga."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3559,11 +3559,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -5847,6 +5847,15 @@
       ],
       "From ${ price }": [
         "Dari ${ price }"
+      ],
+      "Get started for $1": [
+        "Mulai dengan harga $1"
+      ],
+      "Get started for 1 €": [
+        "Mulai dengan harga 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Mulai dengan harga CHF 1"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -9122,11 +9131,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -9764,6 +9773,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Masuk dengan aman di semua perangkat Anda. Meliputi alias tak terbatas, berbagi, 2FA terintegrasi, dan masih banyak lagi."
+      ],
+      "User rejected invitation": [
+        "Pengguna menolak undangan"
       ]
     },
     "Tooltip for news": {

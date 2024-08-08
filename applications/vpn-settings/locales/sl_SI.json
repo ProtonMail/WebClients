@@ -6,19 +6,19 @@
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "${ name } in ${ remainingCount } drugih možnih odtekanj podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo ${ name } in 1 drugo potencialno odtekanje podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
@@ -2627,9 +2627,6 @@
       "${ BRAND_NAME } groups": [
         "Skupine ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Računi z domenami po meri se ne morejo pridružiti paketu Visionary ali družinskemu paktu."
-      ],
       "customer support": [
         "podporo strankam"
       ],
@@ -2666,12 +2663,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Prostor, ki vam je dodeljen: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket Visionary in družinski paket trenutno ne omogočata uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Paket Visionary in družinski paket trenutno ne omogočata doživljenjskih računov."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -2695,9 +2686,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Vašega trenutnega paketa ni mogoče združiti s paketom Visionary ali z družinskim paketom."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3553,11 +3541,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "namenski strežniki"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -8889,10 +8877,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
