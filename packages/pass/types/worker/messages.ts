@@ -34,7 +34,7 @@ import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitP
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { TabId } from './runtime';
-import type { AppState, AppStatus, PopupInitialState } from './state';
+import type { AppState, PopupInitialState } from './state';
 
 export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
 export type ClientEndpoint =
@@ -118,7 +118,6 @@ export enum WorkerMessageType {
     RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
-    SET_APP_STATUS = 'SET_APP_STATUS',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     STORE_DISPATCH = 'STORE_DISPATCH',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
@@ -188,7 +187,6 @@ export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
-export type SetAppStatus = WithPayload<WorkerMessageType.SET_APP_STATUS, { status: AppStatus }>;
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
@@ -258,7 +256,6 @@ export type WorkerMessage =
     | ResolveUserDataMessage
     | SentryCSEventMessage
     | SettingsUpdateMessage
-    | SetAppStatus
     | StartContentScriptMessage
     | StoreActionMessage
     | TelemetryEventMessage

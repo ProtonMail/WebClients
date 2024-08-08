@@ -77,10 +77,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             }
         }
 
-        if (options.getAppState().status !== AppStatus.LOCK_SETUP) {
-            options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
-        }
-
+        options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
         options.onBoot?.({ ok: true, fromCache, offline: payload?.offline });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
