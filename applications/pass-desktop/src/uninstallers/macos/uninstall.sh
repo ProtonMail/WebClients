@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -euo pipefail
+
 CHOICE=`osascript <<EOF
 button returned of (display dialog "This action will uninstall Proton Pass and remove associated data. Are you sure you want to continue?" buttons {"Cancel", "Uninstall"} default button 2 with icon caution with title "Proton Pass Uninstall")
 EOF`
