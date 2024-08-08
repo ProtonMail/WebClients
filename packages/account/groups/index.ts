@@ -4,14 +4,15 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getGroups } from '@proton/shared/lib/api/groups';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import { Group } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces';
 
+import type { DomainsState, OrganizationKeyState} from '..';
 import { getInitialModelState, serverEvent } from '..';
 import type { ModelState } from '../interface';
 
 const name = 'groups';
 
-export interface GroupsState {
+export interface GroupsState extends DomainsState, OrganizationKeyState {
     [name]: ModelState<Group[]>;
 }
 
