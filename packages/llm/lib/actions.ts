@@ -147,21 +147,36 @@ function isSupportedLocale(locale: string): boolean {
     return SUPPORTED_LLM_LANGS.some((prefix) => locale.startsWith(prefix));
 }
 
-const genericCleanup: TransformCallback = (fulltext: string) => {
-    let fulltext2 = fulltext;
-    fulltext2 = removeStopStrings(fulltext2);
-    fulltext2 = fulltext2.replaceAll(/<\/?[a-z][^>]*>/gi, '');
-    fulltext2 = convertToDoubleNewlines(fulltext2);
-    fulltext2 = fulltext2.trim();
-    fulltext2 = removePartialSubstringAtEnd(fulltext2, '</span>');
-    return fulltext2.trimEnd();
+function getCustomStopStringsForAction(action: Action): string[] {
+    switch (action.type) {
+        case 'writeFullEmail':
+            return STOP_STRINGS_WRITE_FULL_EMAIL;
+        default:
+            return STOP_STRINGS_REFINE;
+    }
+}
+
+const makeRefineCleanup = (action: Action) => {
+    const customStopStrings = getCustomStopStringsForAction(action);
+    const stopStrings = [...GENERAL_STOP_STRINGS, ...customStopStrings];
+    return (fulltext: string): string => {
+        fulltext = removeStopStrings(fulltext, customStopStrings);
+        fulltext = fulltext.replaceAll(/<\/?[a-z][^>]*>/gi, '');
+        fulltext = fulltext.replaceAll(/^(Harmful|Subject|Body|Language) ?:.*$/gm, '');
+        fulltext = convertToDoubleNewlines(fulltext);
+        fulltext = fulltext.trim();
+        for (const s of stopStrings) {
+            fulltext = removePartialSubstringAtEnd(fulltext, s);
+        }
+        return fulltext.trimEnd();
+    };
 };
 
 function proofreadActionToCustomRefineAction(action: ProofreadAction): CustomRefineAction {
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged, in the same language as the original text.',
+        prompt: 'Fix any spelling or grammatical errors. Keep correct text otherwise unchanged, in the same language as the original text. If needed, you can introduce paragraph breaks (with two newlines) to help with the flow.',
     };
 }
 
@@ -177,7 +192,7 @@ function friendlyActionToCustomRefineAction(action: FriendlyAction): CustomRefin
     return {
         ...action,
         type: 'customRefine',
-        prompt: 'Rewrite the same text with a friendly tone, like writing to a friend, in the same language as the original text.',
+        prompt: 'Rewrite the same text with a friendly and enthusiastic tone, like writing to a friend, in the same language as the original text, using idioms from that language.',
     };
 }
 
@@ -266,7 +281,7 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
         },
         {
             role: 'assistant',
-            contents: HARMFUL_CHECK_PREFIX,
+            contents: `Sure, here's your email:\n\n\`\`\`plaintext\n${HARMFUL_CHECK_PREFIX}`,
         },
     ]);
 }
@@ -321,12 +336,8 @@ function formatPromptCustomRefine(action: CustomRefineAction): string {
 
     const turns = [
         {
-            role: 'assistant',
-            contents: oldEmail,
-        },
-        {
             role: 'user',
-            contents: user,
+            contents: `Here's my original email:\n\n\`\`\`plaintext\n${oldEmail}\n\`\`\`\n\n${user}`,
         },
         {
             role: 'system',
@@ -334,7 +345,7 @@ function formatPromptCustomRefine(action: CustomRefineAction): string {
         },
         {
             role: 'assistant',
-            contents: newEmailStart,
+            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`plaintext\n${newEmailStart}`,
         },
     ];
 
@@ -379,8 +390,9 @@ export class GpuShortenRunningAction extends BaseRunningAction {
 export class GpuRefineRunningAction extends BaseRunningAction {
     constructor(action: CustomRefineAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptCustomRefine(action);
+        const refineCleanup = makeRefineCleanup(action);
         const wrappedCallback: GenerationCallback = (fulltext: string, details?: GenerationCallbackDetails) => {
-            let cleaned = genericCleanup(fulltext);
+            let cleaned = refineCleanup(fulltext);
             return callback(cleaned || '', details);
         };
         super(prompt, wrappedCallback, chat, action, ['</span>', '</div>']);
@@ -724,16 +736,7 @@ export function getTransformForAction(action: Action): TransformCallback {
         case 'writeFullEmail':
             return makeTransformWriteFullEmail(action.sender);
         default:
-            return genericCleanup;
-    }
-}
-
-function getCustomStopStringsForAction(action: Action): string[] {
-    switch (action.type) {
-        case 'writeFullEmail':
-            return STOP_STRINGS_WRITE_FULL_EMAIL;
-        default:
-            return STOP_STRINGS_REFINE;
+            return makeRefineCleanup(action);
     }
 }
 
