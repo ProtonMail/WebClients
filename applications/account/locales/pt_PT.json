@@ -55,11 +55,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -691,11 +691,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -754,11 +754,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -869,7 +869,7 @@
         "Guardar ficheiro ICS"
       ],
       "Save SAML configuration": [
-        "Salvar a configuração SAML"
+        "Guardar configuração SAML"
       ],
       "Search": [
         "Pesquisar"
@@ -3138,12 +3138,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Ative registos avançados e ${ PROTON_SENTINEL_NAME } para aceder a estas funcionalidades"
-      ],
-      "Enable advanced logs to access these features": [
-        "Ative registos avançados para aceder a estas funcionalidades"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
@@ -4675,9 +4669,6 @@
       "*Only one free trial per customer.": [
         "*Apenas uma avaliação gratuita por cliente."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "As contas com domínios personalizados não podem aderir a um plano Visionary ou family."
-      ],
       "customer support": [
         "apoio ao cliente"
       ],
@@ -4717,12 +4708,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Para facilitar a transição, estamos a oferecer-lhe uma avaliação gratuita de 30 dias da ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos Visionary e Family não suportam actualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Os planos Visionary e family não suportam actualmente contas vitalícias."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Está convidado a juntar-se a ${ invite.OrganizationName }"
       ],
@@ -4741,9 +4726,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "É necessário configurar um domínio personalizado antes de criar um utilizador."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Perderá o acesso a todas as funcionalidades premium e espaço de armazenamento incluídos na ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está convidado a associar a sua conta ${ BRAND_NAME } a este plano de grupo e a usufruir em conjunto de todas as funcionalidades premium ${ BRAND_NAME_TWO }."
       ],
@@ -4752,9 +4734,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "O seu plano actual não pode aderir a um plano Visionary ou family."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6369,11 +6348,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -6835,14 +6814,14 @@
       "Loading ${ appName }": [
         "A carregar ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "A carregar o calendário, por favor aguarde. Será redirecionado para a nossa plataforma de agendamento Calendly num novo separador."
+      ],
       "Loading preview": [
         "A carregar a pré-visualização"
       ],
       "Loading...": [
         "A carregar..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Os registos incluem tentativas de autenticação para todos os serviços da ${ BRAND_NAME } que utilizam as suas credenciais da ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Prioridade baixa"
@@ -6984,6 +6963,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "A sua organização tem mais administradores. Deve comunicar-lhes a nova palavra-passe."
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Outros utilizadores da sua organização verão as suas faixas horárias ocupadas. Não são partilhados quaisquer detalhes do evento."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Ficheiro de recuperação desatualizado; atualize-o para garantir o acesso aos seus dados"
@@ -7378,6 +7360,9 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "As informações expostas foram divulgadas por um serviço de terceiros. As suas informações da conta ${ BRAND_NAME } permanecem seguras e encriptadas. ${ learnMoreLink }"
       ],
       "The following address is available:": [
         "O seguinte endereço está disponível:"
@@ -7927,6 +7912,9 @@
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Tem uma subscrição ${ planTitle } de avaliação. Nenhum pagamento é exigido neste momento. A sua subscrição será renovada automaticamente no final do período de avaliação."
       ],
       "You have no calendars to export.": [
         "Não tem calendários para exportar."
@@ -8495,9 +8483,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
-      ],
-      "Access to my events": [
-        "Acesso aos meus eventos"
       ],
       "Account recovery": [
         "Recuperação da conta"
@@ -9738,12 +9723,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ativar ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Ativar os registos avançados"
-      ],
-      "Enable authentication logs": [
-        "Ativar os registos de autenticação"
       ]
     },
     "Mail import summary": {
@@ -9796,7 +9775,7 @@
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixeira"
+        "Eliminação automática das pastas Spam e Lixo"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
@@ -10593,6 +10572,10 @@
       ],
       "User session management": [
         "Gestão de sessões de utilizador"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partilha de cofre (até ${ n } pessoa)",
+        "Partilha de cofre (até ${ n } pessoas)"
       ]
     },
     "new_plans: feature info": {
@@ -11626,9 +11609,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Obtenha ${ appName } para ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Transfire o ${ appName } para ${ browserName } em breve"
       ],
       "Includes:": [
         "Incluí:"
@@ -13854,11 +13834,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14911,9 +14891,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Ativar/desativar notificações no computador e dispositivo móvel"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "A ativação dos registos avançados regista o endereço IP de cada evento no registo de segurança."
-      ],
       "Feature in early access": [
         "Funcionalidade em acesso antecipado"
       ],
@@ -15366,9 +15343,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao eliminar este número de telefone, já não poderá recuperar a sua conta."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Ao desativar os registos limpa também todo o seu histórico. Tem a certeza de que deseja desativar os registos?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se cancelar a importação, não poderá retomá-la. O ${ BRAND_NAME } guardou todo o progresso na sua conta. Cancelar mesmo assim?"

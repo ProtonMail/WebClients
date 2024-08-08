@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Тлусты"
-      ],
-      "Can send to this group": [
-        "Можа адпраўляць у гэту групу"
-      ],
-      "Can't send to this group": [
-        "Не можа адпраўляць у гэту групу"
       ],
       "Cancel": [
         "Скасаваць"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Выдаліць лагатып"
+      ],
+      "Delete member": [
+        "Выдаліць ўдзельніка"
       ],
       "Delete permanently": [
         "Выдаліць незваротна"
@@ -733,10 +730,10 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open": [
@@ -799,11 +796,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -1464,7 +1461,7 @@
     },
     "Assistant option": {
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "Даныя застануцца на вашай прыладзе, але неабходна будзе аднаразовае спампоўка і сумяшчальнае абсталяванне"
+        "Даныя застануцца на вашай прыладзе, але неабходна будзе аднаразовая спампоўка і сумяшчальнае абсталяванне"
       ],
       "Fast and secure. No logs are kept.": [
         "Хуткі і бяспечны. Не пакідае журналаў."
@@ -1621,14 +1618,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1650,6 +1639,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3411,12 +3408,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Уключыце пашыраны журнал і ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
-      ],
-      "Enable advanced logs to access these features": [
-        "Уключыце пашыраны журнал, каб атрымаць доступ да гэтых функцый"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
@@ -5107,9 +5098,6 @@
       "*Only one free trial per customer.": [
         "*Толькі адзін бясплатны выпрабавальны перыяд для кожнага кліента."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Уліковыя запісы з карыстальніцкімі даменамі не могуць далучацца да сямейнага тарыфнага плана або перайсці на тарыфны план Visionary."
-      ],
       "customer support": [
         "падтрымка кліентаў"
       ],
@@ -5167,12 +5155,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Для спрашчэння пераходу мы ветліва даём вам магчымасць на працягу 30 дзён карыстацца пробнай версіяй ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Тарыфны план Visionary і сямейны тарыфны план у цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "У цяперашні час тарыфныя планы Visionary і сямейны недаступны для ўліковых запісаў з пажыццёвай падпіскай."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
@@ -5206,9 +5188,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перад стварэннем новага карыстальніка неабходна сканфігураваць карыстальніцкі дамен."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Вы згубіце доступ да ўсіх прэміяльных функцый і прасторы сховішча, які ўключае ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
       ],
@@ -5217,9 +5196,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш бягучы тарыфны план не дазваляе далучацца да тарыфнага плана Visionary або сямейнага тарыфнага плана."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5819,7 +5795,7 @@
     },
     "Group state": {
       "Active": [
-        "Актыўны"
+        "Актыўна"
       ],
       "Unanswered": [
         "Без адказу"
@@ -6825,7 +6801,7 @@
         "Вы ўпэўнены, што хочаце выдаліць гэту папку?"
       ],
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
-        "Вы сапраўды хочаце выдаліць гэту групу. Адрас групы больш не будзе працаваць."
+        "Вы сапраўды хочаце выдаліць гэту групу? Адрас групы больш не будзе працаваць."
       ],
       "Are you sure you want to delete this label?": [
         "Вы сапраўды хочаце выдаліць гэту метку?"
@@ -7082,11 +7058,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7717,9 +7693,6 @@
       ],
       "Loading...": [
         "Загрузка..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "У журнале пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
@@ -9692,9 +9665,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
       ],
-      "Access to my events": [
-        "Доступ да маіх падзей"
-      ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
@@ -11033,12 +11003,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Уключыць ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Уключыць дадатковыя журналы"
-      ],
-      "Enable authentication logs": [
-        "Уключыць журнал аўтэнтыфікацыі"
       ]
     },
     "Mail import summary": {
@@ -13286,9 +13250,6 @@
       "Get ${ appName } for ${ browserName }": [
         "Атрымайце ${ appName } для ${ browserName }"
       ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Неўзабаве атрымаеце ${ appName } для ${ browserName }"
-      ],
       "Get in touch with our sales team": [
         "Сувязь з нашай камандай па продажам"
       ],
@@ -13605,7 +13566,7 @@
         "Апрацоўка плацяжу"
       ],
       "Select billing country to pay": [
-        "Выберыце краіну выстаўлення рахунку для алпаты"
+        "Выберыце краіну выстаўлення рахунку для аплаты"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
@@ -16266,10 +16227,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -17391,9 +17352,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Уключыць/адключыць апавяшчэнні на камп'ютары і мабільнай прыладзе"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Уключэнне пашыранага журнала запісвае IP-адрас кожнай падзеі ў журнале бяспекі."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
       ],
@@ -18009,9 +17967,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой уліковы запіс."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Адключыўшы журналы, вы таксама ачысціце ўсю сваю гісторыю журналаў. Вы сапраўды хочаце адключыць журналы?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
