@@ -2325,6 +2325,9 @@
       "Availability unknown": [
         "Disponibilidade desconhecida"
       ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "Organize melhor o seu dia, controle o seu tempo e priorize tarefas. Codifique o seu calendário com cores de eventos personalizadas."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "A desencriptar os contactos... Isto pode demorar alguns minutos. Quando o processo estiver concluído, poderá transferir o ficheiro com todos os seus contactos exportados."
       ],
@@ -3403,9 +3406,6 @@
       "${ BRAND_NAME } groups": [
         "Grupos do ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "As contas com domínios personalizados não podem aderir a um plano Visionary ou family."
-      ],
       "customer support": [
         "apoio ao cliente"
       ],
@@ -3427,12 +3427,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a si: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos Visionary e Family não suportam actualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Os planos Visionary e family não suportam actualmente contas vitalícias."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Está convidado a juntar-se a ${ invite.OrganizationName }"
       ],
@@ -3450,9 +3444,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "O seu plano actual não pode aderir a um plano Visionary ou family."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4222,6 +4213,9 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
+      "Display events for calendar ${ Name }": [
+        "Exibir eventos para o calendário ${ Name }"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não está a ver nada? Lembre-se de desativar os bloqueadores de pop-ups."
       ],
@@ -4404,6 +4398,9 @@
       "Loading ${ appName }": [
         "A carregar ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "A carregar o calendário, por favor aguarde. Será redirecionado para a nossa plataforma de agendamento Calendly num novo separador."
+      ],
       "Loading event": [
         "A carregar o evento"
       ],
@@ -4478,6 +4475,9 @@
       ],
       "Organization size": [
         "Tamanho da organização"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "Outros utilizadores da sua organização verão as suas faixas horárias ocupadas. Não são partilhados quaisquer detalhes do evento."
       ],
       "password": [
         "palavra-passe"
@@ -4602,6 +4602,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Temos de desencriptar localmente os seus contactos antes que os possa exportar. No final do processo, será gerado um ficheiro VCF e poderá transferi-lo."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "As informações expostas foram divulgadas por um serviço de terceiros. As suas informações da conta ${ BRAND_NAME } permanecem seguras e encriptadas. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Os seguintes participantes não podem ser notificados sobre as suas alterações:"
@@ -4832,6 +4835,9 @@
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Tem uma subscrição ${ planTitle } de avaliação. Nenhum pagamento é exigido neste momento. A sua subscrição será renovada automaticamente no final do período de avaliação."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Reativou as suas chaves e os eventos ligados aos seguintes calendários podem agora ser desencriptados."
@@ -5067,9 +5073,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
-      ],
-      "Access to my events": [
-        "Acesso aos meus eventos"
       ],
       "Add email address": [
         "Adicionar um endereço de e-mail"
@@ -5683,7 +5686,7 @@
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixeira"
+        "Eliminação automática das pastas Spam e Lixo"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
@@ -6321,6 +6324,10 @@
       ],
       "User session management": [
         "Gestão de sessões de utilizador"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partilha de cofre (até ${ n } pessoa)",
+        "Partilha de cofre (até ${ n } pessoas)"
       ]
     },
     "new_plans: feature info": {
@@ -7218,8 +7225,14 @@
       "Create an alias": [
         "Criar um alias"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Crie aliases rapidamente e gira facilmente os seus aliases e palavras-passe."
+      ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Os aliases Hide-my-email permitem-lhe registar-se em coisas online sem partilhar o seu endereço de e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Novo alias"
@@ -8130,6 +8143,9 @@
       ],
       "Invitation sent and participants added to all events": [
         "Convite enviado e participantes adicionados a todos os eventos"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Os últimos aliases modificados armazenados no seu cofre mais antigo"
       ],
       "Participants notified and all events updated": [
         "Participantes notificados e todos os eventos atualizados"
