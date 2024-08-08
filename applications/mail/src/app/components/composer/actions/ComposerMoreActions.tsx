@@ -25,10 +25,11 @@ interface Props {
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     editorMetadata: EditorMetadata;
     onChange: MessageChange;
-    showExternalEncryption: boolean;
+    isSmallViewport: boolean;
     isPassword: boolean;
     onPassword: () => void;
     onRemoveOutsideEncryption: () => void;
+    onDelete: () => void;
 }
 
 const ComposerMoreActions = ({
@@ -40,10 +41,11 @@ const ComposerMoreActions = ({
     editorActionsRef,
     editorMetadata,
     onChange,
-    showExternalEncryption,
+    isSmallViewport,
     isPassword,
     onPassword,
     onRemoveOutsideEncryption,
+    onDelete,
 }: Props) => {
     const dispatch = useMailDispatch();
     const titleMoreOptions = c('Title').t`More options`;
@@ -70,9 +72,8 @@ const ComposerMoreActions = ({
 
     return (
         <ComposerMoreOptionsDropdown
-            title={titleMoreOptions}
             titleTooltip={titleMoreOptions}
-            className="button button-for-icon composer-more-dropdown"
+            className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
             content={
                 <Icon
                     name="three-dots-horizontal"
@@ -109,7 +110,7 @@ const ComposerMoreActions = ({
                 </DropdownMenuButton>
             )}
 
-            {showExternalEncryption && (
+            {isSmallViewport && (
                 <>
                     <div className="dropdown-item-hr" key="hr-more-options" />
 
@@ -136,6 +137,17 @@ const ComposerMoreActions = ({
                             <span className="ml-2 my-auto flex-1">{c('Action').t`Remove encryption`}</span>
                         </DropdownMenuButton>
                     )}
+
+                    <div className="dropdown-item-hr" key="hr-more-options" />
+
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap items-center"
+                        onClick={onDelete}
+                        data-testid="composer:delete-draft-button"
+                    >
+                        <Icon name="trash" />
+                        <span className="ml-2 my-auto flex-1">{c('Action').t`Delete draft`}</span>
+                    </DropdownMenuButton>
                 </>
             )}
         </ComposerMoreOptionsDropdown>
