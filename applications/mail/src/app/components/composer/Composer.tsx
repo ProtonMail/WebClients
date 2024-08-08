@@ -1,9 +1,10 @@
 import type { DragEvent, Ref, RefObject } from 'react';
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState, useMemo } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
+import { useHandler, useLocalState, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
@@ -72,6 +73,9 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
+    // TODO: Define this value depending on EO or not.
+    const [displayToolbar, setDisplayToolbar] = useLocalState(true, 'composer-toolbar-expanded');
+    const toolbarWrapperRef = useRef<HTMLDivElement>(null);
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');
@@ -426,8 +430,23 @@ const Composer = (
                         onKeyUp={handleEditorSelection}
                         onMouseUp={handleEditorSelection}
                         isInert={isAssistantExpanded}
+                        toolbarCustomRender={(toolbar) =>
+                            displayToolbar && toolbarWrapperRef.current
+                                ? createPortal(toolbar, toolbarWrapperRef.current)
+                                : null
+                        }
                     />
                 </div>
+
+                {/* Used to display the toolbar below the composer*/}
+                {!metadata.isPlainText && (
+                    <div
+                        ref={toolbarWrapperRef}
+                        // @ts-ignore
+                        inert={isAssistantExpanded ? '' : undefined}
+                    />
+                )}
+
                 <ComposerActions
                     composerID={composerID}
                     addressesBlurRef={addressesBlurRef}
@@ -453,6 +472,8 @@ const Composer = (
                     showAssistantButton={canShowAssistant}
                     onToggleAssistant={handleToggleAssistant}
                     isInert={isAssistantExpanded}
+                    onToggleToolbar={() => setDisplayToolbar(!displayToolbar)}
+                    displayToolbar={displayToolbar}
                 />
             </div>
             {waitBeforeScheduleModal}
