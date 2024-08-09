@@ -8,7 +8,13 @@ export default createRequestSaga({
     call: async ({ password, mode }, options) => {
         const auth = options.getAuthService();
         const verified = await auth.confirmPassword(password, mode);
-        if (!verified) throw new Error(c('Error').t`Wrong password`);
+
+        if (!verified) {
+            const message = options.getAuthStore().getExtraPassword()
+                ? c('Error').t`Wrong extra password`
+                : c('Error').t`Wrong password`;
+            throw new Error(message);
+        }
 
         return true;
     },
