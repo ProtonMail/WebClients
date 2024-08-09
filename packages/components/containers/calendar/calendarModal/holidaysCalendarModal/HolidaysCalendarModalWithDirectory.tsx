@@ -455,25 +455,27 @@ const HolidaysCalendarModalWithDirectory = ({
                 />
 
                 {isComplete && (
-                    <InputField
-                        id="default-full-day-notification"
-                        as={Notifications}
-                        label={c('Label').t`Notifications`}
-                        hasType
-                        notifications={notifications}
-                        defaultNotification={defaultModel.defaultFullDayNotification}
-                        canAdd={notifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                        onChange={(notifications: NotificationModel[]) => {
-                            setNotifications(notifications);
-                        }}
-                    />
+                    <>
+                        <InputField
+                            id="default-full-day-notification"
+                            as={Notifications}
+                            label={c('Label').t`Notifications`}
+                            hasType
+                            notifications={notifications}
+                            defaultNotification={defaultModel.defaultFullDayNotification}
+                            canAdd={notifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                            onChange={(notifications: NotificationModel[]) => {
+                                setNotifications(notifications);
+                            }}
+                        />
+                        <BusySlotsCheckbox
+                            onChange={(nextMakesUserBusy) => {
+                                setMakesUserBusy(nextMakesUserBusy);
+                            }}
+                            value={makesUserBusy}
+                        />
+                    </>
                 )}
-                <BusySlotsCheckbox
-                    onChange={(nextMakesUserBusy) => {
-                        setMakesUserBusy(nextMakesUserBusy);
-                    }}
-                    value={makesUserBusy}
-                />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <>
