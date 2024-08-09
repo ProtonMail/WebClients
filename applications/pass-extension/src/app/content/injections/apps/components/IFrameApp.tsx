@@ -164,7 +164,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                      * the frame's innerHTML */
                     case WorkerMessageType.PORT_UNAUTHORIZED:
                         return destroyFrame();
-                    case WorkerMessageType.WORKER_STATUS:
+                    case WorkerMessageType.WORKER_STATE_CHANGE:
                         return setAppState(message.payload.state);
                 }
             });
