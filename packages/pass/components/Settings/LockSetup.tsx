@@ -21,7 +21,13 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';
+import {
+    selectExtraPasswordEnabled,
+    selectLockMode,
+    selectLockTTL,
+    selectPassPlan,
+    selectUserSettings,
+} from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -47,6 +53,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const currentLockMode = useSelector(selectLockMode);
     const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
     const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
+    const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
     const canToggleTTL = currentLockMode !== LockMode.NONE && !orgLockTTL;
     const biometricsRolledOut = useFeatureFlag(PassFeature.PassDesktopBiometrics);
@@ -104,12 +111,24 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
 
                 case LockMode.PASSWORD:
                     return confirmPassword({
-                        message:
-                            /** If the next mode is `BIOMETRIC` then we'll feed the result of this
-                             *  first unlock call to the `BIOMETRIC` lock creation */
-                            mode === LockMode.BIOMETRICS
-                                ? c('Info').t`Please confirm your password in order to auto-lock with biometrics.`
-                                : c('Info').t`Please confirm your password in order to unregister your current lock.`,
+                        message: (() => {
+                            switch (mode) {
+                                /** If the next mode is `BIOMETRIC` then we'll feed the result of this
+                                 *  first unlock call to the `BIOMETRIC` lock creation */
+                                case LockMode.BIOMETRICS:
+                                    return hasExtraPassword
+                                        ? c('Info')
+                                              .t`Please confirm your extra password in order to auto-lock with biometrics.`
+                                        : c('Info')
+                                              .t`Please confirm your password in order to auto-lock with biometrics.`;
+                                default:
+                                    return hasExtraPassword
+                                        ? c('Info')
+                                              .t`Please confirm your extra password in order to unregister your current lock.`
+                                        : c('Info')
+                                              .t`Please confirm your password in order to unregister your current lock.`;
+                            }
+                        })(),
                         onSubmit: async (secret) => {
                             await unlock({ mode: currentLockMode, secret });
                             resolve({ secret });

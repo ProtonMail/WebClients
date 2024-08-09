@@ -24,6 +24,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
             title: hasExtraPassword ? c('Title').t`Enter your extra password` : c('Title').t`Enter your password`,
             type: 'current-password',
             label: hasExtraPassword ? c('Label').t`Extra password` : c('Label').t`Password`,
+            placeholder: hasExtraPassword ? c('Label').t`Extra password` : c('Label').t`Password`,
         }),
     });
 
