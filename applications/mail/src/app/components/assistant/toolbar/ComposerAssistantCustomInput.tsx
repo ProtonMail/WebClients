@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon, InputFieldTwo, Tooltip } from '@proton/components/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 
 interface Props {
     isAssistantExpanded?: boolean;
@@ -133,6 +134,7 @@ const ComposerAssistantCustomInput = ({
                         dense
                         className="rounded-none composer-assistant-input pt-1 pb-0 resize-none"
                         aria-describedby="composer-assistant-refine-popover composer-assistant-hint"
+                        maxLength={ASSISTANT_PROMPT_SIZE_LIMIT}
                     />
 
                     <Tooltip title={c('Info').t`Generate text`}>
