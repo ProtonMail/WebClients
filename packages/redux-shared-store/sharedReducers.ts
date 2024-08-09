@@ -3,6 +3,7 @@ import {
     addressesReducer,
     domainsReducer,
     groupMembersReducer,
+    groupMembershipsReducer,
     groupsReducer,
     memberReducer,
     membersReducer,
@@ -57,6 +58,7 @@ export const sharedReducers = {
     ...scheduleCallReducer,
     ...groupsReducer,
     ...groupMembersReducer,
+    ...groupMembershipsReducer,
     securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
 };
