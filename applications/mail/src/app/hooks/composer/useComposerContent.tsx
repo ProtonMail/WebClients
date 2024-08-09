@@ -84,6 +84,7 @@ export interface EditorComposer {
     openAssistant: (id: string) => void;
     closeAssistant: (id: string) => void;
     setAssistantStatus: (id: string, status: OpenedAssistantStatus) => void;
+    handleResetAssistantState: () => void;
 }
 
 export interface EditorQuickReply {
@@ -162,6 +163,16 @@ export const useComposerContent = (args: EditorArgs) => {
         if (isComposer) {
             const { composerID, closeAssistant } = args;
             closeAssistant(composerID);
+        }
+    };
+
+    const handleCollapseAssistant = () => {
+        if (isComposer) {
+            const { composerID, setAssistantStatus } = args;
+            if (isAssistantExpanded) {
+                args.handleResetAssistantState();
+                setAssistantStatus(composerID, OpenedAssistantStatus.COLLAPSED);
+            }
         }
     };
 
@@ -762,6 +773,7 @@ export const useComposerContent = (args: EditorArgs) => {
               minimizeButtonRef: args.minimizeButtonRef,
               isAssistantExpanded,
               closeAssistant: handleCloseAssistant,
+              collapseAssistant: handleCollapseAssistant,
           }
         : {
               type: EditorTypes.quickReply,
