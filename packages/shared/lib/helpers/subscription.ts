@@ -241,37 +241,66 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefin
     return b2bPlans.has(planName);
 };
 
-const canCheckItemPaidChecklistCondition = new Set([MAIL, DRIVE, FAMILY, DUO, BUNDLE]);
+const canCheckItemPaidChecklistCondition: Set<PLANS | ADDON_NAMES> = new Set([MAIL, DRIVE, FAMILY, DUO, BUNDLE]);
 export const canCheckItemPaidChecklist = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => canCheckItemPaidChecklistCondition.has(Name as any));
+    return subscription?.Plans?.some(({ Name }) => canCheckItemPaidChecklistCondition.has(Name));
 };
 
-const canCheckItemGetStartedCondition = new Set([VPN, VPN2024, WALLET, PASS, VPN_PASS_BUNDLE]);
+const canCheckItemGetStartedCondition: Set<PLANS | ADDON_NAMES> = new Set([
+    VPN,
+    VPN2024,
+    WALLET,
+    PASS,
+    VPN_PASS_BUNDLE,
+]);
 export const canCheckItemGetStarted = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => canCheckItemGetStartedCondition.has(Name as any));
+    return subscription?.Plans?.some(({ Name }) => canCheckItemGetStartedCondition.has(Name));
 };
 
-const getIsVpnB2BPlanCondition = new Set([VPN_PRO, VPN_BUSINESS]);
-export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => getIsVpnB2BPlanCondition.has(planName as any);
+const getIsVpnB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([VPN_PRO, VPN_BUSINESS]);
+export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => getIsVpnB2BPlanCondition.has(planName);
 
-const getIsVpnPlanCondition = new Set([VPN, VPN2024, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS]);
-export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => getIsVpnPlanCondition.has(planName as any);
+const getIsVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([VPN, VPN2024, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS]);
+export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    if (!planName) {
+        return false;
+    }
+    return getIsVpnPlanCondition.has(planName);
+};
 
-const getIsConsumerVpnPlanCondition = new Set([VPN, VPN2024, VPN_PASS_BUNDLE]);
-export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) =>
-    getIsConsumerVpnPlanCondition.has(planName as any);
+const getIsConsumerVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([VPN, VPN2024, VPN_PASS_BUNDLE]);
+export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    if (!planName) {
+        return false;
+    }
+    return getIsConsumerVpnPlanCondition.has(planName);
+};
 
-const getIsPassB2BPlanCondition = new Set([PASS_PRO, PASS_BUSINESS]);
-export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => getIsPassB2BPlanCondition.has(planName as any);
+const getIsPassB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PASS_PRO, PASS_BUSINESS]);
+export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
+    if (!planName) {
+        return false;
+    }
+    return getIsPassB2BPlanCondition.has(planName);
+};
 
-const getIsPassPlanCondition = new Set([PASS, VPN_PASS_BUNDLE, PASS_PRO, PASS_BUSINESS]);
-export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => getIsPassPlanCondition.has(planName as any);
+const getIsPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PASS, VPN_PASS_BUNDLE, PASS_PRO, PASS_BUSINESS]);
+export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    if (!planName) {
+        return false;
+    }
+    return getIsPassPlanCondition.has(planName);
+};
 
-const getIsConsumerPassPlanCondition = new Set([PASS, VPN_PASS_BUNDLE]);
-export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) =>
-    getIsConsumerPassPlanCondition.has(planName as any);
+const getIsConsumerPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PASS, VPN_PASS_BUNDLE]);
+export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    if (!planName) {
+        return false;
+    }
+    return getIsConsumerPassPlanCondition.has(planName);
+};
 
-const getIsSentinelPlanCondition = new Set([
+const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     VISIONARY,
     BUNDLE,
     FAMILY,
@@ -285,7 +314,10 @@ const getIsSentinelPlanCondition = new Set([
     MAIL_BUSINESS,
 ]);
 export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    return getIsSentinelPlanCondition.has(planName as any);
+    if (!planName) {
+        return false;
+    }
+    return getIsSentinelPlanCondition.has(planName);
 };
 
 export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {
@@ -391,22 +423,28 @@ export const getHasMemberCapablePlan = (
     return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
 };
 
-const blackFridayDiscountCoupons = new Set([
+const blackFridayDiscountCoupons: Set<string> = new Set([
     COUPON_CODES.BLACK_FRIDAY_2022,
     COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
     COUPON_CODES.VPN_BLACK_FRIDAY_2022,
 ]);
 export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
-    return blackFridayDiscountCoupons.has(subscription?.CouponCode as COUPON_CODES);
+    if (!subscription || !subscription.CouponCode) {
+        return false;
+    }
+    return blackFridayDiscountCoupons.has(subscription.CouponCode);
 };
 
-const endOfYearDiscountCoupons = new Set([
+const endOfYearDiscountCoupons: Set<string> = new Set([
     COUPON_CODES.END_OF_YEAR_2023,
     COUPON_CODES.BLACK_FRIDAY_2023,
     COUPON_CODES.EOY_2023_1M_INTRO,
 ]);
 export const getHas2023OfferCoupon = (coupon: string | undefined | null): boolean => {
-    return endOfYearDiscountCoupons.has(coupon as any);
+    if (!coupon) {
+        return false;
+    }
+    return endOfYearDiscountCoupons.has(coupon);
 };
 
 export const hasVPNBlackFridayDiscount = (subscription: Subscription | undefined) => {
@@ -435,7 +473,10 @@ export const getValidAudience = (audience: string | undefined | null): Audience 
 };
 
 export const getIsCustomCycle = (subscription?: Subscription) => {
-    return customCycles.includes(subscription?.Cycle as any);
+    if (!subscription) {
+        return false;
+    }
+    return customCycles.includes(subscription.Cycle);
 };
 
 export function getNormalCycleFromCustomCycle(cycle: CYCLE): CYCLE;
