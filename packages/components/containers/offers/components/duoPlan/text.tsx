@@ -22,7 +22,7 @@ export const getInfos = () => {
     return c('duoplan2024: Info').jt`Full access to all ${BRAND_NAME} products`;
 };
 export const getStorage = () => {
-    return c('duoplan2024: Info').t`1 TB shared storage`;
+    return c('duoplan2024: Info').t`1 TB storage`;
 };
 
 export const getCTAContent = (price: string | ReactNode) => {
@@ -40,7 +40,7 @@ export const getRenews = (
 ) => {
     if (isCycleTwoYear) {
         return c('duoplan2024: Footer')
-            .jt`Billed yearly at ${amountBilled}. Discounts are based on the standard monthly pricing.`;
+            .jt`Billed every 2 years at ${amountBilled}. Discounts are based on the standard monthly pricing.`;
     }
 
     return c('duoplan2024: Footer')
