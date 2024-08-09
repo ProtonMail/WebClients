@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
+import { Loader, Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';
-import useGroupMemberships from './useGroupMembership';
 
 const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
     const isEmpty = memberships.length === 0;
@@ -56,7 +56,18 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
 };
 
 const GroupMembershipSection = () => {
-    const { groupMemberships, loading } = useGroupMemberships();
+    const [originalGroupMemberships, loading] = useGroupMemberships();
+
+    const groupMemberships: GroupMembership[] = (originalGroupMemberships ?? []).map(
+        ({ Group, State, ForwardingKeys, AddressId, ID }) => ({
+            Name: Group.Name,
+            Address: Group.Address,
+            Status: State === 0 ? 'unanswered' : 'active',
+            Keys: ForwardingKeys,
+            AddressID: AddressId,
+            ID: ID,
+        })
+    );
 
     // make status unanswered come first, then sort alphabetically by address
     const sortedGroupMemberships = [...groupMemberships].sort((a, b) => {
@@ -73,6 +84,7 @@ const GroupMembershipSection = () => {
         <>
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`View and manage your groups.`}</SettingsParagraph>
+                {loading && <Loader />}
                 {!loading && <GroupsTable memberships={sortedGroupMemberships} />}
             </SettingsSectionWide>
         </>
