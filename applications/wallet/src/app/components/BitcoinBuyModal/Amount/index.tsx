@@ -235,6 +235,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                 {...props}
                             />
                         )}
+                        assistContainerClassName="empty:hidden"
                     />
 
                     <InputFieldStackedGroup>
