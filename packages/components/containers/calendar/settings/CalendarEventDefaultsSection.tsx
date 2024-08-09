@@ -51,7 +51,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const [loadingSaveFullDayNotifications, withLoadingSaveFullDayNotifications] = useLoading();
     const [loadingSaveShareBusySlots, withLoadingSaveShareBusySlots] = useLoading();
 
-    const isBusySlotsAvailable = useBusySlotsAvailable();
+    const isBusySlotsAvailable = useBusySlotsAvailable(undefined, true);
 
     const showDuration = getShowDuration(calendar);
     const cannotEdit = !canEdit;
