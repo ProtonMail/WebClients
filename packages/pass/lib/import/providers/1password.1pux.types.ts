@@ -37,8 +37,10 @@ export enum OnePassVaultType {
 }
 
 export enum OnePassFieldKey {
+    ADDRESS = 'address',
     CONCEALED = 'concealed',
     CREDIT_CARD_NUMBER = 'creditCardNumber',
+    DATE = 'date',
     MONTH_YEAR = 'monthYear',
     STRING = 'string',
     TOTP = 'totp',

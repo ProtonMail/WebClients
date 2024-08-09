@@ -1,1 +1,1 @@
-export const objectKeys = <T>(o: Object) => Object.keys(o) as T[];
+export const objectKeys = <T extends string>(obj: Partial<Record<T, any>>): T[] => Object.keys(obj) as T[];
