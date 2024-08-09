@@ -31,6 +31,7 @@ export const ExtraPassword: FC = () => {
 
     const getInitialModalState = (): PasswordModalProps => ({
         label: c('Label').t`Extra password`,
+        placeholder: c('Label').t`Extra password`,
         message:
             c('Info').t`You will be logged out and need to log in again on all of your other devices.` +
             biometricsMessage,
@@ -48,6 +49,7 @@ export const ExtraPassword: FC = () => {
             return confirmPassword({
                 onSubmit: (password) => toggle.dispatch({ password, enabled: false }),
                 label: c('Label').t`Extra password`,
+                placeholder: c('Label').t`Extra password`,
                 message: c('Info').t`Confirm your extra password to proceed with its removal.`,
                 submitLabel: c('Action').t`Confirm`,
                 title: c('Title').t`Remove extra password`,
