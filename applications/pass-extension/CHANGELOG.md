@@ -1,3 +1,46 @@
+### Version 1.22.1
+
+-   Decouple "inject" from "open-on-focus" autofill setting
+-   Account for extra-password in password labels/placeholders
+-   Support B2B force lock setting
+-   Fix initial settings possibly mutated when account switching
+
+### Version 1.21.2
+
+-   Add identity autofill support
+-   Allow disabling identity autofill from settings view
+-   Retrain detectors for all form & field types
+-   Improve OTP item matching with priority given to direct subdomain matches
+-   Improve OTP donut rendering performance
+-   Fix input field bounding box resolution edge-cases
+-   Fine-tune injected icon overlaying elements detection
+-   Improve detection triggers & visibility checks in content-script
+-   Fix custom-element root removal not resetting injected applications
+-   Fix injected icon positioning problems with regards to browser zoom level
+-   Safari extension: add account removal link in host app
+
+### Version 1.21.1
+
+-   Patch OTP field detectors
+
+### Version 1.21.0
+
+-   Add support for identity item management
+-   Allow matching OTP extra-fields during autofill
+-   Fix "Exclude from monitoring" shown on non-login items
+-   Fix auto-scroll issues in item views
+
+### Version 1.20.2
+
+-   Disable passkeys feature discovery when no items are matched
+-   Fine-tune secure-link views & actions
+-   Prevent local session tampering via integrity check
+-   Improve OTP donut rendering performance
+-   Improve settings page UI
+-   Fix local settings re-applied after account switch
+-   Fix B2B external user invite sequence
+-   Fix webauthn timeout errors
+
 ### Version 1.20.0
 
 -   Add support for secure-links
