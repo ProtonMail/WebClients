@@ -1,3 +1,28 @@
+### Version 1.22.1
+
+-   Account for extra-password in password labels/placeholders
+-   Support B2B force lock setting
+-   Fix initial settings possibly mutated when account switching
+
+### Version 1.21.2
+
+-   Improve OTP donut rendering performance
+
+### Version 1.21.0
+
+-   Add support for identity item management
+-   Fix "Exclude from monitoring" shown on non-login items
+-   Fix auto-scroll issues in item views
+
+### Version 1.20.2
+
+-   Fine-tune secure-link views & actions
+-   Prevent local session tampering via integrity check
+-   Improve OTP donut rendering performance
+-   Improve settings page UI
+-   Fix local settings re-applied after account switch
+-   Fix B2B external user invite sequence
+
 ### Version 1.20.1
 
 -   Improved authentication system
