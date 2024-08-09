@@ -115,6 +115,9 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL]?.MaxCalendars),
                 [PLANS.VPN]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.VPN]?.MaxCalendars),
                 [PLANS.DRIVE]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.DRIVE]?.MaxCalendars),
+                [PLANS.DRIVE_BUSINESS]: getNCalendarsFeature(
+                    MAX_CALENDARS_FREE || plansMap[PLANS.DRIVE_BUSINESS]?.MaxCalendars
+                ),
                 [PLANS.PASS]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.PASS]?.MaxCalendars),
                 [PLANS.WALLET]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.WALLET]?.MaxCalendars),
                 [PLANS.FAMILY]: getNCalendarsPerUserFeature(
@@ -151,6 +154,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getEndToEndEncryption(),
                 [PLANS.VPN]: getEndToEndEncryption(),
                 [PLANS.DRIVE]: getEndToEndEncryption(),
+                [PLANS.DRIVE_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.PASS]: getEndToEndEncryption(),
                 [PLANS.WALLET]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
@@ -173,6 +177,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL),
                 [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN),
                 [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE),
+                [PLANS.DRIVE_BUSINESS]: getShareFeature(plansMap, PLANS.DRIVE_BUSINESS, Audience.B2B),
                 [PLANS.PASS]: getShareFeature(plansMap, PLANS.PASS),
                 [PLANS.WALLET]: getShareFeature(plansMap, PLANS.WALLET),
                 [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
@@ -195,6 +200,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getInvitation(),
                 [PLANS.VPN]: getInvitation(),
                 [PLANS.DRIVE]: getInvitation(),
+                [PLANS.DRIVE_BUSINESS]: getInvitation(),
                 [PLANS.PASS]: getInvitation(),
                 [PLANS.WALLET]: getInvitation(),
                 [PLANS.FAMILY]: getInvitation(),
@@ -217,6 +223,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: null,
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: getTeamAvailability(),
