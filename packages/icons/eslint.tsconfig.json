@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "jsx": "react",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "dist",
+        "declaration": true
+    }
+}
