@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import {
     AppVersion,
     AppsDropdown,
+    CollapsibleSidebarSpotlight,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
@@ -349,31 +350,33 @@ const CalendarSidebar = ({
                             isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                         )}
                     >
-                        {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                        <Tooltip
-                            title={
-                                showSideBar
-                                    ? c('Action').t`Collapse navigation bar`
-                                    : c('Action').t`Display navigation bar`
-                            }
-                            originalPlacement="right"
-                        >
-                            <button
-                                className={clsx(
-                                    'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
-                                    !showSideBar && 'sidebar-collapse-button--collapsed',
-                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto',
-                                    isScrollPresent && 'sidebar-collapse-button--above-scroll'
-                                )}
-                                onClick={onClickExpandNav}
-                                aria-pressed={showSideBar}
+                        <CollapsibleSidebarSpotlight app={APPS.PROTONCALENDAR}>
+                            {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
+                            <Tooltip
+                                title={
+                                    showSideBar
+                                        ? c('Action').t`Collapse navigation bar`
+                                        : c('Action').t`Display navigation bar`
+                                }
+                                originalPlacement="right"
                             >
-                                <Icon
-                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                    alt={c('Action').t`Show navigation bar`}
-                                />
-                            </button>
-                        </Tooltip>
+                                <button
+                                    className={clsx(
+                                        'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                        !showSideBar && 'sidebar-collapse-button--collapsed',
+                                        collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                        isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                    )}
+                                    onClick={onClickExpandNav}
+                                    aria-pressed={showSideBar}
+                                >
+                                        <Icon
+                                            name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                            alt={c('Action').t`Show navigation bar`}
+                                        />
+                                    </button>
+                                </Tooltip>
+                        </CollapsibleSidebarSpotlight>
                     </span>
                 )}
             </SidebarNav>
