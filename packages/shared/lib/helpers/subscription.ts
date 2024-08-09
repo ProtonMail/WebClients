@@ -39,6 +39,7 @@ const {
     MAIL_BUSINESS,
     DRIVE,
     DRIVE_PRO,
+    DRIVE_BUSINESS,
     PASS,
     WALLET,
     VPN,
@@ -153,6 +154,7 @@ export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(s
 export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_BUSINESS);
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
+export const hasDriveBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_BUSINESS);
 export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
 export const hasWallet = (subscription: MaybeFreeSubscription) => hasSomeAddonOrPlan(subscription, WALLET);
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
@@ -225,6 +227,7 @@ const b2bPlans: Set<PLANS | ADDON_NAMES> = new Set([
     MAIL_PRO,
     MAIL_BUSINESS,
     DRIVE_PRO,
+    DRIVE_BUSINESS,
     BUNDLE_PRO,
     BUNDLE_PRO_2024,
     ENTERPRISE,
@@ -346,8 +349,16 @@ export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasPassPro(subscription) || hasPassBusiness(subscription);
 };
 
-export const getHasVpnOrPassB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return getHasVpnB2BPlan(subscription) || getHasPassB2BPlan(subscription);
+const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
+    VPN_PRO,
+    VPN_BUSINESS,
+    DRIVE_PRO,
+    DRIVE_BUSINESS,
+    PASS_PRO,
+    PASS_BUSINESS,
+]);
+export const getHasExternalMemberCapableB2BPlan = (subscription: MaybeFreeSubscription) => {
+    return subscription?.Plans?.some((plan) => externalMemberB2BPlans.has(plan.Name)) || false;
 };
 
 export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
