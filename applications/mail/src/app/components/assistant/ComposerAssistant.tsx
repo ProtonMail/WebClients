@@ -83,6 +83,7 @@ const ComposerAssistant = ({
     const {
         generationResult,
         setGenerationResult,
+        setPreviousGenerationResult,
         previousGenerationResult,
         generate,
         submittedPrompt,
@@ -113,6 +114,11 @@ const ComposerAssistant = ({
         if (previousGenerationResult) {
             setGenerationResult(previousGenerationResult);
         }
+    };
+
+    const handleResetGeneration = () => {
+        setGenerationResult('');
+        setPreviousGenerationResult('');
     };
 
     // When user is making a harmful generation on top of a previous generation, reset the content to the previous generation
@@ -166,7 +172,7 @@ const ComposerAssistant = ({
                     feedbackSubmitted={feedbackSubmitted}
                     setFeedbackSubmitted={setFeedbackSubmitted}
                     onResetPrompt={() => setPrompt('')}
-                    onResetGeneration={() => setGenerationResult('')}
+                    onResetGeneration={handleResetGeneration}
                     showReplaceButton={hasComposerContent}
                 />
             )}
