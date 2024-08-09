@@ -20,6 +20,7 @@ export type PasswordModalProps = {
     loading?: boolean;
     message?: string;
     open?: boolean;
+    placeholder?: string;
     submitLabel?: string;
     title: string;
     type: 'new-password' | 'current-password';
@@ -34,6 +35,7 @@ export const PasswordModal: FC<PasswordModalProps> = ({
     loading,
     message,
     open,
+    placeholder,
     submitLabel,
     title,
     type,
@@ -77,7 +79,7 @@ export const PasswordModal: FC<PasswordModalProps> = ({
                     id="password"
                     label={label ?? c('Label').t`Password`}
                     onValue={onValue}
-                    placeholder={c('Placeholder').t`Password`}
+                    placeholder={placeholder ?? c('Placeholder').t`Password`}
                     required
                     value={password}
                 />
