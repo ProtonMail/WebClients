@@ -120,6 +120,7 @@ const mapProxyInstance = (proxyInstances: {
 const useAddGroupMember = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
+    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
     const getOrganizationKey = useGetOrganizationKey();
     const { call } = useEventManager();
 
@@ -152,25 +153,23 @@ const useAddGroupMember = () => {
 
         const forwardeeAddress = memberAddresses.find(({ Email }) => Email === memberEmail) as Address | undefined; // can cast to Address as addressState is full
 
-        const [
-            forwarderKey,
-            forwardeeKeysConfig,
-            {
-                Address: { Keys: forwardeeAddressKeys },
-            },
-        ] = await Promise.all([
+        const [forwarderKey, forwardeeKeysConfig, forwardeeAddressKeysResult] = await Promise.all([
             getGroupAddressKey(groupAddress, organizationPrivateKey).catch(noop),
             getMemberPublicKeys(memberEmail).catch(noop),
             // note: we might be able to remove the getter below, by changing getMemberPublicKeys
             // to also return keys for internal type external; or using a different function,
             // but there is no time for that
-            api(
+            silentApi(
                 getAllPublicKeys({
                     Email: memberEmail,
                     InternalOnly: 1,
                 })
-            ),
+            ).catch(noop),
         ]);
+        let forwardeeAddressKeys;
+        if (forwardeeAddressKeysResult !== undefined) {
+            forwardeeAddressKeys = (forwardeeAddressKeysResult as any)?.Address?.Keys;
+        }
 
         if (forwarderKey === undefined) {
             throw new Error('Group address key is undefined');
@@ -184,12 +183,14 @@ const useAddGroupMember = () => {
             throw new Error('This address cannot be used as group member');
         }
 
-        const forwardeePublicKeys = [
-            ...forwardeeKeysConfig.publicKeys.map((v) => v.armoredKey),
-            ...forwardeeAddressKeys.map((v: { PublicKey: string }) => v.PublicKey),
-        ];
-        const forwardeeArmoredPrimaryPublicKey = forwardeePublicKeys[0];
-
+        let forwardeeArmoredPrimaryPublicKey;
+        if (forwardeeAddressKeys !== undefined) {
+            const forwardeePublicKeys = [
+                ...forwardeeKeysConfig.publicKeys.map((v) => v.armoredKey),
+                ...forwardeeAddressKeys.map((v: { PublicKey: string }) => v.PublicKey),
+            ];
+            forwardeeArmoredPrimaryPublicKey = forwardeePublicKeys[0];
+        }
         return {
             forwarderKey,
             forwardeeKeysConfig,

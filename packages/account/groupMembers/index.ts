@@ -65,7 +65,7 @@ const slice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(serverEvent, (state, action) => {
-            if (!state.value || !action.payload.GroupMembers) {
+            if (!state || !action.payload.GroupMembers) {
                 return;
             }
 
@@ -74,10 +74,10 @@ const slice = createSlice({
             for (const event of groupMemberEvents) {
                 const { Action: action } = event;
                 if (action === DELETE) {
-                    // go through all groups and see if we have the ID
-                    for (const group of Object.values(state.value)) {
-                        if (group[event.ID]) {
-                            delete group[event.ID];
+                    // go through all groups and see if we have this member ID
+                    for (const group of Object.values(state)) {
+                        if (group.value?.[event.ID]) {
+                            delete group.value[event.ID];
                             break;
                         }
                     }
