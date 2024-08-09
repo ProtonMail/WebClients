@@ -11,6 +11,7 @@ import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
@@ -28,13 +29,16 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { SettingsPanel } from './SettingsPanel';
+type Props = { noTTL?: boolean };
 
-export const LockSettings: FC = () => {
+export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const { getBiometricsKey } = usePassCore();
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
     const authStore = useAuthStore();
+    const org = useOrganization({ sync: true });
+    const orgLockTTL = org?.settings.ForceLockSeconds;
+
     const { createNotification } = useNotifications();
     const online = useConnectivity();
 
@@ -44,7 +48,7 @@ export const LockSettings: FC = () => {
     const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
     const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
     const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
-    const canToggleTTL = currentLockMode !== LockMode.NONE;
+    const canToggleTTL = currentLockMode !== LockMode.NONE && !orgLockTTL;
     const biometricsRolledOut = useFeatureFlag(PassFeature.PassDesktopBiometrics);
     const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
     const plan = useSelector(selectPassPlan);
@@ -74,7 +78,7 @@ export const LockSettings: FC = () => {
             });
         }
 
-        const ttl = lockTTL ?? DEFAULT_LOCK_TTL;
+        const ttl = orgLockTTL ?? lockTTL ?? DEFAULT_LOCK_TTL;
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
         const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
@@ -202,7 +206,7 @@ export const LockSettings: FC = () => {
     }, [currentLockMode, biometricsRolledOut]);
 
     return (
-        <SettingsPanel title={c('Label').t`Unlock with`}>
+        <>
             <RadioGroup<LockMode>
                 name="lock-mode"
                 onChange={handleLockModeSwitch}
@@ -210,22 +214,26 @@ export const LockSettings: FC = () => {
                 className={clsx('flex-nowrap gap-3', !online && 'opacity-70 pointer-events-none')}
                 disableChange={!online || createLock.loading}
                 options={[
-                    {
-                        label: (
-                            <span className="block">
-                                {c('Label').t`None`}
-                                <span className="block color-weak text-sm">{c('Info')
-                                    .t`${PASS_APP_NAME} will always be accessible`}</span>
-                            </span>
-                        ),
-                        value: LockMode.NONE,
-                    },
+                    ...(!orgLockTTL
+                        ? [
+                              {
+                                  label: (
+                                      <span className="block">
+                                          {c('Label').t`None`}
+                                          <span className="block color-weak text-sm">{c('Info')
+                                              .t`${PASS_APP_NAME} will always be accessible`}</span>
+                                      </span>
+                                  ),
+                                  value: LockMode.NONE,
+                              },
+                          ]
+                        : []),
                     {
                         label: (
                             <span className="block">
                                 {c('Label').t`PIN code`}
                                 <span className="block color-weak text-sm">{c('Info')
-                                    .t`Online access to ${PASS_APP_NAME} will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.`}</span>
+                                    .t`Online access to ${PASS_APP_NAME} will require a PIN code. You'll be logged out after 3 failed attempts.`}</span>
                             </span>
                         ),
                         value: LockMode.SESSION,
@@ -271,13 +279,26 @@ export const LockSettings: FC = () => {
                 ]}
             />
 
-            <hr className="mt-2 mb-4 border-weak shrink-0" />
-
-            <LockTTLField
-                ttl={nextLock?.ttl ?? lockTTL}
-                disabled={!online || !canToggleTTL || createLock.loading}
-                onChange={handleLockTTLChange}
-            />
-        </SettingsPanel>
+            {!noTTL && (
+                <>
+                    <hr className="mt-2 mb-4 border-weak shrink-0" />
+                    <LockTTLField
+                        ttl={nextLock?.ttl ?? orgLockTTL ?? lockTTL}
+                        disabled={!online || !canToggleTTL || createLock.loading}
+                        onChange={handleLockTTLChange}
+                        label={
+                            <>
+                                {c('Label').t`Auto-lock after`}
+                                {orgLockTTL && (
+                                    <span className="color-weak text-sm">
+                                        {` (${c('Info').t`Set by your organization`})`}
+                                    </span>
+                                )}
+                            </>
+                        }
+                    />
+                </>
+            )}
+        </>
     );
 };

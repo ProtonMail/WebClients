@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvide
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
@@ -26,9 +27,10 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
-import { selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
+import { useAuthService } from '../Context/AuthServiceProvider';
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
 import { Header } from './Header/Header';
 import { LinuxUpdateBar } from './Header/LinuxUpdateBar';
@@ -105,24 +107,30 @@ const MainSwitch: FC = () => {
     );
 };
 
-export const Main: FC = () => (
-    <OrganizationProvider>
-        <ItemsProvider>
-            <BulkSelectProvider>
-                <ItemActionsProvider>
-                    <InviteProvider>
-                        <VaultActionsProvider>
-                            <PasswordProvider>
-                                <SpotlightProvider>
-                                    <OnboardingProvider>
-                                        <MainSwitch />
-                                    </OnboardingProvider>
-                                </SpotlightProvider>
-                            </PasswordProvider>
-                        </VaultActionsProvider>
-                    </InviteProvider>
-                </ItemActionsProvider>
-            </BulkSelectProvider>
-        </ItemsProvider>
-    </OrganizationProvider>
-);
+export const Main: FC = () => {
+    const lockSetup = useSelector(selectLockSetupRequired);
+    const auth = useAuthService();
+    const logout = useCallback(() => auth.logout({ soft: true }), []);
+
+    return (
+        <OrganizationProvider>
+            <ItemsProvider>
+                <BulkSelectProvider>
+                    <ItemActionsProvider>
+                        <InviteProvider>
+                            <VaultActionsProvider>
+                                <PasswordProvider>
+                                    <SpotlightProvider>
+                                        <OnboardingProvider>
+                                            {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
+                                        </OnboardingProvider>
+                                    </SpotlightProvider>
+                                </PasswordProvider>
+                            </VaultActionsProvider>
+                        </InviteProvider>
+                    </ItemActionsProvider>
+                </BulkSelectProvider>
+            </ItemsProvider>
+        </OrganizationProvider>
+    );
+};

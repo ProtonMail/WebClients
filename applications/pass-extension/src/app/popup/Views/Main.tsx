@@ -1,6 +1,8 @@
 import { type FC, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
+import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
 
 import { useNotifications } from '@proton/components/hooks';
@@ -9,10 +11,12 @@ import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
+import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { selectLockSetupRequired } from '@proton/pass/store/selectors';
 
 import { Header } from './Header/Header';
 
@@ -46,11 +50,15 @@ const MainSwitch: FC = () => {
 };
 
 export const Main: FC = () => {
+    const ctx = usePopupContext();
     usePopupStateEffects();
 
     /** clear notifications when `Main` unmounts */
     const { clearNotifications } = useNotifications();
     useEffect(() => () => clearNotifications(), []);
+
+    const lockSetup = useSelector(selectLockSetupRequired);
+    const logout = () => ctx.logout({ soft: true });
 
     return (
         <OrganizationProvider>
@@ -60,7 +68,7 @@ export const Main: FC = () => {
                         <InviteProvider>
                             <PasswordProvider>
                                 <SpotlightProvider>
-                                    <MainSwitch />
+                                    {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
                                 </SpotlightProvider>
                             </PasswordProvider>
                         </InviteProvider>

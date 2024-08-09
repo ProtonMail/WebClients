@@ -40,7 +40,7 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
 
     useEffect(() => {
         const onMessage = (message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.WORKER_STATUS) {
+            if (message.sender === 'background' && message.type === WorkerMessageType.WORKER_STATE_CHANGE) {
                 ready.current.then(() => onWorkerStateChange(message.payload.state)).catch(noop);
             }
         };
