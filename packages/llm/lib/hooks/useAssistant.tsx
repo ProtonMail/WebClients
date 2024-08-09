@@ -2,6 +2,7 @@ import { createContext, useContext, useMemo } from 'react';
 
 import type { AssistantError } from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AssistantErrorTypes } from '@proton/llm/lib/hooks/useAssistantErrors';
+import type { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 
 import type { Action, AssistantConfig, GenerationCallback, OpenedAssistant, OpenedAssistantStatus } from '../types';
 
@@ -145,6 +146,15 @@ export interface AssistantContextType {
     getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
     handleCheckHardwareCompatibility: () => Promise<{ hasCompatibleBrowser: boolean; hasCompatibleHardware: boolean }>;
     cleanSpecificErrors: (assistantID: string) => void;
+    addSpecificError: ({
+        assistantID,
+        assistantType,
+        errorType,
+    }: {
+        assistantID: string;
+        assistantType: ASSISTANT_TYPE;
+        errorType: ERROR_TYPE;
+    }) => void;
 }
 
 export const AssistantContext = createContext<AssistantContextType | null>(null);
@@ -185,6 +195,7 @@ export const useAssistant = (assistantID?: string) => {
         getIsStickyAssistant,
         handleCheckHardwareCompatibility,
         cleanSpecificErrors,
+        addSpecificError,
     } = assistantContext;
 
     const isGeneratingResult = !assistantID ? false : !!runningActions[assistantID];
@@ -255,5 +266,6 @@ export const useAssistant = (assistantID?: string) => {
         getIsStickyAssistant,
         handleCheckHardwareCompatibility,
         cleanSpecificErrors: handleCleanSpecifcErrors,
+        addSpecificError,
     };
 };
