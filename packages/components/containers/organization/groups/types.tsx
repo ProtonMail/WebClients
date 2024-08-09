@@ -21,8 +21,6 @@ export interface GroupsManagementReturn {
     setUiState: (state: GROUPS_STATE) => void;
     loadingGroupMembers: boolean;
     groupMembers: GroupMember[];
-    handleReloadGroupMembers: (groupID: string) => void;
-    handleDeleteGroupMember: (memberId: string) => void;
     domainData: DomainData;
     suggestedAddressDomainName: string;
     suggestedAddressDomainPart: string;
