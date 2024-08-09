@@ -32,6 +32,7 @@ export interface GroupMember {
     State: GROUP_MEMBER_STATE;
     Permissions: GROUP_MEMBER_PERMISSIONS;
     GroupMemberAddressPendingKey?: GroupMemberAddressPendingKey;
+    GroupID: string;
 }
 
 // really just a special group member

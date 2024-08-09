@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useFormik } from 'formik';
 
+import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import {
     useApi,
@@ -13,17 +14,15 @@ import {
     useMembers,
     useNotifications,
 } from '@proton/components';
-import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
-import type { Address, Group, Organization } from '@proton/shared/lib/interfaces';
+import type { Address, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import type { GroupsManagementReturn } from './types';
 import useAddGroupMember from './useAddGroupMember';
-import useGroupMembers from './useGroupMembers';
 import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
@@ -31,7 +30,6 @@ export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
     const [members] = useMembers();
     const [groups, loadingGroups] = useGroups();
-    const [loadingGroupMembers, withLoadingGroupMembers] = useLoading();
     const api = useApi();
     const silentApi = getSilentApi(api);
     const dispatch = useDispatch();
@@ -86,7 +84,10 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const getUser = useGetUser();
     const { keyTransparencyVerify } = useKTVerifier(silentApi, getUser);
 
-    const { fetchGroupMembers, groupMembers, handleReloadGroupMembers, handleDeleteGroupMember } = useGroupMembers();
+    const [groupMembers, loadingGroupMembers] = useGroupMembers(selectedGroup?.ID);
+
+    const transformedGroupMembers: GroupMember[] | undefined =
+        groupMembers !== undefined ? Object.values(groupMembers) : [];
 
     const form = useFormik({
         initialValues: {
@@ -101,9 +102,11 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         validateOnMount: false,
     });
 
+    /*
     useEffect(() => {
         void withLoadingGroupMembers(fetchGroupMembers(selectedGroup?.ID));
     }, [selectedGroup]);
+    */
 
     const { resetForm, values: formValues } = form;
 
@@ -155,11 +158,12 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         );
 
         const addMembersPromises = newEmails.map((email) =>
-            addGroupMember({ID: Group.ID, Address: Group.Address as Address}, email).catch((error) => {
+            addGroupMember({ ID: Group.ID, Address: Group.Address as Address }, email).catch((error) => {
                 console.error(`Failed to add recipient ${email}:`, error);
             })
         );
         await Promise.all(addMembersPromises);
+        await call();
 
         resetForm();
         setUiState('view');
@@ -178,10 +182,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         handleSaveGroup,
         setSelectedGroup,
         setUiState,
-        groupMembers,
+        groupMembers: transformedGroupMembers,
         loadingGroupMembers,
-        handleReloadGroupMembers,
-        handleDeleteGroupMember,
         domainData,
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
