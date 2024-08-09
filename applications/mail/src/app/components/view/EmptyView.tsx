@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { EmptyViewContainer, FeatureCode, Loader, useFeature, useModalState } from '@proton/components';
+import { EmptyViewContainer, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
@@ -13,9 +13,8 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
-import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
+import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
 interface Props {
     labelID: string;
@@ -24,11 +23,6 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
-    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
-        FeatureCode.SLIntegration
-    );
-    const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
-
     const { esStatus } = useEncryptedSearchContext();
     const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
         esStatus;
@@ -79,19 +73,9 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         }
     })();
 
-    const showSimpleLoginPlaceholder = simpleLoginIntegrationFeature?.Value && isSpam && !hasSimpleLogin;
-
-    if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
-        return (
-            <div className="m-auto text-center p-7 max-w-full">
-                <Loader />
-            </div>
-        );
-    }
-
-    return showSimpleLoginPlaceholder ? (
+    return isSpam ? (
         <div className="m-auto text-center p-7 max-w-full">
-            <SimpleLoginPlaceholder />
+            <ProtonPassPlaceholder />
         </div>
     ) : (
         <EmptyViewContainer imageProps={imageProps}>
@@ -99,10 +83,10 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                 {isSearch
                     ? c('Search - no results').t`No results found`
                     : isFolder
-                    ? c('Search - no results').t`No messages found`
-                    : isScheduled
-                    ? c('Search - no results').t`No messages scheduled`
-                    : c('Search - no results').t`No messages found`}
+                      ? c('Search - no results').t`No messages found`
+                      : isScheduled
+                        ? c('Search - no results').t`No messages scheduled`
+                        : c('Search - no results').t`No messages found`}
             </h3>
             <p>
                 {isSearch ? (

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import {
-    FeatureCode,
     Field,
     Icon,
     Label,
@@ -18,13 +17,11 @@ import {
     useAddresses,
     useApi,
     useEventManager,
-    useFeature,
     useModalState,
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
-import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -39,31 +36,23 @@ import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
-import { useSimpleLoginExtension } from '../../../hooks/simpleLogin/useSimpleLoginExtension';
-import { useSimpleLoginTelemetry } from '../../../hooks/simpleLogin/useSimpleLoginTelemetry';
 import type {
     MessageStateWithData,
     MessageWithOptionalBody,
     PartialMessageState,
 } from '../../../store/messages/messagesTypes';
-import SimpleLoginModal from '../../simpleLogin/SimpleLoginModal';
+import ProtonPassAliasesModal from '../../protonPass/ProtonPassAliasesModal';
 
 interface Props {
     message: MessageWithOptionalBody;
 }
 
 const ExtraUnsubscribe = ({ message }: Props) => {
-    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
-        FeatureCode.SLIntegration
-    );
-    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
-
     const { createNotification } = useNotifications();
     const api = useApi();
     const { call } = useEventManager();
     const [addresses] = useAddresses();
     const { extendedVerifications: sendVerification } = useSendVerifications();
-    const { hasSimpleLogin } = useSimpleLoginExtension();
     const saveDraft = useSaveDraft();
     const getMessage = useGetMessage();
     const sendMessage = useSendMessage();
@@ -76,18 +65,9 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     const unsubscribeMethods = message.UnsubscribeMethods || {};
 
-    // If the user doesn't have the simple login extension, we want to show an extra modal to upsell the feature
-    // However, if the received email is coming from Simple Login, the user is probably already using SL, so we don't want to display the extra modal
-    // Finally, if the sender is an official Proton address, we don't want to show this modal
-    const needsSimpleLoginPresentation =
-        simpleLoginIntegrationFeature?.Value &&
-        !hasSimpleLogin &&
-        !hasSimpleLoginSender(message) &&
-        !hasProtonSender(message);
-
     const [unsubscribeModalProps, setUnsubscribeModalOpen, renderUnsubscribeModal] = useModalState();
     const [unsubscribedModalProps, setUnsubscribedModalOpen, renderUnsubscribedModal] = useModalState();
-    const [simpleLoginModalProps, setSimpleLoginModalOpen, renderSimpleLoginModal] = useModalState();
+    const [passAliasesModalProps, setPassAliasesModalOpen, renderPassAliasesModal] = useModalState();
 
     if (!Object.keys(unsubscribeMethods).length || !address) {
         return null;
@@ -211,10 +191,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     const handleSubmit = async () => {
         unsubscribeModalProps.onClose();
-        if (needsSimpleLoginPresentation) {
-            // We need to send a telemetry request when the user sees the SL unsubscribe modal
-            handleSendTelemetryData(TelemetrySimpleLoginEvents.newsletter_unsubscribe);
-
+        if (!hasSimpleLoginSender(message) && !hasProtonSender(message)) {
             setUnsubscribedModalOpen(true);
         }
         await submit();
@@ -223,16 +200,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         createNotification({ text: c('Success').t`Mail list unsubscribed` });
     };
 
-    const handleSimpleLoginModalOpen = () => {
-        // We need to send a telemetry request when the user clicks on the hide-my-email button
-        handleSendTelemetryData(TelemetrySimpleLoginEvents.simplelogin_modal_view, {}, true);
+    const handlePassAliasesModalOpen = () => {
         unsubscribedModalProps.onClose();
-        setSimpleLoginModalOpen(true);
+        setPassAliasesModalOpen(true);
     };
-
-    if (loadingSimpleLoadingFeature) {
-        return null;
-    }
 
     /*
      * translator:
@@ -246,7 +217,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             className="ml-1"
             color="norm"
             shape="underline"
-            onClick={handleSimpleLoginModalOpen}
+            onClick={handlePassAliasesModalOpen}
         >{c('Action').t`hide-my-email aliases`}</ButtonLike>
     );
 
@@ -314,7 +285,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 </Prompt>
             )}
 
-            {renderSimpleLoginModal && <SimpleLoginModal {...simpleLoginModalProps} />}
+            {renderPassAliasesModal && <ProtonPassAliasesModal {...passAliasesModalProps} />}
         </div>
     );
 };
