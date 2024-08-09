@@ -1,7 +1,7 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { type WalletThunkArguments, extraThunkArguments } from '@proton/wallet';
+import { type WalletThunkArguments, extraThunkArguments } from '@proton/wallet/store/thunk';
 
 import { start } from './listener';
 import { rootReducer } from './rootReducer';
