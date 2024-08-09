@@ -11,7 +11,7 @@ type Props = {
     label?: ReactNode;
 };
 
-const TTL_LABELS: Partial<Record<number, () => string>> = {
+export const TTL_LABELS: Partial<Record<number, () => string>> = {
     30: () => c('Label').t`30 seconds`,
     60: () => c('Label').t`1 minute`,
     120: () => c('Label').t`2 minutes`,
@@ -23,7 +23,7 @@ const TTL_LABELS: Partial<Record<number, () => string>> = {
     14_400: () => c('Label').t`4 hours`,
 };
 
-const TTL_OPTIONS: number[] = [60, 120, 300, 600, 3_600, 14_400];
+export const TTL_OPTIONS: number[] = [60, 120, 300, 600, 3_600, 14_400];
 
 export const LockTTLField: FC<Props> = ({ ttl, disabled, onChange, label }) => (
     <InputFieldTwo
