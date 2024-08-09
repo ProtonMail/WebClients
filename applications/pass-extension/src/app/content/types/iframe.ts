@@ -13,7 +13,7 @@ import type {
     MaybeNull,
     PortUnauthorizedMessage,
     SettingsUpdateMessage,
-    WorkerStatusMessage,
+    WorkerStateChangeMessage,
 } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
@@ -90,7 +90,7 @@ export type IFrameWorkerMessages =
     | LocaleUpdatedMessage
     | PortUnauthorizedMessage
     | SettingsUpdateMessage
-    | WorkerStatusMessage;
+    | WorkerStateChangeMessage;
 
 export type IFrameMessageType = IFramePortMessageType | IFrameWorkerMessages['type'];
 
