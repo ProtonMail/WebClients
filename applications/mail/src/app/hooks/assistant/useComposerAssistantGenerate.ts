@@ -355,6 +355,7 @@ const useComposerAssistantGenerate = ({
     return {
         generationResult,
         setGenerationResult,
+        setPreviousGenerationResult,
         previousGenerationResult,
         generate,
         replaceMessageBody,
