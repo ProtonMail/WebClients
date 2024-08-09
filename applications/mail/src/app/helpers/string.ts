@@ -37,6 +37,10 @@ export const toUnsignedString = (val: number, bits: number) => {
     return topString + middleString + bottomString;
 };
 
+export const containsHTMLTag = (input = '') => {
+    return /<\/?[a-z][\s\S]*>/i.test(input);
+};
+
 export const ucFirst = (input = '') => {
     return input.charAt(0).toUpperCase() + input.slice(1);
 };
