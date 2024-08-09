@@ -7,6 +7,7 @@ import { SelectedPlan } from '@proton/components/payments/core';
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';
+import { isDriveOrgSizeAddon } from '@proton/shared/lib/helpers/addons';
 import {
     getSupportedAddons,
     isDomainAddon,
@@ -201,9 +202,10 @@ const AddonCustomizer = ({
     if (isMemberAddon(addonNameKey)) {
         return (
             <AccountSizeCustomiser
-                mode={isOrgSizeAddon(addonNameKey) ? 'org-size' : 'users'}
+                mode={isDriveOrgSizeAddon(addonNameKey) ? 'drive' : isOrgSizeAddon(addonNameKey) ? 'org-size' : 'users'}
                 key={`${addon.Name}-size`}
                 addon={addon}
+                value={value}
                 price={addonPriceInline}
                 input={input}
                 maxUsers={max}
@@ -245,6 +247,7 @@ const AddonCustomizer = ({
                 addon={addon}
                 price={addonPriceInline}
                 input={input}
+                value={value}
                 maxUsers={max}
                 showScribeBanner={showScribeBanner}
                 onShowScribeBanner={() => {

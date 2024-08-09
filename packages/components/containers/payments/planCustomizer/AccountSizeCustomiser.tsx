@@ -9,7 +9,7 @@ import clsx from '@proton/utils/clsx';
 import { Info } from '../../../components';
 import { contactHref } from './helpers';
 
-export type AccountTypeKey = 'org-size' | 'users' | 'gpt-seats';
+export type AccountTypeKey = 'drive' | 'org-size' | 'users' | 'gpt-seats';
 export type AccountSizeConfig = {
     [key in AccountTypeKey]: { label: string; tooltip?: string };
 };
@@ -44,6 +44,7 @@ export const AccountSizeCustomiser = ({
     showDescription = true,
     showTooltip = true,
     mode,
+    value,
 }: {
     addon: Plan;
     maxUsers: number;
@@ -52,8 +53,17 @@ export const AccountSizeCustomiser = ({
     showDescription?: boolean;
     showTooltip?: boolean;
     mode: AccountTypeKey;
+    value: number;
 }) => {
+    const n = value;
     const config: AccountSizeConfig = {
+        drive: {
+            label: c('Info').ngettext(
+                msgid`Create a secure cloud for ${n} member`,
+                `Create a secure cloud for ${n} members`,
+                n
+            ),
+        },
         'org-size': {
             label: c('Info').t`Organization size`,
         },

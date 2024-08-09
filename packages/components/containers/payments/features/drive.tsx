@@ -12,6 +12,7 @@ import {
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     PLANS,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize, { getSizeFormat } from '@proton/shared/lib/helpers/humanSize';
 import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
@@ -52,6 +53,7 @@ export const getStorageFeature = (
         boldStorageSize?: boolean;
         family?: boolean;
         duo?: boolean;
+        drivebusiness?: boolean;
         visionary?: boolean;
         subtext?: boolean;
     }
@@ -75,7 +77,7 @@ export const getStorageFeature = (
 
     // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
     let humanReadableSize = humanSize({ bytes, fraction: 0 });
-    if (options.duo) {
+    if (options.duo || options.drivebusiness) {
         humanReadableSize = getTb(1);
     } else if (options.visionary) {
         humanReadableSize = getTb(6);
@@ -135,9 +137,31 @@ export const getStorageFeatureB2B = (
     };
 };
 
-const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
+export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`End-to-end encryption`,
+        included: true,
+    };
+};
+
+export const getVersionHistory = (options?: 'generic' | '365'): PlanCardFeatureDefinition => {
+    if (options === '365') {
+        return {
+            text: c('new_plans: feature').t`365-day file version history`,
+            included: true,
+        };
+    }
+
+    return {
+        text: c('new_plans: feature').t`Version history`,
+        included: true,
+    };
+};
+
+export const getPremiumFeatures = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature')
+            .t`Premium features of ${MAIL_SHORT_APP_NAME}/${CALENDAR_SHORT_APP_NAME}/${VPN_SHORT_APP_NAME}/${DRIVE_SHORT_APP_NAME}/${PASS_SHORT_APP_NAME}`,
         included: true,
     };
 };
@@ -205,6 +229,11 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
                 freePlan,
             }),
+            [PLANS.DRIVE_BUSINESS]: getStorageFeature(plansMap[PLANS.DRIVE_BUSINESS]?.MaxSpace ?? 1099511627776, {
+                drivebusiness: true,
+                subtext: true,
+                freePlan,
+            }),
             [PLANS.PASS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.WALLET]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, {
@@ -226,7 +255,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000, {
                 subtext: true,
             }),
-            [PLANS.BUNDLE_PRO_2024]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO_2024]?.MaxSpace ?? 536870912000, {
+            [PLANS.BUNDLE_PRO_2024]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO_2024]?.MaxSpace ?? 1099511627776, {
                 subtext: true,
             }),
             [PLANS.PASS_PRO]: getStorageFeature(-1, { subtext: true, freePlan }),
@@ -248,6 +277,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.MAIL]: getEndToEndEncryption(),
                 [PLANS.VPN]: getEndToEndEncryption(),
                 [PLANS.DRIVE]: getEndToEndEncryption(),
+                [PLANS.DRIVE_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.WALLET]: getEndToEndEncryption(),
                 [PLANS.PASS]: getEndToEndEncryption(),
                 [PLANS.FAMILY]: getEndToEndEncryption(),
@@ -270,6 +300,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.MAIL]: getShareFeature(),
                 [PLANS.VPN]: getShareFeature(),
                 [PLANS.DRIVE]: getShareFeature(),
+                [PLANS.DRIVE_BUSINESS]: getShareFeature(),
                 [PLANS.PASS]: getShareFeature(),
                 [PLANS.WALLET]: getShareFeature(),
                 [PLANS.FAMILY]: getShareFeature(),
@@ -292,6 +323,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.MAIL]: getAdvancedShareFeature(),
                 [PLANS.VPN]: getAdvancedShareFeature(),
                 [PLANS.DRIVE]: getAdvancedShareFeature(),
+                [PLANS.DRIVE_BUSINESS]: getAdvancedShareFeature(),
                 [PLANS.PASS]: getAdvancedShareFeature(),
                 [PLANS.WALLET]: getAdvancedShareFeature(),
                 [PLANS.FAMILY]: getAdvancedShareFeature(),
@@ -315,6 +347,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.MAIL]: getDocumentEditor(),
                 [PLANS.VPN]: getDocumentEditor(),
                 [PLANS.DRIVE]: getDocumentEditor(),
+                [PLANS.DRIVE_BUSINESS]: getDocumentEditor(),
                 [PLANS.PASS]: getDocumentEditor(),
                 [PLANS.WALLET]: getDocumentEditor(),
                 [PLANS.FAMILY]: getDocumentEditor(),
