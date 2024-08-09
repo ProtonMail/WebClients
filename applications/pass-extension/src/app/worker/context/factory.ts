@@ -58,7 +58,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const onStateUpdate = (state: AppState) => {
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
-                type: WorkerMessageType.WORKER_STATUS,
+                type: WorkerMessageType.WORKER_STATE_CHANGE,
                 payload: { state },
             })
         );
