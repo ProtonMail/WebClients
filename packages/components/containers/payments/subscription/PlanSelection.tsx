@@ -350,7 +350,7 @@ const PlanSelection = ({
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
 
     const b2cRecommendedPlans = [
-        hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
+        hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
         PLANS.DUO,
         PLANS.FAMILY,
     ].filter(isTruthy);
