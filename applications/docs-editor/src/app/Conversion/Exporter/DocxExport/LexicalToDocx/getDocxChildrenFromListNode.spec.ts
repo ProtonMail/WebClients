@@ -1,7 +1,7 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { ListNode, ListItemNode } from '@lexical/list'
 import { TextNode, $getRoot } from 'lexical'
-import { AllNodes } from '../../../AllNodes'
+import { AllNodes } from '../../../../AllNodes'
 import { getDocxChildrenFromListNode } from './getDocxChildrenFromListNode'
 import type { Paragraph } from 'docx'
 import type { DocxExportContext } from './Context'

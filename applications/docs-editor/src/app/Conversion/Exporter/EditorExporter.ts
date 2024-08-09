@@ -3,7 +3,7 @@ import { type LexicalEditor, type SerializedEditorState, $nodesOfType } from 'le
 import { AllNodes } from '../../AllNodes'
 import { CommentThreadMarkNode, $unwrapCommentThreadMarkNode } from '../../Plugins/Comments/CommentThreadMarkNode'
 import { sendErrorMessage } from '../../Utils/errorMessage'
-import type { DocxExportContext } from '../Docx/LexicalToDocx/Context'
+import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 
 export type ExporterRequiredCallbacks = {
   fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']

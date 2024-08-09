@@ -1,12 +1,12 @@
 import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
-import type { DocxExportContext } from '../Docx/LexicalToDocx/Context'
 import { EditorTxtExporter } from './EditorTxtExporter'
 import { EditorMarkdownExporter } from './EditorMarkdownExporter'
 import { EditorHtmlExporter } from './EditorHtmlExporter'
-import { EditorDocxExporter } from './EditorDocxExporter'
+import { EditorDocxExporter } from './DocxExport/EditorDocxExporter'
 import { EditorPdfExporter } from './EditorPdfExporter'
 import { EditorYjsExporter } from './EditorYjsExporter'
+import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,
