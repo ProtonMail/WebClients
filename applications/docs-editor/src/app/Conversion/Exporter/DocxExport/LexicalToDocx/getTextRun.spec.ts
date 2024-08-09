@@ -5,7 +5,7 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { LinkNode } from '@lexical/link'
 import { $getRoot, ParagraphNode, TextNode } from 'lexical'
 import { DEFAULT_FONT_FACE, FONT_FACES } from '@proton/components/components/editor/constants'
-import { AllNodes } from '../../../AllNodes'
+import { AllNodes } from '../../../../AllNodes'
 
 jest.mock('docx', () => ({
   ...jest.requireActual('docx'),
