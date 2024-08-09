@@ -73,7 +73,6 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
-    // TODO: Define this value depending on EO or not.
     const [displayToolbar, setDisplayToolbar] = useLocalState(true, 'composer-toolbar-expanded');
     const toolbarWrapperRef = useRef<HTMLDivElement>(null);
     const mailSettings = useMailModel('MailSettings');
@@ -86,6 +85,8 @@ const Composer = (
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const composerMetaRef = useRef<HTMLDivElement>(null);
 
+    const setAssistantStateRef = useRef(noop);
+
     const {
         openedAssistants,
         openAssistant,
@@ -97,6 +98,7 @@ const Composer = (
         initAssistant,
         downloadPaused,
         getIsStickyAssistant,
+        cancelRunningAction,
     } = useAssistant(composerID);
 
     // onClose handler can be called in an async handler
@@ -128,6 +130,11 @@ const Composer = (
         if (event.dataTransfer?.types.includes(DRAG_ADDRESS_KEY)) {
             onFocus();
         }
+    };
+
+    const handleResetAssistantState = () => {
+        cancelRunningAction();
+        setAssistantStateRef.current();
     };
 
     const {
@@ -192,6 +199,7 @@ const Composer = (
         openAssistant,
         closeAssistant,
         setAssistantStatus,
+        handleResetAssistantState,
     });
 
     // Update subject on ComposerFrame
@@ -410,6 +418,7 @@ const Composer = (
                             sender={getSender(modelMessage?.data)}
                             onUseGeneratedText={handleInsertGeneratedTextInEditor}
                             onUseRefinedText={handleSetEditorSelection}
+                            setAssistantStateRef={setAssistantStateRef}
                         />
                     )}
                     <ComposerContent
