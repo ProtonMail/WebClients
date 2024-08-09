@@ -28,7 +28,7 @@ export const useAssistantServer = ({
     openedAssistantsState,
 }: Props): Omit<
     AssistantContextType,
-    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors'
+    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors' | 'addSpecificError'
 > => {
     const api = useApi();
     const { sendRequestAssistantReport, sendAssistantErrorReport } = useAssistantTelemetry();

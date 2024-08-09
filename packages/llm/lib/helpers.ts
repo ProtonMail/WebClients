@@ -1,19 +1,23 @@
 import { isURLProtonInternal } from '@proton/components/helpers/url';
-import type { TransformCallback } from '@proton/llm/lib/actions';
 import { getAssistantModels } from '@proton/llm/lib/api';
 import {
+    ASSISTANT_CONTEXT_SIZE_LIMIT,
     GENERAL_STOP_STRINGS,
     STOP_STRINGS_WRITE_FULL_EMAIL,
     assistantAuthorizedApps,
 } from '@proton/llm/lib/constants';
+import type { TransformCallback } from '@proton/llm/lib/formatPrompt';
+import { formatPromptCustomRefine } from '@proton/llm/lib/formatPrompt';
 import type {
     Action,
     AssistantModel,
+    CustomRefineAction,
     IframeToParentMessage,
     OpenedAssistant,
     OpenedAssistantStatus,
     ParentToIframeMessage,
 } from '@proton/llm/lib/types';
+import { isRefineActionType } from '@proton/llm/lib/types';
 import { AssistantEvent } from '@proton/llm/lib/types';
 import { GENERATION_TYPE, checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
@@ -359,4 +363,23 @@ export const postMessageIframeToParent = (
     arrayBuffers?: ArrayBuffer[]
 ) => {
     window.parent?.postMessage(message, parentURL, arrayBuffers || undefined);
+};
+
+/* Model is not working well with more than ~10k chars. To avoid having users facing too many issues when sending
+ * a prompt that is too big, we want to limit the prompt that we send to the model to 10k chars.
+ * What we send to the model, the "full prompt" contains:
+ * 1- The full message body, if any, when trying to refine a message
+ * 2- The user prompt, if any
+ * 3- The "system" instructions (where we say you're an assistant generating emails, etc...)
+ * 4- In case of a selection refine, we have to trick the model. We are passing again the content that is before the selection,
+ *      so that he does not generate it again
+ *
+ * Because of all of this, we can compute the "full prompt" only when submitting a request.
+ */
+export const isPromptSizeValid = (action: Action) => {
+    if (isRefineActionType(action.type)) {
+        const modelPrompt = formatPromptCustomRefine(action as CustomRefineAction);
+        return modelPrompt.length < ASSISTANT_CONTEXT_SIZE_LIMIT;
+    }
+    return true;
 };

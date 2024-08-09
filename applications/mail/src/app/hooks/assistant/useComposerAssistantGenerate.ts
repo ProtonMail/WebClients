@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { useAssistant } from '@proton/llm/lib';
+import { isPromptSizeValid, useAssistant } from '@proton/llm/lib';
 import type {
     Action,
     ActionType,
@@ -12,6 +12,7 @@ import type {
     RefineLocation,
 } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus, isPredefinedRefineActionType, isRefineActionType } from '@proton/llm/lib/types';
+import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
@@ -79,8 +80,21 @@ const useComposerAssistantGenerate = ({
 
     const [{ AIAssistantFlags, Locale: locale }] = useUserSettings();
     const { trialStatus, start: startTrial } = useAssistantSubscriptionStatus();
-    const { downloadPaused, generateResult, setAssistantStatus } = useAssistant(assistantID);
+    const { downloadPaused, generateResult, setAssistantStatus, addSpecificError } = useAssistant(assistantID);
     const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
+
+    const handleCheckValidPrompt = (action: Action) => {
+        const isValidPrompt = isPromptSizeValid(action);
+        if (!isValidPrompt) {
+            addSpecificError({
+                assistantID,
+                errorType: ERROR_TYPE.GENERATION_TOO_LONG,
+                assistantType:
+                    AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY ? ASSISTANT_TYPE.LOCAL : ASSISTANT_TYPE.SERVER,
+            });
+        }
+        return isValidPrompt;
+    };
 
     const handleStartTrial = () => {
         let trialStarted = false;
@@ -129,6 +143,12 @@ const useComposerAssistantGenerate = ({
                     idxStart,
                     idxEnd,
                 };
+
+                const isValidPrompt = handleCheckValidPrompt(action);
+                if (!isValidPrompt) {
+                    return;
+                }
+
                 await generateResult({
                     action,
                     callback: (res) => handleSetGenerationResult(res),
@@ -162,6 +182,12 @@ const useComposerAssistantGenerate = ({
                     idxStart,
                     idxEnd,
                 };
+
+                const isValidPrompt = handleCheckValidPrompt(action);
+                if (!isValidPrompt) {
+                    return;
+                }
+
                 await generateResult({
                     action,
                     callback: handleInsertRefineInGenerationResult,
@@ -289,7 +315,13 @@ const useComposerAssistantGenerate = ({
             setPrompt('');
 
             const action = buildAction(prompt, actionType);
+
             if (action) {
+                const isValidPrompt = handleCheckValidPrompt(action);
+                if (!isValidPrompt) {
+                    return;
+                }
+
                 await generateResult({
                     action,
                     callback: (res) => {
