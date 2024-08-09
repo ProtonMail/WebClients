@@ -9,16 +9,19 @@ import {
     type OnePassFields,
 } from '@proton/pass/lib/import/providers/1password.1pux.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent, Maybe } from '@proton/pass/types';
+import type { ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
 import { objectKeys } from '@proton/pass/utils/object/generic';
+import { epochToDate } from '@proton/pass/utils/time/format';
 
-import type { IdentityDictionary } from './builders.types';
+import type { IdentityDictionary, IdentityRecord, OnePassFieldValue, OnePassFieldValueFactory } from './builders.types';
 
 const fixedSections = ['name', 'address', 'internet'];
+const addressKeys = ['street', 'city', 'country', 'zip', 'state'];
 
 const onePasswordDictionary: IdentityDictionary = {
     address1: 'streetAddress',
     busphone: 'workPhoneNumber',
+    birthdate: 'birthdate',
     cellphone: 'secondPhoneNumber',
     city: 'city',
     company: 'organization',
@@ -30,6 +33,7 @@ const onePasswordDictionary: IdentityDictionary = {
     jobtitle: 'jobTitle',
     lastname: 'lastName',
     state: 'stateOrProvince',
+    street: 'streetAddress',
     website: 'website',
     yahoo: 'yahoo',
     zip: 'zipOrPostalCode',
@@ -41,14 +45,20 @@ export const formatCCExpirationDate = (monthYear: Maybe<number>): string => {
     return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
 };
 
-const onePassValueFactory: { [key in OnePassFieldKey]?: (...args: any) => string } = {
+const onePassValueFactory: OnePassFieldValueFactory = {
+    [OnePassFieldKey.ADDRESS]: (address: MaybeNull<Record<string, string>>) =>
+        addressKeys.reduce<IdentityRecord[]>((acc, key) => {
+            const field = onePasswordDictionary[key];
+            return field ? [...acc, { [field]: address?.[key] ?? '' }] : acc;
+        }, []),
+    [OnePassFieldKey.DATE]: epochToDate,
     [OnePassFieldKey.MONTH_YEAR]: (value: number) => formatCCExpirationDate(value),
 };
 
-export const getValue = (fields: OnePassFields, key: OnePassFieldKey): string => {
+export const getValue = <K extends OnePassFieldKey>(fields: OnePassFields, key: K): OnePassFieldValue<K> => {
     const factory = onePassValueFactory[key];
     const value = fields[key];
-    return factory?.(value) ?? String(value);
+    return (factory?.(value) ?? String(value)) as OnePassFieldValue<K>;
 };
 
 const build1PassBaseIdentity =
@@ -76,6 +86,11 @@ export const build1PassLegacyIdentity = build1PassBaseIdentity<OnePassLegacySect
 export const build1PassIdentity = build1PassBaseIdentity<OnePassField, ItemSection>(
     (acc: Partial<ItemContent<'identity'>>, { id, value }) => {
         const [valueKey] = objectKeys<OnePassFieldKey>(value);
+
+        if (valueKey === OnePassFieldKey.ADDRESS) {
+            return getValue(value, valueKey).reduce((fields, field) => ({ ...fields, ...field }), acc);
+        }
+
         const identityFieldName = onePasswordDictionary[id];
         return identityFieldName ? { ...acc, [identityFieldName]: getValue(value, valueKey) } : acc;
     }
