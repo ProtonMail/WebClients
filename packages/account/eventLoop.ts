@@ -10,6 +10,7 @@ import type {
     Domain,
     Group,
     GroupMember,
+    GroupMembership,
     IncomingAddressForwarding,
     LabelCount,
     MailSettings,
@@ -62,8 +63,9 @@ export interface EventLoop {
     ProductUsedSpace?: User['ProductUsedSpace'];
     Refresh?: number;
     BreachAlerts?: BreachAlertUpdateEvent[];
-    GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
     Groups?: EventItemUpdate<Group, 'Group'>[];
+    GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
+    GroupMemberships?: EventItemUpdate<GroupMembership, 'GroupMembership'>[];
 }
 
 export const serverEvent = createAction('server event', (payload: EventLoop) => ({ payload }));
