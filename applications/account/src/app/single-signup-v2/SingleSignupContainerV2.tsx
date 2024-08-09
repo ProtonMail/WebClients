@@ -219,6 +219,7 @@ const SingleSignupContainerV2 = ({
             [
                 SSO_PATHS.PASS_SIGNUP_B2B,
                 SSO_PATHS.MAIL_SIGNUP_B2B,
+                SSO_PATHS.DRIVE_SIGNUP_B2B,
                 SSO_PATHS.CALENDAR_SIGNUP_B2B,
                 SSO_PATHS.BUSINESS_SIGNUP,
             ].includes(location.pathname as any)
@@ -390,7 +391,6 @@ const SingleSignupContainerV2 = ({
                 mode: signupParameters.mode,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
-                vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
             });
         }

@@ -24,6 +24,7 @@ import {
     getPricePerCycle,
     hasBundle,
     hasDrive,
+    hasDriveBusiness,
     hasDuo,
     hasMail,
     hasMailBusiness,
@@ -144,6 +145,7 @@ type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'
     hasPaidMail?: boolean;
     hasVPN: boolean;
     hasUsers?: boolean;
+    hideStorage?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 };
 
@@ -479,13 +481,18 @@ const getMailBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: Get
     });
 };
 
-const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getBundleProUpsell = ({
+    plansMap,
+    openSubscriptionModal,
+    hideStorage = false,
+    ...rest
+}: GetPlanUpsellArgs): MaybeUpsell => {
     const bundleProPlan = plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO];
 
     const businessStorage = humanSize({ bytes: bundleProPlan?.MaxSpace ?? 500, fraction: 0 });
 
-    const features: UpsellFeature[] = [
-        getStorageBoostFeatureB2B(businessStorage),
+    const features: MaybeUpsellFeature[] = [
+        hideStorage ? undefined : getStorageBoostFeatureB2B(businessStorage),
         getB2BNDomainsFeature(bundleProPlan?.MaxDomains ?? 15),
         getCollaborate(),
         getPasswordManager(),
@@ -499,7 +506,7 @@ const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPla
     return getUpsell({
         plan,
         plansMap,
-        features,
+        features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         upsellPath: DASHBOARD_UPSELL_PATHS.BUSINESS,
         onUpgrade: () =>
             openSubscriptionModal({
@@ -659,8 +666,8 @@ export const resolveUpsellsToDisplay = ({
                 ];
             case hasMailPro(subscription):
                 return [getMailBusinessUpsell(upsellsPayload)];
-            case hasMailBusiness(subscription):
-                return [getBundleProUpsell(upsellsPayload)];
+            case hasMailBusiness(subscription) || hasDriveBusiness(subscription):
+                return [getBundleProUpsell({ ...upsellsPayload, hideStorage: hasDriveBusiness(subscription) })];
             case hasVpnPro(subscription):
                 return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];
             case hasVpnBusiness(subscription):

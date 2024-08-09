@@ -765,6 +765,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.MAIL_SIGNUP,
                                                         SSO_PATHS.MAIL_SIGNUP_B2B,
                                                         SSO_PATHS.DRIVE_SIGNUP,
+                                                        SSO_PATHS.DRIVE_SIGNUP_B2B,
                                                         SSO_PATHS.DOCS_SIGNUP,
                                                         SSO_PATHS.PASS_SIGNUP,
                                                         SSO_PATHS.PASS_SIGNUP_B2B,

@@ -216,6 +216,7 @@ const PlanSelection = ({
 
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
+    const isDriveSettingsApp = app == APPS.PROTONDRIVE;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const isFreeSubscription = getIsFreeSubscription(subscription);
     const renderCycleSelector = isFreeSubscription;
@@ -315,6 +316,8 @@ const PlanSelection = ({
         plansMap[bundleProPlan],
     ]);
 
+    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
+
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
     /**
@@ -325,11 +328,14 @@ const PlanSelection = ({
      */
     const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0;
     const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
+    const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
 
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
     } else if (isPassB2bPlans) {
         B2BPlans = passB2BPlans;
+    } else if (isDriveB2bPlans) {
+        B2BPlans = driveB2BPlans;
     } else {
         B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
     }
