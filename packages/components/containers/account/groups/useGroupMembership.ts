@@ -17,6 +17,7 @@ interface MembershipReturn {
     AddressId: string;
     ID: string;
 }
+
 const useGroupMemberships = () => {
     const [groupMemberships, setGroupMemberships] = useState<GroupMembership[]>([]);
     const [loading, withLoading] = useLoading();
