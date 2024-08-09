@@ -9,8 +9,9 @@ import { Icon, Tooltip } from '@proton/components/components';
 import Copy from '@proton/components/components/button/Copy';
 import { useNotifications } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
-import { useAssistant } from '@proton/llm/lib';
+import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
@@ -57,15 +58,16 @@ const ComposerAssistantExpanded = ({
     const { isGeneratingResult, setAssistantStatus, cancelRunningAction, cleanSpecificErrors } =
         useAssistant(assistantID);
 
-    const handleCancel = () => {
+    const handleCancel = async () => {
         if (isGeneratingResult) {
             cancelRunningAction();
         }
         cleanSpecificErrors();
-        // TODO check if we also want to cancel download
         sendNotUseAnswerAssistantReport();
         setAssistantStatus(assistantID, OpenedAssistantStatus.COLLAPSED);
         onResetPrompt();
+        // Wait for the last callback to be called before cleaning the generation
+        await wait(ASSISTANT_SERVER_THROTTLE_TIMEOUT + 20);
         onResetGeneration();
     };
 
@@ -81,6 +83,7 @@ const ComposerAssistantExpanded = ({
     const handleInsertGenerationInComposer = (action: ASSISTANT_INSERT_TYPE) => {
         replaceMessageBody(action);
         onResetPrompt();
+        onResetGeneration();
     };
 
     return (
