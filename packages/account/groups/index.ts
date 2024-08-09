@@ -6,9 +6,11 @@ import { getGroups } from '@proton/shared/lib/api/groups';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Group } from '@proton/shared/lib/interfaces';
 
-import type { DomainsState, OrganizationKeyState} from '..';
-import { getInitialModelState, serverEvent } from '..';
+import type { DomainsState } from '../domains';
+import { serverEvent } from '../eventLoop';
+import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
+import type { OrganizationKeyState } from '../organizationKey';
 
 const name = 'groups';
 

@@ -44,3 +44,14 @@ export interface GroupMembership {
     AddressID: string;
     ID: string;
 }
+
+export interface GroupMembershipReturn {
+    Group: {
+        Name: string;
+        Address: string;
+    };
+    State: number;
+    ForwardingKeys: GroupMemberAddressPendingKey;
+    AddressId: string;
+    ID: string;
+}
