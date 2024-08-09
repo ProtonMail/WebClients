@@ -1,6 +1,6 @@
 import { BorderStyle, Paragraph } from 'docx'
 
-export const createHorizontalRuleChild = async () => {
+export const createHorizontalRuleChild = (): Paragraph => {
   const paragraph = new Paragraph({
     text: '',
     border: {
@@ -12,5 +12,5 @@ export const createHorizontalRuleChild = async () => {
       },
     },
   })
-  return Promise.resolve([paragraph])
+  return paragraph
 }
