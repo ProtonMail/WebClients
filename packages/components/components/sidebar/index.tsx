@@ -20,3 +20,5 @@ export { default as SidebarLogo } from './SidebarLogo';
 export { default as SidebarListItemSettingsLink } from './SidebarListItemSettingsLink';
 
 export { default as SettingsListItem } from './SettingsListItem';
+
+export { default as CollapsibleSidebarSpotlight } from './CollapsibleSidebarSpotlight';
