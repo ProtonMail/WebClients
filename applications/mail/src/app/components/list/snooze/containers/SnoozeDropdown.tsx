@@ -9,7 +9,7 @@ import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { selectSnoozeDropdownState } from 'proton-mail/store/snooze/snoozeSliceSelectors';
+import { selectSnoozeDropdownState, selectSnoozeElement } from 'proton-mail/store/snooze/snoozeSliceSelectors';
 
 import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useSnooze from '../../../../hooks/actions/useSnooze';
@@ -32,15 +32,16 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const { anchorRef, isOpen, toggle, close: dropdownClose } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, toggle, close: dropdownClose, open } = usePopperAnchor<HTMLButtonElement>();
     const { canSnooze, canUnsnooze, snooze, unsnooze, handleClose, handleCustomClick, snoozeState } = useSnooze();
 
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+    const snoozeSelectedElement = useMailSelector(selectSnoozeElement);
 
     useEffect(() => {
-        if (snoozeDropdownState === 'forceOpen') {
+        if (snoozeDropdownState === 'forceOpen' && snoozeSelectedElement?.ID === elements[0].ID) {
             dispatch(snoozeActions.setSnoozeDropdownOpen());
-            toggle();
+            open();
         }
     }, [snoozeDropdownState]);
 
@@ -56,13 +57,13 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        snooze({ elements, duration, snoozeTime });
+        void snooze({ elements, duration, snoozeTime });
         onClose();
     };
 
     const handleUnsnooze = (event: MouseEvent) => {
         event.stopPropagation();
-        unsnooze(elements);
+        void unsnooze(elements);
         onClose();
     };
 
