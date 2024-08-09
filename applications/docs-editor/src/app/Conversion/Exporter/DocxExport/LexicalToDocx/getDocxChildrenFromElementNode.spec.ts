@@ -3,7 +3,7 @@ import { LinkNode } from '@lexical/link'
 import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode'
 import { ExternalHyperlink, TextRun } from 'docx'
 import { createHeadlessEditor } from '@lexical/headless'
-import { AllNodes } from '../../../AllNodes'
+import { AllNodes } from '../../../../AllNodes'
 import type { DocxExportContext } from './Context'
 
 describe('getDocxChildrenFromElementNode', () => {
