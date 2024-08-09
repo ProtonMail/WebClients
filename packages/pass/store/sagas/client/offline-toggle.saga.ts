@@ -21,7 +21,12 @@ function* offlineToggleWorker(
         if (!isPaidPlan(plan)) throw new Error();
 
         const verified: boolean = yield auth.confirmPassword(payload.loginPassword);
-        if (!verified) throw new Error(c('Error').t`Wrong password`);
+        if (!verified) {
+            const message = authStore.getExtraPassword()
+                ? c('Error').t`Wrong extra password`
+                : c('Error').t`Wrong password`;
+            throw new Error(message);
+        }
 
         const hasOfflineComponents = authStore.getOfflineKD() && authStore.getOfflineConfig();
 
