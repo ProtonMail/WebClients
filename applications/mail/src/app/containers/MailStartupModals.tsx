@@ -44,9 +44,10 @@ const MailStartupModals = () => {
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
         useModalState();
 
+    const showInboxDesktopOnboarding = isElectronMail && !user.hasPaidMail;
     const onceRef = useRef(false);
     useEffect(() => {
-        if (onceRef.current || isElectronMail) {
+        if (onceRef.current || showInboxDesktopOnboarding) {
             return;
         }
 
@@ -71,7 +72,7 @@ const MailStartupModals = () => {
     return (
         <>
             {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
-            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialOnboardingModal />}
+            {showInboxDesktopOnboarding && <InboxDesktopFreeTrialOnboardingModal />}
             {renderOnboardingModal && (
                 <EasySwitchProvider>
                     <MailOnboardingModal

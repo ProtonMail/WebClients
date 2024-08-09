@@ -25,7 +25,7 @@ const useInboxFreeTrial = () => {
     const [displayReminder, setDisplayReminder] = useState(false);
 
     useEffect(() => {
-        if (datesFlag?.Value?.trialEndDate && remindFlag?.Value) {
+        if (datesFlag?.Value.trialEndDate && remindFlag?.Value) {
             const shouldDisplay = shouldDisplayReminder(datesFlag.Value.trialEndDate, remindFlag.Value);
             setDisplayReminder(shouldDisplay);
         }
@@ -33,12 +33,12 @@ const useInboxFreeTrial = () => {
 
     const startFreeTrial = () => {
         const today = new Date();
-        updateDates({
+        void updateDates({
             trialStartDate: startOfDay(today),
             trialEndDate: startOfDay(addDays(today, DEFAULT_TRIAL_DAYS)),
         });
 
-        updateReminders({
+        void updateReminders({
             first: false,
             second: false,
             third: false,
@@ -46,25 +46,31 @@ const useInboxFreeTrial = () => {
     };
 
     const updateDatesFlag = (flag: InboxDesktopFreeTrialDates) => {
-        updateDates(flag);
+        void updateDates(flag);
     };
 
     const updateReminderFlag = (flag: InboxDesktopFreeTrialReminders) => {
-        updateReminders(flag);
+        void updateReminders(flag);
     };
 
     const isUserInFreeTrial = () => {
         const today = new Date();
-        return (
-            datesFlag?.Value?.trialStartDate &&
+        return !!(
+            datesFlag &&
+            datesFlag.Value.trialStartDate &&
             datesFlag.Value.trialEndDate &&
             isBefore(today, new Date(datesFlag.Value.trialEndDate))
         );
     };
 
-    const firstLogin = datesFlag?.Value && !datesFlag.Value.trialEndDate && !datesFlag.Value.trialStartDate;
+    const firstLogin = !!(datesFlag && !datesFlag.Value.trialEndDate && !datesFlag.Value.trialStartDate);
 
-    const allReminderShown = remindFlag?.Value?.first && remindFlag?.Value?.second && remindFlag?.Value?.third;
+    const allReminderShown = !!(
+        remindFlag &&
+        remindFlag.Value.first &&
+        remindFlag.Value.second &&
+        remindFlag.Value.third
+    );
 
     return {
         freeTrialDates: datesFlag,
