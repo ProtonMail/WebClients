@@ -20,6 +20,7 @@ interface ComposerHotkeysHandlers {
     minimizeButtonRef: RefObject<HTMLButtonElement>;
     isAssistantExpanded: boolean;
     closeAssistant: () => void;
+    collapseAssistant: () => void;
 }
 
 interface QuickReplyHotkeysHandlers {
@@ -62,8 +63,15 @@ export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
             if (isComposer) {
                 e.preventDefault();
                 e.stopPropagation();
-                args.closeAssistant();
-                await args.handleClose();
+                if (args.isAssistantExpanded) {
+                    // When composer assistant is expanded, we want to close it when using "Esc"
+                    args.collapseAssistant();
+                } else {
+                    // We still need to close the assistant in that case to clean the context,
+                    // because we allow one assistant opened at the same time
+                    args.closeAssistant();
+                    await args.handleClose();
+                }
             }
         },
         send: async (e: KeyboardEvent) => {
