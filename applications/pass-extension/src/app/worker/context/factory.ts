@@ -34,6 +34,7 @@ import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusRe
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors';
 import { type AppState, AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
@@ -124,21 +125,9 @@ export const createWorkerContext = (config: ProtonConfig) => {
     context.service.apiProxy.clean?.().catch(noop);
     context.service.i18n.init().catch(noop);
 
-    store.subscribe(
-        (() => {
-            const cache = { lockSetup: false };
-
-            return () => {
-                /* Watch for `lockSetup` state changes. Notify all extension
-                 * components on update in order for clients' states to sync. */
-                const lockSetup = selectLockSetupRequired(store.getState());
-                if (lockSetup !== cache.lockSetup) {
-                    cache.lockSetup = lockSetup;
-                    onStateUpdate(context.getState());
-                }
-            };
-        })()
-    );
+    /* Watch for `lockSetup` state changes. Notify all extension
+     * components on update in order for clients' states to sync. */
+    registerStoreEffect(store, selectLockSetupRequired, (_) => onStateUpdate(context.getState()));
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
