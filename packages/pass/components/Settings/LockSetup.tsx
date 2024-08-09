@@ -302,13 +302,13 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                 <>
                     <hr className="mt-2 mb-4 border-weak shrink-0" />
                     <LockTTLField
-                        ttl={nextLock?.ttl ?? orgLockTTL ?? lockTTL}
+                        ttl={nextLock?.ttl || orgLockTTL || lockTTL}
                         disabled={!online || !canToggleTTL || createLock.loading}
                         onChange={handleLockTTLChange}
                         label={
                             <>
                                 {c('Label').t`Auto-lock after`}
-                                {orgLockTTL && (
+                                {Boolean(orgLockTTL) && (
                                     <span className="color-weak text-sm">
                                         {` (${c('Info').t`Set by your organization`})`}
                                     </span>
