@@ -11,7 +11,7 @@ export const useGetGroupMembers = () => {
     const dispatch = baseUseDispatch<ThunkDispatch<GroupMembersState, ProtonThunkArguments, Action>>();
 
     return useCallback(async (groupId: string | undefined) => {
-        if (!groupId) {
+        if (!groupId || groupId === 'new') {
             return undefined;
         }
         return dispatch(groupMembersThunk({ groupId }));
