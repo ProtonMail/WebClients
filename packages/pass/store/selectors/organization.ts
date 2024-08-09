@@ -21,5 +21,6 @@ export const selectCanUpdateOrganization = ({ organization }: State): boolean =>
 
 export const selectLockSetupRequired = createSelector(
     [selectOrganizationSettings, selectLockMode],
-    (orgSettings, lockMode) => Number.isFinite(orgSettings?.ForceLockSeconds) && lockMode === LockMode.NONE
+    (orgSettings, lockMode) =>
+        orgSettings?.ForceLockSeconds && orgSettings.ForceLockSeconds > 0 && lockMode === LockMode.NONE
 );
