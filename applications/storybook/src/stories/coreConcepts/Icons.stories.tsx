@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { Button, Input } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { ButtonGroup, Icon, Mark } from '@proton/components';
-import iconSvg from '@proton/styles/assets/img/icons/sprite-icons.svg';
+import iconSvg from '@proton/icons/assets/sprite-icons.svg';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Icons.mdx';
