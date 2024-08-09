@@ -9,6 +9,7 @@ import type {
     BreachAlertUpdateEvent,
     Domain,
     Group,
+    GroupMember,
     IncomingAddressForwarding,
     LabelCount,
     MailSettings,
@@ -61,6 +62,7 @@ export interface EventLoop {
     ProductUsedSpace?: User['ProductUsedSpace'];
     Refresh?: number;
     BreachAlerts?: BreachAlertUpdateEvent[];
+    GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
     Groups?: EventItemUpdate<Group, 'Group'>[];
 }
 

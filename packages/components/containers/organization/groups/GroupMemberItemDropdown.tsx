@@ -1,9 +1,7 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { useApi } from '@proton/components';
+import { useApi, useEventManager } from '@proton/components';
 import {
     Dropdown,
     DropdownMenu,
@@ -17,7 +15,7 @@ import {
     deleteGroupMember as revokeGroupInvitation,
     updateGroupMember,
 } from '@proton/shared/lib/api/groups';
-import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import { clearBit, setBit, hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
 
@@ -54,8 +52,8 @@ interface Props {
 
 const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [selectedPermission, setSelectedPermission] = useState(member.Permissions);
     const api = useApi();
+    const { call } = useEventManager();
 
     const memberPermissionOptions: PermissionOption[] = [
         {
@@ -65,27 +63,34 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
         { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
     ];
 
-    const handleResentInvitation = () => {
-        void api(resendGroupInvitation(member.ID));
+    const handleResentInvitation = async () => {
+        await api(resendGroupInvitation(member.ID));
     };
 
-    const handleRevokeInvitation = () => {
-        void api(revokeGroupInvitation(member.ID));
+    const handleRevokeInvitation = async () => {
+        await api(revokeGroupInvitation(member.ID));
+        await call();
     };
 
-    const handleOverrideGroupPermissions = (value: number) => {
-        setSelectedPermission(value);
+    const handleOverrideGroupPermissions = async (value: number) => {
         const newPermissions = setBit(
             clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions),
             value
         );
-        void api(
+        await api(
             updateGroupMember(member.ID, {
                 GroupID: group.ID,
                 Permissions: newPermissions,
             })
         );
+        await call();
     };
+
+    const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(
+        member.Permissions,
+        GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
+    ) ? GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
+    : GROUP_MEMBER_PERMISSIONS.None;
 
     return (
         <>
@@ -114,7 +119,7 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
                         <Option
                             key={option.value}
                             option={option}
-                            isSelected={option.value === selectedPermission}
+                            isSelected={option.value === overrideGroupPermissions}
                             onSelect={handleOverrideGroupPermissions}
                         />
                     ))}
