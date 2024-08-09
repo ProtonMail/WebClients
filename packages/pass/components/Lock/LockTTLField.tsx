@@ -11,43 +11,32 @@ type Props = {
     label?: ReactNode;
 };
 
-const getSessionLockTTLOptions = () => [
-    { title: c('Label').t`1 minute`, value: 60 },
-    { title: c('Label').t`2 minutes`, value: 120 },
-    { title: c('Label').t`5 minutes`, value: 300 },
-    { title: c('Label').t`10 minutes`, value: 600 },
-    { title: c('Label').t`1 hour`, value: 3600 },
-    { title: c('Label').t`4 hours`, value: 14400 },
-];
-
-export const LockTTLField: FC<Props> = ({ ttl, disabled, onChange, label }) => {
-    /* Legacy values selectable prior to v1.20.1 */
-    const legacyPlaceholder = (() => {
-        switch (ttl) {
-            case 30:
-                return c('Label').t`30 seconds`;
-            case 900:
-                return c('Label').t`15 minutes`;
-            case 1800:
-                return c('Label').t`30 minutes`;
-            default:
-                return undefined;
-        }
-    })();
-
-    return (
-        <InputFieldTwo
-            as={SelectTwo<number>}
-            label={label}
-            disabled={disabled}
-            placeholder={legacyPlaceholder ?? c('Label').t`10 minutes`}
-            onValue={onChange}
-            value={ttl}
-            dense
-        >
-            {getSessionLockTTLOptions().map(({ title, value }) => (
-                <Option key={value} title={title} value={value} />
-            ))}
-        </InputFieldTwo>
-    );
+const TTL_LABELS: Partial<Record<number, () => string>> = {
+    30: () => c('Label').t`30 seconds`,
+    60: () => c('Label').t`1 minute`,
+    120: () => c('Label').t`2 minutes`,
+    300: () => c('Label').t`5 minutes`,
+    600: () => c('Label').t`10 minutes`,
+    900: () => c('Label').t`15 minutes`,
+    1_800: () => c('Label').t`30 minutes`,
+    3_600: () => c('Label').t`1 hour`,
+    14_400: () => c('Label').t`4 hours`,
 };
+
+const TTL_OPTIONS: number[] = [60, 120, 300, 600, 3_600, 14_400];
+
+export const LockTTLField: FC<Props> = ({ ttl, disabled, onChange, label }) => (
+    <InputFieldTwo
+        as={SelectTwo<number>}
+        label={label}
+        disabled={disabled}
+        placeholder={TTL_LABELS[ttl ?? 600]?.()}
+        onValue={onChange}
+        value={ttl}
+        dense
+    >
+        {TTL_OPTIONS.map((value) => (
+            <Option key={value} title={TTL_LABELS[value]?.() ?? ''} value={value} />
+        ))}
+    </InputFieldTwo>
+);
