@@ -47,6 +47,12 @@ const ORG_SIZE_ADDONS = [
     ADDON_NAMES.MEMBER_PASS_PRO,
 ];
 
+const DRIVE_ORG_SIZE_ADDONS = [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_DRIVE_BUSINESS];
+
+export const isDriveOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
+    return DRIVE_ORG_SIZE_ADDONS.some((name) => addonOrName === name);
+};
+
 export const isOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
     return ORG_SIZE_ADDONS.some((name) => addonOrName === name);
 };
@@ -97,6 +103,7 @@ const {
     BUNDLE_PRO_2024,
     MAIL_PRO,
     DRIVE_PRO,
+    DRIVE_BUSINESS,
     VPN_PRO,
     VPN_BUSINESS,
     PASS_PRO,
@@ -140,6 +147,10 @@ export function getSupportedB2BAddons(planIDs: PlanIDs): SupportedAddons {
 
     if (planIDs[DRIVE_PRO]) {
         supported[ADDON_NAMES.MEMBER_DRIVE_PRO] = true;
+    }
+
+    if (planIDs[DRIVE_BUSINESS]) {
+        supported[ADDON_NAMES.MEMBER_DRIVE_BUSINESS] = true;
     }
 
     if (planIDs[BUNDLE_PRO]) {

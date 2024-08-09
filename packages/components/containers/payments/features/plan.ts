@@ -191,6 +191,31 @@ export const getDrivePlan = ({
     };
 };
 
+export const getDriveBusinessPlan = ({
+    plan,
+    boldStorageSize,
+    freePlan,
+}: {
+    freePlan: FreePlanDefault;
+    plan: Plan;
+    boldStorageSize?: boolean;
+}): ShortPlan => {
+    return {
+        plan: PLANS.DRIVE_BUSINESS,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`Protect sensitive business information and collaborate securely.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan, drivebusiness: true }),
+            getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
+            getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
+            getVPNConnections(1),
+            getSupport('priority'),
+        ],
+    };
+};
+
 export const getPassPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.PASS,
@@ -694,6 +719,8 @@ export const getShortPlan = (
             return getVPNPassPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan({ plan: planData, boldStorageSize, freePlan });
+        case PLANS.DRIVE_BUSINESS:
+            return getDriveBusinessPlan({ plan: planData, boldStorageSize, freePlan });
         case PLANS.PASS:
             return getPassPlan(planData);
         case PLANS.MAIL_PRO:
