@@ -3,14 +3,16 @@ import { TextRun } from 'docx'
 import tinycolor from 'tinycolor2'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import { $isLinkNode } from '@lexical/link'
-import { DummyElementUsedToConvertTextNodeCSSTextToComputedStyles } from './GenerateDocxFromEditor'
+
 import { DEFAULT_FONT_FACE } from '@proton/components/components/editor/constants'
+
+const DummyElementUsedToConvertTextNodeCSSTextToComputedStyles = document.createElement('span')
 
 function pixelsToPoints(pixels: number) {
   return pixels * 0.75
 }
 
-export function getTextRun(node: TextNode, parentNode: ElementNode, state: EditorState) {
+export function getTextRun(node: TextNode, parentNode: ElementNode, state: EditorState): TextRun {
   return state.read(() => {
     const style = node.getStyle()
     DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.cssText = style
