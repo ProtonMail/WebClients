@@ -39,4 +39,5 @@ export * from './vpn/hooks';
 export * from './allowAddressDeletion';
 export * from './persist/listener';
 export * from './initialModelState';
+export * from './groupMembers';
 export * from './groups';
