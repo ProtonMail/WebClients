@@ -9,7 +9,7 @@ import {
     ModalTwo,
     ModalTwoContent,
     ModalTwoHeader,
-    RevisionsUpgradeBanner,
+    RevisionsFreeUpgradeBanner,
     getRetentionLabel,
     useModalTwoStatic,
     useUser,
@@ -63,7 +63,7 @@ const RevisionsModalContent = () => {
                 (hasPaidDrive ? (
                     <RevisionsSettingsBanner revisionRetentionDays={revisionRetentionDays} />
                 ) : (
-                    <RevisionsUpgradeBanner />
+                    <RevisionsFreeUpgradeBanner />
                 ))}
             {isLoading && <CircleLoader className="w-full m-auto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
