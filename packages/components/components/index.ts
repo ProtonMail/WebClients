@@ -21,7 +21,6 @@ export * from './contextMenu';
 export * from './downloadClientCard';
 export * from './dragMoveContainer';
 export * from './drawer';
-export * from './drive/revisions';
 export * from './dropdown';
 export * from './dropzone';
 export * from './editableText';
