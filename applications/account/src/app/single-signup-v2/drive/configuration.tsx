@@ -261,6 +261,7 @@ export const getDriveConfiguration = ({
     hideFreePlan,
     freePlan,
     audience,
+    canAccessDriveBizPlan,
 }: {
     hideFreePlan: boolean;
     audience: Audience.B2B | Audience.B2C;
@@ -268,6 +269,7 @@ export const getDriveConfiguration = ({
     mode: SignupMode;
     isLargeViewport: boolean;
     freePlan: FreePlanDefault;
+    canAccessDriveBizPlan?: boolean;
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
     const title = c('drive_signup_2024: Info').t`Secure cloud storage that gives you control of your data`;
@@ -410,7 +412,7 @@ export const getDriveConfiguration = ({
                 title: c('mail_signup_2024: title').t`For individuals`,
                 defaultPlan: PLANS.BUNDLE,
             },
-            {
+            canAccessDriveBizPlan && {
                 value: Audience.B2B,
                 locationDescriptor: {
                     pathname: SSO_PATHS.DRIVE_SIGNUP_B2B,
@@ -418,7 +420,7 @@ export const getDriveConfiguration = ({
                 title: c('mail_signup_2024: title').t`For businesses`,
                 defaultPlan: PLANS.DRIVE_BUSINESS,
             },
-        ],
+        ].filter(isTruthy),
         features,
         benefits,
         planCards,
