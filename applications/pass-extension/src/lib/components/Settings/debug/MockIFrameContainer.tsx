@@ -10,7 +10,7 @@ import {
     type NotificationActions,
 } from 'proton-pass-extension/app/content/types';
 
-import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
+import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -18,7 +18,7 @@ const createMockIFrameContext = (appState: Partial<AppState>, payload?: any): IF
     endpoint: 'test',
     features: {},
     port: null,
-    settings: INITIAL_SETTINGS,
+    settings: getInitialSettings(),
     userEmail: 'john@proton.me',
     visible: true,
     appState: {

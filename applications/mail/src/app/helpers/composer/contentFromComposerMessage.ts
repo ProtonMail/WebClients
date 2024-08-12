@@ -135,7 +135,8 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
         const signatureIndex = editorContent.indexOf(addressSignature);
         const postContent = signatureIndex === -1 ? '' : editorContent.slice(signatureIndex);
 
-        return content + postContent;
+        // If no signature set, return only the content, otherwise we will keep the previous content while replacing the content in Scribe
+        return addressSignature ? content + postContent : content;
     }
 
     throw new Error('Unsupported editor type');

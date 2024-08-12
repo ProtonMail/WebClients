@@ -39,6 +39,7 @@ const AttachmentsButton = (
 
     return (
         <div className="composer-attachments-button-wrapper flex *:items-center">
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <ButtonLike
                 icon
                 role="button"

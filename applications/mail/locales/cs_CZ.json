@@ -4703,9 +4703,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Účty s vlastními doménami se nemohou připojit k tarifu Visionary nebo rodinnému tarifu."
-      ],
       "customer support": [
         "zákaznická podpora"
       ],
@@ -4730,12 +4727,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Tarify Visionary a rodinné tarify v současné době nepodporují doživotní účty."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
       ],
@@ -4756,9 +4747,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Váš aktuální tarif se nemůže připojit k tarifu Visionary nebo rodinnému tarifu."
       ]
     },
     "familyOffer_2023:Label": {

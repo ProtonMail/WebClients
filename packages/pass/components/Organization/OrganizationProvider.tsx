@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
-import { getOrganizationSettingsIntent } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectOrganizationState, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -40,7 +40,7 @@ export const OrganizationProvider: FC<PropsWithChildren> = ({ children }) => {
                       settings: {
                           ...org.settings,
                           enabled: org.canUpdate,
-                          sync: () => dispatch(withRevalidate(getOrganizationSettingsIntent())),
+                          sync: () => dispatch(withRevalidate(getOrganizationSettings.intent())),
                       },
                   }
                 : null,

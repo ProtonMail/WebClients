@@ -3281,17 +3281,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konti med brugerdomæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konti med tilpassede domæner kan ikke deltage i et gruppeabonnement."
       ],
       "customer support": [
         "kundeservice"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppeabonnementer understøttes pt. ikke af eksterne konti. Opret en ${ BRAND_NAME }-adresse før tilmelding. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
       ],
       "Invited by: ${ inviteEmail }": [
         "Inviteret af: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livstidskonti kan ikke indgå i et gruppeabonnement."
       ],
       "Manage addresses.": [
         "Administrer adresser."
@@ -3307,12 +3313,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- og familie-abonnementer understøtter på nuværende tidspunkt ikke eksterne kontoer. Opret en ${ BRAND_NAME }-adresse før du tilmelder dig. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary og familie-abonnementer understøtter på nuværende tidspunkt ikke livstidskonti."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
@@ -3335,8 +3335,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Label": {

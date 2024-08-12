@@ -12,7 +12,8 @@ export const getBenefits = (appName: string) => {
 };
 
 export const getJoinB2BString = () => {
-    return c('pass_signup_2023: Info').t`Join over 50 000 organizations that trust ${BRAND_NAME}`;
+    return c('drive_signup_2024: Info')
+        .t`Join the 50,000+ organizations already benefiting from ${BRAND_NAME}'s security`;
 };
 export const getJoinString = (audience?: Audience) => {
     if (audience === Audience.B2B) {
@@ -76,7 +77,7 @@ export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience
     const gdpr = {
         key: 'gdpr',
         left: <Icon size={6} className="color-primary" name="shield" />,
-        text: c('signup_2024: Feature').t`GDPR compliant`,
+        text: c('signup_2024: Feature').t`GDPR and HIPAA compliant`,
     };
 
     const audienceSpecificFeatures = audience === Audience.B2B ? [e2e, swiss, gdpr] : [e2e, openSource, swiss];

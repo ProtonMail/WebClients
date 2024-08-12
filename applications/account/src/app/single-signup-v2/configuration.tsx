@@ -9,6 +9,7 @@ import {
     getAllAppsFeature,
     getBundlePlan,
     getBundleProPlan,
+    getDriveBusinessPlan,
     getDrivePlan,
     getDuoPlan,
     getEarlyAccessFeature,
@@ -112,6 +113,15 @@ export const getSummaryPlan = ({
 
     if (plan && plan?.Name === PLANS.DRIVE) {
         const shortPlan = getDrivePlan({ plan, freePlan });
+        return {
+            logo: <DriveLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.DRIVE_BUSINESS) {
+        const shortPlan = getDriveBusinessPlan({ plan, freePlan });
         return {
             logo: <DriveLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,

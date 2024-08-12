@@ -9,6 +9,8 @@ import type {
     BreachAlertUpdateEvent,
     Domain,
     Group,
+    GroupMember,
+    GroupMembership,
     IncomingAddressForwarding,
     LabelCount,
     MailSettings,
@@ -62,6 +64,8 @@ export interface EventLoop {
     Refresh?: number;
     BreachAlerts?: BreachAlertUpdateEvent[];
     Groups?: EventItemUpdate<Group, 'Group'>[];
+    GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
+    GroupMemberships?: EventItemUpdate<GroupMembership, 'GroupMembership'>[];
 }
 
 export const serverEvent = createAction('server event', (payload: EventLoop) => ({ payload }));

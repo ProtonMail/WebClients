@@ -87,7 +87,7 @@ function createNotificationManager(
             const containsHTML =
                 sanitizedElement?.childNodes && Array.from(sanitizedElement.childNodes).some(isElement);
             if (containsHTML) {
-                sanitizedElement.querySelectorAll('A').forEach((node) => {
+                sanitizedElement.querySelectorAll('a').forEach((node) => {
                     if (node.tagName === 'A') {
                         node.setAttribute('rel', 'noopener noreferrer');
                         node.setAttribute('target', '_blank');

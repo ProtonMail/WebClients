@@ -76,7 +76,7 @@ const LogsSection = () => {
             createModal(
                 <ConfirmModal title={c('Title').t`Clear`} onConfirm={resolve} onClose={reject}>
                     <Alert className="mb-4" type="warning">{c('Warning')
-                        .t`By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?`}</Alert>
+                        .t`By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?`}</Alert>
                 </ConfirmModal>
             );
         });
@@ -151,12 +151,12 @@ const LogsSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`Logs include authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME_TWO} credentials.`}
+                    .t`Events include authentication attempts for all ${BRAND_NAME} services that use your ${BRAND_NAME_TWO} credentials.`}
             </SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="logs-toggle">
-                        {c('Log preference').t`Enable authentication logs`}
+                        {c('Log preference').t`Enable security events`}
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
@@ -172,10 +172,9 @@ const LogsSection = () => {
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label className="text-semibold" htmlFor="advanced-logs-toggle">
-                            <span className="mr-2">{c('Log preference').t`Enable advanced logs`}</span>
+                            <span className="mr-2">{c('Log preference').t`Enable detailed events`}</span>
                             <Info
-                                title={c('Tooltip')
-                                    .t`Enabling advanced logs records the IP address for each event in the security log.`}
+                                title={c('Tooltip').t`Enabling detailed events records the IP address for each event.`}
                             />
                         </label>
                     </SettingsLayoutLeft>

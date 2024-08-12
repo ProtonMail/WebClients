@@ -5,9 +5,9 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
+    getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    getHasVpnOrPassB2BPlan,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
@@ -44,7 +44,7 @@ export const getOrganizationAppRoutes = ({
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
-    const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
+    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
     const hasVpnB2BPlanWithEventLogging = hasVpnBusiness(subscription); //only vpnbiz2023 has Connection Events feature
     const canShowB2BConnectionEvents =
         canDisplayB2BLogsVPN &&
@@ -72,7 +72,7 @@ export const getOrganizationAppRoutes = ({
         header: sectionTitle,
         routes: {
             users: <SectionConfig>{
-                text: hasVpnOrPassB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
+                text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
                 available: hasMemberCapablePlan && (hasOrganizationKey || hasOrganization),
@@ -87,7 +87,7 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Create multiple user accounts`,
                         id: 'multi-user-creation',
-                        available: organization && !!organization.RequiresKey && !hasVpnOrPassB2BPlan,
+                        available: organization && !!organization.RequiresKey && !hasExternalMemberCapableB2BPlan,
                     },
                 ],
             },
@@ -172,7 +172,7 @@ export const getOrganizationAppRoutes = ({
                 icon: 'filter',
                 available:
                     app !== APPS.PROTONVPN_SETTINGS &&
-                    !hasVpnOrPassB2BPlan &&
+                    !hasExternalMemberCapableB2BPlan &&
                     (hasActiveOrganizationKey || hasActiveOrganization),
                 subsections: [
                     {

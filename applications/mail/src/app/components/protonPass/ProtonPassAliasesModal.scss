@@ -1,0 +1,6 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-aliases-modal {
+	// Special case otherwise modal is not properly displayed
+	--size: #{rem(700)};
+}

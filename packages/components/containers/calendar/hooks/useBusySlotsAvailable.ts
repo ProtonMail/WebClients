@@ -8,7 +8,7 @@ import { useFlag } from '@proton/unleash';
  * Has user an eligible plan for busy time slots
  * @param view to add only when related to components display (attendees list for ex).
  */
-const useBusySlotsAvailable = (view?: VIEWS) => {
+const useBusySlotsAvailable = (view?: VIEWS, skipResponsiveCheck = false) => {
     const isBusySlotsFlagEnabled = useFlag('CalendarBusyTimeSlots');
     const [organization] = useOrganization();
     const breakpoint = useActiveBreakpoint();
@@ -17,7 +17,12 @@ const useBusySlotsAvailable = (view?: VIEWS) => {
      * If the flag is not enabled or the organization is not available or the viewport is small
      * Don't display busy time slots
      */
-    if (!isBusySlotsFlagEnabled || !organization || breakpoint.viewportWidth['<=small'] || view === VIEWS.MONTH) {
+    if (
+        !isBusySlotsFlagEnabled ||
+        !organization ||
+        (!skipResponsiveCheck && breakpoint.viewportWidth['<=small']) ||
+        view === VIEWS.MONTH
+    ) {
         return false;
     }
 

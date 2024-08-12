@@ -509,6 +509,9 @@
       "Try again": [
         "Yritä uudelleen"
       ],
+      "Unlock": [
+        "Avaa"
+      ],
       "Unlock offline with password": [
         "Avaa salasanalla yhteydettömässä tilassa"
       ],
@@ -1514,6 +1517,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
       ],
+      "Quickly autofill your identities.": [
+        "Automaattitäytä identiteettisi nopeasti."
+      ],
       "Registering extra password...": [
         "Lisäsalasanaa lisätään..."
       ],
@@ -1973,9 +1979,6 @@
       "Display": [
         "Ulkoasu"
       ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Näytä ${ PASS_APP_NAME } -kuvake kirjautumiskentissä"
-      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -2065,6 +2068,9 @@
       ],
       "Identity": [
         "Identiteetti"
+      ],
+      "Identity autofill": [
+        "Identiteetin automaattitäyttö"
       ],
       "Import": [
         "Tuonti"
@@ -2296,9 +2302,6 @@
       ],
       "Selected": [
         "Valittu"
-      ],
-      "Session locking": [
-        "Istunnon lukitus"
       ],
       "Settings": [
         "Asetukset"

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "jsx": "react",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "lib",
+        "declaration": true
+    },
+    "include": ["tmp/all.tsx"]
+}

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
+import { HashRouter as Router } from 'react-router-dom';
 
 import { PopupProvider } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
@@ -9,8 +10,10 @@ import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSiz
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 
 import { ErrorBoundary } from '@proton/components';
+import { Localized } from '@proton/pass/components/Core/Localized';
+import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 
-import { App } from './App';
+import { AppGuard } from './AppGuard';
 
 import './Popup.scss';
 
@@ -30,7 +33,13 @@ const Popup = () => {
                     >
                         <ErrorBoundary component={<ExtensionError />}>
                             <PopupProvider>
-                                <App />
+                                <Router>
+                                    <NavigationProvider>
+                                        <Localized>
+                                            <AppGuard />
+                                        </Localized>
+                                    </NavigationProvider>
+                                </Router>
                             </PopupProvider>
                         </ErrorBoundary>
                     </ReduxProvider>

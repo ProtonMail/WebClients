@@ -3,6 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { c, msgid } from 'ttag';
 
 import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
+import { useMember } from '@proton/components/hooks';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
@@ -27,6 +28,7 @@ interface Props {
 
 const UsagePanel = ({ addresses, calendars, organization, user, children }: PropsWithChildren<Props>) => {
     const { UsedMembers = 0 } = organization || {};
+    const [member] = useMember();
 
     if (UsedMembers <= 1) {
         return null;
@@ -36,7 +38,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     const humanMaxSpace = humanSize({ bytes: user.MaxSpace });
     const UsedAddresses = addresses?.length;
     const UsedCalendars = calendars?.length;
-    const maxVpn = 10;
+    const VPNConnections = 10;
 
     const items: (Item | false)[] = [
         UsedAddresses !== undefined && {
@@ -55,10 +57,10 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
                 UsedCalendars
             ),
         },
-        {
+        !!(member && member.MaxVPN > 0) && {
             icon: 'brand-proton-vpn',
             text: user.hasPaidVpn
-                ? getHighSpeedVPNConnectionsText(maxVpn)
+                ? getHighSpeedVPNConnectionsText(member.MaxVPN || VPNConnections)
                 : c('Subscription attribute').t`1 VPN connection`,
         },
     ];

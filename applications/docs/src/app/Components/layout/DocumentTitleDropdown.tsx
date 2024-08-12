@@ -36,6 +36,7 @@ const DocumentTitleDropdown = ({
 
   const [title, setTitle] = useState<string | undefined>()
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
+  const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
   const [isRenaming, setIsRenaming] = useState(false)
@@ -92,9 +93,19 @@ const DocumentTitleDropdown = ({
     }, DocControllerEvent.DidLoadDocumentTitle)
   }, [application.eventBus])
 
-  const onNewDocument = useCallback(() => {
-    void controller?.createNewDocument()
-  }, [controller])
+  const onNewDocument = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      event.preventDefault()
+      event.stopPropagation()
+
+      setIsMakingNewDocument(true)
+
+      void controller?.createNewDocument().then(() => {
+        setIsMakingNewDocument(false)
+      })
+    },
+    [controller],
+  )
 
   useEffect(() => {
     if (!controller) {
@@ -189,12 +200,14 @@ const DocumentTitleDropdown = ({
           )}
 
           <DropdownMenuButton
+            disabled={isMakingNewDocument}
             className="flex items-center text-left"
             onClick={onNewDocument}
             data-testid="dropdown-new-document"
           >
             <Icon name="file" className="color-weak mr-2" />
             {c('Action').t`New document`}
+            {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
           </DropdownMenuButton>
 
           <DropdownMenuButton

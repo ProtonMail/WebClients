@@ -1,11 +1,12 @@
 import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
 import type { SerializedEditorState } from 'lexical'
-import type { DocxExportContext } from '../Docx/LexicalToDocx/Context'
 import { EditorTxtExporter } from './EditorTxtExporter'
 import { EditorMarkdownExporter } from './EditorMarkdownExporter'
 import { EditorHtmlExporter } from './EditorHtmlExporter'
-import { EditorDocxExporter } from './EditorDocxExporter'
+import { EditorDocxExporter } from './DocxExport/EditorDocxExporter'
 import { EditorPdfExporter } from './EditorPdfExporter'
+import { EditorYjsExporter } from './EditorYjsExporter'
+import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,
@@ -13,7 +14,7 @@ export async function exportDataFromEditorState(
   callbacks: {
     fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
   },
-): Promise<Uint8Array | Blob> {
+): Promise<Uint8Array> {
   switch (format) {
     case 'txt':
       return new EditorTxtExporter(editorState, callbacks).export()
@@ -25,6 +26,8 @@ export async function exportDataFromEditorState(
       return new EditorDocxExporter(editorState, callbacks).export()
     case 'pdf':
       return new EditorPdfExporter(editorState, callbacks).export()
+    case 'yjs':
+      return new EditorYjsExporter(editorState, callbacks, { customStateHandling: true }).export()
     default:
       throw new Error(`Unsupported format: ${format}`)
   }

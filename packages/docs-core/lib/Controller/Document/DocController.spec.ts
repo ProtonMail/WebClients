@@ -152,7 +152,7 @@ describe('DocController', () => {
     it('should send the initial commit to the editor', async () => {
       controller.sendInitialCommitToEditor = jest.fn()
 
-      controller.setInitialCommit({
+      await controller.setInitialCommit({
         needsSquash: jest.fn(),
       } as unknown as jest.Mocked<DecryptedCommit>)
 
@@ -160,7 +160,7 @@ describe('DocController', () => {
     })
 
     it('should set last commit id property', async () => {
-      controller.setInitialCommit({
+      await controller.setInitialCommit({
         needsSquash: jest.fn(),
         commitId: '456',
       } as unknown as jest.Mocked<DecryptedCommit>)

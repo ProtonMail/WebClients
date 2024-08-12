@@ -35,12 +35,12 @@ import { sendErrorMessage } from './Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
 import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import { TablePlugin } from './Plugins/Table/TablePlugin'
-import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
 import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
 import type { EditorLoadResult } from './EditorLoadResult'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
+import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
 
 const TypingBotEnabled = false
 
@@ -169,10 +169,10 @@ export function Editor({
         <CommentPlugin controller={clientInvoker} username={username} />
         <ImagesPlugin />
         {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
+        {!nonInteractiveMode && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
-        {!nonInteractiveMode && <DraggableBlockPlugin showGenericAlertModal={showGenericAlertModal} />}
       </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )

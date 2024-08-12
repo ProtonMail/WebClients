@@ -426,7 +426,7 @@
         "Administrar etiquetas"
       ],
       "Mark as resolved": [
-        "Marcar como resuelto"
+        "Marcar como resuelta"
       ],
       "Mark for deletion": [
         "Marcar para eliminar"
@@ -3423,6 +3423,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Cuando la contraseña adicional está activada, la gestión de alias solo puede hacerse en ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Necesitas un calendario personal activo donde importar todos tus eventos."
       ]
@@ -3587,17 +3590,23 @@
       "${ BRAND_NAME } groups": [
         "grupos ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan grupal."
       ],
       "customer support": [
         "atención al cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes grupales actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitación de: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Las cuentas Lifetime no pueden unirse a un plan grupal."
       ],
       "Manage addresses.": [
         "Gestiona las direcciones."
@@ -3613,12 +3622,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes Visionary y familiar no admiten cuentas externas en este momento. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Los planes Visionary y familiar no admiten cuentas vitalicias en este momento."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
@@ -3641,8 +3644,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Tu plan actual no puede formar parte de un plan Visionary o familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "No puedes aceptar esta invitación con el plan actual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5129,7 +5132,7 @@
         "Tu dirección de correo electrónico y contraseña fueron filtradas:"
       ],
       "Your email address was exposed:": [
-        "Tu dirección de correo electrónico fue expuesta:"
+        "La dirección de correo electrónico fue expuesta:"
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
@@ -5141,7 +5144,7 @@
         "Tus archivos serán cifrados y después guardados."
       ],
       "Your information was found on ${ displayedDate }": [
-        "Tus datos han sido encontrados el ${ displayedDate }"
+        "Se han encontrado tus datos el ${ displayedDate }."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -5150,7 +5153,7 @@
         "Tu próxima fecha de facturación es el ${ renewalTime }."
       ],
       "Your password was leaked:": [
-        "Tu contraseña fue filtrada:"
+        "Se ha filtrado tu contraseña:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
@@ -5294,9 +5297,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
-      ],
-      "Access to my events": [
-        "Acceso a mis eventos"
       ],
       "Add email address": [
         "Añadir correo electrónico"
@@ -7442,7 +7442,7 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "El número de tarjeta ingresado es no válido."
+        "El número de tarjeta ingresado no es válido."
       ],
       "Invalid expiration date": [
         "La fecha de expiración no es válida."
@@ -7700,7 +7700,7 @@
         "Genera alias al instante y gestiona fácilmente tus alias y contraseñas."
       ],
       "Hide-my-email aliases": [
-        "Alias de Hide-my-email"
+        "Alias de hide-my-email"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
         "Los alias de hide-my-email te permiten registrarte en sitios sin compartir tu dirección de correo electrónico. ${ learnMoreLink }"
@@ -7847,7 +7847,7 @@
     },
     "session_recovery:available:title": {
       "Reset your password": [
-        "Restablecer tu contraseña"
+        "Restablecer la contraseña"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -7862,7 +7862,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "El restablecimiento de contraseña ha sido cancelado."
+        "Se ha cancelado el restablecimiento de contraseña."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -8818,7 +8818,7 @@
         "Dirección copiada al portapapeles"
       ],
       "Alias copied to clipboard": [
-        "Alias copiado al portapapeles."
+        "Se ha copiado el alias al portapapeles."
       ],
       "Alias saved and copied": [
         "Alias guardado y copiado."
@@ -9657,7 +9657,7 @@
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
       ],
       "Change start date to unselect": [
-        "Cambia la fecha de inicio para anular la selección"
+        "Cambia la fecha de inicio para anular la selección."
       ],
       "Customize import to reduce the number of folders": [
         "Personaliza la importación para reducir el número de carpetas."

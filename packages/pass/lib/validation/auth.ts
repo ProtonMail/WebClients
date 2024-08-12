@@ -3,9 +3,15 @@ import { c } from 'ttag';
 
 import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import type { Maybe } from '@proton/pass/types';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-export const validateCurrentPassword = (values: PasswordCredentials): FormikErrors<PasswordCredentials> =>
-    values.password.length > 0 ? {} : { password: c('Warning').t`Encryption password is required` };
+const validatePassword =
+    (errorMessage: string) =>
+    (values: PasswordCredentials): FormikErrors<PasswordCredentials> =>
+        values.password.length > 0 ? {} : { password: errorMessage };
+
+export const validateCurrentPassword = validatePassword(c('Warning').t`${BRAND_NAME} password is required`);
+export const validateExtraPassword = validatePassword(c('Warning').t`Extra password is required`);
 
 export const validateNewExtraPassword = (password: string, previous?: string): Maybe<string> => {
     if (password.length === 0) return c('Warning').t`Extra password cannot be empty`;

@@ -18,7 +18,11 @@ import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@p
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import { getHasPassB2BPlan, getHasVpnOrPassB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasExternalMemberCapableB2BPlan,
+    getHasPassB2BPlan,
+    hasVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
@@ -112,17 +116,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     } = useAccountSpotlights();
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
-    const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
+    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
-    const useEmail = hasVpnOrPassB2BPlan;
-    const allowStorageConfiguration = !hasVpnOrPassB2BPlan;
-    const allowVpnAccessConfiguration = !hasVpnOrPassB2BPlan;
-    const allowPrivateMemberConfiguration = !hasVpnOrPassB2BPlan;
+    const useEmail = hasExternalMemberCapableB2BPlan;
+    const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan;
+    const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
+    const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowAIAssistantConfiguration = accessToAssistant.enabled && !accessToAssistant.killSwitch;
 
-    const showMultipleUserUploadButton = hasVpnOrPassB2BPlan;
-    const showAddressesSection = !hasVpnOrPassB2BPlan;
-    const showFeaturesColumn = !hasVpnOrPassB2BPlan;
+    const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
+    const showAddressesSection = !hasExternalMemberCapableB2BPlan;
+    const showFeaturesColumn = !hasExternalMemberCapableB2BPlan;
 
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
@@ -402,7 +406,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         app={app}
                         onSuccess={setupOrgSpotlight.close}
                         useEmail={useEmail}
-                        optionalName={hasVpnOrPassB2BPlan}
+                        optionalName={hasExternalMemberCapableB2BPlan}
                         members={members}
                         aiSeatsRemaining={aiSeatsRemaining}
                         allowStorageConfiguration={allowStorageConfiguration}
@@ -463,7 +467,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     />
                 )}
                 <div className="flex items-center mb-2 gap-2 mr-4">
-                    {hasVpnOrPassB2BPlan ? (
+                    {hasExternalMemberCapableB2BPlan ? (
                         <>
                             {hasSetupActiveOrganizationWithKeys && (
                                 <SetupOrgSpotlight app={app}>
@@ -548,7 +552,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                             addresses: memberAddresses,
                             organization,
                             organizationKey,
-                            disableMemberSignIn: hasVpnOrPassB2BPlan,
+                            disableMemberSignIn: hasExternalMemberCapableB2BPlan,
                         });
 
                         return (
@@ -559,15 +563,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                             >
                                 <TableCell className="align-baseline">
                                     <div className="flex items-center gap-3">
-                                        <Avatar className="shrink-0 text-rg" color="weak">
-                                            {getInitials(memberName)}
-                                        </Avatar>
-                                        <div
-                                            className="text-ellipsis shrink-0"
-                                            data-testid="users-and-addresses-table:memberName"
-                                            title={memberName}
-                                        >
-                                            {memberName}
+                                        <div className="flex flex-nowrap items-center gap-3">
+                                            <Avatar className="shrink-0 text-rg" color="weak">
+                                                {getInitials(memberName)}
+                                            </Avatar>
+                                            <div
+                                                className="text-ellipsis shrink"
+                                                data-testid="users-and-addresses-table:memberName"
+                                                title={memberName}
+                                            >
+                                                {memberName}
+                                            </div>
                                         </div>
                                         <div className="flex items-center gap-1">
                                             {(() => {

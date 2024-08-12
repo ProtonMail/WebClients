@@ -25,7 +25,7 @@ import type {
     LlmManager,
     LlmModel,
 } from '@proton/llm/lib/types';
-import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -42,7 +42,7 @@ export const useAssistantLocal = ({
     active,
 }: Props): Omit<
     AssistantContextType,
-    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors'
+    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors' | 'addSpecificError'
 > => {
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -354,7 +354,7 @@ export const useAssistantLocal = ({
         }));
     };
 
-    const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
+    const generateResult = async ({ action, callback, assistantID, hasSelection }: GenerateAssistantResult) => {
         // TODO prevent submit if user made too much harmful requests recently
 
         // Do not start multiple actions in the same assistant
@@ -449,6 +449,9 @@ export const useAssistantLocal = ({
                     sendRequestAssistantReport({
                         assistantType: ASSISTANT_TYPE.LOCAL,
                         generationType: getGenerationType(action),
+                        selectionType: hasSelection
+                            ? GENERATION_SELECTION_TYPE.HAS_SELECTION
+                            : GENERATION_SELECTION_TYPE.NO_SELECTION,
                         ingestionTime,
                         generationTime,
                         tokensGenerated: generatedTokensNumber.current,

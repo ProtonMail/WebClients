@@ -8,6 +8,8 @@ type Obj = { [key: PropertyKey]: any };
 const isEmptyValue = (value: any) =>
     value === null || value === undefined || value === '' || (typeof value === 'number' && Number.isNaN(value));
 
+/** `merge` does not return a new object reference. It overwrites the `original`
+ * in-place. As such, use carefully when merging over constants as it will mutate */
 const merge = <Original extends Obj, Overwrite extends Obj>(
     original: Original,
     overwrite: Overwrite,

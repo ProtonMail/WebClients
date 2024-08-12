@@ -61,6 +61,7 @@ interface Props {
      * Whether selector should have a label or not
      */
     label?: ReactNode | null;
+    assistContainerClassName?: string;
 }
 
 const CountrySelect = ({
@@ -73,6 +74,7 @@ const CountrySelect = ({
     hint,
     disabled,
     label = c('Label').t`Country`,
+    assistContainerClassName,
     as = SearchableSelect<string>,
 }: Props) => {
     const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
@@ -155,7 +157,7 @@ const CountrySelect = ({
             hint={hint}
             data-testid="country-select"
             disabled={disabled}
-            assistContainerClassName="empty:hidden"
+            assistContainerClassName={assistContainerClassName}
         >
             {optionsComponents}
         </InputFieldTwo>

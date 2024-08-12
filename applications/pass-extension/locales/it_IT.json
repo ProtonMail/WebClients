@@ -509,6 +509,9 @@
       "Try again": [
         "Riprova"
       ],
+      "Unlock": [
+        "Sblocca"
+      ],
       "Unlock offline with password": [
         "Sblocca offline con password"
       ],
@@ -1069,6 +1072,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accedi alle tue password in movimento grazie alle nostre applicazioni mobili."
       ],
@@ -1119,6 +1125,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Prima di esportare i tuoi dati con questo formato, apri le impostazioni di Safari -> scheda \"Generale\" -> disabilita l'opzione \"Apri file sicuri dopo il download\". Questo impedirà a Safari di estrarre in modo errato il file esportato."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Blocco con biometria impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "La biometria verrà disabilitata e dovrà essere abilitata nuovamente."
       ],
       "Built in 2FA authenticator": [
         "Autenticazione 2FA integrata"
@@ -1224,6 +1236,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Abilita il blocco automatico per proteggere i tuoi dati"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Abilita il blocco automatico con biometria"
+      ],
+      "Enabling biometrics lock failed": [
+        "Impossibile abilitare il blocco con biometria"
       ],
       "Enabling offline mode...": [
         "Abilitazione della modalità offline..."
@@ -1475,6 +1493,9 @@
       "Please confirm your password": [
         "Conferma la tua password"
       ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Conferma la tua password per abilitare il blocco automatico con biometria."
+      ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Conferma la tua password per abilitare il blocco automatico con password."
       ],
@@ -1513,6 +1534,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protetto da ${ PROTON_SENTINEL_LINK }, il nostro programma avanzato di protezione dell'account."
+      ],
+      "Quickly autofill your identities.": [
+        "Compila rapidamente e automaticamente le tue identità."
       ],
       "Registering extra password...": [
         "Registrazione della password aggiuntiva..."
@@ -1632,6 +1656,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
+      "This option is currently not available on your device.": [
+        "Questa opzione non è attualmente disponibile sul tuo dispositivo."
+      ],
       "This setting is disabled on the organization level": [
         "Questa impostazione è disabilitata a livello di organizzazione"
       ],
@@ -1659,6 +1686,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Sblocca ${ PASS_APP_NAME } con il tuo codice PIN per salvare questa passkey"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Sblocca ${ PASS_SHORT_APP_NAME } con biometria"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password ${ BRAND_NAME }"
       ],
@@ -1667,6 +1697,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Sbloccalo con il tuo PIN per accedere alle impostazioni"
+      ],
+      "Unlock with biometrics": [
+        "Sblocca con biometria"
       ],
       "Unpinning item...": [
         "Annullamento del fissaggio dell'elemento in corso"
@@ -1892,6 +1925,9 @@
       "Autosuggest": [
         "Suggerimenti automatici"
       ],
+      "Biometrics": [
+        "Biometria"
+      ],
       "Birthdate": [
         "Data di nascita"
       ],
@@ -1972,9 +2008,6 @@
       ],
       "Display": [
         "Mostra"
-      ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Mostra l'icona di ${ PASS_APP_NAME } nei campi di login"
       ],
       "Domain": [
         "Dominio"
@@ -2065,6 +2098,9 @@
       ],
       "Identity": [
         "Identità"
+      ],
+      "Identity autofill": [
+        "Compilazione automatica dell'identità"
       ],
       "Import": [
         "Importa"
@@ -2297,9 +2333,6 @@
       "Selected": [
         "Selezionato"
       ],
-      "Session locking": [
-        "Blocco della sessione"
-      ],
       "Settings": [
         "Impostazioni"
       ],
@@ -2372,6 +2405,9 @@
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Sblocca ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Metodo di sblocco"
       ],
       "Unnamed Credit Card": [
         "Carta di credito senza nome"

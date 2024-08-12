@@ -55,7 +55,12 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
             logger.info(`[PasswordLock] creating password lock`);
 
             const verified = await auth.confirmPassword(secret);
-            if (!verified) throw new Error(c('Error').t`Wrong password`);
+            if (!verified) {
+                const message = authStore.getExtraPassword()
+                    ? c('Error').t`Wrong extra password`
+                    : c('Error').t`Wrong password`;
+                throw new Error(message);
+            }
 
             await onBeforeCreate?.();
 
@@ -150,7 +155,10 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
                 await setRetryCount(retryCount).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
-                throw Error(c('Error').t`Wrong password`);
+                const errMessage = authStore.getExtraPassword()
+                    ? c('Error').t`Wrong extra password`
+                    : c('Error').t`Wrong password`;
+                throw Error(errMessage);
             }
         },
     };

@@ -10,7 +10,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
-import { validateCurrentPassword } from '@proton/pass/lib/validation/auth';
+import { validateCurrentPassword, validateExtraPassword } from '@proton/pass/lib/validation/auth';
 import { unlock } from '@proton/pass/store/actions';
 import { unlockRequest } from '@proton/pass/store/actions/requests';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -18,9 +18,9 @@ import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PasswordForm } from './PasswordForm';
 
-type Props = { offlineEnabled?: boolean };
+type Props = { extraPassword: boolean; offlineEnabled?: boolean };
 
-export const PasswordUnlock: FC<Props> = ({ offlineEnabled }) => {
+export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => {
     const { createNotification } = useNotifications();
     const online = useConnectivity();
     const authStore = useAuthStore();
@@ -60,7 +60,7 @@ export const PasswordUnlock: FC<Props> = ({ offlineEnabled }) => {
             loading={passwordUnlock.loading}
             submitLabel={!online && offlineEnabled ? c('Action').t`Continue offline` : c('Action').t`Continue`}
             onSubmit={onSubmit}
-            onValidate={validateCurrentPassword}
+            onValidate={extraPassword ? validateExtraPassword : validateCurrentPassword}
         />
     );
 };

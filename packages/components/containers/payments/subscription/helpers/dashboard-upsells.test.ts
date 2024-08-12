@@ -138,6 +138,14 @@ describe('resolveUpsellsToDisplay', () => {
             const unlimitedUpsellWithoutAction = {
                 ...unlimitedUpsell,
                 title: 'Proton Unlimited Trial',
+                otherCtas: [
+                    {
+                        action: expect.any(Function),
+                        label: 'Explore all Proton plans',
+                        shape: 'ghost',
+                        color: 'norm',
+                    },
+                ],
             };
 
             expect(upsells).toMatchObject([unlimitedUpsellWithoutAction]);
@@ -176,7 +184,6 @@ describe('resolveUpsellsToDisplay', () => {
                 {
                     ...unlimitedUpsell,
                     isRecommended: true,
-                    features: unlimitedUpsell.features.filter(({ text }) => text !== '25 calendars'),
                 },
                 familyUpsell,
             ]);
@@ -222,11 +229,20 @@ describe('resolveUpsellsToDisplay', () => {
                 canAccessDuoPlan: true,
             });
 
+            const [firstUnlimitedUpsellFeature, ...restUnlimitedUpsellFeatures] = unlimitedUpsell.features;
             expect(upsells).toMatchObject([
                 {
                     ...unlimitedUpsell,
+                    features: [
+                        firstUnlimitedUpsellFeature,
+                        {
+                            text: '1 user',
+                            icon: 'users',
+                            included: true,
+                        },
+                        ...restUnlimitedUpsellFeatures,
+                    ],
                     isRecommended: true,
-                    features: unlimitedUpsell.features.filter(({ text }) => text !== '25 calendars'),
                 },
                 duoUpsell,
             ]);
@@ -267,6 +283,81 @@ describe('resolveUpsellsToDisplay', () => {
                     Plans: [
                         {
                             Name: PLANS.BUNDLE,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
+            });
+
+            expect(upsell).toMatchObject(familyUpsell);
+
+            upsell.onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.FAMILY,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+        });
+
+        it('should return Duo and Family upsell', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                isFree: false,
+                hasPaidMail: true,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.BUNDLE,
+                            Type: PLAN_TYPES.PLAN,
+                        },
+                    ],
+                } as Subscription,
+                canAccessDuoPlan: true,
+            });
+
+            expect(upsells).toMatchObject([{ ...duoUpsell, isRecommended: true }, familyUpsell]);
+
+            upsells[0].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.DUO,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+
+            upsells[1].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.FAMILY,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+        });
+    });
+
+    describe('Duo', () => {
+        it('should return Family upsell', () => {
+            const [upsell] = resolveUpsellsToDisplay({
+                ...base,
+                isFree: false,
+                hasPaidMail: true,
+                subscription: {
+                    Plans: [
+                        {
+                            Name: PLANS.DUO,
                             Type: PLAN_TYPES.PLAN,
                         },
                     ],

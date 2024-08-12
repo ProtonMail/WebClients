@@ -175,7 +175,7 @@ export const getMailConfiguration = ({
             },
             {
                 plan: PLANS.ENTERPRISE,
-                subsection: <LetsTalkGenericSubSection />,
+                subsection: <LetsTalkGenericSubSection app="mail" />,
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false,

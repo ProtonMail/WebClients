@@ -50,6 +50,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         domainData,
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
+        selectedGroup,
     } = groupsManagement;
 
     const { resetForm, dirty, values: formValues, setFieldValue } = form;
@@ -125,7 +126,6 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     onClick={() => {
                                         onFormSubmit();
                                         void withLoading(handleSaveGroup(newEmailsToAdd));
-                                        setNewGroupMembers([]);
                                     }}
                                 >
                                     {c('Action').t`Save`}
@@ -255,11 +255,17 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 <NewGroupMemberItem
                                     member={member}
                                     handleRemoveNewMember={handleRemoveNewGroupMember}
+                                    submitting={loading}
                                 />
                             );
                         })}
                     </div>
-                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} edit />
+                    <GroupMemberList
+                        groupMembers={groupMembers}
+                        loading={loadingGroupMembers}
+                        group={selectedGroup}
+                        edit
+                    />
                 </div>
             </Panel>
         </>

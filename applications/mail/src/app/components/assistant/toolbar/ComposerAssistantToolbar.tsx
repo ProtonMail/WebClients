@@ -60,6 +60,8 @@ const ComposerAssistantToolbar = ({
             assistantRequest: prompt,
             setAssistantRequest: setPrompt,
         });
+        // We want to have focus inside assistant when popover is closed (so that user can close assistant using Esc)
+        containerRef.current?.focus();
     };
 
     // Set this ref around the toolbar so that any click on the toolbar (that is outside the assistant generation)
@@ -88,7 +90,13 @@ const ComposerAssistantToolbar = ({
     const disableActions = isExpandedAndDownloading;
 
     return (
-        <div ref={containerRef}>
+        <div
+            ref={containerRef}
+            tabIndex={-1}
+            className="outline-none--at-all"
+            aria-labelledby={`heading-${assistantID}`}
+        >
+            <h1 id={`heading-${assistantID}`} className="sr-only">{c('Info').t`Scribe panel`}</h1>
             <div>
                 {showGenerationState ? (
                     <div className="inline-flex flex-row flex-nowrap items-center">

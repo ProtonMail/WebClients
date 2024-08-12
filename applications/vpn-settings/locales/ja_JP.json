@@ -2452,9 +2452,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } グループ"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "カスタムドメインを持つアカウントはVisionaryやファミリープランに参加できません。"
-      ],
       "customer support": [
         "カスタマーサポート"
       ],
@@ -2491,12 +2488,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "割り当てられたストレージ: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary とファミリープランは外部のアカウントをサポートしていません。参加するには ${ BRAND_NAME } アドレスを作成してください。 ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary とファミリープランは現時点では永久アカウントをサポートしていません。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
       ],
@@ -2520,9 +2511,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "あなたの現在のプランでは Visionary またはファミリープランに参加できません。"
       ]
     },
     "familyOffer_2023:Info": {
@@ -3294,10 +3282,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7999,10 +7987,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

@@ -1,4 +1,4 @@
-import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
+import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 
 import { createSettingsService } from './service';
 
@@ -21,7 +21,7 @@ describe('createSettingsService', () => {
     });
 
     test('sync method should proxy `options.sync`', async () => {
-        const update = INITIAL_SETTINGS;
+        const update = getInitialSettings();
         const service = createSettingsService({ clear, resolve, sync });
         await service.sync(update);
 
@@ -29,7 +29,7 @@ describe('createSettingsService', () => {
         expect(sync).toHaveBeenCalledWith(update);
     });
 
-    test('resolve method should merge INITIAL_SETTINGS with resolved settings', async () => {
+    test('resolve method should merge initial settings with resolved settings', async () => {
         const settings = { test_setting: true };
         resolve.mockResolvedValue(settings);
 
@@ -37,15 +37,15 @@ describe('createSettingsService', () => {
         const result = await service.resolve();
 
         expect(resolve).toHaveBeenCalledTimes(1);
-        expect(result).toEqual({ ...INITIAL_SETTINGS, ...settings });
+        expect(result).toEqual({ ...getInitialSettings(), ...settings });
     });
 
-    test('resolve should return INITIAL_SETTINGS when `options.resolve` fails', async () => {
+    test('resolve should return initial settings when `options.resolve` fails', async () => {
         resolve.mockRejectedValue(new Error());
         const service = createSettingsService({ clear, resolve, sync });
         const result = await service.resolve();
 
         expect(resolve).toHaveBeenCalledTimes(1);
-        expect(result).toEqual(INITIAL_SETTINGS);
+        expect(result).toEqual(getInitialSettings());
     });
 });

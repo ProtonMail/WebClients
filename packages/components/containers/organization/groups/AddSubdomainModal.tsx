@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { addSubdomain } from '@proton/account/groups/actions';
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
@@ -20,8 +21,6 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
-
-import { addSubdomain } from './helpers';
 
 interface Props extends ModalProps {
     prefilledDomainName: string;

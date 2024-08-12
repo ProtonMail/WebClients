@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Жирний"
-      ],
-      "Can send to this group": [
-        "Можна надіслати до цієї групи"
-      ],
-      "Can't send to this group": [
-        "Не можна надіслати до цієї групи"
       ],
       "Cancel": [
         "Скасувати"
@@ -733,11 +727,11 @@
       "No, thanks": [
         "Ні, дякую"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Відкрити"
@@ -799,11 +793,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
       "refresh the page": [
         "оновити сторінку"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -1621,14 +1615,6 @@
         "Оберіть свою пропозицію Кінця року"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ТБ сховища (вдвічі більше, ніж з будь-яким іншим планом)"
@@ -1650,6 +1636,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "План ${ plan } доступний знову лише протягом обмеженого часу"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3411,12 +3405,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Увімкніть розширені журнали та ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
-      ],
-      "Enable advanced logs to access these features": [
-        "Увімкніть розширені журнали, щоб отримати доступ до цих функцій"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -5107,9 +5095,6 @@
       "*Only one free trial per customer.": [
         "*Тільки одна безплатна пробна версія на одного клієнта."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Облікові записи з власними доменами не можна приєднати до Visionary або сімейного плану."
-      ],
       "customer support": [
         "клієнтська підтримка"
       ],
@@ -5152,12 +5137,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Щоб полегшити перехід, ми надаємо вам 30-денну пробну версію ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary і сімейні плани наразі не підтримують довічні облікові записи."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
       ],
@@ -5179,9 +5158,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Перш ніж створити нового користувача, потрібно налаштувати власний домен."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Ви втратите доступ до всіх преміумфункцій і простору сховища, включених до ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрошено пов'язати обліковий запис ${ BRAND_NAME } із цим груповим планом і разом користуватися всіма преміумфункціями ${ BRAND_NAME_TWO }"
       ],
@@ -5190,9 +5166,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш обліковий запис використовує ${ usedSpace } обсягу сховища, що перевищує призначений вам обсяг ${ inviteSpace }. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг вашого сховища."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш поточний план не може приєднатися до Visionary або сімейного плану."
       ]
     },
     "familyOffer_2023:Info": {
@@ -7055,11 +7028,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -7690,9 +7663,6 @@
       ],
       "Loading...": [
         "Завантаження..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Журнали містять записи про спроби автентифікації для всіх служб ${ BRAND_NAME }, які використовують ваші облікові дані ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Низький пріоритет"
@@ -9665,9 +9635,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
-      "Access to my events": [
-        "Доступ до моїх подій"
-      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -11006,12 +10973,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Увімкнути ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Увімкнути розширений журнал"
-      ],
-      "Enable authentication logs": [
-        "Увімкнути журнал авторизації"
       ]
     },
     "Mail import summary": {
@@ -13255,9 +13216,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Отримайте ${ appName } для ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Незабаром отримайте ${ appName } для ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Зв'яжіться з нашим відділом продажів"
@@ -16095,11 +16053,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -17220,9 +17178,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Увімкнути/вимкнути сповіщення на комп'ютері й мобільному пристрої"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Увімкнення розширеного журналу записує IP-адресу для кожної події в журналі безпеки."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адреса кінцевої точки провайдера ідентифікації (наприклад, https://idp.example.com/sso/saml)"
       ],
@@ -17841,9 +17796,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Видаливши цей номер телефону, ви більше не зможете відновити свій обліковий запис."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Вимкнувши журнали, ви також очистите всю історію записів. Ви дійсно хочете вимкнути журнали?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Дата закінчення терміну придатності не у форматі ММ/РР"

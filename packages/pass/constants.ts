@@ -10,7 +10,7 @@ export const MAX_BATCH_ADDRESS_REQUEST = 10;
 export const ALIAS_OPTIONS_MAX_AGE = 10 * 60;
 export const ALIAS_DETAILS_MAX_AGE = 30;
 
-export const DEFAULT_LOCK_TTL = 900; /* 15 minutes */
+export const DEFAULT_LOCK_TTL = 600; /* 10 minutes */
 
 export const MAX_ITEM_NAME_LENGTH = 200;
 export const MAX_ITEM_NOTE_LENGTH = 25_000;

@@ -82,12 +82,6 @@
       "Block": [
         "Bloquear"
       ],
-      "Can send to this group": [
-        "Puedes enviar a este grupo."
-      ],
-      "Can't send to this group": [
-        "No puedes enviar a este grupo."
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Eliminar el logo"
+      ],
+      "Delete member": [
+        "Eliminar el miembro"
       ],
       "Delete user": [
         "Eliminar usuario"
@@ -2688,11 +2685,14 @@
       "${ BRAND_NAME } groups": [
         "grupos ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Las cuentas con dominios personalizados no pueden unirse a un plan Visionary o familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Las cuentas con dominios personalizados no pueden unirse a un plan grupal."
       ],
       "customer support": [
         "atención al cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Los planes grupales actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
@@ -2702,6 +2702,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitación de: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Las cuentas Lifetime no pueden unirse a un plan grupal."
       ],
       "Manage addresses.": [
         "Gestiona las direcciones."
@@ -2733,12 +2736,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes Visionary y familiar no admiten cuentas externas en este momento. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Los planes Visionary y familiar no admiten cuentas vitalicias en este momento."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Has recibido una invitación para unirte a ${ invite.OrganizationName }"
@@ -2775,8 +2772,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Tu plan actual no puede formar parte de un plan Visionary o familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "No puedes aceptar esta invitación con el plan actual."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2965,7 +2962,7 @@
         "Llave de seguridad"
       ],
       "Security key removed": [
-        "La llave de seguridad ha sido eliminada"
+        "Se ha borrardo la clave de seguridad."
       ],
       "Security key updated": [
         "Llave de seguridad actualizada"
@@ -3620,11 +3617,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -7315,7 +7312,7 @@
     },
     "Payments.Error": {
       "Invalid card number": [
-        "El número de tarjeta ingresado es no válido."
+        "El número de tarjeta ingresado no es válido."
       ],
       "Invalid expiration date": [
         "La fecha de expiración no es válida."
@@ -7863,7 +7860,7 @@
     },
     "session_recovery:available:title": {
       "Reset your password": [
-        "Restablecer tu contraseña"
+        "Restablecer la contraseña"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -7878,7 +7875,7 @@
     },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
-        "El restablecimiento de contraseña ha sido cancelado."
+        "Se ha cancelado el restablecimiento de contraseña."
       ]
     },
     "session_recovery:cancellation:title": {
@@ -7960,7 +7957,7 @@
         "Solicitar el restablecimiento de contraseña"
       ],
       "Use recovery method": [
-        "Utilizar un método de recuperación"
+        "Usar un método de recuperación"
       ]
     },
     "session_recovery:initiation:info": {
@@ -9293,10 +9290,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [

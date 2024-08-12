@@ -21,7 +21,7 @@ import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
-import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState, Maybe, MaybeNull, RecursivePartial } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -56,7 +56,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
     const { i18n } = usePassCore();
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [appState, setAppState] = useState<IFrameContextValue['appState']>(INITIAL_WORKER_STATE);
-    const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
+    const [settings, setSettings] = useState<ProxiedSettings>(getInitialSettings());
     const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
@@ -164,7 +164,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                      * the frame's innerHTML */
                     case WorkerMessageType.PORT_UNAUTHORIZED:
                         return destroyFrame();
-                    case WorkerMessageType.WORKER_STATUS:
+                    case WorkerMessageType.WORKER_STATE_CHANGE:
                         return setAppState(message.payload.state);
                 }
             });

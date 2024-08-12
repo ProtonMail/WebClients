@@ -12,7 +12,7 @@ import {
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
-import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -28,7 +28,7 @@ export const useAssistantServer = ({
     openedAssistantsState,
 }: Props): Omit<
     AssistantContextType,
-    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors'
+    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors' | 'addSpecificError'
 > => {
     const api = useApi();
     const { sendRequestAssistantReport, sendAssistantErrorReport } = useAssistantTelemetry();
@@ -68,7 +68,7 @@ export const useAssistantServer = ({
         }
     };
 
-    const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
+    const generateResult = async ({ action, callback, assistantID, hasSelection }: GenerateAssistantResult) => {
         if (assistantID in runningActions) {
             return;
         }
@@ -101,6 +101,16 @@ export const useAssistantServer = ({
             const resolver = () => {
                 reader.cancel();
             };
+
+            // If the running action has already been cancelled (the user clicked on generate and cancel instantly),
+            // the generation will stop and start again.
+            // We are setting the resolver as noop above so that we can see in the UI that we are starting the generation,
+            // before the api request is actually sent, but this will cause the issue.
+            // So if we already cleaned the generation at this point, make sure we are stopping it.
+            if (runningActionsRef.current[assistantID] === undefined) {
+                resolver();
+                return;
+            }
 
             setRunningActions((runningActions) => {
                 runningActions[assistantID] = resolver;
@@ -164,6 +174,9 @@ export const useAssistantServer = ({
             sendRequestAssistantReport({
                 assistantType: ASSISTANT_TYPE.SERVER,
                 generationType: getGenerationType(action),
+                selectionType: hasSelection
+                    ? GENERATION_SELECTION_TYPE.HAS_SELECTION
+                    : GENERATION_SELECTION_TYPE.NO_SELECTION,
                 ingestionTime: ingestionTime,
                 generationTime: GenerationTime,
                 tokensGenerated: generatedTokens,

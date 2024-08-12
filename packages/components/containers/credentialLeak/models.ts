@@ -18,6 +18,7 @@ export interface FetchedBreaches {
     exposedData: {
         code: string;
         name: string;
+        values?: string[];
     }[];
     actions:
         | {

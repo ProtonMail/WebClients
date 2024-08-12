@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import { useCallback } from 'react';
 
 import { Dropzone } from '@proton/components/components';
@@ -17,7 +17,7 @@ import PlainTextEditor from './plainTextEditor/PlainTextEditor';
 import RoosterEditor from './rooster/RoosterEditor';
 import EditorToolbar from './toolbar/Toolbar';
 
-interface Props {
+export interface EditorProps {
     className?: string;
     editorToolbarClassname?: string;
     editorClassname?: string;
@@ -49,7 +49,18 @@ interface Props {
     modalLink: any;
     modalImage: any;
     modalDefaultFont: any;
-    hasToolbar?: boolean;
+    /**
+     * Display or not the toolbar.
+     * Toolbar contains actions like bold, italic, etc.
+     */
+    displayToolbar?: boolean;
+    /**
+     * Custom render function for the toolbar.
+     * In case we want to add a wrapper around the toolbar for example.
+     * @param toolbar The EditorToolbar component
+     * @param displayToolbar The displayToolbar prop value
+     */
+    toolbarCustomRender?: (toolbar: ReactNode, displayToolbar: boolean) => ReactNode;
     hasDropzone?: boolean;
     /**
      * When true forces the small breakpoint behavior for toolbar
@@ -88,10 +99,11 @@ const Editor = ({
     modalLink,
     modalImage,
     modalDefaultFont,
-    hasToolbar = true,
+    displayToolbar = true,
+    toolbarCustomRender = (component, display) => (display ? component : null),
     hasDropzone = true,
     isSmallViewportForToolbar = undefined,
-}: Props) => {
+}: EditorProps) => {
     /**
      * Set to true when editor setContent is called by parent components
      * in order to prevent onChange callback
@@ -161,7 +173,7 @@ const Editor = ({
                     )}
                 </div>
 
-                {hasToolbar && (
+                {toolbarCustomRender(
                     <EditorToolbar
                         config={toolbarConfig}
                         metadata={metadata}
@@ -171,7 +183,8 @@ const Editor = ({
                         simple={simple}
                         isSmallViewportForToolbar={isSmallViewportForToolbar}
                         userSettings={userSettings}
-                    />
+                    />,
+                    displayToolbar
                 )}
             </div>
 

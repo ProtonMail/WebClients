@@ -89,7 +89,7 @@ const ViewGroup = ({
                     </div>
                 )}
                 <div className="gap-2">
-                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} />
+                    <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} group={selectedGroup} />
                 </div>
             </div>
         </Panel>

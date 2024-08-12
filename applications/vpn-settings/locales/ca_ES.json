@@ -1543,6 +1543,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "República Islàmica de l'Iran"
+      ],
       "Isle of Man": [
         "Illa de Man"
       ],
@@ -2641,9 +2644,6 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Els comptes amb dominis personalitzats no poden unir-se a un pla Visionary o familiar."
-      ],
       "customer support": [
         "atenció al client"
       ],
@@ -2680,12 +2680,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Els plans Visionary i familiar actualment no admeten comptes vitalicis."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
       ],
@@ -2709,9 +2703,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "El vostre pla actual no pot unir-se a un pla Visionary o familiar."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3540,11 +3531,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -4455,7 +4446,7 @@
         "Per a continuar, seleccioneu un mètode de recuperació del compte perquè puguem verificar la sol·licitud."
       ],
       "To proceed, we must verify the request.": [
-        "Per a continuar, hem de verificar la petició."
+        "Per a continuar, hem de verificar la sol·licitud."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ${ VPN_APP_NAME } per al vostre dispositiu i connecteu a un servidor."
@@ -5831,6 +5822,12 @@
       "From ${ price }": [
         "Des de ${ price }"
       ],
+      "Get started for $1": [
+        "Comenceu per $1"
+      ],
+      "Get started for 1 €": [
+        "Comenceu per 1€"
+      ],
       "Upgrade": [
         "Millora"
       ],
@@ -7140,6 +7137,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
+      "Please select billing state": [
+        "Seleccioneu l'estat de facturació"
+      ],
       "Processing payment": [
         "S'està processant el pagament."
       ],
@@ -8379,6 +8379,9 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "2 users": [
+        "2 usuaris"
+      ],
       "20 email addresses per user": [
         "20 adreces de correu electrònic per usuari"
       ],
@@ -8558,6 +8561,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Unlimited privacy for two": [
+        "Privadesa il·limitada per a dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Els usuaris no podran gestionar els seus calendaris"
@@ -9069,10 +9075,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -9977,6 +9983,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema amb Wallet"
       ]
     },
     "Warning": {

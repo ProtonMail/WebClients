@@ -509,6 +509,9 @@
       "Try again": [
         "Försök igen"
       ],
+      "Unlock": [
+        "Lås upp"
+      ],
       "Unlock offline with password": [
         "Lås upp offline med lösenord"
       ],
@@ -1066,6 +1069,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt ${ BRAND_NAME }-lösenord."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
       ],
@@ -1116,6 +1122,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Innan du exporterar dina data med detta format, öppna Safari-inställningar -> fliken ”Allmänt” -> inaktivera alternativet ”Öppna säkra filer efter nedladdning”. Detta kommer att förhindra att Safari extraherar den exporterade filen felaktigt."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrisk lås har registrerats. Använd det för att låsa upp ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometri kommer att inaktiveras och måste aktiveras igen."
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
@@ -1466,6 +1478,9 @@
       "Please confirm your password": [
         "Bekräfta ditt lösenord"
       ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Bekräfta ditt lösenord för att låsa automatiskt med biometri."
+      ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Bekräfta ditt lösenord för att låsa automatiskt med ditt lösenord."
       ],
@@ -1623,6 +1638,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
       ],
+      "This option is currently not available on your device.": [
+        "Detta alternativ är för närvarande inte tillgängligt på din enhet."
+      ],
       "This setting is disabled on the organization level": [
         "Denna inställning är inaktiverad på organisationsnivå"
       ],
@@ -1650,6 +1668,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att spara denna passkey"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Lås upp ${ PASS_SHORT_APP_NAME } med biometri"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
       ],
@@ -1658,6 +1679,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
+      ],
+      "Unlock with biometrics": [
+        "Lås upp med biometri"
       ],
       "Unpinning item...": [
         "Lossar objekt..."
@@ -1883,6 +1907,9 @@
       "Autosuggest": [
         "Föreslå automatiskt"
       ],
+      "Biometrics": [
+        "Biometri"
+      ],
       "Birthdate": [
         "Födelsedatum"
       ],
@@ -1963,9 +1990,6 @@
       ],
       "Display": [
         "Visa"
-      ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Visa ikon ${ PASS_APP_NAME } på inloggningsfält"
       ],
       "Domain": [
         "Domän"
@@ -2291,9 +2315,6 @@
       "Selected": [
         "Valda"
       ],
-      "Session locking": [
-        "Sessionslåsning"
-      ],
       "Settings": [
         "Inställningar"
       ],
@@ -2366,6 +2387,9 @@
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Lås upp ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Lås upp med"
       ],
       "Unnamed Credit Card": [
         "Namnlöst kreditkort"

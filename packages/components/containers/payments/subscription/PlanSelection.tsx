@@ -16,6 +16,7 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIpPricePerMonth,
     getPricePerCycle,
+    hasFamily,
     hasMaximumCycle,
     hasSomeAddonOrPlan,
 } from '@proton/shared/lib/helpers/subscription';
@@ -215,6 +216,7 @@ const PlanSelection = ({
 
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
+    const isDriveSettingsApp = app == APPS.PROTONDRIVE;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const isFreeSubscription = getIsFreeSubscription(subscription);
     const renderCycleSelector = isFreeSubscription;
@@ -273,6 +275,8 @@ const PlanSelection = ({
         return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
     }
 
+    const isFamilySubscription = hasFamily(subscription);
+
     let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
@@ -284,7 +288,6 @@ const PlanSelection = ({
                 PLANS.DRIVE,
                 PLANS.VPN,
                 PLANS.BUNDLE,
-                PLANS.FAMILY,
                 PLANS.MAIL_PRO,
                 PLANS.VISIONARY,
                 PLANS.MAIL_BUSINESS,
@@ -297,7 +300,7 @@ const PlanSelection = ({
 
     let FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan && !isFamilySubscription ? plansMap[PLANS.DUO] : null,
         plansMap[PLANS.FAMILY],
     ]);
 
@@ -313,6 +316,8 @@ const PlanSelection = ({
         plansMap[bundleProPlan],
     ]);
 
+    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
+
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
     /**
@@ -323,11 +328,14 @@ const PlanSelection = ({
      */
     const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0;
     const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
+    const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
 
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
     } else if (isPassB2bPlans) {
         B2BPlans = passB2BPlans;
+    } else if (isDriveB2bPlans) {
+        B2BPlans = driveB2BPlans;
     } else {
         B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
     }
@@ -348,7 +356,7 @@ const PlanSelection = ({
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
 
     const b2cRecommendedPlans = [
-        hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
+        hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
         PLANS.DUO,
         PLANS.FAMILY,
     ].filter(isTruthy);

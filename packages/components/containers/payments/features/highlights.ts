@@ -18,13 +18,17 @@ export const getNUsersText = (n: number) => {
     return c('new_plans: feature').ngettext(msgid`Up to ${n} user`, `Up to ${n} users`, n);
 };
 
+export const getFreeUsersText = () => {
+    return c('new_plans: feature').t`1 user`;
+};
+
 const getUsers = (): PlanCardFeature => {
     return {
         name: 'user-number',
         target: Audience.FAMILY,
         plans: {
             [PLANS.FREE]: {
-                text: c('new_plans: feature').t`1 user`,
+                text: getFreeUsersText(),
                 included: true,
             },
             [PLANS.BUNDLE]: null,
@@ -32,6 +36,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.VPN]: null,
             [PLANS.PASS]: null,
             [PLANS.DRIVE]: null,
+            [PLANS.DRIVE_BUSINESS]: null,
             [PLANS.WALLET]: null,
             [PLANS.FAMILY]: {
                 text: getNUsersText(FAMILY_MAX_USERS),
@@ -57,7 +62,7 @@ const getUsers = (): PlanCardFeature => {
 
 export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        text: getNUsersText(n),
+        text: n === 1 ? getFreeUsersText() : getNUsersText(n),
         icon: 'users',
         included: true,
     };
@@ -142,6 +147,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getSupport('priority'),
                 [PLANS.VPN]: getSupport('priority'),
                 [PLANS.DRIVE]: getSupport('priority'),
+                [PLANS.DRIVE_BUSINESS]: getSupport('priority'),
                 [PLANS.PASS]: getSupport('priority'),
                 [PLANS.WALLET]: getSupport('priority'),
                 [PLANS.FAMILY]: getSupport('priority'),
@@ -164,6 +170,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getSentinel(),
                 [PLANS.VPN]: getSentinel(),
                 [PLANS.DRIVE]: getSentinel(),
+                [PLANS.DRIVE_BUSINESS]: getSentinel(true),
                 [PLANS.PASS]: getSentinel(true),
                 [PLANS.WALLET]: getSentinel(true),
                 [PLANS.FAMILY]: getSentinel(true),
@@ -186,6 +193,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: getCustomBranding(true),
                 [PLANS.WALLET]: null,
                 [PLANS.PASS]: null,
                 [PLANS.FAMILY]: null,
@@ -208,6 +216,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getEasySwitch(),
                 [PLANS.VPN]: getEasySwitch(),
                 [PLANS.DRIVE]: getEasySwitch(),
+                [PLANS.DRIVE_BUSINESS]: getEasySwitch(),
                 [PLANS.PASS]: getEasySwitch(),
                 [PLANS.WALLET]: getEasySwitch(),
                 [PLANS.FAMILY]: getEasySwitch(),
@@ -231,6 +240,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: null,
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: null,

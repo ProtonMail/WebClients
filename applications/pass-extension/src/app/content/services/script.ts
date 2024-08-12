@@ -88,7 +88,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
                     return onFeatureFlagsChange(message.payload);
                 case WorkerMessageType.SETTINGS_UPDATE:
                     return onSettingsChange(message.payload);
-                case WorkerMessageType.WORKER_STATUS:
+                case WorkerMessageType.WORKER_STATE_CHANGE:
                     return onWorkerStateChange(message.payload.state);
                 case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
                     return context.destroy({ reason: 'unload script' });

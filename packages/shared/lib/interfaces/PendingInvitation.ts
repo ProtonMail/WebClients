@@ -14,6 +14,7 @@ export interface AcceptInvitationValidation {
     HasCustomDomains: boolean;
     ExceedsMaxSpace: boolean;
     ExceedsAddresses: boolean;
+    HasUnpaidInvoice: boolean;
     ExceedsMaxAcceptedInvitations: boolean;
     IsExternalUser: boolean;
 }
