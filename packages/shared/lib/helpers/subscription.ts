@@ -303,6 +303,21 @@ export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined)
     return getIsConsumerPassPlanCondition.has(planName);
 };
 
+const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+    PLANS.MAIL,
+    PLANS.DRIVE,
+    PLANS.VPN,
+    PLANS.BUNDLE,
+    PLANS.MAIL_PRO,
+    PLANS.VISIONARY,
+    PLANS.MAIL_BUSINESS,
+    PLANS.BUNDLE_PRO,
+    PLANS.BUNDLE_PRO_2024,
+]);
+export const getCanSubscriptionAccessDuoPlan = (subscription?: MaybeFreeSubscription) => {
+    return hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessDuoPlanCondition.has(Name));
+};
+
 const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     VISIONARY,
     BUNDLE,
