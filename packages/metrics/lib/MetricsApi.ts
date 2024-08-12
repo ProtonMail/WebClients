@@ -5,6 +5,13 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from './../constants';
 import type IMetricsApi from './types/IMetricsApi';
 
+class TooManyRequestsError extends Error {
+    constructor() {
+        super('Too many requests');
+        this.name = 'TooManyRequestsError';
+    }
+}
+
 class MetricsApi implements IMetricsApi {
     private _authHeaders: { [key: string]: string };
 
@@ -56,7 +63,7 @@ class MetricsApi implements IMetricsApi {
             });
 
             if (attempt >= METRICS_MAX_ATTEMPTS) {
-                return;
+                throw new TooManyRequestsError();
             }
 
             if (response.status === HTTP_STATUS_CODE.TOO_MANY_REQUESTS) {
@@ -78,12 +85,12 @@ class MetricsApi implements IMetricsApi {
 
             return response;
         } catch (error: any) {
-            if (error.name !== 'AbortError') {
+            if (error.name !== 'AbortError' || error.name === 'TooManyRequestsError') {
                 throw error;
             }
 
             if (attempt >= METRICS_MAX_ATTEMPTS) {
-                return;
+                throw new TooManyRequestsError();
             }
 
             await wait(METRICS_DEFAULT_RETRY_SECONDS * SECOND);

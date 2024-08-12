@@ -8,10 +8,10 @@ module.exports = {
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     coverageThreshold: {
         global: {
-            branches: 90,
+            branches: 93,
             functions: 100,
-            lines: 97,
-            statements: 97,
+            lines: 98,
+            statements: 98,
         },
     },
 };

@@ -1,3 +1,4 @@
+import { METRICS_MAX_JAIL } from '../constants';
 import type IMetricsApi from './types/IMetricsApi';
 import type IMetricsRequestService from './types/IMetricsRequestService';
 import type MetricsRequest from './types/MetricsRequest';
@@ -16,6 +17,10 @@ class MetricsRequestService implements IMetricsRequestService {
 
     private _batch?: BatchOptions;
 
+    private _jailMax: number;
+
+    private _jailCount: number;
+
     private _intervalId: ReturnType<typeof setInterval> | null;
 
     constructor(
@@ -23,9 +28,11 @@ class MetricsRequestService implements IMetricsRequestService {
         {
             reportMetrics,
             batch,
+            jailMax,
         }: {
             reportMetrics: boolean;
             batch?: BatchOptions;
+            jailMax?: number;
         }
     ) {
         this.api = api;
@@ -45,6 +52,19 @@ class MetricsRequestService implements IMetricsRequestService {
 
         this._requestQueue = [];
         this._intervalId = null;
+
+        this._jailMax = (() => {
+            if (jailMax === undefined) {
+                return METRICS_MAX_JAIL;
+            }
+
+            if (jailMax <= 0) {
+                return METRICS_MAX_JAIL;
+            }
+
+            return jailMax;
+        })();
+        this._jailCount = 0;
     }
 
     public startBatchingProcess() {
@@ -52,7 +72,12 @@ class MetricsRequestService implements IMetricsRequestService {
             return;
         }
 
-        this._intervalId = setInterval(this.processNextBatch.bind(this), this._batch.frequency);
+        // Very naïve progressive backoff
+        const frequencyWithIncrementalBackoff = (this._jailCount + 1) * this._batch.frequency;
+
+        this._intervalId = setInterval(() => {
+            this.processNextBatch();
+        }, frequencyWithIncrementalBackoff);
     }
 
     public stopBatchingProcess() {
@@ -71,7 +96,12 @@ class MetricsRequestService implements IMetricsRequestService {
 
         const itemsToProcess = this._requestQueue;
         this.clearQueue();
-        await this.makeRequest(itemsToProcess);
+
+        try {
+            await this.makeRequest(itemsToProcess);
+        } catch (error) {
+            this.resetBatchingProcess();
+        }
     }
 
     public clearQueue() {
@@ -88,7 +118,7 @@ class MetricsRequestService implements IMetricsRequestService {
         }
 
         if (this._batch === undefined) {
-            void this.makeRequest([request]);
+            void this.makeRequest([request]).catch(() => {});
             return;
         }
 
@@ -99,7 +129,7 @@ class MetricsRequestService implements IMetricsRequestService {
         this._requestQueue.push(request);
     }
 
-    private processNextBatch() {
+    private async processNextBatch() {
         if (this._batch === undefined) {
             return;
         }
@@ -107,18 +137,53 @@ class MetricsRequestService implements IMetricsRequestService {
         const itemsToProcess = this._requestQueue.splice(0, this._batch.size);
 
         if (itemsToProcess.length === 0) {
+            this.stopBatchingProcess();
             return;
         }
 
-        return this.makeRequest(itemsToProcess);
+        try {
+            await this.makeRequest(itemsToProcess);
+        } catch (error) {
+            this.resetBatchingProcess();
+        }
     }
 
-    private makeRequest(metrics: MetricsRequest[]) {
-        return this.api.fetch('api/data/v1/metrics', {
-            method: 'post',
-            body: JSON.stringify({ Metrics: metrics }),
-        });
+    private async makeRequest(metrics: MetricsRequest[]) {
+        if (this.isJailed()) {
+            return;
+        }
+
+        try {
+            await this.api.fetch('api/data/v1/metrics', {
+                method: 'post',
+                body: JSON.stringify({ Metrics: metrics }),
+            });
+
+            if (this._requestQueue.length === 0) {
+                this.resetJailCount();
+            }
+        } catch (error) {
+            this.incrementJailCount();
+            throw error;
+        }
     }
+
+    private resetBatchingProcess() {
+        this.stopBatchingProcess();
+        this.startBatchingProcess();
+    }
+
+    private isJailed = () => {
+        return this._jailCount >= this._jailMax;
+    };
+
+    private resetJailCount = () => {
+        this._jailCount = 0;
+    };
+
+    private incrementJailCount = () => {
+        this._jailCount += 1;
+    };
 }
 
 export default MetricsRequestService;
