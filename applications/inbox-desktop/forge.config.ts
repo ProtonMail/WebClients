@@ -97,6 +97,7 @@ const config: ForgeConfig = {
             name: "@electron-forge/maker-rpm",
             config: {
                 options: {
+                    name: "proton-mail",
                     bin: getName(),
                     icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
                     homepage: pkg.author.url,
@@ -109,6 +110,7 @@ const config: ForgeConfig = {
             name: "@electron-forge/maker-deb",
             config: {
                 options: {
+                    name: "proton-mail",
                     bin: getName(),
                     icon: `${__dirname}/assets/linux/${getIcon()}.svg`,
                     maintainer: pkg.author.name,
