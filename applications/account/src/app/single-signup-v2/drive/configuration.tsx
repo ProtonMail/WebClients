@@ -7,6 +7,7 @@ import {
     getFreeDriveStorageFeature,
     getPremiumFeatures,
     getStorageFeature,
+    getStorageFeatureB2B,
     getVersionHistory,
 } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';
@@ -234,19 +235,19 @@ export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     ];
 };
 
-export const getDriveBusinessFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+export const getDriveBusinessFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
-    return [getStorageFeature(plan.MaxSpace, { freePlan, drivebusiness: true }), getVersionHistory('365')];
+    return [getStorageFeatureB2B(plan.MaxSpace, { subtext: false, unit: 'TB' }), getVersionHistory('365')];
 };
 
-export const getBundleProFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+export const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [
-        getStorageFeature(plan.MaxSpace, { freePlan }),
+        getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
         getVersionHistory('365'),
         getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
         getVPNConnections(1),

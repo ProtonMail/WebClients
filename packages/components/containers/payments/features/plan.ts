@@ -193,8 +193,6 @@ export const getDrivePlan = ({
 
 export const getDriveBusinessPlan = ({
     plan,
-    boldStorageSize,
-    freePlan,
 }: {
     freePlan: FreePlanDefault;
     plan: Plan;
@@ -204,10 +202,11 @@ export const getDriveBusinessPlan = ({
         plan: PLANS.DRIVE_BUSINESS,
         title: plan.Title,
         label: '',
-        description: c('new_plans: info').t`Protect sensitive business information and collaborate securely.`,
+        description: c('new_plans: info')
+            .t`Protect sensitive business information and collaborate securely.asdfasdfsdf`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan, drivebusiness: true }),
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false, unit: 'TB' }),
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
             getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
             getVPNConnections(1),
