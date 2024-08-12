@@ -44,7 +44,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
 
     const { validator, onFormSubmit, reset } = useFormErrors();
 
-    const invalidCodeError = c('l10n_nightly: Security checkup').t`Invalid code`;
+    const invalidCodeError = c('Safety review').t`Invalid code`;
 
     useEffect(() => {
         void initiateVerification({ api, method })
@@ -95,7 +95,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
         setCodeError('');
         reset();
 
-        createNotification({ text: c('l10n_nightly: Security checkup').jt`Code sent to ${boldValue}` });
+        createNotification({ text: c('Safety review').jt`Code sent to ${boldValue}` });
     };
 
     return (
@@ -124,7 +124,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
                 disabled={resendingCode}
                 className="mt-8"
             >
-                {c('l10n_nightly: Security checkup').t`Verify`}
+                {c('Safety review').t`Verify`}
             </Button>
             {showResendCode && token ? (
                 <Button
@@ -136,7 +136,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
                     onClick={() => withResendingCode(handleSendNewCode(token))}
                     className="mt-2"
                 >
-                    {c('l10n_nightly: Security checkup').t`Send a new code`}
+                    {c('Safety review').t`Send a new code`}
                 </Button>
             ) : null}
         </Form>
