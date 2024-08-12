@@ -325,15 +325,15 @@ export const SSO_PATHS = {
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
 export const SECURITY_CHECKUP_PATHS = {
-    ROOT: '/security-checkup',
-    SET_PHRASE: '/security-checkup/phrase',
-    SET_EMAIL: '/security-checkup/email',
-    VERIFY_EMAIL: '/security-checkup/email/verify',
-    ENABLE_EMAIL: '/security-checkup/email/enable',
-    SET_PHONE: '/security-checkup/phone',
-    VERIFY_PHONE: '/security-checkup/phone/verify',
-    ENABLE_PHONE: '/security-checkup/phone/enable',
-    ENABLE_DEVICE_RECOVERY: '/security-checkup/device',
+    ROOT: '/safety-review',
+    SET_PHRASE: '/safety-review/phrase',
+    SET_EMAIL: '/safety-review/email',
+    VERIFY_EMAIL: '/safety-review/email/verify',
+    ENABLE_EMAIL: '/safety-review/email/enable',
+    SET_PHONE: '/safety-review/phone',
+    VERIFY_PHONE: '/safety-review/phone/verify',
+    ENABLE_PHONE: '/safety-review/phone/enable',
+    ENABLE_DEVICE_RECOVERY: '/safety-review/device',
 };
 
 export const VPN_HOSTNAME = 'account.protonvpn.com';
