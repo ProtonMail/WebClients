@@ -206,7 +206,7 @@ export const getDriveBusinessPlan = ({
             .t`Protect sensitive business information and collaborate securely.asdfasdfsdf`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeatureB2B(plan.MaxSpace, { subtext: false, unit: 'TB' }),
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
             getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
             getVPNConnections(1),

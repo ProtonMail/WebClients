@@ -239,7 +239,7 @@ export const getDriveBusinessFeatures = ({ plan }: { plan: Plan | undefined; fre
     if (!plan) {
         return [];
     }
-    return [getStorageFeatureB2B(plan.MaxSpace, { subtext: false, unit: 'TB' }), getVersionHistory('365')];
+    return [getStorageFeatureB2B(plan.MaxSpace, { subtext: false }), getVersionHistory('365')];
 };
 
 export const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {

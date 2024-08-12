@@ -50,20 +50,28 @@ export const getLongSizeFormat = (key: SizeUnits, n: number) => {
     throw new Error('Unknown unit');
 };
 
-export const getUnit = (bytes: number): SizeUnits => {
-    if (bytes < sizeUnits.KB) {
+// Due to legacy reasons, we keep the default max to GB instead of TB to avoid changing expectations of current consumers
+const defaultUnitOptions: { max?: SizeUnits } = {
+    max: 'GB',
+};
+export const getUnit = (bytes: number, options = defaultUnitOptions): SizeUnits => {
+    if (bytes < sizeUnits.KB || options?.max === 'B') {
         return 'B';
     }
 
-    if (bytes < sizeUnits.MB) {
+    if (bytes < sizeUnits.MB || options?.max === 'KB') {
         return 'KB';
     }
 
-    if (bytes < sizeUnits.GB) {
+    if (bytes < sizeUnits.GB || options?.max === 'MB') {
         return 'MB';
     }
 
-    return 'GB';
+    if (bytes < sizeUnits.TB || options?.max === 'GB') {
+        return 'GB';
+    }
+
+    return 'TB';
 };
 
 const transformTo = ({
@@ -94,6 +102,7 @@ const transformTo = ({
 const humanSize = ({
     bytes = 0,
     unit: maybeUnit,
+    unitOptions,
     fraction: maybeFraction,
     withoutUnit,
     truncate,
@@ -101,10 +110,11 @@ const humanSize = ({
     truncate?: boolean;
     bytes: number | undefined;
     unit?: SizeUnits;
+    unitOptions?: Parameters<typeof getUnit>[1];
     withoutUnit?: boolean;
     fraction?: number;
 }) => {
-    const unit = maybeUnit || getUnit(bytes);
+    const unit = maybeUnit || getUnit(bytes, unitOptions);
     const fractionDigits = maybeFraction === undefined && unit === 'B' ? 0 : maybeFraction;
     return transformTo({ bytes, unit, withoutUnit, fractionDigits, truncate });
 };
