@@ -27,6 +27,8 @@ export const setIsProtonUserCookie = () => {
 
 // This is a cheap way to see if the current session is a proton user but it is not an totally accurate way!
 // Use with that in mind, most not be used for business critical features but more for marketing usage, upsells, etc... (which would not add additional api backend usage).
+// Example alternative:
+// - For Drive UrlsApp, more reliable way is to use isSessionProtonUser() method from the usePublicSession hook which infers if the current session is a proton user or not based on the response from the /auth API.
 export const isProtonUserFromCookie = () => {
     const cookie = getCookie(IS_PROTON_USER_COOKIE_NAME);
     return cookie === cookieValue;

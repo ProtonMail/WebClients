@@ -16,8 +16,8 @@ export default class MetricsBase {
         this.requestService.api.setVersionHeaders(clientID, appVersion);
     }
 
-    public setAuthHeaders(uid: string) {
-        this.requestService.api.setAuthHeaders(uid);
+    public setAuthHeaders(uid: string, accessToken?: string) {
+        this.requestService.api.setAuthHeaders(uid, accessToken);
     }
 
     public clearAuthHeaders() {
