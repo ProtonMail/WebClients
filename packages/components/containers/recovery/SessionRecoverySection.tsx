@@ -14,7 +14,8 @@ import {
     useIsSessionRecoveryInitiationAvailable,
     useNotifications,
 } from '../../hooks';
-import RecoveryModal from '../account/RecoveryModal';
+import ChangePasswordModal, { MODES } from '../account/ChangePasswordModal';
+import ReauthUsingRecoveryModal from '../account/ReauthUsingRecoveryModal';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -31,6 +32,7 @@ const SessionRecoverySection = () => {
 
     const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
     const [recoveryModal, setRecoveryModalOpen, renderRecoveryModal] = useModalState();
+    const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
     const [
         confirmDisableSessionRecoveryModal,
         setConfirmDisableSessionRecoveryModalOpen,
@@ -73,7 +75,8 @@ const SessionRecoverySection = () => {
                 />
             )}
             {renderRecoveryModal && (
-                <RecoveryModal
+                <ReauthUsingRecoveryModal
+                    availableRecoveryMethods={availableRecoveryMethods}
                     onBack={() => {
                         recoveryModal.onClose();
                         setSessionRecoveryModalOpen(true);
@@ -82,8 +85,15 @@ const SessionRecoverySection = () => {
                         recoveryModal.onClose();
                         setSessionRecoveryModalOpen(true);
                     }}
-                    availableRecoveryMethods={availableRecoveryMethods}
+                    onSuccess={() => setChangePasswordModalOpen(true)}
                     {...recoveryModal}
+                />
+            )}
+            {renderChangePasswordModal && (
+                <ChangePasswordModal
+                    mode={MODES.CHANGE_ONE_PASSWORD_MODE}
+                    signedInRecoveryFlow
+                    {...changePasswordModal}
                 />
             )}
             {renderConfirmDisableSessionRecoveryModal && (
