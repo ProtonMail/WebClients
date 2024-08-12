@@ -127,7 +127,7 @@ export const getStorageFeatureB2B = (
     const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
 
     return {
-        text: c('new_plans: feature').t`${size} storage per user`,
+        text: c('new_plans: feature').t`${size} of secure storage /user`,
         tooltip: c('new_plans: tooltip')
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}. Administrators can allocate different storage amounts to users in their organization`,
         subtext: options.subtext ? c('storage_split: info').t`For all ${BRAND_NAME} services` : undefined,
@@ -147,7 +147,7 @@ export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
 export const getVersionHistory = (options?: 'generic' | '30' | '365'): PlanCardFeatureDefinition => {
     if (options === '365' || options === '30') {
         return {
-            text: c('new_plans: feature').t`${options}-day file and folders version history`,
+            text: c('new_plans: feature').t`${options}-day file version history`,
             included: true,
         };
     }

@@ -12,12 +12,17 @@ import {
 } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';
 import {
+    getCustomSecureMailB2B,
     getFoldersAndLabelsFeature,
     getNAddressesFeature,
     getNDomainsFeature,
 } from '@proton/components/containers/payments/features/mail';
 import { getPasswordManager } from '@proton/components/containers/payments/features/pass';
-import { getVPNConnections } from '@proton/components/containers/payments/features/vpn';
+import { getUpToNUsers } from '@proton/components/containers/payments/features/plan';
+import {
+    getB2BVPNConnectionsDevicesFeature,
+    getVPNConnections,
+} from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
@@ -202,12 +207,7 @@ export const getDrivePlusFeatures = ({ plan, freePlan }: { plan: Plan | undefine
     if (!plan) {
         return [];
     }
-    return [
-        getStorageFeature(plan.MaxSpace, { freePlan }),
-        getEndToEndEncryption(),
-        getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-        getVersionHistory(),
-    ];
+    return [getStorageFeature(plan.MaxSpace, { freePlan }), getEndToEndEncryption(), getVersionHistory()];
 };
 
 export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
@@ -228,7 +228,7 @@ export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     }
     return [
         getStorageFeature(plan.MaxSpace, { freePlan, family: true }),
-        getEndToEndEncryption(),
+        getUpToNUsers(6),
         getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
         getNDomainsFeature({ n: plan.MaxDomains || 1 }),
         getFoldersAndLabelsFeature('unlimited'),
@@ -249,8 +249,8 @@ export const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePla
     return [
         getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
         getVersionHistory('365'),
-        getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-        getVPNConnections(1),
+        getCustomSecureMailB2B(),
+        getB2BVPNConnectionsDevicesFeature(10),
         getPasswordManager(),
     ];
 };

@@ -66,6 +66,20 @@ export const getHighSpeedVPNConnectionsFeature = (n: number = VPN_CONNECTIONS): 
     included: true,
 });
 
+const getB2BVPNConnectionsDevicesText = (n: number) => {
+    return c('Subscription attribute').ngettext(
+        msgid`VPN connection for ${n} device /user`,
+        `VPN connection for ${n} devices /user`,
+        n
+    );
+};
+
+export const getB2BVPNConnectionsDevicesFeature = (n: number = VPN_CONNECTIONS): PlanCardFeatureDefinition => ({
+    icon: 'brand-proton-vpn',
+    text: getB2BVPNConnectionsDevicesText(n),
+    included: true,
+});
+
 export const getVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
 };
