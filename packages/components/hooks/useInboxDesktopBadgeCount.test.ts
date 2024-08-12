@@ -46,13 +46,24 @@ describe('useInboxDesktopBadgeCount', () => {
         expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
     });
 
-    it('should call with not call when no count', () => {
+    it('should call with 0 when no count', () => {
         desktopHelpersMock.isElectronMail = true;
-        useConversationCountsMock.mockReturnValue([]);
+        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
+        useConversationCountsMock.mockReturnValue([[]]);
         useMessageCountsMock.mockReturnValue([]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
+    });
+
+    it('should call with 0 when negative count', () => {
+        desktopHelpersMock.isElectronMail = true;
+        useMailSettingsMock.mockReturnValue([{ ViewMode: VIEW_MODE.GROUP }]);
+        useConversationCountsMock.mockReturnValue([[{ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: -1, Total: 1 }]]);
+        useMessageCountsMock.mockReturnValue([]);
+
+        renderHook(() => useInboxDesktopBadgeCount());
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
     });
 
     it('should call with 1 when 1 unread conversation', () => {
