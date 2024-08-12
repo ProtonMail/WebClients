@@ -45,7 +45,6 @@ enum AccountFlag {
     ChargebeeFreeToPaidB2B = 'ChargebeeFreeToPaidB2B',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
-    LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
     B2BLogsPass = 'B2BLogsPass',
     SingleSignup = 'SingleSignup',
