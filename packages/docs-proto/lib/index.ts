@@ -15,6 +15,10 @@ export * from './Factory/CreateClientMessageWithDocumentUpdates'
 
 export * from './Generated'
 
+export * from './Payload/ConnectionReadyPayload'
+export * from './Payload/DocumentCommitUpdatedPayload'
+export * from './Payload/SHMOLGTCEIHPayload'
+
 export * from './ServerMessage/ServerMessageType'
 export * from './ServerMessage/ServerMessageTypeEnum'
 export * from './ServerMessage/ServerMessageTypeProps'
