@@ -1,5 +1,5 @@
 import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
-import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getAppVersionHeaders, getAuthHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from './../constants';
@@ -15,8 +15,8 @@ class MetricsApi implements IMetricsApi {
         this._versionHeaders = this.getVersionHeaders(clientID, appVersion);
     }
 
-    public setAuthHeaders(uid: string) {
-        this._authHeaders = this.getAuthHeaders(uid);
+    public setAuthHeaders(uid: string, accessToken?: string) {
+        this._authHeaders = this.getAuthHeaders(uid, accessToken);
     }
 
     public setVersionHeaders(clientID: string, appVersion: string) {
@@ -91,9 +91,13 @@ class MetricsApi implements IMetricsApi {
         }
     }
 
-    private getAuthHeaders(uid?: string) {
+    private getAuthHeaders(uid?: string, accessToken?: string) {
         if (!uid) {
             return {};
+        }
+
+        if (uid && accessToken) {
+            return getAuthHeaders(uid, accessToken);
         }
 
         return getUIDHeaders(uid);

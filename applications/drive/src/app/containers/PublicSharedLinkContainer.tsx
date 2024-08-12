@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { LocationErrorBoundary } from '@proton/components';
 import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useLoading } from '@proton/hooks';
+import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
@@ -40,7 +41,7 @@ function PublicShareLinkInitContainer() {
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [errorMessage, setError] = useState<string | undefined>();
     const [link, setLink] = useState<DecryptedLink>();
-    const { loadPublicShare } = usePublicShare();
+    const { loadPublicShare, user } = usePublicShare();
 
     // If password to the share was changed, page need to reload everything.
     // In such case we need to also clear all downloads to not keep anything
@@ -69,7 +70,13 @@ function PublicShareLinkInitContainer() {
         if (token && !isLoading && !authError && !isPasswordNeeded) {
             void withLoading(
                 loadPublicShare(abortController.signal)
-                    .then(({ link }) => setLink(link))
+                    .then(({ link }) => {
+                        setLink(link);
+                        metrics.drive_public_share_load_success_total.increment({
+                            type: link?.isFile ? 'file' : 'folder',
+                            plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
+                        });
+                    })
                     .catch((error) => {
                         console.error(error);
                         const apiError = getApiError(error);

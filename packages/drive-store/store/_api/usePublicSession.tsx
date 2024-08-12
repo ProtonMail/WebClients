@@ -5,7 +5,7 @@ import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaders, withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { srpAuth } from '@proton/shared/lib/srp';
 
 import { getLastActivePersistedUserSessionUID } from '../../utils/lastActivePersistedUserSession';
