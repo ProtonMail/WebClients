@@ -24,6 +24,7 @@ enum CommonFeatureFlag {
     Wallet = 'Wallet',
     WalletPlan = 'WalletPlan',
     DuoPlan = 'DuoPlan',
+    DriveBizPlan = 'DriveBizPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     LeftSidebarCollapsible = 'LeftSidebarCollapsible',
