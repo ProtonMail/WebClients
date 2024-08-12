@@ -10,12 +10,12 @@ const useShowUpsellBanner = (labelID: string) => {
     const needToShowUpsellBanner = useRef<boolean>(true);
 
     /**
-     * Users can dismiss the banner. However, we want to show it again every 3 months
+     * Users can dismiss the banner. However, we want to show it again every month
      * A value is stored in the localStorage so that we know if we need to show it again or not
      * - If no value is set, user did not click on dismiss => We want to show the banner (if other conditions are valid)
      * - If value is set
-     *      - If it was less than 3 months ago => Hide the banner
-     *      - If it was more than 3 months ago => Show the banner (if other conditions are valid)
+     *      - If it was less than a month ago => Hide the banner
+     *      - If it was more than a month ago => Show the banner (if other conditions are valid)
      */
     const [showAgain, setShowAgain] = useState(false);
 
@@ -51,7 +51,7 @@ const useShowUpsellBanner = (labelID: string) => {
 
     const handleNeedsToShowBanner = (storedTime: number) => {
         const today = Date.now();
-        const limitInterval = 3 * MONTH;
+        const limitInterval = 1 * MONTH;
 
         return storedTime + limitInterval < today;
     };
