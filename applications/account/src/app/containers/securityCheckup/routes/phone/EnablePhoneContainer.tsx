@@ -43,7 +43,7 @@ const EnablePhoneContainer = () => {
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="success" />}>
-                    {c('l10n_nightly: Security checkup').t`Your recovery phone has been enabled`}
+                    {c('Safety review').t`Your recovery phone has been enabled`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -52,12 +52,12 @@ const EnablePhoneContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`${BRAND_NAME} will use this phone number to send a reset code by SMS when you reset your password.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
-                    {c('l10n_nightly: Security checkup').t`Continue to Safety Review`}
+                    {c('Safety review').t`Continue to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -73,15 +73,15 @@ const EnablePhoneContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="danger" />}>
-                {c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
+                {c('Safety review').t`Enable recovery by phone`}
             </SecurityCheckupMainTitle>
 
-            <div className="mb-2">{c('l10n_nightly: Security checkup').t`You recovery phone number is:`}</div>
+            <div className="mb-2">{c('Safety review').t`You recovery phone number is:`}</div>
             <div className="rounded bg-weak p-3 mb-4">{formattedPhoneNumber}</div>
 
             <div>
                 {getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
+                    c('Safety review')
                         .t` **Enable recovery by phone** to regain access to your account if you forget your password.`
                 )}
             </div>
@@ -93,7 +93,7 @@ const EnablePhoneContainer = () => {
                 onClick={() => withEnabling(enablePasswordResetViaPhone)}
                 loading={enabling}
             >
-                {c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
+                {c('Safety review').t`Enable recovery by phone`}
             </Button>
         </SecurityCheckupMain>
     );

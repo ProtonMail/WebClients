@@ -27,7 +27,7 @@ const SecurityCheckupRouter = () => {
 
     const pageLoadOnceRef = useRef(false);
 
-    useAppTitle(c('l10n_nightly: Security checkup').t`Safety review`);
+    useAppTitle(c('Safety review').t`Safety review`);
 
     useEffect(() => {
         restoreSecurityCheckupSession({ dispatch, userId: user.ID });
