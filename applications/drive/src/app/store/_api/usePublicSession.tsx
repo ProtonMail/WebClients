@@ -38,6 +38,16 @@ function usePublicSessionProvider() {
     const sessionInfo = useRef<SessionInfo>();
 
     const initHandshake = async (token: string) => {
+        /*
+            initHandshake is the first request, which can fail, so we set the auth headers for the metrics.
+            Metrics to be authenticated either needs a persisted session (default, as below) or an access token set in initSession().
+            In case you neither have persisted session or access token, you will be 401 Unauthorized to call metrics.
+        */
+        const UID = getLastActivePersistedUserSessionUID();
+        if (UID) {
+            metrics.setAuthHeaders(UID);
+        }
+
         return api<SRPHandshakeInfo>(queryInitSRPHandshake(token)).then((handshakeInfo) => {
             return {
                 handshakeInfo,

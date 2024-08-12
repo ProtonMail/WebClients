@@ -46,10 +46,12 @@ export default function usePublicShare() {
                     extra: {
                         e,
                         public: true,
+                        crypto: true,
                     },
                 })
             )
         );
+
         const sharePassphrase = await CryptoProxy.decryptMessage({
             armoredMessage: Token.SharePassphrase,
             passwords: [computedPassword],
@@ -62,6 +64,7 @@ export default function usePublicShare() {
                     extra: {
                         e,
                         public: true,
+                        crypto: true,
                     },
                 })
             )
@@ -79,11 +82,13 @@ export default function usePublicShare() {
                     extra: {
                         e,
                         public: true,
+                        crypto: true,
                     },
                 })
             )
         );
 
+        clearTimeout(undefined);
         sharesKeys.set(sessionInfo.token, sharePrivateKey);
 
         setLinks(sessionInfo.token, [
