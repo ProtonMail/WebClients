@@ -54,7 +54,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                     className="inline-flex items-center"
                 >
                     <Icon name="arrow-left" className="shrink-0 mr-1 mb-0.5" />
-                    {c('l10n_nightly: Security checkup').t`Account safety review`}
+                    {c('Safety review').t`Account safety review`}
                 </ButtonLike>
             );
         }

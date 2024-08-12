@@ -31,7 +31,7 @@ const VerifyEmailContainer = () => {
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="success" />}>
-                    {c('l10n_nightly: Security checkup').t`Your recovery email is set`}
+                    {c('Safety review').t`Your recovery email is set`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -40,12 +40,12 @@ const VerifyEmailContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`${BRAND_NAME} will use this address to send a reset code by email when you reset your password.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
-                    {c('l10n_nightly: Security checkup').t`Continue to Safety Review`}
+                    {c('Safety review').t`Continue to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -59,16 +59,16 @@ const VerifyEmailContainer = () => {
                 </div>
 
                 <SecurityCheckupMainTitle>
-                    {c('l10n_nightly: Security checkup').t`There was an error verifying your recovery email`}
+                    {c('Safety review').t`There was an error verifying your recovery email`}
                 </SecurityCheckupMainTitle>
 
                 <div>
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm">
-                    {c('l10n_nightly: Security checkup').t`Back to Safety Review`}
+                    {c('Safety review').t`Back to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -87,11 +87,11 @@ const VerifyEmailContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="warning" />}>
-                {c('l10n_nightly: Security checkup').t`Verify your recovery email address`}
+                {c('Safety review').t`Verify your recovery email address`}
             </SecurityCheckupMainTitle>
 
             <div className="mb-12">
-                {c('l10n_nightly: Security checkup')
+                {c('Safety review')
                     .jt`To make sure the email address is yours, enter the verification code sent to ${boldEmail}.`}
             </div>
 
