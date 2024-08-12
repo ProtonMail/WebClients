@@ -37,6 +37,16 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setTheme'; payload: ThemeSetting }
     | { type: 'earlyAccess'; payload: Environment | undefined };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
+export type IPCInboxHostUpdateMessage = {
+    type: 'captureMessage';
+    payload: {
+        message: string;
+        level: 'error' | 'warning';
+        tags: Record<string, string | number>;
+        extra: Record<string, string | number>;
+    };
+};
+export type IPCInboxHostUpdateMessageType = IPCInboxHostUpdateMessage['type'];
 
 /**
  * Electron injects an object in the window object
@@ -50,6 +60,10 @@ export type IPCInboxMessageBroker = {
     getInfo?: <T extends IPCInboxGetInfoMessage['type']>(
         type: T
     ) => Extract<IPCInboxGetInfoMessage, { type: T }>['result'];
+    on?: <T extends IPCInboxHostUpdateMessageType>(
+        type: T,
+        callback: (payload: Extract<IPCInboxHostUpdateMessage, { type: T }>['payload']) => void
+    ) => { removeListener: () => void };
     send?: <T extends IPCInboxClientUpdateMessageType>(
         type: T,
         payload: Extract<IPCInboxClientUpdateMessage, { type: T }>['payload']
