@@ -103,9 +103,24 @@ describe('MetricsApi', () => {
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-uid')).toBe(undefined);
         });
+
+        it('sets auth headers with Authorization when uid and access token are defined', async () => {
+            const uid = 'uid';
+            const accessToken = 'accessToken';
+            const metricsApi = new MetricsApi();
+
+            metricsApi.setAuthHeaders(uid, accessToken);
+
+            await metricsApi.fetch('/route');
+            const content = fetchMock.mock.lastCall?.[1];
+
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+            expect(getHeader(content?.headers, 'x-pm-uid')).toBe(uid);
+            expect(getHeader(content?.headers, 'Authorization')).toBe(`Bearer ${accessToken}`);
+        });
     });
 
-    describe('setAuthHeaders', () => {
+    describe('setVersionHeaders', () => {
         it('sets app version headers when clientID and appVersion are defined', async () => {
             const clientID = 'clientID';
             const appVersion = 'appVersion';
