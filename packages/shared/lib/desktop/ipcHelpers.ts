@@ -21,6 +21,9 @@ export function invokeInboxDesktopIPC({ type, payload }: IPCInboxClientUpdateMes
 export const canGetInboxDesktopInfo =
     isElectronMail && !!window.ipcInboxMessageBroker && !!window.ipcInboxMessageBroker!.getInfo;
 
+export const canListenInboxDesktopHostMessages =
+    isElectronMail && !!window.ipcInboxMessageBroker && !!window.ipcInboxMessageBroker!.on;
+
 export function getInboxDesktopInfo<T extends IPCInboxGetInfoMessage['type']>(key: T) {
     return window.ipcInboxMessageBroker!.getInfo!<T>(key);
 }
