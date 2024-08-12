@@ -1,3 +1,4 @@
+import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
@@ -6,6 +7,7 @@ import { EnrichedError } from './errorHandling/EnrichedError';
 
 export const getLastActivePersistedUserSessionUID = (): string | null => {
     try {
+        // Last Active Persisted Session in Drive apps
         const storageKeys = Object.keys(localStorage);
         let lastActiveUserId = '';
         let lastAccess = 0;
@@ -32,7 +34,18 @@ export const getLastActivePersistedUserSessionUID = (): string | null => {
             }
         }
 
-        return null;
+        // Last Active Persisted Session in any apps
+        let persistedSession: PersistedSession | null = null;
+        for (const k of storageKeys) {
+            if (k.startsWith(STORAGE_PREFIX)) {
+                const data = JSON.parse(localStorage[k]) as PersistedSession;
+                if (persistedSession === null || data.persistedAt > persistedSession.persistedAt) {
+                    persistedSession = data;
+                }
+            }
+        }
+
+        return persistedSession?.UID ?? null;
     } catch (e) {
         sendErrorReport(
             new EnrichedError('Failed to parse JSON from localStorage', {
