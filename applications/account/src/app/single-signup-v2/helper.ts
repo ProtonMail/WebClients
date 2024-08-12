@@ -537,6 +537,7 @@ export const getUserInfo = async ({
                     planID: upsell.plan.Name,
                     organization,
                     plans,
+                    user,
                 }),
             });
         }
