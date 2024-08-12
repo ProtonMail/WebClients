@@ -1,14 +1,15 @@
-import type { LexicalEditor } from 'lexical'
-
-export function getEditorDimensionsWithoutPadding(editor: LexicalEditor) {
-  const editorRootElement = editor.getRootElement()
-
-  if (!editorRootElement) {
+export function getElementDimensionsWithoutPadding(element: HTMLElement | null):
+  | {
+      width: number
+      height: number
+    }
+  | undefined {
+  if (!element) {
     return undefined
   }
 
-  const editorRootElementStyle = getComputedStyle(editorRootElement)
-  const editorRootElementRect = editorRootElement.getBoundingClientRect()
+  const editorRootElementStyle = getComputedStyle(element)
+  const editorRootElementRect = element.getBoundingClientRect()
 
   const horizontalPadding =
     parseFloat(editorRootElementStyle.paddingLeft) + parseFloat(editorRootElementStyle.paddingRight)

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { EditorToClientBridge } from './Bridge/EditorToClientBridge'
 import { Editor } from './Editor'
+import { c } from 'ttag'
 import type {
   BroadcastSource,
   ClientRequiresEditorMethods,
@@ -206,9 +207,15 @@ export function App({ nonInteractiveMode = false }: Props) {
 
           const editorState = editorRef.current.getEditorState().toJSON()
 
-          return exportDataFromEditorState(editorState, format, {
-            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
-          })
+          try {
+            const result = await exportDataFromEditorState(editorState, format, {
+              fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+            })
+            return result
+          } catch (error) {
+            void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
+            throw error
+          }
         },
 
         async printAsPDF(): Promise<void> {
