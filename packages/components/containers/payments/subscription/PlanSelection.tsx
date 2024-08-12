@@ -15,9 +15,9 @@ import {
 } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
+    getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
     getPricePerCycle,
-    hasFamily,
     hasMaximumCycle,
     hasSomeAddonOrPlan,
 } from '@proton/shared/lib/helpers/subscription';
@@ -213,8 +213,8 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
-    const canAccessDuoPlan = useFlag('DuoPlan');
     const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
+    const canAccessDuoPlan = useFlag('DuoPlan') && getCanSubscriptionAccessDuoPlan(subscription);
 
     const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
@@ -278,32 +278,16 @@ const PlanSelection = ({
         return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
     }
 
-    const isFamilySubscription = hasFamily(subscription);
-
     let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
-        canAccessDuoPlan &&
-        (isFreeSubscription ||
-            hasSomeAddonOrPlan(subscription, [
-                PLANS.MAIL,
-                PLANS.DRIVE,
-                PLANS.VPN,
-                PLANS.BUNDLE,
-                PLANS.MAIL_PRO,
-                PLANS.VISIONARY,
-                PLANS.MAIL_BUSINESS,
-                PLANS.BUNDLE_PRO,
-                PLANS.BUNDLE_PRO_2024,
-            ]))
-            ? plansMap[PLANS.DUO]
-            : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
     ]);
 
     let FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        canAccessDuoPlan && !isFamilySubscription ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
         plansMap[PLANS.FAMILY],
     ]);
 
