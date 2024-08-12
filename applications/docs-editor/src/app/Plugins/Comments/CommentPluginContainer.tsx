@@ -312,6 +312,22 @@ export default function CommentPlugin({
     },
     [editor, markNodeMap],
   )
+  const getMarkNodes = useCallback(
+    (markID: string) => {
+      return editor.getEditorState().read(() => {
+        const markNodeKeys = markNodeMap.get(markID)
+        if (!markNodeKeys) {
+          return null
+        }
+        return Array.from(markNodeKeys)
+          .map((key) => {
+            return $getNodeByKey(key)
+          })
+          .filter($isCommentThreadMarkNode)
+      })
+    },
+    [editor, markNodeMap],
+  )
 
   useEffect(() => {
     return mergeRegister(
@@ -351,6 +367,7 @@ export default function CommentPlugin({
         threadToFocus,
         setThreadToFocus,
         awarenessStates,
+        getMarkNodes,
       }}
     >
       {showCommentInput &&
