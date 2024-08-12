@@ -392,9 +392,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                         >
                             <Icon className="shrink-0" name="pass-shield-warning" size={6} />
 
-                            <div>
-                                {c('l10n_nightly: Security checkup').t`You have recommended account safety actions`}
-                            </div>
+                            <div>{c('Safety review').t`You have recommended account safety actions`}</div>
                         </AppLink>
                     ) : null}
 
