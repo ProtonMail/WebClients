@@ -10,6 +10,11 @@ export const METRICS_BATCH_SIZE = 100;
 export const METRICS_REQUEST_FREQUENCY_SECONDS = 5;
 
 /**
+ * Maximum number of failed batch attempts before killing the service
+ */
+export const METRICS_MAX_JAIL = 3;
+
+/**
  * Maximum number of times an API call
  * will be retried before abandoning the request
  */
