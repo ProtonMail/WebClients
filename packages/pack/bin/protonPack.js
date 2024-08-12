@@ -18,6 +18,7 @@ const getPort = (basePort) => {
 const writeConfig = async (configFile) => {
     const configPath = path.resolve('./src/app/config.ts');
     console.log(`writing file ${configPath}`);
+
     await fs.mkdir(path.dirname(configPath), { recursive: true });
     await fs.writeFile(configPath, configFile);
 };
