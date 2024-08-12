@@ -3,6 +3,7 @@ import { $isLinkNode } from '@lexical/link'
 import { $isListItemNode, $isListNode } from '@lexical/list'
 import { $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
 import { $isTableNode, $isTableCellNode, $isTableRowNode } from '@lexical/table'
+import type { EditorState } from 'lexical'
 import { type LexicalNode, $isLineBreakNode, $isTextNode, $isElementNode, $isParagraphNode } from 'lexical'
 import { $isImageNode } from '../../../../Plugins/Image/ImageNode'
 import { ExportStyles } from '../ExportStyles'
@@ -11,10 +12,20 @@ import { getListItemNode } from './getListItemNode'
 import { getNodeTextAlignment } from './getNodeTextAlignment'
 import type { PDFDataNode } from '../PDFDataNode'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
+import { toImage } from '@proton/shared/lib/helpers/image'
+import { isWebpImage } from '../../../ImageSrcUtils'
 
-export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode => {
-  const parent = node.getParent()
+const MaxEditorWidth = 816
+const ApproximateWidthOfA4PDF = 595
+const ApproximatePaddingThatGivesGoodResults = 19
+const MaxImageWidth = ApproximateWidthOfA4PDF + ApproximatePaddingThatGivesGoodResults
+const EditorToPDFConversionFactor = MaxImageWidth / MaxEditorWidth
 
+function pixelsToPoints(pixels: number): number {
+  return pixels * 0.75
+}
+
+export const getPDFDataNodeFromLexicalNode = async (node: LexicalNode, state: EditorState): Promise<PDFDataNode> => {
   if ($isLineBreakNode(node)) {
     return {
       type: 'Text',
@@ -22,45 +33,48 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
     }
   }
 
+  const parent = state.read(() => node.getParent())
   if ($isTextNode(node)) {
-    const isInlineCode = node.hasFormat('code')
-    const isCodeNodeText = $isCodeNode(parent)
-    const isBold = node.hasFormat('bold')
-    const isItalic = node.hasFormat('italic')
-    const isHighlight = node.hasFormat('highlight')
+    return state.read(() => {
+      const isInlineCode = node.hasFormat('code')
+      const isCodeNodeText = $isCodeNode(parent)
+      const isBold = node.hasFormat('bold')
+      const isItalic = node.hasFormat('italic')
+      const isHighlight = node.hasFormat('highlight')
 
-    let font = isInlineCode || isCodeNodeText ? 'Courier' : 'Helvetica'
-    if (isBold || isItalic) {
-      font += '-'
-      if (isBold) {
-        font += 'Bold'
+      let font = isInlineCode || isCodeNodeText ? 'Courier' : 'Helvetica'
+      if (isBold || isItalic) {
+        font += '-'
+        if (isBold) {
+          font += 'Bold'
+        }
+        if (isItalic) {
+          font += 'Oblique'
+        }
       }
-      if (isItalic) {
-        font += 'Oblique'
-      }
-    }
 
-    return {
-      type: 'Text',
-      children: node.getTextContent(),
-      style: {
-        fontFamily: font,
-        // eslint-disable-next-line no-nested-ternary
-        textDecoration: node.hasFormat('underline')
-          ? 'underline'
-          : node.hasFormat('strikethrough')
-            ? 'line-through'
-            : undefined,
-        // eslint-disable-next-line no-nested-ternary
-        backgroundColor: isInlineCode ? '#f1f1f1' : isHighlight ? 'rgb(255,255,0)' : undefined,
-        fontSize: isInlineCode || isCodeNodeText ? 11 : undefined,
-        textAlign: $isElementNode(parent) ? getNodeTextAlignment(parent) : 'left',
-      },
-    }
+      return {
+        type: 'Text',
+        children: node.getTextContent(),
+        style: {
+          fontFamily: font,
+          // eslint-disable-next-line no-nested-ternary
+          textDecoration: node.hasFormat('underline')
+            ? 'underline'
+            : node.hasFormat('strikethrough')
+              ? 'line-through'
+              : undefined,
+          // eslint-disable-next-line no-nested-ternary
+          backgroundColor: isInlineCode ? '#f1f1f1' : isHighlight ? 'rgb(255,255,0)' : undefined,
+          fontSize: isInlineCode || isCodeNodeText ? 11 : undefined,
+          textAlign: $isElementNode(parent) ? getNodeTextAlignment(parent) : 'left',
+        },
+      }
+    })
   }
 
   if ($isCodeNode(node)) {
-    const children = node.getChildren()
+    const children = state.read(() => node.getChildren())
     const lines: LexicalNode[][] = [[]]
 
     for (let i = 0, currentLine = 0; i < children.length; i++) {
@@ -74,6 +88,20 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
       }
     }
 
+    const processedLines: PDFDataNode[] = []
+    for (const line of lines) {
+      const sublines: PDFDataNode[] = []
+      for (const subline of line) {
+        const processedSubline = await getPDFDataNodeFromLexicalNode(subline, state)
+        sublines.push(processedSubline)
+      }
+      processedLines.push({
+        type: 'View',
+        style: [ExportStyles.row, ExportStyles.wrap],
+        children: sublines,
+      })
+    }
+
     return {
       type: 'View',
       style: [
@@ -85,15 +113,7 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
           fontFamily: 'Courier',
         },
       ],
-      children: lines.map((line) => {
-        return {
-          type: 'View',
-          style: [ExportStyles.row, ExportStyles.wrap],
-          children: line.map((child) => {
-            return getPDFDataNodeFromLexicalNode(child)
-          }),
-        }
-      }),
+      children: processedLines,
     }
   }
 
@@ -111,23 +131,61 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
         ],
       }
     }
+
+    const src = node.__src
+    if (isWebpImage(src)) {
+      return null
+    }
+
+    let width = state.read(() => node.getWidth())
+    let height = state.read(() => node.getHeight())
+
+    if (width === 'inherit' || height === 'inherit') {
+      const image = await toImage(src)
+      width = width === 'inherit' ? image.width : width
+      height = height === 'inherit' ? image.height : height
+    }
+
+    const aspectRatio = width && height ? width / height : 1
+
+    let finalWidth = width
+    let finalHeight = height
+
+    if (width >= MaxImageWidth) {
+      finalWidth = MaxImageWidth
+      finalHeight = finalWidth / aspectRatio
+    }
+
+    finalWidth *= EditorToPDFConversionFactor
+    finalHeight *= EditorToPDFConversionFactor
+
+    const widthInPts = pixelsToPoints(finalWidth)
+    const heightInPts = pixelsToPoints(finalHeight)
+
     return {
       type: 'Image',
-      src: node.__src,
+      src: src,
+      style: {
+        width: widthInPts,
+        height: heightInPts,
+      },
     }
   }
 
-  const children =
-    $isElementNode(node) || $isTableNode(node) || $isTableCellNode(node) || $isTableRowNode(node)
-      ? node.getChildren().map((child) => {
-          return getPDFDataNodeFromLexicalNode(child)
-        })
-      : undefined
+  const children: PDFDataNode[] = []
+  if ($isElementNode(node) || $isTableNode(node) || $isTableCellNode(node) || $isTableRowNode(node)) {
+    for (const child of state.read(() => node.getChildren())) {
+      const processedChild = await getPDFDataNodeFromLexicalNode(child, state)
+      if (processedChild) {
+        children.push(processedChild)
+      }
+    }
+  }
 
   if ($isLinkNode(node)) {
     return {
       type: 'Link',
-      src: node.getURL(),
+      src: state.read(() => node.getURL()),
       children,
     }
   }
@@ -137,9 +195,9 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
       return null
     }
 
-    const listType = parent.getListType()
+    const listType = state.read(() => parent.getListType())
 
-    const isNestedList = node.getChildren().some((child) => $isListNode(child))
+    const isNestedList = state.read(() => node.getChildren()).some((child) => $isListNode(child))
 
     if (isNestedList) {
       return {
@@ -157,8 +215,8 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
     return getListItemNode({
       children,
       listType,
-      value: node.getValue(),
-      checked: node.getChecked(),
+      value: state.read(() => node.getValue()),
+      checked: state.read(() => node.getChecked()),
     })
   }
 
@@ -168,6 +226,7 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
       style: [
         ExportStyles.column,
         {
+          textAlign: state.read(() => getNodeTextAlignment(node)),
           gap: 7,
         },
       ],
@@ -175,15 +234,22 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
     }
   }
 
-  if ($isParagraphNode(node) && node.getTextContent().length === 0) {
-    return null
+  if ($isParagraphNode(node)) {
+    if (state.read(() => node.getTextContent()).length === 0 && children) {
+      return {
+        type: 'View',
+        children,
+      }
+    } else if (state.read(() => node.getTextContent()).length === 0) {
+      return null
+    }
   }
 
   if ($isTableCellNode(node)) {
     return {
       type: 'View',
       style: {
-        backgroundColor: node.hasHeader() ? '#f4f5f7' : undefined,
+        backgroundColor: state.read(() => node.hasHeader()) ? '#f4f5f7' : undefined,
         borderColor: '#e3e3e3',
         borderWidth: 1,
         flex: 1,
@@ -216,7 +282,7 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
         ExportStyles.row,
         ExportStyles.wrap,
         {
-          fontSize: $isHeadingNode(node) ? getFontSizeForHeading(node) : undefined,
+          fontSize: $isHeadingNode(node) ? state.read(() => getFontSizeForHeading(node)) : undefined,
         },
         $isQuoteNode(node) ? ExportStyles.quote : {},
       ],
@@ -245,6 +311,6 @@ export const getPDFDataNodeFromLexicalNode = (node: LexicalNode): PDFDataNode =>
   return {
     type: 'View',
     style: [ExportStyles.page, ExportStyles.block, ExportStyles.row, ExportStyles.wrap],
-    children: [{ type: 'Text', children: node.getTextContent() }],
+    children: [{ type: 'Text', children: state.read(() => node.getTextContent()) }],
   }
 }
