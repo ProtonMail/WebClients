@@ -62,7 +62,7 @@ const useTips = () => {
     const [userSettings, loadingSettings] = useUserSettings();
     const activeAddresses = getActiveAddresses(addresses ?? []);
     const [missScopePass, setMissScopePass] = useState(false);
-    const [organization] = useOrganization();
+    const [organization, loadingOrganization] = useOrganization();
 
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
 
@@ -77,6 +77,7 @@ const useTips = () => {
         loadingFolders ||
         loadingUser ||
         loadingSnoozedMessages ||
+        loadingOrganization ||
         loadingScheduledMessages;
 
     const labelID = useMailSelector((store) => store.elements.params.labelID);
