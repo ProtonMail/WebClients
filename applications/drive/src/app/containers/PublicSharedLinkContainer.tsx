@@ -73,8 +73,7 @@ function PublicShareLinkInitContainer() {
         }
         if (error) {
             metrics.drive_public_share_load_error_total.increment({
-                // TODO: There is a flaw here, if we can't decrypt the link we don't know the file type, so it will default to 'file' (the first ternary condition), we should add a third type 'unknown'
-                type: !link ? 'file' : link.isFile ? 'file' : 'folder',
+                type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
                 plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
                 error: getErrorMetricType(error),
             });
