@@ -16,12 +16,13 @@
     },
     "dependencies": {
         "@emoji-mart/data": "^1.0.3",
-        "@floating-ui/dom": "^1.6.8",
+        "@floating-ui/dom": "^1.6.10",
         "@noble/ed25519": "1.7.3",
         "@proton/account": "workspace:^",
         "@proton/calendar": "workspace:^",
         "@proton/chargebee": "workspace:^",
         "@proton/features": "workspace:^",
+        "@proton/icons": "workspace:^",
         "@proton/mail": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/react-polymorphic-types": "workspace:^",
@@ -63,7 +64,7 @@
         "react-sortable-hoc": "^2.0.0",
         "react-virtualized": "^9.22.5",
         "resize-observer": "^1.0.4",
-        "roosterjs": "8.47.0",
+        "roosterjs": "8.61.0",
         "tabbable": "^6.2.0",
         "tinycolor2": "^1.6.0",
         "ttag": "^1.8.7"

@@ -18,7 +18,6 @@ export enum TelemetryMeasurementGroups {
     mailSelectAll = 'mail.web.select_all',
     mailSnooze = 'mail.web.snooze',
     mailSignup = 'mail.web.signup',
-    mailSimpleLogin = 'mail.web.simplelogin_popups',
     mailComposerAssistant = 'mail.web.composer_assistant',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
@@ -38,13 +37,6 @@ export enum TelemetryMailTrial2024UpsellModal {
     noThanks = 'no_thanks',
     closeModal = 'close_modal',
     upsell = 'upsell',
-}
-
-export enum TelemetrySimpleLoginEvents {
-    spam_view = 'spam_view',
-    newsletter_unsubscribe = 'newsletter_unsubscribe',
-    simplelogin_modal_view = 'simplelogin_modal_view',
-    go_to_simplelogin = 'go_to_simplelogin',
 }
 
 export enum TelemetryCalendarEvents {
@@ -177,7 +169,6 @@ export enum TelemetryCollapsibleLeftSidebarEvents {
 }
 
 export type TelemetryEvents =
-    | TelemetrySimpleLoginEvents
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
     | TelemetryCalendarEvents

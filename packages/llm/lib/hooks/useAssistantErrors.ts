@@ -66,6 +66,10 @@ const getErrorMessage = (errorType: ERROR_TYPE, assistantType: ASSISTANT_TYPE) =
         return c('Error').t`Problem unloading data not needed when the writing assistant is inactive`;
     }
 
+    if (errorType === ERROR_TYPE.GENERATION_TOO_LONG) {
+        return c('Error').t`Text is too long to refine`;
+    }
+
     throw new Error('Unknown error type');
 };
 
@@ -95,7 +99,7 @@ const useAssistantErrors = () => {
             errorType,
         });
 
-        setErrors([...errors, newError]);
+        setErrors((errors) => [...errors, newError]);
     };
 
     const addGlobalError = (assistantType: ASSISTANT_TYPE, errorType: ERROR_TYPE) => {
@@ -111,28 +115,28 @@ const useAssistantErrors = () => {
             errorType,
         });
 
-        setErrors([...errors, newError]);
+        setErrors((errors) => [...errors, newError]);
 
         return errorMessage;
     };
 
     const cleanSpecificErrors = (assistantID: string) => {
-        const filteredErrors = errors.filter((error) => {
-            if (error.type === AssistantErrorTypes.specificError) {
-                return error.assistantID !== assistantID;
-            }
-            return error;
+        setErrors((errors) => {
+            return errors.filter((error) => {
+                if (error.type === AssistantErrorTypes.specificError) {
+                    return error.assistantID !== assistantID;
+                }
+                return error;
+            });
         });
-
-        setErrors(filteredErrors);
     };
 
     const cleanGlobalErrors = () => {
-        const filteredErrors = errors.filter((error) => {
-            return error.type !== AssistantErrorTypes.globalError;
+        setErrors((errors) => {
+            return errors.filter((error) => {
+                return error.type !== AssistantErrorTypes.globalError;
+            });
         });
-
-        setErrors(filteredErrors);
     };
 
     return { errors, addSpecificError, cleanSpecificErrors, addGlobalError, cleanGlobalErrors };

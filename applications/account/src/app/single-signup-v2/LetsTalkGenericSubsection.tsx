@@ -18,11 +18,11 @@ const getFeatures = (): PlanCardFeatureDefinition[] => {
     }));
 };
 
-const LetsTalkGenericSubSection = () => {
+const LetsTalkGenericSubSection = ({ app }: { app: 'mail' | 'drive' }) => {
     return (
         <div className="flex flex-column gap-4 w-full">
             <div className="text-left text-sm">
-                {c('pass_signup_2023: Info').t`Customizable services for large teams.`}
+                {c('drive_signup_2024: Info').t`Tailored made solutions for larger organizations with custom needs`}
             </div>
             <ButtonLike
                 as="a"
@@ -30,10 +30,10 @@ const LetsTalkGenericSubSection = () => {
                 color="norm"
                 fullWidth
                 pill
-                href={getStaticURL('/business/contact?pd=mail&int=demo')}
+                href={getStaticURL(`/business/contact?pd=${app}&int=enterprise&ref=appdashboard`)}
                 target="_blank"
             >
-                {c('signup: Action').t`Request a demo`}
+                {c('signup: Action').t`Request trial`}
             </ButtonLike>
 
             <PlanCardFeatureList

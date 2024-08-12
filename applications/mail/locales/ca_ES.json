@@ -558,6 +558,9 @@
       "hide-my-email aliases": [
         "àlies de hide-my-email"
       ],
+      "I like this response": [
+        "M'agrada aquesta resposta"
+      ],
       "Image could not be loaded with tracker protection.": [
         "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
       ],
@@ -720,6 +723,12 @@
       ],
       "Minimize composer": [
         "Minimitzar l'editor"
+      ],
+      "Modify": [
+        "Modifica"
+      ],
+      "Modify selection": [
+        "Modifica la selecció"
       ],
       "Monday": [
         "Dilluns"
@@ -949,6 +958,9 @@
       "Remove this label": [
         "Esborra aquesta etiqueta"
       ],
+      "Replace": [
+        "Reemplaça"
+      ],
       "Reply": [
         "Respon"
       ],
@@ -1176,6 +1188,9 @@
       ],
       "Stay": [
         "Mantenir"
+      ],
+      "Stop downloading assistant": [
+        "Atura la baixada de l'assistent"
       ],
       "Stop generating result": [
         "Atura la generació del resultat"
@@ -1523,6 +1538,9 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
+      ],
+      "Run on device": [
+        "Executa al dispositiu"
       ],
       "Run on servers": [
         "Executa als servidors"
@@ -2799,6 +2817,9 @@
       ],
       "Ireland": [
         "Irlanda"
+      ],
+      "Islamic Republic of Iran": [
+        "República Islàmica de l'Iran"
       ],
       "Isle of Man": [
         "Illa de Man"
@@ -4578,9 +4599,6 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Els comptes amb dominis personalitzats no poden unir-se a un pla Visionary o familiar."
-      ],
       "customer support": [
         "atenció al client"
       ],
@@ -4602,12 +4620,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Els plans Visionary i familiar actualment no admeten comptes vitalicis."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
       ],
@@ -4625,9 +4637,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "El vostre pla actual no pot unir-se a un pla Visionary o familiar."
       ]
     },
     "familyOffer_2023:Label": {
@@ -8203,6 +8212,9 @@
       "Wonderful": [
         "Meravellosa"
       ],
+      "Writing assistant": [
+        "Assistent d'escriptura"
+      ],
       "Your alias": [
         "El vostre àlies"
       ],
@@ -8853,6 +8865,12 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for $1": [
+        "Comenceu per $1"
+      ],
+      "Get started for 1 €": [
+        "Comenceu per 1€"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -9914,6 +9932,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
+      "Please select billing state": [
+        "Seleccioneu l'estat de facturació"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
@@ -10007,6 +10028,9 @@
       ],
       "First name": [
         "Nom"
+      ],
+      "Generating": [
+        "S'està generant"
       ],
       "Gift code": [
         "Codi regal"
@@ -11209,6 +11233,9 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "2 users": [
+        "2 usuaris"
+      ],
       "20 email addresses per user": [
         "20 adreces de correu electrònic per usuari"
       ],
@@ -11361,6 +11388,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Unlimited privacy for two": [
+        "Privadesa il·limitada per a dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Els usuaris no podran gestionar els seus calendaris"
@@ -11761,6 +11791,9 @@
       "Self-destruction set": [
         "S'ha establert la destrucció automàtica"
       ],
+      "Text copied to clipboard": [
+        "Text copiat al porta-retalls"
+      ],
       "Thanks for the feedback!": [
         "Gràcies pel vostre comentari."
       ],
@@ -11787,6 +11820,9 @@
       ]
     },
     "Success notification": {
+      " is now active": [
+        " ara està actiu"
+      ],
       "${ label.Name } removed": [
         "${ label.Name } esborrat"
       ]
@@ -11934,6 +11970,9 @@
       ],
       "Create an alias": [
         "Crea un àlies"
+      ],
+      "Create new email address": [
+        "Crea una nova adreça de correu electrònic"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
@@ -12895,6 +12934,16 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ]
+    },
+    "wallet_signup_2024:Action": {
+      "Access Wallet app": [
+        "Accedeix a l'aplicació Wallet"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema amb Wallet"
       ]
     },
     "wallet_signup_2024:Title": {

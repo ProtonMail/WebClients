@@ -508,6 +508,9 @@
       "Try for free": [
         "Prova gratis"
       ],
+      "Unlock": [
+        "Sblocca"
+      ],
       "Unlock offline with password": [
         "Sblocca offline con password"
       ],
@@ -1082,6 +1085,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
+      ],
       "Add a username field": [
         "Aggiungi il campo nome utente"
       ],
@@ -1132,6 +1138,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Prima di esportare i tuoi dati con questo formato, apri le impostazioni di Safari -> scheda \"Generale\" -> disabilita l'opzione \"Apri file sicuri dopo il download\". Questo impedirà a Safari di estrarre in modo errato il file esportato."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Blocco con biometria impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "La biometria verrà disabilitata e dovrà essere abilitata nuovamente."
       ],
       "Breaches detected": [
         "Violazioni di dati rilevate"
@@ -1231,6 +1243,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Abilita il blocco automatico per proteggere i tuoi dati"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Abilita il blocco automatico con biometria"
+      ],
+      "Enabling biometrics lock failed": [
+        "Impossibile abilitare il blocco con biometria"
       ],
       "Enabling offline mode...": [
         "Abilitazione della modalità offline..."
@@ -1506,6 +1524,9 @@
       "Please confirm your password": [
         "Conferma la tua password"
       ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Conferma la tua password per abilitare il blocco automatico con biometria."
+      ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Conferma la tua password per abilitare il blocco automatico con password."
       ],
@@ -1657,6 +1678,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
+      "This option is currently not available on your device.": [
+        "Questa opzione non è attualmente disponibile sul tuo dispositivo."
+      ],
       "This setting is disabled on the organization level": [
         "Questa impostazione è disabilitata a livello di organizzazione"
       ],
@@ -1681,11 +1705,17 @@
       "Unlimited hide-my-email aliases": [
         "Alias Hide-my-email illimitati"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Sblocca ${ PASS_SHORT_APP_NAME } con biometria"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password aggiuntiva"
+      ],
+      "Unlock with biometrics": [
+        "Sblocca con biometria"
       ],
       "Unpinning item...": [
         "Annullamento del fissaggio dell'elemento in corso"
@@ -1902,6 +1932,9 @@
       ],
       "Beta Access": [
         "Accesso beta"
+      ],
+      "Biometrics": [
+        "Biometria"
       ],
       "Birthdate": [
         "Data di nascita"
@@ -2305,9 +2338,6 @@
       "Selected": [
         "Selezionato"
       ],
-      "Session locking": [
-        "Blocco della sessione"
-      ],
       "Share": [
         "Condividi"
       ],
@@ -2380,6 +2410,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlock with": [
+        "Metodo di sblocco"
       ],
       "Unnamed Credit Card": [
         "Carta di credito senza nome"

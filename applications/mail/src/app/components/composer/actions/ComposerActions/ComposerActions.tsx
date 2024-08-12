@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Vr } from '@proton/atoms';
 import type { EditorMetadata } from '@proton/components';
 import {
     FeatureCode,
@@ -66,6 +66,8 @@ interface Props {
     showAssistantButton: boolean;
     onToggleAssistant: () => void;
     isInert: boolean;
+    onToggleToolbar: () => void;
+    displayToolbar: boolean;
 }
 
 const ComposerActions = ({
@@ -93,6 +95,8 @@ const ComposerActions = ({
     showAssistantButton,
     onToggleAssistant,
     isInert,
+    onToggleToolbar,
+    displayToolbar,
 }: Props) => {
     const dispatch = useMailDispatch();
 
@@ -224,25 +228,26 @@ const ComposerActions = ({
                 </ComposerScheduleSendSpotlight>
 
                 <div className="flex flex-1">
-                    <div className="flex">
-                        <Tooltip title={titleDeleteDraft}>
-                            <Button
-                                icon
-                                disabled={disabled}
-                                onClick={onDelete}
-                                shape="ghost"
-                                className="mr-1 sm:mr-2"
-                                data-testid="composer:delete-draft-button"
-                            >
-                                <Icon name="trash" alt={c('Action').t`Delete draft`} />
-                            </Button>
-                        </Tooltip>
+                    <div className="flex gap-1">
                         {!isSmallViewport && (
-                            <ComposerPasswordActions
-                                isPassword={isPassword}
-                                onPassword={onPassword}
-                                onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
-                            />
+                            <>
+                                <Tooltip title={titleDeleteDraft}>
+                                    <Button
+                                        icon
+                                        disabled={disabled}
+                                        onClick={onDelete}
+                                        shape="ghost"
+                                        data-testid="composer:delete-draft-button"
+                                    >
+                                        <Icon name="trash" alt={c('Action').t`Delete draft`} />
+                                    </Button>
+                                </Tooltip>
+                                <ComposerPasswordActions
+                                    isPassword={isPassword}
+                                    onPassword={onPassword}
+                                    onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                                />
+                            </>
                         )}
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton
@@ -255,6 +260,7 @@ const ComposerActions = ({
                         </Tooltip>
                         {showAssistantButton && (
                             <>
+                                <Vr className="border-weak" aria-hidden="true" />
                                 <Tooltip title={assistantTooltipText}>
                                     <div>
                                         <ComposerAssistantSpotlight {...assistantSpotlight}>
@@ -265,7 +271,8 @@ const ComposerActions = ({
                                                 shape="ghost"
                                                 data-testid="composer:use-assistant-button"
                                                 aria-expanded={isAssistantOpened}
-                                                className="flex sm:mx-2"
+                                                aria-pressed={isAssistantOpened}
+                                                className="flex"
                                             >
                                                 <Icon
                                                     name="pen-sparks"
@@ -278,6 +285,21 @@ const ComposerActions = ({
                                 </Tooltip>
                             </>
                         )}
+                        <Tooltip title={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}>
+                            <Button
+                                icon
+                                disabled={disabled || editorMetadata.isPlainText}
+                                onClick={onToggleToolbar}
+                                shape="ghost"
+                                data-testid="composer:show-toolbar-button"
+                                aria-expanded={displayToolbar}
+                                aria-pressed={displayToolbar}
+                                className="flex"
+                            >
+                                <Icon name="text-style" alt={c('Action').t`Show toolbar`} />
+                            </Button>
+                        </Tooltip>
+                        {showAssistantButton && <Vr className="border-weak" aria-hidden="true" />}
                         <ComposerMoreActions
                             isExpiration={isExpiration}
                             message={message}
@@ -287,10 +309,11 @@ const ComposerActions = ({
                             editorActionsRef={editorActionsRef}
                             editorMetadata={editorMetadata}
                             onChange={onChange}
-                            showExternalEncryption={isSmallViewport}
+                            isSmallViewport={isSmallViewport}
                             isPassword={isPassword}
                             onPassword={onPassword}
                             onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                            onDelete={onDelete}
                         />
                     </div>
                     <div className="flex-1 flex pr-4">

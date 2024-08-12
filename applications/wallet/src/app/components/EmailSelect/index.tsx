@@ -64,6 +64,7 @@ export const EmailSelect = ({ value, onChange, extraOptions }: Props) => {
             onChange={(event) => {
                 onChange(event.value);
             }}
+            readOnly={allAddressesOptions.length <= 1}
             options={allAddressesOptions.map((option) => ({
                 label: option.Email,
                 value: option.ID,

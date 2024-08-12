@@ -17,9 +17,9 @@ export type PopupState = {
     filters: MaybeNull<ItemFilters>;
 };
 
-const INITIAL_STATE: PopupState = { tabs: {}, filters: null };
+const getInitialState = (): PopupState => ({ tabs: {}, filters: null });
 
-const popupReducer: Reducer<PopupState> = (state = INITIAL_STATE, action: Action) => {
+const popupReducer: Reducer<PopupState> = (state = getInitialState(), action: Action) => {
     if (popupTabStateSave.match(action)) {
         return merge(state, {
             filters: action.payload.filters ?? state.filters,

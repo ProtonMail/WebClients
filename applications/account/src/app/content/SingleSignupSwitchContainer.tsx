@@ -41,6 +41,7 @@ const singlePageSignupPaths = new Set([
     SSO_PATHS.CALENDAR_SIGNUP_B2B,
     SSO_PATHS.BUSINESS_SIGNUP,
 ]);
+const singlePageSignupPlans = new Set([PLANS.VISIONARY, PLANS.DUO]);
 
 const SingleSignupSwitchContainer = ({
     hasBFCoupon,
@@ -65,8 +66,8 @@ const SingleSignupSwitchContainer = ({
         hasBFCoupon ||
         singlePageSignupApps.has(maybePreAppIntent as any) ||
         singlePageSignupPaths.has(location.pathname as any) ||
+        singlePageSignupPlans.has(searchParams.get('plan') as any) ||
         searchParams.get('mode') === 'sps' ||
-        searchParams.get('plan') === PLANS.VISIONARY ||
         singleSignupEnabled;
 
     if (renderSingleSignup) {

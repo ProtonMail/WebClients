@@ -188,7 +188,7 @@
         "Copiar mensagem para a área de transferência"
       ],
       "Copy invite link": [
-        "Copiar o link de convite"
+        "Copiar ligação de convite"
       ],
       "Copy link": [
         "Copiar ligação"
@@ -3061,9 +3061,6 @@
       "${ BRAND_NAME } groups": [
         "Grupos do ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "As contas com domínios personalizados não podem aderir a um plano Visionary ou family."
-      ],
       "customer support": [
         "apoio ao cliente"
       ],
@@ -3085,12 +3082,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a si: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos Visionary e Family não suportam actualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Os planos Visionary e family não suportam actualmente contas vitalícias."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Está convidado a juntar-se a ${ invite.OrganizationName }"
       ],
@@ -3108,9 +3099,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "O seu plano actual não pode aderir a um plano Visionary ou family."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4288,6 +4276,9 @@
       "Loading ${ appName }": [
         "A carregar ${ appName }"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "A carregar o calendário, por favor aguarde. Será redirecionado para a nossa plataforma de agendamento Calendly num novo separador."
+      ],
       "Loading link": [
         "Carregamento da ligação"
       ],
@@ -4674,6 +4665,9 @@
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
       ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "As informações expostas foram divulgadas por um serviço de terceiros. As suas informações da conta ${ BRAND_NAME } permanecem seguras e encriptadas. ${ learnMoreLink }"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "O seguinte pode ter sido adulterado: ${ items }. Abra apenas se confiar nele."
       ],
@@ -4985,6 +4979,9 @@
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tem uma subscrição experimental ${ planTitle }. Se gostaria de continuar com a sua subscrição após o período de avaliação, por favor, adicione um método de pagamento."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Tem uma subscrição ${ planTitle } de avaliação. Nenhum pagamento é exigido neste momento. A sua subscrição será renovada automaticamente no final do período de avaliação."
       ],
       "You may be redirected to your bank’s website.": [
         "Pode ser redirecionado para o sítio Web do seu banco."
@@ -5891,7 +5888,7 @@
         "10 endereços de e-mail"
       ],
       "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixeira"
+        "Eliminação automática das pastas Spam e Lixo"
       ],
       "Support for 1 custom email domain": [
         "Apoio ao cliente para 1 domínio de e-mail personalizado"
@@ -6473,6 +6470,10 @@
       ],
       "User session management": [
         "Gestão de sessões de utilizador"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partilha de cofre (até ${ n } pessoa)",
+        "Partilha de cofre (até ${ n } pessoas)"
       ]
     },
     "new_plans: feature info": {
@@ -7368,8 +7369,14 @@
       "Create an alias": [
         "Criar um alias"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Crie aliases rapidamente e gira facilmente os seus aliases e palavras-passe."
+      ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Os aliases Hide-my-email permitem-lhe registar-se em coisas online sem partilhar o seu endereço de e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Novo alias"
@@ -8166,6 +8173,9 @@
       ],
       "Import record deleted": [
         "Registo de importação eliminado"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Os últimos aliases modificados armazenados no seu cofre mais antigo"
       ],
       "Payment method added": [
         "Método de pagamento adicionado"

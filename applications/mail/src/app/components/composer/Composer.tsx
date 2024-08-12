@@ -1,9 +1,10 @@
 import type { DragEvent, Ref, RefObject } from 'react';
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState, useMemo } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
+import { useHandler, useLocalState, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
@@ -72,6 +73,8 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
+    const [displayToolbar, setDisplayToolbar] = useLocalState(true, 'composer-toolbar-expanded');
+    const toolbarWrapperRef = useRef<HTMLDivElement>(null);
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');
@@ -81,6 +84,8 @@ const Composer = (
     const composerContentRef = useRef<HTMLElement>(null);
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const composerMetaRef = useRef<HTMLDivElement>(null);
+
+    const setAssistantStateRef = useRef(noop);
 
     const {
         openedAssistants,
@@ -93,6 +98,7 @@ const Composer = (
         initAssistant,
         downloadPaused,
         getIsStickyAssistant,
+        cancelRunningAction,
     } = useAssistant(composerID);
 
     // onClose handler can be called in an async handler
@@ -124,6 +130,11 @@ const Composer = (
         if (event.dataTransfer?.types.includes(DRAG_ADDRESS_KEY)) {
             onFocus();
         }
+    };
+
+    const handleResetAssistantState = () => {
+        cancelRunningAction();
+        setAssistantStateRef.current();
     };
 
     const {
@@ -188,6 +199,7 @@ const Composer = (
         openAssistant,
         closeAssistant,
         setAssistantStatus,
+        handleResetAssistantState,
     });
 
     // Update subject on ComposerFrame
@@ -406,6 +418,7 @@ const Composer = (
                             sender={getSender(modelMessage?.data)}
                             onUseGeneratedText={handleInsertGeneratedTextInEditor}
                             onUseRefinedText={handleSetEditorSelection}
+                            setAssistantStateRef={setAssistantStateRef}
                         />
                     )}
                     <ComposerContent
@@ -426,8 +439,23 @@ const Composer = (
                         onKeyUp={handleEditorSelection}
                         onMouseUp={handleEditorSelection}
                         isInert={isAssistantExpanded}
+                        toolbarCustomRender={(toolbar) =>
+                            displayToolbar && toolbarWrapperRef.current
+                                ? createPortal(toolbar, toolbarWrapperRef.current)
+                                : null
+                        }
                     />
                 </div>
+
+                {/* Used to display the toolbar below the composer*/}
+                {!metadata.isPlainText && (
+                    <div
+                        ref={toolbarWrapperRef}
+                        // @ts-ignore
+                        inert={isAssistantExpanded ? '' : undefined}
+                    />
+                )}
+
                 <ComposerActions
                     composerID={composerID}
                     addressesBlurRef={addressesBlurRef}
@@ -453,6 +481,8 @@ const Composer = (
                     showAssistantButton={canShowAssistant}
                     onToggleAssistant={handleToggleAssistant}
                     isInert={isAssistantExpanded}
+                    onToggleToolbar={() => setDisplayToolbar(!displayToolbar)}
+                    displayToolbar={displayToolbar}
                 />
             </div>
             {waitBeforeScheduleModal}

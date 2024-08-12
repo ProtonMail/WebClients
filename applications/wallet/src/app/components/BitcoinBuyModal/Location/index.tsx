@@ -62,6 +62,7 @@ export const Location = ({ onConfirm }: Props) => {
                             {...props}
                         />
                     )}
+                    assistContainerClassName="empty:hidden"
                 />
             </div>
 

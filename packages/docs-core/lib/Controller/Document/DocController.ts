@@ -743,7 +743,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const date = getPlatformFriendlyDateForFileName()
     const newName = `${this.docMeta.name} (copy ${date})`
-    const state = await this.editorInvoker.getDocumentState()
+
+    const state = await this.editorInvoker.exportData('yjs')
     const result = await this._duplicateDocument.execute(newName, this.nodeMeta, state)
 
     if (result.isFailed()) {

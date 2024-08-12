@@ -15,7 +15,7 @@ const DealPrice = () => {
     const dealSuffixPriceString = dealSuffixPrice?.();
 
     return (
-        <div className="my-4 text-center">
+        <div className="my-4 text-center offer-monthly-price-container">
             <Price
                 currency={currency}
                 className={clsx(

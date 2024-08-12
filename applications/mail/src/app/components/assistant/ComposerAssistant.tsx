@@ -1,10 +1,11 @@
-import type { RefObject } from 'react';
+import type { MutableRefObject, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { ComposerAssistantTrialEndedUpsellModal, useModalStateObject } from '@proton/components/components';
-import { getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
+import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -32,6 +33,7 @@ interface Props {
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
     recipients: Recipient[];
     sender: Recipient | undefined;
+    setAssistantStateRef: MutableRefObject<() => void>;
 }
 
 const ComposerAssistant = ({
@@ -44,6 +46,7 @@ const ComposerAssistant = ({
     setInnerModal,
     recipients,
     sender,
+    setAssistantStateRef,
 }: Props) => {
     const [prompt, setPrompt] = useState('');
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
@@ -54,7 +57,7 @@ const ComposerAssistant = ({
     const upsellModal = useModalStateObject();
     const resumeDownloadModal = useModalStateObject();
 
-    const { closeAssistant, openedAssistants, setAssistantStatus, resumeDownloadModel, error } =
+    const { closeAssistant, openedAssistants, setAssistantStatus, resumeDownloadModel, error, cleanSpecificErrors } =
         useAssistant(assistantID);
 
     const isAssistantExpanded = useMemo(() => {
@@ -84,6 +87,7 @@ const ComposerAssistant = ({
         generationResult,
         setGenerationResult,
         previousGenerationResult,
+        setPreviousGenerationResult,
         generate,
         submittedPrompt,
         replaceMessageBody,
@@ -95,7 +99,6 @@ const ComposerAssistant = ({
         onResetFeedbackSubmitted: () => {
             setFeedbackSubmitted(false);
         },
-        hasSelection: selectedText ? selectedText.length > 0 : false,
         expanded: isAssistantExpanded,
         recipients,
         sender,
@@ -116,12 +119,29 @@ const ComposerAssistant = ({
         }
     };
 
+    const handleResetGeneration = () => {
+        setGenerationResult('');
+        setPreviousGenerationResult('');
+    };
+
     // When user is making a harmful generation on top of a previous generation, reset the content to the previous generation
     useEffect(() => {
         if (error && error.errorType === ERROR_TYPE.GENERATION_HARMFUL) {
             handleResetToPreviousPrompt();
         }
     }, [error]);
+
+    // Set ref content used to reset assistant state when user is using escape shortcut
+    useEffect(() => {
+        setAssistantStateRef.current = async () => {
+            setPrompt('');
+            // Wait for the last callback to be called before cleaning the generation
+            await wait(ASSISTANT_SERVER_THROTTLE_TIMEOUT + 20);
+            setGenerationResult('');
+            setPreviousGenerationResult('');
+            cleanSpecificErrors();
+        };
+    }, [setPrompt, setPreviousGenerationResult]);
 
     const hasComposerContent = !!removeLineBreaks(getContentBeforeBlockquote());
 
@@ -167,7 +187,7 @@ const ComposerAssistant = ({
                     feedbackSubmitted={feedbackSubmitted}
                     setFeedbackSubmitted={setFeedbackSubmitted}
                     onResetPrompt={() => setPrompt('')}
-                    onResetGeneration={() => setGenerationResult('')}
+                    onResetGeneration={handleResetGeneration}
                     showReplaceButton={hasComposerContent}
                 />
             )}

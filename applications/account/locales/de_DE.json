@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Fett"
-      ],
-      "Can send to this group": [
-        "Kann an diese Gruppe senden"
-      ],
-      "Can't send to this group": [
-        "Kann nicht an diese Gruppe senden"
       ],
       "Cancel": [
         "Abbrechen"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Logo löschen"
+      ],
+      "Delete member": [
+        "Mitglied entfernen"
       ],
       "Delete permanently": [
         "Dauerhaft löschen"
@@ -733,11 +730,11 @@
       "No, thanks": [
         "Nein, danke"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Öffnen"
@@ -799,11 +796,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reload": [
         "Neu laden"
@@ -1613,14 +1610,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1642,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -3383,12 +3380,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiviere ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktiviere \"Erweiterte Protokolle\" und ${ PROTON_SENTINEL_NAME }, um auf diese Funktionen zuzugreifen."
-      ],
-      "Enable advanced logs to access these features": [
-        "Aktiviere \"Erweiterte Protokolle\", um auf diese Funktionen zuzugreifen."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
@@ -5062,9 +5053,6 @@
       "*Only one free trial per customer.": [
         "*Nur eine kostenlose Testversion pro Kunde."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Abonnement abschließen."
-      ],
       "customer support": [
         "Kundendienst"
       ],
@@ -5120,12 +5108,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Um dir den Übergang zu erleichtern, bieten wir dir eine kostenlose 30-tägige Testversion von ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Für Visionary- und Family-Abonnements sind derzeit keine lebenslangen Konten verfügbar."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
       ],
@@ -5155,9 +5137,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Du verlierst den Zugriff auf alle Premium-Funktionen und Speicher, die in ${ BRAND_NAME } Family enthalten sind."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
@@ -5166,9 +5145,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Mit deinem aktuellen Abonnement kannst du kein Visionary- oder Family-Abonnement abschließen."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6934,11 +6910,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -7552,9 +7528,6 @@
       ],
       "Loading...": [
         "Wird geladen..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Protokolle enthalten Authentifizierungsversuche aller ${ BRAND_NAME }-Dienste die deine ${ BRAND_NAME_TWO }-Anmeldedaten verwenden."
       ],
       "Low Priority": [
         "Niedrige Priorität"
@@ -9483,9 +9456,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
-      "Access to my events": [
-        "Zugang zu meinen Terminen"
-      ],
       "Account recovery": [
         "Kontowiederherstellung"
       ],
@@ -10817,12 +10787,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } aktivieren"
-      ],
-      "Enable advanced logs": [
-        "Erweiterte Protokolle aktivieren"
-      ],
-      "Enable authentication logs": [
-        "Authentifizierungsprotokolle aktivieren"
       ]
     },
     "Mail import summary": {
@@ -12993,9 +12957,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Hol dir ${ appName } für ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Hol dir bald ${ appName } für ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Wende dich an unser Vertriebsteam"
@@ -15874,11 +15835,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -16986,9 +16947,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Mitteilungen auf Desktop- und Mobilgeräten aktivieren/deaktivieren"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Wenn du die erweiterten Protokolle aktivierst, wird die IP-Adresse für jedes Ereignis im Sicherheitsprotokoll aufgezeichnet."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
       ],
@@ -17584,9 +17542,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Wenn du die Protokollierung deaktivierst, wird auch dein gesamter Protokollverlauf gelöscht. Möchtest du die Protokollierung wirklich deaktivieren?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."

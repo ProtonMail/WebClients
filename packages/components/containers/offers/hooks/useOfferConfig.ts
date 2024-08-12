@@ -21,6 +21,8 @@ import {
     useBlackFriday2023VPNTwoYears,
 } from '../operations/blackFridayVPN2023TwoYears';
 import { blackFriday2023VPNYearlyConfig, useBlackFriday2023VPNYearly } from '../operations/blackFridayVPN2023Yearly';
+import { duoPlan2024TwoYearConfig, useDuoPlanTwoYear2024 } from '../operations/duoPlan2024TwoYears';
+import { duoPlan2024YearlyConfig, useDuoPlan2024Yearly } from '../operations/duoPlan2024Yearly';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { mailTrial2024Config, useMailTrial2024 } from '../operations/mailTrial2024';
@@ -28,6 +30,8 @@ import { subscriptionReminderConfig, useSubscriptionReminder } from '../operatio
 
 const configs: Record<OfferId, OfferConfig> = {
     'subscription-reminder': subscriptionReminderConfig,
+    'duo-plan-2024-yearly': duoPlan2024YearlyConfig,
+    'duo-plan-2024-two-years': duoPlan2024TwoYearConfig,
     'go-unlimited-2022': goUnlimited2022Config,
     'mail-trial-2023': mailTrial2023Config,
     'mail-trial-2024': mailTrial2024Config,
@@ -50,7 +54,8 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
 
     const subscriptionReminder = useSubscriptionReminder();
-
+    const duoPlan2024Yearly = useDuoPlan2024Yearly();
+    const duoPlan2024TwoYear = useDuoPlanTwoYear2024();
     const goUnlimited2022 = useGoUnlimited2022();
     const mailTrial2023 = useMailTrial2023();
     const mailTrial2024 = useMailTrial2024();
@@ -67,7 +72,8 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
 
     // Offer order matters
     const allOffers: Operation[] = [
-        subscriptionReminder,
+        duoPlan2024Yearly,
+        duoPlan2024TwoYear,
         blackFriday2023InboxFree,
         blackFriday2023InboxMail,
         blackFriday2023InboxUnlimited,
@@ -81,17 +87,13 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         goUnlimited2022,
         mailTrial2023,
         mailTrial2024,
+        subscriptionReminder,
     ];
 
     const validOffers: Operation[] | undefined = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
     const isLoading = allOffers.some((offer) => offer.isLoading);
+    const [validOffer] = validOffers;
 
-    if (validOffers.length === 1) {
-        return [validOffers[0].config, isLoading];
-    }
-
-    // The subscription reminder offer could be valid but we want to show the next valid offer to avoid clashes
-    const validOffer: Operation | undefined = validOffers.find((offer) => offer.config.ID !== 'subscription-reminder');
     return [validOffer?.config, isLoading];
 };
 

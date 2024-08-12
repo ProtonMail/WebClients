@@ -31,5 +31,5 @@ export interface Group {
     CreateTime?: number;
     Permissions?: GroupPermissions;
     Flags?: GroupFlags;
-    MemberCount: number | undefined;
+    MemberCount?: number;
 }

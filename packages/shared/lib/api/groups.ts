@@ -1,4 +1,11 @@
-import type { Address, GroupFlags, GroupMemberType, GroupPermissions, ProxyInstances } from '../interfaces';
+import type {
+    Address,
+    GROUP_MEMBER_PERMISSIONS,
+    GroupFlags,
+    GroupMemberType,
+    GroupPermissions,
+    ProxyInstances,
+} from '../interfaces';
 
 interface GroupParameters {
     Name: string;
@@ -50,7 +57,7 @@ export const getGroupMembers = (groupID: string) => ({
     url: `core/v4/groups/${groupID}/members`,
 });
 
-export interface AddMemberParameters {
+export interface GroupMemberParameters {
     Type: GroupMemberType;
     GroupID: string; // encrypted
     Email: string;
@@ -60,13 +67,22 @@ export interface AddMemberParameters {
     ProxyInstances?: ProxyInstances[]; // Only for E2EE member
     Token?: string;
     Signature?: string;
+    Permissions?: GROUP_MEMBER_PERMISSIONS;
 }
 
-export const addGroupMember = (addMemberParams: AddMemberParameters) => ({
+export const addGroupMember = (addMemberParams: GroupMemberParameters) => ({
     method: 'post',
     url: 'core/v4/groups/members',
     data: {
         ...addMemberParams,
+    },
+});
+
+export const updateGroupMember = (groupMemberID: string, groupMemberParams: Partial<GroupMemberParameters>) => ({
+    method: 'put',
+    url: `core/v4/groups/members/${groupMemberID}`,
+    data: {
+        ...groupMemberParams,
     },
 });
 

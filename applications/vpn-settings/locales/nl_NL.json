@@ -82,12 +82,6 @@
       "Block": [
         "Blokkeer"
       ],
-      "Can send to this group": [
-        "Kan naar deze groep verzenden"
-      ],
-      "Can't send to this group": [
-        "Kan niet naar deze groep verzenden"
-      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Logo verwijderen"
+      ],
+      "Delete member": [
+        "Verwijder lid"
       ],
       "Delete user": [
         "Gebruiker verwijderen"
@@ -2688,9 +2685,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Accounts met een eigen domein kunnen zich niet aansluiten bij een Visionary- of gezinsabonnement."
-      ],
       "customer support": [
         "klantondersteuning"
       ],
@@ -2734,12 +2728,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- en gezinsabonnmenten bieden op dit moment geen ondersteuning voor externe accounts. Maak een adres voor ${ BRAND_NAME } voordat u zich hierbij aansluit. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary- en gezinsabonnementen bieden op dit moment geen ondersteuning voor levenslange accounts."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "U bent uitgenodigd u aan te sluiten bij ${ invite.OrganizationName }"
       ],
@@ -2774,9 +2762,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Met uw huidige abonnement kunt u zich niet aansluiten bij een Visionary- of gezinsabonnement."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3620,11 +3605,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -9293,11 +9278,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"

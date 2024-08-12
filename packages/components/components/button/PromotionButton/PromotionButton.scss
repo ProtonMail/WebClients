@@ -51,4 +51,19 @@
 			--color-stop-2: var(--upgrade-color-stop-2);
 		}
 	}
+
+	&--pinkblue {
+		// used for some promotions
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(86.26deg, #da30ea 0%, #6d4aff 51.44%, #4ab8f6 100%);
+
+				--text-norm: white;
+
+				border: 0;
+			}
+		}
+	}
 }

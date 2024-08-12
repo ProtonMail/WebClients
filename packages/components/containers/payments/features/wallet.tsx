@@ -86,6 +86,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.MAIL]: getWallets(FREE_WALLETS),
                 [PLANS.VPN]: getWallets(FREE_WALLETS),
                 [PLANS.DRIVE]: getWallets(FREE_WALLETS),
+                [PLANS.DRIVE_BUSINESS]: getWallets(FREE_WALLETS),
                 [PLANS.PASS]: getWallets(FREE_WALLETS),
                 [PLANS.FAMILY]: getWallets(UNLIMITED_WALLETS),
                 [PLANS.DUO]: getWallets(UNLIMITED_WALLETS), // TODO validate with product
@@ -108,6 +109,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.MAIL]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.VPN]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.DRIVE]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
+                [PLANS.DRIVE_BUSINESS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.PASS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.FAMILY]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
                 [PLANS.DUO]: getWallets(UNLIMITED_WALLET_ACCOUNTS), // TODO validate with product
@@ -130,6 +132,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.MAIL]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.VPN]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.DRIVE]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
+                [PLANS.DRIVE_BUSINESS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.PASS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.FAMILY]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
                 [PLANS.DUO]: getWallets(UNLIMITED_WALLET_EMAIL), // TODO validate with product
@@ -152,6 +155,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.MAIL]: getBitcoinViaEmail(),
                 [PLANS.VPN]: getBitcoinViaEmail(),
                 [PLANS.DRIVE]: getBitcoinViaEmail(),
+                [PLANS.DRIVE_BUSINESS]: getBitcoinViaEmail(),
                 [PLANS.PASS]: getBitcoinViaEmail(),
                 [PLANS.FAMILY]: getBitcoinViaEmail(),
                 [PLANS.DUO]: getBitcoinViaEmail(), // TODO validate with product

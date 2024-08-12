@@ -20,7 +20,7 @@ import {
     ModalTwoHeader as ModalHeader,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     organization: Organization;
@@ -32,12 +32,19 @@ const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const [name, setName] = useState(organization.Name);
+    const { createNotification } = useNotifications();
 
     const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
 
     const handleSubmit = async () => {
         await api(updateOrganizationName(name));
         await call();
+        let message = c('Success').t`Organization name updated`;
+        if (isFamilyOrg) {
+            message = c('familyOffer_2023:Success').t`Family name updated`;
+        }
+        createNotification({ text: message });
+
         onClose?.();
     };
 

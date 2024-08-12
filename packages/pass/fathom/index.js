@@ -2052,13 +2052,16 @@ const getIdentityFieldType = (input) => {
         return (_a = IDENTITY_RE_MAP.find(([, test]) => test(haystack))) === null || _a === void 0 ? void 0 : _a[0];
 };
 
+const isAutocompleteListInput = (el) => el.getAttribute('aria-autocomplete') === 'list' || el.role === 'combobox';
+
 const maybeIdentity = (fnode) => {
     const input = fnode.element;
     const { visible, isFormLogin, type, searchField } = fnode.noteFor('field');
     if ((type && !IDENTITY_INPUT_TYPES.includes(type)) || !visible || isFormLogin) return false;
-    if (input.getAttribute('aria-autocomplete') === 'list' || input.role === 'combobox') return false;
     const identityType = getIdentityFieldType(input);
     if (!identityType) return false;
+    if (isAutocompleteListInput(input))
+        return [IdentityFieldType.ADDRESS, IdentityFieldType.ZIPCODE].includes(identityType);
     if (type === 'number') return [IdentityFieldType.TELEPHONE, IdentityFieldType.ZIPCODE].includes(identityType);
     if (searchField)
         return [IdentityFieldType.ADDRESS, IdentityFieldType.ZIPCODE, identityType === IdentityFieldType.CITY].includes(

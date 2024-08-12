@@ -509,6 +509,9 @@
       "Try again": [
         "다시 시도"
       ],
+      "Unlock": [
+        "잠금 해제"
+      ],
       "Unlock offline with password": [
         "비밀번호로 오프라인 잠금 해제"
       ],
@@ -1496,6 +1499,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
       ],
+      "Quickly autofill your identities.": [
+        "신원을 빠르게 자동 입력합니다"
+      ],
       "Registering extra password...": [
         "추가 비밀번호 설정 중..."
       ],
@@ -1856,7 +1862,7 @@
         "2단계 인증 자동 완성"
       ],
       "Automatically open autofill when a login field is focused": [
-        "로그인 입력란에 위치해 있다면 자동 완성을 자동으로 엽니다."
+        "로그인 입력란 위치시 자동 완성을 열기"
       ],
       "Autosave": [
         "자동 저장"
@@ -1948,9 +1954,6 @@
       "Display": [
         "표시"
       ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "로그인 란에 ${ PASS_APP_NAME } 아이콘을 표시"
-      ],
       "Domain": [
         "도메인"
       ],
@@ -2040,6 +2043,9 @@
       ],
       "Identity": [
         "신원"
+      ],
+      "Identity autofill": [
+        "신원 자동 완성"
       ],
       "Import": [
         "불러오기"
@@ -2271,9 +2277,6 @@
       ],
       "Selected": [
         "선택됨"
-      ],
-      "Session locking": [
-        "세션 잠금"
       ],
       "Settings": [
         "설정"

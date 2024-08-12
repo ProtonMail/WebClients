@@ -13,6 +13,7 @@ const getHasAccess = (organization: Organization | undefined) => {
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
         PLANS.MAIL_BUSINESS,
+        PLANS.DRIVE_BUSINESS,
         PLANS.PASS_BUSINESS,
         PLANS.VPN_BUSINESS,
         PLANS.ENTERPRISE,

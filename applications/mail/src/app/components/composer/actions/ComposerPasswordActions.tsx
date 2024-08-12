@@ -72,7 +72,6 @@ const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPass
                 shape="ghost"
                 data-testid="composer:password-button"
                 onClick={onPassword}
-                className="mr-1 sm:mr-2"
                 aria-pressed={isPassword}
             >
                 <Icon name="lock" alt={c('Action').t`Encryption`} />

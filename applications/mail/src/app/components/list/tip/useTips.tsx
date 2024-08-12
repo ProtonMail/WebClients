@@ -10,7 +10,7 @@ import {
     useAddresses,
     useFeature,
     useMailSettings,
-    useSubscription,
+    useOrganization,
     useUser,
 } from '@proton/components';
 import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
@@ -28,7 +28,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { getIsB2BAudienceFromSubscription } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash';
@@ -46,6 +46,11 @@ import ProtonTipCTA from './ProtonTipCTA';
 
 const PM_DOMAIN = 'pm.me';
 
+// Suggested folder/label name shouldn't get translated
+const suggestedFolderName = 'Receipts';
+const suggestedLabelName = 'To pay';
+const suggestedPaidLabelName = 'Paid';
+
 const { vpn, drive, pass } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
 const useTips = () => {
@@ -56,16 +61,15 @@ const useTips = () => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [userSettings, loadingSettings] = useUserSettings();
     const activeAddresses = getActiveAddresses(addresses ?? []);
-    const [subscription, loadingSubscription] = useSubscription();
     const [missScopePass, setMissScopePass] = useState(false);
+    const [organization] = useOrganization();
 
-    const isB2BAudience = getIsB2BAudienceFromSubscription(subscription);
+    const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
 
     const [hasSnoozedMessages, loadingSnoozedMessages] = useHasSnoozedMessages();
     const [hasScheduledMessages, loadingScheduledMessages] = useHasScheduledMessages();
 
     const loading =
-        loadingSubscription ||
         loadingSettings ||
         loadingMailSettings ||
         loadingAddresses ||
@@ -92,11 +96,6 @@ const useTips = () => {
         const displayTips = differenceInDays(new Date(), feature.Value) >= 60;
         setShouldDisplayTips(displayTips);
     }, [feature]);
-
-    // Suggested folder/label name shouldn't get translated
-    const suggestedFolderName = 'Receipts';
-    const suggestedLabelName = 'To pay';
-    const suggestedPaidLabelName = 'Paid';
 
     const showMeHowCTA = c('Tip Action').t`Show me how`;
     const openAppCTA = c('Tip Action').t`Open `;

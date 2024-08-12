@@ -3587,9 +3587,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä Visionary- tai perhetilaukseen."
-      ],
       "customer support": [
         "asiakaspalveluun"
       ],
@@ -3614,12 +3611,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- ja Family-tilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME }-osoite ennen liittymistä. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary- ja Family-tilaukset eivät tällä hetkellä tue elinikäisiä tilejä."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
       ],
@@ -3640,9 +3631,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Nykyinen tilauksesi ei voi liittyä Visionary- tai perhetilaukseen."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5291,9 +5279,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
-      ],
-      "Access to my events": [
-        "Tapahtumieni käyttöoikeudet"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"

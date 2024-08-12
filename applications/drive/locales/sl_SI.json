@@ -14,19 +14,19 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "${ name } in ${ remainingCount } drugih možnih odtekanj podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo ${ name } in 1 drugo potencialno odtekanje podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
@@ -2605,7 +2605,7 @@
         "Napaka pri dešifriranju računalnika"
       ],
       "External accounts are not supported yet": [
-        "Zunanji računi še niso podprti"
+        "Zunanji računi še niso podprti."
       ],
       "External invitations are not available yet.": [
         "Zunanja povabila še niso na voljo."
@@ -2614,7 +2614,7 @@
         "Zunanja povabila so začasno onemogočena."
       ],
       "External invitations are temporarily disabled. Please try again later": [
-        "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje"
+        "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje."
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Datoteke »${ item.name }« ni mogoče naložiti zaradi napake »${ error }«."
@@ -2911,7 +2911,7 @@
         "Neznano stanje žetona plačila"
       ],
       "Upload for this folder is temporarily disabled": [
-        "Nalaganje v to mapo je začasno onemogočeno"
+        "Nalaganje v to mapo je začasno onemogočeno."
       ],
       "Username must begin with a letter or digit": [
         "Uporabniško ime se mora začeti s črko ali številko"
@@ -3268,9 +3268,6 @@
       "${ BRAND_NAME } groups": [
         "Skupine ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Računi z domenami po meri se ne morejo pridružiti paketu Visionary ali družinskemu paktu."
-      ],
       "customer support": [
         "podporo strankam"
       ],
@@ -3292,12 +3289,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Prostor, ki vam je dodeljen: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket Visionary in družinski paket trenutno ne omogočata uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Paket Visionary in družinski paket trenutno ne omogočata doživljenjskih računov."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -3315,9 +3306,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Vašega trenutnega paketa ni mogoče združiti s paketom Visionary ali z družinskim paketom."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4113,7 +4101,7 @@
         "Ali ste prepričani, da želite zavreči uvoz?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Ali res želite izprazniti Koš in trajno izbrisati vse elemente?"
+        "Ali res želite izprazniti smetnjak in trajno izbrisati vse predmete?"
       ],
       "Are you sure you want to permanently delete": [
         "Ali ste prepričani, da želite trajno izbrisati"
@@ -4446,7 +4434,7 @@
         "Datoteka ne bo posodobljena"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Datoteke in mape, ki jih drugi delijo z vami, bodo prikazane tukaj"
+        "Datoteke in mape, ki jih drugi delijo z vami, bodo prikazane tukaj."
       ],
       "Finalizing": [
         "Zaključevanje"
@@ -5400,7 +5388,7 @@
         "Imeti morate plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
       ],
       "You need access": [
-        "Potrebujete dostop"
+        "Potrebujete dostop."
       ],
       "You will lose access to Plus features on this date.": [
         "Dostop do funkcij Plus boste izgubili na ta datum."
@@ -7597,19 +7585,19 @@
         "${ reason } je bil omogočen."
       ],
       "Access for the member removed": [
-        "Dostop je bil ukinjen"
+        "Dostop za člana je bil ukinjen."
       ],
       "Access updated": [
-        "Dostop je posodobljen"
+        "Dostop je posodobljen."
       ],
       "Access updated and shared": [
-        "Dostop je posodobljen in deljen"
+        "Dostop je posodobljen in deljen."
       ],
       "All items will soon be permanently deleted from trash": [
         "Vsi predmeti bodo kmalu trajno izbrisani iz koša"
       ],
       "An invitation has been sent": [
-        "Vabilo je bilo odposlano"
+        "Vabilo je bilo odposlano."
       ],
       "Cannot load link": [
         "Povezave ni bilo mogoče naložiti"
@@ -7642,7 +7630,7 @@
         "Zunanje povabilo je bilo odstranjeno iz skupne rabe."
       ],
       "Failed to accept share invitation": [
-        "Povabila k skupni rabi ni bilo mogoče sprejeti"
+        "Povabila k skupni rabi ni bilo mogoče sprejeti."
       ],
       "Failed to convert external invitation": [
         "Zunanjega vabila ni bilo mogoče pretvoriti."
@@ -7654,10 +7642,10 @@
         "Napaka pri premikanju, prosimo poskusite znova"
       ],
       "Failed to open document": [
-        "Odpiranje dokumenta spodletelo"
+        "Odpiranje dokumenta je spodletelo."
       ],
       "Failed to remove the file": [
-        "Datoteke ni bilo mogoče odstraniti"
+        "Datoteke ni bilo mogoče odstraniti."
       ],
       "Failed to upload files: ${ err }": [
         "Datotek ni bilo mogoče naložiti: ${ err }"
@@ -7675,7 +7663,7 @@
         "Datoteki ali mapi manjka ime"
       ],
       "File removed": [
-        "Datoteka je odstranjena"
+        "Datoteka je odstranjena."
       ],
       "Link copied to clipboard": [
         "Povezava je kopirana v odložišče"
@@ -7705,10 +7693,10 @@
         "Korenske mape ni bilo mogoče naložiti"
       ],
       "Share invitation accepted successfully": [
-        "Povabilo k skupni rabi je bilo sprejeto"
+        "Povabilo k skupni rabi je bilo sprejeto."
       ],
       "Stopping to share this item has failed": [
-        "Preklic deljenja za ta predmet ni uspel"
+        "Preklic deljenja za ta predmet ni uspel."
       ],
       "Subfolder failed to be loaded": [
         "Podmape ni bilo mogoče naložiti"
@@ -7729,7 +7717,7 @@
         "Smetnjaka ni bilo mogoče izprazniti"
       ],
       "You stopped sharing this item": [
-        "Prenehali ste deliti ta predmet"
+        "Prenehali ste deliti ta predmet."
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše stare datoteke bodo izbrisane v 72 urah."

@@ -373,7 +373,6 @@ const CredentialLeakSection = () => {
                                                 )}
                                             >
                                                 <BreachInformationCard
-                                                    paid={isPaidUser}
                                                     breachData={viewingBreach}
                                                     onResolve={markAsResolvedBreach}
                                                     onOpen={markAsOpenBreach}

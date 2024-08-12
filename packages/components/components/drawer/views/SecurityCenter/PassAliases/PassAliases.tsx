@@ -17,6 +17,7 @@ import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases
 import clsx from '@proton/utils/clsx';
 
 import { DrawerAppSection } from '../../shared';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '../constants';
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AliasesList from './AliasesList';
 import HasNoAliases from './HasNoAliases';
@@ -100,6 +101,7 @@ const PassAliases = () => {
                         color="norm"
                         fullWidth
                         loading={loading}
+                        id={DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID}
                     >
                         {!hasAliases ? c('Security Center').t`Create an alias` : c('Security Center').t`New alias`}
                     </Button>

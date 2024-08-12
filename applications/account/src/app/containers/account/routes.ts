@@ -14,7 +14,11 @@ import {
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import { getHasVpnB2BPlan, getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasExternalMemberCapableB2BPlan,
+    getHasVpnB2BPlan,
+    hasCancellablePlan,
+} from '@proton/shared/lib/helpers/subscription';
 import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { Renew, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
@@ -62,7 +66,7 @@ export const getAccountAppRoutes = ({
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
 
-    const hasVPNOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
+    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
     const cancellablePlan = hasCancellablePlan(subscription, user);
 
@@ -135,12 +139,12 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-b2b-subscription',
                         // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
-                        available: isPaid && canPay && !cancellablePlan && hasVPNOrPassB2BPlan,
+                        available: isPaid && canPay && !cancellablePlan && hasExternalMemberCapableB2BPlan,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'downgrade-account',
-                        available: isPaid && canPay && !cancellablePlan && !hasVPNOrPassB2BPlan,
+                        available: isPaid && canPay && !cancellablePlan && !hasExternalMemberCapableB2BPlan,
                     },
                 ],
             },
@@ -278,7 +282,7 @@ export const getAccountAppRoutes = ({
                         available: !isSSOUser,
                     },
                     {
-                        text: c('Title').t`Security logs`,
+                        text: c('Title').t`Security events`,
                         id: 'logs',
                         available: !isSSOUser,
                     },

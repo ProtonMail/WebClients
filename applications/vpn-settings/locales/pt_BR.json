@@ -82,12 +82,6 @@
       "Block": [
         "Bloquear"
       ],
-      "Can send to this group": [
-        "Pode enviar para esse grupo"
-      ],
-      "Can't send to this group": [
-        "Não é possível enviar para este grupo"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Excluir logotipo"
+      ],
+      "Delete member": [
+        "Excluir membro"
       ],
       "Delete user": [
         "Excluir usuário"
@@ -2688,11 +2685,14 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Contas com domínios personalizados não podem participar de um plano Visionary ou familiar."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Contas com domínios personalizados não podem participar de um plano de grupo."
       ],
       "customer support": [
         "suporte ao cliente"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -2702,6 +2702,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "As contas Lifetime não podem participar de um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -2733,12 +2736,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os planos Visionary e familiar não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Atualmente, planos Visionary e familiares não oferecem suporte a contas vitalícias."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -2775,8 +2772,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Com seu plano atual, não é possível participar de um plano Visionary ou familiar."
+      "Your cannot accept this invitation with your current plan.": [
+        "Você não pode aceitar esse convite com seu plano atual."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3626,11 +3623,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -9320,11 +9317,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"

@@ -1874,6 +1874,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "República Islàmica de l'Iran"
+      ],
       "Isle of Man": [
         "Illa de Man"
       ],
@@ -3569,9 +3572,6 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Els comptes amb dominis personalitzats no poden unir-se a un pla Visionary o familiar."
-      ],
       "customer support": [
         "atenció al client"
       ],
@@ -3593,12 +3593,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans Visionary i familiar actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Els plans Visionary i familiar actualment no admeten comptes vitalicis."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
       ],
@@ -3616,9 +3610,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "El vostre pla actual no pot unir-se a un pla Visionary o familiar."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5268,9 +5259,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
-      "Access to my events": [
-        "Accés als meus esdeveniments."
-      ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
       ],
@@ -6193,6 +6181,12 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for $1": [
+        "Comenceu per $1"
+      ],
+      "Get started for 1 €": [
+        "Comenceu per 1€"
       ],
       "Upgrade now": [
         "Millora ara"
@@ -7364,6 +7358,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
+      "Please select billing state": [
+        "Seleccioneu l'estat de facturació"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
@@ -8452,6 +8449,9 @@
       "10 email addresses": [
         "10 adreces de correu electrònic"
       ],
+      "2 users": [
+        "2 usuaris"
+      ],
       "20 email addresses per user": [
         "20 adreces de correu electrònic per usuari"
       ],
@@ -8604,6 +8604,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Unlimited privacy for two": [
+        "Privadesa il·limitada per a dos"
       ],
       "Users won’t be able to manage their calendars": [
         "Els usuaris no podran gestionar els seus calendaris"
@@ -9751,6 +9754,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema amb Wallet"
       ]
     },
     "Warning": {

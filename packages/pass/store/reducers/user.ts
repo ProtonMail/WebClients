@@ -53,7 +53,7 @@ export type UserState = {
 export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization'>>;
 export type HydratedAccessState = RequiredNonNull<UserAccessState>;
 
-const initialState: UserState = {
+const getInitialState = (): UserState => ({
     addresses: {},
     eventId: null,
     features: null,
@@ -62,14 +62,14 @@ const initialState: UserState = {
     userSettings: null,
     waitingNewUserInvites: 0,
     monitor: { ProtonAddress: true, Aliases: true },
-};
+});
 
 export const INITIAL_HIGHSECURITY_SETTINGS = {
     Eligible: 0,
     Value: SETTINGS_PROTON_SENTINEL_STATE.DISABLED,
 };
 
-const reducer: Reducer<UserState> = (state = initialState, action) => {
+const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 

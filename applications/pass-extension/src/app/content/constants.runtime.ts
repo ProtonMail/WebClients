@@ -64,6 +64,11 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOFILL_LOGIN,
         },
+        {
+            type: FieldType.IDENTITY,
+            injection: FieldInjectionRule.FIRST_OF_SECTION,
+            action: DropdownAction.AUTOFILL_IDENTITY,
+        },
     ],
     [FormType.PASSWORD_CHANGE]: [
         {

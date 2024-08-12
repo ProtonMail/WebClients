@@ -11,9 +11,9 @@ export enum GROUP_MEMBER_TYPE {
     EXTERNAL = 1,
 }
 
-export enum GroupMemberPermissions {
-    CanSend = 0,
-    CantSend = 1,
+export enum GROUP_MEMBER_PERMISSIONS {
+    None = 0, // 0000
+    OverrideGroupPermissions = 1 << 0, // 0001
 }
 
 export interface GroupMemberAddressPendingKey {
@@ -30,7 +30,9 @@ export interface GroupMember {
     AddressId?: string;
     Email: string;
     State: GROUP_MEMBER_STATE;
+    Permissions: GROUP_MEMBER_PERMISSIONS;
     GroupMemberAddressPendingKey?: GroupMemberAddressPendingKey;
+    GroupID: string;
 }
 
 // really just a special group member
@@ -40,5 +42,16 @@ export interface GroupMembership {
     Status: string;
     Keys: GroupMemberAddressPendingKey;
     AddressID: string;
+    ID: string;
+}
+
+export interface GroupMembershipReturn {
+    Group: {
+        Name: string;
+        Address: string;
+    };
+    State: number;
+    ForwardingKeys: GroupMemberAddressPendingKey;
+    AddressId: string;
     ID: string;
 }

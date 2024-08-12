@@ -41,6 +41,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
     const handleRejectInvitation = async () => {
         await api(rejectInvitation(invite.ID));
         await call();
+        createNotification({ text: c('Success').t`Invitation rejected` });
         modalProps.onClose();
     };
 
@@ -51,6 +52,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         createNotification({
             text: c('familyOffer_2023:Family plan').t`You have successfully joined the family group`,
         });
+
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
             // Force refresh the organization since it's not present in the event manager
             getOrganization({ cache: CacheType.None }).catch(noop);

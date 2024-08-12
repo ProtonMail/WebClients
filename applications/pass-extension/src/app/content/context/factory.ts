@@ -8,7 +8,7 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 
 import { hasCriteria } from '@proton/pass/lib/settings/criteria';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
-import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
@@ -32,7 +32,7 @@ export const createContentScriptContext = (options: {
         UID: undefined,
     };
 
-    const settings: ProxiedSettings = INITIAL_SETTINGS;
+    const settings: ProxiedSettings = getInitialSettings();
     const featureFlags: FeatureFlagState = {};
 
     const context: ContentScriptContext = CSContext.set({
@@ -71,8 +71,9 @@ export const createContentScriptContext = (options: {
             const { autofill, autosuggest, autosave, passkeys } = settings;
 
             return {
-                Autofill: autofill.inject && !hasCriteria(mask, 'Autofill'),
-                Autofill2FA: !hasCriteria(mask, 'Autofill2FA'),
+                /** autofill can only be active if user has injection or "open on focus" setup */
+                Autofill: (autofill.inject || autofill.openOnFocus) && !hasCriteria(mask, 'Autofill'),
+                Autofill2FA: autofill.twofa && !hasCriteria(mask, 'Autofill2FA'),
                 AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
                 AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
                 Autosave: autosave.prompt && !hasCriteria(mask, 'Autosave'),

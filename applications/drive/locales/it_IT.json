@@ -3281,17 +3281,23 @@
       "${ BRAND_NAME } groups": [
         "Gruppi ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Gli account con domini personalizzati non possono entrare a far parte di un piano Visionary o di un piano famiglia."
+      "Accounts with custom domains cannot join a group plan.": [
+        "Gli account con domini personalizzati non possono aderire a un piano di gruppo."
       ],
       "customer support": [
         "assistenza clienti"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "I piani di gruppo attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di iscriverti. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invito di: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Gli account Lifetime non possono aderire a un piano di gruppo."
       ],
       "Manage addresses.": [
         "Gestisci gli indirizzi."
@@ -3307,12 +3313,6 @@
       ],
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
-      ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani Visionary e i piani famiglia attualmente non supportano account esterni. Crea un indirizzo ${ BRAND_NAME } prima di aderire al piano. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "I piani Visionary e i piani famiglia per ora non supportano gli account a vita."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Hai ricevuto un invito a ${ invite.OrganizationName }"
@@ -3335,8 +3335,8 @@
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
       ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Il tuo piano attuale non può essere associato a un piano Visionary o a un piano famiglia."
+      "Your cannot accept this invitation with your current plan.": [
+        "Non puoi accettare questo invito con il tuo piano attuale."
       ]
     },
     "familyOffer_2023:Label": {

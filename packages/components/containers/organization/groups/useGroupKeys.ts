@@ -2,6 +2,7 @@ import {
     useAddresses,
     useApi,
     useAuthentication,
+    useGetOrganizationKey,
     useGetPublicKeysForInbox,
     useGetUser,
     useGetUserKeys,
@@ -24,6 +25,7 @@ const useGroupKeys = () => {
     const [addresses = []] = useAddresses();
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const { createNotification } = useNotifications();
+    const getOrganizationKey = useGetOrganizationKey();
 
     const addNewGroupAddressMemberKey = async (groupAddress: Address, groupAddressKey: DecryptedAddressKey) => {
         const userKeys = await getUserKeys();
@@ -48,8 +50,17 @@ const useGroupKeys = () => {
 
     const getGroupAddressKey = async (
         groupAddress: Address,
-        organizationKey: PrivateKeyReference
+        // this function is faster if called with organizationKey
+        organizationKey: PrivateKeyReference | undefined = undefined
     ): Promise<DecryptedAddressKey> => {
+        if (organizationKey === undefined) {
+            const cachedOrganizationKey = await getOrganizationKey();
+            if (cachedOrganizationKey.privateKey === undefined) {
+                throw new Error('Organization key is undefined');
+            }
+            organizationKey = cachedOrganizationKey.privateKey;
+        }
+
         const encryptedKeys = groupAddress.Keys;
         const groupAddressKey = await getDecryptedGroupAddressKey(encryptedKeys, organizationKey);
 
@@ -65,7 +76,11 @@ const useGroupKeys = () => {
     };
 
     const getMemberPublicKeys = async (memberEmail: string) => {
-        const memberPublicKeys = await getPublicKeysForInbox({ email: memberEmail, lifetime: 0 });
+        const memberPublicKeys = await getPublicKeysForInbox({
+            email: memberEmail,
+            lifetime: 0,
+            noCache: true,
+        });
 
         if (memberPublicKeys.Errors) {
             memberPublicKeys.Errors.forEach((error: string) => {

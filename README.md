@@ -7,7 +7,7 @@ This project is a monorepo hosting the proton web clients. It includes the web a
 -   <img src="./applications/drive/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Drive</span>
 -   <img src="./applications/account/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Account</span>
 -   <img src="./applications/vpn-settings/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton VPN</span>
--   <img src="./applications/pass-extension/public/assets/protonpass-icon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Pass</span>
+-   <img src="./applications/pass/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Pass</span>
 -   <img src="./applications/wallet/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Wallet</span>
 
 Technically, this monorepo is based on Yarn 3 & Yarn Workspaces, with unified versioning for all packages inside.

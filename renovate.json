@@ -16,7 +16,11 @@
         "@protontech/pass-rust-core",
         "@mlc-ai/web-llm"
     ],
-    "ignorePaths": ["**/node_modules/**", "applications/pass-extension/safari/**"],
+    "ignorePaths": [
+        "**/node_modules/**",
+        "applications/pass-extension/safari/**",
+        "applications/pass-desktop/native/**"
+    ],
     "packageRules": [
         {
             "groupName": "Playwright",

@@ -3278,9 +3278,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konten mit benutzerdefinierten Domains können keinen Visionary- oder Family-Abonnement abschließen."
-      ],
       "customer support": [
         "Kundendienst"
       ],
@@ -3305,12 +3302,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- und Family-Abonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Für Visionary- und Family-Abonnements sind derzeit keine lebenslangen Konten verfügbar."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
       ],
@@ -3331,9 +3322,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Mit deinem aktuellen Abonnement kannst du kein Visionary- oder Family-Abonnement abschließen."
       ]
     },
     "familyOffer_2023:Label": {

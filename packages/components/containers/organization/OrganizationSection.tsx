@@ -15,7 +15,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getHasMemberCapablePlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasMemberCapablePlan, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -189,13 +189,16 @@ const OrganizationSection = ({ app, organization }: Props) => {
                         ? c('familyOffer_2023:Action').t`Set up family group`
                         : c('Action').t`Enable multi-user support`;
 
+                    let learnMoreLink = '/proton-for-business';
+                    if (hasFamily(subscription)) {
+                        learnMoreLink = '/get-started-proton-family';
+                    } else if (hasDuo(subscription)) {
+                        learnMoreLink = '/get-started-proton-duo';
+                    }
+
                     return (
                         <>
-                            <SettingsParagraph
-                                learnMoreUrl={getKnowledgeBaseUrl(
-                                    isPartOfFamily ? '/get-started-proton-family' : '/proton-for-business'
-                                )}
-                            >
+                            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl(learnMoreLink)}>
                                 {c('familyOffer_2023:Info')
                                     .t`Create and manage family members and assign them storage space shared between ${DRIVE_APP_NAME} and ${MAIL_APP_NAME}.`}
                             </SettingsParagraph>

@@ -13,7 +13,7 @@ import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getHasVpnOrPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasExternalMemberCapableB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -71,7 +71,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [{ hasPaidVpn }] = useUser();
     const [subscription] = useSubscription();
     const [orgKeyCreated, setOrgKeyCreated] = useState(false);
-    const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
+    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
     const selfMember = members.find(({ Self }) => !!Self);
     const storageRange = getStorageRange(selfMember, organization);
     const [model, setModel] = useState({
@@ -105,7 +105,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const errorHandler = useErrorHandler();
 
     const handlePreStorageStep = async () => {
-        if (hasVpnOrPassB2BPlan) {
+        if (hasExternalMemberCapableB2BPlan) {
             // If user setting up organization for VPN B2B plan then the storage step must be skipped.
             return finalizeOrganizationCreation();
         }

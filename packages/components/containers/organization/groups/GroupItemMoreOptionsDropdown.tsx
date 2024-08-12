@@ -9,18 +9,34 @@ import {
     useModalStateObject,
     usePopperAnchor,
 } from '@proton/components/components';
+import useLoading from '@proton/hooks/useLoading';
 
 import GroupItemActionPrompt from './GroupItemActionPrompt';
 
 interface Props {
     handleDeleteGroup: () => Promise<void>;
     handleDeleteAllGroupMembers: () => Promise<void>;
+    handleEnableGroupAddressE2EE: () => Promise<void>;
+    handleDisableGroupAddressE2EE: () => Promise<void>;
+    groupAddressE2EEEnabled: boolean | undefined;
 }
 
-const GroupItemMoreOptionsDropdown = ({ handleDeleteGroup, handleDeleteAllGroupMembers }: Props) => {
+const GroupItemMoreOptionsDropdown = ({
+    handleDeleteGroup,
+    handleDeleteAllGroupMembers,
+    handleEnableGroupAddressE2EE,
+    handleDisableGroupAddressE2EE,
+    groupAddressE2EEEnabled,
+}: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
     const removeAllMembersPrompt = useModalStateObject();
+    const [loading, withLoading] = useLoading();
+
+    // === false as in not true and not undefined
+    const displayEnableE2EEButton = groupAddressE2EEEnabled === false;
+    // === true as in true and not undefined
+    const displayDisableE2EEButton = groupAddressE2EEEnabled === true;
 
     return (
         <>
@@ -64,6 +80,28 @@ const GroupItemMoreOptionsDropdown = ({ handleDeleteGroup, handleDeleteAllGroupM
                     >
                         {c('Action').t`Remove all members from group`}
                     </DropdownMenuButton>
+                    {displayEnableE2EEButton && (
+                        <DropdownMenuButton
+                            className="text-left"
+                            disabled={loading}
+                            onClick={() => {
+                                withLoading(handleEnableGroupAddressE2EE());
+                            }}
+                        >
+                            {c('Action').t`Enable E2EE for group address`}
+                        </DropdownMenuButton>
+                    )}
+                    {displayDisableE2EEButton && (
+                        <DropdownMenuButton
+                            className="text-left"
+                            disabled={loading}
+                            onClick={() => {
+                                withLoading(handleDisableGroupAddressE2EE());
+                            }}
+                        >
+                            {c('Action').t`Disable E2EE for group address`}
+                        </DropdownMenuButton>
+                    )}
                     <DropdownMenuButton
                         className="text-left color-danger"
                         onClick={() => {

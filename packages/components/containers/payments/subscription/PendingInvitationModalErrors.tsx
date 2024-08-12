@@ -58,6 +58,9 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     } else if (errors.IsExternalUser) {
         errorDescription = c('familyOffer_2023:Family plan')
             .jt`Group plans do not currently support external accounts. Create a ${BRAND_NAME} address before joining. ${addressSettingsLink}`;
+    } else if (errors.HasUnpaidInvoice) {
+        errorDescription = c('familyOffer_2023:Family plan')
+            .t`You have unpaid invoices. Please pay them before joining a group plan.`;
     }
 
     return (
