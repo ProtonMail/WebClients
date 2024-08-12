@@ -351,8 +351,13 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             disabledOnlyField={inputsDisabled}
                             autoFocus
                         >
-                            {filteredAddresses.map(({ ID, Email }) => (
-                                <Option title={Email} key={ID} value={ID}>
+                            {(isEditing ? addresses : filteredAddresses).map(({ ID, Email, Receive }) => (
+                                <Option
+                                    title={Email}
+                                    key={ID}
+                                    value={ID}
+                                    disabled={Receive !== ADDRESS_RECEIVE.RECEIVE_YES}
+                                >
                                     {Email}
                                 </Option>
                             ))}
