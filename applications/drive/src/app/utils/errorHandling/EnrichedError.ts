@@ -1,4 +1,4 @@
-import type { CaptureContext } from '@sentry/types';
+import type { ScopeContext } from '@sentry/types';
 
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
@@ -23,14 +23,14 @@ export const isEnrichedError = (err: unknown): err is EnrichedError => {
  * however there is a `core-js` bug in the version we use which can cause
  * crashes when the Error object gets cloned. Hence, this custom error.
  *
- * We can use these properties from Sentry's `CaptureContext`:
+ * We can use these properties from Sentry's `ScopeContext`:
  * - `tags`, which are searchable, and must be primitives
  * - `extra`, which can be structured data
  */
 export class EnrichedError extends Error {
     isEnrichedError: boolean = true;
 
-    context?: CaptureContext;
+    context?: Partial<ScopeContext>;
 
     /**
      * An optional message to be used for Sentry instead of the `message` property.
@@ -39,7 +39,7 @@ export class EnrichedError extends Error {
      */
     sentryMessage?: string;
 
-    constructor(message: string, context?: CaptureContext, sentryMessage?: string) {
+    constructor(message: string, context?: Partial<ScopeContext>, sentryMessage?: string) {
         super(message);
 
         // It is important that the name is "Error", as we want it
