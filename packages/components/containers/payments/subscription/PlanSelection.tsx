@@ -214,6 +214,7 @@ const PlanSelection = ({
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
     const canAccessDuoPlan = useFlag('DuoPlan');
+    const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
 
     const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
@@ -318,7 +319,10 @@ const PlanSelection = ({
         plansMap[bundleProPlan],
     ]);
 
-    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
+    const driveB2BPlans = filterPlans([
+        canAccessDriveBusinessPlan ? plansMap[PLANS.DRIVE_BUSINESS] : undefined,
+        plansMap[bundleProPlan],
+    ]);
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 

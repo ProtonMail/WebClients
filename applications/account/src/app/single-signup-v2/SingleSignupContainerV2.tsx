@@ -211,6 +211,7 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
+    const canAccessDriveBizPlan = useFlag('DriveBizPlan');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -219,7 +220,7 @@ const SingleSignupContainerV2 = ({
             [
                 SSO_PATHS.PASS_SIGNUP_B2B,
                 SSO_PATHS.MAIL_SIGNUP_B2B,
-                SSO_PATHS.DRIVE_SIGNUP_B2B,
+                canAccessDriveBizPlan && SSO_PATHS.DRIVE_SIGNUP_B2B,
                 SSO_PATHS.CALENDAR_SIGNUP_B2B,
                 SSO_PATHS.BUSINESS_SIGNUP,
             ].includes(location.pathname as any)
@@ -392,6 +393,7 @@ const SingleSignupContainerV2 = ({
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 hideFreePlan: signupParameters.hideFreePlan,
+                canAccessDriveBizPlan,
             });
         }
         if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
