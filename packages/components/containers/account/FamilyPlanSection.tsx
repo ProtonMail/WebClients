@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
 import { Loader } from '@proton/components/components/loader';
-import { useAddresses, useCalendars, useOrganization, useUser } from '@proton/components/hooks';
+import { useAddresses, useCalendars, useMember, useOrganization, useUser } from '@proton/components/hooks';
 import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
 import { UsagePanel } from '../payments/subscription/panels';
@@ -17,10 +17,12 @@ const FamilyPlanSection = () => {
     const [user, userLoading] = useUser();
     const [calendars, calendarsLoading] = useCalendars();
     const [addresses, addressLoading] = useAddresses();
+    const [, memberLoading] = useMember();
 
     const [leaveFamilyModal, setLeaveFamilyModal, renderLeaveFamilyModal] = useModalState();
 
-    const isLoading = !organization || organisationLoading || userLoading || calendarsLoading || addressLoading;
+    const isLoading =
+        !organization || organisationLoading || userLoading || calendarsLoading || addressLoading || memberLoading;
 
     const isFamilyPlan = isOrganizationFamily(organization);
     const isDuoPlan = isOrganizationDuo(organization);
