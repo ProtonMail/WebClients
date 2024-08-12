@@ -14,7 +14,7 @@ import type {
   Spread,
 } from 'lexical'
 import { $applyNodeReplacement, $getEditor, DecoratorNode, createEditor } from 'lexical'
-import { getEditorDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 const ImageComponent = React.lazy(() => import('./ImageComponent'))
 
@@ -39,7 +39,7 @@ function $convertImageElement(domNode: Node): null | DOMConversionOutput {
   const aspectRatio = width && height ? width / height : 1
   let finalWidth = width
   let finalHeight = height
-  const editorDimensions = getEditorDimensionsWithoutPadding($getEditor())
+  const editorDimensions = getElementDimensionsWithoutPadding($getEditor().getRootElement())
   if (editorDimensions) {
     const editorWidth = editorDimensions.width
     if (width >= editorWidth) {
