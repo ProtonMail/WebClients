@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { buildNordPassIdentity } from '@proton/pass/lib/import/builders/nordpass.builder';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -11,6 +12,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '../helpers/transformers';
@@ -53,6 +55,13 @@ const processNoteItem = (item: NordPassItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.name,
         note: item.note,
+    });
+
+const processIdentityItem = (item: NordPassItem): ItemImportIntent<'identity'> =>
+    importIdentityItem({
+        name: item.name,
+        note: item.note,
+        ...buildNordPassIdentity(item),
     });
 
 const processCreditCardItem = (item: NordPassItem): ItemImportIntent<'creditCard'> => {
@@ -102,6 +111,8 @@ export const readNordPassData = async ({
                             switch (item.type) {
                                 case NordPassType.CREDIT_CARD:
                                     return processCreditCardItem(item);
+                                case NordPassType.IDENTITY:
+                                    return processIdentityItem(item);
                                 case NordPassType.LOGIN:
                                     return processLoginItem(item, importUsername);
                                 case NordPassType.NOTE:
