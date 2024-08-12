@@ -15,6 +15,8 @@ import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_shares/useDriveShareURLBookmarking';
 import { sendErrorReport } from '../utils/errorHandling';
+import { getErrorMetricType } from '../utils/errorHandling/apiErrors';
+import type { ErrorTuple } from '../utils/type/ErrorTuple';
 import { deleteStoredUrlPassword } from '../utils/url/password';
 
 export default function PublicSharedLinkContainer() {
@@ -35,13 +37,21 @@ export default function PublicSharedLinkContainer() {
 function PublicShareLinkInitContainer() {
     const { clearDownloads } = useDownload();
     const { token, urlPassword } = usePublicToken();
-    const { isLoading, error: authError, isPasswordNeeded, submitPassword } = usePublicAuth(token, urlPassword);
+    const {
+        isLoading,
+        error: [authError, authErrorMessage],
+        isPasswordNeeded,
+        submitPassword,
+    } = usePublicAuth(token, urlPassword);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const isProtonUser = isProtonUserFromCookie();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
-    const [errorMessage, setError] = useState<string | undefined>();
+    const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
     const { loadPublicShare, user } = usePublicShare();
+
+    const error: ErrorTuple[0] = authError || publicShareError;
+    const errorMessage: ErrorTuple[1] = authErrorMessage || publicShareErrorMessage;
 
     // If password to the share was changed, page need to reload everything.
     // In such case we need to also clear all downloads to not keep anything
@@ -58,42 +68,49 @@ function PublicShareLinkInitContainer() {
     }, []);
 
     useEffect(() => {
-        const error = authError || errorMessage;
-        if (error) {
-            sendErrorReport(new Error(error));
+        if (errorMessage) {
+            sendErrorReport(new Error(errorMessage));
         }
-    }, [authError, errorMessage]);
+        if (error) {
+            metrics.drive_public_share_load_error_total.increment({
+                // TODO: There is a flaw here, if we can't decrypt the link we don't know the file type, so it will default to 'file' (the first ternary condition), we should add a third type 'unknown'
+                type: !link ? 'file' : link.isFile ? 'file' : 'folder',
+                plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
+                error: getErrorMetricType(error),
+            });
+        }
+    }, [errorMessage, error]);
 
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (token && !isLoading && !authError && !isPasswordNeeded) {
+        if (token && !isLoading && !authErrorMessage && !isPasswordNeeded) {
             void withLoading(
                 loadPublicShare(abortController.signal)
                     .then(({ link }) => {
                         setLink(link);
                         metrics.drive_public_share_load_success_total.increment({
-                            type: link?.isFile ? 'file' : 'folder',
+                            type: link.isFile ? 'file' : 'folder',
                             plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
                         });
                     })
                     .catch((error) => {
                         console.error(error);
                         const apiError = getApiError(error);
-                        setError(apiError.message || error.message || c('Info').t`Cannot load shared link`);
+                        setError([error, apiError.message || error.message || c('Info').t`Cannot load shared link`]);
                     })
             );
-        } else if (authError) {
+        } else if (authErrorMessage) {
             setLoading(false);
         }
 
         return () => {
             abortController.abort();
         };
-    }, [token, isLoading, authError, isPasswordNeeded]);
+    }, [token, isLoading, authErrorMessage, isPasswordNeeded]);
 
     const showLoadingPage = isLoading || isLoadingDecrypt;
-    const showErrorPage = authError || errorMessage || (showLoadingPage === false && link === undefined);
+    const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
 
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} />;

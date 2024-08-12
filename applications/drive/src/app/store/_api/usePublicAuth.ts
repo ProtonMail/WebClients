@@ -5,8 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './usePublicSession';
@@ -22,7 +21,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
 
     const { hasSession, initHandshake, initSession } = usePublicSession();
     const [isLoading, withLoading] = useLoading(true);
-    const [error, setError] = useState<string | undefined>();
+    const [error, setError] = useState<[unknown, string]>([, '']);
 
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
 
@@ -32,11 +31,10 @@ export default function usePublicAuth(token: string, urlPassword: string) {
      * otherwise it uses the message from API. Any non-structured error is
      * converted to general message about failure and is reported to Sentry.
      */
-    const handleInitialLoadError = (error: any) => {
+    const handleInitialLoadError = (error: unknown) => {
         const apiError = getApiError(error);
-
-        if (apiError.status === HTTP_STATUS_CODE.NOT_FOUND || apiError.code === RESPONSE_CODE.NOT_FOUND) {
-            setError(c('Title').t`The link either does not exist or has expired`);
+        if (apiError.status === HTTP_STATUS_CODE.NOT_FOUND || apiError.code === API_CODES.NOT_FOUND_ERROR) {
+            setError([error, c('Title').t`The link either does not exist or has expired`]);
             return;
         }
 
@@ -48,7 +46,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
         // useEffect below and doesn't have to be taken care of here as here
         // would not be possible to distinguish the situation anyway.
         if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
-            setError(c('Title').t`The link expired`);
+            setError([error, c('Title').t`The link expired`]);
             return;
         }
 
@@ -58,7 +56,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
             return;
         }
 
-        setError(c('Title').t`Cannot load link`);
+        setError([error, c('Title').t`Cannot load link`]);
         sendErrorReport(error);
     };
 

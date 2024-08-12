@@ -1,4 +1,4 @@
-import type { CaptureContext } from '@sentry/types';
+import type { ScopeContext } from '@sentry/types';
 
 import { CryptoProxy } from '@proton/crypto';
 
@@ -14,7 +14,7 @@ export const isVerificationError = (err: any) => {
 };
 
 export class VerificationError extends EnrichedError {
-    constructor(context?: CaptureContext) {
+    constructor(context?: Partial<ScopeContext>) {
         super(VERIFIER_ERROR_MESSAGE, context);
 
         // It is important that the name is "Error", as we want it
