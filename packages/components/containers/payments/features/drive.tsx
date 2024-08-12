@@ -122,10 +122,9 @@ export const getStorageFeatureB2B = (
     options: {
         highlight?: boolean;
         subtext?: boolean;
-        unit?: Parameters<typeof humanSize>[0]['unit'];
     }
 ): PlanCardFeatureDefinition => {
-    const size = humanSize({ bytes, fraction: 0, unit: options.unit });
+    const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
 
     return {
         text: c('new_plans: feature').t`${size} storage per user`,
@@ -230,7 +229,6 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             }),
             [PLANS.DRIVE_BUSINESS]: getStorageFeatureB2B(plansMap[PLANS.DRIVE_BUSINESS]?.MaxSpace ?? 1099511627776, {
                 subtext: true,
-                unit: 'TB',
             }),
             [PLANS.PASS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.WALLET]: getStorageFeature(-1, { subtext: true, freePlan }),
