@@ -4,7 +4,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Block, Pagination } from '@proton/components/components';
+import { Block, Icon, Pagination } from '@proton/components/components';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getPassLogs } from '@proton/shared/lib/api/b2blogs';
@@ -134,6 +134,19 @@ const PassEvents = () => {
         reset();
     };
 
+    const handleClickableEmailOrIP = (keyword: string) => {
+        const searchType = getSearchType(keyword);
+
+        if (searchType !== 'email' && searchType !== 'ip') {
+            return;
+        }
+
+        const updatedQuery = { ...query, [searchType === 'email' ? 'Email' : 'Ip']: keyword };
+        setQuery(updatedQuery);
+        setKeyword(keyword);
+        reset();
+    };
+
     const handleResetFilter = () => {
         setError(null);
         setFilter(initialFilter);
@@ -159,32 +172,38 @@ const PassEvents = () => {
                 handleSearchSubmit={handleSearchSubmit}
                 getEventTypeText={getPassEventTypeText}
             />
-            <Block className="flex flex-nowrap flex-row-reverse items-end items-center gap-2">
-                <Button
-                    shape="outline"
-                    onClick={handleDownloadClick}
-                    title={c('Action').t`Download`}
-                    disabled={events.length === 0}
-                >
-                    {c('Action').t`Download`}
-                </Button>
-                <Button
-                    shape="outline"
-                    onClick={handleResetFilter}
-                    disabled={Object.keys(query).length === 0}
-                    title={c('Action').t`Clear filter`}
-                >
-                    {c('Action').t`Clear filters`}
-                </Button>
-                <Pagination
-                    page={page}
-                    total={total}
-                    limit={PAGINATION_LIMIT}
-                    onSelect={onSelect}
-                    onNext={onNext}
-                    onPrevious={onPrevious}
-                />
-            </Block>
+            <div className="flex justify-space-between">
+                <div className="content-center">
+                    <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
+                    <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
+                </div>
+                <Block className="flex flex-nowrap flex-row-reverse items-end items-center gap-2">
+                    <Button
+                        shape="outline"
+                        onClick={handleDownloadClick}
+                        title={c('Action').t`Download`}
+                        disabled={events.length === 0}
+                    >
+                        {c('Action').t`Download`}
+                    </Button>
+                    <Button
+                        shape="outline"
+                        onClick={handleResetFilter}
+                        disabled={Object.keys(query).length === 0}
+                        title={c('Action').t`Clear filter`}
+                    >
+                        {c('Action').t`Clear filters`}
+                    </Button>
+                    <Pagination
+                        page={page}
+                        total={total}
+                        limit={PAGINATION_LIMIT}
+                        onSelect={onSelect}
+                        onNext={onNext}
+                        onPrevious={onPrevious}
+                    />
+                </Block>
+            </div>
             {error ? (
                 <GenericError className="text-center">{error}</GenericError>
             ) : (
@@ -193,6 +212,7 @@ const PassEvents = () => {
                     loading={loading}
                     handleEventClick={handleClickableEvent}
                     handleTimeClick={handleClickableTime}
+                    handleEmailOrIpClick={handleClickableEmailOrIP}
                 />
             )}
         </SettingsSectionWide>
