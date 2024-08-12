@@ -85,7 +85,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
             });
         }
 
-        const ttl = orgLockTTL ?? lockTTL ?? DEFAULT_LOCK_TTL;
+        const ttl = orgLockTTL || (lockTTL ?? DEFAULT_LOCK_TTL);
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
         const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
