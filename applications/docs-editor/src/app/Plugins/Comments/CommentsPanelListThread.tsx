@@ -1,4 +1,3 @@
-import { $getNodeByKey } from 'lexical'
 import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
@@ -11,17 +10,51 @@ import { c, msgid } from 'ttag'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import type { CommentThreadMarkNode } from './CommentThreadMarkNode'
-import { $isCommentThreadMarkNode } from './CommentThreadMarkNode'
 
 export function CommentsPanelListThread({ thread }: { thread: CommentThreadInterface }) {
   const [editor] = useLexicalComposerContext()
-  const { controller, markNodeMap, activeIDs } = useCommentsContext()
+  const { controller, getMarkNodes, activeIDs } = useCommentsContext()
 
   const application = useApplication()
   const [isDeleting, setIsDeleting] = useState(false)
 
   const [typers, setTypers] = useState<string[]>([])
+
+  const markID = thread.markID
+  const markNodes = useMemo(() => {
+    return getMarkNodes(markID) ?? []
+  }, [getMarkNodes, markID])
+
+  const [element, setElement] = useState<HTMLLIElement | null>(null)
+  const [isFocusWithin, setIsFocusWithin] = useState(false)
+  const [isHovering, setIsHovering] = useState(false)
+  useEffect(() => {
+    if (!element) {
+      return
+    }
+    const onFocus = () => {
+      setIsFocusWithin(true)
+    }
+    const onBlur = () => {
+      setIsFocusWithin(false)
+    }
+    const onMouseEnter = () => {
+      setIsHovering(true)
+    }
+    const onMouseLeave = () => {
+      setIsHovering(false)
+    }
+    element.addEventListener('focusin', onFocus)
+    element.addEventListener('focusout', onBlur)
+    element.addEventListener('mouseenter', onMouseEnter)
+    element.addEventListener('mouseleave', onMouseLeave)
+    return () => {
+      element.removeEventListener('focusin', onFocus)
+      element.removeEventListener('focusout', onBlur)
+      element.removeEventListener('mouseenter', onMouseEnter)
+      element.removeEventListener('mouseleave', onMouseLeave)
+    }
+  }, [element])
 
   useEffect(() => {
     controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
@@ -34,28 +67,41 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     }, LiveCommentsEvent.TypingStatusChange)
   }, [controller, application, thread.id])
 
-  const markID = thread.markID
-
   const quote = useMemo(() => {
-    let quote: string | undefined
-    editor.getEditorState().read(() => {
-      const markNodeKeys = markNodeMap.get(markID)
-      if (markNodeKeys !== undefined) {
-        const markNodeKey = Array.from(markNodeKeys)[0]
-        const markNode = $getNodeByKey<CommentThreadMarkNode>(markNodeKey)
-        if ($isCommentThreadMarkNode(markNode)) {
-          quote = markNode.getTextContent()
-        }
+    return editor.getEditorState().read(() => {
+      const markNode = markNodes[0]
+      if (!markNode) {
+        return null
       }
+      return markNode.getTextContent()
     })
-    return quote
-  }, [editor, markID, markNodeMap])
+  }, [editor, markNodes])
 
   const handleClickThread = () => {
     controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
   }
 
-  const isActive = activeIDs.includes(markID)
+  const isActive = activeIDs.includes(markID) || isFocusWithin
+  useEffect(() => {
+    if (!isActive && !isHovering) {
+      return
+    }
+    const changedElems: HTMLElement[] = []
+    const editorState = editor.getEditorState()
+    for (const node of markNodes) {
+      const element = editorState.read(() => editor.getElementByKey(node.getKey()))
+      if (!element) {
+        continue
+      }
+      element.classList.add('selected')
+      changedElems.push(element)
+    }
+    return () => {
+      for (const element of changedElems) {
+        element.classList.remove('selected')
+      }
+    }
+  }, [editor, isActive, isHovering, markNodes])
 
   const isResolved = thread.state === CommentThreadState.Resolved
 
@@ -72,13 +118,14 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     <li
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
+      ref={setElement}
       data-thread-mark-id={markID}
       onClick={handleClickThread}
       className={clsx(
-        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded border last:mb-0 focus:outline-none',
-        isActive
-          ? 'shadow-raised'
-          : 'focus-within:[box-shadow:_var(--shadow-raised-offset)_rgb(var(--shadow-color,_var(--shadow-default-color))/var(--shadow-raised-opacity))]',
+        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded border transition-transform duration-[50ms] last:mb-0 focus:outline-none',
+        isActive || isHovering
+          ? 'shadow-raised relative translate-x-[-5%] hover:bg-[--optional-background-lowered]'
+          : '',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
       )}
       data-testid={isActive ? 'floating-thread-list-non-section' : 'floating-thread-list-section'}
