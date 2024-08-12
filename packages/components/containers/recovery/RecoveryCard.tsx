@@ -307,13 +307,13 @@ const SecurityCheckupCard = () => {
     if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE) {
         return (
             <GenericSecurityCheckupCard
-                title={c('l10n_nightly: Security checkup').t`Your account and data can be recovered`}
-                subtitle={c('l10n_nightly: Security checkup').t`Your account is fully secure.`}
+                title={c('Safety review').t`Your account and data can be recovered`}
+                subtitle={c('Safety review').t`Your account is fully secure.`}
                 icon="pass-shield-ok"
                 color="success"
-                description={c('l10n_nightly: Security checkup')
+                description={c('Safety review')
                     .t`Your account and data can be recovered. Check if you can still access your recovery methods.`}
-                cta={c('l10n_nightly: Security checkup').t`Check account security`}
+                cta={c('Safety review').t`Check account security`}
             />
         );
     }
@@ -321,13 +321,13 @@ const SecurityCheckupCard = () => {
     if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE) {
         return (
             <GenericSecurityCheckupCard
-                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
-                subtitle={c('l10n_nightly: Security checkup').t`You have recommended actions.`}
+                title={c('Safety review').t`Safeguard your account`}
+                subtitle={c('Safety review').t`You have recommended actions.`}
                 icon="pass-shield-warning"
                 color="info"
-                description={c('l10n_nightly: Security checkup')
+                description={c('Safety review')
                     .t`Your account and data can be recovered. You have recommended actions to Safeguard your account further.`}
-                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+                cta={c('Safety review').t`Safeguard account now`}
             />
         );
     }
@@ -335,15 +335,15 @@ const SecurityCheckupCard = () => {
     if (cohort === SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED) {
         return (
             <GenericSecurityCheckupCard
-                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
-                subtitle={c('l10n_nightly: Security checkup').t`You are at risk of losing access to your data.`}
+                title={c('Safety review').t`Safeguard your account`}
+                subtitle={c('Safety review').t`You are at risk of losing access to your data.`}
                 icon="pass-shield-warning"
                 color="warning"
                 description={getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
+                    c('Safety review')
                         .t`If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.`
                 )}
-                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+                cta={c('Safety review').t`Safeguard account now`}
             />
         );
     }
@@ -351,16 +351,15 @@ const SecurityCheckupCard = () => {
     if (cohort === SecurityCheckupCohort.NO_RECOVERY_METHOD) {
         return (
             <GenericSecurityCheckupCard
-                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
-                subtitle={c('l10n_nightly: Security checkup')
-                    .t`You are at risk of losing access to your account and data.`}
+                title={c('Safety review').t`Safeguard your account`}
+                subtitle={c('Safety review').t`You are at risk of losing access to your account and data.`}
                 icon="pass-shield-warning"
                 color="danger"
                 description={getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
+                    c('Safety review')
                         .t`If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.`
                 )}
-                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+                cta={c('Safety review').t`Safeguard account now`}
             />
         );
     }
@@ -368,22 +367,22 @@ const SecurityCheckupCard = () => {
     if (actions.length || furtherActions.length) {
         return (
             <GenericSecurityCheckupCard
-                title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
-                subtitle={c('l10n_nightly: Security checkup').t`You have recommended actions.`}
+                title={c('Safety review').t`Safeguard your account`}
+                subtitle={c('Safety review').t`You have recommended actions.`}
                 icon="pass-shield-warning"
                 color="info"
-                cta={c('l10n_nightly: Security checkup').t`Safeguard account now`}
+                cta={c('Safety review').t`Safeguard account now`}
             />
         );
     }
 
     return (
         <GenericSecurityCheckupCard
-            title={c('l10n_nightly: Security checkup').t`Safeguard your account`}
-            subtitle={c('l10n_nightly: Security checkup').t`Your account is fully secure.`}
+            title={c('Safety review').t`Safeguard your account`}
+            subtitle={c('Safety review').t`Your account is fully secure.`}
             icon="pass-shield-ok"
             color="success"
-            cta={c('l10n_nightly: Security checkup').t`Check account security`}
+            cta={c('Safety review').t`Check account security`}
         />
     );
 };
