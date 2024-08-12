@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
@@ -11,7 +12,8 @@ import { getId } from '@proton/shared/lib/webauthn/id';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
-import { useConfig, useNotifications, useUserSettings } from '../../hooks';
+import { useAvailableRecoveryMethods, useConfig, useNotifications, useUserSettings } from '../../hooks';
+import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
@@ -32,6 +34,7 @@ const TwoFactorSection = () => {
     const { createNotification } = useNotifications();
     const [enableTOTPModal, setEnableTOTPModalOpen, renderEnableTOTPModal] = useModalState();
     const [disableTOTPModal, setDisableTOTPModalOpen, renderDisableTOTPModal] = useModalState();
+    const [lostTwoFAPModal, setLostTwoFAModal, renderLostTwoFAModal] = useModalState();
     const [addSecurityKeyModal, setAddSecurityKeyModal, renderAddSecurityKeyModal] = useModalState();
     const [removeSecurityKeyModal, setRemoveSecurityKeyModal, renderRemoveSecurityKeyModal] = useModalState();
     const [editSecurityKeyModal, setEditSecurityKeyModal, renderEditSecurityKeyModal] = useModalState();
@@ -40,6 +43,8 @@ const TwoFactorSection = () => {
     );
     const [tmpEdit, setTmpEdit] = useState<{ name: string; id: string } | undefined>(undefined);
 
+    const showSignedInForgot2FAFlow = useFlag('SignedInForgot2FAFlow');
+
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
 
@@ -47,6 +52,9 @@ const TwoFactorSection = () => {
     const canEnableFido2 = hasTOTPEnabled;
 
     const canDisableTOTP = hasTOTPEnabled && !registeredKeys.length;
+
+    const [availableRecoveryMethods] = useAvailableRecoveryMethods();
+    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
 
     const handleChangeTOTP = () => {
         if (hasTOTPEnabled) {
@@ -84,10 +92,20 @@ const TwoFactorSection = () => {
         <SettingsSection>
             {renderEnableTOTPModal && <EnableTOTPModal {...enableTOTPModal} />}
             {renderDisableTOTPModal && <DisableTOTPModal {...disableTOTPModal} />}
+            {renderLostTwoFAModal && (
+                <LostTwoFAModal availableRecoveryMethods={availableRecoveryMethods} {...lostTwoFAPModal} />
+            )}
             <SettingsParagraph>
                 {c('Info')
                     .t`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
             </SettingsParagraph>
+            {showSignedInForgot2FAFlow && hasTOTPEnabled && hasRecoveryMethod && (
+                <SettingsParagraph>
+                    <InlineLinkButton onClick={() => setLostTwoFAModal(true)}>
+                        {c('Action').t`Lost access to your 2FA device?`}
+                    </InlineLinkButton>
+                </SettingsParagraph>
+            )}
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="twoFactorToggle" className="text-semibold">

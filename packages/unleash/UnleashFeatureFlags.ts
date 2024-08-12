@@ -57,6 +57,7 @@ enum AccountFlag {
     AllowDowncycling = 'AllowDowncycling',
     SecurityCheckup = 'SecurityCheckup',
     PassB2BForceLock = 'PassB2BForceLock',
+    SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
 }
 
 enum CalendarFeatureFlag {

@@ -21,7 +21,7 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                 <AuthModal
                     config={disableTotp()}
                     {...authModalProps}
-                    onCancel={undefined}
+                    onCancel={onClose}
                     onSuccess={async () => {
                         await withLoading(call());
                         onClose?.();
@@ -48,7 +48,8 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     </Button>,
                 ]}
             >
-                {c('Info').t`Are you sure you want to disable two-factor authentication?`}
+                {c('Info')
+                    .t`Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.`}
             </Prompt>
         </>
     );
