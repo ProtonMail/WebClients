@@ -290,6 +290,7 @@ const SubscriptionContainer = ({
                 planID: plansMap[plan].Name,
                 organization,
                 plans,
+                user,
             });
         }
 
