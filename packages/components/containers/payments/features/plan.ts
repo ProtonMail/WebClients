@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import {
@@ -106,6 +106,13 @@ export const getAllAppsFeature = (): PlanCardFeatureDefinition => {
 export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: info').t`Early access to new apps and features`,
+        included: true,
+    };
+};
+
+export const getUpToNUsers = (n: number): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').ngettext(msgid`${n} user`, `Up to ${n} users`, n),
         included: true,
     };
 };
