@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { restoreSecurityCheckupSession, securityCheckupSlice } from '@proton/account';
-import { useApi, useUser } from '@proton/components';
+import { useApi, useAppTitle, useUser } from '@proton/components';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
@@ -24,6 +26,8 @@ const SecurityCheckupRouter = () => {
     const [user] = useUser();
 
     const pageLoadOnceRef = useRef(false);
+
+    useAppTitle(c('l10n_nightly: Security checkup').t`Safety review`);
 
     useEffect(() => {
         restoreSecurityCheckupSession({ dispatch, userId: user.ID });
