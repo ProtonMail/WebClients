@@ -31,34 +31,32 @@ import {
     useUserSettings,
 } from '../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
-import ChangePasswordModal, { MODES } from './ChangePasswordModal';
-
-enum STEP {
-    METHOD,
-    NEW_PASSWORD,
-}
 
 interface Props extends ModalProps {
-    onInitiateSessionRecoveryClick: () => void;
-    onBack: () => void;
+    onInitiateSessionRecoveryClick?: () => void;
+    onBack?: () => void;
     availableRecoveryMethods: ('mnemonic' | 'email' | 'sms')[];
+    title?: string;
+    onSuccess: () => void;
 }
 
-const RecoveryModal = ({
+const ReauthUsingRecoveryModal = ({
     onInitiateSessionRecoveryClick,
     onBack,
     availableRecoveryMethods,
+    title,
     onClose,
+    onSuccess,
     ...rest
 }: Props) => {
     const api = useApi();
+
     const [user] = useUser();
     const authentication = useAuthentication();
     const { validator, onFormSubmit } = useFormErrors();
     const [userSettings] = useUserSettings();
 
     const [submitting, withSubmitting] = useLoading();
-    const [step, setStep] = useState(STEP.METHOD);
     const [tabIndex, setTabIndex] = useState(0);
     const [mnemonic, setMnemonic] = useState('');
     const mnemonicValidation = useMnemonicInputValidation(mnemonic);
@@ -67,17 +65,6 @@ const RecoveryModal = ({
 
     const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
 
-    if (step === STEP.NEW_PASSWORD) {
-        return (
-            <ChangePasswordModal
-                onClose={onClose}
-                {...rest}
-                mode={MODES.CHANGE_ONE_PASSWORD_MODE}
-                signedInRecoveryFlow
-            />
-        );
-    }
-
     const onSubmit = async () => {
         if (!onFormSubmit()) {
             return;
@@ -85,12 +72,8 @@ const RecoveryModal = ({
 
         if (currentMethod === 'email') {
             await api(reauthByEmailVerification());
-
-            setStep(STEP.NEW_PASSWORD);
         } else if (currentMethod === 'sms') {
             await api(reauthBySmsVerification());
-
-            setStep(STEP.NEW_PASSWORD);
         } else if (currentMethod === 'mnemonic') {
             const persistent = authentication.getPersistent();
             const username = user.Email || user.Name;
@@ -108,9 +91,10 @@ const RecoveryModal = ({
                     password: randomBytes,
                 },
             });
-
-            setStep(STEP.NEW_PASSWORD);
         }
+
+        await onSuccess();
+        onClose?.();
     };
 
     const toProceed = c('Info').t`To proceed, we must verify the request.`;
@@ -123,7 +107,7 @@ const RecoveryModal = ({
 
     return (
         <Modal onClose={onClose} as={Form} onSubmit={() => withSubmitting(onSubmit())} {...rest}>
-            <ModalHeader title={c('Title').t`Reset password`} subline={user.Email} />
+            <ModalHeader title={title || c('Title').t`Reset password`} subline={user.Email} />
             <ModalContent>
                 {availableRecoveryMethods.length > 1 && (
                     <div className="mb-2">
@@ -143,7 +127,7 @@ const RecoveryModal = ({
                                         {codeResetString(userSettings.Email.Value)}
                                     </div>
 
-                                    {isSessionRecoveryInitiationAvailable && (
+                                    {isSessionRecoveryInitiationAvailable && onInitiateSessionRecoveryClick && (
                                         <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                             {c('Info').t`Can’t access your recovery email?`}
                                         </InlineLinkButton>
@@ -160,7 +144,7 @@ const RecoveryModal = ({
                                         {codeResetString(userSettings.Phone.Value)}
                                     </div>
 
-                                    {isSessionRecoveryInitiationAvailable && (
+                                    {isSessionRecoveryInitiationAvailable && onInitiateSessionRecoveryClick && (
                                         <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                             {c('Info').t`Can’t access your recovery phone?`}
                                         </InlineLinkButton>
@@ -188,7 +172,7 @@ const RecoveryModal = ({
                                         )}
                                     />
 
-                                    {isSessionRecoveryInitiationAvailable && (
+                                    {isSessionRecoveryInitiationAvailable && onInitiateSessionRecoveryClick && (
                                         <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                             {c('Info').t`Don’t know your recovery phrase?`}
                                         </InlineLinkButton>
@@ -208,11 +192,15 @@ const RecoveryModal = ({
                 />
             </ModalContent>
             <ModalFooter>
-                <Button onClick={onBack}>{c('Action').t`Back`}</Button>
+                {onBack ? (
+                    <Button onClick={onBack}>{c('Action').t`Back`}</Button>
+                ) : (
+                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                )}
                 <Button type="submit" color="norm" loading={submitting}>{c('Action').t`Continue`}</Button>
             </ModalFooter>
         </Modal>
     );
 };
 
-export default RecoveryModal;
+export default ReauthUsingRecoveryModal;
