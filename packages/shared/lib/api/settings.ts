@@ -161,9 +161,10 @@ export const getSecurityKeyChallenge = (crossPlatform: boolean) => ({
     },
 });
 
-export const removeSecurityKey = (credentialID: string) => ({
+export const removeSecurityKey = (credentialID: string, data: { PersistPasswordScope?: boolean } = {}) => ({
     url: `core/v4/settings/2fa/${credentialID}/remove`,
     method: 'post',
+    data,
 });
 
 export const renameSecurityKey = (credentialID: string, data: { Name: string }) => ({

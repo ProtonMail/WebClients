@@ -16,7 +16,7 @@ import {
     useUserSettings,
 } from '../../hooks';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
-import RecoveryModal from './RecoveryModal';
+import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
@@ -35,6 +35,11 @@ const PasswordsSection = () => {
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
+    const [
+        changePasswordAfterReauthModal,
+        setChangePasswordAfterReauthModalOpen,
+        renderChangePasswordAfterReauthModal,
+    ] = useModalState();
     const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
     const [recoveryModal, setRecoveryModalOpen, renderRecoveryModal] = useModalState();
     const [
@@ -134,7 +139,8 @@ const PasswordsSection = () => {
                 />
             )}
             {renderRecoveryModal && (
-                <RecoveryModal
+                <ReauthUsingRecoveryModal
+                    availableRecoveryMethods={availableRecoveryMethods}
                     onBack={() => {
                         recoveryModal.onClose();
                         setChangePasswordModalOpen(true);
@@ -143,8 +149,15 @@ const PasswordsSection = () => {
                         recoveryModal.onClose();
                         setSessionRecoveryModalOpen(true);
                     }}
-                    availableRecoveryMethods={availableRecoveryMethods}
+                    onSuccess={() => setChangePasswordAfterReauthModalOpen(true)}
                     {...recoveryModal}
+                />
+            )}
+            {renderChangePasswordAfterReauthModal && (
+                <ChangePasswordModal
+                    mode={MODES.CHANGE_ONE_PASSWORD_MODE}
+                    signedInRecoveryFlow
+                    {...changePasswordAfterReauthModal}
                 />
             )}
             {renderSessionRecoveryPasswordResetModal && (
