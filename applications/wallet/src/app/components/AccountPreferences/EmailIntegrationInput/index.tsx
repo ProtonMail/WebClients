@@ -3,12 +3,13 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
-import { Prompt, Toggle, useModalState } from '@proton/components/components';
+import { Info, Prompt, Toggle, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import { useAddresses, useOrganization, useUser } from '@proton/components/hooks';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { type IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, CoreButton } from '../../../atoms';
+import { Button } from '../../../atoms';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../../contexts/WalletSetupModalContext';
 import { EmailAddressCreationModal } from '../../EmailAddressCreationModal';
 import { WalletUpgradeModal } from '../../WalletUpgradeModal';
@@ -84,12 +85,22 @@ export const EmailIntegrationInput = ({
             onClick={() => {
                 open({ kind: WalletSetupModalKind.WalletAccountCreation, apiWalletData: wallet });
             }}
+            role="button"
         >{c('Wallet preferences').t`creating a new BTC account`}</span>
     );
 
-    const warning = (
-        <div>{c('Wallet preferences')
-            .jt`For better privacy, we recommend ${walletAccountCreation} for receiving Bitcoin via Email.`}</div>
+    const learnMore = (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <span
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
+            key="prompt-button"
+            className="p-0 link link-focus color-norm"
+            onClick={() => {
+                setBveWarningPrompt(true);
+            }}
+            role="button"
+        >{c('Wallet preferences').t`Learn more`}</span>
     );
 
     const isPrimaryAccount = walletAccount.Priority === 1;
@@ -97,37 +108,43 @@ export const EmailIntegrationInput = ({
     return (
         <>
             <InputFieldStacked isBigger isGroupElement>
-                <div className="flex flex-row items-center justify-space-between mb-3">
-                    <div className="flex flex-column items-start">
-                        <span className="color-weak mb-1">{c('Wallet preferences').t`Receive Bitcoin via Email`}</span>
+                <div className="flex flex-row items-center justify-space-between">
+                    <div className="flex flex-column items-start w-full">
+                        <label
+                            className="flex flex-nowrap justify-space-between items-center gap-2 w-full"
+                            htmlFor={walletAccount.ID}
+                        >
+                            <span className="flex items-center gap-2">
+                                <span className="flex-1 text-left">{c('Wallet preferences')
+                                    .t`Receive Bitcoin via Email`}</span>
+                                <Info url={getKnowledgeBaseUrl('/wallet-bitcoin-via-email')} />
+                            </span>
+                            <span className="shrink-0">
+                                <Toggle
+                                    id={walletAccount.ID}
+                                    checked={value.length > 0}
+                                    loading={loading}
+                                    className="ml-auto"
+                                    onChange={() => {
+                                        if (value.length < 1) {
+                                            setEmailIntegrationModal(true);
+                                        } else {
+                                            onRemoveAddress(linkedEmail?.ID);
+                                        }
+                                    }}
+                                />
+                            </span>
+                        </label>
                         <span className="color-norm text-lg">{linkedEmail?.Email ?? ''}</span>
                     </div>
-
-                    <Toggle
-                        id={walletAccount.ID}
-                        checked={value.length > 0}
-                        loading={loading}
-                        onChange={() => {
-                            if (value.length < 1) {
-                                setEmailIntegrationModal(true);
-                            } else {
-                                onRemoveAddress(linkedEmail?.ID);
-                            }
-                        }}
-                    />
                 </div>
 
-                {shouldShowBvEWarning && !linkedEmail && <div className="mb-2">{warning}</div>}
-
-                <div>
-                    <CoreButton
-                        shape="underline"
-                        color="weak"
-                        onClick={() => {
-                            setBveWarningPrompt(true);
-                        }}
-                    >{c('Action').t`Learn more`}</CoreButton>
-                </div>
+                {(shouldShowBvEWarning || isPrimaryAccount) && !linkedEmail && (
+                    <div className="mt-3">
+                        <div>{c('Wallet preferences')
+                            .jt`For better privacy, we recommend ${walletAccountCreation} for receiving Bitcoin via Email. ${learnMore}.`}</div>
+                    </div>
+                )}
             </InputFieldStacked>
 
             <EmailIntegrationModal
