@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -694,11 +694,11 @@
       "No, thanks": [
         "いいえ"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "開く"
@@ -760,10 +760,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -1502,14 +1502,6 @@
         "年末オファーを選択してください"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1531,6 +1523,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -3190,12 +3190,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "これらの機能にアクセスするには ${ PROTON_SENTINEL_NAME } を有効にしてください"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "これらの機能にアクセスするには、詳細ログと ${ PROTON_SENTINEL_NAME } を有効にしてください"
-      ],
-      "Enable advanced logs to access these features": [
-        "これらの機能にアクセスするには、詳細ログを有効にします。"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
@@ -4711,9 +4705,6 @@
       "*Only one free trial per customer.": [
         "* 1 名につき無料トライアルは 1 回のみ利用できます"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "カスタムドメインを持つアカウントはVisionaryやファミリープランに参加できません。"
-      ],
       "customer support": [
         "カスタマーサポート"
       ],
@@ -4753,12 +4744,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "移行を容易にするため、${ BRAND_NAME } Unlimited* の30日間無料トライアルを提供します。"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary とファミリープランは外部のアカウントをサポートしていません。参加するには ${ BRAND_NAME } アドレスを作成してください。 ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary とファミリープランは現時点では永久アカウントをサポートしていません。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } に招待されました"
       ],
@@ -4777,9 +4762,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "新規ユーザーを作成する前にカスタムドメインを設定する必要があります。"
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "${ BRAND_NAME } Family に含まれるすべてのプレミアム機能とストレージ容量が使えなくなります"
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "${ BRAND_NAME_TWO } のプレミアム機能が利用できるように、あなたの ${ BRAND_NAME } アカウントをこのグループプランにリンクする招待が届いています。"
       ],
@@ -4788,9 +4770,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "あなたの現在のプランでは Visionary またはファミリープランに参加できません。"
       ]
     },
     "familyOffer_2023:Info": {
@@ -6419,10 +6398,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6919,9 +6898,6 @@
       ],
       "Loading...": [
         "読み込み中..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "すべての ${ BRAND_NAME } サービスに対して、あなたの ${ BRAND_NAME_TWO } 認証情報を使用した認証の試行が、ログに含まれます。"
       ],
       "Low Priority": [
         "優先度：低"
@@ -9869,12 +9845,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } を有効にする"
-      ],
-      "Enable advanced logs": [
-        "詳細ログを有効にする"
-      ],
-      "Enable authentication logs": [
-        "認証ログを有効にする"
       ]
     },
     "Mail import summary": {
@@ -11855,9 +11825,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "${ browserName }の ${ appName } を取得"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "${ appName } を ${ browserName } ですぐに入手してください"
       ],
       "Get in touch with our sales team": [
         "当社の営業チームにお問い合わせください"
@@ -14190,10 +14157,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -15243,9 +15210,6 @@
       "Enable/disable desktop and mobile notifications": [
         "デスクトップおよびモバイル端末での通知の有効/無効"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "詳細ログを有効にすると、セキュリティログの各イベントの IP アドレスが記録されます。"
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL（例：https://idp.example.com/sso/saml）"
       ],
@@ -15711,9 +15675,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "ログを無効にするには、ログの履歴をクリアする必要があります。ログを無効にしてよろしいですか?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "有効期限が MM/YY の形式ではありません"

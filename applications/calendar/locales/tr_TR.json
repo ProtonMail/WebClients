@@ -3587,9 +3587,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Özel etki alanları olan hesaplar, Visionary ya da Family tarifesine katılamaz."
-      ],
       "customer support": [
         "müşteri desteği"
       ],
@@ -3614,12 +3611,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary ve Family tarifeleri şu anda ömür boyu hesapları desteklemiyor."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } kuruluşuna davet edildiniz"
       ],
@@ -3640,9 +3631,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Geçerli tarifeniz bir Visionary ya da Family tarifesine katılamaz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5291,9 +5279,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
-      ],
-      "Access to my events": [
-        "Etkinliklerime eriş"
       ],
       "Add email address": [
         "E-posta adresi ekle"

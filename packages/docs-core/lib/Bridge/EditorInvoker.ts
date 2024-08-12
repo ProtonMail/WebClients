@@ -88,7 +88,7 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('showCommentsPanel', [])
   }
 
-  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob> {
+  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array> {
     return this.invokeEditorMethod('exportData', [format])
   }
 

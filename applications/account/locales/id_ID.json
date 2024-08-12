@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -360,6 +360,9 @@
       ],
       "Delete logo": [
         "Hapus logo"
+      ],
+      "Delete member": [
+        "Hapus anggota"
       ],
       "Delete permanently": [
         "Hapus secara permanen"
@@ -727,10 +730,10 @@
       "No, thanks": [
         "Tidak, terima kasih"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -793,17 +796,23 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
       ],
       "Remove": [
         "Hapus"
+      ],
+      "Remove all members": [
+        "Keluarkan semua anggota"
+      ],
+      "Remove all members from group": [
+        "Keluarkan semua anggota dari grup"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -894,6 +903,9 @@
       ],
       "Revoke all other sessions": [
         "Cabut seluruh sesi lainnya"
+      ],
+      "Revoke invitation": [
+        "Cabut undangan"
       ],
       "Revoke this invitation": [
         "Anulir undangan ini"
@@ -1594,14 +1606,6 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1623,6 +1627,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3354,12 +3366,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan log lanjutan dan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur ini"
-      ],
-      "Enable advanced logs to access these features": [
-        "Aktifkan log lanjutan untuk mengakses berbagai fitur berikut"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
@@ -5029,9 +5035,6 @@
       "*Only one free trial per customer.": [
         "*Hanya satu uji coba gratis per pelanggan."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Akun dengan domain khusus tidak dapat bergabung ke paket Visionary atau paket keluarga."
-      ],
       "customer support": [
         "layanan dukungan"
       ],
@@ -5086,12 +5089,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Untuk memudahkan transisi, kami memberi Anda uji coba ${ BRAND_NAME } Unlimited selama 30 hari*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket Visionary dan paket keluarga saat ini tidak mendukung akun eksternal. Buat sebuah alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Paket Visionary dan keluarga saat ini tidak mendukung akun seumur hidup."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"
       ],
@@ -5119,9 +5116,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Anda harus mengatur domain kustom sebelum membuat pengguna baru."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Anda akan kehilangan akses ke seluruh fitur premium dan ruang penyimpanan yang terliput pada ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
@@ -5130,9 +5124,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Paket Anda saat ini tidak dapat bergabung ke paket Visionary atau paket keluarga."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5709,8 +5700,27 @@
       ]
     },
     "group_invitation: Success": {
+      "Group invitation accepted": [
+        "Undangan grup diterima"
+      ],
+      "Group invitation declined": [
+        "Undangan grup ditolak"
+      ],
       "Left group": [
         "Telah meninggalkan grup"
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Anda dapat menutup tab ini dengan aman."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "Undangan grup diterima"
+      ],
+      "Group invitation declined": [
+        "Undangan grup ditolak"
       ]
     },
     "Header": {
@@ -6827,11 +6837,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -7450,9 +7460,6 @@
       ],
       "Loading...": [
         "Memuat..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Log keamanan mencakup berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
       ],
       "Low Priority": [
         "Prioritas Rendah"
@@ -9353,9 +9360,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
-      "Access to my events": [
-        "Akses menuju acara saya"
-      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -10685,12 +10689,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktifkan ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Aktifkan log lanjutan"
-      ],
-      "Enable authentication logs": [
-        "Aktifkan log autentikasi"
       ]
     },
     "Mail import summary": {
@@ -11197,6 +11195,15 @@
       ],
       "From ${ price }": [
         "Dari ${ price }"
+      ],
+      "Get started for $1": [
+        "Mulai dengan harga $1"
+      ],
+      "Get started for 1 €": [
+        "Mulai dengan harga 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Mulai dengan harga CHF 1"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -12814,9 +12821,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Dapatkan ${ appName } untuk ${ browserName }"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Dapatkan ${ appName } untuk ${ browserName } segera"
       ],
       "Get in touch with our sales team": [
         "Hubungi tim penjualan kami"
@@ -15642,11 +15646,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -16046,6 +16050,9 @@
       ],
       "Group": [
         "Grup"
+      ],
+      "Group membership": [
+        "Keanggotaan grup"
       ],
       "Groups": [
         "Grup"
@@ -16752,9 +16759,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Aktifkan/nonaktifkan notifikasi desktop dan mobile"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Log lanjutan akan merekam alamat IP untuk setiap peristiwa yang tercatat pada log keamanan."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
       ],
@@ -16897,6 +16901,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Masuk dengan aman di semua perangkat Anda. Meliputi alias tak terbatas, berbagi, 2FA terintegrasi, dan masih banyak lagi."
+      ],
+      "User rejected invitation": [
+        "Pengguna menolak undangan"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17328,9 +17335,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Dengan menonaktifkan log, seluruh riwayat log Anda akan terhapus. Apakah Anda yakin untuk menonaktifkan log?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"

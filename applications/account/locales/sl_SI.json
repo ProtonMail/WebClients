@@ -45,19 +45,19 @@
     },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "${ name } in ${ remainingCount } drugih možnih odtekanj podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo ${ name } in 1 drugo potencialno odtekanje podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo morebitno odtekanje podatkov iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -712,10 +712,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
       "Open": [
@@ -778,11 +778,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "Refresh the page": [
-        "Osveži stran"
-      ],
       "refresh the page": [
         "Osvežite stran"
+      ],
+      "Refresh the page": [
+        "Osveži stran"
       ],
       "Reload": [
         "Osveži"
@@ -1555,14 +1555,6 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1584,6 +1576,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3315,12 +3315,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Omogoči ${ PROTON_SENTINEL_NAME } za dostop do teh funkcij."
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Omogoči napredne dnevnike in ${ PROTON_SENTINEL_NAME } za dostop do teh funkcij."
-      ],
-      "Enable advanced logs to access these features": [
-        "Omogoči napredne dnevnike za dostop do teh funkcij."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
@@ -4991,9 +4985,6 @@
       "*Only one free trial per customer.": [
         "Samo eno brezplačno preizkušanje na stranko."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Računi z domenami po meri se ne morejo pridružiti paketu Visionary ali družinskemu paktu."
-      ],
       "customer support": [
         "podporo strankam"
       ],
@@ -5033,12 +5024,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Za lažji prehod vam dajemo 30-dnevni preizkus brezplačnega ${ BRAND_NAME } Unlimited*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Paket Visionary in družinski paket trenutno ne omogočata uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Paket Visionary in družinski paket trenutno ne omogočata doživljenjskih računov."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -5057,9 +5042,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Pred ustvarjanjem novega uporabnika morate nastaviti domeno po meri."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Izgubili boste dostop do vseh premijskih funkcij in prostora za shranjevanje, vključenih v ${ BRAND_NAME } Family."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s skupinskim paketom in skupaj uživate vse premijske funkcije ${ BRAND_NAME_TWO }."
       ],
@@ -5068,9 +5050,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Vašega trenutnega paketa ni mogoče združiti s paketom Visionary ali z družinskim paketom."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6849,11 +6828,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "dedicated servers": [
-        "namenski strežniki"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -7370,9 +7349,6 @@
       ],
       "Loading...": [
         "Nalaganje ..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Dnevniki vključujejo poskuse overjanja za vse storitve ${ BRAND_NAME }, ki uporabljajo vaše poverilnice ${ BRAND_NAME_TWO }."
       ],
       "Low Priority": [
         "Nizka pomembnost"
@@ -9192,9 +9168,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
-      "Access to my events": [
-        "Dostop do mojih dogodkov"
-      ],
       "Account recovery": [
         "Obnovitev računa"
       ],
@@ -10503,12 +10476,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Omogoči ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Omogoči dodatne dnevnike"
-      ],
-      "Enable authentication logs": [
-        "Omogoči dnevnike preverjanja avtentikacije"
       ]
     },
     "Mail import summary": {
@@ -12686,9 +12653,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "Pridobite ${ appName } za ${ browserName }."
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Kmalu dobite ${ appName } za ${ browserName }."
       ],
       "Get in touch with our sales team": [
         "Stopite v stik z našo prodajno ekipo"
@@ -15404,10 +15368,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -16502,9 +16466,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Vklop/izklop obvestil na namizju in mobilnih napravah"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Omogočanje naprednih dnevnikov zabeleži naslov IP za vsak dogodek v varnostni dnevnik."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL končne točke ponudnika identitete (npr. https://idp.example.com/sso/saml)"
       ],
@@ -17012,9 +16973,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Če izbrišete to telefonsko številko, ne boste več mogli obnoviti svojega računa."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Z izklopom dnevnikov boste izbrisali tudi celotno zgodovino dnevnikov. Ali ste prepričani, da želite onemogočiti dnevnike?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Datum poteka ni v obliki MM/LL"

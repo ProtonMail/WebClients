@@ -10,9 +10,9 @@ interface Props {
 }
 
 const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Props) => {
-    const advancedLogsUpsell = c('Description').t`Enable advanced logs to access these features`;
+    const advancedLogsUpsell = c('Description').t`Enable detailed events to access these features`;
     const advancedLogsAndProtonSentinelUpsell = c('Description')
-        .t`Enable advanced logs and ${PROTON_SENTINEL_NAME} to access these features`;
+        .t`Enable detailed events and ${PROTON_SENTINEL_NAME} to access these features`;
 
     if (isAuthLogAdvanced) {
         return <code>{ip || '-'}</code>;

@@ -1037,7 +1037,7 @@
     },
     "Badge": {
       "Invited": [
-        "Zaproszono"
+        "Zaproszony"
       ]
     },
     "bf2023: Deal details": {
@@ -3318,9 +3318,6 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konta z niestandardowymi domenami nie mogą dołączyć do planu Visionary lub rodzinnego."
-      ],
       "customer support": [
         "wsparcie klienta"
       ],
@@ -3345,12 +3342,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Subskrypcja zostanie naliczona głównemu administratorowi planu."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plan Visionary i rodzinny nie obsługuje obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Plany Visionary i rodzinny obecnie nie obsługują opcji kont dożywotnich."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dołącz do organizacji ${ invite.OrganizationName }"
       ],
@@ -3371,9 +3362,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "W obecnym planie nie możesz dołączyć do planu Visionary lub rodzinnego."
       ]
     },
     "familyOffer_2023:Label": {

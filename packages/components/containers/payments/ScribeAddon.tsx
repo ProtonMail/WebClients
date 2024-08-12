@@ -48,11 +48,13 @@ interface Props {
     audience?: Audience;
     showScribeBanner?: boolean;
     onShowScribeBanner: () => void;
+    value: number;
 }
 
 const ScribeAddon = ({
     addon,
     input,
+    value,
     price,
     maxUsers,
     showDescription,
@@ -71,6 +73,7 @@ const ScribeAddon = ({
             addon={addon}
             price={price}
             input={input}
+            value={value}
             maxUsers={maxUsers}
             showDescription={showDescription}
             showTooltip={showTooltip}

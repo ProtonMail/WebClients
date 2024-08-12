@@ -195,11 +195,11 @@
 		color: inherit;
 	}
 
-	& > *:not(:only-child, :first-child) > &-element {
+	& > .input-adornment + * > &-element {
 		padding-inline-start: 0.5em;
 	}
 
-	& > *:not(:only-child, :last-child) > &-element {
+	& > *:has(+ .input-adornment) > &-element {
 		padding-inline-end: 0.5em;
 	}
 }

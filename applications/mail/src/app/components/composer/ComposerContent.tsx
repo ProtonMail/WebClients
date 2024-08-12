@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { EditorMetadata } from '@proton/components';
 import { Dropzone, EllipsisLoader } from '@proton/components';
+import type { EditorProps } from '@proton/components/components/editor/Editor';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
@@ -17,15 +18,12 @@ import type { MessageChange } from './Composer';
 import type { ExternalEditorActions } from './editor/EditorWrapper';
 import EditorWrapper from './editor/EditorWrapper';
 
-interface Props {
+interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 'toolbarCustomRender'> {
     message: MessageState;
     disabled: boolean;
     onEditorReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
-    onMouseUp?: () => void;
-    onKeyUp?: () => void;
     onChangeContent: (content: string) => void;
-    onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
@@ -58,6 +56,7 @@ const ComposerContent = (
         userSettings,
         editorMetadata,
         isInert,
+        toolbarCustomRender,
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
@@ -67,7 +66,7 @@ const ComposerContent = (
     return (
         <section
             className={clsx([
-                'flex-auto mb-2 flex flex-column flex-nowrap relative composer-content pt-2',
+                'flex-auto flex flex-column flex-nowrap relative composer-content pt-2',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
             ref={ref}
@@ -105,6 +104,7 @@ const ComposerContent = (
                     mailSettings={mailSettings}
                     userSettings={userSettings}
                     editorMetadata={editorMetadata}
+                    toolbarCustomRender={toolbarCustomRender}
                 />
             </div>
             {showAttachments && (

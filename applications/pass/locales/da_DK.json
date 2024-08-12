@@ -508,6 +508,9 @@
       "Try for free": [
         "Prøv gratis"
       ],
+      "Unlock": [
+        "Lås op"
+      ],
       "Unlock offline with password": [
         "Lås offline op med adgangskode"
       ],
@@ -1082,6 +1085,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Adgang til ${ PASS_APP_NAME } vil altid kræve din ${ BRAND_NAME }-adgangskode."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
+      ],
       "Add a username field": [
         "Tilføj et brugernavn-felt"
       ],
@@ -1132,6 +1138,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Før eksport af dine data i dette format, bør du gå ind i Safari- indstillingerne -> fanen \"Generelt\" -> slå indstillingen \"Åbn sikre filer efter overførsel\" fra. Dette vil forhindre Safari i at udpakke den eksporterede fil forkert."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrisk lås er blevet registreret. Brug den til at oplåse ${ PASS_APP_NAME }."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometri vil blive deaktiveret og skal aktiveres igen."
       ],
       "Breaches detected": [
         "Databrud registreret"
@@ -1231,6 +1243,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktiver autolåsning for at sikre dine data"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Aktiverer biometrisk autolås"
+      ],
+      "Enabling biometrics lock failed": [
+        "Aktivering af biometrisk lås mislykkedes"
       ],
       "Enabling offline mode...": [
         "Aktiverer offline-tilstand..."
@@ -1506,6 +1524,9 @@
       "Please confirm your password": [
         "Bekræft venligst din adgangskode"
       ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Bekræft din adgangskode for at opnå automatisk låsning med biometri."
+      ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Bekræft venligst din adgangskode for at autolåse med din adgangskode."
       ],
@@ -1657,6 +1678,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
       ],
+      "This option is currently not available on your device.": [
+        "Denne mulighed er pt. ikke til stede på din enhed."
+      ],
       "This setting is disabled on the organization level": [
         "Denne indstilling er deaktiveret på organisationsniveau"
       ],
@@ -1681,11 +1705,17 @@
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Lås ${ PASS_SHORT_APP_NAME } op med biometri"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås op for ${ PASS_SHORT_APP_NAME } med din ekstra adgangskode"
+      ],
+      "Unlock with biometrics": [
+        "Lås op med biometri"
       ],
       "Unpinning item...": [
         "Frigør element..."
@@ -1902,6 +1932,9 @@
       ],
       "Beta Access": [
         "Beta-adgang"
+      ],
+      "Biometrics": [
+        "Biometri"
       ],
       "Birthdate": [
         "Fødselsdato"
@@ -2305,9 +2338,6 @@
       "Selected": [
         "Valgte"
       ],
-      "Session locking": [
-        "Sessionslåsning"
-      ],
       "Share": [
         "Del"
       ],
@@ -2380,6 +2410,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unlock with": [
+        "Lås op med"
       ],
       "Unnamed Credit Card": [
         "Unavngivet betalingskort"

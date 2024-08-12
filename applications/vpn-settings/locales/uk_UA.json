@@ -82,12 +82,6 @@
       "Block": [
         "Блокувати"
       ],
-      "Can send to this group": [
-        "Можна надіслати до цієї групи"
-      ],
-      "Can't send to this group": [
-        "Не можна надіслати до цієї групи"
-      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -2706,9 +2700,6 @@
       "${ BRAND_NAME } groups": [
         "Групи ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Облікові записи з власними доменами не можна приєднати до Visionary або сімейного плану."
-      ],
       "customer support": [
         "клієнтська підтримка"
       ],
@@ -2748,12 +2739,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунок за підписку буде виставлено головному адміністратору цього тарифу."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary і сімейні плани наразі не підтримують зовнішні облікові записи. Перш ніж приєднатися, створіть адресу ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary і сімейні плани наразі не підтримують довічні облікові записи."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
       ],
@@ -2780,9 +2765,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш обліковий запис використовує ${ usedSpace } обсягу сховища, що перевищує призначений вам обсяг ${ inviteSpace }. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг вашого сховища."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Ваш поточний план не може приєднатися до Visionary або сімейного плану."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3676,11 +3658,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -9377,11 +9359,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"

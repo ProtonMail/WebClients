@@ -20,7 +20,7 @@ const sanitize = (msg: string) => {
         ALLOWED_ATTR: ['href'],
     });
 
-    sanitizedElement.querySelectorAll('A').forEach((node) => {
+    sanitizedElement.querySelectorAll('a').forEach((node) => {
         if (node.tagName === 'A') {
             node.setAttribute('rel', 'noopener noreferrer');
             node.setAttribute('target', '_blank');

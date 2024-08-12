@@ -509,6 +509,9 @@
       "Try again": [
         "კიდევ ცდა"
       ],
+      "Unlock": [
+        "განბლოკვა"
+      ],
       "Unlock offline with password": [
         "განბლოკვა ქსელგარეშე, პაროლით"
       ],
@@ -1514,6 +1517,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
       ],
+      "Quickly autofill your identities.": [
+        "სწრაფად შეავსეთ თქვენი იდენტიფიკატორები."
+      ],
       "Registering extra password...": [
         "დამატებითი პაროლის რეგისტრაცია..."
       ],
@@ -1973,9 +1979,6 @@
       "Display": [
         "ჩვენება"
       ],
-      "Display ${ PASS_APP_NAME } icon on login fields": [
-        "შესვლის ველებზე ${ PASS_APP_NAME }-ის ხატულის ჩვენება"
-      ],
       "Domain": [
         "დომენი"
       ],
@@ -2065,6 +2068,9 @@
       ],
       "Identity": [
         "იდენტიფიკატორი"
+      ],
+      "Identity autofill": [
+        "იდენტიფიკატორის ავტოშევსება"
       ],
       "Import": [
         "შემოტანა"
@@ -2296,9 +2302,6 @@
       ],
       "Selected": [
         "მონიშნულია"
-      ],
-      "Session locking": [
-        "სესიის ჩაკეტვა"
       ],
       "Settings": [
         "მორგება"

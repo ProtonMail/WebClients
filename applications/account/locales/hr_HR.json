@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -481,10 +481,10 @@
       "No, thanks": [
         "Ne, hvala"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open": [
@@ -547,11 +547,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -5846,12 +5846,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Omogući ${ reason }"
-      ],
-      "Enable advanced logs": [
-        "Omogući napredne zapise"
-      ],
-      "Enable authentication logs": [
-        "Omogući autentikacijske zapise"
       ]
     },
     "mail_signup_2024: title": {
@@ -7909,10 +7903,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
@@ -8594,9 +8588,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Omogući/onemogući desktop i mobilne obavijesti"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Omogućavanjem naprednih zapisa, IP adresa za svaki događaj će se spremati u sigurnosne zapise."
-      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupirajte e-poštu u istom razgovoru u pristigloj pošti ili ih prikažite zasebno."
       ],
@@ -8827,9 +8818,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Brisanjem ovog broj telefona više nećete moći vratiti svoj račun."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Onemogućavanjem zapisa također ćete izbrisati cijelu povijest zapisa. Jeste li sigurni da želite onemogućiti zapise?"
       ],
       "Please add at least one recipient.": [
         "Molim unesite barem jednog primatelja."

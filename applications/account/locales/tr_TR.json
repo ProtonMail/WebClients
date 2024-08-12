@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "Koyu"
-      ],
-      "Can send to this group": [
-        "Bu gruba gönderebilir"
-      ],
-      "Can't send to this group": [
-        "Bu gruba gönderemez"
       ],
       "Cancel": [
         "İptal"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "Logoyu sil"
+      ],
+      "Delete member": [
+        "Üyeyi sil"
       ],
       "Delete permanently": [
         "Kalıcı olarak sil"
@@ -733,10 +730,10 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open": [
@@ -799,11 +796,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -1613,14 +1610,6 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1642,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -3383,12 +3380,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Bu özelliklere erişmek için gelişmiş günlük ve ${ PROTON_SENTINEL_NAME } özelliklerini açın"
-      ],
-      "Enable advanced logs to access these features": [
-        "Bu özelliklere erişmek için gelişmiş günlük özelliğini açın"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
@@ -5065,9 +5056,6 @@
       "*Only one free trial per customer.": [
         "* Her müşteri için yalnızca bir ücretsiz deneme."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Özel etki alanları olan hesaplar, Visionary ya da Family tarifesine katılamaz."
-      ],
       "customer support": [
         "müşteri desteği"
       ],
@@ -5123,12 +5111,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "Geçişi kolaylaştırmak için size 30 günlük ücretsiz ${ BRAND_NAME } Unlimited* deneme süresi sunuyoruz."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary ve Family tarifeleri şu anda ömür boyu hesapları desteklemiyor."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } kuruluşuna davet edildiniz"
       ],
@@ -5158,9 +5140,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "${ BRAND_NAME } Family tarifesindeki tüm ücretli özelliklere ve depolama alanına erişiminizi kaybedeceksiniz."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "${ BRAND_NAME } hesabınızı bu grup tarifesine bağlamaya ve birlikte ücretli tüm ${ BRAND_NAME_TWO } özelliklerinin tadını çıkarmaya davet edildiniz."
       ],
@@ -5169,9 +5148,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Geçerli tarifeniz bir Visionary ya da Family tarifesine katılamaz."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6946,11 +6922,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7573,9 +7549,6 @@
       ],
       "Loading...": [
         "Yükleniyor..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Günlük kayıtlarında, ${ BRAND_NAME_TWO } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetlerinin kimlik doğrulama girişimleri bulunur."
       ],
       "Low Priority": [
         "Düşük Öncelik"
@@ -9504,9 +9477,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
-      "Access to my events": [
-        "Etkinliklerime eriş"
-      ],
       "Account recovery": [
         "Hesap kurtarma"
       ],
@@ -10841,12 +10811,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
-      ],
-      "Enable advanced logs": [
-        "Gelişmiş günlükler tutulsun"
-      ],
-      "Enable authentication logs": [
-        "Kimlik doğrulama günlükleri tutulsun"
       ]
     },
     "Mail import summary": {
@@ -13017,9 +12981,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "${ browserName } için ${ appName } edinin"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "Yakında ${ browserName } için ${ appName } yayınlanacak"
       ],
       "Get in touch with our sales team": [
         "Satış ekibimizle görüşün"
@@ -15898,10 +15859,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -17013,9 +16974,6 @@
       "Enable/disable desktop and mobile notifications": [
         "Masaüstü ve mobil bildirimleri aç/kapat"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Gelişmiş günlük kaydı özelliği açıldığında, her etkinliğin IP adresi kaydedilir."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
       ],
@@ -17611,9 +17569,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Günlük kayıtları özelliğini kapattığınızda, bütün günlük geçmişinizi de temizlemiş olursunuz. Günlük kaydını kapatmak istediğinize emin misiniz?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"

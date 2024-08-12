@@ -82,12 +82,6 @@
       "Block": [
         "Blokovat"
       ],
-      "Can send to this group": [
-        "Může posílat do této skupiny"
-      ],
-      "Can't send to this group": [
-        "Nemůže posílat do této skupiny"
-      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Smazat logo"
+      ],
+      "Delete member": [
+        "Smazat člena"
       ],
       "Delete user": [
         "Smazat uživatele"
@@ -2706,9 +2703,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Účty s vlastními doménami se nemohou připojit k tarifu Visionary nebo rodinnému tarifu."
-      ],
       "customer support": [
         "zákaznická podpora"
       ],
@@ -2754,12 +2748,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Tarify Visionary a rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Tarify Visionary a rodinné tarify v současné době nepodporují doživotní účty."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
       ],
@@ -2798,9 +2786,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Váš aktuální tarif se nemůže připojit k tarifu Visionary nebo rodinnému tarifu."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3694,11 +3679,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -9566,10 +9551,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [

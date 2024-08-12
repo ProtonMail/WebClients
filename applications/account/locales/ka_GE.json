@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -180,12 +180,6 @@
       ],
       "Bold": [
         "სქელი"
-      ],
-      "Can send to this group": [
-        "ამ ჯგუფთან გაგზავნა შეუძლებელია"
-      ],
-      "Can't send to this group": [
-        "ამ ჯგუფთან გაგზავნა შეუძლებელია"
       ],
       "Cancel": [
         "გაუქმება"
@@ -366,6 +360,9 @@
       ],
       "Delete logo": [
         "ლოგოს წაშლა"
+      ],
+      "Delete member": [
+        "წევრის წაშლა"
       ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"
@@ -733,10 +730,10 @@
       "No, thanks": [
         "არა, მადლობა"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open": [
@@ -799,10 +796,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -1613,14 +1610,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1642,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -3383,12 +3380,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME }"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "ამ ფუნქციებთან წვდომისთვის ჩართეთ ${ PROTON_SENTINEL_NAME } და დამატებითი ჟურნალი"
-      ],
-      "Enable advanced logs to access these features": [
-        "ამ ფუნქციებთნ წვდომისთვის დამატებითი ჟურნალი ჩართეთ"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
@@ -5065,9 +5056,6 @@
       "*Only one free trial per customer.": [
         "* მხოლოდ, ერთი საცდელი თითოეული კლიენტისთვის."
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "მომხმარებლის დომენის მქონე ანგარიშები Visionary და საოჯახო ტარიფებს ვერ მიიღებენ."
-      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
@@ -5123,12 +5111,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "გადასვლის გასაადვილებლად ${ BRAND_NAME } Unlimited-თან 30 დღიან გამოსაცდელ წვდომას მოგცემთ*."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary და საოჯახო გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary და საოჯახო ტარიფებს ამჟამად ცხოვრებისეული ანგარიშების მხარდაჭერა არ გააჩნიათ"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
       ],
@@ -5158,9 +5140,6 @@
       "You need to configure a custom domain before creating a new user.": [
         "ახალი მომხმარებლის დამატებამდე თქვენი დომენის მორგება აუცილებელია."
       ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "დაკარგავთ წვდომას ყველა ფასიან თვისებასთან და საცავთან, რომლებსაც ${ BRAND_NAME }-ის ოჯახი შეიცავს."
-      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ჯგუფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ BRAND_NAME_TWO }-ის ფასიანი ფუნქციით."
       ],
@@ -5169,9 +5148,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "თქვენი მიმდინარე ანგარიში Visionary ან საოჯახო გეგმას ვერ შეუერთდება."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6946,11 +6922,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -7573,9 +7549,6 @@
       ],
       "Loading...": [
         "ჩატვირთვა..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "ჟურნალი შეიცავს ავთენტიკაციის მცდელობებს ${ BRAND_NAME }-ის სერვისებთან, სადაც ${ BRAND_NAME_TWO }-ის მომხმარებელს და პაროლს იყენებთ."
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
@@ -9504,9 +9477,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
-      "Access to my events": [
-        "წვდომა ჩემს მოვლენებთან"
-      ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
@@ -10841,12 +10811,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason }-ის ჩართვა"
-      ],
-      "Enable advanced logs": [
-        "დამატებითი ჟურნალის ჩართვა"
-      ],
-      "Enable authentication logs": [
-        "ავთენტიკაციის ჟურნალის დამატება"
       ]
     },
     "Mail import summary": {
@@ -13017,9 +12981,6 @@
       ],
       "Get ${ appName } for ${ browserName }": [
         "დააყენეთ ${ appName } ${ browserName }-სთვის"
-      ],
-      "Get ${ appName } for ${ browserName } soon": [
-        "დააყენეთ ${ appName } ${ browserName }-სთვის, მალე"
       ],
       "Get in touch with our sales team": [
         "დაუკავშირდით ჩვენი გაყიდვების გუნდს"
@@ -15898,10 +15859,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -17013,9 +16974,6 @@
       "Enable/disable desktop and mobile notifications": [
         "კომპიუტერსა და მობილურზე გაფრთხილებების ჩართ/გამორთ"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "დამატებითი ჟურნალის ჩაწერისას IP მისამართის თითოეულ მოვლენაზე მიწერა."
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
       ],
@@ -17611,9 +17569,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "ამ ტელეფონის ნომრის წაშლის შემთხვევაში თქვენს ანგარიშს ვეღარ აღადგენთ."
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "ჟურნალის გამორთვით თქვენ მას გაასუფთავებთ კიდეც. დარწმუნებული ბრძანდებით, რომ მისი წაშლა გნებავთ?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"

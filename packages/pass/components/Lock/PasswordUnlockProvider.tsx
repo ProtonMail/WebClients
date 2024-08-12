@@ -17,11 +17,14 @@ export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PasswordModalProps>({
         getInitialModalState: () => ({
-            message: c('Info').t`Please confirm your password`,
+            message: hasExtraPassword
+                ? c('Info').t`Please confirm your extra password`
+                : c('Info').t`Please confirm your password`,
             submitLabel: c('Action').t`Authenticate`,
-            title: c('Title').t`Enter your password`,
+            title: hasExtraPassword ? c('Title').t`Enter your extra password` : c('Title').t`Enter your password`,
             type: 'current-password',
             label: hasExtraPassword ? c('Label').t`Extra password` : c('Label').t`Password`,
+            placeholder: hasExtraPassword ? c('Label').t`Extra password` : c('Label').t`Password`,
         }),
     });
 

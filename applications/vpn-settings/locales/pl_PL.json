@@ -82,12 +82,6 @@
       "Block": [
         "Zablokuj"
       ],
-      "Can send to this group": [
-        "Można wysłać do tej grupy"
-      ],
-      "Can't send to this group": [
-        "Nie można wysłać do tej grupy"
-      ],
       "Cancel": [
         "Anuluj"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Usuń logo"
+      ],
+      "Delete member": [
+        "Usuń członka"
       ],
       "Delete user": [
         "Usuń użytkownika"
@@ -2700,9 +2697,6 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konta z niestandardowymi domenami nie mogą dołączyć do planu Visionary lub rodzinnego."
-      ],
       "customer support": [
         "wsparcie klienta"
       ],
@@ -2748,12 +2742,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Subskrypcja zostanie naliczona głównemu administratorowi planu."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plan Visionary i rodzinny nie obsługuje obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Plany Visionary i rodzinny obecnie nie obsługują opcji kont dożywotnich."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dołącz do organizacji ${ invite.OrganizationName }"
       ],
@@ -2792,9 +2780,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "W obecnym planie nie możesz dołączyć do planu Visionary lub rodzinnego."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3688,11 +3673,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -9527,10 +9512,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [

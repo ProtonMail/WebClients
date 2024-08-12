@@ -82,12 +82,6 @@
       "Block": [
         "Engelle"
       ],
-      "Can send to this group": [
-        "Bu gruba gönderebilir"
-      ],
-      "Can't send to this group": [
-        "Bu gruba gönderemez"
-      ],
       "Cancel": [
         "İptal"
       ],
@@ -186,6 +180,9 @@
       ],
       "Delete logo": [
         "Logoyu sil"
+      ],
+      "Delete member": [
+        "Üyeyi sil"
       ],
       "Delete user": [
         "Kullanıcıyı sil"
@@ -2688,9 +2685,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Özel etki alanları olan hesaplar, Visionary ya da Family tarifesine katılamaz."
-      ],
       "customer support": [
         "müşteri desteği"
       ],
@@ -2734,12 +2728,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary ve Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary ve Family tarifeleri şu anda ömür boyu hesapları desteklemiyor."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "${ invite.OrganizationName } kuruluşuna davet edildiniz"
       ],
@@ -2774,9 +2762,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Geçerli tarifeniz bir Visionary ya da Family tarifesine katılamaz."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3620,11 +3605,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -9293,10 +9278,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [

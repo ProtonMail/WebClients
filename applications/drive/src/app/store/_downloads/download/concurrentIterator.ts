@@ -1,8 +1,6 @@
 import { generateUID } from '@proton/components';
-import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { waitUntil } from '../../../utils/async';
-import { MAX_DOWNLOADING_BLOCKS_LOAD, MAX_DOWNLOADING_FILES_LOAD } from '../constants';
 import type { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
 import initDownloadLinkFile from './downloadLinkFile';
 import type { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
@@ -10,6 +8,27 @@ import type { NestedLinkDownload, StartedNestedLinkDownload } from './interface'
 /**
  * ConcurrentIterator iterates over provided generator of links and starts
  * download of files in concurrent fashion.
+ *
+ * TODO: It is downloading file concurrently only if the consumer of iterator
+ * is working concurrently. In our setup, ConcurrentIterator is always used
+ * in combination with ArchiveGenerator which consumes one link after another.
+ *
+ * WARNING: There is no safety. If consumer consumes all links at once, this
+ * class will start downloading all links at once too. Use wisely.
+ *
+ * FIXME: There was a safety. But because ArchiveGenerator doesnt use it and
+ * there is bug with some edge case causing stuck download, the limit was
+ * removed. It is not super clear where the problem was. It looks like around
+ * load/progress counting - sometimes it doesn't announce all progresses via
+ * onProgress. I managed reproduce by crazy pause/resume, so perhaps revert
+ * of progress is at fault, but we have logs with this problem without any
+ * pausing too.
+ *
+ * For refactor, progress, raw vs. encrypted size, what is safe and isnt, etc.
+ * must be well defined and used across the whole stack to avoid such problems.
+ *
+ * If you find this message in late 2025, neither download refactor or Drive
+ * refactor didn't happen (yet) and in that case I'm sorry.
  */
 export default class ConcurrentIterator {
     private paused: boolean;
@@ -18,13 +37,10 @@ export default class ConcurrentIterator {
 
     private fileControlers: Map<string, DownloadStreamControls>;
 
-    private loadSize: number;
-
     constructor() {
         this.paused = false;
         this.canceled = false;
         this.fileControlers = new Map();
-        this.loadSize = 0;
     }
 
     async *iterate(
@@ -44,20 +60,6 @@ export default class ConcurrentIterator {
             if (!link.isFile) {
                 yield link as StartedNestedLinkDownload;
             } else {
-                log(`ConcurrentIterator: Waiting for load size to decrease. link: ${link.linkId}`);
-                await waitUntil(
-                    () =>
-                        (this.loadSize < FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS_LOAD &&
-                            this.fileControlers.size < MAX_DOWNLOADING_FILES_LOAD) ||
-                        this.canceled
-                );
-                if (this.canceled) {
-                    log(`ConcurrentIterator: Waiting canceled. link: ${link.linkId}`);
-                    return;
-                }
-
-                log(`ConcurrentIterator: Waiting finished. link: ${link.linkId}`);
-
                 const uniqueId = generateUID();
                 const controls = initDownloadLinkFile(
                     link,
@@ -68,7 +70,6 @@ export default class ConcurrentIterator {
                         onInit: undefined,
                         onProgress: (linkIds: string[], bytes: number) => {
                             callbacks.onProgress?.([...link.parentLinkIds, ...linkIds], bytes);
-                            this.loadSize -= bytes;
                         },
                         onFinish: () => {
                             this.fileControlers.delete(uniqueId);
@@ -77,8 +78,8 @@ export default class ConcurrentIterator {
                     log,
                     options
                 );
-                this.loadSize += link.size;
                 this.fileControlers.set(uniqueId, controls);
+
                 const stream = controls.start();
                 yield {
                     ...link,

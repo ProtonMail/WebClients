@@ -1,0 +1,60 @@
+@import '~@proton/styles/scss/lib';
+
+$breakpoint-layout: 880 !default;
+
+[class*='offer-duo-plan-2024'] {
+	&#{&} {
+		// no taxonomy for this modal, same layout for all themes
+		--text-norm: white;
+		--modal-text-color: white;
+
+		background: radial-gradient(43% 84.97% at 103.88% 125.06%, rgb(167 146 255 / 1) 0%, rgb(27 19 64 / 1) 100%);
+
+		&.offer-modal {
+			--size: #{rem(970)};
+
+			@include media('<=#{em($breakpoint-layout, 16)}') {
+				--size: #{rem(450)};
+			}
+		}
+
+		h1 {
+			font-weight: 200;
+		}
+
+		.offer-plan-container {
+			max-inline-size: none;
+			margin: 0;
+		}
+
+		.offer-wrapper,
+		.offer-monthly-price-container {
+			margin-block: 0;
+		}
+
+		.offer-plan {
+			padding: 0;
+
+			.button {
+				inline-size: auto;
+				margin-block-end: 0;
+				border-radius: 2em;
+				padding-inline: 2em;
+				font-weight: var(--font-weight-semibold);
+				background: linear-gradient(270deg, #6d4aff 0%, #7e5fff 45.72%, #b5a3ff 114.01%);
+				border: 1px solid #1b1340; // to avoid a glitch
+			}
+		}
+
+		@include media('<=#{em($breakpoint-layout, 16)}') {
+			.offer-right-img-container {
+				display: none;
+			}
+		}
+
+		.offer-disable-button-container .button-underline,
+		.offer-feature-icon {
+			color: rgb(173 173 173 / 1);
+		}
+	}
+}

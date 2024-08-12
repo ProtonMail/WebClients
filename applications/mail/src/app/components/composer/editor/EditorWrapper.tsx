@@ -4,6 +4,7 @@ import type { GetContentMode } from 'roosterjs-editor-types';
 
 import type { EditorActions, EditorMetadata } from '@proton/components';
 import { Editor, useHandler } from '@proton/components';
+import type { EditorProps } from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -36,15 +37,12 @@ export interface ExternalEditorActions
     showLinkModal: () => void;
     openEmojiPicker: () => void;
 }
-interface Props {
+interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 'toolbarCustomRender'> {
     message: MessageState;
     disabled: boolean;
     onReady: (editorActions: ExternalEditorActions) => void;
     onChange: MessageChange;
-    onMouseUp?: () => void;
-    onKeyUp?: () => void;
     onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
-    onFocus?: () => void;
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     mailSettings?: MailSettings;
@@ -66,6 +64,7 @@ const EditorWrapper = ({
     mailSettings,
     userSettings,
     editorMetadata,
+    toolbarCustomRender,
 }: Props) => {
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
@@ -307,6 +306,7 @@ const EditorWrapper = ({
             modalImage={modalImage}
             modalDefaultFont={modalDefaultFont}
             userSettings={userSettings}
+            toolbarCustomRender={toolbarCustomRender}
         />
     ) : null;
 };

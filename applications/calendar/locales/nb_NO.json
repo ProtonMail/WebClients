@@ -3587,9 +3587,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
-      "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Kontoer med egendefinerte domener kan ikke bli med i en Visionary- eller familieplan."
-      ],
       "customer support": [
         "kundestøtte"
       ],
@@ -3614,12 +3611,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administratoren for denne planen."
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary- og familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
-      ],
-      "Visionary and family plans do not currently support lifetime accounts.": [
-        "Visionary- og familieplaner støtter for øyeblikket ikke levetidskontoer."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er invitert til å bli med ${ invite.OrganizationName }"
       ],
@@ -3640,9 +3631,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
-      ],
-      "Your current plan cannot join a Visionary or family plan.": [
-        "Din gjeldende plan kan ikke ble med en Visionary- eller familieplan."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5291,9 +5279,6 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig, vennligst kom tilbake senere)."
-      ],
-      "Access to my events": [
-        "Tilgang til mine hendelser"
       ],
       "Add email address": [
         "Legg til e-postadresse"

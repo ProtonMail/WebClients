@@ -23,7 +23,6 @@ import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import PageContainer from './containers/PageContainer';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
-import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 
 const MainContainer: FunctionComponent = () => {
@@ -77,27 +76,25 @@ const MainContainer: FunctionComponent = () => {
             <QuickSettingsRemindersProvider>
                 <DrawerThemeInjector />
                 <EncryptedSearchProvider>
-                    <SimpleLoginExtensionProvider>
-                        <MailContentRefProvider mailContentRef={mailContentRef}>
-                            <ChecklistsProvider>
-                                <SubscriptionModalProvider app={APP_NAME}>
-                                    <ComposerContainer breakpoints={breakpoints}>
-                                        <CheckAllRefProvider>
-                                            <ModalsChildren />
-                                            <Switch>
-                                                <Route
-                                                    path={MAIN_ROUTE_PATH}
-                                                    render={() => (
-                                                        <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                                    )}
-                                                />
-                                            </Switch>
-                                        </CheckAllRefProvider>
-                                    </ComposerContainer>
-                                </SubscriptionModalProvider>
-                            </ChecklistsProvider>
-                        </MailContentRefProvider>
-                    </SimpleLoginExtensionProvider>
+                    <MailContentRefProvider mailContentRef={mailContentRef}>
+                        <ChecklistsProvider>
+                            <SubscriptionModalProvider app={APP_NAME}>
+                                <ComposerContainer breakpoints={breakpoints}>
+                                    <CheckAllRefProvider>
+                                        <ModalsChildren />
+                                        <Switch>
+                                            <Route
+                                                path={MAIN_ROUTE_PATH}
+                                                render={() => (
+                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                                )}
+                                            />
+                                        </Switch>
+                                    </CheckAllRefProvider>
+                                </ComposerContainer>
+                            </SubscriptionModalProvider>
+                        </ChecklistsProvider>
+                    </MailContentRefProvider>
                 </EncryptedSearchProvider>
             </QuickSettingsRemindersProvider>
         </AssistantProvider>

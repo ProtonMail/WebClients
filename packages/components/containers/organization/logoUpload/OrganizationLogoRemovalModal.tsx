@@ -10,7 +10,7 @@ import {
     ModalTwoHeader as ModalHeader,
     useFormErrors,
 } from '@proton/components';
-import { useApi, useEventManager } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics/index';
 import { deleteOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -30,6 +30,7 @@ const OrganizationLogoRemovalModal = ({ onClose, organization, app, ...rest }: P
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { onFormSubmit } = useFormErrors();
+    const { createNotification } = useNotifications();
 
     const handleSubmit = async () => {
         try {
@@ -41,6 +42,7 @@ const OrganizationLogoRemovalModal = ({ onClose, organization, app, ...rest }: P
                 status: 'success',
             });
 
+            createNotification({ text: c('Success').t`Organization logo removed` });
             onClose?.();
         } catch (error) {
             observeApiError(error, (status) =>

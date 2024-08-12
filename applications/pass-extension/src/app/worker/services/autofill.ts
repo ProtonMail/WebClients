@@ -10,7 +10,7 @@ import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } fro
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
-import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
+import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillIdentityCandidates,
     selectAutofillLoginCandidates,
@@ -139,7 +139,7 @@ export const createAutoFillService = () => {
         const state = store.getState();
         return {
             config: selectPasswordOptions(state) ?? DEFAULT_RANDOM_PW_OPTIONS,
-            copy: selectAutosuggestCopyToClipboard(state) ?? INITIAL_SETTINGS.autosuggest.passwordCopy,
+            copy: selectAutosuggestCopyToClipboard(state) ?? getInitialSettings().autosuggest.passwordCopy,
         };
     });
 

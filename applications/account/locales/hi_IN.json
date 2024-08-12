@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -703,10 +703,10 @@
       "No, thanks": [
         "नहीं, शुक्रिया"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
       "Open": [
@@ -769,11 +769,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reload": [
         "रिलोड"
@@ -1481,14 +1481,6 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1510,6 +1502,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
     "bf2023: Offers": {
@@ -3167,12 +3167,6 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "इन सुविधाओं तक पहुँचने के लिए ${ PROTON_SENTINEL_NAME } को सक्षम करें"
       ],
-      "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "इन सुविधाओं तक पहुँचने के लिए उन्नत लॉग और ${ PROTON_SENTINEL_NAME } सक्षम करें"
-      ],
-      "Enable advanced logs to access these features": [
-        "इन सुविधाओं तक पहुँचने के लिए उन्नत लॉग सक्षम करें"
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
@@ -4593,9 +4587,6 @@
       "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
         "परिवर्तन को आसान बनाने के लिए, हम आपको ${ BRAND_NAME } असीमित* का 30-दिन का सौजन्य परीक्षण दे रहे हैं।"
       ],
-      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary और पारिवारिक योजनाएँ वर्तमान में बाहरी खातों का समर्थन नहीं करती हैं। शामिल होने से पहले एक ${ BRAND_NAME } पता बनाएं। ${ addressSettingsLink }"
-      ],
       "You are part of ${ organization.Name }.": [
         "आप ${ organization.Name } के सदस्य है।"
       ],
@@ -4604,9 +4595,6 @@
       ],
       "You need to configure a custom domain before creating a new user.": [
         "नया उपयोगकर्ता बनाने से पहले आपको एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
-      ],
-      "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "आप ${ BRAND_NAME } Family के साथ शामिल सभी प्रीमियम सुविधाओं औरस्टोरेज स्पेस तक पहुंच खो देंगे।"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "आपको अपने ${ BRAND_NAME } खाते को इस समूह योजना से लिंक करने और साथ में सभी ${ BRAND_NAME_TWO } प्रीमियम सुविधाओं का आनंद लेने के लिए आमंत्रित किया जाता है।"
@@ -6231,11 +6219,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -6777,9 +6765,6 @@
       ],
       "Loading...": [
         "लोड हो रहा..."
-      ],
-      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "लॉग में आपके ${ BRAND_NAME } प्रमाण इस्तेमाल करते सारे ${ BRAND_NAME_TWO } सेवाओं पे सत्यापन की कोशिशे होती है"
       ],
       "Low Priority": [
         "निम्न प्राथमिकता"
@@ -8506,9 +8491,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।)"
       ],
-      "Access to my events": [
-        "मेरे इवेंट तक पहुंच"
-      ],
       "Account storage": [
         "खाता संग्रहण"
       ],
@@ -9742,14 +9724,6 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "और जानें"
-      ]
-    },
-    "Log preference": {
-      "Enable advanced logs": [
-        "उन्नत लॉग सक्षम करें"
-      ],
-      "Enable authentication logs": [
-        "प्रमाणीकरण लॉग सक्षम करें"
       ]
     },
     "Mail import summary": {
@@ -13499,10 +13473,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -14551,9 +14525,6 @@
       "Enable/disable desktop and mobile notifications": [
         "डेस्कटॉप और मोबाइल सूचनाएं सक्षम/अक्षम करें"
       ],
-      "Enabling advanced logs records the IP address for each event in the security log.": [
-        "उन्नत लॉग सक्षम करना सुरक्षा लॉग में प्रत्येक ईवेंट के लिए IP पता रिकॉर्ड करता है।"
-      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "पहचान प्रदाता से एंडपॉइंट URL (उदा. https://idp.udaaharan.in/sso/saml)"
       ],
@@ -14963,9 +14934,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "इस फ़ोन नंबर को हटाने से, आप अपने खाते को पुनर्प्राप्त नहीं कर पाएंगे।"
-      ],
-      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "लॉग को अक्षम करने से, आप अपने संपूर्ण लॉग इतिहास को भी साफ़ कर देंगे। क्या आप वाकई लॉग को अक्षम करना चाहते हैं?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "अगर आप इस आयात को रद्द करते हैं, तो आप इसे जारी नहीं रख पाएंगे। ${ BRAND_NAME } ने आपके खाते में सारी प्रगति सेव कर ली है। फिर भी रद्द करें?"

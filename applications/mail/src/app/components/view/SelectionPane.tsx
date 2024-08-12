@@ -1,13 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { FeatureCode, Loader, useFeature, useFolders, useLabels, useModalState } from '@proton/components';
+import { useFolders, useLabels, useModalState } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -22,13 +21,11 @@ import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
-import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
-import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import type { SearchParameters } from '../../models/tools';
 import { total as totalSelector } from '../../store/elements/elementsSelectors';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
-import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
+import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
 import './SelectionPane.scss';
 
@@ -45,12 +42,6 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
     const appLocation = useLocation();
-    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
-        FeatureCode.SLIntegration
-    );
-    const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
-    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
-    const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
     const conversationMode = isConversationMode(labelID, mailSettings, location);
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
 
@@ -193,32 +184,12 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const showText = checkeds || labelCount;
 
-    const showSimpleLoginPlaceholder =
-        simpleLoginIntegrationFeature?.Value && checkeds === 0 && labelID === SPAM && !hasSimpleLogin;
-
-    // If the user sees the SL placeholder, we need to send once a telemetry request
-    useEffect(() => {
-        if (showSimpleLoginPlaceholder && !placeholderSLSeenSent) {
-            // We need to send to telemetry the total number of messages that the user has in spam
-            handleSendTelemetryData(TelemetrySimpleLoginEvents.spam_view, {}, false, total);
-            setPlaceholderSLSeenSent(true);
-        }
-    }, [showSimpleLoginPlaceholder]);
-
-    if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
-        return (
-            <div className="flex h-full py-4 px-7">
-                <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
-                    <Loader />
-                </div>
-            </div>
-        );
-    }
+    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
 
     return (
         <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
             {showSimpleLoginPlaceholder ? (
-                <SimpleLoginPlaceholder />
+                <ProtonPassPlaceholder />
             ) : (
                 <>
                     <div className="mb-8">
@@ -242,12 +213,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         )}
                     </div>
                     <div className="mb-2">
-                        <img
-                            src={conversationSvg}
-                            width={144}
-                            height={101}
-                            alt=""
-                        />
+                        <img src={conversationSvg} width={144} height={101} alt="" />
                     </div>
                     {checkeds === 0 && labelName && (
                         <h3 className="lh-rg text-ellipsis" title={labelName}>

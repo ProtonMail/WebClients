@@ -28,7 +28,7 @@ import {
     ModalTwoHeader as ModalHeader,
     useFormErrors,
 } from '../../../components';
-import { useApi, useEventManager } from '../../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import SidebarPreview from './SidebarPreview';
 import useOrgLogoUploadTelemetry from './useOrgLogoUploadTelemetry';
 
@@ -53,6 +53,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
     const [uploading, setUploading] = useState<boolean>(false);
     const [showUploadLoader, setShowUploadLoader] = useState<boolean>(false);
     const [error, setError] = useState<ReactNode>();
+    const { createNotification } = useNotifications();
 
     const { sendOrgLogoUploadStartProcessReport, sendOrgLogoUploadSuccessReport, sendOrgLogoUploadFailureReport } =
         useOrgLogoUploadTelemetry();
@@ -74,7 +75,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
             });
 
             sendOrgLogoUploadSuccessReport();
-
+            createNotification({ text: c('Success').t`Organization logo updated` });
             onClose?.();
         } catch (error) {
             observeApiError(error, (status) =>

@@ -16,7 +16,7 @@ import {
     SelectTwo,
     useFormErrors,
 } from '@proton/components/components';
-import { useAddresses, useErrorHandler } from '@proton/components/hooks';
+import { useAddresses, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
@@ -36,28 +36,28 @@ const EditOrganizationIdentityModal = ({ signatureAddress: initialSignatureAddre
     });
     const dispatch = useDispatch();
     const errorHandler = useErrorHandler();
+    const { createNotification } = useNotifications();
+
+    const handleSubmit = async (event: FormEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!onFormSubmit()) {
+            return;
+        }
+
+        const address = addresses?.find((address) => address.ID === addressID);
+        if (address) {
+            const handleSubmit = async () => {
+                await dispatch(changeOrganizationSignature({ address }));
+                createNotification({ text: c('Success').t`Organization identity updated` });
+                rest.onClose?.();
+            };
+            withSubmitting(handleSubmit()).catch(errorHandler);
+        }
+    };
 
     return (
-        <Modal
-            as="form"
-            size="small"
-            {...rest}
-            onSubmit={(event: FormEvent) => {
-                event.preventDefault();
-                event.stopPropagation();
-                if (!onFormSubmit()) {
-                    return;
-                }
-                const address = addresses?.find((address) => address.ID === addressID);
-                if (address) {
-                    const handleSubmit = async () => {
-                        await dispatch(changeOrganizationSignature({ address }));
-                        rest.onClose?.();
-                    };
-                    withSubmitting(handleSubmit()).catch(errorHandler);
-                }
-            }}
-        >
+        <Modal as="form" size="small" {...rest} onSubmit={handleSubmit}>
             <ModalHeader title={c('Title').t`Edit organization identity`} />
             <ModalContent>
                 {initialSignatureAddress && (

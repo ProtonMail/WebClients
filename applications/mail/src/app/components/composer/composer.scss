@@ -348,6 +348,7 @@
 
 	.editor-toolbar {
 		max-inline-size: em(640);
+		display: flex;
 	}
 
 	&-body-container {

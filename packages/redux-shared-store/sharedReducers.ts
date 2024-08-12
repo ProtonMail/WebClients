@@ -1,6 +1,9 @@
 import {
     addressKeysReducer,
     addressesReducer,
+    domainsReducer,
+    groupMembersReducer,
+    groupMembershipsReducer,
     groupsReducer,
     memberReducer,
     membersReducer,
@@ -8,6 +11,7 @@ import {
     organizationReducer,
     organizationThemeSlice,
     plansReducer,
+    protonDomainsReducer,
     scheduleCallReducer,
     securityCheckupSlice,
     subscriptionReducer,
@@ -39,6 +43,8 @@ export const sharedReducers = {
     ...subscriptionReducer,
     ...organizationReducer,
     ...organizationKeyReducer,
+    ...protonDomainsReducer,
+    ...domainsReducer,
     organizationTheme: organizationThemeSlice.reducer,
     ...userInvitationsReducer,
     ...contactsReducer,
@@ -51,6 +57,8 @@ export const sharedReducers = {
     ...membersReducer,
     ...scheduleCallReducer,
     ...groupsReducer,
+    ...groupMembersReducer,
+    ...groupMembershipsReducer,
     securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
 };
@@ -68,5 +76,7 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     organization: selectPersistModel,
     userInvitations: selectPersistModel,
     vpnServersCount: selectPersistModel,
+    protonDomains: selectPersistModel,
+    domains: selectPersistModel,
     features: (state: any) => state,
 };
