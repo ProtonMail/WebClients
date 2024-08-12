@@ -8,7 +8,8 @@ interface Client {
         | 'brand-brave'
         | 'brand-firefox'
         | 'brand-edge'
-        | 'brand-windows';
+        | 'brand-windows'
+        | 'brand-safari';
 }
 
 export enum Clients {
@@ -19,6 +20,7 @@ export enum Clients {
     Brave,
     Firefox,
     Edge,
+    Safari,
 }
 
 export const clients: { [key in Clients]: Client } = {
@@ -56,5 +58,10 @@ export const clients: { [key in Clients]: Client } = {
         title: 'Firefox',
         link: 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass',
         icon: 'brand-firefox',
+    },
+    [Clients.Safari]: {
+        title: 'Safari',
+        link: 'https://apps.apple.com/app/id6502835663',
+        icon: 'brand-safari',
     },
 } as const;
