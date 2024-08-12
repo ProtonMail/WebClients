@@ -311,6 +311,7 @@ const Step1 = ({
                 planID: planName,
                 organization: model.session.organization,
                 plans: model.plans,
+                user: model.session.user,
             });
             return handleOptimistic({ planIDs: switchedPlanIds });
         }

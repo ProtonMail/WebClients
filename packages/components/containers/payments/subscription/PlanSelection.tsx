@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/components/hooks';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
@@ -214,6 +215,7 @@ const PlanSelection = ({
     const canAccessWalletPlan = useFlag('WalletPlan');
     const canAccessDuoPlan = useFlag('DuoPlan');
 
+    const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const isDriveSettingsApp = app == APPS.PROTONDRIVE;
@@ -478,6 +480,7 @@ const PlanSelection = ({
                             planID: isFree ? undefined : planName,
                             organization,
                             plans,
+                            user,
                         }),
                         cycle
                     );
