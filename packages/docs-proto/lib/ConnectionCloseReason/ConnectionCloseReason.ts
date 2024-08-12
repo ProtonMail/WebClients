@@ -3,6 +3,8 @@ import { ValueObject } from '@standardnotes/domain-core'
 import type { ConnectionCloseReasonProps } from './ConnectionCloseReasonProps'
 
 export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProps> {
+  private MAX_WEBSOCKET_FRAME_SIZE = 123
+
   static CODES = {
     NORMAL_CLOSURE: 1000,
     GOING_AWAY: 1001,
@@ -31,6 +33,8 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     KILL_SWITCH_ENABLED: 3009,
     DOCUMENT_CAPACITY_REACHED: 3010,
     DOCUMENT_RECREATING: 3011,
+    DOCUMENT_PARTICIPANT_LIMIT_REACHED: 3012,
+    CLIENT_VERSION_NOT_SUPPORTED: 3013,
   }
 
   static messages: Record<number, string> = {
@@ -61,6 +65,9 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     [ConnectionCloseReason.CODES.KILL_SWITCH_ENABLED]: 'Server is not accepting new connection.',
     [ConnectionCloseReason.CODES.DOCUMENT_CAPACITY_REACHED]: 'Document capacity reached',
     [ConnectionCloseReason.CODES.DOCUMENT_RECREATING]: 'Document is being recreated',
+    [ConnectionCloseReason.CODES.DOCUMENT_PARTICIPANT_LIMIT_REACHED]: 'Document active participants limit reached',
+    [ConnectionCloseReason.CODES.CLIENT_VERSION_NOT_SUPPORTED]:
+      'Client version not supported. Please upgrade your client.',
   }
 
   static create(props: ConnectionCloseReasonProps): ConnectionCloseReason {
@@ -73,5 +80,15 @@ export class ConnectionCloseReason extends ValueObject<ConnectionCloseReasonProp
     }
 
     return new ConnectionCloseReason(props)
+  }
+
+  get message(): string {
+    if (!this.props.message) {
+      return 'Unknown reason'
+    }
+
+    return this.props.message.length > this.MAX_WEBSOCKET_FRAME_SIZE
+      ? `${this.props.message.slice(0, this.MAX_WEBSOCKET_FRAME_SIZE - 3)}...`
+      : this.props.message
   }
 }
