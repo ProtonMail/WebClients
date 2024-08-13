@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import type { CustomNotificationProps } from '@proton/components';
@@ -6,6 +8,8 @@ import { Icon } from '@proton/components/components/icon';
 
 import useGetRandomTip from 'proton-mail/components/list/tip/useGetRandomTip';
 import type { TipData } from 'proton-mail/models/tip';
+
+import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 
 import './TipBox.scss';
 
@@ -36,10 +40,9 @@ interface Props {
 const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
     const [user] = useUser();
     const { createNotification } = useNotifications();
-
     const { randomOption } = useGetRandomTip(tips);
-
     const { update } = useFeature(FeatureCode.ProtonTipsSnoozeTime);
+    const { sendTipDisplayedReport } = useProtonTipsTelemetry();
 
     const onSnooze = () => {
         void update(Date.now());
@@ -53,6 +56,8 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
             isClosing: true,
         });
     };
+
+    useEffect(() => sendTipDisplayedReport(randomOption.action), [randomOption]);
 
     if (isDismissed) {
         return null;

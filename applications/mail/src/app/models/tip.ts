@@ -3,19 +3,19 @@ import type { ReactNode } from 'react';
 import type { IconName } from '@proton/components/components';
 
 export enum TipActionType {
-    CreateFolder,
-    CreateLabel,
-    DownloadDesktopApp,
-    GetProtonSubdomainAddress,
-    CreateAlias,
-    ScheduleMessage,
-    ClearMailbox,
-    CreateEmailAddress,
-    SnoozeEmail,
-    EnableDarkWebMonitoring,
-    OpenProtonPass,
-    OpenProtonDrive,
-    DownloadProtonVPN,
+    CreateFolder = 'folder',
+    CreateLabel = 'label',
+    DownloadDesktopApp = 'desktop_app',
+    GetProtonSubdomainAddress = 'pm.me',
+    CreateAlias = 'alias',
+    ScheduleMessage = 'schedule_send',
+    ClearMailbox = 'auto_delete',
+    CreateEmailAddress = 'cereate_address',
+    SnoozeEmail = 'snooze',
+    EnableDarkWebMonitoring = 'dwm',
+    OpenProtonDrive = 'drive',
+    OpenProtonPass = 'pass',
+    DownloadProtonVPN = 'vpn',
 }
 
 export interface TipData {

@@ -13,12 +13,19 @@ interface Props {
      * Needed in a "Dropdown" scenario because we want to close the dropdown after closing the upsell modal
      */
     onCloseCustomAction?: () => void;
+    upsellComponent?: UPSELL_COMPONENT;
     isSettings?: boolean;
 }
-const LabelsUpsellModal = ({ modalProps, onCloseCustomAction, feature, isSettings = false }: Props) => {
+const LabelsUpsellModal = ({
+    modalProps,
+    onCloseCustomAction,
+    feature,
+    upsellComponent,
+    isSettings = false,
+}: Props) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
+        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
         feature,
         isSettings,
     });

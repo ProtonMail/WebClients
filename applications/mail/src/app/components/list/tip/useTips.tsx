@@ -43,6 +43,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import PassAliasTipCTA from './PassAliasTipCTA';
 import ProtonTipCTA from './ProtonTipCTA';
+import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 
 const PM_DOMAIN = 'pm.me';
 
@@ -61,6 +62,7 @@ const useTips = () => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [userSettings, loadingSettings] = useUserSettings();
     const activeAddresses = getActiveAddresses(addresses ?? []);
+    const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
     const [missScopePass, setMissScopePass] = useState(false);
     const [organization, loadingOrganization] = useOrganization();
 
@@ -254,7 +256,12 @@ const useTips = () => {
                     .t`Did you know you have encrypted cloud storage included with your ${BRAND_NAME} Account? Head over to ${DRIVE_APP_NAME} and make the most of your space. It's free.`,
                 // translator: Open Proton Drive
                 cta: (
-                    <Href href={drive} className="link align-baseline" tabIndex={0}>
+                    <Href
+                        href={drive}
+                        className="link align-baseline"
+                        tabIndex={0}
+                        onClick={() => sendCTAButtonClickedReport(TipActionType.OpenProtonDrive)}
+                    >
                         {openAppCTA + `${DRIVE_APP_NAME}`}
                     </Href>
                 ),
@@ -267,7 +274,12 @@ const useTips = () => {
                     .t`Keep your login and credit card details safe but always on hand by adding it to ${PASS_APP_NAME}. It's free, and included with your ${BRAND_NAME} Account.`,
                 // translator: Open Proton Pass
                 cta: (
-                    <Href href={pass} className="link align-baseline" tabIndex={0}>
+                    <Href
+                        href={pass}
+                        className="link align-baseline"
+                        tabIndex={0}
+                        onClick={() => sendCTAButtonClickedReport(TipActionType.OpenProtonPass)}
+                    >
                         {openAppCTA + `${PASS_APP_NAME}`}
                     </Href>
                 ),
@@ -280,7 +292,12 @@ const useTips = () => {
                     .t`When you're traveling or using public WiFi, connect to ${VPN_APP_NAME} to prevent anyone from tracking your online activity or stealing your data. It's free.`,
                 // translator: Download Proton VPN
                 cta: (
-                    <Href href={vpn} className="link align-baseline" tabIndex={0}>
+                    <Href
+                        href={vpn}
+                        className="link align-baseline"
+                        tabIndex={0}
+                        onClick={() => sendCTAButtonClickedReport(TipActionType.DownloadProtonVPN)}
+                    >
                         {c('Tip Action').t`Download ${VPN_APP_NAME}`}
                     </Href>
                 ),
