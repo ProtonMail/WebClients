@@ -2399,6 +2399,38 @@
         "Prioriterad support"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Skaffa det för ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 användare"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full åtkomst till alla ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparar ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Allt av ${ BRAND_NAME }, för 2."
+      ],
+      "Double your storage": [
+        "Dubbla ditt lagringsutrymme"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introducerar ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESKRIVNING:\n${ eventDescription }"
@@ -3280,14 +3312,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konton med anpassade domäner kan inte gå med i ett gruppaket"
+      ],
       "customer support": [
         "kundsupport"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
       ],
       "Invited by: ${ inviteEmail }": [
         "Inbjuden av: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livstidskonton kan inte gå med i ett gruppaket."
       ],
       "Manage addresses.": [
         "Hantera adresser."
@@ -3315,6 +3356,9 @@
       ],
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har obetalda fakturor. Betala dem innan du går med i ett gruppaket."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
@@ -4153,6 +4197,10 @@
       ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Skapa ett säkert moln för ${ n } medlem",
+        "Skapa ett säkert moln för ${ n } medlemmar"
       ],
       "Create in": [
         "Skapa i"
@@ -6722,9 +6770,6 @@
       "${ size } storage": [
         "${ size } lagringsutrymme"
       ],
-      "${ size } storage per user": [
-        "${ size } lagringsutrymme per användare"
-      ],
       "1 user": [
         "1 användare"
       ],
@@ -6739,9 +6784,6 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
-      ],
-      "Advanced sharing security": [
-        "Avancerad delningssäkerhet"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -6772,9 +6814,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbeta och dela stora filer"
-      ],
-      "Collaborative document editor": [
-        "Dokumentredigerare för samarbete"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -6891,6 +6930,9 @@
       "Phone support (40+ users)": [
         "Telefonsupport (40+ användare)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premiumfunktioner av ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Prioriterad e-postsupport"
       ],
@@ -6936,9 +6978,6 @@
       ],
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
-      ],
-      "Share files and folders via link": [
-        "Dela filer och mappar via länk"
       ],
       "Sign in as user": [
         "Logga in som användare"
@@ -7032,6 +7071,9 @@
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
       ],
+      "Version history": [
+        "Versionshistorik"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
       ]
@@ -7122,9 +7164,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Säkra ditt digitala liv med ${ BRAND_NAME } för två personer."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
       ],
@@ -7133,6 +7172,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Gratiskontot designat för att ge alla integritet som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du tar bort ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du skapar ett nytt konto."
@@ -7209,9 +7251,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Välj anpassade tider för att bli påmind om ett e-postmeddelande eller för att ditt meddelande ska komma fram"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontrollera åtkomst till dina delade filer genom att lägga till lösenordsskydd och länkens utgångsdatum"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain } för nyhetsprenumerationer"
@@ -9254,6 +9293,9 @@
       "Import record deleted": [
         "Importpost borttagen"
       ],
+      "Invitation rejected": [
+        "Inbjudan avvisad"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Senast ändrade alias lagrade i ditt äldsta valv"
       ],
@@ -9656,9 +9698,6 @@
       "Edit image": [
         "Redigera bild"
       ],
-      "Email address": [
-        "E-postadress"
-      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -9805,9 +9844,6 @@
       "Other names": [
         "Andra namn"
       ],
-      "Password": [
-        "Lösenord"
-      ],
       "Payment failed": [
         "Betalning misslyckades"
       ],
@@ -9930,9 +9966,6 @@
       ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
-      ],
-      "Sign in with 2FA": [
-        "Logga in med 2FA"
       ],
       "Sign out": [
         "Logga ut"
