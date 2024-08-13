@@ -1375,9 +1375,6 @@
       "External": [
         "Externá"
       ],
-      "Missing keys": [
-        "Chýbajúce kľúče"
-      ],
       "No E2EE mail": [
         "Žiadna E2EE pošta"
       ],
@@ -3626,9 +3623,6 @@
       "Free, encrypted, and secure cloud storage": [
         "Bezplatné, šifrované a bezpečné cloudové úložisko"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Bezpečné cloudové úložisko a zdieľanie súborov, ktoré chráni vaše údaje"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Dostali ste pozvanie na prístup k súboru v ${ DRIVE_APP_NAME }"
       ]
@@ -3639,6 +3633,11 @@
       ],
       "Priority support": [
         "Prioritná podpora"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 používatelia"
       ]
     },
     "Duration": {
@@ -6803,9 +6802,6 @@
       "Are you sure you want to delete this label?": [
         "Naozaj chcete vymazať tento štítok?"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Naozaj chcete vypnúť dvojfázové overovanie?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Naozaj chcete zahodiť všetky zmeny?"
       ],
@@ -7840,6 +7836,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Ostatní používatelia vo vašej organizácii uvidia vaše obsadené sloty. Žiadne podrobnosti o udalosti sa nezdieľajú."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaraný obnovovací súbor; aktualizujte, aby ste zaistili prístup k vašim údajom"
@@ -9637,6 +9636,27 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
+      ],
+      "1 hour": [
+        "1 hodine"
+      ],
+      "1 minute": [
+        "1 minúte"
+      ],
+      "10 minutes": [
+        "10 minútach"
+      ],
+      "15 minutes": [
+        "15 minútach"
+      ],
+      "30 minutes": [
+        "30 minútach"
+      ],
+      "30 seconds": [
+        "30 sekundách"
+      ],
+      "5 minutes": [
+        "5 minútach"
       ],
       "Account recovery": [
         "Obnovenie účtu"
@@ -11626,9 +11646,6 @@
       "${ size } storage": [
         "${ size } úložisko"
       ],
-      "${ size } storage per user": [
-        "${ size } úložisko na používateľa"
-      ],
       "1 user": [
         "1 používateľ"
       ],
@@ -11652,9 +11669,6 @@
       ],
       "Advanced network security": [
         "Pokročilá bezpečnosť siete"
-      ],
-      "Advanced sharing security": [
-        "Pokročilá bezpečnosť zdieľania"
       ],
       "All ${ BRAND_NAME } services": [
         "Všetky služby ${ BRAND_NAME }"
@@ -11691,9 +11705,6 @@
       ],
       "Collaborate and share large files": [
         "Spolupracujte a zdieľajte veľké súbory"
-      ],
-      "Collaborative document editor": [
-        "Spoločný editor dokumentov"
       ],
       "Contact groups": [
         "Skupiny kontaktov"
@@ -11880,9 +11891,6 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
-      ],
-      "Share files and folders via link": [
-        "Zdieľanie súborov a priečinkov cez odkaz"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -12100,9 +12108,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpečte svoj digitálny život s ${ BRAND_NAME } pre dve osoby."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Nastavte automatické odpovede na informovanie odosielateľov, že ste mimo kancelárie, alebo že nemôžete odpovedať."
       ],
@@ -12242,9 +12247,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Zvoľte si vlastné časy, kedy chcete dostať upozornenie na email alebo kedy má prísť vaša správa."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Ovládajte prístup k svojim zdieľaným súborom pridaním ochrany heslom a dátumov vypršania platnosti odkazu"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
@@ -13175,9 +13177,6 @@
       "Current plan": [
         "Súčasný plán"
       ],
-      "Customizable services for large teams.": [
-        "Prispôsobiteľné služby pre veľké tímy."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Na začatie používania ${ PASS_APP_NAME } si stiahnite a nainštalujte príslušné aplikácie a rozšírenia"
       ],
@@ -13252,9 +13251,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Pridajte sa k viac ako 100 miliónom ľudí, ktorí si zvolili ${ BRAND_NAME }, aby zostali v bezpečí online"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Pridajte sa k viac ako 50 000 organizáciám, ktoré dôverujú ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Spúšťanie ${ PASS_APP_NAME }"
@@ -14633,16 +14629,6 @@
         "Overenie"
       ]
     },
-    "signup: Action": {
-      "Request a demo": [
-        "Vyžiadať demoverziu"
-      ]
-    },
-    "signup_2024: Feature": {
-      "GDPR compliant": [
-        "V súlade s GDPR"
-      ]
-    },
     "specialoffer: Action": {
       "Close": [
         "Zavrieť"
@@ -15677,6 +15663,9 @@
       "Import record deleted": [
         "Záznam o importe bol zmazaný"
       ],
+      "Invitation rejected": [
+        "Pozvánka odmietnutá"
+      ],
       "Invitation sent": [
         "Pozvánka odoslaná"
       ],
@@ -16488,9 +16477,6 @@
       "Email": [
         "Email"
       ],
-      "Email address": [
-        "Emailová adresa"
-      ],
       "Email composer": [
         "Editor mailu"
       ],
@@ -16967,9 +16953,6 @@
       ],
       "Sign in to your organization": [
         "Prihláste sa do svojej organizácie"
-      ],
-      "Sign in with 2FA": [
-        "Prihlásiť sa cez 2FA"
       ],
       "Sign out": [
         "Odhlásiť sa"

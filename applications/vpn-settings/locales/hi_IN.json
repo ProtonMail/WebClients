@@ -758,9 +758,6 @@
       "External": [
         "बाहरी"
       ],
-      "Missing keys": [
-        "खोई हुई चाबियां"
-      ],
       "No E2EE mail": [
         "कोई E2EE मेल नहीं"
       ],
@@ -3101,9 +3098,6 @@
       "Amount due": [
         "देय राशि"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "क्या आप वाकई दो-कारक प्रमाणीकरण को अक्षम करना चाहते हैं?"
-      ],
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
       ],
@@ -3231,11 +3225,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
-      "Dedicated servers": [
-        "विशेष सर्वर"
-      ],
       "dedicated servers": [
         "समर्पित सर्वर"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -5329,9 +5323,6 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "${ size } storage per user": [
-        "${ size } स्टोरेज हर यूज़र पे"
-      ],
       "1 user": [
         "1 यूज़र"
       ],
@@ -5355,9 +5346,6 @@
       ],
       "Advanced network security": [
         "उन्नत नेटवर्क सुरक्षा"
-      ],
-      "Advanced sharing security": [
-        "एडवांस शेयर करते हुए सुरक्षा"
       ],
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
@@ -5532,9 +5520,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ देश में सर्वर",
         "${ vpnServersCountData.paid.countries }+ देशों में सर्वर"
-      ],
-      "Share files and folders via link": [
-        "लिंक से फाइल और फोल्डर शेयर करें"
       ],
       "Sign in as user": [
         "यूज़र के रूप में साइनइन"
@@ -5788,9 +5773,6 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "थोक में विज्ञापन-ईमेल या प्रोग्राम किया ईमेल भेजना अभी सपोर्ट नहीं किया गया है। हम सलाह देते है की आप इस के लिए एक समर्पित ईमेल सेवा प्रदाता इस्तेमाल करें।"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "पासवर्ड सुरक्षा और लिंक खत्म होने की तारीख जोड़कर शेयर किए गए फाइलों को कंट्रोल करें।"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
@@ -7597,10 +7579,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -7992,9 +7974,6 @@
       ],
       "Sign in to your organization": [
         "अपने संगठन में साइन इन करें"
-      ],
-      "Sign in with 2FA": [
-        "2-एफए से साइनइन करें"
       ],
       "Sign out": [
         "साइन आउट करें"

@@ -303,6 +303,9 @@
       "Create a new label": [
         "Стварыць новую метку"
       ],
+      "Create alias": [
+        "Стварыць псеўданім"
+      ],
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
@@ -516,9 +519,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Атрымайце яго ўсяго за ${ addonPriceWithCurrency }/месяц"
       ],
-      "Get SimpleLogin extension": [
-        "Атрымаць пашырэнне SimpleLogin"
-      ],
       "Get started": [
         "Пачаць працу"
       ],
@@ -546,9 +546,6 @@
       "Go to settings": [
         "Перайсці ў налады"
       ],
-      "Go to SimpleLogin": [
-        "Перайсці да SimpleLogin"
-      ],
       "Got it": [
         "Зразумела"
       ],
@@ -569,6 +566,9 @@
       ],
       "Hide messages": [
         "Схаваць паведамленні"
+      ],
+      "Hide toolbar": [
+        "Схаваць панэль інструментаў"
       ],
       "hide-my-email aliases": [
         "псеўданімаў Hide-my-email"
@@ -852,10 +852,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open": [
@@ -1182,6 +1182,9 @@
       "Show side panel": [
         "Паказаць бакавую панэль"
       ],
+      "Show toolbar": [
+        "Паказаць панэль інструментаў"
+      ],
       "Sign out": [
         "Выйсці з уліковага запісу"
       ],
@@ -1256,12 +1259,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -3639,6 +3636,43 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Атрымаць ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Атрымайце яго за ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Аплачваецца штогод у памеры ${ amountBilled }. Эканомія складае ${ amountSave } пры гадавой падпісцы на 2 асабістыя ўліковыя запісы ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 карыстальнікі"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Поўны доступ да ўсіх прадуктаў ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Вы эканоміце ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Усе функцыі ${ BRAND_NAME } для дваіх карыстальнікаў."
+      ],
+      "Double your storage": [
+        "Падвоіць ваша сховішча"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Прадстаўляем ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "АПІСАННЕ:\n${ eventDescription }"
@@ -4218,6 +4252,9 @@
       "Tab closed": [
         "Укладка закрыта"
       ],
+      "Text is too long to refine": [
+        "Занадта доўгі тэкст для ўдасканалення"
+      ],
       "Thanks for the feedback!": [
         "Дзякуй за водгук!"
       ],
@@ -4556,6 +4593,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -4585,6 +4625,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Кіраванне псеўданімамі можа быць завершана толькі ў ${ PASS_APP_NAME }, калі дадатковы пароль уключаны."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пакуль няма кантактаў. Пачніце са стварэння новага"
@@ -4703,14 +4746,23 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да групавога тарыфнага плана."
+      ],
       "customer support": [
         "падтрымка кліентаў"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Групавыя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Пажыццёвыя ўліковыя запісы нельга далучыць да групавога тарыфнага плана."
       ],
       "Manage addresses.": [
         "Кіраванне адрасамі."
@@ -4739,6 +4791,9 @@
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца групавога тарыфнага плана."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
       ],
@@ -4747,6 +4802,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Вы не можаце прыняць гэта запрашэнне з вашым бягучым тарыфным планам."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6160,6 +6218,12 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Стварэнне бяспечнага воблака для ${ n } удзельніка",
+        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
+        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
+        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў"
+      ],
       "Create in": [
         "Стварыць у"
       ],
@@ -6895,6 +6959,9 @@
       "Scheduling message...": [
         "Планаванне паведамлення..."
       ],
+      "Scribe panel": [
+        "Панэль Scribe"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Параметры пошуку, якія дазваляюць вам бяспечна шукаць па ключавых словах у целе паведамленняў электронных лістоў."
       ],
@@ -6963,12 +7030,6 @@
       ],
       "Show original message": [
         "Паказаць арыгінальнае паведамленне"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin - гэта сэрвіс ${ BRAND_NAME } і ваш уліковы запіс ${ BRAND_NAME_TWO } уключае псеўданімы для функцыі Hide-my-email. Для таго, каб пачаць маскіраваць ваш адрас электроннай пошты, перайдзіце ў SimpleLogin і стварыце свой першы псеўданім."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin забяспечвае просты спосаб для стварэння адрасоў электроннай пошты на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
@@ -7339,9 +7400,6 @@
       "Users": [
         "Карыстальнікі"
       ],
-      "Using SimpleLogin is easy": [
-        "Выкарыстоўваць SimpleLogin проста"
-      ],
       "Verification may take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
       ],
@@ -7617,9 +7675,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Ваш уліковы запіс ${ BRAND_NAME } уключае SimpleLogin. Каб пачаць працу, усталюйце пашырэнне для браўзера адным націскам."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -9332,9 +9387,6 @@
       "${ size } storage": [
         "${ size } сховішча"
       ],
-      "${ size } storage per user": [
-        "Аб'ём сховішча на карыстальніка: ${ size }"
-      ],
       "1 user": [
         "1 карыстальнік"
       ],
@@ -9352,9 +9404,6 @@
       ],
       "Administration Panel": [
         "Панэль адміністратара"
-      ],
-      "Advanced sharing security": [
-        "Дадатковая бяспека пры абагуленні"
       ],
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
@@ -9385,9 +9434,6 @@
       ],
       "Collaborate and share large files": [
         "Сумесная праца і абагульванне вялікіх файлаў"
-      ],
-      "Collaborative document editor": [
-        "Сумесны рэдактар дакументаў"
       ],
       "Contact groups": [
         "Групы кантактаў"
@@ -9556,9 +9602,6 @@
       ],
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
-      ],
-      "Share files and folders via link": [
-        "Абагульванне файлаў і папак праз спасылкі"
       ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
@@ -9746,9 +9789,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Абараніце сваё лічбавае жыццё з дапамогай ${ BRAND_NAME } для двух карыстальнікаў."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
@@ -9757,6 +9797,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Бясплатны стартавы ўліковы запіс прызначаны для ўсіх, хто лічыць прыватнасць абавязковым параметрам."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
@@ -9828,9 +9871,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Кантралюйце доступ да вашых абагуленых файлаў з дапамогай пароля і спасылак з тэрмінам дзеяння"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
@@ -12241,6 +12281,9 @@
       "Import record deleted": [
         "Запіс імпартавання выдалены"
       ],
+      "Invitation rejected": [
+        "Запрашэнне адхілена"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Параметры спалучэнняў клавіш абноўлены"
       ],
@@ -12843,9 +12886,6 @@
       "Edit image": [
         "Рэдагаванне відарыса"
       ],
-      "Email address": [
-        "Адрас электроннай пошты"
-      ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
@@ -12902,9 +12942,6 @@
       ],
       "Groups": [
         "Групы"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Схавайце сваю электронную пошту з SimpleLogin ад ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -13080,9 +13117,6 @@
       "Other names": [
         "Іншыя імёны"
       ],
-      "Password": [
-        "Пароль"
-      ],
       "Payment failed": [
         "Збой плацяжу"
       ],
@@ -13214,9 +13248,6 @@
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"
-      ],
-      "Sign in with 2FA": [
-        "Увайсці з 2ФА"
       ],
       "Sign out": [
         "Выйсці"

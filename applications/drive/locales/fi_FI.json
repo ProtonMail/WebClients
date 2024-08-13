@@ -2400,6 +2400,43 @@
         "Ensisijainen tuki"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Hanki ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Hanki se hintaan ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Laskutetaan vuosittain hintaan ${ amountBilled }. Säästä ${ amountSave }, kahden henkilön vuosittaisiin ${ BRAND_NAME } Unlimited -tilauksiin verrattuna."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 käyttäjää"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Täysi pääsy kaikkiin ${ BRAND_NAME } -tuotteisiin"
+      ],
+      "You save ${ amountSave }": [
+        "Säästät ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Kaikki ${ BRAND_NAME }:n tarjoama, kahdelle."
+      ],
+      "Double your storage": [
+        "Tuplaa tallennustilasi"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Esittelyssä ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "KUVAUS:\n${ eventDescription }"
@@ -3160,6 +3197,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Kun lisäsalasana on käytössä, aliaksia voidaan hallita vain ${ PASS_APP_NAME }:ssa."
+      ],
       "You may also refresh the page or try again later.": [
         "Voit myös päivittää sivun tai yrittää myöhemmin uudelleen."
       ]
@@ -3278,14 +3318,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
+      ],
       "customer support": [
         "asiakaspalveluun"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Ryhmätilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
       ],
       "Invited by: ${ inviteEmail }": [
         "Kutsunut: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Elinikäiset tilit eivät voi liittyä ryhmätilaukseen."
       ],
       "Manage addresses.": [
         "Hallitse osoitteita."
@@ -3314,6 +3363,9 @@
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Sinulla on maksamattomia laskuja. Maksa ne ennen ryhmätilaukseen liittymistä."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
       ],
@@ -3322,6 +3374,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Et voi hyväksyä kutsua nykyisellä tilauksellasi."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3377,20 +3432,20 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Jotain meni pieleen todennuslaitteellasi tunnistauduttaessa. Yritä uudelleen."
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Security key": [
-        "Todennuslaite"
+        "Suojausavain"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Todennuslaite"
+        "Suojausavain"
       ]
     },
     "file size format": {
@@ -4660,6 +4715,9 @@
       ],
       "Organization size": [
         "Organisaation koko"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Hälytyksemme ovat varovaisia. Jos et tunnista tietomurron kohteeksi joutuneita tietoja lainkaan, voit huoletta jättää tämän raportin huomiotta."
       ],
       "Owner": [
         "Omistaja"
@@ -6648,9 +6706,6 @@
       "${ size } storage": [
         "${ size } tallennustilaa"
       ],
-      "${ size } storage per user": [
-        "${ size } tallennustilaa/käyttäjä"
-      ],
       "1 user": [
         "1 käyttäjä"
       ],
@@ -6668,9 +6723,6 @@
       ],
       "Administration Panel": [
         "Hallintapaneeli"
-      ],
-      "Advanced sharing security": [
-        "Edistynyt jakojen suojaus"
       ],
       "Auto-delete Spam and Trash": [
         "Tyhjennä roskaposti ja roskakori automaattisesti"
@@ -6701,9 +6753,6 @@
       ],
       "Collaborate and share large files": [
         "Tee yhteistyötä ja jaa suuria tiedostoja"
-      ],
-      "Collaborative document editor": [
-        "Yhteistoiminnallinen dokumenttieditori"
       ],
       "Contact groups": [
         "Yhteystietoryhmät"
@@ -6809,7 +6858,7 @@
         "Järjestele kohteita useilla holveilla"
       ],
       "Passkeys supported": [
-        "Tuki suojausavaimille"
+        "Tuki pääsyavaimille"
       ],
       "Password health": [
         "Salasanaterveys"
@@ -6833,7 +6882,7 @@
         "Ensisijainen tuki ja live-chat"
       ],
       "Proofread and refine your texts": [
-        "Oikolue ja paranna tekstiäsi"
+        "Oikolue ja paranna kirjoitustasi"
       ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
@@ -6868,9 +6917,6 @@
       ],
       "Send & receive invitations": [
         "Lähetä ja vastaanota kutsuja"
-      ],
-      "Share files and folders via link": [
-        "Jaa tiedostoja ja kansioita linkin välityksellä"
       ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
@@ -7054,9 +7100,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Suojaa digitaalinen elämäsi ${ BRAND_NAME }:lla kahdelle ihmisille."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Räätälöityjä ratkaisuja suuremmille organisaatioille, joilla on erityisiä turvallisuustarpeita"
       ],
@@ -7065,6 +7108,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Maksuton aloitustili, joka on suunniteltu tuomaan oletusarvoinen yksityisyys kaikkien ulottuville."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Rajaton yksityisyys ja lisätallennustilaa enintään kahdelle henkilölle."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Nautit alennetusta myynninedistämishinnasta nykyisessä tilauksessasi. Jos poistat tilisi, menetät alennetun myynninedistämishinnan, joka ei ole enää käytettävissä, jos luot uuden tilin."
@@ -7136,9 +7182,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Mukauta aikoja, jolloin sinua muistutetaan sähköpostista tai viestisi saapumisesta"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkeille erääntymisajat"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain } uutiskirjeille."
@@ -9193,6 +9236,9 @@
       "Import record deleted": [
         "Tuontitapahtuma poistettiin"
       ],
+      "Invitation rejected": [
+        "Kutsusta kieltäydyttiin"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Viimeksi muokatut vanhimmassa holvissasi olevat aliakset"
       ],
@@ -9592,9 +9638,6 @@
       "Edit image": [
         "Muokkaa kuvaa"
       ],
-      "Email address": [
-        "Sähköpostiosoite"
-      ],
       "Email addresses": [
         "Sähköpostiosoitteet"
       ],
@@ -9741,9 +9784,6 @@
       "Other names": [
         "Muut nimet"
       ],
-      "Password": [
-        "Salasana"
-      ],
       "Payment failed": [
         "Maksu epäonnistui"
       ],
@@ -9866,9 +9906,6 @@
       ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"
-      ],
-      "Sign in with 2FA": [
-        "Kirjaudu kaksivaiheisella todennuksella"
       ],
       "Sign out": [
         "Kirjaudu ulos"

@@ -2400,6 +2400,43 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Få ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Få planen for ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Faktureres årlig til ${ amountBilled }. Spar ${ amountSave } over 2 individuelle ${ BRAND_NAME } ubegrensede årlige abonnementer."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 brukere"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full tilgang til alle ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparer ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Alt av ${ BRAND_NAME }, for 2 personer."
+      ],
+      "Double your storage": [
+        "Doble lagringsplassen din"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introduserer ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "Beskrivelse:\n${ eventDescription }"
@@ -3160,6 +3197,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke laste denne siden. Vennligst oppdater siden eller undersøk internettforbindelsen din."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Når ekstra passord er aktivert, kan aliasadministrasjon bare gjøres i ${ PASS_APP_NAME }."
+      ],
       "You may also refresh the page or try again later.": [
         "Du kan også oppdatere siden eller prøve igjen senere."
       ]
@@ -3278,14 +3318,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Kontoer med egendefinerte domener kan ikke bli med i en gruppeplan."
+      ],
       "customer support": [
         "kundestøtte"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppeplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitert av: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livsvarige kontoer kan ikke bli med i en gruppeplan."
       ],
       "Manage addresses.": [
         "Administrer adresser"
@@ -3314,6 +3363,9 @@
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en gruppeplan."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne gruppeplanen og sammen nyte alle ${ BRAND_NAME_TWO }-premiumfunksjoner."
       ],
@@ -3322,6 +3374,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4660,6 +4715,9 @@
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler feil på siden av forsiktighet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
       "Owner": [
         "Eier"
@@ -6705,9 +6763,6 @@
       "${ size } storage": [
         "${ size } lagringsplass"
       ],
-      "${ size } storage per user": [
-        "${ size } lagringsplass per bruker"
-      ],
       "1 user": [
         "1 bruker"
       ],
@@ -6725,9 +6780,6 @@
       ],
       "Administration Panel": [
         "Administrasjonspanel"
-      ],
-      "Advanced sharing security": [
-        "Avansert delingssikkerhet"
       ],
       "Auto-delete Spam and Trash": [
         "Auto-slett søppelpost og papirkurv"
@@ -6758,9 +6810,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbeid og del store filer"
-      ],
-      "Collaborative document editor": [
-        "Samarbeidende dokumentredigerer"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -6925,9 +6974,6 @@
       ],
       "Send & receive invitations": [
         "Send & motta invitasjoner"
-      ],
-      "Share files and folders via link": [
-        "Del filer og mapper via kobling"
       ],
       "Sign in as user": [
         "Logg på som bruker"
@@ -7111,9 +7157,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sikre ditt digitale liv med ${ BRAND_NAME } for to personer."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov"
       ],
@@ -7122,6 +7165,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Gratis startpakkekonto utformet til å styrke alle med personvern som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Ubegrenset privatliv og mer lagringsplass for opptil 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du sletter kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
@@ -7193,9 +7239,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Velg egendefinerte tidspunkter for å bli påminnet om en e-postmelding eller for når meldingen skal ankomme."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroller tilgang til dine delte filer ved å legge til passordbeskyttelse og utløpsdatoer på koblinger."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, JohnNews@${ domain } for nyhetsabonnement"
@@ -9250,6 +9293,9 @@
       "Import record deleted": [
         "Importpost slettet"
       ],
+      "Invitation rejected": [
+        "Invitasjon avslått"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Sist endrede aliaser lagret i ditt eldste hvelv"
       ],
@@ -9649,9 +9695,6 @@
       "Edit image": [
         "Rediger bilde"
       ],
-      "Email address": [
-        "E-postadresse"
-      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -9798,9 +9841,6 @@
       "Other names": [
         "Andre navn"
       ],
-      "Password": [
-        "Passord"
-      ],
       "Payment failed": [
         "Betaling mislyktes"
       ],
@@ -9923,9 +9963,6 @@
       ],
       "Sign in and grant access": [
         "Logg på og gi tilgang"
-      ],
-      "Sign in with 2FA": [
-        "Logg på med 2FA"
       ],
       "Sign out": [
         "Logg av"

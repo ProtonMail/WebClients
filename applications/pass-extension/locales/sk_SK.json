@@ -1100,6 +1100,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Prístup k heslám na cestách pomocou našich mobilných aplikácií."
       ],
@@ -1150,6 +1153,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Tým sa zabráni tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrické uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometria bude deaktivovaná a bude potrebné ju znova zapnúť."
       ],
       "Built in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
@@ -1255,6 +1264,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Povoľte automatické uzamykanie na zabezpečenie údajov"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Aktivácia biometrického automatického zamykania"
+      ],
+      "Enabling biometrics lock failed": [
+        "Aktivácia biometrického zamykania zlyhala"
       ],
       "Enabling offline mode...": [
         "Zapínanie offline režimu..."
@@ -1463,9 +1478,6 @@
       "Offline support successfully disabled": [
         "Podpora offline bola úspešne vypnutá"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód na odomknutie relácie. Po 3 neúspešných pokusoch dôjde k odhláseniu."
-      ],
       "Open the Extensions menu": [
         "Otvorte menu rozšírenia"
       ],
@@ -1511,8 +1523,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Potvrďte vaše dodatočné heslo, prosím"
+      ],
       "Please confirm your password": [
         "Potvrďte vaše heslo, prosím"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou biometrie."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou vášho hesla."
@@ -1552,6 +1570,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Rýchle automatické vyplnenie vašich 2FA tokenov."
       ],
       "Quickly autofill your identities.": [
         "Rýchle automatické vyplnenie vašich identít."
@@ -1676,6 +1697,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
       ],
+      "This option is currently not available on your device.": [
+        "Táto možnosť nie je vo vašom zariadení momentálne k dispozícii."
+      ],
       "This setting is disabled on the organization level": [
         "Toto nastavenie je vypnuté na úrovni organizácie"
       ],
@@ -1703,6 +1727,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre uloženie tohto prístupového kľúča"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ],
@@ -1711,6 +1738,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
+      ],
+      "Unlock with biometrics": [
+        "Odomknúť pomocou biometrie"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
@@ -1867,6 +1897,9 @@
       "24 hours": [
         "24 hodín"
       ],
+      "2FA autofill": [
+        "Automatické vypĺňanie 2FA"
+      ],
       "2FA secret key (TOTP)": [
         "2FA tajný kľúč (TOTP)"
       ],
@@ -1948,6 +1981,9 @@
       "Autosuggest": [
         "Automatické navrhovanie"
       ],
+      "Biometrics": [
+        "Biometria"
+      ],
       "Birthdate": [
         "Dátum narodenia"
       ],
@@ -2028,6 +2064,9 @@
       ],
       "Display": [
         "Zobraziť"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Zobraziť ikonu ${ PASS_APP_NAME } v automaticky vyplniteľných poliach"
       ],
       "Domain": [
         "Doména"
@@ -2428,6 +2467,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "Odomknúť ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "Odomknúť pomocou"
+      ],
       "Unnamed Credit Card": [
         "Nepomenovaná platobná karta"
       ],
@@ -2674,6 +2716,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Zadajte vaše dodatočné heslo"
+      ],
       "Enter your password": [
         "Zadajte Vaše heslo"
       ],
@@ -2888,6 +2933,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } heslo je povinné"
+      ],
       "A description of the problem is required": [
         "Vyžaduje sa opis problému"
       ],
@@ -2921,14 +2969,14 @@
       "Empty note": [
         "Prázdna poznámka"
       ],
-      "Encryption password is required": [
-        "Vyžaduje sa šifrovacie heslo"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
       ],
       "Extra password cannot be empty": [
         "Dodatočné heslo nemôže byť prázdne"
+      ],
+      "Extra password is required": [
+        "Dodatočné heslo je povinné"
       ],
       "Extra password should have at least 8 characters": [
         "Dodatočné heslo by malo mať aspoň 8 znakov"

@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Αντιμετωπίσαμε πρόβλημα κατά την εκκίνηση του ${ PASS_SHORT_APP_NAME }. Εάν αυτό το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη πελατών μας για βοήθεια."
       ],
+      "Wrong extra password": [
+        "Λάθος επιπλέον κωδικός πρόσβασης"
+      ],
       "Wrong password": [
         "Λανθασμένος κωδικός πρόσβασης"
       ],
@@ -1072,6 +1075,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας εν κινήσει με τις εφαρμογές μας για κινητά."
       ],
@@ -1122,6 +1128,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Πριν εξαγάγετε τα δεδομένα σας με αυτήν τη μορφή, ανοίξτε τις ρυθμίσεις Safari -> καρτέλα \"Γενικά\" -> απενεργοποιήστε την επιλογή \"Άνοιγμα ασφαλών αρχείων μετά τη λήψη\". Αυτό θα αποτρέψει το Safari από την εσφαλμένη εξαγωγή του εξαγόμενου αρχείου."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Το κλείδωμα βιομετρικών στοιχείων καταχωρήθηκε επιτυχώς. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Τα βιομετρικά στοιχεία θα απενεργοποιηθούν και θα πρέπει να ενεργοποιηθούν ξανά."
       ],
       "Built in 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής ταυτότητας 2FA"
@@ -1227,6 +1239,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Ενεργοποιήστε το αυτόματο κλείδωμα για να ασφαλίσετε τα δεδομένα σας"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος βιομετρικών στοιχείων"
+      ],
+      "Enabling biometrics lock failed": [
+        "Η ενεργοποίηση του κλειδώματος με βιομετρικά απέτυχε"
       ],
       "Enabling offline mode...": [
         "Ενεργοποίηση λειτουργίας εκτός σύνδεσης..."
@@ -1429,8 +1447,8 @@
       "Offline support successfully disabled": [
         "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Επεκτάσεις\""
@@ -1475,8 +1493,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
+      "Please confirm your extra password": [
+        "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας για αυτόματο κλείδωμα με βιομετρικά στοιχεία."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης σας για να καταργήσετε την καταχώρηση του τρέχοντος κλειδώματος."
+      ],
       "Please confirm your password": [
         "Παρακαλούμε επιβεβαίωσε τον κωδικό πρόσβασής σου"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με βιομετρικά."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Επιβεβαιώστε τον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με τον κωδικό πρόσβασής σας."
@@ -1516,6 +1546,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Συμπληρώστε γρήγορα αυτόματα τα διακριτικά 2FA."
       ],
       "Quickly autofill your identities.": [
         "Συμπληρώστε γρήγορα αυτόματα τις ταυτότητές σας."
@@ -1576,6 +1609,9 @@
       ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
+      ],
+      "Set by your organization": [
+        "Ορισμένο από τον οργανισμό σας"
       ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
@@ -1638,6 +1674,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
       ],
+      "This option is currently not available on your device.": [
+        "Αυτή η επιλογή δεν είναι προς το παρόν διαθέσιμη στη συσκευή σας."
+      ],
       "This setting is disabled on the organization level": [
         "Αυτή η ρύθμιση είναι απενεργοποιημένη σε επίπεδο οργανισμού"
       ],
@@ -1665,6 +1704,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN σας για να αποθηκεύσετε αυτό το κλειδί πρόσβασης"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με βιομετρικά"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Ξεκλειδώστε ${ PASS_SHORT_APP_NAME } με τον κωδικό πρόσβασης ${ BRAND_NAME }"
       ],
@@ -1673,6 +1715,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
+      ],
+      "Unlock with biometrics": [
+        "Ξεκλειδώστε με βιομετρικά"
       ],
       "Unpinning item...": [
         "Ξεκαρφίτσωμα στοιχείου..."
@@ -1770,6 +1815,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1814,8 +1862,14 @@
       "15 minutes": [
         "15 λεπτά"
       ],
+      "2 minutes": [
+        "2 λεπτά"
+      ],
       "24 hours": [
         "24 ώρες"
+      ],
+      "2FA autofill": [
+        "Αυτόματη συμπλήρωση 2FA"
       ],
       "2FA secret key (TOTP)": [
         "Μυστικό κλειδί 2FA (TOTP)"
@@ -1831,6 +1885,9 @@
       ],
       "30 seconds": [
         "30 δευτερόλεπτα"
+      ],
+      "4 hours": [
+        "4 ώρες"
       ],
       "5 minutes": [
         "5 λεπτά"
@@ -1897,6 +1954,9 @@
       ],
       "Autosuggest": [
         "Αυτόματη πρόταση"
+      ],
+      "Biometrics": [
+        "Βιομετρικά"
       ],
       "Birthdate": [
         "Ημερομηνία γέννησης"
@@ -1978,6 +2038,9 @@
       ],
       "Display": [
         "Προβολή"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Εμφάνιση εικονιδίου ${ PASS_APP_NAME } σε πεδία με δυνατότητα αυτόματης συμπλήρωσης"
       ],
       "Domain": [
         "Τομέας (Domain)"
@@ -2376,6 +2439,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "Ξεκλειδώστε το ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "Ξεκλείδωμα με"
+      ],
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
       ],
@@ -2618,6 +2684,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
       ],
+      "Enter your extra password": [
+        "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
@@ -2832,6 +2901,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
+      ],
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
       ],
@@ -2865,14 +2937,14 @@
       "Empty note": [
         "Κενή σημείωση"
       ],
-      "Encryption password is required": [
-        "Απαιτείται κωδικός πρόσβασης κρυπτογράφησης"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
       ],
       "Extra password cannot be empty": [
         "Ο επιπλέον κωδικός πρόσβασης δεν μπορεί να είναι κενός"
+      ],
+      "Extra password is required": [
+        "Ο επιπλέον κωδικός πρόσβασης απαιτείται"
       ],
       "Extra password should have at least 8 characters": [
         "Ο επιπλέον κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες"

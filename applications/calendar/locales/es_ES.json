@@ -205,7 +205,7 @@
         "Crear un grupo de contactos"
       ],
       "Create and copy alias": [
-        "Crear y copiar alias"
+        "Crear y copiar el alias"
       ],
       "Create calendar": [
         "Crear calendario"
@@ -1878,7 +1878,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irán (República Islámica de Irán)"
+        "Irán (República Islámica)"
       ],
       "Isle of Man": [
         "Isla de Man"
@@ -1947,7 +1947,7 @@
         "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
-        "Libia, Yamahiriya Árabe"
+        "Libia (Yamahiriya Árabe)"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -2383,7 +2383,7 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Cada día, a las ${ timesString }"
+        "Cada día a las ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } día a las ${ timesString }",
@@ -2614,6 +2614,43 @@
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Añadir calendario"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtén ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obtenlo por ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturación anual de ${ amountBilled }. Ahorra ${ amountSave } en 2 suscripciones individuales anuales ilimitadas de ${ BRAND_NAME }."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuarios"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acceso completo a todos los productos de ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ahorras ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Todas las funciones de ${ BRAND_NAME }, para 2."
+      ],
+      "Double your storage": [
+        "Doblar tu almacenamiento"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duplicate event button tooltip": {
@@ -3635,6 +3672,9 @@
       "You have successfully joined the family group": [
         "Te has unido al grupo familiar."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan de grupo."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
       ],
@@ -4376,6 +4416,10 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Crear una nube segura para ${ n } miembro",
+        "Crear una nube segura para ${ n } miembros"
+      ],
       "Create in": [
         "Crear en"
       ],
@@ -4686,6 +4730,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Otros usuarios en tu organización verán tus espacios ocupados. No se comparten los detalles del evento."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nuestras alertas se caracterizan por su cautela. Si no reconoces la información vulnerada, puedes ignorar este informe."
       ],
       "password": [
         "contraseña"
@@ -6329,9 +6376,6 @@
       "${ size } storage": [
         "${ size } de almacenamiento"
       ],
-      "${ size } storage per user": [
-        "${ size } de almacenamiento por usuario"
-      ],
       "1 user": [
         "1 usuario"
       ],
@@ -6349,9 +6393,6 @@
       ],
       "Administration Panel": [
         "Panel de administración"
-      ],
-      "Advanced sharing security": [
-        "Seguridad avanzada al compartir archivos"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -6382,9 +6423,6 @@
       ],
       "Collaborate and share large files": [
         "Colabora y comparte archivos grandes"
-      ],
-      "Collaborative document editor": [
-        "Editor de documentos colaborativo"
       ],
       "Contact groups": [
         "Grupos de contactos"
@@ -6545,13 +6583,10 @@
         "Servidores Secure Core"
       ],
       "See team's availability": [
-        "Mostrar la disponibilidad de tu equipo"
+        "Mostrar la disponibilidad del equipo"
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
-      ],
-      "Share files and folders via link": [
-        "Compartir archivos y carpetas con un enlace"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -6645,6 +6680,9 @@
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
+      "Version history": [
+        "Historial de versiones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
@@ -6735,9 +6773,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Asegura tu vida digital con ${ BRAND_NAME } para dos personas."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -6746,6 +6781,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "La cuenta inicial sin coste ofrece privacidad por defecto a todo el mundo."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privacidad ilimitada y más almacenamiento para hasta 2 personas."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Ahora mismo pagas un precio especial por tu plan. Si eliminas la cuenta, perderás esta ventaja y no la recuperarás creando otra cuenta."
@@ -6817,9 +6855,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controla el acceso a tus archivos compartidos con enlaces con fechas de expiración y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
@@ -7059,7 +7094,7 @@
         "Grupo de contactos actualizado"
       ],
       "Link copied to clipboard": [
-        "El enlace ha sido copiado al portapapeles."
+        "Se ha copiado el enlace al portapapeles."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7917,7 +7952,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "El restablecimiento de contraseña ha sido solicitado."
+        "Se ha solicitado el restablecimiento de contraseña."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -8248,7 +8283,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Seguir en ${ currentPlanName }"
+        "Seguir con ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -8821,7 +8856,7 @@
         "Se ha copiado el alias al portapapeles."
       ],
       "Alias saved and copied": [
-        "Alias guardado y copiado."
+        "Se ha guardado y copiado el alias."
       ],
       "All events deleted": [
         "Se han eliminado todos los eventos."
@@ -8914,6 +8949,9 @@
       ],
       "Import record deleted": [
         "Se ha eliminado el registro importación."
+      ],
+      "Invitation rejected": [
+        "Se ha rechazado la invitación."
       ],
       "Invitation sent and all events updated": [
         "Invitación enviada y todos los eventos actualizados"
@@ -9189,7 +9227,7 @@
         "¿Cancelar suscripción?"
       ],
       "Cannot add more addresses": [
-        "No se pueden añadir más direcciones"
+        "No se pueden añadir más direcciones."
       ],
       "Card verification": [
         "Verificación de la tarjeta"
@@ -9307,9 +9345,6 @@
       "Edit image": [
         "Editar imagen"
       ],
-      "Email address": [
-        "Dirección de correo"
-      ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
@@ -9341,7 +9376,7 @@
         "Comentarios"
       ],
       "Get advanced protection": [
-        "Obtén protección avanzada."
+        "Obtén una protección avanzada."
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obtén las aplicaciones de ${ appName[APP_NAME] }"
@@ -9418,9 +9453,6 @@
       ],
       "Participants cannot be notified": [
         "No se puede notificar a los participantes"
-      ],
-      "Password": [
-        "Contraseña"
       ],
       "Payment failed": [
         "Error en el pago"
@@ -9551,9 +9583,6 @@
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
       ],
-      "Sign in with 2FA": [
-        "Iniciar sesión con la 2FA"
-      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -9567,7 +9596,7 @@
         "Resumen"
       ],
       "Unlock contacts groups": [
-        "Desbloquear grupos de contactos"
+        "Desbloquear los grupos de contactos"
       ],
       "Update event": [
         "Actualizar el evento"

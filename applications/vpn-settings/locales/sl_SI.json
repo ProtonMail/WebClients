@@ -777,9 +777,6 @@
       "External": [
         "Zunanji"
       ],
-      "Missing keys": [
-        "Manjkajoči ključi"
-      ],
       "No E2EE mail": [
         "Brez šifriranja E2E"
       ],
@@ -3409,9 +3406,6 @@
       "Amount due": [
         "Dolgovani znesek"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Ali ste prepričani, da želite onemogočiti dvojno preverjanja pristnosti?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Ali ste prepričani, da želite zavreči spremembe?"
       ],
@@ -3541,11 +3535,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenski strežniki"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -5788,9 +5782,6 @@
       "${ size } storage": [
         "${ size } shrambe"
       ],
-      "${ size } storage per user": [
-        "${ size } shrambe na uporabnika"
-      ],
       "1 user": [
         "En uporabnik"
       ],
@@ -5814,9 +5805,6 @@
       ],
       "Advanced network security": [
         "Napredna varnost omrežja"
-      ],
-      "Advanced sharing security": [
-        "Napredna varnost deljenja"
       ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
@@ -6030,9 +6018,6 @@
         "Strežniki v več kot ${ vpnServersCountData.paid.countries } državah",
         "Strežniki v več kot ${ vpnServersCountData.paid.countries } državah",
         "Strežniki v več kot ${ vpnServersCountData.paid.countries } državah"
-      ],
-      "Share files and folders via link": [
-        "Deli datoteke in mape preko povezave"
       ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
@@ -6329,9 +6314,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Nastavite urnik po meri, ko želite biti opomnjeni na e-poštno sporočilo ali prejeti sporočilo."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Nadzorujte dostop do vaših deljenih datotek z dodajanjem zaščite z geslom in datumov poteka povezave."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Ustvarite več e-poštnih naslovov za vaše spletne identitete, npr. JanezNakupi@${ domain } za nakupovalne račune in JanezNovice@${ domain } za naročnine na novice."
@@ -8877,10 +8859,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -9281,9 +9263,6 @@
       ],
       "Sign in to your organization": [
         "Prijavite se v svojo organizacijo"
-      ],
-      "Sign in with 2FA": [
-        "Prijava z overjanjem v dveh korakih"
       ],
       "Sign out": [
         "Odjava"

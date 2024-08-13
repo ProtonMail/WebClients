@@ -2616,6 +2616,43 @@
         "Προσθήκη ημερολογίου"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Αποκτήστε το ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Αποκτήστε το για ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 χρήστες"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Πλήρης πρόσβαση σε όλα τα ${ BRAND_NAME } προϊόντα"
+      ],
+      "You save ${ amountSave }": [
+        "Εξοικονομείτε ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Όλα του ${ BRAND_NAME }, για 2."
+      ],
+      "Double your storage": [
+        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Παρουσιάζουμε το ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Διπλότυπη εκδήλωση"
@@ -3423,6 +3460,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Όταν είναι ενεργοποιημένος ο επιπλέον κωδικός πρόσβασης, η διαχείριση ψευδωνύμων μπορεί να γίνει μόνο στο ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας"
       ]
@@ -3587,14 +3627,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
+      ],
       "customer support": [
         "υποστήριξη πελατών"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Τα ομαδικά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
       ],
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
       ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
@@ -3623,6 +3672,9 @@
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα ομαδικό πλάνο."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Έχετε προσκληθεί να συνδέσετε τον λογαριασμό σας ${ BRAND_NAME } σε αυτό το ομαδικό πρόγραμμα και να απολαύσετε μαζί όλες τις premium λειτουργίες ${ BRAND_NAME_TWO }."
       ],
@@ -3631,6 +3683,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Δεν μπορείτε να αποδεχτείτε αυτήν την πρόσκληση με το τρέχον πλάνο σας."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4361,6 +4416,10 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλη"
+      ],
       "Create in": [
         "Δημιουργία εντός"
       ],
@@ -4671,6 +4730,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Οι ειδοποιήσεις μας σφάλλουν προς την πλευρά της προσοχής. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -6311,9 +6373,6 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
-      "${ size } storage per user": [
-        "${ size } αποθηκευτικός χώρος ανά χρήστη"
-      ],
       "1 user": [
         "1 χρήστης"
       ],
@@ -6331,9 +6390,6 @@
       ],
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
-      ],
-      "Advanced sharing security": [
-        "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
@@ -6364,9 +6420,6 @@
       ],
       "Collaborate and share large files": [
         "Συνεργασία και κοινή χρήση μεγάλων αρχείων"
-      ],
-      "Collaborative document editor": [
-        "Συνεργατικό πρόγραμμα επεξεργασίας εγγράφων"
       ],
       "Contact groups": [
         "Ομάδες επαφών"
@@ -6486,6 +6539,9 @@
       "Phone support (40+ users)": [
         "Τηλεφωνική υποστήριξη (40+ χρήστες)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium χαρακτηριστικά του ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
       ],
@@ -6531,9 +6587,6 @@
       ],
       "Send & receive invitations": [
         "Αποστολή & λήψη προσκλήσεων"
-      ],
-      "Share files and folders via link": [
-        "Κοινοποίηση αρχείων και φακέλων μέσω συνδέσμου"
       ],
       "Sign in as user": [
         "Είσοδος ως χρήστης"
@@ -6627,6 +6680,9 @@
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
@@ -6717,9 +6773,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Ασφαλίστε την ψηφιακή σας ζωή με ${ BRAND_NAME } για δύο άτομα."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
@@ -6728,6 +6781,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ο λογαριασμός εκκίνησης χωρίς κόστος έχει σχεδιαστεί για να παρέχει σε όλους το απόρρητο από προεπιλογή."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Αν διαγράψετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη αν δημιουργήσετε νέο λογαριασμό."
@@ -6799,9 +6855,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Επιλέξτε προσαρμοσμένες ώρες για υπενθύμιση σχετικά με ένα μήνυμα ηλεκτρονικού ταχυδρομείου ή για την άφιξη του μηνύματός σας"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Ελέγξτε την πρόσβαση στα κοινόχρηστα αρχεία σας προσθέτοντας προστασία με κωδικό πρόσβασης και ημερομηνίες λήξης συνδέσμου"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain } για συνδρομή ειδήσεων"
@@ -8897,6 +8950,9 @@
       "Import record deleted": [
         "Η εισαγωγή εγγραφής διαγράφηκε"
       ],
+      "Invitation rejected": [
+        "Η πρόσκληση απορρίφθηκε"
+      ],
       "Invitation sent and all events updated": [
         "Η πρόσκληση στάλθηκε και ενημερώθηκαν όλες οι εκδηλώσεις"
       ],
@@ -9289,9 +9345,6 @@
       "Edit image": [
         "Επεξεργασία εικόνας"
       ],
-      "Email address": [
-        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ],
       "Email addresses": [
         "Διευθύνσεις Email"
       ],
@@ -9400,9 +9453,6 @@
       ],
       "Participants cannot be notified": [
         "Οι συμμετέχοντες δεν μπορούν να ειδοποιηθούν"
-      ],
-      "Password": [
-        "Κωδικός"
       ],
       "Payment failed": [
         "Αποτυχία πληρωμής"
@@ -9532,9 +9582,6 @@
       ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
-      ],
-      "Sign in with 2FA": [
-        "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
       ],
       "Sign out": [
         "Αποσύνδεση"

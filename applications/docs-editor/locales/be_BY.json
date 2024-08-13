@@ -1,0 +1,513 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "be_BY"
+  },
+  "contexts": {
+    "Action": {
+      "Add comment": [
+        "Дадаць каментарый"
+      ],
+      "Add new table column": [
+        "Дадаць новы слупок у табліцу"
+      ],
+      "Add new table row": [
+        "Дадаць новы радок у табліцу"
+      ],
+      "Adjust font size": [
+        "Наладзіць памер шрыфту"
+      ],
+      "and": [
+        "і"
+      ],
+      "Apply": [
+        "Ужыць"
+      ],
+      "Bold": [
+        "Тлусты"
+      ],
+      "Bulleted List": [
+        "Маркіраваны спіс"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Center align": [
+        "Выраўнаваць па цэнтры"
+      ],
+      "Check List": [
+        "Кантрольны спіс"
+      ],
+      "Clear contents": [
+        "Ачысціць змесціва"
+      ],
+      "Clear formatting": [
+        "Ачысціць фарматаванне"
+      ],
+      "Click to open column menu": [
+        "Націсніце, каб адкрыць меню слупка"
+      ],
+      "Click to open row menu": [
+        "Націсніце, каб адкрыць меню радка"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Code block": [
+        "Блок кода"
+      ],
+      "Color": [
+        "Колер"
+      ],
+      "Copy link": [
+        "Капіяваць спасылку"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete column": [
+        "Выдаліць слупок"
+      ],
+      "Delete comment": [
+        "Выдаліць каментарый"
+      ],
+      "Delete row": [
+        "Выдаліць радок"
+      ],
+      "Delete thread": [
+        "Выдаліць гутарку"
+      ],
+      "Duplicate": [
+        "Дубліраваць"
+      ],
+      "Edit": [
+        "Рэдагаваць"
+      ],
+      "Edit link": [
+        "Рэдагаваць спасылку"
+      ],
+      "Fit table to page width": [
+        "Падагнаць табліцу да шырыні старонкі"
+      ],
+      "Indent": [
+        "Водступ"
+      ],
+      "Insert above": [
+        "Уставіць вышэй"
+      ],
+      "Insert below": [
+        "Уставіць ніжэй"
+      ],
+      "Insert image": [
+        "Уставіць відарыс"
+      ],
+      "Insert left": [
+        "Уставіць злева"
+      ],
+      "Insert link": [
+        "Уставіць спасылку"
+      ],
+      "Insert right": [
+        "Уставіць справа"
+      ],
+      "Insert table": [
+        "Уставіць табліцу"
+      ],
+      "Italic": [
+        "Курсіў"
+      ],
+      "Justify align": [
+        "Выраўнаваць па баках"
+      ],
+      "Left align": [
+        "Выраўнаваць па левым краі"
+      ],
+      "Link": [
+        "Спасылка"
+      ],
+      "Numbered List": [
+        "Нумараваны спіс"
+      ],
+      "Options": [
+        "Параметры"
+      ],
+      "Outdent": [
+        "Выступ"
+      ],
+      "Quote": [
+        "Цытаваць"
+      ],
+      "Re-open": [
+        "Адкрыць паўторна"
+      ],
+      "Re-open thread": [
+        "Адкрыць гутарку паўторна"
+      ],
+      "Redo": [
+        "Вярнуць"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
+      ],
+      "Remove background color": [
+        "Выдаліць колер фону"
+      ],
+      "Remove link": [
+        "Выдаліць спасылку"
+      ],
+      "Reply": [
+        "Адказаць"
+      ],
+      "Resolve": [
+        "Вырашыць"
+      ],
+      "Right align": [
+        "Выраўнаваць па правым краі"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Show thread": [
+        "Паказаць гутарку"
+      ],
+      "Strike-through": [
+        "Закрэсліць"
+      ],
+      "Strikethrough": [
+        "Закрэсліванне"
+      ],
+      "Submit": [
+        "Адправіць"
+      ],
+      "Table options": [
+        "Параметры табліцы"
+      ],
+      "Underline": [
+        "Падкрэслены"
+      ],
+      "Undo": [
+        "Адрабіць"
+      ]
+    },
+    "color": {
+      "apple": [
+        "яблычны"
+      ],
+      "azureish white": [
+        "блакітна-белы"
+      ],
+      "black": [
+        "чорны"
+      ],
+      "blanched almond": [
+        "белы міндаль"
+      ],
+      "blue-gray": [
+        "блакітна-шэры"
+      ],
+      "caramel": [
+        "карамель"
+      ],
+      "carrot": [
+        "маркоўны"
+      ],
+      "cerise": [
+        "вішнёвы"
+      ],
+      "cinnabar": [
+        "кінаварны"
+      ],
+      "cobalt": [
+        "кобальтавы"
+      ],
+      "copper": [
+        "медны"
+      ],
+      "cyan-blue azure": [
+        "зеленавата-блакітны лазурак"
+      ],
+      "dandelion": [
+        "дзьмухавец"
+      ],
+      "dark cerulean": [
+        "чорна-блакітны"
+      ],
+      "dark midnight blue": [
+        "цёмна-сіняя поўнач"
+      ],
+      "dim gray": [
+        "цьмяна-шэры"
+      ],
+      "enzian": [
+        "чарнільны"
+      ],
+      "fern": [
+        "папаратнікавы"
+      ],
+      "field drab": [
+        "палявы ахоўны"
+      ],
+      "forest": [
+        "лясны"
+      ],
+      "gainsboro": [
+        "светла-шэры"
+      ],
+      "gray": [
+        "шэры"
+      ],
+      "japanese laurel": [
+        "аукуба японская"
+      ],
+      "kiwi": [
+        "ківі"
+      ],
+      "lemon yellow": [
+        "лімонна-жоўты"
+      ],
+      "light carmine pink": [
+        "светлы кармінава-ружовы"
+      ],
+      "light moss green": [
+        "мохавы светла-зялёны"
+      ],
+      "light red": [
+        "светла-чырвоны"
+      ],
+      "maize": [
+        "кукурузны"
+      ],
+      "mughal green": [
+        "магольскі зялёны"
+      ],
+      "ocean": [
+        "акіянічны"
+      ],
+      "olive": [
+        "аліўкавы"
+      ],
+      "outer space": [
+        "касмічны прастор"
+      ],
+      "pacific": [
+        "ціхаакіянскі"
+      ],
+      "palatinate blue": [
+        "светла-ліловы"
+      ],
+      "pale cerulean": [
+        "бледна-блакітны"
+      ],
+      "pastel gray": [
+        "пастэльна-шэры"
+      ],
+      "persian plum": [
+        "персідская сліва"
+      ],
+      "persian red": [
+        "персідскі чырвоны"
+      ],
+      "philippine gray": [
+        "філіпінскі шэры"
+      ],
+      "philippine silver": [
+        "філіпінскі срэбны"
+      ],
+      "pickle": [
+        "агурочны"
+      ],
+      "pine": [
+        "сасновы"
+      ],
+      "pink": [
+        "ружовы"
+      ],
+      "pistachio": [
+        "фісташкавы"
+      ],
+      "plum": [
+        "слівавы"
+      ],
+      "purple": [
+        "фіялетавы"
+      ],
+      "red": [
+        "чырвоны"
+      ],
+      "reef": [
+        "рыфавы"
+      ],
+      "ruddy pink": [
+        "румяна-ружовы"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "satin sheen gold": [
+        "атласна-залаты"
+      ],
+      "slateblue": [
+        "сланцава-блакітны"
+      ],
+      "soil": [
+        "зямлісты"
+      ],
+      "strawberry": [
+        "клубнічны"
+      ],
+      "vivid auburn": [
+        "насычана-каштанавы"
+      ],
+      "white": [
+        "белы"
+      ]
+    },
+    "Confirm": {
+      "Discard comment?": [
+        "Адхіліць каментарый?"
+      ]
+    },
+    "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Не ўдалося імпартаваць HTML па прычыне невядомай памылкі."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Не ўдалося імпартаваць Markdown па прычыне невядомай памылкі."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Не ўдалося імпартаваць дакумент Word па прычыне невядомай памылкі."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Не ўдалося ініцыялізаваць рэдактар па прычыне невядомай памылкі."
+      ],
+      "Signature verification failed": [
+        "Не ўдалося праверыць подпіс"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Немагчыма пераўтварыць дакумент Word. Магчыма, што ён абаронены паролем. Калі гэта сапраўды так, то разблакіруйце яго і паспрабуйце яшчэ раз."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Адпаведна сістэме"
+      ],
+      "Theme font": [
+        "Шрыфт тэмы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
+      ]
+    },
+    "Info": {
+      "${ allTypersExceptLast } and ${ lastTyper }": [
+        "${ allTypersExceptLast } і ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } піша...",
+        "${ usersTranslation } пішуць...",
+        "${ usersTranslation } пішуць...",
+        "${ usersTranslation } пішуць..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Вы сапраўды хочаце выдаліць гэты каментарый?"
+      ],
+      "Are you sure you want to delete this thread?": [
+        "Вы сапраўды хочаце выдаліць гэту гутарку?"
+      ],
+      "Comments": [
+        "Каментарыі"
+      ],
+      "Editing": [
+        "Рэдагаванне"
+      ],
+      "Just now": [
+        "Толькі што"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "No comments": [
+        "Няма каментарыяў"
+      ],
+      "Something went wrong:": [
+        "Нешта пайшло не так:"
+      ],
+      "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
+        "Змесціва, якое вы спрабуеце ўставіць занадта вялікае для ўстаўкі за раз. Паспрабуйце яшчэ раз уставіць яго меншымі часткамі."
+      ],
+      "Viewing": [
+        "Прагляд"
+      ],
+      "You cannot undo this action.": [
+        "Гэта дзеянне немагчыма адрабіць."
+      ]
+    },
+    "Label": {
+      "Background colour": [
+        "Колер фону"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Спалучэнні клавіш: ${ shortcut }"
+      ],
+      "Link text": [
+        "Тэкст спасылкі"
+      ],
+      "Link URL": [
+        "URL-адрас спасылкі"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
+      ],
+      "Text colour": [
+        "Колер тэксту"
+      ]
+    },
+    "Placeholder": {
+      "Add a comment...": [
+        "Дадаць каментарый..."
+      ],
+      "Edit comment...": [
+        "Рэдагаваць каментарый..."
+      ],
+      "Paste link": [
+        "Уставіць спасылку"
+      ],
+      "Reply...": [
+        "Адказаць..."
+      ],
+      "Text": [
+        "Тэкст"
+      ]
+    },
+    "Title": {
+      "Delete comment": [
+        "Выдаліць каментарый"
+      ],
+      "Delete thread": [
+        "Выдаліць гутарку"
+      ]
+    }
+  }
+}

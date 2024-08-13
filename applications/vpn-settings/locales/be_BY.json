@@ -64,6 +64,9 @@
       "Allow": [
         "Дазволіць"
       ],
+      "Always allow sending mail to group": [
+        "Заўсёды дазваляць адпраўку пошты ў групу"
+      ],
       "Apply": [
         "Ужыць"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Адключыць"
       ],
+      "Disable E2EE for group address": [
+        "Адключыць шыфраванне скразным метадам для групавых адрасоў"
+      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
+      ],
+      "Enable E2EE for group address": [
+        "Уключыць шыфраванне скразным метадам для групавых адрасоў"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -676,6 +685,9 @@
       "Use authentication code": [
         "Выкарыстаць код аўтэнтыфікацыі"
       ],
+      "Use group sending permissions": [
+        "Выкарыстоўваць дазволы групавой адпраўкі"
+      ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
       ],
@@ -818,8 +830,8 @@
       "External": [
         "Знешні"
       ],
-      "Missing keys": [
-        "Адсутнічаюць ключы"
+      "Inactive": [
+        "Неактыўны"
       ],
       "No E2EE mail": [
         "Без пошты E2EE"
@@ -2262,6 +2274,43 @@
         "Прыярытэтная падтрымка"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Атрымаць ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Атрымайце яго за ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Аплачваецца штогод у памеры ${ amountBilled }. Эканомія складае ${ amountSave } пры гадавой падпісцы на 2 асабістыя ўліковыя запісы ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 карыстальнікі"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Поўны доступ да ўсіх прадуктаў ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Вы эканоміце ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Усе функцыі ${ BRAND_NAME } для дваіх карыстальнікаў."
+      ],
+      "Double your storage": [
+        "Падвоіць ваша сховішча"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Прадстаўляем ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } дададзены"
@@ -2703,8 +2752,14 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да групавога тарыфнага плана."
+      ],
       "customer support": [
         "падтрымка кліентаў"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Групавыя тарыфныя планы ў цяперашні час не падтрымліваюць знешнія ўліковыя запісы. Перад далучэннем стварыце адрас ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Калі вы прыміце запрашэнне, то ваш тарыфны план будзе зменены. Рэшта балансу вашай падпіскі вернецца на ваш рахунак."
@@ -2714,6 +2769,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Запрашэнне адпраўлена: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Пажыццёвыя ўліковыя запісы нельга далучыць да групавога тарыфнага плана."
       ],
       "Manage addresses.": [
         "Кіраванне адрасамі."
@@ -2772,6 +2830,9 @@
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца групавога тарыфнага плана."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перад дадаваннем некалькіх карыстальнікаў неабходна сканфігураваць карыстальніцкі дамен."
       ],
@@ -2786,6 +2847,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Вы не можаце прыняць гэта запрашэнне з вашым бягучым тарыфным планам."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2852,6 +2916,9 @@
       ],
       "An error occurred, please try again": [
         "Адбылася памылка. Паспрабуйце яшчэ раз"
+      ],
+      "Family name updated": [
+        "Назва сям'і абноўлена"
       ],
       "Member updated": [
         "Удзельнік абноўлены"
@@ -3535,9 +3602,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Вы сапраўды хочаце выдаліць гэту групу? Адрас групы больш не будзе працаваць."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Вы сапраўды хочаце адключыць двухфактарную аўтэнтыфікацыю?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Вы сапраўды хочаце адхіліць змены?"
       ],
@@ -3646,6 +3710,12 @@
       "Country code": [
         "Код краіны"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Стварэнне бяспечнага воблака для ${ n } удзельніка",
+        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
+        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
+        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
       ],
@@ -3679,11 +3749,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -5088,12 +5158,20 @@
         "Асістэнт ШІ дапаможа вам стварыць лепшыя лісты, хутка і без намаганняў."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Памылковы адрас электроннай пошты"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "У чаканні"
       ],
       "Rejected": [
         "Адхілена"
+      ],
+      "Sending invite...": [
+        "Адпраўка запрашэння..."
       ]
     },
     "Invoice state display as badge": {
@@ -6176,9 +6254,6 @@
       "${ size } storage": [
         "${ size } сховішча"
       ],
-      "${ size } storage per user": [
-        "Аб'ём сховішча на карыстальніка: ${ size }"
-      ],
       "1 user": [
         "1 карыстальнік"
       ],
@@ -6202,9 +6277,6 @@
       ],
       "Advanced network security": [
         "Пашыраная бяспека сеткі"
-      ],
-      "Advanced sharing security": [
-        "Дадатковая бяспека пры абагуленні"
       ],
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
@@ -6238,9 +6310,6 @@
       ],
       "Collaborate and share large files": [
         "Сумесная праца і абагульванне вялікіх файлаў"
-      ],
-      "Collaborative document editor": [
-        "Сумесны рэдактар дакументаў"
       ],
       "Contact groups": [
         "Групы кантактаў"
@@ -6424,9 +6493,6 @@
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
-      ],
-      "Share files and folders via link": [
-        "Абагульванне файлаў і папак праз спасылкі"
       ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
@@ -6623,9 +6689,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Абараніце сваё лічбавае жыццё з дапамогай ${ BRAND_NAME } для двух карыстальнікаў."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
@@ -6634,6 +6697,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Бясплатны стартавы ўліковы запіс прызначаны для ўсіх, хто лічыць прыватнасць абавязковым параметрам."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
@@ -6732,9 +6798,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Кантралюйце доступ да вашых абагуленых файлаў з дапамогай пароля і спасылак з тэрмінам дзеяння"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
@@ -9198,6 +9261,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Калі вы ўвялі сапраўдны нумар тэлефона для аднаўлення, то мы адправім вам SMS з імёнамі вашых карыстальнікаў на працягу наступнай хвіліны."
       ],
+      "Invitation rejected": [
+        "Запрашэнне адхілена"
+      ],
       "Invitation sent": [
         "Запрашэнне адпраўлена"
       ],
@@ -9218,6 +9284,18 @@
       ],
       "Organization activated": [
         "Арганізацыя актывавана"
+      ],
+      "Organization identity updated": [
+        "Ідэнтычнасць арганізацыі абноўлена"
+      ],
+      "Organization logo removed": [
+        "Лагатып арганізацыі выдалены"
+      ],
+      "Organization logo updated": [
+        "Лагатып арганізацыі абноўлены"
+      ],
+      "Organization name updated": [
+        "Назва арганізацыі абноўлена"
       ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
@@ -9524,10 +9602,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -9944,9 +10022,6 @@
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
-      "Sign in with 2FA": [
-        "Увайсці з 2ФА"
-      ],
       "Sign out": [
         "Выйсці"
       ],
@@ -10153,6 +10228,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Прычынай можа быць скіданне пароля або тое, што карыстальнік пакуль не ўвайшоў у сістэму."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Гэты адрас электроннай пошты будзе паказаны ўсім удзельнікам арганізацыі пры выкананні аперацый па кіраванні ўліковым запісам."
       ],
@@ -10178,6 +10256,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ],
+      "Sending member invitation": [
+        "Адпраўка запрашэння ўдзельніку"
       ],
       "User rejected invitation": [
         "Карыстальнік адхліў запрашэнне"
