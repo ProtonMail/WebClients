@@ -2652,6 +2652,43 @@
         "Dodaj kalendarz"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Wybierz plan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Uzyskaj za ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Płatne rocznie ${ amountBilled }. Zaoszczędź ${ amountSave } na rocznej subskrypcji 2 indywidualnych kont ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 użytkowników"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Pełny dostęp do wszystkich usług ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Oszczędzasz ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Wszystko, co z ${ BRAND_NAME } dla dwojga."
+      ],
+      "Double your storage": [
+        "Podwój przestrzeń dyskową"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Przedstawiamy plan ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplikuj wydarzenie"
@@ -3485,6 +3522,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Po włączeniu dodatkowego hasła zarządzanie aliasami dostępne jest tylko w ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia"
       ]
@@ -3653,14 +3693,23 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konta z niestandardowymi domenami nie mogą dołączyć do tego planu."
+      ],
       "customer support": [
         "wsparcie klienta"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Plany grupowe nie obsługują obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
       ],
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Konta dożywotnie nie mogę dołączyć do innego planu."
       ],
       "Manage addresses.": [
         "Zarządzaj adresami."
@@ -3689,6 +3738,9 @@
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu grupowego."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
       ],
@@ -3697,6 +3749,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Nie możesz zaakceptować zaproszenia w obecnym planie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6085,7 +6140,7 @@
         "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
-        "Niestandardowe godziny planowego wysyłania i usypiania"
+        "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny e-mail"
@@ -6508,9 +6563,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ size } storage per user": [
-        "${ size } przestrzeni dyskowej na użytkownika"
-      ],
       "1 user": [
         "1 użytkownik"
       ],
@@ -6528,9 +6580,6 @@
       ],
       "Administration Panel": [
         "Panel administratora"
-      ],
-      "Advanced sharing security": [
-        "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -6561,9 +6610,6 @@
       ],
       "Collaborate and share large files": [
         "Współpraca i udostępnianie dużych plików"
-      ],
-      "Collaborative document editor": [
-        "Edytor dokumentów z możliwością współpracy"
       ],
       "Contact groups": [
         "Grupy kontaktów"
@@ -6733,9 +6779,6 @@
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
       ],
-      "Share files and folders via link": [
-        "Udostępniaj pliki i foldery za pomocą linku"
-      ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
       ],
@@ -6832,6 +6875,9 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
       ],
+      "Version history": [
+        "Historia wersji"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
       ]
@@ -6922,9 +6968,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpiecz cyfrowe życie 2 użytkowników z ${ BRAND_NAME }."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Indywidualne rozwiązania dla większych organizacji o specyficznych potrzebach w zakresie bezpieczeństwa"
       ],
@@ -6933,6 +6976,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Darmowe, podstawowe konto stworzone z myślą o zapewnieniu każdemu prywatności."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Nieograniczona prywatność i więcej przestrzeni dyskowej dla 2 osób."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Usunięcie konta spowoduje utratę promocyjnej ceny i nie będzie ona dostępna przy tworzeniu nowego konta."
@@ -7004,9 +7050,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Wybierz niestandardowe godziny powiadomień o wiadomościach i zaplanowanych wysyłkach"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain } dla subskrybowania wiadomości"
@@ -9229,6 +9272,9 @@
       "Import record deleted": [
         "Rekord importu został usunięty"
       ],
+      "Invitation rejected": [
+        "Zaproszenie zostało odrzucone"
+      ],
       "Invitation sent and all events updated": [
         "Zaproszenie zostało wysłane. Wszystkie wydarzenia zostały zaktualizowane"
       ],
@@ -9641,9 +9687,6 @@
       "Edit image": [
         "Edytuj zdjęcie"
       ],
-      "Email address": [
-        "Adres e-mail"
-      ],
       "Email addresses": [
         "Adresy e-mail"
       ],
@@ -9754,9 +9797,6 @@
       ],
       "Participants cannot be notified": [
         "Uczestnicy nie mogą zostać powiadomieni"
-      ],
-      "Password": [
-        "Hasło"
       ],
       "Payment failed": [
         "Płatność nie powiodła się"
@@ -9886,9 +9926,6 @@
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
-      ],
-      "Sign in with 2FA": [
-        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"

@@ -2658,6 +2658,16 @@
         "Přidat kalendář"
       ]
     },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "Zdvojnásobte své úložiště"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Představujeme ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplikovat událost"
@@ -6382,7 +6392,7 @@
         "Snížit na ${ downgradedPlanName }"
       ],
       "Get started for $1": [
-        "Začít za cenu $1"
+        "Začít za $1"
       ],
       "Get started for 1 €": [
         "Začít za €1"
@@ -6517,9 +6527,6 @@
       "${ size } storage": [
         "${ size } úložiště"
       ],
-      "${ size } storage per user": [
-        "${ size } prostoru na uživatele"
-      ],
       "1 user": [
         "1 uživatel"
       ],
@@ -6537,9 +6544,6 @@
       ],
       "Administration Panel": [
         "Panel správce"
-      ],
-      "Advanced sharing security": [
-        "Pokročilé zabezpečení sdílení"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
@@ -6570,9 +6574,6 @@
       ],
       "Collaborate and share large files": [
         "Spolupráce a sdílení velkých souborů"
-      ],
-      "Collaborative document editor": [
-        "Editor pro spolupráci na dokumentech"
       ],
       "Contact groups": [
         "Skupiny kontaktů"
@@ -6741,9 +6742,6 @@
       ],
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
-      ],
-      "Share files and folders via link": [
-        "Sdílení souborů a složek pomocí odkazu"
       ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
@@ -6931,9 +6929,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpečte svůj digitální život pomocí ${ BRAND_NAME } pro dva uživatele."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
@@ -6942,6 +6937,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Bezplatný startovací účet, který ve výchozím nastavení poskytuje soukromí všem."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Neomezené soukromí a více úložného prostoru pro až 2 uživatele."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Smazání účtu bude mít za následek ztrátu této ceny a již nebude k dispozici při vytváření nového účtu."
@@ -7013,9 +7011,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Vyberte vlastní časy, kdy chcete být upozorněni na e-mail nebo na příchod vaší zprávy"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
@@ -9244,6 +9239,9 @@
       "Import record deleted": [
         "Záznam o importu byl smazán"
       ],
+      "Invitation rejected": [
+        "Pozvánka odmítnuta"
+      ],
       "Invitation sent and all events updated": [
         "Pozvánka byla odeslána a všechny události aktualizovány"
       ],
@@ -9656,9 +9654,6 @@
       "Edit image": [
         "Upravit obrázek"
       ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
       "Email addresses": [
         "E-mailové adresy"
       ],
@@ -9769,9 +9764,6 @@
       ],
       "Participants cannot be notified": [
         "Účastníci nemohou být upozorněni"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Payment failed": [
         "Platba selhala"
@@ -9901,9 +9893,6 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
-      ],
-      "Sign in with 2FA": [
-        "Přihlásit se pomocí 2FA"
       ],
       "Sign out": [
         "Odhlásit se"
