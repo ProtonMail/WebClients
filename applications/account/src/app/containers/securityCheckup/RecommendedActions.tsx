@@ -39,7 +39,7 @@ const RecommendedActions = () => {
                                 }
                                 disableFullWidth
                                 className="color-weak"
-                                gap={0}
+                                gap={1}
                             >
                                 {c('Safety review').t`Show more`} ({filteredFurtherActions.length})
                             </CollapsibleHeader>
@@ -68,7 +68,7 @@ const RecommendedActions = () => {
                         }
                         disableFullWidth
                         className="color-weak"
-                        gap={0}
+                        gap={1}
                     >
                         {c('Safety review').t`Safeguard your account further`} ({filteredFurtherActions.length})
                     </CollapsibleHeader>

@@ -1,7 +1,5 @@
 .security-checkup-card-container {
-	border: 1px solid var(--border-norm);
 	border-radius: var(--border-radius-lg);
-	background-color: var(--background-norm);
 	box-shadow: var(--shadow-norm);
 }
 
@@ -16,8 +14,14 @@
 .security-checkup-card {
 	text-align: start;
 	inline-size: 100%;
-	border-radius: 0;
-	border-block-end: 1px solid var(--border-norm);
+	background-color: var(--background-norm);
+	border: 1px solid var(--border-weak);
+	margin-block-start: -1px;
+
+	&::after {
+		border-radius: inherit;
+		inset: -1px;
+	}
 
 	&:first-child {
 		border-start-start-radius: var(--border-radius-lg);
@@ -27,6 +31,5 @@
 	&:last-child {
 		border-end-start-radius: var(--border-radius-lg);
 		border-end-end-radius: var(--border-radius-lg);
-		border-block-end: 0;
 	}
 }
