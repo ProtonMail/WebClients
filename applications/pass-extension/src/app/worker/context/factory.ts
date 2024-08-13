@@ -107,6 +107,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             return {
                 booted: clientBooted(context.status),
                 localID: authStore.getLocalID(),
+                lockSetup,
                 loggedIn: authStore.hasSession() && clientReady(context.status) && !lockSetup,
                 status: context.status,
                 UID: authStore.getUID(),
