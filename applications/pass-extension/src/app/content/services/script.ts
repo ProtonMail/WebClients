@@ -112,7 +112,16 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         );
 
         if (res.type === 'success') {
-            context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID, stale: false, ready: true });
+            context.setState({
+                /** FIXME: clean-up activation payload */
+                lockSetup: res.lockSetup,
+                loggedIn: res.loggedIn,
+                ready: true,
+                stale: false,
+                status: res.status,
+                UID: res.UID,
+            });
+
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
 

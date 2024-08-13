@@ -122,11 +122,16 @@ export const Dropdown: FC = () => {
                     if (!appState.loggedIn) {
                         return (
                             <ListItem
-                                onClick={async () => {
+                                onClick={() => {
+                                    if (!appState.lockSetup) return accountFork(ForkType.SWITCH);
                                     close();
-                                    await accountFork(ForkType.SWITCH);
                                 }}
-                                subTitle={c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`}
+                                subTitle={
+                                    appState.lockSetup
+                                        ? c('Info')
+                                              .t`Your organization requires you to secure your access to ${PASS_APP_NAME}`
+                                        : c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`
+                                }
                                 icon={PassIconStatus.DISABLED}
                                 autogrow
                             />
