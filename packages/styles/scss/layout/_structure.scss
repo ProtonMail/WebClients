@@ -160,6 +160,16 @@ html,
 		}
 	}
 
+	&-collapse-button--above-scroll {
+		&#{&} {
+			background-color: var(--interaction-weak);
+			color: var(--text-weak);
+			margin-inline-end: 0;
+			border-start-end-radius: 0;
+			border-end-end-radius: 0;
+		}
+	}
+
 	@include media('<=small') {
 		position: fixed;
 		inset: 0;
