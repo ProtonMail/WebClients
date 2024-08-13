@@ -1,26 +1,17 @@
-import {
-    BrowserWindow,
-    type Event,
-    Menu,
-    type Session,
-    Tray,
-    app,
-    nativeImage,
-    nativeTheme,
-    session,
-    shell,
-} from 'electron';
+import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme, session, shell } from 'electron';
 import logger from 'electron-log/main';
 import { join } from 'path';
 
+import type { MaybeNull } from '@proton/pass/types';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getAppUrlFromApiUrl, getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
-import './lib/biometrics';
-import './lib/clipboard';
+import { WINDOWS_APP_ID } from './constants';
+import biometrics from './lib/biometrics';
+import clipboard from './lib/clipboard';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
 import { setApplicationMenu } from './menu-view/application-menu';
@@ -29,11 +20,12 @@ import { certificateVerifyProc } from './tls';
 import { SourceType, updateElectronApp } from './update';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
-await startup();
+export type PassElectronContext = { window: MaybeNull<BrowserWindow>; quitting: boolean };
+export const ctx: PassElectronContext = { window: null, quitting: false };
 
-export let mainWindow: BrowserWindow | null;
-
-let isAppQuitting = false;
+biometrics(() => ctx.window);
+clipboard();
+startup();
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
@@ -90,38 +82,34 @@ const createSession = () => {
         }
     })();
 
-    const appVersionHeaders = getAppVersionHeaders(clientId, config.APP_VERSION);
-    secureSession.webRequest.onBeforeSendHeaders((details, callback) => {
-        const requestHeaders = {
-            ...details.requestHeaders,
-            ...appVersionHeaders,
-        };
-
-        callback({ requestHeaders });
-    });
+    secureSession.webRequest.onBeforeSendHeaders(({ requestHeaders }, callback) =>
+        callback({
+            requestHeaders: {
+                ...requestHeaders,
+                ...getAppVersionHeaders(clientId, config.APP_VERSION),
+            },
+        })
+    );
 
     // Intercept SSO login redirect to the Pass web app
     secureSession.webRequest.onBeforeRequest(filter, async (details, callback) => {
-        if (!mainWindow) return;
+        if (!ctx.window) return;
 
         const url = new URL(details.url);
-        const isLoginUrl = url.pathname === '/login';
-
-        if (!isLoginUrl) {
-            callback({ cancel: false });
-            return;
-        }
+        if (url.pathname !== '/login') return callback({ cancel: false });
 
         callback({ cancel: true });
         const nextUrl = `${MAIN_WINDOW_WEBPACK_ENTRY}#/login${url.hash}`;
-        await mainWindow.loadURL(nextUrl);
+        await ctx.window.loadURL(nextUrl);
     });
 
     return secureSession;
 };
 
 const createWindow = async (session: Session): Promise<BrowserWindow> => {
-    mainWindow = new BrowserWindow({
+    if (ctx.window) return ctx.window;
+
+    ctx.window = new BrowserWindow({
         show: false,
         width: 960,
         height: 640,
@@ -145,20 +133,22 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         minHeight: 480,
     });
 
-    setApplicationMenu(mainWindow);
+    setApplicationMenu(ctx.window);
 
-    mainWindow.on('close', (e) => {
-        if (isAppQuitting) return;
-        e.preventDefault();
-        mainWindow?.hide();
+    ctx.window.on('close', (e) => {
+        if (!ctx.quitting) {
+            e.preventDefault();
+            ctx.window?.hide();
+        }
     });
 
-    mainWindow.on('closed', () => (mainWindow = null));
+    ctx.window.on('closed', () => (ctx.window = null));
 
-    await mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+    await ctx.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
-    mainWindow.show();
-    return mainWindow;
+    ctx.window.show();
+
+    return ctx.window;
 };
 
 const createTrayIcon = (session: Session) => {
@@ -179,7 +169,7 @@ const createTrayIcon = (session: Session) => {
     tray.setToolTip('Proton Pass');
 
     const onOpenPassHandler = async () => {
-        const window = mainWindow || (await createWindow(session));
+        const window = await createWindow(session);
         window.show();
     };
 
@@ -195,7 +185,7 @@ const createTrayIcon = (session: Session) => {
 };
 
 const onActivate = (secureSession: Session) => () => {
-    if (mainWindow) return mainWindow.show();
+    if (ctx.window) return ctx.window.show();
     if (BrowserWindow.getAllWindows().length === 0) return createWindow(secureSession);
 };
 
@@ -223,7 +213,7 @@ app.addListener('ready', async () => {
     app.addListener('second-instance', handleActivate);
 
     // Prevent hiding windows when explicitly quitting
-    app.addListener('before-quit', () => (isAppQuitting = true));
+    app.addListener('before-quit', () => (ctx.quitting = true));
 
     await createWindow(secureSession);
 
@@ -236,10 +226,8 @@ app.addListener('ready', async () => {
     });
 });
 
-app.addListener('web-contents-created', (_ev, contents) => {
-    const preventDefault = (e: Event) => e.preventDefault();
-
-    contents.addListener('will-attach-webview', preventDefault);
+app.addListener('web-contents-created', (_, contents) => {
+    contents.addListener('will-attach-webview', (evt) => evt.preventDefault());
 
     const allowedHosts: string[] = [
         new URL(config.API_URL).host,
@@ -247,21 +235,21 @@ app.addListener('web-contents-created', (_ev, contents) => {
         getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS).host,
     ];
 
-    contents.addListener('will-navigate', (e, href) => {
+    contents.addListener('will-navigate', (evt, href) => {
         if (href.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
 
         const url = new URL(href);
 
         // Prevent opening URLs outside of account
         if (!allowedHosts.includes(url.host) || !['/authorize', '/login'].includes(url.pathname)) {
-            e.preventDefault();
+            evt.preventDefault();
             logger.warn(`[will-navigate] preventDefault: ${url.toString()}`);
             return;
         }
 
         // Open Create account externally
         if (url.searchParams.has('t')) {
-            e.preventDefault();
+            evt.preventDefault();
             logger.warn(`[will-navigate] openExternal: ${url.toString()}`);
             return shell.openExternal(href).catch(noop);
         }
@@ -281,13 +269,5 @@ app.addListener('web-contents-created', (_ev, contents) => {
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
-app.addListener('window-all-closed', () => {
-    if (!isMac) {
-        app.quit();
-    }
-});
-
-const windowsAppId = 'com.squirrel.proton_pass_desktop.ProtonPass';
-app.addListener('will-finish-launching', () => {
-    if (isWindows) app.setAppUserModelId(windowsAppId);
-});
+app.addListener('window-all-closed', () => !isMac && app.quit());
+app.addListener('will-finish-launching', () => isWindows && app.setAppUserModelId(WINDOWS_APP_ID));
