@@ -14,8 +14,15 @@ interface Props {
     edit?: boolean;
 }
 
+const compareMemberNames = (a: GroupMember, b: GroupMember) => a.Email.localeCompare(b.Email);
+const getSortedMembers = (members: GroupMember[]) => {
+    return [...members].sort(compareMemberNames);
+};
+
 const GroupMemberList = ({ groupMembers, loading, group, edit = false }: Props) => {
     const [members] = useMembers();
+
+    const sortedMembers = getSortedMembers(groupMembers);
 
     if (loading || group === undefined) {
         return <Loader />;
@@ -36,7 +43,7 @@ const GroupMemberList = ({ groupMembers, loading, group, edit = false }: Props) 
             )}
             <Scroll>
                 <div className="flex flex-column gap-3">
-                    {groupMembers.map((memberData: GroupMember) => {
+                    {sortedMembers.map((memberData: GroupMember) => {
                         const memberName = members?.find(({ Addresses }) =>
                             Addresses?.some(({ ID }) => ID === (memberData?.AddressID ?? memberData?.AddressId))
                         )?.Name;
