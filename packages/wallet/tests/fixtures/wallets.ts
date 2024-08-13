@@ -1,13 +1,13 @@
 import {
-    WasmAccount,
-    WasmBalance,
+    type WasmAccount,
+    type WasmBalance,
     WasmNetwork,
     WasmPaymentLink,
-    WasmTransactionDetails,
+    type WasmTransactionDetails,
     WasmWallet,
 } from '@proton/andromeda';
 
-import { WalletChainDataByWalletId } from '../../types';
+import { type WalletChainDataByWalletId } from '../../types';
 import { freeable } from '../utils/wasm';
 import {
     apiWalletAccountOneA,
@@ -39,13 +39,13 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
         free: vi.fn(),
         hasSyncData: vi.fn().mockReturnValue(true),
         owns: vi.fn().mockReturnValue(false),
-        getBitcoinUri: vi
+        getNextReceiveAddress: vi
             .fn()
             .mockReturnValue(
                 WasmPaymentLink.tryParse('bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h', WasmNetwork.Testnet)
             ),
-        getAddress: vi.fn(),
-        getIndexAfterLastUsedAddress: vi.fn().mockReturnValue(0),
+        peekReceiveAddress: vi.fn(),
+        markReceiveAddressesUsedTo: vi.fn().mockReturnValue(0),
         getBalance: vi.fn().mockResolvedValue({ confirmed: BigInt(0) } as WasmBalance),
         getDerivationPath: vi.fn().mockResolvedValue("84'/1'/1'/0"),
         getUtxos: vi.fn().mockResolvedValue([]),
