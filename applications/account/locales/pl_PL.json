@@ -157,6 +157,9 @@
       "Allow": [
         "Zezwól"
       ],
+      "Always allow sending mail to group": [
+        "Zawsze zezwalaj na wysyłanie wiadomości do grupy"
+      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -388,6 +391,9 @@
       "Disable": [
         "Wyłącz"
       ],
+      "Disable E2EE for group address": [
+        "Wyłącz E2EE dla grupy"
+      ],
       "Disable recovery phrase": [
         "Wyłącz hasło odzyskiwania"
       ],
@@ -489,6 +495,9 @@
       ],
       "Enable device-based recovery": [
         "Włącz odzyskiwanie za pomocą zaufanego urządzenia"
+      ],
+      "Enable E2EE for group address": [
+        "Włącz E2EE dla grupy"
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
@@ -1180,6 +1189,9 @@
       "Use authentication code": [
         "Użyj kodu uwierzytelniającego"
       ],
+      "Use group sending permissions": [
+        "Użyj uprawnienia grupy"
+      ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
       ],
@@ -1375,8 +1387,8 @@
       "External": [
         "Zewnętrzny"
       ],
-      "Missing keys": [
-        "Brak kluczy"
+      "Inactive": [
+        "Nieaktywny"
       ],
       "No E2EE mail": [
         "Brak E2EE wiadomości"
@@ -3402,6 +3414,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Włącz ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Włącz szczegółowe logi i ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
+      ],
+      "Enable detailed events to access these features": [
+        "Włącz szczegółowe logi, aby uzyskać dostęp do tych funkcji"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
@@ -3620,11 +3638,31 @@
       "Free, encrypted, and secure cloud storage": [
         "Darmowa, szyfrowana i bezpieczna chmura"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Bezpieczna przestrzeń dyskowa w chmurze i udostępnianie plików, które chronią Twoje dane"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Zaproszono Cię do pliku w ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Współpraca:** Edytor dokumentów"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "Zgodność z **RODO** i **HIPAA**"
+      ],
+      "**ISO 27001** certified": [
+        "Certyfikat **ISO 27001**"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Bezpieczeństwo:** szyfrowanie end-to-end"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Zaawansowana ochrona, która wykracza poza standardy"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Dołącz do ponad 50 000 organizacji, które korzystają z bezpieczeństwa ${ BRAND_NAME }"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Bezpieczna przestrzeń dyskowa w chmurze, która daje Ci kontrolę nad Twoimi danymi"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3633,6 +3671,43 @@
       ],
       "Priority support": [
         "Priorytetowe wsparcie"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Wybierz plan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Uzyskaj za ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Płatne rocznie ${ amountBilled }. Zaoszczędź ${ amountSave } na rocznej subskrypcji 2 indywidualnych kont ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 użytkowników"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Pełny dostęp do wszystkich usług ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Oszczędzasz ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Wszystko, co z ${ BRAND_NAME } dla dwojga."
+      ],
+      "Double your storage": [
+        "Podwój przestrzeń dyskową"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Przedstawiamy plan ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5092,8 +5167,14 @@
       "*Only one free trial per customer.": [
         "* Tylko jedna darmowa wersja próbna na klienta."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konta z niestandardowymi domenami nie mogą dołączyć do tego planu."
+      ],
       "customer support": [
         "wsparcie klienta"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Plany grupowe nie obsługują obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -5112,6 +5193,9 @@
       ],
       "Leave Visionary plan": [
         "Opuść plan Visionary"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Konta dożywotnie nie mogę dołączyć do innego planu."
       ],
       "Manage addresses.": [
         "Zarządzaj adresami."
@@ -5176,11 +5260,17 @@
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu grupowego."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Musisz skonfigurować niestandardową domenę przed dodaniem użytkowników."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Musisz skonfigurować niestandardową domenę przed utworzeniem nowego użytkownika."
+      ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Stracisz dostęp do wszystkich funkcji premium i przestrzeni dyskowej, które są częścią planu ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
@@ -5190,6 +5280,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Nie możesz zaakceptować zaproszenia w obecnym planie."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5259,6 +5352,9 @@
       ],
       "An error occurred, please try again": [
         "Wystąpił błąd. Spróbuj ponownie"
+      ],
+      "Family name updated": [
+        "Nazwa rodziny została zaktualizowana"
       ],
       "Member updated": [
         "Użytkownik został zaktualizowany"
@@ -6800,9 +6896,6 @@
       "Are you sure you want to delete this label?": [
         "Czy na pewno chcesz usunąć tę etykietę?"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
@@ -7246,6 +7339,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Zaproszenia zostaną wysłane w tym języku."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Logi obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają danych logowań ${ BRAND_NAME_TWO }."
       ],
       "Example: ${ spfExample }": [
         "Przykład: ${ spfExample }"
@@ -8212,9 +8308,6 @@
       ],
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
@@ -9261,6 +9354,11 @@
         "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Adres e-mail nie jest prawidłowy"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Etykieta linku (opcjonalnie)"
@@ -9277,6 +9375,9 @@
       ],
       "Rejected": [
         "Odrzucone"
+      ],
+      "Sending invite...": [
+        "Wysyłanie zaproszenia"
       ]
     },
     "Invoice state display as badge": {
@@ -9658,6 +9759,33 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
+      ],
+      "1 hour": [
+        "1 godzina"
+      ],
+      "1 minute": [
+        "1 minuta"
+      ],
+      "10 minutes": [
+        "10 minut"
+      ],
+      "15 minutes": [
+        "15 minut"
+      ],
+      "2 minutes": [
+        "2 minuty"
+      ],
+      "30 minutes": [
+        "30 minut"
+      ],
+      "30 seconds": [
+        "30 sekund"
+      ],
+      "4 hours": [
+        "4 godziny"
+      ],
+      "5 minutes": [
+        "5 minut"
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
@@ -10997,6 +11125,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Włącz ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Włącz szczegółowe logi"
+      ],
+      "Enable security events": [
+        "Włącz logi bezpieczeństwa"
       ]
     },
     "Mail import summary": {
@@ -11089,7 +11223,7 @@
         "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
-        "Niestandardowe godziny planowego wysyłania i usypiania"
+        "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny e-mail"
@@ -11647,9 +11781,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ size } storage per user": [
-        "${ size } przestrzeni dyskowej na użytkownika"
-      ],
       "1 user": [
         "1 użytkownik"
       ],
@@ -11673,9 +11804,6 @@
       ],
       "Advanced network security": [
         "Zaawansowane bezpieczeństwo sieci"
-      ],
-      "Advanced sharing security": [
-        "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "All ${ BRAND_NAME } services": [
         "Wszystkie usługi ${ BRAND_NAME }"
@@ -11712,9 +11840,6 @@
       ],
       "Collaborate and share large files": [
         "Współpraca i udostępnianie dużych plików"
-      ],
-      "Collaborative document editor": [
-        "Edytor dokumentów z możliwością współpracy"
       ],
       "Contact groups": [
         "Grupy kontaktów"
@@ -11902,9 +12027,6 @@
         "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
         "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach"
       ],
-      "Share files and folders via link": [
-        "Udostępniaj pliki i foldery za pomocą linku"
-      ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
       ],
@@ -12009,6 +12131,9 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
+      ],
+      "Version history": [
+        "Historia wersji"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
@@ -12121,9 +12246,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpiecz cyfrowe życie 2 użytkowników z ${ BRAND_NAME }."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Ustaw autoresponder, aby poinformować kontakty, kiedy jesteś poza biurem lub nie jesteś w stanie odpowiedzieć."
       ],
@@ -12135,6 +12257,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Darmowe, podstawowe konto stworzone z myślą o zapewnieniu każdemu prywatności."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Nieograniczona prywatność i więcej przestrzeni dyskowej dla 2 osób."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Usunięcie konta spowoduje utratę promocyjnej ceny i nie będzie ona dostępna przy tworzeniu nowego konta."
@@ -12263,9 +12388,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Wybierz niestandardowe godziny powiadomień o wiadomościach i zaplanowanych wysyłkach"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain } dla subskrybowania wiadomości"
@@ -13196,9 +13318,6 @@
       "Current plan": [
         "Obecny plan"
       ],
-      "Customizable services for large teams.": [
-        "Usługi dla dużych zespołów z możliwością personalizacji."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Aby korzystać z ${ PASS_APP_NAME }, pobierz i zainstaluj odpowiednie aplikacje oraz rozszerzenia"
       ],
@@ -13273,9 +13392,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Dołącz do ponad 50 000 organizacji, które zaufały usługom ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Uruchamianie ${ PASS_APP_NAME }"
@@ -14652,13 +14768,13 @@
       ]
     },
     "signup: Action": {
-      "Request a demo": [
-        "Zamów demo"
+      "Request trial": [
+        "Wersja próbna"
       ]
     },
     "signup_2024: Feature": {
-      "GDPR compliant": [
-        "Zgodny z RODO"
+      "GDPR and HIPAA compliant": [
+        "Zgodność z RODO i HIPAA"
       ]
     },
     "specialoffer: Action": {
@@ -15695,6 +15811,9 @@
       "Import record deleted": [
         "Rekord importu został usunięty"
       ],
+      "Invitation rejected": [
+        "Zaproszenie zostało odrzucone"
+      ],
       "Invitation sent": [
         "Zaproszenie zostało wysłane"
       ],
@@ -15718,6 +15837,18 @@
       ],
       "Organization activated": [
         "Organizacja została aktywowana"
+      ],
+      "Organization identity updated": [
+        "Tożsamość organizacji została zaktualizowana"
+      ],
+      "Organization logo removed": [
+        "Logo organizacji zostało usunięte"
+      ],
+      "Organization logo updated": [
+        "Logo organizacji zostało zaktualizowane"
+      ],
+      "Organization name updated": [
+        "Nazwa organizacji została zaktualizowana"
       ],
       "Password copied to clipboard": [
         "Hasło zostało skopiowane do schowka"
@@ -16506,9 +16637,6 @@
       "Email": [
         "E-mail"
       ],
-      "Email address": [
-        "Adres e-mail"
-      ],
       "Email composer": [
         "Edytor wiadomości"
       ],
@@ -16782,6 +16910,9 @@
       "Organization name": [
         "Nazwa organizacji"
       ],
+      "Origin": [
+        "Pochodzenie"
+      ],
       "Other calendars": [
         "Inne kalendarze"
       ],
@@ -16811,9 +16942,6 @@
       ],
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
-      ],
-      "Personalise your e-mail footer": [
-        "Spersonalizuj stopkę"
       ],
       "Phone": [
         "Telefon"
@@ -16914,6 +17042,9 @@
       "Security and privacy": [
         "Bezpieczeństwo i prywatność"
       ],
+      "Security events": [
+        "Logi bezpieczeństwa"
+      ],
       "Security logs": [
         "Logi bezpieczeństwa"
       ],
@@ -16985,9 +17116,6 @@
       ],
       "Sign in to your organization": [
         "Zaloguj się do organizacji"
-      ],
-      "Sign in with 2FA": [
-        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"
@@ -17343,6 +17471,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Włącz lub wyłącz powiadomienia na pulpicie i urządzeniach mobilnych"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Włączenie szczegółowych logów zapisze adres IP każdego zdarzenia."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adres URL punktu końcowego od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)"
       ],
@@ -17415,6 +17546,9 @@
       "This address has been disabled": [
         "Ten adres został wyłączony"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Może to być spowodowane resetowaniem hasła lub niezalogowaniem się użytkownika."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Adres e-mail będzie widoczny dla wszystkich użytkowników organizacji podczas zarządzania kontem."
       ],
@@ -17485,6 +17619,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ],
+      "Sending member invitation": [
+        "Wysyłanie zaproszenia"
       ],
       "User rejected invitation": [
         "Zaproszenie zostało odrzucone"
@@ -17964,6 +18101,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Usuwając ten numer telefonu, stracisz możliwość odzyskiwania swojego konta."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Wyłączenie logów bezpieczeństwa spowoduje usunięcie całej jej historii. Czy na pewno chcesz wyłączyć tę funkcję?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Data wygaśnięcia nie jest w formacie MM/RR"

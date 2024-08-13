@@ -388,6 +388,9 @@
       "Discard": [
         "Descarta"
       ],
+      "Discard changes": [
+        "Descarta els canvis"
+      ],
       "Don't show again": [
         "No mostrar de nou"
       ],
@@ -429,6 +432,9 @@
       ],
       "Edit Gateway": [
         "Edita la passarel·la"
+      ],
+      "Edit group": [
+        "Edita el grup"
       ],
       "Edit invoice details": [
         "Edita les dades de la factura"
@@ -922,6 +928,9 @@
       "Select a calendar to export": [
         "Seleccioneu un calendari per exportar"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selecciona el cicle de facturació ${ billingText }"
+      ],
       "Select calendar view": [
         "Tria la vista de calendari"
       ],
@@ -1065,6 +1074,9 @@
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
+      ],
+      "Test": [
+        "Prova"
       ],
       "Top up": [
         "Recarrega"
@@ -1327,9 +1339,6 @@
       ],
       "External": [
         "Externa"
-      ],
-      "Missing keys": [
-        "Falten claus"
       ],
       "No E2EE mail": [
         "Cap correu E2EE"
@@ -2727,6 +2736,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (República Popular Democràtica)"
+      ],
       "Korea (Republic of)": [
         "Corea (República)"
       ],
@@ -2738,6 +2750,9 @@
       ],
       "Kyrgyzstan": [
         "Kirguizstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "República Popular Democràtica de Laos"
       ],
       "Laos": [
         "Laos"
@@ -2756,6 +2771,9 @@
       ],
       "Libya": [
         "Líbia"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Líbia (Jamahiriya Àrab)"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -3547,9 +3565,6 @@
       "Free, encrypted, and secure cloud storage": [
         "Emmagatzematge al núvol gratuït, xifrat i segur"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Emmagatzematge al núvol segur i compartició de fitxers que protegeix les vostres dades"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Esteu convidat a accedir a un fitxer a ${ DRIVE_APP_NAME }"
       ]
@@ -3560,6 +3575,19 @@
       ],
       "Priority support": [
         "Suport prioritari"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuaris"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Tot allò de ${ BRAND_NAME }, per a 2."
+      ],
+      "Double your storage": [
+        "Dobleu el vostre emmagatzematge"
       ]
     },
     "Duration": {
@@ -5017,6 +5045,9 @@
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
       ],
+      "Leave Duo plan": [
+        "Deixa el pla Duo"
+      ],
       "Manage addresses.": [
         "Gestiona les adreces."
       ],
@@ -5645,6 +5676,19 @@
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Actiu"
+      ],
+      "Unanswered": [
+        "Sense resposta"
+      ]
+    },
+    "group_invitation: Success": {
+      "Left group": [
+        "Deixa el grup"
       ]
     },
     "Header": {
@@ -6543,9 +6587,6 @@
       ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Esteu segur que voleu desactivar l'autenticació de dos factors?"
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
@@ -8928,6 +8969,14 @@
         "Afegeix etiqueta"
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Pendent"
+      ],
+      "Rejected": [
+        "Rebutjat"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Regalat"
@@ -9299,6 +9348,27 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
+      ],
+      "1 hour": [
+        "1 hora"
+      ],
+      "1 minute": [
+        "1 minut"
+      ],
+      "10 minutes": [
+        "10 minuts"
+      ],
+      "15 minutes": [
+        "15 minuts"
+      ],
+      "30 minutes": [
+        "30 minuts"
+      ],
+      "30 seconds": [
+        "30 segons"
+      ],
+      "5 minutes": [
+        "5 minuts"
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -10628,6 +10698,9 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Habilita ${ reason }"
+      ],
+      "Enable security events": [
+        "Activa els esdeveniments de seguretat"
       ]
     },
     "Mail import summary": {
@@ -11226,9 +11299,6 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
-      "${ size } storage per user": [
-        "${ size } emmagatzematge per usuari"
-      ],
       "1 user": [
         "1 usuari"
       ],
@@ -11252,9 +11322,6 @@
       ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
-      ],
-      "Advanced sharing security": [
-        "Seguretat avançada en la compartició"
       ],
       "All ${ BRAND_NAME } services": [
         "Tots els serveis de ${ BRAND_NAME }"
@@ -11471,9 +11538,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servidors en més d'${ vpnServersCountData.paid.countries } país",
         "Servidors en més de ${ vpnServersCountData.paid.countries } països"
-      ],
-      "Share files and folders via link": [
-        "Compartició de fitxers i carpetes mitjançant un enllaç"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -11823,9 +11887,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Trieu horaris personalitzats per a rebre recordatoris d'un correu electrònic o perquè arribi el vostre missatge"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controleu l'accés als vostres fitxers compartits afegint protecció per contrasenya i dates d'expiració d'enllaços."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia; p. ex., JoanCompres@${ domain } per a comptes de compres, JoanNoticies@${ domain } per a la subscripció a notícies."
@@ -12730,9 +12791,6 @@
       "Current plan": [
         "Pla actual"
       ],
-      "Customizable services for large teams.": [
-        "Serveis personalitzables per a grans equips."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarregueu i instal·leu les aplicacions i extensions pertinents per a començar a utilitzar ${ PASS_APP_NAME }."
       ],
@@ -12807,9 +12865,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Afegiu-vos a més de 100 milions de persones que han escollit ${ BRAND_NAME } per mantenir-se segurs en línia"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Uniu-vos a les més de 50 000 organitzacions que confien en ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "S'està llançant ${ PASS_APP_NAME }"
@@ -13475,6 +13530,26 @@
         "Usuari"
       ]
     },
+    "saml: Action": {
+      "Cancel": [
+        "Cancel·la"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detalls"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Corrreu electrònic"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Funciona!"
+      ]
+    },
     "scim: Action": {
       "Configure SCIM": [
         "Configura SCIM"
@@ -14069,16 +14144,6 @@
       ],
       "Verification": [
         "Verificació"
-      ]
-    },
-    "signup: Action": {
-      "Request a demo": [
-        "Sol·licita una demostració"
-      ]
-    },
-    "signup_2024: Feature": {
-      "GDPR compliant": [
-        "Conforme a l'RGPD"
       ]
     },
     "specialoffer: Action": {
@@ -15501,6 +15566,9 @@
       "Add users": [
         "Afegeix usuaris"
       ],
+      "Address": [
+        "Adreça"
+      ],
       "Address and key verification": [
         "Verificació de l'adreça i de la clau"
       ],
@@ -15848,9 +15916,6 @@
       "Email": [
         "Correu electrònic"
       ],
-      "Email address": [
-        "Adreça electrònica"
-      ],
       "Email composer": [
         "Editor de correu electrònic"
       ],
@@ -15968,6 +16033,12 @@
       ],
       "Gift code": [
         "Codi regal"
+      ],
+      "Group": [
+        "Grup"
+      ],
+      "Group membership": [
+        "Membres del grup"
       ],
       "Groups": [
         "Grups"
@@ -16243,6 +16314,9 @@
       "Security and privacy": [
         "Seguretat i privacitat"
       ],
+      "Security events": [
+        "Esdeveniments de seguretat"
+      ],
       "Security logs": [
         "Registres de seguretat"
       ],
@@ -16314,9 +16388,6 @@
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
-      ],
-      "Sign in with 2FA": [
-        "Inicia la sessió amb autenticació de dos factors (A2F)"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -17170,6 +17241,9 @@
       ]
     },
     "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Torna a la cartera"
+      ],
       "Wallet": [
         "Wallet"
       ]
