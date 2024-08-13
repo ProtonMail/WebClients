@@ -9,6 +9,7 @@ import { FieldType, type FormType, buttonSelector, isVisibleForm, removeClassifi
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -21,7 +22,7 @@ export type FormHandlesProps = { zIndex: number };
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const listeners = createListenerStore();
-    const zIndex = getMaxZIndex(form) + 5;
+    const zIndex = getMaxZIndex(options.fields.map(prop('field'))) + 5;
     const scrollRef = findScrollableParent(form);
 
     const formHandle: FormHandle = {
