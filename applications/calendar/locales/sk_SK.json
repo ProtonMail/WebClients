@@ -2658,6 +2658,11 @@
         "Pridať kalendár"
       ]
     },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 používatelia"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplikovať udalosť"
@@ -3490,6 +3495,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Keď je povolené extra heslo, správa aliasov sa môže vykonávať len v ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Na import udalostí potrebujete aktívny osobný kalendár"
@@ -4817,6 +4825,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Ostatní používatelia vo vašej organizácii uvidia vaše obsadené sloty. Žiadne podrobnosti o udalosti sa nezdieľajú."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
       ],
       "password": [
         "heslo"
@@ -6517,9 +6528,6 @@
       "${ size } storage": [
         "${ size } úložisko"
       ],
-      "${ size } storage per user": [
-        "${ size } úložisko na používateľa"
-      ],
       "1 user": [
         "1 používateľ"
       ],
@@ -6537,9 +6545,6 @@
       ],
       "Administration Panel": [
         "Panel administrácie"
-      ],
-      "Advanced sharing security": [
-        "Pokročilá bezpečnosť zdieľania"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
@@ -6570,9 +6575,6 @@
       ],
       "Collaborate and share large files": [
         "Spolupracujte a zdieľajte veľké súbory"
-      ],
-      "Collaborative document editor": [
-        "Spoločný editor dokumentov"
       ],
       "Contact groups": [
         "Skupiny kontaktov"
@@ -6741,9 +6743,6 @@
       ],
       "Send & receive invitations": [
         "Odosielanie a prijímanie pozvánok"
-      ],
-      "Share files and folders via link": [
-        "Zdieľanie súborov a priečinkov cez odkaz"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -6931,9 +6930,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpečte svoj digitálny život s ${ BRAND_NAME } pre dve osoby."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Riešenia na mieru pre väčšie organizácie so špecifickými bezpečnostnými potrebami"
       ],
@@ -7013,9 +7009,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Zvoľte si vlastné časy, kedy chcete dostať upozornenie na email alebo kedy má prísť vaša správa."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Ovládajte prístup k svojim zdieľaným súborom pridaním ochrany heslom a dátumov vypršania platnosti odkazu"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
@@ -9241,6 +9234,9 @@
       "Import record deleted": [
         "Záznam o importe bol zmazaný"
       ],
+      "Invitation rejected": [
+        "Pozvánka odmietnutá"
+      ],
       "Invitation sent and all events updated": [
         "Pozvánka bola odoslaná a všetky udalosti boli aktualizované"
       ],
@@ -9653,9 +9649,6 @@
       "Edit image": [
         "Upraviť obrázok"
       ],
-      "Email address": [
-        "Emailová adresa"
-      ],
       "Email addresses": [
         "Emailové adresy"
       ],
@@ -9766,9 +9759,6 @@
       ],
       "Participants cannot be notified": [
         "Účastníci nemôžu byť upozornení"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Payment failed": [
         "Platba zlyhala"
@@ -9898,9 +9888,6 @@
       ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
-      ],
-      "Sign in with 2FA": [
-        "Prihlásiť sa cez 2FA"
       ],
       "Sign out": [
         "Odhlásiť sa"
