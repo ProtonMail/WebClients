@@ -941,6 +941,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Nous avons rencontré un problème lors du démarrage de ${ PASS_SHORT_APP_NAME }. Si ce problème persiste, contactez notre service client pour obtenir de l'aide."
       ],
+      "Wrong extra password": [
+        "Le mot de passe supplémentaire n'est pas correct."
+      ],
       "Wrong password": [
         "Le mot de passe n'est pas correct."
       ],
@@ -1140,10 +1143,10 @@
         "Avant d'exporter vos données sous ce format, ouvrez et désactivez l'option suivante Paramètres Safari -> Général -> Ouvrir les fichiers sécurisés après téléchargement. Cela empêchera Safari d'extraire le fichier exporté de façon incorrecte."
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Le verrouillage avec la biométrie a été enregistré avec succès. Utilisez-le pour déverrouiller ${ PASS_APP_NAME }"
+        "Le verrouillage avec les données biométriques a été enregistré. Utilisez-le pour déverrouiller ${ PASS_APP_NAME }."
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
-        "La biométrie sera désactivée et devra être réactivée."
+        "Les données biométriques seront désactivées et devront être réactivées."
       ],
       "Breaches detected": [
         "Des fuites de données ont été détectées."
@@ -1248,7 +1251,7 @@
         "Activation du verrouillage automatique biométrique"
       ],
       "Enabling biometrics lock failed": [
-        "L'activation du verrouillage avec la biométrie a échoué"
+        "L'activation du verrouillage avec la biométrie n'a pas abouti"
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
@@ -1478,8 +1481,11 @@
       "Offline support successfully disabled": [
         "L'accès hors ligne est désactivé."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN pour débloquer votre session. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nos alertes se caractérisent par leur prudence. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
       "Owner": [
         "Propriétaire"
@@ -1521,11 +1527,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
       ],
+      "Please confirm your extra password": [
+        "Veuillez confirmer votre mot de passe supplémentaire."
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec les données biométriques."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin d'enlever votre verrouillage actuel."
+      ],
       "Please confirm your password": [
         "Veuillez confirmer votre mot de passe."
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Veuillez confirmer votre mot de passe afin de permettre le verrouillage automatique avec la biométrie."
+        "Veuillez confirmer votre mot de passe afin de permettre le verrouillage automatique avec les données biométriques."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Veuillez confirmer votre mot de passe afin de verrouiller automatiquement avec ce dernier."
@@ -1617,6 +1632,9 @@
       "Session timed out": [
         "La session a expiré."
       ],
+      "Set by your organization": [
+        "Configuré par votre organisation"
+      ],
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
       ],
@@ -1706,7 +1724,7 @@
         "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Déverrouiller ${ PASS_SHORT_APP_NAME } avec la biométrie"
+        "Déverrouiller ${ PASS_SHORT_APP_NAME } avec les données biométriques"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre mot de passe ${ BRAND_NAME }."
@@ -1715,7 +1733,7 @@
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre mot de passe supplémentaire."
       ],
       "Unlock with biometrics": [
-        "Déverrouiller par biométrie"
+        "Déverrouiller avec les données biométriques"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."
@@ -1822,6 +1840,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
       ]
     },
     "Label": {
@@ -1867,6 +1888,9 @@
       "15 minutes": [
         "15 minutes"
       ],
+      "2 minutes": [
+        "2 minutes"
+      ],
       "24 hours": [
         "24 heures"
       ],
@@ -1884,6 +1908,9 @@
       ],
       "30 seconds": [
         "30 secondes"
+      ],
+      "4 hours": [
+        "4 heures"
       ],
       "5 minutes": [
         "5 minutes"
@@ -1934,7 +1961,7 @@
         "Accès à la version bêta"
       ],
       "Biometrics": [
-        "Biométrie"
+        "Données biométriques"
       ],
       "Birthdate": [
         "Date de naissance"
@@ -2724,11 +2751,11 @@
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
-      "Email address": [
-        "Adresse e-mail"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
+      ],
+      "Enter your extra password": [
+        "Saisissez votre mot de passe supplémentaire"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."
@@ -2825,9 +2852,6 @@
       ],
       "Passkey": [
         "Clé d'accès"
-      ],
-      "Password": [
-        "Mot de passe"
       ],
       "Password Health": [
         "Sécurité des mots de passe"
@@ -2990,6 +3014,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Le mot de passe de ${ BRAND_NAME } est nécessaire."
+      ],
       "A description of the problem is required": [
         "Une description du problème est nécessaire."
       ],
@@ -3026,14 +3053,14 @@
       "Empty note": [
         "Note vide"
       ],
-      "Encryption password is required": [
-        "Le mot de passe chiffré est requis."
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La date d'expiration n'est pas au format MM/AA."
       ],
       "Extra password cannot be empty": [
         "Le mot de passe supplémentaire ne peut pas être vide."
+      ],
+      "Extra password is required": [
+        "Un mot de passe supplémentaire est nécessaire."
       ],
       "Extra password should have at least 8 characters": [
         "Le mot de passe supplémentaire doit comporter au moins 8 caractères."

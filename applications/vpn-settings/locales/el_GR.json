@@ -64,6 +64,9 @@
       "Allow": [
         "Επιτρέπεται"
       ],
+      "Always allow sending mail to group": [
+        "Να επιτρέπεται πάντα η αποστολή μηνυμάτων σε ομάδα"
+      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
+      "Disable E2EE for group address": [
+        "Απενεργοποίηση E2EE για διεύθυνση ομάδας"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "Enable E2EE for group address": [
+        "Ενεργοποίηση E2EE για διεύθυνση ομάδας"
       ],
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
@@ -676,6 +685,9 @@
       "Use authentication code": [
         "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
       ],
+      "Use group sending permissions": [
+        "Χρήση δικαιωμάτων αποστολής σε ομάδα"
+      ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
       ],
@@ -810,8 +822,8 @@
       "External": [
         "Εξωτερική"
       ],
-      "Missing keys": [
-        "Κλειδιά που λείπουν"
+      "Inactive": [
+        "Ανενεργό"
       ],
       "No E2EE mail": [
         "Χωρίς E2EE mail"
@@ -2244,6 +2256,43 @@
         "Υποστήριξη με προτεραιότητα"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Αποκτήστε το ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Αποκτήστε το για ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 χρήστες"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Πλήρης πρόσβαση σε όλα τα ${ BRAND_NAME } προϊόντα"
+      ],
+      "You save ${ amountSave }": [
+        "Εξοικονομείτε ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Όλα του ${ BRAND_NAME }, για 2."
+      ],
+      "Double your storage": [
+        "Διπλασιάστε τον αποθηκευτικό σας χώρο"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Παρουσιάζουμε το ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } προστέθηκαν"
@@ -2685,8 +2734,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
+      ],
       "customer support": [
         "υποστήριξη πελατών"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Τα ομαδικά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πρόγραμμά σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -2696,6 +2751,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Προσκλήθηκε από: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
       ],
       "Manage addresses.": [
         "Διαχείριση διευθύνσεων."
@@ -2748,6 +2806,9 @@
       "You have successfully joined the family group": [
         "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Έχετε ανεξόφλητα τιμολόγια. Πληρώστε τους πριν συμμετάσχετε σε ένα ομαδικό πλάνο."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Πρέπει να διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε πολλούς χρήστες."
       ],
@@ -2762,6 +2823,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Δεν μπορείτε να αποδεχτείτε αυτήν την πρόσκληση με το τρέχον πλάνο σας."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2828,6 +2892,9 @@
       ],
       "An error occurred, please try again": [
         "Παρουσιάστηκε σφάλμα. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Family name updated": [
+        "Το επώνυμο ενημερώθηκε"
       ],
       "Member updated": [
         "Το μέλος ενημερώθηκε"
@@ -3463,9 +3530,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την ομάδα. Η διεύθυνση ομάδας δε θα λειτουργεί πλέον."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
-      ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
@@ -3574,6 +3638,10 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλος",
+        "Δημιουργήστε ένα ασφαλές cloud για ${ n } μέλη"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
       ],
@@ -3605,11 +3673,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -4984,12 +5052,20 @@
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Σε εκκρεμότητα"
       ],
       "Rejected": [
         "Απορριφθέντες"
+      ],
+      "Sending invite...": [
+        "Αποστολή πρόσκλησης μέλους..."
       ]
     },
     "Invoice state display as badge": {
@@ -6036,9 +6112,6 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
-      "${ size } storage per user": [
-        "${ size } αποθηκευτικός χώρος ανά χρήστη"
-      ],
       "1 user": [
         "1 χρήστης"
       ],
@@ -6062,9 +6135,6 @@
       ],
       "Advanced network security": [
         "Προχωρημένη ασφάλεια δικτύου"
-      ],
-      "Advanced sharing security": [
-        "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
@@ -6098,9 +6168,6 @@
       ],
       "Collaborate and share large files": [
         "Συνεργασία και κοινή χρήση μεγάλων αρχείων"
-      ],
-      "Collaborative document editor": [
-        "Συνεργατικό πρόγραμμα επεξεργασίας εγγράφων"
       ],
       "Contact groups": [
         "Ομάδες επαφών"
@@ -6229,6 +6296,9 @@
       "Phone support (40+ users)": [
         "Τηλεφωνική υποστήριξη (40+ χρήστες)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium χαρακτηριστικά του ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
       ],
@@ -6278,9 +6348,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Διακομιστές σε ${ vpnServersCountData.paid.countries }+ χώρα",
         "Διακομιστές σε ${ vpnServersCountData.paid.countries }+ χώρες"
-      ],
-      "Share files and folders via link": [
-        "Κοινοποίηση αρχείων και φακέλων μέσω συνδέσμου"
       ],
       "Sign in as user": [
         "Είσοδος ως χρήστης"
@@ -6380,6 +6447,9 @@
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
@@ -6473,9 +6543,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Ασφαλίστε την ψηφιακή σας ζωή με ${ BRAND_NAME } για δύο άτομα."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
@@ -6484,6 +6551,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ο λογαριασμός εκκίνησης χωρίς κόστος έχει σχεδιαστεί για να παρέχει σε όλους το απόρρητο από προεπιλογή."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Απεριόριστο απόρρητο και περισσότερο χώρο αποθήκευσης για έως και 2 άτομα."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Αν διαγράψετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη αν δημιουργήσετε νέο λογαριασμό."
@@ -6582,9 +6652,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Επιλέξτε προσαρμοσμένες ώρες για υπενθύμιση σχετικά με ένα μήνυμα ηλεκτρονικού ταχυδρομείου ή για την άφιξη του μηνύματός σας"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Ελέγξτε την πρόσβαση στα κοινόχρηστα αρχεία σας προσθέτοντας προστασία με κωδικό πρόσβασης και ημερομηνίες λήξης συνδέσμου"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain } για συνδρομή ειδήσεων"
@@ -8952,6 +9019,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Αν έχετε εισάγει ένα έγκυρο τηλέφωνο ανάκτησης θα σας στείλουμε ένα sms με τα ονόματα χρήστη σας το επόμενο λεπτό."
       ],
+      "Invitation rejected": [
+        "Η πρόσκληση απορρίφθηκε"
+      ],
       "Invitation sent": [
         "Η πρόσκληση στάλθηκε"
       ],
@@ -8972,6 +9042,18 @@
       ],
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
+      ],
+      "Organization identity updated": [
+        "Η ταυτότητα του οργανισμού ενημερώθηκε"
+      ],
+      "Organization logo removed": [
+        "Το λογότυπο του οργανισμού καταργήθηκε"
+      ],
+      "Organization logo updated": [
+        "Το λογότυπο του οργανισμού ενημερώθηκε"
+      ],
+      "Organization name updated": [
+        "Το όνομα του οργανισμού ενημερώθηκε"
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
@@ -9275,10 +9357,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -9689,9 +9771,6 @@
       "Sign in to your organization": [
         "Συνδεθήτε στον οργανισμό σας"
       ],
-      "Sign in with 2FA": [
-        "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
-      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -9896,6 +9975,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Αυτό μπορεί να προκληθεί από επαναφορά κωδικού πρόσβασης ή από τον χρήστη που δεν έχει συνδεθεί ακόμα."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα εμφανίζεται σε όλα τα μέλη του οργανισμού κατά την εκτέλεση λειτουργιών διαχείρισης λογαριασμού."
       ],
@@ -9921,6 +10003,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ],
+      "Sending member invitation": [
+        "Αποστολή πρόσκλησης μέλους"
       ],
       "User rejected invitation": [
         "Ο χρήστης απέρριψε την πρόσκληση"

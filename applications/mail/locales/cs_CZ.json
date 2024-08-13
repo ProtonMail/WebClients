@@ -303,6 +303,9 @@
       "Create a new label": [
         "Vytvořit nový štítek"
       ],
+      "Create alias": [
+        "Vytvořit alias"
+      ],
       "Create and copy alias": [
         "Vytvořit a kopírovat alias"
       ],
@@ -516,9 +519,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Získejte ho jen za ${ addonPriceWithCurrency } /měsíc"
       ],
-      "Get SimpleLogin extension": [
-        "Získat rozšíření SimpleLogin"
-      ],
       "Get started": [
         "Začínáme"
       ],
@@ -546,9 +546,6 @@
       "Go to settings": [
         "Přejít do nastavení"
       ],
-      "Go to SimpleLogin": [
-        "Přejít na SimpleLogin"
-      ],
       "Got it": [
         "Rozumím"
       ],
@@ -569,6 +566,9 @@
       ],
       "Hide messages": [
         "Skrýt zprávy"
+      ],
+      "Hide toolbar": [
+        "Skrýt panel nástrojů"
       ],
       "hide-my-email aliases": [
         "aliasy Hide-my-email"
@@ -852,11 +852,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otevřít"
@@ -1182,6 +1182,9 @@
       "Show side panel": [
         "Zobrazit postranní panel"
       ],
+      "Show toolbar": [
+        "Zobrazit panel nástrojů"
+      ],
       "Sign out": [
         "Odhlásit se"
       ],
@@ -1256,12 +1259,6 @@
       ],
       "Trust": [
         "Důvěřovat"
-      ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -3637,6 +3634,16 @@
       ],
       "Priority support": [
         "Prioritní podpora"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "Zdvojnásobte své úložiště"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Představujeme ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -6964,12 +6971,6 @@
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin je služba ${ BRAND_NAME } a váš účet ${ BRAND_NAME_TWO } zahrnuje aliasy Hide-my-email. Chcete-li začít maskovat svou e-mailovou adresu, přejděte do služby SimpleLogin a vytvořte si první alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin poskytuje jednoduchý způsob vytváření přihlašovacích údajů na nedůvěryhodných webech třetích stran, kde nechcete zveřejnit svou skutečnou e-mailovou adresu."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
@@ -7339,9 +7340,6 @@
       "Users": [
         "Uživatelé"
       ],
-      "Using SimpleLogin is easy": [
-        "Používání SimpleLogin je snadné"
-      ],
       "Verification may take a few minutes.": [
         "Ověřování může trvat několik minut."
       ],
@@ -7617,9 +7615,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosáhli jste maximálního počtu adres ve skupině kontaktů."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Váš účet ${ BRAND_NAME } obsahuje SimpleLogin. Rozšíření prohlížeče nainstalujete jedním kliknutím a můžete začít."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -9197,7 +9192,7 @@
         "Snížit na ${ downgradedPlanName }"
       ],
       "Get started for $1": [
-        "Začít za cenu $1"
+        "Začít za $1"
       ],
       "Get started for 1 €": [
         "Začít za €1"
@@ -9332,9 +9327,6 @@
       "${ size } storage": [
         "${ size } úložiště"
       ],
-      "${ size } storage per user": [
-        "${ size } prostoru na uživatele"
-      ],
       "1 user": [
         "1 uživatel"
       ],
@@ -9352,9 +9344,6 @@
       ],
       "Administration Panel": [
         "Panel správce"
-      ],
-      "Advanced sharing security": [
-        "Pokročilé zabezpečení sdílení"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
@@ -9385,9 +9374,6 @@
       ],
       "Collaborate and share large files": [
         "Spolupráce a sdílení velkých souborů"
-      ],
-      "Collaborative document editor": [
-        "Editor pro spolupráci na dokumentech"
       ],
       "Contact groups": [
         "Skupiny kontaktů"
@@ -9556,9 +9542,6 @@
       ],
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
-      ],
-      "Share files and folders via link": [
-        "Sdílení souborů a složek pomocí odkazu"
       ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
@@ -9746,9 +9729,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpečte svůj digitální život pomocí ${ BRAND_NAME } pro dva uživatele."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
@@ -9757,6 +9737,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Bezplatný startovací účet, který ve výchozím nastavení poskytuje soukromí všem."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Neomezené soukromí a více úložného prostoru pro až 2 uživatele."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Smazání účtu bude mít za následek ztrátu této ceny a již nebude k dispozici při vytváření nového účtu."
@@ -9828,9 +9811,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Vyberte vlastní časy, kdy chcete být upozorněni na e-mail nebo na příchod vaší zprávy"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
@@ -12241,6 +12221,9 @@
       "Import record deleted": [
         "Záznam o importu byl smazán"
       ],
+      "Invitation rejected": [
+        "Pozvánka odmítnuta"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Nastavení klávesových zkratek upraveno"
       ],
@@ -12843,9 +12826,6 @@
       "Edit image": [
         "Upravit obrázek"
       ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
       "Email addresses": [
         "E-mailové adresy"
       ],
@@ -12902,9 +12882,6 @@
       ],
       "Groups": [
         "Skupiny"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Skryjte svůj e-mail pomocí SimpleLogin od ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Lidské ověření"
@@ -13080,9 +13057,6 @@
       "Other names": [
         "Ostatní jména"
       ],
-      "Password": [
-        "Heslo"
-      ],
       "Payment failed": [
         "Platba selhala"
       ],
@@ -13214,9 +13188,6 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
-      ],
-      "Sign in with 2FA": [
-        "Přihlásit se pomocí 2FA"
       ],
       "Sign out": [
         "Odhlásit se"

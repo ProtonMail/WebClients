@@ -810,9 +810,6 @@
       "External": [
         "Extern"
       ],
-      "Missing keys": [
-        "Ontbrekende sleutels"
-      ],
       "No E2EE mail": [
         "Geen E2EE mail"
       ],
@@ -2244,6 +2241,43 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Neem ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Neem het voor ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Jaarlijks gefactureerd op ${ amountBilled }. Bespaar ${ amountSave } op 2 individuele ${ BRAND_NAME } Unlimited jaarabonnementen."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 gebruikers"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Volledige toegang tot alle ${ BRAND_NAME } producten"
+      ],
+      "You save ${ amountSave }": [
+        "U bespaart ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Alles van ${ BRAND_NAME }, voor 2."
+      ],
+      "Double your storage": [
+        "Verdubbel uw opslagruimte"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Nieuw: ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } toegevoegd"
@@ -2685,6 +2719,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een groepsabonnement."
+      ],
       "customer support": [
         "klantondersteuning"
       ],
@@ -2696,6 +2733,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Levenslange accounts kunnen niet deelnemen aan een groepsplan."
       ],
       "Manage addresses.": [
         "Beheer adressen."
@@ -2762,6 +2802,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Je kan deze uitnodiging niet accepteren met je huidige abonnement."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3463,9 +3506,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Weet u zeker dat u deze groep wilt verwijderen? Het groepsadres zal niet meer werken."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
@@ -3605,11 +3645,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -6036,9 +6076,6 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
-      "${ size } storage per user": [
-        "${ size } opslagruimte per gebruiker"
-      ],
       "1 user": [
         "1 gebruiker"
       ],
@@ -6062,9 +6099,6 @@
       ],
       "Advanced network security": [
         "Geavanceerde netwerkbeveiliging"
-      ],
-      "Advanced sharing security": [
-        "Geavanceerde beveiliging voor delen"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -6098,9 +6132,6 @@
       ],
       "Collaborate and share large files": [
         "Samenwerken en grote bestanden delen"
-      ],
-      "Collaborative document editor": [
-        "Collaboratieve document-editor"
       ],
       "Contact groups": [
         "Contactgroepen"
@@ -6278,9 +6309,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servers in ${ vpnServersCountData.paid.countries }+ land",
         "Servers in ${ vpnServersCountData.paid.countries }+ landen"
-      ],
-      "Share files and folders via link": [
-        "Bestanden en mappen delen via koppeling"
       ],
       "Sign in as user": [
         "Inloggen als gebruiker"
@@ -6473,9 +6501,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Beveilig uw digitale leven met ${ BRAND_NAME } voor twee personen."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Op maat gemaakte oplossingen voor grotere organisaties met specifieke beveiligingsbehoeften."
       ],
@@ -6484,6 +6509,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "De gratis startersaccount die is ontwikkeld om iedereen standaard te voorzien van privacy."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Onbeperkte privacy en meer opslagruimte voor maximaal 2 personen."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account verwijdert, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuwe account maakt."
@@ -6582,9 +6610,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Kies aangepaste tijden om herinnerd te worden aan een e-mail of om uw bericht te ontvangen"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Beheer toegang tot uw gedeelde bestanden door wachtwoordbeveiliging en verloopdatums voor koppelingen toe te voegen"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
@@ -8952,6 +8977,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Als u een geldig herstel-telefoonnummer heeft ingevoerd, sturen we u een sms met uw gebruikersnamen in de komende minuut."
       ],
+      "Invitation rejected": [
+        "Uitnodiging afgewezen"
+      ],
       "Invitation sent": [
         "Uitnodiging verzonden"
       ],
@@ -9278,11 +9306,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -9691,9 +9719,6 @@
       ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
-      ],
-      "Sign in with 2FA": [
-        "Inloggen met 2FA"
       ],
       "Sign out": [
         "Uitloggen"

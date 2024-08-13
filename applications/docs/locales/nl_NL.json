@@ -178,6 +178,9 @@
       "Create and copy alias": [
         "Maak en kopieer alias"
       ],
+      "Create new document": [
+        "Nieuw document aanmaken"
+      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -398,6 +401,9 @@
       ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
+      ],
+      "PDF (.pdf)": [
+        "PDF (.pdf)"
       ],
       "Plain Text (.txt)": [
         "Platte Tekst (.txt)"
@@ -2201,6 +2207,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Bedrag onder minimum (${ minimumAmount })."
       ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "Er is een fout opgetreden tijdens het converteren van het document. Probeer het opnieuw."
+      ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Er is een fout opgetreden tijdens het dupliceren van het document. Probeer het opnieuw."
       ],
@@ -2472,6 +2481,9 @@
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "Het document dat u probeert te converteren is te groot. Dit kan gebeuren als het document een groot aantal afbeeldingen of andere media heeft. Probeer het opnieuw met een kleiner document."
+      ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
@@ -2570,6 +2582,9 @@
       ],
       "Validation error": [
         "Validatiefout"
+      ],
+      "We are having trouble saving recent edits. Please refresh the page.": [
+        "We hebben problemen met het opslaan van recente aanpassingen. Laad de pagina opnieuw alstublieft."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -2882,6 +2897,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Accounts met een eigen domein kunnen zich niet aansluiten bij een groepsabonnement."
+      ],
       "customer support": [
         "klantondersteuning"
       ],
@@ -2890,6 +2908,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Uitgenodigd door: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Levenslange accounts kunnen niet deelnemen aan een groepsplan."
       ],
       "Manage addresses.": [
         "Beheer adressen."
@@ -2926,6 +2947,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Je kan deze uitnodiging niet accepteren met je huidige abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3925,6 +3949,12 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
+      "No version history available": [
+        "Geen versiegeschiedenis beschikbaar"
+      ],
+      "No version history batches available": [
+        "Geen versiegeschiedenis beschikbaar"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
       ],
@@ -4122,6 +4152,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "De auteur van bewerkingen in het document kon niet worden geverifieerd. Wilt u dit document markeren als geverifieerd? U kan kiezen om te negeren en later te beslissen."
       ],
+      "The Beginning": [
+        "Het begin"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
@@ -4142,6 +4175,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Dit document heeft veel activiteit. Sommige functies zijn mogelijk tijdelijk niet beschikbaar."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Dit document bestaat mogelijk niet of u hebt geen toestemming om het te bekijken. Je kunt de pagina proberen te herladen om te zien of het probleem zich blijft voordoen."
       ],
       "This item already exists in your library": [
         "Dit item bestaat al in uw bibliotheek"
@@ -4245,6 +4281,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
+      ],
+      "View only": [
+        "Alleen weergeven"
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -5478,9 +5517,6 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
-      "${ size } storage per user": [
-        "${ size } opslagruimte per gebruiker"
-      ],
       "1 user": [
         "1 gebruiker"
       ],
@@ -5498,9 +5534,6 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
-      ],
-      "Advanced sharing security": [
-        "Geavanceerde beveiliging voor delen"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -5531,9 +5564,6 @@
       ],
       "Collaborate and share large files": [
         "Samenwerken en grote bestanden delen"
-      ],
-      "Collaborative document editor": [
-        "Collaboratieve document-editor"
       ],
       "Contact groups": [
         "Contactgroepen"
@@ -5698,9 +5728,6 @@
       ],
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
-      ],
-      "Share files and folders via link": [
-        "Bestanden en mappen delen via koppeling"
       ],
       "Sign in as user": [
         "Inloggen als gebruiker"
@@ -5884,9 +5911,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Beveilig uw digitale leven met ${ BRAND_NAME } voor twee personen."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Op maat gemaakte oplossingen voor grotere organisaties met specifieke beveiligingsbehoeften."
       ],
@@ -5895,6 +5919,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "De gratis startersaccount die is ontwikkeld om iedereen standaard te voorzien van privacy."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Onbeperkte privacy en meer opslagruimte voor maximaal 2 personen."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account verwijdert, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuwe account maakt."
@@ -5956,9 +5983,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Kies aangepaste tijden om herinnerd te worden aan een e-mail of om uw bericht te ontvangen"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Beheer toegang tot uw gedeelde bestanden door wachtwoordbeveiliging en verloopdatums voor koppelingen toe te voegen"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
@@ -7421,6 +7445,9 @@
       "Import record deleted": [
         "Import record verwijderd"
       ],
+      "Invitation rejected": [
+        "Uitnodiging afgewezen"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Laatst gewijzigde aliassen opgeslagen in uw oudste kluis"
       ],
@@ -7764,9 +7791,6 @@
       "Edit image": [
         "Afbeelding bewerken"
       ],
-      "Email address": [
-        "E-mailadres"
-      ],
       "Email addresses": [
         "E-mailadressen"
       ],
@@ -7870,9 +7894,6 @@
       "Other names": [
         "Andere namen"
       ],
-      "Password": [
-        "Wachtwoord"
-      ],
       "Payment failed": [
         "Betaling mislukt"
       ],
@@ -7953,9 +7974,6 @@
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
-      ],
-      "Sign in with 2FA": [
-        "Inloggen met 2FA"
       ],
       "Sign out": [
         "Uitloggen"

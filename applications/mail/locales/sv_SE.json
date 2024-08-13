@@ -301,6 +301,9 @@
       "Create a new label": [
         "Skapa en ny etikett"
       ],
+      "Create alias": [
+        "Skapa alias"
+      ],
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
@@ -510,9 +513,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Få det från endast ${ addonPriceWithCurrency }/månad"
       ],
-      "Get SimpleLogin extension": [
-        "Skaffa SimpleLogin-utökningen"
-      ],
       "Get started": [
         "Kom igång"
       ],
@@ -540,9 +540,6 @@
       "Go to settings": [
         "Gå till inställningar"
       ],
-      "Go to SimpleLogin": [
-        "Gå till SimpleLogin"
-      ],
       "Got it": [
         "Förstått"
       ],
@@ -566,6 +563,9 @@
       ],
       "Hide my email": [
         "Hide my email"
+      ],
+      "Hide toolbar": [
+        "Dölj verktygsfält"
       ],
       "hide-my-email aliases": [
         "hide-my-email-alias"
@@ -847,11 +847,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Öppna"
@@ -1177,6 +1177,9 @@
       "Show side panel": [
         "Visa sidopanel"
       ],
+      "Show toolbar": [
+        "Visa verktygsfält"
+      ],
       "Sign out": [
         "Logga ut"
       ],
@@ -1251,10 +1254,6 @@
       ],
       "Trust": [
         "Lita på"
-      ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1520,11 +1519,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Konversation"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Animation": {
@@ -1915,10 +1909,10 @@
         "${ participantName } hade avböjt en inbjudan och föreslog en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } hade tackat nej till en inbjudan och föreslog en ny tid för denna händelse. Svar och förslag är inaktuella."
+        "${ participantName } hade avböjt en inbjudan och föreslog en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } hade tackat nej till en inbjudan till en förekomst av händelsen."
+        "${ participantName } hade avböjt en inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } har avböjt en inbjudan till denna händelse."
@@ -1927,7 +1921,7 @@
         "${ participantName } hade avböjt din inbjudan och föreslog en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } hade tackat nej till din inbjudan och föreslog en ny tid för denna händelse. Svar och förslag är inaktuella."
+        "${ participantName } hade avböjt din inbjudan och föreslog en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } hade tidigare accepterat din inbjudan till en förekomst av händelsen."
@@ -1936,7 +1930,7 @@
         "${ participantName } hade tidigare accepterat din inbjudan."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } hade tidigare tackat nej till din inbjudan till en förekomst av händelsen."
+        "${ participantName } hade tidigare avböjt din inbjudan till en förekomst av händelsen."
       ],
       "${ participantName } had previously declined your invitation.": [
         "${ participantName } har tidigare avböjt din inbjudan."
@@ -1966,7 +1960,7 @@
         "${ participantName } hade föreslagit en ny tid för denna händelse. Detta förslag är inaktuellt. Du har inga kalendrar."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } hade preliminärt tackat ja till en inbjudan och föreslagit en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
+        "${ participantName } hade preliminärt accepterat en inbjudan och föreslagit en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } har preliminärt accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
@@ -2029,7 +2023,7 @@
         "Omläggning av schema för händelse stöds inte för tillfället"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
-        "Det här svaret kan inte läggas till i ${ CALENDAR_APP_NAME } eftersom vi för tillfället bara stöder svar på alla händelser i en serie"
+        "Detta svar kan inte läggas till i ${ CALENDAR_APP_NAME } eftersom vi endast stöder svar på alla händelser i en serie för tillfället"
       ],
       "This event has been canceled.": [
         "Denna händelse har avbrutits."
@@ -3602,6 +3596,38 @@
         "Prioriterad support"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Skaffa det för ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 användare"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full åtkomst till alla ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparar ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Allt av ${ BRAND_NAME }, för 2."
+      ],
+      "Double your storage": [
+        "Dubbla ditt lagringsutrymme"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introducerar ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESKRIVNING:\n${ eventDescription }"
@@ -4160,6 +4186,9 @@
       "Tab closed": [
         "Flik stängd"
       ],
+      "Text is too long to refine": [
+        "Text är för lång för att finjustera"
+      ],
       "Thanks for the feedback!": [
         "Tack för feedbacken!"
       ],
@@ -4641,14 +4670,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konton med anpassade domäner kan inte gå med i ett gruppaket"
+      ],
       "customer support": [
         "kundsupport"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
       ],
       "Invited by: ${ inviteEmail }": [
         "Inbjuden av: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livstidskonton kan inte gå med i ett gruppaket."
       ],
       "Manage addresses.": [
         "Hantera adresser."
@@ -4676,6 +4714,9 @@
       ],
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har obetalda fakturor. Betala dem innan du går med i ett gruppaket."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du är inbjuden att länka ditt ${ BRAND_NAME }-konto till detta gruppaket och tillsammans njuta av alla ${ BRAND_NAME_TWO } premiumfunktioner."
@@ -5646,6 +5687,9 @@
         "${ numOccurrences } förekomst hittades i e-postinnehållet",
         "${ numOccurrences } förekomster hittades i e-postinnehållet"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } tillhandahåller ett enkelt sätt att skapa inloggningar på opålitliga tredjepartswebbplatser där du inte vill avslöja din faktiska e-postadress."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -5984,6 +6028,10 @@
       ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Skapa ett säkert moln för ${ n } medlem",
+        "Skapa ett säkert moln för ${ n } medlemmar"
       ],
       "Create in": [
         "Skapa i"
@@ -6702,6 +6750,9 @@
       "Scheduling message...": [
         "Schemalägger meddelande..."
       ],
+      "Scribe panel": [
+        "Scribe-panel"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Sökalternativ som låter dig söka på ett säkert sätt efter nyckelord i brödtexten i e-postmeddelanden."
       ],
@@ -6768,12 +6819,6 @@
       ],
       "Show original message": [
         "Visa originalmeddelande"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin är en ${ BRAND_NAME }-tjänst, och ditt ${ BRAND_NAME_TWO }-konto inkluderar Hide-my-email-alias. För att börja maskera din e-postadress, gå till SimpleLogin och skapa ditt första alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin tillhandahåller ett enkelt sätt att skapa inloggningar på opålitliga tredjepartswebbplatser där du inte vill avslöja din faktiska e-postadress."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
@@ -7138,9 +7183,6 @@
       "Users": [
         "Användare"
       ],
-      "Using SimpleLogin is easy": [
-        "Det är enkelt att använda SimpleLogin"
-      ],
       "Verification may take a few minutes.": [
         "Verifiering kan ta några minuter."
       ],
@@ -7388,9 +7430,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Ditt ${ BRAND_NAME }-konto inkluderar SimpleLogin. Installera webbläsartillägget med ett klick för att komma igång."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
@@ -9048,9 +9087,6 @@
       "${ size } storage": [
         "${ size } lagringsutrymme"
       ],
-      "${ size } storage per user": [
-        "${ size } lagringsutrymme per användare"
-      ],
       "1 user": [
         "1 användare"
       ],
@@ -9065,9 +9101,6 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
-      ],
-      "Advanced sharing security": [
-        "Avancerad delningssäkerhet"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -9098,9 +9131,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbeta och dela stora filer"
-      ],
-      "Collaborative document editor": [
-        "Dokumentredigerare för samarbete"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -9217,6 +9247,9 @@
       "Phone support (40+ users)": [
         "Telefonsupport (40+ användare)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premiumfunktioner av ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Prioriterad e-postsupport"
       ],
@@ -9262,9 +9295,6 @@
       ],
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
-      ],
-      "Share files and folders via link": [
-        "Dela filer och mappar via länk"
       ],
       "Sign in as user": [
         "Logga in som användare"
@@ -9358,6 +9388,9 @@
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
       ],
+      "Version history": [
+        "Versionshistorik"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
       ]
@@ -9448,9 +9481,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Säkra ditt digitala liv med ${ BRAND_NAME } för två personer."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
       ],
@@ -9459,6 +9489,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Gratiskontot designat för att ge alla integritet som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du tar bort ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du skapar ett nytt konto."
@@ -9535,9 +9568,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Välj anpassade tider för att bli påmind om ett e-postmeddelande eller för att ditt meddelande ska komma fram"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontrollera åtkomst till dina delade filer genom att lägga till lösenordsskydd och länkens utgångsdatum"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain } för nyhetsprenumerationer"
@@ -11802,6 +11832,9 @@
       "Import record deleted": [
         "Importpost borttagen"
       ],
+      "Invitation rejected": [
+        "Inbjudan avvisad"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Inställningar för tangentbordsgenvägar uppdaterade"
       ],
@@ -12372,9 +12405,6 @@
       "Edit image": [
         "Redigera bild"
       ],
-      "Email address": [
-        "E-postadress"
-      ],
       "Email addresses": [
         "E-postadresser"
       ],
@@ -12432,8 +12462,8 @@
       "Groups": [
         "Grupper"
       ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Dölj din e-post med SimpleLogin av ${ BRAND_NAME }"
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Dölj din e-post med ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Mänsklig verifiering"
@@ -12607,9 +12637,6 @@
       "Other names": [
         "Andra namn"
       ],
-      "Password": [
-        "Lösenord"
-      ],
       "Payment failed": [
         "Betalning misslyckades"
       ],
@@ -12741,9 +12768,6 @@
       ],
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
-      ],
-      "Sign in with 2FA": [
-        "Logga in med 2FA"
       ],
       "Sign out": [
         "Logga ut"

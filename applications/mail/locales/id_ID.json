@@ -297,6 +297,9 @@
       "Create a new label": [
         "Buat label baru"
       ],
+      "Create alias": [
+        "Buat alias"
+      ],
       "Create and copy alias": [
         "Buat dan salin alias"
       ],
@@ -504,9 +507,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Dapatkan fitur ini dari hanya ${ addonPriceWithCurrency } /bulan"
       ],
-      "Get SimpleLogin extension": [
-        "Dapatkan ekstensi SimpleLogin"
-      ],
       "Get started": [
         "Selesai"
       ],
@@ -534,9 +534,6 @@
       "Go to settings": [
         "Pergi ke pengaturan"
       ],
-      "Go to SimpleLogin": [
-        "Tuju SimpleLogin"
-      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -557,6 +554,9 @@
       ],
       "Hide messages": [
         "Sembunyikan pesan"
+      ],
+      "Hide toolbar": [
+        "Sembunyikan bilah alat"
       ],
       "hide-my-email aliases": [
         "alias hide-my-email"
@@ -837,10 +837,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1167,6 +1167,9 @@
       "Show side panel": [
         "Tampilkan panel samping"
       ],
+      "Show toolbar": [
+        "Tampilkan bilah alat"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -1241,9 +1244,6 @@
       ],
       "Trust": [
         "Percayai"
-      ],
-      "Trust key": [
-        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -3576,6 +3576,30 @@
         "Dukungan prioritas"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Dapatkan seharga ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 pengguna"
+      ],
+      "You save ${ amountSave }": [
+        "Anda menghemat ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Semua dari ${ BRAND_NAME }, untuk berdua."
+      ],
+      "Double your storage": [
+        "Gandakan penyimpanan Anda"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESKRIPSI:\n${ eventDescription }"
@@ -4128,6 +4152,9 @@
       "Tab closed": [
         "Tab ditutup"
       ],
+      "Text is too long to refine": [
+        "Teks terlalu panjang untuk disempurnakan"
+      ],
       "Thanks for the feedback!": [
         "Terima kasih atas masukannya!"
       ],
@@ -4451,6 +4478,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
       ],
@@ -6568,6 +6598,9 @@
       "Scheduling message...": [
         "Menjadwalkan pesan..."
       ],
+      "Scribe panel": [
+        "Panel Penulisan"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Opsi pencarian yang memungkinkan Anda untuk mencari berdasarkan kata kunci pada badan email secara aman."
       ],
@@ -6633,12 +6666,6 @@
       ],
       "Show original message": [
         "Tampilkan pesan asli"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin merupakan layanan milik ${ BRAND_NAME }, dan akun ${ BRAND_NAME_TWO } Anda meliputi alias hide-my-email di dalamnya. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan hasilkan alias pertama Anda."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
@@ -7000,9 +7027,6 @@
       "Users": [
         "Pengguna"
       ],
-      "Using SimpleLogin is easy": [
-        "Menggunakan SimpleLogin itu mudah"
-      ],
       "Verification may take a few minutes.": [
         "Proses verifikasi dapat memakan waktu sejenak."
       ],
@@ -7236,9 +7260,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Akun ${ BRAND_NAME } Anda meliputi perlindungan SimpleLogin. Instal ekstensi browser SimpleLogin dengan sekali klik untuk memulai."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -8864,9 +8885,6 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ size } storage per user": [
-        "Ruang penyimpanan ${ size } per pengguna"
-      ],
       "1 user": [
         "1 pengguna"
       ],
@@ -8884,9 +8902,6 @@
       ],
       "Administration Panel": [
         "Panel Administrasi"
-      ],
-      "Advanced sharing security": [
-        "Keamanan berbagi berkas tingkat lanjut"
       ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
@@ -8917,9 +8932,6 @@
       ],
       "Collaborate and share large files": [
         "Kolaborasi dan berbagi file besar"
-      ],
-      "Collaborative document editor": [
-        "Penyunting dokumen kolaboratif"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -9083,9 +9095,6 @@
       "Send & receive invitations": [
         "Kirim & terima undangan"
       ],
-      "Share files and folders via link": [
-        "Bagikan berkas dan folder via tautan"
-      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -9175,6 +9184,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
+      ],
+      "Version history": [
+        "Riwayat versi"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
@@ -9266,9 +9278,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
@@ -9348,9 +9357,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
@@ -11560,6 +11566,9 @@
       "Import record deleted": [
         "Rekaman impor dihapus"
       ],
+      "Invitation rejected": [
+        "Undangan ditolak"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferensi pintasan keyboard diperbarui"
       ],
@@ -12114,9 +12123,6 @@
       "Edit image": [
         "Sunting gambar"
       ],
-      "Email address": [
-        "Alamat email"
-      ],
       "Email addresses": [
         "Alamat email"
       ],
@@ -12173,9 +12179,6 @@
       ],
       "Groups": [
         "Grup"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Sembunyikan email Anda dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -12348,9 +12351,6 @@
       "Other names": [
         "Nama lain"
       ],
-      "Password": [
-        "Kata sandi"
-      ],
       "Payment failed": [
         "Pembayaran gagal"
       ],
@@ -12482,9 +12482,6 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
-      ],
-      "Sign in with 2FA": [
-        "Masuk dengan 2FA"
       ],
       "Sign out": [
         "Keluar"

@@ -513,7 +513,7 @@
         "Kilidi aç"
       ],
       "Unlock offline with password": [
-        "Parola ile çevrim dışı kilidi aç"
+        "Kilidi parola ile çevrim dışı aç"
       ],
       "Unpin item": [
         "Ögenin sabitlemesini kaldır"
@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
       ],
+      "Wrong extra password": [
+        "Ek parola yanlış"
+      ],
       "Wrong password": [
         "Parola yanlış"
       ],
@@ -1072,6 +1075,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
       ],
@@ -1122,6 +1128,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biyometri ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biyometrik veriler kullanımdan kaldırılacak ve yeniden kullanıma alınması gerekecek."
       ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
@@ -1227,6 +1239,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Verilerinizi korumak için otomatik kilitlemeyi açın"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Otomatik biyometri kilidi kullanıma alınıyor"
+      ],
+      "Enabling biometrics lock failed": [
+        "Otomatik biyometri kilidi kullanıma alınamadı"
       ],
       "Enabling offline mode...": [
         "Çevrim dışı kip açılıyor..."
@@ -1429,8 +1447,8 @@
       "Offline support successfully disabled": [
         "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak ve oturumunuzu açmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
       ],
       "Open the Extensions menu": [
         "Eklenti menüsünü açın"
@@ -1451,7 +1469,7 @@
         "Parola kopyalandı"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Parola ile kilitleme kaydedildi. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
+        "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
@@ -1475,8 +1493,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
+      "Please confirm your extra password": [
+        "Lütfen ek parolanızı onaylayın"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Biyometri ile otomatik kilitleme için lütfen ek parolanızı doğrulayın."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için ek parolanızı yazın."
+      ],
       "Please confirm your password": [
         "Lütfen parolanızı onaylayın"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Biyometri ile otomatik kilitleme için lütfen parolanızı doğrulayın."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Parolanızla otomatik kilitlemek için lütfen parolanızı doğrulayın."
@@ -1516,6 +1546,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "İki adımlı doğrulama kodlarınızı otomatik doldurun."
       ],
       "Quickly autofill your identities.": [
         "Kimliklerinizi kolayca otomatik olarak doldurun"
@@ -1576,6 +1609,9 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
+      ],
+      "Set by your organization": [
+        "Kuruluşunuz tarafından ayarlanmış"
       ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
@@ -1638,6 +1674,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
+      "This option is currently not available on your device.": [
+        "Bu seçenek şu anda aygıtınızda kullanılamıyor."
+      ],
       "This setting is disabled on the organization level": [
         "Bu ayar kuruluş düzeyinde kapatılmış"
       ],
@@ -1665,6 +1704,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Bu geçiş anahtarını kaydetmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "${ PASS_SHORT_APP_NAME } kilidini açmak için Biyometri kullanın"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
       ],
@@ -1673,6 +1715,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
+      ],
+      "Unlock with biometrics": [
+        "Kilidi biyometri ile aç"
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
@@ -1770,6 +1815,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
       ]
     },
     "Label": {
@@ -1814,8 +1862,14 @@
       "15 minutes": [
         "15 dakika"
       ],
+      "2 minutes": [
+        "2 dakika"
+      ],
       "24 hours": [
         "24 saat"
+      ],
+      "2FA autofill": [
+        "İki adımlı doğrulama otomatik doldurma"
       ],
       "2FA secret key (TOTP)": [
         "İki adımlı doğrulama gizli anahtarı (tek kullanımlık)"
@@ -1831,6 +1885,9 @@
       ],
       "30 seconds": [
         "30 saniye"
+      ],
+      "4 hours": [
+        "4 saat"
       ],
       "5 minutes": [
         "5 dakika"
@@ -1897,6 +1954,9 @@
       ],
       "Autosuggest": [
         "Otomatik öneri"
+      ],
+      "Biometrics": [
+        "Biyometri"
       ],
       "Birthdate": [
         "Doğum tarihi"
@@ -1978,6 +2038,9 @@
       ],
       "Display": [
         "Görünüm"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Otomatik doldurulabilir alanlarda ${ PASS_APP_NAME } simgesi görüntülensin"
       ],
       "Domain": [
         "Etki alanı"
@@ -2376,6 +2439,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kilidini aç"
       ],
+      "Unlock with": [
+        "Kilit şununla açılsın:"
+      ],
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
       ],
@@ -2618,6 +2684,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
       ],
+      "Enter your extra password": [
+        "Ek parolanızı yazın"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -2832,6 +2901,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } parolası gereklidir"
+      ],
       "A description of the problem is required": [
         "Sorunun açıklamasının yazılması zorunludur"
       ],
@@ -2865,14 +2937,14 @@
       "Empty note": [
         "Boş not"
       ],
-      "Encryption password is required": [
-        "Şifreleme parolası gereklidir"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
       "Extra password cannot be empty": [
         "Ek parola boş olamaz"
+      ],
+      "Extra password is required": [
+        "Ek parolanın yazılması zorunludur"
       ],
       "Extra password should have at least 8 characters": [
         "Ek parola en az 8 karakter uzunluğunda olmalıdır"

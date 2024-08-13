@@ -1,0 +1,519 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);",
+    "language": "sl_SI"
+  },
+  "contexts": {
+    "Action": {
+      "Add comment": [
+        "Dodaj komentar"
+      ],
+      "Add new table column": [
+        "Dodaj nov stolpec v tabelo"
+      ],
+      "Add new table row": [
+        "Dodaj novo vrstico v tabelo"
+      ],
+      "Adjust font size": [
+        "Prilagodi velikost pisave"
+      ],
+      "and": [
+        "in"
+      ],
+      "Apply": [
+        "Potrdi"
+      ],
+      "Bold": [
+        "Krepko"
+      ],
+      "Bulleted List": [
+        "Označen seznam"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Center align": [
+        "Poravnaj na sredino"
+      ],
+      "Check List": [
+        "Kontrolni seznam"
+      ],
+      "Clear contents": [
+        "Počisti vsebino"
+      ],
+      "Clear formatting": [
+        "Odstrani oblikovanje"
+      ],
+      "Click to open column menu": [
+        "Klikni za odprtje menija stolpca"
+      ],
+      "Click to open row menu": [
+        "Klikni za odprtje menija vrstice"
+      ],
+      "Close": [
+        "Zapri"
+      ],
+      "Code block": [
+        "Blok kode"
+      ],
+      "Color": [
+        "Barva"
+      ],
+      "Copy link": [
+        "Kopiraj povezavo"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Delete column": [
+        "Izbriši stolpec"
+      ],
+      "Delete comment": [
+        "Izbriši komentar"
+      ],
+      "Delete row": [
+        "Izbriši vrstico"
+      ],
+      "Delete thread": [
+        "Izbriši pogovore"
+      ],
+      "Divider": [
+        "Ločilo"
+      ],
+      "Duplicate": [
+        "Podvoji"
+      ],
+      "Edit": [
+        "Uredi"
+      ],
+      "Edit link": [
+        "Uredi povezavo"
+      ],
+      "Fit table to page width": [
+        "Prilagodi tabelo širini strani"
+      ],
+      "Indent": [
+        "Zamik"
+      ],
+      "Insert above": [
+        "Vstavi zgoraj"
+      ],
+      "Insert below": [
+        "Vstavi spodaj"
+      ],
+      "Insert comment": [
+        "Vstavi komentar"
+      ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
+      "Insert left": [
+        "Vstavi levo"
+      ],
+      "Insert link": [
+        "Vstavi povezavo"
+      ],
+      "Insert right": [
+        "Vstavi desno"
+      ],
+      "Insert table": [
+        "Vstavi tabelo"
+      ],
+      "Italic": [
+        "Ležeče"
+      ],
+      "Justify align": [
+        "Obojestranska poravnava"
+      ],
+      "Left align": [
+        "Poravnava na levo"
+      ],
+      "Link": [
+        "Povezava"
+      ],
+      "Numbered List": [
+        "Oštevilčen seznam"
+      ],
+      "Options": [
+        "Možnosti"
+      ],
+      "Outdent": [
+        "Zmanjšaj zamik"
+      ],
+      "Quote": [
+        "Citiraj"
+      ],
+      "Re-open": [
+        "Ponovno odpri"
+      ],
+      "Re-open thread": [
+        "Ponovno odpri pogovore"
+      ],
+      "Redo": [
+        "Obnovi"
+      ],
+      "Refresh the page": [
+        "Osveži stran"
+      ],
+      "Remove background color": [
+        "Odstrani barvo ozadja"
+      ],
+      "Remove link": [
+        "Odstrani povezavo"
+      ],
+      "Reply": [
+        "Odgovori"
+      ],
+      "Resolve": [
+        "Razreši"
+      ],
+      "Right align": [
+        "Poravnava na desno"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Show thread": [
+        "Pokaži pogovore"
+      ],
+      "Strike-through": [
+        "Prečrtano"
+      ],
+      "Strikethrough": [
+        "Prečrtano"
+      ],
+      "Submit": [
+        "Pošlji"
+      ],
+      "Table options": [
+        "Možnosti tabele"
+      ],
+      "Underline": [
+        "Podčrtaj"
+      ],
+      "Undo": [
+        "Razveljavi"
+      ]
+    },
+    "color": {
+      "apple": [
+        "jabolko"
+      ],
+      "azureish white": [
+        "modro bež"
+      ],
+      "black": [
+        "črna"
+      ],
+      "blanched almond": [
+        "olupljena mandljeva jedrca"
+      ],
+      "blue-gray": [
+        "modro-siva"
+      ],
+      "caramel": [
+        "karamela"
+      ],
+      "carrot": [
+        "korenček"
+      ],
+      "cerise": [
+        "češnja"
+      ],
+      "cinnabar": [
+        "cinabar"
+      ],
+      "cobalt": [
+        "kobaltna"
+      ],
+      "copper": [
+        "bakrena"
+      ],
+      "cyan-blue azure": [
+        "cian-modro azurna"
+      ],
+      "dandelion": [
+        "regrat"
+      ],
+      "dark cerulean": [
+        "temno modrikasta"
+      ],
+      "dark midnight blue": [
+        "temno polnočno modra"
+      ],
+      "dim gray": [
+        "temno siva"
+      ],
+      "enzian": [
+        "encijan"
+      ],
+      "fern": [
+        "praprot"
+      ],
+      "field drab": [
+        "sivo polje"
+      ],
+      "forest": [
+        "gozd"
+      ],
+      "gainsboro": [
+        "gainsboro (sivoplava)"
+      ],
+      "gray": [
+        "sivo"
+      ],
+      "japanese laurel": [
+        "japonski lovor"
+      ],
+      "kiwi": [
+        "kivi"
+      ],
+      "lemon yellow": [
+        "limonasto rumena"
+      ],
+      "light carmine pink": [
+        "svetlo karminsko roza"
+      ],
+      "light moss green": [
+        "svetlo zelena kot mah"
+      ],
+      "light red": [
+        "svetlo rdeča"
+      ],
+      "maize": [
+        "koruza"
+      ],
+      "mughal green": [
+        "mugalsko zelena"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "olivna"
+      ],
+      "outer space": [
+        "vesoljska"
+      ],
+      "pacific": [
+        "pacifična"
+      ],
+      "palatinate blue": [
+        "palatinsko modra"
+      ],
+      "pale cerulean": [
+        "bledo ceruleansko"
+      ],
+      "pastel gray": [
+        "pastelno siva"
+      ],
+      "persian plum": [
+        "perzijska sliva"
+      ],
+      "persian red": [
+        "perzijski rdeča"
+      ],
+      "philippine gray": [
+        "filipinsko siva"
+      ],
+      "philippine silver": [
+        "filipinsko srebrna"
+      ],
+      "pickle": [
+        "kislica"
+      ],
+      "pine": [
+        "bor"
+      ],
+      "pink": [
+        "roza"
+      ],
+      "pistachio": [
+        "pistacija"
+      ],
+      "plum": [
+        "sliva"
+      ],
+      "purple": [
+        "vijolična"
+      ],
+      "red": [
+        "rdeče"
+      ],
+      "reef": [
+        "korala"
+      ],
+      "ruddy pink": [
+        "rdečkasto roza"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "svilen sijaj zlata"
+      ],
+      "slateblue": [
+        "sivkasto modra"
+      ],
+      "soil": [
+        "zemlja"
+      ],
+      "strawberry": [
+        "jagoda"
+      ],
+      "vivid auburn": [
+        "živahno kostanjeva"
+      ],
+      "white": [
+        "bela"
+      ]
+    },
+    "Confirm": {
+      "Discard comment?": [
+        "Zavrzi komentar?"
+      ]
+    },
+    "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Zaradi neznane napake ni bilo mogoče uvoziti HTML."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Zaradi neznane napake ni bilo mogoče uvoziti Markdown."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Zaradi neznane napake ni bilo mogoče uvoziti Word dokumenta."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Zaradi neznane napake ni bilo mogoče zagnati urejevalnika."
+      ],
+      "Signature verification failed": [
+        "Preverjanje podpisa ni uspelo"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Word dokumenta ni bilo mogoče pretvoriti. Je zaščiten z geslom? Če je tako, vas prosimo, da odstranite geslo in poskusite znova."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Osvežite stran ali poskusite znova pozneje."
+      ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Sistemsko privzeto"
+      ],
+      "Theme font": [
+        "Pisava teme"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Medium (recommended)": [
+        "Srednje (priporočeno)"
+      ],
+      "Small": [
+        "Majhno"
+      ],
+      "Very large": [
+        "Zelo veliko"
+      ],
+      "Very small": [
+        "Zelo majhno"
+      ]
+    },
+    "Info": {
+      "${ allTypersExceptLast } and ${ lastTyper }": [
+        "${ allTypersExceptLast } in ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } tipka ...",
+        "${ usersTranslation } tipkata ...",
+        "${ usersTranslation } tipkajo ...",
+        "${ usersTranslation } tipka ..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Ste prepričani, da želite izbrisati ta komentar?"
+      ],
+      "Are you sure you want to delete this thread?": [
+        "Ste prepričani, da želite izbrisati to razpravo?"
+      ],
+      "Comments": [
+        "Komentarji"
+      ],
+      "Editing": [
+        "Urejanje"
+      ],
+      "Just now": [
+        "Pravkar"
+      ],
+      "Loading": [
+        "Nalaganje"
+      ],
+      "No comments": [
+        "Brez komentarjev"
+      ],
+      "Something went wrong:": [
+        "Nekaj je šlo narobe:"
+      ],
+      "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
+        "Vsebina, ki jo poskušate prilepiti, je prevelika. Poskusite znova tako, da prilepite manjše dele."
+      ],
+      "Viewing": [
+        "Ogled"
+      ],
+      "You cannot undo this action.": [
+        "Tega dejanja ne morete razveljaviti."
+      ]
+    },
+    "Label": {
+      "Background colour": [
+        "Barva ozadja"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Bližnjica na tipkovnici: ${ shortcut }"
+      ],
+      "Link text": [
+        "Besedilo povezave"
+      ],
+      "Link URL": [
+        "URL povezave"
+      ],
+      "More options": [
+        "Več možnosti"
+      ],
+      "Text colour": [
+        "Barva besedila"
+      ]
+    },
+    "Placeholder": {
+      "Add a comment...": [
+        "Dodaj komentar ..."
+      ],
+      "Edit comment...": [
+        "Uredi komentar ..."
+      ],
+      "Paste link": [
+        "Prilepi povezavo"
+      ],
+      "Reply...": [
+        "Odgovori ..."
+      ],
+      "Text": [
+        "Besedilo"
+      ]
+    },
+    "Title": {
+      "Delete comment": [
+        "Izbriši komentar"
+      ],
+      "Delete thread": [
+        "Izbriši pogovore"
+      ]
+    }
+  }
+}

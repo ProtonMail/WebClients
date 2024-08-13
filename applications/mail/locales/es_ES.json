@@ -301,8 +301,11 @@
       "Create a new label": [
         "Crear una nueva etiqueta"
       ],
+      "Create alias": [
+        "Crear alias"
+      ],
       "Create and copy alias": [
-        "Crear y copiar alias"
+        "Crear y copiar el alias"
       ],
       "Create folder": [
         "Crear carpeta"
@@ -510,9 +513,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Obtenlo por solo ${ addonPriceWithCurrency }/mes"
       ],
-      "Get SimpleLogin extension": [
-        "Obtener la extensión de SimpleLogin"
-      ],
       "Get started": [
         "Comenzar"
       ],
@@ -540,9 +540,6 @@
       "Go to settings": [
         "Ir a los ajustes"
       ],
-      "Go to SimpleLogin": [
-        "Ir a SimpleLogin"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -563,6 +560,9 @@
       ],
       "Hide messages": [
         "Ocultar mensajes"
+      ],
+      "Hide toolbar": [
+        "Ocultar la barra de herramientas"
       ],
       "hide-my-email aliases": [
         "los alias de Hide-my-email"
@@ -844,10 +844,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
       "Open": [
@@ -1174,6 +1174,9 @@
       "Show side panel": [
         "Mostrar el panel lateral"
       ],
+      "Show toolbar": [
+        "Mostrar la barra de herramientas"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -1238,7 +1241,7 @@
         "Cambiar a la aplicación Contactos"
       ],
       "Toggle security center app": [
-        "Activar aplicación del Centro de Seguridad"
+        "Activar la aplicación del centro de seguridad"
       ],
       "Toggle settings": [
         "Alternar los ajustes"
@@ -1248,10 +1251,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -2840,7 +2839,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irán (República Islámica de Irán)"
+        "Irán (República Islámica)"
       ],
       "Isle of Man": [
         "Isla de Man"
@@ -2909,7 +2908,7 @@
         "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
-        "Libia, Yamahiriya Árabe"
+        "Libia (Yamahiriya Árabe)"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -3345,7 +3344,7 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Cada día, a las ${ timesString }"
+        "Cada día a las ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } día a las ${ timesString }",
@@ -3597,6 +3596,43 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtén ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obtenlo por ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturación anual de ${ amountBilled }. Ahorra ${ amountSave } en 2 suscripciones individuales anuales ilimitadas de ${ BRAND_NAME }."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuarios"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acceso completo a todos los productos de ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ahorras ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Todas las funciones de ${ BRAND_NAME }, para 2."
+      ],
+      "Double your storage": [
+        "Doblar tu almacenamiento"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email body for description (description part)": {
@@ -4160,6 +4196,9 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
+      "Text is too long to refine": [
+        "El texto es demasiado largo para refinarlo"
+      ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
       ],
@@ -4686,6 +4725,9 @@
       "You have successfully joined the family group": [
         "Te has unido al grupo familiar."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan de grupo."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
       ],
@@ -5025,7 +5067,7 @@
         "Bloquea las comunicaciones por correo electrónico de los estafadores de forma permanente."
       ],
       "Block unsavory senders": [
-        "Bloquee remitentes no deseados"
+        "Bloquee los remitentes no deseados"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "¡Enhorabuena por hacer que tu correo electrónico sea aún más seguro, cómodo y relevante! Hemos aumentado tu almacenamiento gratuito a un total de 1 GB."
@@ -5641,6 +5683,9 @@
         "${ numOccurrences } ocurrencia encontrada en el contenido del correo",
         "${ numOccurrences } ocurrencias encontradas en el contenido del correo"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quieres exponer tu dirección de correo electrónico real."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -5979,6 +6024,10 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Crear una nube segura para ${ n } miembro",
+        "Crear una nube segura para ${ n } miembros"
       ],
       "Create in": [
         "Crear en"
@@ -6519,6 +6568,9 @@
       "Organization size": [
         "Tamaño de la organización"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nuestras alertas se caracterizan por su cautela. Si no reconoces la información vulnerada, puedes ignorar este informe."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Verifica que es legítimo."
       ],
@@ -6697,6 +6749,9 @@
       "Scheduling message...": [
         "Programando mensaje..."
       ],
+      "Scribe panel": [
+        "Panel de Scribe"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Opción de búsqueda que te permite buscar de forma segura palabras clave en el cuerpo de los mensajes de correo electrónico."
       ],
@@ -6763,12 +6818,6 @@
       ],
       "Show original message": [
         "Mostrar el mensaje original"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin es un servicio de ${ BRAND_NAME } y tu cuenta ${ BRAND_NAME_TWO } incluye alias de Hide-my-email. Para comenzar a enmascarar tus direcciones de correo, accede a SimpleLogin y crea tu primer alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quieres exponer tu dirección de correo electrónico real."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
@@ -7133,9 +7182,6 @@
       "Users": [
         "Usuarios"
       ],
-      "Using SimpleLogin is easy": [
-        "SimpleLogin es fácil de utilizar."
-      ],
       "Verification may take a few minutes.": [
         "La verificación puede tardar unos minutos."
       ],
@@ -7383,9 +7429,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Has alcanzado el número máximo de direcciones en el grupo de contactos."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Tu cuenta ${ BRAND_NAME } incluye SimpleLogin. Instala la extensión en tu navegador con un clic para comenzar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
@@ -9043,9 +9086,6 @@
       "${ size } storage": [
         "${ size } de almacenamiento"
       ],
-      "${ size } storage per user": [
-        "${ size } de almacenamiento por usuario"
-      ],
       "1 user": [
         "1 usuario"
       ],
@@ -9063,9 +9103,6 @@
       ],
       "Administration Panel": [
         "Panel de administración"
-      ],
-      "Advanced sharing security": [
-        "Seguridad avanzada al compartir archivos"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -9096,9 +9133,6 @@
       ],
       "Collaborate and share large files": [
         "Colabora y comparte archivos grandes"
-      ],
-      "Collaborative document editor": [
-        "Editor de documentos colaborativo"
       ],
       "Contact groups": [
         "Grupos de contactos"
@@ -9259,13 +9293,10 @@
         "Servidores Secure Core"
       ],
       "See team's availability": [
-        "Mostrar la disponibilidad de tu equipo"
+        "Mostrar la disponibilidad del equipo"
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
-      ],
-      "Share files and folders via link": [
-        "Compartir archivos y carpetas con un enlace"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -9359,6 +9390,9 @@
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
+      "Version history": [
+        "Historial de versiones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
@@ -9449,9 +9483,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Asegura tu vida digital con ${ BRAND_NAME } para dos personas."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -9460,6 +9491,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "La cuenta inicial sin coste ofrece privacidad por defecto a todo el mundo."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privacidad ilimitada y más almacenamiento para hasta 2 personas."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Ahora mismo pagas un precio especial por tu plan. Si eliminas la cuenta, perderás esta ventaja y no la recuperarás creando otra cuenta."
@@ -9531,9 +9565,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controla el acceso a tus archivos compartidos con enlaces con fechas de expiración y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
@@ -9779,7 +9810,7 @@
         "Grupo de contactos actualizado"
       ],
       "Link copied to clipboard": [
-        "El enlace ha sido copiado al portapapeles."
+        "Se ha copiado el enlace al portapapeles."
       ],
       "Password has been set successfully": [
         "La contraseña ha sido cambiada."
@@ -9825,7 +9856,7 @@
         "Bloquea las comunicaciones por correo electrónico de los estafadores de forma permanente. ${ kbLinkSender }"
       ],
       "Block unsavory senders": [
-        "Bloquea remitentes no deseados"
+        "Bloquea los remitentes no deseados"
       ],
       "Congratulations on choosing privacy": [
         "Felicitaciones por elegir la privacidad"
@@ -10730,7 +10761,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "El restablecimiento de contraseña ha sido solicitado."
+        "Se ha solicitado el restablecimiento de contraseña."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11087,7 +11118,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Seguir en ${ currentPlanName }"
+        "Seguir con ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -11737,7 +11768,7 @@
         "Se ha copiado el alias al portapapeles."
       ],
       "Alias saved and copied": [
-        "Alias guardado y copiado."
+        "Se ha guardado y copiado el alias."
       ],
       "Bug reported": [
         "Error reportado"
@@ -11809,6 +11840,9 @@
       ],
       "Import record deleted": [
         "Se ha eliminado el registro importación."
+      ],
+      "Invitation rejected": [
+        "Se ha rechazado la invitación."
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferencias de atajos de teclado actualizadas"
@@ -11900,7 +11934,7 @@
         "Confirmación de lectura enviada"
       ],
       "Self-destruction removed": [
-        "Eliminación automática borrada"
+        "Se ha borrado la eliminación automática."
       ],
       "Self-destruction set": [
         "Destrucción automatica configurada"
@@ -12214,7 +12248,7 @@
         "¿Cancelar suscripción?"
       ],
       "Cannot add more addresses": [
-        "No se pueden añadir más direcciones"
+        "No se pueden añadir más direcciones."
       ],
       "Carbon Copy": [
         "Con copia"
@@ -12380,9 +12414,6 @@
       "Edit image": [
         "Editar imagen"
       ],
-      "Email address": [
-        "Dirección de correo"
-      ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
@@ -12429,7 +12460,7 @@
         "Reenviar"
       ],
       "Get advanced protection": [
-        "Obtén protección avanzada."
+        "Obtén una protección avanzada."
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obtén las aplicaciones de ${ appName[APP_NAME] }"
@@ -12439,9 +12470,6 @@
       ],
       "Groups": [
         "Grupos"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Oculta tu correo con SimpleLogin de ${ BRAND_NAME }."
       ],
       "Human verification": [
         "Verificación humana"
@@ -12615,9 +12643,6 @@
       "Other names": [
         "Otros nombres"
       ],
-      "Password": [
-        "Contraseña"
-      ],
       "Payment failed": [
         "Error en el pago"
       ],
@@ -12750,9 +12775,6 @@
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
       ],
-      "Sign in with 2FA": [
-        "Iniciar sesión con la 2FA"
-      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -12806,7 +12828,7 @@
         "¿Confiar en la clave pública?"
       ],
       "Unlock contacts groups": [
-        "Desbloquear grupos de contactos"
+        "Desbloquear los grupos de contactos"
       ],
       "Unsubscribe": [
         "Cancelar suscripción"

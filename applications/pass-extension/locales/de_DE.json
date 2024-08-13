@@ -1120,6 +1120,9 @@
       "Autosaved on ${ payload.domain }": [
         "Auf ${ payload.domain } automatisch gespeichert"
       ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrie wird deaktiviert und muss erneut aktiviert werden."
+      ],
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
       ],
@@ -1426,9 +1429,6 @@
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Der Online-Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du abgemeldet."
-      ],
       "Open the Extensions menu": [
         "Öffne das Erweiterungen-Menü"
       ],
@@ -1471,6 +1471,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
+      "Please confirm your extra password": [
+        "Bitte bestätige dein zusätzliches Passwort"
       ],
       "Please confirm your password": [
         "Bitte bestätige dein Passwort"
@@ -1632,6 +1635,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
+      "This option is currently not available on your device.": [
+        "Diese Option ist zurzeit auf deinem Gerät nicht verfügbar."
+      ],
       "This setting is disabled on the organization level": [
         "Diese Einstellung ist auf Organisationsebene deaktiviert."
       ],
@@ -1659,6 +1665,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code, um diesen Passkey zu speichern."
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "${ PASS_SHORT_APP_NAME } mit Biometrie entsperren"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ],
@@ -1667,6 +1676,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
+      ],
+      "Unlock with biometrics": [
+        "Mit Biometrie entsperren"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
@@ -1891,6 +1903,9 @@
       ],
       "Autosuggest": [
         "Auto-Vorschlagen"
+      ],
+      "Biometrics": [
+        "Biometrische Authentifizierung"
       ],
       "Birthdate": [
         "Geburtsdatum"
@@ -2367,6 +2382,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } entsperren"
       ],
+      "Unlock with": [
+        "Entsperren mit"
+      ],
       "Unnamed Credit Card": [
         "Unbenannte Kreditkarte"
       ],
@@ -2823,6 +2841,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME }-Passwort erforderlich"
+      ],
       "A description of the problem is required": [
         "Eine Beschreibung des Problems ist erforderlich."
       ],
@@ -2856,14 +2877,14 @@
       "Empty note": [
         "Leere Notiz"
       ],
-      "Encryption password is required": [
-        "Verschlüsselungspasswort erforderlich"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."
       ],
       "Extra password cannot be empty": [
         "Das zusätzliche Passwort darf nicht leer sein."
+      ],
+      "Extra password is required": [
+        "Zusätzliches Passwort erfolgreich"
       ],
       "Extra password should have at least 8 characters": [
         "Zusätzliches Passwort sollte mindestens 8 Zeichen lang sein."

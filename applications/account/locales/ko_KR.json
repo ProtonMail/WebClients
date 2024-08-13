@@ -157,6 +157,9 @@
       "Allow": [
         "허용"
       ],
+      "Always allow sending mail to group": [
+        "항상 그룹에게 메일 발송을 허용합니다"
+      ],
       "Apply": [
         "적용"
       ],
@@ -388,6 +391,9 @@
       "Disable": [
         "비활성화"
       ],
+      "Disable E2EE for group address": [
+        "그룹 주소에 E2EE를 비활성화합니다"
+      ],
       "Disable recovery phrase": [
         "복구시점 기록 중지"
       ],
@@ -489,6 +495,9 @@
       ],
       "Enable device-based recovery": [
         "기기 기반 복구 활성화"
+      ],
+      "Enable E2EE for group address": [
+        "그룹 주소에 E2EE를 활성화합니다"
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
@@ -1180,6 +1189,9 @@
       "Use authentication code": [
         "인증 코드를 사용"
       ],
+      "Use group sending permissions": [
+        "그룹 발송 권한들 사용하기"
+      ],
       "Use recovery code": [
         "복구코드 사용"
       ],
@@ -1363,8 +1375,8 @@
       "External": [
         "외부"
       ],
-      "Missing keys": [
-        "사라진 키"
+      "Inactive": [
+        "비활성화"
       ],
       "No E2EE mail": [
         "E2EE 메일 없음"
@@ -3366,6 +3378,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "이 기능들을 이용하려면 상세 이벤트와 ${ PROTON_SENTINEL_NAME }를 활성화합니다"
+      ],
+      "Enable detailed events to access these features": [
+        "이 기능들을 이용하려면 상세 이벤트를 활성화합니다"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
@@ -3584,11 +3602,45 @@
       "Free, encrypted, and secure cloud storage": [
         "무료이고, 암호화되었으며 안전한 클라우드 저장소"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }의 파일을 이용할 수 있는 초대를 받으셨습니다."
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**협동**: 온라인 문서 편집기"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "**GDPR** 및 **HIPAA** 준수"
+      ],
+      "**ISO 27001** certified": [
+        "**ISO 27001** 인증"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "종단간 암호화 **보호**"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**간단하고 사용자 친화적**: 파일을 가져오고 몇 분 안에 설정할 수 있습니다"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "업계 표준을 뛰어넘는 고급 보호"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "이미 ${ BRAND_NAME }의 보안 혜택을 누리고 있는 50,000개 이상의 조직과 함께하세요"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "데이터의 주도권을 잡을 수 있는 안전한 클라우드 스토리지"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "특정 보안 요구가 있는 대규모 조직을 위한 맞춤형 솔루션"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "유일한 비즈니스 솔루션입니다:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3597,6 +3649,43 @@
       ],
       "Priority support": [
         "우선 지원"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo 플랜 받기"
+      ],
+      "Get it for ${ price }": [
+        "${ price }에 구매하세요"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "매년 ${ amountBilled }가 결제됩니다. ${ BRAND_NAME } 무제한 연간 구독 두 개를 따로 결제하는 것보다 ${ amountSave }를 절약할 수 있습니다."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "두 사용자들"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "모든 ${ BRAND_NAME } 제품들에 대한 모든 접근권한"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave }를 절약했습니다"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "두 명을 위한 모든 ${ BRAND_NAME }."
+      ],
+      "Double your storage": [
+        "저장공간을 두 배로 늘리세요"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "${ PLAN_NAMES[PLANS.DUO] } 를 소개합니다 "
       ]
     },
     "Duration": {
@@ -5035,8 +5124,14 @@
       "*Only one free trial per customer.": [
         "*사용자 당 1회 무료 체험"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "커스텀 도메인과 연동된 계정은 그룹 플랜에 합류할 수 없습니다."
+      ],
       "customer support": [
         "고객 지원"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "햔재 그룹 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -5055,6 +5150,9 @@
       ],
       "Leave Visionary plan": [
         "Visionary 요금제 떠나기"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "평생 계정은 그룹 플랜에 합류 불가합니다."
       ],
       "Manage addresses.": [
         "주소를 관리하세요."
@@ -5104,14 +5202,23 @@
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "6개월 동안 ${ n }명의 수락된 초대 제한수에 도달했습니다."
       ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "지난 6개월 동안 초대할 수 있는 ${ n } 명 한도에 도달했습니다. 추가 사용자를 초대할 수 있을 때 이 버튼을 클릭할 수 있습니다."
+      ],
       "You have successfully joined the family group": [
         "가족 그룹에 성공적으로 가입했습니다."
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "결제가 필요한 청구서들이 있습니다. 그룹 플랜에 참여하기 전에 결제하세요."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "여러 사용자를 추가하기 전에 지정 도메인을 설정해야 합니다."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "새 사용자를 생성하기 전 지정 도메인 구성이 필요합니다."
+      ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "${ plan }에 포함된 프리미엄 기능들과 저장 공간을 모두 잃게 됩니다."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "사용자가 ${ BRAND_NAME } 계정이 이 그룹 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ BRAND_NAME_TWO } 프리미엄 기능들을 즐기세요."
@@ -5121,6 +5228,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace } 을(를) 초과하는 스토리지의 ${ usedSpace } 을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 요금제의 구매 관리자에게 저장 공간을 늘리도록 요청하세요."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "현재 플랜에서 이 초대를 수락할 수 없습니다."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5190,6 +5300,9 @@
       ],
       "An error occurred, please try again": [
         "오류가 발생했습니다, 다시 시도하세요"
+      ],
+      "Family name updated": [
+        "가족 이름이 업데이트 됨"
       ],
       "Member updated": [
         "구성원 갱신됨"
@@ -6506,6 +6619,9 @@
       "Affected user is on row": [
         "영향받는 사용자 목록"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "잠긴 후 조직 구성원은 비밀번호 또는 PIN 등을 사용하여 ${ PASS_APP_NAME }의 잠금을 해제해야 합니다."
+      ],
       "Align left": [
         "왼쪽 정렬"
       ],
@@ -6604,9 +6720,6 @@
       ],
       "Are you sure you want to delete this label?": [
         "이 라벨을 정말 제거하시겠어요?"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "정말 이중 인증을 비활성화 하시겠습니까?"
       ],
       "Are you sure you want to discard your changes?": [
         "사용자의 변경사항을 취소하시겠습니까?"
@@ -6793,6 +6906,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 라벨을 만드세요."
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "${ n }명의 구성원을 위한 보안 클라우드 만들기"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "커스텀 도메인에 부계정을 만들거나 관리하고, 계정 주소를 추가하세요."
@@ -7039,6 +7155,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "이벤트 초대 및 답변은 이 언어로 발송됩니다."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "이벤트에는 ${ BRAND_NAME_TWO } 자격 증명들을 사용하는 모든 ${ BRAND_NAME } 서비스에 대한 인증 시도를 포함합니다."
       ],
       "Example: ${ spfExample }": [
         "예시: ${ spfExample }"
@@ -7642,6 +7761,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "이 경고는 때로는 과도할 수 있습니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "오래된 복구 파일; 데이터에 액세스할 수 있도록 업데이트"
@@ -8675,6 +8797,12 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "현재 ${ ipAddresses } 사용 가능한 전용 서버의 ${ ipCount }을(를) 사용하고 있습니다."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "현재 사용 가능한 유저 라이선스 ${ maxMembers } 개 중 ${ usedMembers }개, 글쓰기 도우미 라이선스 ${ maxAI } 개 중 ${ usedAI } 개를 사용하고 있습니다."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "현재 사용중인 유저 라이센스는 ${ maxMembers }개 중 ${ usedMembers }개이며, 글쓰기 도우미 라이센스는 ${ maxAI }개 중에 없습니다."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "현재 ${ maxMembers } 사용 가능한 사용자 라이선스 ${ usedMembers }을(를) 사용하고 있습니다."
       ],
@@ -8991,6 +9119,11 @@
         "AI를 기반으로 한 글쓰기 도우미가 더 빠르고 효율적으로 이메일 생성을 도와드려요."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "유효하지 않은 이메일 주소입니다"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "링크 라벨 (선택 사항)"
@@ -9007,6 +9140,9 @@
       ],
       "Rejected": [
         "거절됨"
+      ],
+      "Sending invite...": [
+        "초대하는 중..."
       ]
     },
     "Invoice state display as badge": {
@@ -9377,6 +9513,33 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
+      "1 hour": [
+        "1시간"
+      ],
+      "1 minute": [
+        "1분"
+      ],
+      "10 minutes": [
+        "10분"
+      ],
+      "15 minutes": [
+        "15분"
+      ],
+      "2 minutes": [
+        "2분"
+      ],
+      "30 minutes": [
+        "30분"
+      ],
+      "30 seconds": [
+        "30초"
+      ],
+      "4 hours": [
+        "4시간"
+      ],
+      "5 minutes": [
+        "5분"
+      ],
       "Account recovery": [
         "계정 복구"
       ],
@@ -9704,6 +9867,9 @@
       "Disable sharing outside the organization": [
         "조직 외부로 공유 비활성화"
       ],
+      "Disabled": [
+        "비활성화됨"
+      ],
       "Display name": [
         "표시되는 이름"
       ],
@@ -9901,6 +10067,9 @@
       ],
       "Link label (optional)": [
         "링크 라벨 (선택 사항)"
+      ],
+      "Lock app after inactivity": [
+        "비활성 후 앱 잠금"
       ],
       "Logo": [
         "로고"
@@ -10712,6 +10881,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } 활성화"
+      ],
+      "Enable detailed events": [
+        "세부 이벤트들을 활성화합니다"
+      ],
+      "Enable security events": [
+        "보안 이벤트를 활성화합니다"
       ]
     },
     "Mail import summary": {
@@ -11293,9 +11468,6 @@
       "${ size } storage": [
         "${ size } 저장공간"
       ],
-      "${ size } storage per user": [
-        "사용자 당 ${ size } 스토리지"
-      ],
       "1 user": [
         "사용자 1명"
       ],
@@ -11319,9 +11491,6 @@
       ],
       "Advanced network security": [
         "향상된 네트워크 보안"
-      ],
-      "Advanced sharing security": [
-        "향상된 공유 보안"
       ],
       "All ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스"
@@ -11358,9 +11527,6 @@
       ],
       "Collaborate and share large files": [
         "큰 파일을 공동으로 작업하고 공유하세요"
-      ],
-      "Collaborative document editor": [
-        "협동 가능한 문서 편집기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -11491,6 +11657,9 @@
       "Phone support (40+ users)": [
         "휴대 전화 지원 (40명 이상 사용자)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }의 프리미엄 기능을 사용할 수 있습니다."
+      ],
       "Priority email support": [
         "이메일 우선 지원"
       ],
@@ -11538,9 +11707,6 @@
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }개 이상 국가 내 서버"
-      ],
-      "Share files and folders via link": [
-        "링크를 통해 파일 및 폴더를 공유"
       ],
       "Sign in as user": [
         "사용자로 로그인"
@@ -11640,6 +11806,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
+      ],
+      "Version history": [
+        "버전 기록"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -11752,9 +11921,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "두 명의 사용자를 위한 ${ BRAND_NAME }으로 내 디지털 생활을 보호하세요."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "자동 회신을 설정하여 부재중이거나 응답할 수 없는 전송자에 알릴 수 있습니다."
       ],
@@ -11766,6 +11932,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "모든 사람에게 개인 정보를 제공하도록 설계된 무료 스타터 계정."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "최대 두 사람까지 무제한 프라이버시 및 더 많은 저장공간을 제공합니다."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 삭제하신다면, 프로모션이 적용된 가격을 잃게되어 만일 새로운 계정을 추가한다고 하더라도 다시 누리실 수 없습니다."
@@ -11894,9 +12063,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "사용자 지정 시간으로 이메일이나 메시지가 도착했음을 안내받을 수 있습니다."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "비밀번호 보호 및 링크 만료일을 추가하여 공유 파일에 대한 접근을 제어하십시오."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
@@ -12529,6 +12695,9 @@
       "Members": [
         "구성원"
       ],
+      "Nobody by default": [
+        "기본적으로 아무도 없습니다"
+      ],
       "Organization members": [
         "조직 구성원"
       ]
@@ -12815,9 +12984,6 @@
       "Current plan": [
         "현재 플랜"
       ],
-      "Customizable services for large teams.": [
-        "큰 팀을 위한 커스텀 가능한 서비스"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }을 사용하려면 관련된 앱 또는 확장을 다운로드 및 설치해주세요"
       ],
@@ -12892,9 +13058,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "온라인에서 안전을 위해 ${ BRAND_NAME }을 선택한 1억 명이 넘는 사람들과 함께 하세요"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "${ BRAND_NAME }을 신뢰하는 5만여개 조직과 함께하세요."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 실행 중"
@@ -14217,13 +14380,13 @@
       ]
     },
     "signup: Action": {
-      "Request a demo": [
-        "데모 요청하기"
+      "Request trial": [
+        "무료 체험 신청"
       ]
     },
     "signup_2024: Feature": {
-      "GDPR compliant": [
-        "GDPR 준수"
+      "GDPR and HIPAA compliant": [
+        "GDPR 및 HIPAA 준수"
       ]
     },
     "specialoffer: Action": {
@@ -15185,6 +15348,9 @@
       "Import record deleted": [
         "불러오기 기록 삭제됨"
       ],
+      "Invitation rejected": [
+        "초대 거부됨"
+      ],
       "Invitation sent": [
         "초대 전송"
       ],
@@ -15208,6 +15374,18 @@
       ],
       "Organization activated": [
         "조직 활성화됨"
+      ],
+      "Organization identity updated": [
+        "조직 신원이 업데이트 됨"
+      ],
+      "Organization logo removed": [
+        "조직 로고가 제거 됨"
+      ],
+      "Organization logo updated": [
+        "조직 로고가 업데이트 됨"
+      ],
+      "Organization name updated": [
+        "조직 이름이 업데이트 됨"
       ],
       "Password copied to clipboard": [
         "비밀번호 복사됨"
@@ -15969,9 +16147,6 @@
       "Email": [
         "이메일"
       ],
-      "Email address": [
-        "이메일 주소"
-      ],
       "Email composer": [
         "이메일 작성"
       ],
@@ -16371,6 +16546,9 @@
       "Security and privacy": [
         "보안 및 개인정보 보호"
       ],
+      "Security events": [
+        "보안 이벤트들"
+      ],
       "Security logs": [
         "보안 로그"
       ],
@@ -16442,9 +16620,6 @@
       ],
       "Sign in to your organization": [
         "조직에 로그인"
-      ],
-      "Sign in with 2FA": [
-        "2단계 인증으로 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -16797,6 +16972,9 @@
       "Enable/disable desktop and mobile notifications": [
         "데스크탑과 모바일 알림 활성화/비활성화"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "자세한 이벤트를 활성화하면 각 이벤트의 IP 주소가 기록됩니다."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
@@ -16869,6 +17047,9 @@
       "This address has been disabled": [
         "이 주소는 비활성화되어 있습니다"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "이것은 비밀번호 재설정 또는 사용자가 아직 로그인하지 않은 경우에 발생할 수 있습니다."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
       ],
@@ -16939,6 +17120,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "Sending member invitation": [
+        "멤버 초대장 발송 중"
       ],
       "User rejected invitation": [
         "사용자가 초대를 거절함"
@@ -17402,6 +17586,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "이 전화번호를 삭제하면 더 이상 계정을 복구할 수 없습니다."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "보안 이벤트 모니터링을 비활성화하면 전체 기록이 삭제됩니다. 정말 비활성화하시겠습니까?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
