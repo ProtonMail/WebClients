@@ -525,6 +525,7 @@ const CalendarContainer = ({
             setContainerRef={setContainerRef}
             onSearch={handleSearch}
             addresses={addresses}
+            isAskUpdateTimezoneModalOpen={isAskUpdateTimezoneModalOpen}
         >
             {!!localTimezoneId && (
                 <AskUpdateTimezoneModal
