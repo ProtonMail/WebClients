@@ -2,9 +2,9 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { EnrichedError } from './EnrichedError';
 
-const is4xx = (status: number) => status >= 400 && status < 500;
+export const is4xx = (status: number) => status >= 400 && status < 500;
 
-const is5xx = (status: number) => status >= 500 && status < 600;
+export const is5xx = (status: number) => status >= 500 && status < 600;
 
 export const getErrorMetricType = (error: unknown) => {
     const apiError = getApiError(error);
