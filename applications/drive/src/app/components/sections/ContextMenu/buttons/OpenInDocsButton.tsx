@@ -1,4 +1,4 @@
-import { MimeIcon, NewFeatureTag } from '@proton/components/components';
+import { MimeIcon } from '@proton/components/components';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import type { DecryptedLink } from '../../../../store';
@@ -23,10 +23,7 @@ const OpenInDocsButton = ({ shareId, link, close }: Props) => {
                 void openInDocsAction({ shareId, linkId: link.linkId });
             }}
             close={close}
-        >
-            {/* TODO: Remove New tag when expired */}
-            <NewFeatureTag featureKey="documents" endDate={new Date('2024-07-15')} className="ml-4" />
-        </ContextMenuButton>
+        />
     );
 };
 
