@@ -7,11 +7,12 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 
 interface Props {
     modalProps: ModalStateProps;
+    upsellComponent?: UPSELL_COMPONENT;
 }
-const FiltersUpsellModal = ({ modalProps }: Props) => {
+const FiltersUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
+        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.SHORT_ADDRESS,
         isSettings: true,
     });
