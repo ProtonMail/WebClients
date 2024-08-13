@@ -15,6 +15,7 @@ import {
     getParentFormPrediction,
     isPrediction,
     removeClassifierFlags,
+    removeProcessedFlag,
 } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -42,7 +43,8 @@ export type FormManagerState = {
     trackedForms: Map<HTMLElement, FormHandle>;
 };
 
-const ATTRIBUTES_FILTER = ['style', 'class'];
+const INPUT_ATTRIBUTES = ['type', 'id', 'name'];
+const ATTRIBUTES_FILTER = ['style', 'class', ...INPUT_ATTRIBUTES];
 
 const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => ({
     childList: true,
@@ -229,6 +231,17 @@ export const createFormManager = (options: FormManagerOptions) => {
                 const { oldValue, attributeName } = mutation;
                 const target = mutation.target as HTMLElement;
                 const current = attributeName ? target?.getAttribute(attributeName) : null;
+
+                if (target instanceof HTMLInputElement) {
+                    /** Handle changes to attributes of input elements that weren't initially tracked.
+                     * For example: a form might be initially filtered out because it had no tracked
+                     * fields, but a change to an input's 'type' attribute could make it trackable.
+                     * IE: account.proton.me/mail/filters modal forms */
+                    const fieldChange = Boolean(attributeName && INPUT_ATTRIBUTES.includes(attributeName));
+                    if (fieldChange) removeProcessedFlag(target);
+                    return fieldChange;
+                }
+
                 if (target.childElementCount === 0) return false;
 
                 if (oldValue !== null && oldValue === current) state.staleMutationsCount++;
