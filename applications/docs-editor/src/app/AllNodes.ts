@@ -8,6 +8,7 @@ import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { ImageNode } from './Plugins/Image/ImageNode'
 import { CommentThreadMarkNode } from './Plugins/Comments/CommentThreadMarkNode'
+import { CustomListNode } from './Plugins/CustomList/CustomListNode'
 
 const CommonNodes = [
   AutoLinkNode,
@@ -21,6 +22,13 @@ const CommonNodes = [
   LinkNode,
   ListItemNode,
   ListNode,
+  CustomListNode,
+  {
+    replace: ListNode,
+    with: (node: ListNode) => {
+      return new CustomListNode(node.__listType, node.__start)
+    },
+  },
   OverflowNode,
   QuoteNode,
   TableCellNode,

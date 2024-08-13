@@ -58,9 +58,16 @@ const DocumentEditorTheme: EditorThemeClasses = {
     listitemChecked: 'Lexical__listItemChecked',
     listitemUnchecked: 'Lexical__listItemUnchecked',
     nested: {
-      listitem: 'Lexical__nestedListItem',
+      listitem: 'Lexical__listItem--nested',
     },
-    olDepth: ['Lexical__ol1', 'Lexical__ol2', 'Lexical__ol3', 'Lexical__ol4', 'Lexical__ol5'],
+    ol: 'Lexical__ol',
+    olDepth: [
+      'Lexical__ol--depth-1',
+      'Lexical__ol--depth-2',
+      'Lexical__ol--depth-3',
+      'Lexical__ol--depth--4',
+      'Lexical__ol--depth-5',
+    ],
     ul: 'Lexical__ul',
     checklist: 'Lexical__checkList',
   },
