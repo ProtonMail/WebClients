@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MimeIcon, NewFeatureTag } from '@proton/components/components';
+import { MimeIcon } from '@proton/components/components';
 
 import { ContextMenuButton } from '../../ContextMenu';
 
@@ -17,10 +17,7 @@ const CreateNewDocumentButton = ({ close, action }: Props) => {
             name={c('Action').t`New document`}
             action={action}
             close={close}
-        >
-            {/* TODO: Remove New tag when expired */}
-            <NewFeatureTag featureKey="documents" endDate={new Date('2024-07-15')} className="ml-4" />
-        </ContextMenuButton>
+        />
     );
 };
 
