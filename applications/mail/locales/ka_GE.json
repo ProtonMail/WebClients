@@ -301,6 +301,9 @@
       "Create a new label": [
         "ახალი ჭდის შექმნა"
       ],
+      "Create alias": [
+        "ფსევდონიმის შექმნა"
+      ],
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
@@ -510,9 +513,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "მიიღეთ ტარიფი, მხოლოდ, ${ addonPriceWithCurrency }-ად თვეში"
       ],
-      "Get SimpleLogin extension": [
-        "SimpleLogin-ის გაფართოების მიღება"
-      ],
       "Get started": [
         "დაიწყეთ"
       ],
@@ -540,9 +540,6 @@
       "Go to settings": [
         "მორგებაზე გადასვლა"
       ],
-      "Go to SimpleLogin": [
-        "SimpleLogin-ზე გადასვლა"
-      ],
       "Got it": [
         "გავიგე"
       ],
@@ -563,6 +560,9 @@
       ],
       "Hide messages": [
         "შეტყობინებების დამალვა"
+      ],
+      "Hide toolbar": [
+        "ხელსაწყოების პანელის დამალვა"
       ],
       "hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
@@ -844,10 +844,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open": [
@@ -1174,6 +1174,9 @@
       "Show side panel": [
         "გვერდითი პანელის ჩვენება"
       ],
+      "Show toolbar": [
+        "ხელსაწყოების პანელის ჩვენება"
+      ],
       "Sign out": [
         "გასვლა"
       ],
@@ -1248,10 +1251,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -3599,6 +3598,43 @@
         "პრიორიტეტული მხარდაჭერა"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "მიიღეთ ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "მიიღეთ ფასით ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "წლიურად გადასახდელი თანხა: ${ amountBilled }. დაზოგეთ ${ amountSave } ორზე მეტი ინდივიდუალური ${ BRAND_NAME }-ის ულიმიტო წლიური გამოწერისთვის."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 მომხმარებელი"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "სრული წვდომა ${ BRAND_NAME }-ის ყველა პროდუქტთან"
+      ],
+      "You save ${ amountSave }": [
+        "დანაზოგი თანხაა ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "მთლიანი ${ BRAND_NAME }, ორისთვის"
+      ],
+      "Double your storage": [
+        "გააორმაგეთ თქვენი საცავი"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "წარმოგიდგენთ ${ PLAN_NAMES[PLANS.DUO] }-ს "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "აღწერა:\n${ eventDescription }"
@@ -4160,6 +4196,9 @@
       "Tab closed": [
         "ჩანართი დახურულია"
       ],
+      "Text is too long to refine": [
+        "ტექსტი მეტისმეტად დიდია ოპტიმიზაციისთვის"
+      ],
       "Thanks for the feedback!": [
         "მადლობა გამოხმაურებისთვის!"
       ],
@@ -4488,6 +4527,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "ფსევდონიმებს ვერ გამოიყენებთ, როცა ${ PASS_APP_NAME }-ში დამატებითი პაროლია ჩართული."
+      ],
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
       ],
@@ -4517,6 +4559,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "კონტაქტები ჯერ არ გაქვთ. დაიწყეთ მათი შექმნა"
@@ -4635,14 +4680,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "მომხმარებლის დომენის მქონე ანგარიშები ჯგუფურ ტარიფს ვერ მიიღებენ."
+      ],
       "customer support": [
         "მხარდაჭერის გუნდი"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "ჯგუფურ გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
       "Invited by: ${ inviteEmail }": [
         "მომწვევი: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "სამუდამო ანგარიშები ჯგუფურ გეგმაში ვერ შევლენ."
       ],
       "Manage addresses.": [
         "მისამართების მართვა."
@@ -4671,6 +4725,9 @@
       "You have successfully joined the family group": [
         "საოჯახო ტარიფს წარმატებით შეუერთდით."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ ჯგუფურ გეგმას მიუერთდებით."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ჯგუფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ BRAND_NAME_TWO }-ის ფასიანი ფუნქციით."
       ],
@@ -4679,6 +4736,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6501,6 +6561,9 @@
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "ყურადღება მიაქციეთ ჩვენს გაფრთხილებებს. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "სისტემამ ეს ელფოსტა ფიშინგის მცდელობად მონიშნა. გადაამოწმეთ, სიმართლეა თუ არა."
       ],
@@ -6679,6 +6742,9 @@
       "Scheduling message...": [
         "შეტყობინების განრიგში ჩამატება..."
       ],
+      "Scribe panel": [
+        "Scribe-ის პანელი"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "ძებნის პარამეტი, რომელიც ელფოსტის შეტყობინების სხეულში საკვანძო სიტყვების უსაფრთხოდ ძებნის საშუალებას გძლევთ."
       ],
@@ -6745,12 +6811,6 @@
       ],
       "Show original message": [
         "საწყისი შეტყობინების ჩვენება"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin-ი ${ BRAND_NAME }-ის სერვისია და ${ BRAND_NAME_TWO }-ის თქვენი ანგარიში შეიცავს დამალული ფოსტის მისამართებს. ელფოსტის დასამალად გადადით SimpleLogin-ზე და შექმენით პირველი მეტსახელი."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin გაძლევთ მარტივ გზას, შექმნათ მომხმარებლები არასანდო საიტებისთვის, სადაც თქვენი ელფოსტის ნამდვილი მისამართის გამოაშკარავებას არ ისურვებდით."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
@@ -7115,9 +7175,6 @@
       "Users": [
         "მომხმარებლები"
       ],
-      "Using SimpleLogin is easy": [
-        "SimpleLogin-ის გამოყენება ადვილია"
-      ],
       "Verification may take a few minutes.": [
         "გადამოწმებას შეიძლება, რამდენიმე წუთი დასჭირდეს."
       ],
@@ -7365,9 +7422,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "${ BRAND_NAME }-ის თქვენი ანგარიში SimpleLogin-საც შეიცავს. დასაწყებად დააყენეთ ბრაუზერის გაფართოება."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
@@ -9022,9 +9076,6 @@
       "${ size } storage": [
         "${ size } საცავი"
       ],
-      "${ size } storage per user": [
-        "${ size }/მომხმარებელი"
-      ],
       "1 user": [
         "1 მომხმარებელი"
       ],
@@ -9042,9 +9093,6 @@
       ],
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
-      ],
-      "Advanced sharing security": [
-        "გაზიარების გაუმჯობესებული უსაფრთხოება"
       ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
@@ -9075,9 +9123,6 @@
       ],
       "Collaborate and share large files": [
         "იმუშავეთ ერთად და გააზიარეთ დიდი ფაილები"
-      ],
-      "Collaborative document editor": [
-        "კოლაბორაციული დოკუმენტის რედაქტორი"
       ],
       "Contact groups": [
         "კონტაქტის ჯგუფები"
@@ -9243,9 +9288,6 @@
       "Send & receive invitations": [
         "მოსაწვევების გაგზავნა და მიღება"
       ],
-      "Share files and folders via link": [
-        "გააგზავნეთ ფაილები და საქაღალდეები ბმულის საშუალებით"
-      ],
       "Sign in as user": [
         "მომხმარებლით შესვლა"
       ],
@@ -9338,6 +9380,9 @@
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
       ],
+      "Version history": [
+        "ვერსიის ისტორია"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
       ]
@@ -9428,9 +9473,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "დაცული ელფოსტა დამატებითი ფუნქციებით, თქვენი ყოველდღიური მიმოწერისთვის."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "დაიცავით თქვენი ციფრული სიცოცხლე ${ BRAND_NAME }-ით ორი ადამიანისთვის."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "შეკვეთილი გადაწყვეტილებები დიდი ორგანიზაციებისთვის, რომლებსაც სპეციფიკური უსაფრთხოების საჭიროება გააჩნიათ"
       ],
@@ -9439,6 +9481,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "დამწყების უფასო ანგარიში განკუთვნილია მათთვის, ვისთვისაც კონფიდენციალობა მნიშვნელოვანია."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "უსაზღვრო კონფიდენციალობა და მეტი საცავი 2-მდე პიროვნებისთვის."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის წაშლის შემთხვევაში, დაკარგავთ სარეკლამო ფასს და მაშინაც კი, თუ ანგარიშს თავიდან შექმნით, ის ხელმისაწვდომი აღარ იქნება."
@@ -9510,9 +9555,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "აირჩიეთ სასურველი დრო, როცა გნებავთ, თქვენი ელფოსტის ან შეტყობინების შესახებ შეგახსენოთ"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "გააკონტროლეთ წვდომა თქვენს გაზიარებულ ფაილებზე მათზე პაროლებისა და ბმულების ვადის დამატების საშუალებით"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain } ახალი ამბების გამოწერებისთვის"
@@ -11789,6 +11831,9 @@
       "Import record deleted": [
         "შემოტანის ჩანაწერი წაშლილია"
       ],
+      "Invitation rejected": [
+        "მოსაწვევი უარყოფილია"
+      ],
       "Keyboard shortcuts preferences updated": [
         "კლავიატურის მალსახმობების პარამეტრები განახლებულია"
       ],
@@ -12359,9 +12404,6 @@
       "Edit image": [
         "გამოსახულების ჩასწორება"
       ],
-      "Email address": [
-        "ელფოსტის მისამართი"
-      ],
       "Email addresses": [
         "ელფოსტის მისამართები"
       ],
@@ -12418,9 +12460,6 @@
       ],
       "Groups": [
         "ჯგუფები"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "დამალეთ თქვენი ელფოსტა ${ BRAND_NAME } SimpleLogin-ის დახმარებით"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
@@ -12594,9 +12633,6 @@
       "Other names": [
         "სხვა სახელები"
       ],
-      "Password": [
-        "პაროლი"
-      ],
       "Payment failed": [
         "გადახდის შეცდომა"
       ],
@@ -12728,9 +12764,6 @@
       ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"
-      ],
-      "Sign in with 2FA": [
-        "2FA-ით შეცვლა"
       ],
       "Sign out": [
         "გასვლა"
