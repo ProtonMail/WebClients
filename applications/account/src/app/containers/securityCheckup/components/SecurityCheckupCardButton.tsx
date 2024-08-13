@@ -8,8 +8,6 @@ import clsx from '@proton/utils/clsx';
 import type { SecurityCheckupCardInnerProps } from './SecurityCheckupCardInner';
 import SecurityCheckupCardInner from './SecurityCheckupCardInner';
 
-import './SecurityCheckupCardButton.scss';
-
 interface SecurityCheckupCardButtonInnerProps extends Omit<SecurityCheckupCardInnerProps, 'suffix'> {
     loading?: boolean;
     icon?: IconName;
@@ -36,15 +34,7 @@ interface Props {
 
 const SecurityCheckupCardButton = ({ onClick, className, children }: Props) => {
     return (
-        <button
-            className={clsx(
-                'security-checkup-card',
-                'security-checkup-card-button',
-                'button button-no-hover',
-                className
-            )}
-            onClick={onClick}
-        >
+        <button className={clsx('security-checkup-card', 'relative interactive-pseudo', className)} onClick={onClick}>
             {children}
         </button>
     );
