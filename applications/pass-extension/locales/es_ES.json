@@ -99,7 +99,7 @@
         "Continuar sin conexión"
       ],
       "Continue without pinning": [
-        "Continuar sin fijar"
+        "Continuar sin anclar"
       ],
       "Copy & fill in": [
         "Copiar y rellenar"
@@ -754,7 +754,7 @@
         "Error al transferir la propiedad de esta caja fuerte."
       ],
       "Failed to unpin item": [
-        "No se pudo desanclar el elemento"
+        "No se ha podido desanclar el elemento."
       ],
       "Failed to update monitoring settings": [
         "Error al actualizar los ajustes de monitoreo"
@@ -775,7 +775,7 @@
         "No se ha podido analizar el archivo."
       ],
       "File could not be read": [
-        "No se ha podido leer el archivo"
+        "No se ha podido leer el archivo."
       ],
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado."
@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacta a nuestro servicio de atención al cliente para obtener ayuda."
       ],
+      "Wrong extra password": [
+        "La contraseña adicional no es correcta."
+      ],
       "Wrong password": [
         "La contraseña no es correcta."
       ],
@@ -1072,6 +1075,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accede a tus contraseñas sobre la marcha con nuestras aplicaciones móviles."
       ],
@@ -1122,6 +1128,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar tus datos con este formato, abre y desactiva Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Se ha registrado el bloqueo automático biométrico. Úsalo para desbloquear ${ PASS_APP_NAME }."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Los datos biométricos se desactivarán y será necesario activarlos nuevamente."
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -1228,6 +1240,12 @@
       "Enable auto-locking to secure your data": [
         "Activa el bloqueo automático para asegurar tus datos"
       ],
+      "Enabling biometrics auto-lock": [
+        "Activando el bloqueo automático biométrico"
+      ],
+      "Enabling biometrics lock failed": [
+        "Error al activar el bloqueo automático biométrico"
+      ],
       "Enabling offline mode...": [
         "Activando el modo sin conexión..."
       ],
@@ -1321,7 +1339,7 @@
         "La invitación ha sido enviada."
       ],
       "Invite successfully sent": [
-        "La Invitación ha sido enviada."
+        "Se ha enviado la invitación."
       ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
@@ -1406,7 +1424,7 @@
         "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
-        "Moviendo elemento a la papelera"
+        "Moviendo el elemento a la papelera"
       ],
       "Never": [
         "Nunca"
@@ -1429,8 +1447,8 @@
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos incorrectos."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
       ],
       "Open the Extensions menu": [
         "Abre el menú de extensiones"
@@ -1475,8 +1493,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
       ],
+      "Please confirm your extra password": [
+        "Confirma tu nueva contraseña."
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Confirma la contraseña adicional para bloquear automáticamente con datos biométricos."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Confirma la contraseña adicional para cancelar el registro del bloqueo actual."
+      ],
       "Please confirm your password": [
         "Confirma tu contraseña"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Confirma la contraseña para bloquear automáticamente con datos biométricos."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Confirma tu contraseña para bloquear automáticamente con tu contraseña."
@@ -1517,6 +1547,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
       ],
+      "Quickly autofill your 2FA tokens.": [
+        "Rellena rápidamente tus tokens 2FA."
+      ],
       "Quickly autofill your identities.": [
         "Rellena rápidamente tus identidades."
       ],
@@ -1533,7 +1566,7 @@
         "Borrando la contraseña adicional..."
       ],
       "Removing secure link...": [
-        "Eliminando el enlace seguro..."
+        "Borrando el enlace seguro..."
       ],
       "Restoring items from trash": [
         "Restaurando un grupo de elementos"
@@ -1576,6 +1609,9 @@
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
+      ],
+      "Set by your organization": [
+        "Configurado por tu organización"
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
@@ -1638,6 +1674,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso a tu archivo exportado podrá ver tus contraseñas. Por seguridad, elimínalo una vez que hayas terminado de utilizarlo."
       ],
+      "This option is currently not available on your device.": [
+        "Esta opción no está disponible en tu dispositivo."
+      ],
       "This setting is disabled on the organization level": [
         "Este ajuste está desactivado para la organización."
       ],
@@ -1665,6 +1704,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Desbloquea ${ PASS_APP_NAME } con tu código PIN para guardar esta clave de acceso."
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con datos biométricos"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }."
       ],
@@ -1673,6 +1715,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloquéala con tu PIN para acceder a los ajustes"
+      ],
+      "Unlock with biometrics": [
+        "Desbloquear usando datos biométricos"
       ],
       "Unpinning item...": [
         "Desanclando el elemento..."
@@ -1690,7 +1735,7 @@
         "Utiliza las cajas fuertes para compartir este elemento con otras personas."
       ],
       "User's access removed": [
-        "El acceso del usuario ha sido borrado."
+        "Se ha borrado el acceso del usuario."
       ],
       "User's access sucessfuly updated": [
         "Se ha actualizado el acceso del usuario."
@@ -1757,7 +1802,7 @@
         "Utilizarás este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez pase el tiempo de inactividad."
       ],
       "You're about to create": [
-        "Vas a crear"
+        "Estás por crear"
       ],
       "You're invited to a vault.": [
         "Se te ha invitado a una caja fuerte."
@@ -1814,8 +1859,14 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2 minutes": [
+        "2 minutos"
+      ],
       "24 hours": [
         "24 horas"
+      ],
+      "2FA autofill": [
+        "Relleno automático 2FA"
       ],
       "2FA secret key (TOTP)": [
         "Clave secreta 2FA (TOTP)"
@@ -1831,6 +1882,9 @@
       ],
       "30 seconds": [
         "30 segundos"
+      ],
+      "4 hours": [
+        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"
@@ -1897,6 +1951,9 @@
       ],
       "Autosuggest": [
         "Sugerencias automáticas"
+      ],
+      "Biometrics": [
+        "Datos biométricos"
       ],
       "Birthdate": [
         "Fecha de nacimiento"
@@ -1978,6 +2035,9 @@
       ],
       "Display": [
         "Mostrar"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Mostrar el ícono de ${ PASS_APP_NAME } en campos de relleno automático"
       ],
       "Domain": [
         "Dominio"
@@ -2376,6 +2436,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloquear ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "Desbloquear con"
+      ],
       "Unnamed Credit Card": [
         "Tarjeta de crédito sin nombre"
       ],
@@ -2618,6 +2681,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando de ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Ingresa tu contraseña adicional."
+      ],
       "Enter your password": [
         "Introduce tu contraseña."
       ],
@@ -2667,7 +2733,7 @@
         "Iniciar sesión como..."
       ],
       "Low disk space": [
-        "Poco espacio en el disco"
+        "Espacio en disco bajo"
       ],
       "Member limit": [
         "Límite de miembros"
@@ -2709,7 +2775,7 @@
         "¿Borrar todos los elementos permanentemente?"
       ],
       "Pin the extension": [
-        "Fija la extensión"
+        "Ancla la extensión"
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
@@ -2778,7 +2844,7 @@
         "Caja fuerte"
       ],
       "Vault shared with you": [
-        "caja fuerte compartida contigo"
+        "Caja fuerte compartida contigo"
       ],
       "Weak password": [
         "Contraseña poco segura"
@@ -2832,6 +2898,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Se necesita la contraseña de ${ BRAND_NAME }."
+      ],
       "A description of the problem is required": [
         "Se requiere una descripción del problema."
       ],
@@ -2865,14 +2934,14 @@
       "Empty note": [
         "Nota vacía"
       ],
-      "Encryption password is required": [
-        "Se requiere la contraseña de cifrado."
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA."
       ],
       "Extra password cannot be empty": [
         "La contraseña adicional no puede estar vacía."
+      ],
+      "Extra password is required": [
+        "Se necesita la contraseña adicional."
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres."
@@ -3005,7 +3074,7 @@
         "Tu sesión está inactiva."
       ],
       "Your session was locked.": [
-        "Tu sesión está bloqueada."
+        "La sesión está bloqueada."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."

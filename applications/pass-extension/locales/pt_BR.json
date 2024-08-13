@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Encontramos problemas ao iniciar ${ PASS_SHORT_APP_NAME }. Se os problemas persistirem, contate o suporte ao cliente para assistência."
       ],
+      "Wrong extra password": [
+        "Senha adicional errada"
+      ],
       "Wrong password": [
         "Senha incorreta"
       ],
@@ -1128,6 +1131,9 @@
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Bloqueio biométrico registrado. Use-a para desbloquear o ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "A biometria será desativada e precisará ser ativada novamente."
       ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
@@ -1441,8 +1447,8 @@
       "Offline support successfully disabled": [
         "Modo off-line desativado com sucesso"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN para desbloquear sua sessão. Você será desconectado após 3 tentativas fracassadas."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
       ],
       "Open the Extensions menu": [
         "Abrir o menu de extensões"
@@ -1486,6 +1492,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password": [
+        "Confirme sua nova senha adicional"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Confirme sua senha adicional para bloquear automaticamente com a sua biometria."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Confirme sua senha adicional para cancelar o registro do seu bloqueio atual."
       ],
       "Please confirm your password": [
         "Confirme sua senha"
@@ -1531,6 +1546,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Preenchimento automático de tokens A2F."
       ],
       "Quickly autofill your identities.": [
         "Preenchimento automático rapidamente de suas identidades."
@@ -1591,6 +1609,9 @@
       ],
       "Session timed out": [
         "Sessão expirada"
+      ],
+      "Set by your organization": [
+        "Configurado pela sua organização"
       ],
       "Settings successfully updated": [
         "Configurações atualizadas"
@@ -1682,6 +1703,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar esta chave de acesso"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com biometria"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
@@ -1791,6 +1815,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1835,8 +1862,14 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2 minutes": [
+        "2 minutos"
+      ],
       "24 hours": [
         "24 horas"
+      ],
+      "2FA autofill": [
+        "Preenchimento automático de A2F"
       ],
       "2FA secret key (TOTP)": [
         "Chave secreta A2F (TOTP)"
@@ -1852,6 +1885,9 @@
       ],
       "30 seconds": [
         "30 segundos"
+      ],
+      "4 hours": [
+        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"
@@ -2002,6 +2038,9 @@
       ],
       "Display": [
         "Exibição"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Exibe o ícone do ${ PASS_APP_NAME } nos campos de preenchimento automático"
       ],
       "Domain": [
         "Domínio"
@@ -2648,6 +2687,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Digite sua senha adicional"
+      ],
       "Enter your password": [
         "Digite sua senha"
       ],
@@ -2862,6 +2904,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "A senha da ${ BRAND_NAME } é obrigatória"
+      ],
       "A description of the problem is required": [
         "Uma descrição do problema é necessária"
       ],
@@ -2895,14 +2940,14 @@
       "Empty note": [
         "Nota vazia"
       ],
-      "Encryption password is required": [
-        "A senha de criptografia é obrigatória"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "A data de expiração não está no formato MM/AA"
       ],
       "Extra password cannot be empty": [
         "A senha adicional não pode estar vazia"
+      ],
+      "Extra password is required": [
+        "A senha adicional é obrigatória"
       ],
       "Extra password should have at least 8 characters": [
         "Senha adicional deve ter pelo menos 8 caracteres"
