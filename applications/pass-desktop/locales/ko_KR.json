@@ -560,6 +560,29 @@
         "사용 중이신 비밀번호 관리자가 없으신가요? 알려주세요."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "강제 새로고침"
+      ],
+      "Reload": [
+        "새로고침"
+      ],
+      "Show logs": [
+        "로그 보기"
+      ],
+      "Speech": [
+        "말하기"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "로그인할 때 ${ PASS_APP_NAME } 시작하기"
+      ],
+      "Toggle developers tools": [
+        "개발자 도구 전환하기"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 제거"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "알뜰하게 할인 받으세요. 오직 ${ relativePrice } 당 개월만 추가하여 Pass Plus를 1년 동안 사용하세요."
@@ -664,6 +687,9 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
+      ],
+      "Biometric authentication failed": [
+        "생체 인증 실패"
       ],
       "Cannot send invitation at the moment": [
         "현재 초대 전송할 수 없습니다."
@@ -941,6 +967,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME }를 시작하는 중에 문제가 발생했습니다. 이것이 계속된다면 고객 지원으로 문의해 주세요."
       ],
+      "Wrong extra password": [
+        "잘못된 추가 비밀번호입니다"
+      ],
       "Wrong password": [
         "잘못된 비밀번호입니다"
       ],
@@ -1099,6 +1128,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }에 대한 접근이 항상 ${ BRAND_NAME } 비밀번호를 요구하게 됩니다."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
+      ],
       "Add a username field": [
         "사용자 이름 입력란 추가"
       ],
@@ -1149,6 +1181,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "이 포맷으로 데이터를 내보내기 전에, Safari 설정-> \"일반\" 탭 ->\" 다운로드 후 '안전한' 파일 열기\"를 비활성화해주세요. 이 설정으로 Safari가 내보낸 파일을 잘못 추출하는 것을 방지할 수 있습니다."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "생체인증 잠금이 성공적으로 설정되었습니다. ${ PASS_APP_NAME } 잠금해제시 사용하세요."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "생체인증이 비활성화되며 다시 활성화가 필요합니다."
       ],
       "Breaches detected": [
         "침해 사례 감지됨"
@@ -1248,6 +1286,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "데이터를 보호하려면 자동 잠금을 활성화 하세요."
+      ],
+      "Enabling biometrics auto-lock": [
+        "생체인증 자동 잠금해제 활성화 중"
+      ],
+      "Enabling biometrics lock failed": [
+        "생체인증 잠금 활성화 실패"
       ],
       "Enabling offline mode...": [
         "오프라인 모드 활성화 중..."
@@ -1480,8 +1524,11 @@
       "Offline support successfully disabled": [
         "오프라인 지원이 비활성화되었습니다"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "${ PASS_APP_NAME }이 온라인에 접근하려면 세션의 잠금을 해제해야 하고 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "이 경고는 때로는 과도할 수 있습니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -1522,8 +1569,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
+      "Please confirm your extra password": [
+        "추가 비밀번호를 확인해주세요"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "생체인증으로 잠금 해제하려면 추가 암호를 확인하세요."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "지금의 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
+      ],
       "Please confirm your password": [
         "비밀번호를 확인하세요"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "생체인증으로 잠금 해제하려면 암호를 확인하세요."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "비밀번호를 사용하는 자동 잠금을 위해 비밀번호를 확인해 주세요."
@@ -1615,6 +1674,9 @@
       "Session timed out": [
         "세션 시간 초과됨"
       ],
+      "Set by your organization": [
+        "조직 설정"
+      ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
       ],
@@ -1678,6 +1740,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
       ],
+      "This option is currently not available on your device.": [
+        "이 옵션은 현재 기기에서 사용할 수 없습니다."
+      ],
       "This setting is disabled on the organization level": [
         "이 설정은 조직에서 비활성화되었습니다"
       ],
@@ -1702,11 +1767,17 @@
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "생체인증으로 ${ PASS_SHORT_APP_NAME } 잠금해제"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "추가 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
+      ],
+      "Unlock with biometrics": [
+        "생체 인증으로 잠금해제"
       ],
       "Unpinning item...": [
         "항목 고정 해제 중..."
@@ -1812,6 +1883,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
       ]
     },
     "Label": {
@@ -1851,6 +1925,9 @@
       "15 minutes": [
         "15분"
       ],
+      "2 minutes": [
+        "2분"
+      ],
       "24 hours": [
         "24시간"
       ],
@@ -1868,6 +1945,9 @@
       ],
       "30 seconds": [
         "30초"
+      ],
+      "4 hours": [
+        "4시간"
       ],
       "5 minutes": [
         "5분"
@@ -1916,6 +1996,9 @@
       ],
       "Beta Access": [
         "베타 참여"
+      ],
+      "Biometrics": [
+        "생체 인식"
       ],
       "Birthdate": [
         "생년월일"
@@ -2391,6 +2474,9 @@
       "Type": [
         "유형"
       ],
+      "Unlock with": [
+        "다음으로 잠금 해제:"
+      ],
       "Unnamed Credit Card": [
         "이름 없는 신용카드"
       ],
@@ -2469,6 +2555,20 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } 활성화"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "편집"
+      ],
+      "File": [
+        "파일"
+      ],
+      "View": [
+        "보기"
+      ],
+      "Window": [
+        "창"
       ]
     },
     "Message": {
@@ -2699,11 +2799,11 @@
       "Discard changes?": [
         "변경 사항을 취소할까요?"
       ],
-      "Email address": [
-        "이메일 주소"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
+      ],
+      "Enter your extra password": [
+        "추가 비밀번호를 입력하세요"
       ],
       "Enter your password": [
         "비밀번호를 입력하세요"
@@ -2800,9 +2900,6 @@
       ],
       "Passkey": [
         "패스키"
-      ],
-      "Password": [
-        "비밀번호"
       ],
       "Password Health": [
         "비밀번호 건강도"
@@ -2964,6 +3061,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
       "A description of the problem is required": [
         "문제의 셜명이 필요합니다."
       ],
@@ -3000,14 +3100,14 @@
       "Empty note": [
         "빈 메모"
       ],
-      "Encryption password is required": [
-        "암호화된 비밀번호가 필요합니다."
-      ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
       ],
       "Extra password cannot be empty": [
         "추가 비밀번호는 비워둘 수 없습니다."
+      ],
+      "Extra password is required": [
+        "추가 비밀번호가 필요합니다"
       ],
       "Extra password should have at least 8 characters": [
         "추가 비밀번호는 최소 8글자여야합니다."

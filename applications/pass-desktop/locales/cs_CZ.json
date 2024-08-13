@@ -560,6 +560,23 @@
         "Váš správce hesel zde není? Požádejte o něj."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Vynutit obnovení"
+      ],
+      "Reload": [
+        "Znovu načíst"
+      ],
+      "Show logs": [
+        "Zobrazit logy"
+      ],
+      "Speech": [
+        "Řeč"
+      ],
+      "Toggle developers tools": [
+        "Přepnout nástroje pro vývojáře"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Šetřete chytře. Získejte roční předplatné Pass Plus za pouhých ${ relativePrice } měsíčně."
@@ -1530,9 +1547,6 @@
       ],
       "Offline support successfully disabled": [
         "Podpora offline byla úspěšně vypnuta"
-      ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód pro odemčení vaší relace. Budete odhlášeni po 3 neúspěšných pokusech."
       ],
       "Owner": [
         "Vlastník"
@@ -2552,6 +2566,20 @@
         "Povolit ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Upravit"
+      ],
+      "File": [
+        "Soubor"
+      ],
+      "View": [
+        "Zobrazit"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } položka",
@@ -2786,9 +2814,6 @@
       "Discard changes?": [
         "Zahodit změny?"
       ],
-      "Email address": [
-        "E-mailová adresa"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
       ],
@@ -2887,9 +2912,6 @@
       ],
       "Passkey": [
         "Přístupový klíč"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Password Health": [
         "Síla hesla"
@@ -3089,9 +3111,6 @@
       ],
       "Empty note": [
         "Prázdná poznámka"
-      ],
-      "Encryption password is required": [
-        "Je vyžadováno heslo pro dešifrování"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"

@@ -560,6 +560,29 @@
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε το."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Αναγκαστική Επαναφόρτωση"
+      ],
+      "Reload": [
+        "Επαναφόρτωση"
+      ],
+      "Show logs": [
+        "Εμφάνιση αρχείων καταγραφής"
+      ],
+      "Speech": [
+        "Ομιλία"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Ξεκινήστε το ${ PASS_APP_NAME } κατά τη σύνδεση"
+      ],
+      "Toggle developers tools": [
+        "Εναλλαγή σε εργαλεία προγραμματιστή"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Απεγκατάσταση ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Εξοικονομήστε έξυπνα. Αποκτήστε ένα χρόνο Pass Plus μόνο για ${ relativePrice } ανά μήνα."
@@ -665,6 +688,9 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Ο έλεγχος ταυτότητας απέτυχε. Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να προχωρήσετε στην εξαγωγή"
+      ],
+      "Biometric authentication failed": [
+        "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε"
       ],
       "Cannot send invitation at the moment": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
@@ -944,6 +970,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Αντιμετωπίσαμε πρόβλημα κατά την εκκίνηση του ${ PASS_SHORT_APP_NAME }. Εάν αυτό το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη πελατών μας για βοήθεια."
       ],
+      "Wrong extra password": [
+        "Λάθος επιπλέον κωδικός πρόσβασης"
+      ],
       "Wrong password": [
         "Λανθασμένος κωδικός πρόσβασης"
       ],
@@ -1113,6 +1142,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
+      ],
       "Add a username field": [
         "Προσθήκη πεδίου ονόματος χρήστη"
       ],
@@ -1163,6 +1195,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Πριν εξαγάγετε τα δεδομένα σας με αυτήν τη μορφή, ανοίξτε τις ρυθμίσεις Safari -> καρτέλα \"Γενικά\" -> απενεργοποιήστε την επιλογή \"Άνοιγμα ασφαλών αρχείων μετά τη λήψη\". Αυτό θα αποτρέψει το Safari από την εσφαλμένη εξαγωγή του εξαγόμενου αρχείου."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Το κλείδωμα βιομετρικών στοιχείων καταχωρήθηκε επιτυχώς. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Τα βιομετρικά στοιχεία θα απενεργοποιηθούν και θα πρέπει να ενεργοποιηθούν ξανά."
       ],
       "Breaches detected": [
         "Εντοπίστηκαν παραβιάσεις"
@@ -1262,6 +1300,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Ενεργοποιήστε το αυτόματο κλείδωμα για να ασφαλίσετε τα δεδομένα σας"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος βιομετρικών στοιχείων"
+      ],
+      "Enabling biometrics lock failed": [
+        "Η ενεργοποίηση του κλειδώματος με βιομετρικά απέτυχε"
       ],
       "Enabling offline mode...": [
         "Ενεργοποίηση λειτουργίας εκτός σύνδεσης..."
@@ -1497,8 +1541,11 @@
       "Offline support successfully disabled": [
         "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Οι ειδοποιήσεις μας σφάλλουν προς την πλευρά της προσοχής. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -1540,8 +1587,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
+      "Please confirm your extra password": [
+        "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας για αυτόματο κλείδωμα με βιομετρικά στοιχεία."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης σας για να καταργήσετε την καταχώρηση του τρέχοντος κλειδώματος."
+      ],
       "Please confirm your password": [
         "Παρακαλούμε επιβεβαίωσε τον κωδικό πρόσβασής σου"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με βιομετρικά."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Επιβεβαιώστε τον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με τον κωδικό πρόσβασής σας."
@@ -1633,6 +1692,9 @@
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
       ],
+      "Set by your organization": [
+        "Ορισμένο από τον οργανισμό σας"
+      ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
       ],
@@ -1697,6 +1759,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
       ],
+      "This option is currently not available on your device.": [
+        "Αυτή η επιλογή δεν είναι προς το παρόν διαθέσιμη στη συσκευή σας."
+      ],
       "This setting is disabled on the organization level": [
         "Αυτή η ρύθμιση είναι απενεργοποιημένη σε επίπεδο οργανισμού"
       ],
@@ -1721,11 +1786,17 @@
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με βιομετρικά"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Ξεκλειδώστε ${ PASS_SHORT_APP_NAME } με τον κωδικό πρόσβασης ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον επιπλέον κωδικό πρόσβασης σας"
+      ],
+      "Unlock with biometrics": [
+        "Ξεκλειδώστε με βιομετρικά"
       ],
       "Unpinning item...": [
         "Ξεκαρφίτσωμα στοιχείου..."
@@ -1832,6 +1903,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1877,6 +1951,9 @@
       "15 minutes": [
         "15 λεπτά"
       ],
+      "2 minutes": [
+        "2 λεπτά"
+      ],
       "24 hours": [
         "24 ώρες"
       ],
@@ -1894,6 +1971,9 @@
       ],
       "30 seconds": [
         "30 δευτερόλεπτα"
+      ],
+      "4 hours": [
+        "4 ώρες"
       ],
       "5 minutes": [
         "5 λεπτά"
@@ -1942,6 +2022,9 @@
       ],
       "Beta Access": [
         "Πρόσβαση Beta"
+      ],
+      "Biometrics": [
+        "Βιομετρικά"
       ],
       "Birthdate": [
         "Ημερομηνία γέννησης"
@@ -2418,6 +2501,9 @@
       "Type": [
         "Τύπος"
       ],
+      "Unlock with": [
+        "Ξεκλείδωμα με"
+      ],
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
       ],
@@ -2496,6 +2582,20 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Επεξεργασία"
+      ],
+      "File": [
+        "Αρχείο"
+      ],
+      "View": [
+        "Προβολή"
+      ],
+      "Window": [
+        "Παράθυρο"
       ]
     },
     "Message": {
@@ -2728,11 +2828,11 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
-      "Email address": [
-        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
+      ],
+      "Enter your extra password": [
+        "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
       ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
@@ -2829,9 +2929,6 @@
       ],
       "Passkey": [
         "Κλειδί πρόσβασης"
-      ],
-      "Password": [
-        "Κωδικός"
       ],
       "Password Health": [
         "Υγεία κωδικού πρόσβασης"
@@ -2994,6 +3091,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
+      ],
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
       ],
@@ -3030,14 +3130,14 @@
       "Empty note": [
         "Κενή σημείωση"
       ],
-      "Encryption password is required": [
-        "Απαιτείται κωδικός πρόσβασης κρυπτογράφησης"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
       ],
       "Extra password cannot be empty": [
         "Ο επιπλέον κωδικός πρόσβασης δεν μπορεί να είναι κενός"
+      ],
+      "Extra password is required": [
+        "Ο επιπλέον κωδικός πρόσβασης απαιτείται"
       ],
       "Extra password should have at least 8 characters": [
         "Ο επιπλέον κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες"
