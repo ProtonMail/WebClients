@@ -37,6 +37,8 @@ export enum FeatureCode {
     BlackFridayPromoShown = 'BlackFridayPromoShown',
     BlockSenderInToolbar = 'BlockSenderInToolbar',
     BundlePromoShown = 'BundlePromoShown',
+    CollapsibleSidebarSpotlightMail = 'CollapsibleSidebarSpotlightMail',
+    CollapsibleSidebarSpotlightCalendar = 'CollapsibleSidebarSpotlightCalendar',
     CalendarBusySlotsSpotlight = 'CalendarBusySlotsSpotlight',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
