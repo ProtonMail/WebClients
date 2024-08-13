@@ -41,6 +41,7 @@ import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
 import type { EditorLoadResult } from './EditorLoadResult'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
+import { CustomOrderedListPlugin } from './Plugins/CustomList/CustomListPlugin'
 
 const TypingBotEnabled = false
 
@@ -151,6 +152,7 @@ export function Editor({
         <HorizontalRulePlugin />
         <ListPlugin />
         <CheckListPlugin />
+        <CustomOrderedListPlugin />
         <TablePlugin hasCellBackgroundColor hasTabHandler />
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
