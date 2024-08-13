@@ -47,3 +47,19 @@ export const WAIT_TIME = 50; // Milliseconds.
  * wait and fail right away instead.
  */
 export const MAX_TOO_MANY_REQUESTS_WAIT = 60 * 60; // Seconds.
+
+/**
+ * Amount of time to wait for a new heartbeat. If no progress is done during
+ * this interval, we detect download as stuck and it is reported.
+ * This time out must be big enough that load of one big folder can fit in.
+ * Regular computer can do ~500/minute. We should manage up to 5k items in
+ * worst case (that is, only loading, nothing else is happening).
+ */
+export const HEARTBEAT_WAIT_TIME = 10 * 60 * 1000; // ms
+
+/**
+ * Amount of minimal time before timeout is recreated. If download is sending
+ * heartbeat too fast, we want to avoid expensive re-creation of setTimeout.
+ * This should not be bigger than very small fraction of HEARTBEAT_WAIT_TIME.
+ */
+export const HEARTBEAT_MAX_REFRESH_TIME = 2 * 1000; // ms
