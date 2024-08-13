@@ -923,7 +923,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const data = await this.editorInvoker.exportData(format)
 
-    void this._exportAndDownload.execute(data, this.decryptedNode?.name, format)
+    await this._exportAndDownload.execute(data, this.decryptedNode?.name, format)
   }
 
   async printAsPDF(): Promise<void> {

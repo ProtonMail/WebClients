@@ -15,7 +15,7 @@ export class EditorPdfExporter extends EditorExporter {
   async export(): Promise<Uint8Array> {
     const { $generatePDFFromEditor } = await import('./PDFExport/PDFExport')
 
-    const pdf = await $generatePDFFromEditor(this.editor, this.pageSize)
+    const pdf = await $generatePDFFromEditor(this.editor, this.pageSize, this.callbacks)
 
     const blob = await fetch(pdf).then((res) => res.blob())
 
