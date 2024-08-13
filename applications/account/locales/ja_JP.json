@@ -340,11 +340,17 @@
       "Delete Gateway": [
         "ゲートウェイ削除"
       ],
+      "Delete group": [
+        "グループを削除"
+      ],
       "Delete link": [
         "リンクを削除"
       ],
       "Delete logo": [
         "ロゴを削除"
+      ],
+      "Delete member": [
+        "メンバーを削除"
       ],
       "Delete permanently": [
         "完全に削除"
@@ -369,6 +375,9 @@
       ],
       "Disable": [
         "無効にする"
+      ],
+      "Disable E2EE for group address": [
+        "グループアドレスのエンドツーエンド暗号化を無効にする"
       ],
       "Disable recovery phrase": [
         "回復用フレーズを無効にする"
@@ -421,6 +430,9 @@
       "Edit Gateway": [
         "ゲートウェイを編集する"
       ],
+      "Edit group": [
+        "グループを編集"
+      ],
       "Edit invoice details": [
         "請求書の詳細を編集する"
       ],
@@ -429,6 +441,12 @@
       ],
       "Edit name": [
         "名前の編集"
+      ],
+      "Edit organization identity": [
+        "組織IDを編集"
+      ],
+      "Edit organization name": [
+        "組織名を編集"
       ],
       "Edit password": [
         "パスワードを編集"
@@ -456,6 +474,9 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
+      ],
+      "Enable E2EE for group address": [
+        "グループアドレスのエンドツーエンド暗号化を有効にする"
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
@@ -772,6 +793,12 @@
       "Remove": [
         "削除"
       ],
+      "Remove all members": [
+        "すべてのメンバーを削除"
+      ],
+      "Remove all members from group": [
+        "グループからすべてのメンバーを削除"
+      ],
       "Remove bonuses": [
         "ボーナスを削除"
       ],
@@ -856,6 +883,9 @@
       "Revoke all other sessions": [
         "ほかのすべてのセッションを取り消す"
       ],
+      "Revoke invitation": [
+        "招待を取り消す"
+      ],
       "Revoke this invitation": [
         "この招待を取り消す"
       ],
@@ -933,6 +963,9 @@
       ],
       "Send my username": [
         "ユーザー名を送信"
+      ],
+      "Send new invite": [
+        "新しい招待を送信"
       ],
       "Send reminder": [
         "リマインダーを送信"
@@ -1290,9 +1323,6 @@
       ],
       "External": [
         "外部"
-      ],
-      "Missing keys": [
-        "キーがありません"
       ],
       "No E2EE mail": [
         "エンドツーエンド暗号化メールなし"
@@ -3357,11 +3387,6 @@
         "スイスのプライバシー法によって保護されています"
       ]
     },
-    "drive_signup_2023: Title": {
-      "Secure cloud storage and file sharing that protects your data": [
-        "データを保護する安全なクラウド ストレージとファイル共有"
-      ]
-    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "拡張バージョン履歴"
@@ -5324,6 +5349,11 @@
         "サービス"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "グループアドレス"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
@@ -5951,8 +5981,11 @@
       "${ vaultLink } created": [
         "${ vaultLink } が作成されました"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } が削除されました"
+      ],
       "${ vaultLink } updated": [
-        "${ vaultLink } 更新されました"
+        "${ vaultLink } が更新されました"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "国別の接続には ${ vpnPlus } が必要です。"
@@ -6098,6 +6131,9 @@
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
       ],
+      "All Events ": [
+        "すべてのイベント"
+      ],
       "All keys successfully reactivated": [
         "すべての鍵は正常に再度アクティブになりました"
       ],
@@ -6169,9 +6205,6 @@
       ],
       "Are you sure you want to delete this label?": [
         "このラベルを削除してよろしいですか?"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "2 要素認証を無効にしてよろしいですか？"
       ],
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
@@ -6803,14 +6836,41 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "Invite Accepted": [
+        "招待が承認されました"
+      ],
+      "Invite Created": [
+        "招待が作成されました"
+      ],
+      "Invite deleted": [
+        "招待が削除されました"
+      ],
+      "Invite Deleted": [
+        "招待が削除されました"
+      ],
       "Invite rejected": [
-        "招待を拒否"
+        "招待が拒否されました"
+      ],
+      "Invite Rejected": [
+        "招待が拒否されました"
       ],
       "Invite successfully sent": [
         "招待状が正常に送信されました"
       ],
       "It appears some of your data is encrypted and locked.": [
         "いくつかのデータの暗号化と復号を可能にします。"
+      ],
+      "Item Autofilled": [
+        "アイテムが自動入力されました"
+      ],
+      "Item Created": [
+        "アイテムが作成されました"
+      ],
+      "Item Deleted": [
+        "アイテムが削除されました"
+      ],
+      "Item Updated": [
+        "アイテムが更新されました"
       ],
       "it’s imperative": [
         "必須です"
@@ -7073,6 +7133,15 @@
       "Paid for a monthly plan": [
         "月額プランに課金"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - カスタムメールが確認されました"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - カスタムメールが作成されました"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - カスタムメールが削除されました"
+      ],
       "password": [
         "パスワード"
       ],
@@ -7321,6 +7390,27 @@
       ],
       "Settings updated": [
         "設定が更新されました"
+      ],
+      "Share Created": [
+        "共有が作成されました"
+      ],
+      "Share Deleted": [
+        "共有が削除されました"
+      ],
+      "Share Updated": [
+        "共有が更新されました"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "共有 ${ vaultLink } が削除されました"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "共有 ${ vaultLink } が更新されました"
+      ],
+      "Shared vault deleted": [
+        "共有保管庫が削除されました"
+      ],
+      "Shared vault updated": [
+        "共有保管庫が更新されました"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "メッセージリストに各送信者の画像を表示します。 写真が利用できない場合は、送信者のイニシャルが表示されます。"
@@ -7757,10 +7847,19 @@
       "Vault created": [
         "保管庫が作成されました"
       ],
+      "Vault Created": [
+        "保管庫が作成されました"
+      ],
       "Vault deleted": [
         "保管庫が削除されました"
       ],
+      "Vault Deleted": [
+        "保管庫が削除されました"
+      ],
       "Vault updated": [
+        "保管庫が更新されました"
+      ],
+      "Vault Updated": [
         "保管庫が更新されました"
       ],
       "Verification can take a few minutes.": [
@@ -8597,6 +8696,27 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
+      "1 hour": [
+        "1 時間"
+      ],
+      "1 minute": [
+        "1 分"
+      ],
+      "10 minutes": [
+        "10 分"
+      ],
+      "15 minutes": [
+        "15 分"
+      ],
+      "30 minutes": [
+        "30 分"
+      ],
+      "30 seconds": [
+        "30 秒"
+      ],
+      "5 minutes": [
+        "5分"
+      ],
       "Account recovery": [
         "アカウントの回復"
       ],
@@ -8864,6 +8984,9 @@
       "Current email": [
         "現在のメール"
       ],
+      "Current organization identity": [
+        "現在の組織ID"
+      ],
       "Daily email notifications": [
         "毎日のメール通知"
       ],
@@ -9026,6 +9149,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Group address": [
+        "グループアドレス"
+      ],
       "Group name": [
         "グループ名"
       ],
@@ -9167,6 +9293,9 @@
       "New login password": [
         "新しいログインパスワード"
       ],
+      "New organization identity": [
+        "新しい組織ID"
+      ],
       "New organization password": [
         "新しい組織のパスワード"
       ],
@@ -9214,6 +9343,9 @@
       ],
       "Or": [
         "または"
+      ],
+      "Organization identity": [
+        "組織 ID"
       ],
       "Organization name": [
         "組織名"
@@ -10384,9 +10516,6 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
-      "${ size } storage per user": [
-        "1 ユーザーあたり ${ size } のストレージ"
-      ],
       "1 user": [
         "1ユーザー"
       ],
@@ -10410,9 +10539,6 @@
       ],
       "Advanced network security": [
         "高度なネットワークセキュリティ"
-      ],
-      "Advanced sharing security": [
-        "高度な共有セキュリティ"
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -10593,9 +10719,6 @@
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ か国のサーバー"
-      ],
-      "Share files and folders via link": [
-        "リンクでファイルやフォルダーを共有"
       ],
       "Sign in as user": [
         "ユーザーとしてサインイン"
@@ -10919,9 +11042,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "電子メールについて通知するか、メッセージが到着するカスタム時間を選択します"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "パスワード保護とリンクの有効期限を追加して、共有ファイルへのアクセスを制御します"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
@@ -11856,9 +11976,6 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "オンラインでの安全を確保するために ${ BRAND_NAME } を選択した 1 億人以上の人々に加わりましょう"
       ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "${ BRAND_NAME } を信頼する 50,000 以上の組織に参加しましょう"
-      ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を起動しています"
       ],
@@ -12077,6 +12194,9 @@
       ],
       "MM/YY": [
         "MM/YY (月/年)"
+      ],
+      "Payment Processing": [
+        "支払い処理中"
       ],
       "Processing payment": [
         "支払いの処理中"
@@ -12459,6 +12579,29 @@
       ],
       "User": [
         "ユーザー"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "キャンセル"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "詳細"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "メール"
+      ]
+    },
+    "saml: Title": {
+      "Test SAML configuration": [
+        "SAML 構成をテスト"
+      ],
+      "Testing SAML configuration": [
+        "SAML 構成をテスト中"
       ]
     },
     "scim: Action": {
@@ -13697,6 +13840,12 @@
       "Organization activated": [
         "組織が有効になりました"
       ],
+      "Organization identity updated": [
+        "組織IDが更新されました"
+      ],
+      "Organization name updated": [
+        "組織名が更新されました"
+      ],
       "Password copied to clipboard": [
         "パスワードがクリップボードにコピーされました"
       ],
@@ -14070,6 +14219,9 @@
       "Add PayPal payment method": [
         "PayPal 支払いの追加"
       ],
+      "Add pm.me subdomain": [
+        "pm.me サブドメインを追加"
+      ],
       "Add servers": [
         "サーバー追加"
       ],
@@ -14319,6 +14471,9 @@
       "Delete folder?": [
         "フォルダーを削除しますか？"
       ],
+      "Delete group?": [
+        "グループを削除しますか？"
+      ],
       "Delete key permanently?": [
         "キーを完全に削除しますか?"
       ],
@@ -14400,6 +14555,9 @@
       "Edit invoice details": [
         "請求書の詳細を編集する"
       ],
+      "Edit organization identity": [
+        "組織IDを編集"
+      ],
       "Edit servers": [
         "サーバー編集"
       ],
@@ -14419,9 +14577,6 @@
         "ゲートウェイにアクセスできる人を編集する"
       ],
       "Email": [
-        "メールアドレス"
-      ],
-      "Email address": [
         "メールアドレス"
       ],
       "Email composer": [
@@ -14537,6 +14692,9 @@
       ],
       "Gift code": [
         "ギフトコード"
+      ],
+      "Group": [
+        "グループ"
       ],
       "Groups": [
         "グループ"
@@ -14712,6 +14870,9 @@
       "Phone": [
         "電話番号"
       ],
+      "Policies": [
+        "ポリシー"
+      ],
       "Preview": [
         "プレビュー"
       ],
@@ -14747,6 +14908,9 @@
       ],
       "Refer a friend": [
         "友達を招待"
+      ],
+      "Remove all members?": [
+        "すべてのメンバーを削除しますか？"
       ],
       "Remove calendar": [
         "カレンダーを削除する"
@@ -14801,6 +14965,9 @@
       ],
       "Security and privacy": [
         "セキュリティとプライバシー"
+      ],
+      "Security events": [
+        "セキュリティイベント"
       ],
       "Security logs": [
         "セキュリティログ"
@@ -14870,9 +15037,6 @@
       ],
       "Sign in to your organization": [
         "組織にサインインする"
-      ],
-      "Sign in with 2FA": [
-        "2FA でサインイン"
       ],
       "Sign out": [
         "サインアウト"
@@ -15644,6 +15808,11 @@
     "wallet_signup_2024:Info": {
       "Coming soon": [
         "近日公開"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Wallet に戻る"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {
