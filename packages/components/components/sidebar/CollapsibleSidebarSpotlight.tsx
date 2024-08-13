@@ -12,9 +12,10 @@ import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-star
 interface Props {
     children: React.ReactNode;
     app: APP_NAMES;
+    isAskUpdateTimezoneModalOpen?: boolean;
 }
 
-const CollapsibleSidebarSpotlight = ({ children, app }: Props) => {
+const CollapsibleSidebarSpotlight = ({ children, app, isAskUpdateTimezoneModalOpen }: Props) => {
     const anchorRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
@@ -25,15 +26,18 @@ const CollapsibleSidebarSpotlight = ({ children, app }: Props) => {
             ? FeatureCode.CollapsibleSidebarSpotlightCalendar
             : FeatureCode.CollapsibleSidebarSpotlightMail;
 
+    const tzmodalNotOpened = app === APPS.PROTONCALENDAR ? !isAskUpdateTimezoneModalOpen : true;
+
     /**
      * Display conditions:
      * 1. User is not on a mobile screen
      * 2. User has done the welcome flow
      * 3. User has created his account more than 2 days ago
      * 4. Feature available for sure (spotlight is included in sidebar in a FF if, so covered)
+     * Bonus: no timezone modal opened for Calendar
      */
 
-    const displaySpotlight = !viewportWidth['<=small'] && isDone && userAccountHasMoreThanTwoDays;
+    const displaySpotlight = !viewportWidth['<=small'] && isDone && userAccountHasMoreThanTwoDays && tzmodalNotOpened;
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(feature, displaySpotlight);
 
