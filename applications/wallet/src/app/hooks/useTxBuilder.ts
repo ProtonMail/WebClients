@@ -55,9 +55,9 @@ export const useTxBuilder = () => {
     }, [unwrapUpdates]);
 
     const updateTxBuilderAsync = useCallback(
-        (updater: AsyncTxBuilderUpdater) => {
+        async (updater: AsyncTxBuilderUpdater) => {
             pushUpdate(updater);
-            void tryMakeUpdates();
+            await tryMakeUpdates();
         },
         [pushUpdate, tryMakeUpdates]
     );
