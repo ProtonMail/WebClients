@@ -303,6 +303,9 @@
       "Create a new label": [
         "Utwórz nową etykietę"
       ],
+      "Create alias": [
+        "Utwórz alias"
+      ],
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
@@ -516,9 +519,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Uzyskaj od ${ addonPriceWithCurrency } / miesiąc"
       ],
-      "Get SimpleLogin extension": [
-        "Pobierz rozszerzenie SimpleLogin"
-      ],
       "Get started": [
         "Rozpocznij"
       ],
@@ -546,9 +546,6 @@
       "Go to settings": [
         "Przejdź do ustawień"
       ],
-      "Go to SimpleLogin": [
-        "Przejdź do SimpleLogin"
-      ],
       "Got it": [
         "Ok"
       ],
@@ -569,6 +566,9 @@
       ],
       "Hide messages": [
         "Ukryj wiadomości"
+      ],
+      "Hide toolbar": [
+        "Ukryj pasek narzędzi"
       ],
       "hide-my-email aliases": [
         "aliasów hide-my-email"
@@ -852,11 +852,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otwórz"
@@ -1182,6 +1182,9 @@
       "Show side panel": [
         "Pokaż panel boczny"
       ],
+      "Show toolbar": [
+        "Pokaż pasek narzędzi"
+      ],
       "Sign out": [
         "Wyloguj"
       ],
@@ -1256,12 +1259,6 @@
       ],
       "Trust": [
         "Zaufaj"
-      ],
-      "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -3633,6 +3630,43 @@
         "Priorytetowe wsparcie"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Wybierz plan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Uzyskaj za ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Płatne rocznie ${ amountBilled }. Zaoszczędź ${ amountSave } na rocznej subskrypcji 2 indywidualnych kont ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 użytkowników"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Pełny dostęp do wszystkich usług ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Oszczędzasz ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Wszystko, co z ${ BRAND_NAME } dla dwojga."
+      ],
+      "Double your storage": [
+        "Podwój przestrzeń dyskową"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Przedstawiamy plan ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "OPIS:\n${ eventDescription }"
@@ -4212,6 +4246,9 @@
       "Tab closed": [
         "Karta została zamknięta"
       ],
+      "Text is too long to refine": [
+        "Tekst jest zbyt długi"
+      ],
       "Thanks for the feedback!": [
         "Dziękujemy za opinię!"
       ],
@@ -4550,6 +4587,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Nie możesz używać aliasów z włączonym dodatkowym hasłem ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
       ],
@@ -4579,6 +4619,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Po włączeniu dodatkowego hasła zarządzanie aliasami dostępne jest tylko w ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nie masz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
@@ -4697,14 +4740,23 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konta z niestandardowymi domenami nie mogą dołączyć do tego planu."
+      ],
       "customer support": [
         "wsparcie klienta"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Plany grupowe nie obsługują obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
       ],
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Konta dożywotnie nie mogę dołączyć do innego planu."
       ],
       "Manage addresses.": [
         "Zarządzaj adresami."
@@ -4733,6 +4785,9 @@
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu grupowego."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Zaproszono Cię do połączenia konta ${ BRAND_NAME } z tym planem grupy, aby razem korzystać z wszystkich funkcji premium ${ BRAND_NAME_TWO }."
       ],
@@ -4741,6 +4796,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Nie możesz zaakceptować zaproszenia w obecnym planie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6889,6 +6947,9 @@
       "Scheduling message...": [
         "Planowanie wiadomości..."
       ],
+      "Scribe panel": [
+        "Panel Scribe"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Ta opcja wyszukiwania pozwala bezpiecznie wyszukiwać słowa kluczowe w treści wiadomości."
       ],
@@ -6957,12 +7018,6 @@
       ],
       "Show original message": [
         "Pokaż oryginalną wiadomość"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin to usługa ${ BRAND_NAME }. Twoje konto ${ BRAND_NAME_TWO } zawiera aliasy hide-my-email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "Usługa SimpleLogin zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
@@ -7330,9 +7385,6 @@
       "Users": [
         "Użytkownicy"
       ],
-      "Using SimpleLogin is easy": [
-        "Używanie usługi SimpleLogin jest łatwe"
-      ],
       "Verification may take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
       ],
@@ -7608,9 +7660,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Osiągnięto maksymalną liczbę adresów w grupie kontaktów."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Twoje konto ${ BRAND_NAME } zawiera subskrypcję SimpleLogin. Zainstaluj rozszerzenie przeglądarki za pomocą jednego kliknięcia."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
@@ -8922,7 +8971,7 @@
         "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
-        "Niestandardowe godziny planowego wysyłania i usypiania"
+        "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny e-mail"
@@ -9323,9 +9372,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ size } storage per user": [
-        "${ size } przestrzeni dyskowej na użytkownika"
-      ],
       "1 user": [
         "1 użytkownik"
       ],
@@ -9343,9 +9389,6 @@
       ],
       "Administration Panel": [
         "Panel administratora"
-      ],
-      "Advanced sharing security": [
-        "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -9376,9 +9419,6 @@
       ],
       "Collaborate and share large files": [
         "Współpraca i udostępnianie dużych plików"
-      ],
-      "Collaborative document editor": [
-        "Edytor dokumentów z możliwością współpracy"
       ],
       "Contact groups": [
         "Grupy kontaktów"
@@ -9548,9 +9588,6 @@
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
       ],
-      "Share files and folders via link": [
-        "Udostępniaj pliki i foldery za pomocą linku"
-      ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
       ],
@@ -9647,6 +9684,9 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
       ],
+      "Version history": [
+        "Historia wersji"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
       ]
@@ -9737,9 +9777,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpiecz cyfrowe życie 2 użytkowników z ${ BRAND_NAME }."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Indywidualne rozwiązania dla większych organizacji o specyficznych potrzebach w zakresie bezpieczeństwa"
       ],
@@ -9748,6 +9785,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Darmowe, podstawowe konto stworzone z myślą o zapewnieniu każdemu prywatności."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Nieograniczona prywatność i więcej przestrzeni dyskowej dla 2 osób."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Usunięcie konta spowoduje utratę promocyjnej ceny i nie będzie ona dostępna przy tworzeniu nowego konta."
@@ -9819,9 +9859,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Wybierz niestandardowe godziny powiadomień o wiadomościach i zaplanowanych wysyłkach"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain } dla subskrybowania wiadomości"
@@ -12229,6 +12266,9 @@
       "Import record deleted": [
         "Rekord importu został usunięty"
       ],
+      "Invitation rejected": [
+        "Zaproszenie zostało odrzucone"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Ustawienia skrótów klawiszowych zostały zaktualizowane"
       ],
@@ -12831,9 +12871,6 @@
       "Edit image": [
         "Edytuj zdjęcie"
       ],
-      "Email address": [
-        "Adres e-mail"
-      ],
       "Email addresses": [
         "Adresy e-mail"
       ],
@@ -12891,8 +12928,8 @@
       "Groups": [
         "Grupy"
       ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Ukryj swój adres e-mail za pomocą SimpleLogin przez ${ BRAND_NAME }"
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Ukryj swój adres z ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Weryfikacja antyspamowa"
@@ -13068,9 +13105,6 @@
       "Other names": [
         "Inne nazwy"
       ],
-      "Password": [
-        "Hasło"
-      ],
       "Payment failed": [
         "Płatność nie powiodła się"
       ],
@@ -13202,9 +13236,6 @@
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
-      ],
-      "Sign in with 2FA": [
-        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"
