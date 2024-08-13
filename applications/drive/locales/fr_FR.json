@@ -2400,6 +2400,43 @@
         "Assistance prioritaire"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Je choisis ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Disponible pour ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturation annuelle à ${ amountBilled }. Économisez ${ amountSave } par an sur 2 abonnements individuels ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 utilisateurs"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Accès complet à tous les produits ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Vous économisez ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Tout ${ BRAND_NAME }, pour deux personnes."
+      ],
+      "Double your storage": [
+        "Doublez votre espace de stockage"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Voici ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPTION :\n${ eventDescription }"
@@ -3326,6 +3363,9 @@
       "You have successfully joined the family group": [
         "Vous avez rejoint le groupe famillal."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement de groupe."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
       ],
@@ -4155,6 +4195,10 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Créer un cloud sécurisé pour ${ n } membre",
+        "Créer un cloud sécurisé pour ${ n } membres"
+      ],
       "Create in": [
         "Créer dans"
       ],
@@ -4675,6 +4719,9 @@
       ],
       "Organization size": [
         "Taille de l’organisation"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nos alertes se caractérisent par leur prudence. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
       "Owner": [
         "Propriétaire"
@@ -6663,9 +6710,6 @@
       "${ size } storage": [
         "${ size } d'espace de stockage"
       ],
-      "${ size } storage per user": [
-        "${ size } d'espace de stockage par utilisateur"
-      ],
       "1 user": [
         "1 utilisateur"
       ],
@@ -6683,9 +6727,6 @@
       ],
       "Administration Panel": [
         "Panneau d'administration"
-      ],
-      "Advanced sharing security": [
-        "Sécurité avancée pour le partage"
       ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
@@ -6716,9 +6757,6 @@
       ],
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
-      ],
-      "Collaborative document editor": [
-        "Éditeur de documents collaboratif"
       ],
       "Contact groups": [
         "Groupes de contacts"
@@ -6838,6 +6876,9 @@
       "Phone support (40+ users)": [
         "Assistance téléphonique (compte 40 utilisateurs ou plus)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
       ],
@@ -6883,9 +6924,6 @@
       ],
       "Send & receive invitations": [
         "Envoyer et recevoir des invitations"
-      ],
-      "Share files and folders via link": [
-        "Partage de fichiers et de dossiers via un lien"
       ],
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
@@ -6979,6 +7017,9 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
+      "Version history": [
+        "Historique des versions"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -7069,9 +7110,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
@@ -7080,6 +7118,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Le compte de démarrage gratuit conçu pour que tout le monde puisse bénéficier du respect de la vie privée."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Une confidentialité protégée en toutes circonstances et plus de stockage pour un maximum de 2 personnes."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En supprimant votre compte, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous créez un nouveau compte."
@@ -7151,9 +7192,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Personnalisez le moment du rappel ou de l'envoi d'un message."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Contrôlez l'accès à vos fichiers partagés en ajoutant une protection par mot de passe et des dates d'expiration de lien."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain } » pour les abonnements à des sites d'informations par exemple."
@@ -8826,7 +8864,7 @@
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
-        "${ planName } vous offre une confidentialité illimitée et plus d'espace de stockage pour un maximum de 2 personnes."
+        "${ planName } vous offre une confidentialité illimitée et plus d'espace de stockage pour jusqu'à 2 personnes."
       ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } permet à votre équipe d'être plus productive, mieux organiser leur travail avec un accès à toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium."
@@ -9207,6 +9245,9 @@
       ],
       "Import record deleted": [
         "L'enregistrement d'importation a été supprimé."
+      ],
+      "Invitation rejected": [
+        "L'invitation a été rejetée."
       ],
       "Last modified aliases stored in your oldest vault": [
         "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
@@ -9607,9 +9648,6 @@
       "Edit image": [
         "Modifier l'image"
       ],
-      "Email address": [
-        "Adresse e-mail"
-      ],
       "Email addresses": [
         "Adresses e-mail"
       ],
@@ -9756,9 +9794,6 @@
       "Other names": [
         "Autres noms"
       ],
-      "Password": [
-        "Mot de passe"
-      ],
       "Payment failed": [
         "Le paiement n'a pas abouti."
       ],
@@ -9881,9 +9916,6 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
-      ],
-      "Sign in with 2FA": [
-        "Se connecter avec l'authentification à deux facteurs (A2F)"
       ],
       "Sign out": [
         "Se déconnecter"
