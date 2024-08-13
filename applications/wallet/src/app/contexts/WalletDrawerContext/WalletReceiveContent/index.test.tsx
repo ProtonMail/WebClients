@@ -1,53 +1,50 @@
 import { render, screen } from '@testing-library/react';
 
-import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
+import { WasmKeychainKind, WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
-import { apiWalletsData, mockUseUserWalletSettings } from '@proton/wallet/tests';
+import { apiWalletsData, freeable, mockUseUserWalletSettings } from '@proton/wallet/tests';
 
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../../tests';
 import { mockUseFiatCurrencies } from '../../../tests/mocks/useFiatCurrencies';
 import { mockUseGetExchangeRate } from '../../../tests/mocks/useGetExchangeRate';
-import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
 describe('WalletReceiveContent', () => {
-    let helper: useBitcoinReceiveModule.UseBitcoinReceiveHelper;
-
-    const mockUseBitcoinReceive = vi.spyOn(useBitcoinReceiveModule, 'useBitcoinReceive');
-
     const [testWallet] = apiWalletsData;
     const [testAccount] = testWallet.WalletAccounts;
 
     const copyAddressButtonText = 'Copy Bitcoin address';
 
+    const mockGenerateNewReceiveAddress = vi.fn();
+
     beforeEach(() => {
-        mockUseBitcoinBlockchainContext();
+        mockUseBitcoinBlockchainContext({
+            bitcoinAddressHelperByWalletAccountId: {
+                [testAccount.ID]: {
+                    generateNewReceiveAddress: mockGenerateNewReceiveAddress,
+                    isLoading: false,
+                    receiveBitcoinAddress: freeable({
+                        keychain: WasmKeychainKind.External,
+                        address: 'tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h',
+                        index: 0,
+                    }),
+                },
+            },
+        });
+
         mockUseWalletAccountExchangeRate(null);
         mockUseGetExchangeRate();
         mockUseFiatCurrencies();
         mockUseUserWalletSettings();
         mockUseNotifications();
-
-        const bitcoinURI = WasmPaymentLink.tryParse(
-            'bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h?amount=0.005',
-            WasmNetwork.Testnet
-        );
-
-        helper = {
-            paymentLink: bitcoinURI,
-            loadingPaymentLink: false,
-            incrementIndex: vi.fn(),
-            isIndexAboveGap: false,
-        };
-
-        mockUseBitcoinReceive.mockReturnValue({ ...helper });
     });
 
-    describe('when payment link is not generated yet', () => {
+    describe('when address is not generated yet', () => {
         beforeEach(() => {
-            mockUseBitcoinReceive.mockReturnValue({
-                ...helper,
-                paymentLink: undefined,
+            mockUseBitcoinBlockchainContext({
+                bitcoinAddressHelperByWalletAccountId: {
+                    [testAccount.ID]: undefined,
+                },
             });
 
             render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
@@ -71,11 +68,20 @@ describe('WalletReceiveContent', () => {
         });
     });
 
-    describe('when new payment link is loading', () => {
+    describe('when address is loading', () => {
         beforeEach(() => {
-            mockUseBitcoinReceive.mockReturnValue({
-                ...helper,
-                loadingPaymentLink: true,
+            mockUseBitcoinBlockchainContext({
+                bitcoinAddressHelperByWalletAccountId: {
+                    [testAccount.ID]: {
+                        generateNewReceiveAddress: mockGenerateNewReceiveAddress,
+                        isLoading: true,
+                        receiveBitcoinAddress: freeable({
+                            keychain: WasmKeychainKind.External,
+                            address: 'tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h',
+                            index: 0,
+                        }),
+                    },
+                },
             });
 
             render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
@@ -102,11 +108,6 @@ describe('WalletReceiveContent', () => {
         );
 
         beforeEach(() => {
-            mockUseBitcoinReceive.mockReturnValue({
-                ...helper,
-                paymentLink: bitcoinURI,
-            });
-
             render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
         });
 
