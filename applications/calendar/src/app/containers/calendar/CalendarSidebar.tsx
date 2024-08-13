@@ -64,6 +64,7 @@ export interface CalendarSidebarProps {
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
+    isAskUpdateTimezoneModalOpen?: boolean;
 }
 
 const CalendarSidebar = ({
@@ -75,6 +76,7 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
+    isAskUpdateTimezoneModalOpen,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
     const api = useApi();
@@ -350,7 +352,10 @@ const CalendarSidebar = ({
                             isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                         )}
                     >
-                        <CollapsibleSidebarSpotlight app={APPS.PROTONCALENDAR}>
+                        <CollapsibleSidebarSpotlight
+                            app={APPS.PROTONCALENDAR}
+                            isAskUpdateTimezoneModalOpen={isAskUpdateTimezoneModalOpen}
+                        >
                             {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
                             <Tooltip
                                 title={
