@@ -37,6 +37,7 @@ const DocumentTitleDropdown = ({
   const [title, setTitle] = useState<string | undefined>()
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
+  const [isExportingPDF, setIsExportingPDF] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
   const [isRenaming, setIsRenaming] = useState(false)
@@ -82,6 +83,24 @@ const DocumentTitleDropdown = ({
 
       void controller.duplicateDocument().then(() => {
         setIsDuplicating(false)
+      })
+    },
+    [controller],
+  )
+
+  const onExportPDF = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (!controller) {
+        throw new Error('Primary controller not found')
+      }
+
+      event.preventDefault()
+      event.stopPropagation()
+
+      setIsExportingPDF(true)
+
+      void controller.exportAndDownload('pdf').then(() => {
+        setIsExportingPDF(false)
       })
     },
     [controller],
@@ -313,12 +332,11 @@ const DocumentTitleDropdown = ({
                 </DropdownMenuButton>
                 <DropdownMenuButton
                   className="flex items-center text-left"
-                  onClick={() => {
-                    void controller.exportAndDownload('pdf')
-                  }}
+                  onClick={onExportPDF}
                   data-testid="download-pdf"
                 >
                   {c('Action').t`PDF (.pdf)`}
+                  {isExportingPDF && <CircleLoader size="small" className="ml-auto" />}
                 </DropdownMenuButton>
               </DropdownMenu>
             </SimpleDropdown>
