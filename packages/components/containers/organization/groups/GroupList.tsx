@@ -1,8 +1,11 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
+import { Button, Input, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
 import type { GroupsManagementReturn } from './types';
@@ -11,11 +14,24 @@ interface Props {
     groupsManagement: GroupsManagementReturn;
 }
 
+const compareGroupNames = (a: Group, b: Group) => a.Name.localeCompare(b.Name);
+
+const getSortedGroups = (input: string, groups: Group[]) => {
+    return input
+        ? groups
+              .filter((group) => {
+                  return group.Name.toLowerCase().includes(input);
+              })
+              .sort(compareGroupNames)
+        : [...groups].sort(compareGroupNames);
+};
+
 const GroupList = ({
     groupsManagement: { uiState, form, setUiState, setSelectedGroup, groups, selectedGroup, domainData, onDeleteGroup },
 }: Props) => {
     const { selectedDomain } = domainData;
     const { resetForm, values: formValues } = form;
+    const [input, setInput] = useState<string>('');
 
     const sideBarPlaceholder = (
         <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full">
@@ -38,32 +54,29 @@ const GroupList = ({
         MemberCount: undefined,
     };
 
+    const sortedGroups = getSortedGroups(input.toLowerCase(), groups);
+
     return (
         <>
-            <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto space-between">
-                <Button
-                    onClick={() => {
-                        setUiState('new');
-                        resetForm({
-                            values: {
-                                name: '',
-                                description: '',
-                                address: '',
-                                permissions: GroupPermissions.NobodyCanSend,
-                                members: '',
-                            },
-                        });
-                        setSelectedGroup(newGroupData);
-                    }}
-                >
-                    <Icon className="shrink-0 mr-2" name="plus" />
-                    {c('Action').t`New group`}
-                </Button>
+            <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 mr-4">
+                {!!groups.length && (
+                    <Input
+                        value={input}
+                        onValue={setInput}
+                        placeholder={c('Placeholder').t`Group name`}
+                        prefix={<Icon name="magnifier" />}
+                        suffix={
+                            <Button shape="ghost" size="small" icon onClick={() => setInput('')}>
+                                <Icon name="cross-small" alt={c('Action').t`Delete`} />
+                            </Button>
+                        }
+                    />
+                )}
             </div>
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
             <Scroll className="mr-4">
                 {uiState === 'new' && <GroupItem key="new" active groupData={newGroupData} isNew={true} />}
-                {groups.map((groupData) => (
+                {sortedGroups.map((groupData) => (
                     <GroupItem
                         key={groupData.ID}
                         groupData={groupData}
