@@ -1,9 +1,16 @@
 import { useRef } from 'react';
 
 import metrics from '@proton/metrics';
-import { getApiError, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import {
+    getApiError,
+    getIsNetworkError,
+    getIsOfflineError,
+    getIsTimeoutError,
+    getIsUnreachableError,
+} from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import useShareState from '../../_shares/useSharesState';
@@ -22,8 +29,12 @@ export enum UploadErrorCategory {
     FreeSpaceExceeded = 'free_space_exceeded',
     TooManyChildren = 'too_many_children',
     NetworkError = 'network_error',
+    ServerError = 'server_error',
     IntegrityError = 'integrity_error',
     Unknown = 'unknown',
+    RateLimited = 'rate_limited',
+    HTTPClientError = '4xx',
+    HTTPServerError = '5xx',
 }
 
 export interface FailedUploadMetadata {
@@ -157,10 +168,18 @@ export function getErrorCategory(error: any): UploadErrorCategory {
         return UploadErrorCategory.TooManyChildren;
     } else if (statusCode === API_CUSTOM_ERROR_CODES.FREE_SPACE_EXCEEDED) {
         return UploadErrorCategory.FreeSpaceExceeded;
-    } else if (getIsConnectionIssue(error)) {
+    } else if (getIsUnreachableError(error) || getIsTimeoutError(error)) {
+        return UploadErrorCategory.ServerError;
+    } else if (getIsOfflineError(error) || getIsNetworkError(error)) {
         return UploadErrorCategory.NetworkError;
     } else if (isVerificationError(error)) {
         return UploadErrorCategory.IntegrityError;
+    } else if (error?.statusCode && error?.statusCode === 429) {
+        return UploadErrorCategory.RateLimited;
+    } else if (error?.statusCode && is4xx(error?.statusCode)) {
+        return UploadErrorCategory.HTTPClientError;
+    } else if (error?.statusCode && is5xx(error?.statusCode)) {
+        return UploadErrorCategory.HTTPServerError;
     }
     return UploadErrorCategory.Unknown;
 }
