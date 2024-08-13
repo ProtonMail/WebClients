@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode, Ref } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
@@ -130,6 +130,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
      * Only when collapse button is present
      */
     collapsed?: boolean;
+    navigationRef?: Ref<HTMLDivElement>;
 }
 
 const Sidebar = ({
@@ -148,6 +149,7 @@ const Sidebar = ({
     showStorage = true,
     collapsed = false,
     className,
+    navigationRef,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -231,6 +233,7 @@ const Sidebar = ({
                         !collapsed && 'overflow-overlay'
                     )}
                     tabIndex={-1}
+                    ref={navigationRef}
                 >
                     {children}
                 </div>
