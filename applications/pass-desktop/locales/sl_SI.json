@@ -518,6 +518,23 @@
         "Vašega upravitelj gesel ni tukaj? Zahtevajte ga."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Vsili ponovno nalaganje"
+      ],
+      "Reload": [
+        "Ponovno naloži"
+      ],
+      "Show logs": [
+        "Prikaži dnevnike"
+      ],
+      "Speech": [
+        "Govor"
+      ],
+      "Toggle developers tools": [
+        "Vklopi/izklopi orodja za razvijalce"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Varčuj pametno. Pridobite leto Pass Plus za samo ${ relativePrice } na mesec."
@@ -2318,6 +2335,20 @@
         "Omogoči ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Uredi"
+      ],
+      "File": [
+        "Datoteka"
+      ],
+      "View": [
+        "Prikaz"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } predmet",
@@ -2549,9 +2580,6 @@
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
-      "Email address": [
-        "E-poštni naslov"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Uživate v ${ PASS_APP_NAME }?"
       ],
@@ -2638,9 +2666,6 @@
       ],
       "Passkey": [
         "Identifikacijski ključ"
-      ],
-      "Password": [
-        "Geslo"
       ],
       "Password Health": [
         "Kakovost gesla"
@@ -2834,9 +2859,6 @@
       ],
       "Empty note": [
         "Prazna opomba"
-      ],
-      "Encryption password is required": [
-        "Zahtevano je geslo za šifriranje"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Datum poteka ni v obliki MM/LL"
