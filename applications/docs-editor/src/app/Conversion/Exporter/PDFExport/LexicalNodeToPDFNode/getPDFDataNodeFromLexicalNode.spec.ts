@@ -2,6 +2,7 @@ import type { EditorState } from 'lexical'
 import { $isParagraphNode, type LexicalNode, $isElementNode } from 'lexical'
 import { getPDFDataNodeFromLexicalNode } from './getPDFDataNodeFromLexicalNode'
 import { $isImageNode } from '../../../../Plugins/Image/ImageNode'
+import type { ExporterRequiredCallbacks } from '../../EditorExporter'
 
 jest.mock('lexical', () => ({
   ...jest.requireActual('lexical'),
@@ -14,6 +15,8 @@ jest.mock('../../../../Plugins/Image/ImageNode', () => ({
 }))
 
 describe('getPDFDataNodeFromLexicalNode', () => {
+  const callbacks = {} as ExporterRequiredCallbacks
+
   afterEach(() => {
     jest.clearAllMocks()
   })
@@ -30,7 +33,7 @@ describe('getPDFDataNodeFromLexicalNode', () => {
       __src: 'data:image/png;base64,',
     } as unknown as LexicalNode
 
-    const result = await getPDFDataNodeFromLexicalNode(node, state)
+    const result = await getPDFDataNodeFromLexicalNode(node, state, callbacks)
 
     expect(result).toEqual({
       type: 'Image',
@@ -68,7 +71,7 @@ describe('getPDFDataNodeFromLexicalNode', () => {
       getTextContent: jest.fn(() => ''),
     } as unknown as LexicalNode
 
-    const result = await getPDFDataNodeFromLexicalNode(node, state)
+    const result = await getPDFDataNodeFromLexicalNode(node, state, callbacks)
 
     expect(result).toEqual({
       type: 'View',
