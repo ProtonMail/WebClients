@@ -44,6 +44,7 @@ import {
     COLLAPSE_EVENTS,
     SOURCE_EVENT,
     sendRequestCollapsibleSidebarReport,
+    useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -92,6 +93,12 @@ const CalendarSidebar = ({
         });
         setshowSideBar(!showSideBar);
     };
+
+    const navigationRef = useRef<HTMLDivElement>(null);
+
+    const { isScrollPresent } = useLeftSidebarButton({
+        navigationRef,
+    });
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
 
@@ -302,6 +309,7 @@ const CalendarSidebar = ({
             version={<AppVersion />}
             showStorage={showSideBar}
             collapsed={collapsed}
+            navigationRef={navigationRef}
         >
             {renderCalendarModal && (
                 <PersonalCalendarModal
@@ -325,14 +333,22 @@ const CalendarSidebar = ({
                 {!collapsed && (
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
-                        {myCalendarsList}
-                        {otherCalendarsList}
+                        <div>
+                            {myCalendarsList}
+                            {otherCalendarsList}
+                        </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>
                 )}
 
                 {featureFlagCollapsible && !isElectronApp && (
-                    <span className={clsx('mt-auto', !collapsed && 'absolute bottom-0 right-0 mb-11 mr-2')}>
+                    <span
+                        className={clsx(
+                            'mt-auto',
+                            !collapsed && 'absolute bottom-0 right-0 mb-11',
+                            isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
+                        )}
+                    >
                         {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
                         <Tooltip
                             title={
@@ -346,7 +362,8 @@ const CalendarSidebar = ({
                                 className={clsx(
                                     'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
                                     !showSideBar && 'sidebar-collapse-button--collapsed',
-                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto'
+                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                    isScrollPresent && 'sidebar-collapse-button--above-scroll'
                                 )}
                                 onClick={onClickExpandNav}
                                 aria-pressed={showSideBar}
