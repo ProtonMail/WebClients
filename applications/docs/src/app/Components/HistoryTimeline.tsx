@@ -14,7 +14,8 @@ function HistoryTimeline({
 }) {
   const formattedBatchGroups = useMemo(() => {
     return versionHistory.getFormattedBatchGroups()
-  }, [versionHistory.batches, versionHistory])
+  }, [versionHistory])
+
   return (
     <>
       {formattedBatchGroups.map(({ formattedDate, batchIndexes }, index) => {
