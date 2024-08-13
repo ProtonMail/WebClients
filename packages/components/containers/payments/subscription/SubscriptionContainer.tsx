@@ -312,7 +312,7 @@ const SubscriptionContainer = ({
                 if (maybeCycle) {
                     return maybeCycle;
                 }
-                return CYCLE.TWO_YEARS;
+                return DEFAULT_CYCLE;
             }
 
             if (maybeCycle) {
