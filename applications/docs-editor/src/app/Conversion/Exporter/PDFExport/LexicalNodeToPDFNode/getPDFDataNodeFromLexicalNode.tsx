@@ -14,18 +14,24 @@ import type { PDFDataNode } from '../PDFDataNode'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { toImage } from '@proton/shared/lib/helpers/image'
 import { isWebpImage } from '../../../ImageSrcUtils'
+import type { ExporterRequiredCallbacks } from '../../EditorExporter'
+import { convertWebpToJpeg } from './convertWebpToJpeg'
 
-const MaxEditorWidth = 816
-const ApproximateWidthOfA4PDF = 595
-const ApproximatePaddingThatGivesGoodResults = 19
-const MaxImageWidth = ApproximateWidthOfA4PDF + ApproximatePaddingThatGivesGoodResults
-const EditorToPDFConversionFactor = MaxImageWidth / MaxEditorWidth
+const MaxEditorWidthPx = 816
+const WidthOfA4PDFInPx = 794
+const Padding = ExportStyles.page.paddingLeft + ExportStyles.page.paddingRight
+const MaxImageWidth = WidthOfA4PDFInPx - Padding
+const EditorToPDFConversionFactor = MaxImageWidth / MaxEditorWidthPx
 
 function pixelsToPoints(pixels: number): number {
   return pixels * 0.75
 }
 
-export const getPDFDataNodeFromLexicalNode = async (node: LexicalNode, state: EditorState): Promise<PDFDataNode> => {
+export const getPDFDataNodeFromLexicalNode = async (
+  node: LexicalNode,
+  state: EditorState,
+  callbacks: ExporterRequiredCallbacks,
+): Promise<PDFDataNode> => {
   if ($isLineBreakNode(node)) {
     return {
       type: 'Text',
@@ -92,7 +98,7 @@ export const getPDFDataNodeFromLexicalNode = async (node: LexicalNode, state: Ed
     for (const line of lines) {
       const sublines: PDFDataNode[] = []
       for (const subline of line) {
-        const processedSubline = await getPDFDataNodeFromLexicalNode(subline, state)
+        const processedSubline = await getPDFDataNodeFromLexicalNode(subline, state, callbacks)
         sublines.push(processedSubline)
       }
       processedLines.push({
@@ -118,7 +124,17 @@ export const getPDFDataNodeFromLexicalNode = async (node: LexicalNode, state: Ed
   }
 
   if ($isImageNode(node)) {
-    if (!node.__src.startsWith('data:')) {
+    let src = node.__src
+
+    if (src.startsWith('http')) {
+      const fetchedB64 = await callbacks.fetchExternalImageAsBase64(src)
+      if (!fetchedB64) {
+        return null
+      }
+      src = fetchedB64
+    }
+
+    if (!src.startsWith('data:')) {
       return {
         type: 'View',
         style: ExportStyles.block,
@@ -132,9 +148,13 @@ export const getPDFDataNodeFromLexicalNode = async (node: LexicalNode, state: Ed
       }
     }
 
-    const src = node.__src
     if (isWebpImage(src)) {
-      return null
+      try {
+        const converted = await convertWebpToJpeg(src)
+        src = converted
+      } catch (error) {
+        return null
+      }
     }
 
     let width = state.read(() => node.getWidth())
@@ -175,7 +195,7 @@ export const getPDFDataNodeFromLexicalNode = async (node: LexicalNode, state: Ed
   const children: PDFDataNode[] = []
   if ($isElementNode(node) || $isTableNode(node) || $isTableCellNode(node) || $isTableRowNode(node)) {
     for (const child of state.read(() => node.getChildren())) {
-      const processedChild = await getPDFDataNodeFromLexicalNode(child, state)
+      const processedChild = await getPDFDataNodeFromLexicalNode(child, state, callbacks)
       if (processedChild) {
         children.push(processedChild)
       }
