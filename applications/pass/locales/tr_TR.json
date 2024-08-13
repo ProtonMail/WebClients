@@ -512,7 +512,7 @@
         "Kilidi aç"
       ],
       "Unlock offline with password": [
-        "Parola ile çevrim dışı kilidi aç"
+        "Kilidi parola ile çevrim dışı aç"
       ],
       "Unpin item": [
         "Ögenin sabitlemesini kaldır"
@@ -941,6 +941,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
       ],
+      "Wrong extra password": [
+        "Ek parola yanlış"
+      ],
       "Wrong password": [
         "Parola yanlış"
       ],
@@ -1085,6 +1088,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
+      ],
       "Add a username field": [
         "Bir kullanıcı adı alanı ekleyin"
       ],
@@ -1135,6 +1141,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biyometri ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biyometrik veriler kullanımdan kaldırılacak ve yeniden kullanıma alınması gerekecek."
       ],
       "Breaches detected": [
         "Veriler ele geçirilmiş"
@@ -1234,6 +1246,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Verilerinizi korumak için otomatik kilitlemeyi açın"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Otomatik biyometri kilidi kullanıma alınıyor"
+      ],
+      "Enabling biometrics lock failed": [
+        "Otomatik biyometri kilidi kullanıma alınamadı"
       ],
       "Enabling offline mode...": [
         "Çevrim dışı kip açılıyor..."
@@ -1463,8 +1481,11 @@
       "Offline support successfully disabled": [
         "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak ve oturumunuzu açmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Uyarılarımız ihtiyatlı davranmak yönündedir. Ele geçirilmiş bilgilerin hiçbirini tanımıyorsanız, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Owner": [
         "Sahibi"
@@ -1479,7 +1500,7 @@
         "parola"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Parola ile kilitleme kaydedildi. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
+        "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
@@ -1506,8 +1527,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
+      "Please confirm your extra password": [
+        "Lütfen ek parolanızı onaylayın"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Biyometri ile otomatik kilitleme için lütfen ek parolanızı doğrulayın."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için ek parolanızı yazın."
+      ],
       "Please confirm your password": [
         "Lütfen parolanızı onaylayın"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Biyometri ile otomatik kilitleme için lütfen parolanızı doğrulayın."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Parolanızla otomatik kilitlemek için lütfen parolanızı doğrulayın."
@@ -1599,6 +1632,9 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
+      "Set by your organization": [
+        "Kuruluşunuz tarafından ayarlanmış"
+      ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
       ],
@@ -1660,6 +1696,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
+      "This option is currently not available on your device.": [
+        "Bu seçenek şu anda aygıtınızda kullanılamıyor."
+      ],
       "This setting is disabled on the organization level": [
         "Bu ayar kuruluş düzeyinde kapatılmış"
       ],
@@ -1684,11 +1723,17 @@
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "${ PASS_SHORT_APP_NAME } kilidini açmak için Biyometri kullanın"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ek parola kullanın"
+      ],
+      "Unlock with biometrics": [
+        "Kilidi biyometri ile aç"
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
@@ -1795,6 +1840,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
       ]
     },
     "Label": {
@@ -1840,6 +1888,9 @@
       "15 minutes": [
         "15 dakika"
       ],
+      "2 minutes": [
+        "2 dakika"
+      ],
       "24 hours": [
         "24 saat"
       ],
@@ -1857,6 +1908,9 @@
       ],
       "30 seconds": [
         "30 saniye"
+      ],
+      "4 hours": [
+        "4 saat"
       ],
       "5 minutes": [
         "5 dakika"
@@ -1905,6 +1959,9 @@
       ],
       "Beta Access": [
         "Beta erişimi"
+      ],
+      "Biometrics": [
+        "Biyometri"
       ],
       "Birthdate": [
         "Doğum tarihi"
@@ -2381,6 +2438,9 @@
       "Type": [
         "Tür"
       ],
+      "Unlock with": [
+        "Kilit şununla açılsın:"
+      ],
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
       ],
@@ -2691,11 +2751,11 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
-      "Email address": [
-        "E-posta adresi"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
+      ],
+      "Enter your extra password": [
+        "Ek parolanızı yazın"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -2792,9 +2852,6 @@
       ],
       "Passkey": [
         "Geçiş anahtarı"
-      ],
-      "Password": [
-        "Parola"
       ],
       "Password Health": [
         "Parola sağlığı"
@@ -2957,6 +3014,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } parolası gereklidir"
+      ],
       "A description of the problem is required": [
         "Sorunun açıklamasının yazılması zorunludur"
       ],
@@ -2993,14 +3053,14 @@
       "Empty note": [
         "Boş not"
       ],
-      "Encryption password is required": [
-        "Şifreleme parolası gereklidir"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
       "Extra password cannot be empty": [
         "Ek parola boş olamaz"
+      ],
+      "Extra password is required": [
+        "Ek parolanın yazılması zorunludur"
       ],
       "Extra password should have at least 8 characters": [
         "Ek parola en az 8 karakter uzunluğunda olmalıdır"

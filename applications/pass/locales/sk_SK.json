@@ -1113,6 +1113,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
+      ],
       "Add a username field": [
         "Pridať pole mena používateľa"
       ],
@@ -1163,6 +1166,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Tým sa zabráni tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrické uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometria bude deaktivovaná a bude potrebné ju znova zapnúť."
       ],
       "Breaches detected": [
         "Zistený únik"
@@ -1262,6 +1271,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Povoľte automatické uzamykanie na zabezpečenie údajov"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Aktivácia biometrického automatického zamykania"
+      ],
+      "Enabling biometrics lock failed": [
+        "Aktivácia biometrického zamykania zlyhala"
       ],
       "Enabling offline mode...": [
         "Zapínanie offline režimu..."
@@ -1497,8 +1512,8 @@
       "Offline support successfully disabled": [
         "Podpora offline bola úspešne vypnutá"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód na odomknutie relácie. Po 3 neúspešných pokusoch dôjde k odhláseniu."
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
       ],
       "Owner": [
         "Vlastník"
@@ -1542,8 +1557,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Potvrďte vaše dodatočné heslo, prosím"
+      ],
       "Please confirm your password": [
         "Potvrďte vaše heslo, prosím"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou biometrie."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou vášho hesla."
@@ -1698,6 +1719,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
       ],
+      "This option is currently not available on your device.": [
+        "Táto možnosť nie je vo vašom zariadení momentálne k dispozícii."
+      ],
       "This setting is disabled on the organization level": [
         "Toto nastavenie je vypnuté na úrovni organizácie"
       ],
@@ -1722,11 +1746,17 @@
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho dodatočného hesla"
+      ],
+      "Unlock with biometrics": [
+        "Odomknúť pomocou biometrie"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
@@ -1957,6 +1987,9 @@
       ],
       "Beta Access": [
         "Beta prístup"
+      ],
+      "Biometrics": [
+        "Biometria"
       ],
       "Birthdate": [
         "Dátum narodenia"
@@ -2435,6 +2468,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock with": [
+        "Odomknúť pomocou"
+      ],
       "Unnamed Credit Card": [
         "Nepomenovaná platobná karta"
       ],
@@ -2749,11 +2785,11 @@
       "Discard changes?": [
         "Zrušiť zmeny?"
       ],
-      "Email address": [
-        "Emailová adresa"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Zadajte vaše dodatočné heslo"
       ],
       "Enter your password": [
         "Zadajte Vaše heslo"
@@ -2850,9 +2886,6 @@
       ],
       "Passkey": [
         "Prístupový kľúč"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Password Health": [
         "Stav hesla"
@@ -3017,6 +3050,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } heslo je povinné"
+      ],
       "A description of the problem is required": [
         "Vyžaduje sa opis problému"
       ],
@@ -3053,14 +3089,14 @@
       "Empty note": [
         "Prázdna poznámka"
       ],
-      "Encryption password is required": [
-        "Vyžaduje sa šifrovacie heslo"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
       ],
       "Extra password cannot be empty": [
         "Dodatočné heslo nemôže byť prázdne"
+      ],
+      "Extra password is required": [
+        "Dodatočné heslo je povinné"
       ],
       "Extra password should have at least 8 characters": [
         "Dodatočné heslo by malo mať aspoň 8 znakov"
