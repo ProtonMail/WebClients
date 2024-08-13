@@ -1,516 +1,518 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "es_LA"
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "sk_SK"
   },
   "contexts": {
     "Action": {
       "Add comment": [
-        "Añadir un comentario"
+        "Pridať komentár"
       ],
       "Add new table column": [
-        "Añadir columna a la tabla"
+        "Pridať nový stĺpec"
       ],
       "Add new table row": [
-        "Añadir fila a la tabla"
+        "Pridať nový riadok"
       ],
       "Adjust font size": [
-        "Ajustar tamaño de fuente"
+        "Prispôsobiť veľkosť písma"
       ],
       "and": [
-        "y"
+        "a"
       ],
       "Apply": [
-        "Aplicar"
+        "Použiť"
       ],
       "Bold": [
-        "Negrita"
+        "Tučné"
       ],
       "Bulleted List": [
-        "Lista de viñetas"
+        "Odrážkový zoznam"
       ],
       "Cancel": [
-        "Cancelar"
+        "Zrušiť"
       ],
       "Center align": [
-        "Alinear al centro"
+        "Zarovnať na stred"
       ],
       "Check List": [
-        "Lista de verificación"
+        "Kontrolný zoznam"
       ],
       "Clear contents": [
-        "Borrar contenidos"
+        "Vymazať obsah"
       ],
       "Clear formatting": [
-        "Borrar el formato"
+        "Vymazať formátovanie"
       ],
       "Click to open column menu": [
-        "Pulsar para abrir menú de columna"
+        "Kliknutím otvorte menu stĺpca"
       ],
       "Click to open row menu": [
-        "Pulsar para abrir menú de fila"
+        "Kliknutím otvorte menu riadku"
       ],
       "Close": [
-        "Cerrar"
+        "Zatvoriť"
       ],
       "Code block": [
-        "Bloque de códigos"
+        "Blok kódu"
       ],
       "Color": [
-        "Color"
+        "Farba"
       ],
       "Copy link": [
-        "Copiar enlace"
+        "Kopírovať odkaz"
       ],
       "Delete": [
-        "Eliminar"
+        "Odstrániť"
       ],
       "Delete column": [
-        "Eliminar la columna"
+        "Vymazať stĺpec"
       ],
       "Delete comment": [
-        "Eliminar el comentario"
+        "Vymazať komentár"
       ],
       "Delete row": [
-        "Eliminar la fila"
+        "Vymazať riadok"
       ],
       "Delete thread": [
-        "Eliminar el hilo"
+        "Vymazať vlákno"
       ],
       "Divider": [
-        "Divisor"
+        "Oddeľovač"
       ],
       "Duplicate": [
-        "Duplicar"
+        "Duplikovať"
       ],
       "Edit": [
-        "Editar"
+        "Upraviť"
       ],
       "Edit link": [
-        "Editar el enlace"
+        "Upraviť odkaz"
       ],
       "Fit table to page width": [
-        "Ajustar tabla al ancho de la página"
+        "Prispôsobiť tabuľku šírke strany"
       ],
       "Indent": [
-        "Aumentar sangría"
+        "Odsadenie"
       ],
       "Insert above": [
-        "Insertar arriba"
+        "Vložiť nad"
       ],
       "Insert below": [
-        "Insertar abajo"
+        "Vložiť pod"
       ],
       "Insert comment": [
-        "Insertar un comentario"
+        "Vložiť komenár"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Vložiť obrázok"
       ],
       "Insert left": [
-        "Insertar a la izquierda"
+        "Vložiť vľavo"
       ],
       "Insert link": [
-        "Insertar enlace"
+        "Vložiť odkaz"
       ],
       "Insert right": [
-        "Insertar a la derecha"
+        "Vložiť vpravo"
       ],
       "Insert table": [
-        "Insertar una tabla"
+        "Vložiť tabuľku"
       ],
       "Italic": [
-        "Cursiva"
+        "Kurzíva"
       ],
       "Justify align": [
-        "Justificar"
+        "Zarovnať podľa okrajov"
       ],
       "Left align": [
-        "Alinear a la izquierda"
+        "Zarovnať vľavo"
       ],
       "Link": [
-        "Enlace"
+        "Odkaz"
       ],
       "Numbered List": [
-        "Lista numerada"
+        "Číslovaný zoznam"
       ],
       "Options": [
-        "Opciones"
+        "Možnosti"
       ],
       "Outdent": [
-        "Reducir sangría"
+        "Predsadenie"
       ],
       "Quote": [
-        "Citar"
+        "Citovať"
       ],
       "Re-open": [
-        "Volver a abrir"
+        "Znovu otvoriť"
       ],
       "Re-open thread": [
-        "Volver a abrir el hilo"
+        "Znovu otvoriť vlákno"
       ],
       "Redo": [
-        "Rehacer"
+        "Znovu"
       ],
       "Refresh the page": [
-        "Refrescar la página"
+        "Obnoviť stránku"
       ],
       "Remove background color": [
-        "Eliminar color de fondo"
+        "Odstrániť farbu pozadia"
       ],
       "Remove link": [
-        "Borrar el enlace"
+        "Odstrániť odkaz"
       ],
       "Reply": [
-        "Responder"
+        "Odpovedať"
       ],
       "Resolve": [
-        "Solucionar"
+        "Vyriešiť"
       ],
       "Right align": [
-        "Alinear a la derecha"
+        "Zarovnať vpravo"
       ],
       "Save": [
-        "Guardar"
+        "Uložiť"
       ],
       "Show thread": [
-        "Mostrar hilo"
+        "Zobraziť vlákno"
       ],
       "Strike-through": [
-        "Tachado"
+        "Prečiarknuté"
       ],
       "Strikethrough": [
-        "Tachar"
+        "Prečiarknúť"
       ],
       "Submit": [
-        "Enviar"
+        "Potvrdiť"
       ],
       "Table options": [
-        "Opciones de tabla"
+        "Možnosti tabuľky"
       ],
       "Underline": [
-        "Subrayado"
+        "Podčiarknuté"
       ],
       "Undo": [
-        "Deshacer"
+        "Vrátiť späť"
       ]
     },
     "color": {
       "apple": [
-        "manzana"
+        "jablko"
       ],
       "azureish white": [
-        "blanco azulado"
+        "azúrovo biela"
       ],
       "black": [
-        "negro"
+        "čierna"
       ],
       "blanched almond": [
-        "almendra blanqueada"
+        "blanšírované mandle"
       ],
       "blue-gray": [
-        "gris azulado"
+        "modrošedá"
       ],
       "caramel": [
-        "caramelo"
+        "karamel"
       ],
       "carrot": [
-        "zanahoria"
+        "mrkva"
       ],
       "cerise": [
-        "cereza"
+        "čerešňa"
       ],
       "cinnabar": [
-        "cinabrio"
+        "rumelka"
       ],
       "cobalt": [
-        "cobalto"
+        "kobalt"
       ],
       "copper": [
-        "cobre"
+        "meď"
       ],
       "cyan-blue azure": [
-        "azul cian"
+        "azúrovo-modrá"
       ],
       "dandelion": [
-        "diente de león"
+        "púpava"
       ],
       "dark cerulean": [
-        "cerúleo oscuro"
+        "tmavo blankytná"
       ],
       "dark midnight blue": [
-        "azul medianoche oscuro"
+        "tmavá polnočná modrá"
       ],
       "dim gray": [
-        "gris tenue"
+        "tmavo šedá"
       ],
       "enzian": [
-        "genciana"
+        "horec"
       ],
       "fern": [
-        "helecho"
+        "papraď"
       ],
       "field drab": [
-        "café oscuro"
+        "poľná jednotvárna"
       ],
       "forest": [
-        "bosque"
+        "les"
       ],
       "gainsboro": [
-        "gris claro"
+        "veľmi svetlo šedá"
       ],
       "gray": [
-        "gris"
+        "sivá"
       ],
       "japanese laurel": [
-        "laurel japonés"
+        "japonský vavrín"
       ],
       "kiwi": [
         "kiwi"
       ],
       "lemon yellow": [
-        "amarillo limón"
+        "citrónovo žltá"
       ],
       "light carmine pink": [
-        "rosa carmín claro"
+        "svetlo karmínovo ružová"
       ],
       "light moss green": [
-        "verde musgo claro"
+        "machovo svetlo zelená"
       ],
       "light red": [
-        "rojo claro"
+        "svetlo červená"
       ],
       "maize": [
-        "maíz"
+        "kukurica"
       ],
       "mughal green": [
-        "verde mogol"
+        "mughalská zelená"
       ],
       "ocean": [
-        "océano"
+        "oceán"
       ],
       "olive": [
-        "aceituna"
+        "oliva"
       ],
       "outer space": [
-        "espacio exterior"
+        "vesmírny priestor"
       ],
       "pacific": [
-        "pacífico"
+        "pacifik"
       ],
       "palatinate blue": [
-        "azul palatino"
+        "palatinátovo modrá"
       ],
       "pale cerulean": [
-        "azul pálido"
+        "bledo blankytná"
       ],
       "pastel gray": [
-        "gris pastel"
+        "pastelovo šedá"
       ],
       "persian plum": [
-        "ciruela persa"
+        "perzská slivka"
       ],
       "persian red": [
-        "rojo persa"
+        "perzská červená"
       ],
       "philippine gray": [
-        "gris filipino"
+        "filipínska šedá"
       ],
       "philippine silver": [
-        "plateado filipino"
+        "filipínska strieborná"
       ],
       "pickle": [
-        "pepinillo"
+        "uhorka"
       ],
       "pine": [
-        "pino"
+        "borovica"
       ],
       "pink": [
-        "rosa"
+        "ružová"
       ],
       "pistachio": [
-        "pistacho"
+        "pistácia"
       ],
       "plum": [
-        "ciruela"
+        "slivka"
       ],
       "purple": [
-        "púrpura"
+        "purpurová"
       ],
       "red": [
-        "rojo"
+        "červená"
       ],
       "reef": [
-        "arrecife"
+        "útes"
       ],
       "ruddy pink": [
-        "rosa rojizo"
+        "perzská červená"
       ],
       "sahara": [
         "sahara"
       ],
       "satin sheen gold": [
-        "oro brillo satinado"
+        "saténovo lesklá zlatá"
       ],
       "slateblue": [
-        "azul pizarra"
+        "bridlicová modrá"
       ],
       "soil": [
-        "suelo"
+        "pôda"
       ],
       "strawberry": [
-        "fresa"
+        "jahoda"
       ],
       "vivid auburn": [
-        "castaño vívido"
+        "živá gaštanová"
       ],
       "white": [
-        "blanco"
+        "biela"
       ]
     },
     "Confirm": {
       "Discard comment?": [
-        "¿Descartar el comentario?"
+        "Odstrániť komentár?"
       ]
     },
     "Error": {
       "Failed to import HTML due to unknown error.": [
-        "Error al importar el HTML debido a un error desconocido."
+        "Nepodarilo sa importovať HTML z dôvodu neznámej chyby."
       ],
       "Failed to import Markdown due to unknown error.": [
-        "Error al importar el Markdown debido a un error desconocido."
+        "Nepodarilo sa importovať Markdown z dôvodu neznámej chyby."
       ],
       "Failed to import Word document due to unknown error.": [
-        "Error al importar el documento de Word debido a un error desconocido."
+        "Nepodarilo sa importovať dokument programu Word z dôvodu neznámej chyby."
       ],
       "Failed to initialize editor due to unknown error.": [
-        "Error al inicializar el editor debido a un error desconocido."
+        "Inicializácia editora sa nepodarila z dôvodu neznámej chyby."
       ],
       "Signature verification failed": [
-        "Error en la verificación de la firma"
+        "Overenie podpisu zlyhalo"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
-        "No se puede convertir el documento de Word. ¿Está protegido con contraseña? Si es así, elimine la contraseña e intente de nuevo."
+        "Nie je možné previesť dokument programu Word. Je chránený heslom? Ak áno, odstráňte heslo a skúste to znova."
       ]
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Actualice la página o intente nuevamente."
+        "Obnovte stránku, prosím, alebo skúste znovu neskôr."
       ],
       "Something went wrong": [
-        "Hubo un problema"
+        "Niečo sa pokazilo"
       ]
     },
     "Font face option": {
       "System default": [
-        "Del sistema"
+        "Podľa systému"
       ],
       "Theme font": [
-        "Fuente del tema"
+        "Písmo motívu"
       ]
     },
     "Font size option": {
       "Large": [
-        "Grande"
+        "Veľké"
       ],
       "Medium (recommended)": [
-        "Mediana (recomendada)"
+        "Stredné (odporúčané)"
       ],
       "Small": [
-        "Pequeña"
+        "Malé"
       ],
       "Very large": [
-        "Muy grande"
+        "Veľmi veľké"
       ],
       "Very small": [
-        "Muy pequeña"
+        "Veľmi malé"
       ]
     },
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
-        "${ allTypersExceptLast } y ${ lastTyper }"
+        "${ allTypersExceptLast } a ${ lastTyper }"
       ],
       "${ usersTranslation } is typing...": [
-        "${ usersTranslation } está escribiendo...",
-        "${ usersTranslation } están escribiendo..."
+        "${ usersTranslation } píše...",
+        "${ usersTranslation } píšu...",
+        "${ usersTranslation } píšu...",
+        "${ usersTranslation } píšu..."
       ],
       "Are you sure you want to delete this comment?": [
-        "¿En verdad desea eliminar este comentario?"
+        "Naozaj chcete vymazať tento komentár?"
       ],
       "Are you sure you want to delete this thread?": [
-        "¿En verdad desea eliminar este hilo?"
+        "Naozaj chcete odstrániť toto vlákno?"
       ],
       "Comments": [
-        "Comentarios"
+        "Komentáre"
       ],
       "Editing": [
-        "Editar"
+        "Upravuje"
       ],
       "Just now": [
-        "Justo ahora"
+        "Práve teraz"
       ],
       "Loading": [
-        "Cargando"
+        "Načítavanie"
       ],
       "No comments": [
-        "Sin comentarios"
+        "Žiadne komentáre"
       ],
       "Something went wrong:": [
-        "Hubo un problema:"
+        "Niečo sa pokazilo:"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
-        "El contenido que está intentando pegar es demasiado grande para pegarlo de una vez. Intente nuevamente pegándolo en partes más pequeñas."
+        "Obsah, ktorý sa pokúšate vložiť, je príliš veľký na to, aby sa dal vložiť naraz. Skúste to znova a vkladajte po menších častiach."
       ],
       "Viewing": [
-        "Ver"
+        "Prezerá"
       ],
       "You cannot undo this action.": [
-        "No puede deshacer esta acción."
+        "Túto akciu nie je možné vrátiť späť."
       ]
     },
     "Label": {
       "Background colour": [
-        "Color de fondo"
+        "Farba pozadia"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Atajo de teclado: ${ shortcut }"
+        "Klávesová skratka: ${ shortcut }"
       ],
       "Link text": [
-        "Texto del enlace"
+        "Text odkazu"
       ],
       "Link URL": [
-        "URL del enlace"
+        "URL adresa odkazu"
       ],
       "More options": [
-        "Más opciones"
+        "Ďalšie možnosti"
       ],
       "Text colour": [
-        "Color del texto"
+        "Farba textu"
       ]
     },
     "Placeholder": {
       "Add a comment...": [
-        "Añadir un comentario..."
+        "Pridať komentár..."
       ],
       "Edit comment...": [
-        "Editar el comentario..."
+        "Upraviť komentár..."
       ],
       "Paste link": [
-        "Pegar el enlace"
+        "Vložiť odkaz"
       ],
       "Reply...": [
-        "Responder..."
+        "Odpovedať..."
       ],
       "Text": [
-        "Texto"
+        "Text"
       ]
     },
     "Title": {
       "Delete comment": [
-        "Eliminar el comentario"
+        "Vymazať komentár"
       ],
       "Delete thread": [
-        "Eliminar el hilo"
+        "Vymazať vlákno"
       ]
     }
   }
