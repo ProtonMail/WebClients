@@ -67,12 +67,16 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
          * The page might automatically refocus such a field, but we want to avoid
          * triggering actions on it while it's in an intermediate state. This function
          * blocks actions, removes the field from tracking, and clears its flags. */
-        detachField: (field: HTMLInputElement) => {
+        detachField: withContext<(field: HTMLInputElement) => void>((ctx, field) => {
             actionTrap(field);
             formHandle.fields.get(field)?.detach();
             formHandle.fields.delete(field);
             removeClassifierFlags(field, { preserveIgnored: false });
-        },
+
+            /* close dropdown if opened & attached to detaching field */
+            const dropdownField = ctx?.service.iframe.dropdown?.getCurrentField()?.element;
+            if (dropdownField === field) ctx?.service.iframe.dropdown?.close();
+        }),
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             let didChange = formType !== formHandle.formType;
