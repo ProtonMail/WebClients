@@ -29,9 +29,9 @@ import { certificateVerifyProc } from './tls';
 import { SourceType, updateElectronApp } from './update';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
-export let mainWindow: BrowserWindow | null;
-
 await startup();
+
+export let mainWindow: BrowserWindow | null;
 
 let isAppQuitting = false;
 
