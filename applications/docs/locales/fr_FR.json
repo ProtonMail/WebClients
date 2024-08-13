@@ -2945,6 +2945,9 @@
       "You have successfully joined the family group": [
         "Vous avez rejoint le groupe famillal."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement de groupe."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement de groupe pour profiter tous ensemble des fonctionnalités premium de ${ BRAND_NAME_TWO }."
       ],
@@ -3626,6 +3629,10 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Créer un cloud sécurisé pour ${ n } membre",
+        "Créer un cloud sécurisé pour ${ n } membres"
+      ],
       "Create in": [
         "Créer dans"
       ],
@@ -3992,6 +3999,9 @@
       "Organization size": [
         "Taille de l’organisation"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nos alertes se caractérisent par leur prudence. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
+      ],
       "Owner": [
         "Propriétaire"
       ],
@@ -4159,7 +4169,7 @@
         "La provenance des modifications dans le document n'a pas pu être vérifiée. Voulez-vous marquer ce document comme vérifié ? Vous pouvez choisir d'ignorer et décider plus tard."
       ],
       "The Beginning": [
-        "Le début"
+        "Début"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
@@ -5523,9 +5533,6 @@
       "${ size } storage": [
         "${ size } d'espace de stockage"
       ],
-      "${ size } storage per user": [
-        "${ size } d'espace de stockage par utilisateur"
-      ],
       "1 user": [
         "1 utilisateur"
       ],
@@ -5543,9 +5550,6 @@
       ],
       "Administration Panel": [
         "Panneau d'administration"
-      ],
-      "Advanced sharing security": [
-        "Sécurité avancée pour le partage"
       ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
@@ -5576,9 +5580,6 @@
       ],
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
-      ],
-      "Collaborative document editor": [
-        "Éditeur de documents collaboratif"
       ],
       "Contact groups": [
         "Groupes de contacts"
@@ -5698,6 +5699,9 @@
       "Phone support (40+ users)": [
         "Assistance téléphonique (compte 40 utilisateurs ou plus)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
       ],
@@ -5743,9 +5747,6 @@
       ],
       "Send & receive invitations": [
         "Envoyer et recevoir des invitations"
-      ],
-      "Share files and folders via link": [
-        "Partage de fichiers et de dossiers via un lien"
       ],
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
@@ -5839,6 +5840,9 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
+      "Version history": [
+        "Historique des versions"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -5929,9 +5933,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sécurisez votre vie numérique avec ${ BRAND_NAME } pour deux personnes."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
@@ -5940,6 +5941,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Le compte de démarrage gratuit conçu pour que tout le monde puisse bénéficier du respect de la vie privée."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Une confidentialité protégée en toutes circonstances et plus de stockage pour un maximum de 2 personnes."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En supprimant votre compte, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous créez un nouveau compte."
@@ -6001,9 +6005,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Personnalisez le moment du rappel ou de l'envoi d'un message."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Contrôlez l'accès à vos fichiers partagés en ajoutant une protection par mot de passe et des dates d'expiration de lien."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain } » pour les abonnements à des sites d'informations par exemple."
@@ -7466,6 +7467,9 @@
       "Import record deleted": [
         "L'enregistrement d'importation a été supprimé."
       ],
+      "Invitation rejected": [
+        "L'invitation a été rejetée."
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
       ],
@@ -7809,9 +7813,6 @@
       "Edit image": [
         "Modifier l'image"
       ],
-      "Email address": [
-        "Adresse e-mail"
-      ],
       "Email addresses": [
         "Adresses e-mail"
       ],
@@ -7915,9 +7916,6 @@
       "Other names": [
         "Autres noms"
       ],
-      "Password": [
-        "Mot de passe"
-      ],
       "Payment failed": [
         "Le paiement n'a pas abouti."
       ],
@@ -7998,9 +7996,6 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
-      ],
-      "Sign in with 2FA": [
-        "Se connecter avec l'authentification à deux facteurs (A2F)"
       ],
       "Sign out": [
         "Se déconnecter"
