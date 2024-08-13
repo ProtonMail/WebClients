@@ -202,7 +202,7 @@ const SubscriptionContainer = ({
     step: maybeStep,
     cycle: maybeCycle,
     minimumCycle,
-    maximumCycle,
+    maximumCycle: maybeMaximumCycle,
     currency: maybeCurrency,
     coupon: maybeCoupon,
     plan,
@@ -228,6 +228,9 @@ const SubscriptionContainer = ({
     allowedAddonTypes,
 }: SubscriptionContainerProps) => {
     const allowDowncycling = useFlag('AllowDowncycling');
+
+    const defaultMaximumCycle = app === APPS.PROTONVPN_SETTINGS ? undefined : CYCLE.YEARLY;
+    const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
 
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -312,7 +315,7 @@ const SubscriptionContainer = ({
                 if (maybeCycle) {
                     return maybeCycle;
                 }
-                return CYCLE.TWO_YEARS;
+                return DEFAULT_CYCLE;
             }
 
             if (maybeCycle) {
