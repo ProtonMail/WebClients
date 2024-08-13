@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -9,7 +9,7 @@ export const TextAreaReadonly: FC<Props> = ({ children, className }) => {
     const [height, setHeight] = useState(0);
     const ref = useRef<HTMLTextAreaElement>(null);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (ref.current) setHeight(ref.current.scrollHeight);
     }, [children]);
 
