@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacte a nuestro servicio de atención al cliente para obtener ayuda."
       ],
+      "Wrong extra password": [
+        "Contraseña adicional incorrecta"
+      ],
       "Wrong password": [
         "La contraseña no es correcta."
       ],
@@ -1073,7 +1076,7 @@
         "El acceso a ${ PASS_APP_NAME } siempre requerirá su contraseña de ${ BRAND_NAME }."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
-        "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o PIN del dispositivo."
+        "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o el código PIN del dispositivo."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Acceda a sus contraseñas sobre la marcha con nuestras aplicaciones móviles."
@@ -1130,7 +1133,7 @@
         "Se registró el bloqueo automático biométrico. Úselo para desbloquear ${ PASS_APP_NAME }."
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
-        "La biometría se desactivará y será necesario activarla nuevamente."
+        "Los datos biométricos se desactivarán y será necesario activarlos nuevamente."
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -1444,8 +1447,8 @@
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos incorrectos."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
       ],
       "Open the Extensions menu": [
         "Abra el menú de extensiones"
@@ -1490,11 +1493,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme la contraseña de ${ BRAND_NAME } para exportar los datos de ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Confirme su contraseña adicional"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Confirme la contraseña adicional para bloquear automáticamente con datos biométricos."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Confirme la contraseña adicional para cancelar el registro del bloqueo actual."
+      ],
       "Please confirm your password": [
         "Confirme su contraseña"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Confirme su contraseña para bloquear automáticamente con biométrica."
+        "Confirme la contraseña para bloquear automáticamente con datos biométricos."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Confirme su contraseña para bloquear automáticamente con su contraseña."
@@ -1598,6 +1610,9 @@
       "Session timed out": [
         "Sesión agotada"
       ],
+      "Set by your organization": [
+        "Configurado por su organización"
+      ],
       "Settings successfully updated": [
         "Ajustes actualizados con éxito"
       ],
@@ -1690,7 +1705,7 @@
         "Desbloquee ${ PASS_APP_NAME } con el código PIN para guardar esta clave de acceso"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Desbloquee ${ PASS_SHORT_APP_NAME } con biométrica"
+        "Desbloquee ${ PASS_SHORT_APP_NAME } con datos biométricos"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
@@ -1800,6 +1815,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1844,6 +1862,9 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2 minutes": [
+        "2 minutos"
+      ],
       "24 hours": [
         "24 horas"
       ],
@@ -1864,6 +1885,9 @@
       ],
       "30 seconds": [
         "30 segundos"
+      ],
+      "4 hours": [
+        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"
@@ -1932,7 +1956,7 @@
         "Sugerencias automáticas"
       ],
       "Biometrics": [
-        "Biométrico"
+        "Datos biométricos"
       ],
       "Birthdate": [
         "Fecha de nacimiento"
@@ -2660,6 +2684,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Ingrese su contraseña adicional"
+      ],
       "Enter your password": [
         "Ingrese la contraseña"
       ],
@@ -2874,6 +2901,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Se requiere la contraseña de ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "Se requiere una descripción del problema"
       ],
@@ -2907,14 +2937,14 @@
       "Empty note": [
         "Nota vacía"
       ],
-      "Encryption password is required": [
-        "Se requiere la contraseña de cifrado"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA"
       ],
       "Extra password cannot be empty": [
         "La contraseña adicional no puede estar vacía"
+      ],
+      "Extra password is required": [
+        "Se requiere la contraseña adicional"
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres"
