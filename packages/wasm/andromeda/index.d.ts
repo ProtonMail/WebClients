@@ -1,6 +1,10 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+* @returns {number}
+*/
+export function getDefaultStopGap(): number;
+/**
 */
 export function setPanicHook(): void;
 /**
@@ -15,39 +19,6 @@ export function getWordsAutocomplete(word_start: string): (string)[];
 */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 /**
-* @returns {number}
-*/
-export function getDefaultStopGap(): number;
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
 */
 export enum WasmScriptType {
   Legacy = 1,
@@ -57,9 +28,10 @@ export enum WasmScriptType {
 }
 /**
 */
-export enum WasmWalletTransactionFlag {
-  Suspicious = 0,
-  Private = 1,
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -83,16 +55,9 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
+export enum WasmWalletTransactionFlag {
+  Suspicious = 0,
+  Private = 1,
 }
 /**
 */
@@ -109,12 +74,49 @@ export enum WasmLanguage {
 }
 /**
 */
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
+}
+/**
+*/
 export enum WasmPaymentLinkKind {
   BitcoinAddress = 0,
   BitcoinURI = 1,
   LightningURI = 2,
   UnifiedURI = 3,
 }
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export interface WasmApiExchangeRate {
     ID: string;
     BitcoinUnit: WasmBitcoinUnit;
@@ -236,9 +238,23 @@ export interface WasmCreateWalletTransactionPayload {
     transaction_time: string | null;
 }
 
-export interface WasmPagination {
-    skip: number;
-    take: number;
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    body: string | null;
+    recipients: Record<string, string> | null;
+    is_anonymous: number | null;
 }
 
 export interface WasmAddressInfo {
@@ -247,7 +263,10 @@ export interface WasmAddressInfo {
     keychain: WasmKeychainKind;
 }
 
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
 
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
@@ -341,25 +360,6 @@ export interface WasmTransactionTime {
     confirmed: boolean;
     confirmation_time: number | null;
     last_seen: number | null;
-}
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    body: string | null;
-    recipients: Record<string, string> | null;
-    is_anonymous: number | null;
 }
 
 /**
@@ -1140,6 +1140,17 @@ export class WasmPsbt {
 /**
 */
   total_fees: bigint;
+}
+/**
+*/
+export class WasmPsbtAndTxBuilder {
+  free(): void;
+/**
+*/
+  0: WasmPsbt;
+/**
+*/
+  1: WasmTxBuilder;
 }
 /**
 */
