@@ -54,7 +54,7 @@ export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, 
     const { txBuilder, updateTxBuilder, updateTxBuilderAsync } = txBuilderHelpers;
 
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
-    const { createDraftPsbt } = usePsbt({ txBuilder });
+    const { createDraftPsbt } = usePsbt({ txBuilderHelpers });
     const [loadingCreatePsbt, withLoadingCreatePsbt] = useLoading();
 
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
@@ -148,7 +148,7 @@ export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, 
             }
         });
 
-        updateTxBuilderAsync((txBuilder) => txBuilder.constrainRecipientAmounts());
+        await updateTxBuilderAsync((txBuilder) => txBuilder.constrainRecipientAmounts());
     };
 
     const handleReviewTransaction = async () => {
