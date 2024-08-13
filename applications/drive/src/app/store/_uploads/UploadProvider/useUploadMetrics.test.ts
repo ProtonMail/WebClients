@@ -106,7 +106,7 @@ describe('useUploadMetrics::', () => {
         it('for timeout error', () => {
             const error = new Error('Request timed out');
             error.name = 'TimeoutError';
-            expect(getErrorCategory(error)).toBe(UploadErrorCategory.NetworkError);
+            expect(getErrorCategory(error)).toBe(UploadErrorCategory.ServerError);
         });
 
         it('for verification error', () => {
@@ -120,6 +120,24 @@ describe('useUploadMetrics::', () => {
 
         it('for too many children error', () => {
             expect(getErrorCategory(tooManyChildren)).toBe(UploadErrorCategory.TooManyChildren);
+        });
+
+        it('for any 429 rate limited response code', () => {
+            const error = new Error('Rate Limited');
+            (error as any).statusCode = 429;
+            expect(getErrorCategory(error)).toBe(UploadErrorCategory.RateLimited);
+        });
+
+        it('for any 4xx response code', () => {
+            const error = new Error('Random error');
+            (error as any).statusCode = 498;
+            expect(getErrorCategory(error)).toBe(UploadErrorCategory.HTTPClientError);
+        });
+
+        it('for any 5xx response code', () => {
+            const error = new Error('Random error');
+            (error as any).statusCode = 589;
+            expect(getErrorCategory(error)).toBe(UploadErrorCategory.HTTPServerError);
         });
 
         it('for any error', () => {
