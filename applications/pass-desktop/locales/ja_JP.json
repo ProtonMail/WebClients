@@ -500,6 +500,23 @@
         "パスワード マネージャーがここにいませんか? リクエストしてください。"
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "強制再読み込み"
+      ],
+      "Reload": [
+        "再読み込み"
+      ],
+      "Show logs": [
+        "ログを表示"
+      ],
+      "Speech": [
+        "読み上げ"
+      ],
+      "Toggle developers tools": [
+        "開発者ツールの切り替え"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "スマートに節約。1ヶ月あたり たった ${ relativePrice } で Pass Plus をゲットしましょう。"
@@ -2138,6 +2155,20 @@
         "${ reason } を有効にする"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "編集"
+      ],
+      "File": [
+        "ファイル"
+      ],
+      "View": [
+        "表示切り替え"
+      ],
+      "Window": [
+        "ウィンドウ"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } 件のアイテム"
@@ -2363,9 +2394,6 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
-      "Email address": [
-        "メールアドレス"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
@@ -2452,9 +2480,6 @@
       ],
       "Passkey": [
         "パスキー"
-      ],
-      "Password": [
-        "パスワード"
       ],
       "Password Health": [
         "パスワードの健全性"
@@ -2639,9 +2664,6 @@
       ],
       "Empty note": [
         "空のメモ"
-      ],
-      "Encryption password is required": [
-        "暗号化パスワードが必要です"
       ],
       "Expiration Date is not in the format MM/YY": [
         "有効期限が MM/YY の形式ではありません"

@@ -560,6 +560,29 @@
         "Er din adgangskodeadministrator her ikke? Anmod om den."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Tving genindlæsning"
+      ],
+      "Reload": [
+        "Genindlæs"
+      ],
+      "Show logs": [
+        "Vis logs"
+      ],
+      "Speech": [
+        "Tale"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Start ${ PASS_APP_NAME } ved indlogning"
+      ],
+      "Toggle developers tools": [
+        "Åbn/luk udviklingsværktøjer"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Afinstallér ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Spar smart. Få et år med Pass Plus for kun ${ relativePrice } pr. måned."
@@ -946,6 +969,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt venligst vores kundesupport for hjælp."
+      ],
+      "Wrong extra password": [
+        "Forkert ekstra adgangskode"
       ],
       "Wrong password": [
         "Forkert adgangskode"
@@ -1515,8 +1541,11 @@
       "Offline support successfully disabled": [
         "Offline-tilstand blev deaktiveret"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Online adgang til ${ PASS_APP_NAME } kræver en pinkode for at låse din session op. Du bliver logget ud efter 3 mislykkede forsøg."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Onlineadgang til ${ PASS_APP_NAME } kræver en PIN-kode. Du bliver logget ud efter 3 mislykkede forsøg."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
       ],
       "Owner": [
         "Ejer"
@@ -1557,6 +1586,15 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your extra password": [
+        "Bekræft din ekstra adgangskode"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Bekræft din ekstra adgangskode for at opnå automatisk låsning med biometri."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Bekræft venligst din ekstra adgangskode for at afregistrere din nuværende lås."
       ],
       "Please confirm your password": [
         "Bekræft venligst din adgangskode"
@@ -1653,6 +1691,9 @@
       ],
       "Session timed out": [
         "Session er udløbet"
+      ],
+      "Set by your organization": [
+        "Indstillet af din organisation"
       ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
@@ -1862,6 +1903,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1907,6 +1951,9 @@
       "15 minutes": [
         "15 minutter"
       ],
+      "2 minutes": [
+        "2 minutter"
+      ],
       "24 hours": [
         "24 timer"
       ],
@@ -1924,6 +1971,9 @@
       ],
       "30 seconds": [
         "30 sekunder"
+      ],
+      "4 hours": [
+        "4 timer"
       ],
       "5 minutes": [
         "5 minutter"
@@ -2534,6 +2584,20 @@
         "Aktiver ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Redigér"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "View": [
+        "Vis"
+      ],
+      "Window": [
+        "Vindue"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } element",
@@ -2764,11 +2828,11 @@
       "Discard changes?": [
         "Kassér ændringer?"
       ],
-      "Email address": [
-        "E-mailadresse"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Indtast din ekstra adgangskode"
       ],
       "Enter your password": [
         "Indtast din adgangskode"
@@ -2865,9 +2929,6 @@
       ],
       "Passkey": [
         "Adgangsnøgle"
-      ],
-      "Password": [
-        "Adgangskode"
       ],
       "Password Health": [
         "Adgangskode-sundhed"
@@ -3030,6 +3091,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Adgangskoden til ${ BRAND_NAME } kræves"
+      ],
       "A description of the problem is required": [
         "En beskrivelse af problemet er påkrævet"
       ],
@@ -3066,14 +3130,14 @@
       "Empty note": [
         "Tom note"
       ],
-      "Encryption password is required": [
-        "Krypteringsadgangskode er påkrævet"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Udløbsdatoen er ikke i formatet MM/ÅÅ"
       ],
       "Extra password cannot be empty": [
         "Ekstra adgangskode kan ikke være tom"
+      ],
+      "Extra password is required": [
+        "Ekstra adgangskode er påkrævet"
       ],
       "Extra password should have at least 8 characters": [
         "Ekstra adgangskode skal have mindst 8 tegn"

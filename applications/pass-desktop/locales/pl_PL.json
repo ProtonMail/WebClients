@@ -560,6 +560,29 @@
         "Nie ma Twojego menadżera haseł? Zgłoś to."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Odśwież"
+      ],
+      "Reload": [
+        "Odśwież"
+      ],
+      "Show logs": [
+        "Pokaż logi"
+      ],
+      "Speech": [
+        "Mowa"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Uruchom ${ PASS_APP_NAME } podczas logowania"
+      ],
+      "Toggle developers tools": [
+        "Narzędzia na deweloperów"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Odinstaluj ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Oszczędzaj mądrze. Skorzystaj z rozwiązania Pass Plus za jedynie ${ relativePrice } miesięcznie."
@@ -667,6 +690,9 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Uwierzytelnianie nie powiodło się. Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane"
+      ],
+      "Biometric authentication failed": [
+        "Uwierzytelnianie biometryczne nie powiodło się"
       ],
       "Cannot send invitation at the moment": [
         "Nie można wysłać zaproszenia",
@@ -950,6 +976,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Mamy problem z usługą ${ PASS_SHORT_APP_NAME }. Jeśli problem będzie się powtarzał, skontaktuj się z naszym wsparciem klienta."
       ],
+      "Wrong extra password": [
+        "Dodatkowe hasło jest nieprawidłowe"
+      ],
       "Wrong password": [
         "Hasło jest nieprawidłowe"
       ],
@@ -1138,6 +1167,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał hasła ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
+      ],
       "Add a username field": [
         "Dodaj pole nazwy użytkownika"
       ],
@@ -1188,6 +1220,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Przed wyeksportowaniem danych w tym formacie otwórz ustawienia Safari -> zakładka \"Ogólne\" -> wyłącz opcję \"Otwieraj bezpieczne pliki po pobraniu\". Zapobiegnie to nieprawidłowemu przetworzeniu wyeksportowanego pliku przez przeglądarkę Safari."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Blokada za pomocą biometrii została włączona. Użyj jej, aby odblokować ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometria zostanie wyłączona i będzie musiała zostać ponownie włączona."
       ],
       "Breaches detected": [
         "Wykryto wycieki"
@@ -1287,6 +1325,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Włącz automatyczną blokadę, aby chronić dane"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Włączenie blokady aplikacji za pomocą biometrii"
+      ],
+      "Enabling biometrics lock failed": [
+        "Włączenie blokady aplikacji za pomocą biometrii nie powiodło się"
       ],
       "Enabling offline mode...": [
         "Włączanie trybu offline..."
@@ -1528,8 +1572,8 @@
       "Offline support successfully disabled": [
         "Tryb offline został wyłączony"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Użytkownik zostanie wylogowany po 3 nieudanych próbach."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Wylogowanie nastąpi po 3 nieudanych próbach."
       ],
       "Owner": [
         "Właściciel"
@@ -1573,8 +1617,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Potwierdź dodatkowe hasło"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Potwierdź dodatkowe hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Potwierdź dodatkowe hasło, aby wyłączyć blokadę."
+      ],
       "Please confirm your password": [
         "Potwierdź hasło"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Potwierdź hasło, aby włączyć blokadę."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Potwierdź hasło, aby włączyć blokadę."
@@ -1622,7 +1678,7 @@
         "Dodawanie dodatkowego hasła..."
       ],
       "Registering PIN lock failed": [
-        "Włączenie blokady za pomocą kodu PIN nie powiodła się"
+        "Włączenie blokady za pomocą kodu PIN nie powiodło się"
       ],
       "Removing all inactive secure links...": [
         "Usuwanie wszystkich nieaktywnych linków..."
@@ -1665,6 +1721,9 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
+      ],
+      "Set by your organization": [
+        "Skonfiguruj organizację"
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
@@ -1732,6 +1791,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
       ],
+      "This option is currently not available on your device.": [
+        "Funkcja nie jest dostępna na tym urządzeniu."
+      ],
       "This setting is disabled on the organization level": [
         "Ustawienie jest wyłączone na poziomie organizacji"
       ],
@@ -1756,11 +1818,17 @@
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą biometrii"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą dodatkowego hasła"
+      ],
+      "Unlock with biometrics": [
+        "Odblokuj za pomocą biometrii"
       ],
       "Unpinning item...": [
         "Odpinanie elementu..."
@@ -1869,6 +1937,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Twoje informacje zostały znalezione w dniu: ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1926,6 +1997,9 @@
       "15 minutes": [
         "15 minut"
       ],
+      "2 minutes": [
+        "2 minuty"
+      ],
       "24 hours": [
         "1 dzień"
       ],
@@ -1943,6 +2017,9 @@
       ],
       "30 seconds": [
         "30 sekund"
+      ],
+      "4 hours": [
+        "4 godziny"
       ],
       "5 minutes": [
         "5 minut"
@@ -1991,6 +2068,9 @@
       ],
       "Beta Access": [
         "Dostęp beta"
+      ],
+      "Biometrics": [
+        "Biometria"
       ],
       "Birthdate": [
         "Urodziny"
@@ -2466,6 +2546,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock with": [
+        "Odblokuj za pomocą"
+      ],
       "Unnamed Credit Card": [
         "Karta płatnicza bez nazwy"
       ],
@@ -2544,6 +2627,20 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Włącz ${ reason }"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Edytuj"
+      ],
+      "File": [
+        "Plik"
+      ],
+      "View": [
+        "Widok"
+      ],
+      "Window": [
+        "Okno"
       ]
     },
     "Message": {
@@ -2780,11 +2877,11 @@
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
-      "Email address": [
-        "Adres e-mail"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Wpisz dodatkowe hasło"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -2881,9 +2978,6 @@
       ],
       "Passkey": [
         "Klucz dostępu"
-      ],
-      "Password": [
-        "Hasło"
       ],
       "Password Health": [
         "Jakość hasła"
@@ -3048,6 +3142,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Hasło ${ BRAND_NAME } jest wymagane"
+      ],
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
       ],
@@ -3084,14 +3181,14 @@
       "Empty note": [
         "Notatka jest pusta"
       ],
-      "Encryption password is required": [
-        "Hasło szyfrowania jest wymagane"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Data wygaśnięcia nie jest w formacie MM/RR"
       ],
       "Extra password cannot be empty": [
         "Dodatkowe hasło nie może być puste"
+      ],
+      "Extra password is required": [
+        "Dodatkowe hasło jest wymagane"
       ],
       "Extra password should have at least 8 characters": [
         "Dodatkowe hasło musi zawierać co najmniej 8 znaków"

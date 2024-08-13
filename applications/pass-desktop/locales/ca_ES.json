@@ -136,6 +136,9 @@
       "Create card": [
         "Crea una targeta"
       ],
+      "Create identity": [
+        "Crea una identitat"
+      ],
       "Create login": [
         "Crea un inici de sessió"
       ],
@@ -552,6 +555,23 @@
       ],
       "Your password manager not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ]
+    },
+    "App menu": {
+      "Force Reload": [
+        "Força la recàrrega"
+      ],
+      "Reload": [
+        "Torna a carregar"
+      ],
+      "Show logs": [
+        "Mostra els registres"
+      ],
+      "Speech": [
+        "Dicteu"
+      ],
+      "Toggle developers tools": [
+        "Commuta les eines de desenvolupament"
       ]
     },
     "bf2023: Info": {
@@ -1482,9 +1502,6 @@
       "Offline support successfully disabled": [
         "S'ha desactivat el mode fora de línia"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se us tancarà la sessió després de 3 intents que no han funcionat."
-      ],
       "Owner": [
         "Propietari"
       ],
@@ -1712,6 +1729,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya addicional."
       ],
+      "Unlock with biometrics": [
+        "Desbloqueja amb dades biomètriques"
+      ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
       ],
@@ -1925,6 +1945,9 @@
       "Beta Access": [
         "Accés beta"
       ],
+      "Biometrics": [
+        "Dades biomètriques"
+      ],
       "Birthdate": [
         "Data de naixement"
       ],
@@ -2039,6 +2062,9 @@
       "Extra password": [
         "Contrasenya addicional"
       ],
+      "Facebook account": [
+        "Compte de Facebook"
+      ],
       "Field name": [
         "Nom del camp"
       ],
@@ -2146,6 +2172,9 @@
       ],
       "License number": [
         "Número de llicència"
+      ],
+      "LinkedIn account": [
+        "Compte de LinkedIn"
       ],
       "Login": [
         "Inici de sessió"
@@ -2456,6 +2485,20 @@
         "Habilita ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Edita"
+      ],
+      "File": [
+        "Fitxer"
+      ],
+      "View": [
+        "Mostra"
+      ],
+      "Window": [
+        "Finestra"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } element",
@@ -2686,9 +2729,6 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
-      "Email address": [
-        "Adreça electrònica"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
       ],
@@ -2778,9 +2818,6 @@
       ],
       "Passkey": [
         "Clau d'accés"
-      ],
-      "Password": [
-        "Contrasenya"
       ],
       "Password Health": [
         "Salut de les contrasenyes"
@@ -2975,9 +3012,6 @@
       ],
       "Empty note": [
         "Nota buida"
-      ],
-      "Encryption password is required": [
-        "Es requereix una contrasenya de xifratge"
       ],
       "Expiration Date is not in the format MM/YY": [
         "La data de caducitat no té el format MM/AA"

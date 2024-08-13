@@ -560,6 +560,23 @@
         "Вашого менеджера паролів немає? Запитайте його."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Примусове перезавантаження"
+      ],
+      "Reload": [
+        "Перезавантажити"
+      ],
+      "Show logs": [
+        "Показати журнали"
+      ],
+      "Speech": [
+        "Мовлення"
+      ],
+      "Toggle developers tools": [
+        "Інструменти розробника"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Розумне збереження. Отримайте річний Pass Plus лише за ${ relativePrice } в місяць."
@@ -1498,9 +1515,6 @@
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Мережевий доступ до ${ PASS_APP_NAME } вимагатиме PIN-коду для розблокування сеансу. Ви вийдете з системи після 3 невдалих спроб."
-      ],
       "Owner": [
         "Власник"
       ],
@@ -2417,6 +2431,20 @@
         "Увімкнути ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Редагувати"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "View": [
+        "Вигляд"
+      ],
+      "Window": [
+        "Вікно"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } елемент",
@@ -2651,9 +2679,6 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
-      "Email address": [
-        "Адреса електронної пошти"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
       ],
@@ -2746,9 +2771,6 @@
       ],
       "Passkey": [
         "Ключ доступу"
-      ],
-      "Password": [
-        "Пароль"
       ],
       "Password Health": [
         "Якість пароля"
@@ -2948,9 +2970,6 @@
       ],
       "Empty note": [
         "Порожня нотатка"
-      ],
-      "Encryption password is required": [
-        "Потрібен пароль шифрування"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Дата закінчення терміну придатності не у форматі ММ/РР"

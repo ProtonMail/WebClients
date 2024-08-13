@@ -560,6 +560,29 @@
         "Il tuo gestore di password non è presente? Richiedilo."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Forza la ricarica"
+      ],
+      "Reload": [
+        "Ricarica"
+      ],
+      "Show logs": [
+        "Mostra i log"
+      ],
+      "Speech": [
+        "Voce"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Avvia ${ PASS_APP_NAME } all'accesso"
+      ],
+      "Toggle developers tools": [
+        "Abilita/disabilita gli strumenti per sviluppatori"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Disinstalla ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Costi minimi, sicurezza massima: ottieni un anno di Pass Plus a soli ${ relativePrice } al mese."
@@ -1515,8 +1538,8 @@
       "Offline support successfully disabled": [
         "Accesso offline disabilitato"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "I nostri avvisi sono molto prudenti. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
       ],
       "Owner": [
         "Proprietario"
@@ -1557,6 +1580,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password": [
+        "Conferma la tua password aggiuntiva"
       ],
       "Please confirm your password": [
         "Conferma la tua password"
@@ -2534,6 +2560,20 @@
         "Abilita ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Modifica"
+      ],
+      "File": [
+        "File"
+      ],
+      "View": [
+        "Visualizzazione"
+      ],
+      "Window": [
+        "Finestra"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } elemento",
@@ -2764,11 +2804,11 @@
       "Discard changes?": [
         "Annullare le modifiche?"
       ],
-      "Email address": [
-        "Indirizzo email"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Inserisci la password aggiuntiva"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -2865,9 +2905,6 @@
       ],
       "Passkey": [
         "Passkey"
-      ],
-      "Password": [
-        "Password"
       ],
       "Password Health": [
         "Stato di integrità della password"
@@ -3030,6 +3067,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "È richiesta la password di ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "È richiesta una descrizione del problema"
       ],
@@ -3066,14 +3106,14 @@
       "Empty note": [
         "Nota vuota"
       ],
-      "Encryption password is required": [
-        "Password di crittografia necessaria"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La data di scadenza non è nel formato MM/AA"
       ],
       "Extra password cannot be empty": [
         "La password aggiuntiva non può essere vuota"
+      ],
+      "Extra password is required": [
+        "È richiesta una password aggiuntiva"
       ],
       "Extra password should have at least 8 characters": [
         "La password aggiuntiva deve contenere almeno 8 caratteri"

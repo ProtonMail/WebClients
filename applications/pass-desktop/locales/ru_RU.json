@@ -551,6 +551,23 @@
         "Вашего менеджера паролей здесь нет? Запросите его."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Принудительная перезагрузка"
+      ],
+      "Reload": [
+        "Перезагрузить"
+      ],
+      "Show logs": [
+        "Показать журналы"
+      ],
+      "Speech": [
+        "Речь"
+      ],
+      "Toggle developers tools": [
+        "Переключиться на инструменты разработчика"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Экономьте с умом. Получите год Pass Plus всего за ${ relativePrice } в месяц."
@@ -1512,9 +1529,6 @@
       ],
       "Offline support successfully disabled": [
         "Поддержка офлайновой поддержки успешно отключена"
-      ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код, чтобы разблокировать ваш сеанс. Вы выйдете из системы после 3 неудачных попыток."
       ],
       "Owner": [
         "Владелец"
@@ -2501,6 +2515,20 @@
         "Включите ${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "Изменить"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "View": [
+        "Посмотреть"
+      ],
+      "Window": [
+        "Окно"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } элемент",
@@ -2735,9 +2763,6 @@
       "Discard changes?": [
         "Сбросить изменения?"
       ],
-      "Email address": [
-        "Адрес электронной почты"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
       ],
@@ -2827,9 +2852,6 @@
       ],
       "Passkey": [
         "Ключ доступа"
-      ],
-      "Password": [
-        "Пароль"
       ],
       "Password Health": [
         "Здоровье пароля"
@@ -3026,9 +3048,6 @@
       ],
       "Empty note": [
         "Пустая заметка"
-      ],
-      "Encryption password is required": [
-        "Требуется пароль для шифрования"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
