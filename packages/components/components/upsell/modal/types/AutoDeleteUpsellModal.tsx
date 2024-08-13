@@ -10,12 +10,13 @@ import { UpsellModal } from '../index';
 
 interface Props {
     modalProps: ModalStateProps;
+    upsellComponent?: UPSELL_COMPONENT;
 }
 
-const AutoDeleteUpsellModal = ({ modalProps }: Props) => {
+const AutoDeleteUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
+        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.AUTO_DELETE,
     });
     const upsellConfig = useUpsellConfig({ upsellRef, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
