@@ -102,11 +102,10 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
         const account = await import('../utils/account');
 
         // Fill bitcoin address pool
-        const addressesPoolPayload = await account.generateBitcoinAddressesPayloadForPoolFilling({
+        const addressesPoolPayload = await account.generateBitcoinAddressesPayloadToFillPool({
             addressesToCreate: POOL_FILLING_THRESHOLD,
-            startIndex: FIRST_INDEX,
             wasmAccount,
-            addressKey: primaryAddressKey,
+            walletAccountAddressKey: primaryAddressKey,
         });
 
         if (addressesPoolPayload?.[0]?.length) {
