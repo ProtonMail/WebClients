@@ -303,6 +303,9 @@
       "Create a new label": [
         "Vytvoriť nový štítok"
       ],
+      "Create alias": [
+        "Vytvoriť alias"
+      ],
       "Create and copy alias": [
         "Vytvoriť a kopírovať alias"
       ],
@@ -516,9 +519,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Získať len za ${ addonPriceWithCurrency } /mesiac"
       ],
-      "Get SimpleLogin extension": [
-        "Získať rozšírenie SimpleLogin"
-      ],
       "Get started": [
         "Začíname"
       ],
@@ -546,9 +546,6 @@
       "Go to settings": [
         "Prejsť do nastavení"
       ],
-      "Go to SimpleLogin": [
-        "Prejsť na SimpleLogin"
-      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -569,6 +566,9 @@
       ],
       "Hide messages": [
         "Skryť správy"
+      ],
+      "Hide toolbar": [
+        "Skryť panel nástrojov"
       ],
       "hide-my-email aliases": [
         "Hide-my-email aliasy"
@@ -852,11 +852,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otvoriť"
@@ -1182,6 +1182,9 @@
       "Show side panel": [
         "Zobraziť bočný panel"
       ],
+      "Show toolbar": [
+        "Zobraziť panel s nástrojmi"
+      ],
       "Sign out": [
         "Odhlásiť sa"
       ],
@@ -1256,12 +1259,6 @@
       ],
       "Trust": [
         "Dôverovať"
-      ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -3639,6 +3636,11 @@
         "Prioritná podpora"
       ]
     },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 používatelia"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "POPIS:\n${ eventDescription }"
@@ -4585,6 +4587,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Keď je povolené extra heslo, správa aliasov sa môže vykonávať len v ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Zatiaľ nemáte žiadny kontakt. Začnite vytvorením nového kontaktu"
@@ -6715,6 +6720,9 @@
       "Organization size": [
         "Veľkosť organizácie"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil túto správu ako pokus o phishing. Potvrďte prosím, že ide o legitímnu správu."
       ],
@@ -6963,12 +6971,6 @@
       ],
       "Show original message": [
         "Zobraziť pôvodnú správu"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin je ${ BRAND_NAME } služba a váš ${ BRAND_NAME_TWO } účet obsahuje Hide-my-email aliasy. Pre začatie maskovania svojej emailovej adresy, prejdite do SimpleLogin a vytvorte svoj prvý alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin poskytuje jednoduchý spôsob vytvárania prihlasovacích údajov na nedôveryhodných weboch tretích strán, kde nechcete zverejniť svoju skutočnú emailovú adresu."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
@@ -7339,9 +7341,6 @@
       "Users": [
         "Používatelia"
       ],
-      "Using SimpleLogin is easy": [
-        "Používanie SimpleLogin je jednoduché"
-      ],
       "Verification may take a few minutes.": [
         "Overenie môže trvať niekoľko minút."
       ],
@@ -7617,9 +7616,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosiahli ste maximálny počet adries v skupine kontaktov."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Váš účet ${ BRAND_NAME } obsahuje SimpleLogin. Rozšírenie prehliadača nainštalujete jedným kliknutím a môžete začať."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
@@ -9332,9 +9328,6 @@
       "${ size } storage": [
         "${ size } úložisko"
       ],
-      "${ size } storage per user": [
-        "${ size } úložisko na používateľa"
-      ],
       "1 user": [
         "1 používateľ"
       ],
@@ -9352,9 +9345,6 @@
       ],
       "Administration Panel": [
         "Panel administrácie"
-      ],
-      "Advanced sharing security": [
-        "Pokročilá bezpečnosť zdieľania"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
@@ -9385,9 +9375,6 @@
       ],
       "Collaborate and share large files": [
         "Spolupracujte a zdieľajte veľké súbory"
-      ],
-      "Collaborative document editor": [
-        "Spoločný editor dokumentov"
       ],
       "Contact groups": [
         "Skupiny kontaktov"
@@ -9556,9 +9543,6 @@
       ],
       "Send & receive invitations": [
         "Odosielanie a prijímanie pozvánok"
-      ],
-      "Share files and folders via link": [
-        "Zdieľanie súborov a priečinkov cez odkaz"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -9746,9 +9730,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpečte svoj digitálny život s ${ BRAND_NAME } pre dve osoby."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Riešenia na mieru pre väčšie organizácie so špecifickými bezpečnostnými potrebami"
       ],
@@ -9828,9 +9809,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Zvoľte si vlastné časy, kedy chcete dostať upozornenie na email alebo kedy má prísť vaša správa."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Ovládajte prístup k svojim zdieľaným súborom pridaním ochrany heslom a dátumov vypršania platnosti odkazu"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
@@ -12241,6 +12219,9 @@
       "Import record deleted": [
         "Záznam o importe bol zmazaný"
       ],
+      "Invitation rejected": [
+        "Pozvánka odmietnutá"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Nastavenie klávesových skratiek upravené"
       ],
@@ -12843,9 +12824,6 @@
       "Edit image": [
         "Upraviť obrázok"
       ],
-      "Email address": [
-        "Emailová adresa"
-      ],
       "Email addresses": [
         "Emailové adresy"
       ],
@@ -12902,9 +12880,6 @@
       ],
       "Groups": [
         "Skupiny"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Skryte svoj email pomocou SimpleLogin od ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
@@ -13080,9 +13055,6 @@
       "Other names": [
         "Ostatné mená"
       ],
-      "Password": [
-        "Heslo"
-      ],
       "Payment failed": [
         "Platba zlyhala"
       ],
@@ -13214,9 +13186,6 @@
       ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
-      ],
-      "Sign in with 2FA": [
-        "Prihlásiť sa cez 2FA"
       ],
       "Sign out": [
         "Odhlásiť sa"

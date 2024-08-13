@@ -288,6 +288,9 @@
       "Create a new label": [
         "新しいラベルを作成"
       ],
+      "Create alias": [
+        "エイリアスを作成"
+      ],
       "Create and copy alias": [
         "エイリアスを作成してコピー"
       ],
@@ -480,9 +483,6 @@
       "Get in touch": [
         "連絡する"
       ],
-      "Get SimpleLogin extension": [
-        "SimpleLogin 拡張機能を入手"
-      ],
       "Get started": [
         "利用開始"
       ],
@@ -510,9 +510,6 @@
       "Go to settings": [
         "設定を開く"
       ],
-      "Go to SimpleLogin": [
-        "SimpleLogin へ移動"
-      ],
       "Got it": [
         "はい"
       ],
@@ -533,6 +530,9 @@
       ],
       "Hide messages": [
         "メッセージを非表示"
+      ],
+      "Hide toolbar": [
+        "ツールバーを非表示"
       ],
       "hide-my-email aliases": [
         "hide-my-email エイリアス"
@@ -795,11 +795,11 @@
       "Not saved": [
         "未保存"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "開く"
@@ -1107,6 +1107,9 @@
       "Show side panel": [
         "サイドパネルを表示"
       ],
+      "Show toolbar": [
+        "ツールバーを表示"
+      ],
       "Sign out": [
         "サインアウト"
       ],
@@ -1175,9 +1178,6 @@
       ],
       "Trust": [
         "信頼する"
-      ],
-      "Trust key": [
-        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -5300,6 +5300,9 @@
       "and": [
         "と"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "次回メールを開いた際に、別のヒントが表示されます"
+      ],
       "Applying actions to conversations": [
         "会話に適用する操作"
       ],
@@ -5419,6 +5422,9 @@
       ],
       "Confirm phishing report": [
         "フィッシング報告の確認"
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "宛先がメールを受信するのに最適なタイミングを検討し、送信を予約できます。"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "グループ ${ contactGroupName } に連絡先を追加しました"
@@ -6080,6 +6086,9 @@
       "Scheduling message...": [
         "メッセージを送信予約中..."
       ],
+      "Scribe panel": [
+        "Scribe パネル"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "メール本文中のキーワードを安全に検索できる検索オプション。"
       ],
@@ -6145,12 +6154,6 @@
       ],
       "Show original message": [
         "元のメッセージを表示"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin は ${ BRAND_NAME } のサービスで、あなたの ${ BRAND_NAME_TWO } アカウントには hide-my-email エイリアスが含まれています。あなたのメールアドレスをマスキングするには、SimpleLogin で最初のエイリアスを作成してください。"
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin は、信頼のおけない第三者サイトで、本来のメールアドレスを公開せずにアカウントを作成するためのシンプルな方法を提供します。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -6461,9 +6464,6 @@
       "Users": [
         "ユーザー"
       ],
-      "Using SimpleLogin is easy": [
-        "SimpleLogin を使うのは簡単です"
-      ],
       "Verification may take a few minutes.": [
         "認証には数分かかる場合があります。"
       ],
@@ -6673,9 +6673,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "連絡先グループのアドレス数の上限に達しました。"
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "あなたの ${ BRAND_NAME } アカウントには SimpleLogin が含まれています。ワンクリックでブラウザ拡張機能をインストールし始めることができます。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
@@ -7550,6 +7547,9 @@
       "Wonderful": [
         "すばらしい"
       ],
+      "Writing assistant": [
+        "執筆アシスタント"
+      ],
       "Your alias": [
         "あなたのエイリアス"
       ],
@@ -8251,9 +8251,6 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
-      "${ size } storage per user": [
-        "1 ユーザーあたり ${ size } のストレージ"
-      ],
       "1 user": [
         "1ユーザー"
       ],
@@ -8271,9 +8268,6 @@
       ],
       "Administration Panel": [
         "管理パネル"
-      ],
-      "Advanced sharing security": [
-        "高度な共有セキュリティ"
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -8439,9 +8433,6 @@
       ],
       "Send & receive invitations": [
         "招待を送受信"
-      ],
-      "Share files and folders via link": [
-        "リンクでファイルやフォルダーを共有"
       ],
       "Sign in as user": [
         "ユーザーとしてサインイン"
@@ -8678,9 +8669,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "電子メールについて通知するか、メッセージが到着するカスタム時間を選択します"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "パスワード保護とリンクの有効期限を追加して、共有ファイルへのアクセスを制御します"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "複数のメールアドレスを作成して使用できます。例えば、買い物用に JohnShopper@${ domain } 、ニュース購読用に JohnNews@${ domain } を使用するなどです。"
@@ -9092,6 +9080,9 @@
       "MM/YY": [
         "MM/YY (月/年)"
       ],
+      "Payment Processing": [
+        "支払い処理中"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "特別割引価格 ${ priceWithDiscount } は最初の 1 か月間有効です。 その後、毎月 ${ price } で自動的に更新されます。 いつでもキャンセルできます。"
       ],
@@ -9173,6 +9164,9 @@
       ],
       "First name": [
         "名"
+      ],
+      "Generating": [
+        "生成中"
       ],
       "Gift code": [
         "ギフトコード"
@@ -10944,9 +10938,6 @@
       "Edit image": [
         "画像の編集"
       ],
-      "Email address": [
-        "メールアドレス"
-      ],
       "Email addresses": [
         "メールアドレス"
       ],
@@ -11003,9 +10994,6 @@
       ],
       "Groups": [
         "グループ"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } の SimpleLogin であなたのメールアドレスを保護する"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -11169,9 +11157,6 @@
       "Other names": [
         "別名"
       ],
-      "Password": [
-        "パスワード"
-      ],
       "Payment failed": [
         "支払いに失敗しました"
       ],
@@ -11303,9 +11288,6 @@
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"
-      ],
-      "Sign in with 2FA": [
-        "2FA でサインイン"
       ],
       "Sign out": [
         "サインアウト"
