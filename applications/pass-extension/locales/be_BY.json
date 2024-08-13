@@ -933,6 +933,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Узнікла праблема падчас запуску ${ PASS_SHORT_APP_NAME }. Звяжыцеся з нашай службай падтрымкі кліентаў, калі гэта праблема застанецца."
       ],
+      "Wrong extra password": [
+        "Няправільны дадатковы пароль"
+      ],
       "Wrong password": [
         "Няправільны пароль"
       ],
@@ -1100,6 +1103,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступа да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш пароль ${ BRAND_NAME }"
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Атрымлівайце доступ да сваіх пароляў дзе б вы не знаходзіліся пры дапамозе нашых мабільных праграм."
       ],
@@ -1150,6 +1156,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Адкрыйце налады Safari -> укладка \"Агульныя (General)\" -> адключыце параметр \"Адкрываць бяспечныя файлы пасля спампоўвання (Open safe files after downloading)\" перад тым, як экспартаваць свае даныя ў гэты фармат."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Блакіроўка біяметрыяй паспяхова зарэгістравана. Вы можаце выкарыстоўваць яе, каб разблакіраваць ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Біяметрыя будзе адключана і яе неабходна будзе ўключыць паўторна."
       ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
@@ -1255,6 +1267,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Уключэнне аўтаблакіроўкі біяметрыяй"
+      ],
+      "Enabling biometrics lock failed": [
+        "Збой уключэння аўтаблакіроўкі біяметрыяй"
       ],
       "Enabling offline mode...": [
         "Уключэнне рэжыму па-за сеткай..."
@@ -1463,8 +1481,8 @@
       "Offline support successfully disabled": [
         "Падтрымка па-за сеткай паспяхова адключана"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код, каб разблакіраваць ваш сеанс. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
       ],
       "Open the Extensions menu": [
         "Адкрыць меню з пашырэннямі"
@@ -1511,8 +1529,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Пацвердзіце свой дадатковы пароль"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Пацвердзіце свой дадатковы пароль для аўтаблакіроўкі з дапамогай біяметрыі."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Пацвердзіце свой дадатковы пароль, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      ],
       "Please confirm your password": [
         "Пацвердзіце свой пароль"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Пацвердзіце свой пароль для аўтаблакіроўкі з дапамогай біяметрыі."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Пацвердзіце свой пароль для аўтаблакіроўкі з дапамогай вашага пароля."
@@ -1552,6 +1582,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Хуткае аўтазапаўненне вашых 2ФА токенаў."
       ],
       "Quickly autofill your identities.": [
         "Хуткае запаўненне вашых ідэнтычнасцей."
@@ -1612,6 +1645,9 @@
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
+      ],
+      "Set by your organization": [
+        "Зададзена вашай арганізацыяй"
       ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
@@ -1676,6 +1712,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
+      "This option is currently not available on your device.": [
+        "Гэты параметр у цяперашні час недаступны на вашай прыладзе."
+      ],
       "This setting is disabled on the organization level": [
         "Налада адключана на ўзроўні арганізацыі"
       ],
@@ -1703,6 +1742,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб захаваць гэты ключ доступу"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай біяметрыі"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай пароля ${ BRAND_NAME }"
       ],
@@ -1711,6 +1753,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
+      ],
+      "Unlock with biometrics": [
+        "Разблакіраваць з дапамогай біяметрыі"
       ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
@@ -1810,6 +1855,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1864,8 +1912,14 @@
       "15 minutes": [
         "15 хвілін"
       ],
+      "2 minutes": [
+        "2 хвіліны"
+      ],
       "24 hours": [
         "24 гадзіны"
+      ],
+      "2FA autofill": [
+        "Аўтазапаўненне 2ФА"
       ],
       "2FA secret key (TOTP)": [
         "Сакрэтны ключ 2ФА (TOTP)"
@@ -1881,6 +1935,9 @@
       ],
       "30 seconds": [
         "30 секунд"
+      ],
+      "4 hours": [
+        "4 гадзіны"
       ],
       "5 minutes": [
         "5 хвілін"
@@ -1947,6 +2004,9 @@
       ],
       "Autosuggest": [
         "Аўтапрапанова"
+      ],
+      "Biometrics": [
+        "Біяметрыя"
       ],
       "Birthdate": [
         "Дата нараджэння"
@@ -2028,6 +2088,9 @@
       ],
       "Display": [
         "Адлюстроўваць"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Паказваць значок ${ PASS_APP_NAME } у палях аўтазапаўнення"
       ],
       "Domain": [
         "Дамен"
@@ -2428,6 +2491,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "Разблакіраваць ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "Разблакіраваць з дапамогай"
+      ],
       "Unnamed Credit Card": [
         "Крэдытная картка без назвы"
       ],
@@ -2674,6 +2740,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Увядзіце ваш дадатковы пароль"
+      ],
       "Enter your password": [
         "Увядзіце пароль"
       ],
@@ -2888,6 +2957,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Патрабуецца ўвесці пароль ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "Патрабуецца апісанне праблемы"
       ],
@@ -2921,14 +2993,14 @@
       "Empty note": [
         "Пустая нататка"
       ],
-      "Encryption password is required": [
-        "Патрабуецца шыфраванне пароля"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
       "Extra password cannot be empty": [
         "Дадатковы пароль не можа быць пустым"
+      ],
+      "Extra password is required": [
+        "Патрабуецца дадатковы пароль"
       ],
       "Extra password should have at least 8 characters": [
         "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"

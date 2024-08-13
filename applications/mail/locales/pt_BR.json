@@ -298,6 +298,9 @@
       "Create a new label": [
         "Criar um novo marcador"
       ],
+      "Create alias": [
+        "Criar alias"
+      ],
       "Create and copy alias": [
         "Criar e copiar alias"
       ],
@@ -507,9 +510,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Obter por apenas ${ addonPriceWithCurrency } /mês"
       ],
-      "Get SimpleLogin extension": [
-        "Ir para a extensão SimpleLogin"
-      ],
       "Get started": [
         "Começar"
       ],
@@ -537,9 +537,6 @@
       "Go to settings": [
         "Ir para configurações"
       ],
-      "Go to SimpleLogin": [
-        "Ir para o SimpleLogin"
-      ],
       "Got it": [
         "Entendi"
       ],
@@ -563,6 +560,9 @@
       ],
       "Hide my email": [
         "Hide my email"
+      ],
+      "Hide toolbar": [
+        "Ocultar barra de ferramentas"
       ],
       "hide-my-email aliases": [
         "aliases do Hide-my-email"
@@ -844,11 +844,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Abrir"
@@ -969,6 +969,9 @@
       ],
       "Replace": [
         "Substituir"
+      ],
+      "Replaces the selected text in your message": [
+        "Substitua o texto selecionado em sua mensagem"
       ],
       "Reply": [
         "Responder"
@@ -1171,6 +1174,9 @@
       "Show side panel": [
         "Mostrar o painel lateral"
       ],
+      "Show toolbar": [
+        "Mostrar barra de ferramentas"
+      ],
       "Sign out": [
         "Encerrar sessão"
       ],
@@ -1245,10 +1251,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1518,11 +1520,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversa"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Animation": {
@@ -3604,6 +3601,43 @@
         "Suporte prioritário"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obtenha por ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuários"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acesso completo aos produtos da ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Economize ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
+      ],
+      "Double your storage": [
+        "Dobrar seu armazenamento"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Apresentamos ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIÇÃO:\n${ eventDescription }"
@@ -4164,6 +4198,9 @@
       ],
       "Tab closed": [
         "Guia fechada"
+      ],
+      "Text is too long to refine": [
+        "O texto é muito longo para ser refinado"
       ],
       "Thanks for the feedback!": [
         "Obrigado pelo feedback!"
@@ -5655,6 +5692,9 @@
         "${ numOccurrences } ocorrência encontrada no conteúdo do e-mail",
         "${ numOccurrences } ocorrências encontradas no conteúdo do e-mail"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "O ${ PASS_APP_NAME } fornece uma maneira simples de cadastrar-se em sites de terceiros não de confiança nos quais você não quer expor o seu endereço de e-mail real."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -5993,6 +6033,10 @@
       ],
       "Create a new contact group": [
         "Criar novo grupo de contato"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Criar uma nuvem segura para ${ n } membro",
+        "Criar uma nuvem segura para ${ n } membros"
       ],
       "Create in": [
         "Criar em"
@@ -6711,6 +6755,9 @@
       "Scheduling message...": [
         "Agendando mensagem..."
       ],
+      "Scribe panel": [
+        "Painel do Scribe"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Opção de pesquisa que permite pesquisar palavras-chave com segurança no corpo das mensagens de e-mail."
       ],
@@ -6777,12 +6824,6 @@
       ],
       "Show original message": [
         "Exibir mensagem original"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "O SimpleLogin é um serviço da ${ BRAND_NAME }, e sua conta da ${ BRAND_NAME_TWO } inclui os aliases do Hide-my-email. Para começar a mascarar seu endereço de e-mail, acesse SimpleLogin e crie seu primeiro alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não de confiança nos quais você não quer expor o seu endereço de e-mail real."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
@@ -7147,9 +7188,6 @@
       "Users": [
         "Usuários"
       ],
-      "Using SimpleLogin is easy": [
-        "Usar o SimpleLogin é fácil"
-      ],
       "Verification may take a few minutes.": [
         "A verificação pode levar alguns minutos."
       ],
@@ -7397,9 +7435,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Você alcançou o número máximo de endereços no grupo de contato."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Sua conta da ${ BRAND_NAME } incluí o SimpleLogin. Instale a extensão no seu navegador com um só clique para começar a usar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
@@ -9060,9 +9095,6 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
-      "${ size } storage per user": [
-        "${ size } de armazenamento por usuário"
-      ],
       "1 user": [
         "1 usuário"
       ],
@@ -9080,9 +9112,6 @@
       ],
       "Administration Panel": [
         "Painel de Administração"
-      ],
-      "Advanced sharing security": [
-        "Segurança avançada de compartilhamento"
       ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
@@ -9113,9 +9142,6 @@
       ],
       "Collaborate and share large files": [
         "Colabore e compartilhe arquivos grandes"
-      ],
-      "Collaborative document editor": [
-        "Editor de documento colaborativo"
       ],
       "Contact groups": [
         "Grupos de contatos"
@@ -9235,6 +9261,9 @@
       "Phone support (40+ users)": [
         "Suporte por telefone (40 ou mais usuários)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Suporte prioritário por e-mail"
       ],
@@ -9280,9 +9309,6 @@
       ],
       "Send & receive invitations": [
         "Enviar e receber convites"
-      ],
-      "Share files and folders via link": [
-        "Compartilhe arquivos e pastas por link"
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
@@ -9376,6 +9402,9 @@
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
       ],
+      "Version history": [
+        "Histórico de versões"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ]
@@ -9466,9 +9495,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com recursos avançados para suas comunicações do dia a dia."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Proteja sua vida digital com a ${ BRAND_NAME } para duas pessoas."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
       ],
@@ -9477,6 +9503,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "A conta inicial gratuita criada para oferecer privacidade a todos por padrão."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privacidade ilimitada e mais armazenamento para até 2 pessoas."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Seu plano atual está com um preço promocional. Se excluir sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você criar uma conta."
@@ -9553,9 +9582,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Personalize o horário para receber lembretes sobre um e-mail ou enviar sua mensagem"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controle o acesso aos seus arquivos compartilhados adicionando proteção por senha e datas de expiração de links"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line (por exemplo JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain } para assinaturas de notícias)"
@@ -11838,6 +11864,9 @@
       "Import record deleted": [
         "Importação de registro excluído"
       ],
+      "Invitation rejected": [
+        "Convite rejeitado"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferências de atalhos de teclado atualizadas"
       ],
@@ -12408,9 +12437,6 @@
       "Edit image": [
         "Editar imagem"
       ],
-      "Email address": [
-        "Endereço de e-mail"
-      ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
@@ -12468,8 +12494,8 @@
       "Groups": [
         "Grupos"
       ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Oculte seu e-mail com SimpleLogin da ${ BRAND_NAME }"
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Oculte seu e-mail com ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Verificação humana"
@@ -12643,9 +12669,6 @@
       "Other names": [
         "Outros nomes"
       ],
-      "Password": [
-        "Senha"
-      ],
       "Payment failed": [
         "Erro no pagamento"
       ],
@@ -12777,9 +12800,6 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
-      ],
-      "Sign in with 2FA": [
-        "Iniciar sessão com A2F"
       ],
       "Sign out": [
         "Encerrar sessão"

@@ -1,0 +1,516 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "id_ID"
+  },
+  "contexts": {
+    "Action": {
+      "Add comment": [
+        "Tambah komentar"
+      ],
+      "Add new table column": [
+        "Tambah kolom tabel baru"
+      ],
+      "Add new table row": [
+        "Tambah baris tabel baru"
+      ],
+      "Adjust font size": [
+        "Atur ukuran fon"
+      ],
+      "and": [
+        "dan"
+      ],
+      "Apply": [
+        "Terapkan"
+      ],
+      "Bold": [
+        "Tebal"
+      ],
+      "Bulleted List": [
+        "Daftar Bertitik"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
+      "Center align": [
+        "Rata tengah"
+      ],
+      "Check List": [
+        "Daftar Centang"
+      ],
+      "Clear contents": [
+        "Hapus konten"
+      ],
+      "Clear formatting": [
+        "Hapus pemformatan"
+      ],
+      "Click to open column menu": [
+        "Klik untuk membuka menu kolom"
+      ],
+      "Click to open row menu": [
+        "Klik untuk membuka menu baris"
+      ],
+      "Close": [
+        "Tutup"
+      ],
+      "Code block": [
+        "Balok kode"
+      ],
+      "Color": [
+        "Warna"
+      ],
+      "Copy link": [
+        "Salin tautan"
+      ],
+      "Delete": [
+        "Hapus"
+      ],
+      "Delete column": [
+        "Hapus kolom"
+      ],
+      "Delete comment": [
+        "Hapus komentar"
+      ],
+      "Delete row": [
+        "Hapus baris"
+      ],
+      "Delete thread": [
+        "Hapus utas"
+      ],
+      "Divider": [
+        "Pembagi"
+      ],
+      "Duplicate": [
+        "Gandakan"
+      ],
+      "Edit": [
+        "Sunting"
+      ],
+      "Edit link": [
+        "Salin tautan"
+      ],
+      "Fit table to page width": [
+        "Sesuaikan ukuran tabel dengan lebar halaman"
+      ],
+      "Indent": [
+        "Indentasi"
+      ],
+      "Insert above": [
+        "Sisipkan di atas"
+      ],
+      "Insert below": [
+        "Sisipkan di bawah"
+      ],
+      "Insert comment": [
+        "Sisipkan komentar"
+      ],
+      "Insert image": [
+        "Sisipkan gambar"
+      ],
+      "Insert left": [
+        "Sisipkan di kiri"
+      ],
+      "Insert link": [
+        "Sisipkan tautan"
+      ],
+      "Insert right": [
+        "Sisipkan di kanan"
+      ],
+      "Insert table": [
+        "Sisipkan tabel"
+      ],
+      "Italic": [
+        "Miring"
+      ],
+      "Justify align": [
+        "Rata kanan dan kiri"
+      ],
+      "Left align": [
+        "Rata kiri"
+      ],
+      "Link": [
+        "Tautkan"
+      ],
+      "Numbered List": [
+        "Daftar Nomor"
+      ],
+      "Options": [
+        "Opsi"
+      ],
+      "Outdent": [
+        "Batas luar"
+      ],
+      "Quote": [
+        "Kutip"
+      ],
+      "Re-open": [
+        "Buka kembali"
+      ],
+      "Re-open thread": [
+        "Buka kembali utas"
+      ],
+      "Redo": [
+        "Batal urungkan"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
+      ],
+      "Remove background color": [
+        "Hapus warna latar belakang"
+      ],
+      "Remove link": [
+        "Hapus tautan"
+      ],
+      "Reply": [
+        "Balas"
+      ],
+      "Resolve": [
+        "Tutup"
+      ],
+      "Right align": [
+        "Rata kanan"
+      ],
+      "Save": [
+        "Simpan"
+      ],
+      "Show thread": [
+        "Tampilkan utas"
+      ],
+      "Strike-through": [
+        "Coret"
+      ],
+      "Strikethrough": [
+        "Coret"
+      ],
+      "Submit": [
+        "Kirim"
+      ],
+      "Table options": [
+        "Opsi tabel"
+      ],
+      "Underline": [
+        "Garis bawah"
+      ],
+      "Undo": [
+        "Urungkan"
+      ]
+    },
+    "color": {
+      "apple": [
+        "hijau apel"
+      ],
+      "azureish white": [
+        "putih kebiruan"
+      ],
+      "black": [
+        "hitam"
+      ],
+      "blanched almond": [
+        "almond panggang"
+      ],
+      "blue-gray": [
+        "biru-abu"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "ceri"
+      ],
+      "cinnabar": [
+        "cinnabar"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "tembaga"
+      ],
+      "cyan-blue azure": [
+        "biru langit-laut"
+      ],
+      "dandelion": [
+        "dandelion"
+      ],
+      "dark cerulean": [
+        "biru laut gelap"
+      ],
+      "dark midnight blue": [
+        "biru temaram"
+      ],
+      "dim gray": [
+        "abu pucat"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "perdu"
+      ],
+      "field drab": [
+        "coklat lapangan"
+      ],
+      "forest": [
+        "hutan"
+      ],
+      "gainsboro": [
+        "gainsboro"
+      ],
+      "gray": [
+        "abu-abu"
+      ],
+      "japanese laurel": [
+        "laurel jepang"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "kuning lemon"
+      ],
+      "light carmine pink": [
+        "merah jambu karmina"
+      ],
+      "light moss green": [
+        "hijau lumut"
+      ],
+      "light red": [
+        "merah terang"
+      ],
+      "maize": [
+        "jagung"
+      ],
+      "mughal green": [
+        "hijau mughal"
+      ],
+      "ocean": [
+        "samudera"
+      ],
+      "olive": [
+        "zaitun"
+      ],
+      "outer space": [
+        "luar angkasa"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "palatinate blue": [
+        "biru palatina"
+      ],
+      "pale cerulean": [
+        "biru laut pucat"
+      ],
+      "pastel gray": [
+        "abu pastel"
+      ],
+      "persian plum": [
+        "plum persia"
+      ],
+      "persian red": [
+        "merah persia"
+      ],
+      "philippine gray": [
+        "abu filipina"
+      ],
+      "philippine silver": [
+        "perak filipina"
+      ],
+      "pickle": [
+        "acar"
+      ],
+      "pine": [
+        "pinus"
+      ],
+      "pink": [
+        "merah jambu"
+      ],
+      "pistachio": [
+        "kacang pistasi"
+      ],
+      "plum": [
+        "plem"
+      ],
+      "purple": [
+        "ungu"
+      ],
+      "red": [
+        "merah"
+      ],
+      "reef": [
+        "karang"
+      ],
+      "ruddy pink": [
+        "merah jambu pucat"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "emas satin"
+      ],
+      "slateblue": [
+        "biru tanah"
+      ],
+      "soil": [
+        "tanah"
+      ],
+      "strawberry": [
+        "stroberi"
+      ],
+      "vivid auburn": [
+        "coklat menyala"
+      ],
+      "white": [
+        "putih"
+      ]
+    },
+    "Confirm": {
+      "Discard comment?": [
+        "Buang komentar?"
+      ]
+    },
+    "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "HTML gagal diimpor karena kesalahan yang tidak diketahui."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Markdown gagal diimpor karena kesalahan yang tidak diketahui."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Dokumen Word gagal diimpor karena kesalahan yang tidak diketahui."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Editor gagal untuk dimulai karena kesalahan yang tidak diketahui."
+      ],
+      "Signature verification failed": [
+        "Verifikasi tanda tangan gagal"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Dokumen Word tidak dapat dikonversi. Apakah dokumen ini terlindung oleh kata sandi? Apabila ya, silakan hapus kata sandi yang bersangkutan dan coba lagi."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Silakan muat ulang laman atau coba lagi nanti."
+      ],
+      "Something went wrong": [
+        "Terdapat suatu kesalahan"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Bawaan sistem"
+      ],
+      "Theme font": [
+        "Jenis tulisan tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Besar"
+      ],
+      "Medium (recommended)": [
+        "Sedang (direkomendasikan)"
+      ],
+      "Small": [
+        "Kecil"
+      ],
+      "Very large": [
+        "Sangat besar"
+      ],
+      "Very small": [
+        "Mungil"
+      ]
+    },
+    "Info": {
+      "${ allTypersExceptLast } and ${ lastTyper }": [
+        "${ allTypersExceptLast } dan ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } sedang menulis..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Apakah Anda yakin ingin menghapus komentar ini?"
+      ],
+      "Are you sure you want to delete this thread?": [
+        "Apakah Anda yakin ingin menghapus utas ini?"
+      ],
+      "Comments": [
+        "Komentar"
+      ],
+      "Editing": [
+        "Menyunting"
+      ],
+      "Just now": [
+        "Baru saja"
+      ],
+      "Loading": [
+        "Memuat"
+      ],
+      "No comments": [
+        "Tidak ada komentar"
+      ],
+      "Something went wrong:": [
+        "Terdapat suatu kesalahan:"
+      ],
+      "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
+        "Konten yang Anda coba salin terlalu besar untuk dapat disalin dalam satu waktu. Coba lagi dengan menyalin potongan salinan yang lebih pendek secara satu per satu."
+      ],
+      "Viewing": [
+        "Melihat"
+      ],
+      "You cannot undo this action.": [
+        "Anda tidak dapat mengurungkan tindakan ini."
+      ]
+    },
+    "Label": {
+      "Background colour": [
+        "Warna latar"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pintasan keyboard: ${ shortcut }"
+      ],
+      "Link text": [
+        "Teks tautan"
+      ],
+      "Link URL": [
+        "URL tautan"
+      ],
+      "More options": [
+        "Opsi lainnya"
+      ],
+      "Text colour": [
+        "Warna teks"
+      ]
+    },
+    "Placeholder": {
+      "Add a comment...": [
+        "Tambah komentar..."
+      ],
+      "Edit comment...": [
+        "Sunting komentar..."
+      ],
+      "Paste link": [
+        "Salin tautan"
+      ],
+      "Reply...": [
+        "Balas..."
+      ],
+      "Text": [
+        "Teks"
+      ]
+    },
+    "Title": {
+      "Delete comment": [
+        "Hapus komentar"
+      ],
+      "Delete thread": [
+        "Hapus utas"
+      ]
+    }
+  }
+}

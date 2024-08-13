@@ -152,6 +152,9 @@
       "Delete logo": [
         "Logó törlése"
       ],
+      "Delete member": [
+        "Tag törlése"
+      ],
       "Delete user": [
         "Felhasználó törlése"
       ],
@@ -705,9 +708,6 @@
       "External": [
         "Külső"
       ],
-      "Missing keys": [
-        "Hiányzó kulcsok"
-      ],
       "Orphan": [
         "Árva"
       ]
@@ -720,6 +720,23 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Ez le fogja választani az összes routert és klienst, ami ezt a tanúsítvány használja."
+      ]
+    },
+    "app-switcher": {
+      "Browse the web privately and block ads": [
+        "Böngésszen privát módon"
+      ],
+      "Keep your schedule private": [
+        "Kezelje bizalmasan az időbeosztását"
+      ],
+      "Protect your passwords and identity": [
+        "Védje meg a jelszavait és kilétét"
+      ],
+      "Safeguard your files and photos": [
+        "Védje a fájljait és a fényképeit"
+      ],
+      "Secure your communications": [
+        "Kommunikáljon biztonságosan"
       ]
     },
     "Badge for domain": {
@@ -797,6 +814,9 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Saját domain név használatát is lehetővé teszi. 15 e-mail cím, korlátlan számú hide-my-email e-mail álnév, naptár megosztás és további lehetőségek."
+      ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
       ]
@@ -805,6 +825,9 @@
       "${ n } month": [
         "${ n } hónap",
         "${ n } hónap"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Automatikusan megújul, ${ renewPrice } áron, ${ renewalLength } periódussal"
       ]
     },
     "Billing cycle option": {
@@ -2011,6 +2034,9 @@
       "Code wrong or not valid anymore": [
         "Hibás kód, vagy már nem érvényes"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "A számlák betöltése nem sikerült. Próbálja meg később."
+      ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
@@ -2328,6 +2354,9 @@
         "Elérte a 6 hónapon belül lehetséges maximális ${ n } elfogadott meghívót. Ez a gomb aktiválódni fog, amikor ismét hívhat meg felhasználókat.",
         "Elérte a 6 hónapon belül lehetséges maximális ${ n } elfogadott meghívót. Ez a gomb aktiválódni fog, amikor ismét hívhat meg felhasználókat."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Kifizetetlen számlája van. Kérjük, rendezze a számlákat, mielőtt csoportos csomagba lépne."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Meghívót kapott, hogy a ${ BRAND_NAME } fiókjával csatlakozzon ehhez a csoporthoz és együtt használhassák a ${ BRAND_NAME_TWO } prémium lehetőségeit."
       ],
@@ -2569,7 +2598,13 @@
         "(1 e-mail negyedévente)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 e-mail havonta)"
+        "(havonta 1-2 e-mail)"
+      ],
+      "(2-4 emails per year)": [
+        "(évente 2-4 e-mail)"
+      ],
+      "(4-6 emails per year)": [
+        "(évente 4-6 e-mail)"
       ]
     },
     "Go to sign in": {
@@ -2717,6 +2752,9 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "A ${ MAIL_APP_NAME } egy jelszavas módban is használható, amely leváltja a külön bejelentkezési és második jelszavakat. Egy jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
       ],
       "${ n } address": [
         "${ n } cím",
@@ -2880,11 +2918,11 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Biztosan törli ezt a csoportot? A csoportcímek ezután nem fognak működni."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Biztosan ki szeretné kapcsolni a kétlépcsős hitelesítést?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
+      ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Biztos, hogy adminisztrátor jogokat szeretne adni a felhasználónak?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Biztos, hogy szeretné törölni a felhasználó adminisztratív jogait?"
@@ -2989,7 +3027,7 @@
         "Saját domain nevek"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Szabja testre a ${ BRAND_NAME } alkalmazások megjelenését."
+        "Állítsa be igényei szerint a ${ BRAND_NAME } alkalmazások megjelenését."
       ],
       "Dedicated servers": [
         "Dedikált szerverek"
@@ -3002,6 +3040,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Fedezze fel a ProtectBuy-t logó"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "A DKIM lehetővé teszi, hogy a ${ BRAND_NAME } digitálisan aláírja az e-mailjeit és megakadályozza, hogy esetleges támadók manipulálják az üzeneteket. Vegye fel a következő CNAME rekordot a domain név beállításaihoz (azon a felületen található, ahol a saját domain nevet vásárolta)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "A DMARC ellenőrzi, hogy a feladó SPF és DKIM rekordjai az ön tartományából származnak-e. Ez megakadályozhatja, hogy egy támadó egy másik tartomány SPF és DKIM bejegyzéseit használja az ön domain nevének megszemélyesítésére. A rekordban szereplő \"p=\" érték adja meg, hogy a címzett platformok hogyan kezeljék a nem engedélyezett e-maileket. A legtöbb tartomány esetében a \"p=quarantine\" házirend használatát javasoljuk. A következő TXT rekordot adja hozzá a domain név beállításaihoz (azon a felületen, ahol a saját domain nevet vásárolta)."
@@ -3112,8 +3153,14 @@
       "Fill in user details": [
         "Adja meg a felhasználó adatait"
       ],
+      "finance": [
+        "pénzügyi"
+      ],
       "for choosing ${ product }": [
         "hogy a ${ product }t választotta"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "A szervezet központosított bejelentkezést (SAML, SSO) használó tagjai számára"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Amennyiben egy másik e-mail szolgáltatásról vált a ${ MAIL_APP_NAME } szolgáltatásra, válassza a ${ boldAddresses } lapot, és az MX rekord módosítása előtt vegyen fel minden aktív e-mail címet, a zökkenőmentes átállás érdekében."
@@ -3129,6 +3176,9 @@
       ],
       "here": [
         "ide"
+      ],
+      "High Priority": [
+        "Magas prioritású"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
@@ -3187,8 +3237,14 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Fontos: Mindenképpen mentese el a helyreállító kódokat. Különben véglegesen elveszíti a fiókját, ha elveszik a kétlépcsős hitelesítéshez használt eszköze."
       ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "A következő lépésben egy Bitcoin címet használva küldhet befizetést."
+      ],
       "inactive": [
         "kikapcsolva"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName }-t tartalmaz: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Növelje fiókja biztonságát azzal, hogy hitelesíti e-mail címét."
@@ -3352,6 +3408,12 @@
       "Loading...": [
         "Betöltés..."
       ],
+      "Low Priority": [
+        "Alacsony prioritású"
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "A jelentősebb e-mail szolgáltatások elutasíthatják vagy levélszemétként kezelhetik az e-maileket, ha az SPF/DKIM/DMARC hiányzik vagy nem megfelelően van beállítva."
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "A jelentősebb e-mail szolgáltatások elutasíthatják vagy levélszemétként kezelhetik az e-maileket, ha az SPF/DKIM/DMARC hiányzik vagy nem megfelelően van beállítva."
       ],
@@ -3363,6 +3425,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard Biztonsági Kód logó"
+      ],
+      "Medium Priority": [
+        "Közepes prioritású"
       ],
       "Member": [
         "Tag"
@@ -3393,6 +3458,9 @@
       ],
       "No results found": [
         "Nincs találat"
+      ],
+      "Number of dedicated servers in the organization": [
+        "A dedikált szerverek száma a szervezeténél"
       ],
       "of": [
         "/"
@@ -3429,6 +3497,9 @@
       ],
       "Password copied to clipboard": [
         "Jelszó a vágólapra másolva"
+      ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakter hosszúnak kell lennie."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
@@ -3470,6 +3541,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
+      ],
+      "please open a support ticket": [
+        "kérjük, nyisson egy ügyfélszolgálati jegyet"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Kérjük, próbálkozzon újra egy másik fizetési mód használatával, vagy lépjen kapcsolatba a bankjával."
@@ -3558,6 +3632,9 @@
       "SCIM token active": [
         "SCIM token aktív"
       ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Helyezze biztonságba a ${ BRAND_NAME } fiókját"
+      ],
       "Securing your account": [
         "Fiók biztosítása"
       ],
@@ -3634,8 +3711,14 @@
       "Storage used by this user": [
         "A felhasználó által használt tárhely"
       ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
+      ],
       "Subscription auto-renews every ${ cycle } months.": [
         "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
+      ],
+      "Subscription auto-renews every month.": [
+        "Az előfizetés minden hónapban automatikusan megújul."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
@@ -3651,6 +3734,9 @@
       ],
       "Thank you": [
         "Köszönjük"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Köszönjük, hogy támogatja küldetésünket, hogy egy jobb internetet építsünk, ahol a magánszféra és a szabadság az első."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
@@ -3709,6 +3795,9 @@
       "This file is too large to preview": [
         "Ez a fájl túl nagy az előnézethez"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Ez az üzenet nem a támogatási csoporthoz érkezik. Ha problémája van a szolgáltatással vagy további segítségre van szüksége ${ supportLink }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
       ],
@@ -3724,8 +3813,14 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ezzel véglegesen törlődik fiókja és minden ahhoz kapcsolódó adat. A fiók többé nem állítható vissza."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Ez minden beállított kétlépcsős hitelesítési módszert eltávolít."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Ez lecseréli az ideiglenes jelszavát. Ezzel jelentkezhet be jövőben a ${ BRAND_NAME } fiókjába."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Ez új meghívót küld a **${ email }** címre."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ez minden aktív munkafolyamatból kilépteti és kikapcsolja a kétlépcsős hitelesítést."
@@ -3742,6 +3837,9 @@
       "To cancel your subscription, please reach out to us.": [
         "Az előfizetés lemondásához kérjük, lépjen kapcsolatba velünk."
       ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "A befizetés befejezéséhez, kérjük küldjön ${ btcAmountBold }-t az alábbi címre."
+      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
@@ -3750,6 +3848,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "A ${ BRAND_NAME } termékekről szóló legfrissebb híreinkhez iratkozzon fel a hírleveleinkre és időnként nézze meg a ${ blogLink } oldalunkat."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
@@ -3781,6 +3882,12 @@
       "Two-factor authentication enabled": [
         "Kétlépcsős hitelesítés bekapcsolva"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "A két jelszavas mód két jelszó megadását kívánja meg: egy jelszó a bejelentkezéshez és egy másik az adatok visszafejtéséhez. (Speciális)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "A két jelszavas mód különválasztja a bejelentkezési jelszót és az adatok titkosításához használt jelszót. Ez egy kis biztonsági előnnyel járhat bizonyos esetekben, de a legtöbb felhasználónak inkább az egy jelszavas módot javasoljuk. A két jelszavas módra váltáshoz, először adja meg a bejelentkezési jelszót és aztán pedig az második jelszót."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
@@ -3792,6 +3899,9 @@
       ],
       "Unsupported file": [
         "Ismeretlen file"
+      ],
+      "Unverified": [
+        "Nem ellenőrzött"
       ],
       "Unverified email address.": [
         "Hitelesítetlen e-mail cím"
@@ -3865,6 +3975,9 @@
       "Version number successfully copied to clipboard": [
         "A verziószám sikeresen másolva a vágólapra"
       ],
+      "View, download, and manage your invoices.": [
+        "Számlák megtekintése, letöltése és kezelése."
+      ],
       "Visa Secure logo": [
         "Visa biztonsági logó"
       ],
@@ -3922,6 +4035,12 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "A fiók helyreállítási célra megadott telefonszámára fog kapni egy visszaállító kódot."
       ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Amikor lemondja a jelenlegi előfizetését, a fennmaradó kifizetett összeg kreditként kerül hozzáadásra a fiókja egyenlegéhez, és előfizetése átvált a ${ BRAND_NAME } ${ PLANS.FREE } csomagra."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ha lemondja, az elfőzetése nem kerül majd megújításra, de a már befizetett időszak végéig használhatja a csomagban elérhető lehetőségeket. Ennek befejeződésekor a ${ BRAND_NAME } Free csomagra kerül át."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
       ],
@@ -3967,6 +4086,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Jelenleg több tárhelyet használ mint a ${ downgradedPlanName } csomagban elérhető. Töröljön vagy távolítson el adatokat a csomagváltáshoz."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkesztheti, hogy biztosítsa a helyes e-mail címet hitelesítéshez."
       ],
@@ -4011,8 +4133,17 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "A felhasználót azután delegálhatja adminisztrátorrá, ha elfogadta a meghívót."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "A bejelentkezés után az ${ destination } oldalra kerül átirányításra."
+      ],
+      "You will lose access to Plus features on this date.": [
+        "Ekkor elveszíti a hozzáférését a Plus lehetőségekhez."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Ekkor elveszíti a hozzáférését a Plus szerverekhez és lehetőségekhez."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
@@ -4041,6 +4172,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
       ],
+      "Your account was successfully updated with this promotion": [
+        "A fiókja sikeresen frissítve az ajánlattal"
+      ],
       "Your account will be updated once the payment is cleared.": [
         "A fiókját frissítjük, mihelyst megérkezik a befizetés."
       ],
@@ -4052,6 +4186,12 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Adatai velünk biztonságban vannak. Csak akkor lépünk önnel kapcsolatba, ha ez a szolgáltatásunk biztosításához szükséges."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "A következő számlázási időpont: ${ renewalTime }."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "A szervezete központosított hitelesítést (SSO) használ. Az SSO-szolgáltatóval való folytatáshoz nyomja meg a Bejelentkezés gombot."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Szervezete e-mailjei végpontok közti titkosítása a szervezeti kulccsal történik. Ezzel az ujjlenyomattal ellenőrizhető, hogy a fiókhoz tartozó összes adminisztrátor birtokolja ugyanazt a kulcsot."
@@ -4077,11 +4217,19 @@
     "Info for domain modal": {
       "Add a new user to your organization and create an address for it.": [
         "Vegyen fel egy új felhasználót a szervezethez és készítsen neki címet."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Biztonsági okokból ellenőriznünk kell, hogy a(z) ${ domainName } domain név az ön tulajdonában van. Vegye fel a következő TXT rekordot a domain név beállításaihoz (azon a felületen található, ahol a saját domain nevet vásárolta). Egy példát és néhány hasznos tippet talál itt: ${ kbLink }."
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Az előfizetés automatikus megújításához megadhat egy fizetési módot. Más fizetési módok is elérhetők."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Adja meg saját vagy a szervezet nevét és címét. Mind a személyes, mind a szervezeti számlák ezekkel az adatokkal kerülnek kiállításra."
       ]
     },
     "Info when deleting payment method": {
@@ -4092,6 +4240,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Csak megtekintés"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "Függőben"
       ]
     },
     "Invoice state display as badge": {
@@ -4123,6 +4276,12 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Credit note": [
+        "Jóváírás"
+      ],
+      "Currency conversion": [
+        "Valuta átváltás"
       ],
       "Donation": [
         "Adomány"
@@ -4526,7 +4685,7 @@
         "Rendszer információk"
       ],
       "Two-password mode": [
-        "Kétjelszavas mód"
+        "Két jelszavas mód"
       ],
       "Type": [
         "Típus"
@@ -4590,14 +4749,32 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } és ${ additionalApp } hírek"
+      ],
+      "${ app } product updates": [
+        "${ app } hírek"
+      ],
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } béta verzió bejelentések"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } üzleti hírlevél"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Fontos ${ BRAND_NAME } bejelentések"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } hírlevél"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "${ BRAND_NAME } ajánlatok és promóciók"
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } termékekkel kapcsolatos hírek"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } felhasználói kérdőív"
       ],
       "Daily email notifications": [
         "Napi e-mail értesítések"
@@ -4942,6 +5119,9 @@
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
       ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } korlátlan ide-my-email e-mail álnévvel"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -4951,11 +5131,11 @@
       "${ size } storage": [
         "${ size } tárhely"
       ],
-      "${ size } storage per user": [
-        "${ size } tárhely felhasználónként"
-      ],
       "1 user": [
         "1 felhasználó"
+      ],
+      "24/7 account management support": [
+        "Non-stop fiókkezelési támogatás"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -4966,14 +5146,23 @@
       "Admin console": [
         "Admin konzol"
       ],
-      "Advanced sharing security": [
-        "Fejlett megosztási biztonság"
+      "Administration Panel": [
+        "Adminisztrációs panel"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Levélszemét és lomtár automatikus törlése"
       ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
       ],
       "Auto-reply": [
         "Automatikus válasz"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Bankkártyák automatikus kitöltése (hamarosan)"
+      ],
+      "Automatic email forwarding": [
+        "Automatikus e-mail továbbítás"
       ],
       "Calendar sharing": [
         "Naptár megosztás"
@@ -5005,11 +5194,20 @@
       "Custom workspace branding": [
         "Egyéni munkaterület márkajelzései"
       ],
+      "Data breach monitoring": [
+        "Adatvédelmi incidensek figyelése"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Adatvédelmi incidensek figyelése (hamarosan)"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
       "DNS leak prevention": [
         "DNS szivárgás elleni védelem"
+      ],
+      "Double hop": [
+        "Kettős adattovábbítás"
       ],
       "Easy Switch import assistant": [
         "Easy Switch importálási segéd"
@@ -5029,14 +5227,23 @@
       "End-to-end encryption": [
         "Végpontok közti titkosítás"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Gyors P2P/BitTorrent letöltések"
+      ],
       "Free VPN on a single device": [
         "Ingyenes VPN egy eszközön"
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
       ],
+      "Group management (coming soon)": [
+        "Csoportkezelés (hamarosan elérhető)"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
+      ],
+      "High-speed streaming": [
+        "Nagy sebességű videózás"
       ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
@@ -5060,6 +5267,9 @@
       "No-logs policy": [
         "Nincs naplózás"
       ],
+      "Organize items with multiple vaults": [
+        "Elemek rendezése több tárolóba"
+      ],
       "Password manager to secure credentials": [
         "Jelszókezelő a biztonsági hitelesítő adatok számára"
       ],
@@ -5075,12 +5285,21 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
+      "Priority support & live chat": [
+        "Elsőbbségi támogatás és élő csevegés"
+      ],
       "Protect ${ n } device at a time": [
         "${ n } eszköz védelme egyidőben",
         "${ n } eszköz védelme egyidőben"
       ],
+      "Require 2FA for organization": [
+        "Kétlépcsős hitelesítés megkövetelése a szervezetben"
+      ],
       "Router support": [
         "Router támogatás"
+      ],
+      "Schedule and snooze emails for any time": [
+        "E-mailek időzítése vagy halasztása"
       ],
       "Schedule messages at any time": [
         "Üzenetek ütemezése bármikor"
@@ -5101,9 +5320,6 @@
         "Szerverek több mint ${ vpnServersCountData.paid.countries } országban",
         "Szerverek több mint ${ vpnServersCountData.paid.countries } országban"
       ],
-      "Share files and folders via link": [
-        "Fájlok és mappák megosztása hivatkozással"
-      ],
       "Sign in as user": [
         "Bejelentkezés felhasználóként"
       ],
@@ -5115,6 +5331,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Csatorna szétválasztás (Android és Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO integráció (hamarosan elérhető)"
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
@@ -5148,6 +5367,15 @@
       ],
       "Unlimited messages per day": [
         "Korlátlan számú üzenet naponta"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Korlátlan számú megosztott tároló, hozzáférési jogokkal"
+      ],
+      "Unlimited vault sharing": [
+        "Korlátlan számú tároló megosztása"
+      ],
+      "Unlimited vaults": [
+        "Korlátlan számú tároló"
       ],
       "Unlimited volume/bandwidth": [
         "Korlátlan adatmennyiség és forgalom"
@@ -5238,6 +5466,9 @@
       "Popular": [
         "Népszerű"
       ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Védje a családja adatait az összes ${ BRAND_NAME } szolgáltatás kombinációjával."
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
       ],
@@ -5306,6 +5537,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Tartsa biztonságban e-mailjeit végpontok közti titkosítással. Saját domain név használatát is lehetővé teszi. 15 e-mail cím, korlátlan számú hide-my-email e-mail álnév és további lehetőségek."
+      ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "Használja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } alkalmazásokat kényelmesen a számítógépén"
       ],
@@ -5323,9 +5557,6 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Tömeges vagy programozott levélküldés jelenleg nem támogatott. Javasoljuk, hogy ilyen célra erre specializálódott szolgáltatókat vegyen igénybe."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Korlátozhatja a megosztott fájlokhoz való hozzáférést jelszó vagy lejárati idő beállításával is"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
@@ -5390,6 +5621,9 @@
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Védjen meg minden eszközt, ami a Wifi hálózatához kapcsolódik. Ez ekkor is hasznos, ha nem minden eszköze támogatja közvetlenül a VPN beállításokat."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Védje meg családját a rosszindulatú weboldalaktól és nézze kedvenc videós szolgáltatásait nagy sebességű VPN szervereink segítségével"
       ],
       "Quickly set up out-of-office messages": [
         "Állítson be \"nem-elérhető\" üzeneteket könnyedén"
@@ -5653,6 +5887,11 @@
         "Fizetés ellenőrzése"
       ]
     },
+    "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
+        "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **helyreállító jelmondattal** vagy a **régi jelszavával** tudja majd feloldani."
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
@@ -5684,6 +5923,12 @@
       ],
       "MM/YY": [
         "HH/ÉÉ"
+      ],
+      "Please add a payment method in the dashboard to continue.": [
+        "A folytatáshoz kérjük, vegyen fel egy fizetési módot a vezérlőközpontban."
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "A számla kifizetését feldolgozzuk. Kérjük, várjon a fizetés befejezéséig, mielőtt módosítaná csomagját vagy frissítené fizetési adatait. Köszönjük türelmét."
       ]
     },
     "Payments.Error": {
@@ -5722,6 +5967,9 @@
       "E.g., ": [
         "Pl., "
       ],
+      "Email or IP": [
+        "E-mail vagy IP cím"
+      ],
       "End date": [
         "Befejező dátum"
       ],
@@ -5743,8 +5991,14 @@
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
+      "Please select the main reason": [
+        "Válassza ki a fő okot"
+      ],
       "Search": [
         "Keresés"
+      ],
+      "Search for a user or address": [
+        "Felhasználó vagy cím keresése"
       ],
       "Search users": [
         "Felhasználók keresése "
@@ -5884,6 +6138,17 @@
     "Select file": {
       "Upload CSV file": [
         "CSV fájl feltöltése"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "Jóváírás"
+      ],
+      "Currency conversion": [
+        "Valuta átváltás"
+      ],
+      "Invoice": [
+        "Számla"
       ]
     },
     "Select search results": {
@@ -6371,6 +6636,18 @@
       ],
       "Your storage is full": [
         "A tárhelye megtelt"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Elveszíti a hozzáférést ${ gb } tárhelyhez és az elsőbbségi támogatáshoz."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Elveszíti a hozzáférést további tárhelyhez, e-mail címekhez, e-mail álnevekhez, naptárakhoz és az elsőbbségi támogatáshoz."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Elveszíti a hozzáférést a legnagyobb sebességű VPN-hez, 10 eszköz védelméhez, nagy sebességű videózáshoz, reklámblokkolóhoz, rosszindulatú szoftver elleni védelemhez és az elsőbbségi támogatáshoz."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Elveszíti a hozzáférést korlátlan számú bejelentkezéshez és jegyzethez, korlátlan ide-my-email e-mail álnevekhez, 20 tárolóhoz és az elsőbbségi támogatáshoz."
       ]
     },
     "Subscription": {
@@ -6496,6 +6773,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } segít a családtagjai — és adataik — védelmében, amikor csak online vannak."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -6556,6 +6836,9 @@
     "Subscription renewal state": {
       "Disable": [
         "Letiltás"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Rendszerünk nem tud automatikusan levonni ezzel a fizetési móddal, de az előfizetése továbbra is megújul a számlázási ciklus végén. Ha kisebb csomagra szeretne váltani vagy módosítani szeretné előfizetését, azt továbbra is magának kell megtennie a számlázási időszak vége előtt. Ez nem lehetséges automatikusan, mert ha túllépte az ingyenes csomagban elérhető tárhelyet, vagy más fizetős funkciókat használ, nem törölhetünk automatikusan fájlokat, e-maileket vagy más adatokat ön helyett. Ha letiltja az automatikus fizetést, ne felejtse el a következő számlát az esedékesség napja előtt befizetni, hogy elkerülje a fiók felfüggesztését."
       ]
     },
     "Subscription saving": {
@@ -6574,6 +6857,9 @@
       ],
       "Address added": [
         "Cím hozzáadva"
+      ],
+      "Administrator privileges restored": [
+        "Adminisztrátor jogok helyreállítva"
       ],
       "Bug reported": [
         "Hiba bejelentve"
@@ -6601,6 +6887,9 @@
       ],
       "Email address copied to clipboard": [
         "E-mail cím a vágólapra másolva"
+      ],
+      "Email address updated": [
+        "E-mail cím frissítve"
       ],
       "Email updated": [
         "E-mail frissítve"
@@ -6919,10 +7208,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -7273,9 +7562,6 @@
       "Sign in to your organization": [
         "Jelentkezzen be a szervezetébe"
       ],
-      "Sign in with 2FA": [
-        "Bejelentkezés kétlépcsős hitelesítéssel"
-      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -7299,10 +7585,10 @@
         "Összegzés"
       ],
       "Switch to one-password mode": [
-        "Egyjelszavas módra váltás"
+        "Egy jelszavas módra váltás"
       ],
       "Switch to two-password mode": [
-        "Kétjelszavas módra váltás"
+        "Két jelszavas módra váltás"
       ],
       "There are no groups": [
         "Nincsenek csoportok"
@@ -7368,7 +7654,7 @@
         "Az ön csomagja"
       ],
       "Your subscriptions": [
-        "Az előfizetései"
+        "Előfizetések"
       ]
     },
     "Title for payment methods table": {

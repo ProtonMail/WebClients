@@ -938,6 +938,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Kami menemui masalah pada saat memulai ${ PASS_SHORT_APP_NAME }. Apabila masalah ini terus berlanjut, silakan hubungi layanan dukungan pelanggan kami untuk memperoleh bantuan."
       ],
+      "Wrong extra password": [
+        "Kata sandi tambahan salah"
+      ],
       "Wrong password": [
         "Kata sandi salah"
       ],
@@ -1122,6 +1125,9 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka berkas aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak berkas yang diekspor."
       ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+      ],
       "Breaches detected": [
         "Kebocoran terdeteksi"
       ],
@@ -1220,6 +1226,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktifkan pengucian otomatis untuk mengamankan data Anda"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Mengaktifkan penguncian otomatis biometrik"
+      ],
+      "Enabling biometrics lock failed": [
+        "Gagal mengaktifkan penguncian biometrik"
       ],
       "Enabling offline mode...": [
         "Mengaktifkan mode offline..."
@@ -1446,9 +1458,6 @@
       "Offline support successfully disabled": [
         "Dukungan offline berhasil dinonaktifkan"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Akses online ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi saat ini. Anda akan dikeluarkan dari akun setelah 3 percobaan yang gagal."
-      ],
       "Owner": [
         "Pemilik"
       ],
@@ -1487,6 +1496,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan kunci Anda saat ini."
       ],
       "Please confirm your password": [
         "Silakan konfirmasi kata sandi Anda"
@@ -1581,6 +1593,9 @@
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
+      "Set by your organization": [
+        "Ditetapkan oleh organisasi Anda"
+      ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
       ],
@@ -1641,6 +1656,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
       ],
+      "This option is currently not available on your device.": [
+        "Pilihan ini untuk saat ini tidak tersedia pada perangkat Anda."
+      ],
       "This setting is disabled on the organization level": [
         "Pengaturan ini dinonaktifkan pada tingkat organisasi"
       ],
@@ -1670,6 +1688,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi tambahan Anda"
+      ],
+      "Unlock with biometrics": [
+        "Buka dengan biometrik"
       ],
       "Unpinning item...": [
         "Melepas sematan item..."
@@ -1814,6 +1835,9 @@
       "15 minutes": [
         "15 menit"
       ],
+      "2 minutes": [
+        "2 menit"
+      ],
       "24 hours": [
         "24 jam"
       ],
@@ -1831,6 +1855,9 @@
       ],
       "30 seconds": [
         "30 detik"
+      ],
+      "4 hours": [
+        "4 jam"
       ],
       "5 minutes": [
         "5 menit"
@@ -1879,6 +1906,9 @@
       ],
       "Beta Access": [
         "Akses Beta"
+      ],
+      "Biometrics": [
+        "Biometrik"
       ],
       "Birthdate": [
         "Tanggal lahir"
@@ -2354,6 +2384,9 @@
       "Type": [
         "Jenis"
       ],
+      "Unlock with": [
+        "Buka dengan"
+      ],
       "Unnamed Credit Card": [
         "Kartu Kredit tidak bernama"
       ],
@@ -2662,11 +2695,11 @@
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
-      "Email address": [
-        "Alamat email"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Masukkan kata sandi tambahan Anda"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -2763,9 +2796,6 @@
       ],
       "Passkey": [
         "Passkey"
-      ],
-      "Password": [
-        "Kata sandi"
       ],
       "Password Health": [
         "Kesehatan Kata Sandi"
@@ -2963,14 +2993,14 @@
       "Empty note": [
         "Catatan kosong"
       ],
-      "Encryption password is required": [
-        "Kata sandi enkripsi dibutuhkan"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
       "Extra password cannot be empty": [
         "Kata sandi tambahan tidak dapat kosong"
+      ],
+      "Extra password is required": [
+        "Kata sandi tambahan diperlukan"
       ],
       "Extra password should have at least 8 characters": [
         "Kata sandi tambahan harus berisi setidaknya 8 karakter"

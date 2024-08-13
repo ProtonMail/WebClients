@@ -196,6 +196,9 @@
       "Discard": [
         "Descarta"
       ],
+      "Discard changes": [
+        "Descarta els canvis"
+      ],
       "Done": [
         "Fet"
       ],
@@ -225,6 +228,9 @@
       ],
       "Edit Gateway": [
         "Edita la passarel·la"
+      ],
+      "Edit group": [
+        "Edita el grup"
       ],
       "Edit invoice details": [
         "Edita les dades de la factura"
@@ -517,6 +523,9 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
+      "Select billing cycle ${ billingText }": [
+        "Selecciona el cicle de facturació ${ billingText }"
+      ],
       "Select country": [
         "Seleccioneu el país"
       ],
@@ -603,6 +612,9 @@
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
+      ],
+      "Test": [
+        "Prova"
       ],
       "Top up": [
         "Recarrega"
@@ -777,9 +789,6 @@
       ],
       "External": [
         "Externa"
-      ],
-      "Missing keys": [
-        "Falten claus"
       ],
       "No E2EE mail": [
         "Cap correu E2EE"
@@ -1576,6 +1585,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Corea (República Popular Democràtica)"
+      ],
       "Korea (Republic of)": [
         "Corea (República)"
       ],
@@ -1587,6 +1599,9 @@
       ],
       "Kyrgyzstan": [
         "Kirguizstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "República Popular Democràtica de Laos"
       ],
       "Laos": [
         "Laos"
@@ -1605,6 +1620,9 @@
       ],
       "Libya": [
         "Líbia"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Líbia (Jamahiriya Àrab)"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -2201,6 +2219,19 @@
       ],
       "Priority support": [
         "Suport prioritari"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuaris"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Tot allò de ${ BRAND_NAME }, per a 2."
+      ],
+      "Double your storage": [
+        "Dobleu el vostre emmagatzematge"
       ]
     },
     "Email spam notification": {
@@ -3395,9 +3426,6 @@
       "Amount due": [
         "Import pendent"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Esteu segur que voleu desactivar l'autenticació de dos factors?"
-      ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
       ],
@@ -3531,11 +3559,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -4892,6 +4920,14 @@
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ]
     },
+    "invitation status": {
+      "Pending": [
+        "Pendent"
+      ],
+      "Rejected": [
+        "Rebutjat"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Regalat"
@@ -5930,9 +5966,6 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
-      "${ size } storage per user": [
-        "${ size } emmagatzematge per usuari"
-      ],
       "1 user": [
         "1 usuari"
       ],
@@ -5956,9 +5989,6 @@
       ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
-      ],
-      "Advanced sharing security": [
-        "Seguretat avançada en la compartició"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -6169,9 +6199,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servidors en més d'${ vpnServersCountData.paid.countries } país",
         "Servidors en més de ${ vpnServersCountData.paid.countries } països"
-      ],
-      "Share files and folders via link": [
-        "Compartició de fitxers i carpetes mitjançant un enllaç"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -6467,9 +6494,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Trieu horaris personalitzats per a rebre recordatoris d'un correu electrònic o perquè arribi el vostre missatge"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controleu l'accés als vostres fitxers compartits afegint protecció per contrasenya i dates d'expiració d'enllaços."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia; p. ex., JoanCompres@${ domain } per a comptes de compres, JoanNoticies@${ domain } per a la subscripció a notícies."
@@ -7414,6 +7438,26 @@
       ],
       "User": [
         "Usuari"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Cancel·la"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Detalls"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Corrreu electrònic"
+      ]
+    },
+    "saml: Title": {
+      "It works!": [
+        "Funciona!"
       ]
     },
     "scim: Action": {
@@ -9075,10 +9119,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -9482,9 +9526,6 @@
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
-      ],
-      "Sign in with 2FA": [
-        "Inicia la sessió amb autenticació de dos factors (A2F)"
       ],
       "Sign out": [
         "Tanca la sessió"

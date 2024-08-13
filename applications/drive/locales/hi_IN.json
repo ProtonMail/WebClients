@@ -974,6 +974,11 @@
         "असमर्थित घटना"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "आमंत्रित"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } स्टोरेज"
@@ -6081,9 +6086,6 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "${ size } storage per user": [
-        "${ size } स्टोरेज हर यूज़र पे"
-      ],
       "1 user": [
         "1 यूज़र"
       ],
@@ -6101,9 +6103,6 @@
       ],
       "Administration Panel": [
         "प्रशासन पैनल"
-      ],
-      "Advanced sharing security": [
-        "एडवांस शेयर करते हुए सुरक्षा"
       ],
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
@@ -6262,9 +6261,6 @@
       ],
       "Send & receive invitations": [
         "न्योते भेजें और लें"
-      ],
-      "Share files and folders via link": [
-        "लिंक से फाइल और फोल्डर शेयर करें"
       ],
       "Sign in as user": [
         "यूज़र के रूप में साइनइन"
@@ -6485,9 +6481,6 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "थोक में विज्ञापन-ईमेल या प्रोग्राम किया ईमेल भेजना अभी सपोर्ट नहीं किया गया है। हम सलाह देते है की आप इस के लिए एक समर्पित ईमेल सेवा प्रदाता इस्तेमाल करें।"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "पासवर्ड सुरक्षा और लिंक खत्म होने की तारीख जोड़कर शेयर किए गए फाइलों को कंट्रोल करें।"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
@@ -6880,11 +6873,17 @@
       ]
     },
     "Onboarding Action": {
+      "Create new document": [
+        "नया दस्तावेज़ बनाएं"
+      ],
       "Next": [
         "अगला"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } इस्तेमाल करें"
+      ],
+      "Try it later": [
+        "बाद में पुन: प्रयास करें"
       ]
     },
     "Onboarding Info": {
@@ -7231,6 +7230,9 @@
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } खोलें"
+      ],
+      "Protect your online identity": [
+        "अपनी ऑनलाइन पहचान सुरक्षित रखें"
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } आज़माएँ"
@@ -8222,9 +8224,6 @@
       "Edit image": [
         "तस्वीर बदलाव करें"
       ],
-      "Email address": [
-        "ईमेल पता"
-      ],
       "Email addresses": [
         "ईमेल पता"
       ],
@@ -8356,9 +8355,6 @@
       "Other names": [
         "दूसरे नाम"
       ],
-      "Password": [
-        "पासवर्ड"
-      ],
       "Payment failed": [
         "भुगतान असफल हुआ"
       ],
@@ -8475,9 +8471,6 @@
       ],
       "Sign in and grant access": [
         "साइन इन करें और पहुंच प्रदान करें"
-      ],
-      "Sign in with 2FA": [
-        "2-एफए से साइनइन करें"
       ],
       "Sign out": [
         "साइन आउट करें"

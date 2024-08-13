@@ -157,6 +157,9 @@
       "Allow": [
         "Tillat"
       ],
+      "Always allow sending mail to group": [
+        "Tillat alltid sending av e-post til gruppen"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -388,6 +391,9 @@
       "Disable": [
         "Deaktiver"
       ],
+      "Disable E2EE for group address": [
+        "Deaktiver ende-til-ende-kryptert for gruppeadresse"
+      ],
       "Disable recovery phrase": [
         "Deaktiver gjenopprettingsfrase"
       ],
@@ -489,6 +495,9 @@
       ],
       "Enable device-based recovery": [
         "Aktiver enhetsbasert gjenoppretting"
+      ],
+      "Enable E2EE for group address": [
+        "Aktiver ende-til-ende-kryptert for gruppeadresse"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -1180,6 +1189,9 @@
       "Use authentication code": [
         "Bruk autentiseringskode"
       ],
+      "Use group sending permissions": [
+        "Bruk tillatelser for gruppesending"
+      ],
       "Use recovery code": [
         "Bruk gjenopprettingskode"
       ],
@@ -1367,8 +1379,8 @@
       "External": [
         "Ekstern"
       ],
-      "Missing keys": [
-        "Mangler nøkler"
+      "Inactive": [
+        "Inaktiv"
       ],
       "No E2EE mail": [
         "Ingen E2EE-post"
@@ -3380,6 +3392,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktiver detaljerte hendelser og ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
+      ],
+      "Enable detailed events to access these features": [
+        "Aktiver detaljerte hendelser for å få tilgang til disse funksjonene"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
@@ -3598,9 +3616,6 @@
       "Free, encrypted, and secure cloud storage": [
         "Gratis, kryptert og sikker skylagring"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Sikker skylagring og fildeling som beskytter dataene dine"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du er invitert til å få tilgang til en fil i ${ DRIVE_APP_NAME }"
       ]
@@ -3611,6 +3626,43 @@
       ],
       "Priority support": [
         "Prioritert brukerstøtte"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Få ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Få planen for ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Faktureres årlig til ${ amountBilled }. Spar ${ amountSave } over 2 individuelle ${ BRAND_NAME } ubegrensede årlige abonnementer."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 brukere"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full tilgang til alle ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparer ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Alt av ${ BRAND_NAME }, for 2 personer."
+      ],
+      "Double your storage": [
+        "Doble lagringsplassen din"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introduserer ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5056,8 +5108,14 @@
       "*Only one free trial per customer.": [
         "*Kun en gratis prøveversjon per kunde."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Kontoer med egendefinerte domener kan ikke bli med i en gruppeplan."
+      ],
       "customer support": [
         "kundestøtte"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppeplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -5076,6 +5134,9 @@
       ],
       "Leave Visionary plan": [
         "Forlat Visionary-plan"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livsvarige kontoer kan ikke bli med i en gruppeplan."
       ],
       "Manage addresses.": [
         "Administrer adresser"
@@ -5134,11 +5195,17 @@
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en gruppeplan."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du må konfigurere et egendefinert domene før du kan legge til flere brukere."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du må konfigurere et egendefinert domene før du kan opprette en ny bruker."
+      ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Du vil miste tilgang til alle premiumfunksjoner og lagringsplass inkludert med ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er invitert til å koble din ${ BRAND_NAME }-konto til denne gruppeplanen og sammen nyte alle ${ BRAND_NAME_TWO }-premiumfunksjoner."
@@ -5148,6 +5215,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5217,6 +5287,9 @@
       ],
       "An error occurred, please try again": [
         "En feil oppstod, vennligst prøv igjen"
+      ],
+      "Family name updated": [
+        "Familienavn oppdatert"
       ],
       "Member updated": [
         "Medlem oppdatert"
@@ -6674,9 +6747,6 @@
       "Are you sure you want to delete this label?": [
         "Er du sikker på at du vil slette denne etiketten?"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Er du sikker på at du vil deaktivere tofaktorautentisering?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil forkaste de ulagrede endringene dine?"
       ],
@@ -7112,6 +7182,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Hendelseinvitasjoner og RSVP-er vil bli sendt på dette språket."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Hendelser inkluderer autentiseringsforsøk for alle ${ BRAND_NAME }-tjenester som bruker ${ BRAND_NAME_TWO }-legitimasjonen din."
       ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
@@ -7718,6 +7791,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andre brukere i organisasjonen din vil se de travle tidslukene dine. Ingen hendelsesdetaljer deles."
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler feil på siden av forsiktighet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Utdatert gjenopprettingsfil; oppdater for å sikre tilgang til dine data."
       ],
@@ -8071,9 +8147,6 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-innsending tillater 3-partstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, vennligst ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
@@ -9093,6 +9166,11 @@
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Ikke en gyldig e-postadresse"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Etikett for kobling (valgfritt)"
@@ -9109,6 +9187,9 @@
       ],
       "Rejected": [
         "Avvist"
+      ],
+      "Sending invite...": [
+        "Sender invitasjon..."
       ]
     },
     "Invoice state display as badge": {
@@ -9482,6 +9563,27 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig, vennligst kom tilbake senere)."
+      ],
+      "1 hour": [
+        "1 time"
+      ],
+      "1 minute": [
+        "1 minutt"
+      ],
+      "10 minutes": [
+        "10 minutter"
+      ],
+      "15 minutes": [
+        "15 minutter"
+      ],
+      "30 minutes": [
+        "30 minutter"
+      ],
+      "30 seconds": [
+        "30 sekunder"
+      ],
+      "5 minutes": [
+        "5 minutter"
       ],
       "Account recovery": [
         "Kontogjenoppretting"
@@ -10820,6 +10922,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Aktiver detaljerte hendelser"
+      ],
+      "Enable security events": [
+        "Aktiver sikkerhetshendelser"
       ]
     },
     "Mail import summary": {
@@ -11424,9 +11532,6 @@
       "${ size } storage": [
         "${ size } lagringsplass"
       ],
-      "${ size } storage per user": [
-        "${ size } lagringsplass per bruker"
-      ],
       "1 user": [
         "1 bruker"
       ],
@@ -11450,9 +11555,6 @@
       ],
       "Advanced network security": [
         "Avansert nettverkssikkerhet"
-      ],
-      "Advanced sharing security": [
-        "Avansert delingssikkerhet"
       ],
       "All ${ BRAND_NAME } services": [
         "Alle ${ BRAND_NAME }-tjenester"
@@ -11489,9 +11591,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbeid og del store filer"
-      ],
-      "Collaborative document editor": [
-        "Samarbeidende dokumentredigerer"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -11672,9 +11771,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Tjenere i ${ vpnServersCountData.paid.countries }+ land",
         "Tjenere i ${ vpnServersCountData.paid.countries }+ land"
-      ],
-      "Share files and folders via link": [
-        "Del filer og mapper via kobling"
       ],
       "Sign in as user": [
         "Logg på som bruker"
@@ -11888,9 +11984,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sikre ditt digitale liv med ${ BRAND_NAME } for to personer."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Angi automatiske svar for å informere avsendere du ikke er på kontoret eller ikke i stand til å respondere."
       ],
@@ -11902,6 +11995,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Gratis startpakkekonto utformet til å styrke alle med personvern som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Ubegrenset privatliv og mer lagringsplass for opptil 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du sletter kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
@@ -12030,9 +12126,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Velg egendefinerte tidspunkter for å bli påminnet om en e-postmelding eller for når meldingen skal ankomme."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroller tilgang til dine delte filer ved å legge til passordbeskyttelse og utløpsdatoer på koblinger."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, JohnNews@${ domain } for nyhetsabonnement"
@@ -12964,9 +13057,6 @@
       "Current plan": [
         "Gjeldende plan"
       ],
-      "Customizable services for large teams.": [
-        "Tilpassbare tjenester for store team."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Last ned og installer de relevante appene og utvidelsene for å begynne å bruke ${ PASS_APP_NAME }"
       ],
@@ -13041,9 +13131,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli med over 100 millioner mennesker som har valgt ${ BRAND_NAME } for å være trygg på nettet"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Bli med over 50 000 organisasjoner som stoler på ${ BRAND_NAME }."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Starter ${ PASS_APP_NAME }"
@@ -14384,16 +14471,6 @@
         "Verifisering"
       ]
     },
-    "signup: Action": {
-      "Request a demo": [
-        "Be om en demo"
-      ]
-    },
-    "signup_2024: Feature": {
-      "GDPR compliant": [
-        "GDPR-kompatibel"
-      ]
-    },
     "specialoffer: Action": {
       "Close": [
         "Lukk"
@@ -15378,6 +15455,9 @@
       "Import record deleted": [
         "Importpost slettet"
       ],
+      "Invitation rejected": [
+        "Invitasjon avslått"
+      ],
       "Invitation sent": [
         "Invitasjon sendt"
       ],
@@ -15401,6 +15481,18 @@
       ],
       "Organization activated": [
         "Organisasjon aktivert"
+      ],
+      "Organization identity updated": [
+        "Organisasjonsidentitet oppdatert"
+      ],
+      "Organization logo removed": [
+        "Organisasjonslogo fjernet"
+      ],
+      "Organization logo updated": [
+        "Organisasjonslogo oppdatert"
+      ],
+      "Organization name updated": [
+        "Organisasjonsnavn oppdatert"
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
@@ -16170,9 +16262,6 @@
       "Email": [
         "E-post"
       ],
-      "Email address": [
-        "E-postadresse"
-      ],
       "Email composer": [
         "Redigeringsvindu for e-post"
       ],
@@ -16475,9 +16564,6 @@
       "PayPal verification failed": [
         "PayPal-bekreftelse mislyktes"
       ],
-      "Personalise your e-mail footer": [
-        "Tilpass bunnteksten i e-post"
-      ],
       "Phone": [
         "Telefon"
       ],
@@ -16577,6 +16663,9 @@
       "Security and privacy": [
         "Sikkerhet og personvern"
       ],
+      "Security events": [
+        "Sikkerhetshendelser"
+      ],
       "Security logs": [
         "Sikkerhetslogger"
       ],
@@ -16648,9 +16737,6 @@
       ],
       "Sign in to your organization": [
         "Logg på din organisasjon"
-      ],
-      "Sign in with 2FA": [
-        "Logg på med 2FA"
       ],
       "Sign out": [
         "Logg av"
@@ -17004,6 +17090,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Aktivere/deaktivere skrivebord- og mobilvarslinger"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Aktivering av detaljerte hendelser registrerer IP-adressen for hver hendelse."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
       ],
@@ -17076,6 +17165,9 @@
       "This address has been disabled": [
         "Denne adressen er deaktivert"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Dette kan være forårsaket av tilbakestilling av passord eller at brukeren ikke logger på enda."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."
       ],
@@ -17146,6 +17238,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitasjon"
       ],
       "User rejected invitation": [
         "Bruker avviste invitasjonen"
@@ -17622,6 +17717,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ved å deaktivere overvåking av sikkerhetshendelser vil du også slette hele historikken. Er du sikker på at du vil deaktivere dette?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Utløpsdato er ikke i formatet MM/ÅÅ"

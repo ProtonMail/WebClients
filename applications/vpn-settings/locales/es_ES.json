@@ -64,6 +64,9 @@
       "Allow": [
         "Permitir"
       ],
+      "Always allow sending mail to group": [
+        "Permitir siempre el envío de correo al grupo"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Desactivar"
       ],
+      "Disable E2EE for group address": [
+        "Desactivar el cifrado de extremo a extremo para la dirección del grupo"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
+      ],
+      "Enable E2EE for group address": [
+        "Activar el cifrado de extremo a extremo para la dirección del grupo"
       ],
       "Enable multi-user support": [
         "Activar soporte multiusuario"
@@ -455,7 +464,7 @@
         "Borrar el código de regalo"
       ],
       "Remove single sign-on": [
-        "Eliminar el inicio de sesión único"
+        "Borrar el inicio de sesión único"
       ],
       "Rename": [
         "Renombrar"
@@ -590,7 +599,7 @@
         "Iniciar sesión"
       ],
       "Sign in with password": [
-        "Iniciar sesión con contraseña"
+        "Iniciar sesión con una contraseña"
       ],
       "Sign in with SSO": [
         "Iniciar sesión con SSO"
@@ -675,6 +684,9 @@
       ],
       "Use authentication code": [
         "Utilizar código de autenticación"
+      ],
+      "Use group sending permissions": [
+        "Usar los permisos de envío del grupo"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -770,7 +782,7 @@
         "Deshabiliar correo E2EE"
       ],
       "Disallow unsigned mail": [
-        "Non permitir correos sin firma"
+        "No permitir correos sin firma"
       ],
       "Edit": [
         "Editar"
@@ -810,8 +822,8 @@
       "External": [
         "Externa"
       ],
-      "Missing keys": [
-        "Claves faltantes"
+      "Inactive": [
+        "Inactiva"
       ],
       "No E2EE mail": [
         "Sin correo E2EE"
@@ -1576,7 +1588,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "Irán (República Islámica de Irán)"
+        "Irán (República Islámica)"
       ],
       "Isle of Man": [
         "Isla de Man"
@@ -1645,7 +1657,7 @@
         "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
-        "Libia, Yamahiriya Árabe"
+        "Libia (Yamahiriya Árabe)"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -2244,6 +2256,43 @@
         "Soporte prioritario"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtén ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obtenlo por ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturación anual de ${ amountBilled }. Ahorra ${ amountSave } en 2 suscripciones individuales anuales ilimitadas de ${ BRAND_NAME }."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuarios"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acceso completo a todos los productos de ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ahorras ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Todas las funciones de ${ BRAND_NAME }, para 2."
+      ],
+      "Double your storage": [
+        "Doblar tu almacenamiento"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } añadido"
@@ -2757,6 +2806,9 @@
       "You have successfully joined the family group": [
         "Te has unido al grupo familiar."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan de grupo."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Debes configurar un dominio personalizado antes de crear múltiples usuarios."
       ],
@@ -2840,6 +2892,9 @@
       ],
       "An error occurred, please try again": [
         "Se ha producido un error. Inténtalo de nuevo."
+      ],
+      "Family name updated": [
+        "Se ha actualizado el nombre de la familia."
       ],
       "Member updated": [
         "Miembro actualizado"
@@ -3475,9 +3530,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "¿Estás seguro de que quieres eliminar este grupo? La dirección del grupo dejará de funcionar."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "¿Estás seguro de que quieres desactivar la autenticación de dos factores?"
-      ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
@@ -3586,6 +3638,10 @@
       "Country code": [
         "Código de país"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Crear una nube segura para ${ n } miembro",
+        "Crear una nube segura para ${ n } miembros"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea y administra subcuentas y asígnales direcciones de correo electrónico en tu dominio personalizado."
       ],
@@ -3617,11 +3673,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -3929,7 +3985,7 @@
         "Se ha rellenado automáticamente el elemento en ${ vaultLink }."
       ],
       "Item autofilled in vault": [
-        "El elemento en la caja fuerte ha sido rellenado automaticamente."
+        "Se ha rellenado el elemento en la caja fuerte automaticamente."
       ],
       "Item Changed Flags": [
         "Se han cambiado los marcadores del elemento."
@@ -3968,7 +4024,7 @@
         "Elemento en la caja fuerte eliminado"
       ],
       "Item in vault untrashed": [
-        "El elemento en la caja fuerte ha sido restaurado."
+        "Se ha restaurado el elemento en la caja fuerte."
       ],
       "Item Read": [
         "Se ha leído el elemento."
@@ -4085,10 +4141,10 @@
         "Debe comenzar con una letra."
       ],
       "New User Invite Created": [
-        "La invitación para el usuario nuevo ha sido creada."
+        "Se ha creado la invitación para el usuario nuevo."
       ],
       "New User Invite Deleted": [
-        "La invitación para el usuario nuevo ha sido eliminada."
+        "Se ha eliminado la invitación para el usuario nuevo."
       ],
       "New user invited to organization": [
         "Se ha invitado el nuevo usuario a la organización."
@@ -4270,7 +4326,7 @@
         "Recuerda compartir los detalles de inicio de sesión con el usuario."
       ],
       "Request a phone call": [
-        "Solicite una llamada telefónica"
+        "Solicita una llamada telefónica"
       ],
       "Resend verification email": [
         "Reenviar el correo electrónico de verificación"
@@ -4357,10 +4413,10 @@
         "${ vaultLink } compartido actualizado"
       ],
       "Shared vault deleted": [
-        "La caja fuerte compartida ha sido eliminada."
+        "Se ha eliminado la caja fuerte compartida."
       ],
       "Shared vault updated": [
-        "La caja fuerte compartida ha sido actualizada."
+        "Se ha actualizado la caja fuerte compartida."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicia sesión en ${ MAIL_APP_NAME } para activar tu dirección"
@@ -4369,7 +4425,7 @@
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
       ],
       "Single sign-on removed": [
-        "El inicio de sesión único ha sido eliminado."
+        "Se ha eliminado el inicio de sesión único."
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Algunos de tus servidores disponibles solo pueden utilizarse en países específicos debido a eliminaciones recientes."
@@ -4646,7 +4702,7 @@
         "Se ha eliminado la caja fuerte."
       ],
       "Vault shared with email": [
-        "Caja fuerte compartida por correo electrónico"
+        "Se ha compartido la caja fuerte por correo electrónico."
       ],
       "Vault updated": [
         "Se ha actualizado la caja fuerte."
@@ -4996,12 +5052,20 @@
         "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "No es una dirección de correo electrónico válida."
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Pendiente"
       ],
       "Rejected": [
         "Rechazada"
+      ],
+      "Sending invite...": [
+        "Enviando la invitación..."
       ]
     },
     "Invoice state display as badge": {
@@ -6048,9 +6112,6 @@
       "${ size } storage": [
         "${ size } de almacenamiento"
       ],
-      "${ size } storage per user": [
-        "${ size } de almacenamiento por usuario"
-      ],
       "1 user": [
         "1 usuario"
       ],
@@ -6074,9 +6135,6 @@
       ],
       "Advanced network security": [
         "Seguridad de red avanzada"
-      ],
-      "Advanced sharing security": [
-        "Seguridad avanzada al compartir archivos"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -6110,9 +6168,6 @@
       ],
       "Collaborate and share large files": [
         "Colabora y comparte archivos grandes"
-      ],
-      "Collaborative document editor": [
-        "Editor de documentos colaborativo"
       ],
       "Contact groups": [
         "Grupos de contactos"
@@ -6282,7 +6337,7 @@
         "Servidores Secure Core"
       ],
       "See team's availability": [
-        "Mostrar la disponibilidad de tu equipo"
+        "Mostrar la disponibilidad del equipo"
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
@@ -6290,9 +6345,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servidores en más de ${ vpnServersCountData.paid.countries } país",
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
-      ],
-      "Share files and folders via link": [
-        "Compartir archivos y carpetas con un enlace"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -6392,6 +6444,9 @@
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
+      "Version history": [
+        "Historial de versiones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
@@ -6485,9 +6540,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Asegura tu vida digital con ${ BRAND_NAME } para dos personas."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -6496,6 +6548,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "La cuenta inicial sin coste ofrece privacidad por defecto a todo el mundo."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privacidad ilimitada y más almacenamiento para hasta 2 personas."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Ahora mismo pagas un precio especial por tu plan. Si eliminas la cuenta, perderás esta ventaja y no la recuperarás creando otra cuenta."
@@ -6594,9 +6649,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controla el acceso a tus archivos compartidos con enlaces con fechas de expiración y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
@@ -7946,7 +7998,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "El restablecimiento de contraseña ha sido solicitado."
+        "Se ha solicitado el restablecimiento de contraseña."
       ]
     },
     "session_recovery:initiation:action": {
@@ -8289,7 +8341,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Seguir en ${ currentPlanName }"
+        "Seguir con ${ currentPlanName }"
       ]
     },
     "storage_split: feature": {
@@ -8754,7 +8806,7 @@
         "Mantente seguro y conectado en cualquier lugar"
       ],
       "Subscription canceled": [
-        "La suscripción ha sido cancelada."
+        "Se ha cancelado la suscripción."
       ],
       "Support your compliance objectives": [
         "Logra tus objetivos de cumplimiento"
@@ -8964,6 +9016,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Si has introducido un teléfono de recuperación válido, te enviaremos un SMS con tus nombres de usuario en el próximo minuto."
       ],
+      "Invitation rejected": [
+        "Se ha rechazado la invitación."
+      ],
       "Invitation sent": [
         "Invitación enviada"
       ],
@@ -8984,6 +9039,18 @@
       ],
       "Organization activated": [
         "Organización activada"
+      ],
+      "Organization identity updated": [
+        "Se ha actualizado la identidad de la organización."
+      ],
+      "Organization logo removed": [
+        "Se ha borrado el logo de la organización."
+      ],
+      "Organization logo updated": [
+        "Se ha actualizado el logo de la organización."
+      ],
+      "Organization name updated": [
+        "Se ha actualizado el nombre de la organización."
       ],
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles"
@@ -9290,10 +9357,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -9633,7 +9700,7 @@
         "Borrar el dominio"
       ],
       "Remove single sign-on": [
-        "Eliminar el inicio de sesión único"
+        "Borrar el inicio de sesión único"
       ],
       "Remove single sign-on for your organization?": [
         "¿Eliminar el inicio de sesión único de tu organización?"
@@ -9703,9 +9770,6 @@
       ],
       "Sign in to your organization": [
         "Iniciar sesión en tu organización"
-      ],
-      "Sign in with 2FA": [
-        "Iniciar sesión con la 2FA"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -9911,6 +9975,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Esto puede deberse a que se ha restablecido la contraseña o a que el usuario aún no ha iniciado sesión."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
       ],
@@ -9921,7 +9988,7 @@
         "Generalmente una URL que contiene el nombre del proveedor de identidad dentro."
       ],
       "Verified email address": [
-        "Correo electrónico verificado"
+        "Se ha verificado el correo electrónico."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Se ha detectado un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, se tendrá que cerrar la sesión de DKIM."
@@ -9936,6 +10003,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ],
+      "Sending member invitation": [
+        "Enviando una invitación al miembro"
       ],
       "User rejected invitation": [
         "El usuario ha rechazado la invitación."

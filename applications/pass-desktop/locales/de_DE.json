@@ -560,6 +560,26 @@
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Neu laden erzwingen"
+      ],
+      "Reload": [
+        "Neu laden"
+      ],
+      "Show logs": [
+        "Protokolle anzeigen"
+      ],
+      "Speech": [
+        "Sprache"
+      ],
+      "Toggle developers tools": [
+        "Entwicklerwerkzeuge ein/aus"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } deinstallieren"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Spare clever. Hol dir ein Jahr Pass Plus für nur ${ relativePrice } pro Monat."
@@ -1161,6 +1181,9 @@
       "Auto-lock successfully disabled.": [
         "Automatische Sperre erfolgreich deaktiviert."
       ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrie wird deaktiviert und muss erneut aktiviert werden."
+      ],
       "Breaches detected": [
         "Datenlecks entdeckt"
       ],
@@ -1494,8 +1517,8 @@
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Der Online-Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren. Nach 3 Fehlversuchen wirst du abgemeldet."
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Unsere Warnungen sind eher auf der Seite der Vorsicht angesiedelt. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Owner": [
         "Besitzer"
@@ -1536,6 +1559,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
+      "Please confirm your extra password": [
+        "Bitte bestätige dein zusätzliches Passwort"
       ],
       "Please confirm your password": [
         "Bitte bestätige dein Passwort"
@@ -1694,6 +1720,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Dieser Export ist unverschlüsselt und jeder, der Zugang zu deiner exportierten Datei hat, kann deine Passwörter sehen. Bitte lösche die Datei aus Sicherheitsgründen, wenn du sie nicht mehr benötigst."
       ],
+      "This option is currently not available on your device.": [
+        "Diese Option ist zurzeit auf deinem Gerät nicht verfügbar."
+      ],
       "This setting is disabled on the organization level": [
         "Diese Einstellung ist auf Organisationsebene deaktiviert."
       ],
@@ -1718,11 +1747,17 @@
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte Hide-my-email-Aliasse"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "${ PASS_SHORT_APP_NAME } mit Biometrie entsperren"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zusätzlichen Passwort"
+      ],
+      "Unlock with biometrics": [
+        "Mit Biometrie entsperren"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
@@ -1939,6 +1974,9 @@
       ],
       "Beta Access": [
         "Beta-Zugang"
+      ],
+      "Biometrics": [
+        "Biometrische Authentifizierung"
       ],
       "Birthdate": [
         "Geburtsdatum"
@@ -2415,6 +2453,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock with": [
+        "Entsperren mit"
+      ],
       "Unnamed Credit Card": [
         "Unbenannte Kreditkarte"
       ],
@@ -2493,6 +2534,20 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } aktivieren"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Bearbeiten"
+      ],
+      "File": [
+        "Datei"
+      ],
+      "View": [
+        "Anzeigen"
+      ],
+      "Window": [
+        "Fenster"
       ]
     },
     "Message": {
@@ -2725,9 +2780,6 @@
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
-      "Email address": [
-        "E‐Mail‐Adresse"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
       ],
@@ -2826,9 +2878,6 @@
       ],
       "Passkey": [
         "Passkey"
-      ],
-      "Password": [
-        "Passwort"
       ],
       "Password Health": [
         "Passwortsicherheit"
@@ -2991,6 +3040,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME }-Passwort erforderlich"
+      ],
       "A description of the problem is required": [
         "Eine Beschreibung des Problems ist erforderlich."
       ],
@@ -3027,14 +3079,14 @@
       "Empty note": [
         "Leere Notiz"
       ],
-      "Encryption password is required": [
-        "Verschlüsselungspasswort erforderlich"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."
       ],
       "Extra password cannot be empty": [
         "Das zusätzliche Passwort darf nicht leer sein."
+      ],
+      "Extra password is required": [
+        "Zusätzliches Passwort erfolgreich"
       ],
       "Extra password should have at least 8 characters": [
         "Zusätzliches Passwort sollte mindestens 8 Zeichen lang sein."
