@@ -105,6 +105,7 @@ interface Props {
     onSearch: () => void;
     addresses: Address[];
     calendarUserSettings: CalendarUserSettings;
+    isAskUpdateTimezoneModalOpen?: boolean;
 }
 
 const CalendarContainerView = ({
@@ -138,6 +139,8 @@ const CalendarContainerView = ({
     onSearch,
 
     addresses,
+
+    isAskUpdateTimezoneModalOpen,
 
     calendarUserSettings,
 }: Props) => {
@@ -592,6 +595,7 @@ const CalendarContainerView = ({
                     weekStartsOn={weekStartsOn}
                 />
             }
+            isAskUpdateTimezoneModalOpen={isAskUpdateTimezoneModalOpen}
         />
     );
 
