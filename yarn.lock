@@ -11902,12 +11902,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/webpack-asset-relocator-loader@npm:1.7.4":
-  version: 1.7.4
-  resolution: "@vercel/webpack-asset-relocator-loader@npm:1.7.4"
+"@vercel/webpack-asset-relocator-loader@npm:1.7.3":
+  version: 1.7.3
+  resolution: "@vercel/webpack-asset-relocator-loader@npm:1.7.3"
   dependencies:
     resolve: "npm:^1.10.0"
-  checksum: 10c0/0a04cecad5e1910e64c2e9eaacea36336e1aa1fd74e3077b078b327340634744e480ac60322d0dd60461734568811d02473a7a8c433a3c51cb2878650dd933bb
+  checksum: 10c0/5b35ee7c5cab08ef8ee9f0a2413be220e905824d1481bf6bed3ba2d8e97d052448317654f9e947b698da51f27f255940e9e8209db9123d8ddcb0bc9cd2a502d3
   languageName: node
   linkType: hard
 
@@ -33850,7 +33850,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/pack": "workspace:^"
-    "@vercel/webpack-asset-relocator-loader": "npm:1.7.4"
+    "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
     electron: "npm:^31.3.1"
     electron-log: "npm:^5.1.7"
