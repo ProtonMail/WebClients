@@ -64,6 +64,9 @@
       "Allow": [
         "Permitere"
       ],
+      "Always allow sending mail to group": [
+        "Permitere întotdeauna trimitere mesaje la grup"
+      ],
       "Apply": [
         "Aplicare"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Dezactivare"
       ],
+      "Disable E2EE for group address": [
+        "Dezactivare criptare bilaterală pentru adresa grupului"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
+      ],
+      "Enable E2EE for group address": [
+        "Activare criptare bilaterală pentru adresa grupului"
       ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
@@ -676,6 +685,9 @@
       "Use authentication code": [
         "Folosire cod de autentificare"
       ],
+      "Use group sending permissions": [
+        "Folosire permisiuni de trimitere pentru grup"
+      ],
       "Use recovery code": [
         "Folosire cod de recuperare"
       ],
@@ -814,8 +826,8 @@
       "External": [
         "Extern"
       ],
-      "Missing keys": [
-        "Lipsesc cheile"
+      "Inactive": [
+        "Inactivă"
       ],
       "No E2EE mail": [
         "Mesaj necriptat"
@@ -2253,6 +2265,43 @@
         "Asistență prioritară"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Luați ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Luați-l cu ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturat anual cu ${ amountBilled }. Economisiți ${ amountSave } cu două abonamente anuale ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "Doi utilizatori"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acces complet la toate produsele ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Economisiți ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Toate produsele ${ BRAND_NAME } pentru doi utilizatori."
+      ],
+      "Double your storage": [
+        "Dublați-vă spațiul de stocare"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Vă prezentăm ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } s-a adăugat."
@@ -2694,8 +2743,14 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Conturile cu domenii personale nu se pot alătura unui plan de grup."
+      ],
       "customer support": [
         "suportul tehnic"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Planurile de grup nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -2705,6 +2760,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitație de la: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Conturile pe viață nu se pot alătura unui plan de grup."
       ],
       "Manage addresses.": [
         "Gestionare adrese."
@@ -2760,6 +2818,9 @@
       "You have successfully joined the family group": [
         "V-ați alăturat cu succes grupului de familie."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Aveți facturi neplătite. Vă rugăm să le plătiți înainte de a vă alătura unui plan de grup."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Trebuie să configurați un domeniu personal înainte de a adăuga utilizatori multipli."
       ],
@@ -2774,6 +2835,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Nu puteți accepta această invitație cu planul actual."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2840,6 +2904,9 @@
       ],
       "An error occurred, please try again": [
         "A apărut o eroare. Reîncercați mai târziu."
+      ],
+      "Family name updated": [
+        "S-a actualizat numele de familie."
       ],
       "Member updated": [
         "Membru actualizat"
@@ -3499,9 +3566,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Sigur doriți să ștergeți acest grup. Adresa grupului nu va mai funcționa."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Sigur doriți dezactivarea autentificării cu doi factori?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
@@ -3642,11 +3706,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -5039,12 +5103,20 @@
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Nu este o adresă de e-mail validă."
+      ]
+    },
     "invitation status": {
       "Pending": [
         "În așteptare"
       ],
       "Rejected": [
         "Respinsă"
+      ],
+      "Sending invite...": [
+        "Se trimite invitația..."
       ]
     },
     "Invoice state display as badge": {
@@ -6112,9 +6184,6 @@
       "${ size } storage": [
         "${ size } spațiu"
       ],
-      "${ size } storage per user": [
-        "${ size } spațiu per utilizator"
-      ],
       "1 user": [
         "Un utilizator"
       ],
@@ -6138,9 +6207,6 @@
       ],
       "Advanced network security": [
         "Securitate avansată a rețelei"
-      ],
-      "Advanced sharing security": [
-        "Securitate avansată partajări"
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -6174,9 +6240,6 @@
       ],
       "Collaborate and share large files": [
         "Colaborare și partajare fișiere mari"
-      ],
-      "Collaborative document editor": [
-        "Editor colaborativ de documente"
       ],
       "Contact groups": [
         "Grupuri de contacte"
@@ -6357,9 +6420,6 @@
         "Servere în peste ${ vpnServersCountData.paid.countries } țară",
         "Servere în peste ${ vpnServersCountData.paid.countries } țări",
         "Servere în peste ${ vpnServersCountData.paid.countries } de țări"
-      ],
-      "Share files and folders via link": [
-        "Partajați fișiere și foldere prin legături"
       ],
       "Sign in as user": [
         "Conectați-vă ca utilizator"
@@ -6554,9 +6614,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Asigurați-vă viața digitală cu ${ BRAND_NAME } pentru două persoane."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
@@ -6565,6 +6622,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Contul de început, fără costuri, creat pentru a împuternici pe toată lumea cu confidențialitate în mod implicit."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Confidențialitate nelimitată și mai mult spațiu de stocare pentru până la două persoane."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă ștergeți contul, veți pierde prețul promoțional și nu va fi disponibil dacă creați un cont nou."
@@ -6663,9 +6723,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controlați accesul la fișierele partajate adăugând protecția cu parolă și dată de expirare la legături."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain } pentru abonamentul la știri."
@@ -9102,6 +9159,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Dacă ați introdus un număr de telefon de recuperare valid veți primi un SMS cu numele de utilizator în curând."
       ],
+      "Invitation rejected": [
+        "Invitație refuzată"
+      ],
       "Invitation sent": [
         "Invitația a fost trimisă."
       ],
@@ -9122,6 +9182,18 @@
       ],
       "Organization activated": [
         "Organizație activată"
+      ],
+      "Organization identity updated": [
+        "S-a actualizat identitatea organizației"
+      ],
+      "Organization logo removed": [
+        "S-a eliminat sigla organizației"
+      ],
+      "Organization logo updated": [
+        "S-a actualizat sigla organizației"
+      ],
+      "Organization name updated": [
+        "S-a actualizat numele organizației"
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -9428,10 +9500,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -9845,9 +9917,6 @@
       "Sign in to your organization": [
         "Autentificare la organizație"
       ],
-      "Sign in with 2FA": [
-        "Autentificare A2F"
-      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -10053,6 +10122,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Acest lucru poate fi cauzat de o resetare a parolei sau de faptul că utilizatorul nu s-a conectat încă."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Această adresă de e-mail va fi afișată tuturor membrilor organizației atunci când efectuează operațiuni de gestionare a contului."
       ],
@@ -10078,6 +10150,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ],
+      "Sending member invitation": [
+        "Se trimite invitația membrului"
       ],
       "User rejected invitation": [
         "Utilizatorul a respins invitația"
