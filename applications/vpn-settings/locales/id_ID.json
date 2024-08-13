@@ -199,6 +199,9 @@
       "Disable": [
         "Nonaktifkan"
       ],
+      "Disable E2EE for group address": [
+        "Nonaktifkan E2EE untuk alamat grup"
+      ],
       "Discard": [
         "Buang"
       ],
@@ -270,6 +273,9 @@
       ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
+      ],
+      "Enable E2EE for group address": [
+        "Aktifkan E2EE untuk alamat grup"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -676,6 +682,9 @@
       "Use authentication code": [
         "Gunakan kode autentikasi"
       ],
+      "Use group sending permissions": [
+        "Gunakan perizinan pengiriman grup"
+      ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
@@ -806,8 +815,8 @@
       "External": [
         "Eksternal"
       ],
-      "Missing keys": [
-        "Kunci yang hilang"
+      "Inactive": [
+        "Nonaktif"
       ],
       "No E2EE mail": [
         "Tanpa email E2EE"
@@ -2235,6 +2244,30 @@
         "Dukungan prioritas"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Dapatkan seharga ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 pengguna"
+      ],
+      "You save ${ amountSave }": [
+        "Anda menghemat ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Semua dari ${ BRAND_NAME }, untuk berdua."
+      ],
+      "Double your storage": [
+        "Gandakan penyimpanan Anda"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } ditambahkan"
@@ -2816,6 +2849,9 @@
       ],
       "An error occurred, please try again": [
         "Terjadi kesalahan, silakan coba lagi"
+      ],
+      "Family name updated": [
+        "Nama keluarga diperbarui"
       ],
       "Member updated": [
         "Anggota diperbarui"
@@ -3421,8 +3457,11 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
+      "Are you sure you want to cancel editing the group?": [
+        "Apakah Anda yakin ingin batal menyunting grup ini?"
+      ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Apakah Anda yakin ingin menghapus grup ini? Alamat grup ini tidak akan lagi berfungsi."
       ],
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
@@ -3432,6 +3471,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Apakah Anda yakin ingin menghapus seluruh anggota dari grup ini?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
@@ -3559,11 +3601,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -4083,6 +4125,15 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - email khusus dikonfirmasi"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - email khusus dibuat"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - email khusus dihapus"
       ],
       "password": [
         "kata sandi"
@@ -4914,12 +4965,20 @@
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Bukan alamat email yang valid"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Tertunda"
       ],
       "Rejected": [
         "Ditolak"
+      ],
+      "Sending invite...": [
+        "Mengirimkan undangan..."
       ]
     },
     "Invoice state display as badge": {
@@ -5945,9 +6004,6 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ size } storage per user": [
-        "Ruang penyimpanan ${ size } per pengguna"
-      ],
       "1 user": [
         "1 pengguna"
       ],
@@ -5971,9 +6027,6 @@
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
-      ],
-      "Advanced sharing security": [
-        "Keamanan berbagi berkas tingkat lanjut"
       ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
@@ -6007,9 +6060,6 @@
       ],
       "Collaborate and share large files": [
         "Kolaborasi dan berbagi file besar"
-      ],
-      "Collaborative document editor": [
-        "Penyunting dokumen kolaboratif"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -6185,9 +6235,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Server dalam ${ vpnServersCountData.paid.countries }+ negara"
       ],
-      "Share files and folders via link": [
-        "Bagikan berkas dan folder via tautan"
-      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -6284,6 +6331,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
+      "Version history": [
+        "Riwayat versi"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
@@ -6376,9 +6426,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
-      ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
@@ -6486,9 +6533,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
@@ -7464,6 +7508,9 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil terselesaikan."
+      ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
       ]
@@ -8805,6 +8852,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Jika Anda memasukkan nomor telepon pemulihan yang valid, kami akan mengirimkan Anda sms dengan nama pengguna Anda di menit berikutnya."
       ],
+      "Invitation rejected": [
+        "Undangan ditolak"
+      ],
       "Invitation sent": [
         "Undangan dikirim"
       ],
@@ -8825,6 +8875,18 @@
       ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
+      ],
+      "Organization identity updated": [
+        "Identitas organisasi diperbarui"
+      ],
+      "Organization logo removed": [
+        "Logo organisasi dihapus"
+      ],
+      "Organization logo updated": [
+        "Logo organisasi diperbarui"
+      ],
+      "Organization name updated": [
+        "Nama organisasi diperbarui"
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
@@ -9131,11 +9193,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -9542,9 +9604,6 @@
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
-      "Sign in with 2FA": [
-        "Masuk dengan 2FA"
-      ],
       "Sign out": [
         "Keluar"
       ],
@@ -9774,8 +9833,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Masuk dengan aman di semua perangkat Anda. Meliputi alias tak terbatas, berbagi, 2FA terintegrasi, dan masih banyak lagi."
       ],
+      "Sending member invitation": [
+        "Mengirimkan undangan anggota"
+      ],
       "User rejected invitation": [
         "Pengguna menolak undangan"
+      ],
+      "Waiting user to accept the invitation": [
+        "Menunggu pengguna untuk menerima undangan"
       ]
     },
     "Tooltip for news": {

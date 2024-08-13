@@ -64,6 +64,9 @@
       "Allow": [
         "Tillat"
       ],
+      "Always allow sending mail to group": [
+        "Tillat alltid sending av e-post til gruppen"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Deaktiver"
       ],
+      "Disable E2EE for group address": [
+        "Deaktiver ende-til-ende-kryptert for gruppeadresse"
+      ],
       "Discard": [
         "Forkast"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
+      ],
+      "Enable E2EE for group address": [
+        "Aktiver ende-til-ende-kryptert for gruppeadresse"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -676,6 +685,9 @@
       "Use authentication code": [
         "Bruk autentiseringskode"
       ],
+      "Use group sending permissions": [
+        "Bruk tillatelser for gruppesending"
+      ],
       "Use recovery code": [
         "Bruk gjenopprettingskode"
       ],
@@ -810,8 +822,8 @@
       "External": [
         "Ekstern"
       ],
-      "Missing keys": [
-        "Mangler nøkler"
+      "Inactive": [
+        "Inaktiv"
       ],
       "No E2EE mail": [
         "Ingen E2EE-post"
@@ -2244,6 +2256,43 @@
         "Prioritert brukerstøtte"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Få ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Få planen for ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Faktureres årlig til ${ amountBilled }. Spar ${ amountSave } over 2 individuelle ${ BRAND_NAME } ubegrensede årlige abonnementer."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 brukere"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full tilgang til alle ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparer ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Alt av ${ BRAND_NAME }, for 2 personer."
+      ],
+      "Double your storage": [
+        "Doble lagringsplassen din"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introduserer ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } lagt til"
@@ -2685,8 +2734,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Kontoer med egendefinerte domener kan ikke bli med i en gruppeplan."
+      ],
       "customer support": [
         "kundestøtte"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppeplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -2696,6 +2751,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitert av: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livsvarige kontoer kan ikke bli med i en gruppeplan."
       ],
       "Manage addresses.": [
         "Administrer adresser"
@@ -2748,6 +2806,9 @@
       "You have successfully joined the family group": [
         "Du har blitt med i familiegruppen"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har ubetalte fakturaer. Vennligst betal dem før du blir med i en gruppeplan."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du må konfigurere et egendefinert domene før du kan legge til flere brukere."
       ],
@@ -2762,6 +2823,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2828,6 +2892,9 @@
       ],
       "An error occurred, please try again": [
         "En feil oppstod, vennligst prøv igjen"
+      ],
+      "Family name updated": [
+        "Familienavn oppdatert"
       ],
       "Member updated": [
         "Medlem oppdatert"
@@ -3463,9 +3530,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Er du sikker på at du vil slette denne gruppen? Gruppeadressen vil ikke fungere lenger."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Er du sikker på at du vil deaktivere tofaktorautentisering?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil forkaste de ulagrede endringene dine?"
       ],
@@ -3605,11 +3669,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -4987,12 +5051,20 @@
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Ikke en gyldig e-postadresse"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Venter"
       ],
       "Rejected": [
         "Avvist"
+      ],
+      "Sending invite...": [
+        "Sender invitasjon..."
       ]
     },
     "Invoice state display as badge": {
@@ -6042,9 +6114,6 @@
       "${ size } storage": [
         "${ size } lagringsplass"
       ],
-      "${ size } storage per user": [
-        "${ size } lagringsplass per bruker"
-      ],
       "1 user": [
         "1 bruker"
       ],
@@ -6068,9 +6137,6 @@
       ],
       "Advanced network security": [
         "Avansert nettverkssikkerhet"
-      ],
-      "Advanced sharing security": [
-        "Avansert delingssikkerhet"
       ],
       "Auto-delete Spam and Trash": [
         "Auto-slett søppelpost og papirkurv"
@@ -6104,9 +6170,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbeid og del store filer"
-      ],
-      "Collaborative document editor": [
-        "Samarbeidende dokumentredigerer"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -6284,9 +6347,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Tjenere i ${ vpnServersCountData.paid.countries }+ land",
         "Tjenere i ${ vpnServersCountData.paid.countries }+ land"
-      ],
-      "Share files and folders via link": [
-        "Del filer og mapper via kobling"
       ],
       "Sign in as user": [
         "Logg på som bruker"
@@ -6479,9 +6539,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-post med avanserte funksjoner for daglig kommunikasjon."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sikre ditt digitale liv med ${ BRAND_NAME } for to personer."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov"
       ],
@@ -6490,6 +6547,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Gratis startpakkekonto utformet til å styrke alle med personvern som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Ubegrenset privatliv og mer lagringsplass for opptil 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du sletter kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du oppretter en ny konto."
@@ -6588,9 +6648,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Velg egendefinerte tidspunkter for å bli påminnet om en e-postmelding eller for når meldingen skal ankomme."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroller tilgang til dine delte filer ved å legge til passordbeskyttelse og utløpsdatoer på koblinger."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, JohnNews@${ domain } for nyhetsabonnement"
@@ -8979,6 +9036,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Hvis du skrev inn et gyldig gjenopprettings-telefonnummer, sender vi deg en sms med brukernavnene dine i neste øyeblikk."
       ],
+      "Invitation rejected": [
+        "Invitasjon avslått"
+      ],
       "Invitation sent": [
         "Invitasjon sendt"
       ],
@@ -8999,6 +9059,18 @@
       ],
       "Organization activated": [
         "Organisasjon aktivert"
+      ],
+      "Organization identity updated": [
+        "Organisasjonsidentitet oppdatert"
+      ],
+      "Organization logo removed": [
+        "Organisasjonslogo fjernet"
+      ],
+      "Organization logo updated": [
+        "Organisasjonslogo oppdatert"
+      ],
+      "Organization name updated": [
+        "Organisasjonsnavn oppdatert"
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
@@ -9302,10 +9374,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -9716,9 +9788,6 @@
       "Sign in to your organization": [
         "Logg på din organisasjon"
       ],
-      "Sign in with 2FA": [
-        "Logg på med 2FA"
-      ],
       "Sign out": [
         "Logg av"
       ],
@@ -9923,6 +9992,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte temaet vil være aktivt når systemet er satt til \"lys modus\"."
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Dette kan være forårsaket av tilbakestilling av passord eller at brukeren ikke logger på enda."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."
       ],
@@ -9948,6 +10020,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitasjon"
       ],
       "User rejected invitation": [
         "Bruker avviste invitasjonen"
