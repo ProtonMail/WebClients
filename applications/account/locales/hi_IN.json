@@ -1302,9 +1302,6 @@
       "External": [
         "बाहरी"
       ],
-      "Missing keys": [
-        "खोई हुई चाबियां"
-      ],
       "No E2EE mail": [
         "कोई E2EE मेल नहीं"
       ],
@@ -5992,9 +5989,6 @@
       "Are you sure you want to delete this label?": [
         "क्या आप वाकई इस लेबल को हटाना चाहते हैं?"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "क्या आप वाकई दो-कारक प्रमाणीकरण को अक्षम करना चाहते हैं?"
-      ],
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
       ],
@@ -8120,6 +8114,11 @@
         "सिर्फ देखे"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "लिंक लेबल (वैकल्पिक)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "लेबल जोड़ें"
@@ -8490,6 +8489,27 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।)"
+      ],
+      "1 hour": [
+        "1 घंटा"
+      ],
+      "1 minute": [
+        "1 मिनट"
+      ],
+      "10 minutes": [
+        "10 मिनट"
+      ],
+      "15 minutes": [
+        "15 मिनट"
+      ],
+      "30 minutes": [
+        "30 मिनट"
+      ],
+      "30 seconds": [
+        "30 सेकंड"
+      ],
+      "5 minutes": [
+        "5 मिनट"
       ],
       "Account storage": [
         "खाता संग्रहण"
@@ -10222,9 +10242,6 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "${ size } storage per user": [
-        "${ size } स्टोरेज हर यूज़र पे"
-      ],
       "1 user": [
         "1 यूज़र"
       ],
@@ -10248,9 +10265,6 @@
       ],
       "Advanced network security": [
         "उन्नत नेटवर्क सुरक्षा"
-      ],
-      "Advanced sharing security": [
-        "एडवांस शेयर करते हुए सुरक्षा"
       ],
       "Auto-delete Spam and Trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
@@ -10425,9 +10439,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ देश में सर्वर",
         "${ vpnServersCountData.paid.countries }+ देशों में सर्वर"
-      ],
-      "Share files and folders via link": [
-        "लिंक से फाइल और फोल्डर शेयर करें"
       ],
       "Sign in as user": [
         "यूज़र के रूप में साइनइन"
@@ -10729,9 +10740,6 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "थोक में विज्ञापन-ईमेल या प्रोग्राम किया ईमेल भेजना अभी सपोर्ट नहीं किया गया है। हम सलाह देते है की आप इस के लिए एक समर्पित ईमेल सेवा प्रदाता इस्तेमाल करें।"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "पासवर्ड सुरक्षा और लिंक खत्म होने की तारीख जोड़कर शेयर किए गए फाइलों को कंट्रोल करें।"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
@@ -12401,11 +12409,6 @@
         "सत्यापन"
       ]
     },
-    "signup_2024: Feature": {
-      "GDPR compliant": [
-        "GDPR अनुपालक"
-      ]
-    },
     "specialoffer: Action": {
       "Close": [
         "बंद करें"
@@ -13742,9 +13745,6 @@
       "Email": [
         "ईमेल"
       ],
-      "Email address": [
-        "ईमेल पता"
-      ],
       "Email composer": [
         "ईमेल कंपोजर"
       ],
@@ -14190,9 +14190,6 @@
       ],
       "Sign in to your organization": [
         "अपने संगठन में साइन इन करें"
-      ],
-      "Sign in with 2FA": [
-        "2-एफए से साइनइन करें"
       ],
       "Sign out": [
         "साइन आउट करें"
