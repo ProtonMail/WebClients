@@ -9,7 +9,7 @@ import { useApi, useEventManager, useNotifications, useUser } from '@proton/comp
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { LABEL_TYPE, MAIL_UPSELL_PATHS, ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAIL_UPSELL_PATHS, ROOT_FOLDER, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { MESSAGE_ACTIONS } from 'proton-mail/constants';
@@ -20,6 +20,8 @@ import { TipActionType } from 'proton-mail/models/tip';
 import { elements } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { snoozeActions } from 'proton-mail/store/snooze/snoozeSlice';
+
+import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 
 const MAX_LABEL_COUNT_FOR_FREE_USER = 3;
 const SUGGESTED_FOLDER_NAME = 'Receipts';
@@ -46,6 +48,7 @@ const useTipConfig = ({ actionType }: Props) => {
     const { createPremiumAddress, loadingProtonDomains } = usePremiumAddress();
     const dispatch = useMailDispatch();
     const mailboxElements = useMailSelector(elements);
+    const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
 
     const labelsUpsellModal = useModalStateObject();
     const createLabelModal = useModalStateObject();
@@ -61,6 +64,7 @@ const useTipConfig = ({ actionType }: Props) => {
                     <LabelsUpsellModal
                         modalProps={labelsUpsellModal.modalProps}
                         feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS}
+                        upsellComponent={UPSELL_COMPONENT.TIP}
                     />
                 )}
                 {createLabelModal.render && (
@@ -87,6 +91,7 @@ const useTipConfig = ({ actionType }: Props) => {
                     <LabelsUpsellModal
                         modalProps={labelsUpsellModal.modalProps}
                         feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS}
+                        upsellComponent={UPSELL_COMPONENT.TIP}
                     />
                 )}
                 {createLabelModal.render && (
@@ -110,7 +115,10 @@ const useTipConfig = ({ actionType }: Props) => {
         return (
             <>
                 {autoDeleteUpsellModal.render && (
-                    <AutoDeleteUpsellModal modalProps={autoDeleteUpsellModal.modalProps} />
+                    <AutoDeleteUpsellModal
+                        modalProps={autoDeleteUpsellModal.modalProps}
+                        upsellComponent={UPSELL_COMPONENT.TIP}
+                    />
                 )}
             </>
         );
@@ -120,7 +128,10 @@ const useTipConfig = ({ actionType }: Props) => {
         return (
             <>
                 {increasePrivacyUpsellModal.render && (
-                    <IncreasePrivacyUpsellModal modalProps={increasePrivacyUpsellModal.modalProps} />
+                    <IncreasePrivacyUpsellModal
+                        modalProps={increasePrivacyUpsellModal.modalProps}
+                        upsellComponent={UPSELL_COMPONENT.TIP}
+                    />
                 )}
             </>
         );
@@ -130,14 +141,23 @@ const useTipConfig = ({ actionType }: Props) => {
         return (
             <>
                 {protonSentinelUpsellModal.render && (
-                    <ProtonSentinelUpsellModal modalProps={protonSentinelUpsellModal.modalProps} />
+                    <ProtonSentinelUpsellModal
+                        modalProps={protonSentinelUpsellModal.modalProps}
+                        upsellComponent={UPSELL_COMPONENT.TIP}
+                    />
                 )}
             </>
         );
     };
 
     const renderPmMeUpsellModal = () => {
-        return <>{pmMeUpsellModal.render && <PmMeUpsellModal modalProps={pmMeUpsellModal.modalProps} />}</>;
+        return (
+            <>
+                {pmMeUpsellModal.render && (
+                    <PmMeUpsellModal modalProps={pmMeUpsellModal.modalProps} upsellComponent={UPSELL_COMPONENT.TIP} />
+                )}
+            </>
+        );
     };
 
     const renderModalContent = () => {
@@ -255,6 +275,7 @@ const useTipConfig = ({ actionType }: Props) => {
             default:
                 break;
         }
+        sendCTAButtonClickedReport(actionType);
     };
 
     return {

@@ -615,6 +615,7 @@ export enum UPSELL_COMPONENT {
     MODAL = 'modal-',
     BUTTON = 'button-',
     TOGGLE = 'toggle-',
+    TIP = 'tip-',
 }
 
 export enum MAIL_UPSELL_PATHS {
