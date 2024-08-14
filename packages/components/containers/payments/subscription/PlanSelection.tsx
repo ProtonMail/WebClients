@@ -17,6 +17,7 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
+    getMaximumCycleForApp,
     getPricePerCycle,
     hasMaximumCycle,
     hasSomeAddonOrPlan,
@@ -159,14 +160,10 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
     return price;
 };
 
-const getCycleSelectorOptions = (app: ProductParam) => {
+const getCycleSelectorOptions = () => {
     const oneMonth = { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY };
     const oneYear = { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY };
     const twoYears = { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS };
-
-    if (app !== APPS.PROTONVPN_SETTINGS) {
-        return [oneMonth, oneYear];
-    }
 
     return [oneMonth, oneYear, twoYears];
 };
@@ -246,12 +243,16 @@ const PlanSelection = ({
             maximumCycle = CYCLE.YEARLY;
         }
     }
+    if (maximumCycle === undefined) {
+        maximumCycle = getMaximumCycleForApp(app);
+    }
 
+    const cycleSelectorOptions = getCycleSelectorOptions();
     const { cycle: restrictedCycle } = getRestrictedCycle({
         cycle: cycleProp,
         minimumCycle: maybeMinimumCycle,
         maximumCycle,
-        options: getCycleSelectorOptions(app),
+        options: cycleSelectorOptions,
     });
 
     function excludingCurrentPlanWithMaxCycle(plan: Plan | ShortPlanLike): boolean {
@@ -569,7 +570,7 @@ const PlanSelection = ({
                         disabled={loading}
                         minimumCycle={maybeMinimumCycle}
                         maximumCycle={maximumCycle}
-                        options={getCycleSelectorOptions(app)}
+                        options={cycleSelectorOptions}
                     />
                 )}
             </div>

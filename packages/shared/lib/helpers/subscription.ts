@@ -791,3 +791,14 @@ export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscript
         subscription?.UpcomingSubscription?.Cycle === CYCLE.THIRTY
     );
 }
+
+export const getMaximumCycleForApp = (app: ProductParam) => {
+    if (app === APPS.PROTONPASS || app === APPS.PROTONWALLET) {
+        return CYCLE.YEARLY;
+    }
+    // Even though this returns the same value as the final return, adding this explicitly because VPN wants to keep the two year cycle
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return CYCLE.TWO_YEARS;
+    }
+    return CYCLE.TWO_YEARS;
+};

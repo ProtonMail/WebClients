@@ -34,6 +34,7 @@ import {
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsVpnPlan,
+    getMaximumCycleForApp,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasVisionary,
@@ -229,7 +230,7 @@ const SubscriptionContainer = ({
 }: SubscriptionContainerProps) => {
     const allowDowncycling = useFlag('AllowDowncycling');
 
-    const defaultMaximumCycle = app === APPS.PROTONVPN_SETTINGS ? undefined : CYCLE.YEARLY;
+    const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
 
     const TITLE = {
