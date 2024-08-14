@@ -19,11 +19,27 @@ export enum AppStatus {
 }
 
 export type AppState = {
+    /** Flag indicating whether user is fully authorized and
+     * app is ready. Client-specific behaviors: in extension,
+     * remains false if B2B lock setup is required; in web,
+     * typically true after login sequence completes. */
+    authorized: boolean;
+    /** Indicates user state has been successfully hydrated
+     * and client is fully initialized and ready. */
     booted: boolean;
+    /** LocalID of the current active session. Primarily relevant
+     * in the extension context. For web/desktop, prefer using
+     * the `authStore` directly. */
     localID: Maybe<number>;
+    /** Optional flag indicating whether a user requires B2B lock
+     * setup. Relevant only in the extension context to propagate
+     * this state to "un-connected" extension components. */
     lockSetup?: boolean;
-    loggedIn: boolean;
+    /** Current client status */
     status: AppStatus;
+    /** UID of the current active session. Primarily relevant in
+     * the extension context. For web/desktop, prefer using the
+     * `authStore` directly. */
     UID: Maybe<string>;
 };
 

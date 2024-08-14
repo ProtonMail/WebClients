@@ -56,9 +56,9 @@ export const createAutofillService = () => {
     /** Synchronizes login form fields with current credential count.
      * Resets credential and identity counts if forced or user logged out */
     const sync = withContext<(options?: { forceSync: boolean }) => Promise<void>>(async (ctx, options) => {
-        const loggedIn = ctx?.getState().loggedIn ?? false;
+        const authorized = ctx?.getState().authorized ?? false;
 
-        if (options?.forceSync || !loggedIn) {
+        if (options?.forceSync || !authorized) {
             state.credentialsCount = null;
             state.identitiesCount = null;
         }
@@ -68,11 +68,11 @@ export const createAutofillService = () => {
         const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
 
         if (loginForms.length) {
-            const count = loggedIn ? await getCredentialsCount() : 0;
+            const count = authorized ? await getCredentialsCount() : 0;
             loginForms?.forEach((form) => form.getFields().forEach((field) => field.icon?.setCount(count)));
         }
 
-        if (identityFields && loggedIn) await getIdentitiesCount();
+        if (identityFields && authorized) await getIdentitiesCount();
     });
 
     const telemetry = (type: '2fa' | 'login') => {

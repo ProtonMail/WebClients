@@ -11,22 +11,22 @@ import noop from '@proton/utils/noop';
 
 export interface ClientContextValue {
     setBooted: (booted: boolean) => void;
-    setLoggedIn: (loggedIn: boolean) => void;
+    setAuthorized: (authorized: boolean) => void;
     setStatus: (status: AppStatus) => void;
     state: AppState;
 }
 
 const getInitialAppState = () => ({
+    authorized: false,
     booted: false,
     localID: undefined,
-    loggedIn: false,
     status: AppStatus.IDLE,
     UID: undefined,
 });
 
 export const ClientContext = createContext<ClientContextValue>({
     setBooted: noop,
-    setLoggedIn: noop,
+    setAuthorized: noop,
     setStatus: noop,
     state: getInitialAppState(),
 });
@@ -68,7 +68,7 @@ export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
                     state,
                     setStatus: next('status'),
                     setBooted: next('booted'),
-                    setLoggedIn: next('loggedIn'),
+                    setAuthorized: next('authorized'),
                 };
             }, [state])}
         >
