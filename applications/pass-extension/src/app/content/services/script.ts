@@ -112,16 +112,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
         );
 
         if (res.type === 'success') {
-            context.setState({
-                /** FIXME: clean-up activation payload */
-                lockSetup: res.lockSetup,
-                loggedIn: res.loggedIn,
-                ready: true,
-                stale: false,
-                status: res.status,
-                UID: res.UID,
-            });
-
+            context.setState({ ...res.state, ready: true, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
 
@@ -136,7 +127,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
              * be triggered : destroy this content-script service */
             if (!mainFrame) return context.destroy({ reason: 'subframe discarded' });
 
-            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
+            logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.state.status}"`);
             window.postMessage({ type: CLIENT_SCRIPT_READY_EVENT });
 
             await reconciliate();
