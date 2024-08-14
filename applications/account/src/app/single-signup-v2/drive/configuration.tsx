@@ -20,7 +20,7 @@ import {
 import { getPasswordManager } from '@proton/components/containers/payments/features/pass';
 import { getUpToNUsers } from '@proton/components/containers/payments/features/plan';
 import {
-    getB2BVPNConnectionsDevicesFeature,
+    getB2BHighSpeedVPNConnectionsFeature,
     getVPNConnections,
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
@@ -250,7 +250,7 @@ export const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePla
         getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
         getVersionHistory(365),
         getCustomSecureMailB2B(),
-        getB2BVPNConnectionsDevicesFeature(10),
+        getB2BHighSpeedVPNConnectionsFeature(),
         getPasswordManager(),
     ];
 };
