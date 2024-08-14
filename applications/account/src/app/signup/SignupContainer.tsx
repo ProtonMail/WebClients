@@ -1000,13 +1000,31 @@ const SignupContainer = ({
                                 throw new Error('Missing cache');
                             }
                             const validateFlow = createFlow();
-                            const signupActionResponse = await handleDisplayName({
+                            const updatedCache = await handleDisplayName({
                                 displayName,
                                 cache,
                             });
 
                             if (validateFlow()) {
-                                await handleResult(signupActionResponse);
+                                const getNextStep = (cache: SignupCacheResult) => {
+                                    if (cache.accountData.signupType === SignupType.Email) {
+                                        // Ignore recovery step if signing up with an external email address because it's automatically set.
+                                        return cache.ignoreExplore ? undefined : SignupSteps.Explore;
+                                    }
+                                    // The next step is recovery by default
+                                    return SignupSteps.SaveRecovery;
+                                };
+                                const getResponse = (cache: SignupCacheResult): SignupActionResponse => {
+                                    const to = getNextStep(cache);
+                                    if (to) {
+                                        return {
+                                            cache,
+                                            to,
+                                        };
+                                    }
+                                    return handleDone({ cache });
+                                };
+                                await handleResult(getResponse(updatedCache));
                             }
 
                             metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
@@ -1041,14 +1059,20 @@ const SignupContainer = ({
                                 throw new Error('Missing cache');
                             }
                             const validateFlow = createFlow();
-                            const signupActionResponse = await handleSaveRecovery({
+                            await handleSaveRecovery({
                                 cache,
                                 recoveryEmail,
                                 recoveryPhone,
                             });
 
                             if (validateFlow()) {
-                                await handleResult(signupActionResponse);
+                                const getResponse = (cache: SignupCacheResult): SignupActionResponse => {
+                                    if (cache.ignoreExplore) {
+                                        return handleDone({ cache, appIntent: cache.appIntent });
+                                    }
+                                    return { cache, to: SignupSteps.Explore };
+                                };
+                                await handleResult(getResponse(cache));
                             }
 
                             if (!!recoveryEmail || !!recoveryPhone) {
