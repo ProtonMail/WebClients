@@ -1,4 +1,7 @@
 import { StyleSheet } from '@react-pdf/renderer'
+import { pixelsToPoints } from './LexicalNodeToPDFNode/Utils/pixelsToPoints'
+
+export const BodyFontSizePx = 16
 
 export const ExportStyles = StyleSheet.create({
   page: {
@@ -6,7 +9,7 @@ export const ExportStyles = StyleSheet.create({
     paddingLeft: 35,
     paddingRight: 45,
     lineHeight: 1.3,
-    fontSize: 11,
+    fontSize: pixelsToPoints(BodyFontSizePx),
     gap: 14,
   },
   block: {
