@@ -301,6 +301,9 @@
       "Create a new label": [
         "Opret en ny etiket"
       ],
+      "Create alias": [
+        "Opret alias"
+      ],
       "Create and copy alias": [
         "Opret og kopier et alias"
       ],
@@ -510,9 +513,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Få det fra kun ${ addonPriceWithCurrency } / måned"
       ],
-      "Get SimpleLogin extension": [
-        "Hent SimpleLogin-udvidelse"
-      ],
       "Get started": [
         "Kom godt i gang"
       ],
@@ -540,9 +540,6 @@
       "Go to settings": [
         "Gå til indstillinger"
       ],
-      "Go to SimpleLogin": [
-        "Gå til SimpleLogin"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -563,6 +560,9 @@
       ],
       "Hide messages": [
         "Skjul beskeder"
+      ],
+      "Hide toolbar": [
+        "Skjul værktøjslinjen"
       ],
       "hide-my-email aliases": [
         "hide-my-email-aliasser"
@@ -844,10 +844,10 @@
       "Not saved": [
         "Ikke gemt"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open": [
@@ -1174,6 +1174,9 @@
       "Show side panel": [
         "Vis sidepanel"
       ],
+      "Show toolbar": [
+        "Vis værktøjslinjen"
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -1248,10 +1251,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -3599,6 +3598,43 @@
         "Prioriteret support"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Hent ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Fås til ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Faktureres årligt til ${ amountBilled }. Spar ${ amountSave } på 2 enkeltstående ${ BRAND_NAME }. Ubegrænset årlige abonnementer."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 brugere"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Fuld adgang til alle ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparer ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Alt fra ${ BRAND_NAME }, for 2."
+      ],
+      "Double your storage": [
+        "Fordobl din lagerplads"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Vi præsenterer ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "BESKRIVELSE:\n${ eventDescription }"
@@ -4160,6 +4196,9 @@
       "Tab closed": [
         "Fane lukket"
       ],
+      "Text is too long to refine": [
+        "Teksten er for lang til at finpudse"
+      ],
       "Thanks for the feedback!": [
         "Tak for din feedback!"
       ],
@@ -4685,6 +4724,9 @@
       ],
       "You have successfully joined the family group": [
         "Du er blevet medlem af familiegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har ubetalte fakturaer. Betal dem først, før du tilslutter et gruppeabonnement."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du er inviteret til at forbinde din ${ BRAND_NAME }-konto til dette gruppe-abonnement og sammen nyde alle ${ BRAND_NAME_TWO } premium funktionerne."
@@ -5641,6 +5683,9 @@
         "${ numOccurrences } forekomst fundet i mail-indholdet",
         "${ numOccurrences } forekomster fundet i mail-indholdet"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } giver en enkel måde at oprette adgang til upålidelige tredjepartssteder, hvor du ikke ønsker at afsløre din rigtige e-mailadresse."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
@@ -5979,6 +6024,10 @@
       ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Opret en sikker skypakke til ${ n } medlem",
+        "Opret en sikker skypakke til ${ n } medlemmer"
       ],
       "Create in": [
         "Opret i"
@@ -6519,6 +6568,9 @@
       "Organization size": [
         "Organisationsstørrelse"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
       ],
@@ -6697,6 +6749,9 @@
       "Scheduling message...": [
         "Planlægger besked..."
       ],
+      "Scribe panel": [
+        "Scribe-panel"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Søgemulighed der lader sig søge sikkert for nøgleord i indholdet af e-mailbeskeder."
       ],
@@ -6763,12 +6818,6 @@
       ],
       "Show original message": [
         "Vis oprindelig besked"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin er en ${ BRAND_NAME }-tjeneste, og din ${ BRAND_NAME_TWO }-konto inkluderer Hide-my-email-aliasser. For at begynde at skjule din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
@@ -7133,9 +7182,6 @@
       "Users": [
         "Brugere"
       ],
-      "Using SimpleLogin is easy": [
-        "Det er nemt at bruge SimpleLogin"
-      ],
       "Verification may take a few minutes.": [
         "Bekræftelsen kan tage et par minutter."
       ],
@@ -7383,9 +7429,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nået det maksimale antal adresser i kontaktgruppen."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Din ${ BRAND_NAME }-konto inkluderer SimpleLogin. Installér browserudvidelsen med ét klik for at komme i gang."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
@@ -9040,9 +9083,6 @@
       "${ size } storage": [
         "${ size } lagerplads"
       ],
-      "${ size } storage per user": [
-        "${ size } lager pr. bruger"
-      ],
       "1 user": [
         "1 bruger"
       ],
@@ -9060,9 +9100,6 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
-      ],
-      "Advanced sharing security": [
-        "Avanceret delingssikkerhed"
       ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
@@ -9093,9 +9130,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbejd og del store filer"
-      ],
-      "Collaborative document editor": [
-        "Redigering af samarbejdsdokumenter"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -9215,6 +9249,9 @@
       "Phone support (40+ users)": [
         "Telefon-support (40+ brugere)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium-funktioner i ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Prioriteret e-mail-support"
       ],
@@ -9260,9 +9297,6 @@
       ],
       "Send & receive invitations": [
         "Send og modtag invitationer"
-      ],
-      "Share files and folders via link": [
-        "Del filer og mapper via link"
       ],
       "Sign in as user": [
         "Log ind som bruger"
@@ -9356,6 +9390,9 @@
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
       ],
+      "Version history": [
+        "Versionshistorik"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
       ]
@@ -9446,9 +9483,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sikr dit digitale liv med ${ BRAND_NAME } for to personer."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skræddersyede løsninger til større organisationer med specifikke sikkerhedsbehov"
       ],
@@ -9457,6 +9491,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Den gratis startkonto, der er designet til at give alle mulighed for at få privatlivsbeskyttelse som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Ubegrænset privatliv og mere lagerplads til op til 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du drager fordel af en kampagnepris på dit nuværende abonnement. Hvis du sletter din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du opretter en ny konto."
@@ -9528,9 +9565,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Vælg tilpassede tidspunkter for påmindelse om en e-mail eller modtagelse af din besked"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Opret flere e-mailadresser til dine onlineidentiteter, f.eks. JensShopper@${ domain } til shoppingkonti, JensNews@${ domain } til nyhedsabonnementer."
@@ -11807,6 +11841,9 @@
       "Import record deleted": [
         "Importpost slettet"
       ],
+      "Invitation rejected": [
+        "Invitation afslået"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
       ],
@@ -12377,9 +12414,6 @@
       "Edit image": [
         "Redigér billede"
       ],
-      "Email address": [
-        "E-mailadresse"
-      ],
       "Email addresses": [
         "E-mailadresser"
       ],
@@ -12437,8 +12471,8 @@
       "Groups": [
         "Grupper"
       ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Skjul din e-mail med SimpleLogin fra ${ BRAND_NAME }"
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Skjul din e-mail med ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -12612,9 +12646,6 @@
       "Other names": [
         "Andre navne"
       ],
-      "Password": [
-        "Adgangskode"
-      ],
       "Payment failed": [
         "Betaling mislykkedes"
       ],
@@ -12746,9 +12777,6 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
-      ],
-      "Sign in with 2FA": [
-        "Log ind med 2FA"
       ],
       "Sign out": [
         "Log ud"

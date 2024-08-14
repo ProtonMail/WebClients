@@ -1099,6 +1099,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
+      ],
       "Add a username field": [
         "Adăugare câmp nume utilizator"
       ],
@@ -1149,6 +1152,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Înainte de a vă exporta datele cu acest format, accesați Setări Safari -> fila „General” -> dezactivați opțiunea „Deschidere fișiere sigure după descărcare”. Acest lucru va împiedica Safari să extragă incorect fișierul exportat."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Blocarea cu date biometrice s-a înregistrat. Folosiți-o pentru a debloca ${ PASS_APP_NAME }."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Datele biometrice vor fi dezactivate și vor trebui reactivate."
       ],
       "Breaches detected": [
         "Divulgări detectate"
@@ -1248,6 +1257,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Activați autoblocarea pentru a securiza datele."
+      ],
+      "Enabling biometrics auto-lock": [
+        "Se activează autoblocarea cu date biometrice."
+      ],
+      "Enabling biometrics lock failed": [
+        "Activarea autoblocării cu date biometrice a eșuat."
       ],
       "Enabling offline mode...": [
         "Se activează modul fără conexiune..."
@@ -1480,8 +1495,8 @@
       "Offline support successfully disabled": [
         "Accesul deconectat a fost dezactivat."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Accesul la online la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea. După 3 încercări nereușite se va deconecta din cont."
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Alertele noastre de erori noastre de atenționare. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
       ],
       "Owner": [
         "Proprietar"
@@ -1524,8 +1539,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Confirmați parola suplimentară"
+      ],
       "Please confirm your password": [
         "Confirmați parola"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Confirmați parola pentru a putea bloca automat cu date biometrice."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Confirmați parola pentru a bloca automat cu parolă."
@@ -1679,6 +1700,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
       ],
+      "This option is currently not available on your device.": [
+        "Această opțiune nu este disponibilă pe acest dispozitiv."
+      ],
       "This setting is disabled on the organization level": [
         "Această setare este dezactivată la nivel de organizație."
       ],
@@ -1703,11 +1727,17 @@
       "Unlimited hide-my-email aliases": [
         "Aliasuri nelimitate hide-my-email"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Deblocați ${ PASS_SHORT_APP_NAME } cu date biometrice"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola suplimentară."
+      ],
+      "Unlock with biometrics": [
+        "Deblocare cu date biometrice"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."
@@ -1931,6 +1961,9 @@
       ],
       "Beta Access": [
         "Acces la Beta"
+      ],
+      "Biometrics": [
+        "Date biometrice"
       ],
       "Birthdate": [
         "Data nașterii"
@@ -2408,6 +2441,9 @@
       "Type": [
         "Tip"
       ],
+      "Unlock with": [
+        "Deblocare cu"
+      ],
       "Unnamed Credit Card": [
         "Card de credit nedenumit"
       ],
@@ -2720,11 +2756,11 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
-      "Email address": [
-        "Adresa de e-mail"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Introduceți parola suplimentară"
       ],
       "Enter your password": [
         "Introduceţi parola"
@@ -2821,9 +2857,6 @@
       ],
       "Passkey": [
         "Cheie de acces"
-      ],
-      "Password": [
-        "Parola"
       ],
       "Password Health": [
         "Stare parolă"
@@ -2987,6 +3020,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Este necesară parola ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "Este necesară o descriere a problemei."
       ],
@@ -3023,14 +3059,14 @@
       "Empty note": [
         "Notă goală."
       ],
-      "Encryption password is required": [
-        "Este necesară parola de criptare."
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Data de expirare nu este în format LL/AA."
       ],
       "Extra password cannot be empty": [
         "Parola suplimentară nu poate fi goală."
+      ],
+      "Extra password is required": [
+        "Este necesară parola suplimentară"
       ],
       "Extra password should have at least 8 characters": [
         "Parola suplimentară trebuie să aibă cel puțin 8 caractere."

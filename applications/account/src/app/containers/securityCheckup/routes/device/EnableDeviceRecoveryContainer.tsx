@@ -80,16 +80,16 @@ const EnableDeviceRecoveryContainer = () => {
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={deviceIcon} color="success" />}>
-                    {c('l10n_nightly: Security checkup').t`Device-based recovery enabled`}
+                    {c('Safety review').t`Device-based recovery enabled`}
                 </SecurityCheckupMainTitle>
 
                 <div className="mt-6">
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`If you forget your ${BRAND_NAME} password and need to reset it, the next time you sign in on this device using your new password, full access to your ${BRAND_NAME} Account will be restored.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
-                    {c('l10n_nightly: Security checkup').t`Continue to Safety Review`}
+                    {c('Safety review').t`Continue to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -106,21 +106,21 @@ const EnableDeviceRecoveryContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={deviceIcon} color="danger" />}>
-                {c('l10n_nightly: Security checkup').t`Enable device-based recovery`}
+                {c('Safety review').t`Enable device-based recovery`}
             </SecurityCheckupMainTitle>
 
             <div className="flex flex-column gap-4">
                 <div>
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`When you enable device-based recovery, ${BRAND_NAME} will store an encrypted backup keychain as a file in your browser’s web storage.`}
                 </div>
 
                 <div>
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`If you forget your ${BRAND_NAME} password and need to reset it, the next time you sign in this device using your new password, full access to your ${BRAND_NAME} Account will be restored.`}
                 </div>
 
-                <div>{c('l10n_nightly: Security checkup').t`You can disable this at any time.`}</div>
+                <div>{c('Safety review').t`You can disable this at any time.`}</div>
             </div>
 
             <Button

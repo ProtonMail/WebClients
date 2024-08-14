@@ -22,9 +22,10 @@ import { ModalTwo } from '../../../../../modalTwo';
 
 interface Props {
     modalProps: ModalStateProps;
+    upsellComponent?: UPSELL_COMPONENT;
 }
 
-const ProtonSentinelUpsellModal = ({ modalProps }: Props) => {
+const ProtonSentinelUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     const [user] = useUser();
 
     return (
@@ -61,7 +62,7 @@ const ProtonSentinelUpsellModal = ({ modalProps }: Props) => {
                         getUpgradePath({ user }),
                         getUpsellRef({
                             app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-                            component: UPSELL_COMPONENT.MODAL,
+                            component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
                             feature: MAIL_UPSELL_PATHS.PROTON_SENTINEL,
                         })
                     )}

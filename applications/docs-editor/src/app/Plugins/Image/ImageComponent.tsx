@@ -25,7 +25,7 @@ import {
 import { $isImageNode } from './ImageNode'
 import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
-import { getEditorDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { CircleLoader } from '@proton/atoms'
 
 const imageCache = new Set()
@@ -81,7 +81,7 @@ function LazyImage({
       src={src}
       alt={altText}
       ref={useCombinedRefs(imageRef, (image) => {
-        const editorDimensions = getEditorDimensionsWithoutPadding(editor)
+        const editorDimensions = getElementDimensionsWithoutPadding(editor.getRootElement())
         if (image && editorDimensions) {
           const naturalWidth = image.naturalWidth
           if (image.style.width === 'inherit') {

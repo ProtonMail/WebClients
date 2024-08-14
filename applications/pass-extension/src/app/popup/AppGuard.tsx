@@ -16,9 +16,9 @@ export const AppGuard: FC = () => {
     const lockSetup = useSelector(selectLockSetupRequired);
 
     /* Navigate from Lobby when user is logged in (or needs lock setup),
-     * and popup is initialized. In extension, `loggedIn` is false if
+     * and popup is initialized. In extension, `authorized` is false if
      * lock setup required (see `WorkerContextInterface::getState`). */
-    const ready = (lockSetup || state.loggedIn) && initialized;
+    const ready = (lockSetup || state.authorized) && initialized;
 
     return (
         <Route

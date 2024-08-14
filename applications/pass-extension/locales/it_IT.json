@@ -1444,9 +1444,6 @@
       "Offline support successfully disabled": [
         "Accesso offline disabilitato"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
-      ],
       "Open the Extensions menu": [
         "Apri il menu Estensioni"
       ],
@@ -1489,6 +1486,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password": [
+        "Conferma la tua password aggiuntiva"
       ],
       "Please confirm your password": [
         "Conferma la tua password"
@@ -1534,6 +1534,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protetto da ${ PROTON_SENTINEL_LINK }, il nostro programma avanzato di protezione dell'account."
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Compila rapidamente e automaticamente i tuoi token per la verifica in due passaggi."
       ],
       "Quickly autofill your identities.": [
         "Compila rapidamente e automaticamente le tue identità."
@@ -1844,6 +1847,9 @@
       "24 hours": [
         "24 ore"
       ],
+      "2FA autofill": [
+        "Compilazione automatica della verifica a due passaggi"
+      ],
       "2FA secret key (TOTP)": [
         "Chiave segreta 2FA (TOTP)"
       ],
@@ -2008,6 +2014,9 @@
       ],
       "Display": [
         "Mostra"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Mostra l'icona di ${ PASS_APP_NAME } nei campi con la compilazione automatica"
       ],
       "Domain": [
         "Dominio"
@@ -2651,6 +2660,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Inserisci la password aggiuntiva"
+      ],
       "Enter your password": [
         "Inserisci la tua password"
       ],
@@ -2865,6 +2877,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "È richiesta la password di ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "È richiesta una descrizione del problema"
       ],
@@ -2898,14 +2913,14 @@
       "Empty note": [
         "Nota vuota"
       ],
-      "Encryption password is required": [
-        "Password di crittografia necessaria"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La data di scadenza non è nel formato MM/AA"
       ],
       "Extra password cannot be empty": [
         "La password aggiuntiva non può essere vuota"
+      ],
+      "Extra password is required": [
+        "È richiesta una password aggiuntiva"
       ],
       "Extra password should have at least 8 characters": [
         "La password aggiuntiva deve contenere almeno 8 caratteri"

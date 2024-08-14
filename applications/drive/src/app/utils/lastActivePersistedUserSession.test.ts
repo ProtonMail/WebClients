@@ -25,6 +25,23 @@ describe('getLastActivePersistedUserSessionUID', () => {
         expect(result).toBeNull();
     });
 
+    it('returns last active session for any apps if there is no sessions for Drive', () => {
+        localStorage.setItem(
+            `${STORAGE_PREFIX}0`,
+            JSON.stringify({ UserID: '1234', UID: 'abcd-1234', persistedAt: 123 })
+        );
+        localStorage.setItem(
+            `${STORAGE_PREFIX}1`,
+            JSON.stringify({ UserID: '5678', UID: 'abcd-5678', persistedAt: 567 })
+        );
+        localStorage.setItem(
+            `${STORAGE_PREFIX}2`,
+            JSON.stringify({ UserID: '9999', UID: 'abcd-9999', persistedAt: 345 })
+        );
+        const result = getLastActivePersistedUserSessionUID();
+        expect(result).toBe('abcd-5678');
+    });
+
     it('handles JSON parse errors', () => {
         localStorage.setItem(`${LAST_ACTIVE_PING}-1234`, 'not a JSON');
         const result = getLastActivePersistedUserSessionUID();

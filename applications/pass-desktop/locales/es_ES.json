@@ -560,6 +560,29 @@
         "¿No aparece tu gestor de contraseñas? Solicítalo."
       ]
     },
+    "App menu": {
+      "Force Reload": [
+        "Forzar la recarga"
+      ],
+      "Reload": [
+        "Recargar"
+      ],
+      "Show logs": [
+        "Mostrar los registros"
+      ],
+      "Speech": [
+        "Dictar"
+      ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Lanzar ${ PASS_APP_NAME } al inicio de sesión"
+      ],
+      "Toggle developers tools": [
+        "Activar las herramientas de desarrollador"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Desinstalar ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Ahorra con inteligencia. Contrata Pass Plus durante un año por solo ${ relativePrice } al mes."
@@ -665,6 +688,9 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Error con la autenticación. Confirma tu contraseña de ${ BRAND_NAME } para continuar con la exportación."
+      ],
+      "Biometric authentication failed": [
+        "Error en la autenticación biométrica"
       ],
       "Cannot send invitation at the moment": [
         "No se puede enviar la invitación por el momento.",
@@ -783,7 +809,7 @@
         "Error al transferir la propiedad de esta caja fuerte."
       ],
       "Failed to unpin item": [
-        "No se pudo desanclar el elemento"
+        "No se ha podido desanclar el elemento."
       ],
       "Failed to update monitoring settings": [
         "Error al actualizar los ajustes de monitoreo"
@@ -804,7 +830,7 @@
         "No se ha podido analizar el archivo."
       ],
       "File could not be read": [
-        "No se ha podido leer el archivo"
+        "No se ha podido leer el archivo."
       ],
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado."
@@ -943,6 +969,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacta a nuestro servicio de atención al cliente para obtener ayuda."
+      ],
+      "Wrong extra password": [
+        "La contraseña adicional no es correcta."
       ],
       "Wrong password": [
         "La contraseña no es correcta."
@@ -1113,6 +1142,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
+      ],
       "Add a username field": [
         "Añadir un campo de nombre de usuario"
       ],
@@ -1163,6 +1195,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Antes de exportar tus datos con este formato, abre y desactiva Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Se ha registrado el bloqueo automático biométrico. Úsalo para desbloquear ${ PASS_APP_NAME }."
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Los datos biométricos se desactivarán y será necesario activarlos nuevamente."
       ],
       "Breaches detected": [
         "Vulneraciones detectadas"
@@ -1262,6 +1300,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Activa el bloqueo automático para asegurar tus datos"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Activando el bloqueo automático biométrico"
+      ],
+      "Enabling biometrics lock failed": [
+        "Error al activar el bloqueo automático biométrico"
       ],
       "Enabling offline mode...": [
         "Activando el modo sin conexión..."
@@ -1368,7 +1412,7 @@
         "La invitación ha sido enviada."
       ],
       "Invite successfully sent": [
-        "La Invitación ha sido enviada."
+        "Se ha enviado la invitación."
       ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
@@ -1468,7 +1512,7 @@
         "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
-        "Moviendo elemento a la papelera"
+        "Moviendo el elemento a la papelera"
       ],
       "Never": [
         "Nunca"
@@ -1497,8 +1541,11 @@
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear la sesión. Se cerrará la sesión después de 3 intentos incorrectos."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nuestras alertas se caracterizan por su cautela. Si no reconoces la información vulnerada, puedes ignorar este informe."
       ],
       "Owner": [
         "Propietario"
@@ -1540,8 +1587,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
       ],
+      "Please confirm your extra password": [
+        "Confirma tu nueva contraseña."
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Confirma la contraseña adicional para bloquear automáticamente con datos biométricos."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Confirma la contraseña adicional para cancelar el registro del bloqueo actual."
+      ],
       "Please confirm your password": [
         "Confirma tu contraseña"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Confirma la contraseña para bloquear automáticamente con datos biométricos."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Confirma tu contraseña para bloquear automáticamente con tu contraseña."
@@ -1598,7 +1657,7 @@
         "Borrando la contraseña adicional..."
       ],
       "Removing secure link...": [
-        "Eliminando el enlace seguro..."
+        "Borrando el enlace seguro..."
       ],
       "Restoring items from trash": [
         "Restaurando un grupo de elementos"
@@ -1613,7 +1672,7 @@
         "Selecciona la caja fuerte de destino"
       ],
       "Select vault to share": [
-        "Seleccione la caja fuerte para compartir"
+        "Selecciona la caja fuerte para compartir"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecciona dónde quieres guardar tus cajas fuertes importadas."
@@ -1632,6 +1691,9 @@
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado."
+      ],
+      "Set by your organization": [
+        "Configurado por tu organización"
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
@@ -1697,6 +1759,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso a tu archivo exportado podrá ver tus contraseñas. Por seguridad, elimínalo una vez que hayas terminado de utilizarlo."
       ],
+      "This option is currently not available on your device.": [
+        "Esta opción no está disponible en tu dispositivo."
+      ],
       "This setting is disabled on the organization level": [
         "Este ajuste está desactivado para la organización."
       ],
@@ -1721,11 +1786,17 @@
       "Unlimited hide-my-email aliases": [
         "Un número ilimitado de alias de Hide-my-email"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con datos biométricos"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña adicional."
+      ],
+      "Unlock with biometrics": [
+        "Desbloquear usando datos biométricos"
       ],
       "Unpinning item...": [
         "Desanclando el elemento..."
@@ -1740,7 +1811,7 @@
         "Utiliza las cajas fuertes para compartir este elemento con otras personas."
       ],
       "User's access removed": [
-        "El acceso del usuario ha sido borrado."
+        "Se ha borrado el acceso del usuario."
       ],
       "User's access sucessfuly updated": [
         "Se ha actualizado el acceso del usuario."
@@ -1877,6 +1948,9 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2 minutes": [
+        "2 minutos"
+      ],
       "24 hours": [
         "24 horas"
       ],
@@ -1894,6 +1968,9 @@
       ],
       "30 seconds": [
         "30 segundos"
+      ],
+      "4 hours": [
+        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"
@@ -1942,6 +2019,9 @@
       ],
       "Beta Access": [
         "Acceso beta"
+      ],
+      "Biometrics": [
+        "Datos biométricos"
       ],
       "Birthdate": [
         "Fecha de nacimiento"
@@ -2418,6 +2498,9 @@
       "Type": [
         "Tipo"
       ],
+      "Unlock with": [
+        "Desbloquear con"
+      ],
       "Unnamed Credit Card": [
         "Tarjeta de crédito sin nombre"
       ],
@@ -2496,6 +2579,20 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Editar"
+      ],
+      "File": [
+        "Archivo"
+      ],
+      "View": [
+        "Vista"
+      ],
+      "Window": [
+        "Ventana"
       ]
     },
     "Message": {
@@ -2728,11 +2825,11 @@
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
-      "Email address": [
-        "Dirección de correo"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando de ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Ingresa tu contraseña adicional."
       ],
       "Enter your password": [
         "Introduce tu contraseña."
@@ -2783,7 +2880,7 @@
         "Cargando las vulneraciones..."
       ],
       "Low disk space": [
-        "Poco espacio en el disco"
+        "Espacio en disco bajo"
       ],
       "Mark as resolved?": [
         "¿Marcar como resuelta?"
@@ -2829,9 +2926,6 @@
       ],
       "Passkey": [
         "Clave de acceso"
-      ],
-      "Password": [
-        "Contraseña"
       ],
       "Password Health": [
         "Estado de la contraseña"
@@ -2928,7 +3022,7 @@
         "Caja fuerte"
       ],
       "Vault shared with you": [
-        "caja fuerte compartida contigo"
+        "Caja fuerte compartida contigo"
       ],
       "Want to learn more?": [
         "¿Quieres saber más?"
@@ -2994,6 +3088,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Se necesita la contraseña de ${ BRAND_NAME }."
+      ],
       "A description of the problem is required": [
         "Se requiere una descripción del problema."
       ],
@@ -3030,14 +3127,14 @@
       "Empty note": [
         "Nota vacía"
       ],
-      "Encryption password is required": [
-        "Se requiere la contraseña de cifrado."
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA."
       ],
       "Extra password cannot be empty": [
         "La contraseña adicional no puede estar vacía."
+      ],
+      "Extra password is required": [
+        "Se necesita la contraseña adicional."
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres."
@@ -3185,7 +3282,7 @@
         "Tu sesión está inactiva."
       ],
       "Your session was locked.": [
-        "Tu sesión está bloqueada."
+        "La sesión está bloqueada."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."

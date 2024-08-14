@@ -301,6 +301,9 @@
       "Create a new label": [
         "Crear una etiqueta nueva"
       ],
+      "Create alias": [
+        "Crear alias"
+      ],
       "Create and copy alias": [
         "Crear y copiar alias"
       ],
@@ -510,9 +513,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Obténgalo por solo ${ addonPriceWithCurrency }/mes"
       ],
-      "Get SimpleLogin extension": [
-        "Obtener extensión de SimpleLogin"
-      ],
       "Get started": [
         "Comenzar"
       ],
@@ -540,9 +540,6 @@
       "Go to settings": [
         "Ir a los ajustes"
       ],
-      "Go to SimpleLogin": [
-        "Ir a SimpleLogin"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -563,6 +560,9 @@
       ],
       "Hide messages": [
         "Ocultar mensajes"
+      ],
+      "Hide toolbar": [
+        "Ocultar la barra de herramientas"
       ],
       "hide-my-email aliases": [
         "alias de Hide-my-email"
@@ -844,10 +844,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1174,6 +1174,9 @@
       "Show side panel": [
         "Mostrar el panel lateral"
       ],
+      "Show toolbar": [
+        "Mostrar la barra de herramientas"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -1248,10 +1251,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -3599,6 +3598,43 @@
         "Soporte prioritario"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtenga ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obténgalo por ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturado anualmente por ${ amountBilled }. Ahorre ${ amountSave } en comparación a 2 suscripciones anuales de ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 usuarios"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acceso completo a todos los productos de ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ahorre ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Todas las funciones de ${ BRAND_NAME }, para 2."
+      ],
+      "Double your storage": [
+        "Duplica su almacenamiento"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Presentamos ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "DESCRIPCIÓN:\n${ eventDescription }"
@@ -4160,6 +4196,9 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
+      "Text is too long to refine": [
+        "El texto es muy largo para refinarlo"
+      ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
       ],
@@ -4685,6 +4724,9 @@
       ],
       "You have successfully joined the family group": [
         "Se ha unido al grupo familiar con éxito"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Tiene facturas sin pagar. Por favor, páguelas antes de unirse a un plan grupal."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Está invitado a vincular la cuenta de ${ BRAND_NAME } a este plan de grupo y disfrutar juntos de todas las funciones premium de ${ BRAND_NAME_TWO }."
@@ -5641,6 +5683,9 @@
         "${ numOccurrences } ocurrencia encontrada en el contenido del correo",
         "${ numOccurrences } ocurrencias encontradas en el contenido del correo"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no desea exponer la dirección de correo electrónico real."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -5979,6 +6024,10 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Crear una nube segura para ${ n } miembro",
+        "Crear una nube segura para ${ n } miembros"
       ],
       "Create in": [
         "Crear en"
@@ -6519,6 +6568,9 @@
       "Organization size": [
         "Tamaño de la organización"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nuestras alertas tienden a ser demasiado cautelosas. Si no reconoce ninguna de las informaciones filtradas, puede ignorar este reporte sin problemas."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema marcó este mensaje como un intento de suplantación. Compruebe que es legítimo."
       ],
@@ -6697,6 +6749,9 @@
       "Scheduling message...": [
         "Programando mensaje..."
       ],
+      "Scribe panel": [
+        "Panel de Scribe"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "La opción de búsqueda que le permite buscar de forma segura palabras clave en el cuerpo de los mensajes de correo electrónico."
       ],
@@ -6763,12 +6818,6 @@
       ],
       "Show original message": [
         "Mostrar mensaje original"
-      ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin es un servicio de ${ BRAND_NAME } y la cuenta ${ BRAND_NAME_TWO } incluye alias de Hide-my-email. Para comenzar a enmascarar sus direcciones de correo, acceda a SimpleLogin y cree el primer alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quiere exponer la dirección de correo electrónico real."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
@@ -7133,9 +7182,6 @@
       "Users": [
         "Usuarios"
       ],
-      "Using SimpleLogin is easy": [
-        "Usar SimpleLogin es fácil"
-      ],
       "Verification may take a few minutes.": [
         "La verificación puede tomar unos minutos."
       ],
@@ -7383,9 +7429,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Ha alcanzado el número máximo de direcciones en el grupo de contactos."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "La cuenta de ${ BRAND_NAME } incluye SimpleLogin. Instale la extensión de navegador con un clic para comenzar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "La cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en el buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
@@ -9043,9 +9086,6 @@
       "${ size } storage": [
         "${ size } de almacenamiento"
       ],
-      "${ size } storage per user": [
-        "${ size } de almacenamiento por usuario"
-      ],
       "1 user": [
         "1 usuario"
       ],
@@ -9063,9 +9103,6 @@
       ],
       "Administration Panel": [
         "Panel de administración"
-      ],
-      "Advanced sharing security": [
-        "Seguridad avanzada al compartir archivos"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -9096,9 +9133,6 @@
       ],
       "Collaborate and share large files": [
         "Colaborar y compartir grandes archivos"
-      ],
-      "Collaborative document editor": [
-        "Editor de documentos colaborativo"
       ],
       "Contact groups": [
         "Grupos de contactos"
@@ -9218,6 +9252,9 @@
       "Phone support (40+ users)": [
         "Soporte telefónico (más de 40 usuarios)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funciones premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
       ],
@@ -9263,9 +9300,6 @@
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
-      ],
-      "Share files and folders via link": [
-        "Compartir archivos y carpetas con un enlace"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -9359,6 +9393,9 @@
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
       ],
+      "Version history": [
+        "Historial de versiones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
       ]
@@ -9449,9 +9486,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para su día a día."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Asegure su vida digital con ${ BRAND_NAME } para dos personas."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
       ],
@@ -9460,6 +9494,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "La cuenta inicial gratuita diseñada para potenciar a todos con la privacidad por defecto."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privacidad ilimitada y más almacenamiento para hasta 2 personas."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Está disfrutando de un precio promocional en el plan actual. Si elimina la cuenta, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
@@ -9531,9 +9568,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue el mensaje"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controle el acceso a los archivos compartidos con enlaces con fechas de expiración y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
@@ -11810,6 +11844,9 @@
       "Import record deleted": [
         "Registro de importación eliminado"
       ],
+      "Invitation rejected": [
+        "Invitación rechazada"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferencias de atajos de teclado actualizadas"
       ],
@@ -12380,9 +12417,6 @@
       "Edit image": [
         "Editar imagen"
       ],
-      "Email address": [
-        "Dirección de correo"
-      ],
       "Email addresses": [
         "Direcciones de correo"
       ],
@@ -12440,8 +12474,8 @@
       "Groups": [
         "Grupos"
       ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Oculte el correo con SimpleLogin de ${ BRAND_NAME }"
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Oculte su correo electrónico con ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Verificación humana"
@@ -12615,9 +12649,6 @@
       "Other names": [
         "Otros nombres"
       ],
-      "Password": [
-        "Contraseña"
-      ],
       "Payment failed": [
         "Error con el pago"
       ],
@@ -12749,9 +12780,6 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
-      ],
-      "Sign in with 2FA": [
-        "Iniciar sesión 2FA"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -13230,8 +13258,8 @@
         "Cada semana los sábados ${ interval }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Cada semana los domingos ${ interval }",
-        "Cada semana los domingos ${ interval }"
+        "Cada ${ interval } semana los domingos",
+        "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "Cada semana los domingos, ${ timesString } ${ interval }",

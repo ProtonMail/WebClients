@@ -25,7 +25,7 @@ const RecommendedActions = () => {
             {prioritiseActions ? (
                 <div className="flex flex-column gap-2">
                     <h2 className="text-rg text-semibold">
-                        {c('l10n_nightly: Security checkup').t`Take action to secure your account`}
+                        {c('Safety review').t`Take action to secure your account`}
                     </h2>
                     <Actions actions={actions.length ? actions : filteredFurtherActions} />
 
@@ -39,9 +39,9 @@ const RecommendedActions = () => {
                                 }
                                 disableFullWidth
                                 className="color-weak"
-                                gap={0}
+                                gap={1}
                             >
-                                {c('l10n_nightly: Security checkup').t`Show more`} ({filteredFurtherActions.length})
+                                {c('Safety review').t`Show more`} ({filteredFurtherActions.length})
                             </CollapsibleHeader>
                             <CollapsibleContent className="mt-2">
                                 <Actions actions={filteredFurtherActions} />
@@ -53,9 +53,7 @@ const RecommendedActions = () => {
 
             {showRecoveryMethods(securityState) ? (
                 <div className="flex flex-column gap-2">
-                    <h2 className="text-rg text-semibold">
-                        {c('l10n_nightly: Security checkup').t`Your recovery methods`}
-                    </h2>
+                    <h2 className="text-rg text-semibold">{c('Safety review').t`Your recovery methods`}</h2>
                     <RecoveryMethods />
                 </div>
             ) : null}
@@ -70,10 +68,9 @@ const RecommendedActions = () => {
                         }
                         disableFullWidth
                         className="color-weak"
-                        gap={0}
+                        gap={1}
                     >
-                        {c('l10n_nightly: Security checkup').t`Safeguard your account further`} (
-                        {filteredFurtherActions.length})
+                        {c('Safety review').t`Safeguard your account further`} ({filteredFurtherActions.length})
                     </CollapsibleHeader>
                     <CollapsibleContent>
                         <Actions actions={filteredFurtherActions} />

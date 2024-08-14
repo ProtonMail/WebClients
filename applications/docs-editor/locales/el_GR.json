@@ -1,0 +1,517 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "el_GR"
+  },
+  "contexts": {
+    "Action": {
+      "Add comment": [
+        "Προσθήκη σχολίου"
+      ],
+      "Add new table column": [
+        "Προσθήκη νέας στήλης πίνακα"
+      ],
+      "Add new table row": [
+        "Προσθήκη νέας γραμμής πίνακα"
+      ],
+      "Adjust font size": [
+        "Προσαρμογή μεγέθους γραμματοσειράς"
+      ],
+      "and": [
+        "και"
+      ],
+      "Apply": [
+        "Εφαρμογή"
+      ],
+      "Bold": [
+        "Έντονη γραφή"
+      ],
+      "Bulleted List": [
+        "Λίστα Κουκκίδων"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Center align": [
+        "Στοίχιση στο κέντρο"
+      ],
+      "Check List": [
+        "Λίστα Ελέγχου"
+      ],
+      "Clear contents": [
+        "Διαγραφή περιεχομένων"
+      ],
+      "Clear formatting": [
+        "Εκκαθάριση μορφοποίησης"
+      ],
+      "Click to open column menu": [
+        "Κάντε κλικ για να ανοίξετε το μενού στήλης"
+      ],
+      "Click to open row menu": [
+        "Κάντε κλικ για να ανοίξετε το μενού γραμμής"
+      ],
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Code block": [
+        "Μπλοκ κώδικα"
+      ],
+      "Color": [
+        "Χρώμα"
+      ],
+      "Copy link": [
+        "Αντιγραφή συνδέσμου"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Delete column": [
+        "Διαγραφή στήλης"
+      ],
+      "Delete comment": [
+        "Διαγραφή σχολίου"
+      ],
+      "Delete row": [
+        "Διαγραφή σειράς"
+      ],
+      "Delete thread": [
+        "Διαγραφή συνομιλίας"
+      ],
+      "Divider": [
+        "Διαχωριστικό"
+      ],
+      "Duplicate": [
+        "Αντίγραφη"
+      ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
+      "Edit link": [
+        "Επεξεργασία συνδέσμου"
+      ],
+      "Fit table to page width": [
+        "Προσαρμογή πίνακα σε πλάτος σελίδας"
+      ],
+      "Indent": [
+        "Εσοχή"
+      ],
+      "Insert above": [
+        "Εισαγωγή από επάνω"
+      ],
+      "Insert below": [
+        "Εισαγωγή από κάτω"
+      ],
+      "Insert comment": [
+        "Εισάγετε σχόλιο"
+      ],
+      "Insert image": [
+        "Εισαγωγή εικόνας"
+      ],
+      "Insert left": [
+        "Εισαγωγή αριστερά"
+      ],
+      "Insert link": [
+        "Εισαγωγή συνδέσμου"
+      ],
+      "Insert right": [
+        "Εισαγωγή δεξιά"
+      ],
+      "Insert table": [
+        "Εισαγωγή πίνακα"
+      ],
+      "Italic": [
+        "Πλάγια γραφή"
+      ],
+      "Justify align": [
+        "Πλήρης στοίχιση στοίχισης"
+      ],
+      "Left align": [
+        "Στοίχιση στα αριστερά"
+      ],
+      "Link": [
+        "Σύνδεσμος"
+      ],
+      "Numbered List": [
+        "Αριθμημένη Λίστα"
+      ],
+      "Options": [
+        "Επιλογές"
+      ],
+      "Outdent": [
+        "Εξοχή"
+      ],
+      "Quote": [
+        "Παράθεση"
+      ],
+      "Re-open": [
+        "Άνοιγμα ξανά"
+      ],
+      "Re-open thread": [
+        "Ανοίξτε ξανά το νήμα"
+      ],
+      "Redo": [
+        "Επανάληψη"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
+      ],
+      "Remove background color": [
+        "Κατάργηση χρώματος φόντου"
+      ],
+      "Remove link": [
+        "Αφαίρεση συνδέσμου"
+      ],
+      "Reply": [
+        "Απάντηση"
+      ],
+      "Resolve": [
+        "Επίλυση"
+      ],
+      "Right align": [
+        "Στοίχιση στα δεξιά"
+      ],
+      "Save": [
+        "Αποθήκευση"
+      ],
+      "Show thread": [
+        "Εμφάνιση νήματος"
+      ],
+      "Strike-through": [
+        "Επιδιαγράμμιση"
+      ],
+      "Strikethrough": [
+        "Διαγραμμισμένο Κείμενο"
+      ],
+      "Submit": [
+        "Υποβολή"
+      ],
+      "Table options": [
+        "Επιλογές πίνακα"
+      ],
+      "Underline": [
+        "Υπογράμμιση"
+      ],
+      "Undo": [
+        "Αναίρεση"
+      ]
+    },
+    "color": {
+      "apple": [
+        "μήλο"
+      ],
+      "azureish white": [
+        "λευκό γαλαζωπό"
+      ],
+      "black": [
+        "μαύρο"
+      ],
+      "blanched almond": [
+        "αμυγδαλόψυχα"
+      ],
+      "blue-gray": [
+        "μπλε-γκρι"
+      ],
+      "caramel": [
+        "καραμελί"
+      ],
+      "carrot": [
+        "καρότο"
+      ],
+      "cerise": [
+        "κεράσι"
+      ],
+      "cinnabar": [
+        "κιννάβαρη"
+      ],
+      "cobalt": [
+        "κοβάλτιο"
+      ],
+      "copper": [
+        "χαλκός"
+      ],
+      "cyan-blue azure": [
+        "κυανό-μπλε γαλάζιο"
+      ],
+      "dandelion": [
+        "ραδίκι"
+      ],
+      "dark cerulean": [
+        "σκούρος ουρανός"
+      ],
+      "dark midnight blue": [
+        "μπλε μεσονυκτίου"
+      ],
+      "dim gray": [
+        "αχνό γκρι"
+      ],
+      "enzian": [
+        "βαθύ μπλέ"
+      ],
+      "fern": [
+        "φτέρη"
+      ],
+      "field drab": [
+        "μονότονο πεδίο"
+      ],
+      "forest": [
+        "δάσος"
+      ],
+      "gainsboro": [
+        "γκέινσμπορο"
+      ],
+      "gray": [
+        "γκρι"
+      ],
+      "japanese laurel": [
+        "ιαπωνική δάφνη"
+      ],
+      "kiwi": [
+        "ακτινίδιο"
+      ],
+      "lemon yellow": [
+        "λεμονί"
+      ],
+      "light carmine pink": [
+        "ανοιχτό ροζ καρμίνη"
+      ],
+      "light moss green": [
+        "ανοιχτό πράσινο βρύα"
+      ],
+      "light red": [
+        "ανοιχτό κόκκινο"
+      ],
+      "maize": [
+        "καλαμπόκι"
+      ],
+      "mughal green": [
+        "mughal πράσινο"
+      ],
+      "ocean": [
+        "ωκεανός"
+      ],
+      "olive": [
+        "λαδί"
+      ],
+      "outer space": [
+        "μεσοαστρικό"
+      ],
+      "pacific": [
+        "ειρηνικός"
+      ],
+      "palatinate blue": [
+        "βασιλικό μπλε"
+      ],
+      "pale cerulean": [
+        "χλωμός ουρανός"
+      ],
+      "pastel gray": [
+        "παστέλ γκρι"
+      ],
+      "persian plum": [
+        "περσικό δαμασκηνί"
+      ],
+      "persian red": [
+        "περσικό κόκκινο"
+      ],
+      "philippine gray": [
+        "γκρί των φιλιππίνων"
+      ],
+      "philippine silver": [
+        "ασημί των φιλιππίνων"
+      ],
+      "pickle": [
+        "τουρσί"
+      ],
+      "pine": [
+        "πεύκο"
+      ],
+      "pink": [
+        "ροζ"
+      ],
+      "pistachio": [
+        "φιστίκι"
+      ],
+      "plum": [
+        "δαμάσκηνο"
+      ],
+      "purple": [
+        "μοβ"
+      ],
+      "red": [
+        "κόκκινο"
+      ],
+      "reef": [
+        "ύφαλος"
+      ],
+      "ruddy pink": [
+        "κατακόκκινο ροζ"
+      ],
+      "sahara": [
+        "Σαχάρα"
+      ],
+      "satin sheen gold": [
+        "σατέν γυαλιστερό χρυσό"
+      ],
+      "slateblue": [
+        "μπλε ροζέ"
+      ],
+      "soil": [
+        "χώμα"
+      ],
+      "strawberry": [
+        "φράουλα"
+      ],
+      "vivid auburn": [
+        "ζωηρό καστανοκόκκινο"
+      ],
+      "white": [
+        "λευκό"
+      ]
+    },
+    "Confirm": {
+      "Discard comment?": [
+        "Απόρριψη σχολίου;"
+      ]
+    },
+    "Error": {
+      "Failed to import HTML due to unknown error.": [
+        "Αποτυχία εισαγωγής HTML λόγω άγνωστου σφάλματος."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Αποτυχία εισαγωγής Markdown λόγω άγνωστου σφάλματος."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Αποτυχία εισαγωγής εγγράφου του Word λόγω άγνωστου σφάλματος."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Αποτυχία προετοιμασίας του προγράμματος επεξεργασίας λόγω άγνωστου σφάλματος."
+      ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Δεν είναι δυνατή η μετατροπή εγγράφου του Word. Προστατεύεται με κωδικό πρόσβασης; Εάν ναι, παρακαλούμε καταργήστε τον κωδικό πρόσβασης και προσπαθήστε ξανά."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Προεπιλογή συστήματος"
+      ],
+      "Theme font": [
+        "Γραμματοσειρά εμφάνισης"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Μεγάλο"
+      ],
+      "Medium (recommended)": [
+        "Μεσαίο (συνιστάται)"
+      ],
+      "Small": [
+        "Μικρό"
+      ],
+      "Very large": [
+        "Πολύ μεγάλο"
+      ],
+      "Very small": [
+        "Πολύ μικρό"
+      ]
+    },
+    "Info": {
+      "${ allTypersExceptLast } and ${ lastTyper }": [
+        "${ allTypersExceptLast } και ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } πληκτρολογεί...",
+        "${ usersTranslation } πληκτρολογούν..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το σχόλιο;"
+      ],
+      "Are you sure you want to delete this thread?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το νήμα;"
+      ],
+      "Comments": [
+        "Σχόλια"
+      ],
+      "Editing": [
+        "Επεξεργασία"
+      ],
+      "Just now": [
+        "Μόλις τώρα"
+      ],
+      "Loading": [
+        "Φόρτωση"
+      ],
+      "No comments": [
+        "Δεν υπάρχουν σχόλια"
+      ],
+      "Something went wrong:": [
+        "Κάτι πήγε στραβά:"
+      ],
+      "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
+        "Το περιεχόμενο που προσπαθείτε να επικολλήσετε είναι πολύ μεγάλο για να επικολληθεί ταυτόχρονα. Δοκιμάστε ξανά επικολλώντας μικρότερα κομμάτια κάθε φορά."
+      ],
+      "Viewing": [
+        "Προβολή"
+      ],
+      "You cannot undo this action.": [
+        "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ]
+    },
+    "Label": {
+      "Background colour": [
+        "Χρώμα φόντου"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Συντόμευση πληκτρολογίου: ${ shortcut }"
+      ],
+      "Link text": [
+        "Κείμενο Σύνδεσης"
+      ],
+      "Link URL": [
+        "URL Σύνδεσης"
+      ],
+      "More options": [
+        "Περισσότερες επιλογές"
+      ],
+      "Text colour": [
+        "Χρώμα κειμένου"
+      ]
+    },
+    "Placeholder": {
+      "Add a comment...": [
+        "Προσθέστε ένα σχόλιο..."
+      ],
+      "Edit comment...": [
+        "Επεξεργασία σχολίου..."
+      ],
+      "Paste link": [
+        "Επικόλληση συνδέσμου"
+      ],
+      "Reply...": [
+        "Απάντηση..."
+      ],
+      "Text": [
+        "Κείμενο"
+      ]
+    },
+    "Title": {
+      "Delete comment": [
+        "Διαγραφή σχολίου"
+      ],
+      "Delete thread": [
+        "Διαγραφή συνομιλίας"
+      ]
+    }
+  }
+}

@@ -53,6 +53,7 @@ const FilterAndSortEventsBlock = ({
                     prefix={<Icon name="magnifier" />}
                     onValue={setKeyword}
                     className="w-full md:max-h-auto"
+                    data-protonpass-ignore="true"
                 />
                 <SelectTwo id="eventType" value={filter.eventType} onValue={handleSetEventType} className="flex-1">
                     {eventTypesList.map((type) => {

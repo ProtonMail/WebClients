@@ -9,14 +9,15 @@ import { UpsellModal } from '../index';
 
 interface Props {
     modalProps: ModalStateProps;
+    upsellComponent?: UPSELL_COMPONENT;
 }
 
-const IncreasePrivacyUpsellModal = ({ modalProps }: Props) => {
+const IncreasePrivacyUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     const [user] = useUser();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-        component: UPSELL_COMPONENT.MODAL,
+        component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.UNLIMITED_ADDRESSES,
     });
 

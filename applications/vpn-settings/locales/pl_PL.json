@@ -64,6 +64,9 @@
       "Allow": [
         "Zezwól"
       ],
+      "Always allow sending mail to group": [
+        "Zawsze zezwalaj na wysyłanie wiadomości do grupy"
+      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Wyłącz"
       ],
+      "Disable E2EE for group address": [
+        "Wyłącz E2EE dla grupy"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
+      ],
+      "Enable E2EE for group address": [
+        "Włącz E2EE dla grupy"
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
@@ -676,6 +685,9 @@
       "Use authentication code": [
         "Użyj kodu uwierzytelniającego"
       ],
+      "Use group sending permissions": [
+        "Użyj uprawnienia grupy"
+      ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
       ],
@@ -818,8 +830,8 @@
       "External": [
         "Zewnętrzny"
       ],
-      "Missing keys": [
-        "Brak kluczy"
+      "Inactive": [
+        "Nieaktywny"
       ],
       "No E2EE mail": [
         "Brak E2EE wiadomości"
@@ -2256,6 +2268,43 @@
         "Priorytetowe wsparcie"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Wybierz plan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Uzyskaj za ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Płatne rocznie ${ amountBilled }. Zaoszczędź ${ amountSave } na rocznej subskrypcji 2 indywidualnych kont ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 użytkowników"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Pełny dostęp do wszystkich usług ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Oszczędzasz ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Wszystko, co z ${ BRAND_NAME } dla dwojga."
+      ],
+      "Double your storage": [
+        "Podwój przestrzeń dyskową"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Przedstawiamy plan ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "Adres ${ name } został dodany"
@@ -2697,8 +2746,14 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konta z niestandardowymi domenami nie mogą dołączyć do tego planu."
+      ],
       "customer support": [
         "wsparcie klienta"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Plany grupowe nie obsługują obecnie kont zewnętrznych. Utwórz adres ${ BRAND_NAME } przed dołączeniem. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
@@ -2708,6 +2763,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Zaproszenie wysłane przez: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Konta dożywotnie nie mogę dołączyć do innego planu."
       ],
       "Manage addresses.": [
         "Zarządzaj adresami."
@@ -2766,6 +2824,9 @@
       "You have successfully joined the family group": [
         "Dołączono do grupy rodzinnej"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Masz nieopłacone faktury. Opłać je przed dołączeniem do planu grupowego."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Musisz skonfigurować niestandardową domenę przed dodaniem użytkowników."
       ],
@@ -2780,6 +2841,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Nie możesz zaakceptować zaproszenia w obecnym planie."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2846,6 +2910,9 @@
       ],
       "An error occurred, please try again": [
         "Wystąpił błąd. Spróbuj ponownie"
+      ],
+      "Family name updated": [
+        "Nazwa rodziny została zaktualizowana"
       ],
       "Member updated": [
         "Użytkownik został zaktualizowany"
@@ -3529,9 +3596,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Czy na pewno chcesz usunąć tę grupę? Adres grupy nie będzie już działał."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
@@ -3673,11 +3737,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -5079,12 +5143,20 @@
         "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Adres e-mail nie jest prawidłowy"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Oczekujące"
       ],
       "Rejected": [
         "Odrzucone"
+      ],
+      "Sending invite...": [
+        "Wysyłanie zaproszenia"
       ]
     },
     "Invoice state display as badge": {
@@ -5884,7 +5956,7 @@
         "Automatyczne usuwanie Spamu i opróżnianie Kosza"
       ],
       "Custom schedule send and snooze times": [
-        "Niestandardowe godziny planowego wysyłania i usypiania"
+        "Niestandardowe godziny wysyłania i odkładania wiadomości"
       ],
       "Support for 1 custom email domain": [
         "Wsparcie dla 1 niestandardowej domeny e-mail"
@@ -6167,9 +6239,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ size } storage per user": [
-        "${ size } przestrzeni dyskowej na użytkownika"
-      ],
       "1 user": [
         "1 użytkownik"
       ],
@@ -6193,9 +6262,6 @@
       ],
       "Advanced network security": [
         "Zaawansowane bezpieczeństwo sieci"
-      ],
-      "Advanced sharing security": [
-        "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -6229,9 +6295,6 @@
       ],
       "Collaborate and share large files": [
         "Współpraca i udostępnianie dużych plików"
-      ],
-      "Collaborative document editor": [
-        "Edytor dokumentów z możliwością współpracy"
       ],
       "Contact groups": [
         "Grupy kontaktów"
@@ -6416,9 +6479,6 @@
         "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
         "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach"
       ],
-      "Share files and folders via link": [
-        "Udostępniaj pliki i foldery za pomocą linku"
-      ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
       ],
@@ -6521,6 +6581,9 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
       ],
+      "Version history": [
+        "Historia wersji"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
       ]
@@ -6614,9 +6677,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Zabezpiecz cyfrowe życie 2 użytkowników z ${ BRAND_NAME }."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Indywidualne rozwiązania dla większych organizacji o specyficznych potrzebach w zakresie bezpieczeństwa"
       ],
@@ -6625,6 +6685,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Darmowe, podstawowe konto stworzone z myślą o zapewnieniu każdemu prywatności."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Nieograniczona prywatność i więcej przestrzeni dyskowej dla 2 osób."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Usunięcie konta spowoduje utratę promocyjnej ceny i nie będzie ona dostępna przy tworzeniu nowego konta."
@@ -6723,9 +6786,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Wybierz niestandardowe godziny powiadomień o wiadomościach i zaplanowanych wysyłkach"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain } dla subskrybowania wiadomości"
@@ -9186,6 +9246,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Jeśli wpisany numer pomocniczy jest prawidłowy, w ciągu minuty wyślemy Ci wiadomość SMS z Twoimi nazwami użytkowników."
       ],
+      "Invitation rejected": [
+        "Zaproszenie zostało odrzucone"
+      ],
       "Invitation sent": [
         "Zaproszenie zostało wysłane"
       ],
@@ -9206,6 +9269,18 @@
       ],
       "Organization activated": [
         "Organizacja została aktywowana"
+      ],
+      "Organization identity updated": [
+        "Tożsamość organizacji została zaktualizowana"
+      ],
+      "Organization logo removed": [
+        "Logo organizacji zostało usunięte"
+      ],
+      "Organization logo updated": [
+        "Logo organizacji zostało zaktualizowane"
+      ],
+      "Organization name updated": [
+        "Nazwa organizacji została zaktualizowana"
       ],
       "Password copied to clipboard": [
         "Hasło zostało skopiowane do schowka"
@@ -9512,10 +9587,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -9812,6 +9887,9 @@
       "Organization name": [
         "Nazwa organizacji"
       ],
+      "Origin": [
+        "Pochodzenie"
+      ],
       "Password": [
         "Hasło"
       ],
@@ -9928,9 +10006,6 @@
       ],
       "Sign in to your organization": [
         "Zaloguj się do organizacji"
-      ],
-      "Sign in with 2FA": [
-        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"
@@ -10138,6 +10213,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Może to być spowodowane resetowaniem hasła lub niezalogowaniem się użytkownika."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Adres e-mail będzie widoczny dla wszystkich użytkowników organizacji podczas zarządzania kontem."
       ],
@@ -10163,6 +10241,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ],
+      "Sending member invitation": [
+        "Wysyłanie zaproszenia"
       ],
       "User rejected invitation": [
         "Zaproszenie zostało odrzucone"

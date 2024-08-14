@@ -15,10 +15,12 @@ import {
 } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Group } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
@@ -38,6 +40,16 @@ export interface NewGroupMember {
     Address: string;
 }
 
+const getMemberAddressMap = (members: EnhancedMember[]) => {
+    const addressMap: { [key: string]: string | null } = {};
+    members?.forEach((member: EnhancedMember) => {
+        if (member?.Addresses && member.Addresses.length > 0) {
+            addressMap[member.Addresses[0].Email] = member.ID;
+        }
+    });
+    return addressMap;
+};
+
 const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const {
         uiState,
@@ -51,6 +63,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
         selectedGroup,
+        members,
     } = groupsManagement;
 
     const { resetForm, dirty, values: formValues, setFieldValue } = form;
@@ -58,7 +71,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
     const [loading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
     const [newGroupMembers, setNewGroupMembers] = useState<NewGroupMember[]>([]);
+    const memberAddressMap = getMemberAddressMap(members);
 
     const newEmailsToAdd = newGroupMembers.map((member) => member.Address);
 
@@ -93,6 +108,27 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const handleRemoveNewGroupMember = (memberToRemove: NewGroupMember) => {
         const updatedNewMembersList = newGroupMembers.filter((prev) => prev !== memberToRemove);
         setNewGroupMembers(updatedNewMembersList);
+    };
+
+    const handleAddAllOrganizationMembers = () => {
+        const exisitingEmails = new Set([
+            ...groupMembers?.map((member) => member?.Email),
+            ...newGroupMembers.map((newMember) => newMember.Address),
+        ]);
+
+        const newMembersToAdd = Object.keys(memberAddressMap)
+            .filter((email) => !exisitingEmails.has(email))
+            .map((email) => ({
+                Name: email,
+                Address: email,
+            }));
+
+        if (newMembersToAdd.length === 0) {
+            createNotification({ text: c('Info').t`All members have been added.` });
+            return;
+        }
+
+        setNewGroupMembers((prev) => [...prev, ...newMembersToAdd]);
     };
 
     return (
@@ -222,22 +258,12 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                         setFieldValue('permissions', permissions);
                                     }}
                                 >
+                                    <Option title={c('option').t`No one`} value={GroupPermissions.NobodyCanSend} />
                                     <Option
-                                        title={c('option').t`Nobody by default`}
-                                        value={GroupPermissions.NobodyCanSend}
-                                    />
-                                    <Option
-                                        title={c('option').t`Members`}
+                                        title={c('option').t`Group members`}
                                         value={GroupPermissions.GroupMembersCanSend}
                                     />
-                                    <Option
-                                        title={c('option').t`Organization members`}
-                                        value={GroupPermissions.OrgMembersCanSend}
-                                    />
-                                    <Option
-                                        title={c('option').t`Everyone, incl. outside`}
-                                        value={GroupPermissions.EveryoneCanSend}
-                                    />
+                                    <Option title={c('option').t`Everyone`} value={GroupPermissions.EveryoneCanSend} />
                                 </InputFieldTwo>
                             </InputFieldStacked>
                         </InputFieldStackedGroup>
@@ -245,8 +271,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 </FormikProvider>
                 <NewGroupMemberInput
                     newGroupMembers={newGroupMembers}
-                    handleAddNewGroupMembers={handleAddNewMembers}
+                    onAddNewGroupMembers={handleAddNewMembers}
                     groupMembers={groupMembers}
+                    onAddAllOrgMembers={handleAddAllOrganizationMembers}
                 />
                 <div className="mt-3 flex flex-column gap-3">
                     <div className="flex flex-column gap-3">

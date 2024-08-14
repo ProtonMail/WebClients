@@ -2637,6 +2637,43 @@
         "Adăugare calendar"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Luați ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Luați-l cu ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Facturat anual cu ${ amountBilled }. Economisiți ${ amountSave } cu două abonamente anuale ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "Doi utilizatori"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Acces complet la toate produsele ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Economisiți ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Toate produsele ${ BRAND_NAME } pentru doi utilizatori."
+      ],
+      "Double your storage": [
+        "Dublați-vă spațiul de stocare"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Vă prezentăm ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Duplicare eveniment"
@@ -3457,6 +3494,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Când este activată o parolă suplimentară, gestionarea alias-ului se poate face numai în ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele"
       ]
@@ -3623,14 +3663,23 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Conturile cu domenii personale nu se pot alătura unui plan de grup."
+      ],
       "customer support": [
         "suportul tehnic"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Planurile de grup nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
       ],
       "Invited by: ${ inviteEmail }": [
         "Invitație de la: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Conturile pe viață nu se pot alătura unui plan de grup."
       ],
       "Manage addresses.": [
         "Gestionare adrese."
@@ -3659,6 +3708,9 @@
       "You have successfully joined the family group": [
         "V-ați alăturat cu succes grupului de familie."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Aveți facturi neplătite. Vă rugăm să le plătiți înainte de a vă alătura unui plan de grup."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Ați primit o invitație să vă conectați contul ${ BRAND_NAME } la acest plan de grup și să vă bucurați împreună de toate funcțiile premium ale ${ BRAND_NAME_TWO }."
       ],
@@ -3667,6 +3719,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Nu puteți accepta această invitație cu planul actual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4744,6 +4799,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Alți utilizatori din organizație vă vor vedea perioadele când aveți activități. Detaliile despre eveniment nu sunt distribuite."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Alertele noastre de erori noastre de atenționare. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
       ],
       "password": [
         "parola"
@@ -6414,9 +6472,6 @@
       "${ size } storage": [
         "${ size } spațiu"
       ],
-      "${ size } storage per user": [
-        "${ size } spațiu per utilizator"
-      ],
       "1 user": [
         "Un utilizator"
       ],
@@ -6434,9 +6489,6 @@
       ],
       "Administration Panel": [
         "Panou de administrare"
-      ],
-      "Advanced sharing security": [
-        "Securitate avansată partajări"
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -6467,9 +6519,6 @@
       ],
       "Collaborate and share large files": [
         "Colaborare și partajare fișiere mari"
-      ],
-      "Collaborative document editor": [
-        "Editor colaborativ de documente"
       ],
       "Contact groups": [
         "Grupuri de contacte"
@@ -6636,9 +6685,6 @@
       ],
       "Send & receive invitations": [
         "Trimiteți și primiți invitații"
-      ],
-      "Share files and folders via link": [
-        "Partajați fișiere și foldere prin legături"
       ],
       "Sign in as user": [
         "Conectați-vă ca utilizator"
@@ -6824,9 +6870,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Asigurați-vă viața digitală cu ${ BRAND_NAME } pentru două persoane."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
@@ -6835,6 +6878,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Contul de început, fără costuri, creat pentru a împuternici pe toată lumea cu confidențialitate în mod implicit."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Confidențialitate nelimitată și mai mult spațiu de stocare pentru până la două persoane."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă ștergeți contul, veți pierde prețul promoțional și nu va fi disponibil dacă creați un cont nou."
@@ -6906,9 +6952,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controlați accesul la fișierele partajate adăugând protecția cu parolă și dată de expirare la legături."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain } pentru abonamentul la știri."
@@ -9069,6 +9112,9 @@
       "Import record deleted": [
         "Înregistrare importare ștearsă"
       ],
+      "Invitation rejected": [
+        "Invitație refuzată"
+      ],
       "Invitation sent and all events updated": [
         "Invitația a fost trimisă și evenimentele au fost actualizate."
       ],
@@ -9471,9 +9517,6 @@
       "Edit image": [
         "Editare imagine"
       ],
-      "Email address": [
-        "Adresa de e-mail"
-      ],
       "Email addresses": [
         "Adrese de e-mail"
       ],
@@ -9583,9 +9626,6 @@
       ],
       "Participants cannot be notified": [
         "Participanții nu pot fi notificați"
-      ],
-      "Password": [
-        "Parola"
       ],
       "Payment failed": [
         "Plată eșuată"
@@ -9715,9 +9755,6 @@
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
-      ],
-      "Sign in with 2FA": [
-        "Autentificare A2F"
       ],
       "Sign out": [
         "Deconectare"

@@ -14,9 +14,10 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 
 interface Props {
     modalProps: ModalStateProps;
+    upsellComponent?: UPSELL_COMPONENT;
 }
 
-const PassAliasesUpsellModal = ({ modalProps }: Props) => {
+const PassAliasesUpsellModal = ({ modalProps, upsellComponent }: Props) => {
     const [user] = useUser();
 
     return (
@@ -35,7 +36,7 @@ const PassAliasesUpsellModal = ({ modalProps }: Props) => {
                 }),
                 getUpsellRef({
                     app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
-                    component: UPSELL_COMPONENT.MODAL,
+                    component: upsellComponent ?? UPSELL_COMPONENT.MODAL,
                     feature: MAIL_UPSELL_PATHS.PASS_ALIASES,
                 })
             )}

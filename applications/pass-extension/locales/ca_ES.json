@@ -134,6 +134,9 @@
       "Create card": [
         "Crea una targeta"
       ],
+      "Create identity": [
+        "Crea una identitat"
+      ],
       "Create login": [
         "Crea un inici de sessió"
       ],
@@ -1408,9 +1411,6 @@
       "Offline support successfully disabled": [
         "S'ha desactivat el mode fora de línia"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se us tancarà la sessió després de 3 intents que no han funcionat."
-      ],
       "Open the Extensions menu": [
         "Obre el menú d'Extensions"
       ],
@@ -1650,6 +1650,9 @@
       "Unlock it with your PIN to access the settings": [
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
       ],
+      "Unlock with biometrics": [
+        "Desbloqueja amb dades biomètriques"
+      ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
       ],
@@ -1871,6 +1874,9 @@
       "Autosuggest": [
         "Suggeriment automàtic"
       ],
+      "Biometrics": [
+        "Dades biomètriques"
+      ],
       "Birthdate": [
         "Data de naixement"
       ],
@@ -1982,6 +1988,9 @@
       "Extra password": [
         "Contrasenya addicional"
       ],
+      "Facebook account": [
+        "Compte de Facebook"
+      ],
       "Field name": [
         "Nom del camp"
       ],
@@ -2083,6 +2092,9 @@
       ],
       "License number": [
         "Número de llicència"
+      ],
+      "LinkedIn account": [
+        "Compte de LinkedIn"
       ],
       "Login": [
         "Inici de sessió"
@@ -2531,6 +2543,9 @@
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
+      "Autofill": [
+        "Emplenament automàtic"
+      ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
       ],
@@ -2587,6 +2602,9 @@
       ],
       "History": [
         "Historial"
+      ],
+      "Identity": [
+        "Identitat"
       ],
       "Import - ${ date }": [
         "Importació - ${ date }"
@@ -2792,9 +2810,6 @@
       ],
       "Empty note": [
         "Nota buida"
-      ],
-      "Encryption password is required": [
-        "Es requereix una contrasenya de xifratge"
       ],
       "Expiration Date is not in the format MM/YY": [
         "La data de caducitat no té el format MM/AA"

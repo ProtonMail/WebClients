@@ -14,7 +14,7 @@ export const GroupMemberItemWrapper = ({ memberEmail, memberName, children }: Pr
         <>
             <div className="flex gap-3">
                 <Avatar className="shrink-0 text-rg" color="weak">
-                    {getInitials(memberName ?? memberEmail)}
+                    {getInitials(memberName ?? memberEmail ?? '')}
                 </Avatar>
                 <span className="flex-1 flex flex-column justify-center">
                     <span className="block max-w-full text-ellipsis" title={memberName}>

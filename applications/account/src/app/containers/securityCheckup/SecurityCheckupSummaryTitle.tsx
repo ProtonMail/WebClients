@@ -21,7 +21,7 @@ const Title = ({
             <div className={clsx('rounded-full p-6 overflow-hidden', `security-checkup-color--${color}`)}>
                 <Icon name={icon} size={10} />
             </div>
-            <h1 className="text-4xl text-bold">{c('l10n_nightly: Security checkup').t`Account safety review`}</h1>
+            <h1 className="text-4xl text-bold">{c('Safety review').t`Account safety review`}</h1>
             <div className="color-weak max-w-custom" style={{ '--max-w-custom': '20rem' }}>
                 {subline}
             </div>
@@ -35,7 +35,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE) {
         return (
             <Title
-                subline={c('l10n_nightly: Security checkup').t`Your account is secure.`}
+                subline={c('Safety review').t`Your account is secure.`}
                 icon="pass-shield-ok"
                 color="success"
                 className={className}
@@ -46,8 +46,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE) {
         return (
             <Title
-                subline={c('l10n_nightly: Security checkup')
-                    .t`Your account and data can be recovered. You have recommended actions.`}
+                subline={c('Safety review').t`Your account and data can be recovered. You have recommended actions.`}
                 icon="pass-shield-warning"
                 color="info"
                 className={className}
@@ -58,8 +57,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED) {
         return (
             <Title
-                subline={c('l10n_nightly: Security checkup')
-                    .t`Critical issues found. You are at risk of losing access to your data.`}
+                subline={c('Safety review').t`Critical issues found. You are at risk of losing access to your data.`}
                 icon="pass-shield-warning"
                 color="warning"
                 className={className}
@@ -70,7 +68,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.NO_RECOVERY_METHOD) {
         return (
             <Title
-                subline={c('l10n_nightly: Security checkup')
+                subline={c('Safety review')
                     .t`Critical issues found. You are at risk of losing access to your account and data.`}
                 icon="pass-shield-warning"
                 color="danger"

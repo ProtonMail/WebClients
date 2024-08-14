@@ -658,7 +658,7 @@
         "Aliasvaihtoehtoja ei voitu selvittää"
       ],
       "Authentication error": [
-        "Todennusvirhe"
+        "Tunnistautumisvirhe"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Jatka vientiä vahvistamalla ${ BRAND_NAME } -salasanasi"
@@ -1085,6 +1085,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }in avaus vaatii aina ${ BRAND_NAME }-salasanasi."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
+      ],
       "Add a username field": [
         "Lisää käyttäjätunnus-kenttä"
       ],
@@ -1135,6 +1138,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrinen lukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometria poistetaan käytöstä, ja se on otettava käyttöön uudelleen."
       ],
       "Breaches detected": [
         "Tietomurtoja havaittiin"
@@ -1234,6 +1243,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Automaattista biometristä lukitusta otetaan käyttöön"
+      ],
+      "Enabling biometrics lock failed": [
+        "Automaattisen biometrisen lukituksen käyttöönotto epäonnistui"
       ],
       "Enabling offline mode...": [
         "Yhteydetöntä tilaa otetaan käyttöön..."
@@ -1463,8 +1478,8 @@
       "Offline support successfully disabled": [
         "Yhteydetön tila poistettiin käytöstä"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii istunnon avaamisen PIN-koodilla. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Hälytyksemme ovat varovaisia. Jos et tunnista tietomurron kohteeksi joutuneita tietoja lainkaan, voit huoletta jättää tämän raportin huomiotta."
       ],
       "Owner": [
         "Omistaja"
@@ -1506,8 +1521,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
+      "Please confirm your extra password": [
+        "Vahvista lisäsalasanasi"
+      ],
       "Please confirm your password": [
         "Vahvista salasanasi"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Käytä automaattista biometristä lukitusta vahvistamalla salasanasi."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Käytä automaattista salasanalukitusta vahvistamalla salasanasi."
@@ -1660,6 +1681,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
+      "This option is currently not available on your device.": [
+        "Tämä valinta ei ole tällä hetkellä käytettävissä laitteellasi."
+      ],
       "This setting is disabled on the organization level": [
         "Tämä asetus on poistettu käytöstä organisaatiotasolla"
       ],
@@ -1684,11 +1708,17 @@
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Avaa ${ PASS_SHORT_APP_NAME } biometrialla"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
+      ],
+      "Unlock with biometrics": [
+        "Avaa biometrialla"
       ],
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
@@ -1788,7 +1818,7 @@
         "Sinut on kutsuttu jaettuun holviin."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Tilisi on rajoitettu, koska organisaatiosi on pakottanut kaksivaiheisen todennuksen. Ota kaksivaiheinen todennus käyttöön tiliasetuksissasi tai ota yhteyttä järjestelmänvalvojaan."
+        "Tilisi on rajoitettu, koska organisaatiosi on pakottanut kaksivaiheisen tunnistautumisen. Ota kaksivaiheinen tunnistautuminen käyttöön tiliasetuksissasi tai ota yhteyttä ylläpitäjään."
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -1905,6 +1935,9 @@
       ],
       "Beta Access": [
         "Käytä beetaversiota"
+      ],
+      "Biometrics": [
+        "Biometria"
       ],
       "Birthdate": [
         "Syntymäpäivä"
@@ -2228,7 +2261,7 @@
         "Organisaatio"
       ],
       "Passkey": [
-        "Suojausavain"
+        "Todentamisavain"
       ],
       "Passphrase": [
         "Tunnuslauseke"
@@ -2380,6 +2413,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Unlock with": [
+        "Lukituksen avaustapa"
       ],
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
@@ -2691,11 +2727,11 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
-      "Email address": [
-        "Sähköpostiosoite"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
+      ],
+      "Enter your extra password": [
+        "Syötä lisäsalasanasi"
       ],
       "Enter your password": [
         "Syötä salasanasi"
@@ -2791,10 +2827,7 @@
         "Tervetuliaislahjamme sinulle"
       ],
       "Passkey": [
-        "Suojausavain"
-      ],
-      "Password": [
-        "Salasana"
+        "Todentamisavain"
       ],
       "Password Health": [
         "Salasanaterveys"
@@ -2957,6 +2990,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } -salasana vaaditaan"
+      ],
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
       ],
@@ -2993,14 +3029,14 @@
       "Empty note": [
         "Tyhjä muistiinpano"
       ],
-      "Encryption password is required": [
-        "Salaussalasana vaaditaan"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"
       ],
       "Extra password cannot be empty": [
         "Lisäsalasana ei voi olla tyhjä"
+      ],
+      "Extra password is required": [
+        "Lisäsalasana vaaditaan"
       ],
       "Extra password should have at least 8 characters": [
         "Lisäsalasanan täytyy sisältää vähintään 8 merkkiä"

@@ -3102,6 +3102,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "啟用額外密碼時，別名管理只能在 ${ PASS_APP_NAME } 中進行。"
+      ],
       "You may also refresh the page or try again later.": [
         "您亦可重新整理此頁面，或稍後再試一次。"
       ]
@@ -6487,9 +6490,6 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
-      "${ size } storage per user": [
-        "${ size } 可用空間 / 每位使用者"
-      ],
       "1 user": [
         "1 位使用者"
       ],
@@ -6507,9 +6507,6 @@
       ],
       "Administration Panel": [
         "管理介面"
-      ],
-      "Advanced sharing security": [
-        "進階的共享安全性"
       ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
@@ -6540,9 +6537,6 @@
       ],
       "Collaborate and share large files": [
         "合作和共享大型檔案"
-      ],
-      "Collaborative document editor": [
-        "合作文件編輯者"
       ],
       "Contact groups": [
         "聯絡人群組"
@@ -6702,9 +6696,6 @@
       ],
       "Send & receive invitations": [
         "傳送並接收邀請"
-      ],
-      "Share files and folders via link": [
-        "透過連結分享檔案及資料夾"
       ],
       "Sign in as user": [
         "登入為使用者"
@@ -6877,9 +6868,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "透過${ BRAND_NAME }為兩人保護您的數位生活。"
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "為具有特定安全需求的大型組織量身訂作的解決方案"
       ],
@@ -6944,9 +6932,6 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "目前並不支援大量推廣或程式化電子郵件傳送。我們建議使用專屬的電子郵件服務提供者作此用途。"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "管控您共享檔案的存取，可透過加入密碼防護，以及設定連結有效日期"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "為您的線上身分創建多個電子郵件位址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
@@ -8746,6 +8731,9 @@
       "Import record deleted": [
         "匯入記錄已刪除"
       ],
+      "Invitation rejected": [
+        "邀請已拒絕"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "最後修改的別名已儲存到您最舊的保險庫"
       ],
@@ -9132,9 +9120,6 @@
       "Edit image": [
         "編輯圖像"
       ],
-      "Email address": [
-        "電子郵件地址"
-      ],
       "Email addresses": [
         "電郵位址"
       ],
@@ -9279,9 +9264,6 @@
       "Other names": [
         "其它名稱"
       ],
-      "Password": [
-        "密碼"
-      ],
       "Payment failed": [
         "付款失敗"
       ],
@@ -9404,9 +9386,6 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
-      ],
-      "Sign in with 2FA": [
-        "使用 2FA 登入"
       ],
       "Sign out": [
         "登出"

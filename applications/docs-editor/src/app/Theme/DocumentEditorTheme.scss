@@ -95,21 +95,17 @@
 }
 
 .Lexical__commentThreadMark {
-	--rgb: 255 135 0;
-	--base-bg: rgb(var(--rgb) / 0.3);
-	--overlap-bg: rgb(var(--rgb) / 0.35);
-	--selected-bg: rgb(var(--rgb) / 0.4);
+	--rgb: 255 153 0;
+	--base-bg: rgb(var(--rgb) / 0.2);
+	--selected-bg: rgb(var(--rgb) / 1);
 
 	background: var(--base-bg);
 	font-weight: inherit;
 	color: inherit;
 
-	&.selected {
+	&.selected,
+	&.hovered {
 		background: var(--selected-bg);
-	}
-
-	&Overlap {
-		background: var(--overlap-bg);
 	}
 }
 

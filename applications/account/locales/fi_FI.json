@@ -157,6 +157,9 @@
       "Allow": [
         "Salli"
       ],
+      "Always allow sending mail to group": [
+        "Salli aina sähköpostin lähettäminen ryhmälle"
+      ],
       "Apply": [
         "Toteuta"
       ],
@@ -170,7 +173,7 @@
         "Tunnistaudu"
       ],
       "Authenticating": [
-        "Varmennetaan"
+        "Vahvistetaan"
       ],
       "Back": [
         "Takaisin"
@@ -388,6 +391,9 @@
       "Disable": [
         "Poista käytöstä"
       ],
+      "Disable E2EE for group address": [
+        "Poista E2EE käytöstä ryhmäosoitteelle"
+      ],
       "Disable recovery phrase": [
         "Poista palautuslauseke käytöstä"
       ],
@@ -489,6 +495,9 @@
       ],
       "Enable device-based recovery": [
         "Ota laitteistopohjainen palautus käyttöön"
+      ],
+      "Enable E2EE for group address": [
+        "Ota päästä päähän -salaus käyttöön ryhmäosoitteelle"
       ],
       "Enable multi-user support": [
         "Ota usean käyttäjän tuki käyttöön"
@@ -1180,6 +1189,9 @@
       "Use authentication code": [
         "Käytä todennuskoodia"
       ],
+      "Use group sending permissions": [
+        "Käytä ryhmälähetyksen käyttöoikeuksia"
+      ],
       "Use recovery code": [
         "Käytä palautuskoodia"
       ],
@@ -1367,8 +1379,8 @@
       "External": [
         "Ulkoinen"
       ],
-      "Missing keys": [
-        "Puuttuvat avaimet"
+      "Inactive": [
+        "Pois käytöstä"
       ],
       "No E2EE mail": [
         "Ei PP-salattua postia"
@@ -3380,6 +3392,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Käytä näitä ominaisuuksia ottamalla yksityiskohtaiset tapahtumat ja ${ PROTON_SENTINEL_NAME } käyttöön"
+      ],
+      "Enable detailed events to access these features": [
+        "Käytä näitä ominaisuuksia ottamalla yksityiskohtaiset tapahtumat käyttöön"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
@@ -3598,9 +3616,6 @@
       "Free, encrypted, and secure cloud storage": [
         "Ilmainen, salattu ja turvallinen pilvitallennustila"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Turvallinen pilvitallennustila ja tietojasi suojaava tiedostojen jakaminen"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Sinut on kutsuttu käyttämään tiedostoa palvelussa: ${ DRIVE_APP_NAME }"
       ]
@@ -3611,6 +3626,43 @@
       ],
       "Priority support": [
         "Ensisijainen tuki"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Hanki ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Hanki se hintaan ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Laskutetaan vuosittain hintaan ${ amountBilled }. Säästä ${ amountSave }, kahden henkilön vuosittaisiin ${ BRAND_NAME } Unlimited -tilauksiin verrattuna."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 käyttäjää"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Täysi pääsy kaikkiin ${ BRAND_NAME } -tuotteisiin"
+      ],
+      "You save ${ amountSave }": [
+        "Säästät ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Kaikki ${ BRAND_NAME }:n tarjoama, kahdelle."
+      ],
+      "Double your storage": [
+        "Tuplaa tallennustilasi"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Esittelyssä ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5056,8 +5108,14 @@
       "*Only one free trial per customer.": [
         "*Vain yksi ilmainen kokeilu asiakasta kohden."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
+      ],
       "customer support": [
         "asiakaspalveluun"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Ryhmätilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
@@ -5076,6 +5134,9 @@
       ],
       "Leave Visionary plan": [
         "Poistu Visionary-tilauksesta"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Elinikäiset tilit eivät voi liittyä ryhmätilaukseen."
       ],
       "Manage addresses.": [
         "Hallitse osoitteita."
@@ -5134,11 +5195,17 @@
       "You have successfully joined the family group": [
         "Olet liittynyt perheryhmään"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Sinulla on maksamattomia laskuja. Maksa ne ennen ryhmätilaukseen liittymistä."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin voit lisätä useita käyttäjiä."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Sinun on määritettävä oma verkkotunnus ennen kuin luot uuden käyttäjän."
+      ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Menetät pääsyn kaikkiin ${ plan } -tilauksen sisältämiin premium-ominaisuuksiin ja tallennustilaan."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Sinut on kutsuttu yhdistämään ${ BRAND_NAME }-tilisi tähän ryhmätilaukseen ja nauttimaan kaikista ${ BRAND_NAME_TWO }in premium-ominaisuuksista yhdessä."
@@ -5148,6 +5215,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Et voi hyväksyä kutsua nykyisellä tilauksellasi."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5217,6 +5287,9 @@
       ],
       "An error occurred, please try again": [
         "Tapahtui virhe. Yritä uudelleen."
+      ],
+      "Family name updated": [
+        "Perheen nimi päivitettiin"
       ],
       "Member updated": [
         "Jäsen päivitettiin"
@@ -5296,93 +5369,93 @@
     },
     "fido2: Action": {
       "Add security key": [
-        "Liitä todennuslaite"
+        "Liitä suojausavain"
       ],
       "Delete key": [
-        "Poista todennuslaite"
+        "Poista avain"
       ]
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Poista kaksivaiheinen tunnistautuminen todennuslaitteella käytöstä ennen TOTP:n käytöstäpoistoa"
+        "Poista kaksivaiheinen tunnistautuminen suojausavaimella käytöstä ennen TOTP:n käytöstäpoistoa"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Jotain meni pieleen todennuslaitteellasi tunnistauduttaessa. Yritä uudelleen."
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Jotain meni pieleen todennuslaitteesi rekisteröinnissä. Yritä uudelleen."
+        "Jotain meni pieleen suojausavaimesi rekisteröinnissä. Yritä uudelleen."
       ]
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Kaksivaiheinen tunnistautuminen todennuslaitteella poistettiin käytöstä"
+        "Kaksivaiheinen tunnistautuminen suojausavaimella poistettiin käytöstä"
       ],
       "Add a name to identify your security key with.": [
-        "Anna todennuslaitteellesi tunnistettava nimi."
+        "Anna suojausavaimellesi tunnistettava nimi."
       ],
       "Allow platform keys": [
         "Salli alustojen avaimet"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Mahdollistaa sisäänrakennettujen todennuslaitteiden käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
+        "Mahdollistaa sisäänrakennettujen suojausavainten käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
+        "Haluatko varmasti poistaa suojausavaimen ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Kytke ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Insert your security key into your device's USB port.": [
-        "Kytke todennuslaitteesi laitteen USB-porttiin."
+        "Kytke suojausavaimesi laitteen USB-porttiin."
       ],
       "Security key": [
-        "Todennuslaite"
+        "Suojausavain"
       ],
       "Security key removed": [
-        "Todennuslaite poistettiin"
+        "Suojausavain poistettiin"
       ],
       "Security key updated": [
-        "Todennuslaite päivitettiin"
+        "Suojausavain päivitettiin"
       ],
       "This will delete all security keys linked to your account.": [
-        "Tämä poistaa kaikki tiliisi liitetyt todennuslaitteet."
+        "Tämä poistaa kaikki tiliisi liitetyt suojausavaimet."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Käyttääksesi kaksivaiheista tunnistautumista todennuslaitteella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
+        "Käyttääksesi kaksivaiheista tunnistautumista suojausavaimella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Vahvista identiteettisi fyysisellä U2F- tai FIDO2-todennuslaitteella"
+        "Vahvista identiteettisi fyysisellä U2F- tai FIDO2-suojausavaimella"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Todennuslaitteesi on valmis käyttöön."
+        "Suojausavaimesi on valmis käyttöön."
       ]
     },
     "fido2: Label": {
       "Key name": [
-        "Todennuslaitteen nimi"
+        "Avaimen nimi"
       ],
       "Security key": [
-        "Todennuslaite"
+        "Suojausavain"
       ]
     },
     "fido2: Title": {
       "Delete security key?": [
-        "Poistetaanko todennuslaite?"
+        "Poistetaanko suojausavain?"
       ],
       "Disable 2FA via security key?": [
-        "Poistetaanko kaksivaiheinen tunnistautuminen todennuslaitteella käytöstä?"
+        "Poistetaanko kaksivaiheinen tunnistautuminen suojausavaimella käytöstä?"
       ],
       "Name your security key": [
-        "Nimeä todennuslaitteesi"
+        "Nimeä suojausavaimesi"
       ],
       "Register your security key": [
-        "Rekisteröi todennuslaitteesi"
+        "Rekisteröi suojausavaimesi"
       ],
       "Registered security keys": [
-        "Liitetyt todennuslaitteet"
+        "Liitetyt suojausavaimet"
       ],
       "Security key registered": [
-        "Todennuslaite rekisteröitiin"
+        "Suojausavain rekisteröitiin"
       ]
     },
     "file size format": {
@@ -6674,9 +6747,6 @@
       "Are you sure you want to delete this label?": [
         "Haluatko varmasti poistaa tunnisteen?"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Haluatko varmasti poistaa kaksivaiheisen tunnistautumisen käytöstä?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
       ],
@@ -7112,6 +7182,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Tapahtumakutsut ja osanottovahvistukset lähetetään tällä kielellä."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Tapahtumiin sisältyvät tunnistautumisyritykset kaikkiin ${ BRAND_NAME } -tunnuksiasi käyttäviin ${ BRAND_NAME_TWO } -palveluihin."
       ],
       "Example: ${ spfExample }": [
         "Esimerkki: ${ spfExample }"
@@ -7718,6 +7791,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Organisaatiosi muut käyttäjät näkevät varatut aikasi. Tapahtumatietoja ei jaeta."
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Hälytyksemme ovat varovaisia. Jos et tunnista tietomurron kohteeksi joutuneita tietoja lainkaan, voit huoletta jättää tämän raportin huomiotta."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Vanhentunut palautustiedosto, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
@@ -7887,7 +7963,7 @@
         "osta lisää tallennustilaa"
       ],
       "read our two-factor authentication guide first": [
-        "luet ensin oppaamme kaksivaiheiseen todennukseen"
+        "luet ensin kaksivaiheisen tunnistautumisen oppaamme"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Suositeltavaa luotettavilla laitteilla. ${ keepMeSignedInLearnMoreLink }"
@@ -9087,6 +9163,11 @@
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Virheellinen sähköpostiosoite"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Linkin tunniste (valinnainen)"
@@ -9103,6 +9184,9 @@
       ],
       "Rejected": [
         "Kieltäydytty"
+      ],
+      "Sending invite...": [
+        "Lähetetään kutsua..."
       ]
     },
     "Invoice state display as badge": {
@@ -9476,6 +9560,27 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
+      ],
+      "1 hour": [
+        "Tunnin kuluttua"
+      ],
+      "1 minute": [
+        "Minuutin kuluttua"
+      ],
+      "10 minutes": [
+        "10 minuutin kuluttua"
+      ],
+      "15 minutes": [
+        "15 minuutin kuluttua"
+      ],
+      "30 minutes": [
+        "30 minuutin kuluttua"
+      ],
+      "30 seconds": [
+        "30 sekunnin kuluttua"
+      ],
+      "5 minutes": [
+        "Viiden minuutin kuluttua"
       ],
       "Account recovery": [
         "Tilin palautus"
@@ -10811,6 +10916,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
+      ],
+      "Enable detailed events": [
+        "Ota yksityiskohtaiset tapahtumat käyttöön"
+      ],
+      "Enable security events": [
+        "Ota suojaustapahtumat käyttöön"
       ]
     },
     "Mail import summary": {
@@ -11415,9 +11526,6 @@
       "${ size } storage": [
         "${ size } tallennustilaa"
       ],
-      "${ size } storage per user": [
-        "${ size } tallennustilaa/käyttäjä"
-      ],
       "1 user": [
         "1 käyttäjä"
       ],
@@ -11441,9 +11549,6 @@
       ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
-      ],
-      "Advanced sharing security": [
-        "Edistynyt jakojen suojaus"
       ],
       "All ${ BRAND_NAME } services": [
         "Kaikki ${ BRAND_NAME } -palvelut"
@@ -11480,9 +11585,6 @@
       ],
       "Collaborate and share large files": [
         "Tee yhteistyötä ja jaa suuria tiedostoja"
-      ],
-      "Collaborative document editor": [
-        "Yhteistoiminnallinen dokumenttieditori"
       ],
       "Contact groups": [
         "Yhteystietoryhmät"
@@ -11600,7 +11702,7 @@
         "Järjestele kohteita useilla holveilla"
       ],
       "Passkeys supported": [
-        "Tuki suojausavaimille"
+        "Tuki pääsyavaimille"
       ],
       "Password health": [
         "Salasanaterveys"
@@ -11624,7 +11726,7 @@
         "Ensisijainen tuki ja live-chat"
       ],
       "Proofread and refine your texts": [
-        "Oikolue ja paranna tekstiäsi"
+        "Oikolue ja paranna kirjoitustasi"
       ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
@@ -11663,9 +11765,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa"
-      ],
-      "Share files and folders via link": [
-        "Jaa tiedostoja ja kansioita linkin välityksellä"
       ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
@@ -11879,9 +11978,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Suojaa digitaalinen elämäsi ${ BRAND_NAME }:lla kahdelle ihmisille."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Määrittämällä automaattivastauksia voit ilmoittaa yhteydenottajille, ettet ole töissä tai voi muusta syystä vastata."
       ],
@@ -11893,6 +11989,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Maksuton aloitustili, joka on suunniteltu tuomaan oletusarvoinen yksityisyys kaikkien ulottuville."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Rajaton yksityisyys ja lisätallennustilaa enintään kahdelle henkilölle."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Nautit alennetusta myynninedistämishinnasta nykyisessä tilauksessasi. Jos poistat tilisi, menetät alennetun myynninedistämishinnan, joka ei ole enää käytettävissä, jos luot uuden tilin."
@@ -12021,9 +12120,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Mukauta aikoja, jolloin sinua muistutetaan sähköpostista tai viestisi saapumisesta"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkeille erääntymisajat"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain } uutiskirjeille."
@@ -12934,9 +13030,6 @@
       "Current plan": [
         "Nykyinen tilaus"
       ],
-      "Customizable services for large teams.": [
-        "Mukautettavat palvelut suurille ryhmille."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME }ssin käyttäminen lataamalla ja asentamalla tarvitsemasi sovellukset ja laajennukset"
       ],
@@ -13012,9 +13105,6 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }:n pysyäkseen turvassa verkossa"
       ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Liity yli 50 000 yrityksen joukkoon, jotka luottavat ${ BRAND_NAME } -tuotteeseen."
-      ],
       "Launching ${ PASS_APP_NAME }": [
         "Käynnistetään ${ PASS_APP_NAME }"
       ],
@@ -13034,7 +13124,7 @@
         "Avoin lähdekoodi ja auditoitu"
       ],
       "Passkeys supported on all devices": [
-        "Suojausavaimia tuetaan kaikilla laitteilla"
+        "Avainkoodeja tuetaan kaikilla laitteilla"
       ],
       "per month": [
         "kuukaudessa"
@@ -14354,16 +14444,6 @@
         "Vahvistus"
       ]
     },
-    "signup: Action": {
-      "Request a demo": [
-        "Pyydä kokeilua"
-      ]
-    },
-    "signup_2024: Feature": {
-      "GDPR compliant": [
-        "GDPR:n mukainen"
-      ]
-    },
     "specialoffer: Action": {
       "Close": [
         "Sulje"
@@ -15348,6 +15428,9 @@
       "Import record deleted": [
         "Tuontitapahtuma poistettiin"
       ],
+      "Invitation rejected": [
+        "Kutsusta kieltäydyttiin"
+      ],
       "Invitation sent": [
         "Kutsu lähetettiin"
       ],
@@ -15371,6 +15454,18 @@
       ],
       "Organization activated": [
         "Organisaatio aktivoitiin"
+      ],
+      "Organization identity updated": [
+        "Organisaation identiteetti päivitettiin"
+      ],
+      "Organization logo removed": [
+        "Organisaation logo poistettiin"
+      ],
+      "Organization logo updated": [
+        "Organisaation logo päivitettiin"
+      ],
+      "Organization name updated": [
+        "Organisaation nimi päivitettiin"
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
@@ -15827,7 +15922,7 @@
         "Oletko varma?"
       ],
       "Authentication security": [
-        "Todentamisen turvallisuus"
+        "Tunnistautumisen turvallisuus"
       ],
       "Auto-reply": [
         "Automaattivastaus"
@@ -16142,9 +16237,6 @@
       ],
       "Email": [
         "Sähköposti"
-      ],
-      "Email address": [
-        "Sähköpostiosoite"
       ],
       "Email composer": [
         "Sähköpostin kirjoitusikkuna"
@@ -16547,6 +16639,9 @@
       "Security and privacy": [
         "Suojaus ja yksityisyys"
       ],
+      "Security events": [
+        "Turvallisuustapahtumat"
+      ],
       "Security logs": [
         "Suojauslokit"
       ],
@@ -16618,9 +16713,6 @@
       ],
       "Sign in to your organization": [
         "Kirjaudu organisaatioosi"
-      ],
-      "Sign in with 2FA": [
-        "Kirjaudu kaksivaiheisella todennuksella"
       ],
       "Sign out": [
         "Kirjaudu ulos"
@@ -16974,6 +17066,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Yksityiskohtaisten tapahtumien käyttöönotto tallentaa kunkin tapahtuman IP-osoitteen."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
@@ -17046,6 +17141,9 @@
       "This address has been disabled": [
         "Tämä osoite on poistettu käytöstä"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Tämä voi johtua salasanan nollauksesta tai siitä, että käyttäjä ei ole vielä kirjautunut sisään."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tämä sähköpostiosoite näytetään kaikille organisaation jäsenille tilinhallintatoimintoja suoritettaessa."
       ],
@@ -17116,6 +17214,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajoittamattoman määrän aliaksia, jakamisen, integroidun 2FA:n ja muuta."
+      ],
+      "Sending member invitation": [
+        "Jäsenkutsua lähetetään"
       ],
       "User rejected invitation": [
         "Käyttäjä kieltäytyi kutsusta"
@@ -17569,6 +17670,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Jos poistat tämän puhelinnumeron, et voi enää palauttaa tiliäsi."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Turvallisuustapahtumien seurannan käytöstäpoiston yhteydessä tyhjennetään myös koko historiasi. Haluatko varmasti poistaa sen käytöstä?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"

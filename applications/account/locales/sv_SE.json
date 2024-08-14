@@ -1189,6 +1189,9 @@
       "Use authentication code": [
         "Använd autentiseringskod"
       ],
+      "Use group sending permissions": [
+        "Använd behörigheter för gruppsändning"
+      ],
       "Use recovery code": [
         "Använd återställningskod"
       ],
@@ -1372,8 +1375,8 @@
       "External": [
         "Extern"
       ],
-      "Missing keys": [
-        "Saknar nycklar"
+      "Inactive": [
+        "Inaktiv"
       ],
       "No E2EE mail": [
         "Ingen E2EE e-post"
@@ -3608,11 +3611,33 @@
       "Free, encrypted, and secure cloud storage": [
         "Gratis, krypterad och säker molnlagring"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Säker molnlagring och fildelning som skyddar din data"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du är inbjuden att komma åt en fil i ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Secure:** end-to-end encryption": [
+        "**Säker:** end-to-end-kryptering"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Enkelt och användarvänligt:** importera dina filer och inställningar på några minuter"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Avancerat skydd som går utöver branschstandarder"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Skydda känslig företagsinformation och samarbeta säkert"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Säker molnlagring som ger dig kontroll över dina data"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Skräddarsydda lösningar för större organisationer med anpassade behov"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Den enda företagslösningen som är:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3621,6 +3646,38 @@
       ],
       "Priority support": [
         "Prioriterad support"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Skaffa det för ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 användare"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Full åtkomst till alla ${ BRAND_NAME }-produkter"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparar ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Allt av ${ BRAND_NAME }, för 2."
+      ],
+      "Double your storage": [
+        "Dubbla ditt lagringsutrymme"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Introducerar ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5066,8 +5123,14 @@
       "*Only one free trial per customer.": [
         "*Endast en gratis provperiod per kund."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konton med anpassade domäner kan inte gå med i ett gruppaket"
+      ],
       "customer support": [
         "kundsupport"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppaket stöder för närvarande inte externa konton. Skapa en ${ BRAND_NAME }-adress innan du går med. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Om du accepterar inbjudan kommer vi att byta från ditt nuvarande paket och kreditera ditt konto med eventuellt återstående saldo."
@@ -5086,6 +5149,9 @@
       ],
       "Leave Visionary plan": [
         "Lämna Visionary-paket"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Livstidskonton kan inte gå med i ett gruppaket."
       ],
       "Manage addresses.": [
         "Hantera adresser."
@@ -5143,6 +5209,9 @@
       ],
       "You have successfully joined the family group": [
         "Du har gått med i familjegruppen"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du har obetalda fakturor. Betala dem innan du går med i ett gruppaket."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du måste konfigurera en anpassad domän innan du lägger till flera användare."
@@ -5233,6 +5302,9 @@
       ],
       "An error occurred, please try again": [
         "Ett fel uppstod, försök igen"
+      ],
+      "Family name updated": [
+        "Familjenamn uppdaterat"
       ],
       "Member updated": [
         "Medlem uppdaterad"
@@ -6599,6 +6671,9 @@
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Efter att ha blivit låst måste organisationsmedlemmar låsa upp ${ PASS_APP_NAME } med sitt lösenord eller PIN-kod etc."
+      ],
       "Align left": [
         "Vänsterjustera"
       ],
@@ -6700,9 +6775,6 @@
       ],
       "Are you sure you want to delete this label?": [
         "Är du säker på att du vill ta bort denna etikett?"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Är du säker på att du vill inaktivera tvåfaktorsautentisering?"
       ],
       "Are you sure you want to discard your changes?": [
         "Är du säker på att du vill ignorera dina ändringar?"
@@ -6881,6 +6953,10 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för den här importeringen och etiketterna som du skulle vilja importera."
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Skapa ett säkert moln för ${ n } medlem",
+        "Skapa ett säkert moln för ${ n } medlemmar"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Skapa och hantera underkonton och tilldela dem e-postadresser på din anpassade domän."
@@ -7130,6 +7206,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Händelseinbjudningar och OSA kommer att skickas på detta språk."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Händelser inkluderar autentiseringsförsök för alla ${ BRAND_NAME }-tjänster som använder dina ${ BRAND_NAME_TWO }-inloggningsuppgifter."
       ],
       "Example: ${ spfExample }": [
         "Exempel: ${ spfExample }"
@@ -9468,6 +9547,33 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
+      "1 hour": [
+        "1 timme"
+      ],
+      "1 minute": [
+        "1 minut"
+      ],
+      "10 minutes": [
+        "10 minuter"
+      ],
+      "15 minutes": [
+        "15 minuter"
+      ],
+      "2 minutes": [
+        "2 minuter"
+      ],
+      "30 minutes": [
+        "30 minuter"
+      ],
+      "30 seconds": [
+        "30 sekunder"
+      ],
+      "4 hours": [
+        "4 timmar"
+      ],
+      "5 minutes": [
+        "5 minuter"
+      ],
       "Account recovery": [
         "Kontoåterställning"
       ],
@@ -9795,6 +9901,9 @@
       "Disable sharing outside the organization": [
         "Inaktivera delning utanför organisationen"
       ],
+      "Disabled": [
+        "Inaktiverad"
+      ],
       "Display name": [
         "Visningsnamn"
       ],
@@ -9992,6 +10101,9 @@
       ],
       "Link label (optional)": [
         "Länketikett (valfritt)"
+      ],
+      "Lock app after inactivity": [
+        "Lås app efter inaktivitet"
       ],
       "Logo": [
         "Logga"
@@ -10802,6 +10914,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktivera ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Aktivera detaljerade händelser"
+      ],
+      "Enable security events": [
+        "Aktivera säkerhetshändelser"
       ]
     },
     "Mail import summary": {
@@ -11406,9 +11524,6 @@
       "${ size } storage": [
         "${ size } lagringsutrymme"
       ],
-      "${ size } storage per user": [
-        "${ size } lagringsutrymme per användare"
-      ],
       "1 user": [
         "1 användare"
       ],
@@ -11429,9 +11544,6 @@
       ],
       "Advanced network security": [
         "Avancerad nätverkssäkerhet"
-      ],
-      "Advanced sharing security": [
-        "Avancerad delningssäkerhet"
       ],
       "All ${ BRAND_NAME } services": [
         "Alla ${ BRAND_NAME }-tjänster"
@@ -11468,9 +11580,6 @@
       ],
       "Collaborate and share large files": [
         "Samarbeta och dela stora filer"
-      ],
-      "Collaborative document editor": [
-        "Dokumentredigerare för samarbete"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -11599,6 +11708,9 @@
       "Phone support (40+ users)": [
         "Telefonsupport (40+ användare)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premiumfunktioner av ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      ],
       "Priority email support": [
         "Prioriterad e-postsupport"
       ],
@@ -11648,9 +11760,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servrar i ${ vpnServersCountData.paid.countries }+ land",
         "Servrar i ${ vpnServersCountData.paid.countries }+ länder"
-      ],
-      "Share files and folders via link": [
-        "Dela filer och mappar via länk"
       ],
       "Sign in as user": [
         "Logga in som användare"
@@ -11752,6 +11861,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
+      ],
+      "Version history": [
+        "Versionshistorik"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
@@ -11864,9 +11976,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Säkra ditt digitala liv med ${ BRAND_NAME } för två personer."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Ställ in automatiska svar för att informera avsändare om att du är borta från kontoret eller inte kan svara."
       ],
@@ -11878,6 +11987,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Gratiskontot designat för att ge alla integritet som standard."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Obegränsad integritet och mer lagringsutrymme för upp till 2 personer."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du tar bort ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du skapar ett nytt konto."
@@ -12009,9 +12121,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Välj anpassade tider för att bli påmind om ett e-postmeddelande eller för att ditt meddelande ska komma fram"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kontrollera åtkomst till dina delade filer genom att lägga till lösenordsskydd och länkens utgångsdatum"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain } för nyhetsprenumerationer"
@@ -12943,9 +13052,6 @@
       "Current plan": [
         "Nuvarande paket"
       ],
-      "Customizable services for large teams.": [
-        "Anpassningsbara tjänster för stora team."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Ladda ner och installera relevanta appar och tillägg för att börja använda ${ PASS_APP_NAME }"
       ],
@@ -13020,9 +13126,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli en del av över 100 miljoner människor som har valt ${ BRAND_NAME } för att hålla sig säkra online"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Gå med och bli en del av över 50 000 organisationer som litar på ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Lanserar ${ PASS_APP_NAME }"
@@ -14338,13 +14441,13 @@
       ]
     },
     "signup: Action": {
-      "Request a demo": [
-        "Begär en demo"
+      "Request trial": [
+        "Begär provperiod"
       ]
     },
     "signup_2024: Feature": {
-      "GDPR compliant": [
-        "GDPR-kompatibel"
+      "GDPR and HIPAA compliant": [
+        "GDPR och HIPAA-kompatibel"
       ]
     },
     "specialoffer: Action": {
@@ -15316,6 +15419,9 @@
       "Import record deleted": [
         "Importpost borttagen"
       ],
+      "Invitation rejected": [
+        "Inbjudan avvisad"
+      ],
       "Invitation sent": [
         "Inbjudan skickad"
       ],
@@ -15339,6 +15445,18 @@
       ],
       "Organization activated": [
         "Organisation aktiverad"
+      ],
+      "Organization identity updated": [
+        "Organisationsidentitet uppdaterad"
+      ],
+      "Organization logo removed": [
+        "Organisationens logga borttagen"
+      ],
+      "Organization logo updated": [
+        "Organisationens logga uppdaterad"
+      ],
+      "Organization name updated": [
+        "Organisationsnamn uppdaterad"
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
@@ -16114,9 +16232,6 @@
       "Email": [
         "E-post"
       ],
-      "Email address": [
-        "E-postadress"
-      ],
       "Email composer": [
         "Redigeringsfönstret för e-post"
       ],
@@ -16425,9 +16540,6 @@
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
       ],
-      "Personalise your e-mail footer": [
-        "Personifiera sidfoten för din e-post"
-      ],
       "Phone": [
         "Telefon"
       ],
@@ -16601,9 +16713,6 @@
       ],
       "Sign in to your organization": [
         "Logga in på din organisation"
-      ],
-      "Sign in with 2FA": [
-        "Logga in med 2FA"
       ],
       "Sign out": [
         "Logga ut"
@@ -17034,6 +17143,9 @@
       ],
       "This address has been disabled": [
         "Denna adress har inaktiverats"
+      ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Detta kan orsakas av en lösenordsåterställning eller att användaren inte loggat in ännu."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denna e-postadress kommer att visas för alla organisationsmedlemmar när de utför kontohanteringsåtgärder."
@@ -17581,6 +17693,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Genom att inaktivera övervakning av säkerhetshändelser kommer du också att rensa hela din historik. Är du säker på att du vill inaktivera detta?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Utgångsdatum är inte i formatet MM/ÅÅ"

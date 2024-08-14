@@ -2,9 +2,7 @@ import { ImageRun } from 'docx'
 import type { ImageNode } from '../../../../Plugins/Image/ImageNode'
 import { toImage } from '@proton/shared/lib/helpers/image'
 import type { DocxExportContext } from './Context'
-
-const isBase64Image = (value = '') =>
-  (value.startsWith('data:image') || value.startsWith('data:application/octet-stream')) && value.includes(';base64')
+import { isBase64Image } from '../../../ImageSrcUtils'
 
 export async function getImageRun(
   node: ImageNode,

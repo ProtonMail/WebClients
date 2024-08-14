@@ -1,13 +1,13 @@
-import { getMaxZIndex, isStackingContext, zTraverse } from './zindex';
+import { getMaxZIndex, isStackingContext, resolveClosestStackZIndex } from './zindex';
 
 describe('z-index utilities', () => {
     const root = document.createElement('body');
 
     describe('stacking context detection', () => {
-        test('should return false if no z-index values', () => {
+        test('should return true when reaching root node', () => {
             const el = document.createElement('div');
             el.style.position = 'absolute';
-            expect(isStackingContext(el)).toEqual([false, null]);
+            expect(isStackingContext(el)).toEqual([true, 0]);
         });
 
         test('should return false if z-index value in non-stacking context', () => {
@@ -67,9 +67,9 @@ describe('z-index utilities', () => {
         });
     });
 
-    describe('z-index traversal', () => {
+    describe('`resolveClosestStackZIndex`', () => {
         test('should return 0 if empty document', () => {
-            expect(zTraverse(root)).toBe(0);
+            expect(resolveClosestStackZIndex(root)).toBe(0);
         });
 
         test('should return 0 if no stacking contexts', () => {
@@ -81,7 +81,7 @@ describe('z-index utilities', () => {
                 </div>
             `;
 
-            expect(zTraverse(root.querySelector('#target')!)).toBe(0);
+            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(0);
         });
 
         test('should handle stacking contexts created by `flex` parent', () => {
@@ -93,7 +93,7 @@ describe('z-index utilities', () => {
                 </div>
             `;
 
-            expect(zTraverse(root.querySelector('#target')!)).toBe(100);
+            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(100);
         });
 
         test('should handle stacking contexts created by `grid` parent', () => {
@@ -105,7 +105,7 @@ describe('z-index utilities', () => {
                 </div>
             `;
 
-            expect(zTraverse(root.querySelector('#target')!)).toBe(100);
+            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(100);
         });
 
         test('should handle nested stacking contexts created by `flex` parent', () => {
@@ -119,16 +119,16 @@ describe('z-index utilities', () => {
                 </div>
             `;
 
-            expect(zTraverse(root.querySelector('#target')!)).toBe(101);
+            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(100);
         });
 
-        test('should resolve outer-most stacking context', () => {
+        test('should resolve inner-most stacking context', () => {
             root.innerHTML = `
                 <div style="position: absolute; z-index: 10">
                     <div style="position: relative; z-index: 50">
                         <div style="display: flex;">
                             <div style="position: static; z-index: 101; display: flex;">
-                                <div style="position: static; z-index: 100;">
+                                <div style="position: static;">
                                     <div id="target"></div>
                                 </div>
                             </div>
@@ -139,18 +139,20 @@ describe('z-index utilities', () => {
                 </div>
             `;
 
-            expect(zTraverse(root.querySelector('#target')!)).toBe(10);
+            expect(resolveClosestStackZIndex(root.querySelector('#target')!)).toBe(101);
         });
     });
 
     describe('max z-index', () => {
-        test('should account for children', () => {
+        test('should resolve maximum value found for multiple anchors', () => {
             root.innerHTML = `
                 <div style="display: flex">
                     <div style="position: static; z-index: 101; display: flex;">
                         <div style="position: static; z-index: 100;">
-                            <div id="target">
+                            <div id="target_1">
                                 <div style="position: relative; z-index: 1000">
+                                    <div id="target_2">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +160,7 @@ describe('z-index utilities', () => {
                 </div>
             `;
 
-            expect(getMaxZIndex(root.querySelector('#target')!)).toBe(1_000);
+            expect(getMaxZIndex([root.querySelector('#target_1')!, root.querySelector('#target_2')!])).toBe(1_000);
         });
     });
 });

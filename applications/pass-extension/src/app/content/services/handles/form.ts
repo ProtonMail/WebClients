@@ -2,19 +2,14 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/form/autofill.identity.sections';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
 import type { DetectedField, DetectedForm, FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
+import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
 
-import {
-    FieldType,
-    type FormType,
-    buttonSelector,
-    isVisibleForm,
-    removeClassifierFlags,
-    removeProcessedFlag,
-} from '@proton/pass/fathom';
+import { FieldType, type FormType, buttonSelector, isVisibleForm, removeClassifierFlags } from '@proton/pass/fathom';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -27,7 +22,7 @@ export type FormHandlesProps = { zIndex: number };
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const listeners = createListenerStore();
-    const zIndex = getMaxZIndex(form) + 5;
+    const zIndex = getMaxZIndex(options.fields.map(prop('field'))) + 5;
     const scrollRef = findScrollableParent(form);
 
     const formHandle: FormHandle = {
@@ -67,11 +62,21 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             return predicate ? fields.filter(predicate) : fields;
         },
 
-        detachField: (field: HTMLInputElement) => {
+        /** Detach a field to prevent unwanted actions during attribute changes.
+         * This is useful when a field's attributes are updated, like changing its `type`.
+         * The page might automatically refocus such a field, but we want to avoid
+         * triggering actions on it while it's in an intermediate state. This function
+         * blocks actions, removes the field from tracking, and clears its flags. */
+        detachField: withContext<(field: HTMLInputElement) => void>((ctx, field) => {
+            actionTrap(field);
             formHandle.fields.get(field)?.detach();
             formHandle.fields.delete(field);
-            removeProcessedFlag(field);
-        },
+            removeClassifierFlags(field, { preserveIgnored: false });
+
+            /* close dropdown if opened & attached to detaching field */
+            const dropdownField = ctx?.service.iframe.dropdown?.getCurrentField()?.element;
+            if (dropdownField === field) ctx?.service.iframe.dropdown?.close();
+        }),
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             let didChange = formType !== formHandle.formType;

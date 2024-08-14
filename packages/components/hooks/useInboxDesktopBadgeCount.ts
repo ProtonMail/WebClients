@@ -4,6 +4,7 @@ import { useConversationCounts, useMailSettings, useMessageCounts } from '@proto
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 const useInboxDesktopBadgeCount = () => {
@@ -19,10 +20,27 @@ const useInboxDesktopBadgeCount = () => {
         }
 
         const inboxConvCount = counts?.find(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.INBOX);
+        let payload = inboxConvCount?.Unread;
+
+        if (payload === undefined) {
+            captureMessage('Invalid undefined unread count', {
+                level: 'error',
+                extra: { inboxConvCount, payload },
+            });
+
+            payload = 0;
+        } else if (payload < 0) {
+            captureMessage('Invalid negative unread count', {
+                level: 'error',
+                extra: { inboxConvCount, payload },
+            });
+
+            payload = 0;
+        }
 
         invokeInboxDesktopIPC({
             type: 'updateNotification',
-            payload: inboxConvCount?.Unread ?? 0,
+            payload,
         });
     }, [counts]);
 };

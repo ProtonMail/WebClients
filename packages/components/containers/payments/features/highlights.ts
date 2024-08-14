@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import {
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
+    DRIVE_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     PLANS,
@@ -68,12 +69,25 @@ export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinition => {
+export const getSupport = (type: 'limited' | 'priority', product?: 'drive' | 'all'): PlanCardFeatureDefinition => {
+    const textType =
+        type === 'limited' ? c('new_plans: feature').t`Limited support` : c('new_plans: feature').t`Priority support`;
+
+    let text = textType;
+    switch (product) {
+        case 'drive':
+            text = c('new_plans: feature').t`${textType} - For ${DRIVE_APP_NAME}`;
+            break;
+        case 'all':
+            text = c('new_plans: feature').t`${textType} - For all ${BRAND_NAME} services`;
+            break;
+        default:
+            text = textType;
+            break;
+    }
+
     return {
-        text:
-            type === 'limited'
-                ? c('new_plans: feature').t`Limited support`
-                : c('new_plans: feature').t`Priority support`,
+        text: text,
         included: true,
         icon: 'life-ring',
     };
@@ -147,7 +161,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getSupport('priority'),
                 [PLANS.VPN]: getSupport('priority'),
                 [PLANS.DRIVE]: getSupport('priority'),
-                [PLANS.DRIVE_BUSINESS]: getSupport('priority'),
+                [PLANS.DRIVE_BUSINESS]: getSupport('priority', 'drive'),
                 [PLANS.PASS]: getSupport('priority'),
                 [PLANS.WALLET]: getSupport('priority'),
                 [PLANS.FAMILY]: getSupport('priority'),
@@ -155,7 +169,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL_PRO]: getSupport('priority'),
                 [PLANS.MAIL_BUSINESS]: getSupport('priority'),
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
-                [PLANS.BUNDLE_PRO_2024]: getSupport('priority'),
+                [PLANS.BUNDLE_PRO_2024]: getSupport('priority', 'all'),
                 [PLANS.PASS_PRO]: get24x7Support(),
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
@@ -216,7 +230,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: getEasySwitch(),
                 [PLANS.VPN]: getEasySwitch(),
                 [PLANS.DRIVE]: getEasySwitch(),
-                [PLANS.DRIVE_BUSINESS]: getEasySwitch(),
+                [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: getEasySwitch(),
                 [PLANS.WALLET]: getEasySwitch(),
                 [PLANS.FAMILY]: getEasySwitch(),

@@ -64,6 +64,9 @@
       "Allow": [
         "İzin ver"
       ],
+      "Always allow sending mail to group": [
+        "Gruba her zaman e-posta gönderilebilsin"
+      ],
       "Apply": [
         "Uygula"
       ],
@@ -199,6 +202,9 @@
       "Disable": [
         "Kapat"
       ],
+      "Disable E2EE for group address": [
+        "Grup adresi için E2EE kullanılamasın"
+      ],
       "Discard": [
         "Sil"
       ],
@@ -270,6 +276,9 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini açmak"
+      ],
+      "Enable E2EE for group address": [
+        "Grup adresi için E2EE kullanılsın"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
@@ -676,6 +685,9 @@
       "Use authentication code": [
         "Kimlik doğrulama kodu kullan"
       ],
+      "Use group sending permissions": [
+        "Grup gönderim izinleri kullanılsın"
+      ],
       "Use recovery code": [
         "Kurtarma kodunu kullan"
       ],
@@ -810,8 +822,8 @@
       "External": [
         "Dış"
       ],
-      "Missing keys": [
-        "Eksik anahtarlar"
+      "Inactive": [
+        "Kapalı"
       ],
       "No E2EE mail": [
         "E2EE e-postası yok"
@@ -2244,6 +2256,43 @@
         "Öncelikli destek"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo edinin"
+      ],
+      "Get it for ${ price }": [
+        "${ price } ile edinin"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Yıllık olarak ${ amountBilled } ile faturalanır. 2 kişisel ${ BRAND_NAME } Unlimited yıllık aboneliğinde ${ amountSave } indirim alın."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 kullanıcı"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Tüm ${ BRAND_NAME } ürünlerine tam erişim"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave } kazancınız var"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Tüm ${ BRAND_NAME } ürünleri, 2 kişi için."
+      ],
+      "Double your storage": [
+        "Depolama alanınızı iki katına çıkarın"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "${ PLAN_NAMES[PLANS.DUO] } ile tanışın "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } eklendi"
@@ -2685,8 +2734,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Özel etki alanları olan hesaplar, bir grup tarifesine katılamaz."
+      ],
       "customer support": [
         "müşteri desteği"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Grup tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -2696,6 +2751,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Davet eden: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Lifetime hesaplar bir grup tarifesine katılamaz."
       ],
       "Manage addresses.": [
         "Adres yönetimi."
@@ -2748,6 +2806,9 @@
       "You have successfully joined the family group": [
         "Aile grubuna katıldınız"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Ödenmemiş faturalarınız var. Bir grup tarifesine geçmeden önce lütfen onları ödeyin."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
       ],
@@ -2762,6 +2823,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Geçerli tarifenizle bu daveti kabul edemezsiniz."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2828,6 +2892,9 @@
       ],
       "An error occurred, please try again": [
         "Bir sorun çıktı. Lütfen yeniden deneyin"
+      ],
+      "Family name updated": [
+        "Aile adı güncellendi"
       ],
       "Member updated": [
         "Üye güncellendi"
@@ -3463,9 +3530,6 @@
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "Bu grubu silmek istediğinize emin misiniz? Artık grup adresi kullanılamayacak."
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "İki adımlı doğrulamayı kapatmak istediğinize emin misiniz?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
@@ -3574,6 +3638,10 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "${ n } üye için bir güvenli bulut oluştur",
+        "${ n } üye için bir güvenli bulut oluştur"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
       ],
@@ -3605,11 +3673,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -4984,12 +5052,20 @@
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Geçerli bir e-posta adresi değil"
+      ]
+    },
     "invitation status": {
       "Pending": [
         "Bekliyor"
       ],
       "Rejected": [
         "Reddedildi"
+      ],
+      "Sending invite...": [
+        "Davet gönderiliyor..."
       ]
     },
     "Invoice state display as badge": {
@@ -6036,9 +6112,6 @@
       "${ size } storage": [
         "${ size } depolama alanı"
       ],
-      "${ size } storage per user": [
-        "Her kullanıcı için ${ size } depolama alanı"
-      ],
       "1 user": [
         "1 kullanıcı"
       ],
@@ -6062,9 +6135,6 @@
       ],
       "Advanced network security": [
         "Gelişmiş ağ güvenliği"
-      ],
-      "Advanced sharing security": [
-        "Gelişmiş paylaşım güvenliği"
       ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
@@ -6098,9 +6168,6 @@
       ],
       "Collaborate and share large files": [
         "Büyük dosyaları paylaşın ve iş birliği yapın"
-      ],
-      "Collaborative document editor": [
-        "İşbirlikli çalışabileceğiniz belge düzenleyici"
       ],
       "Contact groups": [
         "Kişi grupları"
@@ -6229,6 +6296,9 @@
       "Phone support (40+ users)": [
         "Telefon desteği (40+ kullanıcı)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME } özellikleri"
+      ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
       ],
@@ -6278,9 +6348,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular",
         "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular"
-      ],
-      "Share files and folders via link": [
-        "Bağlantı ile dosya ve klasör paylaşın"
       ],
       "Sign in as user": [
         "Kullanıcı olarak oturum açma"
@@ -6380,6 +6447,9 @@
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
       ],
+      "Version history": [
+        "Sürüm geçmişi"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
       ]
@@ -6473,9 +6543,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "İki kişilik ${ BRAND_NAME } ile dijital yaşamınızı koruyun."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
@@ -6484,6 +6551,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "2 kişi için sınırsız gizlilik ve daha fazla depolama alanı."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesabınızı silerseniz, fırsat ücretinizi kaybedersiniz ve yeni bir hesap açtığınızda bu ücreti kullanamazsınız."
@@ -6582,9 +6652,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
@@ -8952,6 +9019,9 @@
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Geçerli bir kurtarma telefon numarası yazdıysanız, bir dakika içinde kullanıcı adlarınızı içeren bir SMS göndereceğiz."
       ],
+      "Invitation rejected": [
+        "Davet reddedildi"
+      ],
       "Invitation sent": [
         "Davet gönderildi"
       ],
@@ -8972,6 +9042,18 @@
       ],
       "Organization activated": [
         "Kuruluş kullanıma alındı"
+      ],
+      "Organization identity updated": [
+        "Kuruluş kimliği güncellendi"
+      ],
+      "Organization logo removed": [
+        "Kuruluş logosu kaldırıldı"
+      ],
+      "Organization logo updated": [
+        "Kuruluş logosu güncellendi"
+      ],
+      "Organization name updated": [
+        "Kuruluş adı güncellendi"
       ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
@@ -9278,10 +9360,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -9692,9 +9774,6 @@
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
-      "Sign in with 2FA": [
-        "2 adımlı doğrulama ile oturum aç"
-      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -9899,6 +9978,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Bu durum, şifrenin sıfırlanmış veya kullanıcının henüz oturum açmamış olmasından kaynaklanabilir."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Hesap yönetimi işlemleri yapılırken tüm kuruluş üyelerine bu e-posta adresi görüntülenir."
       ],
@@ -9924,6 +10006,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "Sending member invitation": [
+        "Üye daveti gönderiliyor"
       ],
       "User rejected invitation": [
         "Kullanıcı daveti reddetti"

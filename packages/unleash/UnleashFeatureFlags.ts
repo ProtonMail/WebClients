@@ -24,6 +24,7 @@ enum CommonFeatureFlag {
     Wallet = 'Wallet',
     WalletPlan = 'WalletPlan',
     DuoPlan = 'DuoPlan',
+    DriveBizPlan = 'DriveBizPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     LeftSidebarCollapsible = 'LeftSidebarCollapsible',
@@ -44,7 +45,6 @@ enum AccountFlag {
     ChargebeeFreeToPaidB2B = 'ChargebeeFreeToPaidB2B',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
-    LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
     B2BLogsPass = 'B2BLogsPass',
     SingleSignup = 'SingleSignup',
@@ -57,6 +57,7 @@ enum AccountFlag {
     AllowDowncycling = 'AllowDowncycling',
     SecurityCheckup = 'SecurityCheckup',
     PassB2BForceLock = 'PassB2BForceLock',
+    SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
 }
 
 enum CalendarFeatureFlag {

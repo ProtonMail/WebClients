@@ -8,7 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, TWO_FA_RECOVERY_CODES_FILE_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -313,8 +313,10 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {
                                         type: 'text/plain;charset=utf-8',
                                     });
-                                    const filename = 'proton_2FA_recovery_codes.txt';
-                                    downloadFile(blob, filename);
+                                    downloadFile(blob, TWO_FA_RECOVERY_CODES_FILE_NAME);
+                                    createNotification({
+                                        text: c('Notification').t`Downloaded 2FA recovery codes`,
+                                    });
                                 }}
                             >
                                 {c('Action').t`Download`}

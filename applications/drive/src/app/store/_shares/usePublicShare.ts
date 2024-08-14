@@ -5,6 +5,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { computeKeyPassword } from '@proton/srp';
 
+import { useUserIfAuthenticated } from '../../hooks/util/useUserIfAuthenticated';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
@@ -18,7 +19,8 @@ import useSharesState from './useSharesState';
  */
 export default function usePublicShare() {
     const api = useApi();
-    const { request, getSessionInfo } = usePublicSession();
+    const { request, getSessionInfo, isSessionProtonUser } = usePublicSession();
+    const { user } = useUserIfAuthenticated(isSessionProtonUser(), getSessionInfo()?.sessionUid);
     const sharesKeys = useSharesKeys();
     const { setLinks } = useLinksState();
     const { setShares } = useSharesState();
@@ -44,10 +46,12 @@ export default function usePublicShare() {
                     extra: {
                         e,
                         public: true,
+                        crypto: true,
                     },
                 })
             )
         );
+
         const sharePassphrase = await CryptoProxy.decryptMessage({
             armoredMessage: Token.SharePassphrase,
             passwords: [computedPassword],
@@ -60,6 +64,7 @@ export default function usePublicShare() {
                     extra: {
                         e,
                         public: true,
+                        crypto: true,
                     },
                 })
             )
@@ -77,11 +82,13 @@ export default function usePublicShare() {
                     extra: {
                         e,
                         public: true,
+                        crypto: true,
                     },
                 })
             )
         );
 
+        clearTimeout(undefined);
         sharesKeys.set(sessionInfo.token, sharePrivateKey);
 
         setLinks(sessionInfo.token, [
@@ -169,5 +176,6 @@ export default function usePublicShare() {
     return {
         loadPublicShare,
         submitAbuseReport,
+        user,
     };
 }

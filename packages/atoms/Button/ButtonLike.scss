@@ -32,7 +32,7 @@
 		text-decoration: none;
 	}
 
-	&:not(.button-no-hover):hover,
+	&:hover,
 	&.is-hover {
 		border-color: var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);

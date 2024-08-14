@@ -30,7 +30,7 @@ describe('MetricsBase', () => {
 
             metrics.init({ uid, clientID, appVersion });
 
-            expect(metricsRequestService.api.setAuthHeaders).toHaveBeenCalledWith(uid);
+            expect(metricsRequestService.api.setAuthHeaders).toHaveBeenCalledWith(uid, undefined);
         });
 
         it('sets version headers', () => {
@@ -64,7 +64,17 @@ describe('MetricsBase', () => {
 
             metrics.setAuthHeaders(uid);
 
-            expect(metricsRequestService.api.setAuthHeaders).toHaveBeenCalledWith(uid);
+            expect(metricsRequestService.api.setAuthHeaders).toHaveBeenCalledWith(uid, undefined);
+        });
+
+        it('sets auth headers and authorization', () => {
+            const uid = 'uid';
+            const accessToken = 'accessToken';
+            const metrics = new MetricsBase(metricsRequestService);
+
+            metrics.setAuthHeaders(uid, accessToken);
+
+            expect(metricsRequestService.api.setAuthHeaders).toHaveBeenCalledWith(uid, accessToken);
         });
     });
 

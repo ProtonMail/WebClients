@@ -44,8 +44,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { getPhoneSupport } from '../../features/b2b';
-import { getNCalendarsFeature } from '../../features/calendar';
-import { getCollaborate, getStorageBoostFeatureB2B, getStorageFeature } from '../../features/drive';
+import { getNCalendarsFeature, getNCalendarsPerUserFeature } from '../../features/calendar';
+import { getCollaborate, getStorageBoostFeatureB2B, getStorageFeature, getVersionHistory } from '../../features/drive';
 import { getCustomBranding, getSentinel, getUsersFeature } from '../../features/highlights';
 import type { PlanCardFeatureDefinition } from '../../features/interface';
 import {
@@ -54,7 +54,7 @@ import {
     getNAddressesFeatureB2B,
     getNDomainsFeature,
 } from '../../features/mail';
-import { FREE_PASS_ALIASES, getPasswordManager, getProtonPassFeature } from '../../features/pass';
+import { FREE_PASS_ALIASES, getPasswordManager, getProtonPassFeature, getVaultSharingB2B } from '../../features/pass';
 import { getShortPlan, getVPNEnterprisePlan } from '../../features/plan';
 import {
     getB2BHighSpeedVPNConnectionsFeature,
@@ -145,7 +145,7 @@ type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'
     hasPaidMail?: boolean;
     hasVPN: boolean;
     hasUsers?: boolean;
-    hideStorage?: boolean;
+    hideDriveBusinessFeatures?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 };
 
@@ -484,7 +484,7 @@ const getMailBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: Get
 const getBundleProUpsell = ({
     plansMap,
     openSubscriptionModal,
-    hideStorage = false,
+    hideDriveBusinessFeatures = false,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const bundleProPlan = plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO];
@@ -492,10 +492,13 @@ const getBundleProUpsell = ({
     const businessStorage = humanSize({ bytes: bundleProPlan?.MaxSpace ?? 500, fraction: 0 });
 
     const features: MaybeUpsellFeature[] = [
-        hideStorage ? undefined : getStorageBoostFeatureB2B(businessStorage),
+        hideDriveBusinessFeatures ? undefined : getStorageBoostFeatureB2B(businessStorage),
         getB2BNDomainsFeature(bundleProPlan?.MaxDomains ?? 15),
+        getNCalendarsPerUserFeature(MAX_CALENDARS_PAID),
         getCollaborate(),
+        hideDriveBusinessFeatures ? undefined : getVersionHistory(365),
         getPasswordManager(),
+        getVaultSharingB2B('unlimited'),
         getB2BHighSpeedVPNConnectionsFeature(),
         getSentinel(true),
         getPhoneSupport(),
@@ -667,7 +670,12 @@ export const resolveUpsellsToDisplay = ({
             case hasMailPro(subscription):
                 return [getMailBusinessUpsell(upsellsPayload)];
             case hasMailBusiness(subscription) || hasDriveBusiness(subscription):
-                return [getBundleProUpsell({ ...upsellsPayload, hideStorage: hasDriveBusiness(subscription) })];
+                return [
+                    getBundleProUpsell({
+                        ...upsellsPayload,
+                        hideDriveBusinessFeatures: hasDriveBusiness(subscription),
+                    }),
+                ];
             case hasVpnPro(subscription):
                 return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];
             case hasVpnBusiness(subscription):

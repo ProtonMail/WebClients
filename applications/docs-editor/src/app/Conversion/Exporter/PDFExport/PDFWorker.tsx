@@ -46,8 +46,10 @@ const PDFDocument = ({ nodes, pageSize }: { nodes: PDFDataNode[]; pageSize: Page
   )
 }
 
-const renderPDF = (nodes: PDFDataNode[], pageSize: PageProps['size']) => {
-  return pdf(<PDFDocument pageSize={pageSize} nodes={nodes} />).toBlob()
+const renderPDF = async (nodes: PDFDataNode[], pageSize: PageProps['size']): Promise<Blob> => {
+  const doc = pdf(<PDFDocument pageSize={pageSize} nodes={nodes} />)
+  const blob = await doc.toBlob()
+  return blob
 }
 
 expose({

@@ -388,6 +388,9 @@
       "Disable": [
         "Nonaktifkan"
       ],
+      "Disable E2EE for group address": [
+        "Nonaktifkan E2EE untuk alamat grup"
+      ],
       "Disable recovery phrase": [
         "Nonaktifkan frasa pemulihan"
       ],
@@ -489,6 +492,9 @@
       ],
       "Enable device-based recovery": [
         "Aktifkan pemulihan berbasis perangkat"
+      ],
+      "Enable E2EE for group address": [
+        "Aktifkan E2EE untuk alamat grup"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -1180,6 +1186,9 @@
       "Use authentication code": [
         "Gunakan kode autentikasi"
       ],
+      "Use group sending permissions": [
+        "Gunakan perizinan pengiriman grup"
+      ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
@@ -1363,8 +1372,8 @@
       "External": [
         "Eksternal"
       ],
-      "Missing keys": [
-        "Kunci yang hilang"
+      "Inactive": [
+        "Nonaktif"
       ],
       "No E2EE mail": [
         "Tanpa email E2EE"
@@ -3366,6 +3375,9 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktifkan peristiwa berdetail dan ${ PROTON_SENTINEL_NAME } untuk mengakses fitur-fitur ini"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
@@ -3584,11 +3596,19 @@
       "Free, encrypted, and secure cloud storage": [
         "Penyimpanan cloud yang gratis, terenkripsi, dan aman"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Layanan penyimpanan cloud dan file-sharing aman yang melindungi data Anda"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Anda diundang untuk mengakses berkas di ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**GDPR** and **HIPAA** compliant": [
+        "Berpatuh pada **GDPR** dan **HIPAA**"
+      ],
+      "**ISO 27001** certified": [
+        "Tersertifikasi **ISO 27001**"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Aman:** enkripsi ujung ke ujung"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3597,6 +3617,30 @@
       ],
       "Priority support": [
         "Dukungan prioritas"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Dapatkan seharga ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 pengguna"
+      ],
+      "You save ${ amountSave }": [
+        "Anda menghemat ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Semua dari ${ BRAND_NAME }, untuk berdua."
+      ],
+      "Double your storage": [
+        "Gandakan penyimpanan Anda"
       ]
     },
     "Duration": {
@@ -5116,6 +5160,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Anda harus mengatur domain kustom sebelum membuat pengguna baru."
       ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Anda akan kehilangan akses ke seluruh fitur premium dan ruang penyimpanan yang terliput dalam ${ plan }."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
@@ -5193,6 +5240,9 @@
       ],
       "An error occurred, please try again": [
         "Terjadi kesalahan, silakan coba lagi"
+      ],
+      "Family name updated": [
+        "Nama keluarga diperbarui"
       ],
       "Member updated": [
         "Anggota diperbarui"
@@ -5713,6 +5763,9 @@
     "group_invite_2024: Info": {
       "You can safely close this tab.": [
         "Anda dapat menutup tab ini dengan aman."
+      ],
+      "You have declined the group invitation and will not receive any email from this group.": [
+        "Anda telah menolak undangan grup dan tidak akan menerima email dari grup ini"
       ]
     },
     "group_invite_2024: Title": {
@@ -6573,6 +6626,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Siapa pun dengan tautan ini tidak akan lagi dapat menyinkronkan atau memperoleh pembaruan seputar kalender Anda ke depannya. Apabila Anda ingin kembali memberikan mereka akses, Anda harus membuat tautan baru."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Apakah Anda yakin ingin batal menyunting grup ini?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Apakah Anda yakin ingin menghapus kalender ini?"
       ],
@@ -6591,11 +6647,11 @@
       "Are you sure you want to delete this folder?": [
         "Apakah Anda yakin ingin menghapus folder ini?"
       ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Apakah Anda yakin ingin menghapus grup ini? Alamat grup ini tidak akan lagi berfungsi."
+      ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
-      ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
       ],
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
@@ -6611,6 +6667,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Apakah Anda yakin ingin menghapus seluruh anggota dari grup ini?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
@@ -7025,6 +7084,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Undangan dan konfirmasi kehadiran acara (RSVP) akan dikirim dalam bahasa ini."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Peristiwa mencakup berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
       ],
       "Example: ${ spfExample }": [
         "Contoh: ${ spfExample }"
@@ -7647,6 +7709,15 @@
       "Paid for a monthly plan": [
         "Terbayar dalam bentuk paket berlangganan bulanan"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - email khusus dikonfirmasi"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - email khusus dibuat"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - email khusus dihapus"
+      ],
       "password": [
         "kata sandi"
       ],
@@ -7967,9 +8038,6 @@
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
@@ -8974,6 +9042,11 @@
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Bukan alamat email yang valid"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Label tautan (opsional)"
@@ -8990,6 +9063,9 @@
       ],
       "Rejected": [
         "Ditolak"
+      ],
+      "Sending invite...": [
+        "Mengirimkan undangan..."
       ]
     },
     "Invoice state display as badge": {
@@ -9360,6 +9436,33 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
+      "1 hour": [
+        "1 jam"
+      ],
+      "1 minute": [
+        "1 menit"
+      ],
+      "10 minutes": [
+        "10 menit"
+      ],
+      "15 minutes": [
+        "15 menit"
+      ],
+      "2 minutes": [
+        "2 menit"
+      ],
+      "30 minutes": [
+        "30 menit"
+      ],
+      "30 seconds": [
+        "30 detik"
+      ],
+      "4 hours": [
+        "4 jam"
+      ],
+      "5 minutes": [
+        "5 menit"
+      ],
       "Account recovery": [
         "Pemulihan akun"
       ],
@@ -9687,6 +9790,9 @@
       "Disable sharing outside the organization": [
         "Nonaktifkan pembagian di luar organisasi"
       ],
+      "Disabled": [
+        "Dinonaktifkan"
+      ],
       "Display name": [
         "Nama tampilan"
       ],
@@ -9884,6 +9990,9 @@
       ],
       "Link label (optional)": [
         "Label tautan (opsional)"
+      ],
+      "Lock app after inactivity": [
+        "Kunci aplikasi setelah tidak aktif"
       ],
       "Logo": [
         "Logo"
@@ -10689,6 +10798,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktifkan ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Aktifkan peristiwa terperinci"
+      ],
+      "Enable security events": [
+        "Aktifkan peristiwa keamanan"
       ]
     },
     "Mail import summary": {
@@ -11270,9 +11385,6 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ size } storage per user": [
-        "Ruang penyimpanan ${ size } per pengguna"
-      ],
       "1 user": [
         "1 pengguna"
       ],
@@ -11296,9 +11408,6 @@
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
-      ],
-      "Advanced sharing security": [
-        "Keamanan berbagi berkas tingkat lanjut"
       ],
       "All ${ BRAND_NAME } services": [
         "Seluruh layanan ${ BRAND_NAME }"
@@ -11335,9 +11444,6 @@
       ],
       "Collaborate and share large files": [
         "Kolaborasi dan berbagi file besar"
-      ],
-      "Collaborative document editor": [
-        "Penyunting dokumen kolaboratif"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -11516,9 +11622,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Server dalam ${ vpnServersCountData.paid.countries }+ negara"
       ],
-      "Share files and folders via link": [
-        "Bagikan berkas dan folder via tautan"
-      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -11617,6 +11720,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
+      ],
+      "Version history": [
+        "Riwayat versi"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
@@ -11728,9 +11834,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
-      ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Siapkan pesan balasan otomatis untuk menginformasikan pengirim pesan bahwa Anda sedang tidak berada di kantor atau tidak dapat membalas."
@@ -11871,9 +11974,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
@@ -12774,9 +12874,6 @@
       "Current plan": [
         "Paket saat ini"
       ],
-      "Customizable services for large teams.": [
-        "Layanan yang dapat disesuaikan untuk tim besar"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Unduh dan instal aplikasi dan ekstensi yang sesuai untuk mulai menggunakan ${ PASS_APP_NAME }"
       ],
@@ -12851,9 +12948,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bergabunglah dengan lebih dari 100 juta orang yang telah memilih ${ BRAND_NAME } untuk melindungi aktivitas online mereka"
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Bergabunglah dengan lebih dari 50.000 organisasi yang telah memercayai ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Meluncurkan ${ PASS_APP_NAME }"
@@ -13550,6 +13644,9 @@
       ]
     },
     "saml: Error": {
+      "Sign-in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil terselesaikan."
+      ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
       ]
@@ -14173,13 +14270,13 @@
       ]
     },
     "signup: Action": {
-      "Request a demo": [
-        "Minta demo"
+      "Request trial": [
+        "Minta uji coba"
       ]
     },
     "signup_2024: Feature": {
-      "GDPR compliant": [
-        "Patuh terhadap GDPR"
+      "GDPR and HIPAA compliant": [
+        "Berpatuh pada GDPR dan HIPAA"
       ]
     },
     "specialoffer: Action": {
@@ -15141,6 +15238,9 @@
       "Import record deleted": [
         "Rekaman impor dihapus"
       ],
+      "Invitation rejected": [
+        "Undangan ditolak"
+      ],
       "Invitation sent": [
         "Undangan dikirim"
       ],
@@ -15164,6 +15264,18 @@
       ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
+      ],
+      "Organization identity updated": [
+        "Identitas organisasi diperbarui"
+      ],
+      "Organization logo removed": [
+        "Logo organisasi dihapus"
+      ],
+      "Organization logo updated": [
+        "Logo organisasi diperbarui"
+      ],
+      "Organization name updated": [
+        "Nama organisasi diperbarui"
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
@@ -15928,9 +16040,6 @@
       "Email": [
         "Email"
       ],
-      "Email address": [
-        "Alamat email"
-      ],
       "Email composer": [
         "Komposer email"
       ],
@@ -16231,9 +16340,6 @@
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
       ],
-      "Personalise your e-mail footer": [
-        "Sesuaikan footer email Anda"
-      ],
       "Phone": [
         "Telepon"
       ],
@@ -16333,6 +16439,9 @@
       "Security and privacy": [
         "Keamanan dan privasi"
       ],
+      "Security events": [
+        "Peristiwa keamanan"
+      ],
       "Security logs": [
         "Log keamanan"
       ],
@@ -16404,9 +16513,6 @@
       ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
-      ],
-      "Sign in with 2FA": [
-        "Masuk dengan 2FA"
       ],
       "Sign out": [
         "Keluar"
@@ -16902,8 +17008,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Masuk dengan aman di semua perangkat Anda. Meliputi alias tak terbatas, berbagi, 2FA terintegrasi, dan masih banyak lagi."
       ],
+      "Sending member invitation": [
+        "Mengirimkan undangan anggota"
+      ],
       "User rejected invitation": [
         "Pengguna menolak undangan"
+      ],
+      "Waiting user to accept the invitation": [
+        "Menunggu pengguna untuk menerima undangan"
       ]
     },
     "Tooltip automatically attach public key": {

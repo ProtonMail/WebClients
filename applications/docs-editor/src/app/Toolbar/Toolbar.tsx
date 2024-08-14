@@ -2,12 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $createCodeNode, $isCodeNode } from '@lexical/code'
 import type { ListType } from '@lexical/list'
+import { ListNode } from '@lexical/list'
 import {
   $isListNode,
   INSERT_CHECK_LIST_COMMAND,
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
-  ListNode,
 } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
@@ -59,6 +59,7 @@ import { c } from 'ttag'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import CheckListIcon from '../Icons/CheckListIcon'
+import AlphabeticalListIcon from '../Icons/AlphabeticalListIcon'
 import clsx from '@proton/utils/clsx'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
@@ -82,6 +83,10 @@ import { INSERT_INLINE_COMMENT_COMMAND } from '../Commands'
 import AddCommentIcon from '../Icons/AddCommentIcon'
 import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
 import DividerIcon from '../Icons/DividerIcon'
+import { INSERT_CUSTOM_ORDERED_LIST_COMMAND } from '../Plugins/CustomList/CustomListCommands'
+import type { CustomListMarker, CustomListStyleType } from '../Plugins/CustomList/CustomListTypes'
+import { $isCustomListNode } from '../Plugins/CustomList/$isCustomListNode'
+import RomanListIcon from '../Icons/RomanListIcon'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -112,6 +117,8 @@ export default function DocumentEditorToolbar({
   const [isQuote, setIsQuote] = useState(false)
 
   const [listType, setListType] = useState<ListType>()
+  const [listStyleType, setListStyleType] = useState<CustomListStyleType>()
+  const [listMarker, setListMarker] = useState<CustomListMarker>()
   const [elementFormat, setElementFormat] = useState<ElementFormatType>('left')
 
   const [isBold, setIsBold] = useState(false)
@@ -201,6 +208,13 @@ export default function DocumentEditorToolbar({
     }
   }, [editor, focusEditor, formatParagraph, listType])
 
+  const formatCustomList = useCallback(
+    (type: CustomListStyleType, marker?: CustomListMarker) => {
+      editor.dispatchCommand(INSERT_CUSTOM_ORDERED_LIST_COMMAND, { type, marker })
+    },
+    [editor, focusEditor, formatParagraph, listType],
+  )
+
   const formatCheckList = useCallback(() => {
     if (listType !== 'check') {
       editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)
@@ -211,7 +225,7 @@ export default function DocumentEditorToolbar({
   }, [editor, focusEditor, formatParagraph, listType])
 
   const formatNumberedList = useCallback(() => {
-    if (listType !== 'number') {
+    if (listType !== 'number' || listStyleType) {
       editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
       focusEditor()
     } else {
@@ -333,10 +347,20 @@ export default function DocumentEditorToolbar({
 
         if ($isListNode(element)) {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode)
-          const type = parentList ? parentList.getListType() : element.getListType()
+          const elementOrParent = parentList || element
+          const type = elementOrParent.getListType()
           setListType(type)
+
+          if ($isCustomListNode(elementOrParent)) {
+            const listStyleType = elementOrParent.getListStyleType()
+            const listMarker = elementOrParent.getListMarker()
+            setListStyleType(listStyleType)
+            setListMarker(listMarker)
+          }
         } else {
           setListType(undefined)
+          setListStyleType(undefined)
+          setListMarker(undefined)
         }
       }
 
@@ -936,7 +960,7 @@ export default function DocumentEditorToolbar({
                     <DropdownMenuButton
                       className={clsx(
                         'flex items-center gap-2 text-left text-sm',
-                        type === listType && 'active font-bold',
+                        !listStyleType && type === listType && 'active font-bold',
                       )}
                       onClick={onClick}
                       disabled={!isEditable}
@@ -946,6 +970,90 @@ export default function DocumentEditorToolbar({
                     </DropdownMenuButton>
                   </ToolbarTooltip>
                 ))}
+
+                <SimpleDropdown
+                  as={DropdownMenuButton}
+                  className={clsx(
+                    'flex items-center gap-2 text-left text-sm',
+                    listStyleType && listStyleType !== 'upper-roman' && 'active font-bold',
+                  )}
+                  data-testid="dropdown-alphabetical-list"
+                  content={
+                    <>
+                      <AlphabeticalListIcon className="color-weak h-4 w-4" />
+                      {c('Action').t`Alphabetical`}
+                      <Icon name="chevron-right-filled" className="ml-auto" />
+                    </>
+                  }
+                  hasCaret={false}
+                  onClick={(event: MouseEvent) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }}
+                  originalPlacement="right-start"
+                  contentProps={{
+                    offset: 0,
+                  }}
+                >
+                  <DropdownMenu className="text-sm">
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center text-left',
+                        listStyleType === 'upper-alpha' && listMarker === 'period' && 'active font-bold',
+                      )}
+                      onClick={() => {
+                        formatCustomList('upper-alpha')
+                      }}
+                    >
+                      {c('Action').t`A. B. C. D.`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center text-left',
+                        listStyleType === 'lower-alpha' && listMarker === 'period' && 'active font-bold',
+                      )}
+                      onClick={() => {
+                        formatCustomList('lower-alpha')
+                      }}
+                    >
+                      {c('Action').t`a. b. c. d.`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center text-left',
+                        listStyleType === 'upper-alpha' && listMarker === 'bracket' && 'active font-bold',
+                      )}
+                      onClick={() => {
+                        formatCustomList('upper-alpha', 'bracket')
+                      }}
+                    >
+                      {c('Action').t`A) B) C) D)`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center text-left',
+                        listStyleType === 'lower-alpha' && listMarker === 'bracket' && 'active font-bold',
+                      )}
+                      onClick={() => {
+                        formatCustomList('lower-alpha', 'bracket')
+                      }}
+                    >
+                      {c('Action').t`a) b) c) d)`}
+                    </DropdownMenuButton>
+                  </DropdownMenu>
+                </SimpleDropdown>
+
+                <DropdownMenuButton
+                  className={clsx(
+                    'flex items-center gap-2 text-left text-sm',
+                    listStyleType === 'upper-roman' && 'active font-bold',
+                  )}
+                  onClick={() => formatCustomList('upper-roman')}
+                  disabled={!isEditable}
+                >
+                  <RomanListIcon className="color-weak h-4 w-4" />
+                  {c('Action').t`Roman`}
+                </DropdownMenuButton>
               </DropdownMenu>
             </SimpleDropdown>
             <ToolbarSeparator />

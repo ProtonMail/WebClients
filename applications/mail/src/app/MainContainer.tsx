@@ -12,6 +12,7 @@ import {
 } from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { useFlag } from '@proton/unleash';
 import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
@@ -43,6 +44,8 @@ const MainContainer: FunctionComponent = () => {
 
     const shouldAutoSetupWallet = useFlag('WalletAutoSetup');
     useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
+
+    useInboxDesktopMessageForward();
 
     // Service Worker registration
     // Including a kill switch with a feature flag
