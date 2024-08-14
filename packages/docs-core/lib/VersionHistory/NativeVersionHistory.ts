@@ -4,14 +4,19 @@ import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { VersionHistoryBatch } from './VersionHistoryBatch'
 import { DateFormatter } from './DateFormatter'
 
+/**
+ * How many DUs should make up a presentable revision in the history viewer. If the threshold is 10 and a
+ * document has 100 DUs, the UI will show 10 revisions.
+ */
+const BatchThreshold = 10
+
 export class NativeVersionHistory {
   private versionHistoryBatches: VersionHistoryBatch[] = []
   private _batchDocumentUpdates = new BatchDocumentUpdates()
-  private batchThreshold = 100
   private dateFormatter = new DateFormatter()
 
   constructor(commit: DecryptedCommit) {
-    this.versionHistoryBatches = this._batchDocumentUpdates.execute(commit.updates, this.batchThreshold).getValue()
+    this.versionHistoryBatches = this._batchDocumentUpdates.execute(commit.updates, BatchThreshold).getValue()
   }
 
   get batches() {
