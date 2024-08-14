@@ -1,5 +1,7 @@
 import type { IStorageProvider } from '@unleash/proxy-client-react';
 
+import saveWhitelistedFlagInCookies from './UnleashCookiesProvider';
+
 export default class ProtonUnleashStorageProvider implements IStorageProvider {
     private prefix = 'unleash:repository';
 
@@ -7,6 +9,7 @@ export default class ProtonUnleashStorageProvider implements IStorageProvider {
         const repo = JSON.stringify(data);
         const key = `${this.prefix}:${name}`;
         try {
+            saveWhitelistedFlagInCookies(data);
             window.localStorage.setItem(key, repo);
         } catch (e) {}
     }
