@@ -20,6 +20,7 @@ import {
     useAddresses,
     useDeviceRecovery,
     useFeatures,
+    useGroupMemberships,
     useIsDataRecoveryAvailable,
     useOrganization,
     useOrganizationTheme,
@@ -156,6 +157,7 @@ const MainContainer = () => {
     const assistantKillSwitch = isInAllowedApps ? !hasAssistant && assistantUpsellKillSwitch : true;
 
     const organizationTheme = useOrganizationTheme();
+    const [memberships] = useGroupMemberships();
 
     const routes = getRoutes({
         app,
@@ -173,6 +175,7 @@ const MainContainer = () => {
         assistantKillSwitch,
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
+        memberships,
     });
 
     useEffect(() => {
