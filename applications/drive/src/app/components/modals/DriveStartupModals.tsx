@@ -20,7 +20,7 @@ import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 import { useDriveDocsFeatureFlag } from '../../store/_documents';
 import DriveDocsOnboardingModal from './DriveDocsOnboardingModal';
-import DriveOnboardingModal from './DriveOnboardingModal';
+import { DriveOnboardingModal } from './DriveOnboardingModal';
 
 const DriveStartupModals = () => {
     // Drive welcome modal
