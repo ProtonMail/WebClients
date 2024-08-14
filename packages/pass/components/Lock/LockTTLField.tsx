@@ -20,10 +20,9 @@ export const TTL_LABELS: Partial<Record<number, () => string>> = {
     900: () => c('Label').t`15 minutes`,
     1_800: () => c('Label').t`30 minutes`,
     3_600: () => c('Label').t`1 hour`,
-    14_400: () => c('Label').t`4 hours`,
 };
 
-export const TTL_OPTIONS: number[] = [60, 120, 300, 600, 3_600, 14_400];
+export const TTL_OPTIONS: number[] = [60, 120, 300, 600, 3_600];
 
 export const LockTTLField: FC<Props> = ({ ttl, disabled, onChange, label }) => (
     <InputFieldTwo
