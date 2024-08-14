@@ -187,6 +187,10 @@ export const getAutoCoupon = ({
         return COUPON_CODES.PASS_B2B_INTRO;
     }
 
+    if (!coupon && [PLANS.DRIVE_BUSINESS].some((plan) => planIDs?.[plan])) {
+        return COUPON_CODES.DRIVEB2BINTRO2024;
+    }
+
     if (
         !coupon &&
         [PLANS.VPN2024].some((plan) => planIDs?.[plan]) &&

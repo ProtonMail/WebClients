@@ -311,6 +311,7 @@ const Step1 = ({
                 planID: planName,
                 organization: model.session.organization,
                 plans: model.plans,
+                user: model.session.user,
             });
             return handleOptimistic({ planIDs: switchedPlanIds });
         }
@@ -553,6 +554,16 @@ const Step1 = ({
                     ) {
                         const textLaunchOffer = getBoldFormattedText(
                             c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
+                        );
+                        return wrap('hourglass', textLaunchOffer);
+                    }
+
+                    if (selectedPlan.Name === PLANS.DUO && options.cycle === CYCLE.YEARLY) {
+                        const discount = getSimplePriceString(options.currency, checkout.discountPerCycle, '');
+                        const name = selectedPlan.Title;
+                        const textLaunchOffer = getBoldFormattedText(
+                            c('mail_signup_2024: Info')
+                                .t`Limited time offer: **Save ${discount} on ${name} with a 1-year plan**`
                         );
                         return wrap('hourglass', textLaunchOffer);
                     }

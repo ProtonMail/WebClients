@@ -14,7 +14,7 @@ export const DropdownDebug: FC = () => {
     return (
         <SettingsPanel title="Dropdown">
             <div className="gap-4" style={{ columnCount: 2 }}>
-                <MockIFrameContainer appState={{ loggedIn: false, status: AppStatus.IDLE }} width={DROPDOWN_WIDTH}>
+                <MockIFrameContainer appState={{ authorized: false, status: AppStatus.IDLE }} width={DROPDOWN_WIDTH}>
                     <Dropdown />
                 </MockIFrameContainer>
 

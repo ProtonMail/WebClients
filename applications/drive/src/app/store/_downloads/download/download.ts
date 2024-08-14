@@ -2,6 +2,7 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
+import { HEARTBEAT_MAX_REFRESH_TIME, HEARTBEAT_WAIT_TIME } from '../constants';
 import fileSaver from '../fileSaver/fileSaver';
 import type {
     DownloadCallbacks,
@@ -44,18 +45,61 @@ export default function initDownload(
     options?: { virusScan?: boolean }
 ): DownloadControls {
     let gotErr: any;
+    const heartbeat = new HeartbeatTimeout(log);
+
     const sizePromise = new SizeTimeoutPromise(SIZE_WAIT_TIME);
     const controls = getControls(
         links,
         {
-            ...callbacks,
             onInit: (size, linkSizes) => {
                 callbacks.onInit?.(size, linkSizes);
                 sizePromise.set(size);
+                heartbeat.refreshTimeout();
+            },
+            onProgress: (...args) => {
+                callbacks.onProgress?.(...args);
+                heartbeat.refreshTimeout();
+            },
+            onSignatureIssue: async (...args) => {
+                heartbeat.pauseTimeout();
+                return callbacks.onSignatureIssue?.(...args);
             },
             onError: (err) => {
                 callbacks.onError?.(err);
                 gotErr = err;
+                heartbeat.pauseTimeout();
+            },
+            onNetworkError: (err) => {
+                callbacks.onNetworkError?.(err);
+                heartbeat.pauseTimeout();
+            },
+            onScanIssue: async (...args) => {
+                heartbeat.pauseTimeout();
+                return callbacks.onScanIssue?.(...args);
+            },
+            onContainsDocument: async (...args) => {
+                heartbeat.pauseTimeout();
+                return callbacks.onContainsDocument?.(...args);
+            },
+            onFinish: (...args) => {
+                callbacks.onFinish?.(...args);
+                heartbeat.pauseTimeout();
+            },
+            getChildren: (...args) => {
+                heartbeat.refreshTimeout();
+                return callbacks.getChildren(...args);
+            },
+            getBlocks: (...args) => {
+                heartbeat.refreshTimeout();
+                return callbacks.getBlocks(...args);
+            },
+            getKeys: (...args) => {
+                heartbeat.refreshTimeout();
+                return callbacks.getKeys(...args);
+            },
+            scanFilesHash: async (...args) => {
+                heartbeat.refreshTimeout();
+                return callbacks.scanFilesHash?.(...args);
             },
         },
         log,
@@ -63,8 +107,14 @@ export default function initDownload(
         api,
         options
     );
+
+    heartbeat.onTimeout = () => {
+        // TODO: At this moment we send this to Sentry only. Metric must be used here.
+        gotErr = new Error('Transfer got stuck');
+        controls.cancel();
+    };
+
     return {
-        ...controls,
         start: async () => {
             const stream = controls.start();
             const size = await sizePromise.get().catch(() => undefined);
@@ -87,10 +137,20 @@ export default function initDownload(
                 throw gotErr;
             }
             callbacks.onFinish?.();
+            heartbeat.pauseTimeout();
+        },
+        pause: () => {
+            controls.pause();
+            heartbeat.pauseTimeout();
+        },
+        resume: () => {
+            controls.resume();
+            heartbeat.refreshTimeout();
         },
         cancel: () => {
             gotErr = new TransferCancel({ message: `Transfer canceled` });
             controls.cancel();
+            heartbeat.pauseTimeout();
         },
     };
 }
@@ -155,5 +215,65 @@ class SizeTimeoutPromise {
 
     async get() {
         return this.promise;
+    }
+}
+
+// TODO: This heartbeat is good enough, but has few limitations that
+// must be improved next time:
+// * It is hooked to available callbacks, but it doesnt get heartbeat
+//   even if some operation is ongoing but takes time. For example,
+//   children loading. For this reason the timeout must be very huge.
+// * It must take care of possible race condition and thus ignore
+//   some heartbeats that is configured by constant.
+// * It is calling setTimeout too often and in various frequency instead
+//   of real heartbeat.
+// Ideally, we don't expand this functionality, as that requires several
+// changes, while we need to refactor download fully to run in web worker.
+// Then, we can apply the same heartbeat implementation as for upload.
+class HeartbeatTimeout {
+    private heartbeatTimeout: NodeJS.Timeout | undefined;
+
+    private lastUpdate: number | undefined;
+
+    private log: LogCallback;
+
+    onTimeout: (() => void) | undefined;
+
+    constructor(log: LogCallback) {
+        this.log = log;
+    }
+
+    refreshTimeout() {
+        // Do not re-create setTimeout too often and avoid refreshing right
+        // after pausing (pause sends signal to pause, but onProgress can
+        // still be called).
+        if (this.lastUpdate && Date.now() - this.lastUpdate < HEARTBEAT_MAX_REFRESH_TIME) {
+            return;
+        }
+
+        this.clearTimeout();
+
+        this.lastUpdate = Date.now();
+        this.log('Heartbeat refreshed');
+
+        this.heartbeatTimeout = setTimeout(() => {
+            this.log('Heartbeat timeouted');
+            this.onTimeout?.();
+        }, HEARTBEAT_WAIT_TIME);
+    }
+
+    pauseTimeout() {
+        if (this.heartbeatTimeout) {
+            this.lastUpdate = Date.now();
+            this.log('Heartbeat paused');
+            this.clearTimeout();
+        }
+    }
+
+    private clearTimeout() {
+        if (this.heartbeatTimeout) {
+            clearTimeout(this.heartbeatTimeout);
+            this.heartbeatTimeout = undefined;
+        }
     }
 }

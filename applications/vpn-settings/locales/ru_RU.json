@@ -777,9 +777,6 @@
       "External": [
         "Внешний"
       ],
-      "Missing keys": [
-        "Отсутствуют ключи"
-      ],
       "No E2EE mail": [
         "Нет зашифрованной сквозным методом почты"
       ],
@@ -2221,6 +2218,43 @@
         "Приоритетная поддержка"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Оформить ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Оформите за ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Ежегодная оплата в размере ${ amountBilled }. Сохраните ${ amountSave } на 2 индивидуальных подписках ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 пользователя"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Полный доступ ко всем продуктам ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Вы экономите ${ amountSave }."
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Все возможности ${ BRAND_NAME } для двоих."
+      ],
+      "Double your storage": [
+        "Удвойте своё хранилище"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Встречайте ${ PLAN_NAMES[PLANS.DUO] } "
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } добавлено"
@@ -3447,9 +3481,6 @@
       "Amount due": [
         "Сумма к оплате"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
@@ -3579,11 +3610,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -5978,9 +6009,6 @@
       "${ size } storage": [
         "${ size } хранилища"
       ],
-      "${ size } storage per user": [
-        "Объем хранилища на пользователя: ${ size }"
-      ],
       "1 user": [
         "1 пользователь"
       ],
@@ -6004,9 +6032,6 @@
       ],
       "Advanced network security": [
         "Передовая сетевая безопасность"
-      ],
-      "Advanced sharing security": [
-        "Дополнительная безопасность совместного доступа"
       ],
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
@@ -6040,9 +6065,6 @@
       ],
       "Collaborate and share large files": [
         "Работайте вместе и делитесь большими файлами"
-      ],
-      "Collaborative document editor": [
-        "Редактор для совместной работы над документами"
       ],
       "Contact groups": [
         "Группы контактов"
@@ -6226,9 +6248,6 @@
         "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
         "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
         "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах"
-      ],
-      "Share files and folders via link": [
-        "Обменивайтесь файлами и папками по ссылке"
       ],
       "Sign in as user": [
         "Войти как пользователь"
@@ -6434,6 +6453,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Бесплатный стартовый аккаунт, созданный для предоставления всем конфиденциальности по умолчанию."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Неограниченная конфиденциальность и увеличенный объём хранилища для 2 пользователей."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы удалите аккаунт, вы потеряете свою акционную цену, и она не будет доступна, если вы создадите новый аккаунт."
       ],
@@ -6528,9 +6550,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выберите время, в течение которого вам будут напоминать об электронной почте или о том, что ваше сообщение должно прийти."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Контролируйте доступ к общим файлам, добавляя защиту паролем и даты истечения срока действия ссылок"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, JohnShopper@${ domain } для учетных записей покупок, JohnNews@${ domain } для подписки на новости"
@@ -9224,10 +9243,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -9631,9 +9650,6 @@
       ],
       "Sign in to your organization": [
         "Войдите в вашу организацию"
-      ],
-      "Sign in with 2FA": [
-        "Войти с помощью двухфакторной аутентификации"
       ],
       "Sign out": [
         "Выйти"

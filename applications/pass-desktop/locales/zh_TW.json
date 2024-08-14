@@ -458,6 +458,17 @@
         "您的密碼管理器不在此?要求他。"
       ]
     },
+    "App menu": {
+      "Reload": [
+        "重新載入"
+      ],
+      "Show logs": [
+        "顯示記錄檔"
+      ],
+      "Speech": [
+        "語音"
+      ]
+    },
     "bf2023: Label": {
       "Get the deal": [
         "取得優惠"
@@ -1821,6 +1832,20 @@
         "啟用${ reason }"
       ]
     },
+    "Menu": {
+      "Edit": [
+        "編輯"
+      ],
+      "File": [
+        "檔案"
+      ],
+      "View": [
+        "檢視"
+      ],
+      "Window": [
+        "視窗"
+      ]
+    },
     "Message": {
       "${ count } item": [
         "${ count } 個項目"
@@ -2040,9 +2065,6 @@
       "Discard changes?": [
         "捨棄變更？"
       ],
-      "Email address": [
-        "電子郵件地址"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
       ],
@@ -2126,9 +2148,6 @@
       ],
       "Passkey": [
         "密碼金鑰"
-      ],
-      "Password": [
-        "密碼"
       ],
       "Password Health": [
         "密碼健檢"

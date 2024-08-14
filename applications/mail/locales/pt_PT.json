@@ -277,6 +277,9 @@
       "Create a new label": [
         "Criar uma etiqueta"
       ],
+      "Create alias": [
+        "Criar um alias"
+      ],
       "Create and copy alias": [
         "Criar e colar alias"
       ],
@@ -471,9 +474,6 @@
       "Get in touch": [
         "Entrar em contacto"
       ],
-      "Get SimpleLogin extension": [
-        "Obter a extensão SimpleLogin"
-      ],
       "Get started": [
         "Começar"
       ],
@@ -500,9 +500,6 @@
       ],
       "Go to settings": [
         "Ir para as definições"
-      ],
-      "Go to SimpleLogin": [
-        "Ir para o SimpleLogin"
       ],
       "Got it": [
         "Entendido"
@@ -790,11 +787,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open": [
         "Abrir"
@@ -1173,10 +1170,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -6357,12 +6350,6 @@
       "Show original message": [
         "Mostrar mensagem original"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "O SimpleLogin é um serviço da ${ BRAND_NAME }, e a sua conta da ${ BRAND_NAME_TWO } inclui os aliases do Hide-my-email. Para começar a mascarar o seu endereço de e-mail, aceda ao SimpleLogin e crie o seu primeiro alias."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin fornece um meio simples de criar logins em sites de terceiros não confiáveis, de forma a que o seu endereço de e-mail real não seja exposto."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
       ],
@@ -6699,9 +6686,6 @@
       "Users": [
         "Utilizadores"
       ],
-      "Using SimpleLogin is easy": [
-        "Usar o SimpleLogin é fácil"
-      ],
       "Verification may take a few minutes.": [
         "A verificação pode demorar alguns minutos."
       ],
@@ -6937,9 +6921,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Atingiu o número máximo de endereços no grupo de contacto."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "A sua conta ${ BRAND_NAME } inclui SimpleLogin. Instale a extensão do navegador com um clique para começar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor efetue o pagamento das faturas em atraso."
@@ -8524,9 +8505,6 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
-      "${ size } storage per user": [
-        "${ size } de armazenamento por utilizador"
-      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -8541,9 +8519,6 @@
       ],
       "Administration Panel": [
         "Painel de administração"
-      ],
-      "Advanced sharing security": [
-        "Segurança avançada de partilha"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixeira"
@@ -8711,9 +8686,6 @@
       ],
       "Send & receive invitations": [
         "Enviar e receber convites"
-      ],
-      "Share files and folders via link": [
-        "Compartilhe ficheiros e pastas com uma ligação"
       ],
       "Sign in as user": [
         "Iniciar sessão como utilizador"
@@ -8919,9 +8891,6 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "O envio de e-mail promocional ou programático em massa não é atualmente suportado. Recomendamos a utilização de um fornecedor de serviços de e-mail dedicado para este caso de utilização."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controle o acesso aos seus ficheiros partilhados, adicionando proteção por palavra-passe e datas de expiração das ligações."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crie vários endereços de e-mail para as suas identidades online, por exemplo, JoãoCompras@${ domain } para as contas de compras, JoãoNotícias@${ domain } para as subscrições de notícias"
@@ -11260,9 +11229,6 @@
       "Edit image": [
         "Editar imagem"
       ],
-      "Email address": [
-        "Endereço de e-mail"
-      ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
@@ -11319,9 +11285,6 @@
       ],
       "Groups": [
         "Grupos"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Oculte o seu e-mail com o SimpleLogin por ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Verificação humana"
@@ -11492,9 +11455,6 @@
       "Other names": [
         "Outros nomes"
       ],
-      "Password": [
-        "Palavra-passe"
-      ],
       "Payment failed": [
         "Erro no pagamento"
       ],
@@ -11623,9 +11583,6 @@
       ],
       "Sign in and grant access": [
         "Faça login e conceda acesso"
-      ],
-      "Sign in with 2FA": [
-        "Autenticação com 2FA"
       ],
       "Sign out": [
         "Terminar sessão"

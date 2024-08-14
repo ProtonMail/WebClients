@@ -143,7 +143,7 @@ export const createFormTrackerService = () => {
         withContext((ctx, { payload }, sender) => {
             const { reason, ...staging } = payload;
 
-            if (ctx.getState().loggedIn) {
+            if (ctx.getState().authorized) {
                 const { tabId, url } = parseSender(sender);
                 const { domain, subdomain, protocol: scheme } = url;
                 const staged = stage(tabId, { domain, subdomain, scheme, ...staging }, reason);
@@ -159,7 +159,7 @@ export const createFormTrackerService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FORM_ENTRY_STASH,
         withContext((ctx, { payload: { reason } }, sender) => {
-            if (ctx.getState().loggedIn) {
+            if (ctx.getState().authorized) {
                 const { tabId, url } = parseSender(sender);
                 if (url.domain) {
                     stash(tabId, reason);
@@ -174,7 +174,7 @@ export const createFormTrackerService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FORM_ENTRY_COMMIT,
         withContext((ctx, { payload: { reason } }, sender) => {
-            if (ctx.getState().loggedIn) {
+            if (ctx.getState().authorized) {
                 const { tabId, url } = parseSender(sender);
                 if (url.domain) {
                     const committed = commit(tabId, url.domain, reason);
@@ -202,7 +202,7 @@ export const createFormTrackerService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FORM_ENTRY_REQUEST,
         withContext(async (ctx, _, sender) => {
-            if (ctx.getState().loggedIn) {
+            if (ctx.getState().authorized) {
                 const { tabId, url } = parseSender(sender);
 
                 if (url.domain) {

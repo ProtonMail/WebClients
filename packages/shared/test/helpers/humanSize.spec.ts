@@ -26,6 +26,26 @@ describe('humanSize', () => {
     it('should 1.0 GB correctly', () => {
         expect(humanSize({ bytes: 1024 * 1024 * 1024, unit: 'GB', fraction: 1 })).toEqual('1.0 GB');
     });
+
+    it('should show max correctly', () => {
+        (
+            [
+                { max: 'B', expectation: '1099511627776 bytes' },
+                { max: 'KB', expectation: '1073741824 KB' },
+                { max: 'MB', expectation: '1048576 MB' },
+                { max: 'GB', expectation: '1024 GB' },
+                { max: 'TB', expectation: '1 TB' },
+            ] as const
+        ).forEach(({ max, expectation }) => {
+            expect(
+                humanSize({
+                    bytes: 1024 * 1024 * 1024 * 1024,
+                    unitOptions: { max },
+                    fraction: 0,
+                })
+            ).toEqual(expectation);
+        });
+    });
 });
 
 describe('shortHumanSize', () => {

@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     BRAND_NAME,
@@ -53,7 +53,6 @@ export const getStorageFeature = (
         boldStorageSize?: boolean;
         family?: boolean;
         duo?: boolean;
-        drivebusiness?: boolean;
         visionary?: boolean;
         subtext?: boolean;
     }
@@ -77,7 +76,7 @@ export const getStorageFeature = (
 
     // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
     let humanReadableSize = humanSize({ bytes, fraction: 0 });
-    if (options.duo || options.drivebusiness) {
+    if (options.duo) {
         humanReadableSize = getTb(1);
     } else if (options.visionary) {
         humanReadableSize = getTb(6);
@@ -125,9 +124,10 @@ export const getStorageFeatureB2B = (
         subtext?: boolean;
     }
 ): PlanCardFeatureDefinition => {
-    const size = humanSize({ bytes, fraction: 0 });
+    const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
+
     return {
-        text: c('new_plans: feature').t`${size} storage per user`,
+        text: c('new_plans: feature').t`${size} of secure storage per user`,
         tooltip: c('new_plans: tooltip')
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}. Administrators can allocate different storage amounts to users in their organization`,
         subtext: options.subtext ? c('storage_split: info').t`For all ${BRAND_NAME} services` : undefined,
@@ -144,17 +144,23 @@ export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getVersionHistory = (options?: 'generic' | '365'): PlanCardFeatureDefinition => {
-    if (options === '365') {
+export const getVersionHistory = (options?: 'generic' | 30 | 365): PlanCardFeatureDefinition => {
+    if (options === 365 || options === 30) {
         return {
-            text: c('new_plans: feature').t`365-day file version history`,
+            text: c('new_plans: feature').ngettext(
+                msgid`${options}-day file version history`,
+                `${options}-day file version history`,
+                options
+            ),
             included: true,
+            icon: 'clock-rotate-left',
         };
     }
 
     return {
         text: c('new_plans: feature').t`Version history`,
         included: true,
+        icon: 'clock-rotate-left',
     };
 };
 
@@ -185,24 +191,22 @@ export const getDriveAppFeature = (options?: { family?: boolean; duo?: boolean }
 
 const getShareFeature = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Share files and folders via link`,
+        text: c('new_plans: feature').t`Share files with no size limit`,
         tooltip: c('new_plans: tooltip').t`Share your files or folders with anyone by using secure, shareable links`,
         included: true,
     };
 };
 
-const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
+const getSyncAndBackupFeature = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Advanced sharing security`,
-        tooltip: c('new_plans: tooltip')
-            .t`Control access to your shared files by adding password protection and link expiration dates`,
+        text: c('new_plans: feature').t`Sync and backup all your files across devices`,
         included: true,
     };
 };
 
 const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Collaborative document editor`,
+        text: c('new_plans: feature').t`Online document editor`,
         included: true,
     };
 };
@@ -211,6 +215,7 @@ export const getCollaborate = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Collaborate and share large files`,
         included: true,
+        icon: 'brand-proton-drive',
     };
 };
 
@@ -229,10 +234,8 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
                 subtext: true,
                 freePlan,
             }),
-            [PLANS.DRIVE_BUSINESS]: getStorageFeature(plansMap[PLANS.DRIVE_BUSINESS]?.MaxSpace ?? 1099511627776, {
-                drivebusiness: true,
+            [PLANS.DRIVE_BUSINESS]: getStorageFeatureB2B(plansMap[PLANS.DRIVE_BUSINESS]?.MaxSpace ?? 1099511627776, {
                 subtext: true,
-                freePlan,
             }),
             [PLANS.PASS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.WALLET]: getStorageFeature(-1, { subtext: true, freePlan }),
@@ -293,6 +296,30 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
             },
         },
         {
+            name: 'document-editor',
+            target: Audience.B2B,
+            plans: {
+                [PLANS.FREE]: getDocumentEditor(),
+                [PLANS.BUNDLE]: getDocumentEditor(),
+                [PLANS.MAIL]: getDocumentEditor(),
+                [PLANS.VPN]: getDocumentEditor(),
+                [PLANS.DRIVE]: getDocumentEditor(),
+                [PLANS.DRIVE_BUSINESS]: getDocumentEditor(),
+                [PLANS.PASS]: getDocumentEditor(),
+                [PLANS.WALLET]: getDocumentEditor(),
+                [PLANS.FAMILY]: getDocumentEditor(),
+                [PLANS.DUO]: getDocumentEditor(),
+                [PLANS.MAIL_PRO]: getDocumentEditor(),
+                [PLANS.MAIL_BUSINESS]: getDocumentEditor(),
+                [PLANS.BUNDLE_PRO]: getDocumentEditor(),
+                [PLANS.BUNDLE_PRO_2024]: getDocumentEditor(),
+                [PLANS.PASS_PRO]: getDocumentEditor(),
+                [PLANS.PASS_BUSINESS]: getDocumentEditor(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
             name: 'share',
             plans: {
                 [PLANS.FREE]: getShareFeature(),
@@ -316,50 +343,49 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
             },
         },
         {
-            name: 'advanced-share',
+            name: 'sync-and-backup',
             plans: {
-                [PLANS.FREE]: getAdvancedShareFeature(),
-                [PLANS.BUNDLE]: getAdvancedShareFeature(),
-                [PLANS.MAIL]: getAdvancedShareFeature(),
-                [PLANS.VPN]: getAdvancedShareFeature(),
-                [PLANS.DRIVE]: getAdvancedShareFeature(),
-                [PLANS.DRIVE_BUSINESS]: getAdvancedShareFeature(),
-                [PLANS.PASS]: getAdvancedShareFeature(),
-                [PLANS.WALLET]: getAdvancedShareFeature(),
-                [PLANS.FAMILY]: getAdvancedShareFeature(),
-                [PLANS.DUO]: getAdvancedShareFeature(),
-                [PLANS.MAIL_PRO]: getAdvancedShareFeature(),
-                [PLANS.MAIL_BUSINESS]: getAdvancedShareFeature(),
-                [PLANS.BUNDLE_PRO]: getAdvancedShareFeature(),
-                [PLANS.BUNDLE_PRO_2024]: getAdvancedShareFeature(),
-                [PLANS.PASS_PRO]: getAdvancedShareFeature(),
-                [PLANS.PASS_BUSINESS]: getAdvancedShareFeature(),
+                [PLANS.FREE]: getSyncAndBackupFeature(),
+                [PLANS.BUNDLE]: getSyncAndBackupFeature(),
+                [PLANS.MAIL]: getSyncAndBackupFeature(),
+                [PLANS.VPN]: getSyncAndBackupFeature(),
+                [PLANS.DRIVE]: getSyncAndBackupFeature(),
+                [PLANS.DRIVE_BUSINESS]: getSyncAndBackupFeature(),
+                [PLANS.PASS]: getSyncAndBackupFeature(),
+                [PLANS.WALLET]: getSyncAndBackupFeature(),
+                [PLANS.FAMILY]: getSyncAndBackupFeature(),
+                [PLANS.DUO]: getSyncAndBackupFeature(),
+                [PLANS.MAIL_PRO]: getSyncAndBackupFeature(),
+                [PLANS.MAIL_BUSINESS]: getSyncAndBackupFeature(),
+                [PLANS.BUNDLE_PRO]: getSyncAndBackupFeature(),
+                [PLANS.BUNDLE_PRO_2024]: getSyncAndBackupFeature(),
+                [PLANS.PASS_PRO]: getSyncAndBackupFeature(),
+                [PLANS.PASS_BUSINESS]: getSyncAndBackupFeature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
-            name: 'document-editor',
-            target: Audience.B2B,
+            name: 'version-history',
             plans: {
-                [PLANS.FREE]: getDocumentEditor(),
-                [PLANS.BUNDLE]: getDocumentEditor(),
-                [PLANS.MAIL]: getDocumentEditor(),
-                [PLANS.VPN]: getDocumentEditor(),
-                [PLANS.DRIVE]: getDocumentEditor(),
-                [PLANS.DRIVE_BUSINESS]: getDocumentEditor(),
-                [PLANS.PASS]: getDocumentEditor(),
-                [PLANS.WALLET]: getDocumentEditor(),
-                [PLANS.FAMILY]: getDocumentEditor(),
-                [PLANS.DUO]: getDocumentEditor(),
-                [PLANS.MAIL_PRO]: getDocumentEditor(),
-                [PLANS.MAIL_BUSINESS]: getDocumentEditor(),
-                [PLANS.BUNDLE_PRO]: getDocumentEditor(),
-                [PLANS.BUNDLE_PRO_2024]: getDocumentEditor(),
-                [PLANS.PASS_PRO]: getDocumentEditor(),
-                [PLANS.PASS_BUSINESS]: getDocumentEditor(),
-                [PLANS.VPN_PRO]: null,
-                [PLANS.VPN_BUSINESS]: null,
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: getVersionHistory(365),
+                [PLANS.PASS]: null,
+                [PLANS.WALLET]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.DUO]: null,
+                [PLANS.MAIL_PRO]: getVersionHistory(30),
+                [PLANS.MAIL_BUSINESS]: getVersionHistory(30),
+                [PLANS.BUNDLE_PRO]: getVersionHistory(365),
+                [PLANS.BUNDLE_PRO_2024]: getVersionHistory(365),
+                [PLANS.PASS_PRO]: getVersionHistory(30),
+                [PLANS.PASS_BUSINESS]: getVersionHistory(30),
+                [PLANS.VPN_PRO]: getVersionHistory(30),
+                [PLANS.VPN_BUSINESS]: getVersionHistory(30),
             },
         },
     ];

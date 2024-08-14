@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { SECURITY_CHECKUP_PATHS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 
@@ -15,6 +15,9 @@ const SetupMainContainer: FunctionComponent = () => {
             </Route>
             <Route path={SECURITY_CHECKUP_PATHS.ROOT}>
                 <SecurityCheckupContainer />
+            </Route>
+            <Route path="/security-checkup">
+                <Redirect to={`${SECURITY_CHECKUP_PATHS.ROOT}${location.search}`} />
             </Route>
             <Route path="*">
                 <MainContainer />

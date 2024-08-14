@@ -18,7 +18,7 @@ const config = {
     packagerConfig: {
         asar: true,
         icon: 'assets/logo',
-        extraResource: getExtraResource(),
+        extraResource: ['assets', ...getExtraResource()],
         appBundleId: 'me.proton.pass.electron',
         executableName: process.platform === 'win32' ? 'ProtonPass' : 'Proton Pass',
         // required for debian, else MakerDeb will incorrectly use name from package.json

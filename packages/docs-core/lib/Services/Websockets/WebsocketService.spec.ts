@@ -16,6 +16,10 @@ import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/Websocke
 import type { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 
+const mockOnReadyContentPayload = new TextEncoder().encode(
+  JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
+)
+
 describe('WebsocketService', () => {
   let service: WebsocketService
   let eventBus: InternalEventBusInterface
@@ -23,6 +27,7 @@ describe('WebsocketService', () => {
   let debouncer: UpdateDebouncer
   let connection: WebsocketConnectionInterface
   let record: DocumentConnectionRecord
+  let logger: LoggerInterface
 
   const createService = () => {
     eventBus = {
@@ -33,17 +38,19 @@ describe('WebsocketService', () => {
       execute: jest.fn().mockReturnValue(Result.ok(stringToUtf8Array('123'))),
     } as unknown as jest.Mocked<EncryptMessage>
 
+    logger = {
+      info: jest.fn(),
+      debug: jest.fn(),
+      error: jest.fn(),
+    } as unknown as jest.Mocked<LoggerInterface>
+
     service = new WebsocketService(
       {} as jest.Mocked<GetRealtimeUrlAndToken>,
       encryptMessage,
       {
         execute: jest.fn().mockReturnValue(Result.ok(stringToUtf8Array('123'))),
       } as unknown as jest.Mocked<DecryptMessage>,
-      {
-        info: jest.fn(),
-        debug: jest.fn(),
-        error: jest.fn(),
-      } as unknown as jest.Mocked<LoggerInterface>,
+      logger,
       eventBus,
       '0.0.0.0',
     )
@@ -118,7 +125,7 @@ describe('WebsocketService', () => {
     it('should retry failed messages', async () => {
       service.retryFailedDocumentUpdatesForDoc = jest.fn()
 
-      service.onDocumentConnectionReadyToBroadcast(record)
+      service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
       expect(service.retryFailedDocumentUpdatesForDoc).toHaveBeenCalled()
     })
@@ -126,7 +133,7 @@ describe('WebsocketService', () => {
 
   describe('onDocumentConnectionReadyToBroadcast', () => {
     it('should mark connection as ready to broadcast', async () => {
-      service.onDocumentConnectionReadyToBroadcast(record)
+      service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
       expect(connection.markAsReadyToAcceptMessages).toHaveBeenCalled()
     })
@@ -134,7 +141,7 @@ describe('WebsocketService', () => {
     it('should mark debouncer as ready to flush', () => {
       debouncer.markAsReadyToFlush = jest.fn()
 
-      service.onDocumentConnectionReadyToBroadcast(record)
+      service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
       expect(debouncer.markAsReadyToFlush).toHaveBeenCalled()
     })
@@ -142,9 +149,36 @@ describe('WebsocketService', () => {
     it('should retry failed document updates', () => {
       service.retryFailedDocumentUpdatesForDoc = jest.fn()
 
-      service.onDocumentConnectionReadyToBroadcast(record)
+      service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
       expect(service.retryFailedDocumentUpdatesForDoc).toHaveBeenCalled()
+    })
+
+    it('should pass readiness information to eventBus', () => {
+      service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
+      expect(eventBus.publish).toHaveBeenCalledWith({
+        type: WebsocketConnectionEvent.Connected,
+        payload: {
+          document: record.document,
+          readinessInformation: {
+            connectionId: '12345678',
+            clientUpgradeRecommended: true,
+            clientUpgradeRequired: true,
+          },
+        },
+      })
+    })
+
+    it('should log error and call eventBus if content is not parsable', () => {
+      service.onDocumentConnectionReadyToBroadcast(record, new TextEncoder().encode('not parsable'))
+      expect(logger.error).toHaveBeenCalledWith('Unable to parse content from ConnectionReady message')
+      expect(eventBus.publish).toHaveBeenCalledWith({
+        type: WebsocketConnectionEvent.Connected,
+        payload: {
+          document: record.document,
+          readinessInformation: undefined,
+        },
+      })
     })
   })
 

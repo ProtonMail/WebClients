@@ -23,9 +23,9 @@ export const createContentScriptContext = (options: {
     destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
     const state: CSContextState = {
+        authorized: false,
         booted: false,
         localID: undefined,
-        loggedIn: false,
         ready: false,
         stale: false,
         status: AppStatus.IDLE,

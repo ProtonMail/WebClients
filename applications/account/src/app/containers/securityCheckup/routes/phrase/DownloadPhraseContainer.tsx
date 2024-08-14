@@ -72,16 +72,16 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
                 </div>
 
                 <SecurityCheckupMainTitle>
-                    {c('l10n_nightly: Security checkup').t`There was an error generating your Recovery Kit`}
+                    {c('Safety review').t`There was an error generating your Recovery Kit`}
                 </SecurityCheckupMainTitle>
 
                 <div>
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm">
-                    {c('l10n_nightly: Security checkup').t`Back to Safety Review`}
+                    {c('Safety review').t`Back to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -91,7 +91,7 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phraseIcon} color="success" />}>
-                    {c('l10n_nightly: Security checkup').t`Your Recovery Kit is set`}
+                    {c('Safety review').t`Your Recovery Kit is set`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -100,12 +100,12 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
                 </div>
 
                 <div className="mt-6">
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
-                    {c('l10n_nightly: Security checkup').t`Continue to Safety Review`}
+                    {c('Safety review').t`Continue to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -152,8 +152,8 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
                 }
             >
                 {phrase.isSet || phrase.isOutdated
-                    ? c('l10n_nightly: Security checkup').t`Update your Recovery Kit?`
-                    : c('l10n_nightly: Security checkup').t`Download your Recovery Kit`}
+                    ? c('Safety review').t`Update your Recovery Kit?`
+                    : c('Safety review').t`Download your Recovery Kit`}
             </SecurityCheckupMainTitle>
 
             <div>
@@ -163,18 +163,18 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
             <div className="flex flex-column gap-4">
                 {phrase.isOutdated ? (
                     <div>
-                        {c('l10n_nightly: Security checkup')
+                        {c('Safety review')
                             .t`Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.`}
                     </div>
                 ) : (
                     <>
                         <div>
-                            {c('l10n_nightly: Security checkup')
+                            {c('Safety review')
                                 .t`If you get locked out of your ${BRAND_NAME} Account, your Recovery Kit will allow you to sign in and recover your data.`}
                         </div>
 
                         <div>
-                            {c('l10n_nightly: Security checkup')
+                            {c('Safety review')
                                 .t`It’s the only way to fully restore your account, so make sure you keep it somewhere safe.`}
                         </div>
                     </>
@@ -183,7 +183,7 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
                 {phrase.isSet || phrase.isOutdated ? (
                     <div>
                         {getBoldFormattedText(
-                            c('l10n_nightly: Security checkup')
+                            c('Safety review')
                                 .t`You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.`
                         )}
                     </div>
@@ -198,7 +198,7 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
                             onChange={downloading ? noop : () => setUnderstood(!understood)}
                         />
                         <Label htmlFor="understood-recovery-necessity" className="flex-1">
-                            {c('l10n_nightly: Security checkup')
+                            {c('Safety review')
                                 .t`I understand that I will not be able to recover currently locked data with this Recovery Kit`}
                         </Label>
                     </div>
@@ -214,7 +214,7 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
                 onClick={() => withDownloading(handleDownload)}
             >
                 <Icon name="arrow-down-line" className="mr-2" />
-                {c('l10n_nightly: Security checkup').t`Download ${size}`}
+                {c('Safety review').t`Download ${size}`}
             </Button>
         </SecurityCheckupMain>
     );

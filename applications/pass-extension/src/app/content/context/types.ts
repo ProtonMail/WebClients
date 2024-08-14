@@ -11,8 +11,8 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState, Maybe } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
-export type WorkerStateChangeHandler = (state: AppState) => void;
 export type CSContextState = AppState & { stale: boolean; ready: boolean };
+
 export type CSFeatures =
     | 'Autofill'
     | 'Autofill2FA'
@@ -20,6 +20,7 @@ export type CSFeatures =
     | 'AutosuggestAlias'
     | 'AutosuggestPassword'
     | 'Passkeys';
+
 export interface ContentScriptContext {
     mainFrame: boolean;
     elements: PassElementsConfig;

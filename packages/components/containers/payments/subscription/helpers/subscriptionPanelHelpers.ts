@@ -30,7 +30,16 @@ const getUserText = (isOrganizationDelinquent: boolean, MaxMembers: number, Used
     );
 };
 
-const getAddressText = (isOrganizationDelinquent: boolean, MaxAddresses: number, UsedAddresses: number) => {
+const getAddressText = (
+    isOrganizationDelinquent: boolean,
+    MaxAddresses: number,
+    UsedAddresses: number,
+    MaxMembers: number
+) => {
+    if (MaxMembers > 1 && MaxAddresses === 1 && UsedAddresses === 1 && !isOrganizationDelinquent) {
+        return c('Subscription attribute').t`1 email address per user`;
+    }
+
     if (isOrganizationDelinquent || (MaxAddresses === 1 && UsedAddresses === 1)) {
         return c('Subscription attribute').t`1 email address`;
     }
@@ -136,7 +145,7 @@ export const getSubscriptionPanelText = (
 
     return {
         userText: getUserText(isOrganizationDelinquent, MaxMembers, UsedMembers),
-        addressText: getAddressText(isOrganizationDelinquent, MaxAddresses, UsedAddresses),
+        addressText: getAddressText(isOrganizationDelinquent, MaxAddresses, UsedAddresses, MaxMembers),
         domainsText: getDomainsText(isOrganizationDelinquent, MaxDomains, UsedDomains),
         calendarText: getCalendarText(user, MaxMembers),
         vpnText: getVPNText(user, MaxMembers),

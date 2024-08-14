@@ -208,7 +208,7 @@ export const createAuthService = ({
         },
 
         onLoginComplete: async (_, localID) => {
-            client.setLoggedIn(true);
+            client.setAuthorized(true);
             onboarding.init().catch(noop);
             setSentryUID(authStore.getUID());
 
@@ -229,7 +229,7 @@ export const createAuthService = ({
             onboarding.reset();
             telemetry.stop();
             B2BEvents.stop();
-            settings.clear();
+            void settings.clear();
 
             setSentryUID(undefined);
         },

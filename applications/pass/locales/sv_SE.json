@@ -935,6 +935,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Vi stötte på ett problem när vi startade ${ PASS_SHORT_APP_NAME }. Om problemet kvarstår, kontakta vår kundsupport för hjälp."
       ],
+      "Wrong extra password": [
+        "Fel extra lösenord"
+      ],
       "Wrong password": [
         "Fel lösenord"
       ],
@@ -1460,9 +1463,6 @@
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod för att låsa upp din session. Du kommer att loggas ut efter 3 misslyckade försök."
-      ],
       "Owner": [
         "Ägare"
       ],
@@ -1502,6 +1502,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your extra password": [
+        "Bekräfta ditt extra lösenord"
       ],
       "Please confirm your password": [
         "Bekräfta ditt lösenord"
@@ -1598,6 +1601,9 @@
       ],
       "Session timed out": [
         "Session timeout"
+      ],
+      "Set by your organization": [
+        "Inställt av din organisation"
       ],
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
@@ -1849,6 +1855,9 @@
       "15 minutes": [
         "15 minuter"
       ],
+      "2 minutes": [
+        "2 minuter"
+      ],
       "24 hours": [
         "24 timmar"
       ],
@@ -1866,6 +1875,9 @@
       ],
       "30 seconds": [
         "30 sekunder"
+      ],
+      "4 hours": [
+        "4 timmar"
       ],
       "5 minutes": [
         "5 minuter"
@@ -2709,11 +2721,11 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
-      "Email address": [
-        "E-postadress"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Ange ditt extra lösenord"
       ],
       "Enter your password": [
         "Ange ditt lösenord"
@@ -2810,9 +2822,6 @@
       ],
       "Passkey": [
         "Passkey"
-      ],
-      "Password": [
-        "Lösenord"
       ],
       "Password Health": [
         "Lösenordshälsa"
@@ -2975,6 +2984,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME }-lösenord är obligatoriskt"
+      ],
       "A description of the problem is required": [
         "En beskrivning av problemet är obligatoriskt"
       ],
@@ -3011,14 +3023,14 @@
       "Empty note": [
         "Tom anteckning"
       ],
-      "Encryption password is required": [
-        "Krypteringslösenord är obligatoriskt"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
       "Extra password cannot be empty": [
         "Extra lösenord kan inte vara tomt"
+      ],
+      "Extra password is required": [
+        "Extra lösenord är obligatoriskt"
       ],
       "Extra password should have at least 8 characters": [
         "Extra lösenord bör ha minst 8 tecken"

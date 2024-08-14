@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import {
@@ -21,6 +21,7 @@ import {
     getFreeMailStorageFeature,
     getStorageFeature,
     getStorageFeatureB2B,
+    getVersionHistory,
 } from './drive';
 import { get24x7Support, getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
 import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
@@ -110,6 +111,13 @@ export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getUpToNUsers = (n: number): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').ngettext(msgid`${n} user`, `Up to ${n} users`, n),
+        included: true,
+    };
+};
+
 export const getCTA = (planName: string) => {
     return c('new_plans: action').t`Get ${planName}`;
 };
@@ -193,8 +201,6 @@ export const getDrivePlan = ({
 
 export const getDriveBusinessPlan = ({
     plan,
-    boldStorageSize,
-    freePlan,
 }: {
     freePlan: FreePlanDefault;
     plan: Plan;
@@ -204,14 +210,12 @@ export const getDriveBusinessPlan = ({
         plan: PLANS.DRIVE_BUSINESS,
         title: plan.Title,
         label: '',
-        description: c('new_plans: info').t`Protect sensitive business information and collaborate securely.`,
+        description: c('new_plans: info')
+            .t`Protect sensitive business information and collaborate securely.asdfasdfsdf`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan, drivebusiness: true }),
-            getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-            getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
-            getVPNConnections(1),
-            getSupport('priority'),
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
+            getVersionHistory(365),
         ],
     };
 };

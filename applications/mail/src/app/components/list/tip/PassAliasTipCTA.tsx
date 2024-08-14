@@ -8,7 +8,11 @@ import PassAliasesUpsellModal from '@proton/components/components/drawer/views/S
 import { useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+
+import { TipActionType } from 'proton-mail/models/tip';
+
+import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 
 interface Props {
     ctaText: string;
@@ -16,6 +20,7 @@ interface Props {
 
 const PassAliasTipCTA = ({ ctaText }: Props) => {
     const { hasReachedAliasesCountLimit } = usePassAliasesContext();
+    const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
 
     const authentication = useAuthentication();
 
@@ -43,11 +48,17 @@ const PassAliasTipCTA = ({ ctaText }: Props) => {
         } else {
             createPassAliasesForm.openModal(true);
         }
+        sendCTAButtonClickedReport(TipActionType.CreateAlias);
     };
 
     return (
         <>
-            {passAliasesUpsellModal.render && <PassAliasesUpsellModal modalProps={passAliasesUpsellModal.modalProps} />}
+            {passAliasesUpsellModal.render && (
+                <PassAliasesUpsellModal
+                    modalProps={passAliasesUpsellModal.modalProps}
+                    upsellComponent={UPSELL_COMPONENT.TIP}
+                />
+            )}
             {createPassAliasesForm.render && (
                 <CreatePassAliasesForm
                     onSubmit={() => {

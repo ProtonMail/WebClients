@@ -157,6 +157,9 @@
       "Allow": [
         "Erlauben"
       ],
+      "Always allow sending mail to group": [
+        "Senden von E-Mails an die Gruppe immer erlauben"
+      ],
       "Apply": [
         "Übernehmen"
       ],
@@ -1367,8 +1370,8 @@
       "External": [
         "Extern"
       ],
-      "Missing keys": [
-        "Fehlende Schlüssel"
+      "Inactive": [
+        "Inaktiv"
       ],
       "No E2EE mail": [
         "Keine E2EE-E-Mails"
@@ -3598,9 +3601,6 @@
       "Free, encrypted, and secure cloud storage": [
         "Kostenloser, verschlüsselter und sicherer Cloud-Speicher"
       ],
-      "Secure cloud storage and file sharing that protects your data": [
-        "Sicherer Cloud-Speicher und Dateifreigabe zum Schutz deiner Daten"
-      ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du wurdest eingeladen, auf eine Datei in ${ DRIVE_APP_NAME } zuzugreifen."
       ]
@@ -3611,6 +3611,43 @@
       ],
       "Priority support": [
         "Priorisierter Support"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Hol dir ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Für ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Jährlich für ${ amountBilled } in Rechnung gestellt. Spare ${ amountSave } bei 2 individuellen ${ BRAND_NAME } Unlimited-Jahresabonnements."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 Benutzer"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Voller Zugriff auf alle ${ BRAND_NAME }-Produkte"
+      ],
+      "You save ${ amountSave }": [
+        "Du sparst ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Alles von ${ BRAND_NAME } für zwei Personen."
+      ],
+      "Double your storage": [
+        "Verdopple deinen Speicherplatz"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Wir präsentieren ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5053,8 +5090,14 @@
       "*Only one free trial per customer.": [
         "*Nur eine kostenlose Testversion pro Kunde."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Konten mit eigenen Domains können keinem Gruppenabonnement beitreten."
+      ],
       "customer support": [
         "Kundendienst"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Gruppenabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -5073,6 +5116,9 @@
       ],
       "Leave Visionary plan": [
         "Visionary-Abonnement verlassen"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Lebenslang lizenzierte Konten können keinem Gruppenabonnement beitreten."
       ],
       "Manage addresses.": [
         "Adressen verwalten."
@@ -5145,6 +5191,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Du kannst diese Einladung mit deinem derzeitigen Abonnement nicht annehmen."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6671,9 +6720,6 @@
       "Are you sure you want to delete this label?": [
         "Möchtest du diese Kategorie wirklich löschen?"
       ],
-      "Are you sure you want to disable two-factor authentication?": [
-        "Bist du sicher, dass du die Zwei-Faktor-Authentifizierung (2FA) deaktivieren willst?"
-      ],
       "Are you sure you want to discard your changes?": [
         "Möchtest du deine Änderungen wirklich verwerfen?"
       ],
@@ -7696,6 +7742,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andere Benutzer innerhalb deiner Organisation sehen deine belegten Zeitfenster. Es werden keine Termindetails geteilt."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Unsere Warnungen sind eher auf der Seite der Vorsicht angesiedelt. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Veraltete Wiederherstellungsdatei. Aktualisiere diese, um den Zugriff auf deine Daten zu gewährleisten."
@@ -9066,6 +9115,11 @@
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Keine gültige E-Mail-Adresse"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Link-Beschreibung (optional)"
@@ -9082,6 +9136,9 @@
       ],
       "Rejected": [
         "Abgelehnt"
+      ],
+      "Sending invite...": [
+        "Einladung wird versendet..."
       ]
     },
     "Invoice state display as badge": {
@@ -9455,6 +9512,27 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
+      ],
+      "1 hour": [
+        "1 Stunde"
+      ],
+      "1 minute": [
+        "1 Minute"
+      ],
+      "10 minutes": [
+        "10 Minuten"
+      ],
+      "15 minutes": [
+        "15 Minuten"
+      ],
+      "30 minutes": [
+        "30 Minuten"
+      ],
+      "30 seconds": [
+        "30 Sekunden"
+      ],
+      "5 minutes": [
+        "5 Minuten"
       ],
       "Account recovery": [
         "Kontowiederherstellung"
@@ -11391,9 +11469,6 @@
       "${ size } storage": [
         "${ size } Speicherplatz"
       ],
-      "${ size } storage per user": [
-        "${ size } Speicherplatz pro Benutzer"
-      ],
       "1 user": [
         "1 Benutzer"
       ],
@@ -11417,9 +11492,6 @@
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
-      ],
-      "Advanced sharing security": [
-        "Erweiterte Sicherheit beim Teilen"
       ],
       "All ${ BRAND_NAME } services": [
         "Alle ${ BRAND_NAME }-Dienste"
@@ -11456,9 +11528,6 @@
       ],
       "Collaborate and share large files": [
         "Arbeite mit anderen zusammen und tausche große Dateien aus"
-      ],
-      "Collaborative document editor": [
-        "Gemeinsame Dokumentbearbeitung"
       ],
       "Contact groups": [
         "Kontaktgruppen"
@@ -11639,9 +11708,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Server in mehr als ${ vpnServersCountData.paid.countries } Land",
         "Server in mehr als ${ vpnServersCountData.paid.countries } Ländern"
-      ],
-      "Share files and folders via link": [
-        "Dateien und Ordner als Link teilen"
       ],
       "Sign in as user": [
         "Als Benutzer anmelden"
@@ -11855,9 +11921,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Sichere dein digitales Leben mit ${ BRAND_NAME } für zwei Personen."
-      ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Lege automatische Antworten fest, um Absender darüber zu informieren, dass du nicht im Büro bist oder nicht antworten kannst."
       ],
@@ -11869,6 +11932,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Das kostenlose Starterkonto, das standardmäßig allen Benutzern Privatsphäre gibt."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Unbegrenzte Privatsphäre und mehr Speicher für bis zu 2 Personen."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto löschst, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Konto erstellst."
@@ -11997,9 +12063,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Wähle individuelle Zeiten, zu denen du an eine E-Mail erinnert werden möchtest oder zu denen deine Nachricht ankommen soll."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Steuere den Zugriff auf deine geteilten Dateien mittels Passwortschutz und Ablaufdaten für Links."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain } für Nachrichten-Abonnements."
@@ -12910,9 +12973,6 @@
       "Current plan": [
         "Aktuelles Abonnement"
       ],
-      "Customizable services for large teams.": [
-        "Anpassbare Dienstleistungen für große Teams."
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Lade die entsprechenden Apps und Erweiterungen herunter und installiere sie, um ${ PASS_APP_NAME } zu verwenden."
       ],
@@ -12987,9 +13047,6 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben."
-      ],
-      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
-        "Schließe dich über 50.000 Unternehmen an, die ${ BRAND_NAME } vertrauen."
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird gestartet"
@@ -14330,16 +14387,6 @@
         "Verifikation"
       ]
     },
-    "signup: Action": {
-      "Request a demo": [
-        "Demo anfordern"
-      ]
-    },
-    "signup_2024: Feature": {
-      "GDPR compliant": [
-        "DSGVO-konform"
-      ]
-    },
     "specialoffer: Action": {
       "Close": [
         "Schließen"
@@ -15324,6 +15371,9 @@
       "Import record deleted": [
         "Import-Eintrag gelöscht"
       ],
+      "Invitation rejected": [
+        "Einladung abgelehnt"
+      ],
       "Invitation sent": [
         "Einladung gesendet"
       ],
@@ -15347,6 +15397,18 @@
       ],
       "Organization activated": [
         "Organisation aktiviert"
+      ],
+      "Organization identity updated": [
+        "Organisationsidentität aktualisiert"
+      ],
+      "Organization logo removed": [
+        "Organisationslogo entfernt"
+      ],
+      "Organization logo updated": [
+        "Organisationslogo aktualisiert"
+      ],
+      "Organization name updated": [
+        "Organisationsname aktualisiert"
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
@@ -16119,9 +16181,6 @@
       "Email": [
         "E-Mail-Adresse"
       ],
-      "Email address": [
-        "E‐Mail‐Adresse"
-      ],
       "Email composer": [
         "Fenster zum Verfassen von E-Mails"
       ],
@@ -16520,6 +16579,9 @@
       "Security and privacy": [
         "Sicherheit und Datenschutz"
       ],
+      "Security events": [
+        "Sicherheitsereignisse"
+      ],
       "Security logs": [
         "Sicherheitsprotokolle"
       ],
@@ -16591,9 +16653,6 @@
       ],
       "Sign in to your organization": [
         "Bei deiner Organisation anmelden"
-      ],
-      "Sign in with 2FA": [
-        "Mit 2FA anmelden"
       ],
       "Sign out": [
         "Abmelden"
@@ -17089,6 +17148,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ],
+      "Sending member invitation": [
+        "Mitgliedseinladung wird versendet"
       ],
       "User rejected invitation": [
         "Benutzer hat Einladung abgelehnt"

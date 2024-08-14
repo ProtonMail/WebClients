@@ -16,7 +16,7 @@ const ToolbarButton = ({
         <button
             type="button"
             disabled={disabled}
-            className={clsx(['editor-toolbar-button interactive-pseudo-inset m-0 flex', className])}
+            className={clsx(['editor-toolbar-button interactive-pseudo-inset relative m-0 flex', className])}
             onClick={onClick}
             {...rest}
         >

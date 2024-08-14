@@ -32,9 +32,8 @@ const PhraseAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHRASE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phraseIcon} color="warning" />}
-                    title={c('l10n_nightly: Security checkup').t`Update your Recovery Kit`}
-                    subTitle={c('l10n_nightly: Security checkup')
-                        .t`to recover your account and data if you're ever locked out`}
+                    title={c('Safety review').t`Update your Recovery Kit`}
+                    subTitle={c('Safety review').t`to recover your account and data if you're ever locked out`}
                 />
             </SecurityCheckupCardButton>
         );
@@ -44,9 +43,8 @@ const PhraseAction = () => {
         <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHRASE)}>
             <SecurityCheckupCardButtonInner
                 prefix={<SecurityCheckupMainIcon className="self-start" icon={phraseIcon} color="danger" />}
-                title={c('l10n_nightly: Security checkup').t`Download your Recovery Kit`}
-                subTitle={c('l10n_nightly: Security checkup')
-                    .t`to recover your account and data if you're ever locked out`}
+                title={c('Safety review').t`Download your Recovery Kit`}
+                subTitle={c('Safety review').t`to recover your account and data if you're ever locked out`}
             />
         </SecurityCheckupCardButton>
     );
@@ -68,8 +66,8 @@ const EmailAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_EMAIL)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="danger" />}
-                    title={c('l10n_nightly: Security checkup').t`Add a recovery email address`}
-                    subTitle={c('l10n_nightly: Security checkup').t`to recover your account if you're ever locked out`}
+                    title={c('Safety review').t`Add a recovery email address`}
+                    subTitle={c('Safety review').t`to recover your account if you're ever locked out`}
                 />
             </SecurityCheckupCardButton>
         );
@@ -80,7 +78,7 @@ const EmailAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.ENABLE_EMAIL)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="danger" />}
-                    title={c('l10n_nightly: Security checkup').t`Enable recovery by email`}
+                    title={c('Safety review').t`Enable recovery by email`}
                     subTitle={email.value}
                 />
             </SecurityCheckupCardButton>
@@ -92,7 +90,7 @@ const EmailAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.VERIFY_EMAIL)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="warning" />}
-                    title={c('l10n_nightly: Security checkup').t`Verify your recovery email address`}
+                    title={c('Safety review').t`Verify your recovery email address`}
                     subTitle={email.value}
                 />
             </SecurityCheckupCardButton>
@@ -118,8 +116,8 @@ const PhoneAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHONE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
-                    title={c('l10n_nightly: Security checkup').t`Add a recovery phone number`}
-                    subTitle={c('l10n_nightly: Security checkup').t`to recover your account if you're ever locked out`}
+                    title={c('Safety review').t`Add a recovery phone number`}
+                    subTitle={c('Safety review').t`to recover your account if you're ever locked out`}
                 />
             </SecurityCheckupCardButton>
         );
@@ -132,7 +130,7 @@ const PhoneAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.ENABLE_PHONE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
-                    title={c('l10n_nightly: Security checkup').t`Enable recovery by phone`}
+                    title={c('Safety review').t`Enable recovery by phone`}
                     subTitle={formattedPhoneNumber}
                 />
             </SecurityCheckupCardButton>
@@ -144,7 +142,7 @@ const PhoneAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.VERIFY_PHONE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="warning" />}
-                    title={c('l10n_nightly: Security checkup').t`Verify your recovery phone number`}
+                    title={c('Safety review').t`Verify your recovery phone number`}
                     subTitle={formattedPhoneNumber}
                 />
             </SecurityCheckupCardButton>
@@ -168,9 +166,8 @@ const DeviceAction = () => {
         <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.ENABLE_DEVICE_RECOVERY)}>
             <SecurityCheckupCardButtonInner
                 prefix={<SecurityCheckupMainIcon className="self-start" icon={deviceIcon} color="danger" />}
-                title={c('l10n_nightly: Security checkup').t`Enable device-based recovery`}
-                subTitle={c('l10n_nightly: Security checkup')
-                    .t`to automatically recover your data when you log into a trusted device`}
+                title={c('Safety review').t`Enable device-based recovery`}
+                subTitle={c('Safety review').t`to automatically recover your data when you log into a trusted device`}
             />
         </SecurityCheckupCardButton>
     );

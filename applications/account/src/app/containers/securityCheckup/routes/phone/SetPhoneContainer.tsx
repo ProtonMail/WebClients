@@ -29,11 +29,11 @@ const SetPhoneContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="danger" />}>
-                {c('l10n_nightly: Security checkup').t`Add a recovery phone number`}
+                {c('Safety review').t`Add a recovery phone number`}
             </SecurityCheckupMainTitle>
 
             <div className="mb-4">
-                {c('l10n_nightly: Security checkup')
+                {c('Safety review')
                     .t`You can use your recovery phone to regain access to your account if you forget your password.`}
             </div>
 
@@ -44,7 +44,7 @@ const SetPhoneContainer = () => {
                 phone={userSettings.Phone}
                 hasReset={!!userSettings.Phone.Reset}
                 disableVerifyCta
-                inputProps={{ label: c('l10n_nightly: Security checkup').t`Recovery phone number` }}
+                inputProps={{ label: c('Safety review').t`Recovery phone number` }}
                 renderForm={({ onSubmit, input, submitButtonProps }) => {
                     return (
                         <form onSubmit={onSubmit}>

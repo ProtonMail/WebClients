@@ -40,7 +40,7 @@ const EnableEmailContainer = () => {
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="success" />}>
-                    {c('l10n_nightly: Security checkup').t`Your recovery email has been enabled`}
+                    {c('Safety review').t`Your recovery email has been enabled`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -49,12 +49,12 @@ const EnableEmailContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`${BRAND_NAME} will use this address to send a reset code by email when you reset your password.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
-                    {c('l10n_nightly: Security checkup').t`Continue to Safety Review`}
+                    {c('Safety review').t`Continue to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -70,15 +70,15 @@ const EnableEmailContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="danger" />}>
-                {c('l10n_nightly: Security checkup').t`Enable recovery by email`}
+                {c('Safety review').t`Enable recovery by email`}
             </SecurityCheckupMainTitle>
 
-            <div className="mb-2">{c('l10n_nightly: Security checkup').t`You recovery email address is:`}</div>
+            <div className="mb-2">{c('Safety review').t`You recovery email address is:`}</div>
             <div className="rounded bg-weak p-3 mb-4">{email.value}</div>
 
             <div>
                 {getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
+                    c('Safety review')
                         .t`**Enable recovery by email** to regain access to your account if you forget your password.`
                 )}
             </div>
@@ -90,7 +90,7 @@ const EnableEmailContainer = () => {
                 onClick={() => withEnabling(enablePasswordResetViaEmail)}
                 loading={enabling}
             >
-                {c('l10n_nightly: Security checkup').t`Enable recovery by email`}
+                {c('Safety review').t`Enable recovery by email`}
             </Button>
         </SecurityCheckupMain>
     );

@@ -294,6 +294,9 @@
       "Create a new label": [
         "Ustvari novo oznako"
       ],
+      "Create alias": [
+        "Ustvari vzdevek"
+      ],
       "Create and copy alias": [
         "Ustvari in kopiraj vzdevek"
       ],
@@ -495,9 +498,6 @@
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Pridobite ga lahko že za ${ addonPriceWithCurrency } /mesec"
       ],
-      "Get SimpleLogin extension": [
-        "Prenesi razširitev SimpleLogin"
-      ],
       "Get started": [
         "Začnite"
       ],
@@ -524,9 +524,6 @@
       ],
       "Go to settings": [
         "Pojdi v nastavitve"
-      ],
-      "Go to SimpleLogin": [
-        "Pojdi na SimpleLogin"
       ],
       "Got it": [
         "Razumem"
@@ -822,10 +819,10 @@
       "Not saved": [
         "Ni shranjeno"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
       "Open": [
@@ -1211,12 +1208,6 @@
       ],
       "Trust": [
         "Zaupaj"
-      ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -6767,12 +6758,6 @@
       "Show original message": [
         "Prikaži izvirno sporočilo"
       ],
-      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin je storitev ${ BRAND_NAME } in vaš račun ${ BRAND_NAME_TWO } vključuje vzdevke hide-my-email. Pojdite na SimpleLogin in ustvarite vaše prve vzdevke za maskiranje vašega e-poštnega naslova."
-      ],
-      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin vam omogoča preprost način za ustvarjanje prijavnih podatkov na spletnih straneh, ki niso vredne zaupanja in kjer se ne želite izpostaviti s svojim dejanskim e-poštnim naslovom."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
@@ -7130,9 +7115,6 @@
       "Users": [
         "Uporabniki"
       ],
-      "Using SimpleLogin is easy": [
-        "Uporaba SimpleLogin je enostavna."
-      ],
       "Verification may take a few minutes.": [
         "Preverjanje lahko traja nekaj minut."
       ],
@@ -7402,9 +7384,6 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosegli ste največje število naslovov v skupini stikov."
-      ],
-      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Vaš ${ BRAND_NAME } račun vključuje SimpleLogin. Za začetek z enim klikom namestite razširitev brskalnika."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. Po 28 dneh e-poštni predal ne bo več prejemal sporočil, vaše povezave za skupno rabo na Disku bodo blokirane in ne boste mogli nalagati novih datotek. Za nadaljnje delovanje storitve plačajte morebitne zapadle račune."
@@ -9085,9 +9064,6 @@
       "${ size } storage": [
         "${ size } shrambe"
       ],
-      "${ size } storage per user": [
-        "${ size } shrambe na uporabnika"
-      ],
       "1 user": [
         "En uporabnik"
       ],
@@ -9105,9 +9081,6 @@
       ],
       "Administration Panel": [
         "Skrbniška plošča"
-      ],
-      "Advanced sharing security": [
-        "Napredna varnost deljenja"
       ],
       "Auto-delete Spam and Trash": [
         "Samodejno brisanje neželene pošte in smeti"
@@ -9303,9 +9276,6 @@
       ],
       "Send & receive invitations": [
         "Pošljite in prejmite povabila."
-      ],
-      "Share files and folders via link": [
-        "Deli datoteke in mape preko povezave"
       ],
       "Sign in as user": [
         "Prijavi se kot uporabnik"
@@ -9566,9 +9536,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Nastavite urnik po meri, ko želite biti opomnjeni na e-poštno sporočilo ali prejeti sporočilo."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Nadzorujte dostop do vaših deljenih datotek z dodajanjem zaščite z geslom in datumov poteka povezave."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Ustvarite več e-poštnih naslovov za vaše spletne identitete, npr. JanezNakupi@${ domain } za nakupovalne račune in JanezNovice@${ domain } za naročnine na novice."
@@ -12380,9 +12347,6 @@
       "Edit image": [
         "Uredi sliko"
       ],
-      "Email address": [
-        "E-poštni naslov"
-      ],
       "Email addresses": [
         "E-poštni naslovi"
       ],
@@ -12439,9 +12403,6 @@
       ],
       "Groups": [
         "Skupine"
-      ],
-      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Skrijte svoj e-poštni naslov s SimpleLogin, ki je del storitev ${ BRAND_NAME }."
       ],
       "Human verification": [
         "Ali si človek"
@@ -12614,9 +12575,6 @@
       "Other names": [
         "Ostala imena"
       ],
-      "Password": [
-        "Geslo"
-      ],
       "Payment failed": [
         "Neuspešno plačilo"
       ],
@@ -12748,9 +12706,6 @@
       ],
       "Sign in and grant access": [
         "Prijavite se in dodelite dostop."
-      ],
-      "Sign in with 2FA": [
-        "Prijava z overjanjem v dveh korakih"
       ],
       "Sign out": [
         "Odjava"

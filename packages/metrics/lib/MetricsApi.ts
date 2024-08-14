@@ -1,9 +1,16 @@
 import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
-import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getAppVersionHeaders, getAuthHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from './../constants';
 import type IMetricsApi from './types/IMetricsApi';
+
+class TooManyRequestsError extends Error {
+    constructor() {
+        super('Too many requests');
+        this.name = 'TooManyRequestsError';
+    }
+}
 
 class MetricsApi implements IMetricsApi {
     private _authHeaders: { [key: string]: string };
@@ -15,8 +22,8 @@ class MetricsApi implements IMetricsApi {
         this._versionHeaders = this.getVersionHeaders(clientID, appVersion);
     }
 
-    public setAuthHeaders(uid: string) {
-        this._authHeaders = this.getAuthHeaders(uid);
+    public setAuthHeaders(uid: string, accessToken?: string) {
+        this._authHeaders = this.getAuthHeaders(uid, accessToken);
     }
 
     public setVersionHeaders(clientID: string, appVersion: string) {
@@ -56,7 +63,7 @@ class MetricsApi implements IMetricsApi {
             });
 
             if (attempt >= METRICS_MAX_ATTEMPTS) {
-                return;
+                throw new TooManyRequestsError();
             }
 
             if (response.status === HTTP_STATUS_CODE.TOO_MANY_REQUESTS) {
@@ -78,12 +85,12 @@ class MetricsApi implements IMetricsApi {
 
             return response;
         } catch (error: any) {
-            if (error.name !== 'AbortError') {
+            if (error.name !== 'AbortError' || error.name === 'TooManyRequestsError') {
                 throw error;
             }
 
             if (attempt >= METRICS_MAX_ATTEMPTS) {
-                return;
+                throw new TooManyRequestsError();
             }
 
             await wait(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
@@ -91,9 +98,13 @@ class MetricsApi implements IMetricsApi {
         }
     }
 
-    private getAuthHeaders(uid?: string) {
+    private getAuthHeaders(uid?: string, accessToken?: string) {
         if (!uid) {
             return {};
+        }
+
+        if (uid && accessToken) {
+            return getAuthHeaders(uid, accessToken);
         }
 
         return getUIDHeaders(uid);

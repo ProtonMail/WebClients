@@ -7492,6 +7492,7 @@ __metadata:
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@unleash/proxy-client-react": "npm:^4.2.4"
+    date-fns: "npm:^3.6.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     unleash-proxy-client: "npm:^3.4.0"
@@ -12069,15 +12070,6 @@ __metadata:
   dependencies:
     resolve: "npm:^1.10.0"
   checksum: 10c0/5b35ee7c5cab08ef8ee9f0a2413be220e905824d1481bf6bed3ba2d8e97d052448317654f9e947b698da51f27f255940e9e8209db9123d8ddcb0bc9cd2a502d3
-  languageName: node
-  linkType: hard
-
-"@vercel/webpack-asset-relocator-loader@npm:1.7.4":
-  version: 1.7.4
-  resolution: "@vercel/webpack-asset-relocator-loader@npm:1.7.4"
-  dependencies:
-    resolve: "npm:^1.10.0"
-  checksum: 10c0/0a04cecad5e1910e64c2e9eaacea36336e1aa1fd74e3077b078b327340634744e480ac60322d0dd60461734568811d02473a7a8c433a3c51cb2878650dd933bb
   languageName: node
   linkType: hard
 
@@ -18465,6 +18457,13 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.21.0"
   checksum: 10c0/e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "date-fns@npm:3.6.0"
+  checksum: 10c0/0b5fb981590ef2f8e5a3ba6cd6d77faece0ea7f7158948f2eaae7bbb7c80a8f63ae30b01236c2923cf89bb3719c33aeb150c715ea4fe4e86e37dcf06bed42fb6
   languageName: node
   linkType: hard
 
@@ -34156,7 +34155,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/pack": "workspace:^"
-    "@vercel/webpack-asset-relocator-loader": "npm:1.7.4"
+    "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
     electron: "npm:^31.3.1"
     electron-log: "npm:^5.1.7"

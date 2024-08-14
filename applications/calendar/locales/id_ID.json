@@ -2595,6 +2595,30 @@
         "Tambah kalender"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Dapatkan seharga ${ price }"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 pengguna"
+      ],
+      "You save ${ amountSave }": [
+        "Anda menghemat ${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Semua dari ${ BRAND_NAME }, untuk berdua."
+      ],
+      "Double your storage": [
+        "Gandakan penyimpanan Anda"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Gandakan acara"
@@ -6208,9 +6232,6 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ size } storage per user": [
-        "Ruang penyimpanan ${ size } per pengguna"
-      ],
       "1 user": [
         "1 pengguna"
       ],
@@ -6228,9 +6249,6 @@
       ],
       "Administration Panel": [
         "Panel Administrasi"
-      ],
-      "Advanced sharing security": [
-        "Keamanan berbagi berkas tingkat lanjut"
       ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
@@ -6261,9 +6279,6 @@
       ],
       "Collaborate and share large files": [
         "Kolaborasi dan berbagi file besar"
-      ],
-      "Collaborative document editor": [
-        "Penyunting dokumen kolaboratif"
       ],
       "Contact groups": [
         "Grup kontak"
@@ -6427,9 +6442,6 @@
       "Send & receive invitations": [
         "Kirim & terima undangan"
       ],
-      "Share files and folders via link": [
-        "Bagikan berkas dan folder via tautan"
-      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -6519,6 +6531,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
+      ],
+      "Version history": [
+        "Riwayat versi"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
@@ -6610,9 +6625,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "Amankan kehidupan digital Anda dengan ${ BRAND_NAME } untuk dua pengguna."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
       ],
@@ -6692,9 +6704,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Sesuaikan waktu untuk mengingatkan kapan pesanmu tiba"
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
@@ -8725,6 +8734,9 @@
       "Import record deleted": [
         "Rekaman impor dihapus"
       ],
+      "Invitation rejected": [
+        "Undangan ditolak"
+      ],
       "Invitation sent and all events updated": [
         "Undangan terkirim dan semua acara berhasil diperbarui"
       ],
@@ -9107,9 +9119,6 @@
       "Edit image": [
         "Sunting gambar"
       ],
-      "Email address": [
-        "Alamat email"
-      ],
       "Email addresses": [
         "Alamat email"
       ],
@@ -9217,9 +9226,6 @@
       ],
       "Participants cannot be notified": [
         "Peserta tidak dapat diberi tahu"
-      ],
-      "Password": [
-        "Kata sandi"
       ],
       "Payment failed": [
         "Pembayaran gagal"
@@ -9349,9 +9355,6 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
-      ],
-      "Sign in with 2FA": [
-        "Masuk dengan 2FA"
       ],
       "Sign out": [
         "Keluar"

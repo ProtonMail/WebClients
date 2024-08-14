@@ -34,7 +34,7 @@ const VerifyPhoneContainer = () => {
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="success" />}>
-                    {c('l10n_nightly: Security checkup').t`Your recovery phone is set`}
+                    {c('Safety review').t`Your recovery phone is set`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -43,12 +43,12 @@ const VerifyPhoneContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`${BRAND_NAME} will use this phone number to send a reset code by SMS when you reset your password.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
-                    {c('l10n_nightly: Security checkup').t`Continue to Safety Review`}
+                    {c('Safety review').t`Continue to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -62,16 +62,16 @@ const VerifyPhoneContainer = () => {
                 </div>
 
                 <SecurityCheckupMainTitle>
-                    {c('l10n_nightly: Security checkup').t`There was an error verifying your recovery phone`}
+                    {c('Safety review').t`There was an error verifying your recovery phone`}
                 </SecurityCheckupMainTitle>
 
                 <div>
-                    {c('l10n_nightly: Security checkup')
+                    {c('Safety review')
                         .t`We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm">
-                    {c('l10n_nightly: Security checkup').t`Back to Safety Review`}
+                    {c('Safety review').t`Back to Safety Review`}
                 </ButtonLike>
             </SecurityCheckupMain>
         );
@@ -90,11 +90,11 @@ const VerifyPhoneContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={phoneIcon} color="warning" />}>
-                {c('l10n_nightly: Security checkup').t`Verify your recovery phone number`}
+                {c('Safety review').t`Verify your recovery phone number`}
             </SecurityCheckupMainTitle>
 
             <div className="mb-12">
-                {c('l10n_nightly: Security checkup')
+                {c('Safety review')
                     .jt`To make sure the phone number is yours, enter the verification code sent to ${boldPhoneNumber}.`}
             </div>
 

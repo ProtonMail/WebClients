@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/components/hooks';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
@@ -14,9 +15,10 @@ import {
 } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
+    getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
+    getMaximumCycleForApp,
     getPricePerCycle,
-    hasFamily,
     hasMaximumCycle,
     hasSomeAddonOrPlan,
 } from '@proton/shared/lib/helpers/subscription';
@@ -158,14 +160,10 @@ export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number |
     return price;
 };
 
-const getCycleSelectorOptions = (app: ProductParam) => {
+const getCycleSelectorOptions = () => {
     const oneMonth = { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY };
     const oneYear = { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY };
     const twoYears = { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS };
-
-    if (app === APPS.PROTONPASS || app === APPS.PROTONWALLET) {
-        return [oneMonth, oneYear];
-    }
 
     return [oneMonth, oneYear, twoYears];
 };
@@ -212,8 +210,10 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
-    const canAccessDuoPlan = useFlag('DuoPlan');
+    const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
+    const canAccessDuoPlan = useFlag('DuoPlan') && getCanSubscriptionAccessDuoPlan(subscription);
 
+    const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const isDriveSettingsApp = app == APPS.PROTONDRIVE;
@@ -243,12 +243,16 @@ const PlanSelection = ({
             maximumCycle = CYCLE.YEARLY;
         }
     }
+    if (maximumCycle === undefined) {
+        maximumCycle = getMaximumCycleForApp(app);
+    }
 
+    const cycleSelectorOptions = getCycleSelectorOptions();
     const { cycle: restrictedCycle } = getRestrictedCycle({
         cycle: cycleProp,
         minimumCycle: maybeMinimumCycle,
         maximumCycle,
-        options: getCycleSelectorOptions(app),
+        options: cycleSelectorOptions,
     });
 
     function excludingCurrentPlanWithMaxCycle(plan: Plan | ShortPlanLike): boolean {
@@ -275,32 +279,16 @@ const PlanSelection = ({
         return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
     }
 
-    const isFamilySubscription = hasFamily(subscription);
-
     let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
-        canAccessDuoPlan &&
-        (isFreeSubscription ||
-            hasSomeAddonOrPlan(subscription, [
-                PLANS.MAIL,
-                PLANS.DRIVE,
-                PLANS.VPN,
-                PLANS.BUNDLE,
-                PLANS.MAIL_PRO,
-                PLANS.VISIONARY,
-                PLANS.MAIL_BUSINESS,
-                PLANS.BUNDLE_PRO,
-                PLANS.BUNDLE_PRO_2024,
-            ]))
-            ? plansMap[PLANS.DUO]
-            : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
     ]);
 
     let FamilyPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        canAccessDuoPlan && !isFamilySubscription ? plansMap[PLANS.DUO] : null,
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
         plansMap[PLANS.FAMILY],
     ]);
 
@@ -316,7 +304,10 @@ const PlanSelection = ({
         plansMap[bundleProPlan],
     ]);
 
-    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
+    const driveB2BPlans = filterPlans([
+        canAccessDriveBusinessPlan ? plansMap[PLANS.DRIVE_BUSINESS] : undefined,
+        plansMap[bundleProPlan],
+    ]);
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
@@ -478,6 +469,7 @@ const PlanSelection = ({
                             planID: isFree ? undefined : planName,
                             organization,
                             plans,
+                            user,
                         }),
                         cycle
                     );
@@ -578,7 +570,7 @@ const PlanSelection = ({
                         disabled={loading}
                         minimumCycle={maybeMinimumCycle}
                         maximumCycle={maximumCycle}
-                        options={getCycleSelectorOptions(app)}
+                        options={cycleSelectorOptions}
                     />
                 )}
             </div>

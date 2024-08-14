@@ -426,13 +426,13 @@
         "Tallenna"
       ],
       "Save passkey": [
-        "Tallenna suojausavain"
+        "Tallenna todentamisavain"
       ],
       "Saving": [
         "Tallennetaan"
       ],
       "Saving passkey...": [
-        "Tallennetaan suojausavainta..."
+        "Tallennetaan todentamisavainta..."
       ],
       "Section name": [
         "Osion nimi"
@@ -626,7 +626,7 @@
         "Aliasvaihtoehtoja ei voitu selvittää"
       ],
       "Authentication error": [
-        "Todennusvirhe"
+        "Tunnistautumisvirhe"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Jatka vientiä vahvistamalla ${ BRAND_NAME } -salasanasi"
@@ -814,7 +814,7 @@
         "LastPass vie virheellisen CSV-tiedoston, jos yksikin kohteidesi kentistäsi sisältää odottamattomia pilkkuja, lainausmerkkejä tai useita rivejä"
       ],
       "Missing passkey": [
-        "Suojausavain puuttuu"
+        "Avainkoodi puuttuu"
       ],
       "Moving item failed": [
         "Kohteen siirto epäonnistui"
@@ -901,7 +901,7 @@
         "Tuntematon kohde"
       ],
       "Unknown passkey": [
-        "Tuntematon suojausavain"
+        "Tuntematon todentamisavain"
       ],
       "Unlock failure": [
         "Lukituksen avaus epäonnistui"
@@ -1036,7 +1036,7 @@
         "${ PASS_APP_NAME } tarjoaa kirjautumistietojen tallennusta tai päivitystä."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } tarjoaa tallennettuja suojausavaimia kirjauduttaessa."
+        "${ PASS_APP_NAME } tarjoaa tunnistautumista tallennetuilla avainkoodeilla"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } tarjoaa sähköpostialiaksen luontia rekisteröitymislomakkeissa."
@@ -1045,7 +1045,7 @@
         "${ PASS_APP_NAME } tarjoaa vahvojen salasanojen luontia rekisteröitymislomakkeissa."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } tarjoaa suojausavainten tallennusta."
+        "${ PASS_APP_NAME } tarjoaa avainkoodien tallennusta."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
@@ -1064,13 +1064,16 @@
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Käyttäjätunnuksen \"${ username }\" suojausavain tallennetaan ja se on käytettävissä laitteissa, joihin ${ PASS_APP_NAME } on asennettu."
+        "Käyttäjätunnuksen \"${ username }\" todentamisavain tallennetaan ja se on käytettävissä laitteissa, joihin ${ PASS_APP_NAME } on asennettu."
       ],
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }in avaus vaatii aina ${ BRAND_NAME }-salasanasi."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
@@ -1123,6 +1126,12 @@
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
       ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrinen lukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometria poistetaan käytöstä, ja se on otettava käyttöön uudelleen."
+      ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
@@ -1142,7 +1151,7 @@
         "Voi tarkastella holvin kohteita."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Valitse tallennettu suojausavain, jolla kirjaudutaan osoitteeseen ${ domain }"
+        "Valitse tallennettu avainkoodi, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
       "Click here to add a field for a username.": [
         "Lisää kenttä käyttäjätunnukselle panamalla tästä."
@@ -1151,10 +1160,10 @@
         "Avaa se koska tahansa klikkaamalla kuvaketta."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Sulje tämä ikkuna käyttääksesi todennuslaitetta tai eri suojausavainta."
+        "Sulje tämä ikkuna käyttääksesi suojausavainta tai eri todentamisavainta."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Sulje tämä ikkuna käyttääksesi jotain toista suojausavainratkaisua."
+        "Sulje tämä ikkuna käyttääksesi jotain toista todentamisavainhallintaa."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Vahvista lisäsalasanasi jatkaaksesi sen poistamista."
@@ -1227,6 +1236,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Automaattista biometristä lukitusta otetaan käyttöön"
+      ],
+      "Enabling biometrics lock failed": [
+        "Automaattisen biometrisen lukituksen käyttöönotto epäonnistui"
       ],
       "Enabling offline mode...": [
         "Yhteydetöntä tilaa otetaan käyttöön..."
@@ -1429,9 +1444,6 @@
       "Offline support successfully disabled": [
         "Yhteydetön tila poistettiin käytöstä"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii istunnon avaamisen PIN-koodilla. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
-      ],
       "Open the Extensions menu": [
         "Avaa laajennusvalikko"
       ],
@@ -1445,7 +1457,7 @@
         "Pass Plus -kokeilu"
       ],
       "Passkey sign-in": [
-        "Kirjautuminen suojausavaimella"
+        "Kirjautuminen avainkoodilla"
       ],
       "Password copied": [
         "Salasana kopioitiin"
@@ -1475,8 +1487,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
+      "Please confirm your extra password": [
+        "Vahvista lisäsalasanasi"
+      ],
       "Please confirm your password": [
         "Vahvista salasanasi"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Käytä automaattista biometristä lukitusta vahvistamalla salasanasi."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Käytä automaattista salasanalukitusta vahvistamalla salasanasi."
@@ -1517,6 +1535,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
       ],
+      "Quickly autofill your 2FA tokens.": [
+        "Automaattitäytä todennuskoodisi nopeasti."
+      ],
       "Quickly autofill your identities.": [
         "Automaattitäytä identiteettisi nopeasti."
       ],
@@ -1545,7 +1566,7 @@
         "Tallenna kirjautumistieto"
       ],
       "Save passkey": [
-        "Tallenna suojausavain"
+        "Tallenna todentamisavain"
       ],
       "Secure links": [
         "Suojatut linkit"
@@ -1638,6 +1659,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
+      "This option is currently not available on your device.": [
+        "Tämä valinta ei ole tällä hetkellä käytettävissä laitteellasi."
+      ],
       "This setting is disabled on the organization level": [
         "Tämä asetus on poistettu käytöstä organisaatiotasolla"
       ],
@@ -1660,10 +1684,13 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Käytä suojausavaimiasi avaamalla ${ PASS_APP_NAME } PIN-koodillasi."
+        "Käytä avainkoodejasi avaamalla ${ PASS_APP_NAME } PIN-koodillasi"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Tallenna suojausavain avaamalla ${ PASS_APP_NAME } PIN-koodillasi."
+        "Tallenna avainkoodi avaamalla ${ PASS_APP_NAME } PIN-koodillasi"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Avaa ${ PASS_SHORT_APP_NAME } biometrialla"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi"
@@ -1673,6 +1700,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
+      ],
+      "Unlock with biometrics": [
+        "Avaa biometrialla"
       ],
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
@@ -1766,7 +1796,7 @@
         "${ PASS_APP_NAME } -istuntosi on lukittu."
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Tilisi on rajoitettu, koska organisaatiosi on pakottanut kaksivaiheisen todennuksen. Ota kaksivaiheinen todennus käyttöön tiliasetuksissasi tai ota yhteyttä järjestelmänvalvojaan."
+        "Tilisi on rajoitettu, koska organisaatiosi on pakottanut kaksivaiheisen tunnistautumisen. Ota kaksivaiheinen tunnistautuminen käyttöön tiliasetuksissasi tai ota yhteyttä ylläpitäjään."
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -1816,6 +1846,9 @@
       ],
       "24 hours": [
         "Vuorokauden kuluttua"
+      ],
+      "2FA autofill": [
+        "2FA-automaattitäyttö"
       ],
       "2FA secret key (TOTP)": [
         "2FA-salaisuus (TOTP)"
@@ -1875,7 +1908,7 @@
         "Sovelluslokit"
       ],
       "Authenticate with passkeys": [
-        "Tunnistaudu suojausavaimilla"
+        "Tunnistaudu avainkoodeilla"
       ],
       "Auto-lock after": [
         "Lukitse automaattisesti"
@@ -1897,6 +1930,9 @@
       ],
       "Autosuggest": [
         "Automaattiehdotus"
+      ],
+      "Biometrics": [
+        "Biometria"
       ],
       "Birthdate": [
         "Syntymäpäivä"
@@ -1978,6 +2014,9 @@
       ],
       "Display": [
         "Ulkoasu"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Näytä ${ PASS_APP_NAME } -kuvake automaattitäytettävissä kentissä"
       ],
       "Domain": [
         "Verkkotunnus"
@@ -2208,10 +2247,10 @@
         "Organisaatio"
       ],
       "Passkey": [
-        "Suojausavain"
+        "Todentamisavain"
       ],
       "Passkeys": [
-        "Suojausavaimet"
+        "Todentamisavaimet"
       ],
       "Passphrase": [
         "Tunnuslauseke"
@@ -2283,7 +2322,7 @@
         "Näytä salasana"
       ],
       "Save passkeys": [
-        "Tallenna suojausavaimet"
+        "Tallenna todentamisavaimet"
       ],
       "Security": [
         "Suojaus"
@@ -2375,6 +2414,9 @@
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Avaa ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Lukituksen avaustapa"
       ],
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
@@ -2618,6 +2660,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
       ],
+      "Enter your extra password": [
+        "Syötä lisäsalasanasi"
+      ],
       "Enter your password": [
         "Syötä salasanasi"
       ],
@@ -2697,7 +2742,7 @@
         "Tervetuliaislahjamme sinulle"
       ],
       "Passkey": [
-        "Suojausavain"
+        "Todentamisavain"
       ],
       "Password": [
         "Salasana"
@@ -2832,6 +2877,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } -salasana vaaditaan"
+      ],
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
       ],
@@ -2865,14 +2913,14 @@
       "Empty note": [
         "Tyhjä muistiinpano"
       ],
-      "Encryption password is required": [
-        "Salaussalasana vaaditaan"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"
       ],
       "Extra password cannot be empty": [
         "Lisäsalasana ei voi olla tyhjä"
+      ],
+      "Extra password is required": [
+        "Lisäsalasana vaaditaan"
       ],
       "Extra password should have at least 8 characters": [
         "Lisäsalasanan täytyy sisältää vähintään 8 merkkiä"
