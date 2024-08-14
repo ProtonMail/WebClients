@@ -193,9 +193,16 @@ const CustomStep = ({
 
                         await wait(1_500);
 
-                        const b2bSettingsApp = [APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE].includes(
-                            product as any
-                        )
+                        if (product === APPS.PROTONDRIVE) {
+                            const signupActionResponse = handleDone({
+                                cache,
+                                appIntent: { app: APPS.PROTONDRIVE, ref: 'product-switch' },
+                            });
+                            await onSetup({ type: 'signup', payload: signupActionResponse });
+                            return;
+                        }
+
+                        const b2bSettingsApp = [APPS.PROTONMAIL, APPS.PROTONVPN_SETTINGS].includes(product as any)
                             ? product
                             : APPS.PROTONMAIL;
 
