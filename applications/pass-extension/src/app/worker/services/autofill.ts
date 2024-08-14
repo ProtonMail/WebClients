@@ -104,7 +104,7 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
         onContextReady(async ({ getState }, { payload }, sender) => {
             const tabId = sender.tab?.id;
-            if (!getState().loggedIn || tabId === undefined) throw new Error('Invalid autofill query');
+            if (!getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
 
             const host = await (async () => {
                 if (payload.domain) return payload.domain;
@@ -125,7 +125,7 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOFILL_IDENTITY_QUERY,
         onContextReady(async ({ getState }, _, sender) => {
             const tabId = sender.tab?.id;
-            if (!getState().loggedIn || tabId === undefined) throw new Error('Invalid autofill query');
+            if (!getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
 
             const state = store.getState();
             const { shareIds, needsUpgrade } = getAutofillOptions();

@@ -21,9 +21,9 @@ import noop from '@proton/utils/noop';
 import { ExtensionContext, type ExtensionContextType } from '../../context/extension-context';
 
 export const INITIAL_WORKER_STATE: AppState = {
+    authorized: false,
     booted: false,
     localID: undefined,
-    loggedIn: false,
     status: AppStatus.IDLE,
     UID: undefined,
 };
@@ -88,10 +88,10 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
 
     useVisibleEffect(
         (visible) => {
-            if (state.loggedIn && visible) activityProbe.start();
+            if (state.authorized && visible) activityProbe.start();
             else activityProbe.cancel();
         },
-        [state.loggedIn]
+        [state.authorized]
     );
 
     const context = useMemo<ExtensionConnectContextValue>(

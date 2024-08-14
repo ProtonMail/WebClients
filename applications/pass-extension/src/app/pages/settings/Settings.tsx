@@ -95,7 +95,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
-    if (context.state.loggedIn) {
+    if (context.state.authorized) {
         return (
             <PasswordUnlockProvider>
                 <PinUnlockProvider>

@@ -119,7 +119,7 @@ export const Dropdown: FC = () => {
                         );
                     }
 
-                    if (!appState.loggedIn) {
+                    if (!appState.authorized) {
                         return (
                             <ListItem
                                 onClick={() => {

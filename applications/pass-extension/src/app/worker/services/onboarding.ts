@@ -56,7 +56,7 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
 
     /* when reaching `account.proton.me/auth-ext` we want to
      * redirect the user to the welcome page iif user has logged in.
-     * we check the `authStore` because the `ctx.state.loggedIn` will
+     * we check the `authStore` because the `ctx.state.authorized` will
      * not be `true` until the worker is actually `READY` (booting
      * sequence finished) */
     WorkerMessageBroker.registerMessage(
