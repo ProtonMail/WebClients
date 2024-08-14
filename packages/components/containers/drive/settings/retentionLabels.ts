@@ -11,5 +11,6 @@ export const getRetentionLabel = (nbDay: RevisionRetentionDaysSetting) => {
     if (nbDay === 3650) {
         return retentionLabelForYears(10);
     }
+
     return retentionLabelForDays(nbDay);
 };
