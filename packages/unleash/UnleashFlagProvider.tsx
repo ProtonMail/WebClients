@@ -6,7 +6,7 @@ import type { IConfig, UnleashClient } from 'unleash-proxy-client';
 import { createPromise } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import ProtonUnleashStorageProvider from './ProtonUnleashStorageProvider';
+import ProtonUnleashStorageProvider from './storage/UnleashStorageProvider';
 
 // Just something dummy to have a valid domain because the library does new URL
 const prefix = 'https://proton.me/';
