@@ -27,7 +27,7 @@ describe('AuthService', () => {
     const getOnline = jest.fn(() => true);
     const onNotification = jest.fn();
     const setStatus = jest.fn();
-    const setLoggedIn = jest.fn();
+    const setAuthorized = jest.fn();
     const setBooted = jest.fn();
     const subscribe = jest.fn();
 
@@ -39,7 +39,7 @@ describe('AuthService', () => {
 
     beforeEach(() => {
         authStore.clear();
-        client = { setStatus, setLoggedIn, setBooted, state: appState };
+        client = { setStatus, setAuthorized, setBooted, state: appState };
         history = { replace: jest.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
         sw = { on: jest.fn(), off: jest.fn() } as any;
         authService = auth.createAuthService({

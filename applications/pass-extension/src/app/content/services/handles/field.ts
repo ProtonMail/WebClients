@@ -41,7 +41,7 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
             const shouldClose = opened && current !== target;
             const openOnFocus = ctx?.getSettings().autofill.openOnFocus;
-            const shouldOpen = ctx?.getState().loggedIn && (!opened || shouldClose) && openOnFocus;
+            const shouldOpen = ctx?.getState().authorized && (!opened || shouldClose) && openOnFocus;
 
             if (shouldClose) dropdown?.close();
             if (shouldOpen) ctx?.service.iframe.attachDropdown()?.open({ action, autofocused: true, field });

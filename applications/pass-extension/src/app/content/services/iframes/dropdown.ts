@@ -78,20 +78,20 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         async (ctx, { action, autofocused, field }) => {
             if (!ctx) return;
 
-            const { loggedIn } = ctx.getState();
+            const { authorized } = ctx.getState();
             const { url } = ctx.getExtensionContext();
             const domain = url.subdomain ?? url.domain ?? '';
 
             switch (action) {
                 case DropdownAction.AUTOFILL_IDENTITY: {
-                    if (!loggedIn) return { action, domain: '' };
+                    if (!authorized) return { action, domain: '' };
                     if (autofocused && field.autofilled && !field.icon) return;
                     if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
                     return { action, domain };
                 }
 
                 case DropdownAction.AUTOFILL_LOGIN: {
-                    if (!loggedIn) return { action, domain: '' };
+                    if (!authorized) return { action, domain: '' };
                     if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
                     return { action, domain };
                 }
