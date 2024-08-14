@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
+import { useUser } from '@proton/components/hooks';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
 import { Loader, Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
@@ -8,7 +9,7 @@ import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';
 
-const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
+const GroupsTable = ({ memberships, isPrivateUser }: { memberships: GroupMembership[]; isPrivateUser: boolean }) => {
     const isEmpty = memberships.length === 0;
 
     return (
@@ -46,7 +47,11 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
                                                 {membership.Address}
                                             </span>,
                                             <GroupState key={key} membership={membership} />,
-                                            <GroupActions key={key} membership={membership} />,
+                                            <GroupActions
+                                                key={key}
+                                                membership={membership}
+                                                isPrivateUser={isPrivateUser}
+                                            />,
                                         ]}
                                     />
                                 );
@@ -61,6 +66,8 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
 
 const GroupMembershipSection = () => {
     const [originalGroupMemberships, loading] = useGroupMemberships();
+    const [User] = useUser();
+    const { isPrivate } = User;
 
     const groupMemberships: GroupMembership[] = (originalGroupMemberships ?? []).map(
         ({ Group, State, ForwardingKeys, AddressId, ID }) => ({
@@ -89,7 +96,7 @@ const GroupMembershipSection = () => {
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`View and manage your groups.`}</SettingsParagraph>
                 {loading && <Loader />}
-                {!loading && <GroupsTable memberships={sortedGroupMemberships} />}
+                {!loading && <GroupsTable memberships={sortedGroupMemberships} isPrivateUser={isPrivate} />}
             </SettingsSectionWide>
         </>
     );
