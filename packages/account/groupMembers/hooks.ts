@@ -26,6 +26,10 @@ export const useGroupMembers = (groupId: string | undefined) => {
         void getGroupMembers(groupId);
     }, [groupId, getGroupMembers]);
 
+    if (groupId === 'new') {
+        return [undefined, false] as const;
+    }
+
     const group = selectedValue[groupId || ''];
 
     return [group?.value, group === undefined] as const;

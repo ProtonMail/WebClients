@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { AddressesAutocompleteTwo } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
@@ -39,17 +40,23 @@ const convertGroupMemberToRecipient = (groupMembers: GroupMember[]): Recipient[]
 
 interface Props {
     newGroupMembers: NewGroupMember[];
-    handleAddNewGroupMembers: (members: NewGroupMember[]) => void;
+    onAddNewGroupMembers: (members: NewGroupMember[]) => void;
     groupMembers: GroupMember[];
+    onAddAllOrgMembers: () => void;
 }
 
-export const NewGroupMemberInput = ({ newGroupMembers, handleAddNewGroupMembers, groupMembers }: Props) => {
+export const NewGroupMemberInput = ({
+    newGroupMembers,
+    onAddNewGroupMembers,
+    groupMembers,
+    onAddAllOrgMembers,
+}: Props) => {
     const [members] = useMembers();
     const existingGroupMembers = convertGroupMemberToRecipient(groupMembers);
     const recipients = [...existingGroupMembers, ...newGroupMembers];
 
     const handleAddRecipients = (newRecipients: Recipient[]) => {
-        handleAddNewGroupMembers(newRecipients);
+        onAddNewGroupMembers(newRecipients);
     };
 
     return (
@@ -68,9 +75,13 @@ export const NewGroupMemberInput = ({ newGroupMembers, handleAddNewGroupMembers,
                             }
                         }}
                         unstyled
+                        placeholder={c('Label').t`Add group member`}
                     />
                 </InputFieldStacked>
             </InputFieldStackedGroup>
+            <Button color="norm" shape="ghost" size="small" className="mt-2" onClick={onAddAllOrgMembers}>
+                {c('Label').t`Add all organization members`}
+            </Button>
         </>
     );
 };
