@@ -1,6 +1,6 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
 import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
-import { ItemState } from '@proton/pass/types';
+import { ItemFlag, ItemState } from '@proton/pass/types';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -39,8 +39,17 @@ export const isEditItemDraft = (draft?: Draft): draft is EditDraft => draft?.mod
 export const isNewItemDraft = (draft?: Draft): draft is NewDraft => draft?.mode === 'new';
 
 export const isPinned = ({ pinned }: ItemRevision) => pinned;
-export const isMonitored = ({ flags }: ItemRevision) => flags << 0 === 0;
-export const isBreached = ({ flags }: ItemRevision) => flags << 1 === 1;
+
+const hasItemFlag =
+    (bitFlag: ItemFlag) =>
+    ({ flags }: ItemRevision) =>
+        (flags & bitFlag) === bitFlag;
+
+export const isHealthCheckSkipped = hasItemFlag(ItemFlag.SkipHealthCheck);
+export const isBreached = hasItemFlag(ItemFlag.EmailBreached);
+export const isMonitored = not(isHealthCheckSkipped);
+export const isAliasDisabled = hasItemFlag(ItemFlag.AliasDisabled);
+
 export const isActiveMonitored = and(isActive, isMonitored);
 export const isExcluded = and(isActive, not(isMonitored));
 

@@ -125,3 +125,9 @@ export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: strin
 
 export type BatchItemRevisionIDs = { shareId: string; batch: ItemRevisionID[] };
 export type BatchItemRevisions = { shareId: string; batch: ItemRevision[] };
+
+export enum ItemFlag {
+    SkipHealthCheck = 1 << 0,
+    EmailBreached = 1 << 1,
+    AliasDisabled = 1 << 2,
+}
