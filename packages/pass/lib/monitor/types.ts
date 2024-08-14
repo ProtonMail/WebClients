@@ -9,6 +9,10 @@ export enum AddressType {
     CUSTOM = 'custom',
 }
 
+export enum BreachFlag {
+    MonitorDisabled = 1 << 0,
+}
+
 export type AddressBreachDTO<T extends AddressType = AddressType> = {
     [AddressType.ALIAS]: { type: AddressType.ALIAS } & SelectedItem;
     [AddressType.CUSTOM]: { type: AddressType.CUSTOM; addressId: CustomAddressID };
