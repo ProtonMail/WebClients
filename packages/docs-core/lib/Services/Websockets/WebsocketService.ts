@@ -1,4 +1,4 @@
-import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils'
 import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import type { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
@@ -14,6 +14,7 @@ import type {
   ServerMessageWithEvents,
   ServerMessageWithDocumentUpdates,
   ServerMessageWithMessageAcks,
+  ConnectionReadyPayload,
 } from '@proton/docs-proto'
 import {
   ClientMessage,
@@ -228,17 +229,36 @@ export class WebsocketService implements WebsocketServiceInterface {
     return connection
   }
 
-  onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord): void {
+  isConnectionReadyPayload(obj: any): obj is ConnectionReadyPayload {
+    return (
+      typeof obj === 'object' &&
+      obj !== null &&
+      typeof obj.clientUpgradeRecommended === 'boolean' &&
+      typeof obj.clientUpgradeRequired === 'boolean'
+    )
+  }
+
+  onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord, content: Uint8Array): void {
     this.logger.info('Received ready to broadcast message from RTS')
 
     record.connection.markAsReadyToAcceptMessages()
-
     record.debouncer.markAsReadyToFlush()
+
+    let readinessInformation: ConnectionReadyPayload | undefined
+    try {
+      const parsed = JSON.parse(utf8ArrayToString(content))
+      if (this.isConnectionReadyPayload(parsed)) {
+        readinessInformation = parsed
+      }
+    } catch {
+      this.logger.error('Unable to parse content from ConnectionReady message')
+    }
 
     this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connected]>({
       type: WebsocketConnectionEvent.Connected,
       payload: {
         document: record.document,
+        readinessInformation: readinessInformation,
       },
     })
 
@@ -551,7 +571,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         case EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream:
           break
         case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
-          this.onDocumentConnectionReadyToBroadcast(record)
+          this.onDocumentConnectionReadyToBroadcast(record, event.content)
           break
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
         case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
