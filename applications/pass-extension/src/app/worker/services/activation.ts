@@ -216,7 +216,7 @@ export const createActivationService = () => {
             }
 
             return {
-                ...ctx.getState(),
+                state: ctx.getState(),
                 features: selectFeatureFlags(store.getState()) ?? {},
                 settings: await ctx.service.settings.resolve(),
             };

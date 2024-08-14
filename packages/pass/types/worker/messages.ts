@@ -307,7 +307,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
-    [WorkerMessageType.WORKER_WAKEUP]: AppState & { settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.WORKER_WAKEUP]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
 };
 
 export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap

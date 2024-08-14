@@ -99,15 +99,16 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
 
         getState: () => {
-            /** Note: A user is not considered fully logged in if lock setup is required.
+            /** Note: A user is not considered fully authorized if lock setup is required.
              * This allows blocking other extension components (e.g., injected dropdown)
              * when the user is in this state. */
             const lockSetup = selectLockSetupRequired(store.getState());
 
             return {
+                authorized: authStore.hasSession() && clientReady(context.status) && !lockSetup,
                 booted: clientBooted(context.status),
                 localID: authStore.getLocalID(),
-                loggedIn: authStore.hasSession() && clientReady(context.status) && !lockSetup,
+                lockSetup,
                 status: context.status,
                 UID: authStore.getUID(),
             };
