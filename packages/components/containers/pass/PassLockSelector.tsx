@@ -13,8 +13,7 @@ type Props = {
 
 const getOptions = () => [
     { title: c('Label').t`Disabled`, value: 0 },
-    /* BE doesn't support values above 3600 */
-    ...TTL_OPTIONS.filter((value) => value <= 3_600).map((value) => ({
+    ...TTL_OPTIONS.map((value) => ({
         title: TTL_LABELS[value]?.() ?? '',
         value,
     })),
