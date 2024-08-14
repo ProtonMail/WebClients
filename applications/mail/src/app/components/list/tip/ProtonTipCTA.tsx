@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { SettingsLink } from '@proton/components/components/link';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -38,15 +38,9 @@ const ProtonTipCTA = ({ actionType, settingsUrl, ctaText }: Props) => {
     return (
         <>
             {modalContent}
-            <Button
-                onClick={onClick}
-                disabled={isDisabled}
-                shape="underline"
-                size="small"
-                className="link align-baseline"
-            >
+            <InlineLinkButton onClick={onClick} disabled={isDisabled}>
                 {ctaText}
-            </Button>
+            </InlineLinkButton>
         </>
     );
 };
