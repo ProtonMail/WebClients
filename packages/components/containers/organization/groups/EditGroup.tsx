@@ -21,6 +21,7 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { Group } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
@@ -74,6 +75,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const { createNotification } = useNotifications();
     const [newGroupMembers, setNewGroupMembers] = useState<NewGroupMember[]>([]);
     const memberAddressMap = getMemberAddressMap(members);
+    const verifiedCustomDomains = customDomains?.filter(getIsDomainActive);
 
     const newEmailsToAdd = newGroupMembers.map((member) => member.Address);
 
@@ -234,7 +236,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
                                         return (
                                             <GroupAddressDomainSelect
-                                                domains={customDomains}
+                                                domains={verifiedCustomDomains}
                                                 selectedDomain={selectedDomain}
                                                 suggestedDomainName={suggestedAddressDomainName}
                                                 onChange={(value: string) => setSelectedDomain(value)}
