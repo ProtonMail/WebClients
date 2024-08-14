@@ -1,41 +1,25 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import {
-    Radio,
-    RevisionsUpgradeBanner,
-    Tooltip,
-    useConfirmActionModal,
-    useRevisionRetentionDays,
-    useUser,
-} from '@proton/components';
-import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
+import { Radio, Tooltip, useConfirmActionModal, useRevisionRetentionDays, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { getRetentionLabel } from './retentionLabels';
+import { BusinessUpgradeBanner, FreeUpgradeBanner } from './banner';
+import { useRetentionOptions } from './useRetentionOptions';
 
 const RetentionDaysSection = () => {
-    const [{ hasPaidDrive }] = useUser();
+    const [{ hasPaidDrive, isAdmin }] = useUser();
+
     const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
     const { revisionRetentionDays, hasValueChanged, isLoading, isSubmitLoading, handleSubmit, handleChange } =
         useRevisionRetentionDays(hasPaidDrive, showConfirmActionModal);
 
-    const options: {
-        value: RevisionRetentionDaysSetting;
-        label: string;
-        disabled?: boolean;
-    }[] = [
-        { value: 0, label: c('Label').t`Don't keep versions` },
-        { value: 7, label: getRetentionLabel(7) },
-        { value: 30, label: getRetentionLabel(30) },
-        { value: 180, label: getRetentionLabel(180) },
-        { value: 365, label: getRetentionLabel(365) },
-        { value: 3650, label: getRetentionLabel(3650) },
-    ];
+    const { options, canUpsellFree, canUpsellB2B } = useRetentionOptions(revisionRetentionDays);
 
     return (
-        <div className="max-w-custom" style={{ '--max-w-custom': '37em' }}>
-            {!hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
+        <div className="max-w-custom" style={{ '--max-w-custom': '41em' }}>
+            {canUpsellFree && <FreeUpgradeBanner />}
+            {canUpsellB2B && isAdmin && <BusinessUpgradeBanner />}
             <form className="flex flex-column items-start gap-2 mt-6" onSubmit={handleSubmit}>
                 <span className="sr-only" id="id_desc_history">
                     {c('Info').t`Version history`}
@@ -46,9 +30,7 @@ const RetentionDaysSection = () => {
                         onChange: () => handleChange(option.value),
                         id: `retention${id}`,
                         name: 'retention',
-                        // If free user revisionRetentionDays will be the default and only available value
-                        disabled:
-                            isLoading || isSubmitLoading || (option.value !== revisionRetentionDays && !hasPaidDrive),
+                        disabled: isLoading || isSubmitLoading || option.disabled,
                         checked: !isLoading && revisionRetentionDays === option.value,
                         className: clsx(
                             'w-full flex flex-nowrap border rounded p-3',
@@ -56,22 +38,21 @@ const RetentionDaysSection = () => {
                         ),
                     };
 
-                    if (option.value !== revisionRetentionDays && !hasPaidDrive) {
-                        return (
-                            <Tooltip key={id} title={c('Info').t`Upgrade to unlock`} originalPlacement="right">
-                                <div className="w-full">
-                                    <Radio aria-describedby="id_desc_history" {...radioProps}>
-                                        {option.label}
-                                    </Radio>
-                                </div>
-                            </Tooltip>
-                        );
-                    }
-                    return (
-                        <Radio aria-describedby="id_desc_history" key={id} {...radioProps}>
+                    let optionRadio = (
+                        <Radio aria-describedby="id_desc_history" {...radioProps}>
                             {option.label}
                         </Radio>
                     );
+
+                    if (option.disabled) {
+                        optionRadio = (
+                            <Tooltip key={id} title={c('Info').t`Upgrade to unlock`} originalPlacement="right">
+                                <div className="w-full">{optionRadio}</div>
+                            </Tooltip>
+                        );
+                    }
+
+                    return optionRadio;
                 })}
                 <Button
                     className="mt-6"
