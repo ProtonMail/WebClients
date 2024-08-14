@@ -1,6 +1,12 @@
 import type { ThemeColor } from '@proton/colors';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    GroupMembershipReturn,
+    Organization,
+    Subscription,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
@@ -28,6 +34,7 @@ interface Arguments {
     assistantKillSwitch: boolean;
     canDisplayB2BLogsPass: boolean;
     canDisplayB2BLogsVPN: boolean;
+    memberships: GroupMembershipReturn[] | undefined;
 }
 
 export const getRoutes = ({
@@ -46,6 +53,7 @@ export const getRoutes = ({
     assistantKillSwitch,
     canDisplayB2BLogsPass,
     canDisplayB2BLogsVPN,
+    memberships,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -62,6 +70,7 @@ export const getRoutes = ({
             showThemeSelection,
             assistantKillSwitch,
             isUserGroupsFeatureEnabled,
+            memberships,
         }),
         mail: getMailAppRoutes({
             app,
