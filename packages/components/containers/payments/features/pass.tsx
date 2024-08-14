@@ -1,6 +1,12 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
+    PASS_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    PLANS,
+} from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -195,6 +201,25 @@ export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinit
     };
 };
 
+export const getVaultSharingB2BText = (n: number | 'unlimited') => {
+    return n === 'unlimited'
+        ? c('new_plans: feature').t`Unlimited shared ${PASS_SHORT_APP_NAME} vaults per user`
+        : c('new_plans: feature').ngettext(
+              msgid`${n} shared ${PASS_SHORT_APP_NAME} vault per user`,
+              `${n} shared ${PASS_SHORT_APP_NAME} vaults per user`,
+              n
+          );
+};
+
+export const getVaultSharingB2B = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
+    return {
+        text: getVaultSharingB2BText(n),
+        icon: 'vault',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
 export const getSecureSharingTextEmpty = (link?: boolean) => {
     if (link) {
         return c('pass_signup_2023: Info').t`Secure vault and link sharing`;
@@ -239,9 +264,9 @@ export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeat
 
 export const getPasswordManager = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Password manager to secure credentials`,
+        text: c('new_plans: feature').t`Password manager`,
         included: true,
-        icon: 'shield',
+        icon: 'brand-proton-pass',
     };
 };
 
@@ -322,8 +347,8 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DUO]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.MAIL_PRO]: getVaults(FREE_VAULTS),
                 [PLANS.MAIL_BUSINESS]: getVaults(FREE_VAULTS),
-                [PLANS.BUNDLE_PRO]: getVaults(PASS_PLUS_VAULTS),
-                [PLANS.BUNDLE_PRO_2024]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.BUNDLE_PRO]: getVaults(PASS_BIZ_VAULTS),
+                [PLANS.BUNDLE_PRO_2024]: getVaults(PASS_BIZ_VAULTS),
                 [PLANS.PASS_PRO]: getVaults(PASS_PRO_VAULTS),
                 [PLANS.PASS_BUSINESS]: getVaults(PASS_BIZ_VAULTS),
                 [PLANS.VPN_PRO]: null,

@@ -361,6 +361,7 @@ export const getPhoneSupport = (): PlanCardFeatureDefinition => {
         tooltip: c('new_plans: tooltip')
             .t`Phone support is available from the ${BRAND_NAME} Customer Support team during European business hours, for customers with 20 or more users`,
         included: true,
+        icon: 'phone',
     };
 };
 export const getSLA = (): PlanCardFeatureDefinition => {
