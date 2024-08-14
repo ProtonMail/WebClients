@@ -127,7 +127,7 @@ export const getStorageFeatureB2B = (
     const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
 
     return {
-        text: c('new_plans: feature').t`${size} of secure storage /user`,
+        text: c('new_plans: feature').t`${size} of secure storage per user`,
         tooltip: c('new_plans: tooltip')
             .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}. Administrators can allocate different storage amounts to users in their organization`,
         subtext: options.subtext ? c('storage_split: info').t`For all ${BRAND_NAME} services` : undefined,
@@ -153,12 +153,14 @@ export const getVersionHistory = (options?: 'generic' | 30 | 365): PlanCardFeatu
                 options
             ),
             included: true,
+            icon: 'clock-rotate-left',
         };
     }
 
     return {
         text: c('new_plans: feature').t`Version history`,
         included: true,
+        icon: 'clock-rotate-left',
     };
 };
 
@@ -213,6 +215,7 @@ export const getCollaborate = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Collaborate and share large files`,
         included: true,
+        icon: 'brand-proton-drive',
     };
 };
 
