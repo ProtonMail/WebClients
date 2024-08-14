@@ -21,6 +21,7 @@ import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import {
     getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
+    hasDuo,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -30,7 +31,6 @@ import {
     getIsDomainActive,
     getOrganizationDenomination,
     getOrganizationKeyInfo,
-    isOrganizationFamily,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
@@ -132,7 +132,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const aiSeatsRemaining = MaxAI > UsedAI;
 
     const isOrgAFamilyPlan = getOrganizationDenomination(organization) === 'familyGroup';
-    const isOrgFamily = isOrganizationFamily(organization);
+    const hasDuoPlan = hasDuo(subscription);
 
     const canInviteProtonUsers = hasVisionary(subscription) || isOrgAFamilyPlan;
     const { createNotification } = useNotifications();
@@ -494,11 +494,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 (hasReachedLimit ? (
                                     <Info
                                         className="color-danger"
-                                        title={isOrgFamily ? getInvitationLimit(10) : getInvitationLimit(3)}
+                                        title={hasDuoPlan ? getInvitationLimit(3) : getInvitationLimit(10)}
                                     />
                                 ) : (
                                     <Info
-                                        title={isOrgFamily ? getInvitationAcceptLimit(10) : getInvitationAcceptLimit(3)}
+                                        title={hasDuoPlan ? getInvitationAcceptLimit(3) : getInvitationAcceptLimit(10)}
                                     />
                                 ))}
 
