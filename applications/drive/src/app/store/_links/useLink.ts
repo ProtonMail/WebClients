@@ -254,7 +254,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
         }
@@ -282,7 +282,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
 
@@ -322,7 +322,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
 
@@ -412,7 +412,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
         }
@@ -587,7 +587,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
         }
@@ -618,7 +618,7 @@ export function useLinkInner(
                     shareId,
                     linkId,
                 },
-                extra: { e },
+                extra: { e, crypto: true },
             });
         }
     };

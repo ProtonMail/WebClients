@@ -31,8 +31,8 @@ const Phrase = () => {
         <SecurityCheckupCard>
             <SecurityCheckupCardInner
                 prefix={<SecurityCheckupMainIcon className="self-start" icon={phraseIcon} color="success" />}
-                title={c('l10n_nightly: Security checkup').t`Your Recovery Kit`}
-                subTitle={c('l10n_nightly: Security checkup').t`Can be used to regain access to your account and data`}
+                title={c('Safety review').t`Your Recovery Kit`}
+                subTitle={c('Safety review').t`Can be used to regain access to your account and data`}
                 checkmark
             />
         </SecurityCheckupCard>
@@ -60,7 +60,7 @@ const Email = () => {
                         color={isPerfectDeviceState ? 'success' : 'info'}
                     />
                 }
-                title={c('l10n_nightly: Security checkup').t`Your recovery email`}
+                title={c('Safety review').t`Your recovery email`}
                 subTitle={email.value}
                 checkmark={isPerfectDeviceState}
             />
@@ -91,7 +91,7 @@ const Phone = () => {
                         color={isPerfectDeviceState ? 'success' : 'info'}
                     />
                 }
-                title={c('l10n_nightly: Security checkup').t`Your recovery phone`}
+                title={c('Safety review').t`Your recovery phone`}
                 subTitle={formattedPhoneNumber}
                 checkmark={isPerfectDeviceState}
             />
@@ -114,22 +114,19 @@ const Device = () => {
         const disclaimerText = (() => {
             if (isPerfectEmailState && isPerfectPhoneState) {
                 return getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
-                        .t`Your recovery email and phone can **only recover access to your account**.`
+                    c('Safety review').t`Your recovery email and phone can **only recover access to your account**.`
                 );
             }
 
             if (isPerfectEmailState) {
                 return getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
-                        .t`Your recovery email can **only recover access to your account**.`
+                    c('Safety review').t`Your recovery email can **only recover access to your account**.`
                 );
             }
 
             if (isPerfectPhoneState) {
                 return getBoldFormattedText(
-                    c('l10n_nightly: Security checkup')
-                        .t`Your recovery phone can **only recover access to your account**.`
+                    c('Safety review').t`Your recovery phone can **only recover access to your account**.`
                 );
             }
         })();
@@ -137,7 +134,7 @@ const Device = () => {
         const enableDeviceRecovery = (
             // translator: full sentence "Enable device-based recovery to ensure your data can be recovered."
             <Link key="enable-device-recovery" to={SECURITY_CHECKUP_PATHS.ENABLE_DEVICE_RECOVERY}>
-                {c('l10n_nightly: Security checkup').t`Enable device-based recovery`}
+                {c('Safety review').t`Enable device-based recovery`}
             </Link>
         );
 
@@ -147,8 +144,7 @@ const Device = () => {
                 <div>
                     {
                         // translator: full sentence "Enable device-based recovery to ensure your data can be recovered."
-                        c('l10n_nightly: Security checkup')
-                            .jt`${enableDeviceRecovery} to ensure your data can be recovered.`
+                        c('Safety review').jt`${enableDeviceRecovery} to ensure your data can be recovered.`
                     }
                 </div>
             </div>

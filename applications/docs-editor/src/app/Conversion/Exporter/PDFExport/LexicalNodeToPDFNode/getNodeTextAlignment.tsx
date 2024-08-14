@@ -1,6 +1,7 @@
 import type { ElementNode } from 'lexical'
+import type { Style } from '@react-pdf/types'
 
-export const getNodeTextAlignment = (node: ElementNode) => {
+export const getNodeTextAlignment = (node: ElementNode): Style['textAlign'] => {
   const formatType = node.getFormatType()
 
   if (!formatType) {
@@ -11,7 +12,7 @@ export const getNodeTextAlignment = (node: ElementNode) => {
     return 'left'
   }
 
-  if (formatType === 'end') {
+  if (formatType === 'end' || formatType === 'right') {
     return 'right'
   }
 

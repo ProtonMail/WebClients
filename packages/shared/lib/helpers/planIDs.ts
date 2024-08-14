@@ -1,8 +1,8 @@
 import type { SelectedPlan } from '@proton/components/payments/core';
 
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
-import type { Organization, Plan, PlanIDs, PlansMap, SubscriptionCheckResponse } from '../interfaces';
-import { getMaxValue } from '../interfaces';
+import type { Organization, Plan, PlanIDs, PlansMap, SubscriptionCheckResponse, User } from '../interfaces';
+import { ChargebeeEnabled, getMaxValue } from '../interfaces';
 import { getSupportedAddons, getSupportedB2BAddons, isDomainAddon, isMemberAddon, isScribeAddon } from './addons';
 import type { AggregatedPricing, PricingForCycles } from './subscription';
 import { allCycles, getPlanMembers, getPricePerCycle, getPricePerMember } from './subscription';
@@ -42,11 +42,13 @@ export const switchPlan = ({
     planID,
     organization,
     plans,
+    user,
 }: {
     planIDs: PlanIDs;
     planID?: PLANS | ADDON_NAMES;
     organization?: Organization;
     plans: Plan[];
+    user: User | undefined;
 }): PlanIDs => {
     if (planID === undefined) {
         return {};
@@ -135,7 +137,12 @@ export const switchPlan = ({
             }
         }
 
-        if (isScribeAddon(addon) && plan && organization) {
+        // In case if we have inhouse Visionary user with non-zero UsedAI and they can't use Chargebee yet
+        // (e.g. because of Business flag) then we forbid transfering Scribe addons, because it will go to v4 payments
+        // which don't support scribe.
+        const canTransferScribe = user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED;
+
+        if (isScribeAddon(addon) && plan && organization && canTransferScribe) {
             const gptAddon = plans.find(({ Name }) => Name === addon);
             const diffAIs = (organization.UsedAI || 0) - getMaxValue(plan, 'MaxAI');
 

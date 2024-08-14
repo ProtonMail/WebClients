@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
-import type { WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
+import type { WasmApiWallet, WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { IWasmApiWalletData, WalletMap } from '@proton/wallet';
 
 import type {
@@ -9,6 +10,7 @@ import type {
     WalletChainDataByWalletId,
     WalletWithChainData,
 } from '../../types';
+import type { BitcoinAddressHelper } from './useBitcoinAddresses';
 import type { SyncingMetadata } from './useWalletsChainData';
 
 export type SyncingObserver = (wallet: WalletWithChainData, account: AccountWithChainData) => void;
@@ -35,11 +37,16 @@ export interface BitcoinBlockchainContextValue {
     feesEstimation: Map<string, number>;
     loadingFeesEstimation: boolean;
 
-    fillBitcoinAddressPools: (data?: { walletAccountIds: string[] }) => void;
-    fillBitcoinAddressPoolForAccount: (
-        walletAccount: WasmApiWalletAccount,
-        walletWithChainData: WalletWithChainData
-    ) => Promise<void>;
+    manageBitcoinAddressPool: ({
+        wallet,
+        account,
+        accountChainData,
+    }: {
+        wallet: WasmApiWallet;
+        account: WasmApiWalletAccount;
+        accountChainData: AccountWithChainData;
+    }) => Promise<void>;
+    bitcoinAddressHelperByWalletAccountId: SimpleMap<BitcoinAddressHelper>;
 }
 
 export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextValue>({
@@ -64,8 +71,8 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
     feesEstimation: new Map(),
     loadingFeesEstimation: false,
 
-    fillBitcoinAddressPools: () => {},
-    fillBitcoinAddressPoolForAccount: async () => {},
+    manageBitcoinAddressPool: async () => {},
+    bitcoinAddressHelperByWalletAccountId: {},
 });
 
 export const useBitcoinBlockchainContext = () => useContext(BitcoinBlockchainContext);

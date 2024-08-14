@@ -72,14 +72,6 @@ const GroupItemMoreOptionsDropdown = ({
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
                 <DropdownMenu>
-                    <DropdownMenuButton
-                        className="text-left"
-                        onClick={() => {
-                            removeAllMembersPrompt.openModal(true);
-                        }}
-                    >
-                        {c('Action').t`Remove all members from group`}
-                    </DropdownMenuButton>
                     {displayEnableE2EEButton && (
                         <DropdownMenuButton
                             className="text-left"
@@ -88,7 +80,7 @@ const GroupItemMoreOptionsDropdown = ({
                                 withLoading(handleEnableGroupAddressE2EE());
                             }}
                         >
-                            {c('Action').t`Enable E2EE for group address`}
+                            {c('Action').t`Enable E2EE group mail encryption`}
                         </DropdownMenuButton>
                     )}
                     {displayDisableE2EEButton && (
@@ -99,7 +91,7 @@ const GroupItemMoreOptionsDropdown = ({
                                 withLoading(handleDisableGroupAddressE2EE());
                             }}
                         >
-                            {c('Action').t`Disable E2EE for group address`}
+                            {c('Action').t`Disable E2EE group mail encryption`}
                         </DropdownMenuButton>
                     )}
                     <DropdownMenuButton

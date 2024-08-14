@@ -28,11 +28,11 @@ const SetEmailContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="danger" />}>
-                {c('l10n_nightly: Security checkup').t`Add a recovery email`}
+                {c('Safety review').t`Add a recovery email`}
             </SecurityCheckupMainTitle>
 
             <div className="mb-4">
-                {c('l10n_nightly: Security checkup')
+                {c('Safety review')
                     .t`You can use your recovery email to regain access to your account if you forget your password.`}
             </div>
 
@@ -43,7 +43,7 @@ const SetEmailContainer = () => {
                 hasReset={!!userSettings.Email.Reset}
                 hasNotify={!!userSettings.Email.Notify}
                 disableVerifyCta
-                inputProps={{ label: c('l10n_nightly: Security checkup').t`Recovery email address` }}
+                inputProps={{ label: c('Safety review').t`Recovery email address` }}
                 renderForm={({ onSubmit, input, submitButtonProps }) => {
                     return (
                         <form onSubmit={onSubmit}>

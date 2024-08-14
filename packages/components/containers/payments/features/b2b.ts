@@ -357,10 +357,11 @@ export const getSupport = (): PlanCardFeatureDefinition => {
 };
 export const getPhoneSupport = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Phone support (40+ users)`,
+        text: c('new_plans: feature').t`Phone support (20+ users)`,
         tooltip: c('new_plans: tooltip')
-            .t`Phone support is available from the ${BRAND_NAME} Customer Success team during European business hours, for customers with 6 or more users`,
+            .t`Phone support is available from the ${BRAND_NAME} Customer Support team during European business hours, for customers with 20 or more users`,
         included: true,
+        icon: 'phone',
     };
 };
 export const getSLA = (): PlanCardFeatureDefinition => {

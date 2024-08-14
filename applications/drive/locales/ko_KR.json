@@ -2387,6 +2387,43 @@
         "우선 지원"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo 플랜 받기"
+      ],
+      "Get it for ${ price }": [
+        "${ price }에 구매하세요"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "매년 ${ amountBilled }가 결제됩니다. ${ BRAND_NAME } 무제한 연간 구독 두 개를 따로 결제하는 것보다 ${ amountSave }를 절약할 수 있습니다."
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "두 사용자들"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "모든 ${ BRAND_NAME } 제품들에 대한 모든 접근권한"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave }를 절약했습니다"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "두 명을 위한 모든 ${ BRAND_NAME }."
+      ],
+      "Double your storage": [
+        "저장공간을 두 배로 늘리세요"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "${ PLAN_NAMES[PLANS.DUO] } 를 소개합니다 "
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "설명:\n${ eventDescription }"
@@ -3138,6 +3175,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "추가 비밀번호 설정 시, 별칭 관리는 ${ PASS_APP_NAME } 에서만 가능합니다."
+      ],
       "You may also refresh the page or try again later.": [
         "페이지를 새로 고치거나 나중에 다시 시도할 수도 있습니다."
       ]
@@ -3255,14 +3295,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "커스텀 도메인과 연동된 계정은 그룹 플랜에 합류할 수 없습니다."
+      ],
       "customer support": [
         "고객 지원"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "햔재 그룹 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
       ],
       "Invited by: ${ inviteEmail }": [
         "이 사용자에게 의해 초대됨: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "평생 계정은 그룹 플랜에 합류 불가합니다."
       ],
       "Manage addresses.": [
         "주소를 관리하세요."
@@ -3291,6 +3340,9 @@
       "You have successfully joined the family group": [
         "가족 그룹에 성공적으로 가입했습니다."
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "결제가 필요한 청구서들이 있습니다. 그룹 플랜에 참여하기 전에 결제하세요."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "사용자가 ${ BRAND_NAME } 계정이 이 그룹 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ BRAND_NAME_TWO } 프리미엄 기능들을 즐기세요."
       ],
@@ -3299,6 +3351,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "사용자의 계정이 할당된 ${ inviteSpace } 을(를) 초과하는 스토리지의 ${ usedSpace } 을(를) 사용하고 있습니다. 일부 데이터를 삭제하거나 요금제의 구매 관리자에게 저장 공간을 늘리도록 요청하세요."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "현재 플랜에서 이 초대를 수락할 수 없습니다."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4069,6 +4124,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "${ n }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
       "Create in": [
         "만들기"
       ],
@@ -4584,6 +4642,9 @@
       ],
       "Organization size": [
         "조직 크기"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "이 경고는 때로는 과도할 수 있습니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -6541,9 +6602,6 @@
       "${ size } storage": [
         "${ size } 저장공간"
       ],
-      "${ size } storage per user": [
-        "사용자 당 ${ size } 스토리지"
-      ],
       "1 user": [
         "사용자 1명"
       ],
@@ -6561,9 +6619,6 @@
       ],
       "Administration Panel": [
         "관리 패널"
-      ],
-      "Advanced sharing security": [
-        "향상된 공유 보안"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -6594,9 +6649,6 @@
       ],
       "Collaborate and share large files": [
         "큰 파일을 공동으로 작업하고 공유하세요"
-      ],
-      "Collaborative document editor": [
-        "협동 가능한 문서 편집기"
       ],
       "Contact groups": [
         "연락처 그룹"
@@ -6715,6 +6767,9 @@
       "Phone support (40+ users)": [
         "휴대 전화 지원 (40명 이상 사용자)"
       ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }의 프리미엄 기능을 사용할 수 있습니다."
+      ],
       "Priority email support": [
         "이메일 우선 지원"
       ],
@@ -6759,9 +6814,6 @@
       ],
       "Send & receive invitations": [
         "전송 및 받은 초대"
-      ],
-      "Share files and folders via link": [
-        "링크를 통해 파일 및 폴더를 공유"
       ],
       "Sign in as user": [
         "사용자로 로그인"
@@ -6853,6 +6905,9 @@
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
       ],
+      "Version history": [
+        "버전 기록"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
       ]
@@ -6943,9 +6998,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
-      "Secure your digital life with ${ BRAND_NAME } for two people.": [
-        "두 명의 사용자를 위한 ${ BRAND_NAME }으로 내 디지털 생활을 보호하세요."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
       ],
@@ -6954,6 +7006,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "모든 사람에게 개인 정보를 제공하도록 설계된 무료 스타터 계정."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "최대 두 사람까지 무제한 프라이버시 및 더 많은 저장공간을 제공합니다."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 삭제하신다면, 프로모션이 적용된 가격을 잃게되어 만일 새로운 계정을 추가한다고 하더라도 다시 누리실 수 없습니다."
@@ -7025,9 +7080,6 @@
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "사용자 지정 시간으로 이메일이나 메시지가 도착했음을 안내받을 수 있습니다."
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        "비밀번호 보호 및 링크 만료일을 추가하여 공유 파일에 대한 접근을 제어하십시오."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
@@ -9026,6 +9078,9 @@
       "Import record deleted": [
         "불러오기 기록 삭제됨"
       ],
+      "Invitation rejected": [
+        "초대 거부됨"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
@@ -9412,9 +9467,6 @@
       "Edit image": [
         "이미지 편집"
       ],
-      "Email address": [
-        "이메일 주소"
-      ],
       "Email addresses": [
         "이메일 주소"
       ],
@@ -9559,9 +9611,6 @@
       "Other names": [
         "다른 이름"
       ],
-      "Password": [
-        "비밀번호"
-      ],
       "Payment failed": [
         "결제 실패"
       ],
@@ -9684,9 +9733,6 @@
       ],
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
-      ],
-      "Sign in with 2FA": [
-        "2단계 인증으로 로그인"
       ],
       "Sign out": [
         "로그아웃"

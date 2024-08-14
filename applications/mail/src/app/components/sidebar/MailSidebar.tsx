@@ -1,10 +1,11 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import {
     AppVersion,
     AppsDropdown,
+    CollapsibleSidebarSpotlight,
     Icon,
     Sidebar,
     SidebarDrawerItems,
@@ -23,6 +24,7 @@ import {
     COLLAPSE_EVENTS,
     SOURCE_EVENT,
     sendRequestCollapsibleSidebarReport,
+    useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -75,6 +77,12 @@ const MailSidebar = ({ labelID }: Props) => {
         setshowSideBar(!showSideBar);
     };
 
+    const navigationRef = useRef<HTMLDivElement>(null);
+
+    const { isScrollPresent } = useLeftSidebarButton({
+        navigationRef,
+    });
+
     return (
         <Sidebar
             app={APPS.PROTONMAIL}
@@ -89,6 +97,7 @@ const MailSidebar = ({ labelID }: Props) => {
             preFooter={<SidebarStorageUpsell app={APPS.PROTONMAIL} />}
             collapsed={collapsed}
             showStorage={showSideBar}
+            navigationRef={navigationRef}
         >
             <SidebarNav className="flex *:min-size-auto">
                 <MailSidebarList
@@ -110,31 +119,40 @@ const MailSidebar = ({ labelID }: Props) => {
                     <UsersOnboardingChecklist smallVariant />
                 )}
                 {featureFlagCollapsible && !isElectronApp && (
-                    <span className={clsx('mt-auto', !collapsed && 'absolute bottom-0 right-0 mb-11 mr-2')}>
+                    <span
+                        className={clsx(
+                            'mt-auto',
+                            !collapsed && 'absolute bottom-0 right-0 mb-11',
+                            isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
+                        )}
+                    >
+                        <CollapsibleSidebarSpotlight app={APPS.PROTONMAIL}>
                         {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                        <Tooltip
-                            title={
-                                showSideBar
-                                    ? c('Action').t`Collapse navigation bar`
-                                    : c('Action').t`Display navigation bar`
-                            }
-                            originalPlacement="right"
-                        >
-                            <button
-                                className={clsx(
-                                    'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
-                                    !showSideBar && 'sidebar-collapse-button--collapsed',
-                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto'
-                                )}
-                                onClick={() => onClickExpandNav()}
-                                aria-pressed={showSideBar}
+                            <Tooltip
+                                title={
+                                    showSideBar
+                                        ? c('Action').t`Collapse navigation bar`
+                                        : c('Action').t`Display navigation bar`
+                                }
+                                originalPlacement="right"
                             >
-                                <Icon
-                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                    alt={c('Action').t`Show navigation bar`}
-                                />
-                            </button>
-                        </Tooltip>
+                                <button
+                                    className={clsx(
+                                        'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                        !showSideBar && 'sidebar-collapse-button--collapsed',
+                                        collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                        isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                    )}
+                                    onClick={() => onClickExpandNav()}
+                                    aria-pressed={showSideBar}
+                                >
+                                        <Icon
+                                            name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                            alt={c('Action').t`Show navigation bar`}
+                                        />
+                                    </button>
+                                </Tooltip>
+                        </CollapsibleSidebarSpotlight>
                     </span>
                 )}
             </SidebarNav>

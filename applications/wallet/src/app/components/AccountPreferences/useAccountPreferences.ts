@@ -17,6 +17,7 @@ import {
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useFiatCurrencies } from '../../store/hooks';
+import { getAccountWithChainDataFromManyWallets } from '../../utils';
 
 export const useAccountPreferences = (
     wallet: IWasmApiWalletData,
@@ -31,7 +32,7 @@ export const useAccountPreferences = (
     const { createNotification } = useNotifications();
     const [userKeys] = useUserKeys();
 
-    const { fillBitcoinAddressPoolForAccount, walletsChainData } = useBitcoinBlockchainContext();
+    const { manageBitcoinAddressPool, walletsChainData } = useBitcoinBlockchainContext();
     const api = useWalletApiClients();
     const dispatch = useDispatch();
 
@@ -137,10 +138,18 @@ export const useAccountPreferences = (
                     emailAddressId
                 );
 
-                const walletWithChainData = walletsChainData[wallet.Wallet.ID];
+                const accountChainData = getAccountWithChainDataFromManyWallets(
+                    walletsChainData,
+                    wallet.Wallet.ID,
+                    updatedAccount.ID
+                );
 
-                if (walletWithChainData) {
-                    await fillBitcoinAddressPoolForAccount(updatedAccount, walletWithChainData).catch(() => {
+                if (accountChainData) {
+                    await manageBitcoinAddressPool({
+                        wallet: wallet.Wallet,
+                        account: updatedAccount,
+                        accountChainData,
+                    }).catch(() => {
                         createNotification({
                             type: 'error',
                             text: c('Wallet Settings').t`Could not fill the pool after email address adition`,
@@ -195,10 +204,18 @@ export const useAccountPreferences = (
                     emailAddressId
                 );
 
-                const walletWithChainData = walletsChainData[wallet.Wallet.ID];
+                const accountChainData = getAccountWithChainDataFromManyWallets(
+                    walletsChainData,
+                    wallet.Wallet.ID,
+                    updatedAccount.ID
+                );
 
-                if (walletWithChainData) {
-                    await fillBitcoinAddressPoolForAccount(updatedAccount, walletWithChainData).catch(() => {
+                if (accountChainData) {
+                    await manageBitcoinAddressPool({
+                        wallet: wallet.Wallet,
+                        account: updatedAccount,
+                        accountChainData,
+                    }).catch(() => {
                         createNotification({
                             type: 'error',
                             text: c('Wallet Settings').t`Could not fill the pool after email address replacement`,

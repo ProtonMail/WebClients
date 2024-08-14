@@ -19,7 +19,13 @@ import {
     getHasVpnB2BPlan,
     hasCancellablePlan,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    GroupMembershipReturn,
+    Organization,
+    Subscription,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 import { Renew, UserType } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -40,6 +46,7 @@ export const getAccountAppRoutes = ({
     showThemeSelection,
     assistantKillSwitch,
     isUserGroupsFeatureEnabled,
+    memberships,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -54,6 +61,7 @@ export const getAccountAppRoutes = ({
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
     isUserGroupsFeatureEnabled: boolean;
+    memberships: GroupMembershipReturn[] | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -334,7 +342,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Group membership`,
                 to: '/group-membership',
                 icon: 'pass-group',
-                available: isUserGroupsFeatureEnabled,
+                available: isUserGroupsFeatureEnabled && memberships && memberships.length > 0,
                 subsections: [
                     {
                         id: 'group-membership',

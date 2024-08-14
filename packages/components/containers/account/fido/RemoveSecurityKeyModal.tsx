@@ -40,7 +40,7 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
                 <AuthModal
                     config={unlockPasswordChanges()}
                     {...authModalProps}
-                    onCancel={undefined}
+                    onCancel={onClose}
                     onSuccess={async () => {
                         await Promise.all(
                             keys.map((key) => {

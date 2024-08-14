@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import {
     AppVersion,
     AppsDropdown,
+    CollapsibleSidebarSpotlight,
     DropdownMenu,
     DropdownMenuButton,
     Icon,
@@ -44,6 +45,7 @@ import {
     COLLAPSE_EVENTS,
     SOURCE_EVENT,
     sendRequestCollapsibleSidebarReport,
+    useLeftSidebarButton,
 } from '@proton/shared/lib/helpers/collapsibleSidebar';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -62,6 +64,7 @@ export interface CalendarSidebarProps {
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
+    isAskUpdateTimezoneModalOpen?: boolean;
 }
 
 const CalendarSidebar = ({
@@ -73,6 +76,7 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
+    isAskUpdateTimezoneModalOpen,
 }: CalendarSidebarProps) => {
     const { call } = useEventManager();
     const api = useApi();
@@ -92,6 +96,12 @@ const CalendarSidebar = ({
         });
         setshowSideBar(!showSideBar);
     };
+
+    const navigationRef = useRef<HTMLDivElement>(null);
+
+    const { isScrollPresent } = useLeftSidebarButton({
+        navigationRef,
+    });
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
 
@@ -302,6 +312,7 @@ const CalendarSidebar = ({
             version={<AppVersion />}
             showStorage={showSideBar}
             collapsed={collapsed}
+            navigationRef={navigationRef}
         >
             {renderCalendarModal && (
                 <PersonalCalendarModal
@@ -325,38 +336,52 @@ const CalendarSidebar = ({
                 {!collapsed && (
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
-                        {myCalendarsList}
-                        {otherCalendarsList}
+                        <div>
+                            {myCalendarsList}
+                            {otherCalendarsList}
+                        </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>
                 )}
 
                 {featureFlagCollapsible && !isElectronApp && (
-                    <span className={clsx('mt-auto', !collapsed && 'absolute bottom-0 right-0 mb-11 mr-2')}>
-                        {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                        <Tooltip
-                            title={
-                                showSideBar
-                                    ? c('Action').t`Collapse navigation bar`
-                                    : c('Action').t`Display navigation bar`
-                            }
-                            originalPlacement="right"
+                    <span
+                        className={clsx(
+                            'mt-auto',
+                            !collapsed && 'absolute bottom-0 right-0 mb-11',
+                            isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
+                        )}
+                    >
+                        <CollapsibleSidebarSpotlight
+                            app={APPS.PROTONCALENDAR}
+                            isAskUpdateTimezoneModalOpen={isAskUpdateTimezoneModalOpen}
                         >
-                            <button
-                                className={clsx(
-                                    'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
-                                    !showSideBar && 'sidebar-collapse-button--collapsed',
-                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto'
-                                )}
-                                onClick={onClickExpandNav}
-                                aria-pressed={showSideBar}
+                            {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
+                            <Tooltip
+                                title={
+                                    showSideBar
+                                        ? c('Action').t`Collapse navigation bar`
+                                        : c('Action').t`Display navigation bar`
+                                }
+                                originalPlacement="right"
                             >
-                                <Icon
-                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                    alt={c('Action').t`Show navigation bar`}
-                                />
-                            </button>
-                        </Tooltip>
+                                <button
+                                    className={clsx(
+                                        'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                        !showSideBar && 'sidebar-collapse-button--collapsed',
+                                        collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                        isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                    )}
+                                    onClick={onClickExpandNav}
+                                    aria-pressed={showSideBar}
+                                >
+                                        <Icon
+                                            name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                            alt={c('Action').t`Show navigation bar`}
+                                        />
+                                    </button>
+                                </Tooltip>
+                        </CollapsibleSidebarSpotlight>
                     </span>
                 )}
             </SidebarNav>

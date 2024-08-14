@@ -2,35 +2,40 @@
 	--lexical-ordered-list-margin: 1rem;
 }
 
-@for $i from 1 through 5 {
-	.Lexical__ol#{$i} {
-		padding: 0;
-		margin: 0;
-		margin-block-end: 0.75rem;
-		margin-inline-start: var(--lexical-ordered-list-margin);
-		list-style-position: outside;
-		list-style-type: decimal;
+$list-style-types: (decimal, upper-alpha, lower-alpha, upper-roman, lower-roman);
 
-		&.Lexical__rtl {
-			margin-inline: 0 var(--lexical-ordered-list-margin);
+.Lexical__ol {
+	padding: 0;
+	margin: 0;
+	margin-block-end: 0.75rem;
+	margin-inline-start: var(--lexical-ordered-list-margin);
+	list-style-position: outside;
+
+	&.Lexical__rtl {
+		margin-inline: 0 var(--lexical-ordered-list-margin);
+	}
+
+	--list-style-type: decimal;
+
+	@for $i from 1 through 5 {
+		&--depth-#{$i} {
+			--list-style-type: #{nth($list-style-types, $i)};
 		}
 	}
-}
 
-.Lexical__ol2 {
-	list-style-type: upper-alpha;
-}
+	@each $list-style-type in $list-style-types {
+		&--#{$list-style-type} {
+			--list-style-type: #{$list-style-type};
+		}
+	}
 
-.Lexical__ol3 {
-	list-style-type: lower-alpha;
-}
+	list-style-type: var(--list-style-type);
 
-.Lexical__ol4 {
-	list-style-type: upper-roman;
-}
-
-.Lexical__ol5 {
-	list-style-type: lower-roman;
+	&--bracket-marker {
+		& > :not(.Lexical__listItem--nested)::marker {
+			content: counter(list-item, var(--list-style-type)) ') ';
+		}
+	}
 }
 
 .Lexical__ul {
@@ -129,7 +134,7 @@
 	margin-block-end: 0.25rem;
 }
 
-.Lexical__nestedListItem {
+.Lexical__listItem--nested {
 	list-style-type: none;
 
 	> ol,
@@ -142,7 +147,7 @@
 	}
 }
 
-.Lexical__nestedListItem::before,
-.Lexical__nestedListItem::after {
+.Lexical__listItem--nested::before,
+.Lexical__listItem--nested::after {
 	display: none;
 }

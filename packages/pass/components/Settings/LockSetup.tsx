@@ -85,7 +85,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
             });
         }
 
-        const ttl = orgLockTTL ?? lockTTL ?? DEFAULT_LOCK_TTL;
+        const ttl = orgLockTTL || (lockTTL ?? DEFAULT_LOCK_TTL);
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
         const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
@@ -161,7 +161,10 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
             case LockMode.PASSWORD:
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
-                    message: c('Info').t`Please confirm your password in order to auto-lock with your password.`,
+                    message: hasExtraPassword
+                        ? c('Info')
+                              .t`Please confirm your extra password in order to auto-lock with your extra password.`
+                        : c('Info').t`Please confirm your password in order to auto-lock with your password.`,
                 });
 
             case LockMode.BIOMETRICS: {
@@ -173,7 +176,9 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                 /* else prompt for password */
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
-                    message: c('Info').t`Please confirm your password in order to auto-lock with biometrics.`,
+                    message: hasExtraPassword
+                        ? c('Info').t`Please confirm your extra password in order to auto-lock with biometrics.`
+                        : c('Info').t`Please confirm your password in order to auto-lock with biometrics.`,
                 });
             }
 
@@ -196,7 +201,9 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
             case LockMode.BIOMETRICS:
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode: currentLockMode, secret, ttl }),
-                    message: c('Info').t`Please confirm your password in order to update the auto-lock time.`,
+                    message: hasExtraPassword
+                        ? c('Info').t`Please confirm your extra password in order to update the auto-lock time.`
+                        : c('Info').t`Please confirm your password in order to update the auto-lock time.`,
                 });
         }
     };

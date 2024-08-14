@@ -1085,6 +1085,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
+      ],
       "Add a username field": [
         "Legg til brukernavnfelt"
       ],
@@ -1135,6 +1138,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Før du eksporterer dataene dine med dette formatet, må du åpne Safari-innstillinger -> kategorien \"Generelt\" -> deaktivere alternativet \"Åpne sikre filer etter nedlasting\". Dette forhindrer at Safari trekker ut den eksporterte filen feil."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrisk lås registrert. Bruk den til å låse opp ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometri vil bli deaktivert og må aktiveres på nytt."
       ],
       "Breaches detected": [
         "Brudd oppdaget"
@@ -1234,6 +1243,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktiver automatisk låsing for å sikre dataene dine"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Aktiverer biometrisk auto-lås"
+      ],
+      "Enabling biometrics lock failed": [
+        "Aktivering av biometrisk lås mislyktes"
       ],
       "Enabling offline mode...": [
         "Aktiverer frakoblet modus..."
@@ -1463,8 +1478,8 @@
       "Offline support successfully disabled": [
         "Støtte for frakoblet tilgang deaktivert"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode for å låse opp økten. Du blir logget ut etter 3 mislykkede forsøk."
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler feil på siden av forsiktighet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
       "Owner": [
         "Eier"
@@ -1506,8 +1521,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
+      "Please confirm your extra password": [
+        "Vennligst bekreft ditt ekstra passord"
+      ],
       "Please confirm your password": [
         "Vennligst bekreft passordet ditt"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Vennligst bekreft passordet ditt for å låse automatisk med biometri."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Vennligst bekreft passordet ditt for å automatisk låse med passordet ditt."
@@ -1660,6 +1681,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, vennligst slett den etter at du er ferdig med å bruke den."
       ],
+      "This option is currently not available on your device.": [
+        "Dette alternativet er for øyeblikket ikke tilgjengelig på enheten din."
+      ],
       "This setting is disabled on the organization level": [
         "Denne innstillingen er deaktivert på organisasjonsnivå"
       ],
@@ -1684,11 +1708,17 @@
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Lås opp ${ PASS_SHORT_APP_NAME } med biometri"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-passord"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ekstra passord"
+      ],
+      "Unlock with biometrics": [
+        "Lås opp med biometri"
       ],
       "Unpinning item...": [
         "Løser element..."
@@ -1905,6 +1935,9 @@
       ],
       "Beta Access": [
         "Testversjon-tilgang"
+      ],
+      "Biometrics": [
+        "Biometri"
       ],
       "Birthdate": [
         "Fødselsdato"
@@ -2381,6 +2414,9 @@
       "Type": [
         "Type"
       ],
+      "Unlock with": [
+        "Lås opp med"
+      ],
       "Unnamed Credit Card": [
         "Ikke navngitt kredittkort"
       ],
@@ -2691,11 +2727,11 @@
       "Discard changes?": [
         "Forkaste endringer?"
       ],
-      "Email address": [
-        "E-postadresse"
-      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Koser du deg med ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Angi det ekstra passordet ditt"
       ],
       "Enter your password": [
         "Skriv inn passord"
@@ -2792,9 +2828,6 @@
       ],
       "Passkey": [
         "Tilgangsnøkkel"
-      ],
-      "Password": [
-        "Passord"
       ],
       "Password Health": [
         "Passordhelse"
@@ -2957,6 +2990,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME }-passord kreves"
+      ],
       "A description of the problem is required": [
         "En beskrivelse av problemet er nødvendig"
       ],
@@ -2993,14 +3029,14 @@
       "Empty note": [
         "Tomt notat"
       ],
-      "Encryption password is required": [
-        "Krypteringspassord kreves"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "Utløpsdato er ikke i formatet MM/ÅÅ"
       ],
       "Extra password cannot be empty": [
         "Ekstra passord kan ikke være tomt"
+      ],
+      "Extra password is required": [
+        "Ekstra passord kreves"
       ],
       "Extra password should have at least 8 characters": [
         "Ekstra passord bør ha minst 8 tegn"

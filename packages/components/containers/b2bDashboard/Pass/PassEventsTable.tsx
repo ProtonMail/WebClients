@@ -16,6 +16,7 @@ interface Props {
     loading: boolean;
     handleEventClick: (event: string) => void;
     handleTimeClick: (time: string) => void;
+    handleEmailOrIpClick: (keyword: string) => void;
 }
 
 interface DescriptionProps {
@@ -52,7 +53,7 @@ const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionP
     );
 };
 
-const PassEventsTable = ({ events, loading, handleEventClick, handleTimeClick }: Props) => {
+const PassEventsTable = ({ events, loading, handleEventClick, handleTimeClick, handleEmailOrIpClick }: Props) => {
     const api = useApi();
     const [shareIds, setShareIds] = useState<{ [key: string]: string | null }>({});
     const [invalidShareIds, setInvalidShareIds] = useState<Set<string>>(new Set());
@@ -127,7 +128,15 @@ const PassEventsTable = ({ events, loading, handleEventClick, handleTimeClick }:
                                 </Button>,
                                 <div className="flex flex-column">
                                     <span>{name}</span>
-                                    <span className="color-weak">{email}</span>
+                                    <Button
+                                        onClick={() => handleEmailOrIpClick(email)}
+                                        color="weak"
+                                        size="small"
+                                        shape="ghost"
+                                        className="px-1"
+                                    >
+                                        <span className="color-weak">{email}</span>
+                                    </Button>
                                 </div>,
                                 <Button
                                     onClick={() => handleEventClick(event)}
@@ -144,9 +153,15 @@ const PassEventsTable = ({ events, loading, handleEventClick, handleTimeClick }:
                                     event={event}
                                     hasInvalidShareId={hasInvalidShareId}
                                 />,
-                                <div className="flex flex-column">
+                                <Button
+                                    onClick={() => handleEmailOrIpClick(ip)}
+                                    color="weak"
+                                    size="small"
+                                    shape="ghost"
+                                    className="px-1"
+                                >
                                     <span>{ip}</span>
-                                </div>,
+                                </Button>,
                             ]}
                         />
                     );

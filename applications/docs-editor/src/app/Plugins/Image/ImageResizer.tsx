@@ -4,7 +4,7 @@ import { calculateZoomLevel } from '@lexical/utils'
 import { useRef } from 'react'
 
 import './ImageResizer.scss'
-import { getEditorDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)
@@ -59,7 +59,7 @@ export default function ImageResizer({
   let containerMaxWidth = 100
   let containerMaxHeight = 100
 
-  const editorDimensions = getEditorDimensionsWithoutPadding(editor)
+  const editorDimensions = getElementDimensionsWithoutPadding(editor.getRootElement())
   if (editorDimensions) {
     containerMaxWidth = editorDimensions.width
     containerMaxHeight = editorDimensions.height

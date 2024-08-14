@@ -18,7 +18,7 @@ import {
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
-import { getAccountWithChainDataFromManyWallets, getThemeForWallet } from '../../utils';
+import { getAccountBalance, getAccountWithChainDataFromManyWallets, getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAccount?: () => void) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
@@ -140,10 +140,10 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
                     account.ID
                 );
 
-                const transactions = await accountChainData?.account.getTransactions();
+                const balance = await getAccountBalance(accountChainData);
                 setShouldShowBvEWarningByAccountId((prev) => ({
                     ...prev,
-                    [account.ID]: account.Priority === 1 || !!transactions?.[0].length,
+                    [account.ID]: account.Priority === 1 || balance > 0,
                 }));
             }
         };

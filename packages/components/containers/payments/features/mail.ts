@@ -69,6 +69,14 @@ export const getNAddressesFeatureB2B = ({
     };
 };
 
+export const getCustomSecureMailB2B = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Custom and secure business email`,
+        included: true,
+        icon: 'envelope',
+    };
+};
+
 export const getExtraPersonalizationFeature = (): PlanCardFeatureDefinition => ({
     icon: 'checkmark-circle',
     text: c('new_plans: Upsell attribute')

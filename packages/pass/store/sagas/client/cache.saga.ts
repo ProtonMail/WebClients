@@ -16,13 +16,13 @@ const CACHE_THROTTLING_TIMEOUT = 1_000;
 function* cacheWorker({ meta, type }: WithCache<Action>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
     if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
 
-    const { booted, loggedIn } = getAppState();
+    const { booted, authorized } = getAppState();
     const authStore = getAuthStore();
     const keyPassword = authStore.getPassword();
     const validSession = authStore.hasSession() && keyPassword !== undefined;
     const sessionLockToken = authStore.getLockToken();
     const offlineKD = authStore.getOfflineKD();
-    const ready = booted && loggedIn;
+    const ready = booted && authorized;
 
     if (validSession && ready && PassCrypto.ready) {
         try {

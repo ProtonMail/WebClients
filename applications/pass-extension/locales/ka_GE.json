@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "აღმოჩენილია შეცდომა ${ PASS_SHORT_APP_NAME }-ის გაშვებისას. თუ ეს პრობლემა გაგრძელდება, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
       ],
+      "Wrong extra password": [
+        "არასწორი დამატებითი პაროლი"
+      ],
       "Wrong password": [
         "არასწორი პაროლი"
       ],
@@ -1072,6 +1075,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება ${ BRAND_NAME }-ის პაროლი."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "იქონიეთ წვდომა თქვენს პაროლებთან, ჩვენი მობილური აპლიკაციებით, მგზავრობის დროსაც."
       ],
@@ -1122,6 +1128,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "თქვენი მონაცემების ამ ფორმატში გატანამდე გახსენთ Safari-ის პარამეტრებ -> \"ზოგადი\" ჩანართი -> გათიშეთ პარამეტრი \"Safari-ის ფაილების გახსნა მათი გამოწერის შემდეგ\". ეს Safari-ი ხელს შეუშლის, გატანილი ფაილი გააფუჭოს."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "ბიომეტრიით დაბლოკვა წამარტებით დარეგისტრირდა. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "ბიომეტრია გაითიშება და საჭიროა, ის თავიდან ჩართოთ."
       ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -1227,6 +1239,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "ჩართეთ ავტოდაბლოკვა თქვენი მონაცემების დასაცავად"
+      ],
+      "Enabling biometrics auto-lock": [
+        "ბიომეტრიული ავტოდაბლოკვის ჩართვა"
+      ],
+      "Enabling biometrics lock failed": [
+        "ბიომეტრიული დაბლოკვის ჩართვა ჩავარდა"
       ],
       "Enabling offline mode...": [
         "უქსელო რეჟიმის ჩართვა..."
@@ -1429,9 +1447,6 @@
       "Offline support successfully disabled": [
         "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომას PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
-      ],
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
       ],
@@ -1475,8 +1490,14 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
       ],
+      "Please confirm your extra password": [
+        "დაადასტურეთ თქვენი დამატებითი პაროლი"
+      ],
       "Please confirm your password": [
         "გთხოვთ, დაადასტუროთ პაროლი."
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "დაადასტურეთ თქვენი პაროლი, რომ ბიომეტრიით ავტოდაბლოკვა ჩართოთ."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "დაადასტურეთ თქვენი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
@@ -1516,6 +1537,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "სწრაფად შეავსეთ თქვენი 2FA კოდები."
       ],
       "Quickly autofill your identities.": [
         "სწრაფად შეავსეთ თქვენი იდენტიფიკატორები."
@@ -1638,6 +1662,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
       ],
+      "This option is currently not available on your device.": [
+        "ეს პარამეტრი ამჟამად თქვენს მოწყობილობაზე ხელმისაწვდომი არაა."
+      ],
       "This setting is disabled on the organization level": [
         "ეს პარამეტრი გათიშულია ორგანიზაციის დონეზე"
       ],
@@ -1665,6 +1692,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით, რომ შეინახოთ ეს წვდომის გასაღები"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ბიომეტრიით"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ],
@@ -1673,6 +1703,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "პარამეტრებთან წვდომისთვის საჭიროა მისი განბლოკვა PIN კოდით"
+      ],
+      "Unlock with biometrics": [
+        "ბიომეტრიით განბლოკვა"
       ],
       "Unpinning item...": [
         "ელემენტის მოხსნა..."
@@ -1814,8 +1847,14 @@
       "15 minutes": [
         "15 წუთი"
       ],
+      "2 minutes": [
+        "2 წუთი"
+      ],
       "24 hours": [
         "24 სთ"
+      ],
+      "2FA autofill": [
+        "2FA-ის ავტოშევსება"
       ],
       "2FA secret key (TOTP)": [
         "2FA საიდუმლო გასაღები (TOTP)"
@@ -1831,6 +1870,9 @@
       ],
       "30 seconds": [
         "30 წამი"
+      ],
+      "4 hours": [
+        "4 სთ"
       ],
       "5 minutes": [
         "5 წუთი"
@@ -1897,6 +1939,9 @@
       ],
       "Autosuggest": [
         "ავტომატური რჩევა"
+      ],
+      "Biometrics": [
+        "ბიომეტრია"
       ],
       "Birthdate": [
         "დაბადების თარიღი"
@@ -1978,6 +2023,9 @@
       ],
       "Display": [
         "ჩვენება"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "ავტოშევსებად ველებზე ${ PASS_APP_NAME }-ის ხატულის ჩვენება"
       ],
       "Domain": [
         "დომენი"
@@ -2376,6 +2424,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "განბლოკეთ ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "განბლოკვის მექანიზმი"
+      ],
       "Unnamed Credit Card": [
         "უსახელო საკრედიტო ბარათი"
       ],
@@ -2618,6 +2669,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "შეიყვანეთ თქვენი დაამატებითი პაროლი"
+      ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
       ],
@@ -2832,6 +2886,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME }-ის პაროლი აუცილებელია"
+      ],
       "A description of the problem is required": [
         "პრობლემის აღწერა აუცილებელია"
       ],
@@ -2865,14 +2922,14 @@
       "Empty note": [
         "ცარიელი შენიშვნა"
       ],
-      "Encryption password is required": [
-        "დაშიფვრის პაროლი აუცილებელია"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
       ],
       "Extra password cannot be empty": [
         "დამატებითი პაროლი ცარიელი არ შეიძლება იყოს"
+      ],
+      "Extra password is required": [
+        "დამატებითი პაროლი აუცილებელია"
       ],
       "Extra password should have at least 8 characters": [
         "დამატებით პაროლი, სულ ცოტა, 8 სიმბოლოს უნდა შეიცავდეს"

@@ -103,9 +103,24 @@ describe('MetricsApi', () => {
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(getHeader(content?.headers, 'x-pm-uid')).toBe(undefined);
         });
+
+        it('sets auth headers with Authorization when uid and access token are defined', async () => {
+            const uid = 'uid';
+            const accessToken = 'accessToken';
+            const metricsApi = new MetricsApi();
+
+            metricsApi.setAuthHeaders(uid, accessToken);
+
+            await metricsApi.fetch('/route');
+            const content = fetchMock.mock.lastCall?.[1];
+
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+            expect(getHeader(content?.headers, 'x-pm-uid')).toBe(uid);
+            expect(getHeader(content?.headers, 'Authorization')).toBe(`Bearer ${accessToken}`);
+        });
     });
 
-    describe('setAuthHeaders', () => {
+    describe('setVersionHeaders', () => {
         it('sets app version headers when clientID and appVersion are defined', async () => {
             const clientID = 'clientID';
             const appVersion = 'appVersion';
@@ -248,11 +263,11 @@ describe('MetricsApi', () => {
                 expect(wait).toHaveBeenNthCalledWith(3, 3 * SECOND);
             });
 
-            it(`retires a maximum of ${METRICS_MAX_ATTEMPTS} times`, async () => {
+            it(`throws error if maximum retry limit is hit`, async () => {
                 fetchMock.mockResponse(getRetryImplementation('/retry', '1'));
                 const metricsApi = new MetricsApi();
 
-                await metricsApi.fetch('/retry');
+                await expect(metricsApi.fetch('/retry')).rejects.toThrow('Too many requests');
 
                 expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
             });
@@ -323,13 +338,20 @@ describe('MetricsApi', () => {
                 });
 
             it('retries request if request aborts', async () => {
-                fetchMock.mockAbort();
+                fetchMock.mockAbortOnce();
                 const metricsApi = new MetricsApi();
 
                 await metricsApi.fetch('/route');
 
+                expect(fetchMock).toHaveBeenCalledTimes(2);
+            });
+
+            it('throws error if request continually aborts', async () => {
+                fetchMock.mockAbort();
+                const metricsApi = new MetricsApi();
+
+                await expect(metricsApi.fetch('/route')).rejects.toThrow('Too many requests');
                 expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
-                await expect(fetchMock).rejects.toThrow('The operation was aborted.');
             });
 
             it(`retries request if response takes longer than ${METRICS_REQUEST_TIMEOUT_SECONDS} seconds`, async () => {
@@ -350,11 +372,11 @@ describe('MetricsApi', () => {
                 expect(wait).toHaveBeenNthCalledWith(1, METRICS_DEFAULT_RETRY_SECONDS * SECOND);
             });
 
-            it(`retires a maximum of ${METRICS_MAX_ATTEMPTS} times`, async () => {
+            it(`throws error if request continually timesout`, async () => {
                 fetchMock.mockResponse(timeoutRequestMock);
                 const metricsApi = new MetricsApi();
 
-                await metricsApi.fetch('/route');
+                await expect(metricsApi.fetch('/route')).rejects.toThrow('Too many requests');
 
                 expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
             });

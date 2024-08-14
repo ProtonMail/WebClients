@@ -37,11 +37,6 @@ import { getAuthTypes } from './getAuthTypes';
 
 const FORM_ID = 'auth-form';
 
-enum Step {
-    Password,
-    TWO_FA,
-}
-
 const TOTPForm = ({
     onSubmit,
     loading,
@@ -164,6 +159,11 @@ const getTwoFaCredentials = async (
     }
 };
 
+enum Step {
+    Password,
+    TWO_FA,
+}
+
 interface Props extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
     config: SrpConfig;
     onSuccess?: (data: { credentials: Credentials; response: Response }) => Promise<void> | void;
@@ -280,7 +280,7 @@ const AuthModal = ({
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
             <ModalHeader
-                title={step === Step.TWO_FA ? c('Title').t`Sign in with 2FA` : c('Title').t`Enter your password`}
+                title={step === Step.TWO_FA ? c('Title').t`Enter 2FA code` : c('Title').t`Enter your password`}
             />
             <ModalContent>
                 {step === Step.Password && (
@@ -379,16 +379,7 @@ const AuthModal = ({
                 })()}
             </ModalContent>
             <ModalFooter>
-                {step === Step.TWO_FA ? (
-                    <Button
-                        onClick={() => {
-                            setFidoError(false);
-                            setStep(Step.Password);
-                        }}
-                    >{c('Action').t`Back`}</Button>
-                ) : (
-                    <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                )}
+                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
                 <Button color="norm" type="submit" form={FORM_ID} loading={submitting} disabled={isLoadingAuth}>
                     {step === Step.Password && authTypes.twoFactor
                         ? c('Action').t`Continue`

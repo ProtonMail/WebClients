@@ -23,7 +23,7 @@ export const NotificationDebug: FC = () => {
         <SettingsPanel title="Notification">
             <div className="gap-4" style={{ columnCount: 2 }}>
                 <MockIFrameContainer
-                    appState={{ loggedIn: false, status: AppStatus.IDLE }}
+                    appState={{ authorized: false, status: AppStatus.IDLE }}
                     width={NOTIFICATION_WIDTH}
                     height={NOTIFICATION_HEIGHT}
                 >
