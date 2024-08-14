@@ -21,6 +21,7 @@ import {
     getFreeMailStorageFeature,
     getStorageFeature,
     getStorageFeatureB2B,
+    getVersionHistory,
 } from './drive';
 import { get24x7Support, getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
 import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
@@ -214,10 +215,7 @@ export const getDriveBusinessPlan = ({
         cta: getCTA(plan.Title),
         features: [
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
-            getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-            getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
-            getVPNConnections(1),
-            getSupport('priority'),
+            getVersionHistory(365),
         ],
     };
 };
