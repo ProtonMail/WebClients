@@ -8,6 +8,8 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    hasMailBusiness,
+    hasVisionary,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
@@ -54,6 +56,11 @@ export const getOrganizationAppRoutes = ({
         (hasOrganizationKey || hasOrganization);
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
+    const canShowGroupsSection =
+        isUserGroupsFeatureEnabled &&
+        !!organization &&
+        hasActiveOrganizationKey &&
+        (hasVisionary(subscription) || hasMailBusiness(subscription));
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -95,7 +102,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Groups`,
                 to: '/user-groups',
                 icon: 'pass-group',
-                available: isUserGroupsFeatureEnabled && !!organization && hasActiveOrganizationKey,
+                available: canShowGroupsSection,
                 subsections: [
                     {
                         id: 'groups-management',
