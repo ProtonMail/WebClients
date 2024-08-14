@@ -10,12 +10,8 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components/components';
-import {
-    resendGroupInvitation,
-    deleteGroupMember as revokeGroupInvitation,
-    updateGroupMember,
-} from '@proton/shared/lib/api/groups';
-import { clearBit, setBit, hasBit } from '@proton/shared/lib/helpers/bitset';
+import { deleteGroupMember as revokeGroupInvitation, updateGroupMember } from '@proton/shared/lib/api/groups';
+import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
 
@@ -63,10 +59,6 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
         { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
     ];
 
-    const handleResentInvitation = async () => {
-        await api(resendGroupInvitation(member.ID));
-    };
-
     const handleRevokeInvitation = async () => {
         await api(revokeGroupInvitation(member.ID));
         await call();
@@ -89,8 +81,9 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(
         member.Permissions,
         GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
-    ) ? GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
-    : GROUP_MEMBER_PERMISSIONS.None;
+    )
+        ? GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
+        : GROUP_MEMBER_PERMISSIONS.None;
 
     return (
         <>
@@ -123,10 +116,7 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
                             onSelect={handleOverrideGroupPermissions}
                         />
                     ))}
-                    <hr className="mt-2" />
-                    <DropdownMenuButton className="text-left" onClick={handleResentInvitation}>
-                        {c('Action').t`Resend invitation`}
-                    </DropdownMenuButton>
+                    <hr className="mt-2 mb-0" />
                     <DropdownMenuButton className="text-left color-danger" onClick={handleRevokeInvitation}>
                         {c('Action').t`Revoke invitation`}
                     </DropdownMenuButton>

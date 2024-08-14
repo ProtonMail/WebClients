@@ -39,8 +39,12 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
                                             '',
                                         ]}
                                         cells={[
-                                            membership.Name,
-                                            membership.Address,
+                                            <span className="block max-w-full text-ellipsis" title={membership.Name}>
+                                                {membership.Name}
+                                            </span>,
+                                            <span className="block max-w-full text-ellipsis" title={membership.Address}>
+                                                {membership.Address}
+                                            </span>,
                                             <GroupState key={key} membership={membership} />,
                                             <GroupActions key={key} membership={membership} />,
                                         ]}
