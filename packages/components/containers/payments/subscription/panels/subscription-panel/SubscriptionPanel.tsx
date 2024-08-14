@@ -16,6 +16,7 @@ import {
     getIsPassB2BPlan,
     getIsSentinelPlan,
     getPrimaryPlan,
+    hasDriveBusiness,
     hasPass,
     hasVPN,
     hasVPNPassBundle,
@@ -41,6 +42,7 @@ import percentage from '@proton/utils/percentage';
 
 import type { IconName } from '../../../../../components';
 import { Icon, Meter, Price, StripedItem, StripedList } from '../../../../../components';
+import { getVersionHistory } from '../../../features/drive';
 import { getSentinel } from '../../../features/highlights';
 import {
     FREE_PASS_ALIASES,
@@ -54,6 +56,7 @@ import {
     getLoginsAndNotes,
     getProtonPassFeature,
     getVaultSharing,
+    getVaultSharingB2B,
     getVaults,
 } from '../../../features/pass';
 import { getVPNConnectionsFeature } from '../../../features/vpn';
@@ -274,6 +277,39 @@ const SubscriptionPanel = ({
         );
     };
 
+    const getDriveAppB2B = () => {
+        const items: (Item | false)[] = [
+            !!userText &&
+                (MaxMembers > 1 ||
+                    getIsB2BAudienceFromSubscription(subscription) ||
+                    upsells.some((upsell) => upsell.features.some((feature) => feature.icon === 'users'))) && {
+                    icon: 'users',
+                    text: userText,
+                },
+            getVersionHistory(365),
+            {
+                icon: 'envelope',
+                text: addressText,
+            },
+            {
+                icon: 'calendar-checkmark',
+                text: calendarText,
+            },
+            {
+                icon: 'brand-proton-vpn',
+                text: vpnText,
+            },
+            MaxMembers > 1 ? getVaultSharingB2B(FREE_VAULTS) : getVaults(FREE_VAULTS),
+        ];
+
+        return (
+            <StripedList alternate={alternate}>
+                {storageItem}
+                <SubscriptionItems items={items.filter(isTruthy)} />
+            </StripedList>
+        );
+    };
+
     const getVpnB2B = () => {
         /**
          * The `vpn` in `vpn-get-more` is unimportant.
@@ -407,6 +443,9 @@ const SubscriptionPanel = ({
                 }
                 if (hasWallet(subscription)) {
                     return getWalletAppWalletPlus();
+                }
+                if (hasDriveBusiness(subscription)) {
+                    return getDriveAppB2B();
                 }
 
                 return getDefault();
