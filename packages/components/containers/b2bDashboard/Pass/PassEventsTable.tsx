@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { AppLink, Table, TableBody, TableHeader, TableRow, Time, Tooltip } from '@proton/components/components';
+import { AppLink, SortingTableHeader, Table, TableBody, TableRow, Time, Tooltip } from '@proton/components/components';
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { PassEvent } from '..';
 import { useApi } from '../../..';
@@ -17,6 +17,7 @@ interface Props {
     handleEventClick: (event: string) => void;
     handleTimeClick: (time: string) => void;
     handleEmailOrIpClick: (keyword: string) => void;
+    handleToggleSort: (direction: SORT_DIRECTION) => void;
 }
 
 interface DescriptionProps {
@@ -25,6 +26,12 @@ interface DescriptionProps {
     event: string;
     hasInvalidShareId: boolean;
 }
+
+interface SortConfig {
+    key: keyof PassEvent;
+    direction: SORT_DIRECTION;
+}
+
 const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionProps) => {
     if (hasInvalidShareId) {
         return (
@@ -53,7 +60,14 @@ const Description = ({ shareId, itemId, event, hasInvalidShareId }: DescriptionP
     );
 };
 
-const PassEventsTable = ({ events, loading, handleEventClick, handleTimeClick, handleEmailOrIpClick }: Props) => {
+const PassEventsTable = ({
+    events,
+    loading,
+    handleEventClick,
+    handleTimeClick,
+    handleEmailOrIpClick,
+    handleToggleSort,
+}: Props) => {
     const api = useApi();
     const [shareIds, setShareIds] = useState<{ [key: string]: string | null }>({});
     const [invalidShareIds, setInvalidShareIds] = useState<Set<string>>(new Set());
@@ -92,15 +106,30 @@ const PassEventsTable = ({ events, loading, handleEventClick, handleTimeClick, h
         }
     }, [events, api]);
 
+    const [sortConfig, setSortConfig] = useState<SortConfig>({
+        key: 'time',
+        direction: SORT_DIRECTION.ASC,
+    });
+
+    const toggleSort = () => {
+        setSortConfig({
+            ...sortConfig,
+            direction: sortConfig.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC,
+        });
+        handleToggleSort(sortConfig.direction);
+    };
+
     return (
         <Table responsive="cards">
-            <TableHeader
+            <SortingTableHeader
+                config={sortConfig}
+                onToggleSort={toggleSort}
                 cells={[
-                    c('Title').t`Time`,
-                    c('Title').t`User`,
-                    c('Title').t`Event`,
-                    c('Title').t`Description`,
-                    c('Title').t`IP`,
+                    { key: 'time', content: c('TableHeader').t`Time`, sorting: true },
+                    { content: c('Title').t`User` },
+                    { content: c('Title').t`Event` },
+                    { content: c('Title').t`Description` },
+                    { content: c('Title').t`IP` },
                 ]}
             />
             <TableBody colSpan={5} loading={loading}>
