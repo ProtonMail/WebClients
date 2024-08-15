@@ -38,7 +38,7 @@ const PendingInvitationPanel = ({ invites }: Props) => {
 
     return (
         <>
-            <div className="border rounded px-6 py-5">
+            <div className="border rounded px-6 py-5" data-testid="pending-invitations-panel">
                 <div className="flex">
                     <h3 className="text-lg mb-6">
                         <strong>
