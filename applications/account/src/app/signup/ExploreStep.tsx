@@ -24,7 +24,6 @@ interface Props {
 const ExploreStep = ({ onExplore, user, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const canAccessWallet = useFlag('Wallet');
     const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
 
     useEffect(() => {
@@ -42,7 +41,7 @@ const ExploreStep = ({ onExplore, user, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user, canAccessWallet, isWalletAppSwitcherNewBadgeEnabled })}
+                    apps={getExploreApps({ subscribed, user, isWalletAppSwitcherNewBadgeEnabled })}
                     onExplore={onExplore}
                 />
             </Content>

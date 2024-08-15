@@ -35,9 +35,8 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         const { APP_NAME } = useConfig();
 
         const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
-        const canAccessWallet = useFlag('Wallet');
 
-        const availableApps = getAvailableApps({ user, canAccessWallet });
+        const availableApps = getAvailableApps({ user });
 
         if (availableApps.length <= 1) {
             return null;

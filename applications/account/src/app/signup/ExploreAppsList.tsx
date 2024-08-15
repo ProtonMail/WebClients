@@ -23,15 +23,13 @@ interface App {
 export const getExploreApps = ({
     subscribed,
     user,
-    canAccessWallet,
     isWalletAppSwitcherNewBadgeEnabled,
 }: {
     subscribed?: User['Subscribed'];
     user: User | undefined;
-    canAccessWallet: boolean;
     isWalletAppSwitcherNewBadgeEnabled: boolean;
 }) => {
-    const availableApps = getAvailableApps({ user, canAccessWallet });
+    const availableApps = getAvailableApps({ user });
     return [
         {
             name: APPS.PROTONMAIL,
