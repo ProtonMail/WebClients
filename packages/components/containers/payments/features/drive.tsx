@@ -158,7 +158,7 @@ export const getVersionHistory = (options?: 'generic' | 30 | 365): PlanCardFeatu
     }
 
     return {
-        text: c('new_plans: feature').t`Version history`,
+        text: c('new_plans: feature').t`Recover previous file versions`,
         included: true,
         icon: 'clock-rotate-left',
     };
@@ -166,9 +166,17 @@ export const getVersionHistory = (options?: 'generic' | 30 | 365): PlanCardFeatu
 
 export const getPremiumFeatures = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature')
-            .t`Premium features of ${MAIL_SHORT_APP_NAME}/${CALENDAR_SHORT_APP_NAME}/${VPN_SHORT_APP_NAME}/${DRIVE_SHORT_APP_NAME}/${PASS_SHORT_APP_NAME}`,
+        text: c('new_plans: feature').t`All premium ${BRAND_NAME} services. One easy subscription`,
         included: true,
+    };
+};
+
+export const getBasicFeatures = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature')
+            .t`All basic ${BRAND_NAME} services (${MAIL_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME})`,
+        included: true,
+        icon: 'brand-proton',
     };
 };
 
@@ -204,10 +212,11 @@ const getSyncAndBackupFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getDocumentEditor = (): PlanCardFeatureDefinition => {
+export const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Online document editor`,
         included: true,
+        icon: 'brand-proton-drive',
     };
 };
 
@@ -272,6 +281,29 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
 export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanCardFeature[] => {
     return [
         getStorage(plansMap, freePlan),
+        {
+            name: 'version-history',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: getVersionHistory(),
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: getVersionHistory(),
+                [PLANS.DRIVE_BUSINESS]: getVersionHistory(365),
+                [PLANS.PASS]: null,
+                [PLANS.WALLET]: null,
+                [PLANS.FAMILY]: getVersionHistory(),
+                [PLANS.DUO]: getVersionHistory(),
+                [PLANS.MAIL_PRO]: getVersionHistory(30),
+                [PLANS.MAIL_BUSINESS]: getVersionHistory(30),
+                [PLANS.BUNDLE_PRO]: getVersionHistory(365),
+                [PLANS.BUNDLE_PRO_2024]: getVersionHistory(365),
+                [PLANS.PASS_PRO]: getVersionHistory(30),
+                [PLANS.PASS_BUSINESS]: getVersionHistory(30),
+                [PLANS.VPN_PRO]: getVersionHistory(30),
+                [PLANS.VPN_BUSINESS]: getVersionHistory(30),
+            },
+        },
         {
             name: 'encryption',
             plans: {
@@ -363,29 +395,6 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getSyncAndBackupFeature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
-            },
-        },
-        {
-            name: 'version-history',
-            plans: {
-                [PLANS.FREE]: null,
-                [PLANS.BUNDLE]: null,
-                [PLANS.MAIL]: null,
-                [PLANS.VPN]: null,
-                [PLANS.DRIVE]: null,
-                [PLANS.DRIVE_BUSINESS]: getVersionHistory(365),
-                [PLANS.PASS]: null,
-                [PLANS.WALLET]: null,
-                [PLANS.FAMILY]: null,
-                [PLANS.DUO]: null,
-                [PLANS.MAIL_PRO]: getVersionHistory(30),
-                [PLANS.MAIL_BUSINESS]: getVersionHistory(30),
-                [PLANS.BUNDLE_PRO]: getVersionHistory(365),
-                [PLANS.BUNDLE_PRO_2024]: getVersionHistory(365),
-                [PLANS.PASS_PRO]: getVersionHistory(30),
-                [PLANS.PASS_BUSINESS]: getVersionHistory(30),
-                [PLANS.VPN_PRO]: getVersionHistory(30),
-                [PLANS.VPN_BUSINESS]: getVersionHistory(30),
             },
         },
     ];
