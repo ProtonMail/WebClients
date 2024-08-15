@@ -342,7 +342,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Group membership`,
                 to: '/group-membership',
                 icon: 'pass-group',
-                available: isUserGroupsFeatureEnabled && memberships && memberships.length > 0,
+                available: isUserGroupsFeatureEnabled && (memberships?.length ?? 0) > 0,
                 subsections: [
                     {
                         id: 'group-membership',
