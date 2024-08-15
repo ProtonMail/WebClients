@@ -76,10 +76,10 @@ export function DriveItemContextMenu({
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
                 {isOnlyOneFileItem && showOpenInDocs && (
-                    <OpenInDocsButton shareId={shareId} link={selectedLink} close={close} />
+                    <OpenInDocsButton selectedBrowserItem={selectedLink} close={close} />
                 )}
                 {(hasPreviewAvailable || (isOnlyOneFileItem && showOpenInDocs)) && <ContextSeparator />}
-                <DownloadButton selectedLinks={selectedLinks} close={close} />
+                <DownloadButton selectedBrowserItems={selectedLinks} close={close} />
                 {isAdmin && hasLink && (
                     <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
@@ -104,7 +104,7 @@ export function DriveItemContextMenu({
                     <RenameButton showRenameModal={showRenameModal} link={selectedLink} close={close} />
                 )}
                 <DetailsButton
-                    selectedLinks={selectedLinks}
+                    selectedBrowserItems={selectedLinks}
                     showDetailsModal={showDetailsModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
