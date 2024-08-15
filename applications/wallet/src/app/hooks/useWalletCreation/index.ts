@@ -12,7 +12,7 @@ import type {
     WasmProtonWalletApiClient,
     WasmScriptType,
 } from '@proton/andromeda';
-import { WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
+import { WasmAccount, WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { useAddresses, useNotifications, useOrganization, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
@@ -142,7 +142,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
     const { createNotification } = useNotifications();
 
-    const { decryptedApiWalletsData, network } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData, network, manageBitcoinAddressPool } = useBitcoinBlockchainContext();
 
     const [mnemonicError, setMnemonicError] = useState<string>();
     const [mnemonic, setMnemonic] = useState<string>();
@@ -310,6 +310,25 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                         try {
                             await api.wallet.addEmailAddress(Wallet.ID, created.Data.ID, firstAddress.ID);
                             addedEmailAddresses = [{ ID: firstAddress.ID, Email: firstAddress.Email }];
+
+                            const { DerivationPath, ScriptType } = created.Data;
+
+                            const derivationPath = new WasmDerivationPath(DerivationPath);
+                            const wasmAccount = new WasmAccount(wasmWallet, ScriptType, derivationPath);
+
+                            void manageBitcoinAddressPool({
+                                wallet: wallet.Wallet,
+                                account: {
+                                    ...created.Data,
+                                    FiatCurrency: selectedCurrency,
+                                    Addresses: addedEmailAddresses,
+                                },
+                                accountChainData: {
+                                    account: wasmAccount,
+                                    scriptType: ScriptType,
+                                    derivationPath: DerivationPath,
+                                },
+                            });
                         } catch (error: any) {
                             createNotification({
                                 text: error?.error ?? c('Wallet setup').t`Could not link email to wallet account`,
